@@ -4,12 +4,39 @@ import { PageHero } from "@/components/page-hero";
 import { SectionHeading } from "@/components/section-heading";
 import { AreaCard } from "@/components/area-card";
 import { Reveal } from "@/components/reveal";
-import { areas, profile, timeline } from "@/lib/data";
+import {
+  areas,
+  events,
+  leadership,
+  profile,
+  scholarships,
+  timeline,
+  type Credential,
+} from "@/lib/data";
 
 export const metadata: Metadata = {
   title: "Sobre",
   description: profile.shortBio,
 };
+
+function CredentialList({ items }: { items: Credential[] }) {
+  return (
+    <ul className="space-y-5">
+      {items.map((item) => (
+        <li key={item.title} className="border-l-2 border-line pl-4">
+          <p className="text-sm font-medium leading-snug text-ink">
+            {item.title}
+          </p>
+          <p className="mt-1 flex flex-wrap items-center gap-2 font-mono text-xs text-muted">
+            {item.detail && <span>{item.detail}</span>}
+            {item.detail && <span aria-hidden="true">•</span>}
+            <span>{item.period}</span>
+          </p>
+        </li>
+      ))}
+    </ul>
+  );
+}
 
 export default function SobrePage() {
   return (
@@ -30,17 +57,18 @@ export default function SobrePage() {
                   {profile.shortBio}
                 </p>
                 <p>
-                  Meu interesse por medicina nasceu da curiosidade sobre os
-                  limites do corpo humano — e cresceu na direção de dois
-                  extremos aparentemente distantes: o interior do crânio e o
-                  vácuo do espaço. Entre um e outro, encontrei um fio condutor
-                  comum: a fisiologia sob estresse extremo.
+                  Estudante de Medicina na FCMSJC-Humanitas, concentro minha
+                  produção científica na neurocirurgia e na neurorradiologia
+                  intervencionista — com trabalhos sobre embolização
+                  pré-operatória, tratamento endovascular de fístulas e
+                  malformações arteriovenosas, e doença cerebrovascular.
                 </p>
                 <p>
-                  Hoje, divido meu tempo entre a formação clínica, projetos de
-                  pesquisa em neurociência e fisiologia aeroespacial, e a
-                  produção de conteúdo que aproxima esses temas de colegas e do
-                  público em geral.
+                  Em paralelo, dedico-me à medicina aeroespacial, investigando
+                  como o corpo humano se adapta à microgravidade — tema da minha
+                  iniciação científica sobre alterações nefrológicas em
+                  astronautas — e à liderança acadêmica, hoje à frente do
+                  Diretório Acadêmico da faculdade.
                 </p>
               </div>
             </Reveal>
@@ -87,6 +115,44 @@ export default function SobrePage() {
                 <AreaCard area={area} index={i} />
               </Reveal>
             ))}
+          </div>
+        </Container>
+      </section>
+
+      <section className="border-t border-line py-16 sm:py-24">
+        <Container>
+          <Reveal>
+            <SectionHeading
+              index="03"
+              eyebrow="Atuação"
+              title="Liderança e reconhecimento"
+            />
+          </Reveal>
+          <div className="grid gap-x-8 gap-y-12 md:grid-cols-3">
+            <Reveal>
+              <div>
+                <h3 className="mb-6 text-xs font-semibold uppercase tracking-[0.16em] text-signal">
+                  Liderança e ligas
+                </h3>
+                <CredentialList items={leadership} />
+              </div>
+            </Reveal>
+            <Reveal delay={100}>
+              <div>
+                <h3 className="mb-6 text-xs font-semibold uppercase tracking-[0.16em] text-signal">
+                  Bolsas e monitorias
+                </h3>
+                <CredentialList items={scholarships} />
+              </div>
+            </Reveal>
+            <Reveal delay={200}>
+              <div>
+                <h3 className="mb-6 text-xs font-semibold uppercase tracking-[0.16em] text-signal">
+                  Organização de eventos
+                </h3>
+                <CredentialList items={events} />
+              </div>
+            </Reveal>
           </div>
         </Container>
       </section>

@@ -17,7 +17,7 @@ export default function ProjetosPage() {
       <PageHero
         eyebrow="Trabalhos"
         title="Projetos"
-        description="Pesquisa aplicada, revisões e material técnico produzidos na interface entre neurocirurgia, fisiologia espacial e educação médica."
+        description="Pesquisa em neurorradiologia intervencionista, neurocirurgia e medicina aeroespacial — de relatos de caso e revisões sistemáticas a projetos de iniciação científica."
       />
 
       <section className="py-16 sm:py-24">
@@ -41,6 +41,17 @@ export default function ProjetosPage() {
                   <p className="text-sm leading-relaxed text-ink-soft">
                     {project.description}
                   </p>
+                  {project.link && (
+                    <a
+                      href={project.link}
+                      target="_blank"
+                      rel="noopener"
+                      className="mt-6 inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.14em] text-signal transition-opacity hover:opacity-70"
+                    >
+                      {project.linkLabel ?? "Ver publicação"}
+                      <span aria-hidden="true">↗</span>
+                    </a>
+                  )}
                 </article>
               </Reveal>
             ))}
