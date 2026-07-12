@@ -56,7 +56,7 @@ export default function PublicacoesPage() {
                 {items.map((pub, i) => (
                   <li key={pub.title}>
                     <Reveal delay={i * 50}>
-                      <div className="group flex flex-col gap-3 py-7 sm:flex-row sm:justify-between sm:gap-8">
+                      <div className="group flex flex-col gap-3 py-7 sm:flex-row sm:items-baseline sm:justify-between sm:gap-8">
                         <div className="flex items-baseline gap-5">
                           <span
                             className="hidden shrink-0 font-mono text-sm text-line-strong sm:inline"
