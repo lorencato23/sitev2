@@ -12,7 +12,6 @@ const links = [
   { href: "/sobre", label: "Sobre" },
   { href: "/projetos", label: "Projetos" },
   { href: "/publicacoes", label: "Publicações" },
-  { href: "/blog", label: "Blog" },
   { href: "/contato", label: "Contato" },
 ];
 

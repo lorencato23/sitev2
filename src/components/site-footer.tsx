@@ -7,7 +7,6 @@ const nav = [
   { href: "/sobre", label: "Sobre" },
   { href: "/projetos", label: "Projetos" },
   { href: "/publicacoes", label: "Publicações" },
-  { href: "/blog", label: "Blog" },
   { href: "/contato", label: "Contato" },
 ];
 
@@ -46,9 +45,6 @@ export function SiteFooter() {
             </Link>
             <Link href={profile.linkedin} target="_blank" rel="noopener" className="text-ink-soft transition-colors hover:text-signal">
               LinkedIn — {profile.linkedinHandle}
-            </Link>
-            <Link href={`mailto:${profile.email}`} className="text-ink-soft transition-colors hover:text-signal">
-              {profile.email}
             </Link>
           </div>
         </div>

@@ -12,12 +12,6 @@ export const metadata: Metadata = {
 
 const channels = [
   {
-    label: "E-mail",
-    value: profile.email,
-    note: "Para colaborações, pesquisa e convites.",
-    href: `mailto:${profile.email}`,
-  },
-  {
     label: "Instagram",
     value: profile.instagramHandle,
     note: "Divulgação científica e bastidores.",
@@ -43,7 +37,7 @@ export default function ContatoPage() {
 
       <section className="py-16 sm:py-24">
         <Container>
-          <div className="grid gap-5 sm:grid-cols-3">
+          <div className="grid gap-5 sm:grid-cols-2">
             {channels.map((channel, i) => (
               <Reveal key={channel.label} delay={i * 100} className="flex">
                 <Link

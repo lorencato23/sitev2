@@ -5,12 +5,11 @@ import { SectionLink } from "@/components/section-link";
 import { ButtonLink } from "@/components/button-link";
 import { HeroGraphic } from "@/components/hero-graphic";
 import { ProjectCard } from "@/components/project-card";
-import { PostCard } from "@/components/post-card";
 import { StatStrip } from "@/components/stat-strip";
 import { AreaCard } from "@/components/area-card";
 import { SocialLinks } from "@/components/social-links";
 import { Reveal } from "@/components/reveal";
-import { areas, profile, projects, posts, publicationStats } from "@/lib/data";
+import { areas, profile, projects, publicationStats } from "@/lib/data";
 
 export default function Home() {
   return (
@@ -48,8 +47,8 @@ export default function Home() {
                 <ButtonLink href="/publicacoes" variant="secondary">
                   Publicações
                 </ButtonLink>
-                <ButtonLink href="/blog" variant="secondary">
-                  Blog
+                <ButtonLink href="/sobre" variant="secondary">
+                  Sobre
                 </ButtonLink>
               </div>
 
@@ -109,26 +108,6 @@ export default function Home() {
         </Container>
       </section>
 
-      <section className="py-16 sm:py-24">
-        <Container>
-          <Reveal>
-            <SectionHeading
-              index="04"
-              eyebrow="Leitura"
-              title="Conteúdos recentes"
-              action={<SectionLink href="/blog">Ver todos</SectionLink>}
-            />
-          </Reveal>
-          <div className="grid gap-5 sm:grid-cols-3">
-            {posts.slice(0, 3).map((post, i) => (
-              <Reveal key={post.slug} delay={i * 100} className="flex">
-                <PostCard post={post} />
-              </Reveal>
-            ))}
-          </div>
-        </Container>
-      </section>
-
       <section className="border-t border-line py-20 sm:py-28">
         <Container className="text-center">
           <Reveal>
@@ -145,10 +124,12 @@ export default function Home() {
             <div className="mt-9 flex flex-wrap items-center justify-center gap-4">
               <ButtonLink href="/contato">Entrar em contato</ButtonLink>
               <Link
-                href={`mailto:${profile.email}`}
+                href={profile.instagram}
+                target="_blank"
+                rel="noopener"
                 className="font-mono text-sm text-muted transition-colors hover:text-signal"
               >
-                {profile.email}
+                {profile.instagramHandle}
               </Link>
             </div>
           </Reveal>

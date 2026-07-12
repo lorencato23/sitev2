@@ -19,19 +19,9 @@ function LinkedInIcon() {
   );
 }
 
-function MailIcon() {
-  return (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" className="h-4.5 w-4.5" aria-hidden="true">
-      <rect x="3" y="5" width="18" height="14" rx="2.5" />
-      <path d="m3.5 7 8.5 6 8.5-6" />
-    </svg>
-  );
-}
-
 const items = [
   { label: "Instagram", href: profile.instagram, external: true, Icon: InstagramIcon },
   { label: "LinkedIn", href: profile.linkedin, external: true, Icon: LinkedInIcon },
-  { label: "E-mail", href: `mailto:${profile.email}`, external: false, Icon: MailIcon },
 ];
 
 export function SocialLinks() {

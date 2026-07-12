@@ -22,10 +22,10 @@ export default function NotFound() {
         <div className="mt-9 flex flex-wrap items-center justify-center gap-4">
           <ButtonLink href="/">Voltar ao início</ButtonLink>
           <Link
-            href="/blog"
+            href="/publicacoes"
             className="text-xs font-semibold uppercase tracking-[0.14em] text-muted transition-colors hover:text-signal"
           >
-            Ou explore o blog →
+            Ou veja as publicações →
           </Link>
         </div>
       </Container>

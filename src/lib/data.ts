@@ -8,7 +8,6 @@ export const profile = {
     "Da neurointervenção à fisiologia espacial — pesquiso os limites do corpo humano sob estresse extremo.",
   shortBio:
     "Acadêmico de Medicina na FCMSJC-Humanitas, com produção científica em neurocirurgia e neurorradiologia intervencionista e pesquisa em medicina aeroespacial. Primeiro autor em trabalhos sobre embolização pré-operatória, doença cerebrovascular e fisiologia humana em microgravidade, além de atuação em liderança acadêmica e divulgação científica.",
-  email: "contato@drlorencato.com",
   instagram: "https://instagram.com/dr.lorencato",
   instagramHandle: "@dr.lorencato",
   linkedin: "https://linkedin.com/in/gabriel-lorencato",
@@ -350,60 +349,5 @@ export const timeline = [
   },
 ];
 
-export type Post = {
-  slug: string;
-  title: string;
-  excerpt: string;
-  tag: string;
-  date: string;
-  readTime: string;
-  content: string[];
-};
-
-export const posts: Post[] = [
-  {
-    slug: "como-a-microgravidade-altera-o-corpo-humano",
-    title: "Como a microgravidade altera o corpo humano?",
-    excerpt:
-      "Principais mudanças fisiológicas que ocorrem durante missões espaciais.",
-    tag: "Medicina Aeroespacial",
-    date: "2026-05-12",
-    readTime: "6 min leitura",
-    content: [
-      "A ausência de peso altera praticamente todos os sistemas do corpo humano, do cardiovascular ao musculoesquelético. Sem a força da gravidade puxando os fluidos corporais para baixo, o organismo passa por uma redistribuição significativa de líquidos em direção à cabeça, o que explica o inchaço facial característico dos astronautas nos primeiros dias em órbita.",
-      "O sistema cardiovascular também se adapta: o coração, que não precisa mais trabalhar contra a gravidade para bombear sangue para as pernas, tende a perder massa e eficiência ao longo de missões prolongadas. Estudos recentes indicam remodelamento estrutural do ventrículo esquerdo em tripulações de longa duração.",
-      "Ossos e músculos, por sua vez, sofrem perda acelerada de densidade e massa — um processo comparável, em ritmo, ao envelhecimento fisiológico normal, porém muito mais rápido. Protocolos de exercício resistido a bordo tentam mitigar esse efeito, mas não o eliminam por completo.",
-      "Compreender essas alterações é essencial não apenas para a exploração espacial, mas também para a medicina terrestre: muitos dos mecanismos observados em microgravidade têm paralelos com o que ocorre em pacientes acamados por longos períodos.",
-    ],
-  },
-  {
-    slug: "trombectomia-mecanica-quando-e-como-realizar",
-    title: "Trombectomia mecânica: quando e como realizar",
-    excerpt:
-      "Indicações, técnica e evidências atuais sobre o tratamento endovascular do AVC isquêmico.",
-    tag: "Neurocirurgia",
-    date: "2026-05-02",
-    readTime: "8 min leitura",
-    content: [
-      "A trombectomia mecânica se consolidou como o tratamento de escolha para o AVC isquêmico agudo por oclusão de grandes vasos, especialmente após os ensaios clínicos que ampliaram a janela terapêutica para até 24 horas em pacientes selecionados por imagem.",
-      "A seleção criteriosa do paciente é o fator mais determinante para o sucesso do procedimento: escala NIHSS, ASPECTS na tomografia e, em casos de janela estendida, a presença de tecido salvável identificado por perfusão são critérios centrais.",
-      "Do ponto de vista técnico, a combinação de aspiração direta com stent retriever (técnica combinada) tem mostrado taxas de recanalização superiores às técnicas isoladas, reduzindo o tempo até a reperfusão — variável com forte correlação a desfechos funcionais.",
-      "Apesar dos avanços, o maior desafio permanece sendo logístico: garantir que o paciente certo chegue ao centro certo dentro da janela certa, o que reforça a importância de protocolos regionais bem desenhados de atendimento ao AVC.",
-    ],
-  },
-  {
-    slug: "o-futuro-da-cirurgia-espacial",
-    title: "O futuro da cirurgia espacial",
-    excerpt:
-      "Desafios, tecnologias e o papel da medicina nas próximas missões interplanetárias.",
-    tag: "Divulgação Científica",
-    date: "2026-04-25",
-    readTime: "7 min leitura",
-    content: [
-      "Realizar uma cirurgia em microgravidade impõe desafios que vão muito além da técnica cirúrgica em si: sangue e fluidos corporais não se comportam da mesma forma sem gravidade, formando esferas em vez de escorrer, o que exige sistemas de contenção especialmente projetados.",
-      "Missões para a Lua e, eventualmente, Marte, vão exigir autonomia médica sem precedentes — sem possibilidade de evacuação rápida para a Terra, tripulações precisarão contar com protocolos robustos de telemedicina, inteligência artificial de apoio à decisão e, possivelmente, robótica cirúrgica remota ou semiautônoma.",
-      "Pesquisas atuais em voos parabólicos e em estações análogas na Terra já testam protótipos de instrumentais adaptados, câmaras de contenção de fluidos e fluxos de trabalho cirúrgico pensados especificamente para o ambiente espacial.",
-      "O desenvolvimento dessa área não beneficia apenas astronautas: técnicas de cirurgia remota e sistemas de suporte à decisão têm potencial direto de aplicação em regiões remotas e de difícil acesso aqui na Terra.",
-    ],
-  },
-];
+// Blog removido por enquanto — os textos anteriores eram apenas exemplos.
+// Para reativar, recrie o tipo Post, a lista de posts e as rotas /blog.
