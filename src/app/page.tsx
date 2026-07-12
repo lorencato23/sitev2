@@ -4,6 +4,7 @@ import { SectionHeading } from "@/components/section-heading";
 import { SectionLink } from "@/components/section-link";
 import { ButtonLink } from "@/components/button-link";
 import { HeroGraphic } from "@/components/hero-graphic";
+import { ScrollParallax } from "@/components/scroll-parallax";
 import { ProjectCard } from "@/components/project-card";
 import { StatStrip } from "@/components/stat-strip";
 import { AreaCard } from "@/components/area-card";
@@ -58,7 +59,9 @@ export default function Home() {
             </div>
 
             <div className="animate-fade-up" style={{ animationDelay: "200ms" }}>
-              <HeroGraphic />
+              <ScrollParallax speed={0.12}>
+                <HeroGraphic />
+              </ScrollParallax>
             </div>
           </div>
         </Container>
