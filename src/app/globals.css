@@ -1,0 +1,66 @@
+@import "tailwindcss";
+
+:root {
+  --color-paper: #f7f4ec;
+  --color-paper-soft: #f1ede2;
+  --color-surface: #ffffff;
+  --color-ink: #14181c;
+  --color-ink-soft: #454e57;
+  --color-muted: #6b7480;
+  --color-line: #dfd9c9;
+  --color-line-strong: #c9c1ac;
+  --color-signal: #1f3fd1;
+  --color-signal-soft: #eef1fd;
+  --color-amber: #b5591a;
+  --color-amber-soft: #fbeee0;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-paper: #0d1116;
+    --color-paper-soft: #12171d;
+    --color-surface: #161c23;
+    --color-ink: #f3f1ea;
+    --color-ink-soft: #c7cdd5;
+    --color-muted: #8a93a0;
+    --color-line: #2a323b;
+    --color-line-strong: #3a434e;
+    --color-signal: #7d9dff;
+    --color-signal-soft: #1a2338;
+    --color-amber: #e2934f;
+    --color-amber-soft: #2c2013;
+  }
+}
+
+@theme inline {
+  --font-display: var(--font-display);
+  --font-sans: var(--font-body);
+  --font-mono: var(--font-mono);
+
+  --color-paper: var(--color-paper);
+  --color-paper-soft: var(--color-paper-soft);
+  --color-surface: var(--color-surface);
+  --color-ink: var(--color-ink);
+  --color-ink-soft: var(--color-ink-soft);
+  --color-muted: var(--color-muted);
+  --color-line: var(--color-line);
+  --color-line-strong: var(--color-line-strong);
+  --color-signal: var(--color-signal);
+  --color-signal-soft: var(--color-signal-soft);
+  --color-amber: var(--color-amber);
+  --color-amber-soft: var(--color-amber-soft);
+}
+
+html {
+  scroll-behavior: smooth;
+  color-scheme: light dark;
+}
+
+body {
+  font-family: var(--font-body), system-ui, sans-serif;
+}
+
+::selection {
+  background: var(--color-signal);
+  color: var(--color-paper);
+}
