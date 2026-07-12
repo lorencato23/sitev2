@@ -91,9 +91,11 @@ export const projects: Project[] = [
     summary:
       "Relato de caso e revisão sistemática sobre o manejo endovascular de fístula arteriovenosa do couro cabeludo.",
     description:
-      "Coautoria em relato de caso com revisão sistemática sobre o tratamento endovascular de fístula arteriovenosa do couro cabeludo, aceito no Brazilian Journal of Neurosurgery (JBNC).",
+      "Coautoria em relato de caso com revisão sistemática sobre o tratamento endovascular de fístula arteriovenosa do couro cabeludo, publicado no Brazilian Journal of Neurosurgery (JBNC).",
     tag: "Neurocirurgia Endovascular",
     year: "2025",
+    link: "https://www.jbnc.org.br/artigo/endovascular-treatment-of-scalp-arteriovenous-fistula-a-case-report-and-systematic-review-of-the-literature/1740",
+    linkLabel: "Ver no JBNC",
   },
   {
     slug: "abordagem-robotica-neurocirurgia-pediatrica",
@@ -156,6 +158,7 @@ export const publications: Publication[] = [
     year: "2025",
     role: "Coautor",
     category: "periodico",
+    link: "https://www.jbnc.org.br/artigo/endovascular-treatment-of-scalp-arteriovenous-fistula-a-case-report-and-systematic-review-of-the-literature/1740",
   },
   {
     title:
@@ -164,6 +167,7 @@ export const publications: Publication[] = [
     year: "2024",
     role: "1º autor",
     category: "periodico",
+    link: "https://bjihs.emnuvens.com.br/bjihs/article/view/4723",
   },
   {
     title: "Hospital admissions for viral encephalitis: a critical analysis",
@@ -171,6 +175,8 @@ export const publications: Publication[] = [
     year: "2024",
     role: "Coautor",
     category: "periodico",
+    link: "https://doi.org/10.5327/CBN240884",
+    note: "DOI 10.5327/CBN240884",
   },
   // Trabalhos em congressos
   {
