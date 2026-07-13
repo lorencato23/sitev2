@@ -6,29 +6,49 @@
   --color-surface: #fdfcf8;
   --color-ink: #131619;
   --color-ink-soft: #3f4750;
-  --color-muted: #737d89;
+  --color-muted: #5b6570;
   --color-line: #e0dac9;
   --color-line-strong: #c6bda5;
   --color-signal: #1c3ecf;
   --color-signal-soft: #e9edfc;
-  --color-amber: #a8500f;
+  --color-amber: #8a4109;
   --color-amber-soft: #f8ecdc;
+  color-scheme: light;
 }
 
+/* Dark tokens — applied by explicit user choice… */
+:root[data-theme="dark"] {
+  --color-paper: #0c1014;
+  --color-paper-soft: #11161c;
+  --color-surface: #151b22;
+  --color-ink: #f2f0e9;
+  --color-ink-soft: #c3cad3;
+  --color-muted: #9aa4b1;
+  --color-line: #262e37;
+  --color-line-strong: #38424d;
+  --color-signal: #8aa5ff;
+  --color-signal-soft: #18213a;
+  --color-amber: #efac6b;
+  --color-amber-soft: #2a1f11;
+  color-scheme: dark;
+}
+
+/* …or by system preference when the user hasn't chosen. */
 @media (prefers-color-scheme: dark) {
-  :root {
+  :root:not([data-theme="light"]) {
     --color-paper: #0c1014;
     --color-paper-soft: #11161c;
     --color-surface: #151b22;
     --color-ink: #f2f0e9;
     --color-ink-soft: #c3cad3;
-    --color-muted: #86909d;
+    --color-muted: #9aa4b1;
     --color-line: #262e37;
     --color-line-strong: #38424d;
     --color-signal: #8aa5ff;
     --color-signal-soft: #18213a;
-    --color-amber: #e59a55;
+    --color-amber: #efac6b;
     --color-amber-soft: #2a1f11;
+    color-scheme: dark;
   }
 }
 
@@ -92,7 +112,6 @@
 
 html {
   scroll-behavior: smooth;
-  color-scheme: light dark;
 }
 
 body {
@@ -108,6 +127,29 @@ body {
 ::selection {
   background: var(--color-signal);
   color: var(--color-paper);
+}
+
+/* Theme toggle icons: show the theme you'd switch TO. */
+.theme-icon-sun {
+  display: none;
+}
+
+:root[data-theme="dark"] .theme-icon-sun {
+  display: block;
+}
+
+:root[data-theme="dark"] .theme-icon-moon {
+  display: none;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .theme-icon-sun {
+    display: block;
+  }
+
+  :root:not([data-theme="light"]) .theme-icon-moon {
+    display: none;
+  }
 }
 
 /* Reveal-on-scroll: elements start hidden, .is-visible animates them in.
@@ -146,4 +188,60 @@ body {
   outline: 2px solid var(--color-signal);
   outline-offset: 3px;
   border-radius: 2px;
+}
+
+/* Print: clean, ink-friendly document (Publicações doubles as a mini-CV). */
+@media print {
+  :root,
+  :root[data-theme="dark"] {
+    --color-paper: #ffffff;
+    --color-paper-soft: #ffffff;
+    --color-surface: #ffffff;
+    --color-ink: #000000;
+    --color-ink-soft: #1f2428;
+    --color-muted: #3f474f;
+    --color-line: #c8c8c8;
+    --color-line-strong: #999999;
+    --color-signal: #1a2fa0;
+    --color-signal-soft: #ffffff;
+    --color-amber: #6e3406;
+    --color-amber-soft: #ffffff;
+    color-scheme: light;
+  }
+
+  header,
+  footer,
+  .no-print {
+    display: none !important;
+  }
+
+  body {
+    background-image: none !important;
+  }
+
+  .reveal,
+  [class*="animate-"] {
+    opacity: 1 !important;
+    transform: none !important;
+    animation: none !important;
+    transition: none !important;
+  }
+
+  section {
+    padding: 1.2rem 0 !important;
+    border: 0 !important;
+  }
+
+  li,
+  article {
+    break-inside: avoid;
+  }
+
+  /* Surface external destinations (e.g. DOIs) on paper. */
+  main a[href^="http"]::after {
+    content: " (" attr(href) ")";
+    font-size: 0.7em;
+    color: var(--color-muted);
+    word-break: break-all;
+  }
 }

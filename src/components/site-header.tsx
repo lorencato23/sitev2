@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { Container } from "./container";
 import { Mark } from "./mark";
+import { ThemeToggle } from "./theme-toggle";
 import { profile } from "@/lib/data";
 
 const links = [
@@ -80,15 +81,18 @@ export function SiteHeader() {
           })}
         </nav>
 
-        <button
-          type="button"
-          onClick={() => setOpen((v) => !v)}
-          className="shrink-0 rounded-full border border-line px-4 py-2 text-xs font-medium uppercase tracking-[0.14em] text-ink-soft transition-colors hover:border-signal hover:text-signal md:hidden"
-          aria-expanded={open}
-          aria-label={open ? "Fechar menu" : "Abrir menu"}
-        >
-          {open ? "Fechar" : "Menu"}
-        </button>
+        <div className="flex items-center gap-3">
+          <ThemeToggle />
+          <button
+            type="button"
+            onClick={() => setOpen((v) => !v)}
+            className="shrink-0 rounded-full border border-line px-4 py-2 text-xs font-medium uppercase tracking-[0.14em] text-ink-soft transition-colors hover:border-signal hover:text-signal md:hidden"
+            aria-expanded={open}
+            aria-label={open ? "Fechar menu" : "Abrir menu"}
+          >
+            {open ? "Fechar" : "Menu"}
+          </button>
+        </div>
       </Container>
 
       {open && (

@@ -5,10 +5,34 @@ import { SectionHeading } from "@/components/section-heading";
 import { StatStrip } from "@/components/stat-strip";
 import { Reveal } from "@/components/reveal";
 import {
+  profile,
   publicationStats,
   publications,
   type PublicationCategory,
 } from "@/lib/data";
+
+const articlesJsonLd = {
+  "@context": "https://schema.org",
+  "@graph": publications
+    .filter((p) => p.category === "periodico")
+    .map((p) => ({
+      "@type": "ScholarlyArticle",
+      headline: p.title,
+      author: { "@type": "Person", name: profile.name },
+      datePublished: p.year,
+      ...(p.venue && {
+        isPartOf: { "@type": "Periodical", name: p.venue },
+      }),
+      ...(p.link && { sameAs: p.link }),
+      ...(p.link?.startsWith("https://doi.org/") && {
+        identifier: {
+          "@type": "PropertyValue",
+          propertyID: "DOI",
+          value: p.link.replace("https://doi.org/", ""),
+        },
+      }),
+    })),
+};
 
 export const metadata: Metadata = {
   title: "Publicações",
@@ -25,6 +49,10 @@ const groups: { key: PublicationCategory; index: string; label: string }[] = [
 export default function PublicacoesPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articlesJsonLd) }}
+      />
       <PageHero
         eyebrow="Ciência"
         title="Produção"

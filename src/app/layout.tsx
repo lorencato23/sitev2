@@ -43,7 +43,7 @@ export const metadata: Metadata = {
     description,
   },
   twitter: {
-    card: "summary",
+    card: "summary_large_image",
     title: "Gabriel Lorencato",
     description,
   },
@@ -77,8 +77,16 @@ export default function RootLayout({
     <html
       lang="pt-BR"
       className={`${fraunces.variable} ${plexSans.variable} ${plexMono.variable}`}
+      suppressHydrationWarning
     >
       <body className="flex min-h-screen flex-col bg-paper text-ink antialiased">
+        {/* aplica o tema salvo antes da primeira pintura, evitando flash */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html:
+              "try{var t=localStorage.getItem('theme');if(t==='dark'||t==='light')document.documentElement.setAttribute('data-theme',t)}catch(e){}",
+          }}
+        />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
