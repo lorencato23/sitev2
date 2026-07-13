@@ -61,6 +61,7 @@ const personJsonLd = {
   "@type": "Person",
   name: profile.name,
   url: "https://drlorencato.com",
+  ...(profile.email && { email: profile.email }),
   jobTitle: profile.role,
   knowsAbout: [
     "Neurocirurgia",

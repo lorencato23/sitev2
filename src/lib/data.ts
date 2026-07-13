@@ -19,13 +19,17 @@ export const profile = {
   location: "São José dos Campos, SP",
   // Preencher quando disponíveis — os blocos que dependem deles só
   // aparecem no site depois de preenchidos (nunca inventar valores):
-  email: undefined as string | undefined,
+  email: "contato@drlorencato.com" as string | undefined,
+  // Preencher quando o Gabriel enviar o link — o slot só renderiza com valor:
   lattes: undefined as string | undefined,
   // Verificado via API pública do ORCID: registro de Gabriel Felipe
   // Lorençato lista o artigo da Neuroradiology (Springer) como trabalho.
   orcid: "https://orcid.org/0009-0005-0203-7039" as string | undefined,
   googleScholar: undefined as string | undefined,
-  researchGate: undefined as string | undefined,
+  researchGate:
+    "https://www.researchgate.net/scientific-contributions/Gabriel-Felipe-Lorencato-2300485870" as
+      | string
+      | undefined,
 };
 
 // Sinais de autoridade exibidos na primeira dobra do hero (F-02).
