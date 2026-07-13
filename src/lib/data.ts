@@ -21,8 +21,11 @@ export const profile = {
   // aparecem no site depois de preenchidos (nunca inventar valores):
   email: undefined as string | undefined,
   lattes: undefined as string | undefined,
-  orcid: undefined as string | undefined,
+  // Verificado via API pública do ORCID: registro de Gabriel Felipe
+  // Lorençato lista o artigo da Neuroradiology (Springer) como trabalho.
+  orcid: "https://orcid.org/0009-0005-0203-7039" as string | undefined,
   googleScholar: undefined as string | undefined,
+  researchGate: undefined as string | undefined,
 };
 
 // Sinais de autoridade exibidos na primeira dobra do hero (F-02).
@@ -447,6 +450,11 @@ export const academicLinks: AcademicLink[] = [
   profile.googleScholar && {
     label: "Google Scholar",
     href: profile.googleScholar,
+    handle: "Perfil",
+  },
+  profile.researchGate && {
+    label: "ResearchGate",
+    href: profile.researchGate,
     handle: "Perfil",
   },
   { label: "LinkedIn", href: profile.linkedin, handle: profile.linkedinHandle },

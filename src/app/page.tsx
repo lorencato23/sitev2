@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Container } from "@/components/container";
 import { SectionHeading } from "@/components/section-heading";
 import { SectionLink } from "@/components/section-link";
@@ -9,6 +10,8 @@ import { StatStrip } from "@/components/stat-strip";
 import { AreaCard } from "@/components/area-card";
 import { SocialLinks } from "@/components/social-links";
 import { Reveal } from "@/components/reveal";
+import { ScrollParallax } from "@/components/scroll-parallax";
+import centroCirurgico from "@/assets/centro-cirurgico.webp";
 import {
   areas,
   heroSignals,
@@ -94,7 +97,9 @@ export default function Home() {
             </div>
 
             <div className="animate-fade-up" style={{ animationDelay: "200ms" }}>
-              <HeroGraphic />
+              <ScrollParallax speed={0.12}>
+                <HeroGraphic />
+              </ScrollParallax>
             </div>
           </div>
         </Container>
@@ -132,6 +137,39 @@ export default function Home() {
               </Reveal>
             ))}
           </div>
+        </Container>
+      </section>
+
+      {/* Interlúdio editorial — prova humana (F-07) */}
+      <section className="py-10 sm:py-14">
+        <Container>
+          <Reveal>
+            <figure className="grid items-center gap-10 overflow-hidden rounded-3xl border border-line bg-paper-soft/60 p-6 sm:p-10 lg:grid-cols-[0.9fr_1.1fr]">
+              <div className="relative aspect-[4/5] max-h-[430px] w-full overflow-hidden rounded-2xl">
+                <Image
+                  src={centroCirurgico}
+                  alt="Gabriel Lorencato em centro cirúrgico, acompanhando procedimento ao microscópio cirúrgico"
+                  fill
+                  sizes="(min-width: 1024px) 40vw, 100vw"
+                  className="object-cover"
+                  placeholder="blur"
+                />
+              </div>
+              <figcaption>
+                <p className="text-xs font-semibold uppercase tracking-[0.24em] text-signal">
+                  Em campo
+                </p>
+                <blockquote className="mt-4 max-w-lg font-display text-2xl leading-snug text-ink sm:text-3xl">
+                  Entre a literatura e a prática — o centro cirúrgico é onde as
+                  perguntas de pesquisa nascem.
+                </blockquote>
+                <p className="mt-4 max-w-md text-sm leading-relaxed text-ink-soft">
+                  O acompanhamento de procedimentos neurocirúrgicos alimenta os
+                  relatos de caso e as revisões sistemáticas publicadas.
+                </p>
+              </figcaption>
+            </figure>
+          </Reveal>
         </Container>
       </section>
 

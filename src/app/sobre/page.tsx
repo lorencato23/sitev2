@@ -1,10 +1,11 @@
+import Image from "next/image";
 import { Container } from "@/components/container";
 import { PageHero } from "@/components/page-hero";
 import { SectionHeading } from "@/components/section-heading";
 import { AreaCard } from "@/components/area-card";
-import { Mark } from "@/components/mark";
 import { Reveal } from "@/components/reveal";
 import { pageMeta } from "@/lib/metadata";
+import retrato from "@/assets/gabriel-retrato.jpg";
 import {
   areas,
   events,
@@ -55,16 +56,16 @@ export default function SobrePage() {
           <div className="grid gap-14 lg:grid-cols-[1fr_1.3fr]">
             <Reveal>
               <div className="space-y-5 text-base leading-relaxed text-ink-soft lg:sticky lg:top-28">
-                {/* Espaço reservado para o retrato — substituir pelo <Image>
-                    com a foto real mantendo o mesmo aspect-[4/5]. */}
-                <figure
-                  aria-label="Espaço reservado para retrato de Gabriel Lorencato"
-                  className="mb-8 flex aspect-[4/5] max-w-sm flex-col items-center justify-center gap-4 rounded-3xl border border-dashed border-line-strong bg-paper-soft"
-                >
-                  <Mark className="h-14 w-14 text-line-strong" />
-                  <figcaption className="text-[0.68rem] font-semibold uppercase tracking-[0.2em] text-muted">
-                    Retrato — em breve
-                  </figcaption>
+                <figure className="relative mb-8 aspect-[4/5] max-w-sm overflow-hidden rounded-3xl border border-line">
+                  <Image
+                    src={retrato}
+                    alt="Gabriel Lorencato, de jaleco e estetoscópio, no campus da FCMSJC-Humanitas"
+                    fill
+                    sizes="(min-width: 1024px) 24rem, 100vw"
+                    className="object-cover"
+                    placeholder="blur"
+                    priority
+                  />
                 </figure>
                 <p className="first-letter:float-left first-letter:mr-3 first-letter:font-display first-letter:text-6xl first-letter:leading-[0.85] first-letter:text-signal">
                   {profile.shortBio}

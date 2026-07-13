@@ -68,7 +68,7 @@ const personJsonLd = {
     "Medicina Aeroespacial",
     "Divulgação Científica",
   ],
-  sameAs: [profile.instagram, profile.linkedin],
+  sameAs: [profile.instagram, profile.linkedin, profile.orcid].filter(Boolean),
 };
 
 export default function RootLayout({
