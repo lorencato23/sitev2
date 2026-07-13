@@ -6,6 +6,10 @@ export const profile = {
   institution: "FCMSJC-Humanitas",
   tagline:
     "Da neurointervenção à fisiologia espacial — pesquiso os limites do corpo humano sob estresse extremo.",
+  // Abertura do hero: curta, específica, prova antes de explicação (F-02).
+  heroLead:
+    "Pesquiso o que acontece com o corpo humano nos extremos — do interior do crânio à microgravidade.",
+  heroSub: "Acadêmico de Medicina na FCMSJC-Humanitas, São José dos Campos.",
   shortBio:
     "Acadêmico de Medicina na FCMSJC-Humanitas, com produção científica em neurocirurgia e neurorradiologia intervencionista e pesquisa em medicina aeroespacial. Primeiro autor em trabalhos sobre embolização pré-operatória, doença cerebrovascular e fisiologia humana em microgravidade, além de atuação em liderança acadêmica e divulgação científica.",
   instagram: "https://instagram.com/dr.lorencato",
@@ -13,7 +17,30 @@ export const profile = {
   linkedin: "https://linkedin.com/in/gabriel-lorencato",
   linkedinHandle: "/in/gabriel-lorencato",
   location: "São José dos Campos, SP",
+  // Preencher quando disponíveis — os blocos que dependem deles só
+  // aparecem no site depois de preenchidos (nunca inventar valores):
+  email: undefined as string | undefined,
+  lattes: undefined as string | undefined,
+  orcid: undefined as string | undefined,
+  googleScholar: undefined as string | undefined,
 };
+
+// Sinais de autoridade exibidos na primeira dobra do hero (F-02).
+export const heroSignals: {
+  value: string;
+  label: string;
+  href: string;
+  external?: boolean;
+}[] = [
+  {
+    value: "1º autor",
+    label: "na Neuroradiology (Springer), 2025",
+    href: "https://doi.org/10.1007/s00234-025-03826-4",
+    external: true,
+  },
+  { value: "04", label: "artigos em periódicos", href: "/publicacoes" },
+  { value: "08", label: "trabalhos como 1º autor", href: "/publicacoes" },
+];
 
 export type Area = {
   key: string;
@@ -61,13 +88,17 @@ export const areas: Area[] = [
   },
 ];
 
+// Mini-case: cinco campos fixos por projeto (F-04).
 export type Project = {
   slug: string;
   title: string;
   summary: string;
-  description: string;
   tag: string;
   year: string;
+  contexto: string;
+  contribuicao: string;
+  metodo: string;
+  resultado: string;
   link?: string;
   linkLabel?: string;
 };
@@ -78,10 +109,16 @@ export const projects: Project[] = [
     title: "Embolização pré-operatória via artéria coroideia anterior",
     summary:
       "Relato de caso e revisão sistemática sobre embolização superseletiva de carcinoma gigante de plexo coroide em lactente.",
-    description:
-      "Como primeiro autor, descrevi o planejamento e a execução da embolização pré-operatória superseletiva da artéria coroideia anterior em um lactente com carcinoma gigante de plexo coroide, acompanhada de revisão sistemática da literatura. Publicado na revista Neuroradiology (Springer).",
     tag: "Neurorradiologia Intervencionista",
     year: "2025",
+    contexto:
+      "Carcinoma gigante de plexo coroide em um lactente — tumor altamente vascularizado cuja ressecção exige controle prévio do sangramento.",
+    contribuicao:
+      "Primeiro autor: conduzi a redação do relato e a revisão sistemática da literatura sobre a técnica.",
+    metodo:
+      "Relato de caso da embolização superseletiva da artéria coroideia anterior somado a revisão sistemática.",
+    resultado:
+      "Publicado na Neuroradiology (Springer), out/2025 — indexado com DOI e PMID.",
     link: "https://doi.org/10.1007/s00234-025-03826-4",
     linkLabel: "Ver na Neuroradiology",
   },
@@ -90,10 +127,15 @@ export const projects: Project[] = [
     title: "Tratamento endovascular de fístula AV do couro cabeludo",
     summary:
       "Relato de caso e revisão sistemática sobre o manejo endovascular de fístula arteriovenosa do couro cabeludo.",
-    description:
-      "Coautoria em relato de caso com revisão sistemática sobre o tratamento endovascular de fístula arteriovenosa do couro cabeludo, publicado no Brazilian Journal of Neurosurgery (JBNC).",
     tag: "Neurocirurgia Endovascular",
     year: "2025",
+    contexto:
+      "Fístulas arteriovenosas do couro cabeludo são lesões raras, com literatura esparsa sobre a melhor via de tratamento.",
+    contribuicao:
+      "Coautor: participei da análise do caso e da sistematização da literatura.",
+    metodo: "Relato de caso com revisão sistemática da literatura.",
+    resultado:
+      "Publicado no Brazilian Journal of Neurosurgery (JBNC), 2025.",
     link: "https://www.jbnc.org.br/artigo/endovascular-treatment-of-scalp-arteriovenous-fistula-a-case-report-and-systematic-review-of-the-literature/1740",
     linkLabel: "Ver no JBNC",
   },
@@ -102,20 +144,33 @@ export const projects: Project[] = [
     title: "Abordagem robótica em neurocirurgia pediátrica",
     summary:
       "Correção de malformações arteriovenosas com apoio de robótica em neurocirurgia pediátrica.",
-    description:
-      "Como primeiro autor, discuti o papel da abordagem robótica na correção de malformações arteriovenosas em neurocirurgia pediátrica. Publicado no Brazilian Journal of Implantology and Health Sciences.",
     tag: "Neurocirurgia",
     year: "2024",
+    contexto:
+      "A robótica cirúrgica avança rápido, mas seu papel na correção de malformações arteriovenosas pediátricas ainda é pouco consolidado.",
+    contribuicao:
+      "Primeiro autor: conduzi a análise do tema e a redação do artigo.",
+    metodo:
+      "Revisão da literatura sobre abordagem robótica aplicada a malformações arteriovenosas em pediatria.",
+    resultado:
+      "Publicado no Brazilian Journal of Implantology and Health Sciences, dez/2024.",
+    link: "https://bjihs.emnuvens.com.br/bjihs/article/view/4723",
+    linkLabel: "Ver no BJIHS",
   },
   {
     slug: "alteracoes-nefrologicas-microgravidade",
     title: "Alterações nefrológicas em microgravidade",
     summary:
       "Iniciação científica sobre o impacto do ambiente de microgravidade na função renal e na saúde de astronautas.",
-    description:
-      "Projeto de iniciação científica investigando as alterações nefrológicas no ambiente de microgravidade e seu impacto na saúde de astronautas em missões de longa duração.",
     tag: "Medicina Aeroespacial",
-    year: "2025",
+    year: "2025–2026",
+    contexto:
+      "Missões espaciais de longa duração alteram a fisiologia renal, com implicações diretas para a saúde de astronautas.",
+    contribuicao: "Bolsista de iniciação científica responsável pelo projeto.",
+    metodo:
+      "Investigação das alterações nefrológicas induzidas pelo ambiente de microgravidade e de seu impacto na saúde.",
+    resultado:
+      "Iniciação científica em andamento (2025–2026), voltada a subsidiar estratégias de proteção renal em voo espacial.",
   },
 ];
 
@@ -354,6 +409,53 @@ export const timeline = [
       "Ingresso no curso de Medicina e primeira representação discente da turma.",
   },
 ];
+
+// Orientação de contato por intenção (F-01).
+export const contactIntents = [
+  {
+    title: "Pesquisa e colaboração",
+    description:
+      "Coautoria, projetos e trocas com pesquisadores e orientadores em neurociência e medicina aeroespacial.",
+  },
+  {
+    title: "Convites e palestras",
+    description:
+      "Ligas acadêmicas, simpósios e eventos científicos que queiram me convidar para falar.",
+  },
+  {
+    title: "Divulgação e imprensa",
+    description:
+      "Conteúdo, entrevistas e parcerias de comunicação em ciência e saúde.",
+  },
+];
+
+// Perfis acadêmicos/profissionais. Só entram no site os que estiverem
+// preenchidos em `profile` — nunca inventar um identificador (F-06).
+export type AcademicLink = { label: string; href: string; handle: string };
+
+export const academicLinks: AcademicLink[] = [
+  profile.lattes && {
+    label: "Currículo Lattes",
+    href: profile.lattes,
+    handle: "CNPq",
+  },
+  profile.orcid && {
+    label: "ORCID",
+    href: profile.orcid,
+    handle: profile.orcid.replace(/^https?:\/\/orcid\.org\//, ""),
+  },
+  profile.googleScholar && {
+    label: "Google Scholar",
+    href: profile.googleScholar,
+    handle: "Perfil",
+  },
+  { label: "LinkedIn", href: profile.linkedin, handle: profile.linkedinHandle },
+  {
+    label: "Instagram",
+    href: profile.instagram,
+    handle: profile.instagramHandle,
+  },
+].filter(Boolean) as AcademicLink[];
 
 // Blog removido por enquanto — os textos anteriores eram apenas exemplos.
 // Para reativar, recrie o tipo Post, a lista de posts e as rotas /blog.

@@ -9,7 +9,13 @@ import { StatStrip } from "@/components/stat-strip";
 import { AreaCard } from "@/components/area-card";
 import { SocialLinks } from "@/components/social-links";
 import { Reveal } from "@/components/reveal";
-import { areas, profile, projects, publicationStats } from "@/lib/data";
+import {
+  areas,
+  heroSignals,
+  profile,
+  projects,
+  publicationStats,
+} from "@/lib/data";
 
 export default function Home() {
   return (
@@ -33,26 +39,56 @@ export default function Home() {
               </h1>
 
               <p
-                className="mt-8 max-w-xl text-base leading-relaxed text-ink-soft sm:text-lg animate-fade-up"
+                className="mt-8 max-w-xl text-lg leading-relaxed text-ink-soft sm:text-xl animate-fade-up"
                 style={{ animationDelay: "160ms" }}
               >
-                {profile.shortBio}
+                {profile.heroLead}
               </p>
+              <p
+                className="mt-3 max-w-xl text-sm text-muted animate-fade-up"
+                style={{ animationDelay: "200ms" }}
+              >
+                {profile.heroSub}
+              </p>
+
+              {/* Sinais de autoridade na primeira dobra (F-02) */}
+              <ul
+                className="mt-8 flex flex-wrap gap-x-8 gap-y-4 animate-fade-up"
+                style={{ animationDelay: "240ms" }}
+              >
+                {heroSignals.map((sig) => (
+                  <li key={sig.label}>
+                    <Link
+                      href={sig.href}
+                      target={sig.external ? "_blank" : undefined}
+                      rel={sig.external ? "noopener" : undefined}
+                      className="group block"
+                    >
+                      <span className="block font-display text-2xl text-signal">
+                        {sig.value}
+                      </span>
+                      <span className="mt-1 block max-w-[11rem] text-xs leading-snug text-ink-soft transition-colors group-hover:text-signal">
+                        {sig.label}
+                      </span>
+                    </Link>
+                  </li>
+                ))}
+              </ul>
 
               <div
                 className="mt-9 flex flex-wrap gap-3 animate-fade-up"
-                style={{ animationDelay: "240ms" }}
+                style={{ animationDelay: "300ms" }}
               >
                 <ButtonLink href="/projetos">Ver projetos →</ButtonLink>
                 <ButtonLink href="/publicacoes" variant="secondary">
                   Publicações
                 </ButtonLink>
-                <ButtonLink href="/sobre" variant="secondary">
-                  Sobre
+                <ButtonLink href="/contato" variant="secondary">
+                  Contato
                 </ButtonLink>
               </div>
 
-              <div className="mt-10 animate-fade-up" style={{ animationDelay: "320ms" }}>
+              <div className="mt-10 animate-fade-up" style={{ animationDelay: "360ms" }}>
                 <SocialLinks />
               </div>
             </div>

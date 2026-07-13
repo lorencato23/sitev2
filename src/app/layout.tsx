@@ -34,10 +34,13 @@ export const metadata: Metadata = {
   },
   description,
   authors: [{ name: profile.name }],
+  alternates: { canonical: "/" },
   openGraph: {
     type: "website",
     locale: "pt_BR",
-    url: "https://drlorencato.com",
+    // og:url por rota é definido em cada página (alternates.canonical);
+    // aqui vale só para a home.
+    url: "/",
     siteName: "Gabriel Lorencato",
     title: "Gabriel Lorencato | Medicina, Neurociência e Medicina Aeroespacial",
     description,

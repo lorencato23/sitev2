@@ -1,9 +1,9 @@
-import type { Metadata } from "next";
 import { Container } from "@/components/container";
 import { PageHero } from "@/components/page-hero";
 import { SectionHeading } from "@/components/section-heading";
 import { StatStrip } from "@/components/stat-strip";
 import { Reveal } from "@/components/reveal";
+import { pageMeta } from "@/lib/metadata";
 import {
   profile,
   publicationStats,
@@ -34,11 +34,12 @@ const articlesJsonLd = {
     })),
 };
 
-export const metadata: Metadata = {
+export const metadata = pageMeta({
   title: "Publicações",
   description:
     "Artigos em periódicos, trabalhos em congressos e palestras em neurocirurgia, neurointervenção e medicina aeroespacial.",
-};
+  path: "/publicacoes",
+});
 
 const groups: { key: PublicationCategory; index: string; label: string }[] = [
   { key: "periodico", index: "01", label: "Artigos em periódicos" },

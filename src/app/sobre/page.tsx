@@ -1,10 +1,10 @@
-import type { Metadata } from "next";
 import { Container } from "@/components/container";
 import { PageHero } from "@/components/page-hero";
 import { SectionHeading } from "@/components/section-heading";
 import { AreaCard } from "@/components/area-card";
 import { Mark } from "@/components/mark";
 import { Reveal } from "@/components/reveal";
+import { pageMeta } from "@/lib/metadata";
 import {
   areas,
   events,
@@ -15,10 +15,11 @@ import {
   type Credential,
 } from "@/lib/data";
 
-export const metadata: Metadata = {
+export const metadata = pageMeta({
   title: "Sobre",
   description: profile.shortBio,
-};
+  path: "/sobre",
+});
 
 function CredentialList({ items }: { items: Credential[] }) {
   return (
