@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import { useMemo, useState } from "react";
 
 type LibraryItem = {
@@ -9,10 +8,21 @@ type LibraryItem = {
   type: string;
   area: string;
   href: string;
+  external?: boolean;
   status: string;
 };
 
 const items: LibraryItem[] = [
+  {
+    title: "Handbook Premium",
+    description:
+      "Biblioteca privada de Handbooks Premium, com catálogo navegável e leitura dos materiais disponíveis na Tailnet.",
+    type: "Coleção",
+    area: "Medicina",
+    href: "https://atlas.tailc69edf.ts.net:8443/",
+    external: true,
+    status: "Tailnet",
+  },
   {
     title: "Saúde Mental",
     description:
@@ -86,9 +96,11 @@ export function BiblioCatalog() {
       {visibleItems.length > 0 ? (
         <div className="grid gap-5 md:grid-cols-2">
           {visibleItems.map((item) => (
-            <Link
+            <a
               key={item.href}
               href={item.href}
+              target={item.external ? "_blank" : undefined}
+              rel={item.external ? "noreferrer" : undefined}
               className="group rounded-2xl border border-line bg-surface p-7 transition-all duration-300 hover:-translate-y-1 hover:border-signal hover:shadow-[0_16px_40px_rgba(19,22,25,0.08)]"
             >
               <div className="mb-10 flex items-start justify-between gap-4">
@@ -107,7 +119,7 @@ export function BiblioCatalog() {
                 <span>{item.area}</span>
                 <span className="text-signal transition-transform group-hover:translate-x-1" aria-hidden="true">→</span>
               </div>
-            </Link>
+            </a>
           ))}
         </div>
       ) : (
