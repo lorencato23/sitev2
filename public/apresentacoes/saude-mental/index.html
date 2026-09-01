@@ -1,0 +1,1828 @@
+<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><style>html,body{margin:0;background:#000}</style></head><body>
+<title>Psicoterapias · Seminário de Saúde Mental</title>
+<style>
+:root{
+  --void:#04070E; --deep:#0A1120; --panel:#0E1626;
+  --ink:#EEF1F6; --ink-2:#D2D8E3; --mute:#929EB3; --faint:#5E6A80;
+  --amber:#E0A45C; --cyan:#4FBEE8; --violet:#9C82DE; --teal:#35C0A4;
+  --sepia:#C09257;
+  --display:"Aptos Display","Segoe UI Variable Display","Segoe UI","Helvetica Neue",Arial,sans-serif;
+  --body:"Aptos","Segoe UI Variable Text","Segoe UI","Helvetica Neue",Arial,sans-serif;
+}
+*{box-sizing:border-box}
+body{margin:0;background:#000;color:var(--ink);font-family:var(--body);overflow:hidden;
+  -webkit-font-smoothing:antialiased}
+body.highcontrast{--mute:#C1CADB;--faint:#94A1B7}
+
+#stage{position:fixed;inset:0;overflow:hidden;background:#000}
+#deck{width:1920px;height:1080px;position:absolute;left:50%;top:50%;transform-origin:center center;
+  background:var(--void);overflow:hidden}
+#viz{position:absolute;inset:0;width:1920px;height:1080px}
+#vignette{position:absolute;inset:0;pointer-events:none;
+  background:radial-gradient(120% 90% at 50% 46%,rgba(4,7,14,0) 40%,rgba(4,7,14,.48) 79%,rgba(2,4,9,.88) 100%)}
+
+/* ---------- slide system ---------- */
+.slide{position:absolute;inset:0;opacity:0;visibility:hidden;transition:none}
+.slide.live{opacity:1;visibility:visible;transition:opacity .48s cubic-bezier(.22,.7,.24,1)}
+.pad{position:absolute;inset:0;padding:96px 140px}
+
+/* reveal */
+[data-s]{opacity:0;transform:translateY(10px);
+  transition:opacity .60s cubic-bezier(.22,.7,.24,1),transform .60s cubic-bezier(.22,.7,.24,1),filter .60s}
+[data-s].on{opacity:1;transform:none}
+[data-s].blurin{filter:blur(14px)}
+[data-s].blurin.on{filter:blur(0)}
+
+/* ---------- typography ---------- */
+.eyebrow{font-family:var(--body);font-size:17px;font-weight:500;letter-spacing:.22em;
+  text-transform:uppercase;color:var(--mute)}
+.lens-tag{font-size:17px;font-weight:600;letter-spacing:.26em;text-transform:uppercase}
+h1.hero{font-family:var(--display);font-size:104px;font-weight:600;letter-spacing:.16em;
+  margin:0;line-height:1;text-transform:uppercase}
+h2{font-family:var(--display);font-size:68px;font-weight:600;line-height:1.06;letter-spacing:-.022em;
+  margin:0;text-wrap:balance}
+h2.big{font-size:84px}
+h2.huge{font-size:104px;letter-spacing:-.032em}
+.sub{font-family:var(--body);font-size:31px;font-weight:300;line-height:1.42;color:var(--ink-2);
+  max-width:24ch;margin:0}
+.sub.wide{max-width:40ch}
+.small{font-size:23px;font-weight:300;color:#A7B2C5;line-height:1.5}
+.ref{font-size:16px;font-weight:400;color:#77849A;letter-spacing:.03em;line-height:1.5}
+.quote{font-family:var(--display);font-size:38px;font-weight:300;font-style:italic;color:var(--ink-2)}
+
+.tl{position:absolute;left:140px;top:112px}
+.bl{position:absolute;left:140px;bottom:104px}
+.br{position:absolute;right:140px;bottom:104px;text-align:right}
+.tr{position:absolute;right:140px;top:112px;text-align:right}
+.ctr{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);text-align:center;width:1400px}
+.ctr.hi{top:31%}
+.ctr.lo{top:72%}
+.ctr[data-s]{transform:translate(-50%,calc(-50% + 16px))}
+.ctr[data-s].on{transform:translate(-50%,-50%)}
+
+.stack{display:flex;flex-direction:column;gap:22px}
+.stack.tight{gap:12px}
+
+/* ---------- lens question column ---------- */
+.qcol{position:absolute;right:140px;top:206px;width:600px;display:flex;flex-direction:column;gap:25px}
+.qitem{display:flex;flex-direction:column;gap:7px;padding-left:20px;border-left:2px solid var(--edge,var(--faint))}
+.qitem .q{font-size:19px;font-weight:600;letter-spacing:.05em;color:#A9B6CB;text-transform:uppercase}
+.qitem .a{font-family:var(--display);font-size:30px;font-weight:400;line-height:1.28;color:var(--ink)}
+
+/* ---------- matrix ---------- */
+.matrix{position:absolute;left:140px;right:140px;top:198px;
+  display:grid;grid-template-columns:210px repeat(4,1fr);gap:0;
+  font-family:var(--body)}
+.matrix .hd{padding:0 0 20px;font-size:19px;font-weight:600;letter-spacing:.13em;text-transform:uppercase;
+  border-bottom:1px solid rgba(120,135,160,.28)}
+.matrix .rl{padding:15px 22px 15px 0;font-size:17px;font-weight:500;letter-spacing:.12em;
+  text-transform:uppercase;color:var(--mute);border-bottom:1px solid rgba(120,135,160,.1);
+  display:flex;align-items:center}
+.matrix .cell{padding:15px 26px 15px 0;font-size:21px;font-weight:300;line-height:1.3;color:var(--ink);
+  border-bottom:1px solid rgba(120,135,160,.1);display:flex;align-items:center}
+.matrix .row{display:contents}
+.matrix .row [data-s]{transition-duration:.7s}
+
+/* ---------- panorama do campo ---------- */
+.field-grid{position:absolute;left:140px;right:140px;top:330px;
+  display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px 42px}
+.field-item{position:relative;min-height:54px;padding:13px 18px 13px 22px;
+  display:flex;align-items:center;font-family:var(--display);font-size:24px;font-weight:400;
+  line-height:1.25;color:#C0C9D9;border-left:2px solid rgba(126,138,160,.48);
+  background:linear-gradient(90deg,rgba(126,138,160,.075),rgba(126,138,160,0) 78%)}
+.field-item::before{content:"";position:absolute;left:-5px;top:50%;width:8px;height:8px;
+  transform:translateY(-50%);border-radius:50%;background:#7E8AA0;box-shadow:0 0 18px rgba(126,138,160,.5)}
+.field-item:nth-child(4n+1){border-color:rgba(224,164,92,.54)}
+.field-item:nth-child(4n+1)::before{background:var(--amber);box-shadow:0 0 18px rgba(224,164,92,.55)}
+.field-item:nth-child(4n+2){border-color:rgba(79,190,232,.50)}
+.field-item:nth-child(4n+2)::before{background:var(--cyan);box-shadow:0 0 18px rgba(79,190,232,.5)}
+.field-item:nth-child(4n+3){border-color:rgba(156,130,222,.50)}
+.field-item:nth-child(4n+3)::before{background:var(--violet);box-shadow:0 0 18px rgba(156,130,222,.5)}
+.field-item:nth-child(4n){border-color:rgba(53,192,164,.50)}
+.field-item:nth-child(4n)::before{background:var(--teal);box-shadow:0 0 18px rgba(53,192,164,.5)}
+.field-grid .field-item{opacity:0;transform:translateY(10px);transition:opacity .42s ease,transform .42s ease}
+.field-grid.on .field-item{opacity:1;transform:none}
+.field-grid.on .field-item:nth-child(3n+2){transition-delay:.07s}
+.field-grid.on .field-item:nth-child(3n){transition-delay:.14s}
+
+/* ---------- venn ---------- */
+.venn{position:absolute;left:640px;top:392px;width:1160px;height:430px}
+.vc{position:absolute;top:58px;width:440px;height:322px;border-radius:50%;
+  display:grid;place-items:center;font-family:var(--display);font-size:27px;font-weight:500;
+  letter-spacing:.14em;text-transform:uppercase}
+.vc.a{left:200px;border:1.5px solid rgba(224,164,92,.6);background:rgba(224,164,92,.05);color:#EFC48F}
+.vc.b{right:200px;border:1.5px solid rgba(53,192,164,.6);background:rgba(53,192,164,.05);color:#79D8C4}
+.vouter{position:absolute;inset:0;border-radius:50%;border:1px dashed rgba(120,135,160,.32)}
+.vlabel{position:absolute;left:50%;transform:translateX(-50%);top:-6px;font-size:18px;font-weight:500;
+  letter-spacing:.24em;text-transform:uppercase;color:var(--mute);background:var(--void);padding:0 18px}
+
+/* ---------- algorithm ---------- */
+.algo{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);text-align:center;
+  display:flex;flex-direction:column;align-items:center;gap:16px}
+.algo .box{font-family:var(--display);font-size:36px;font-weight:500;letter-spacing:.2em;
+  text-transform:uppercase;padding:20px 52px;border:1px solid rgba(120,135,160,.4);color:var(--ink-2)}
+.algo .arrow{width:1px;height:52px;background:linear-gradient(var(--faint),var(--mute))}
+.algo .box,.algo .arrow{transition:opacity .42s,filter .42s,transform .42s}
+.algo.broken .box{opacity:0;filter:blur(9px);transform:scale(.96)}
+.algo.broken .arrow{opacity:0;filter:blur(6px)}
+
+/* ---------- escala, PTS e estados deliberados ---------- */
+.scale-legend{position:absolute;right:140px;top:120px;width:390px;display:flex;flex-direction:column;gap:12px}
+.scale-item{display:grid;grid-template-columns:42px 1fr;align-items:center;gap:14px;padding:13px 18px;
+  background:linear-gradient(90deg,rgba(14,22,38,.82),rgba(14,22,38,.18));
+  border-left:2px solid var(--edge);font-size:19px;color:#D7DEEA;letter-spacing:.04em}
+.scale-item b{font-size:14px;letter-spacing:.16em;color:var(--edge);font-weight:600}
+.pts-mark{position:absolute;left:50%;top:250px;transform:translateX(-50%);text-align:center;
+  width:720px;padding:20px 40px;background:radial-gradient(ellipse at center,rgba(4,7,14,.82),rgba(4,7,14,0) 72%)}
+.pts-mark[data-s]{transform:translate(-50%,10px)}
+.pts-mark[data-s].on{transform:translate(-50%,0)}
+.pts-mark strong{display:block;font-family:var(--display);font-size:88px;line-height:.95;letter-spacing:.04em}
+.pts-mark span{display:block;margin-top:13px;font-size:17px;letter-spacing:.22em;color:#A9B6CB}
+#oldQ{transition:opacity .42s,color .42s;text-decoration-color:rgba(224,164,92,.8)}
+#oldQ.retired{opacity:.72;color:#98A4B8;text-decoration:line-through;text-decoration-thickness:1px}
+.matrix [data-s].past{opacity:.38}
+.matrix [data-s].focus{opacity:1}
+.matrix .cell.focus,.matrix .rl.focus{background:linear-gradient(90deg,rgba(120,150,190,.10),rgba(120,150,190,0))}
+
+/* ---------- refs ---------- */
+.refs{position:absolute;left:140px;right:140px;top:210px;
+  display:grid;grid-template-columns:1fr 1fr;gap:26px 76px}
+.refitem{font-size:19px;font-weight:300;line-height:1.5;color:var(--ink-2);
+  padding-left:44px;position:relative}
+.refitem b{font-weight:500;color:var(--ink)}
+.refitem::before{content:attr(data-n);position:absolute;left:0;top:2px;font-size:15px;font-weight:500;
+  color:var(--faint);letter-spacing:.08em;font-variant-numeric:tabular-nums}
+.todo{color:var(--amber);font-weight:500}
+
+.v{transition:color .3s}
+
+/* ---------- chrome ---------- */
+#rail{position:absolute;left:140px;right:140px;bottom:52px;display:flex;gap:5px;align-items:center;
+  opacity:.5;transition:opacity .4s}
+#deck:hover #rail{opacity:.85}
+#rail i{flex:1;height:2px;background:rgba(120,135,160,.22);border-radius:2px;transition:background .5s}
+#rail i.done{background:rgba(120,135,160,.5)}
+#rail i.cur{background:var(--ink)}
+#meta{position:absolute;right:140px;bottom:74px;font-size:15px;letter-spacing:.16em;color:var(--faint);
+  font-variant-numeric:tabular-nums;display:flex;gap:22px;align-items:baseline}
+#meta .t.over{color:var(--amber)}
+#meta .t.run{color:var(--ink-2)}
+
+#notes{position:fixed;left:0;right:0;bottom:0;max-height:46vh;overflow:auto;z-index:20;
+  background:rgba(8,12,22,.97);border-top:1px solid rgba(120,135,160,.22);
+  padding:26px 38px 30px;transform:translateY(101%);transition:transform .4s cubic-bezier(.4,0,.2,1);
+  font-size:15px;line-height:1.62;color:#C3CBD9}
+#notes.open{transform:none}
+#notes h4{margin:0 0 6px;font-family:var(--display);font-size:19px;font-weight:600;color:var(--ink);
+  letter-spacing:-.01em}
+#notes .clock{font-size:13px;letter-spacing:.16em;color:var(--mute);margin-bottom:14px;
+  text-transform:uppercase;font-variant-numeric:tabular-nums}
+#notes p{margin:0 0 10px;max-width:100ch}
+#notes .say{color:var(--ink);border-left:2px solid rgba(224,164,92,.55);padding-left:14px}
+#notes .cue{color:var(--mute);font-size:14px}
+#notes .cue b{color:var(--amber);font-weight:500}
+#help{position:fixed;right:16px;top:14px;z-index:21;font-size:12px;letter-spacing:.1em;color:#4C566B;
+  text-align:right;line-height:1.9;opacity:0;transition:opacity .3s;pointer-events:none}
+#help.show{opacity:1}
+@media (prefers-reduced-motion:reduce){
+  .slide,[data-s]{transition-duration:.01ms!important}
+}
+</style>
+
+<div id="stage">
+<div id="deck" role="group" aria-label="Apresentação Psicoterapias">
+  <canvas id="viz" width="1920" height="1080" aria-hidden="true"></canvas>
+  <div id="vignette"></div>
+
+  <!-- 01 ABERTURA -->
+  <section class="slide" data-scene="solo" data-t="0:00–0:30">
+    <div class="pad">
+      <div class="ctr hi stack" style="gap:34px">
+        <h1 class="hero blurin" data-s="1">Psicoterapias</h1>
+        <p class="sub wide" data-s="1" style="margin:0 auto;font-size:29px;letter-spacing:.02em">Diferentes formas de compreender o sujeito, o sofrimento e a mudança</p>
+      </div>
+      <div class="bl eyebrow" data-s="1">Internato em Saúde Mental · Seminário</div>
+      <div class="tr eyebrow" data-s="1">01 SET 2026 · 08:30</div>
+      <div class="br eyebrow" data-s="1" style="font-size:19px;color:#AAB5C8">Lorencato · Nicole · Vinícius</div>
+    </div>
+  </section>
+
+  <!-- 02 A PERGUNTA CENTRAL -->
+  <section class="slide" data-scene="concepts" data-t="0:30–1:30">
+    <div class="pad">
+      <div class="bl" data-s="4" style="max-width:1100px">
+        <h2 class="big">O que exatamente muda em uma psicoterapia?</h2>
+      </div>
+    </div>
+  </section>
+
+  <!-- 03 O QUE CHAMAMOS DE PSICOTERAPIA -->
+  <section class="slide" data-scene="rings" data-t="1:30–2:45">
+    <div class="pad">
+      <div class="tl" data-s="1" style="max-width:940px">
+        <h2>Psicoterapia não é apenas uma coleção de técnicas.</h2>
+      </div>
+      <div class="bl stack tight" data-s="3" style="max-width:800px;bottom:122px">
+        <p class="small" style="font-size:24px;color:#B5C0D2">É uma forma organizada de compreender e intervir sobre o sofrimento psíquico — modelo, objetivos, intervenções e contexto sustentados por uma relação.</p>
+        <p class="ref" style="font-size:17px;color:#8491A6">Cordioli &amp; Grevet (orgs.), <i>Psicoterapias: abordagens atuais</i>, 4. ed., Artmed, 2019.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 04 QUATRO LENTES -->
+  <section class="slide" data-scene="lenses" data-t="2:45–3:45">
+    <div class="pad">
+      <div class="tl" data-s="2" style="max-width:820px">
+        <h2 class="big">Quatro lentes.<br>O mesmo sujeito.</h2>
+        <p class="small" style="max-width:720px;margin-top:28px;font-size:24px;line-height:1.42;color:#AEB9CC">Duas orientações teóricas e duas modalidades clínicas — com recorte interpessoal para grupo e sistêmico para casal e família.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 05 O MESMO PACIENTE -->
+  <section class="slide" data-scene="case" data-t="3:45–4:45">
+    <div class="pad">
+      <div class="tl stack tight" data-s="1">
+        <div class="eyebrow">Fio narrativo · caso fictício</div>
+        <h2>Rafael, 28 anos</h2>
+      </div>
+      <div class="bl" data-s="3"><p class="quote" style="color:#E1E6EF">«Quero parar de me sentir assim.»</p></div>
+      <div class="br" data-s="3"><p class="ref" style="color:#8996AA">Sem diagnóstico fechado.<br>O caso serve de eixo comparativo.</p></div>
+    </div>
+  </section>
+
+  <!-- 06 LENTE 01 PSICANÁLISE -->
+  <section class="slide" data-scene="layers" data-t="4:45–6:30">
+    <div class="pad">
+      <div class="tl stack tight" data-s="1">
+        <div class="lens-tag" style="color:var(--amber)">Lente 01</div>
+        <h2>Psicanálise &amp;<br>psicodinâmicas</h2>
+      </div>
+      <div class="qcol" style="--edge:rgba(224,164,92,.45)">
+        <div class="qitem" data-s="2"><div class="q">Como compreende o sujeito?</div><div class="a v">Histórico e relacional — atravessado por afetos e conflitos conscientes e inconscientes</div></div>
+        <div class="qitem" data-s="3"><div class="q">Onde localiza o sofrimento?</div><div class="a v">Em padrões afetivos e relacionais que se repetem, nem sempre de modo consciente</div></div>
+        <div class="qitem" data-s="4"><div class="q">O que produz mudança?</div><div class="a v">Compreensão, elaboração e novas experiências na relação terapêutica</div></div>
+        <div class="qitem" data-s="5"><div class="q">Qual o lugar da relação?</div><div class="a v">Transferência, aliança e manejo do vínculo são recursos clínicos</div></div>
+      </div>
+      <div class="bl" data-s="5" style="bottom:118px"><p class="ref" style="color:#8491A6">Cordioli &amp; Grevet, 2019 — seções sobre terapias psicanalíticas e psicodinâmicas.</p></div>
+    </div>
+  </section>
+
+  <!-- 07 LENTE 02 TCC -->
+  <section class="slide" data-scene="cbt" data-t="6:30–8:15">
+    <div class="pad">
+      <div class="tl stack tight" data-s="1">
+        <div class="lens-tag" style="color:var(--cyan)">Lente 02</div>
+        <h2>Terapias cognitivo-<br>comportamentais</h2>
+      </div>
+      <div class="qcol" style="--edge:rgba(79,190,232,.45)">
+        <div class="qitem" data-s="2"><div class="q">Como compreende o sujeito?</div><div class="a v">Pessoa situada que interpreta, aprende e pode construir novos repertórios</div></div>
+        <div class="qitem" data-s="3"><div class="q">Onde localiza o sofrimento?</div><div class="a v">Na interação entre cognições, emoções, comportamentos e contexto</div></div>
+        <div class="qitem" data-s="4"><div class="q">O que produz mudança?</div><div class="a v">Formulação compartilhada, experimentação, exposição e aprendizagem</div></div>
+        <div class="qitem" data-s="5"><div class="q">Qual o lugar da relação?</div><div class="a v">Colaboração ativa — também participa do processo de mudança</div></div>
+      </div>
+      <div class="bl" data-s="6"><p class="small" style="max-width:640px">O paciente não mudou. Mudou o modelo que organiza o que se observa nele.</p></div>
+    </div>
+  </section>
+
+  <!-- 08 LENTE 03 GRUPO -->
+  <section class="slide" data-scene="group" data-t="8:15–9:45">
+    <div class="pad">
+      <div class="tl stack tight" data-s="1">
+        <div class="lens-tag" style="color:var(--violet)">Lente 03</div>
+        <h2>Quando o campo terapêutico<br>inclui o outro.</h2>
+        <div class="eyebrow" style="margin-top:8px">Psicoterapia de grupo · recorte interpessoal</div>
+      </div>
+      <div class="qcol" style="--edge:rgba(156,130,222,.45)">
+        <div class="qitem" data-s="2"><div class="q">Como compreende o sujeito?</div><div class="a v">Constituído e observado nas relações</div></div>
+        <div class="qitem" data-s="3"><div class="q">Onde localiza o sofrimento?</div><div class="a v">Em padrões interpessoais, isolamento e dificuldades de pertencimento</div></div>
+        <div class="qitem" data-s="4"><div class="q">O que produz mudança?</div><div class="a v">Coesão, universalidade, feedback e aprendizagem interpessoal</div></div>
+        <div class="qitem" data-s="5"><div class="q">Qual o lugar da relação?</div><div class="a v">Múltipla — participantes e coordenação compõem o campo</div></div>
+      </div>
+      <div class="bl" data-s="5"><p class="ref">Yalom &amp; Leszcz, <i>The Theory and Practice of Group Psychotherapy</i>, 6. ed., Basic Books, 2020.</p></div>
+    </div>
+  </section>
+
+  <!-- 09 LENTE 04 CASAL E FAMÍLIA -->
+  <section class="slide" data-scene="family" data-t="9:45–11:15">
+    <div class="pad">
+      <div class="tl stack tight" data-s="1">
+        <div class="lens-tag" style="color:var(--teal)">Lente 04</div>
+        <h2>E se o problema não estiver<br>apenas “dentro” do indivíduo?</h2>
+        <div class="eyebrow" style="margin-top:8px">Terapias de casal e família · recorte sistêmico</div>
+      </div>
+      <div class="qcol" style="--edge:rgba(53,192,164,.45)">
+        <div class="qitem" data-s="2"><div class="q">Como compreende o sujeito?</div><div class="a v">Pessoa inserida em relações e sistemas em movimento</div></div>
+        <div class="qitem" data-s="3"><div class="q">Onde localiza o sofrimento?</div><div class="a v">Em padrões relacionais, significados e contextos que se retroalimentam</div></div>
+        <div class="qitem" data-s="4"><div class="q">O que produz mudança?</div><div class="a v">Reorganizar padrões, regras e significados</div></div>
+        <div class="qitem" data-s="5"><div class="q">Qual o lugar da relação?</div><div class="a v">Alianças múltiplas — participação clínica sem perder a posição terapêutica</div></div>
+      </div>
+      <div class="bl" data-s="5"><p class="small" style="max-width:620px">Causalidade circular, não linear.</p></div>
+    </div>
+  </section>
+
+  <!-- 10 MATRIZ -->
+  <section class="slide" data-scene="matrix" data-t="11:15–13:15">
+    <div class="pad">
+      <div class="tl" data-s="1"><h2 style="font-size:52px">Quatro recortes, quatro mapas</h2><div class="eyebrow" style="margin-top:12px">Tendências didáticas — não definições totais</div></div>
+      <div class="matrix">
+        <div class="row">
+          <div class="rl" data-s="1"></div>
+          <div class="hd" data-s="1" style="color:var(--amber)">Psicodinâmicas</div>
+          <div class="hd" data-s="1" style="color:var(--cyan)">TCC</div>
+          <div class="hd" data-s="1" style="color:var(--violet)">Grupo</div>
+          <div class="hd" data-s="1" style="color:var(--teal)">Casal &amp; família</div>
+        </div>
+        <div class="row">
+          <div class="rl" data-s="2">Sujeito</div>
+          <div class="cell" data-s="2"><span class="v">Histórico, relacional, em conflito</span></div>
+          <div class="cell" data-s="2"><span class="v">Situado; aprende e atribui sentidos</span></div>
+          <div class="cell" data-s="2"><span class="v">Pessoa em relações</span></div>
+          <div class="cell" data-s="2"><span class="v">Pessoa em sistemas</span></div>
+        </div>
+        <div class="row">
+          <div class="rl" data-s="3">Sofrimento</div>
+          <div class="cell" data-s="3"><span class="v">Padrões afetivos e relacionais</span></div>
+          <div class="cell" data-s="3"><span class="v">Cognição, emoção, ação e contexto</span></div>
+          <div class="cell" data-s="3"><span class="v">Padrões interpessoais e isolamento</span></div>
+          <div class="cell" data-s="3"><span class="v">Padrões relacionais circulares</span></div>
+        </div>
+        <div class="row">
+          <div class="rl" data-s="4">Mudança</div>
+          <div class="cell" data-s="4"><span class="v">Compreensão, elaboração, experiência</span></div>
+          <div class="cell" data-s="4"><span class="v">Aprendizagem e experimentação</span></div>
+          <div class="cell" data-s="4"><span class="v">Coesão, feedback e aprendizagem</span></div>
+          <div class="cell" data-s="4"><span class="v">Reorganizar significados</span></div>
+        </div>
+        <div class="row">
+          <div class="rl" data-s="5">Terapeuta</div>
+          <div class="cell" data-s="5"><span class="v">Escuta, formulação e manejo</span></div>
+          <div class="cell" data-s="5"><span class="v">Colaborador ativo, orientado por formulação</span></div>
+          <div class="cell" data-s="5"><span class="v">Coordena e cuida do campo</span></div>
+          <div class="cell" data-s="5"><span class="v">Maneja sistema e alianças</span></div>
+        </div>
+        <div class="row">
+          <div class="rl" data-s="6">Relação</div>
+          <div class="cell" data-s="6"><span class="v">Transferência e aliança</span></div>
+          <div class="cell" data-s="6"><span class="v">Colaboração e fator de mudança</span></div>
+          <div class="cell" data-s="6"><span class="v">Múltipla, com papéis definidos</span></div>
+          <div class="cell" data-s="6"><span class="v">Alianças equilibradas</span></div>
+        </div>
+        <div class="row">
+          <div class="rl" data-s="7">Recursos</div>
+          <div class="cell" data-s="7"><span class="v">Associação, clarificação, interpretação</span></div>
+          <div class="cell" data-s="7"><span class="v">Reestruturação, exposição, tarefas</span></div>
+          <div class="cell" data-s="7"><span class="v">Feedback, microcosmo social</span></div>
+          <div class="cell" data-s="7"><span class="v">Genograma, reenquadre, tarefas</span></div>
+        </div>
+        <div class="row">
+          <div class="rl" data-s="8">Indicação</div>
+          <div class="cell" data-s="8"><span class="v">Padrões recorrentes; objetivos acordados</span></div>
+          <div class="cell" data-s="8"><span class="v">Diversos quadros; formulação individual</span></div>
+          <div class="cell" data-s="8"><span class="v">Objetivos interpessoais; critérios de grupo</span></div>
+          <div class="cell" data-s="8"><span class="v">Demandas relacionais; segurança avaliada</span></div>
+        </div>
+        <div class="row">
+          <div class="rl" data-s="9">Limites</div>
+          <div class="cell" data-s="9"><span class="v">Acesso, tempo e adequação do enquadre</span></div>
+          <div class="cell" data-s="9"><span class="v">Risco de rigidez sem formulação singular</span></div>
+          <div class="cell" data-s="9"><span class="v">Seleção, sigilo compartilhado, evasão</span></div>
+          <div class="cell" data-s="9"><span class="v">Engajamento, assimetrias e segurança</span></div>
+        </div>
+      </div>
+      <div class="bl" data-s="10" style="max-width:1120px;bottom:78px"><p class="small" style="font-size:21px">A pergunta não é qual delas venceu — é o que cada modelo torna mais visível, e o que deixa menos visível.</p></div>
+    </div>
+  </section>
+
+  <!-- 11 O QUE PRODUZ MUDANÇA -->
+  <section class="slide" data-scene="change" data-t="13:15–14:30">
+    <div class="pad">
+      <div class="tl" data-s="1"><div class="eyebrow">Fatores comuns</div></div>
+      <div class="bl stack tight" data-s="3" style="max-width:1060px;bottom:160px">
+        <h2>Como técnica, relação, expectativas e contexto se combinam para produzir mudança?</h2>
+      </div>
+      <div class="br" data-s="3" style="bottom:88px"><p class="ref" style="color:#8290A5">Wampold BE. <i>How important are the common factors in psychotherapy? An update.</i><br>World Psychiatry. 2015;14(3):270–277. doi:10.1002/wps.20238</p></div>
+    </div>
+  </section>
+
+  <!-- 12 PSICANÁLISE CONTEMPORÂNEA -->
+  <section class="slide" data-scene="office" data-t="14:30–16:30">
+    <div class="pad">
+      <div class="tl" data-s="1" data-off="2"><div class="eyebrow" style="color:#B08A55">A imagem clássica</div></div>
+      <div class="bl" data-s="3" style="max-width:1000px"><h2 class="big">E a clínica psicanalítica contemporânea?</h2></div>
+      <div class="br" data-s="3"><p class="ref">Cordioli &amp; Grevet, 2019 — psicoterapias psicodinâmicas, breves e de apoio.</p></div>
+    </div>
+  </section>
+
+  <!-- 13 INTERPRETAÇÃO -->
+  <section class="slide" data-scene="interp" data-t="16:30–17:45">
+    <div class="pad">
+      <div class="tl" data-s="3"><h2 class="big">A técnica também mudou?</h2></div>
+      <div class="bl" data-s="3" style="max-width:980px"><p class="small v">A interpretação permanece — ao lado de intervenções expressivas e suportivas, manejo da transferência e da aliança, foco e duração quando indicados e adaptação ao contexto.</p></div>
+    </div>
+  </section>
+
+  <!-- 14 QUEM ESCOLHE -->
+  <section class="slide" data-scene="choice" data-t="17:45–19:00">
+    <div class="pad">
+      <div class="tl" data-s="1"><div class="eyebrow">Quem escolhe a psicoterapia?</div></div>
+      <div class="algo" id="algoBox" data-s="1">
+        <div class="box">Paciente</div><div class="arrow"></div>
+        <div class="box">Diagnóstico</div><div class="arrow"></div>
+        <div class="box">Abordagem</div>
+      </div>
+      <div class="ctr" data-s="2" data-off="3" id="algoQ" style="top:52%"><h2 class="huge">É realmente assim?</h2></div>
+      <div class="bl" data-s="3" style="max-width:1120px"><p class="small" style="color:#C0C9D8;font-size:25px">Decisão compartilhada: necessidades e preferências, objetivos, formulação clínica, evidências, segurança, competência profissional e recursos da rede.</p></div>
+    </div>
+  </section>
+
+  <!-- 15 EXISTEM APENAS ESSAS QUATRO -->
+  <section class="slide" data-scene="field" data-t="19:00–19:45">
+    <div class="pad">
+      <div class="tl" data-s="1"><h2 class="big">O campo é maior.</h2><div class="eyebrow" style="margin-top:14px">Orientações · modalidades · protocolos · integrações</div></div>
+      <div class="field-grid" data-s="2">
+        <div class="field-item">Terapia interpessoal</div>
+        <div class="field-item">ACT</div>
+        <div class="field-item">DBT</div>
+        <div class="field-item">EMDR</div>
+        <div class="field-item">Terapia focada na emoção</div>
+        <div class="field-item">Gestalt-terapia</div>
+        <div class="field-item">Psicodrama</div>
+        <div class="field-item">Fenomenológico-existencial</div>
+        <div class="field-item">Análise do comportamento</div>
+        <div class="field-item">Terapia narrativa</div>
+        <div class="field-item">Terapia do esquema</div>
+        <div class="field-item">Intervenções baseadas em mindfulness</div>
+        <div class="field-item">Psicoterapias breves</div>
+        <div class="field-item">Abordagem centrada na pessoa</div>
+      </div>
+      <div class="bl" data-s="2"><p class="ref">Panorama ilustrativo: os exemplos não pertencem todos ao mesmo nível de classificação.</p></div>
+    </div>
+  </section>
+
+  <!-- 16 MUDANÇA DE ESCALA -->
+  <section class="slide" data-scene="zoomout" data-t="19:45–21:15">
+    <div class="pad">
+      <div class="tl" data-s="1" data-off="3"><div class="eyebrow">Até aqui, olhamos para psicoterapia</div></div>
+      <div class="scale-legend">
+        <div class="scale-item" data-s="2" style="--edge:var(--teal)"><b>01</b><span>Sujeito + família</span></div>
+        <div class="scale-item" data-s="3" style="--edge:#8795AA"><b>02</b><span>Território e vida cotidiana</span></div>
+        <div class="scale-item" data-s="4" style="--edge:#D5DDE9"><b>03</b><span>Rede de cuidado</span></div>
+      </div>
+      <div class="bl" data-s="4" style="max-width:1180px"><h2 class="big">Mas cuidado em saúde mental é maior do que psicoterapia.</h2></div>
+    </div>
+  </section>
+
+  <!-- 17 CLÍNICA AMPLIADA -->
+  <section class="slide" data-scene="ampliada" data-t="21:15–23:00">
+    <div class="pad">
+      <div class="tl stack tight" data-s="2">
+        <h2>Clínica ampliada</h2>
+        <p class="sub" style="font-size:29px">O sujeito é maior que seu diagnóstico.</p>
+      </div>
+      <div class="tr" data-s="3" style="max-width:680px"><p class="small" style="font-size:27px;color:#B8C3D6;line-height:1.42">No SUS, psicoterapias individuais, grupais e familiares podem integrar o cuidado em diferentes pontos da rede — articuladas ao PTS, não como destino isolado.</p></div>
+      <div class="bl" data-s="3"><p class="ref">Brasil. Ministério da Saúde. <i>Clínica ampliada e compartilhada.</i> Brasília, 2009.<br>Brasil. Ministério da Saúde. <i>Saúde Mental.</i> Cadernos de Atenção Básica, n. 34, 2013.</p></div>
+    </div>
+  </section>
+
+  <!-- 18 DO ENCAMINHAMENTO AO PTS -->
+  <section class="slide" data-scene="pts" data-t="23:00–24:45">
+    <div class="pad">
+      <div class="tl" data-s="1" data-off="2"><div class="eyebrow">“Encaminhar para a psicologia”</div></div>
+      <div class="pts-mark" data-s="3"><strong>PTS</strong><span>PROJETO TERAPÊUTICO SINGULAR</span></div>
+      <div class="bl stack tight" data-s="4" style="max-width:920px">
+        <h2>Cuidado não é transferência de responsabilidade.</h2>
+        <p class="ref v">PTS — diagnóstico ampliado · definição de metas · divisão de responsabilidades · reavaliação.<br>Brasil. Ministério da Saúde. <i>Clínica ampliada, equipe de referência e projeto terapêutico singular.</i> 2. ed., 2008.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 19 O QUE MAIS PODE SER TERAPÊUTICO -->
+  <section class="slide" data-scene="islands" data-t="24:45–25:45">
+    <div class="pad">
+      <div class="tl" data-s="1"><h2>Terapêutico ≠ necessariamente<br>psicoterapia formal</h2></div>
+      <div class="bl" data-s="2"><p class="ref">Brasil. Ministério da Saúde. <i>Saúde Mental.</i> Cadernos de Atenção Básica, n. 34, 2013.</p></div>
+    </div>
+  </section>
+
+  <!-- 20 PICS -->
+  <section class="slide" data-scene="pics" data-t="25:45–26:30">
+    <div class="pad">
+      <div class="tl" data-s="1"><h2 class="big">E as PICS?</h2></div>
+      <div class="venn" data-s="1">
+        <div class="vouter"><span class="vlabel">Projeto de cuidado</span></div>
+        <div class="vc a">Psicoterapias</div>
+        <div class="vc b">PICS</div>
+      </div>
+      <div class="bl stack tight" data-s="2" style="max-width:600px">
+        <p class="small" style="color:#C1CAD9">PICS não são classificadas como psicoterapias. Formam um conjunto heterogêneo, com indicações e níveis de evidência distintos, e podem compor o cuidado.</p>
+        <p class="ref" style="color:#8290A5">PNPIC — Portaria GM/MS nº 971/2006, ampliada pelas Portarias nº 849/2017 e nº 702/2018. O SUS reconhece 29 práticas; a oferta concreta varia conforme o território e o serviço.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 21 VOLTAMOS AO RAFAEL -->
+  <section class="slide" data-scene="recap" data-t="26:30–27:45">
+    <div class="pad">
+      <div class="tl" data-s="1"><div class="eyebrow">Rafael, 28 anos</div></div>
+      <div class="ctr" data-s="4" style="top:auto;bottom:132px">
+        <h2 class="big" style="margin-bottom:26px">A pergunta mudou.</h2>
+        <p class="small" id="oldQ" style="text-align:center">“Para qual abordagem eu encaminho?”</p>
+        <p class="sub wide" id="newQ" style="margin:14px auto 0;text-align:center;font-size:38px;color:var(--ink)">“Que cuidado faz sentido para este sujeito?”</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 22 CONCLUSÃO -->
+  <section class="slide" data-scene="conclusion" data-t="27:45–28:30">
+    <div class="pad">
+      <div class="ctr stack" style="gap:34px;text-align:center">
+        <h2 data-s="1" style="font-size:46px;font-weight:350;color:#D8DEE8">Não existe uma única forma de compreender o sofrimento.</h2>
+        <h2 data-s="2" style="font-size:46px;font-weight:350;color:#D8DEE8">Não existe um único mecanismo possível de mudança.</h2>
+        <h2 data-s="3" style="font-size:46px;font-weight:350;color:#D8DEE8">E cuidado em saúde mental não é sinônimo de psicoterapia.</h2>
+        <h2 data-s="4" class="huge" style="margin-top:34px">O sujeito vem antes da abordagem.</h2>
+      </div>
+    </div>
+  </section>
+
+  <!-- 23 ENCERRAMENTO -->
+  <section class="slide" data-scene="end" data-t="28:30–28:45">
+    <div class="pad">
+      <div class="tl" data-s="1"><div class="eyebrow">Psicoterapias</div></div>
+      <div class="ctr stack" style="gap:30px;text-align:center">
+        <h2 data-s="1" style="font-size:52px;font-weight:300">Quando dizemos “encaminhar para a Psicologia”…</h2>
+        <h2 data-s="2" class="big">…o que exatamente estamos propondo?</h2>
+      </div>
+    </div>
+  </section>
+
+  <!-- 24 REFERÊNCIAS -->
+  <section class="slide" data-scene="refs" data-t="fora do tempo">
+    <div class="pad">
+      <div class="tl stack tight" data-s="1">
+        <div class="eyebrow">Referências</div>
+        <h2 style="font-size:44px">Bibliografia</h2>
+      </div>
+      <div class="refs" data-s="1">
+        <div class="refitem" data-n="01"><b>CORDIOLI, A. V.; GREVET, E. H.</b> (orgs.). Psicoterapias: abordagens atuais. 4. ed. Porto Alegre: Artmed, 2019. 792 p. ISBN 978-85-8271-527-7.</div>
+        <div class="refitem" data-n="02"><b>BRASIL. Ministério da Saúde.</b> Secretaria de Atenção à Saúde. Departamento de Atenção Básica. Saúde Mental. Brasília: Ministério da Saúde, 2013. 176 p. (Cadernos de Atenção Básica, n. 34). ISBN 978-85-334-2019-9.</div>
+        <div class="refitem" data-n="03"><b>WAMPOLD, B. E.</b> How important are the common factors in psychotherapy? An update. World Psychiatry, v. 14, n. 3, p. 270–277, 2015. DOI: 10.1002/wps.20238.</div>
+        <div class="refitem" data-n="04"><b>BRASIL. Ministério da Saúde.</b> Clínica ampliada e compartilhada. Brasília: Ministério da Saúde, 2009. (Série B. Textos Básicos de Saúde). ISBN 978-85-334-1582-9.</div>
+        <div class="refitem" data-n="05"><b>BRASIL. Ministério da Saúde.</b> Clínica ampliada, equipe de referência e projeto terapêutico singular. 2. ed. Brasília: Ministério da Saúde, 2008. 59 p. (Série B. Textos Básicos de Saúde).</div>
+        <div class="refitem" data-n="06"><b>BRASIL. Ministério da Saúde.</b> Portaria GM/MS nº 971, de 3 de maio de 2006 — Política Nacional de Práticas Integrativas e Complementares no SUS. Ampliada pelas Portarias nº 849/2017 e nº 702/2018.</div>
+        <div class="refitem" data-n="07"><b>BRASIL. Ministério da Saúde.</b> Portaria GM/MS nº 3.088, de 23 de dezembro de 2011 — origem da RAPS; conteúdo consolidado no Anexo V da Portaria de Consolidação nº 3/2017.</div>
+        <div class="refitem" data-n="08"><b>YALOM, I. D.; LESZCZ, M.</b> The Theory and Practice of Group Psychotherapy. 6. ed. New York: Basic Books, 2020. 818 p.</div>
+        <div class="refitem" data-n="09"><b>BRASIL. Ministério da Saúde.</b> Política Nacional de Práticas Integrativas e Complementares no SUS: atitude de ampliação de acesso. 3. ed. Brasília: Ministério da Saúde, 2026.</div>
+      </div>
+      <div class="bl" data-s="1"><p class="ref">Referências institucionais e acadêmicas utilizadas na elaboração do seminário.</p></div>
+    </div>
+  </section>
+
+  <div id="rail"></div>
+  <div id="meta" aria-live="polite"><span class="t" id="clock">00:00</span><span id="idx">01 / 24</span></div>
+</div>
+</div>
+
+<div id="notes"></div>
+<div id="help">← → navegar · N janela de notas · T cronômetro · V contraste · F tela cheia · R reiniciar</div>
+
+<script>
+(function(){
+'use strict';
+const W=1920,H=1080,FOV=1180;
+const REDUCED=!!(window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches);
+const RGB={ink:'235,240,248',mute:'116,131,157',amber:'224,164,92',cyan:'79,190,232',
+           violet:'156,130,222',teal:'53,192,164',sepia:'198,152,90'};
+const HEX={ink:'#EEF1F6',mute:'#7E8AA0',amber:'#E0A45C',cyan:'#4FBEE8',violet:'#9C82DE',
+           teal:'#35C0A4',sepia:'#C6985A'};
+
+/* ---------- sprites ---------- */
+function makeSprite(rgb){
+  const s=24,c=document.createElement('canvas');c.width=c.height=s;
+  const g=c.getContext('2d');
+  const gr=g.createRadialGradient(s/2,s/2,0,s/2,s/2,s/2);
+  gr.addColorStop(0,'rgba('+rgb+',1)');
+  gr.addColorStop(.22,'rgba('+rgb+',.62)');
+  gr.addColorStop(.55,'rgba('+rgb+',.16)');
+  gr.addColorStop(1,'rgba('+rgb+',0)');
+  g.fillStyle=gr;g.fillRect(0,0,s,s);
+  return c;
+}
+const SPR={};for(const k in RGB)SPR[k]=makeSprite(RGB[k]);
+
+/* ---------- geometry ---------- */
+function makeBust(n){
+  const a=new Float32Array(n*4);
+  for(let i=0;i<n;i++){
+    const t=Math.random();let x,y,z;
+    if(t<0.33){                                   // cabeça
+      const u=Math.random()*Math.PI*2,v=Math.acos(2*Math.random()-1);
+      x=Math.sin(v)*Math.cos(u)*0.40;y=Math.cos(v)*0.50;z=Math.sin(v)*Math.sin(u)*0.42;
+      const k=y<0?1-0.32*(-y/0.5):1;x*=k;z*=k;
+      if(y<0)z+=0.06*(-y/0.5);
+      y+=1.30;
+    }else if(t<0.42){                             // pescoço
+      const u=Math.random()*Math.PI*2,h=Math.random(),r=0.150+0.055*h*h;
+      x=Math.cos(u)*r;z=Math.sin(u)*r*0.9;y=0.60+h*0.30;
+    }else{                                        // busto
+      const u=Math.random()*Math.PI*2,h=Math.random();
+      const top=0.72-0.32*Math.pow(Math.abs(Math.cos(u)),1.5);
+      const bot=-0.34;
+      const w=0.94-0.11*h,d=0.27+0.06*h;
+      x=Math.cos(u)*w;z=Math.sin(u)*d;y=top-h*(top-bot);
+    }
+    a[i*4]=x+(Math.random()-.5)*.012;
+    a[i*4+1]=y+(Math.random()-.5)*.012;
+    a[i*4+2]=z+(Math.random()-.5)*.012;
+    a[i*4+3]=0.65+Math.random()*0.75;
+  }
+  return a;
+}
+function makeBrain(n){
+  const a=new Float32Array(n*4);
+  for(let i=0;i<n;i++){
+    let x,y,z,q;
+    do{
+      x=(Math.random()-.5)*.68;
+      y=(Math.random()-.5)*.52;
+      z=(Math.random()-.5)*.48;
+      q=(x/.36)**2+(y/.28)**2+(z/.26)**2;
+    }while(q>1||Math.abs(x)<.028);
+    const fold=1+.055*Math.sin(x*44+y*31+z*27);
+    a[i*4]=x*fold;
+    a[i*4+1]=y*fold;
+    a[i*4+2]=z*fold;
+    a[i*4+3]=.72+Math.random()*.55;
+  }
+  return a;
+}
+const BUST=makeBust(2200), BUST_S=makeBust(300), BRAIN=makeBrain(760);
+
+/* ambient dust */
+const DUST=(function(n){const a=new Float32Array(n*4);
+  for(let i=0;i<n;i++){a[i*4]=(Math.random()-.5)*26;a[i*4+1]=(Math.random()-.5)*14;
+    a[i*4+2]=(Math.random()-.5)*26;a[i*4+3]=Math.random()*Math.PI*2;}
+  return a;})(430);
+
+/* ---------- cenários (mobiliário em arestas 3D) ---------- */
+function edgesFromBox(x0,x1,y0,y1,z0,z1){
+  const p=(x,y,z)=>[x,y,z];const E=[];
+  const c=[p(x0,y0,z0),p(x1,y0,z0),p(x1,y0,z1),p(x0,y0,z1),
+           p(x0,y1,z0),p(x1,y1,z0),p(x1,y1,z1),p(x0,y1,z1)];
+  const idx=[[0,1],[1,2],[2,3],[3,0],[4,5],[5,6],[6,7],[7,4],[0,4],[1,5],[2,6],[3,7]];
+  idx.forEach(k=>E.push([c[k[0]],c[k[1]]]));return E;
+}
+const FLOOR=-1.20;
+function E_rect(x0,x1,y,z0,z1){            /* retângulo horizontal */
+  return [[[x0,y,z0],[x1,y,z0]],[[x1,y,z0],[x1,y,z1]],
+          [[x1,y,z1],[x0,y,z1]],[[x0,y,z1],[x0,y,z0]]];
+}
+function E_slab(x0,x1,y,t,z0,z1){          /* tampo com espessura */
+  const E=E_rect(x0,x1,y,z0,z1).concat(E_rect(x0,x1,y-t,z0,z1));
+  [[x0,z0],[x1,z0],[x1,z1],[x0,z1]].forEach(c=>E.push([[c[0],y,c[1]],[c[0],y-t,c[1]]]));
+  return E;
+}
+function E_panelYZ(x,y0,y1,z0,z1){         /* painel vertical, normal em X */
+  return [[[x,y0,z0],[x,y1,z0]],[[x,y1,z0],[x,y1,z1]],
+          [[x,y1,z1],[x,y0,z1]],[[x,y0,z1],[x,y0,z0]]];
+}
+function E_panelXY(x0,x1,y0,y1,z){         /* painel vertical, normal em Z */
+  return [[[x0,y0,z],[x1,y0,z]],[[x1,y0,z],[x1,y1,z]],
+          [[x1,y1,z],[x0,y1,z]],[[x0,y1,z],[x0,y0,z]]];
+}
+function E_legs(xs,zs,y0,y1){
+  const E=[];xs.forEach(x=>zs.forEach(z=>E.push([[x,y0,z],[x,y1,z]])));return E;
+}
+function E_arcXY(cx,cy,z,r,a0,a1,n){       /* arco no plano XY */
+  const E=[];for(let i=0;i<n;i++){
+    const t0=a0+(a1-a0)*i/n,t1=a0+(a1-a0)*(i+1)/n;
+    E.push([[cx+Math.cos(t0)*r,cy+Math.sin(t0)*r,z],
+            [cx+Math.cos(t1)*r,cy+Math.sin(t1)*r,z]]);}
+  return E;
+}
+function E_circle(cx,cz,y,r,n){
+  const E=[];for(let i=0;i<n;i++){
+    const t0=i/n*Math.PI*2,t1=(i+1)/n*Math.PI*2;
+    E.push([[cx+Math.cos(t0)*r,y,cz+Math.sin(t0)*r],
+            [cx+Math.cos(t1)*r,y,cz+Math.sin(t1)*r]]);}
+  return E;
+}
+function E_chair(cx,cz,face,s){             /* cadeira; face=+1 encosto em -x */
+  s=s||1;const w=.40*s,d=.40*s,seat=-.46,th=.05,back=.44*s;
+  let E=E_slab(cx-w,cx+w,seat,th,cz-d,cz+d);
+  E=E.concat(E_panelYZ(cx-face*w,seat,seat+back,cz-d,cz+d));
+  return E.concat(E_legs([cx-w*.78,cx+w*.78],[cz-d*.78,cz+d*.78],FLOOR,seat-th));
+}
+
+/* --- consultório clássico --- */
+const CLASSIC=(function(){
+  let E=[];
+  /* divã: slab longo e baixo, cabeceira roliça, almofada, pés torneados */
+  const x0=-.55,x1=2.52,z0=-.50,z1=.50,seat=-.32,th=.12;
+  E=E.concat(E_slab(x0,x1,seat,th,z0,z1));
+  const hc=x1-.36, ha=Math.PI*.78;
+  E=E.concat(E_arcXY(hc,seat,z0,.36,0,ha,11),E_arcXY(hc,seat,z1,.36,0,ha,11));
+  for(const k of [.34,.62]){
+    const a=ha*k,ax=hc+Math.cos(a)*.36,ay=seat+Math.sin(a)*.36;
+    E.push([[ax,ay,z0],[ax,ay,z1]]);
+  }
+  const hx=hc+Math.cos(ha)*.36, hy=seat+Math.sin(ha)*.36;
+  E.push([[hx,hy,z0],[hx,hy,z1]],[[x1,seat,z0],[x1,seat,z1]]);
+  E=E.concat(E_rect(x1-.92,x1-.30,seat+.055,z0+.10,z1-.10));
+  E=E.concat(E_legs([x0+.26,x1-.56],[z0+.13,z1-.13],FLOOR,seat-th));
+  [.22,.98,1.70].forEach(x=>E.push([[x,seat,z0],[x,seat,z1]]));
+  /* poltrona do analista, atrás da cabeceira */
+  const cx=3.52,cz=-1.30,w=.50,d=.46,ps=-.42,pt=.09;
+  E=E.concat(E_slab(cx-w,cx+w,ps,pt,cz-d,cz+d));
+  E=E.concat(E_panelXY(cx-w,cx+w,ps,ps+.62,cz-d));
+  E=E.concat(E_arcXY(cx,ps+.56,cz-d,w,.20,Math.PI-.20,8));
+  [cz-d,cz+d].forEach(z=>{
+    E.push([[cx-w,ps+.26,z],[cx+w*.86,ps+.26,z]],
+           [[cx+w*.86,ps+.26,z],[cx+w*.86,ps,z]]);});
+  E=E.concat(E_legs([cx-w*.8,cx+w*.8],[cz-d*.8,cz+d*.8],FLOOR,ps-pt));
+  /* janela com montante e travessa + feixe de luz no chão */
+  const zw=-2.62,wx0=-4.45,wx1=-2.62,wy0=.42,wy1=2.34;
+  E=E.concat(E_panelXY(wx0,wx1,wy0,wy1,zw));
+  E.push([[(wx0+wx1)/2,wy0,zw],[(wx0+wx1)/2,wy1,zw]],
+         [[wx0,(wy0+wy1)/2,zw],[wx1,(wy0+wy1)/2,zw]]);
+  const fx0=-3.35,fx1=-1.30,fz0=.00,fz1=1.85;
+  E.push([[wx0,wy1,zw],[fx0,FLOOR,fz1]],[[wx1,wy1,zw],[fx1,FLOOR,fz1]]);
+  E=E.concat(E_rect(fx0,fx1,FLOOR,fz0,fz1));
+  /* tapete sob o divã + rodapé da parede do fundo */
+  E=E.concat(E_rect(-1.25,3.10,FLOOR+.005,-1.00,1.55));
+  E.push([[-4.2,FLOOR,zw],[4.2,FLOOR,zw]],
+         [[-4.2,FLOOR,zw],[-4.2,FLOOR,-1.4]],[[4.2,FLOOR,zw],[4.2,FLOOR,-1.4]]);
+  return E;
+})();
+
+/* --- quatro cenários contemporâneos --- */
+const BAY=[-4.35,-1.45,1.45,4.35];
+const MODERN=(function(){
+  let E=[];
+  /* 1 · consultório face a face */
+  let cx=BAY[0];
+  E=E.concat(E_chair(cx-.78,.05,1,1),E_chair(cx+.78,.05,-1,1));
+  E=E.concat(E_circle(cx,.05,-.64,.27,14),E_legs([cx],[.05],FLOOR,-.64));
+  /* 2 · ambulatório: mesa + duas cadeiras */
+  cx=BAY[1];
+  E=E.concat(E_slab(cx-.88,cx+.88,-.50,.06,-.32,.32));
+  E=E.concat(E_legs([cx-.78,cx+.78],[-.26,.26],FLOOR,-.56));
+  E=E.concat(E_chair(cx,-1.05,1,.82),E_chair(cx,1.05,-1,.82));
+  /* 3 · serviço de saúde mental: roda de cadeiras */
+  cx=BAY[2];
+  for(let i=0;i<7;i++){
+    const a=i/7*Math.PI*2+.45,x=cx+Math.cos(a)*.98,z=Math.sin(a)*.98;
+    E=E.concat(E_slab(x-.17,x+.17,-.52,.04,z-.17,z+.17));
+    E.push([[x+Math.cos(a)*.17,-.52,z+Math.sin(a)*.17],
+            [x+Math.cos(a)*.17,-.14,z+Math.sin(a)*.17]]);
+    E=E.concat(E_legs([x-.12,x+.12],[z-.12,z+.12],FLOOR,-.56));
+  }
+  /* 4 · hospital: leito com grade e criado-mudo */
+  cx=BAY[3];
+  E=E.concat(E_slab(cx-.44,cx+.44,-.54,.11,-.98,.98));
+  E=E.concat(E_panelXY(cx-.44,cx+.44,-.54,.20,-.98));
+  E=E.concat(E_rect(cx-.30,cx+.30,-.42,-.90,-.55));
+  E=E.concat(E_panelXY(cx-.44,cx+.44,-.54,-.22,.98));
+  E.push([[cx-.49,-.28,-.58],[cx-.49,-.28,.28]],
+         [[cx-.49,-.28,-.58],[cx-.49,-.54,-.58]],
+         [[cx-.49,-.28,.28],[cx-.49,-.54,.28]]);
+  E=E.concat(E_legs([cx-.36,cx+.36],[-.86,.86],FLOOR,-.65));
+  E=E.concat(E_slab(cx+.68,cx+1.02,-.74,.05,-.92,-.58));
+  E=E.concat(E_legs([cx+.72,cx+.98],[-.88,-.62],FLOOR,-.79));
+  /* chão comum */
+  E.push([[-5.55,FLOOR,1.85],[5.55,FLOOR,1.85]],
+         [[-5.55,FLOOR,1.85],[-5.55,FLOOR,.5]],[[5.55,FLOOR,1.85],[5.55,FLOOR,.5]]);
+  return E;
+})();
+
+function sampleEdges(E,n){
+  const len=E.map(e=>Math.hypot(e[1][0]-e[0][0],e[1][1]-e[0][1],e[1][2]-e[0][2]));
+  const tot=len.reduce((a,b)=>a+b,0);const out=new Float32Array(n*3);
+  for(let i=0;i<n;i++){
+    let r=Math.random()*tot,k=0;while(k<len.length-1&&r>len[k]){r-=len[k];k++;}
+    const t=Math.random(),e=E[k];
+    out[i*3]=e[0][0]+(e[1][0]-e[0][0])*t+(Math.random()-.5)*.022;
+    out[i*3+1]=e[0][1]+(e[1][1]-e[0][1])*t+(Math.random()-.5)*.022;
+    out[i*3+2]=e[0][2]+(e[1][2]-e[0][2])*t+(Math.random()-.5)*.022;
+  }
+  return out;
+}
+const OFF_COUNT=4200;
+const OFF_A=sampleEdges(CLASSIC,OFF_COUNT), OFF_B=sampleEdges(MODERN,OFF_COUNT);
+const OFF_N=new Float32Array(OFF_COUNT*3);
+for(let i=0;i<OFF_COUNT*3;i++)OFF_N[i]=(Math.random()-.5)*2;
+/* fase e giro por partícula: a sala se desfaz em onda, não em bloco */
+const OFF_PH=new Float32Array(OFF_COUNT), OFF_SW=new Float32Array(OFF_COUNT);
+for(let i=0;i<OFF_COUNT;i++){
+  OFF_PH[i]=Math.random();
+  OFF_SW[i]=(Math.random()-.5)*2;
+}
+
+/* ---------- seta do encaminhamento (slide 18) ---------- */
+const ARW_N=520, ARW=new Float32Array(ARW_N*4);
+for(let i=0;i<ARW_N;i++){
+  ARW[i*4]=i/(ARW_N-1);
+  ARW[i*4+1]=(Math.random()-.5)*2;
+  ARW[i*4+2]=(Math.random()-.5)*2;
+  ARW[i*4+3]=Math.random();
+}
+
+/* ---------- câmera ---------- */
+const cam={dist:5.0,ty:0.55,tx:0,yaw:0,pitch:0.06};
+const camT={dist:5.0,ty:0.55,tx:0,yaw:0,pitch:0.06};
+let drift=0;
+function proj(x,y,z){
+  x-=cam.tx;y-=cam.ty;z-=0;
+  const cy=Math.cos(cam.yaw),sy=Math.sin(cam.yaw);
+  const x1=x*cy-z*sy, z1=x*sy+z*cy;
+  const cp=Math.cos(cam.pitch),sp=Math.sin(cam.pitch);
+  const y1=y*cp-z1*sp, z2=y*sp+z1*cp+cam.dist;
+  if(z2<0.35)return null;
+  const f=FOV/z2;
+  return [W/2+x1*f, H/2-y1*f, f, z2];
+}
+
+/* ---------- estado animado ---------- */
+const S={bust:0,brain:0,group:0,family:0,rings:0,layers:0,cbt:0,lens:0,split:0,office:0,
+         morph:0,net:0,conv:0,amb:.55,glow:.5,interp:0,iA:0,arw:0,brk:0,card:0,sc1:0,sc2:0,sc3:0,
+         tA:0,tC:0,tV:0,tT:0,sep:0};
+const T=Object.assign({},S);
+const RATE={morph:2.35,arw:2.1,brk:1.35,conv:1.8,rings:1.8,layers:1.7,card:5.5,sc1:2.0,sc2:2.0,sc3:2.0};
+
+/* ---------- nós ---------- */
+const NODES=new Map();          // key -> {def, a, r, y}
+function setNodes(list){
+  const seen=new Set();
+  list.forEach(d=>{
+    seen.add(d.k);
+    let n=NODES.get(d.k);
+    if(!n){n={def:d,a:0,r:d.r,y:d.y};NODES.set(d.k,n);}
+    else{n.def=d;}
+    n.want=1;
+  });
+  NODES.forEach((n,k)=>{if(!seen.has(k))n.want=0;});
+}
+function nd(k,label,r,ang,y,color,o){
+  o=o||{};return{k:k,l:label,r:r,a:ang*Math.PI/180,y:y,c:color||'ink',
+    size:o.size||27,center:!!o.center,dot:o.dot!==false,conv:!!o.conv,
+    up:!!o.up,sub:o.sub||null,plane:o.plane||'xz',
+    link:!!o.link,net:!!o.net,track:o.track||0.4,linkColor:o.linkColor||null,pool:!!o.pool,
+    flat:o.flat?o.flat:0};
+}
+
+/* ---------- desenho ---------- */
+const cv=document.getElementById('viz'),ctx=cv.getContext('2d');
+function figure(pts,ox,oy,oz,sc,spr,alpha){
+  if(alpha<=.004)return;
+  const n=pts.length/4, st=stride(), gain=qGain();
+  for(let i=0;i<n;i+=st){
+    const j=i*4;
+    const p=proj(ox+pts[j]*sc, oy+pts[j+1]*sc, oz+pts[j+2]*sc);
+    if(!p)continue;
+    const dep=Math.max(0,Math.min(1,(p[3]-(cam.dist-1.6))/3.4));
+    const a=alpha*gain*(1-.72*dep)*(.55+.45*pts[j+3]);
+    if(a<=.008)continue;
+    const sz=Math.max(.6,p[2]*.0125*pts[j+3]*(st>1?1.18:1));
+    ctx.globalAlpha=Math.min(1,a);
+    ctx.drawImage(spr,p[0]-sz,p[1]-sz,sz*2,sz*2);
+  }
+}
+function tintedFigure(pts,ox,oy,oz,sc,alpha){
+  const base=Math.max(0,1-(S.tA+S.tC+S.tV+S.tT+S.sep));
+  figure(pts,ox,oy,oz,sc,SPR.ink,alpha*base);
+  if(S.tA>.01)figure(pts,ox,oy,oz,sc,SPR.amber,alpha*S.tA);
+  if(S.tC>.01)figure(pts,ox,oy,oz,sc,SPR.cyan,alpha*S.tC);
+  if(S.tV>.01)figure(pts,ox,oy,oz,sc,SPR.violet,alpha*S.tV);
+  if(S.tT>.01)figure(pts,ox,oy,oz,sc,SPR.teal,alpha*S.tT);
+  if(S.sep>.01)figure(pts,ox,oy,oz,sc,SPR.sepia,alpha*S.sep);
+}
+function brainFigure(alpha){
+  if(alpha<=.004)return;
+  const a=(REDUCED?-.35:tt*.24)-.35,ca=Math.cos(a),sa=Math.sin(a);
+  const pulse=.88+.12*Math.sin(tt*1.25),st=stride(),gain=qGain();
+  for(let i=0;i<BRAIN.length/4;i+=st){
+    const j=i*4,x=BRAIN[j],z=BRAIN[j+2];
+    const p=proj(x*ca-z*sa,1.31+BRAIN[j+1],x*sa+z*ca-.02);
+    if(!p)continue;
+    const sz=Math.max(1.25,p[2]*.017*BRAIN[j+3]*(st>1?1.35:1));
+    ctx.globalAlpha=Math.min(1,alpha*pulse*gain*(.48+.42*BRAIN[j+3]));
+    const spr=(i%7<5)?SPR.cyan:SPR.amber;
+    ctx.drawImage(spr,p[0]-sz,p[1]-sz,sz*2,sz*2);
+  }
+  const c=proj(0,1.31,0);
+  if(c){
+    const r=195*c[2]/240;
+    ctx.save();ctx.translate(c[0],c[1]);ctx.rotate(-.18+Math.sin(tt*.17)*.12);
+    ctx.globalAlpha=alpha*.28;ctx.strokeStyle='rgba(79,190,232,.9)';ctx.lineWidth=1.4;
+    ctx.beginPath();ctx.ellipse(0,0,r,r*.34,0,.15,Math.PI*1.72);ctx.stroke();
+    ctx.rotate(1.04);ctx.strokeStyle='rgba(224,164,92,.8)';
+    ctx.beginPath();ctx.ellipse(0,0,r*.86,r*.28,0,.35,Math.PI*1.86);ctx.stroke();ctx.restore();
+  }
+}
+function line(p,q,color,alpha,w){
+  if(!p||!q||alpha<=.01)return;
+  ctx.globalAlpha=alpha;ctx.strokeStyle=color;ctx.lineWidth=w||1;
+  ctx.beginPath();ctx.moveTo(p[0],p[1]);ctx.lineTo(q[0],q[1]);ctx.stroke();
+}
+function label(txt,p,color,alpha,px,opt){
+  if(!p||alpha<=.012||!txt)return;
+  if(p[1]<52||p[1]>H-96)return;
+  opt=opt||{};
+  const s=px*Math.max(0.80,Math.min(1.30,p[2]/240));
+  ctx.globalAlpha=Math.min(1,alpha);
+  ctx.fillStyle=color;
+  ctx.textAlign='center';ctx.textBaseline='middle';
+  try{ctx.letterSpacing=(opt.track||0)+'px';}catch(e){}
+  ctx.font=(opt.weight||500)+' '+s.toFixed(1)+'px "'+(opt.display?'Aptos Display':'Aptos')+'", "Segoe UI", Helvetica, Arial, sans-serif';
+  const tw=ctx.measureText(txt).width;
+  if(p[0]<-tw||p[0]>W+tw){try{ctx.letterSpacing='0px';}catch(e){}return;}
+  const cx=Math.max(104+tw/2,Math.min(W-104-tw/2,p[0]));
+  ctx.fillText(txt,cx,p[1]);
+  try{ctx.letterSpacing='0px';}catch(e){}
+  return s;
+}
+
+/* ---------- posições de figuras secundárias ---------- */
+const GROUP=[];for(let i=0;i<7;i++){const a=(i/7)*Math.PI*2+0.42;GROUP.push([Math.cos(a)*2.75,0,Math.sin(a)*2.75]);}
+const FAMILY=[[-2.15,0,0.95],[2.15,0,0.95],[-1.55,0,-1.75],[1.55,0,-1.75]];
+const FAMILY_L=['parceira','irmã','mãe','pai'];
+
+let tPrev=performance.now(),tt=0;
+let frameMs=16, QUAL=1, qClock=0;
+function stride(){return QUAL>=.95?1:(QUAL>=.62?2:3);}
+function qGain(){return QUAL>=.95?1:(QUAL>=.62?1.45:1.95);}
+function ease(a,b,k,dt){return a+(b-a)*(1-Math.exp(-k*dt));}
+
+function frame(now){
+  if(document.hidden){tPrev=now;requestAnimationFrame(frame);return;}
+  const dt=Math.min(.05,(now-tPrev)/1000);tPrev=now;tt+=dt;
+  frameMs=frameMs*.92+dt*1000*.08; qClock+=dt;
+  if(qClock>1.6){qClock=0;
+    if(frameMs>27&&QUAL>.5)QUAL-=.25;
+    else if(frameMs<15&&QUAL<1)QUAL+=.25;}
+  for(const k in S)S[k]=ease(S[k],T[k],RATE[k]||2.0,dt);
+  cam.dist=ease(cam.dist,camT.dist,1.55,dt);
+  cam.ty=ease(cam.ty,camT.ty,1.7,dt);
+  cam.tx=ease(cam.tx,camT.tx,1.7,dt);
+  cam.pitch=ease(cam.pitch,camT.pitch,1.7,dt);
+  drift=REDUCED?0:(Math.sin(tt*0.11)*0.055+Math.sin(tt*0.043)*0.03);
+  cam.yaw=ease(cam.yaw,camT.yaw,1.5,dt)+0;
+  const yaw0=cam.yaw;cam.yaw=yaw0+drift;
+
+  NODES.forEach((n,k)=>{
+    n.a=ease(n.a,n.want,n.want?3.2:6.2,dt);
+    const targetR=n.def.r*(n.def.conv?(1-.62*S.conv):1);
+    n.r=ease(n.r,targetR,1.9,dt);
+    n.y=ease(n.y,n.def.y,1.9,dt);
+    if(n.want===0&&n.a<.004)NODES.delete(k);
+  });
+
+  ctx.clearRect(0,0,W,H);
+
+  /* glow central */
+  if(S.glow>.01){
+    const p=proj(0,0.9,0);
+    if(p){const R=520*p[2]/240;
+      const g=ctx.createRadialGradient(p[0],p[1],0,p[0],p[1],R);
+      g.addColorStop(0,'rgba(96,126,176,'+(0.15*S.glow).toFixed(3)+')');
+      g.addColorStop(1,'rgba(96,126,176,0)');
+      ctx.globalAlpha=1;ctx.fillStyle=g;ctx.fillRect(0,0,W,H);}
+  }
+
+  ctx.globalCompositeOperation='lighter';
+
+  /* poeira */
+  if(S.amb>.01&&!REDUCED){
+    const dst=stride();
+    for(let i=0;i<DUST.length/4;i+=dst){
+      const j=i*4,ph=DUST[j+3]+tt*0.13;
+      const p=proj(DUST[j]+Math.sin(ph)*.35,DUST[j+1]+Math.cos(ph*.7)*.28,DUST[j+2]);
+      if(!p)continue;
+      const sz=Math.max(.5,p[2]*.0042);
+      ctx.globalAlpha=S.amb*.30*Math.max(0,1-p[3]/28);
+      ctx.drawImage(SPR.mute,p[0]-sz,p[1]-sz,sz*2,sz*2);
+    }
+  }
+
+  /* consultório — dissolução em onda, com giro e virada de paleta por partícula */
+  if(S.office>.01){
+    const M=Math.max(0,Math.min(1,S.morph));
+    /* poças de luz sob cada cenário contemporâneo */
+    if(M>.35){
+      const k=(M-.35)/.65;
+      BAY.forEach(cx=>{
+        const q=proj(cx,FLOOR+.02,0);
+        if(!q)return;const R=270*q[2]/240;
+        ctx.save();ctx.globalAlpha=1;
+        ctx.translate(q[0],q[1]);ctx.scale(1,.36);
+        const g=ctx.createRadialGradient(0,0,0,0,0,R);
+        g.addColorStop(0,'rgba(150,190,230,'+(0.19*k*S.office).toFixed(3)+')');
+        g.addColorStop(.45,'rgba(150,190,230,'+(0.065*k*S.office).toFixed(3)+')');
+        g.addColorStop(1,'rgba(150,178,214,0)');
+        ctx.fillStyle=g;ctx.beginPath();ctx.arc(0,0,R,0,7);ctx.fill();ctx.restore();
+      });
+    }
+    /* luz volumétrica: poça quente no chão e brilho na janela, só na cena sépia */
+    const warm=S.office*(1-M);
+    if(warm>.02){
+      const gp=proj(-2.3,FLOOR+.02,.95), gw=proj(-3.5,1.4,-2.6);
+      if(gp){const R=470*gp[2]/240;
+        ctx.save();ctx.globalAlpha=1;
+        ctx.translate(gp[0],gp[1]);ctx.scale(1,.42);
+        const g=ctx.createRadialGradient(0,0,0,0,0,R);
+        g.addColorStop(0,'rgba(206,158,94,'+(0.30*warm).toFixed(3)+')');
+        g.addColorStop(.45,'rgba(206,158,94,'+(0.10*warm).toFixed(3)+')');
+        g.addColorStop(1,'rgba(206,158,94,0)');
+        ctx.fillStyle=g;ctx.beginPath();ctx.arc(0,0,R,0,7);ctx.fill();ctx.restore();}
+      if(gw){const R=300*gw[2]/240;
+        const g=ctx.createRadialGradient(gw[0],gw[1],0,gw[0],gw[1],R);
+        g.addColorStop(0,'rgba(214,172,112,'+(0.16*warm).toFixed(3)+')');
+        g.addColorStop(1,'rgba(214,172,112,0)');
+        ctx.globalAlpha=1;ctx.fillStyle=g;ctx.beginPath();ctx.arc(gw[0],gw[1],R,0,7);ctx.fill();}
+    }
+    const st=Math.min(2,stride()), gain=st>1?1.5:1;
+    for(let i=0;i<OFF_COUNT;i+=st){
+      const j=i*3;
+      const t=Math.max(0,Math.min(1,(M-OFF_PH[i]*.42)/.58));
+      const b=Math.sin(Math.PI*t);
+      let x=OFF_A[j]+(OFF_B[j]-OFF_A[j])*t;
+      let y=OFF_A[j+1]+(OFF_B[j+1]-OFF_A[j+1])*t;
+      let z=OFF_A[j+2]+(OFF_B[j+2]-OFF_A[j+2])*t;
+      if(b>.002){
+        const rot=b*OFF_SW[i]*.72, cr=Math.cos(rot), sr=Math.sin(rot);
+        const rx=x*cr-z*sr, rz=x*sr+z*cr;
+        const sp=b*1.08;
+        x=rx+OFF_N[j]*sp;
+        y=y+OFF_N[j+1]*sp*.42+b*.18;
+        z=rz+OFF_N[j+2]*sp;
+      }
+      const p=proj(x,y,z);if(!p)continue;
+      const modernBoost=.90+1.08*M;
+      const sz=Math.max(1.15,p[2]*.0225*modernBoost*(1+b*.42)*(st>1?1.55:1));
+      const base=S.office*(1.18+.34*M)*gain*(1-.28*b);
+      if(t<.985){ctx.globalAlpha=base*(1-t);ctx.drawImage(SPR.sepia,p[0]-sz,p[1]-sz,sz*2,sz*2);}
+      if(t>.015){
+        ctx.globalAlpha=base*t;ctx.drawImage(SPR.cyan,p[0]-sz,p[1]-sz,sz*2,sz*2);
+        if(t>.78){
+          const core=sz*.50;
+          ctx.globalAlpha=Math.min(1,(t-.78)*4.2*S.office);
+          ctx.drawImage(SPR.ink,p[0]-core,p[1]-core,core*2,core*2);
+        }
+      }
+    }
+  }
+
+  /* figuras */
+  tintedFigure(BUST,0,0,0,1,S.bust);
+  if(S.brain>.01)brainFigure(S.brain);
+  if(S.group>.01)GROUP.forEach(g=>figure(BUST_S,g[0],g[1],g[2],1,SPR.violet,S.group*.72));
+  if(S.family>.01)FAMILY.forEach(g=>figure(BUST_S,g[0],g[1],g[2],1,SPR.teal,S.family*.72));
+
+  /* nós – pontos */
+  NODES.forEach(n=>{
+    if(n.def.center)return;
+    const x=Math.cos(n.def.a)*n.r;
+    const z=n.def.plane==='xy'?0.5:Math.sin(n.def.a)*n.r*(n.def.flat||1);
+    const y=n.def.plane==='xy'?n.y+Math.sin(n.def.a)*n.r:n.y;
+    const p=proj(x,y,z);if(!p)return;
+    if(n.def.pool){
+      const R=(200+55*Math.sin(tt*.55+n.def.a*3))*Math.max(.85,Math.min(1.7,p[2]/240));
+      const col=RGB[n.def.c]||RGB.ink;
+      ctx.save();ctx.globalAlpha=1;
+      ctx.translate(p[0],p[1]);ctx.scale(1,.40);
+      const g=ctx.createRadialGradient(0,0,0,0,0,R);
+      g.addColorStop(0,'rgba('+col+','+(0.30*n.a).toFixed(3)+')');
+      g.addColorStop(.40,'rgba('+col+','+(0.11*n.a).toFixed(3)+')');
+      g.addColorStop(1,'rgba('+col+',0)');
+      ctx.fillStyle=g;ctx.beginPath();ctx.arc(0,0,R,0,7);ctx.fill();ctx.restore();
+    }
+    if(n.def.dot){
+      const sz=Math.max(1.2,p[2]*.016);
+      ctx.globalAlpha=n.a*.85;
+      ctx.drawImage(SPR[n.def.c]||SPR.ink,p[0]-sz*2.2,p[1]-sz*2.2,sz*4.4,sz*4.4);
+    }
+    n._p=p;n._x=x;n._y=y;n._z=z;
+  });
+
+  ctx.globalCompositeOperation='source-over';
+
+  /* anéis concêntricos */
+  if(S.rings>.01)drawRings();
+  /* camadas psicodinâmicas */
+  if(S.layers>.01)drawLayers();
+  /* rede cognitivo-comportamental */
+  if(S.cbt>.01)drawCBT();
+  /* ligações */
+  drawLinks();
+  /* escalas aninhadas, ficha clínica e seta do encaminhamento */
+  drawScales();
+  drawCard();
+  if(S.arw>.01)drawArrow();
+  /* lentes */
+  if(S.lens>.01)drawLenses();
+
+  /* rótulos dos nós */
+  NODES.forEach(n=>{
+    const d=n.def;
+    if(d.center){
+      const p=proj(0,d.y,0);if(!p)return;
+      label(d.l,p,HEX[d.c]||HEX.ink,n.a,d.size,{weight:600,display:true,track:d.size>60?2:1});
+      if(d.sub){const q=[p[0],p[1]+d.size*Math.max(0.80,Math.min(1.30,p[2]/240))*0.82,p[2],p[3]];
+        label(d.sub,q,HEX.mute,n.a*.9,d.size*0.34,{weight:400,track:1.6});}
+      return;
+    }
+    const p=n._p;if(!p)return;
+    const dep=Math.max(0,Math.min(1,(p[3]-(cam.dist-2))/6));
+    const off=d.up?-1:1;
+    const q=[p[0],p[1]+off*(26*Math.max(0.80,Math.min(1.30,p[2]/240))),p[2],p[3]];
+    const al=n.a*(1-.55*dep);
+    label(d.l,q,HEX[d.c]||HEX.ink,al,d.size,{weight:500,track:d.track||0.4});
+  });
+
+  /* palavra "interpretação" */
+  if(S.iA>.012){
+    const m=Math.max(0,Math.min(1,S.interp));
+    const sz=286-244*m;
+    ctx.globalAlpha=Math.min(1,S.iA)*(1-.25*m);
+    ctx.fillStyle=HEX.amber;ctx.textAlign='center';ctx.textBaseline='middle';
+    try{ctx.letterSpacing=(m*1.5).toFixed(1)+'px';}catch(e){}
+    ctx.font='300 '+sz.toFixed(0)+'px "Aptos Display", "Segoe UI", Helvetica, Arial, sans-serif';
+    ctx.fillText('interpretação',W/2,500-208*m);
+    try{ctx.letterSpacing='0px';}catch(e){}
+  }
+
+  ctx.globalAlpha=1;
+  cam.yaw=yaw0;
+  requestAnimationFrame(frame);
+}
+
+function ring3(r,y,steps){
+  const out=[];for(let i=0;i<=steps;i++){const a=i/steps*Math.PI*2;
+    out.push(proj(Math.cos(a)*r,y,Math.sin(a)*r));}
+  return out;
+}
+function strokePath(pts,color,alpha,w,frac){
+  ctx.globalAlpha=alpha;ctx.strokeStyle=color;ctx.lineWidth=w||1;
+  ctx.beginPath();let started=false;
+  const lim=Math.floor(pts.length*(frac===undefined?1:frac));
+  for(let i=0;i<lim;i++){const p=pts[i];if(!p){started=false;continue;}
+    if(!started){ctx.moveTo(p[0],p[1]);started=true;}else ctx.lineTo(p[0],p[1]);}
+  ctx.stroke();
+}
+function drawRings(){
+  const f=Math.max(0,Math.min(1,S.rings));
+  strokePath(ring3(1.55,-0.55,90),'rgba(235,240,248,.5)',S.rings*.75,1.4,Math.min(1,f*1.6));
+  strokePath(ring3(3.05,-0.55,110),'rgba(126,138,160,.55)',S.rings*.6,1,Math.max(0,(f-.35)/.65));
+  const a=proj(0,-0.55,1.55);
+  const b=proj(Math.cos(0.35)*3.05,-0.55,Math.sin(0.35)*3.05);
+  label('relação terapêutica',a?[a[0],a[1]+24,a[2],a[3]]:null,HEX.ink,S.rings*.9,25,{track:1});
+  label('modelo · objetivos · intervenções · contexto',b?[b[0]+30,b[1]+34,b[2],b[3]]:null,HEX.mute,Math.max(0,(f-.4)/.6),22,{track:1});
+}
+function drawLayers(){
+  const L=[[1.15,1.34,'experiência consciente'],
+           [1.50,0.30,'afetos · conflitos · representações'],
+           [1.80,-0.78,'processos não imediatamente acessíveis']];
+  const ang=2.79;
+  L.forEach((l,i)=>{
+    const f=Math.max(0,Math.min(1,(S.layers-i*.16)/.5));
+    if(f<=.01)return;
+    strokePath(ring3(l[0],l[1],90),'rgba(224,164,92,.55)',f*.7,1.2);
+    const p=proj(Math.cos(ang)*l[0],l[1],Math.sin(ang)*l[0]);
+    ctx.textAlign='right';
+    if(p){ctx.globalAlpha=f*.85;ctx.fillStyle=HEX.amber;ctx.textBaseline='middle';
+      ctx.font='500 '+(21*Math.max(0.80,Math.min(1.30,p[2]/240))).toFixed(1)+'px "Inter", Helvetica, Arial, sans-serif';
+      ctx.fillText(l[2],p[0]-14,p[1]);}
+    ctx.textAlign='center';
+  });
+  const f=Math.max(0,(S.layers-.5)/.5);
+  if(f>.02){                                  // alça de repetição
+    const pts=[];for(let i=0;i<=120;i++){const t=i/120*Math.PI*2;
+      pts.push(proj(Math.sin(t*2)*0.95,0.35+Math.sin(t)*0.85,Math.cos(t)*0.95));}
+    strokePath(pts,'rgba(224,164,92,.42)',f*.6,1.1);
+  }
+}
+function drawCBT(){
+  const keys=['cbt1','cbt2','cbt3','cbt4','cbt5'],pos=[];
+  keys.forEach(k=>{const n=NODES.get(k);pos.push(n&&n._p?n._p:null);});
+  for(let i=0;i<5;i++){
+    const a=pos[i],b=pos[(i+1)%5];
+    line(a,b,'rgba(79,190,232,.45)',S.cbt*.8,1.2);
+  }
+  const t=(tt*0.28)%1,seg=Math.floor(t*5),lt=(t*5)%1;
+  const a=pos[seg],b=pos[(seg+1)%5];
+  if(a&&b){
+    const x=a[0]+(b[0]-a[0])*lt,y=a[1]+(b[1]-a[1])*lt;
+    ctx.globalCompositeOperation='lighter';
+    ctx.globalAlpha=S.cbt*.9;ctx.drawImage(SPR.cyan,x-26,y-26,52,52);
+    ctx.globalCompositeOperation='source-over';
+  }
+}
+function drawLinks(){
+  const c=proj(0,0.62,0);
+  /* conceitos / dimensões → centro */
+  NODES.forEach(n=>{
+    if(n.def.center||!n._p||n.def.plane==='xy')return;
+    if(!n.def.link)return;
+    line(c,n._p,n.def.linkColor||'rgba(126,138,160,.34)',n.a*.55,1);
+  });
+  /* grupo */
+  if(S.group>.02){
+    const P=GROUP.map(g=>proj(g[0],g[1]+0.5,g[2]));
+    for(let i=0;i<P.length;i++)
+      line(P[i],P[(i+1)%P.length],'rgba(156,130,222,.48)',S.group*.68,1.15);
+  }
+  /* família */
+  if(S.family>.02){
+    const P=FAMILY.map(g=>proj(g[0],g[1]+0.55,g[2]));
+    const R=proj(0,0.55,0);
+    const pulse=.5+.5*Math.sin(tt*1.1);
+    for(let i=0;i<P.length;i++){
+      line(P[i],R,'rgba(53,192,164,.55)',S.family*(.55+.35*pulse),1.3);
+      line(P[i],P[(i+1)%P.length],'rgba(53,192,164,.3)',S.family*(.6-.25*pulse),1);
+    }
+    const familyLabelFade=Math.max(0,1-S.net*1.25);
+    P.forEach((p,i)=>{if(p)label(FAMILY_L[i],[p[0],p[1]+38,p[2],p[3]],HEX.teal,S.family*.9*familyLabelFade,25,{track:.6});});
+  }
+  /* rede de cuidado */
+  if(S.net>.02){
+    const R=proj(0,0.6,0);const arr=[];
+    NODES.forEach(n=>{if(n.def.net&&n._p)arr.push(n);});
+    arr.forEach((n,i)=>{
+      line(R,n._p,'rgba(126,150,180,.4)',n.a*S.net*.7,1);
+      const m=arr[(i+2)%arr.length];
+      if(m&&m!==n)line(n._p,m._p,'rgba(126,150,180,.2)',n.a*S.net*.45,1);
+    });
+  }
+}
+function drawScales(){
+  const L=[[S.sc1,2.9,'rgba(53,192,164,.42)'],
+           [S.sc2,6.6,'rgba(126,138,160,.34)'],
+           [S.sc3,11.2,'rgba(190,205,230,.26)']];
+  L.forEach(l=>{ if(l[0]>.02) strokePath(ring3(l[1],-0.62,110),l[2],l[0]*.75,1.1); });
+}
+function drawCard(){
+  const a=Math.max(0,Math.min(1,S.card));
+  if(a<=.02)return;
+  const p=proj(0,2.30,0);if(!p)return;
+  const k=Math.max(.75,Math.min(1.25,p[2]/240));
+  const w=660*k,h=282*k,ex=1+(1-a)*.5;
+  ctx.save();ctx.globalAlpha=a;
+  ctx.translate(p[0],p[1]);ctx.scale(ex,ex);
+  ctx.strokeStyle='rgba(126,138,160,.55)';ctx.lineWidth=1.2;
+  ctx.strokeRect(-w/2,-h/2,w,h);
+  ctx.strokeStyle='rgba(126,138,160,.24)';ctx.beginPath();
+  ctx.moveTo(-w/2,-h/6);ctx.lineTo(w/2,-h/6);
+  ctx.moveTo(-w/2,h/6);ctx.lineTo(w/2,h/6);ctx.stroke();
+  ctx.fillStyle=HEX.mute;ctx.textAlign='left';ctx.textBaseline='middle';
+  try{ctx.letterSpacing='2px';}catch(e){}
+  ctx.font='500 '+(24*k).toFixed(1)+'px "Inter", Helvetica, Arial, sans-serif';
+  ['PACIENTE','DIAGNÓSTICO','CONDUTA'].forEach((t,i)=>ctx.fillText(t,-w/2+32*k,-h/3+i*h/3));
+  try{ctx.letterSpacing='0px';}catch(e){}
+  ctx.restore();ctx.globalAlpha=1;
+}
+function drawArrow(){
+  const ax=-3.05,bx=3.05,ay=.55,az=.55;
+  const k=Math.max(0,Math.min(1,S.brk));
+  ctx.globalCompositeOperation='lighter';
+  for(let i=0;i<ARW_N;i++){
+    const j=i*4,t=ARW[j],jx=ARW[j+1],jy=ARW[j+2],rnd=ARW[j+3];
+    let x=ax+(bx-ax)*t, y=ay+jy*.045, z=az+jx*.045;
+    if(k>.002){
+      const a=(rnd*.28+t)*Math.PI*2, R=5.5;
+      const tx=Math.cos(a)*R, tz=Math.sin(a)*R*.35, ty=ay+(rnd*2-1)*1.75+jy*.45;
+      const e=Math.max(0,Math.min(1,(k-t*.22)/.78));
+      const b=Math.sin(Math.PI*e)*1.35;
+      x+= (tx-x)*e + jx*b;  y+= (ty-y)*e + jy*b*.7;  z+= (tz-z)*e + jx*b*.8;
+    }
+    const p=proj(x,y,z);if(!p)continue;
+    const sz=Math.max(1.0,p[2]*.016);
+    ctx.globalAlpha=S.arw*(1-k*.88)*.95;
+    ctx.drawImage(SPR.ink,p[0]-sz,p[1]-sz,sz*2,sz*2);
+  }
+  ctx.globalCompositeOperation='source-over';
+  if(k<.55){
+    const a=S.arw*(1-k/.55);
+    const bp=proj(bx,ay,az),h1=proj(bx-.34,ay+.21,az),h2=proj(bx-.34,ay-.21,az);
+    line(h1,bp,'rgba(235,240,248,.8)',a,1.6);line(h2,bp,'rgba(235,240,248,.8)',a,1.6);
+  }
+  /* X discreto no meio: aparece com a quebra e some com ela */
+  const xa=S.arw*Math.sin(Math.PI*Math.max(0,Math.min(1,k/.5)))*(k<.5?1:0);
+  if(xa>.02){
+    const c=proj(0,ay,az);
+    if(c){const r=26*c[2]/240;
+      ctx.globalAlpha=xa*.7;ctx.strokeStyle=HEX.mute;ctx.lineWidth=2;
+      ctx.beginPath();
+      ctx.moveTo(c[0]-r,c[1]-r);ctx.lineTo(c[0]+r,c[1]+r);
+      ctx.moveTo(c[0]+r,c[1]-r);ctx.lineTo(c[0]-r,c[1]+r);
+      ctx.stroke();}
+  }
+  ctx.globalAlpha=1;
+}
+function drawLenses(){
+  const A=Math.max(0,Math.min(1,S.lens));
+  const sp=Math.max(0,Math.min(1,S.split));
+  const specs=[
+    {c:'224,164,92',hex:HEX.amber,l:'Psicanálise / psicodinâmicas',dx:-615},
+    {c:'79,190,232',hex:HEX.cyan,l:'TCC',dx:-205},
+    {c:'156,130,222',hex:HEX.violet,l:'Grupo',dx:205},
+    {c:'53,192,164',hex:HEX.teal,l:'Casal & família',dx:615}
+  ];
+  const cx=W/2,cy0=H/2-40,cy1=H*0.69;
+  const R0=372,R1=138;
+  specs.forEach((s,i)=>{
+    const x=cx+s.dx*sp, y=cy0+(cy1-cy0)*sp;
+    const r=R0+(R1-R0)*sp;
+    const a=A*(i===0?1:sp*sp);
+    if(a<=.012)return;
+    ctx.save();
+    ctx.globalCompositeOperation='lighter';
+    const g=ctx.createRadialGradient(x,y,r*.1,x,y,r);
+    g.addColorStop(0,'rgba('+s.c+','+(0.075*a).toFixed(3)+')');
+    g.addColorStop(.70,'rgba('+s.c+','+(0.045*a).toFixed(3)+')');
+    g.addColorStop(.94,'rgba('+s.c+','+(0.25*a).toFixed(3)+')');
+    g.addColorStop(1,'rgba('+s.c+',0)');
+    ctx.fillStyle=g;ctx.beginPath();ctx.arc(x,y,r,0,7);ctx.fill();
+    ctx.globalCompositeOperation='source-over';
+    ctx.globalAlpha=a*.62;ctx.lineWidth=1.4;ctx.strokeStyle='rgba('+s.c+',.85)';
+    ctx.beginPath();ctx.arc(x,y,r,0,7);ctx.stroke();
+    ctx.globalAlpha=a*.30;ctx.lineWidth=5;ctx.strokeStyle='rgba('+s.c+',.5)';
+    ctx.beginPath();ctx.arc(x,y,r,-2.5,-1.1);ctx.stroke();
+    ctx.restore();
+    if(sp>.25){
+      ctx.globalAlpha=a*sp;ctx.fillStyle=s.hex;ctx.textAlign='center';ctx.textBaseline='middle';
+      try{ctx.letterSpacing='2.2px';}catch(e){}
+      ctx.font='600 21px "Inter", Helvetica, Arial, sans-serif';
+      ctx.fillText(s.l.toUpperCase(),x,y+r+42);
+      try{ctx.letterSpacing='0px';}catch(e){}
+    }
+  });
+  ctx.globalAlpha=1;
+}
+
+/* =================== ROTEIRO =================== */
+const CMP=[nd('c1','ansiedade',3.35,155,1.62,'ink',{link:1}),
+           nd('c2','ruminação',3.35,25,1.45,'ink',{link:1}),
+           nd('c3','dificuldades nos relacionamentos',3.5,203,0.35,'ink',{link:1}),
+           nd('c4','conflitos familiares recorrentes',3.5,338,0.18,'ink',{link:1}),
+           nd('c5','sensação de repetir os mesmos padrões',3.4,92,-0.85,'ink',{link:1})];
+const APPR=[nd('a1','Psicanálise',3.7,150,1.7,'amber',{link:1,linkColor:'rgba(224,164,92,.3)'}),
+            nd('a2','TCC',3.7,30,1.7,'cyan',{link:1,linkColor:'rgba(79,190,232,.3)'}),
+            nd('a3','Grupo',3.7,210,0.1,'violet',{link:1,linkColor:'rgba(156,130,222,.3)'}),
+            nd('a4','Casal & família',3.7,330,0.1,'teal',{link:1,linkColor:'rgba(53,192,164,.3)'})];
+
+const DECK=[
+/* 01 */{cam:{dist:5.7,ty:1.72,pitch:.015,yaw:-.20},set:{bust:.72,brain:1,amb:.72,glow:.78},steps:[{}],
+  n:'Abertura',
+  notes:[{say:'Quando falamos em psicoterapia, frequentemente usamos uma única palavra para designar práticas construídas a partir de maneiras bastante diferentes de compreender o ser humano.'},
+         {cue:'PAUSA de 2 segundos.'},
+         {say:'Então talvez a primeira pergunta não seja “qual técnica utilizar?”, mas: o que cada abordagem pensa que está acontecendo com esse sujeito?'}]},
+
+/* 02 */{cam:{dist:5.9,ty:.6,pitch:.05,yaw:-.2},set:{bust:1,amb:.5,glow:.45},
+  steps:[{add:[nd('k1','SUJEITO',2.9,150,1.55,'ink',{link:1,track:2.4,size:26}),
+               nd('k2','SOFRIMENTO',2.9,30,1.35,'ink',{link:1,track:2.4,size:26})]},
+         {add:[nd('k3','RELAÇÃO',2.95,205,0.15,'ink',{link:1,track:2.4,size:26})]},
+         {add:[nd('k4','MUDANÇA',2.95,335,-0.05,'ink',{link:1,track:2.4,size:26})]},
+         {cam:{dist:6.4}}],
+  n:'A pergunta central',
+  notes:[{say:'A pluralidade das psicoterapias existe porque elas não discordam apenas sobre técnica.'},
+         {say:'Elas podem divergir sobre o que constitui o sujeito, de onde emerge o sofrimento, como ocorre a mudança e qual é o próprio papel da relação terapêutica.'},
+         {cue:'Revele uma palavra por vez, conforme verbaliza cada dimensão. Termine com a pergunta.'}]},
+
+/* 03 */{cam:{dist:7.0,ty:.35,pitch:.24,yaw:-.1},set:{bust:.85,amb:.45,glow:.4},
+  steps:[{set:{rings:.55}},{set:{rings:1}},{}],
+  n:'O que chamamos de psicoterapia?',
+  notes:[{say:'Psicoterapia não é apenas uma coleção de técnicas: é uma forma organizada de compreender o sofrimento e de intervir sobre ele.'},
+         {say:'No núcleo está a relação terapêutica. Ao redor dela, o modelo teórico, os objetivos, as intervenções e o contexto em que o atendimento acontece.'},
+         {cue:'Não aprofundar classificações aqui. Fechar com: “E é justamente porque podemos compreender sofrimento e mudança de maneiras distintas que existem diferentes psicoterapias.”'},
+         {cue:'Definição operacional apoiada em <b>Cordioli &amp; Grevet (2019)</b>. Faça a transição: “os modelos divergem porque recortam o sofrimento de maneiras diferentes”.'}]},
+
+/* 04 */{cam:{dist:5.9,ty:-.08,pitch:.04,yaw:0},set:{bust:.72,amb:.4,glow:.48},
+  steps:[{set:{lens:1,split:0}},{set:{lens:1,split:1}}],
+  n:'Quatro lentes',
+  notes:[{say:'Vamos usar quatro recortes pedidos pela atividade. Psicanálise e TCC são orientações teóricas; grupo e casal/família são modalidades que podem assumir diferentes orientações.'},
+         {say:'Para tornar a comparação possível, o grupo será apresentado pelo recorte interpessoal e casal/família pelo recorte sistêmico. É um mapa didático, não uma taxonomia completa.'},
+         {cue:'Momento cinematográfico. Construa o mapa mental e preserve a ressalva conceitual. Máximo de 60 segundos.'}]},
+
+/* 05 */{cam:{dist:6.2,ty:.55,pitch:.06,yaw:-.15},set:{bust:1,amb:.5,glow:.45},
+  steps:[{add:[CMP[0],CMP[1],CMP[2]]},{add:[CMP[3],CMP[4]]},{}],
+  n:'O mesmo paciente',
+  notes:[{say:'Rafael, 28 anos. Ansiedade, ruminação, dificuldades nos relacionamentos, conflitos familiares recorrentes e a sensação de repetir sempre os mesmos padrões.'},
+         {say:'O paciente não chega dizendo “eu tenho um problema cognitivo” ou “eu tenho um conflito inconsciente”. Ele chega com sofrimento.'},
+         {say:'É o modelo clínico que organiza aquilo que observamos.'},
+         {cue:'Caso fictício, sem diagnóstico fechado — apenas fio narrativo. Não transformar em discussão diagnóstica.'}]},
+
+/* 06 */{cam:{dist:5.6,ty:.5,tx:1.2,pitch:.14,yaw:-.25},set:{bust:.85,tA:.85,amb:.4,glow:.4},
+  steps:[{set:{layers:.2}},{set:{layers:.45}},{set:{layers:.7}},{set:{layers:.9}},{set:{layers:1}}],
+  n:'Lente 01 — Psicanálise / psicodinâmicas',
+  notes:[{say:'Atravessando a primeira lente, o mesmo Rafael passa a ser lido em profundidade: a experiência consciente, os afetos e conflitos, e processos que não estão imediatamente acessíveis.'},
+         {say:'O sofrimento é lido em padrões afetivos e relacionais que se repetem. A mudança envolve compreensão, elaboração e novas experiências; transferência e aliança participam do trabalho clínico.'},
+         {cue:'Evitar caricatura histórica: sem Freud, sem divã ainda. Falar da lógica clínica.'},
+         {cue:'Evite opor uma psicanálise “longa” a terapias “rápidas”: há enquadres psicodinâmicos breves, suportivos e focais.'}]},
+
+/* 07 */{cam:{dist:6.15,ty:.46,tx:.95,pitch:.06,yaw:.18},set:{bust:.70,tC:.82,cbt:.82,amb:.38,glow:.36},
+  steps:[{add:[nd('cbt1','situação',1.35,90,.25,'cyan',{plane:'xy',size:24})]},
+         {add:[nd('cbt2','cognições',1.35,162,.25,'cyan',{plane:'xy',size:24})]},
+         {add:[nd('cbt3','emoções',1.35,234,.25,'cyan',{plane:'xy',size:24})]},
+         {add:[nd('cbt4','comportamentos',1.35,306,.25,'cyan',{plane:'xy',size:24})]},
+         {add:[nd('cbt5','consequências',1.35,18,.25,'cyan',{plane:'xy',size:24})]},
+         {}],
+  n:'Lente 02 — Terapias cognitivo-comportamentais',
+  notes:[{say:'A mesma pessoa, na mesma posição. O que mudou foi a lente.'},
+         {say:'Agora o sofrimento é lido como um circuito que se mantém: uma situação é processada de determinado modo, isso produz emoção, a emoção orienta comportamentos, e as consequências desses comportamentos realimentam o circuito.'},
+         {say:'A mudança envolve aprendizagem: testar hipóteses, experimentar, expor-se quando indicado e construir novos repertórios dentro e fora da sessão. A colaboração também participa da mudança.'},
+         {cue:'Frase-chave: <b>o paciente não mudou; o modelo explicativo mudou.</b>'},
+         {cue:'Sublinhe que a formulação individual organiza a técnica; “protocolo” não significa aplicação mecânica.'}]},
+
+/* 08 */{cam:{dist:8.6,ty:1.42,tx:1.5,pitch:.16,yaw:-.1},set:{bust:.9,tV:.5,group:1,amb:.5,glow:.35},
+  steps:[{},{},{},{},{}],
+  n:'Lente 03 — Psicoterapia de grupo',
+  notes:[{say:'Aqui a câmera se afasta e Rafael deixa de ocupar sozinho o centro. A unidade de análise deixa de ser o indivíduo isolado e passa a ser o campo de relações.'},
+         {say:'O que trata não é só o que o terapeuta diz: é a interação, o pertencimento, a experiência compartilhada, o retorno que os outros participantes oferecem.'},
+         {cue:'Nomeie brevemente coesão, universalidade, feedback e aprendizagem interpessoal, conforme Yalom &amp; Leszcz (2020).'},
+         {cue:'A transformação espacial da tela é o argumento: a mudança de escala comunica a mudança de unidade de análise.'}]},
+
+/* 09 */{cam:{dist:9.2,ty:1.38,tx:1.4,pitch:.20,yaw:.12},set:{bust:.9,tT:.5,family:1,amb:.5,glow:.35},
+  steps:[{},{},{},{},{}],
+  n:'Lente 04 — Casal e família',
+  notes:[{say:'Continuamos afastando. As conexões deixam de ser um agrupamento e passam a ser um sistema com história, regras e hierarquias.'},
+         {say:'A pergunta se desloca: e se o problema não estiver apenas “dentro” do indivíduo, mas no padrão relacional que o sustenta?'},
+         {say:'No recorte sistêmico, o terapeuta participa do campo relacional e precisa manejar alianças múltiplas, assimetrias e condições de segurança.'},
+         {cue:'Enfatizar causalidade <b>circular</b>, não linear. Evitar linguagem de culpabilização da família.'}]},
+
+/* 10 */{cam:{dist:13,ty:.6,pitch:.1,yaw:0},set:{bust:0,amb:.22,glow:.12},
+  steps:[{},{},{},{},{},{},{},{},{},{}],
+  n:'Quatro recortes, quatro mapas',
+  notes:[{cue:'Slide acadêmico central. Construir <b>linha a linha</b> — nunca mostrar a tabela inteira de uma vez. Cerca de 12 segundos por linha.'},
+         {say:'Comparar não é competir. Cada coluna é internamente coerente: o modo como a abordagem entende o sujeito determina onde ela localiza o sofrimento, e isso determina o que ela considera mudança.'},
+         {say:'A pergunta não é qual delas venceu. A pergunta é: o que cada modelo torna mais visível — e o que potencialmente deixa menos visível?'},
+         {cue:'A matriz mostra tendências do recorte didático. Grupo e casal/família são modalidades clínicas; aqui aparecem pelos recortes interpessoal e sistêmico.'}]},
+
+/* 11 */{cam:{dist:6.0,ty:1.15,pitch:.05,yaw:-.1},set:{bust:.2,amb:.4,glow:.5},
+  steps:[{add:[nd('mc','MUDANÇA',0,0,.75,'ink',{center:1,size:92}),
+               nd('m1','modelo',3.6,150,1.5,'mute',{link:1,conv:1,size:26}),
+               nd('m2','intervenção',3.6,35,1.5,'mute',{link:1,conv:1,size:26}),
+               nd('m3','relação',3.6,215,.2,'ink',{link:1,conv:1,size:30}),
+               nd('m4','expectativas',3.6,325,.2,'mute',{link:1,conv:1,size:26}),
+               nd('m5','contexto',3.6,90,-.9,'mute',{link:1,conv:1,size:26})]},
+         {set:{conv:1}},{drop:['mc','m1','m2','m3','m4','m5'],set:{bust:.06,amb:.22,glow:.14}}],
+  n:'O que produz mudança?',
+  notes:[{say:'Se cada abordagem propõe um mecanismo diferente, uma pergunta se impõe: o que, afinal, produz mudança em psicoterapia?'},
+         {say:'A literatura de fatores comuns argumenta que uma parte relevante do resultado não é exclusiva de nenhuma escola: a aliança, a empatia, as expectativas geradas por uma explicação plausível e o contexto do tratamento atravessam todos os modelos.'},
+         {say:'A pergunta não é técnica ou encontro. É como técnica, relação, expectativas, modelo explicativo e contexto se combinam para produzir mudança.'},
+         {cue:'<b>Não apresentar percentuais de memória.</b> Wampold (2015) sustenta a discussão, mas fatores comuns e técnicas não devem ser apresentados como alternativas excludentes.'}]},
+
+/* 12 */{cam:{dist:12.8,ty:.28,pitch:.075,yaw:.15},set:{bust:0,office:1,morph:0,amb:.28,glow:.16,sep:1},
+  steps:[{add:[nd('o0','divã · poltrona · janela',2.30,75,-1.68,'sepia',{size:24,dot:false})]},
+         {drop:['o0'],set:{morph:1},cam:{dist:10.0,ty:-.08,pitch:.22,yaw:.02},
+          add:[nd('o1','consultório face a face',4.75,156,-1.62,'ink',{size:24,dot:false}),
+               nd('o2','ambulatório',2.39,127,-1.62,'ink',{size:24,dot:false}),
+               nd('o3','serviço de saúde mental',2.39,53,-1.62,'ink',{size:24,dot:false}),
+               nd('o4','hospital',4.75,24,-1.62,'ink',{size:24,dot:false})]},
+         {cam:{dist:10.4,ty:-.02,pitch:.20}}],
+  n:'Da imagem clássica à clínica contemporânea',
+  notes:[{say:'Esta é a imagem que a palavra “psicanálise” costuma evocar: um consultório do início do século XX, o divã, a poltrona atrás.'},
+         {cue:'PAUSA. Deixe a cena sépia respirar por 3 a 4 segundos antes de avançar.'},
+         {say:'Mas a orientação deste seminário pede explicitamente que a psicanálise não seja reduzida ao seu modelo clássico. O enquadre se transformou: atendimento face a face, ambulatório, serviço de saúde mental, hospital, e outros contextos.'},
+         {say:'E a clínica psicanalítica contemporânea — o que ela é hoje?'},
+         {cue:'Exemplos do recorte adotado: atendimento face a face, ambulatório, serviço de saúde mental e hospital; não apresentar a lista como exaustiva.'}]},
+
+/* 13 */{cam:{dist:6.9,ty:.62,pitch:.05,yaw:.1},set:{bust:.25,amb:.35,glow:.4,interp:0,iA:0},
+  steps:[{set:{iA:1,interp:0}},
+         {set:{iA:1,interp:1},add:[nd('ic','relação terapêutica',0,0,.5,'ink',{center:1,size:52}),
+               nd('i1','manejo da transferência',2.9,152,1.45,'amber',{size:25}),
+               nd('i2','aliança de trabalho',2.9,28,1.45,'amber',{size:25}),
+               nd('i3','enquadre negociado',3.0,208,.05,'amber',{size:25}),
+               nd('i4','foco e duração quando indicados',3.0,332,.05,'amber',{size:24}),
+               nd('i5','contexto do serviço',2.8,90,-1.05,'amber',{size:25})]},
+         {}],
+  n:'“Interpretar o inconsciente” é suficiente?',
+  notes:[{say:'Durante muito tempo a psicanálise foi resumida a uma única operação: interpretar.'},
+         {say:'A interpretação permanece — mas ao lado dela aparecem o manejo da transferência, a aliança de trabalho, a negociação do enquadre, a definição de foco e duração, e o contexto institucional em que o atendimento ocorre.'},
+         {cue:'Responder às duas provocações da docência: (1) a psicanálise contemporânea continua restrita à interpretação do inconsciente? (2) enquadre e técnica permanecem iguais ao modelo clássico?'},
+         {cue:'Diferencie intervenções expressivas e suportivas. A técnica e o enquadre são escolhidos conforme objetivos, condições do paciente e contexto.'}]},
+
+/* 14 */{cam:{dist:6.6,ty:.6,pitch:.05,yaw:0},set:{bust:.3,amb:.4,glow:.35},
+  steps:[{},{},
+         {set:{bust:.95,net:.5},cam:{dist:7.6},
+          add:[nd('d1','necessidades',3.5,155,1.75,'ink',{link:1,size:25}),
+               nd('d2','preferências',3.5,25,1.75,'ink',{link:1,size:25}),
+               nd('d3','objetivos',3.6,196,.85,'ink',{link:1,size:25}),
+               nd('d4','formulação clínica',3.6,344,.85,'ink',{link:1,size:25}),
+               nd('d5','evidências',3.7,224,-.2,'ink',{link:1,size:25}),
+               nd('d6','competência disponível',3.7,316,-.2,'ink',{link:1,size:25}),
+               nd('d7','contexto',3.3,128,-1.25,'ink',{link:1,size:25}),
+               nd('d8','serviço e rede',3.3,52,-1.25,'ink',{link:1,size:25})]}],
+  n:'Quem escolhe a psicoterapia?',
+  notes:[{say:'A representação mais comum é um algoritmo: paciente, diagnóstico, abordagem.'},
+         {cue:'PAUSA de 3 segundos sobre o algoritmo antes de quebrá-lo.'},
+         {say:'Mas encaminhar para uma abordagem não deveria ser uma decisão mecânica determinada exclusivamente pelo diagnóstico.'},
+         {say:'Entram necessidades e preferências do paciente, objetivos pactuados, a formulação clínica do caso, as evidências disponíveis, a competência e a disponibilidade do profissional, o contexto e o que a rede efetivamente oferece.'},
+         {cue:'Nomeie o princípio: <b>decisão compartilhada</b>. Diagnóstico informa a escolha, mas não a determina sozinho.'}]},
+
+/* 15 */{cam:{dist:14.5,ty:.55,pitch:.10,yaw:-.05},set:{bust:0,amb:.28,glow:.10,lens:0,split:0},
+  steps:[{},{}],
+  n:'Existem apenas essas quatro?',
+  notes:[{say:'Recortamos quatro lentes por razões didáticas. O campo é muito maior — e continua se diversificando.'},
+         {cue:'Máximo de 45 segundos. <b>Não explicar nenhuma</b> das modalidades: o objetivo é apenas demonstrar pluralidade.'},
+         {cue:'Os exemplos misturam níveis de classificação. Diga isso explicitamente e use a lista apenas para demonstrar pluralidade.'}]},
+
+/* 16 */{cam:{dist:5.4,ty:.55,pitch:.06,yaw:0},set:{bust:1,amb:.5,glow:.45},
+  steps:[{},
+         {cam:{dist:9.0,pitch:.15},set:{family:1,tT:.25,sc1:1}},
+         {cam:{dist:12.8,pitch:.15},set:{net:.48,sc1:.62,sc2:1},
+          add:[nd('t1','trabalho',6.4,32,-1.20,'mute',{size:23,flat:.42}),
+               nd('t2','escola / formação',6.4,142,2.10,'mute',{size:23,flat:.42}),
+               nd('t3','vizinhança',6.4,218,-1.20,'mute',{size:23,flat:.42}),
+               nd('t4','comunidade',6.4,328,2.10,'mute',{size:23,flat:.42})]},
+         {drop:['t1','t2','t3','t4'],cam:{dist:18.2,pitch:.14},set:{net:.92,sc1:.34,sc2:.62,sc3:1},
+          add:[nd('r1','UBS',11.0,18,1.55,'cyan',{size:27,flat:.35}),
+               nd('r2','CAPS',11.0,72,-1.45,'cyan',{size:27,flat:.35}),
+               nd('r3','apoio matricial',11.0,134,.55,'ink',{size:25,flat:.35}),
+               nd('r4','urgência / hospital',11.0,196,-1.45,'ink',{size:25,flat:.35}),
+               nd('r5','rede intersetorial',11.0,286,1.55,'ink',{size:25,flat:.35})]}],
+  n:'A mudança de escala',
+  notes:[{say:'Até aqui, olhamos para psicoterapia. Agora a câmera vai subir.'},
+         {say:'Rafael não existe isoladamente: ele está dentro de uma família, dentro de um território — trabalho, escola, vizinhança, comunidade — e dentro de uma rede de cuidado.'},
+         {say:'Mas cuidado em saúde mental é maior do que psicoterapia.'},
+         {cue:'Este é o movimento visual mais memorável da apresentação. Deixe o zoom out respirar. A RAPS tem origem na Portaria GM/MS nº 3.088/2011, hoje consolidada no Anexo V da Portaria de Consolidação nº 3/2017.'}]},
+
+/* 17 */{cam:{dist:11,ty:.6,pitch:.2,yaw:-.1},set:{bust:.95,amb:.45,glow:.35,net:.5},
+  steps:[{set:{card:1},cam:{dist:9.4,ty:.9}},
+         {set:{card:0},
+          add:[nd('p1','biológico',3.9,145,1.9,'ink',{link:1,size:25}),
+               nd('p2','psicológico',3.9,35,1.9,'ink',{link:1,size:25}),
+               nd('p3','social',4.1,190,1.0,'ink',{link:1,size:25}),
+               nd('p4','família',4.1,350,1.0,'ink',{link:1,size:25}),
+               nd('p5','território',4.3,215,.1,'ink',{link:1,size:25}),
+               nd('p6','trabalho',4.3,325,.1,'ink',{link:1,size:25}),
+               nd('p7','vínculos',4.2,245,-.8,'ink',{link:1,size:25}),
+               nd('p8','autonomia',4.2,295,-.8,'ink',{link:1,size:25}),
+               nd('p9','projeto de vida',4.0,90,-1.6,'ink',{link:1,size:27})]},
+         {}],
+  n:'Clínica ampliada',
+  notes:[{say:'A ficha tradicional cabe em três campos: paciente, diagnóstico, conduta. A clínica ampliada não descarta esses campos — ela recusa que eles esgotem o sujeito.'},
+         {say:'A proposta articula e inclui diferentes enfoques: compreensão ampliada do processo saúde-doença, construção compartilhada de diagnósticos e terapêuticas, ampliação do objeto de trabalho, transformação dos instrumentos e suporte para os próprios profissionais.'},
+         {say:'O sujeito é maior que seu diagnóstico. E o cuidado, por consequência, é trabalho de equipe, no território, em rede.'},
+         {cue:'Fontes: <b>Clínica ampliada e compartilhada</b> (MS, 2009) e <b>CAB nº 34 — Saúde Mental</b> (MS, 2013).'}]},
+
+/* 18 */{cam:{dist:11.5,ty:1.10,pitch:.10,yaw:.05},set:{bust:.9,amb:.45,glow:.3},
+  steps:[{cam:{dist:8.6,ty:.55,pitch:.06},set:{bust:.16,arw:1,brk:0},
+          add:[nd('mA','MÉDICO',3.10,170,1.30,'mute',{size:26,track:2.2,dot:false}),
+               nd('mB','PSICOLOGIA',3.10,10,1.30,'mute',{size:26,track:2.2,dot:false})]},
+         {drop:['mA','mB'],cam:{dist:11.5,ty:1.10,pitch:.14},set:{bust:.9,arw:1,brk:1,net:.85},
+          add:[nd('n1','UBS',5.5,15,2.25,'ink',{net:1,size:25,flat:.35}),
+               nd('n2','CAPS',5.5,55,2.25,'ink',{net:1,size:25,flat:.35}),
+               nd('n3','medicina',5.5,95,2.25,'ink',{net:1,size:25,flat:.35}),
+               nd('n4','psicologia',5.5,140,2.25,'ink',{net:1,size:25,flat:.35}),
+               nd('n5','enfermagem',5.5,180,1.5,'ink',{net:1,size:25,flat:.35}),
+               nd('n6','família',5.5,220,0.8,'ink',{net:1,size:25,flat:.35}),
+               nd('n7','grupo',5.5,262,0.8,'ink',{net:1,size:25,flat:.35}),
+               nd('n8','território',5.5,300,0.8,'ink',{net:1,size:25,flat:.35}),
+               nd('n9','recursos comunitários',5.5,338,0.8,'ink',{net:1,size:25,flat:.35})]},
+         {set:{conv:.42,arw:.30}},
+         {}],
+  n:'Do encaminhamento ao PTS',
+  notes:[{say:'“Encaminhar para a psicologia.” Uma seta, de um profissional para outro, e o caso sai da nossa responsabilidade.'},
+         {say:'A seta se desfaz. No lugar dela aparece uma rede: UBS, CAPS, medicina, psicologia, enfermagem, família, grupos, território e recursos comunitários — todos convergindo para um mesmo plano.'},
+         {say:'O Projeto Terapêutico Singular é esse plano: construído com o usuário, com metas pactuadas, responsabilidades divididas e reavaliação permanente.'},
+         {say:'Cuidado não é transferência de responsabilidade.'},
+         {cue:'Os quatro momentos do PTS: diagnóstico ampliado, definição de metas, divisão de responsabilidades e reavaliação — <b>Clínica ampliada, equipe de referência e PTS</b> (MS, 2. ed., 2008).'}]},
+
+/* 19 */{cam:{dist:15.5,ty:.48,pitch:.13,yaw:-.03},set:{bust:.25,amb:.42,glow:.22,net:0},
+  steps:[{add:[nd('s1','grupos',7.0,25,1.35,'violet',{link:1,size:27,flat:.46}),
+               nd('s2','intervenções familiares',10.0,72,-1.20,'teal',{link:1,size:25,flat:.42}),
+               nd('s3','atividades coletivas',10.0,120,1.35,'ink',{link:1,size:25,flat:.42}),
+               nd('s4','território',7.0,170,-1.20,'ink',{link:1,size:27,flat:.46}),
+               nd('s5','recursos comunitários',10.0,218,1.35,'ink',{link:1,size:25,flat:.42}),
+               nd('s6','convivência',7.0,268,-1.20,'ink',{link:1,size:27,flat:.46}),
+               nd('s7','apoio matricial',10.0,320,1.35,'ink',{link:1,size:25,flat:.42})]},
+         {}],
+  n:'O que mais pode ser terapêutico?',
+  notes:[{say:'Nem tudo o que é terapêutico é psicoterapia formal.'},
+         {say:'Grupos, intervenções com a família, atividades coletivas, uso do território, recursos comunitários, espaços de convivência e o próprio apoio matricial produzem efeitos clínicos reais.'},
+         {cue:'Cerca de 60 segundos. Relacione os dispositivos ao CAB nº 34 e ressalte que produzir efeito terapêutico não os transforma automaticamente em psicoterapia.'}]},
+
+/* 20 */{cam:{dist:22,ty:.6,pitch:.15,yaw:0},set:{bust:.12,amb:.35,glow:.15},
+  steps:[{},{}],
+  n:'E as PICS?',
+  notes:[{say:'As Práticas Integrativas e Complementares não são classificadas como psicoterapias. Formam um conjunto heterogêneo, com indicações, riscos e níveis de evidência distintos.'},
+         {say:'Podem compor o projeto de cuidado em saúde mental dentro do SUS, conforme necessidades e preferências do usuário, avaliação clínica e oferta real do território.'},
+         {cue:'Máximo de 45 segundos. <b>Não transformar o seminário numa apresentação sobre PICS.</b> O SUS reconhece 29 práticas, mas a disponibilidade varia entre serviços.'}]},
+
+/* 21 */{cam:{dist:6.2,ty:.55,pitch:.06,yaw:-.1},set:{bust:1,amb:.5,glow:.45},
+  steps:[{add:[CMP[0],CMP[1],CMP[2],CMP[3]]},
+         {cam:{dist:10,ty:.6,pitch:.10},
+          add:[nd('a1','Psicanálise',5.6,150,2.45,'amber',{size:27,flat:.4}),
+               nd('a2','TCC',5.6,30,2.45,'cyan',{size:27,flat:.4}),
+               nd('a3','Grupo',6.1,196,1.25,'violet',{size:27,flat:.4}),
+               nd('a4','Casal & família',6.1,344,1.25,'teal',{size:27,flat:.4})]},
+         {cam:{dist:15,ty:.6,pitch:.10},set:{net:.8},drop:['c1','c2','c3','c4'],
+          add:[nd('q1','equipe',10.6,22,3.55,'ink',{net:1,size:26,flat:.3}),
+               nd('q2','território',10.6,95,3.15,'ink',{net:1,size:26,flat:.3}),
+               nd('q3','rede',10.6,168,3.55,'ink',{net:1,size:26,flat:.3}),
+               nd('q4','PTS',10.6,242,2.6,'ink',{net:1,size:26,flat:.3}),
+               nd('q5','dispositivos comunitários',10.6,315,3.55,'ink',{net:1,size:26,flat:.3})]},
+         {cam:{dist:16}}],
+  n:'Voltamos ao Rafael',
+  notes:[{say:'Voltamos ao início. O mesmo Rafael, as mesmas queixas.'},
+         {say:'Agora sabemos que quatro lentes diferentes leriam esse quadro de quatro maneiras distintas — e que nenhuma delas esgota o caso.'},
+         {say:'E sabemos também que ao redor dele existem equipe, território, rede e a possibilidade de um projeto terapêutico construído com ele.'},
+         {say:'A pergunta mudou. Não é mais “para qual abordagem eu encaminho?”, e sim “que cuidado faz sentido para este sujeito?”.'}]},
+
+/* 22 */{cam:{dist:9.5,ty:1.55,pitch:.12,yaw:-.2},set:{bust:.55,amb:.35,glow:.35,net:.4},
+  steps:[{add:[nd('z1','',5.5,30,1.6,'mute',{net:1}),nd('z2','',5.5,90,-1.5,'mute',{net:1}),
+               nd('z3','',5.5,150,1.6,'mute',{net:1}),nd('z4','',5.5,210,-1.5,'mute',{net:1}),
+               nd('z5','',5.5,270,1.6,'mute',{net:1}),nd('z6','',5.5,330,-1.5,'mute',{net:1})]},
+         {},{},{}],
+  n:'Conclusão',
+  notes:[{cue:'Cerca de 45 segundos. Uma frase por vez, com respiro entre elas. Não introduzir conteúdo novo.'},
+         {say:'Não existe uma única forma de compreender o sofrimento. Não existe um único mecanismo possível de mudança. E cuidado em saúde mental não é sinônimo de psicoterapia.'},
+         {say:'O sujeito vem antes da abordagem.'}]},
+
+/* 23 */{cam:{dist:10,ty:.6,pitch:.05,yaw:.15},set:{bust:.10,amb:.3,glow:.25},
+  steps:[{},{}],
+  n:'Encerramento',
+  notes:[{say:'Quando dizemos “encaminhar para a Psicologia”… o que exatamente estamos propondo?'},
+         {cue:'SILÊNCIO de aproximadamente 2 segundos. Não preencher.'},
+         {say:'Obrigado.'}]},
+
+/* 24 */{cam:{dist:30,ty:.6,pitch:.05,yaw:0},set:{bust:0,amb:.25,glow:.12},steps:[{}],
+  n:'Referências',
+  notes:[{cue:'Slide fora dos 30 minutos. Deixar disponível ao final para perguntas.'},
+         {cue:'As datas das cartilhas de Clínica Ampliada e PTS foram conferidas nos PDFs oficiais do Ministério da Saúde.'}]}
+];
+
+/* =================== NAVEGAÇÃO =================== */
+const slides=[...document.querySelectorAll('.slide')];
+slides.forEach((el,i)=>{
+  el.setAttribute('role','group');
+  el.setAttribute('aria-roledescription','slide');
+  el.setAttribute('aria-label',(i+1)+' de '+slides.length+' — '+DECK[i].n);
+});
+const DEF={bust:0,brain:0,group:0,family:0,rings:0,layers:0,cbt:0,lens:0,split:0,office:0,
+           morph:0,net:0,conv:0,amb:.4,glow:.3,interp:0,iA:0,arw:0,brk:0,card:0,sc1:0,sc2:0,sc3:0,
+           tA:0,tC:0,tV:0,tT:0,sep:0};
+let si=0,st=1,previousSlide=-1;
+function stepsOf(i){return DECK[i].steps.length;}
+function apply(){
+  const d=DECK[si];
+  const slideChanged=si!==previousSlide;
+  Object.assign(T,DEF);
+  Object.assign(camT,{dist:6,ty:.6,tx:0,pitch:.08,yaw:0});
+  if(d.cam)Object.assign(camT,d.cam);
+  if(d.set)Object.assign(T,d.set);
+  let list=[];
+  for(let k=0;k<st;k++){
+    const s=d.steps[k];if(!s)continue;
+    if(s.cam)Object.assign(camT,s.cam);
+    if(s.set)Object.assign(T,s.set);
+    if(s.add)list=list.concat(s.add);
+    if(s.drop)list=list.filter(n=>s.drop.indexOf(n.k)<0);
+  }
+  if(slideChanged)NODES.clear();
+  setNodes(list);
+  if(slideChanged)Object.assign(S,T);
+  slides.forEach((el,i)=>{
+    const live=i===si;
+    el.classList.toggle('live',live);
+    el.setAttribute('aria-hidden',live?'false':'true');
+  });
+  slides[si].querySelectorAll('[data-s]').forEach(el=>{
+    const off=el.dataset.off?parseInt(el.dataset.off,10):Infinity;
+    el.classList.toggle('on',parseInt(el.dataset.s,10)<=st&&st<off);});
+  /* ganchos de DOM */
+  const algo=document.getElementById('algoBox');
+  if(algo)algo.classList.toggle('broken',si===13&&st>=3);
+  const oq=document.getElementById('oldQ');
+  if(oq)oq.classList.toggle('retired',si===20&&st>=4);
+  document.querySelectorAll('.matrix [data-s]').forEach(el=>{
+    const row=parseInt(el.dataset.s,10)||0;
+    const active=si===9&&st>=2&&st<=9;
+    el.classList.toggle('focus',active&&row===st);
+    el.classList.toggle('past',active&&row<st);
+  });
+  /* chrome */
+  document.getElementById('idx').textContent=
+    String(si+1).padStart(2,'0')+' / '+String(DECK.length).padStart(2,'0');
+  rail.forEach((el,i)=>{el.className=i<si?'done':(i===si?'cur':'');});
+  renderNotes();
+  previousSlide=si;
+}
+function go(i,s){
+  i=Math.max(0,Math.min(DECK.length-1,i));
+  si=i;st=Math.max(1,Math.min(stepsOf(i),s||1));apply();
+}
+function next(){ if(st<stepsOf(si))go(si,st+1); else if(si<DECK.length-1)go(si+1,1); }
+function prev(){ if(st>1)go(si,st-1); else if(si>0)go(si-1,stepsOf(si-1)); }
+
+/* trilho */
+const railEl=document.getElementById('rail'),rail=[];
+DECK.forEach(()=>{const i=document.createElement('i');railEl.appendChild(i);rail.push(i);});
+
+/* notas */
+const notesEl=document.getElementById('notes');
+let presenterWin=null;
+function openPresenter(){
+  if(!presenterWin||presenterWin.closed){
+    presenterWin=window.open('','psicoterapias-notas','popup=yes,width=760,height=780');
+    if(!presenterWin){flashHelp();return;}
+    presenterWin.document.title='Notas · Psicoterapias';
+    presenterWin.document.head.innerHTML='<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">'+
+      '<style>body{margin:0;padding:30px 34px;background:#0A1120;color:#D7DEE9;font:18px/1.55 "Segoe UI",Arial,sans-serif}'+
+      'h4{margin:0 0 6px;color:#fff;font-size:27px}.clock{color:#E0A45C;font-size:15px;letter-spacing:.1em;text-transform:uppercase;margin-bottom:24px}'+
+      '.say{color:#fff;border-left:3px solid #E0A45C;padding-left:16px}.cue{color:#9EABC0}.cue b{color:#E0A45C}'+
+      '.next{margin-top:28px;padding-top:16px;border-top:1px solid #344057;color:#7F8CA3;font-size:14px}#pclock{font-variant-numeric:tabular-nums}</style>';
+  }
+  renderNotes();
+  presenterWin.focus();
+}
+function renderNotes(){
+  const d=DECK[si],sec=slides[si];
+  let h='<h4>'+(si+1<10?'0':'')+(si+1)+' · '+d.n+'</h4>';
+  h+='<div class="clock">'+(sec.dataset.t||'')+' &nbsp;·&nbsp; passo '+st+' de '+stepsOf(si)+' &nbsp;·&nbsp; cronômetro <span id="pclock">'+clockEl.textContent+'</span></div>';
+  (d.notes||[]).forEach(n=>{
+    if(n.say)h+='<p class="say">'+n.say+'</p>';
+    if(n.cue)h+='<p class="cue">'+n.cue+'</p>';
+  });
+  if(DECK[si+1])h+='<div class="next">PRÓXIMO · '+DECK[si+1].n+'</div>';
+  notesEl.innerHTML=h;
+  if(presenterWin&&!presenterWin.closed)presenterWin.document.body.innerHTML=h;
+}
+
+/* cronômetro */
+let t0=null,running=false;
+const clockEl=document.getElementById('clock');
+setInterval(()=>{
+  if(running&&t0!==null){
+    const e=Math.floor((Date.now()-t0)/1000);
+    clockEl.textContent=String(Math.floor(e/60)).padStart(2,'0')+':'+String(e%60).padStart(2,'0');
+    clockEl.className='t run'+(e>1725?' over':'');
+  }
+  if(presenterWin&&!presenterWin.closed){
+    const pc=presenterWin.document.getElementById('pclock');
+    if(pc)pc.textContent=clockEl.textContent+(running?'':' · pausado');
+  }
+},250);
+
+/* escala */
+function fit(){
+  const k=Math.min(innerWidth/W,innerHeight/H);
+  document.getElementById('deck').style.transform='translate(-50%,-50%) scale('+k+')';
+}
+addEventListener('resize',fit);fit();
+
+/* teclado */
+const helpEl=document.getElementById('help');
+let helpT;
+function flashHelp(){helpEl.classList.add('show');clearTimeout(helpT);
+  helpT=setTimeout(()=>helpEl.classList.remove('show'),2600);}
+addEventListener('keydown',e=>{
+  const k=e.key;
+  if(k==='ArrowRight'||k==='PageDown'||k===' '||k==='Enter'){e.preventDefault();next();}
+  else if(k==='ArrowLeft'||k==='PageUp'){e.preventDefault();prev();}
+  else if(k==='ArrowDown'){e.preventDefault();go(si+1,1);}
+  else if(k==='ArrowUp'){e.preventDefault();go(si-1,1);}
+  else if(k==='n'||k==='N'){openPresenter();}
+  else if(k==='v'||k==='V'){document.body.classList.toggle('highcontrast');}
+  else if(k==='t'||k==='T'){if(!running){t0=Date.now();running=true;}else{running=false;}}
+  else if(k==='r'||k==='R'){t0=Date.now();running=true;go(0,1);}
+  else if(k==='f'||k==='F'){
+    if(!document.fullscreenElement)document.documentElement.requestFullscreen&&document.documentElement.requestFullscreen();
+    else document.exitFullscreen&&document.exitFullscreen();}
+  else if(k==='?'||k==='h'||k==='H'){flashHelp();}
+  else if(k>='1'&&k<='9'&&e.shiftKey){go(parseInt(k,10)-1,1);}
+});
+let touchStartX=null,swipedUntil=0;
+addEventListener('pointerdown',e=>{if(e.pointerType==='touch')touchStartX=e.clientX;});
+addEventListener('pointerup',e=>{
+  if(e.pointerType!=='touch'||touchStartX===null)return;
+  const dx=e.clientX-touchStartX;touchStartX=null;
+  if(Math.abs(dx)>70){swipedUntil=performance.now()+450;dx<0?next():prev();}
+});
+addEventListener('click',e=>{
+  if(performance.now()<swipedUntil)return;
+  if(e.target.closest('#notes'))return;
+  (e.clientX < innerWidth*0.22) ? prev() : next();
+});
+flashHelp();
+
+/* início */
+function validateDeck(){
+  const issues=[];
+  if(slides.length!==DECK.length)issues.push('Quantidade de slides e configurações diverge.');
+  slides.forEach((slide,i)=>{
+    const max=[...slide.querySelectorAll('[data-s]')].reduce((m,el)=>Math.max(m,parseInt(el.dataset.s,10)||0),0);
+    if(max>stepsOf(i))issues.push('Slide '+(i+1)+': data-s '+max+' excede '+stepsOf(i)+' etapas.');
+  });
+  if(slides.some(slide=>slide.textContent.includes('[COMPLETAR')))issues.push('Há referência marcada como incompleta.');
+  if(issues.length)console.error('Pré-voo da apresentação:\n'+issues.join('\n'));
+  else console.info('Pré-voo da apresentação: 24 slides consistentes e sem pendências visíveis.');
+}
+validateDeck();
+go(0,1);
+if(document.fonts&&document.fonts.ready)document.fonts.ready.then(()=>{});
+requestAnimationFrame(frame);
+})();
+</script>
+
+</body></html>
