@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HP Library — Handbooks Premium</title>
+<link rel="stylesheet" href="/biblio/handbook-premium/static/app.css">
+</head>
+<body>
+<a class="skip" href="#cards">Pular para os resultados</a>
+
+<header class="topbar">
+  <div class="brand">
+    <span class="logo" aria-hidden="true">HP</span>
+    <div>
+      <h1>Handbook Premium Library</h1>
+      <p class="sub">Biblioteca local · acesso privado via loopback/Tailscale</p>
+    </div>
+  </div>
+  <div class="searchbox">
+    <label class="sr-only" for="q">Buscar handbooks</label>
+    <input id="q" type="search" placeholder="Buscar por título, eixo, apostila ou ID…" autocomplete="off">
+  </div>
+</header>
+
+<p id="banner" class="banner hidden" role="alert"></p>
+
+<main class="layout">
+  <aside class="filters">
+    <h2>Filtros</h2>
+    <section>
+      <h3 id="lbl-group">Macroárea</h3>
+      <div id="f-group" class="chips" role="group" aria-labelledby="lbl-group"></div>
+    </section>
+    <section>
+      <h3 id="lbl-priority">Prioridade</h3>
+      <div id="f-priority" class="chips" role="group" aria-labelledby="lbl-priority"></div>
+    </section>
+    <section>
+      <h3 id="lbl-onda">Onda</h3>
+      <div id="f-onda" class="chips" role="group" aria-labelledby="lbl-onda"></div>
+    </section>
+    <section>
+      <h3 id="lbl-status">Status</h3>
+      <div id="f-status" class="chips" role="group" aria-labelledby="lbl-status"></div>
+    </section>
+    <section>
+      <h3 id="lbl-cobertura">Cobertura de fontes</h3>
+      <div id="f-cobertura" class="chips" role="group" aria-labelledby="lbl-cobertura"></div>
+    </section>
+    <button id="clear" class="ghost" type="button">Limpar filtros</button>
+  </aside>
+
+  <section class="results" aria-label="Resultados">
+    <div class="results-head">
+      <p id="count" aria-live="polite">carregando…</p>
+    </div>
+    <div id="cards" class="cards"></div>
+    <p id="empty" class="empty hidden">Nenhum HP corresponde aos filtros atuais.</p>
+  </section>
+</main>
+
+<div id="detail" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="detail-title">
+  <div class="modal-card">
+    <button class="close" id="detail-close" type="button" aria-label="Fechar detalhe">×</button>
+    <div id="detail-body"></div>
+  </div>
+</div>
+
+<div id="reader" class="reader hidden" role="dialog" aria-modal="true" aria-labelledby="reader-title">
+  <header class="reader-bar">
+    <button class="icon" id="reader-close" type="button" aria-label="Fechar leitor">←</button>
+    <div class="reader-id">
+      <span id="reader-hpid"></span>
+      <h2 id="reader-title"></h2>
+    </div>
+    <div class="reader-nav">
+      <button class="icon" id="reader-prev" type="button" aria-label="Handbook anterior">‹</button>
+      <span id="reader-pos" class="reader-pos"></span>
+      <button class="icon" id="reader-next" type="button" aria-label="Próximo handbook">›</button>
+      <a class="icon" id="reader-tab" href="#" target="_blank" rel="noopener noreferrer"
+         aria-label="Abrir em nova aba" title="Abrir em nova aba">⧉</a>
+    </div>
+  </header>
+  <iframe id="reader-frame" title="Conteúdo do handbook"></iframe>
+</div>
+
+<footer class="foot">
+  <p>Handbook Premium Library · catálogo editorial · conteúdo dos HPs permanece <em>auditing</em> até revisão humana — nada aqui é orientação clínica.</p>
+</footer>
+
+<script src="/biblio/handbook-premium/static/app.js"></script>
+</body>
+</html>

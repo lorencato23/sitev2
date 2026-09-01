@@ -16,12 +16,11 @@ const items: LibraryItem[] = [
   {
     title: "Handbook Premium",
     description:
-      "Biblioteca privada de Handbooks Premium, com catálogo navegável e leitura dos materiais disponíveis na Tailnet.",
+      "Biblioteca pública de Handbooks Premium, com catálogo navegável e leitura dos materiais publicados no site.",
     type: "Coleção",
     area: "Medicina",
-    href: "https://atlas.tailc69edf.ts.net:8443/",
-    external: true,
-    status: "Tailnet",
+    href: "/biblio/handbook-premium",
+    status: "Biblioteca",
   },
   {
     title: "Saúde Mental",
