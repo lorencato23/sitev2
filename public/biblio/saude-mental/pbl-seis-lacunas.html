@@ -118,8 +118,21 @@ li { margin: 0 0 6px; }
 }
 .lacuna { font-family: var(--mono); font-size: 12px; color: var(--muted); margin: 8px 0 12px; }
 .box { padding: 14px 16px; margin: 12px 0 16px; }
-.box.mesa { border-color: #e4d3b0; background: #fbf6ec; }
-.box.alert { border-color: #e7cfc8; background: #fbf4f2; }
+.box.mesa { border-color: #e4d3b0; background: #fbf6ec; border-left: 4px solid var(--gold); }
+.box.alert { border-color: #e7cfc8; background: #fbf4f2; border-left: 4px solid var(--coral); }
+mark {
+  background: #ffe08a;
+  color: inherit;
+  padding: 0 .18em;
+  border-radius: 3px;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+mark.no { background: #ffc9c0; }
+mark.num { background: #cfeedf; }
+@media print {
+  mark, mark.no, mark.num { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+}
 .box h3 { margin: 0 0 8px; color: var(--gold); }
 .table-scroll { overflow-x: auto; margin: 8px 0 14px; }
 table { width: 100%; border-collapse: collapse; font-family: var(--sans); font-size: 14px; line-height: 1.35; min-width: 640px; }
@@ -181,7 +194,7 @@ tr:nth-child(even) td { background: #faf7f2; }
     <p class="kicker">Internato · Saúde mental · educacional · <a href="/biblio/saude-mental">Acervo</a></p>
     <h1>Seis lacunas,<br>uma problematização.</h1>
     <p class="lead">Cada lacuna da foto virou um objetivo. O quadro de cada um é o que se fala na mesa. O texto abaixo é o critério, se alguém pedir a fonte.</p>
-    <p class="meta">22 set 2026 · não é prescrição · sem doses · sem paciente identificado</p>
+    <p class="meta">22 set 2026 · não é prescrição · sem doses · amarelo = o que falar · rosa = o que não fazer · verde = número que fecha o critério</p>
   </div>
 </header>
 <div class="shell">
@@ -220,7 +233,7 @@ tr:nth-child(even) td { background: #faf7f2; }
     <p class="lacuna">Lacuna original: “Diferenciar virada hipomaníaca de resposta à sertralina. Diferenciar de TAB.”</p>
     <div class="box mesa">
       <h3>Para falar em um minuto</h3>
-      <p>Resposta à sertralina é a depressão melhorar, sem um episódio hipomaníaco completo. Irritabilidade, inquietação ou agitação, sozinhas, não fecham hipomania e não fecham bipolar.<span class="cite">[1][2]</span> Hipomania pede humor elevado, expansivo ou irritável mais aumento de energia ou atividade, na maior parte do dia, quase todos os dias, por pelo menos 4 dias, com mudança visível para os outros, sem prejuízo grave, sem internação e sem psicose.<span class="cite">[2]</span> Se o episódio completo continua depois que o efeito fisiológico do antidepressivo já deveria ter passado, isso basta como episódio hipomaníaco ou maníaco e pode sustentar o diagnóstico de bipolar.<span class="cite">[1][2][3]</span> Se a pessoa entra em mania ou hipomania usando antidepressivo em monoterapia, a diretriz manda considerar suspender o antidepressivo e oferecer antipsicótico, tenha ou não suspendido o antidepressivo.<span class="cite">[4]</span></p>
+      <p><mark>Resposta à sertralina é a depressão melhorar, sem um episódio hipomaníaco completo.</mark> Irritabilidade, inquietação ou agitação, sozinhas, <mark class="no">não fecham hipomania e não fecham bipolar.</mark><span class="cite">[1][2]</span> Hipomania pede humor elevado, expansivo ou irritável mais aumento de energia ou atividade, na maior parte do dia, quase todos os dias, por <mark class="num">pelo menos 4 dias</mark>, com mudança visível para os outros, sem prejuízo grave, sem internação e sem psicose.<span class="cite">[2]</span> Se o episódio completo continua <mark>depois que o efeito fisiológico do antidepressivo já deveria ter passado</mark>, isso basta como episódio hipomaníaco ou maníaco e pode sustentar o diagnóstico de bipolar.<span class="cite">[1][2][3]</span> Se a pessoa entra em mania ou hipomania usando antidepressivo em monoterapia, a diretriz manda <mark>considerar suspender o antidepressivo e oferecer antipsicótico</mark>, tenha ou não suspendido o antidepressivo.<span class="cite">[4]</span></p>
     </div>
     <h3>O que conta como resposta</h3>
     <p>Resposta não é “ficar mais agitado” nem “dormir menos e achar isso melhora”. É a síndrome depressiva recuar: humor, interesse, energia, sono, apetite e funcionamento voltam em direção ao basal daquela pessoa, sem um período novo de humor elevado ou irritável com energia aumentada. Sertralina não tem, neste texto, uma regra própria diferente dos outros antidepressivos. A lacuna cita a sertralina porque é o fármaco da discussão. O critério do manual vale para antidepressivo em geral, inclusive eletroconvulsoterapia.<span class="cite">[1][2]</span></p>
@@ -287,7 +300,7 @@ tr:nth-child(even) td { background: #faf7f2; }
     <p class="lacuna">Lacuna original: “Borderline (diag, tratamento)”.</p>
     <div class="box mesa">
       <h3>Para falar em um minuto</h3>
-      <p>É um padrão persistente de relações instáveis, autoimagem instável, desregulação emocional e impulsividade, com pelo menos 5 de 9 critérios, começando até o início da vida adulta.<span class="cite">[7]</span> O humor do borderline muda em horas, em geral por gatilho interpessoal, e raramente dura mais do que alguns dias. No bipolar, o humor é mais sustentado, menos reativo, e costuma vir com mudança de energia e atividade.<span class="cite">[7]</span> O tratamento do transtorno é psicoterapia.<span class="cite">[7][8]</span> A NICE manda não usar fármaco especificamente para borderline, nem para automutilação, instabilidade emocional, comportamento de risco ou sintomas psicóticos transitórios, e não usar antipsicótico em médio e longo prazo para o transtorno.<span class="cite">[8]</span></p>
+      <p>É um padrão persistente de relações instáveis, autoimagem instável, desregulação emocional e impulsividade, com <mark class="num">pelo menos 5 de 9 critérios</mark>, começando até o início da vida adulta.<span class="cite">[7]</span> O humor do borderline <mark>muda em horas</mark>, em geral por gatilho interpessoal, e raramente dura mais do que alguns dias. No bipolar, o humor é mais sustentado, menos reativo, e costuma vir com mudança de energia e atividade.<span class="cite">[7]</span> <mark>O tratamento do transtorno é psicoterapia.</mark><span class="cite">[7][8]</span> A NICE manda <mark class="no">não usar fármaco especificamente para borderline</mark>, nem para automutilação, instabilidade emocional, comportamento de risco ou sintomas psicóticos transitórios, e <mark class="no">não usar antipsicótico em médio e longo prazo</mark> para o transtorno.<span class="cite">[8]</span></p>
     </div>
     <h3>Diagnóstico</h3>
     <p>O Merck, citando o DSM-5-TR, pede um padrão persistente de relações, autoimagem e emoções instáveis, com impulsividade pronunciada, mostrado por 5 ou mais dos itens abaixo. Os sintomas devem ter começado até o início da vida adulta, mas podem aparecer na adolescência.<span class="cite">[7]</span></p>
@@ -327,7 +340,7 @@ tr:nth-child(even) td { background: #faf7f2; }
     <p class="lacuna">Lacuna original: “Transtornos mentais pos-parto”.</p>
     <div class="box mesa">
       <h3>Para falar em um minuto</h3>
-      <p>Depressão pós-parto, na página do Ministério da Saúde, é tristeza profunda, desespero e falta de esperança logo após o parto, e os sintomas precisam surgir até 4 semanas para receber esse nome naquela página.<span class="cite">[9]</span> A NICE organiza o cuidado mental de quem está grávida ou teve bebê no último ano, não só nas 4 semanas.<span class="cite">[10]</span> As duas janelas não se anulam: uma é janela do rótulo, a outra é janela do serviço. Psicose pós-parto não é “depressão que ficou extrema”. A NICE a define como psicose, muitas vezes com mania e/ou depressão, de início imediato, que pode ficar muito grave muito rápido.<span class="cite">[10]</span> Se há história de doença mental grave, ficar alerta nas primeiras 2 semanas. Início súbito pede avaliação especializada em até 4 horas.<span class="cite">[10]</span></p>
+      <p>Depressão pós-parto, na página do Ministério da Saúde, é tristeza profunda, desespero e falta de esperança logo após o parto, e os sintomas precisam surgir <mark class="num">até 4 semanas</mark> para receber esse nome naquela página.<span class="cite">[9]</span> A NICE organiza o cuidado mental de quem está grávida ou teve bebê <mark class="num">no último ano</mark>, não só nas 4 semanas.<span class="cite">[10]</span> As duas janelas não se anulam: uma é janela do rótulo, a outra é janela do serviço. <mark class="no">Psicose pós-parto não é “depressão que ficou extrema”.</mark> A NICE a define como psicose, muitas vezes com mania e/ou depressão, de início imediato, que pode ficar muito grave muito rápido.<span class="cite">[10]</span> Se há história de doença mental grave, ficar alerta nas <mark class="num">primeiras 2 semanas</mark>. Início súbito pede avaliação especializada em <mark class="num">até 4 horas</mark>.<span class="cite">[10]</span></p>
     </div>
     <h3>Três gravidades, sem inventar prevalência</h3>
     <p>A página do Ministério da Saúde não descreve o blues puerperal como categoria própria, e por isso este PBL não cita percentual de blues. O que a página descreve é depressão pós-parto e, como complicação rara e mais grave, psicose pós-parto.<span class="cite">[9]</span> Na discussão, não chame de depressão todo choro dos primeiros dias se não houver síndrome depressiva. Também não chame de “só cansaço” um quadro que preenche depressão ou que tenha psicose.</p>
@@ -354,7 +367,7 @@ tr:nth-child(even) td { background: #faf7f2; }
     <p class="lacuna">Lacuna original: “TAB”. O objetivo 1 já fez o diagnóstico diferencial com a sertralina. Este objetivo é o transtorno em si.</p>
     <div class="box mesa">
       <h3>Para falar em um minuto</h3>
-      <p>Bipolar tipo I exige pelo menos um episódio maníaco. Tipo II exige pelo menos um episódio depressivo maior e um hipomaníaco, e nenhum maníaco. Ciclotimia é um período longo, acima de 2 anos, com sintomas hipomaníacos e depressivos que não fecham episódio completo.<span class="cite">[6]</span> Começa em geral na adolescência, na casa dos 20 ou dos 30. A herdabilidade estimada é de 70 a 90%.<span class="cite">[6]</span> Antidepressivo convencional não é tratamento de primeira linha da depressão bipolar, e monoterapia antidepressiva não é recomendada no tipo I.<span class="cite">[2]</span> Lítio não se corta de uma vez: má adesão ou suspensão rápida aumenta o risco de recaída.<span class="cite">[5]</span></p>
+      <p><mark>Bipolar tipo I exige pelo menos um episódio maníaco.</mark> <mark>Tipo II exige pelo menos um episódio depressivo maior e um hipomaníaco, e nenhum maníaco.</mark> Ciclotimia é um período longo, <mark class="num">acima de 2 anos</mark>, com sintomas hipomaníacos e depressivos que não fecham episódio completo.<span class="cite">[6]</span> Começa em geral na adolescência, na casa dos 20 ou dos 30. A herdabilidade estimada é de 70 a 90%.<span class="cite">[6]</span> <mark class="no">Antidepressivo convencional não é tratamento de primeira linha da depressão bipolar, e monoterapia antidepressiva não é recomendada no tipo I.</mark><span class="cite">[2]</span> <mark class="no">Lítio não se corta de uma vez:</mark> má adesão ou suspensão rápida aumenta o risco de recaída.<span class="cite">[5]</span></p>
     </div>
     <h3>Como classificar</h3>
     <p>O Merck, em revisão de janeiro de 2026 e atualização de maio de 2026, descreve:<span class="cite">[6]</span></p>
@@ -384,7 +397,7 @@ tr:nth-child(even) td { background: #faf7f2; }
     <p class="lacuna">Lacuna original: “transtornos relacionados ao trauma e estressores”.</p>
     <div class="box mesa">
       <h3>Para falar em um minuto</h3>
-      <p>Esse capítulo é agrupado pela causa, não por um sintoma. Todos surgem depois de exposição a evento traumático ou estressor, e podem aparecer como disforia, irritabilidade, dissociação, uso de substância ou insônia, não só como ansiedade.<span class="cite">[13]</span> No DSM-5-TR a lista é: transtorno de apego reativo e transtorno de interação social desinibida, só em crianças; TEPT; transtorno de estresse agudo; transtornos de adaptação; transtorno de luto prolongado; e as categorias especificado e não especificado.<span class="cite">[13]</span> TEPT complexo é diagnóstico da CID-11, não do DSM-5.<span class="cite">[11]</span> Tratamento do TEPT em adulto: TCC focada em trauma; EMDR em condições definidas; não fazer debriefing psicológico; não oferecer benzodiazepínico para prevenir.<span class="cite">[11]</span></p>
+      <p><mark>Esse capítulo é agrupado pela causa, não por um sintoma.</mark> Todos surgem depois de exposição a evento traumático ou estressor, e podem aparecer como disforia, irritabilidade, dissociação, uso de substância ou insônia, não só como ansiedade.<span class="cite">[13]</span> No DSM-5-TR a lista é: transtorno de apego reativo e transtorno de interação social desinibida, só em crianças; TEPT; transtorno de estresse agudo; transtornos de adaptação; transtorno de luto prolongado; e as categorias especificado e não especificado.<span class="cite">[13]</span> <mark>TEPT complexo é diagnóstico da CID-11, não do DSM-5.</mark><span class="cite">[11]</span> Tratamento do TEPT em adulto: <mark>TCC focada em trauma</mark>; EMDR em condições definidas; <mark class="no">não fazer debriefing psicológico</mark>; <mark class="no">não oferecer benzodiazepínico para prevenir</mark>.<span class="cite">[11]</span></p>
     </div>
     <h3>O mapa do capítulo</h3>
     <p>A maioria dos diagnósticos psiquiátricos se agrupa pelo sintoma nuclear. Este grupo é exceção: a porta de entrada é a exposição.<span class="cite">[13]</span> Isso evita dois erros de enfermaria. O primeiro é chamar de ansiedade tudo o que veio depois de um trauma. O segundo é chamar de TEPT toda reação a um estresse.</p>
@@ -426,7 +439,7 @@ tr:nth-child(even) td { background: #faf7f2; }
     <p class="lacuna">Lacuna original: “como registrar o humor no exame psíquico — do momento / da maior parte do tempo”.</p>
     <div class="box mesa">
       <h3>Para falar em um minuto</h3>
-      <p>Registra os dois, em linhas separadas. Humor é a emoção predominante, a da maior parte do tempo. Afeto é a expressão durante a entrevista, a do momento.<span class="cite">[12]</span> Humor deprimido no relato das últimas semanas e choro na consulta não são a mesma frase. O primeiro vai em humor. O segundo vai em afeto, se for a expressividade daquela hora. A duração do humor é dado diagnóstico: semanas na depressão, dias na hipomania.<span class="cite">[12][2]</span></p>
+      <p><mark>Registra os dois, em linhas separadas.</mark> <mark>Humor é a emoção predominante, a da maior parte do tempo.</mark> <mark>Afeto é a expressão durante a entrevista, a do momento.</mark><span class="cite">[12]</span> Humor deprimido no relato das últimas semanas e choro na consulta não são a mesma frase. O primeiro vai em humor. O segundo vai em afeto, se for a expressividade daquela hora. A duração do humor é dado diagnóstico: <mark class="num">semanas na depressão, dias na hipomania</mark>.<span class="cite">[12][2]</span></p>
     </div>
     <h3>Por que a lacuna existe</h3>
     <p>As escolas não usam as palavras do mesmo jeito. Baldaçara e colaboradores, em revisão de 2007 da Santa Casa de São Paulo, mostram que humor e afeto são de uso corrente e de definição heterogênea.<span class="cite">[12]</span> Jaspers separava sentimento, afeto momentâneo intenso e disposição mais duradoura. Schneider tratava afeto como vivência aguda, reativa, com manifestação corporal, e humor como estado prolongado, nem sempre reativo.<span class="cite">[12]</span> Dalgalarrondo, citado nessa revisão, define humor como tônus afetivo basal e difuso, e afeto como a qualidade emocional que acompanha uma ideia; em sentido amplo, afeto também é usado para qualquer humor, sentimento ou emoção.<span class="cite">[12]</span> A confusão da foto é a confusão da literatura. A saída prática é escolher uma convenção e escrever as duas coisas.</p>
