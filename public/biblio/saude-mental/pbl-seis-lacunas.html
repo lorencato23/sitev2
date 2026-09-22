@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>PBL de Saúde Mental — seis lacunas</title>
+<style>
+:root {
+  --paper: #f3eee6;
+  --ink: #1c1915;
+  --soft: #3f3a34;
+  --muted: #6d655c;
+  --line: #e3d9cc;
+  --card: #fffdf9;
+  --hero: #12161c;
+  --hero-ink: #f7f2ea;
+  --gold: #c4a46a;
+  --coral: #c45c4a;
+  --teal: #1c6d68;
+  --display: "Iowan Old Style", Palatino, "Palatino Linotype", "TeX Gyre Pagella", Georgia, serif;
+  --sans: "Segoe UI", "Liberation Sans", sans-serif;
+  --mono: ui-monospace, "Cascadia Mono", "Liberation Mono", monospace;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 72px; }
+.obj, h2, .banner { scroll-margin-top: 72px; }
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--display);
+  font-size: 18px;
+  line-height: 1.55;
+}
+a { color: var(--teal); }
+a:focus-visible, button:focus-visible { outline: 2px solid var(--coral); outline-offset: 3px; }
+.skip {
+  position: absolute;
+  left: 12px;
+  top: 12px;
+  transform: translateY(-160%);
+  background: #fff;
+  color: var(--ink);
+  padding: 8px 12px;
+  z-index: 6;
+  border-radius: 8px;
+}
+.skip:focus { transform: none; }
+.hero {
+  color: var(--hero-ink);
+  background:
+    linear-gradient(rgba(255,255,255,.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.035) 1px, transparent 1px),
+    radial-gradient(900px 420px at 90% 0%, rgba(196,164,106,.18), transparent 60%),
+    var(--hero);
+  background-size: 32px 32px, 32px 32px, auto, auto;
+  padding: 40px 24px 32px;
+}
+.hero-inner { max-width: 980px; margin: 0 auto; }
+.kicker {
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin: 0 0 14px;
+}
+.kicker a { color: var(--gold); }
+h1 {
+  font-family: var(--display);
+  font-weight: 560;
+  font-size: clamp(34px, 5.4vw, 56px);
+  line-height: 1.02;
+  letter-spacing: -.03em;
+  margin: 0 0 16px;
+  max-width: none;
+}
+.lead { max-width: 38em; font-size: 19px; line-height: 1.45; color: #e7dfd3; margin: 0 0 18px; }
+.meta { font-family: var(--mono); font-size: 12px; color: #b7ad9f; margin: 0; }
+.shell { max-width: 1080px; margin: 0 auto; padding: 28px 20px 72px; display: grid; grid-template-columns: 210px minmax(0, 1fr); gap: 36px; align-items: start; }
+.toc { position: sticky; top: 16px; display: flex; flex-direction: column; gap: 4px; }
+.toc::-webkit-scrollbar { display: none; }
+.toc { scrollbar-width: none; }
+.toc a {
+  font-family: var(--sans);
+  font-size: 13px;
+  color: var(--soft);
+  text-decoration: none;
+  padding: 7px 10px;
+  border-radius: 8px;
+}
+.toc a:hover { background: rgba(28,109,104,.08); color: var(--teal); }
+.toc .n { font-family: var(--mono); font-size: 11px; color: var(--gold); margin-right: 6px; }
+main { min-width: 0; }
+.banner, .box, .obj {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+}
+.banner { padding: 14px 16px; margin: 0 0 18px; font-size: 16px; }
+.banner strong { color: var(--ink); }
+h2 { font-size: 28px; line-height: 1.15; letter-spacing: -.02em; margin: 28px 0 10px; }
+h3 { font-family: var(--sans); font-size: 13px; letter-spacing: .04em; text-transform: uppercase; color: var(--teal); margin: 18px 0 6px; }
+p { margin: 0 0 12px; }
+ul, ol { margin: 6px 0 14px; padding-left: 1.2em; }
+li { margin: 0 0 6px; }
+.obj { margin: 22px 0; padding: 18px 18px 8px; }
+.obj-head { display: flex; gap: 10px; align-items: baseline; }
+.obj-head h2 { margin: 0; }
+.num {
+  font-family: var(--mono);
+  font-size: 12px;
+  color: #fff;
+  background: var(--coral);
+  border-radius: 999px;
+  padding: 3px 8px;
+  flex: none;
+}
+.lacuna { font-family: var(--mono); font-size: 12px; color: var(--muted); margin: 8px 0 12px; }
+.box { padding: 14px 16px; margin: 12px 0 16px; }
+.box.mesa { border-color: #e4d3b0; background: #fbf6ec; }
+.box.alert { border-color: #e7cfc8; background: #fbf4f2; }
+.box h3 { margin: 0 0 8px; color: var(--gold); }
+.table-scroll { overflow-x: auto; margin: 8px 0 14px; }
+table { width: 100%; border-collapse: collapse; font-family: var(--sans); font-size: 14px; line-height: 1.35; min-width: 640px; }
+th, td { border: 1px solid var(--line); padding: 8px 9px; vertical-align: top; text-align: left; }
+th { background: var(--hero); color: var(--hero-ink); font-weight: 650; }
+tr:nth-child(even) td { background: #faf7f2; }
+.cite { font-family: var(--mono); font-size: 12px; color: var(--teal); font-weight: 650; white-space: nowrap; }
+.small, .refs { font-size: 14px; color: var(--soft); }
+.refs p { margin: 0 0 10px; padding-left: 2em; text-indent: -2em; hyphens: none; }
+.refs a { overflow-wrap: anywhere; word-break: break-word; }
+@media (max-width: 800px) {
+  body { font-size: 18px; line-height: 1.62; padding-bottom: env(safe-area-inset-bottom); }
+  h1 { font-size: 34px; }
+  h2 { font-size: 26px; }
+  .hero { padding: 28px 18px 22px; padding-top: max(28px, env(safe-area-inset-top)); }
+  .lead { font-size: 17px; }
+  .shell { grid-template-columns: 1fr; padding: 8px 16px 56px; gap: 8px; }
+  .toc {
+    position: sticky; top: 0; z-index: 4;
+    flex-direction: row; overflow-x: auto;
+    background: rgba(243,238,230,.96);
+    padding: 10px 16px;
+    margin: 0 -16px;
+    gap: 8px;
+    -webkit-mask-image: linear-gradient(90deg, #000 0, #000 calc(100% - 36px), transparent);
+    mask-image: linear-gradient(90deg, #000 0, #000 calc(100% - 36px), transparent);
+  }
+  .toc a {
+    white-space: nowrap;
+    border: 1px solid var(--line);
+    background: var(--card);
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+    padding: 0 14px;
+    border-radius: 999px;
+  }
+  .obj, .banner, .box { border-radius: 16px; }
+  .obj { padding: 16px 14px 8px; }
+  .cite { white-space: normal; }
+}
+@media print {
+  body { background: #fff; font-size: 11pt; }
+  .skip, .toc { display: none; }
+  .hero { background: #fff; color: #111; padding: 0 0 12px; }
+  .lead, .meta, .kicker { color: #333; }
+  .shell { display: block; max-width: none; padding: 0; }
+  .obj, .box, .banner { break-inside: auto; box-shadow: none; }
+  a { color: #111; text-decoration: none; }
+}
+@page { size: A4; margin: 16mm; }
+</style>
+</head>
+<body>
+
+<a class="skip" href="#conteudo">Ir para o texto</a>
+<header class="hero">
+  <div class="hero-inner">
+    <p class="kicker">Internato · Saúde mental · educacional · <a href="/biblio/saude-mental">Acervo</a></p>
+    <h1>Seis lacunas,<br>uma problematização.</h1>
+    <p class="lead">Cada lacuna da foto virou um objetivo. O quadro de cada um é o que se fala na mesa. O texto abaixo é o critério, se alguém pedir a fonte.</p>
+    <p class="meta">22 set 2026 · não é prescrição · sem doses · sem paciente identificado</p>
+  </div>
+</header>
+<div class="shell">
+<nav class="toc" aria-label="Objetivos">
+  <a href="#como-usar"><span class="n">00</span>Como usar</a>
+  <a href="#obj-1"><span class="n">01</span>Sertralina</a>
+  <a href="#obj-2"><span class="n">02</span>Borderline</a>
+  <a href="#obj-3"><span class="n">03</span>Pós-parto</a>
+  <a href="#obj-4"><span class="n">04</span>TAB</a>
+  <a href="#obj-5"><span class="n">05</span>Trauma</a>
+  <a href="#obj-6"><span class="n">06</span>Humor</a>
+  <a href="#sintese"><span class="n">+</span>Síntese</a>
+  <a href="#referencias"><span class="n">§</span>Fontes</a>
+</nav>
+<main id="conteudo">
+
+
+<div class="banner">
+    <strong>O que a foto tinha, e o que não tinha.</strong>
+    O manuscrito traz o título “Problematização”, o subtítulo “Lacunas” e seis itens. O caso narrado não está na imagem. Este PBL não inventa paciente. Responde às lacunas e mostra como elas se cruzam: sertralina, virada de humor, transtorno bipolar, borderline, pós-parto, trauma e o modo de escrever o humor no exame psíquico.
+  </div>
+
+  <h2 id="como-usar">Como usar na mesa</h2>
+  <p>Leia o quadro de cada objetivo em voz alta. O texto abaixo é o fundamento, se alguém pedir o critério ou a diretriz. Números entre colchetes são as fontes do final. Onde duas fontes discordam, as duas ficam na mesa. Onde eu não extraí o número, o número não aparece.</p>
+  <ol>
+    <li>Diferenciar virada hipomaníaca de resposta à sertralina, e diferenciar de transtorno afetivo bipolar.</li>
+    <li>Transtorno de personalidade borderline: diagnóstico e tratamento.</li>
+    <li>Transtornos mentais no pós-parto.</li>
+    <li>Transtorno afetivo bipolar.</li>
+    <li>Transtornos relacionados a trauma e a estressores.</li>
+    <li>Como registrar o humor no exame psíquico: o do momento e o da maior parte do tempo.</li>
+  </ol>
+
+  <section class="obj" id="obj-1">
+    <div class="obj-head"><span class="num">01</span><h2 style="margin:0">Virada hipomaníaca, resposta à sertralina e TAB</h2></div>
+    <p class="lacuna">Lacuna original: “Diferenciar virada hipomaníaca de resposta à sertralina. Diferenciar de TAB.”</p>
+    <div class="box mesa">
+      <h3>Para falar em um minuto</h3>
+      <p>Resposta à sertralina é a depressão melhorar, sem um episódio hipomaníaco completo. Irritabilidade, inquietação ou agitação, sozinhas, não fecham hipomania e não fecham bipolar.<span class="cite">[1][2]</span> Hipomania pede humor elevado, expansivo ou irritável mais aumento de energia ou atividade, na maior parte do dia, quase todos os dias, por pelo menos 4 dias, com mudança visível para os outros, sem prejuízo grave, sem internação e sem psicose.<span class="cite">[2]</span> Se o episódio completo continua depois que o efeito fisiológico do antidepressivo já deveria ter passado, isso basta como episódio hipomaníaco ou maníaco e pode sustentar o diagnóstico de bipolar.<span class="cite">[1][2][3]</span> Se a pessoa entra em mania ou hipomania usando antidepressivo em monoterapia, a diretriz manda considerar suspender o antidepressivo e oferecer antipsicótico, tenha ou não suspendido o antidepressivo.<span class="cite">[4]</span></p>
+    </div>
+    <h3>O que conta como resposta</h3>
+    <p>Resposta não é “ficar mais agitado” nem “dormir menos e achar isso melhora”. É a síndrome depressiva recuar: humor, interesse, energia, sono, apetite e funcionamento voltam em direção ao basal daquela pessoa, sem um período novo de humor elevado ou irritável com energia aumentada. Sertralina não tem, neste texto, uma regra própria diferente dos outros antidepressivos. A lacuna cita a sertralina porque é o fármaco da discussão. O critério do manual vale para antidepressivo em geral, inclusive eletroconvulsoterapia.<span class="cite">[1][2]</span></p>
+    <h3>O que não é virada</h3>
+    <p>A nota do DSM-5-TR, reproduzida em material educacional da APA via Neurotorium, é explícita: um ou dois sintomas, em especial irritabilidade, inquietação ou agitação depois do antidepressivo, não bastam para hipomania e não indicam, por si, diátese bipolar.<span class="cite">[1]</span> A mesma cautela está na reprodução dos critérios do DSM-5 usada pela diretriz da Flórida.<span class="cite">[2]</span> Na enfermaria isso às vezes ganha o apelido de “ativação”. Ativação não é diagnóstico do DSM. O que se leva para a mesa é a nota do manual, não o apelido.</p>
+    <h3>O que é virada hipomaníaca</h3>
+    <p>O critério A mudou no DSM-5: não basta humor elevado ou irritável. A mudança de humor tem de vir junto com aumento persistente de atividade ou energia.<span class="cite">[2][3]</span> Para episódio hipomaníaco, a diretriz que reproduz o DSM-5 exige:</p>
+    <ul>
+      <li>período distinto de humor elevado, expansivo ou irritável, e aumento de atividade ou energia, por pelo menos 4 dias seguidos, na maior parte do dia, quase todos os dias;<span class="cite">[2]</span></li>
+      <li>durante esse período, 3 ou mais sintomas da lista da mania (4, se o humor for só irritável), com mudança clara em relação ao habitual;<span class="cite">[2]</span></li>
+      <li>mudança inequívoca do funcionamento, observável por outras pessoas;<span class="cite">[2]</span></li>
+      <li>sem prejuízo acentuado, sem necessidade de internação e sem psicose. Psicose ou internação transformam o episódio em maníaco.<span class="cite">[2]</span></li>
+    </ul>
+    <p>A lista de sintomas usada tanto na mania quanto na hipomania, na mesma fonte, é: autoestima inflada ou grandiosidade; menos necessidade de sono; mais fala ou pressão por falar; fuga de ideias ou pensamento acelerado; distratibilidade; aumento de atividade dirigida a metas ou agitação; envolvimento excessivo em atividades de alto risco.<span class="cite">[2]</span></p>
+    <div class="table-scroll"><table>
+      <thead>
+        <tr><th>Pergunta</th><th>Resposta à sertralina</th><th>Sintoma isolado</th><th>Hipomania</th><th>Mania</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Humor e energia</td>
+          <td>Depressão recua, sem elevação sindrômica</td>
+          <td>Irritabilidade, inquietação ou agitação, um ou dois itens</td>
+          <td>Humor alterado e energia aumentada, juntos</td>
+          <td>O mesmo, com gravidade maior</td>
+        </tr>
+        <tr>
+          <td>Tempo</td>
+          <td>Não há episódio novo</td>
+          <td>Não fecha tempo de episódio</td>
+          <td>Pelo menos 4 dias</td>
+          <td>Pelo menos 1 semana, ou qualquer duração se houver internação</td>
+        </tr>
+        <tr>
+          <td>Gravidade</td>
+          <td>Funcionamento melhora</td>
+          <td>Não basta para diagnóstico</td>
+          <td>Visível, sem prejuízo grave, sem psicose, sem internação</td>
+          <td>Prejuízo acentuado, ou internação, ou psicose</td>
+        </tr>
+        <tr>
+          <td>E o bipolar?</td>
+          <td>Não sugere, sozinha</td>
+          <td>A nota do DSM manda não concluir bipolar</td>
+          <td>Se persistir além do efeito do fármaco, pode contar como episódio</td>
+          <td>Um episódio maníaco fecha bipolar tipo I</td>
+        </tr>
+      </tbody>
+    </table></div>
+    <p class="small">Tabela construída a partir dos critérios e da nota sobre antidepressivo.<span class="cite">[1][2]</span> Não é escala validada.</p>
+    <h3>Quando isso vira TAB, e quando não vira</h3>
+    <p>No DSM-IV, hipomania surgida com antidepressivo tendia a ser critério de exclusão do bipolar tipo II. No DSM-5, se a síndrome continua completa além do efeito fisiológico do tratamento, ela passa a contar como episódio e, portanto, pode fechar bipolar tipo II.<span class="cite">[3]</span> A nota do DSM-5-TR diz o mesmo para hipomania.<span class="cite">[1]</span> Para mania, a nota diz que um episódio maníaco completo nesse contexto é evidência suficiente de episódio maníaco e, portanto, de bipolar tipo I.<span class="cite">[2]</span></p>
+    <p>O outro lado da mesma nota também existe: se não há episódio completo, não se diagnostica bipolar por precaução.<span class="cite">[1][2]</span> O DSM-5 ainda mantém a categoria de transtorno bipolar e relacionado induzido por substância ou medicamento, para o caso em que o quadro é atribuído ao efeito fisiológico do fármaco e não persiste depois dele.<span class="cite">[3][6]</span> Julgar causalidade continua sendo julgamento clínico, não um algoritmo.<span class="cite">[3]</span></p>
+    <div class="box alert">
+      <h3>Conduta que a diretriz escreve, sem dose</h3>
+      <p>Se a pessoa desenvolve mania ou hipomania e está em antidepressivo em monoterapia: considerar suspender o antidepressivo e oferecer antipsicótico (haloperidol, olanzapina, quetiapina ou risperidona), independentemente de o antidepressivo ter sido suspenso.<span class="cite">[4]</span> Essa frase está numa síntese de 2024 da diretriz NICE CG185. A página oficial da mesma diretriz foi atualizada em 2 de setembro de 2025, sobretudo por segurança do valproato; o texto integral da recomendação do antidepressivo não veio na extração da página oficial, então a frase fica ancorada na síntese, não numa citação direta do HTML da NICE.<span class="cite">[4][5]</span></p>
+      <p>Não iniciar valproato pela primeira vez em pessoa com menos de 55 anos, salvo acordo documentado de dois especialistas de que não há outro tratamento eficaz e tolerado, ou de que o risco reprodutivo não se aplica.<span class="cite">[4]</span> Em mulheres e meninas com potencial de engravidar, a NICE CG192 manda não oferecer valproato para tratamento agudo ou de manutenção de problema de saúde mental, salvo se as outras opções falharam ou não foram toleradas e houver programa de prevenção de gravidez.<span class="cite">[10]</span></p>
+      <p>Este objetivo não traz dose, nível sérico nem esquema de retirada. Isso é decisão da equipe, com a bula e a diretriz abertas.</p>
+    </div>
+  </section>
+
+  <section class="obj" id="obj-2">
+    <div class="obj-head"><span class="num">02</span><h2 style="margin:0">Borderline: diagnóstico e tratamento</h2></div>
+    <p class="lacuna">Lacuna original: “Borderline (diag, tratamento)”.</p>
+    <div class="box mesa">
+      <h3>Para falar em um minuto</h3>
+      <p>É um padrão persistente de relações instáveis, autoimagem instável, desregulação emocional e impulsividade, com pelo menos 5 de 9 critérios, começando até o início da vida adulta.<span class="cite">[7]</span> O humor do borderline muda em horas, em geral por gatilho interpessoal, e raramente dura mais do que alguns dias. No bipolar, o humor é mais sustentado, menos reativo, e costuma vir com mudança de energia e atividade.<span class="cite">[7]</span> O tratamento do transtorno é psicoterapia.<span class="cite">[7][8]</span> A NICE manda não usar fármaco especificamente para borderline, nem para automutilação, instabilidade emocional, comportamento de risco ou sintomas psicóticos transitórios, e não usar antipsicótico em médio e longo prazo para o transtorno.<span class="cite">[8]</span></p>
+    </div>
+    <h3>Diagnóstico</h3>
+    <p>O Merck, citando o DSM-5-TR, pede um padrão persistente de relações, autoimagem e emoções instáveis, com impulsividade pronunciada, mostrado por 5 ou mais dos itens abaixo. Os sintomas devem ter começado até o início da vida adulta, mas podem aparecer na adolescência.<span class="cite">[7]</span></p>
+    <ol>
+      <li>Esforços desesperados para evitar abandono, real ou imaginado.</li>
+      <li>Relações instáveis e intensas, que alternam idealização e desvalorização.</li>
+      <li>Autoimagem ou senso de si instável.</li>
+      <li>Impulsividade em pelo menos duas áreas que podem causar dano, como sexo sem proteção, compulsão alimentar ou direção imprudente.</li>
+      <li>Comportamento, gesto ou ameaça suicida repetidos, ou automutilação.</li>
+      <li>Mudanças rápidas de humor, em geral por poucas horas e raramente por mais do que alguns dias.</li>
+      <li>Sentimento persistente de vazio.</li>
+      <li>Raiva intensa e inadequada, ou dificuldade de controlar a raiva.</li>
+      <li>Pensamentos paranoides transitórios ou dissociação grave, disparados por estresse.</li>
+    </ol>
+    <p>Prevalência mediana estimada nos Estados Unidos: 2,7%, podendo chegar a 5,9%. Em internação psiquiátrica, cerca de 20%. Cerca de 75% das pessoas diagnosticadas em tratamento são mulheres, mas na população geral americana a razão é 1:1.<span class="cite">[7]</span> Esses números não são brasileiros. História de abuso físico ou sexual, negligência, separação de cuidadores ou perda parental é comum, e parentes de primeiro grau têm risco cerca de 5 vezes maior.<span class="cite">[7]</span> Isso não significa que trauma cause o diagnóstico sozinho, nem que toda pessoa com trauma tenha borderline.</p>
+    <h3>O que não confundir</h3>
+    <p>Com bipolar: os dois oscilam, mas no borderline a mudança é rápida e reativa a estresse, sobretudo interpessoal. No bipolar, o humor dura mais, reage menos ao ambiente imediato, e há mudança relevante de energia e atividade.<span class="cite">[7]</span> Volte ao objetivo 1: hipomania pede pelo menos 4 dias; mania, uma semana ou internação.<span class="cite">[2]</span> Oscilação de horas não preenche esse tempo.</p>
+    <p>Com TEPT: muitas pessoas com borderline têm história de trauma, mas reexperimentação e hiperativação ligadas ao evento são do TEPT, não do borderline. A comorbidade é alta, e os dois diagnósticos podem coexistir.<span class="cite">[7]</span> O objetivo 5 detalha o TEPT complexo da CID-11, que se parece com borderline na superfície e não é a mesma coisa.</p>
+    <p>Com depressão ou ansiedade: autoimagem negativa, apego inseguro e sensibilidade à rejeição pesam no borderline e em geral não estão no centro de um transtorno de humor ou de ansiedade isolado.<span class="cite">[7]</span> Com uso de substância: impulsividade e mudança de humor durante a intoxicação não fecham borderline; identidade instável e instabilidade afetiva fora do uso ajudam a separar.<span class="cite">[7]</span></p>
+    <p>Risco: o Merck, citando metanálise de 2005, afirma que o risco de suicídio é 40 vezes o da população geral e que cerca de 8 a 10% dessas pessoas morrem por suicídio.<span class="cite">[7]</span> Automutilação não é, automaticamente, tentativa de morrer, mas também não é teatro. A NICE manda avaliar risco dentro da avaliação completa, separar risco imediato de risco de longo prazo, e incluir o risco para outras pessoas e para filhos dependentes.<span class="cite">[8]</span></p>
+    <h3>Tratamento</h3>
+    <p>A base é psicoterapia.<span class="cite">[7]</span> Intervenções com evidência de reduzir comportamento suicida, melhorar depressão e melhorar funcionamento, segundo o Merck, incluem terapia comportamental dialética, STEPPS, tratamento baseado em mentalização, psicoterapia focada na transferência e terapia do esquema.<span class="cite">[7]</span> A NICE não manda escolher uma marca. Manda que a psicoterapia ocorra num serviço com plano compartilhado, cuidado estruturado e supervisão do terapeuta, e que intervenção breve, de menos de 3 meses, não seja usada especificamente para borderline fora de um serviço com essas características.<span class="cite">[8]</span> Monitorar funcionamento, uso de álcool e droga, automutilação, depressão e os sintomas do transtorno, não só “se gostou da sessão”.<span class="cite">[8]</span></p>
+    <p>Fármaco, na NICE CG78:</p>
+    <ul>
+      <li>não usar especificamente para o transtorno nem para sintomas ou comportamentos isolados, como automutilação repetida, instabilidade emocional marcada, comportamento de risco e sintomas psicóticos transitórios;<span class="cite">[8]</span></li>
+      <li>não usar antipsicótico para tratamento de médio e longo prazo do borderline;<span class="cite">[8]</span></li>
+      <li>fármaco pode entrar no tratamento de comorbidade, seguindo a diretriz daquela comorbidade;<span class="cite">[8]</span></li>
+      <li>sedativo, na crise, pode ser considerado com cautela, por prazo combinado e não maior que 1 semana; anti-histamínico sedativo não tem licença para essa indicação no Reino Unido e o consentimento informado deve ser documentado;<span class="cite">[8]</span></li>
+      <li>quem já usa fármaco sem comorbidade diagnosticada deve ter o esquema revisto, com meta de reduzir e suspender o que for desnecessário.<span class="cite">[8]</span></li>
+    </ul>
+    <p>O Merck é um pouco menos restritivo na letra, mas aponta para o mesmo centro: medicamento não é consistentemente eficaz para os sintomas nucleares e deve ser usado com parcimônia, em geral limitado a comorbidade psiquiátrica definida.<span class="cite">[7]</span> Benzodiazepínico e estimulante não são recomendados, pelo risco de dependência, overdose, desinibição e desvio do fármaco.<span class="cite">[7]</span> Se a mesa ouvir “borderline se trata com antipsicótico”, a resposta da diretriz é não.<span class="cite">[8]</span></p>
+    <p>Na porta de entrada, automutilação repetida, risco persistente ou instabilidade emocional marcada justificam considerar encaminhamento para avaliação. Pessoa com o diagnóstico não deve ser excluída de serviço por ter o diagnóstico ou por ter se automutilado.<span class="cite">[8]</span> A diretriz pede atmosfera de esperança: recuperação é possível.<span class="cite">[8]</span></p>
+  </section>
+
+  <section class="obj" id="obj-3">
+    <div class="obj-head"><span class="num">03</span><h2 style="margin:0">Transtornos mentais no pós-parto</h2></div>
+    <p class="lacuna">Lacuna original: “Transtornos mentais pos-parto”.</p>
+    <div class="box mesa">
+      <h3>Para falar em um minuto</h3>
+      <p>Depressão pós-parto, na página do Ministério da Saúde, é tristeza profunda, desespero e falta de esperança logo após o parto, e os sintomas precisam surgir até 4 semanas para receber esse nome naquela página.<span class="cite">[9]</span> A NICE organiza o cuidado mental de quem está grávida ou teve bebê no último ano, não só nas 4 semanas.<span class="cite">[10]</span> As duas janelas não se anulam: uma é janela do rótulo, a outra é janela do serviço. Psicose pós-parto não é “depressão que ficou extrema”. A NICE a define como psicose, muitas vezes com mania e/ou depressão, de início imediato, que pode ficar muito grave muito rápido.<span class="cite">[10]</span> Se há história de doença mental grave, ficar alerta nas primeiras 2 semanas. Início súbito pede avaliação especializada em até 4 horas.<span class="cite">[10]</span></p>
+    </div>
+    <h3>Três gravidades, sem inventar prevalência</h3>
+    <p>A página do Ministério da Saúde não descreve o blues puerperal como categoria própria, e por isso este PBL não cita percentual de blues. O que a página descreve é depressão pós-parto e, como complicação rara e mais grave, psicose pós-parto.<span class="cite">[9]</span> Na discussão, não chame de depressão todo choro dos primeiros dias se não houver síndrome depressiva. Também não chame de “só cansaço” um quadro que preenche depressão ou que tenha psicose.</p>
+    <p>O Ministério diz que não há uma causa única, e liga o quadro a fatores físicos, emocionais, estilo de vida e história de outros transtornos. Na mesma página, afirma que a principal causa é o desequilíbrio hormonal do fim da gravidez.<span class="cite">[9]</span> Trate essa segunda frase como redação da página oficial, não como mecanismo fechado. A NICE não reduz o problema a hormônio: manda perguntar história de doença mental grave, tratamento prévio e doença perinatal grave em parente de primeiro grau, e alerta que no bipolar os sintomas podem começar de repente nas primeiras semanas depois do parto.<span class="cite">[10]</span></p>
+    <p>Homens também podem desenvolver depressão depois do nascimento do bebê, segundo o Ministério.<span class="cite">[9]</span> A diretriz NICE consultada está escrita para a mulher no ciclo gravídico-puerperal.<span class="cite">[10]</span></p>
+    <h3>Como reconhecer, no pré-natal e no puerpério</h3>
+    <p>No primeiro contato e no pós-parto precoce, a NICE manda considerar duas perguntas: no último mês, você tem se sentido para baixo, deprimida ou sem esperança? No último mês, você tem tido pouco interesse ou prazer nas coisas? E o GAD-2, nas últimas 2 semanas: sentir-se nervosa, ansiosa ou no limite; não conseguir parar ou controlar a preocupação.<span class="cite">[10]</span> Resposta positiva a uma das perguntas de depressão, risco ou preocupação clínica: considerar EPDS ou PHQ-9 como parte da avaliação completa, ou encaminhar. GAD-2 com 3 ou mais: GAD-7 ou encaminhamento.<span class="cite">[10]</span> A NICE cita essas escalas como exemplo de monitoramento. Não extraí, nesta rodada, o ponto de corte brasileiro do EPDS, então não invento nota de corte.</p>
+    <p>Perguntar, no primeiro contato, sobre doença mental grave atual ou passada, internação psiquiátrica e doença perinatal grave em mãe, irmã ou filha.<span class="cite">[10]</span> Quem tem ou teve doença mental grave deve ser encaminhada a serviço secundário, de preferência perinatal.<span class="cite">[10]</span></p>
+    <h3>Depressão pós-parto</h3>
+    <p>O Ministério trata o diagnóstico como clínico, considera o quadro um subtipo de depressão maior e usa a janela de 4 semanas. Pode pedir questionário de triagem e exames para tireoide ou outros hormônios.<span class="cite">[9]</span> O tratamento que a página descreve é antidepressivo combinado com psicoterapia, com apoio da família, oferecido no SUS. Equipe de Saúde da Família pode acionar apoio matricial, NASF ou outra equipe de saúde mental. Caso grave vai a CAPS ou serviço de referência. Risco de suicídio ou de infanticídio: encaminhar para internação, de preferência em hospital geral.<span class="cite">[9]</span></p>
+    <p>A NICE, para sintomas depressivos sublimiares persistentes ou depressão leve a moderada na gravidez ou no pós-parto, considera autoajuda facilitada. Para depressão moderada ou grave, considera intervenção psicológica de alta intensidade, por exemplo TCC, e/ou antidepressivo tricíclico, ISRS ou IRSN, se a mulher entende os riscos e prefere medicação, recusa psicoterapia ou não respondeu a ela. Combinação, se a resposta a um só foi insuficiente.<span class="cite">[10]</span> Há um limiar mais alto para começar fármaco nesse período, porque a relação risco-benefício muda. Amamentação entra na conversa antes de decidir: benefício de amamentar, risco do fármaco, risco de suspender fármaco para amamentar.<span class="cite">[10]</span> Não escolhi um ISRS “de preferência” porque a diretriz extraída não elege um nome.</p>
+    <h3>Psicose pós-parto</h3>
+    <p>Aqui as fontes não dizem a mesma coisa, e a diferença importa.</p>
+    <p>O Ministério descreve a psicose como forma rara, mais agressiva e extrema da depressão pós-parto, mais suscetível em quem tem bipolar ou história de psicose pós-parto, com sintomas em geral nas primeiras 3 semanas. Pede tratamento imediato, muitas vezes hospitalar, e, com a segurança garantida, combinação de antidepressivo, antipsicótico e estabilizador de humor; às vezes eletroconvulsoterapia. Alguns fármacos usados nesse quadro não são recomendados na amamentação.<span class="cite">[9]</span></p>
+    <p>A NICE não a define como depressão agravada. Define psicose pós-parto como psicose, frequentemente com mania e/ou sintomas depressivos, no período pós-natal imediato, que pode se tornar muito grave com extrema rapidez.<span class="cite">[10]</span> Alerta nas primeiras 2 semanas se há doença mental grave atual ou passada, ou história familiar perinatal grave em parente de primeiro grau. Início súbito: encaminhar a serviço secundário, de preferência perinatal, para avaliação imediata, em até 4 horas do encaminhamento.<span class="cite">[10]</span></p>
+    <div class="box alert">
+      <h3>O que não misturar</h3>
+      <p>Não tratar psicose puerperal como ajuste de antidepressivo. Não iniciar valproato em pessoa com potencial de engravidar fora da exceção formal da diretriz.<span class="cite">[10]</span> Não separar a mãe do bebê por rotina, nem prometer que todo fármaco é compatível com amamentação. A página do Ministério avisa que alguns não são.<span class="cite">[9]</span> Risco de suicídio ou de infanticídio não espera consulta eletiva.<span class="cite">[9][10]</span></p>
+    </div>
+  </section>
+
+  <section class="obj" id="obj-4">
+    <div class="obj-head"><span class="num">04</span><h2 style="margin:0">Transtorno afetivo bipolar</h2></div>
+    <p class="lacuna">Lacuna original: “TAB”. O objetivo 1 já fez o diagnóstico diferencial com a sertralina. Este objetivo é o transtorno em si.</p>
+    <div class="box mesa">
+      <h3>Para falar em um minuto</h3>
+      <p>Bipolar tipo I exige pelo menos um episódio maníaco. Tipo II exige pelo menos um episódio depressivo maior e um hipomaníaco, e nenhum maníaco. Ciclotimia é um período longo, acima de 2 anos, com sintomas hipomaníacos e depressivos que não fecham episódio completo.<span class="cite">[6]</span> Começa em geral na adolescência, na casa dos 20 ou dos 30. A herdabilidade estimada é de 70 a 90%.<span class="cite">[6]</span> Antidepressivo convencional não é tratamento de primeira linha da depressão bipolar, e monoterapia antidepressiva não é recomendada no tipo I.<span class="cite">[2]</span> Lítio não se corta de uma vez: má adesão ou suspensão rápida aumenta o risco de recaída.<span class="cite">[5]</span></p>
+    </div>
+    <h3>Como classificar</h3>
+    <p>O Merck, em revisão de janeiro de 2026 e atualização de maio de 2026, descreve:<span class="cite">[6]</span></p>
+    <ul>
+      <li>tipo I: pelo menos um episódio maníaco; episódio depressivo ocorre na maioria;</li>
+      <li>tipo II: pelo menos um episódio depressivo maior e um hipomaníaco, sem episódio maníaco;</li>
+      <li>ciclotímico: mais de 2 anos com períodos hipomaníacos e depressivos que não preenchem mania, hipomania ou depressão maior;</li>
+      <li>induzido por substância ou medicamento: perturbação do humor compatível com mania durante ou logo após exposição, intoxicação ou abstinência de uma substância capaz de produzir o quadro;</li>
+      <li>devido a outra condição médica, como síndrome de Cushing ou traumatismo craniano, e que não ocorra só durante delirium;</li>
+      <li>não especificado: traços bipolares claros que não fecham as categorias acima.</li>
+    </ul>
+    <p>Prevalência ao longo da vida, em amostra mundial citada pelo Merck: cerca de 2,5% em homens e 2,3% em mulheres.<span class="cite">[6]</span> Episódios duram de algumas semanas a 6 meses; os depressivos em geral duram mais que os maníacos ou hipomaníacos. Ciclo rápido costuma ser definido como 4 ou mais episódios por ano. A minoria alterna mania e depressão a cada ciclo; na maioria, um polo predomina.<span class="cite">[6]</span></p>
+    <p>O Merck afirma que a incidência de suicídio ao longo da vida é cerca de 20 a 60 vezes a da população geral, e que 15 a 20% das pessoas com bipolar morrem por suicídio, citando revisão de 2019 e a revisão do JAMA de 2023.<span class="cite">[6]</span> São cifras dessa fonte, não de coorte brasileira. O uso clínico é simples: perguntar suicídio em toda fase, não só na depressão.</p>
+    <h3>O que pode precipitar ou imitar</h3>
+    <p>O Merck lista, como gatilhos possíveis de exacerbação, simpatomiméticos como cocaína e anfetamina, álcool, corticosteroide e alguns antidepressivos, com exemplo de tricíclicos e inibidores de recaptação noradrenérgica.<span class="cite">[6]</span> Isso conversa com o objetivo 1, mas não autoriza concluir que toda piora depois de sertralina é bipolar. Hipertireoidismo entra no diagnóstico diferencial que o Merck manda afastar, com T4 e TSH.<span class="cite">[6]</span></p>
+    <p>A avaliação que a NICE descreve, no cuidado secundário, inclui história detalhada de humor, episódios de hiperatividade e desinibição, outros períodos de mudança sustentada, sintomas entre os episódios, gatilhos, padrão de recaída e história familiar.<span class="cite">[5]</span></p>
+    <h3>Tratamento, em princípio, sem dose</h3>
+    <p>Não localizei, nesta rodada, protocolo do Ministério da Saúde específico para TAB. O que segue não é conduta do SUS. É o que as fontes extraídas dizem.</p>
+    <p>Pontos-chave do Merck: o tratamento depende da fase e da gravidade e em geral envolve estabilizador de humor e/ou anticonvulsivante, com exemplos de lítio, valproato, carbamazepina e lamotrigina, e/ou antipsicótico de segunda geração, com exemplos de aripiprazol, lurasidona, olanzapina, quetiapina, risperidona, ziprasidona e cariprazina.<span class="cite">[6]</span> Não reproduzo a ordem de preferência do Merck como se fosse a da NICE.</p>
+    <p>A diretriz da Flórida de 2019-2020, para depressão bipolar aguda, coloca como nível 1 lurasidona ou cariprazina em monoterapia, lamotrigina, quetiapina em monoterapia se for tipo II, lítio, e lurasidona ou lamotrigina associadas a lítio ou divalproato já otimizado. Manda não usar antidepressivo convencional, como ISRS, IRSN, tricíclico ou IMAO, como primeira linha. Monoterapia antidepressiva não é recomendada na depressão do tipo I. No tipo II, a segurança e a eficácia da monoterapia antidepressiva são incertas, mas podem ser apropriadas em circunstâncias selecionadas.<span class="cite">[2]</span> Essa é uma diretriz americana de Medicaid, de 2019-2020, não uma atualização de 2026.</p>
+    <p>Lítio, na página oficial da NICE CG185: avisar que má adesão ou suspensão rápida pode aumentar o risco de recaída; antes de iniciar, peso ou IMC, ureia e eletrólitos incluindo cálcio, taxa de filtração glomerular estimada, função tireoidiana e hemograma.<span class="cite">[5]</span> Não coloquei nível sérico-alvo porque esse número não veio na extração desta rodada.</p>
+    <p>Valproato: ver o alerta do objetivo 1 e do objetivo 3. A atualização de 2 de setembro de 2025 da CG185 alinhou recomendações à segurança do valproato em homens.<span class="cite">[5]</span> Não é fármaco de rotina em pessoa que pode engravidar.<span class="cite">[10]</span></p>
+  </section>
+
+  <section class="obj" id="obj-5">
+    <div class="obj-head"><span class="num">05</span><h2 style="margin:0">Trauma e estressores</h2></div>
+    <p class="lacuna">Lacuna original: “transtornos relacionados ao trauma e estressores”.</p>
+    <div class="box mesa">
+      <h3>Para falar em um minuto</h3>
+      <p>Esse capítulo é agrupado pela causa, não por um sintoma. Todos surgem depois de exposição a evento traumático ou estressor, e podem aparecer como disforia, irritabilidade, dissociação, uso de substância ou insônia, não só como ansiedade.<span class="cite">[13]</span> No DSM-5-TR a lista é: transtorno de apego reativo e transtorno de interação social desinibida, só em crianças; TEPT; transtorno de estresse agudo; transtornos de adaptação; transtorno de luto prolongado; e as categorias especificado e não especificado.<span class="cite">[13]</span> TEPT complexo é diagnóstico da CID-11, não do DSM-5.<span class="cite">[11]</span> Tratamento do TEPT em adulto: TCC focada em trauma; EMDR em condições definidas; não fazer debriefing psicológico; não oferecer benzodiazepínico para prevenir.<span class="cite">[11]</span></p>
+    </div>
+    <h3>O mapa do capítulo</h3>
+    <p>A maioria dos diagnósticos psiquiátricos se agrupa pelo sintoma nuclear. Este grupo é exceção: a porta de entrada é a exposição.<span class="cite">[13]</span> Isso evita dois erros de enfermaria. O primeiro é chamar de ansiedade tudo o que veio depois de um trauma. O segundo é chamar de TEPT toda reação a um estresse.</p>
+    <div class="table-scroll"><table>
+      <thead>
+        <tr><th>Quadro</th><th>O que separa, com a fonte que eu li</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Estresse agudo</td>
+          <td>Diagnóstico do DSM-5 no primeiro mês depois do trauma. Pede 9 ou mais sintomas de qualquer uma de 5 categorias: intrusão, humor negativo, dissociação, evitação e ativação.<span class="cite">[11]</span> O Merck diz que em geral começa logo após o trauma e dura de 3 dias a 1 mês.<span class="cite">[13]</span></td>
+        </tr>
+        <tr>
+          <td>TEPT</td>
+          <td>Pode continuar o estresse agudo, começar um mês ou mais depois, ou ter expressão tardia 6 meses ou mais depois.<span class="cite">[13]</span> Na apresentação: reexperimentação, evitação, hiperativação, alteração negativa de humor e pensamento, entorpecimento, dissociação, desregulação emocional, dificuldade interpessoal, autoimagem negativa.<span class="cite">[11]</span></td>
+        </tr>
+        <tr>
+          <td>TEPT complexo</td>
+          <td>CID-11, não DSM-5. Exige os requisitos do TEPT e mais três: problemas graves e persistentes de regulação do afeto; crença de ser diminuído, derrotado ou sem valor, com vergonha, culpa ou fracasso ligados ao trauma; dificuldade persistente de manter relações e de se sentir próximo. Surge sobretudo após eventos prolongados ou repetidos dos quais é difícil escapar.<span class="cite">[11]</span> O DSM-5 cobre parte dessa complexidade com sintomas de humor e cognição negativos e com o especificador dissociativo, sem criar o diagnóstico.<span class="cite">[11]</span></td>
+        </tr>
+        <tr>
+          <td>Adaptação, luto prolongado, apego</td>
+          <td>Estão na lista do DSM-5-TR citada pelo Merck.<span class="cite">[13]</span> Não reproduzo critérios operacionais deles porque a página extraída nomeia o grupo e não detalha cada critério. Apego reativo e interação social desinibida são diagnósticos de criança.<span class="cite">[13]</span></td>
+        </tr>
+      </tbody>
+    </table></div>
+    <h3>Como perguntar</h3>
+    <p>Perguntar de forma específica sobre reexperimentação, evitação, hiperativação, dissociação, alteração de humor e pensamento, e sobre prejuízo funcional. Perguntar se houve um ou mais eventos traumáticos, que podem ter ocorrido muitos meses ou anos antes, e dar exemplos: acidente grave, agressão física ou sexual, abuso na infância ou doméstico, exposição no trabalho, trauma ligado a doença grave ou ao parto, guerra, tortura.<span class="cite">[11]</span> Parto traumático também aparece na NICE perinatal: parto fisicamente traumático ou vivido como traumático, mesmo quando obstetricamente simples.<span class="cite">[10]</span></p>
+    <h3>Tratamento do TEPT, em adulto</h3>
+    <p>Não oferecer debriefing psicológico focado para prevenir ou tratar TEPT.<span class="cite">[11]</span> Oferecer TCC individual focada em trauma a adulto com estresse agudo ou sintomas clinicamente importantes de TEPT exposto a trauma no último mês, e também a quem apresenta o quadro mais de 1 mês depois do evento.<span class="cite">[11]</span> EMDR: considerar entre 1 e 3 meses depois de trauma não relacionado a combate, se a pessoa prefere EMDR; oferecer EMDR se a apresentação ocorre mais de 3 meses depois de trauma não relacionado a combate.<span class="cite">[11]</span></p>
+    <p>Não oferecer fármaco, inclusive benzodiazepínico, para prevenir TEPT.<span class="cite">[11]</span> Se a pessoa prefere tratamento farmacológico, considerar venlafaxina ou um ISRS, como sertralina, e revisar com regularidade. Em dezembro de 2018, no Reino Unido, só sertralina e paroxetina tinham autorização de comercialização para essa indicação; venlafaxina era uso fora de bula.<span class="cite">[11]</span> Antipsicótico, como risperidona, só como acréscimo, se há sintomas incapacitantes que não responderam, e iniciado por especialista. Também era uso fora de bula.<span class="cite">[11]</span> Sem dose neste PBL.</p>
+    <p>TEPT com depressão: em geral tratar o TEPT primeiro, porque a depressão muitas vezes melhora se o TEPT responde. Tratar a depressão primeiro se ela é grave o bastante para impedir a psicoterapia do TEPT, ou se há risco de a pessoa ferir a si ou a outros.<span class="cite">[11]</span> Não excluir do tratamento só por uso de álcool ou de outra droga.<span class="cite">[11]</span></p>
+    <h3>Com borderline e com o pós-parto</h3>
+    <p>História de trauma não é diagnóstico. Borderline não exige reexperimentação do evento; TEPT exige.<span class="cite">[7][11]</span> TEPT complexo e borderline compartilham desregulação, autoimagem negativa e dificuldade relacional. O que o TEPT complexo acrescenta, na definição que a NICE cita da CID-11, é o núcleo do TEPT depois de exposição extrema, em geral prolongada.<span class="cite">[11]</span> Os dois podem coexistir. Parto pode ser o evento índice de um TEPT, e isso não é a mesma coisa que depressão pós-parto nem que psicose puerperal.<span class="cite">[10][11]</span></p>
+  </section>
+
+  <section class="obj" id="obj-6">
+    <div class="obj-head"><span class="num">06</span><h2 style="margin:0">Humor no exame psíquico: momento ou maior parte do tempo</h2></div>
+    <p class="lacuna">Lacuna original: “como registrar o humor no exame psíquico — do momento / da maior parte do tempo”.</p>
+    <div class="box mesa">
+      <h3>Para falar em um minuto</h3>
+      <p>Registra os dois, em linhas separadas. Humor é a emoção predominante, a da maior parte do tempo. Afeto é a expressão durante a entrevista, a do momento.<span class="cite">[12]</span> Humor deprimido no relato das últimas semanas e choro na consulta não são a mesma frase. O primeiro vai em humor. O segundo vai em afeto, se for a expressividade daquela hora. A duração do humor é dado diagnóstico: semanas na depressão, dias na hipomania.<span class="cite">[12][2]</span></p>
+    </div>
+    <h3>Por que a lacuna existe</h3>
+    <p>As escolas não usam as palavras do mesmo jeito. Baldaçara e colaboradores, em revisão de 2007 da Santa Casa de São Paulo, mostram que humor e afeto são de uso corrente e de definição heterogênea.<span class="cite">[12]</span> Jaspers separava sentimento, afeto momentâneo intenso e disposição mais duradoura. Schneider tratava afeto como vivência aguda, reativa, com manifestação corporal, e humor como estado prolongado, nem sempre reativo.<span class="cite">[12]</span> Dalgalarrondo, citado nessa revisão, define humor como tônus afetivo basal e difuso, e afeto como a qualidade emocional que acompanha uma ideia; em sentido amplo, afeto também é usado para qualquer humor, sentimento ou emoção.<span class="cite">[12]</span> A confusão da foto é a confusão da literatura. A saída prática é escolher uma convenção e escrever as duas coisas.</p>
+    <h3>A convenção para o prontuário</h3>
+    <p>A proposta de Baldaçara adota Strauss: humor são as emoções predominantes do paciente. Tem componente subjetivo, o que a pessoa diz de si, e componente objetivo, o que acompanhante ou equipe observa. Descreve-se com palavra de estado: calmo, triste, ansioso, deprimido, alegre, eufórico, tenso, irritado, apático.<span class="cite">[12]</span> Afeto é a expressão dessas emoções. Várias emoções podem aparecer numa entrevista de 45 a 90 minutos. Afeto é a capacidade, ou o limite, de variar a expressão conforme o conteúdo do pensamento.<span class="cite">[12]</span></p>
+    <p>No humor, anotar estabilidade, reatividade e duração. Estabilidade: se muda ao longo do dia. Reatividade: se muda diante de evento externo. Duração: dias, semanas ou anos. A duração importa para o diagnóstico. A revisão lembra que humor deprimido no episódio depressivo maior precisa persistir por duas semanas ou mais.<span class="cite">[12]</span> Hipomania, no critério já citado, pede 4 dias; mania, 1 semana ou internação.<span class="cite">[2]</span></p>
+    <p>No afeto, anotar variação (plano, restrito), padrão de mudança (fluido, monótono, lábil), adequação ao conteúdo do pensamento, intensidade da expressão (rígido ou embotado, se a expressão está ausente ou muito reduzida) e a capacidade de se relacionar com quem entrevista.<span class="cite">[12]</span></p>
+    <p>A conclusão do artigo é a resposta direta da lacuna: durante a entrevista observa-se um estado basal, o humor, e estados passageiros conforme o contexto, os afetos.<span class="cite">[12]</span> O do momento não substitui o da maior parte do tempo. O da maior parte do tempo não apaga o do momento.</p>
+    <div class="box">
+      <h3>Como escrever, modelo educacional</h3>
+      <p>Humor: deprimido, predominante nas últimas três semanas, estável ao longo do dia, pouco reativo a boas notícias. Relato da pessoa; acompanhante confirma. Afeto: no momento da entrevista, modulado, congruente com o conteúdo, choro quando fala do bebê, sem labilidade extrema, contato preservado.</p>
+      <p class="small">Modelo de redação, não caso real. A lógica vem de Baldaçara/Strauss.<span class="cite">[12]</span> Se o humor predominante e o afeto da hora divergem, as duas linhas ficam. Não se “corrige” uma pela outra.</p>
+    </div>
+    <p>Essa distinção segura os outros objetivos. Virada hipomaníaca é mudança do humor predominante, com energia, por dias, observável por outros.<span class="cite">[2][12]</span> Instabilidade borderline é mudança afetiva de horas, reativa à relação.<span class="cite">[7][12]</span> Choro na visita do puerpério é afeto da hora, até que a duração e o restante da síndrome digam se há humor depressivo.<span class="cite">[9][12]</span></p>
+  </section>
+
+  <h2 id="sintese">O que as seis lacunas perguntam juntas</h2>
+  <ul>
+    <li>Sertralina que “animou” a pessoa não é, por isso, resposta nem bipolar. Conte dias, energia, prejuízo, psicose e se o quadro sobrevive ao efeito do fármaco.<span class="cite">[1][2]</span></li>
+    <li>Horas e gatilho interpessoal puxam para borderline. Dias ou semanas, com energia, puxam para episódio de humor.<span class="cite">[2][7]</span></li>
+    <li>Pós-parto tem janela de 4 semanas no rótulo do Ministério e janela de 1 ano no cuidado da NICE. Psicose nas primeiras 2 semanas é emergência, não ajuste de ISRS.<span class="cite">[9][10]</span></li>
+    <li>Trauma explica parte do borderline e pode produzir TEPT, inclusive depois do parto. Não substitui o critério.<span class="cite">[7][10][11]</span></li>
+    <li>No exame psíquico, humor é o predominante. Afeto é o da entrevista. Os dois entram no texto.<span class="cite">[12]</span></li>
+  </ul>
+
+  <div class="banner">
+    <strong>Limite deste PBL.</strong>
+    Não há caso identificado, não há dose, não há nível sérico de lítio e não há ponto de corte brasileiro do EPDS, porque essas informações não estavam na foto nem nas páginas extraídas. A diretriz da Flórida é de 2019-2020 e não é protocolo do SUS. A frase sobre suspender antidepressivo na mania veio de síntese da NICE, não do HTML oficial extraído. A página do Ministério simplifica a psicose puerperal como depressão extrema e aponta hormônio como causa principal; a NICE descreve outro quadro, e as duas ficam citadas. Nada aqui autoriza prescrever, suspender ou internar sem a equipe e sem a pessoa.
+  </div>
+
+  <h2 id="referencias">Referências</h2>
+  <div class="refs">
+    <p>[1] Neurotorium. DSM-5-TR: hypomanic episode. Publicado em 28 mai. 2024. Nota do DSM-5-TR sobre hipomania durante antidepressivo, citando American Psychiatric Association, DSM-5-TR, 2022. <a href="https://neurotorium.org/slide/dsm-5-tr-hypomanic-episode">https://neurotorium.org/slide/dsm-5-tr-hypomanic-episode</a></p>
+    <p>[2] Florida Medicaid Drug Therapy Management Program for Behavioral Health. Bipolar disorders: adult guidelines, 2019-2020. Reproduz critérios do DSM-5 para mania e hipomania e recomendações de tratamento da depressão bipolar. <a href="https://floridabhcenter.org/wp-content/uploads/2021/02/Bipolar-Disorders_Adult-Guidelines-2019-2020.pdf">https://floridabhcenter.org/wp-content/uploads/2021/02/Bipolar-Disorders_Adult-Guidelines-2019-2020.pdf</a></p>
+    <p>[3] Angst J. Bipolar disorders in DSM-5: strengths, problems and perspectives. Int J Bipolar Disord. 2013;1:12. <a href="https://journalbipolardisorders.springeropen.com/articles/10.1186/2194-7511-1-12">https://journalbipolardisorders.springeropen.com/articles/10.1186/2194-7511-1-12</a></p>
+    <p>[4] Ashtons. Updated NICE Guideline CG185 – Bipolar disorder: assessment and management. 7 mar. 2024. Síntese que reproduz a recomendação sobre mania ou hipomania em uso de antidepressivo e a restrição de início de valproato. <a href="https://ashtons.com/resources/updated-nice-guideline-cg185-bipolar-disorder-assessment-and-management">https://ashtons.com/resources/updated-nice-guideline-cg185-bipolar-disorder-assessment-and-management</a></p>
+    <p>[5] National Institute for Health and Care Excellence. Bipolar disorder: assessment and management. NICE guideline CG185. Publicada em 24 set. 2014, atualizada em 2 set. 2025. <a href="https://www.nice.org.uk/guidance/cg185">https://www.nice.org.uk/guidance/cg185</a></p>
+    <p>[6] Coryell W. Bipolar disorders. Merck Manual Professional Edition. Revisão completa jan. 2026, atualizado mai. 2026. <a href="https://www.merckmanuals.com/professional/psychiatric-disorders/mood-disorders/bipolar-disorders">https://www.merckmanuals.com/professional/psychiatric-disorders/mood-disorders/bipolar-disorders</a></p>
+    <p>[7] Zimmerman M. Borderline personality disorder. Merck Manual Professional Edition. Revisão completa set. 2023, atualizado jan. 2026. Critérios atribuídos ao DSM-5-TR. <a href="https://www.merckmanuals.com/professional/psychiatric-disorders/personality-disorders/borderline-personality-disorder-bpd">https://www.merckmanuals.com/professional/psychiatric-disorders/personality-disorders/borderline-personality-disorder-bpd</a></p>
+    <p>[8] National Institute for Health and Care Excellence. Borderline personality disorder: recognition and management. NICE guideline CG78. Publicada em 28 jan. 2009. <a href="https://www.nice.org.uk/guidance/cg78/chapter/Recommendations">https://www.nice.org.uk/guidance/cg78/chapter/Recommendations</a></p>
+    <p>[9] Brasil. Ministério da Saúde. Depressão pós-parto. Página institucional. <a href="https://www.gov.br/saude/pt-br/assuntos/saude-de-a-a-z/d/depressao-pos-parto">https://www.gov.br/saude/pt-br/assuntos/saude-de-a-a-z/d/depressao-pos-parto</a></p>
+    <p>[10] National Institute for Health and Care Excellence. Antenatal and postnatal mental health: clinical management and service guidance. NICE guideline CG192. Revisada em 30 mai. 2025. <a href="https://www.nice.org.uk/guidance/cg192/chapter/Recommendations">https://www.nice.org.uk/guidance/cg192/chapter/Recommendations</a></p>
+    <p>[11] National Institute for Health and Care Excellence. Post-traumatic stress disorder. NICE guideline NG116. Recomendações, inclusive definição de estresse agudo e de TEPT complexo da CID-11. <a href="https://www.nice.org.uk/guidance/ng116/chapter/Recommendations">https://www.nice.org.uk/guidance/ng116/chapter/Recommendations</a></p>
+    <p>[12] Baldaçara L, Bueno CR, Lima DS, Nóbrega LPC, Sanches M. Humor e afeto. Como defini-los? Arq Med Hosp Fac Cienc Med Santa Casa São Paulo. 2007;52(3):108-13. <a href="https://arquivosmedicos.fcmsantacasasp.edu.br/index.php/AMSCSP/article/viewFile/449/502">https://arquivosmedicos.fcmsantacasasp.edu.br/index.php/AMSCSP/article/viewFile/449/502</a></p>
+    <p>[13] Barnhill JW. Overview of trauma- and stressor-related disorders. Merck Manual Professional Edition. Revisão completa abr. 2026. <a href="https://www.merckmanuals.com/professional/psychiatric-disorders/anxiety-and-trauma-and-stressor-related-disorders/overview-of-trauma-and-stressor-related-disorders">https://www.merckmanuals.com/professional/psychiatric-disorders/anxiety-and-trauma-and-stressor-related-disorders/overview-of-trauma-and-stressor-related-disorders</a></p>
+  </div>
+  <p class="small">Acesso às páginas em 22 de setembro de 2026. Material para estudo de internato. Não substitui avaliação da pessoa, consentimento, bula nem diretriz vigente no serviço.</p>
+
+</main>
+</div>
+</body>
+</html>
