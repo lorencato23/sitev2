@@ -31,6 +31,16 @@ const items: LibraryItem[] = [
     href: "/biblio/saude-mental",
     status: "2 materiais",
   },
+  {
+    title: "Materiais complementares",
+    description:
+      "Acesse diretamente a pasta compartilhada de materiais no Google Drive.",
+    type: "Coleção",
+    area: "Google Drive",
+    href: "https://drive.google.com/drive/folders/1vVUG5VV8y_HIS505qCFmIlkgJXMGOqIa",
+    external: true,
+    status: "Pasta compartilhada",
+  },
 ];
 
 const filters = ["Todos", "Coleções", "Apresentações", "Guias"];
@@ -116,7 +126,15 @@ export function BiblioCatalog() {
               </p>
               <div className="mt-8 flex items-center justify-between border-t border-line pt-5 text-xs font-semibold uppercase tracking-[0.14em] text-muted">
                 <span>{item.area}</span>
-                <span className="text-signal transition-transform group-hover:translate-x-1" aria-hidden="true">→</span>
+                {item.external ? (
+                  <span className="text-signal transition-transform group-hover:translate-x-1">
+                    Abrir pasta no Google Drive <span aria-hidden="true">↗</span>
+                  </span>
+                ) : (
+                  <span className="text-signal transition-transform group-hover:translate-x-1" aria-hidden="true">
+                    →
+                  </span>
+                )}
               </div>
             </a>
           ))}
