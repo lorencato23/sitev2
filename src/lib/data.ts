@@ -181,6 +181,67 @@ export const projects: Project[] = [
   },
 ];
 
+export type DivisionProject = {
+  division: "Health" | "Labs" | "Education" | "Science";
+  title: string;
+  summary: string;
+  status: "Publicado" | "Em desenvolvimento" | "MVP" | "Ativo";
+  note: string;
+};
+
+// Prévia pública das frentes AZLO. Descrições deliberadamente curtas:
+// não expor dados locais, conteúdo clínico não publicado ou detalhes privados.
+export const divisionProjects: DivisionProject[] = [
+  {
+    division: "Health",
+    title: "Neurocirurgia & Neurointervenção",
+    summary:
+      "Produção científica sobre doença cerebrovascular, embolização pré-operatória e tratamento endovascular.",
+    status: "Publicado",
+    note: "Relatos de caso, revisões e comunicação científica.",
+  },
+  {
+    division: "Labs",
+    title: "Hermes Office Next",
+    summary:
+      "Ambiente local-first que aproxima documentos, LibreOffice e agentes de IA com revisão humana.",
+    status: "MVP",
+    note: "Reconstrução em desenvolvimento; sem nuvem ou telemetria no MVP.",
+  },
+  {
+    division: "Labs",
+    title: "Ankinator Studio",
+    summary:
+      "Sistema local para curadoria editorial, exportação compatível com Anki e análise de desempenho.",
+    status: "Ativo",
+    note: "Dados pessoais e conteúdo de estudo permanecem locais.",
+  },
+  {
+    division: "Education",
+    title: "Guia IA para Médicos",
+    summary:
+      "Material didático para compreender LLMs, agentes, prompts e workflows de IA aplicada.",
+    status: "Em desenvolvimento",
+    note: "Projeto educacional; não contém dados clínicos.",
+  },
+  {
+    division: "Science",
+    title: "Revisão Sistemática Nefroespacial",
+    summary:
+      "Investigação sobre alterações renais em microgravidade e seu impacto na saúde de astronautas.",
+    status: "Em desenvolvimento",
+    note: "Projeto acadêmico em execução, com protocolo e auditoria versionados.",
+  },
+  {
+    division: "Science",
+    title: "Método, evidência e agentes",
+    summary:
+      "Pesquisa em construção sobre rastreabilidade, eficiência e confiabilidade em workflows científicos assistidos por IA.",
+    status: "Em desenvolvimento",
+    note: "Linha pública em formação; resultados serão publicados conforme validação.",
+  },
+];
+
 export const publicationStats = [
   { value: "04", label: "Artigos em periódicos" },
   { value: "09", label: "Trabalhos em congressos" },

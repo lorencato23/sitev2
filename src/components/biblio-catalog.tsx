@@ -25,11 +25,11 @@ const items: LibraryItem[] = [
   {
     title: "Saúde Mental",
     description:
-      "Seminário de psicoterapias e PBL das lacunas de saúde mental, para consulta no navegador.",
+      "Ferramenta de exame do estado mental, seminário de psicoterapias e PBL das lacunas de saúde mental, para consulta no navegador.",
     type: "Coleção",
     area: "Saúde mental",
     href: "/biblio/saude-mental",
-    status: "2 materiais",
+    status: "3 materiais",
   },
 ];
 

@@ -156,7 +156,7 @@ function card(it) {
   div.setAttribute("aria-label", `${it.id}: ${it.title}`);
   div.dataset.id = it.id;
   const badge = it.has_content
-    ? `<span class="badge content">conteúdo</span>`
+    ? `<span class="badge content">conteúdo</span><span class="badge audit">${esc(it.status)}</span>`
     : `<span class="badge audit">${esc(it.status)}</span>`;
   div.innerHTML = `
     <div class="card-top">
@@ -218,9 +218,11 @@ async function openDetail(id, { push = true } = {}) {
       <dt>Fonte de diretrizes</dt><dd>${esc(hp.editorial_source_role || "—")}</dd>
     </dl>
     <div class="actions">${action}</div>
-    <p class="notice">${hp.status !== "completed"
-      ? "Este handbook está em auditoria editorial. O conteúdo publicado é material de trabalho e não constitui orientação clínica."
-      : "Handbook marcado como concluído no catálogo, mas aguarda signoff humano final."}</p>`;
+    <p class="notice">${hp.status === "clinical_review"
+      ? "Revisão clínica humana pendente. Este é um rascunho educacional, não um protocolo institucional nem orientação clínica individual."
+      : hp.status !== "completed"
+        ? "Este handbook está em auditoria editorial (" + esc(hp.status) + "). O conteúdo publicado é material de trabalho e não constitui orientação clínica."
+        : "Handbook marcado como concluído no catálogo, mas aguarda signoff humano final."}</p>`;
 
   const readBtn = $("#detail-read");
   if (readBtn) readBtn.addEventListener("click", () => openReader(hp.id));

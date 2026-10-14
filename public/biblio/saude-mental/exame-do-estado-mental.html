@@ -1,0 +1,963 @@
+<!doctype html>
+<html lang="pt-BR" data-tema="claro">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Exame do Estado Mental (EEM) — ferramenta de apoio</title>
+<meta name="description" content="Ferramenta de apoio ao Exame do Estado Mental: selecione os achados por domínio e gere o texto do exame para o prontuário. Funciona offline e nenhum dado sai deste dispositivo.">
+<link rel="canonical" href="https://drlorencato.com/biblio/saude-mental/exame-do-estado-mental.html">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:title" content="Exame do Estado Mental — ferramenta de apoio">
+<meta property="og:description" content="Selecione os achados por domínio e gere o texto do exame mental para o prontuário. Funciona offline; nenhum dado sai deste dispositivo.">
+<meta property="og:url" content="https://drlorencato.com/biblio/saude-mental/exame-do-estado-mental.html">
+<meta name="twitter:card" content="summary">
+<meta name="theme-color" content="#0d9488" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#070d18" media="(prefers-color-scheme: dark)">
+<meta name="color-scheme" content="light dark">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="EEM">
+<meta name="format-detection" content="telephone=no">
+<style>
+  :root{
+    --bg:#f4f7f9; --card:#ffffff; --card-2:#f8fafc; --ink:#0f172a; --ink-2:#475569; --ink-3:#7b8794;
+    --line:#e2e8f0; --line-2:#cbd5e1;
+    --accent:#0d9488; --accent-ink:#ffffff; --accent-soft:#e6f7f5;
+    --warn:#8a4b06; --warn-soft:#fdf0d0; --danger:#b91c1c; --danger-soft:#fee2e2;
+    --ok:#047857;
+    --raio:14px; --sombra:0 1px 2px rgba(15,23,42,.05),0 8px 24px -16px rgba(15,23,42,.25);
+  }
+  html[data-tema="escuro"]{
+    --bg:#070d18; --card:#0f1a2b; --card-2:#132136; --ink:#e8eef8; --ink-2:#a8b6c9; --ink-3:#7d8ea6;
+    --line:#1e2f47; --line-2:#2b405e;
+    --accent:#2dd4bf; --accent-ink:#04211d; --accent-soft:#0c2b28;
+    --warn:#fbbf24; --warn-soft:#3a2c07; --danger:#f87171; --danger-soft:#3a1414;
+    --ok:#34d399;
+    --sombra:0 1px 2px rgba(0,0,0,.4),0 12px 32px -20px rgba(0,0,0,.9);
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0}
+  html{ -webkit-text-size-adjust:100%; color-scheme:light dark; }
+  body{
+    background:var(--bg); color:var(--ink);
+    font:16px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  }
+  /* Celular: sem flash cinza ao tocar e sem atraso/zoom por toque duplo */
+  button,.ficha,.lista-nav button,.abas button,a{ -webkit-tap-highlight-color:transparent; touch-action:manipulation; }
+  h1,h2,h3,h4{margin:0; line-height:1.25; letter-spacing:-.01em}
+  button,input,textarea,select{font:inherit; color:inherit}
+  a{color:var(--accent)}
+
+  /* ---------- topo ---------- */
+  .topo{
+    position:sticky; top:0; z-index:40; backdrop-filter:blur(10px);
+    background:var(--card); /* reserva para navegador sem color-mix (Safari < 16.2) */
+    background:color-mix(in srgb, var(--card) 88%, transparent);
+    border-bottom:1px solid var(--line);
+  }
+  .topo-in{max-width:1280px; margin:0 auto; padding:12px 16px; display:flex; gap:14px; align-items:center; flex-wrap:wrap}
+  .marca{display:flex; align-items:center; gap:10px; min-width:0}
+  .logo{
+    width:38px;height:38px;border-radius:11px;flex:0 0 auto;
+    background:linear-gradient(140deg,var(--accent),#4f46e5);
+    color:#fff; display:grid; place-items:center; font-weight:800; font-size:15px; letter-spacing:-.03em;
+  }
+  .marca h1{font-size:16px}
+  .marca p{margin:1px 0 0; font-size:12px; color:var(--ink-3)}
+  .topo-acoes{margin-left:auto; display:flex; gap:8px; align-items:center; flex-wrap:wrap}
+  .busca{position:relative}
+  .busca input{
+    width:250px; max-width:46vw; padding:9px 12px 9px 34px; border-radius:999px;
+    border:1px solid var(--line-2); background:var(--card-2); outline:none;
+  }
+  .busca input:focus{border-color:var(--accent); box-shadow:0 0 0 3px var(--accent-soft)}
+  .busca svg{position:absolute; left:11px; top:50%; transform:translateY(-50%); opacity:.55; width:15px; height:15px}
+
+  .btn{
+    display:inline-flex; align-items:center; gap:7px; padding:9px 14px; border-radius:10px;
+    border:1px solid var(--line-2); background:var(--card); cursor:pointer; font-size:14px; font-weight:550;
+    transition:transform .06s ease, background .15s ease, border-color .15s ease;
+  }
+  .btn:hover{background:var(--card-2)}
+  .btn:active{transform:translateY(1px)}
+  .btn:focus-visible{outline:2px solid var(--accent); outline-offset:2px}
+  .btn-primario{background:var(--accent); border-color:var(--accent); color:var(--accent-ink)}
+  .btn-primario:hover{background:color-mix(in srgb, var(--accent) 88%, #000)}
+  .btn-fantasma{border-color:transparent; background:transparent; color:var(--ink-2)}
+  .btn-fantasma:hover{background:var(--card-2)}
+  .btn-perigo{color:var(--danger); border-color:color-mix(in srgb, var(--danger) 35%, var(--line-2))}
+  .btn-perigo:hover{background:var(--danger-soft)}
+  .btn[disabled]{opacity:.45; cursor:not-allowed}
+  .btn-sm{padding:6px 10px; font-size:12.5px; border-radius:8px}
+
+  /* ---------- layout ---------- */
+  .envelope{max-width:1280px; margin:0 auto; padding:18px 16px 120px; display:grid; gap:22px; grid-template-columns:290px minmax(0,1fr); align-items:start}
+  @media (max-width:1000px){ .envelope{grid-template-columns:minmax(0,1fr)} }
+
+  .lateral{position:sticky; top:74px; max-height:calc(100vh - 96px); overflow:auto; padding-right:4px}
+  .lateral{ max-height:calc(100dvh - 96px); } /* dvh: não pula quando a barra do Safari aparece */
+  .lateral{ overscroll-behavior:contain; -webkit-overflow-scrolling:touch; }
+  @media (max-width:1000px){ .lateral{position:static; max-height:none; overflow:visible} .lateral.fechado{display:none} }
+  .painel{background:var(--card); border:1px solid var(--line); border-radius:var(--raio); box-shadow:var(--sombra); overflow:hidden}
+  .painel-topo{padding:12px 14px; border-bottom:1px solid var(--line); display:flex; align-items:center; justify-content:space-between; gap:8px}
+  .painel-topo h2{font-size:13px; text-transform:uppercase; letter-spacing:.06em; color:var(--ink-3)}
+  .lista-nav{list-style:none; margin:0; padding:6px}
+  .lista-nav li{margin:0}
+  .lista-nav button{
+    width:100%; display:flex; align-items:center; gap:9px; text-align:left;
+    padding:8px 10px; border:0; background:transparent; border-radius:9px; cursor:pointer; font-size:13.5px;
+  }
+  .lista-nav button:hover{background:var(--card-2)}
+  .lista-nav button.ativo{background:var(--accent-soft); color:var(--accent); font-weight:650}
+  .lista-nav .cont{margin-left:auto; font-size:11.5px; font-variant-numeric:tabular-nums; color:var(--ink-3); background:var(--card-2); border-radius:999px; padding:1px 7px; min-width:22px; text-align:center}
+  .lista-nav button.ativo .cont{background:var(--accent); color:var(--accent-ink)}
+
+  .progresso{height:6px; background:var(--card-2); border-radius:999px; overflow:hidden; margin:10px 12px 4px}
+  .progresso i{display:block; height:100%; width:0; background:linear-gradient(90deg,var(--accent),#4f46e5); transition:width .25s ease}
+  .progresso-txt{padding:0 14px 12px; font-size:12px; color:var(--ink-3)}
+
+  /* ---------- cartões ---------- */
+  .intro{background:var(--card); border:1px solid var(--line); border-radius:var(--raio); box-shadow:var(--sombra); padding:16px; margin-bottom:18px}
+  .intro h2{font-size:15px; margin-bottom:4px}
+  .intro p{margin:0 0 12px; font-size:13.5px; color:var(--ink-2)}
+  .campos{display:grid; gap:10px; grid-template-columns:repeat(auto-fit,minmax(180px,1fr))}
+  .campo label{display:block; font-size:11.5px; text-transform:uppercase; letter-spacing:.05em; color:var(--ink-3); margin-bottom:4px}
+  .campo input,.campo textarea{
+    width:100%; padding:9px 11px; border:1px solid var(--line-2); border-radius:9px; background:var(--card-2); outline:none;
+  }
+  .campo input:focus,.campo textarea:focus{border-color:var(--accent); box-shadow:0 0 0 3px var(--accent-soft)}
+  .campo textarea{resize:vertical; min-height:80px; line-height:1.5}
+
+  .secao{background:var(--card); border:1px solid var(--line); border-radius:var(--raio); box-shadow:var(--sombra); margin-bottom:14px; scroll-margin-top:84px; overflow:hidden}
+  .secao-cab{display:flex; align-items:flex-start; gap:12px; padding:14px 16px; background:var(--card-2); border-bottom:1px solid var(--line)}
+  .secao-cab h3{font-size:15px}
+  .secao-cab p{margin:2px 0 0; font-size:12.5px; color:var(--ink-3)}
+  .secao-cab .dir{margin-left:auto; display:flex; gap:6px; align-items:center; flex:0 0 auto}
+  .marca-sel{font-size:11.5px; padding:2px 9px; border-radius:999px; background:var(--accent); color:var(--accent-ink); font-weight:650}
+  .marca-sel.zero{background:var(--card); color:var(--ink-3); border:1px solid var(--line-2); font-weight:500}
+
+  .secao-corpo{padding:14px 16px}
+  .secao.recolhida .secao-corpo{display:none}
+  .grupo{margin-bottom:14px}
+  .grupo:last-child{margin-bottom:0}
+  .grupo-rot{display:flex; align-items:center; gap:8px; margin-bottom:7px; font-size:11.5px; text-transform:uppercase; letter-spacing:.05em; color:var(--ink-3); font-weight:650}
+  .selo{font-size:10px; text-transform:none; letter-spacing:0; padding:1px 7px; border-radius:999px; background:var(--warn-soft); color:var(--warn); font-weight:600}
+  .selo{ font-weight:800; border:1px solid var(--warn-soft); border-color:color-mix(in srgb, var(--warn) 30%, transparent); }
+  .legenda{display:flex; align-items:center; gap:8px; flex-wrap:wrap; font-size:12.5px; color:var(--ink-2); margin-top:10px}
+  .fichas{display:flex; flex-wrap:wrap; gap:7px}
+  .ficha{
+    border:1px solid var(--line-2); background:var(--card); border-radius:999px; padding:6px 13px;
+    font-size:13px; cursor:pointer; transition:all .12s ease; user-select:none;
+  }
+  .ficha:hover{border-color:var(--accent); background:var(--accent-soft)}
+  .ficha[aria-pressed="true"]{background:var(--accent); border-color:var(--accent); color:var(--accent-ink); font-weight:600}
+  .ficha:focus-visible{outline:2px solid var(--accent); outline-offset:2px}
+  .ficha.personalizada{border-style:dashed}
+  .ficha.personalizada .x{margin-left:7px; opacity:.7; font-weight:700}
+  .ficha.personalizada .x:hover{opacity:1}
+
+  .add-termo{display:flex; gap:8px; margin-top:9px; flex-wrap:wrap}
+  .add-termo input{flex:1 1 220px; padding:8px 11px; border:1px solid var(--line-2); border-radius:9px; background:var(--card-2); outline:none}
+  .add-termo input:focus{border-color:var(--accent); box-shadow:0 0 0 3px var(--accent-soft)}
+
+  /* ---------- resultados da busca ---------- */
+  .busca-painel{background:var(--card); border:1px solid var(--line); border-radius:var(--raio); box-shadow:var(--sombra); padding:10px; margin-bottom:18px; display:none}
+  .busca-painel.on{display:block}
+  .busca-painel h4{font-size:12px; text-transform:uppercase; letter-spacing:.05em; color:var(--ink-3); padding:2px 6px 8px}
+  .busca-lista{max-height:320px; overflow:auto; display:grid; gap:2px}
+  .busca-lista button{
+    display:flex; gap:10px; align-items:center; width:100%; text-align:left; padding:8px 10px;
+    border:0; background:transparent; border-radius:8px; cursor:pointer; font-size:13.5px;
+  }
+  .busca-lista button:hover{background:var(--accent-soft)}
+  .busca-lista .onde{margin-left:auto; font-size:11.5px; color:var(--ink-3); white-space:nowrap}
+  .busca-lista mark{background:color-mix(in srgb,var(--accent) 25%, transparent); color:inherit; border-radius:3px; padding:0 2px}
+
+  /* ---------- barra inferior ---------- */
+  .barra{
+    position:fixed; left:0; right:0; bottom:0; z-index:45; border-top:1px solid var(--line);
+    background:var(--card); /* reserva para navegador sem color-mix */
+    background:color-mix(in srgb, var(--card) 92%, transparent); backdrop-filter:blur(10px);
+    padding-bottom:env(safe-area-inset-bottom, 0px);
+  }
+  .barra-in{max-width:1280px; margin:0 auto; padding:10px 16px; display:flex; align-items:center; gap:12px; flex-wrap:wrap}
+  .barra .resumo{font-size:13px; color:var(--ink-2)}
+  .barra .resumo b{color:var(--ink)}
+  .barra .dir{margin-left:auto; display:flex; gap:8px; flex-wrap:wrap}
+
+  /* ---------- diálogo de saída ---------- */
+  dialog{
+    border:1px solid var(--line); border-radius:16px; padding:0; background:var(--card); color:var(--ink);
+    width:min(880px,94vw); max-height:90vh; box-shadow:0 30px 80px -30px rgba(0,0,0,.6);
+  }
+  dialog{ max-height:90dvh; }
+  dialog::backdrop{background:rgba(8,12,20,.55); backdrop-filter:blur(2px)}
+  .dlg-cab{display:flex; align-items:center; gap:10px; padding:14px 16px; border-bottom:1px solid var(--line); flex-wrap:wrap}
+  .dlg-cab h3{font-size:16px}
+  .abas{display:flex; gap:4px; background:var(--card-2); padding:3px; border-radius:10px; margin-left:auto}
+  .abas button{border:0; background:transparent; padding:6px 12px; border-radius:8px; cursor:pointer; font-size:13px; color:var(--ink-2)}
+  .abas button[aria-selected="true"]{background:var(--card); color:var(--ink); font-weight:600; box-shadow:var(--sombra)}
+  .dlg-corpo{padding:16px; overflow:auto; max-height:calc(90vh - 150px)}
+  .dlg-corpo{ max-height:calc(90dvh - 150px); }
+  #textoSaida{
+    width:100%; height:auto; min-height:240px; padding:14px; border:1px solid var(--line-2); border-radius:11px;
+    background:var(--card-2); font:13.5px/1.6 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+    resize:vertical; outline:none; white-space:pre-wrap; overflow:hidden;
+  }
+  #textoSaida:focus{border-color:var(--accent); box-shadow:0 0 0 3px var(--accent-soft)}
+  .dlg-rodape{display:flex; gap:8px; padding:12px 16px; border-top:1px solid var(--line); flex-wrap:wrap; align-items:center}
+  .aviso{font-size:12.5px; color:var(--warn); background:var(--warn-soft); border-radius:9px; padding:9px 11px; margin-bottom:12px}
+  .aviso.neutro{color:var(--ink-2); background:var(--card-2)}
+  .link-acervo{color:var(--accent); text-decoration:underline; text-underline-offset:2px; white-space:nowrap}
+  .dica{font-size:12px; color:var(--ink-3)}
+
+  .toast{
+    position:fixed; left:50%; bottom:86px; transform:translate(-50%,20px); z-index:60; opacity:0; pointer-events:none;
+    background:var(--ink); color:var(--bg); padding:10px 16px; border-radius:999px; font-size:13.5px; transition:all .2s ease;
+  }
+  .toast.on{opacity:1; transform:translate(-50%,0)}
+
+  /* ---------- telas estreitas: alvos de toque maiores e rodapé sem cobrir conteúdo ---------- */
+  @media (max-width:640px){
+    .topo-acoes{width:100%; gap:6px}
+    .busca{flex:1 1 100%; order:-1}
+    .busca input{width:100%; max-width:none; padding:11px 12px 11px 36px}
+    .envelope{padding:14px 12px 235px}
+    .ficha{padding:9px 15px; min-height:42px; display:inline-flex; align-items:center}
+    .btn{padding:11px 15px}
+    .btn-sm{padding:9px 12px; font-size:13px}
+    .lista-nav button{padding:11px 10px; font-size:14px}
+    .secao-cab{padding:13px 14px}
+    .secao-corpo{padding:13px 14px}
+    .add-termo input{flex:1 1 100%}
+    .add-termo .btn{flex:1 1 100%; justify-content:center}
+    .barra-in{padding:10px 12px; gap:8px}
+    .barra .resumo{flex:1 1 100%}
+    .barra .dir{width:100%; margin-left:0}
+    .barra .dir .btn{flex:1 1 auto; justify-content:center}
+    .barra .dir #btnGerar{flex:1 1 100%}
+    /* Barra sólida: com fundo translúcido as fichas apareciam por baixo e o toque
+       nelas era engolido pela barra — parecia que a seleção não funcionava. */
+    .barra{ background:var(--card); backdrop-filter:none; box-shadow:0 -6px 18px -14px rgba(0,0,0,.5); }
+    .barra-in{padding:8px 12px; gap:6px}
+    .barra .resumo{font-size:12px}
+    .barra .dir .btn{padding:9px 10px; font-size:12.5px}
+    .dlg-cab{padding:12px 14px}
+    .abas{margin-left:0; width:100%}
+    .abas button{flex:1 1 0; padding:9px 6px; font-size:12.5px}
+    .dlg-rodape .btn{flex:1 1 auto; justify-content:center}
+    .toast{bottom:140px; font-size:12.5px; max-width:88vw; text-align:center}
+    /* 16px evita o zoom automático do iOS ao focar o campo */
+    #textoSaida{font-size:16px}
+  }
+
+  /* ---------- impressão ---------- */
+  #impressao{display:none}
+  @media print{
+    body{background:#fff; color:#000}
+    .topo,.barra,.lateral,.intro,.secao,.busca-painel,.toast,.dlg-rodape,.dlg-cab,.aviso{display:none !important}
+    dialog{position:static; width:auto; max-height:none; border:0; box-shadow:none; display:block !important}
+    dialog::backdrop{display:none}
+    .dlg-corpo{max-height:none; padding:0; overflow:visible}
+    #textoSaida{display:none}
+    #impressao{display:block; font:12pt/1.5 Georgia,"Times New Roman",serif; white-space:pre-wrap}
+  }
+</style>
+</head>
+<body>
+
+<header class="topo">
+  <div class="topo-in">
+    <div class="marca">
+      <div class="logo" aria-hidden="true">EEM</div>
+      <div>
+        <h1>Exame do Estado Mental</h1>
+        <p>Estruturado · offline · nada sai deste dispositivo · <a class="link-acervo" id="linkAcervo" href="/biblio/saude-mental">Acervo</a></p>
+      </div>
+    </div>
+    <div class="topo-acoes">
+      <div class="busca">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+        <input id="busca" type="search" placeholder="Buscar termo…" aria-label="Buscar termo no exame"
+               autocomplete="off" autocapitalize="none" autocorrect="off" spellcheck="false"
+               enterkeyhint="search" inputmode="search">
+      </div>
+      <button class="btn btn-sm" id="btnIndice" aria-expanded="true">Índice</button>
+      <button class="btn btn-sm" id="btnTema" title="Alternar tema claro/escuro" aria-label="Alternar tema claro/escuro">◐</button>
+    </div>
+  </div>
+</header>
+
+<div class="envelope">
+  <aside class="lateral" id="lateral">
+    <div class="painel">
+      <div class="painel-topo">
+        <h2>Domínios</h2>
+        <span class="dica" id="contDominios">0</span>
+      </div>
+      <div class="progresso"><i id="barraProgresso"></i></div>
+      <div class="progresso-txt" id="txtProgresso">Nenhum termo selecionado</div>
+      <ul class="lista-nav" id="nav"></ul>
+    </div>
+  </aside>
+
+  <main>
+    <noscript>
+      <div class="aviso" style="margin-bottom:18px">
+        <strong>O JavaScript está desativado neste navegador.</strong>
+        Os domínios estão listados abaixo — servem de consulta —, mas as fichas não respondem ao
+        toque e o botão “Gerar texto” não funciona. Para usar a ferramenta completa, ative o
+        JavaScript ou abra esta página no <strong>Safari</strong>, no <strong>Chrome</strong> ou
+        no <strong>Firefox</strong>.
+      </div>
+    </noscript>
+
+    <section class="intro">
+      <h2>Identificação (opcional)</h2>
+      <p>Preencha os domínios abaixo. Campos em branco não entram no texto final.</p>
+      <div class="campos">
+        <div class="campo"><label for="mNome">Nome ou iniciais</label><input id="mNome" placeholder="Ex.: M.A.S." autocomplete="off" autocapitalize="words" enterkeyhint="next"></div>
+        <div class="campo"><label for="mRegistro">Registro / prontuário</label><input id="mRegistro" placeholder="Ex.: 12345" autocomplete="off" autocapitalize="none" inputmode="numeric" enterkeyhint="next"></div>
+        <div class="campo"><label for="mData">Data do exame</label><input id="mData" type="date"></div>
+      </div>
+      <p class="legenda">
+        <span>Grupos marcados com <span class="selo">escolha única</span> aceitam <strong>1 opção</strong>.</span>
+        <span>Nos demais, marque <strong>quantas quiser</strong>.</span>
+      </p>
+    </section>
+
+    <div class="busca-painel" id="buscaPainel">
+      <h4 id="buscaTitulo">Resultados</h4>
+      <div class="busca-lista" id="buscaLista"></div>
+    </div>
+
+    <div id="secoes"><section class="secao" id="sec-aparencia"><div class="secao-cab"><div><h3>Aparência Geral</h3><p>Higiene, vestes, postura, idade aparente, fácies, autocuidado</p></div><div class="dir"><span class="marca-sel zero" data-cont="aparencia" title="Termos selecionados neste domínio">0</span><button class="btn btn-sm btn-fantasma" data-limpar-secao="aparencia" title="Limpar este domínio">Limpar</button><button class="btn btn-sm btn-fantasma" data-recolher="aparencia" title="Recolher domínio">▾</button></div></div><div class="secao-corpo"><div class="grupo"><div class="grupo-rot"><span>Higiene</span><span class="selo">escolha única</span></div><div class="fichas"><button type="button" class="ficha" aria-pressed="false" data-termo="Boa higiene" data-gi="0">Boa higiene</button><button type="button" class="ficha" aria-pressed="false" data-termo="Higiene regular" data-gi="0">Higiene regular</button><button type="button" class="ficha" aria-pressed="false" data-termo="Higiene precária" data-gi="0">Higiene precária</button></div></div><div class="grupo"><div class="grupo-rot"><span>Vestes</span><span class="selo">escolha única</span></div><div class="fichas"><button type="button" class="ficha" aria-pressed="false" data-termo="Vestes adequadas" data-gi="1">Vestes adequadas</button><button type="button" class="ficha" aria-pressed="false" data-termo="Vestes inadequadas" data-gi="1">Vestes inadequadas</button><button type="button" class="ficha" aria-pressed="false" data-termo="Vestes bizarras" data-gi="1">Vestes bizarras</button><button type="button" class="ficha" aria-pressed="false" data-termo="Vestes descuidadas" data-gi="1">Vestes descuidadas</button></div></div><div class="grupo"><div class="grupo-rot"><span>Idade aparente</span><span class="selo">escolha única</span></div><div class="fichas"><button type="button" class="ficha" aria-pressed="false" data-termo="Idade aparente compatível" data-gi="2">Idade aparente compatível</button><button type="button" class="ficha" aria-pressed="false" data-termo="Idade aparente maior" data-gi="2">Idade aparente maior</button><button type="button" class="ficha" aria-pressed="false" data-termo="Idade aparente menor" data-gi="2">Idade aparente menor</button></div></div><div class="grupo"><div class="grupo-rot"><span>Postura</span><span class="selo">escolha única</span></div><div class="fichas"><button type="button" class="ficha" aria-pressed="false" data-termo="Postura ereta" data-gi="3">Postura ereta</button><button type="button" class="ficha" aria-pressed="false" data-termo="Postura curvada" data-gi="3">Postura curvada</button><button type="button" class="ficha" aria-pressed="false" data-termo="Postura tensa" data-gi="3">Postura tensa</button><button type="button" class="ficha" aria-pressed="false" data-termo="Postura rígida" data-gi="3">Postura rígida</button></div></div><div class="grupo"><div class="grupo-rot"><span>Estado nutricional</span><span class="selo">escolha única</span></div><div class="fichas"><button type="button" class="ficha" aria-pressed="false" data-termo="Bem nutrido" data-gi="4">Bem nutrido</button><button type="button" class="ficha" aria-pressed="false" data-termo="Emagrecido" data-gi="4">Emagrecido</button><button type="button" class="ficha" aria-pressed="false" data-termo="Sobrepeso" data-gi="4">Sobrepeso</button><button type="button" class="ficha" aria-pressed="false" data-termo="Obeso" data-gi="4">Obeso</button><button type="button" class="ficha" aria-pressed="false" data-termo="Caquético" data-gi="4">Caquético</button></div></div><div class="grupo"><div class="grupo-rot"><span>Autocuidado</span><span class="selo">escolha única</span></div><div class="fichas"><button type="button" class="ficha" aria-pressed="false" data-termo="Autocuidado preservado" data-gi="5">Autocuidado preservado</button><button type="button" class="ficha" aria-pressed="false" data-termo="Autocuidado prejudicado" data-gi="5">Autocuidado prejudicado</button><button type="button" class="ficha" aria-pressed="false" data-termo="Autocuidado muito prejudicado" data-gi="5">Autocuidado muito prejudicado</button></div></div><div class="grupo"><div class="grupo-rot"><span>Contato visual</span><span class="selo">escolha única</span></div><div class="fichas"><button type="button" class="ficha" aria-pressed="false" data-termo="Contato visual preservado" data-gi="6">Contato visual preservado</button><button type="button" class="ficha" aria-pressed="false" data-termo="Contato visual reduzido" data-gi="6">Contato visual reduzido</button><button type="button" class="ficha" aria-pressed="false" data-termo="Contato visual evitado" data-gi="6">Contato visual evitado</button><button type="button" class="ficha" aria-pressed="false" data-termo="Contato visual fixo" data-gi="6">Contato visual fixo</button></div></div><div class="grupo"><div class="grupo-rot"><span>Fácies</span></div><div class="fichas"><button type="button" class="ficha" aria-pressed="false" data-termo="Fácies depressiva" data-gi="7">Fácies depressiva</button><button type="button" class="ficha" aria-pressed="false" data-termo="Fácies ansiosa" data-gi="7">Fácies ansiosa</button><button type="button" class="ficha" aria-pressed="false" data-termo="Fácies atípica" data-gi="7">Fácies atípica</button><button type="button" class="ficha" aria-pressed="false" data-termo="Fácies de dor" data-gi="7">Fácies de dor</button><button type="button" class="ficha" aria-pressed="false" data-termo="Fácies hostil" data-gi="7">Fácies hostil</button><button type="button" class="ficha" aria-pressed="false" data-termo="Fácies embotada" data-gi="7">Fácies embotada</button><button type="button" class="ficha" aria-pressed="false" data-termo="Fácies indiferente" data-gi="7">Fácies indiferente</button></div></div><div class="grupo"><div class="grupo-rot"><span>Marcas e sinais corporais</span></div><div class="fichas"><button type="button" class="ficha" aria-pressed="false" data-termo="Cicatrizes de autolesão" data-gi="8">Cicatrizes de autolesão</button><button type="button" class="ficha" aria-pressed="false" data-termo="Lesões cutâneas recentes" data-gi="8">Lesões cutâneas recentes</button><button type="button" class="ficha" aria-pressed="false" data-termo="Ferimentos em cicatrização" data-gi="8">Ferimentos em cicatrização</button><button type="button" class="ficha" aria-pressed="false" data-termo="Sinais de trauma" data-gi="8">Sinais de trauma</button><button type="button" class="ficha" aria-pressed="false" data-termo="Tatuagens" data-gi="8">Tatuagens</button><button type="button" class="ficha" aria-pressed="false" data-termo="Piercings" data-gi="8">Piercings</button></div></div><div class="grupo"><div class="grupo-rot"><span>Aspecto global</span></div><div class="fichas"><button type="button" class="ficha" aria-pressed="false" data-termo="Aparência compatível com a idade referida" data-gi="9">Aparência compatível com a idade referida</button><button type="button" class="ficha" aria-pressed="false" data-termo="Aparência descuidada" data-gi="9">Aparência descuidada</button><button type="button" class="ficha" aria-pressed="false" data-termo="Aparência bizarra" data-gi="9">Aparência bizarra</button></div></div><div class="add-termo"><input type="text" data-novo="aparencia" placeholder="Adicionar termo personalizado…" aria-label="Novo termo para Aparência Geral" autocomplete="off" autocapitalize="sentences" enterkeyhint="done"><button class="btn btn-sm" data-add="aparencia">Adicionar</button></div></div></section><section class="secao" id="sec-atitude"><div class="secao-cab"><div><h3>Atitude e Relação com o Examinador</h3><p>Cooperação, postura na entrevista, comunicação, demanda</p></div><div class="dir"><span class="marca-sel zero" data-cont="atitude" title="Termos selecionados neste domínio">0</span><button class="btn btn-sm btn-fantasma" data-limpar-secao="atitude" title="Limpar este domínio">Limpar</button><button class="btn btn-sm btn-fantasma" data-recolher="atitude" title="Recolher domínio">▾</button></div></div><div class="secao-corpo"><div class="grupo"><div class="grupo-rot"><span>Cooperação</span><span class="selo">escolha única</span></div><div class="fichas"><button type="button" class="ficha" aria-pressed="false" data-termo="Colaborativo" data-gi="0">Colaborativo</button><button type="button" class="ficha" aria-pressed="false" data-termo="Cooperativo" data-gi="0">Cooperativo</button><button type="button" class="ficha" aria-pressed="false" data-termo="Passivo" data-gi="0">Passivo</button><button type="button" class="ficha" aria-pressed="false" data-termo="Opositor" data-gi="0">Opositor</button><button type="button" class="ficha" aria-pressed="false" data-termo="Hostil" data-gi="0">Hostil</button></div></div><div class="grupo"><div class="grupo-rot"><span>Atitude global</span></div><div class="fichas"><button type="button" class="ficha" aria-pressed="false" data-termo="Evasivo" data-gi="1">Evasivo</button><button type="button" class="ficha" aria-pressed="false" data-termo="Desconfiado" data-gi="1">Desconfiado</button><button type="button" class="ficha" aria-pressed="false" data-termo="Indiferente" data-gi="1">Indiferente</button><button type="button" class="ficha" aria-pressed="false" data-termo="Sedutor" data-gi="1">Sedutor</button><button type="button" class="ficha" aria-pressed="false" data-termo="Dramático" data-gi="1">Dramático</button><button type="button" class="ficha" aria-pressed="false" data-termo="Infantilizado" data-gi="1">Infantilizado</button><button type="button" class="ficha" aria-pressed="false" data-termo="Reticente" data-gi="1">Reticente</button><button type="button" class="ficha" aria-pressed="false" data-termo="Prolixo" data-gi="1">Prolixo</button><button type="button" class="ficha" aria-pressed="false" data-termo="Aderente" data-gi="1">Aderente</button><button type="button" class="ficha" aria-pressed="false" data-termo="Manipulador" data-gi="1">Manipulador</button><button type="button" class="ficha" aria-pressed="false" data-termo="Exigente" data-gi="1">Exigente</button><button type="button" class="ficha" aria-pressed="false" data-termo="Queixoso" data-gi="1">Queixoso</button><button type="button" class="ficha" aria-pressed="false" data-termo="Reservado" data-gi="1">Reservado</button><button type="button" class="ficha" aria-pressed="false" data-termo="Amistoso" data-gi="1">Amistoso</button></div></div><div class="grupo"><div class="grupo-rot"><span>Comunicação</span></div><div class="fichas"><button type="button" class="ficha" aria-pressed="false" data-termo="Discurso espontâneo" data-gi="2">Discurso espontâneo</button><button type="button" class="ficha" aria-pressed="false" data-termo="Discurso apenas sob estímulo" data-gi="2">Discurso apenas sob estímulo</button><button type="button" class="ficha" aria-pressed="false" data-termo="Comunicação empobrecida" data-gi="2">Comunicação empobrecida</button><button type="button" class="ficha" aria-pressed="false" data-termo="Comunicação preservada" data-gi="2">Comunicação preservada</button><button type="button" class="ficha" aria-pressed="false" data-termo="Solicita interrupção da entrevista" data-gi="2">Solicita interrupção da entrevista</button></div></div><div class="grupo"><div class="grupo-rot"><span>Colaboração com o exame</span><span class="selo">escolha única</span></div><div class="fichas"><button type="button" class="ficha" aria-pressed="false" data-termo="Colabora com o exame" data-gi="3">Colabora com o exame</button><button type="button" class="ficha" aria-pressed="false" data-termo="Colaboração parcial com o exame" data-gi="3">Colaboração parcial com o exame</button><button type="button" class="ficha" aria-pressed="false" data-termo="Não colabora com o exame" data-gi="3">Não colabora com o exame</button></div></div><div class="grupo"><div class="grupo-rot"><span>Demanda</span></div><div class="fichas"><button type="button" class="ficha" aria-pressed="false" data-termo="Busca ativa por tratamento" data-gi="4">Busca ativa por tratamento</button><button type="button" class="ficha" aria-pressed="false" data-termo="Demanda trazida por terceiros" data-gi="4">Demanda trazida por terceiros</button><button type="button" class="ficha" aria-pressed="false" data-termo="Demanda judicial" data-gi="4">Demanda judicial</button><button type="button" class="ficha" aria-pressed="false" data-termo="Sem demanda de tratamento" data-gi="4">Sem demanda de tratamento</button><button type="button" class="ficha" aria-pressed="false" data-termo="Demanda ambivalente" data-gi="4">Demanda ambivalente</button></div></div><div class="add-termo"><input type="text" data-novo="atitude" placeholder="Adicionar termo personalizado…" aria-label="Novo termo para Atitude e Relação com o Examinador" autocomplete="off" autocapitalize="sentences" enterkeyhint="done"><button class="btn btn-sm" data-add="atitude">Adicionar</button></div></div></section><section class="secao" id="sec-consciencia"><div class="secao-cab"><div><h3>Consciência</h3><p>Nível de alerta, clareza e flutuação da consciência</p></div><div class="dir"><span class="marca-sel zero" data-cont="consciencia" title="Termos selecionados neste domínio">0</span><button class="btn btn-sm btn-fantasma" data-limpar-secao="consciencia" title="Limpar este domínio">Limpar</button><button class="btn btn-sm btn-fantasma" data-recolher="consciencia" title="Recolher domínio">▾</button></div></div><div class="secao-corpo"><div class="grupo"><div class="grupo-rot"><span>Nível de consciência</span><span class="selo">escolha única</span></div><div class="fichas"><button type="button" class="ficha" aria-pressed="false" data-termo="Vigil" data-gi="0">Vigil</button><button type="button" class="ficha" aria-pressed="false" data-termo="Lúcido" data-gi="0">Lúcido</button><button type="button" class="ficha" aria-pressed="false" data-termo="Sonolento" data-gi="0">Sonolento</button><button type="button" class="ficha" aria-pressed="false" data-termo="Obnubilado" data-gi="0">Obnubilado</button><button type="button" class="ficha" aria-pressed="false" data-termo="Torporoso" data-gi="0">Torporoso</button><button type="button" class="ficha" aria-pressed="false" data-termo="Comatoso" data-gi="0">Comatoso</button></div></div><div class="grupo"><div class="grupo-rot"><span>Clareza</span><span class="selo">escolha única</span></div><div class="fichas"><button type="button" class="ficha" aria-pressed="false" data-termo="Clareza preservada" data-gi="1">Clareza preservada</button><button type="button" class="ficha" aria-pressed="false" data-termo="Confuso" data-gi="1">Confuso</button><button type="button" class="ficha" aria-pressed="false" data-termo="Delirium" data-gi="1">Delirium</button><button type="button" class="ficha" aria-pressed="false" data-termo="Estado crepuscular" data-gi="1">Estado crepuscular</button></div></div><div class="grupo"><div class="grupo-rot"><span>Grau de rebaixamento</span><span class="selo">escolha única</span></div><div class="fichas"><button type="button" class="ficha" aria-pressed="false" data-termo="Sem rebaixamento" data-gi="2">Sem rebaixamento</button><button type="button" class="ficha" aria-pressed="false" data-termo="Rebaixamento leve" data-gi="2">Rebaixamento leve</button><button type="button" class="ficha" aria-pressed="false" data-termo="Rebaixamento moderado" data-gi="2">Rebaixamento moderado</button><button type="button" class="ficha" aria-pressed="false" data-termo="Rebaixamento grave" data-gi="2">Rebaixamento grave</button><button type="button" class="ficha" aria-pressed="false" data-termo="Hipervigil" data-gi="2">Hipervigil</button></div></div><div class="grupo"><div class="grupo-rot"><span>Flutuação</span></div><div class="fichas"><button type="button" class="ficha" aria-pressed="false" data-termo="Flutuação do nível de consciência" data-gi="3">Flutuação do nível de consciência</button><button type="button" class="ficha" aria-pressed="false" data-termo="Períodos de lucidez intercalados" data-gi="3">Períodos de lucidez intercalados</button><button type="button" class="ficha" aria-pressed="false" data-termo="Sonolência diurna excessiva" data-gi="3">Sonolência diurna excessiva</button></div></div><div class="add-termo"><input type="text" data-novo="consciencia" placeholder="Adicionar termo personalizado…" aria-label="Novo termo para Consciência" autocomplete="off" autocapitalize="sentences" enterkeyhint="done"><button class="btn btn-sm" data-add="consciencia">Adicionar</button></div></div></section><section class="secao" id="sec-orientacao"><div class="secao-cab"><div><h3>Orientação</h3><p>Orientação autopsíquica e alopsíquica: tempo, espaço, pessoa e situação</p></div><div class="dir"><span class="marca-sel zero" data-cont="orientacao" title="Termos selecionados neste domínio">0</span><button class="btn btn-sm btn-fantasma" data-limpar-secao="orientacao" title="Limpar este domínio">Limpar</button><button class="btn btn-sm btn-fantasma" data-recolher="orientacao" title="Recolher domínio">▾</button></div></div><div class="secao-corpo"><div class="grupo"><div class="grupo-rot"><span>Global</span><span class="selo">escolha única</span></div><div class="fichas"><button type="button" class="ficha" aria-pressed="false" data-termo="Orientado globalmente" data-gi="0">Orientado globalmente</button><button type="button" class="ficha" aria-pressed="false" data-termo="Desorientado globalmente" data-gi="0">Desorientado globalmente</button></div></div><div class="grupo"><div class="grupo-rot"><span>Tempo</span><span class="selo">escolha única</span></div><div class="fichas"><button type="button" class="ficha" aria-pressed="false" data-termo="Orientado no tempo" data-gi="1">Orientado no tempo</button><button type="button" class="ficha" aria-pressed="false" data-termo="Desorientado no tempo" data-gi="1">Desorientado no tempo</button><button type="button" class="ficha" aria-pressed="false" data-termo="Desorientação temporal parcial" data-gi="1">Desorientação temporal parcial</button></div></div><div class="grupo"><div class="grupo-rot"><span>Espaço</span><span class="selo">escolha única</span></div><div class="fichas"><button type="button" class="ficha" aria-pressed="false" data-termo="Orientado no espaço" data-gi="2">Orientado no espaço</button><button type="button" class="ficha" aria-pressed="false" data-termo="Desorientado no espaço" data-gi="2">Desorientado no espaço</button><button type="button" class="ficha" aria-pressed="false" data-termo="Desorientação espacial parcial" data-gi="2">Desorientação espacial parcial</button></div></div><div class="grupo"><div class="grupo-rot"><span>Pessoa</span><span class="selo">escolha única</span></div><div class="fichas"><button type="button" class="ficha" aria-pressed="false" data-termo="Orientado quanto à própria pessoa" data-gi="3">Orientado quanto à própria pessoa</button><button type="button" class="ficha" aria-pressed="false" data-termo="Desorientado autopsiquicamente" data-gi="3">Desorientado autopsiquicamente</button></div></div><div class="grupo"><div class="grupo-rot"><span>Situação</span><span class="selo">escolha única</span></div><div class="fichas"><button type="button" class="ficha" aria-pressed="false" data-termo="Orientado quanto à situação" data-gi="4">Orientado quanto à situação</button><button type="button" class="ficha" aria-pressed="false" data-termo="Desorientado quanto à situação" data-gi="4">Desorientado quanto à situação</button></div></div><div class="grupo"><div class="grupo-rot"><span>Categoria da orientação</span></div><div class="fichas"><button type="button" class="ficha" aria-pressed="false" data-termo="Orientado alopsiquicamente" data-gi="5">Orientado alopsiquicamente</button><button type="button" class="ficha" aria-pressed="false" data-termo="Desorientado alopsiquicamente" data-gi="5">Desorientado alopsiquicamente</button><button type="button" class="ficha" aria-pressed="false" data-termo="Dupla orientação" data-gi="5">Dupla orientação</button><button type="button" class="ficha" aria-pressed="false" data-termo="Desorientação flutuante" data-gi="5">Desorientação flutuante</button></div></div><div class="add-termo"><input type="text" data-novo="orientacao" placeholder="Adicionar termo personalizado…" aria-label="Novo termo para Orientação" autocomplete="off" autocapitalize="sentences" enterkeyhint="done"><button class="btn btn-sm" data-add="orientacao">Adicionar</button></div></div></section><section class="secao" id="sec-atencao"><div class="secao-cab"><div><h3>Atenção e Concentração</h3><p>Capacidade de focar, manter e alternar a atenção</p></div><div class="dir"><span class="marca-sel zero" data-cont="atencao" title="Termos selecionados neste domínio">0</span><button class="btn btn-sm btn-fantasma" data-limpar-secao="atencao" title="Limpar este domínio">Limpar</button><button class="btn btn-sm btn-fantasma" data-recolher="atencao" title="Recolher domínio">▾</button></div></div><div class="secao-corpo"><div class="grupo"><div class="grupo-rot"><span>Atenção</span><span class="selo">escolha única</span></div><div class="fichas"><button type="button" class="ficha" aria-pressed="false" data-termo="Atenção preservada" data-gi="0">Atenção preservada</button><button type="button" class="ficha" aria-pressed="false" data-termo="Atenção diminuída" data-gi="0">Atenção diminuída</button><button type="button" class="ficha" aria-pressed="false" data-termo="Atenção aumentada" data-gi="0">Atenção aumentada</button><button type="button" class="ficha" aria-pressed="false" data-termo="Aprosexia" data-gi="0">Aprosexia</button></div></div><div class="grupo"><div class="grupo-rot"><span>Concentração</span><span class="selo">escolha única</span></div><div class="fichas"><button type="button" class="ficha" aria-pressed="false" data-termo="Concentração preservada" data-gi="1">Concentração preservada</button><button type="button" class="ficha" aria-pressed="false" data-termo="Dificuldade de concentração" data-gi="1">Dificuldade de concentração</button><button type="button" class="ficha" aria-pressed="false" data-termo="Hipoprosexia" data-gi="1">Hipoprosexia</button><button type="button" class="ficha" aria-pressed="false" data-termo="Hiperprosexia" data-gi="1">Hiperprosexia</button><button type="button" class="ficha" aria-pressed="false" data-termo="Distraibilidade" data-gi="1">Distraibilidade</button></div></div><div class="grupo"><div class="grupo-rot"><span>Modalidades</span></div><div class="fichas"><button type="button" class="ficha" aria-pressed="false" data-termo="Atenção voluntária preservada" data-gi="2">Atenção voluntária preservada</button><button type="button" class="ficha" aria-pressed="false" data-termo="Atenção espontânea preservada" data-gi="2">Atenção espontânea preservada</button><button type="button" class="ficha" aria-pressed="false" data-termo="Fatigabilidade atencional" data-gi="2">Fatigabilidade atencional</button><button type="button" class="ficha" aria-pressed="false" data-termo="Atenção seletiva prejudicada" data-gi="2">Atenção seletiva prejudicada</button><button type="button" class="ficha" aria-pressed="false" data-termo="Atenção sustentada prejudicada" data-gi="2">Atenção sustentada prejudicada</button><button type="button" class="ficha" aria-pressed="false" data-termo="Atenção dividida prejudicada" data-gi="2">Atenção dividida prejudicada</button></div></div><div class="add-termo"><input type="text" data-novo="atencao" placeholder="Adicionar termo personalizado…" aria-label="Novo termo para Atenção e Concentração" autocomplete="off" autocapitalize="sentences" enterkeyhint="done"><button class="btn btn-sm" data-add="atencao">Adicionar</button></div></div></section><section class="secao" id="sec-memoria"><div class="secao-cab"><div><h3>Memória</h3><p>Memória imediata, recente e remota; alterações qualitativas</p></div><div class="dir"><span class="marca-sel zero" data-cont="memoria" title="Termos selecionados neste domínio">0</span><button class="btn btn-sm btn-fantasma" data-limpar-secao="memoria" title="Limpar este domínio">Limpar</button><button class="btn btn-sm btn-fantasma" data-recolher="memoria" title="Recolher domínio">▾</button></div></div><div class="secao-corpo"><div class="grupo"><div class="grupo-rot"><span>Geral</span><span class="selo">escolha única</span></div><div class="fichas"><button type="button" class="ficha" aria-pressed="false" data-termo="Memória preservada" data-gi="0">Memória preservada</button><button type="button" class="ficha" aria-pressed="false" data-termo="Memória prejudicada" data-gi="0">Memória prejudicada</button></div></div><div class="grupo"><div class="grupo-rot"><span>Imediata</span><span class="selo">escolha única</span></div><div class="fichas"><button type="button" class="ficha" aria-pressed="false" data-termo="Memória imediata preservada" data-gi="1">Memória imediata preservada</button><button type="button" class="ficha" aria-pressed="false" data-termo="Memória imediata prejudicada" data-gi="1">Memória imediata prejudicada</button></div></div><div class="grupo"><div class="grupo-rot"><span>Recente</span><span class="selo">escolha única</span></div><div class="fichas"><button type="button" class="ficha" aria-pressed="false" data-termo="Memória recente preservada" data-gi="2">Memória recente preservada</button><button type="button" class="ficha" aria-pressed="false" data-termo="Memória recente prejudicada" data-gi="2">Memória recente prejudicada</button></div></div><div class="grupo"><div class="grupo-rot"><span>Remota</span><span class="selo">escolha única</span></div><div class="fichas"><button type="button" class="ficha" aria-pressed="false" data-termo="Memória remota preservada" data-gi="3">Memória remota preservada</button><button type="button" class="ficha" aria-pressed="false" data-termo="Memória remota prejudicada" data-gi="3">Memória remota prejudicada</button></div></div><div class="grupo"><div class="grupo-rot"><span>Alterações qualitativas</span></div><div class="fichas"><button type="button" class="ficha" aria-pressed="false" data-termo="Amnésia anterógrada" data-gi="4">Amnésia anterógrada</button><button type="button" class="ficha" aria-pressed="false" data-termo="Amnésia retrógrada" data-gi="4">Amnésia retrógrada</button><button type="button" class="ficha" aria-pressed="false" data-termo="Amnésia lacunar" data-gi="4">Amnésia lacunar</button><button type="button" class="ficha" aria-pressed="false" data-termo="Hipermnésia" data-gi="4">Hipermnésia</button><button type="button" class="ficha" aria-pressed="false" data-termo="Paramnésia" data-gi="4">Paramnésia</button><button type="button" class="ficha" aria-pressed="false" data-termo="Confabulação" data-gi="4">Confabulação</button><button type="button" class="ficha" aria-pressed="false" data-termo="Falso reconhecimento" data-gi="4">Falso reconhecimento</button><button type="button" class="ficha" aria-pressed="false" data-termo="Déjà vu" data-gi="4">Déjà vu</button><button type="button" class="ficha" aria-pressed="false" data-termo="Jamais vu" data-gi="4">Jamais vu</button><button type="button" class="ficha" aria-pressed="false" data-termo="Ilusão de memória" data-gi="4">Ilusão de memória</button></div></div><div class="grupo"><div class="grupo-rot"><span>Queixas</span></div><div class="fichas"><button type="button" class="ficha" aria-pressed="false" data-termo="Queixa de esquecimentos" data-gi="5">Queixa de esquecimentos</button><button type="button" class="ficha" aria-pressed="false" data-termo="Esquecimentos relatados por terceiros" data-gi="5">Esquecimentos relatados por terceiros</button><button type="button" class="ficha" aria-pressed="false" data-termo="Uso de recursos compensatórios" data-gi="5">Uso de recursos compensatórios</button></div></div><div class="add-termo"><input type="text" data-novo="memoria" placeholder="Adicionar termo personalizado…" aria-label="Novo termo para Memória" autocomplete="off" autocapitalize="sentences" enterkeyhint="done"><button class="btn btn-sm" data-add="memoria">Adicionar</button></div></div></section><section class="secao" id="sec-linguagem"><div class="secao-cab"><div><h3>Linguagem</h3><p>Fluência, compreensão, nomeação, repetição, leitura e escrita</p></div><div class="dir"><span class="marca-sel zero" data-cont="linguagem" title="Termos selecionados neste domínio">0</span><button class="btn btn-sm btn-fantasma" data-limpar-secao="linguagem" title="Limpar este domínio">Limpar</button><button class="btn btn-sm btn-fantasma" data-recolher="linguagem" title="Recolher domínio">▾</button></div></div><div class="secao-corpo"><div class="grupo"><div class="grupo-rot"><span>Geral</span><span class="selo">escolha única</span></div><div class="fichas"><button type="button" class="ficha" aria-pressed="false" data-termo="Linguagem preservada" data-gi="0">Linguagem preservada</button><button type="button" class="ficha" aria-pressed="false" data-termo="Linguagem alterada" data-gi="0">Linguagem alterada</button></div></div><div class="grupo"><div class="grupo-rot"><span>Fluência</span><span class="selo">escolha única</span></div><div class="fichas"><button type="button" class="ficha" aria-pressed="false" data-termo="Fluência normal" data-gi="1">Fluência normal</button><button type="button" class="ficha" aria-pressed="false" data-termo="Fluência aumentada" data-gi="1">Fluência aumentada</button><button type="button" class="ficha" aria-pressed="false" data-termo="Fluência diminuída" data-gi="1">Fluência diminuída</button></div></div><div class="grupo"><div class="grupo-rot"><span>Compreensão</span><span class="selo">escolha única</span></div><div class="fichas"><button type="button" class="ficha" aria-pressed="false" data-termo="Compreensão preservada" data-gi="2">Compreensão preservada</button><button type="button" class="ficha" aria-pressed="false" data-termo="Compreensão prejudicada" data-gi="2">Compreensão prejudicada</button></div></div><div class="grupo"><div class="grupo-rot"><span>Nomeação</span><span class="selo">escolha única</span></div><div class="fichas"><button type="button" class="ficha" aria-pressed="false" data-termo="Nomeação preservada" data-gi="3">Nomeação preservada</button><button type="button" class="ficha" aria-pressed="false" data-termo="Nomeação prejudicada" data-gi="3">Nomeação prejudicada</button></div></div><div class="grupo"><div class="grupo-rot"><span>Repetição</span><span class="selo">escolha única</span></div><div class="fichas"><button type="button" class="ficha" aria-pressed="false" data-termo="Repetição preservada" data-gi="4">Repetição preservada</button><button type="button" class="ficha" aria-pressed="false" data-termo="Repetição prejudicada" data-gi="4">Repetição prejudicada</button></div></div><div class="grupo"><div class="grupo-rot"><span>Leitura e escrita</span><span class="selo">escolha única</span></div><div class="fichas"><button type="button" class="ficha" aria-pressed="false" data-termo="Leitura e escrita preservadas" data-gi="5">Leitura e escrita preservadas</button><button type="button" class="ficha" aria-pressed="false" data-termo="Leitura e escrita prejudicadas" data-gi="5">Leitura e escrita prejudicadas</button><button type="button" class="ficha" aria-pressed="false" data-termo="Alexia" data-gi="5">Alexia</button><button type="button" class="ficha" aria-pressed="false" data-termo="Disgrafia" data-gi="5">Disgrafia</button></div></div><div class="grupo"><div class="grupo-rot"><span>Alterações</span></div><div class="fichas"><button type="button" class="ficha" aria-pressed="false" data-termo="Sem afasia" data-gi="6">Sem afasia</button><button type="button" class="ficha" aria-pressed="false" data-termo="Afasia de Broca" data-gi="6">Afasia de Broca</button><button type="button" class="ficha" aria-pressed="false" data-termo="Afasia de Wernicke" data-gi="6">Afasia de Wernicke</button><button type="button" class="ficha" aria-pressed="false" data-termo="Afasia global" data-gi="6">Afasia global</button><button type="button" class="ficha" aria-pressed="false" data-termo="Afasia de condução" data-gi="6">Afasia de condução</button><button type="button" class="ficha" aria-pressed="false" data-termo="Disartria" data-gi="6">Disartria</button><button type="button" class="ficha" aria-pressed="false" data-termo="Dislalia" data-gi="6">Dislalia</button><button type="button" class="ficha" aria-pressed="false" data-termo="Mutismo" data-gi="6">Mutismo</button><button type="button" class="ficha" aria-pressed="false" data-termo="Ecolalia" data-gi="6">Ecolalia</button><button type="button" class="ficha" aria-pressed="false" data-termo="Palilalia" data-gi="6">Palilalia</button><button type="button" class="ficha" aria-pressed="false" data-termo="Neologismos" data-gi="6">Neologismos</button><button type="button" class="ficha" aria-pressed="false" data-termo="Parafasias" data-gi="6">Parafasias</button><button type="button" class="ficha" aria-pressed="false" data-termo="Taquilalia" data-gi="6">Taquilalia</button><button type="button" class="ficha" aria-pressed="false" data-termo="Bradilalia" data-gi="6">Bradilalia</button></div></div><div class="add-termo"><input type="text" data-novo="linguagem" placeholder="Adicionar termo personalizado…" aria-label="Novo termo para Linguagem" autocomplete="off" autocapitalize="sentences" enterkeyhint="done"><button class="btn btn-sm" data-add="linguagem">Adicionar</button></div></div></section><section class="secao" id="sec-pensamento_curso"><div class="secao-cab"><div><h3>Pensamento — Curso</h3><p>Velocidade, fluxo e continuidade do pensamento</p></div><div class="dir"><span class="marca-sel zero" data-cont="pensamento_curso" title="Termos selecionados neste domínio">0</span><button class="btn btn-sm btn-fantasma" data-limpar-secao="pensamento_curso" title="Limpar este domínio">Limpar</button><button class="btn btn-sm btn-fantasma" data-recolher="pensamento_curso" title="Recolher domínio">▾</button></div></div><div class="secao-corpo"><div class="grupo"><div class="grupo-rot"><span>Velocidade</span><span class="selo">escolha única</span></div><div class="fichas"><button type="button" class="ficha" aria-pressed="false" data-termo="Curso normal" data-gi="0">Curso normal</button><button type="button" class="ficha" aria-pressed="false" data-termo="Acelerado" data-gi="0">Acelerado</button><button type="button" class="ficha" aria-pressed="false" data-termo="Lentificado" data-gi="0">Lentificado</button></div></div><div class="grupo"><div class="grupo-rot"><span>Alterações do curso</span></div><div class="fichas"><button type="button" class="ficha" aria-pressed="false" data-termo="Bloqueio do pensamento" data-gi="1">Bloqueio do pensamento</button><button type="button" class="ficha" aria-pressed="false" data-termo="Fuga de ideias" data-gi="1">Fuga de ideias</button><button type="button" class="ficha" aria-pressed="false" data-termo="Taquipsiquismo" data-gi="1">Taquipsiquismo</button><button type="button" class="ficha" aria-pressed="false" data-termo="Bradipsiquismo" data-gi="1">Bradipsiquismo</button><button type="button" class="ficha" aria-pressed="false" data-termo="Perseveração" data-gi="1">Perseveração</button><button type="button" class="ficha" aria-pressed="false" data-termo="Roubo do pensamento" data-gi="1">Roubo do pensamento</button><button type="button" class="ficha" aria-pressed="false" data-termo="Interrupção súbita" data-gi="1">Interrupção súbita</button><button type="button" class="ficha" aria-pressed="false" data-termo="Pensamento prolixo" data-gi="1">Pensamento prolixo</button><button type="button" class="ficha" aria-pressed="false" data-termo="Pensamento circunstancial" data-gi="1">Pensamento circunstancial</button><button type="button" class="ficha" aria-pressed="false" data-termo="Viscosidade do pensamento" data-gi="1">Viscosidade do pensamento</button></div></div><div class="add-termo"><input type="text" data-novo="pensamento_curso" placeholder="Adicionar termo personalizado…" aria-label="Novo termo para Pensamento — Curso" autocomplete="off" autocapitalize="sentences" enterkeyhint="done"><button class="btn btn-sm" data-add="pensamento_curso">Adicionar</button></div></div></section><section class="secao" id="sec-pensamento_forma"><div class="secao-cab"><div><h3>Pensamento — Forma</h3><p>Organização, estrutura e abstração do pensamento</p></div><div class="dir"><span class="marca-sel zero" data-cont="pensamento_forma" title="Termos selecionados neste domínio">0</span><button class="btn btn-sm btn-fantasma" data-limpar-secao="pensamento_forma" title="Limpar este domínio">Limpar</button><button class="btn btn-sm btn-fantasma" data-recolher="pensamento_forma" title="Recolher domínio">▾</button></div></div><div class="secao-corpo"><div class="grupo"><div class="grupo-rot"><span>Organização</span><span class="selo">escolha única</span></div><div class="fichas"><button type="button" class="ficha" aria-pressed="false" data-termo="Forma preservada" data-gi="0">Forma preservada</button><button type="button" class="ficha" aria-pressed="false" data-termo="Pensamento lógico" data-gi="0">Pensamento lógico</button><button type="button" class="ficha" aria-pressed="false" data-termo="Pensamento ilógico" data-gi="0">Pensamento ilógico</button></div></div><div class="grupo"><div class="grupo-rot"><span>Abstração</span><span class="selo">escolha única</span></div><div class="fichas"><button type="button" class="ficha" aria-pressed="false" data-termo="Pensamento abstrato preservado" data-gi="1">Pensamento abstrato preservado</button><button type="button" class="ficha" aria-pressed="false" data-termo="Pensamento concreto" data-gi="1">Pensamento concreto</button></div></div><div class="grupo"><div class="grupo-rot"><span>Alterações da forma</span></div><div class="fichas"><button type="button" class="ficha" aria-pressed="false" data-termo="Afrouxamento das associações" data-gi="2">Afrouxamento das associações</button><button type="button" class="ficha" aria-pressed="false" data-termo="Descarrilamento" data-gi="2">Descarrilamento</button><button type="button" class="ficha" aria-pressed="false" data-termo="Tangencialidade" data-gi="2">Tangencialidade</button><button type="button" class="ficha" aria-pressed="false" data-termo="Circunstancialidade" data-gi="2">Circunstancialidade</button><button type="button" class="ficha" aria-pressed="false" data-termo="Incoerência" data-gi="2">Incoerência</button><button type="button" class="ficha" aria-pressed="false" data-termo="Desagregação" data-gi="2">Desagregação</button><button type="button" class="ficha" aria-pressed="false" data-termo="Salada de palavras" data-gi="2">Salada de palavras</button><button type="button" class="ficha" aria-pressed="false" data-termo="Pensamento mágico" data-gi="2">Pensamento mágico</button><button type="button" class="ficha" aria-pressed="false" data-termo="Pensamento dereístico" data-gi="2">Pensamento dereístico</button><button type="button" class="ficha" aria-pressed="false" data-termo="Fusão de ideias" data-gi="2">Fusão de ideias</button></div></div><div class="add-termo"><input type="text" data-novo="pensamento_forma" placeholder="Adicionar termo personalizado…" aria-label="Novo termo para Pensamento — Forma" autocomplete="off" autocapitalize="sentences" enterkeyhint="done"><button class="btn btn-sm" data-add="pensamento_forma">Adicionar</button></div></div></section><section class="secao" id="sec-pensamento_conteudo"><div class="secao-cab"><div><h3>Pensamento — Conteúdo</h3><p>Temas, ideação suicida, delírios, obsessões e fobias</p></div><div class="dir"><span class="marca-sel zero" data-cont="pensamento_conteudo" title="Termos selecionados neste domínio">0</span><button class="btn btn-sm btn-fantasma" data-limpar-secao="pensamento_conteudo" title="Limpar este domínio">Limpar</button><button class="btn btn-sm btn-fantasma" data-recolher="pensamento_conteudo" title="Recolher domínio">▾</button></div></div><div class="secao-corpo"><div class="grupo"><div class="grupo-rot"><span>Geral</span><span class="selo">escolha única</span></div><div class="fichas"><button type="button" class="ficha" aria-pressed="false" data-termo="Conteúdo adequado" data-gi="0">Conteúdo adequado</button><button type="button" class="ficha" aria-pressed="false" data-termo="Conteúdo alterado" data-gi="0">Conteúdo alterado</button></div></div><div class="grupo"><div class="grupo-rot"><span>Ideação de morte</span><span class="selo">escolha única</span></div><div class="fichas"><button type="button" class="ficha" aria-pressed="false" data-termo="Sem ideias de morte" data-gi="1">Sem ideias de morte</button><button type="button" class="ficha" aria-pressed="false" data-termo="Ideias de morte" data-gi="1">Ideias de morte</button><button type="button" class="ficha" aria-pressed="false" data-termo="Desejo de morrer" data-gi="1">Desejo de morrer</button></div></div><div class="grupo"><div class="grupo-rot"><span>Ideação suicida</span><span class="selo">escolha única</span></div><div class="fichas"><button type="button" class="ficha" aria-pressed="false" data-termo="Sem ideação suicida" data-gi="2">Sem ideação suicida</button><button type="button" class="ficha" aria-pressed="false" data-termo="Ideação suicida passiva" data-gi="2">Ideação suicida passiva</button><button type="button" class="ficha" aria-pressed="false" data-termo="Ideação suicida ativa" data-gi="2">Ideação suicida ativa</button></div></div><div class="grupo"><div class="grupo-rot"><span>Plano suicida</span><span class="selo">escolha única</span></div><div class="fichas"><button type="button" class="ficha" aria-pressed="false" data-termo="Sem plano suicida" data-gi="3">Sem plano suicida</button><button type="button" class="ficha" aria-pressed="false" data-termo="Com plano suicida" data-gi="3">Com plano suicida</button><button type="button" class="ficha" aria-pressed="false" data-termo="Acesso a meios letais" data-gi="3">Acesso a meios letais</button></div></div><div class="grupo"><div class="grupo-rot"><span>Ideação heteroagressiva</span><span class="selo">escolha única</span></div><div class="fichas"><button type="button" class="ficha" aria-pressed="false" data-termo="Sem ideação homicida" data-gi="4">Sem ideação homicida</button><button type="button" class="ficha" aria-pressed="false" data-termo="Com ideação homicida" data-gi="4">Com ideação homicida</button><button type="button" class="ficha" aria-pressed="false" data-termo="Ideação heteroagressiva" data-gi="4">Ideação heteroagressiva</button></div></div><div class="grupo"><div class="grupo-rot"><span>Autolesão</span><span class="selo">escolha única</span></div><div class="fichas"><button type="button" class="ficha" aria-pressed="false" data-termo="Sem histórico de autolesão" data-gi="5">Sem histórico de autolesão</button><button type="button" class="ficha" aria-pressed="false" data-termo="Histórico de autolesão" data-gi="5">Histórico de autolesão</button><button type="button" class="ficha" aria-pressed="false" data-termo="Autolesão sem intenção suicida" data-gi="5">Autolesão sem intenção suicida</button><button type="button" class="ficha" aria-pressed="false" data-termo="Autolesão recente" data-gi="5">Autolesão recente</button></div></div><div class="grupo"><div class="grupo-rot"><span>Conteúdo depressivo</span></div><div class="fichas"><button type="button" class="ficha" aria-pressed="false" data-termo="Ideação depressiva" data-gi="6">Ideação depressiva</button><button type="button" class="ficha" aria-pressed="false" data-termo="Ideias de ruína" data-gi="6">Ideias de ruína</button><button type="button" class="ficha" aria-pressed="false" data-termo="Ideias de culpa" data-gi="6">Ideias de culpa</button><button type="button" class="ficha" aria-pressed="false" data-termo="Ideias de menos-valia" data-gi="6">Ideias de menos-valia</button><button type="button" class="ficha" aria-pressed="false" data-termo="Ideias de desesperança" data-gi="6">Ideias de desesperança</button><button type="button" class="ficha" aria-pressed="false" data-termo="Ideias de inutilidade" data-gi="6">Ideias de inutilidade</button></div></div><div class="grupo"><div class="grupo-rot"><span>Conteúdo maníaco</span></div><div class="fichas"><button type="button" class="ficha" aria-pressed="false" data-termo="Ideação maníaca" data-gi="7">Ideação maníaca</button><button type="button" class="ficha" aria-pressed="false" data-termo="Ideias de grandeza" data-gi="7">Ideias de grandeza</button><button type="button" class="ficha" aria-pressed="false" data-termo="Ideias de onipotência" data-gi="7">Ideias de onipotência</button><button type="button" class="ficha" aria-pressed="false" data-termo="Ideias de aceleração do pensamento" data-gi="7">Ideias de aceleração do pensamento</button></div></div><div class="grupo"><div class="grupo-rot"><span>Conteúdo paranoide</span></div><div class="fichas"><button type="button" class="ficha" aria-pressed="false" data-termo="Ideação paranoide" data-gi="8">Ideação paranoide</button><button type="button" class="ficha" aria-pressed="false" data-termo="Ideias persecutórias" data-gi="8">Ideias persecutórias</button><button type="button" class="ficha" aria-pressed="false" data-termo="Ideias de referência" data-gi="8">Ideias de referência</button><button type="button" class="ficha" aria-pressed="false" data-termo="Ideias de influência" data-gi="8">Ideias de influência</button><button type="button" class="ficha" aria-pressed="false" data-termo="Ideias de prejuízo" data-gi="8">Ideias de prejuízo</button><button type="button" class="ficha" aria-pressed="false" data-termo="Ideias de ciúme" data-gi="8">Ideias de ciúme</button></div></div><div class="grupo"><div class="grupo-rot"><span>Delírios</span></div><div class="fichas"><button type="button" class="ficha" aria-pressed="false" data-termo="Delírio persecutório" data-gi="9">Delírio persecutório</button><button type="button" class="ficha" aria-pressed="false" data-termo="Delírio de grandeza" data-gi="9">Delírio de grandeza</button><button type="button" class="ficha" aria-pressed="false" data-termo="Delírio místico-religioso" data-gi="9">Delírio místico-religioso</button><button type="button" class="ficha" aria-pressed="false" data-termo="Delírio somático" data-gi="9">Delírio somático</button><button type="button" class="ficha" aria-pressed="false" data-termo="Delírio hipocondríaco" data-gi="9">Delírio hipocondríaco</button><button type="button" class="ficha" aria-pressed="false" data-termo="Delírio erotomaníaco" data-gi="9">Delírio erotomaníaco</button><button type="button" class="ficha" aria-pressed="false" data-termo="Delírio de ciúmes" data-gi="9">Delírio de ciúmes</button><button type="button" class="ficha" aria-pressed="false" data-termo="Delírio niilista" data-gi="9">Delírio niilista</button><button type="button" class="ficha" aria-pressed="false" data-termo="Delírio de ruína" data-gi="9">Delírio de ruína</button><button type="button" class="ficha" aria-pressed="false" data-termo="Delírio de infestação" data-gi="9">Delírio de infestação</button><button type="button" class="ficha" aria-pressed="false" data-termo="Delírio de controle" data-gi="9">Delírio de controle</button><button type="button" class="ficha" aria-pressed="false" data-termo="Delírio de influência" data-gi="9">Delírio de influência</button><button type="button" class="ficha" aria-pressed="false" data-termo="Delírio de referência" data-gi="9">Delírio de referência</button><button type="button" class="ficha" aria-pressed="false" data-termo="Delírio bizarro" data-gi="9">Delírio bizarro</button><button type="button" class="ficha" aria-pressed="false" data-termo="Delírio não bizarro" data-gi="9">Delírio não bizarro</button><button type="button" class="ficha" aria-pressed="false" data-termo="Delírio sistematizado" data-gi="9">Delírio sistematizado</button><button type="button" class="ficha" aria-pressed="false" data-termo="Delírio fragmentado" data-gi="9">Delírio fragmentado</button><button type="button" class="ficha" aria-pressed="false" data-termo="Delírio encapsulado" data-gi="9">Delírio encapsulado</button></div></div><div class="grupo"><div class="grupo-rot"><span>Sintomas obsessivos e fobias</span></div><div class="fichas"><button type="button" class="ficha" aria-pressed="false" data-termo="Obsessões" data-gi="10">Obsessões</button><button type="button" class="ficha" aria-pressed="false" data-termo="Compulsões" data-gi="10">Compulsões</button><button type="button" class="ficha" aria-pressed="false" data-termo="Rituais" data-gi="10">Rituais</button><button type="button" class="ficha" aria-pressed="false" data-termo="Fobias" data-gi="10">Fobias</button><button type="button" class="ficha" aria-pressed="false" data-termo="Preocupações excessivas" data-gi="10">Preocupações excessivas</button><button type="button" class="ficha" aria-pressed="false" data-termo="Pensamentos intrusivos" data-gi="10">Pensamentos intrusivos</button><button type="button" class="ficha" aria-pressed="false" data-termo="Ideação supersticiosa" data-gi="10">Ideação supersticiosa</button></div></div><div class="grupo"><div class="grupo-rot"><span>Outros conteúdos</span></div><div class="fichas"><button type="button" class="ficha" aria-pressed="false" data-termo="Ideias de catástrofe" data-gi="11">Ideias de catástrofe</button><button type="button" class="ficha" aria-pressed="false" data-termo="Preocupações com a saúde" data-gi="11">Preocupações com a saúde</button><button type="button" class="ficha" aria-pressed="false" data-termo="Preocupações financeiras" data-gi="11">Preocupações financeiras</button><button type="button" class="ficha" aria-pressed="false" data-termo="Preocupações existenciais" data-gi="11">Preocupações existenciais</button><button type="button" class="ficha" aria-pressed="false" data-termo="Ruminação" data-gi="11">Ruminação</button></div></div><div class="add-termo"><input type="text" data-novo="pensamento_conteudo" placeholder="Adicionar termo personalizado…" aria-label="Novo termo para Pensamento — Conteúdo" autocomplete="off" autocapitalize="sentences" enterkeyhint="done"><button class="btn btn-sm" data-add="pensamento_conteudo">Adicionar</button></div></div></section><section class="secao" id="sec-sensopercepcao"><div class="secao-cab"><div><h3>Sensopercepção</h3><p>Alucinações, ilusões e alterações perceptivas</p></div><div class="dir"><span class="marca-sel zero" data-cont="sensopercepcao" title="Termos selecionados neste domínio">0</span><button class="btn btn-sm btn-fantasma" data-limpar-secao="sensopercepcao" title="Limpar este domínio">Limpar</button><button class="btn btn-sm btn-fantasma" data-recolher="sensopercepcao" title="Recolher domínio">▾</button></div></div><div class="secao-corpo"><div class="grupo"><div class="grupo-rot"><span>Geral</span><span class="selo">escolha única</span></div><div class="fichas"><button type="button" class="ficha" aria-pressed="false" data-termo="Sensopercepção preservada" data-gi="0">Sensopercepção preservada</button><button type="button" class="ficha" aria-pressed="false" data-termo="Sem alterações sensoperceptivas" data-gi="0">Sem alterações sensoperceptivas</button><button type="button" class="ficha" aria-pressed="false" data-termo="Alterações sensoperceptivas presentes" data-gi="0">Alterações sensoperceptivas presentes</button></div></div><div class="grupo"><div class="grupo-rot"><span>Alucinações</span></div><div class="fichas"><button type="button" class="ficha" aria-pressed="false" data-termo="Alucinações auditivas" data-gi="1">Alucinações auditivas</button><button type="button" class="ficha" aria-pressed="false" data-termo="Alucinações visuais" data-gi="1">Alucinações visuais</button><button type="button" class="ficha" aria-pressed="false" data-termo="Alucinações táteis" data-gi="1">Alucinações táteis</button><button type="button" class="ficha" aria-pressed="false" data-termo="Alucinações olfativas" data-gi="1">Alucinações olfativas</button><button type="button" class="ficha" aria-pressed="false" data-termo="Alucinações gustativas" data-gi="1">Alucinações gustativas</button><button type="button" class="ficha" aria-pressed="false" data-termo="Alucinações cenestésicas" data-gi="1">Alucinações cenestésicas</button><button type="button" class="ficha" aria-pressed="false" data-termo="Alucinações cinestésicas" data-gi="1">Alucinações cinestésicas</button><button type="button" class="ficha" aria-pressed="false" data-termo="Alucinações comando" data-gi="1">Alucinações comando</button><button type="button" class="ficha" aria-pressed="false" data-termo="Alucinações complexas" data-gi="1">Alucinações complexas</button></div></div><div class="grupo"><div class="grupo-rot"><span>Vozes</span></div><div class="fichas"><button type="button" class="ficha" aria-pressed="false" data-termo="Vozes" data-gi="2">Vozes</button><button type="button" class="ficha" aria-pressed="false" data-termo="Vozes dialogando" data-gi="2">Vozes dialogando</button><button type="button" class="ficha" aria-pressed="false" data-termo="Vozes comentando" data-gi="2">Vozes comentando</button><button type="button" class="ficha" aria-pressed="false" data-termo="Vozes de comando" data-gi="2">Vozes de comando</button><button type="button" class="ficha" aria-pressed="false" data-termo="Vozes conhecidas" data-gi="2">Vozes conhecidas</button><button type="button" class="ficha" aria-pressed="false" data-termo="Vozes em terceira pessoa" data-gi="2">Vozes em terceira pessoa</button></div></div><div class="grupo"><div class="grupo-rot"><span>Ilusões</span></div><div class="fichas"><button type="button" class="ficha" aria-pressed="false" data-termo="Ilusões" data-gi="3">Ilusões</button><button type="button" class="ficha" aria-pressed="false" data-termo="Ilusões visuais" data-gi="3">Ilusões visuais</button><button type="button" class="ficha" aria-pressed="false" data-termo="Ilusões auditivas" data-gi="3">Ilusões auditivas</button></div></div><div class="grupo"><div class="grupo-rot"><span>Outras alterações</span></div><div class="fichas"><button type="button" class="ficha" aria-pressed="false" data-termo="Pseudoalucinações" data-gi="4">Pseudoalucinações</button><button type="button" class="ficha" aria-pressed="false" data-termo="Alucinose" data-gi="4">Alucinose</button><button type="button" class="ficha" aria-pressed="false" data-termo="Metamorfopsia" data-gi="4">Metamorfopsia</button><button type="button" class="ficha" aria-pressed="false" data-termo="Alteração da percepção do tempo" data-gi="4">Alteração da percepção do tempo</button></div></div><div class="add-termo"><input type="text" data-novo="sensopercepcao" placeholder="Adicionar termo personalizado…" aria-label="Novo termo para Sensopercepção" autocomplete="off" autocapitalize="sentences" enterkeyhint="done"><button class="btn btn-sm" data-add="sensopercepcao">Adicionar</button></div></div></section><section class="secao" id="sec-consciencia_eu"><div class="secao-cab"><div><h3>Consciência do Eu</h3><p>Domínio ausente na ferramenta original: despersonalização, desrealização e vivências de passividade</p></div><div class="dir"><span class="marca-sel zero" data-cont="consciencia_eu" title="Termos selecionados neste domínio">0</span><button class="btn btn-sm btn-fantasma" data-limpar-secao="consciencia_eu" title="Limpar este domínio">Limpar</button><button class="btn btn-sm btn-fantasma" data-recolher="consciencia_eu" title="Recolher domínio">▾</button></div></div><div class="secao-corpo"><div class="grupo"><div class="grupo-rot"><span>Vivência do eu</span><span class="selo">escolha única</span></div><div class="fichas"><button type="button" class="ficha" aria-pressed="false" data-termo="Consciência do eu preservada" data-gi="0">Consciência do eu preservada</button><button type="button" class="ficha" aria-pressed="false" data-termo="Alterações da consciência do eu" data-gi="0">Alterações da consciência do eu</button></div></div><div class="grupo"><div class="grupo-rot"><span>Alterações</span></div><div class="fichas"><button type="button" class="ficha" aria-pressed="false" data-termo="Despersonalização" data-gi="1">Despersonalização</button><button type="button" class="ficha" aria-pressed="false" data-termo="Desrealização" data-gi="1">Desrealização</button><button type="button" class="ficha" aria-pressed="false" data-termo="Vivência de estranheza" data-gi="1">Vivência de estranheza</button><button type="button" class="ficha" aria-pressed="false" data-termo="Sensação de não ser real" data-gi="1">Sensação de não ser real</button><button type="button" class="ficha" aria-pressed="false" data-termo="Sensação de ser outra pessoa" data-gi="1">Sensação de ser outra pessoa</button><button type="button" class="ficha" aria-pressed="false" data-termo="Perda da unidade do eu" data-gi="1">Perda da unidade do eu</button><button type="button" class="ficha" aria-pressed="false" data-termo="Perda da identidade do eu" data-gi="1">Perda da identidade do eu</button><button type="button" class="ficha" aria-pressed="false" data-termo="Perda dos limites do eu" data-gi="1">Perda dos limites do eu</button><button type="button" class="ficha" aria-pressed="false" data-termo="Sentimento de transformação corporal" data-gi="1">Sentimento de transformação corporal</button></div></div><div class="grupo"><div class="grupo-rot"><span>Vivências de passividade</span></div><div class="fichas"><button type="button" class="ficha" aria-pressed="false" data-termo="Vivência de controle do pensamento" data-gi="2">Vivência de controle do pensamento</button><button type="button" class="ficha" aria-pressed="false" data-termo="Vivência de controle dos sentimentos" data-gi="2">Vivência de controle dos sentimentos</button><button type="button" class="ficha" aria-pressed="false" data-termo="Vivência de controle dos impulsos" data-gi="2">Vivência de controle dos impulsos</button><button type="button" class="ficha" aria-pressed="false" data-termo="Vivência de controle da vontade" data-gi="2">Vivência de controle da vontade</button><button type="button" class="ficha" aria-pressed="false" data-termo="Vivência de influência externa" data-gi="2">Vivência de influência externa</button></div></div><div class="add-termo"><input type="text" data-novo="consciencia_eu" placeholder="Adicionar termo personalizado…" aria-label="Novo termo para Consciência do Eu" autocomplete="off" autocapitalize="sentences" enterkeyhint="done"><button class="btn btn-sm" data-add="consciencia_eu">Adicionar</button></div></div></section><section class="secao" id="sec-humor_afeto"><div class="secao-cab"><div><h3>Humor e Afeto</h3><p>Humor basal, modulação, congruência e reatividade afetiva</p></div><div class="dir"><span class="marca-sel zero" data-cont="humor_afeto" title="Termos selecionados neste domínio">0</span><button class="btn btn-sm btn-fantasma" data-limpar-secao="humor_afeto" title="Limpar este domínio">Limpar</button><button class="btn btn-sm btn-fantasma" data-recolher="humor_afeto" title="Recolher domínio">▾</button></div></div><div class="secao-corpo"><div class="grupo"><div class="grupo-rot"><span>Humor</span><span class="selo">escolha única</span></div><div class="fichas"><button type="button" class="ficha" aria-pressed="false" data-termo="Humor eutímico" data-gi="0">Humor eutímico</button><button type="button" class="ficha" aria-pressed="false" data-termo="Humor deprimido" data-gi="0">Humor deprimido</button><button type="button" class="ficha" aria-pressed="false" data-termo="Humor elevado" data-gi="0">Humor elevado</button><button type="button" class="ficha" aria-pressed="false" data-termo="Humor expansivo" data-gi="0">Humor expansivo</button><button type="button" class="ficha" aria-pressed="false" data-termo="Humor eufórico" data-gi="0">Humor eufórico</button><button type="button" class="ficha" aria-pressed="false" data-termo="Humor irritável" data-gi="0">Humor irritável</button><button type="button" class="ficha" aria-pressed="false" data-termo="Humor disfórico" data-gi="0">Humor disfórico</button><button type="button" class="ficha" aria-pressed="false" data-termo="Humor ansioso" data-gi="0">Humor ansioso</button><button type="button" class="ficha" aria-pressed="false" data-termo="Humor apático" data-gi="0">Humor apático</button><button type="button" class="ficha" aria-pressed="false" data-termo="Humor lábil" data-gi="0">Humor lábil</button></div></div><div class="grupo"><div class="grupo-rot"><span>Modulação afetiva</span><span class="selo">escolha única</span></div><div class="fichas"><button type="button" class="ficha" aria-pressed="false" data-termo="Afeto modulado" data-gi="1">Afeto modulado</button><button type="button" class="ficha" aria-pressed="false" data-termo="Afeto restrito" data-gi="1">Afeto restrito</button><button type="button" class="ficha" aria-pressed="false" data-termo="Afeto embotado" data-gi="1">Afeto embotado</button><button type="button" class="ficha" aria-pressed="false" data-termo="Afeto aplainado" data-gi="1">Afeto aplainado</button><button type="button" class="ficha" aria-pressed="false" data-termo="Afeto exaltado" data-gi="1">Afeto exaltado</button><button type="button" class="ficha" aria-pressed="false" data-termo="Afeto lábil" data-gi="1">Afeto lábil</button></div></div><div class="grupo"><div class="grupo-rot"><span>Congruência</span><span class="selo">escolha única</span></div><div class="fichas"><button type="button" class="ficha" aria-pressed="false" data-termo="Afeto congruente" data-gi="2">Afeto congruente</button><button type="button" class="ficha" aria-pressed="false" data-termo="Afeto incongruente" data-gi="2">Afeto incongruente</button><button type="button" class="ficha" aria-pressed="false" data-termo="Afeto inapropriado" data-gi="2">Afeto inapropriado</button></div></div><div class="grupo"><div class="grupo-rot"><span>Outras alterações</span></div><div class="fichas"><button type="button" class="ficha" aria-pressed="false" data-termo="Anedonia" data-gi="3">Anedonia</button><button type="button" class="ficha" aria-pressed="false" data-termo="Apatia" data-gi="3">Apatia</button><button type="button" class="ficha" aria-pressed="false" data-termo="Alexitimia" data-gi="3">Alexitimia</button><button type="button" class="ficha" aria-pressed="false" data-termo="Labilidade afetiva" data-gi="3">Labilidade afetiva</button><button type="button" class="ficha" aria-pressed="false" data-termo="Incontinência afetiva" data-gi="3">Incontinência afetiva</button><button type="button" class="ficha" aria-pressed="false" data-termo="Ambivalência afetiva" data-gi="3">Ambivalência afetiva</button><button type="button" class="ficha" aria-pressed="false" data-termo="Irritabilidade" data-gi="3">Irritabilidade</button><button type="button" class="ficha" aria-pressed="false" data-termo="Reatividade emocional aumentada" data-gi="3">Reatividade emocional aumentada</button><button type="button" class="ficha" aria-pressed="false" data-termo="Puerilidade" data-gi="3">Puerilidade</button><button type="button" class="ficha" aria-pressed="false" data-termo="Acessos de raiva" data-gi="3">Acessos de raiva</button></div></div><div class="add-termo"><input type="text" data-novo="humor_afeto" placeholder="Adicionar termo personalizado…" aria-label="Novo termo para Humor e Afeto" autocomplete="off" autocapitalize="sentences" enterkeyhint="done"><button class="btn btn-sm" data-add="humor_afeto">Adicionar</button></div></div></section><section class="secao" id="sec-psicomotricidade"><div class="secao-cab"><div><h3>Psicomotricidade</h3><p>Atividade motora, catatonia e alterações do comportamento</p></div><div class="dir"><span class="marca-sel zero" data-cont="psicomotricidade" title="Termos selecionados neste domínio">0</span><button class="btn btn-sm btn-fantasma" data-limpar-secao="psicomotricidade" title="Limpar este domínio">Limpar</button><button class="btn btn-sm btn-fantasma" data-recolher="psicomotricidade" title="Recolher domínio">▾</button></div></div><div class="secao-corpo"><div class="grupo"><div class="grupo-rot"><span>Nível de atividade</span><span class="selo">escolha única</span></div><div class="fichas"><button type="button" class="ficha" aria-pressed="false" data-termo="Psicomotricidade normal" data-gi="0">Psicomotricidade normal</button><button type="button" class="ficha" aria-pressed="false" data-termo="Agitação psicomotora" data-gi="0">Agitação psicomotora</button><button type="button" class="ficha" aria-pressed="false" data-termo="Excitação psicomotora" data-gi="0">Excitação psicomotora</button><button type="button" class="ficha" aria-pressed="false" data-termo="Lentificação psicomotora" data-gi="0">Lentificação psicomotora</button><button type="button" class="ficha" aria-pressed="false" data-termo="Estupor" data-gi="0">Estupor</button></div></div><div class="grupo"><div class="grupo-rot"><span>Catatonia</span><span class="selo">escolha única</span></div><div class="fichas"><button type="button" class="ficha" aria-pressed="false" data-termo="Sem sinais catatônicos" data-gi="1">Sem sinais catatônicos</button><button type="button" class="ficha" aria-pressed="false" data-termo="Catatonia" data-gi="1">Catatonia</button><button type="button" class="ficha" aria-pressed="false" data-termo="Catalepsia" data-gi="1">Catalepsia</button><button type="button" class="ficha" aria-pressed="false" data-termo="Flexibilidade cérea" data-gi="1">Flexibilidade cérea</button></div></div><div class="grupo"><div class="grupo-rot"><span>Outras alterações</span></div><div class="fichas"><button type="button" class="ficha" aria-pressed="false" data-termo="Inquietação" data-gi="2">Inquietação</button><button type="button" class="ficha" aria-pressed="false" data-termo="Acatisia" data-gi="2">Acatisia</button><button type="button" class="ficha" aria-pressed="false" data-termo="Negativismo" data-gi="2">Negativismo</button><button type="button" class="ficha" aria-pressed="false" data-termo="Ecopraxia" data-gi="2">Ecopraxia</button><button type="button" class="ficha" aria-pressed="false" data-termo="Estereotipias" data-gi="2">Estereotipias</button><button type="button" class="ficha" aria-pressed="false" data-termo="Maneirismos" data-gi="2">Maneirismos</button><button type="button" class="ficha" aria-pressed="false" data-termo="Tiques" data-gi="2">Tiques</button><button type="button" class="ficha" aria-pressed="false" data-termo="Compulsões motoras" data-gi="2">Compulsões motoras</button><button type="button" class="ficha" aria-pressed="false" data-termo="Automatismos" data-gi="2">Automatismos</button><button type="button" class="ficha" aria-pressed="false" data-termo="Impulsividade" data-gi="2">Impulsividade</button><button type="button" class="ficha" aria-pressed="false" data-termo="Agressividade física" data-gi="2">Agressividade física</button><button type="button" class="ficha" aria-pressed="false" data-termo="Mutismo catatônico" data-gi="2">Mutismo catatônico</button></div></div><div class="add-termo"><input type="text" data-novo="psicomotricidade" placeholder="Adicionar termo personalizado…" aria-label="Novo termo para Psicomotricidade" autocomplete="off" autocapitalize="sentences" enterkeyhint="done"><button class="btn btn-sm" data-add="psicomotricidade">Adicionar</button></div></div></section><section class="secao" id="sec-volicao"><div class="secao-cab"><div><h3>Volição e Pragmatismo</h3><p>Domínio ausente na ferramenta original: iniciativa, vontade e consequências funcionais</p></div><div class="dir"><span class="marca-sel zero" data-cont="volicao" title="Termos selecionados neste domínio">0</span><button class="btn btn-sm btn-fantasma" data-limpar-secao="volicao" title="Limpar este domínio">Limpar</button><button class="btn btn-sm btn-fantasma" data-recolher="volicao" title="Recolher domínio">▾</button></div></div><div class="secao-corpo"><div class="grupo"><div class="grupo-rot"><span>Volição</span><span class="selo">escolha única</span></div><div class="fichas"><button type="button" class="ficha" aria-pressed="false" data-termo="Volição preservada" data-gi="0">Volição preservada</button><button type="button" class="ficha" aria-pressed="false" data-termo="Hipobulia" data-gi="0">Hipobulia</button><button type="button" class="ficha" aria-pressed="false" data-termo="Abulia" data-gi="0">Abulia</button><button type="button" class="ficha" aria-pressed="false" data-termo="Hiperbulia" data-gi="0">Hiperbulia</button></div></div><div class="grupo"><div class="grupo-rot"><span>Pragmatismo</span><span class="selo">escolha única</span></div><div class="fichas"><button type="button" class="ficha" aria-pressed="false" data-termo="Pragmatismo preservado" data-gi="1">Pragmatismo preservado</button><button type="button" class="ficha" aria-pressed="false" data-termo="Pragmatismo reduzido" data-gi="1">Pragmatismo reduzido</button><button type="button" class="ficha" aria-pressed="false" data-termo="Pragmatismo muito reduzido" data-gi="1">Pragmatismo muito reduzido</button></div></div><div class="grupo"><div class="grupo-rot"><span>Iniciativa e interesse</span></div><div class="fichas"><button type="button" class="ficha" aria-pressed="false" data-termo="Iniciativa preservada" data-gi="2">Iniciativa preservada</button><button type="button" class="ficha" aria-pressed="false" data-termo="Redução da iniciativa" data-gi="2">Redução da iniciativa</button><button type="button" class="ficha" aria-pressed="false" data-termo="Incapacidade de iniciar tarefas" data-gi="2">Incapacidade de iniciar tarefas</button><button type="button" class="ficha" aria-pressed="false" data-termo="Abandono de atividades antes prazerosas" data-gi="2">Abandono de atividades antes prazerosas</button><button type="button" class="ficha" aria-pressed="false" data-termo="Redução do interesse" data-gi="2">Redução do interesse</button></div></div><div class="grupo"><div class="grupo-rot"><span>Consequências funcionais</span></div><div class="fichas"><button type="button" class="ficha" aria-pressed="false" data-termo="Prejuízo ocupacional" data-gi="3">Prejuízo ocupacional</button><button type="button" class="ficha" aria-pressed="false" data-termo="Prejuízo acadêmico" data-gi="3">Prejuízo acadêmico</button><button type="button" class="ficha" aria-pressed="false" data-termo="Prejuízo nas relações familiares" data-gi="3">Prejuízo nas relações familiares</button><button type="button" class="ficha" aria-pressed="false" data-termo="Prejuízo nas relações sociais" data-gi="3">Prejuízo nas relações sociais</button><button type="button" class="ficha" aria-pressed="false" data-termo="Prejuízo no autocuidado" data-gi="3">Prejuízo no autocuidado</button><button type="button" class="ficha" aria-pressed="false" data-termo="Necessidade de auxílio de terceiros" data-gi="3">Necessidade de auxílio de terceiros</button><button type="button" class="ficha" aria-pressed="false" data-termo="Afastamento do trabalho" data-gi="3">Afastamento do trabalho</button><button type="button" class="ficha" aria-pressed="false" data-termo="Licença médica" data-gi="3">Licença médica</button></div></div><div class="add-termo"><input type="text" data-novo="volicao" placeholder="Adicionar termo personalizado…" aria-label="Novo termo para Volição e Pragmatismo" autocomplete="off" autocapitalize="sentences" enterkeyhint="done"><button class="btn btn-sm" data-add="volicao">Adicionar</button></div></div></section><section class="secao" id="sec-tempo_espaco"><div class="secao-cab"><div><h3>Vivência do Tempo e do Espaço</h3><p>Domínio ausente na ferramenta original: vivência temporal e espacial</p></div><div class="dir"><span class="marca-sel zero" data-cont="tempo_espaco" title="Termos selecionados neste domínio">0</span><button class="btn btn-sm btn-fantasma" data-limpar-secao="tempo_espaco" title="Limpar este domínio">Limpar</button><button class="btn btn-sm btn-fantasma" data-recolher="tempo_espaco" title="Recolher domínio">▾</button></div></div><div class="secao-corpo"><div class="grupo"><div class="grupo-rot"><span>Tempo</span><span class="selo">escolha única</span></div><div class="fichas"><button type="button" class="ficha" aria-pressed="false" data-termo="Vivência do tempo preservada" data-gi="0">Vivência do tempo preservada</button><button type="button" class="ficha" aria-pressed="false" data-termo="Vivência do tempo alterada" data-gi="0">Vivência do tempo alterada</button></div></div><div class="grupo"><div class="grupo-rot"><span>Alterações temporais</span></div><div class="fichas"><button type="button" class="ficha" aria-pressed="false" data-termo="Sensação de tempo acelerado" data-gi="1">Sensação de tempo acelerado</button><button type="button" class="ficha" aria-pressed="false" data-termo="Sensação de tempo lentificado" data-gi="1">Sensação de tempo lentificado</button><button type="button" class="ficha" aria-pressed="false" data-termo="Sensação de tempo parado" data-gi="1">Sensação de tempo parado</button><button type="button" class="ficha" aria-pressed="false" data-termo="Vivência de eternidade" data-gi="1">Vivência de eternidade</button><button type="button" class="ficha" aria-pressed="false" data-termo="Perda da continuidade temporal" data-gi="1">Perda da continuidade temporal</button></div></div><div class="grupo"><div class="grupo-rot"><span>Espaço</span></div><div class="fichas"><button type="button" class="ficha" aria-pressed="false" data-termo="Vivência do espaço preservada" data-gi="2">Vivência do espaço preservada</button><button type="button" class="ficha" aria-pressed="false" data-termo="Vivência do espaço alterada" data-gi="2">Vivência do espaço alterada</button><button type="button" class="ficha" aria-pressed="false" data-termo="Desorientação topográfica" data-gi="2">Desorientação topográfica</button><button type="button" class="ficha" aria-pressed="false" data-termo="Sensação de estranheza do ambiente" data-gi="2">Sensação de estranheza do ambiente</button><button type="button" class="ficha" aria-pressed="false" data-termo="Sensação de familiaridade excessiva com o ambiente" data-gi="2">Sensação de familiaridade excessiva com o ambiente</button><button type="button" class="ficha" aria-pressed="false" data-termo="Distorção da percepção de distâncias" data-gi="2">Distorção da percepção de distâncias</button></div></div><div class="add-termo"><input type="text" data-novo="tempo_espaco" placeholder="Adicionar termo personalizado…" aria-label="Novo termo para Vivência do Tempo e do Espaço" autocomplete="off" autocapitalize="sentences" enterkeyhint="done"><button class="btn btn-sm" data-add="tempo_espaco">Adicionar</button></div></div></section><section class="secao" id="sec-funcoes_fisiologicas"><div class="secao-cab"><div><h3>Sono, Apetite e Queixas Somáticas</h3><p>Domínio ausente na ferramenta original: funções fisiológicas básicas</p></div><div class="dir"><span class="marca-sel zero" data-cont="funcoes_fisiologicas" title="Termos selecionados neste domínio">0</span><button class="btn btn-sm btn-fantasma" data-limpar-secao="funcoes_fisiologicas" title="Limpar este domínio">Limpar</button><button class="btn btn-sm btn-fantasma" data-recolher="funcoes_fisiologicas" title="Recolher domínio">▾</button></div></div><div class="secao-corpo"><div class="grupo"><div class="grupo-rot"><span>Sono</span><span class="selo">escolha única</span></div><div class="fichas"><button type="button" class="ficha" aria-pressed="false" data-termo="Sono preservado" data-gi="0">Sono preservado</button><button type="button" class="ficha" aria-pressed="false" data-termo="Insônia inicial" data-gi="0">Insônia inicial</button><button type="button" class="ficha" aria-pressed="false" data-termo="Insônia intermediária" data-gi="0">Insônia intermediária</button><button type="button" class="ficha" aria-pressed="false" data-termo="Insônia terminal" data-gi="0">Insônia terminal</button><button type="button" class="ficha" aria-pressed="false" data-termo="Hipersonia" data-gi="0">Hipersonia</button><button type="button" class="ficha" aria-pressed="false" data-termo="Sono não reparador" data-gi="0">Sono não reparador</button><button type="button" class="ficha" aria-pressed="false" data-termo="Inversão do ciclo sono-vigília" data-gi="0">Inversão do ciclo sono-vigília</button></div></div><div class="grupo"><div class="grupo-rot"><span>Apetite</span><span class="selo">escolha única</span></div><div class="fichas"><button type="button" class="ficha" aria-pressed="false" data-termo="Apetite preservado" data-gi="1">Apetite preservado</button><button type="button" class="ficha" aria-pressed="false" data-termo="Apetite reduzido" data-gi="1">Apetite reduzido</button><button type="button" class="ficha" aria-pressed="false" data-termo="Apetite aumentado" data-gi="1">Apetite aumentado</button><button type="button" class="ficha" aria-pressed="false" data-termo="Recusa alimentar" data-gi="1">Recusa alimentar</button></div></div><div class="grupo"><div class="grupo-rot"><span>Peso</span><span class="selo">escolha única</span></div><div class="fichas"><button type="button" class="ficha" aria-pressed="false" data-termo="Peso estável" data-gi="2">Peso estável</button><button type="button" class="ficha" aria-pressed="false" data-termo="Perda ponderal" data-gi="2">Perda ponderal</button><button type="button" class="ficha" aria-pressed="false" data-termo="Ganho ponderal" data-gi="2">Ganho ponderal</button></div></div><div class="grupo"><div class="grupo-rot"><span>Libido</span><span class="selo">escolha única</span></div><div class="fichas"><button type="button" class="ficha" aria-pressed="false" data-termo="Libido preservada" data-gi="3">Libido preservada</button><button type="button" class="ficha" aria-pressed="false" data-termo="Redução da libido" data-gi="3">Redução da libido</button><button type="button" class="ficha" aria-pressed="false" data-termo="Aumento da libido" data-gi="3">Aumento da libido</button></div></div><div class="grupo"><div class="grupo-rot"><span>Outras queixas</span></div><div class="fichas"><button type="button" class="ficha" aria-pressed="false" data-termo="Redução da energia" data-gi="4">Redução da energia</button><button type="button" class="ficha" aria-pressed="false" data-termo="Fadiga" data-gi="4">Fadiga</button><button type="button" class="ficha" aria-pressed="false" data-termo="Falta de motivação" data-gi="4">Falta de motivação</button><button type="button" class="ficha" aria-pressed="false" data-termo="Sintomas neurovegetativos" data-gi="4">Sintomas neurovegetativos</button><button type="button" class="ficha" aria-pressed="false" data-termo="Sudorese" data-gi="4">Sudorese</button><button type="button" class="ficha" aria-pressed="false" data-termo="Palpitações" data-gi="4">Palpitações</button><button type="button" class="ficha" aria-pressed="false" data-termo="Tensão muscular" data-gi="4">Tensão muscular</button><button type="button" class="ficha" aria-pressed="false" data-termo="Cefaleia tensional" data-gi="4">Cefaleia tensional</button></div></div><div class="add-termo"><input type="text" data-novo="funcoes_fisiologicas" placeholder="Adicionar termo personalizado…" aria-label="Novo termo para Sono, Apetite e Queixas Somáticas" autocomplete="off" autocapitalize="sentences" enterkeyhint="done"><button class="btn btn-sm" data-add="funcoes_fisiologicas">Adicionar</button></div></div></section><section class="secao" id="sec-inteligencia"><div class="secao-cab"><div><h3>Inteligência e Funcionamento Global</h3><p>Domínio ausente na ferramenta original: estimativa de inteligência e funcionamento</p></div><div class="dir"><span class="marca-sel zero" data-cont="inteligencia" title="Termos selecionados neste domínio">0</span><button class="btn btn-sm btn-fantasma" data-limpar-secao="inteligencia" title="Limpar este domínio">Limpar</button><button class="btn btn-sm btn-fantasma" data-recolher="inteligencia" title="Recolher domínio">▾</button></div></div><div class="secao-corpo"><div class="grupo"><div class="grupo-rot"><span>Inteligência estimada</span><span class="selo">escolha única</span></div><div class="fichas"><button type="button" class="ficha" aria-pressed="false" data-termo="Inteligência estimada na média" data-gi="0">Inteligência estimada na média</button><button type="button" class="ficha" aria-pressed="false" data-termo="Inteligência estimada acima da média" data-gi="0">Inteligência estimada acima da média</button><button type="button" class="ficha" aria-pressed="false" data-termo="Inteligência estimada abaixo da média" data-gi="0">Inteligência estimada abaixo da média</button><button type="button" class="ficha" aria-pressed="false" data-termo="Deficiência intelectual leve" data-gi="0">Deficiência intelectual leve</button><button type="button" class="ficha" aria-pressed="false" data-termo="Deficiência intelectual moderada" data-gi="0">Deficiência intelectual moderada</button><button type="button" class="ficha" aria-pressed="false" data-termo="Deficiência intelectual grave" data-gi="0">Deficiência intelectual grave</button><button type="button" class="ficha" aria-pressed="false" data-termo="Não avaliável no momento" data-gi="0">Não avaliável no momento</button></div></div><div class="grupo"><div class="grupo-rot"><span>Funcionamento global</span><span class="selo">escolha única</span></div><div class="fichas"><button type="button" class="ficha" aria-pressed="false" data-termo="Funcionamento global preservado" data-gi="1">Funcionamento global preservado</button><button type="button" class="ficha" aria-pressed="false" data-termo="Funcionamento global levemente prejudicado" data-gi="1">Funcionamento global levemente prejudicado</button><button type="button" class="ficha" aria-pressed="false" data-termo="Funcionamento global moderadamente prejudicado" data-gi="1">Funcionamento global moderadamente prejudicado</button><button type="button" class="ficha" aria-pressed="false" data-termo="Funcionamento global gravemente prejudicado" data-gi="1">Funcionamento global gravemente prejudicado</button></div></div><div class="grupo"><div class="grupo-rot"><span>Observações</span></div><div class="fichas"><button type="button" class="ficha" aria-pressed="false" data-termo="Escolaridade compatível com a linguagem" data-gi="2">Escolaridade compatível com a linguagem</button><button type="button" class="ficha" aria-pressed="false" data-termo="Vocabulário preservado" data-gi="2">Vocabulário preservado</button><button type="button" class="ficha" aria-pressed="false" data-termo="Vocabulário empobrecido" data-gi="2">Vocabulário empobrecido</button><button type="button" class="ficha" aria-pressed="false" data-termo="Dificuldade de abstração" data-gi="2">Dificuldade de abstração</button></div></div><div class="add-termo"><input type="text" data-novo="inteligencia" placeholder="Adicionar termo personalizado…" aria-label="Novo termo para Inteligência e Funcionamento Global" autocomplete="off" autocapitalize="sentences" enterkeyhint="done"><button class="btn btn-sm" data-add="inteligencia">Adicionar</button></div></div></section><section class="secao" id="sec-juizo"><div class="secao-cab"><div><h3>Juízo Crítico e Juízo de Realidade</h3><p>Crítica, julgamento social, tomada de decisão e avaliação de riscos</p></div><div class="dir"><span class="marca-sel zero" data-cont="juizo" title="Termos selecionados neste domínio">0</span><button class="btn btn-sm btn-fantasma" data-limpar-secao="juizo" title="Limpar este domínio">Limpar</button><button class="btn btn-sm btn-fantasma" data-recolher="juizo" title="Recolher domínio">▾</button></div></div><div class="secao-corpo"><div class="grupo"><div class="grupo-rot"><span>Juízo crítico</span><span class="selo">escolha única</span></div><div class="fichas"><button type="button" class="ficha" aria-pressed="false" data-termo="Juízo crítico preservado" data-gi="0">Juízo crítico preservado</button><button type="button" class="ficha" aria-pressed="false" data-termo="Juízo crítico prejudicado" data-gi="0">Juízo crítico prejudicado</button><button type="button" class="ficha" aria-pressed="false" data-termo="Juízo crítico abolido" data-gi="0">Juízo crítico abolido</button></div></div><div class="grupo"><div class="grupo-rot"><span>Juízo de realidade</span><span class="selo">escolha única</span></div><div class="fichas"><button type="button" class="ficha" aria-pressed="false" data-termo="Juízo de realidade preservado" data-gi="1">Juízo de realidade preservado</button><button type="button" class="ficha" aria-pressed="false" data-termo="Juízo de realidade prejudicado" data-gi="1">Juízo de realidade prejudicado</button><button type="button" class="ficha" aria-pressed="false" data-termo="Juízo de realidade abolido" data-gi="1">Juízo de realidade abolido</button></div></div><div class="grupo"><div class="grupo-rot"><span>Julgamento social</span><span class="selo">escolha única</span></div><div class="fichas"><button type="button" class="ficha" aria-pressed="false" data-termo="Capacidade de julgamento social preservada" data-gi="2">Capacidade de julgamento social preservada</button><button type="button" class="ficha" aria-pressed="false" data-termo="Capacidade de julgamento social prejudicada" data-gi="2">Capacidade de julgamento social prejudicada</button></div></div><div class="grupo"><div class="grupo-rot"><span>Tomada de decisões</span><span class="selo">escolha única</span></div><div class="fichas"><button type="button" class="ficha" aria-pressed="false" data-termo="Capacidade de tomar decisões preservada" data-gi="3">Capacidade de tomar decisões preservada</button><button type="button" class="ficha" aria-pressed="false" data-termo="Capacidade de tomar decisões prejudicada" data-gi="3">Capacidade de tomar decisões prejudicada</button></div></div><div class="grupo"><div class="grupo-rot"><span>Avaliação de riscos</span><span class="selo">escolha única</span></div><div class="fichas"><button type="button" class="ficha" aria-pressed="false" data-termo="Avaliação de riscos adequada" data-gi="4">Avaliação de riscos adequada</button><button type="button" class="ficha" aria-pressed="false" data-termo="Avaliação de riscos inadequada" data-gi="4">Avaliação de riscos inadequada</button></div></div><div class="add-termo"><input type="text" data-novo="juizo" placeholder="Adicionar termo personalizado…" aria-label="Novo termo para Juízo Crítico e Juízo de Realidade" autocomplete="off" autocapitalize="sentences" enterkeyhint="done"><button class="btn btn-sm" data-add="juizo">Adicionar</button></div></div></section><section class="secao" id="sec-insight"><div class="secao-cab"><div><h3>Insight e Adesão</h3><p>Consciência de morbidade, atribuição dos sintomas e adesão</p></div><div class="dir"><span class="marca-sel zero" data-cont="insight" title="Termos selecionados neste domínio">0</span><button class="btn btn-sm btn-fantasma" data-limpar-secao="insight" title="Limpar este domínio">Limpar</button><button class="btn btn-sm btn-fantasma" data-recolher="insight" title="Recolher domínio">▾</button></div></div><div class="secao-corpo"><div class="grupo"><div class="grupo-rot"><span>Insight</span><span class="selo">escolha única</span></div><div class="fichas"><button type="button" class="ficha" aria-pressed="false" data-termo="Insight preservado" data-gi="0">Insight preservado</button><button type="button" class="ficha" aria-pressed="false" data-termo="Insight parcial" data-gi="0">Insight parcial</button><button type="button" class="ficha" aria-pressed="false" data-termo="Insight ausente" data-gi="0">Insight ausente</button></div></div><div class="grupo"><div class="grupo-rot"><span>Consciência de morbidade</span><span class="selo">escolha única</span></div><div class="fichas"><button type="button" class="ficha" aria-pressed="false" data-termo="Consciência de morbidade presente" data-gi="1">Consciência de morbidade presente</button><button type="button" class="ficha" aria-pressed="false" data-termo="Consciência de morbidade ausente" data-gi="1">Consciência de morbidade ausente</button></div></div><div class="grupo"><div class="grupo-rot"><span>Reconhecimento de tratamento</span><span class="selo">escolha única</span></div><div class="fichas"><button type="button" class="ficha" aria-pressed="false" data-termo="Reconhece necessidade de tratamento" data-gi="2">Reconhece necessidade de tratamento</button><button type="button" class="ficha" aria-pressed="false" data-termo="Não reconhece necessidade de tratamento" data-gi="2">Não reconhece necessidade de tratamento</button></div></div><div class="grupo"><div class="grupo-rot"><span>Atribuição dos sintomas</span><span class="selo">escolha única</span></div><div class="fichas"><button type="button" class="ficha" aria-pressed="false" data-termo="Atribui sintomas a doença mental" data-gi="3">Atribui sintomas a doença mental</button><button type="button" class="ficha" aria-pressed="false" data-termo="Atribui sintomas a causa externa" data-gi="3">Atribui sintomas a causa externa</button><button type="button" class="ficha" aria-pressed="false" data-termo="Atribui sintomas a causa mística ou religiosa" data-gi="3">Atribui sintomas a causa mística ou religiosa</button><button type="button" class="ficha" aria-pressed="false" data-termo="Atribui sintomas a terceiros" data-gi="3">Atribui sintomas a terceiros</button></div></div><div class="grupo"><div class="grupo-rot"><span>Adesão</span><span class="selo">escolha única</span></div><div class="fichas"><button type="button" class="ficha" aria-pressed="false" data-termo="Boa adesão terapêutica" data-gi="4">Boa adesão terapêutica</button><button type="button" class="ficha" aria-pressed="false" data-termo="Adesão terapêutica irregular" data-gi="4">Adesão terapêutica irregular</button><button type="button" class="ficha" aria-pressed="false" data-termo="Má adesão terapêutica" data-gi="4">Má adesão terapêutica</button><button type="button" class="ficha" aria-pressed="false" data-termo="Abandono de tratamento prévio" data-gi="4">Abandono de tratamento prévio</button></div></div><div class="add-termo"><input type="text" data-novo="insight" placeholder="Adicionar termo personalizado…" aria-label="Novo termo para Insight e Adesão" autocomplete="off" autocapitalize="sentences" enterkeyhint="done"><button class="btn btn-sm" data-add="insight">Adicionar</button></div></div></section><section class="secao" id="sec-risco"><div class="secao-cab"><div><h3>Risco</h3><p>Domínio ausente na ferramenta original: avaliação estruturada de risco suicida e de heteroagressão</p></div><div class="dir"><span class="marca-sel zero" data-cont="risco" title="Termos selecionados neste domínio">0</span><button class="btn btn-sm btn-fantasma" data-limpar-secao="risco" title="Limpar este domínio">Limpar</button><button class="btn btn-sm btn-fantasma" data-recolher="risco" title="Recolher domínio">▾</button></div></div><div class="secao-corpo"><div class="grupo"><div class="grupo-rot"><span>Risco suicida</span><span class="selo">escolha única</span></div><div class="fichas"><button type="button" class="ficha" aria-pressed="false" data-termo="Risco suicida ausente" data-gi="0">Risco suicida ausente</button><button type="button" class="ficha" aria-pressed="false" data-termo="Risco suicida baixo" data-gi="0">Risco suicida baixo</button><button type="button" class="ficha" aria-pressed="false" data-termo="Risco suicida moderado" data-gi="0">Risco suicida moderado</button><button type="button" class="ficha" aria-pressed="false" data-termo="Risco suicida alto" data-gi="0">Risco suicida alto</button><button type="button" class="ficha" aria-pressed="false" data-termo="Risco suicida iminente" data-gi="0">Risco suicida iminente</button></div></div><div class="grupo"><div class="grupo-rot"><span>Risco de heteroagressão</span><span class="selo">escolha única</span></div><div class="fichas"><button type="button" class="ficha" aria-pressed="false" data-termo="Risco de heteroagressão ausente" data-gi="1">Risco de heteroagressão ausente</button><button type="button" class="ficha" aria-pressed="false" data-termo="Risco de heteroagressão baixo" data-gi="1">Risco de heteroagressão baixo</button><button type="button" class="ficha" aria-pressed="false" data-termo="Risco de heteroagressão moderado" data-gi="1">Risco de heteroagressão moderado</button><button type="button" class="ficha" aria-pressed="false" data-termo="Risco de heteroagressão alto" data-gi="1">Risco de heteroagressão alto</button></div></div><div class="grupo"><div class="grupo-rot"><span>Fatores de risco</span></div><div class="fichas"><button type="button" class="ficha" aria-pressed="false" data-termo="Tentativa prévia de suicídio" data-gi="2">Tentativa prévia de suicídio</button><button type="button" class="ficha" aria-pressed="false" data-termo="Histórico familiar de suicídio" data-gi="2">Histórico familiar de suicídio</button><button type="button" class="ficha" aria-pressed="false" data-termo="Uso de álcool ou outras substâncias" data-gi="2">Uso de álcool ou outras substâncias</button><button type="button" class="ficha" aria-pressed="false" data-termo="Acesso a meios letais" data-gi="2">Acesso a meios letais</button><button type="button" class="ficha" aria-pressed="false" data-termo="Doença crônica incapacitante" data-gi="2">Doença crônica incapacitante</button><button type="button" class="ficha" aria-pressed="false" data-termo="Perda recente significativa" data-gi="2">Perda recente significativa</button><button type="button" class="ficha" aria-pressed="false" data-termo="Isolamento social" data-gi="2">Isolamento social</button><button type="button" class="ficha" aria-pressed="false" data-termo="Desesperança" data-gi="2">Desesperança</button><button type="button" class="ficha" aria-pressed="false" data-termo="Impulsividade" data-gi="2">Impulsividade</button><button type="button" class="ficha" aria-pressed="false" data-termo="Ausência de suporte social" data-gi="2">Ausência de suporte social</button><button type="button" class="ficha" aria-pressed="false" data-termo="Não adesão ao tratamento" data-gi="2">Não adesão ao tratamento</button><button type="button" class="ficha" aria-pressed="false" data-termo="Hospitalização psiquiátrica prévia" data-gi="2">Hospitalização psiquiátrica prévia</button></div></div><div class="grupo"><div class="grupo-rot"><span>Fatores de proteção</span></div><div class="fichas"><button type="button" class="ficha" aria-pressed="false" data-termo="Suporte familiar presente" data-gi="3">Suporte familiar presente</button><button type="button" class="ficha" aria-pressed="false" data-termo="Suporte social presente" data-gi="3">Suporte social presente</button><button type="button" class="ficha" aria-pressed="false" data-termo="Esperança quanto ao futuro" data-gi="3">Esperança quanto ao futuro</button><button type="button" class="ficha" aria-pressed="false" data-termo="Ausência de plano definido" data-gi="3">Ausência de plano definido</button><button type="button" class="ficha" aria-pressed="false" data-termo="Ausência de tentativa prévia" data-gi="3">Ausência de tentativa prévia</button><button type="button" class="ficha" aria-pressed="false" data-termo="Vinculação terapêutica" data-gi="3">Vinculação terapêutica</button><button type="button" class="ficha" aria-pressed="false" data-termo="Crenças religiosas ou espirituais protetoras" data-gi="3">Crenças religiosas ou espirituais protetoras</button><button type="button" class="ficha" aria-pressed="false" data-termo="Responsabilidades com dependentes" data-gi="3">Responsabilidades com dependentes</button><button type="button" class="ficha" aria-pressed="false" data-termo="Bom controle de impulsos" data-gi="3">Bom controle de impulsos</button></div></div><div class="grupo"><div class="grupo-rot"><span>Plano de segurança documentado</span></div><div class="fichas"><button type="button" class="ficha" aria-pressed="false" data-termo="Sem necessidade de intervenção imediata" data-gi="4">Sem necessidade de intervenção imediata</button><button type="button" class="ficha" aria-pressed="false" data-termo="Reavaliação em curto prazo" data-gi="4">Reavaliação em curto prazo</button><button type="button" class="ficha" aria-pressed="false" data-termo="Encaminhamento a serviço de urgência" data-gi="4">Encaminhamento a serviço de urgência</button><button type="button" class="ficha" aria-pressed="false" data-termo="Necessidade de supervisão contínua" data-gi="4">Necessidade de supervisão contínua</button><button type="button" class="ficha" aria-pressed="false" data-termo="Considerada internação" data-gi="4">Considerada internação</button><button type="button" class="ficha" aria-pressed="false" data-termo="Orientação de rede de apoio" data-gi="4">Orientação de rede de apoio</button><button type="button" class="ficha" aria-pressed="false" data-termo="Acionamento do CAPS" data-gi="4">Acionamento do CAPS</button><button type="button" class="ficha" aria-pressed="false" data-termo="Orientação sobre o CVV (188)" data-gi="4">Orientação sobre o CVV (188)</button><button type="button" class="ficha" aria-pressed="false" data-termo="Restrição de acesso a meios letais" data-gi="4">Restrição de acesso a meios letais</button></div></div><div class="add-termo"><input type="text" data-novo="risco" placeholder="Adicionar termo personalizado…" aria-label="Novo termo para Risco" autocomplete="off" autocapitalize="sentences" enterkeyhint="done"><button class="btn btn-sm" data-add="risco">Adicionar</button></div></div></section><section class="secao" id="sec-sumula"><div class="secao-cab"><div><h3>Súmula e Observações</h3><p>Texto livre: síntese do exame, hipóteses diagnósticas e observações</p></div></div><div class="secao-corpo"><div class="campo" style="margin-bottom:10px"><label for="txt-sumula">Súmula</label><textarea id="txt-sumula" data-campo="sumula" rows="4" placeholder="Síntese do exame e hipóteses diagnósticas..."></textarea></div><div class="campo" style="margin-bottom:10px"><label for="txt-observacoes">Observações adicionais</label><textarea id="txt-observacoes" data-campo="observacoes" rows="3" placeholder="Contexto da entrevista, fontes de informação, limitações do exame..."></textarea></div></div></section></div>
+
+    <div class="aviso neutro" style="margin-top:6px">
+      Ferramenta de apoio à organização do exame clínico. Não substitui o julgamento clínico nem
+      instrumentos validados de avaliação de risco. Os termos são um guia descritivo, não uma
+      escala: não há pontuação, ponto de corte nem classificação automática.
+    </div>
+  </main>
+</div>
+
+<div class="barra">
+  <div class="barra-in">
+    <div class="resumo" id="resumoBarra"><b>0</b> termos em <b>0</b> domínios</div>
+    <div class="dir">
+      <button class="btn btn-sm" id="btnSalvar" title="Salvar um rascunho neste navegador">Salvar rascunho</button>
+      <button class="btn btn-sm" id="btnRascunhos" title="Abrir rascunhos salvos">Rascunhos</button>
+      <button class="btn btn-sm btn-perigo" id="btnLimpar">Limpar tudo</button>
+      <button class="btn btn-primario" id="btnGerar">Gerar texto</button>
+    </div>
+  </div>
+</div>
+
+<dialog id="dlgSaida" aria-labelledby="dlgTitulo">
+  <div class="dlg-cab">
+    <h3 id="dlgTitulo">Texto do exame</h3>
+    <div class="abas" role="tablist">
+      <button role="tab" aria-selected="true" data-modo="estruturado">Estruturado</button>
+      <button role="tab" aria-selected="false" data-modo="narrativo">Narrativo</button>
+      <button role="tab" aria-selected="false" data-modo="resumo">Resumo curto</button>
+    </div>
+  </div>
+  <div class="dlg-corpo">
+    <div class="aviso">Revise e edite o texto antes de colar no prontuário. A responsabilidade clínica é do profissional.</div>
+    <textarea id="textoSaida" spellcheck="true" aria-label="Texto gerado, editável"></textarea>
+    <div class="dica" style="margin-top:8px">O texto é editável: ajuste o que quiser antes de copiar. Ctrl+Enter gera · Esc fecha.</div>
+  </div>
+  <div class="dlg-rodape">
+    <button class="btn" id="btnCopiar">Copiar</button>
+    <button class="btn" id="btnBaixar">Baixar .txt</button>
+    <button class="btn" id="btnImprimir">Imprimir / PDF</button>
+    <span style="margin-left:auto"></span>
+    <button class="btn btn-fantasma" id="btnFechar">Fechar</button>
+  </div>
+</dialog>
+
+<dialog id="dlgRascunhos" aria-labelledby="dlgRascunhosTitulo">
+  <div class="dlg-cab"><h3 id="dlgRascunhosTitulo">Rascunhos salvos neste navegador</h3></div>
+  <div class="dlg-corpo">
+    <div class="aviso">Os rascunhos ficam no armazenamento local deste navegador. Em máquina compartilhada, não salve dados identificáveis e use “Apagar tudo” ao terminar.</div>
+    <div id="listaRascunhos"></div>
+  </div>
+  <div class="dlg-rodape">
+    <button class="btn btn-perigo" id="btnApagarTudo">Apagar todos os dados locais</button>
+    <span style="margin-left:auto"></span>
+    <button class="btn btn-fantasma" id="btnFecharRascunhos">Fechar</button>
+  </div>
+</dialog>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<div id="impressao" aria-hidden="true"></div>
+
+<script>
+/* ============================================================
+   Dados clínicos — carregados de data/dominios-eem.json pelo build.py
+   ============================================================ */
+const DADOS = {"versao":"1.0.0","atualizado":"2026-09-22","titulo":"Exame do Estado Mental — Estruturado","nota_fonte":"Estrutura derivada da extração de psiq.top/eem (15 domínios, 241 termos) e ampliada para cobrir a estrutura clássica do Exame do Estado Mental (domínios ausentes na fonte: consciência do eu, volição e pragmatismo, vivência do tempo e do espaço, funções fisiológicas, inteligência/funcionamento global, risco estruturado e súmula).","secoes":[{"id":"aparencia","title":"Aparência Geral","hint":"Higiene, vestes, postura, idade aparente, fácies, autocuidado","prosa":"Ao exame, o paciente apresenta-se com ","grupos":[{"label":"Higiene","exclusive":true,"suggestions":["Boa higiene","Higiene regular","Higiene precária"]},{"label":"Vestes","exclusive":true,"suggestions":["Vestes adequadas","Vestes inadequadas","Vestes bizarras","Vestes descuidadas"]},{"label":"Idade aparente","exclusive":true,"suggestions":["Idade aparente compatível","Idade aparente maior","Idade aparente menor"]},{"label":"Postura","exclusive":true,"suggestions":["Postura ereta","Postura curvada","Postura tensa","Postura rígida"]},{"label":"Estado nutricional","exclusive":true,"suggestions":["Bem nutrido","Emagrecido","Sobrepeso","Obeso","Caquético"]},{"label":"Autocuidado","exclusive":true,"suggestions":["Autocuidado preservado","Autocuidado prejudicado","Autocuidado muito prejudicado"]},{"label":"Contato visual","exclusive":true,"suggestions":["Contato visual preservado","Contato visual reduzido","Contato visual evitado","Contato visual fixo"]},{"label":"Fácies","exclusive":false,"suggestions":["Fácies depressiva","Fácies ansiosa","Fácies atípica","Fácies de dor","Fácies hostil","Fácies embotada","Fácies indiferente"]},{"label":"Marcas e sinais corporais","exclusive":false,"suggestions":["Cicatrizes de autolesão","Lesões cutâneas recentes","Ferimentos em cicatrização","Sinais de trauma","Tatuagens","Piercings"]},{"label":"Aspecto global","exclusive":false,"suggestions":["Aparência compatível com a idade referida","Aparência descuidada","Aparência bizarra"]}]},{"id":"atitude","title":"Atitude e Relação com o Examinador","hint":"Cooperação, postura na entrevista, comunicação, demanda","prosa":"Quanto à atitude perante o examinador: ","grupos":[{"label":"Cooperação","exclusive":true,"suggestions":["Colaborativo","Cooperativo","Passivo","Opositor","Hostil"]},{"label":"Atitude global","exclusive":false,"suggestions":["Evasivo","Desconfiado","Indiferente","Sedutor","Dramático","Infantilizado","Reticente","Prolixo","Aderente","Manipulador","Exigente","Queixoso","Reservado","Amistoso"]},{"label":"Comunicação","exclusive":false,"suggestions":["Discurso espontâneo","Discurso apenas sob estímulo","Comunicação empobrecida","Comunicação preservada","Solicita interrupção da entrevista"]},{"label":"Colaboração com o exame","exclusive":true,"suggestions":["Colabora com o exame","Colaboração parcial com o exame","Não colabora com o exame"]},{"label":"Demanda","exclusive":false,"suggestions":["Busca ativa por tratamento","Demanda trazida por terceiros","Demanda judicial","Sem demanda de tratamento","Demanda ambivalente"]}]},{"id":"consciencia","title":"Consciência","hint":"Nível de alerta, clareza e flutuação da consciência","prosa":"Quanto ao nível de consciência: ","grupos":[{"label":"Nível de consciência","exclusive":true,"suggestions":["Vigil","Lúcido","Sonolento","Obnubilado","Torporoso","Comatoso"]},{"label":"Clareza","exclusive":true,"suggestions":["Clareza preservada","Confuso","Delirium","Estado crepuscular"]},{"label":"Grau de rebaixamento","exclusive":true,"suggestions":["Sem rebaixamento","Rebaixamento leve","Rebaixamento moderado","Rebaixamento grave","Hipervigil"]},{"label":"Flutuação","exclusive":false,"suggestions":["Flutuação do nível de consciência","Períodos de lucidez intercalados","Sonolência diurna excessiva"]}]},{"id":"orientacao","title":"Orientação","hint":"Orientação autopsíquica e alopsíquica: tempo, espaço, pessoa e situação","prosa":"Em relação à orientação, encontra-se ","grupos":[{"label":"Global","exclusive":true,"suggestions":["Orientado globalmente","Desorientado globalmente"]},{"label":"Tempo","exclusive":true,"suggestions":["Orientado no tempo","Desorientado no tempo","Desorientação temporal parcial"]},{"label":"Espaço","exclusive":true,"suggestions":["Orientado no espaço","Desorientado no espaço","Desorientação espacial parcial"]},{"label":"Pessoa","exclusive":true,"suggestions":["Orientado quanto à própria pessoa","Desorientado autopsiquicamente"]},{"label":"Situação","exclusive":true,"suggestions":["Orientado quanto à situação","Desorientado quanto à situação"]},{"label":"Categoria da orientação","exclusive":false,"suggestions":["Orientado alopsiquicamente","Desorientado alopsiquicamente","Dupla orientação","Desorientação flutuante"]}]},{"id":"atencao","title":"Atenção e Concentração","hint":"Capacidade de focar, manter e alternar a atenção","prosa":"Quanto à atenção e à concentração, observa-se ","grupos":[{"label":"Atenção","exclusive":true,"suggestions":["Atenção preservada","Atenção diminuída","Atenção aumentada","Aprosexia"]},{"label":"Concentração","exclusive":true,"suggestions":["Concentração preservada","Dificuldade de concentração","Hipoprosexia","Hiperprosexia","Distraibilidade"]},{"label":"Modalidades","exclusive":false,"suggestions":["Atenção voluntária preservada","Atenção espontânea preservada","Fatigabilidade atencional","Atenção seletiva prejudicada","Atenção sustentada prejudicada","Atenção dividida prejudicada"]}]},{"id":"memoria","title":"Memória","hint":"Memória imediata, recente e remota; alterações qualitativas","prosa":"Quanto à memória, observa-se ","grupos":[{"label":"Geral","exclusive":true,"suggestions":["Memória preservada","Memória prejudicada"]},{"label":"Imediata","exclusive":true,"suggestions":["Memória imediata preservada","Memória imediata prejudicada"]},{"label":"Recente","exclusive":true,"suggestions":["Memória recente preservada","Memória recente prejudicada"]},{"label":"Remota","exclusive":true,"suggestions":["Memória remota preservada","Memória remota prejudicada"]},{"label":"Alterações qualitativas","exclusive":false,"suggestions":["Amnésia anterógrada","Amnésia retrógrada","Amnésia lacunar","Hipermnésia","Paramnésia","Confabulação","Falso reconhecimento","Déjà vu","Jamais vu","Ilusão de memória"]},{"label":"Queixas","exclusive":false,"suggestions":["Queixa de esquecimentos","Esquecimentos relatados por terceiros","Uso de recursos compensatórios"]}]},{"id":"linguagem","title":"Linguagem","hint":"Fluência, compreensão, nomeação, repetição, leitura e escrita","prosa":"Quanto à linguagem, observa-se ","grupos":[{"label":"Geral","exclusive":true,"suggestions":["Linguagem preservada","Linguagem alterada"]},{"label":"Fluência","exclusive":true,"suggestions":["Fluência normal","Fluência aumentada","Fluência diminuída"]},{"label":"Compreensão","exclusive":true,"suggestions":["Compreensão preservada","Compreensão prejudicada"]},{"label":"Nomeação","exclusive":true,"suggestions":["Nomeação preservada","Nomeação prejudicada"]},{"label":"Repetição","exclusive":true,"suggestions":["Repetição preservada","Repetição prejudicada"]},{"label":"Leitura e escrita","exclusive":true,"suggestions":["Leitura e escrita preservadas","Leitura e escrita prejudicadas","Alexia","Disgrafia"]},{"label":"Alterações","exclusive":false,"suggestions":["Sem afasia","Afasia de Broca","Afasia de Wernicke","Afasia global","Afasia de condução","Disartria","Dislalia","Mutismo","Ecolalia","Palilalia","Neologismos","Parafasias","Taquilalia","Bradilalia"]}]},{"id":"pensamento_curso","title":"Pensamento — Curso","hint":"Velocidade, fluxo e continuidade do pensamento","prosa":"O pensamento apresenta ","grupos":[{"label":"Velocidade","exclusive":true,"suggestions":["Curso normal","Acelerado","Lentificado"]},{"label":"Alterações do curso","exclusive":false,"suggestions":["Bloqueio do pensamento","Fuga de ideias","Taquipsiquismo","Bradipsiquismo","Perseveração","Roubo do pensamento","Interrupção súbita","Pensamento prolixo","Pensamento circunstancial","Viscosidade do pensamento"]}]},{"id":"pensamento_forma","title":"Pensamento — Forma","hint":"Organização, estrutura e abstração do pensamento","prosa":"Quanto à forma do pensamento: ","grupos":[{"label":"Organização","exclusive":true,"suggestions":["Forma preservada","Pensamento lógico","Pensamento ilógico"]},{"label":"Abstração","exclusive":true,"suggestions":["Pensamento abstrato preservado","Pensamento concreto"]},{"label":"Alterações da forma","exclusive":false,"suggestions":["Afrouxamento das associações","Descarrilamento","Tangencialidade","Circunstancialidade","Incoerência","Desagregação","Salada de palavras","Pensamento mágico","Pensamento dereístico","Fusão de ideias"]}]},{"id":"pensamento_conteudo","title":"Pensamento — Conteúdo","hint":"Temas, ideação suicida, delírios, obsessões e fobias","prosa":"No conteúdo do pensamento: ","grupos":[{"label":"Geral","exclusive":true,"suggestions":["Conteúdo adequado","Conteúdo alterado"]},{"label":"Ideação de morte","exclusive":true,"suggestions":["Sem ideias de morte","Ideias de morte","Desejo de morrer"]},{"label":"Ideação suicida","exclusive":true,"suggestions":["Sem ideação suicida","Ideação suicida passiva","Ideação suicida ativa"]},{"label":"Plano suicida","exclusive":true,"suggestions":["Sem plano suicida","Com plano suicida","Acesso a meios letais"]},{"label":"Ideação heteroagressiva","exclusive":true,"suggestions":["Sem ideação homicida","Com ideação homicida","Ideação heteroagressiva"]},{"label":"Autolesão","exclusive":true,"suggestions":["Sem histórico de autolesão","Histórico de autolesão","Autolesão sem intenção suicida","Autolesão recente"]},{"label":"Conteúdo depressivo","exclusive":false,"suggestions":["Ideação depressiva","Ideias de ruína","Ideias de culpa","Ideias de menos-valia","Ideias de desesperança","Ideias de inutilidade"]},{"label":"Conteúdo maníaco","exclusive":false,"suggestions":["Ideação maníaca","Ideias de grandeza","Ideias de onipotência","Ideias de aceleração do pensamento"]},{"label":"Conteúdo paranoide","exclusive":false,"suggestions":["Ideação paranoide","Ideias persecutórias","Ideias de referência","Ideias de influência","Ideias de prejuízo","Ideias de ciúme"]},{"label":"Delírios","exclusive":false,"suggestions":["Delírio persecutório","Delírio de grandeza","Delírio místico-religioso","Delírio somático","Delírio hipocondríaco","Delírio erotomaníaco","Delírio de ciúmes","Delírio niilista","Delírio de ruína","Delírio de infestação","Delírio de controle","Delírio de influência","Delírio de referência","Delírio bizarro","Delírio não bizarro","Delírio sistematizado","Delírio fragmentado","Delírio encapsulado"]},{"label":"Sintomas obsessivos e fobias","exclusive":false,"suggestions":["Obsessões","Compulsões","Rituais","Fobias","Preocupações excessivas","Pensamentos intrusivos","Ideação supersticiosa"]},{"label":"Outros conteúdos","exclusive":false,"suggestions":["Ideias de catástrofe","Preocupações com a saúde","Preocupações financeiras","Preocupações existenciais","Ruminação"]}]},{"id":"sensopercepcao","title":"Sensopercepção","hint":"Alucinações, ilusões e alterações perceptivas","prosa":"Quanto à sensopercepção, observa-se ","grupos":[{"label":"Geral","exclusive":true,"suggestions":["Sensopercepção preservada","Sem alterações sensoperceptivas","Alterações sensoperceptivas presentes"]},{"label":"Alucinações","exclusive":false,"suggestions":["Alucinações auditivas","Alucinações visuais","Alucinações táteis","Alucinações olfativas","Alucinações gustativas","Alucinações cenestésicas","Alucinações cinestésicas","Alucinações comando","Alucinações complexas"]},{"label":"Vozes","exclusive":false,"suggestions":["Vozes","Vozes dialogando","Vozes comentando","Vozes de comando","Vozes conhecidas","Vozes em terceira pessoa"]},{"label":"Ilusões","exclusive":false,"suggestions":["Ilusões","Ilusões visuais","Ilusões auditivas"]},{"label":"Outras alterações","exclusive":false,"suggestions":["Pseudoalucinações","Alucinose","Metamorfopsia","Alteração da percepção do tempo"]}]},{"id":"consciencia_eu","title":"Consciência do Eu","hint":"Domínio ausente na ferramenta original: despersonalização, desrealização e vivências de passividade","prosa":"Quanto à consciência do eu, observa-se ","grupos":[{"label":"Vivência do eu","exclusive":true,"suggestions":["Consciência do eu preservada","Alterações da consciência do eu"]},{"label":"Alterações","exclusive":false,"suggestions":["Despersonalização","Desrealização","Vivência de estranheza","Sensação de não ser real","Sensação de ser outra pessoa","Perda da unidade do eu","Perda da identidade do eu","Perda dos limites do eu","Sentimento de transformação corporal"]},{"label":"Vivências de passividade","exclusive":false,"suggestions":["Vivência de controle do pensamento","Vivência de controle dos sentimentos","Vivência de controle dos impulsos","Vivência de controle da vontade","Vivência de influência externa"]}]},{"id":"humor_afeto","title":"Humor e Afeto","hint":"Humor basal, modulação, congruência e reatividade afetiva","prosa":"Quanto ao humor e ao afeto, observa-se ","grupos":[{"label":"Humor","exclusive":true,"suggestions":["Humor eutímico","Humor deprimido","Humor elevado","Humor expansivo","Humor eufórico","Humor irritável","Humor disfórico","Humor ansioso","Humor apático","Humor lábil"]},{"label":"Modulação afetiva","exclusive":true,"suggestions":["Afeto modulado","Afeto restrito","Afeto embotado","Afeto aplainado","Afeto exaltado","Afeto lábil"]},{"label":"Congruência","exclusive":true,"suggestions":["Afeto congruente","Afeto incongruente","Afeto inapropriado"]},{"label":"Outras alterações","exclusive":false,"suggestions":["Anedonia","Apatia","Alexitimia","Labilidade afetiva","Incontinência afetiva","Ambivalência afetiva","Irritabilidade","Reatividade emocional aumentada","Puerilidade","Acessos de raiva"]}]},{"id":"psicomotricidade","title":"Psicomotricidade","hint":"Atividade motora, catatonia e alterações do comportamento","prosa":"Quanto à psicomotricidade: ","grupos":[{"label":"Nível de atividade","exclusive":true,"suggestions":["Psicomotricidade normal","Agitação psicomotora","Excitação psicomotora","Lentificação psicomotora","Estupor"]},{"label":"Catatonia","exclusive":true,"suggestions":["Sem sinais catatônicos","Catatonia","Catalepsia","Flexibilidade cérea"]},{"label":"Outras alterações","exclusive":false,"suggestions":["Inquietação","Acatisia","Negativismo","Ecopraxia","Estereotipias","Maneirismos","Tiques","Compulsões motoras","Automatismos","Impulsividade","Agressividade física","Mutismo catatônico"]}]},{"id":"volicao","title":"Volição e Pragmatismo","hint":"Domínio ausente na ferramenta original: iniciativa, vontade e consequências funcionais","prosa":"Quanto à volição e ao pragmatismo: ","grupos":[{"label":"Volição","exclusive":true,"suggestions":["Volição preservada","Hipobulia","Abulia","Hiperbulia"]},{"label":"Pragmatismo","exclusive":true,"suggestions":["Pragmatismo preservado","Pragmatismo reduzido","Pragmatismo muito reduzido"]},{"label":"Iniciativa e interesse","exclusive":false,"suggestions":["Iniciativa preservada","Redução da iniciativa","Incapacidade de iniciar tarefas","Abandono de atividades antes prazerosas","Redução do interesse"]},{"label":"Consequências funcionais","exclusive":false,"suggestions":["Prejuízo ocupacional","Prejuízo acadêmico","Prejuízo nas relações familiares","Prejuízo nas relações sociais","Prejuízo no autocuidado","Necessidade de auxílio de terceiros","Afastamento do trabalho","Licença médica"]}]},{"id":"tempo_espaco","title":"Vivência do Tempo e do Espaço","hint":"Domínio ausente na ferramenta original: vivência temporal e espacial","prosa":"Quanto à vivência do tempo e do espaço: ","grupos":[{"label":"Tempo","exclusive":true,"suggestions":["Vivência do tempo preservada","Vivência do tempo alterada"]},{"label":"Alterações temporais","exclusive":false,"suggestions":["Sensação de tempo acelerado","Sensação de tempo lentificado","Sensação de tempo parado","Vivência de eternidade","Perda da continuidade temporal"]},{"label":"Espaço","exclusive":false,"suggestions":["Vivência do espaço preservada","Vivência do espaço alterada","Desorientação topográfica","Sensação de estranheza do ambiente","Sensação de familiaridade excessiva com o ambiente","Distorção da percepção de distâncias"]}]},{"id":"funcoes_fisiologicas","title":"Sono, Apetite e Queixas Somáticas","hint":"Domínio ausente na ferramenta original: funções fisiológicas básicas","prosa":"Quanto ao sono, apetite e funções fisiológicas: ","grupos":[{"label":"Sono","exclusive":true,"suggestions":["Sono preservado","Insônia inicial","Insônia intermediária","Insônia terminal","Hipersonia","Sono não reparador","Inversão do ciclo sono-vigília"]},{"label":"Apetite","exclusive":true,"suggestions":["Apetite preservado","Apetite reduzido","Apetite aumentado","Recusa alimentar"]},{"label":"Peso","exclusive":true,"suggestions":["Peso estável","Perda ponderal","Ganho ponderal"]},{"label":"Libido","exclusive":true,"suggestions":["Libido preservada","Redução da libido","Aumento da libido"]},{"label":"Outras queixas","exclusive":false,"suggestions":["Redução da energia","Fadiga","Falta de motivação","Sintomas neurovegetativos","Sudorese","Palpitações","Tensão muscular","Cefaleia tensional"]}]},{"id":"inteligencia","title":"Inteligência e Funcionamento Global","hint":"Domínio ausente na ferramenta original: estimativa de inteligência e funcionamento","prosa":"Quanto à inteligência e ao funcionamento global: ","grupos":[{"label":"Inteligência estimada","exclusive":true,"suggestions":["Inteligência estimada na média","Inteligência estimada acima da média","Inteligência estimada abaixo da média","Deficiência intelectual leve","Deficiência intelectual moderada","Deficiência intelectual grave","Não avaliável no momento"]},{"label":"Funcionamento global","exclusive":true,"suggestions":["Funcionamento global preservado","Funcionamento global levemente prejudicado","Funcionamento global moderadamente prejudicado","Funcionamento global gravemente prejudicado"]},{"label":"Observações","exclusive":false,"suggestions":["Escolaridade compatível com a linguagem","Vocabulário preservado","Vocabulário empobrecido","Dificuldade de abstração"]}]},{"id":"juizo","title":"Juízo Crítico e Juízo de Realidade","hint":"Crítica, julgamento social, tomada de decisão e avaliação de riscos","prosa":"Quanto ao juízo crítico e de realidade: ","grupos":[{"label":"Juízo crítico","exclusive":true,"suggestions":["Juízo crítico preservado","Juízo crítico prejudicado","Juízo crítico abolido"]},{"label":"Juízo de realidade","exclusive":true,"suggestions":["Juízo de realidade preservado","Juízo de realidade prejudicado","Juízo de realidade abolido"]},{"label":"Julgamento social","exclusive":true,"suggestions":["Capacidade de julgamento social preservada","Capacidade de julgamento social prejudicada"]},{"label":"Tomada de decisões","exclusive":true,"suggestions":["Capacidade de tomar decisões preservada","Capacidade de tomar decisões prejudicada"]},{"label":"Avaliação de riscos","exclusive":true,"suggestions":["Avaliação de riscos adequada","Avaliação de riscos inadequada"]}]},{"id":"insight","title":"Insight e Adesão","hint":"Consciência de morbidade, atribuição dos sintomas e adesão","prosa":"Quanto ao insight e à adesão: ","grupos":[{"label":"Insight","exclusive":true,"suggestions":["Insight preservado","Insight parcial","Insight ausente"]},{"label":"Consciência de morbidade","exclusive":true,"suggestions":["Consciência de morbidade presente","Consciência de morbidade ausente"]},{"label":"Reconhecimento de tratamento","exclusive":true,"suggestions":["Reconhece necessidade de tratamento","Não reconhece necessidade de tratamento"]},{"label":"Atribuição dos sintomas","exclusive":true,"suggestions":["Atribui sintomas a doença mental","Atribui sintomas a causa externa","Atribui sintomas a causa mística ou religiosa","Atribui sintomas a terceiros"]},{"label":"Adesão","exclusive":true,"suggestions":["Boa adesão terapêutica","Adesão terapêutica irregular","Má adesão terapêutica","Abandono de tratamento prévio"]}]},{"id":"risco","title":"Risco","hint":"Domínio ausente na ferramenta original: avaliação estruturada de risco suicida e de heteroagressão","prosa":"Quanto ao risco: ","grupos":[{"label":"Risco suicida","exclusive":true,"suggestions":["Risco suicida ausente","Risco suicida baixo","Risco suicida moderado","Risco suicida alto","Risco suicida iminente"]},{"label":"Risco de heteroagressão","exclusive":true,"suggestions":["Risco de heteroagressão ausente","Risco de heteroagressão baixo","Risco de heteroagressão moderado","Risco de heteroagressão alto"]},{"label":"Fatores de risco","exclusive":false,"suggestions":["Tentativa prévia de suicídio","Histórico familiar de suicídio","Uso de álcool ou outras substâncias","Acesso a meios letais","Doença crônica incapacitante","Perda recente significativa","Isolamento social","Desesperança","Impulsividade","Ausência de suporte social","Não adesão ao tratamento","Hospitalização psiquiátrica prévia"]},{"label":"Fatores de proteção","exclusive":false,"suggestions":["Suporte familiar presente","Suporte social presente","Esperança quanto ao futuro","Ausência de plano definido","Ausência de tentativa prévia","Vinculação terapêutica","Crenças religiosas ou espirituais protetoras","Responsabilidades com dependentes","Bom controle de impulsos"]},{"label":"Plano de segurança documentado","exclusive":false,"suggestions":["Sem necessidade de intervenção imediata","Reavaliação em curto prazo","Encaminhamento a serviço de urgência","Necessidade de supervisão contínua","Considerada internação","Orientação de rede de apoio","Acionamento do CAPS","Orientação sobre o CVV (188)","Restrição de acesso a meios letais"]}]},{"id":"sumula","title":"Súmula e Observações","hint":"Texto livre: síntese do exame, hipóteses diagnósticas e observações","tipo":"texto","campos":[{"id":"sumula","label":"Súmula","placeholder":"Síntese do exame e hipóteses diagnósticas...","linhas":4},{"id":"observacoes","label":"Observações adicionais","placeholder":"Contexto da entrevista, fontes de informação, limitações do exame...","linhas":3}]}]};
+
+/* ============================================================
+   Estado
+   ============================================================ */
+const CHAVE = 'eem-estruturado:v1';
+const CHAVE_RASC = 'eem-estruturado:rascunhos:v1';
+
+const estadoInicial = () => ({
+  sel: {},        // { secaoId: [termos] }
+  custom: {},     // { secaoId: [termos personalizados] }
+  textos: {},     // { campoId: valor }
+  meta: { nome: '', registro: '', data: '' },
+  tema: 'claro',
+  recolhidas: []
+});
+
+let estado = estadoInicial();
+let pilhaDesfazer = [];
+let observador = null;
+const secoes = DADOS.secoes.filter(s => s.tipo !== 'texto');
+const secaoTexto = DADOS.secoes.find(s => s.tipo === 'texto');
+
+/* ============================================================
+   Persistência local
+   ============================================================ */
+function salvarLocal() {
+  try { localStorage.setItem(CHAVE, JSON.stringify(estado)); } catch (e) {}
+}
+function lerLocal() {
+  try {
+    const cru = localStorage.getItem(CHAVE);
+    if (!cru) return null;
+    const obj = JSON.parse(cru);
+    return Object.assign(estadoInicial(), obj);
+  } catch (e) { return null; }
+}
+function limparLocal() {
+  try { localStorage.removeItem(CHAVE); localStorage.removeItem(CHAVE_RASC); } catch (e) {}
+}
+
+/* ============================================================
+   Utilidades
+   ============================================================ */
+const esc = s => String(s).replace(/[&<>"']/g, c => ({ '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;' }[c]));
+const sel = id => estado.sel[id] || [];
+const normalizar = t => {
+  const s = String(t).trim().replace(/\s+/g, ' ');
+  if (s.length > 1 && s[0] === s[0].toUpperCase() && s[1] === s[1].toLowerCase()) return s[0].toLowerCase() + s.slice(1);
+  return s;
+};
+function juntar(termos) {
+  const t = termos.map(normalizar).filter(Boolean);
+  if (t.length === 0) return '';
+  if (t.length === 1) return t[0];
+  if (t.length === 2) return t[0] + ' e ' + t[1];
+  return t.slice(0, -1).join(', ') + ' e ' + t[t.length - 1];
+}
+function toast(msg) {
+  const el = document.getElementById('toast');
+  el.textContent = msg; el.classList.add('on');
+  clearTimeout(el._t); el._t = setTimeout(() => el.classList.remove('on'), 2200);
+}
+function irPara(el, opcoes) {
+  if (el && typeof el.scrollIntoView === 'function') el.scrollIntoView(opcoes || { behavior: 'smooth', block: 'start' });
+}
+function foto() { pilhaDesfazer.push(JSON.stringify(estado)); if (pilhaDesfazer.length > 60) pilhaDesfazer.shift(); }
+function desfazer() {
+  if (!pilhaDesfazer.length) return toast('Nada para desfazer');
+  estado = JSON.parse(pilhaDesfazer.pop());
+  renderTudo(); salvarLocal(); toast('Ação desfeita');
+}
+function totalTermos() { return secoes.reduce((n, s) => n + sel(s.id).length, 0); }
+function dominiosPreenchidos() { return secoes.filter(s => sel(s.id).length > 0).length; }
+
+/* ============================================================
+   Interação com termos
+   ============================================================ */
+function alternar(secaoId, termo, grupo) {
+  foto();
+  const atual = sel(secaoId).slice();
+  const i = atual.indexOf(termo);
+  let trocado = null;
+  if (i >= 0) {
+    atual.splice(i, 1);
+    estado.sel[secaoId] = atual;
+  } else if (grupo && grupo.exclusive) {
+    const doGrupo = grupo.suggestions || [];
+    trocado = atual.find(t => doGrupo.includes(t)) || null;
+    estado.sel[secaoId] = atual.filter(t => !doGrupo.includes(t)).concat([termo]);
+  } else {
+    atual.push(termo);
+    estado.sel[secaoId] = atual;
+  }
+  aplicarSelecao(secaoId);
+  atualizarContadores();
+  salvarLocal();
+  if (trocado) toast('Escolha única: “' + trocado + '” saiu, entrou “' + termo + '”');
+}
+// Atualiza só o que mudou (sem redesenhar o domínio inteiro): preserva a rolagem,
+// o foco e a posição do dedo — essencial no celular.
+function aplicarSelecao(secaoId) {
+  const raiz = document.getElementById('sec-' + secaoId);
+  if (!raiz) return;
+  const escolhidos = sel(secaoId);
+  raiz.querySelectorAll('.ficha').forEach(b => {
+    b.setAttribute('aria-pressed', escolhidos.includes(b.dataset.termo) ? 'true' : 'false');
+  });
+  const cont = raiz.querySelector('[data-cont]');
+  if (cont) {
+    cont.textContent = escolhidos.length;
+    cont.classList.toggle('zero', escolhidos.length === 0);
+  }
+}
+function adicionarPersonalizado(secaoId, texto) {
+  const t = String(texto).trim().replace(/\s+/g, ' ');
+  if (!t) return;
+  foto();
+  const lista = (estado.custom[secaoId] || []).slice();
+  if (!lista.includes(t)) lista.push(t);
+  estado.custom[secaoId] = lista;
+  const s = sel(secaoId).slice(); if (!s.includes(t)) s.push(t);
+  estado.sel[secaoId] = s;
+  renderSecao(secaoId); atualizarContadores(); salvarLocal();
+}
+function removerPersonalizado(secaoId, texto) {
+  foto();
+  estado.custom[secaoId] = (estado.custom[secaoId] || []).filter(t => t !== texto);
+  estado.sel[secaoId] = sel(secaoId).filter(t => t !== texto);
+  renderSecao(secaoId); atualizarContadores(); salvarLocal();
+}
+function limparSecao(secaoId) {
+  foto();
+  estado.sel[secaoId] = [];
+  aplicarSelecao(secaoId); atualizarContadores(); salvarLocal();
+  toast('Domínio limpo');
+}
+
+/* ============================================================
+   Render
+   ============================================================ */
+function renderNav() {
+  const nav = document.getElementById('nav');
+  nav.innerHTML = DADOS.secoes.map(s => {
+    const n = s.tipo === 'texto'
+      ? Object.values(estado.textos || {}).filter(v => v && v.trim()).length
+      : sel(s.id).length;
+    return '<li><button data-ir="' + s.id + '"><span>' + esc(s.title) + '</span>' +
+      '<span class="cont' + (n ? '' : ' zero') + '">' + n + '</span></button></li>';
+  }).join('');
+  nav.querySelectorAll('button[data-ir]').forEach(b => {
+    b.addEventListener('click', () => {
+      const alvo = document.getElementById('sec-' + b.dataset.ir);
+      irPara(alvo);
+      marcarAtivo(b.dataset.ir);
+      if (window.innerWidth <= 1000) document.getElementById('lateral').classList.add('fechado');
+    });
+  });
+  document.getElementById('contDominios').textContent = secoes.length + ' domínios + súmula';
+}
+function marcarAtivo(id) {
+  document.querySelectorAll('#nav button[data-ir]').forEach(b => b.classList.toggle('ativo', b.dataset.ir === id));
+}
+function renderSecao(id) {
+  const s = DADOS.secoes.find(x => x.id === id);
+  if (!s) return;
+  const alvo = document.getElementById('sec-' + id);
+  if (alvo) alvo.outerHTML = htmlSecao(s);
+  const novo = document.getElementById('sec-' + id);
+  ligarSecao(novo, s);
+  if (estado.recolhidas && estado.recolhidas.includes(id)) novo.classList.add('recolhida');
+  if (observador && novo) observador.observe(novo);
+}
+function htmlSecao(s) {
+  if (s.tipo === 'texto') {
+    return '<section class="secao" id="sec-' + s.id + '">' +
+      '<div class="secao-cab"><div><h3>' + esc(s.title) + '</h3><p>' + esc(s.hint) + '</p></div></div>' +
+      '<div class="secao-corpo">' + (s.campos || []).map(c =>
+        '<div class="campo" style="margin-bottom:10px"><label for="txt-' + c.id + '">' + esc(c.label) + '</label>' +
+        '<textarea id="txt-' + c.id + '" data-campo="' + c.id + '" rows="' + (c.linhas || 3) + '" placeholder="' + esc(c.placeholder || '') + '">' +
+        esc((estado.textos || {})[c.id] || '') + '</textarea></div>').join('') +
+      '</div></section>';
+  }
+  const escolhidos = sel(s.id);
+  const custom = (estado.custom || {})[s.id] || [];
+  let corpo = '';
+  s.grupos.forEach((g, gi) => {
+    corpo += '<div class="grupo"><div class="grupo-rot"><span>' + esc(g.label || 'Sugestões') + '</span>' +
+      (g.exclusive ? '<span class="selo">escolha única</span>' : '') + '</div><div class="fichas">' +
+      g.suggestions.map(t => ficha(t, escolhidos.includes(t), false, gi)).join('') +
+      '</div></div>';
+  });
+  if (custom.length) {
+    corpo += '<div class="grupo"><div class="grupo-rot"><span>Termos personalizados</span></div><div class="fichas">' +
+      custom.map(t => ficha(t, escolhidos.includes(t), true, -1)).join('') + '</div></div>';
+  }
+  corpo += '<div class="add-termo">' +
+    '<input type="text" data-novo="' + s.id + '" placeholder="Adicionar termo personalizado…" aria-label="Novo termo para ' + esc(s.title) + '" autocomplete="off" autocapitalize="sentences" enterkeyhint="done">' +
+    '<button class="btn btn-sm" data-add="' + s.id + '">Adicionar</button></div>';
+
+  return '<section class="secao" id="sec-' + s.id + '">' +
+    '<div class="secao-cab"><div><h3>' + esc(s.title) + '</h3><p>' + esc(s.hint) + '</p></div>' +
+    '<div class="dir"><span class="marca-sel' + (escolhidos.length ? '' : ' zero') + '" data-cont="' + s.id + '" title="Termos selecionados neste domínio">' + escolhidos.length + '</span>' +
+    '<button class="btn btn-sm btn-fantasma" data-limpar-secao="' + s.id + '" title="Limpar este domínio">Limpar</button>' +
+    '<button class="btn btn-sm btn-fantasma" data-recolher="' + s.id + '" title="Recolher domínio">▾</button></div></div>' +
+    '<div class="secao-corpo">' + corpo + '</div></section>';
+}
+function ficha(termo, ativo, personalizada, gi) {
+  return '<button type="button" class="ficha' + (personalizada ? ' personalizada' : '') + '" aria-pressed="' + (ativo ? 'true' : 'false') +
+    '" data-termo="' + esc(termo) + '" data-gi="' + gi + '">' + esc(termo) +
+    (personalizada ? '<span class="x" data-remover="' + esc(termo) + '" title="Excluir termo personalizado">×</span>' : '') + '</button>';
+}
+function ligarSecao(raiz, s) {
+  if (!raiz) return;
+  if (s.tipo === 'texto') {
+    raiz.querySelectorAll('textarea[data-campo]').forEach(ta => {
+      ta.addEventListener('input', () => {
+        estado.textos = estado.textos || {};
+        estado.textos[ta.dataset.campo] = ta.value;
+        salvarLocal(); atualizarContadores();
+      });
+    });
+    return;
+  }
+  raiz.querySelectorAll('.ficha').forEach(b => {
+    b.addEventListener('click', ev => {
+      if (ev.target.dataset.remover !== undefined) { removerPersonalizado(s.id, ev.target.dataset.remover); return; }
+      const gi = parseInt(b.dataset.gi, 10);
+      const grupo = gi >= 0 ? s.grupos[gi] : { exclusive: false };
+      alternar(s.id, b.dataset.termo, grupo);
+    });
+  });
+  const entrada = raiz.querySelector('input[data-novo]');
+  const botao = raiz.querySelector('button[data-add]');
+  const enviar = () => { adicionarPersonalizado(s.id, entrada.value); entrada.value = ''; entrada.focus(); };
+  if (botao) botao.addEventListener('click', enviar);
+  if (entrada) entrada.addEventListener('keydown', ev => { if (ev.key === 'Enter') { ev.preventDefault(); enviar(); } });
+  const l = raiz.querySelector('button[data-limpar-secao]');
+  if (l) l.addEventListener('click', () => limparSecao(s.id));
+  const r = raiz.querySelector('button[data-recolher]');
+  if (r) r.addEventListener('click', () => {
+    foto();
+    raiz.classList.toggle('recolhida');
+    const id = s.id, arr = estado.recolhidas || [];
+    estado.recolhidas = raiz.classList.contains('recolhida') ? arr.concat([id]).filter((v, i, a) => a.indexOf(v) === i) : arr.filter(v => v !== id);
+    salvarLocal();
+  });
+}
+let secoesPreRenderizadas = true;
+function renderSecoes() {
+  const alvo = document.getElementById('secoes');
+  // O build.py já deixa os domínios no HTML (para funcionar sem JavaScript).
+  // Na primeira carga o app adota esse HTML em vez de recriá-lo; depois disso,
+  // qualquer re-render (desfazer, abrir rascunho) reconstrói tudo do zero.
+  if (secoesPreRenderizadas && alvo.querySelector('section.secao')) {
+    secoesPreRenderizadas = false;
+  } else {
+    alvo.innerHTML = DADOS.secoes.map(htmlSecao).join('');
+  }
+  DADOS.secoes.forEach(s => ligarSecao(document.getElementById('sec-' + s.id), s));
+}
+function atualizarContadores() {
+  const total = totalTermos(), dom = dominiosPreenchidos();
+  document.getElementById('resumoBarra').innerHTML = '<b>' + total + '</b> termos em <b>' + dom + '</b> domínios';
+  const pct = Math.round(100 * dom / secoes.length);
+  document.getElementById('barraProgresso').style.width = pct + '%';
+  document.getElementById('txtProgresso').textContent = dom === 0 ? 'Nenhum domínio preenchido' : dom + ' de ' + secoes.length + ' domínios (' + pct + '%)';
+  secoes.forEach(s => {
+    const el = document.querySelector('[data-cont="' + s.id + '"]');
+    if (el) { const n = sel(s.id).length; el.textContent = n; el.classList.toggle('zero', n === 0); }
+  });
+  document.querySelectorAll('#nav button[data-ir]').forEach(b => {
+    const s = DADOS.secoes.find(x => x.id === b.dataset.ir);
+    const el = b.querySelector('.cont'); if (!el || !s) return;
+    const n = s.tipo === 'texto' ? Object.values(estado.textos || {}).filter(v => v && v.trim()).length : sel(s.id).length;
+    el.textContent = n; el.classList.toggle('zero', n === 0);
+  });
+  document.getElementById('btnGerar').disabled = total === 0;
+}
+function renderTudo() {
+  renderNav(); renderSecoes(); atualizarContadores();
+  document.getElementById('mNome').value = estado.meta.nome || '';
+  document.getElementById('mRegistro').value = estado.meta.registro || '';
+  document.getElementById('mData').value = estado.meta.data || '';
+  document.documentElement.dataset.tema = estado.tema || 'claro';
+}
+
+/* ============================================================
+   Geração de texto
+   ============================================================ */
+function cabecalho() {
+  const l = [];
+  if (estado.meta.nome) l.push('Paciente: ' + estado.meta.nome);
+  if (estado.meta.registro) l.push('Registro: ' + estado.meta.registro);
+  let data = estado.meta.data;
+  if (data) { const [a, m, d] = data.split('-'); if (a) data = d + '/' + m + '/' + a; }
+  else { const h = new Date(); data = String(h.getDate()).padStart(2, '0') + '/' + String(h.getMonth() + 1).padStart(2, '0') + '/' + h.getFullYear(); }
+  l.push('Data: ' + data);
+  return l.join('   |   ');
+}
+function gerarEstruturado() {
+  const linhas = ['EXAME DO ESTADO MENTAL', '', cabecalho(), ''];
+  let algum = false;
+  DADOS.secoes.forEach(s => {
+    if (s.tipo === 'texto') return;
+    const t = sel(s.id);
+    if (!t.length) return;
+    algum = true;
+    linhas.push(s.title + ': ' + juntar(t) + '.');
+  });
+  if (secaoTexto) {
+    (secaoTexto.campos || []).forEach(c => {
+      const v = (estado.textos || {})[c.id];
+      if (v && v.trim()) { linhas.push(''); linhas.push(c.label + ': ' + v.trim()); }
+    });
+  }
+  if (!algum) return '';
+  return linhas.join('\n');
+}
+function gerarNarrativo() {
+  const frases = [];
+  DADOS.secoes.forEach(s => {
+    if (s.tipo === 'texto') return;
+    const t = sel(s.id);
+    if (!t.length) return;
+    if (s.id === 'orientacao') {
+      const baixo = t.map(x => x.toLowerCase());
+      if (baixo.includes('desorientado globalmente')) { frases.push('Apresenta-se desorientado globalmente.'); return; }
+      if (baixo.includes('orientado globalmente')) { frases.push('Encontra-se orientado globalmente.'); return; }
+    }
+    const frase = (s.prosa || (s.title + ': ')) + juntar(t) + '.';
+    frases.push(frase.charAt(0).toUpperCase() + frase.slice(1));
+  });
+  const blocos = [];
+  const textos = [];
+  if (secaoTexto) (secaoTexto.campos || []).forEach(c => {
+    const v = (estado.textos || {})[c.id];
+    if (v && v.trim()) textos.push(c.label + ': ' + v.trim());
+  });
+  if (!frases.length && !textos.length) return '';
+  let corpo = frases.join(' ');
+  if (textos.length) corpo += (corpo ? '\n\n' : '') + textos.join('\n');
+  blocos.push('EXAME DO ESTADO MENTAL', '', cabecalho(), '', corpo);
+  return blocos.join('\n');
+}
+function gerarResumo() {
+  const t = [];
+  if (estado.meta.nome) t.push(estado.meta.nome);
+  t.push(totalTermos() + ' achados em ' + dominiosPreenchidos() + '/' + secoes.length + ' domínios');
+  const relevantes = ['pensamento_conteudo', 'risco', 'sensopercepcao', 'humor_afeto', 'insight', 'juizo'];
+  relevantes.forEach(id => {
+    const s = secoes.find(x => x.id === id);
+    if (s && sel(id).length) t.push(s.title + ': ' + juntar(sel(id)));
+  });
+  const sum = (estado.textos || {}).sumula;
+  if (sum && sum.trim()) t.push('Súmula: ' + sum.trim());
+  return t.join('\n');
+}
+let modo = 'estruturado';
+function ajustarAlturaSaida() {
+  const ta = document.getElementById('textoSaida');
+  ta.style.height = 'auto';
+  ta.style.height = Math.max(240, ta.scrollHeight + 4) + 'px';
+}
+function gerar() {
+  const txt = modo === 'narrativo' ? gerarNarrativo() : modo === 'resumo' ? gerarResumo() : gerarEstruturado();
+  document.getElementById('textoSaida').value = txt;
+  document.getElementById('impressao').textContent = txt;
+  ajustarAlturaSaida();
+  return txt;
+}
+
+/* ============================================================
+   Busca global
+   ============================================================ */
+function buscar(termo) {
+  const painel = document.getElementById('buscaPainel');
+  const lista = document.getElementById('buscaLista');
+  const q = termo.trim().toLowerCase();
+  if (q.length < 2) { painel.classList.remove('on'); return; }
+  const achados = [];
+  DADOS.secoes.forEach(s => {
+    if (s.tipo === 'texto') return;
+    const vistos = {};
+    (s.grupos || []).forEach(g => (g.suggestions || []).forEach(t => {
+      if (vistos[t]) return;
+      if (t.toLowerCase().indexOf(q) >= 0) { vistos[t] = 1; achados.push({ t, s, ativo: sel(s.id).includes(t) }); }
+    }));
+    ((estado.custom || {})[s.id] || []).forEach(t => {
+      if (vistos[t]) return; vistos[t] = 1;
+      if (t.toLowerCase().indexOf(q) >= 0) achados.push({ t, s, ativo: sel(s.id).includes(t) });
+    });
+  });
+  document.getElementById('buscaTitulo').textContent = achados.length + ' resultado(s) para “' + termo.trim() + '”';
+  if (!achados.length) { lista.innerHTML = '<p class="dica" style="padding:8px">Nenhum termo encontrado.</p>'; painel.classList.add('on'); return; }
+  const realce = t => esc(t).replace(new RegExp('(' + q.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + ')', 'ig'), '<mark>$1</mark>');
+  lista.innerHTML = achados.slice(0, 120).map((a, i) =>
+    '<button data-r="' + i + '"><span>' + realce(a.t) + '</span><span class="onde">' + esc(a.s.title) + (a.ativo ? ' · selecionado' : '') + '</span></button>'
+  ).join('');
+  lista.querySelectorAll('button[data-r]').forEach(b => b.addEventListener('click', () => {
+    const a = achados[parseInt(b.dataset.r, 10)];
+    const sec = DADOS.secoes.find(x => x.id === a.s.id);
+    let grupo = { exclusive: false };
+    (sec.grupos || []).forEach(g => { if ((g.suggestions || []).includes(a.t)) grupo = g; });
+    alternar(a.s.id, a.t, grupo);
+    irPara(document.getElementById('sec-' + a.s.id), { behavior: 'smooth', block: 'center' });
+    marcarAtivo(a.s.id);
+    buscar(document.getElementById('busca').value);
+  }));
+  painel.classList.add('on');
+}
+
+/* ============================================================
+   Rascunhos
+   ============================================================ */
+function lerRascunhos() { try { return JSON.parse(localStorage.getItem(CHAVE_RASC) || '{}'); } catch (e) { return {}; } }
+function gravarRascunhos(o) { try { localStorage.setItem(CHAVE_RASC, JSON.stringify(o)); } catch (e) {} }
+function salvarRascunho() {
+  const nome = (estado.meta.nome ? estado.meta.nome + ' — ' : '') + new Date().toLocaleString('pt-BR');
+  const r = lerRascunhos();
+  r[nome] = { estado: JSON.parse(JSON.stringify(estado)), quando: Date.now() };
+  gravarRascunhos(r);
+  toast('Rascunho salvo: ' + nome);
+}
+function renderRascunhos() {
+  const r = lerRascunhos();
+  const chaves = Object.keys(r).sort((a, b) => (r[b].quando || 0) - (r[a].quando || 0));
+  const alvo = document.getElementById('listaRascunhos');
+  if (!chaves.length) { alvo.innerHTML = '<p class="dica">Nenhum rascunho salvo.</p>'; return; }
+  alvo.innerHTML = chaves.map(k =>
+    '<div style="display:flex;gap:8px;align-items:center;padding:8px;border:1px solid var(--line);border-radius:10px;margin-bottom:6px">' +
+    '<span style="flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">' + esc(k) + '</span>' +
+    '<button class="btn btn-sm" data-abrir="' + esc(k) + '">Abrir</button>' +
+    '<button class="btn btn-sm btn-perigo" data-excluir="' + esc(k) + '">Excluir</button></div>').join('');
+  alvo.querySelectorAll('button[data-abrir]').forEach(b => b.addEventListener('click', () => {
+    const obj = lerRascunhos()[b.dataset.abrir];
+    if (!obj) return;
+    foto();
+    estado = Object.assign(estadoInicial(), obj.estado);
+    renderTudo(); salvarLocal();
+    document.getElementById('dlgRascunhos').close();
+    toast('Rascunho aberto');
+  }));
+  alvo.querySelectorAll('button[data-excluir]').forEach(b => b.addEventListener('click', () => {
+    const r2 = lerRascunhos(); delete r2[b.dataset.excluir]; gravarRascunhos(r2); renderRascunhos(); toast('Rascunho excluído');
+  }));
+}
+
+/* ============================================================
+   Saída
+   ============================================================ */
+function copiar() {
+  const ta = document.getElementById('textoSaida');
+  const texto = ta.value;
+  const ok = () => toast('Texto copiado');
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(texto).then(ok).catch(() => { ta.select(); document.execCommand('copy'); ok(); });
+  } else { ta.select(); document.execCommand('copy'); ok(); }
+}
+function baixar() {
+  const texto = document.getElementById('textoSaida').value;
+  const blob = new Blob([texto], { type: 'text/plain;charset=utf-8' });
+  const a = document.createElement('a');
+  const base = (estado.meta.nome || 'eem').replace(/[^\w\-]+/g, '_').toLowerCase();
+  a.href = URL.createObjectURL(blob);
+  a.download = 'eem_' + base + '_' + new Date().toISOString().slice(0, 10) + '.txt';
+  document.body.appendChild(a); a.click(); a.remove();
+  setTimeout(() => URL.revokeObjectURL(a.href), 2000);
+  toast('Arquivo baixado');
+}
+
+/* ============================================================
+   Inicialização
+   ============================================================ */
+(function iniciar() {
+  const salvo = lerLocal();
+  if (salvo) estado = salvo;
+  if (!estado.meta) estado.meta = { nome: '', registro: '', data: '' };
+  if (!estado.recolhidas) estado.recolhidas = [];
+
+  renderTudo();
+
+  // O link de volta ao acervo só faz sentido na versão publicada.
+  // Em arquivo local (file://) ele não levaria a lugar nenhum.
+  const link = document.getElementById('linkAcervo');
+  if (link && !/^https?:$/.test(location.protocol)) {
+    const sep = link.previousSibling;
+    link.remove();
+    if (sep && sep.nodeType === 3) sep.remove();
+  }
+
+  // Em telas estreitas o índice começa recolhido para não empurrar o formulário.
+  if (window.innerWidth <= 1000) {
+    document.getElementById('lateral').classList.add('fechado');
+    document.getElementById('btnIndice').setAttribute('aria-expanded', 'false');
+  }
+
+  ['mNome', 'mRegistro', 'mData'].forEach(id => {
+    document.getElementById(id).addEventListener('input', ev => {
+      const campo = id === 'mNome' ? 'nome' : id === 'mRegistro' ? 'registro' : 'data';
+      estado.meta[campo] = ev.target.value; salvarLocal();
+    });
+  });
+
+  document.getElementById('busca').addEventListener('input', ev => buscar(ev.target.value));
+  document.getElementById('busca').addEventListener('keydown', ev => { if (ev.key === 'Escape') { ev.target.value = ''; buscar(''); } });
+
+  document.getElementById('btnIndice').addEventListener('click', () => {
+    const l = document.getElementById('lateral');
+    l.classList.toggle('fechado');
+    document.getElementById('btnIndice').setAttribute('aria-expanded', String(!l.classList.contains('fechado')));
+  });
+  document.getElementById('btnTema').addEventListener('click', () => {
+    estado.tema = (estado.tema === 'escuro') ? 'claro' : 'escuro';
+    document.documentElement.dataset.tema = estado.tema; salvarLocal();
+  });
+
+  const dlg = document.getElementById('dlgSaida');
+  document.getElementById('btnGerar').addEventListener('click', () => { modo = 'estruturado'; sincronizarAbas(); gerar(); dlg.showModal(); ajustarAlturaSaida(); });
+  document.getElementById('btnFechar').addEventListener('click', () => dlg.close());
+  document.getElementById('btnCopiar').addEventListener('click', copiar);
+  document.getElementById('btnBaixar').addEventListener('click', baixar);
+  document.getElementById('btnImprimir').addEventListener('click', () => { document.getElementById('impressao').textContent = document.getElementById('textoSaida').value; window.print(); });
+  dlg.querySelectorAll('.abas button').forEach(b => b.addEventListener('click', () => {
+    modo = b.dataset.modo; sincronizarAbas(); gerar();
+  }));
+  function sincronizarAbas() {
+    dlg.querySelectorAll('.abas button').forEach(b => b.setAttribute('aria-selected', String(b.dataset.modo === modo)));
+  }
+  document.getElementById('textoSaida').addEventListener('input', ev => { document.getElementById('impressao').textContent = ev.target.value; });
+  document.getElementById('textoSaida').addEventListener('input', ajustarAlturaSaida);
+
+  document.getElementById('btnLimpar').addEventListener('click', () => {
+    if (!confirm('Limpar todas as seleções, textos e identificação? Esta ação pode ser desfeita com Ctrl+Z.')) return;
+    foto(); estado = estadoInicial(); renderTudo(); salvarLocal(); toast('Exame limpo');
+  });
+  document.getElementById('btnSalvar').addEventListener('click', salvarRascunho);
+  const dlgR = document.getElementById('dlgRascunhos');
+  document.getElementById('btnRascunhos').addEventListener('click', () => { renderRascunhos(); dlgR.showModal(); });
+  document.getElementById('btnFecharRascunhos').addEventListener('click', () => dlgR.close());
+  document.getElementById('btnApagarTudo').addEventListener('click', () => {
+    if (!confirm('Apagar permanentemente o estado atual e todos os rascunhos salvos neste navegador?')) return;
+    limparLocal(); estado = estadoInicial(); renderTudo(); dlgR.close(); toast('Dados locais apagados');
+  });
+
+  document.addEventListener('keydown', ev => {
+    const digitando = /^(INPUT|TEXTAREA)$/.test(document.activeElement.tagName);
+    if (ev.key === '/' && !digitando) { ev.preventDefault(); document.getElementById('busca').focus(); }
+    if ((ev.ctrlKey || ev.metaKey) && ev.key === 'Enter') { ev.preventDefault(); if (totalTermos()) { gerar(); dlg.showModal(); ajustarAlturaSaida(); } }
+    if ((ev.ctrlKey || ev.metaKey) && ev.key.toLowerCase() === 'z' && !digitando) { ev.preventDefault(); desfazer(); }
+  });
+
+  // Realce do domínio visível
+  observador = new IntersectionObserver(entradas => {
+    entradas.forEach(e => { if (e.isIntersecting) marcarAtivo(e.target.id.replace('sec-', '')); });
+  }, { rootMargin: '-80px 0px -70% 0px' });
+  document.querySelectorAll('.secao').forEach(s => observador.observe(s));
+
+  salvarLocal();
+})();
+</script>
+</body>
+</html>

@@ -6,7 +6,7 @@ import { pageMeta } from "@/lib/metadata";
 export const metadata = pageMeta({
   title: "Saúde Mental",
   description:
-    "Seminário de psicoterapias e PBL das lacunas de saúde mental, para leitura no navegador.",
+    "Ferramenta de exame do estado mental, seminário de psicoterapias e PBL das lacunas de saúde mental, para usar no navegador.",
   path: "/biblio/saude-mental",
 });
 
@@ -16,11 +16,33 @@ export default function SaudeMentalBiblioPage() {
       <PageHero
         eyebrow="Biblioteca / Saúde Mental"
         title="Seminário de Saúde Mental"
-        description="Dois materiais de estudo: a apresentação do seminário e o PBL das seis lacunas."
+        description="Três materiais: uma ferramenta estruturada para o exame do estado mental, o PBL das seis lacunas e a apresentação do seminário."
       />
       <section className="py-16 sm:py-24">
         <Container>
           <div className="grid gap-5">
+            <article className="rounded-2xl border border-line bg-surface p-7 sm:p-9">
+              <div className="flex items-start justify-between gap-4">
+                <span className="rounded-full bg-signal-soft px-3 py-1.5 text-[0.68rem] font-semibold uppercase tracking-[0.14em] text-signal">
+                  Ferramenta
+                </span>
+                <span className="font-mono text-xs text-muted">HTML</span>
+              </div>
+              <h2 className="mt-8 font-display text-3xl leading-tight text-ink sm:text-4xl">
+                Exame do Estado Mental
+              </h2>
+              <p className="mt-4 max-w-2xl text-sm leading-relaxed text-ink-soft">
+                Marque os achados por domínio e gere o texto do exame para o prontuário. Roda no
+                navegador e não envia dado nenhum a servidor. Apoio ao registro — não substitui
+                julgamento clínico nem instrumentos validados de avaliação de risco.
+              </p>
+              <Link
+                href="/biblio/saude-mental/exame-do-estado-mental"
+                className="mt-8 inline-flex min-h-[44px] items-center gap-2 rounded-full bg-signal px-5 py-3 text-xs font-semibold uppercase tracking-[0.14em] text-paper"
+              >
+                Abrir ferramenta <span aria-hidden="true">↗</span>
+              </Link>
+            </article>
             <article className="rounded-2xl border border-line bg-surface p-7 sm:p-9">
               <div className="flex items-start justify-between gap-4">
                 <span className="rounded-full bg-signal-soft px-3 py-1.5 text-[0.68rem] font-semibold uppercase tracking-[0.14em] text-signal">

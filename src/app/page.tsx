@@ -6,6 +6,7 @@ import { SectionLink } from "@/components/section-link";
 import { ButtonLink } from "@/components/button-link";
 import { HeroGraphic } from "@/components/hero-graphic";
 import { ProjectCard } from "@/components/project-card";
+import { DivisionProjectPreview } from "@/components/division-project-preview";
 import { StatStrip } from "@/components/stat-strip";
 import { AreaCard } from "@/components/area-card";
 import { SocialLinks } from "@/components/social-links";
@@ -17,6 +18,7 @@ import {
   heroSignals,
   profile,
   projects,
+  divisionProjects,
   publicationStats,
 } from "@/lib/data";
 
@@ -140,6 +142,30 @@ export default function Home() {
         </Container>
       </section>
 
+      <section className="border-y border-line bg-paper-soft/40 py-16 sm:py-24">
+        <Container>
+          <Reveal>
+            <SectionHeading
+              index="03"
+              eyebrow="AZLO"
+              title="Frentes em movimento"
+            />
+            <p className="mt-5 max-w-2xl text-sm leading-relaxed text-ink-soft sm:text-base">
+              Uma prévia pública do que está sendo construído nas quatro frentes
+              da AZLO — com status claros e sem transformar trabalho interno em
+              promessa pública.
+            </p>
+          </Reveal>
+          <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            {divisionProjects.map((project, i) => (
+              <Reveal key={`${project.division}-${project.title}`} delay={(i % 3) * 80} className="flex">
+                <DivisionProjectPreview project={project} />
+              </Reveal>
+            ))}
+          </div>
+        </Container>
+      </section>
+
       {/* Interlúdio editorial — prova humana (F-07) */}
       <section className="py-10 sm:py-14">
         <Container>
@@ -176,7 +202,7 @@ export default function Home() {
       <section className="py-16 sm:py-24">
         <Container>
           <Reveal>
-            <SectionHeading index="03" eyebrow="Ciência" title="Produção científica" />
+            <SectionHeading index="04" eyebrow="Ciência" title="Produção científica" />
           </Reveal>
           <StatStrip stats={publicationStats} />
         </Container>
