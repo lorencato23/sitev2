@@ -2,6 +2,8 @@ import { ImageResponse } from "next/og";
 import { readFile } from "node:fs/promises";
 import { join } from "node:path";
 
+export const dynamic = "force-static";
+
 export const alt =
   "Gabriel Lorencato — Medicina, Neurocirurgia e Medicina Aeroespacial";
 export const size = { width: 1200, height: 630 };
