@@ -36,4 +36,6 @@ The site is a static export (`output: "export"`) served by Cloudflare Workers st
 - `npm run preview` builds and serves it locally on the Cloudflare runtime.
 - `npm run deploy` builds and publishes it. Needs `CLOUDFLARE_API_TOKEN` and `CLOUDFLARE_ACCOUNT_ID` in the environment.
 
+`worker/index.ts` runs in front of the files and redirects `www.drlorencato.com` to `drlorencato.com`, the canonical host declared in `metadataBase`, the sitemap and robots.txt. The routes in `wrangler.jsonc` only take effect while the zone's DNS records are proxied.
+
 Static export has no server: redirects live in `public/_redirects` and response headers in `public/_headers`, not in `next.config.ts`. Pages that call `redirect()` would overwrite same-named files in `public/`.

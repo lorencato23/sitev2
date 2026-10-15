@@ -1,10 +1,21 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
   "name": "sitev2",
+  "main": "worker/index.ts",
   "compatibility_date": "2026-10-01",
   "assets": {
     "directory": "./out",
+    "binding": "ASSETS",
+    // The Worker must see every request so it can redirect www to the apex.
+    "run_worker_first": true,
     "html_handling": "auto-trailing-slash",
     "not_found_handling": "404-page"
-  }
+  },
+  // Zone routes only take effect while the DNS records are proxied (orange cloud).
+  "routes": [
+    { "pattern": "drlorencato.com/*", "zone_name": "drlorencato.com" },
+    { "pattern": "www.drlorencato.com/*", "zone_name": "drlorencato.com" }
+  ],
+  "workers_dev": false,
+  "preview_urls": false
 }
