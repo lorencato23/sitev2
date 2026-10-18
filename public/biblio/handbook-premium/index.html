@@ -2,63 +2,99 @@
 <html lang="pt-BR">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>HP Library — Handbooks Premium</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0d1117">
+<title>Handbook Premium Library · @dr.lorencato</title>
+<meta name="description" content="Biblioteca de Handbooks Premium de clínica médica para residência: catálogo de 114 HPs, com os publicados abertos para leitura.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:ital,opsz,wght@0,9..40,400..800;1,9..40,400..600&display=swap">
 <link rel="stylesheet" href="/biblio/handbook-premium/static/app.css">
 </head>
 <body>
-<a class="skip" href="#cards">Pular para os resultados</a>
+<a class="skip" href="#catalogo">Pular para o catálogo</a>
 
-<header class="topbar">
-  <div class="brand">
-    <span class="logo" aria-hidden="true">HP</span>
-    <div>
-      <h1>Handbook Premium Library</h1>
-      <p class="sub">Biblioteca pública · materiais educacionais sujeitos à revisão humana</p>
+<header class="header">
+  <div class="header-row">
+    <a class="h-mark" href="/biblio" aria-label="Voltar à biblioteca">HP</a>
+    <div class="h-titles">
+      <div class="h-title">Handbook Premium Library</div>
+      <div class="h-sub">Biblioteca · clínica médica para residência</div>
     </div>
-  </div>
-  <div class="searchbox">
-    <label class="sr-only" for="q">Buscar handbooks</label>
-    <input id="q" type="search" placeholder="Buscar por título, eixo, apostila ou ID…" autocomplete="off">
+    <div class="h-author">@dr.lorencato</div>
+    <div class="h-edition">v5.2</div>
   </div>
 </header>
 
-<p id="banner" class="banner hidden" role="alert"></p>
-
-<main class="layout">
-  <aside class="filters">
-    <h2>Filtros</h2>
-    <section>
-      <h3 id="lbl-group">Macroárea</h3>
-      <div id="f-group" class="chips" role="group" aria-labelledby="lbl-group"></div>
-    </section>
-    <section>
-      <h3 id="lbl-priority">Prioridade</h3>
-      <div id="f-priority" class="chips" role="group" aria-labelledby="lbl-priority"></div>
-    </section>
-    <section>
-      <h3 id="lbl-onda">Onda</h3>
-      <div id="f-onda" class="chips" role="group" aria-labelledby="lbl-onda"></div>
-    </section>
-    <section>
-      <h3 id="lbl-status">Status</h3>
-      <div id="f-status" class="chips" role="group" aria-labelledby="lbl-status"></div>
-    </section>
-    <section>
-      <h3 id="lbl-cobertura">Cobertura de fontes</h3>
-      <div id="f-cobertura" class="chips" role="group" aria-labelledby="lbl-cobertura"></div>
-    </section>
-    <button id="clear" class="ghost" type="button">Limpar filtros</button>
-  </aside>
-
-  <section class="results" aria-label="Resultados">
-    <div class="results-head">
-      <p id="count" aria-live="polite">carregando…</p>
+<nav class="toc" aria-label="Busca e filtros">
+  <div class="toc-inner">
+    <div class="search">
+      <label class="sr-only" for="q">Buscar handbooks</label>
+      <input id="q" type="search" placeholder="Buscar tema, eixo ou ID…" autocomplete="off">
     </div>
-    <div id="cards" class="cards"></div>
-    <p id="empty" class="empty hidden">Nenhum HP corresponde aos filtros atuais.</p>
-  </section>
+    <div id="f-group" class="chips scroll" role="group" aria-label="Macroárea"></div>
+    <button id="more" class="toc-chip more" type="button" aria-expanded="false" aria-controls="panel">Filtros<span id="more-n" class="more-n"></span></button>
+  </div>
+  <div id="panel" class="panel hidden">
+    <div class="panel-inner">
+      <section><h3 id="lbl-leitura">Leitura</h3><div id="f-leitura" class="chips" role="group" aria-labelledby="lbl-leitura"></div></section>
+      <section><h3 id="lbl-priority">Prioridade</h3><div id="f-priority" class="chips" role="group" aria-labelledby="lbl-priority"></div></section>
+      <section><h3 id="lbl-onda">Onda</h3><div id="f-onda" class="chips" role="group" aria-labelledby="lbl-onda"></div></section>
+      <section><h3 id="lbl-status">Status editorial</h3><div id="f-status" class="chips" role="group" aria-labelledby="lbl-status"></div></section>
+      <section><h3 id="lbl-cobertura">Fontes</h3><div id="f-cobertura" class="chips" role="group" aria-labelledby="lbl-cobertura"></div></section>
+      <button id="clear" class="clear" type="button">Limpar filtros</button>
+    </div>
+  </div>
+</nav>
+
+<main>
+  <div class="wrap">
+    <div class="hero">
+      <div class="hero-stamp">@dr.lorencato</div>
+      <div class="hero-tag">Biblioteca · Handbook Premium</div>
+      <h1>Handbooks Premium<br><em>clínica médica para residência</em></h1>
+      <p class="hero-lead">Um handbook por tema, no formato pocket + estudo: red flags, algoritmo, tratamento com doses e evidência rastreável. O catálogo mostra o plano inteiro; os publicados abrem aqui mesmo.</p>
+      <div id="stats" class="stats" aria-live="polite"></div>
+      <div class="hero-sig">Curadoria por <b>@dr.lorencato</b> · Elite Edition v5.2</div>
+    </div>
+
+    <p id="banner" class="banner hidden" role="alert"></p>
+
+    <div id="pocket" class="pocket hidden">
+      <div class="pocket-head">
+        <div>
+          <div class="pocket-eyebrow">Disponíveis para leitura</div>
+          <div class="pocket-title">Publicados</div>
+          <div class="pocket-sub">Material educacional em revisão clínica humana · não é orientação clínica individual</div>
+        </div>
+      </div>
+      <div id="pocket-grid" class="pocket-grid"></div>
+    </div>
+
+    <section id="catalogo" class="catalog" aria-label="Catálogo">
+      <div class="section">
+        <div class="section-eyebrow">Catálogo</div>
+        <div class="section-title">Todos os handbooks</div>
+        <div id="count" class="section-sub" aria-live="polite">carregando…</div>
+      </div>
+      <div id="cards"></div>
+      <p id="empty" class="empty hidden">Nenhum HP corresponde à busca e aos filtros atuais.</p>
+    </section>
+  </div>
 </main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <div>
+        <div class="foot-author">@dr.lorencato</div>
+        <div class="foot-meta">Handbook Premium Library · v5.2</div>
+      </div>
+      <div class="foot-mono">Cada handbook conserva seu status editorial. Conteúdo em revisão clínica humana é rascunho educacional, não protocolo institucional nem orientação clínica individual.</div>
+    </div>
+  </div>
+</footer>
+<div class="watermark">@dr.lorencato · HP Library</div>
 
 <div id="detail" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="detail-title">
   <div class="modal-card">
@@ -84,10 +120,6 @@
   </header>
   <iframe id="reader-frame" title="Conteúdo do handbook"></iframe>
 </div>
-
-<footer class="foot">
-  <p>Handbook Premium Library · catálogo editorial. Cada material conserva seu status; conteúdo em revisão clínica humana é rascunho educacional, não orientação clínica individual.</p>
-</footer>
 
 <script src="/biblio/handbook-premium/static/app.js"></script>
 </body>

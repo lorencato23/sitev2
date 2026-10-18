@@ -7,12 +7,26 @@
 "use strict";
 
 const FACETS = [
-  { key: "group", col: "group", mount: "#f-group" },
+  { key: "group", col: "group", mount: "#f-group", dot: true },
+  { key: "leitura", col: "leitura", mount: "#f-leitura" },
   { key: "priority", col: "priority", mount: "#f-priority" },
   { key: "onda", col: "onda", mount: "#f-onda", fmt: (v) => v.replace("O", "Onda ") },
-  { key: "status", col: "status", mount: "#f-status" },
-  { key: "cobertura", col: "cobertura_atual", mount: "#f-cobertura" },
+  { key: "status", col: "status", mount: "#f-status", fmt: (v) => STATUS[v] || v },
+  { key: "cobertura", col: "cobertura_atual", mount: "#f-cobertura", fmt: (v) => COBERTURA[v] || v },
 ];
+
+/* Rótulos em português e cores por macroárea, na paleta dos próprios HPs. */
+const STATUS = { auditing: "em auditoria", clinical_review: "revisão clínica", validated: "validado", completed: "concluído" };
+const COBERTURA = { covered: "fontes completas", partial: "fontes parciais", absent: "sem fontes" };
+const PRIO = { P0: ["ank-dgr", "P0 · núcleo"], P1: ["ank-dec", "P1"], P2: ["ank-hy", "P2"] };
+const AREA = {
+  "Cardiovascular": "#a31b35", "Respiratório": "#1d4570", "Neurologia": "#5e2f78",
+  "Gastro/Hepato": "#a8481a", "Endocrinologia": "#7a6014", "Nefro/Uro": "#0b5d4e",
+  "Infecto/Imuno": "#3e6a2e", "Hemato/Onco": "#a31b25", "Reumato/Orto/Derm": "#5a4070",
+  "Gineco/Obst": "#b4426e", "Pediatria": "#0d6373", "Cirurgia/Trauma": "#6a3a1a",
+  "Psiquiatria/Geriatria": "#1d4ea3", "Oftalmo/ENT": "#545b69",
+};
+const areaColor = (g) => AREA[g] || "#545b69";
 
 const SEARCH_COLS = ["id", "title", "group", "main_axes", "apostila_primaria"];
 
@@ -107,7 +121,8 @@ function buildChips() {
       btn.dataset.key = f.key;
       btn.dataset.val = val;
       btn.setAttribute("aria-pressed", "false");
-      btn.innerHTML = `${esc(f.fmt ? f.fmt(val) : val)}<span class="n"></span>`;
+      const dot = f.dot ? `<span class="dot" style="--acc:${areaColor(val)}"></span>` : "";
+      btn.innerHTML = `${dot}${esc(f.fmt ? f.fmt(val) : val)}<span class="n"></span>`;
       btn.addEventListener("click", () => toggleFilter(f.key, val));
       mount.appendChild(btn);
     }
@@ -133,6 +148,18 @@ function syncChips() {
   }
 }
 
+function syncMore() {
+  const n = FACETS.filter((f) => f.key !== "group")
+    .reduce((acc, f) => acc + state.filters[f.key].size, 0);
+  $("#more-n").textContent = n ? String(n) : "";
+}
+
+$("#more").addEventListener("click", () => {
+  const panel = $("#panel");
+  const open = panel.classList.toggle("hidden") === false;
+  $("#more").setAttribute("aria-expanded", String(open));
+});
+
 function toggleFilter(key, val) {
   const set = state.filters[key];
   if (set.has(val)) set.delete(val);
@@ -148,47 +175,96 @@ $("#clear").addEventListener("click", () => {
 });
 
 /* ---------- cards ---------- */
+function anks(it) {
+  const [cls, label] = PRIO[it.priority] || ["ank-mute", it.priority || "—"];
+  const st = it.status === "auditing" ? "ank-mute" : it.status === "clinical_review" ? "ank-evo" : "ank-prl";
+  return `<span class="ank ${cls}">${esc(label)}</span><span class="ank ${st}">${esc(STATUS[it.status] || it.status)}</span>`;
+}
+
 function card(it) {
   const div = document.createElement("article");
-  div.className = "card";
+  div.className = "card" + (it.has_content ? " live" : "");
+  div.style.setProperty("--acc", areaColor(it.group));
   div.tabIndex = 0;
   div.setAttribute("role", "button");
-  div.setAttribute("aria-label", `${it.id}: ${it.title}`);
+  div.setAttribute("aria-label", `${it.id}: ${it.title}${it.has_content ? " (disponível para leitura)" : ""}`);
   div.dataset.id = it.id;
-  const badge = it.has_content
-    ? `<span class="badge content">conteúdo</span><span class="badge audit">${esc(it.status)}</span>`
-    : `<span class="badge audit">${esc(it.status)}</span>`;
   div.innerHTML = `
-    <div class="card-top">
-      <span class="hpid">${esc(it.id)}</span>
-      <div class="badges">
-        <span class="badge ${prioClass(it.priority)}">${esc(it.priority)}</span>
-        ${badge}
-      </div>
-    </div>
-    <h4>${esc(it.title)}</h4>
+    <div class="card-head"><span class="hpid">${esc(it.id)}</span>${anks(it)}</div>
+    <h3>${esc(it.title)}</h3>
     <p class="axes">${esc(it.main_axes)}</p>
-    <div class="card-meta">
-      <span class="tag">${esc(it.group)}</span>
-      <span class="tag">${esc(String(it.onda ?? "").replace("O", "Onda "))}</span>
-      <span class="tag">residência: ${esc(it.priority_residencia)}</span>
+    <div class="card-foot">
+      <span>${esc(String(it.onda ?? "").replace("O", "onda "))}</span>
+      ${it.has_content ? '<span class="read">Ler →</span>' : '<span class="soon">em produção</span>'}
     </div>`;
-  div.addEventListener("click", () => openDetail(it.id));
+  const open = () => (it.has_content ? openReader(it.id) : openDetail(it.id));
+  div.addEventListener("click", open);
   div.addEventListener("keydown", (e) => {
     if (e.key === "Enter" || e.key === " ") {
       e.preventDefault();
-      openDetail(it.id);
+      open();
     }
   });
   return div;
 }
 
 function renderCards() {
+  const groups = new Map();
+  for (const it of state.results) {
+    if (!groups.has(it.group)) groups.set(it.group, []);
+    groups.get(it.group).push(it);
+  }
   const frag = document.createDocumentFragment();
-  state.results.forEach((it) => frag.appendChild(card(it)));
+  [...groups.keys()].sort((a, b) => a.localeCompare(b, "pt")).forEach((g) => {
+    const sec = document.createElement("section");
+    sec.className = "group";
+    sec.style.setProperty("--acc", areaColor(g));
+    const list = groups.get(g);
+    sec.innerHTML = `<div class="group-head"><h2>${esc(g)}</h2><span class="gcount">${list.length} HP${list.length > 1 ? "s" : ""}</span></div>`;
+    const grid = document.createElement("div");
+    grid.className = "cards";
+    list.forEach((it) => grid.appendChild(card(it)));
+    sec.appendChild(grid);
+    frag.appendChild(sec);
+  });
   el.cards.replaceChildren(frag);
-  el.count.textContent = `${state.results.length} de ${state.all.length} HPs`;
+  const filtered = state.results.length !== state.all.length;
+  el.count.textContent = filtered
+    ? `${state.results.length} de ${state.all.length} handbooks com a busca e os filtros atuais`
+    : `${state.all.length} handbooks em ${new Set(state.all.map((i) => i.group)).size} macroáreas, ordenados por prioridade dentro de cada uma`;
   el.empty.classList.toggle("hidden", state.results.length > 0);
+}
+
+function renderStatic() {
+  const live = state.all.filter((i) => i.has_content);
+  const areas = new Set(state.all.map((i) => i.group)).size;
+  const p0 = state.all.filter((i) => i.priority === "P0").length;
+  $("#stats").innerHTML = [
+    [live.length, "publicados", "live"], [state.all.length, "no catálogo", ""],
+    [areas, "macroáreas", ""], [p0, "núcleo P0", ""],
+  ].map(([n, l, c]) => `<div class="stat ${c}"><b>${n}</b><span>${l}</span></div>`).join("");
+
+  const grid = $("#pocket-grid");
+  grid.replaceChildren(...live.map((it) => {
+    const b = document.createElement("button");
+    b.type = "button";
+    b.className = "pocket-card";
+    b.style.setProperty("--pacc", areaColor(it.group) === "#545b69" ? "#d4b94a" : lighten(areaColor(it.group)));
+    b.innerHTML = `<span class="pc-trig">${esc(it.id)} · ${esc(it.group)}</span>
+      <span class="pc-title">${esc(it.title)}</span>
+      <span class="pc-act">${esc(it.main_axes)}</span>
+      <span class="pc-go">${esc(STATUS[it.status] || it.status)} · ler agora →</span>`;
+    b.addEventListener("click", () => openReader(it.id));
+    return b;
+  }));
+  $("#pocket").classList.toggle("hidden", live.length === 0);
+}
+
+/* As cores de área são escuras (feitas para fundo claro); no pocket escuro, clareia. */
+function lighten(hex) {
+  const n = parseInt(hex.slice(1), 16);
+  const mix = (c) => Math.round(c + (255 - c) * 0.55);
+  return `rgb(${mix(n >> 16)},${mix((n >> 8) & 255)},${mix(n & 255)})`;
 }
 
 /* ---------- detalhe ---------- */
@@ -202,27 +278,31 @@ async function openDetail(id, { push = true } = {}) {
                content_url: row.has_content ? `/biblio/handbook-premium/content/${row.id}/${row.id}.html` : null };
 
   const action = hp.content_available
-    ? `<button class="btn primary" type="button" id="detail-read">Ler handbook</button>`
-    : `<span class="btn disabled" role="note">Conteúdo ainda não disponível</span>`;
+    ? `<button class="btn primary" type="button" id="detail-read">Ler handbook →</button>`
+    : `<span class="btn disabled" role="note">Em produção</span>`;
 
   el.detailBody.innerHTML = `
-    <span class="detail-id">${esc(hp.id)} · ${esc(hp.group)}</span>
-    <h2 id="detail-title">${esc(hp.title)}</h2>
-    <dl class="kv">
-      <dt>Eixos</dt><dd>${esc(hp.main_axes)}</dd>
-      <dt>Prioridade</dt><dd>${esc(hp.priority)} (residência: ${esc(hp.priority_residencia)})</dd>
-      <dt>Onda</dt><dd>${esc(hp.onda)}</dd>
-      <dt>Status editorial</dt><dd>${esc(hp.status)}</dd>
-      <dt>Cobertura de fontes</dt><dd>${esc(hp.cobertura_atual)}</dd>
-      <dt>Apostila primária</dt><dd>${esc(hp.apostila_primaria || "—")}</dd>
-      <dt>Fonte de diretrizes</dt><dd>${esc(hp.editorial_source_role || "—")}</dd>
-    </dl>
-    <div class="actions">${action}</div>
-    <p class="notice">${hp.status === "clinical_review"
-      ? "Revisão clínica humana pendente. Este é um rascunho educacional, não um protocolo institucional nem orientação clínica individual."
-      : hp.status !== "completed"
-        ? "Este handbook está em auditoria editorial (" + esc(hp.status) + "). O conteúdo publicado é material de trabalho e não constitui orientação clínica."
-        : "Handbook marcado como concluído no catálogo, mas aguarda signoff humano final."}</p>`;
+    <div class="m-head" style="--acc:${areaColor(hp.group)}">
+      <div class="m-eyebrow"><span class="hpid">${esc(hp.id)}</span> ${esc(hp.group)}</div>
+      <h2 id="detail-title">${esc(hp.title)}</h2>
+      <div class="m-anks">${anks(hp)}</div>
+    </div>
+    <div class="m-body">
+      <dl class="kv">
+        <dt>Eixos</dt><dd>${esc(hp.main_axes)}</dd>
+        <dt>Prioridade</dt><dd>${esc(hp.priority)} · residência ${esc(hp.priority_residencia)}</dd>
+        <dt>Onda</dt><dd>${esc(String(hp.onda ?? "").replace("O", "Onda "))}</dd>
+        <dt>Status editorial</dt><dd>${esc(STATUS[hp.status] || hp.status)}</dd>
+        <dt>Fontes</dt><dd>${esc(COBERTURA[hp.cobertura_atual] || hp.cobertura_atual)}</dd>
+        <dt>Apostila primária</dt><dd>${esc(hp.apostila_primaria || "—")}</dd>
+      </dl>
+      <div class="actions">${action}</div>
+      <p class="notice"><b>Status</b>${hp.status === "clinical_review"
+        ? "Revisão clínica humana pendente. Rascunho educacional, não protocolo institucional nem orientação clínica individual."
+        : hp.has_content
+          ? "Material publicado para estudo; aguarda signoff humano final. Não constitui orientação clínica individual."
+          : "Handbook planejado, ainda em produção editorial. O conteúdo será publicado quando passar pelo gate v5.2 e pela revisão clínica."}</p>
+    </div>`;
 
   const readBtn = $("#detail-read");
   if (readBtn) readBtn.addEventListener("click", () => openReader(hp.id));
@@ -364,6 +444,7 @@ window.addEventListener("popstate", async () => {
     compute();
     renderCards();
     syncChips();
+    syncMore();
     if (state.reading && state.reading !== read) closeReader({ push: false });
     if (read) {
       openReader(read, { push: false });
@@ -382,6 +463,7 @@ function apply({ push = false } = {}) {
   compute();
   renderCards();
   syncChips();
+  syncMore();
   writeURL(push);
 }
 
@@ -393,7 +475,8 @@ el.q.addEventListener("input", debounce(() => {
 (async function init() {
   try {
     const data = await fetchJSON("/biblio/handbook-premium/catalog.json");
-    state.all = data.items;
+    state.all = data.items.map((it) => ({ ...it, leitura: it.has_content ? "disponível" : "em produção" }));
+    renderStatic();
     const { hp, read } = readURL();
     buildChips();
     apply();
@@ -403,6 +486,6 @@ el.q.addEventListener("input", debounce(() => {
   } catch (e) {
     el.count.textContent = "";
     showBanner(`Não foi possível carregar o catálogo: ${e.message}. ` +
-               `Confirme que o servidor está rodando (python serve.py).`);
+               `Tente recarregar a página.`);
   }
 })();
