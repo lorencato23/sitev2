@@ -1,0 +1,8 @@
+{
+  "redirects": [
+    { "source": "/apresentacoes/saude-mental", "destination": "/biblio/saude-mental", "permanent": true }
+  ],
+  "rewrites": [
+    { "source": "/:path((?!_next/).*)\\.html", "destination": "/:path" }
+  ]
+}
