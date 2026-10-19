@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#0d1117">
 <title>Handbook Premium Library · @dr.lorencato</title>
-<meta name="description" content="Biblioteca de Handbooks Premium de clínica médica para residência: catálogo de 114 HPs, com os publicados abertos para leitura.">
+<meta name="description" content="Biblioteca de Handbooks Premium de clínica médica para residência: 114 temas, com os prontos abertos para leitura.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:ital,opsz,wght@0,9..40,400..800;1,9..40,400..600&display=swap">
@@ -33,17 +33,7 @@
       <input id="q" type="search" placeholder="Buscar tema, eixo ou ID…" autocomplete="off">
     </div>
     <div id="f-group" class="chips scroll" role="group" aria-label="Macroárea"></div>
-    <button id="more" class="toc-chip more" type="button" aria-expanded="false" aria-controls="panel">Filtros<span id="more-n" class="more-n"></span></button>
-  </div>
-  <div id="panel" class="panel hidden">
-    <div class="panel-inner">
-      <section><h3 id="lbl-leitura">Leitura</h3><div id="f-leitura" class="chips" role="group" aria-labelledby="lbl-leitura"></div></section>
-      <section><h3 id="lbl-priority">Prioridade</h3><div id="f-priority" class="chips" role="group" aria-labelledby="lbl-priority"></div></section>
-      <section><h3 id="lbl-onda">Onda</h3><div id="f-onda" class="chips" role="group" aria-labelledby="lbl-onda"></div></section>
-      <section><h3 id="lbl-status">Status editorial</h3><div id="f-status" class="chips" role="group" aria-labelledby="lbl-status"></div></section>
-      <section><h3 id="lbl-cobertura">Fontes</h3><div id="f-cobertura" class="chips" role="group" aria-labelledby="lbl-cobertura"></div></section>
-      <button id="clear" class="clear" type="button">Limpar filtros</button>
-    </div>
+    <button id="only-live" class="toc-chip live-toggle" type="button" aria-pressed="false">📖 Para ler<span id="only-live-n" class="more-n"></span></button>
   </div>
 </nav>
 
@@ -53,7 +43,7 @@
       <div class="hero-stamp">@dr.lorencato</div>
       <div class="hero-tag">Biblioteca · Handbook Premium</div>
       <h1>Handbooks Premium<br><em>clínica médica para residência</em></h1>
-      <p class="hero-lead">Um handbook por tema, no formato pocket + estudo: red flags, algoritmo, tratamento com doses e evidência rastreável. O catálogo mostra o plano inteiro; os publicados abrem aqui mesmo.</p>
+      <p class="hero-lead">Um handbook por tema, no formato pocket + estudo: red flags, algoritmo, tratamento com doses e evidência rastreável. O catálogo mostra a biblioteca inteira; os que já estão prontos abrem aqui mesmo.</p>
       <div id="stats" class="stats" aria-live="polite"></div>
       <div class="hero-sig">Curadoria por <b>@dr.lorencato</b> · Elite Edition v5.2</div>
     </div>
@@ -63,9 +53,9 @@
     <div id="pocket" class="pocket hidden">
       <div class="pocket-head">
         <div>
-          <div class="pocket-eyebrow">Disponíveis para leitura</div>
-          <div class="pocket-title">Publicados</div>
-          <div class="pocket-sub">Material educacional em revisão clínica humana · não é orientação clínica individual</div>
+          <div class="pocket-eyebrow">Prontos para leitura</div>
+          <div class="pocket-title">Para ler agora</div>
+          <div class="pocket-sub">Material educacional para estudo · não é orientação clínica individual</div>
         </div>
       </div>
       <div id="pocket-grid" class="pocket-grid"></div>
@@ -90,7 +80,7 @@
         <div class="foot-author">@dr.lorencato</div>
         <div class="foot-meta">Handbook Premium Library · v5.2</div>
       </div>
-      <div class="foot-mono">Cada handbook conserva seu status editorial. Conteúdo em revisão clínica humana é rascunho educacional, não protocolo institucional nem orientação clínica individual.</div>
+      <div class="foot-mono">Material educacional para estudo. Não substitui protocolo institucional nem orientação clínica individual.</div>
     </div>
   </div>
 </footer>
