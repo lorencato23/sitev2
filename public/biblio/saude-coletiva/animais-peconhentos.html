@@ -276,6 +276,23 @@ table.cmp th{font-family:var(--display);font-size:20px}
 .in .drop{animation:drop 1s ease 2.6s forwards}
 @keyframes drop{0%{opacity:0;transform:translateY(-90px)}60%{opacity:1;transform:translateY(6px)}100%{opacity:1;transform:none}}
 @media (prefers-reduced-motion:reduce){.in .shake{animation:none}.drop{opacity:1}.in .drop{animation:none}}
+
+.hbar.sm{grid-template-columns:120px 1fr;gap:10px;margin:6px 0}
+.hbar.sm .lb{font-size:14px}.hbar.sm .b{height:22px}.hbar.sm .v{font-size:13px}
+.chart-wrap .hbar.sm .lb{font-size:15px}
+.hbar.duo{grid-template-columns:110px 1fr;margin:12px 0}
+.hbar.duo .b{height:34px}.hbar.duo .v{white-space:nowrap}
+.stk-legend{display:flex;flex-wrap:wrap;gap:18px;font-size:14px;color:var(--ink-soft);margin-bottom:10px}
+.stk-legend i{display:inline-block;width:14px;height:14px;border-radius:3px;margin-right:6px;vertical-align:-2px}
+.stk{display:grid;grid-template-columns:250px 1fr;gap:16px;align-items:center;margin:12px 0}
+.stk .lb{font-size:16px;color:var(--ink);font-weight:600;line-height:1.2}
+.stk .lb small{display:block;font-weight:400;font-size:13px;color:var(--muted);font-family:var(--mono)}
+.stk.hl .lb{color:var(--amber)}
+.stk .bar{display:flex;height:40px;border-radius:8px;overflow:hidden}
+.stk .bar i{display:flex;align-items:center;justify-content:center;font-style:normal;font-size:14px;font-weight:700;color:#fff;font-family:var(--mono);overflow:hidden}
+.stk .bar .a{background:var(--amber)}.stk .bar .e{background:var(--signal)}.stk .bar .s{background:var(--ink-soft)}.stk .bar .b{background:var(--bar-mute)}.stk .bar .l{background:#2f8f6b}.stk .bar .o{background:var(--line-strong)}
+html[data-theme="dark"] .stk .bar i{color:#0c1014}
+.stk.mute{opacity:.8}
 </style>
 </head>
 <body>
@@ -304,12 +321,14 @@ table.cmp th{font-family:var(--display);font-size:20px}
     <h1 class="rv" style="--i:1;font-size:104px">Aranhas, <em>lagarta</em> e escorpiões</h1>
     <p class="lead rv" style="--i:2">Phoneutria, Loxosceles, Latrodectus, Lonomia e Tityus — do mecanismo do veneno à soroterapia.</p>
     <nav class="stops rv" style="--i:3" aria-label="Paradas da apresentação">
+      <a href="#epi-brasil"><span>0</span>Dados</a>
       <a href="#phon-habitat"><span>1</span>Armadeira</a>
       <a href="#lox-habitat"><span>2</span>Aranha-marrom</a>
       <a href="#lat-habitat"><span>3</span>Viúva-negra</a>
       <a href="#lon-habitat"><span>4</span>Lonomia</a>
       <a href="#comparativo"><span>5</span>Comparativo</a>
       <a href="#esc-epi"><span>6</span>Escorpionismo</a>
+      <a href="#vigilancia"><span>7</span>Notificação</a>
     </nav>
     <p class="meta rv" style="--i:4">Gabriel Lorencato · outubro de 2026 · agravo de notificação compulsória (SINAN) · <a href="/biblio/saude-coletiva" style="color:#efac6b">← Acervo</a></p>
     <p class="hint rv" style="--i:5">Toque à direita para avançar, à esquerda para voltar · F: tela cheia · D: claro/escuro</p>
@@ -332,6 +351,139 @@ table.cmp th{font-family:var(--display);font-size:20px}
       <div class="ic amb">!</div>
       <p style="margin:0">Identificar o animal ajuda, mas <b>não deve atrasar</b> o atendimento, a classificação de gravidade nem o soro. Pense pelo <b>quadro clínico</b>: dor, pele, músculo ou sangue.</p>
     </div>
+  </div>
+</section>
+
+<!-- E1 EPI BRASIL -->
+<section class="sl" id="epi-brasil" data-t="Epidemiologia · Brasil">
+  <div class="wrap">
+    <p class="eyebrow">Epidemiologia · Brasil, 2010–2024</p>
+    <h2 class="rv">O escorpião lidera os casos; a serpente, os óbitos</h2>
+    <div class="grid" style="grid-template-columns:minmax(0,1fr) minmax(0,1fr) minmax(0,260px);gap:22px">
+      <div class="chart-wrap rv" style="--i:1">
+        <p style="font-weight:600;color:var(--ink);margin:0 0 6px">Casos · <span data-count="3350787">3.350.787</span></p>
+        <div class="hbar sm vl"><div class="lb">Escorpião</div><div class="tr"><div class="b gx" style="width:100%;--i:1"></div><span class="v">55,8%</span></div></div>
+        <div class="hbar sm hl"><div class="lb">Aranha</div><div class="tr"><div class="b gx" style="width:25.8%;--i:2"></div><span class="v">14,4%</span></div></div>
+        <div class="hbar sm"><div class="lb">Serpente</div><div class="tr"><div class="b gx" style="width:24.4%;--i:3"></div><span class="v">13,6%</span></div></div>
+        <div class="hbar sm"><div class="lb">Abelha</div><div class="tr"><div class="b gx" style="width:14.3%;--i:4"></div><span class="v">8,0%</span></div></div>
+        <div class="hbar sm hl"><div class="lb">Lagarta</div><div class="tr"><div class="b gx" style="width:3.8%;--i:5"></div><span class="v">2,1%</span></div></div>
+      </div>
+      <div class="chart-wrap rv" style="--i:2">
+        <p style="font-weight:600;color:var(--ink);margin:0 0 6px">Óbitos · <span data-count="4223">4.223</span></p>
+        <div class="hbar sm"><div class="lb">Serpente</div><div class="tr"><div class="b gx" style="width:100%;--i:2"></div><span class="v">41,8%</span></div></div>
+        <div class="hbar sm"><div class="lb">Abelha, vespa, lagarta…</div><div class="tr"><div class="b gx" style="width:91.4%;--i:3"></div><span class="v">38,2%</span></div></div>
+        <div class="hbar sm vl"><div class="lb">Escorpião</div><div class="tr"><div class="b gx" style="width:33%;--i:4"></div><span class="v">13,8%</span></div></div>
+        <div class="hbar sm hl"><div class="lb">Aranha</div><div class="tr"><div class="b gx" style="width:11.2%;--i:5"></div><span class="v">4,7%</span></div></div>
+        <p class="dl-note" style="margin:8px 0 0">No atestado (SIM), lagarta entra junto com abelhas e vespas.</p>
+      </div>
+      <div class="grid" style="gap:12px;align-content:start">
+        <div class="stat rv" style="--i:3"><span class="big" style="font-size:44px">×2,5</span><span class="lbl">incidência do escorpião: 34,2 → 85,3 por 100 mil (2010–14 → 2020–24)</span></div>
+        <div class="stat rv" style="--i:4;border-left-color:var(--amber)"><span class="big amb" style="font-size:44px">141</span><span class="lbl">acidentes por 100 mil hab. em 2020–24 — eram 74 em 2010–14</span></div>
+        <div class="stat rv" style="--i:5;border-left-color:var(--line-strong)"><span class="big" style="font-size:44px;color:var(--ink)">2º</span><span class="lbl">São Paulo em número de casos (560.777), atrás de Minas Gerais</span></div>
+      </div>
+    </div>
+    <p class="src">Fonte: Ministério da Saúde/SVSA. Boletim Epidemiológico — Morbimortalidade por animais peçonhentos no Brasil, 2010–2024. Número especial, dez/2025 (Sinan, SIM).</p>
+  </div>
+</section>
+
+<!-- E2 EPI SP -->
+<section class="sl" id="epi-sp" data-t="Epidemiologia · São Paulo">
+  <div class="wrap">
+    <p class="eyebrow">Epidemiologia · Estado de São Paulo, 2007–2024</p>
+    <h2 class="rv">Escorpião: dez vezes mais acidentes em 17 anos</h2>
+    <div class="grid" style="grid-template-columns:minmax(0,2.1fr) minmax(0,1fr);gap:22px">
+      <div class="chart-wrap rv">
+        <p style="font-weight:600;color:var(--ink);margin:0 0 4px"><span style="color:var(--signal)">■</span> Escorpião <span style="color:var(--amber);margin-left:14px">━</span> Aranha <span style="font-weight:400;color:var(--muted)">· acidentes por ano</span></p>
+        <div class="scrollx"><svg viewBox="0 0 1100 300" role="img" aria-label="Barras de acidentes por escorpião no estado de São Paulo: 4.729 em 2007, subindo até 50.327 em 2023 e 42.241 em 2024. Linha de acidentes por aranha: de 2.440 em 2007 para 9.201 em 2023 e 7.835 em 2024.">
+          <g><rect class="gy b-sig" style="--i:0" x="11.6" y="240.8" width="38" height="21.2" rx="4"/><rect class="gy b-sig" style="--i:1" x="72.7" y="235.5" width="38" height="26.5" rx="4"/><rect class="gy b-sig" style="--i:2" x="133.8" y="232.7" width="38" height="29.3" rx="4"/><rect class="gy b-sig" style="--i:3" x="194.9" y="229.4" width="38" height="32.6" rx="4"/><rect class="gy b-sig" style="--i:4" x="256.0" y="228.1" width="38" height="33.9" rx="4"/><rect class="gy b-sig" style="--i:5" x="317.1" y="219.4" width="38" height="42.6" rx="4"/><rect class="gy b-sig" style="--i:6" x="378.2" y="210.3" width="38" height="51.7" rx="4"/><rect class="gy b-sig" style="--i:7" x="439.3" y="205.6" width="38" height="56.4" rx="4"/><rect class="gy b-sig" style="--i:8" x="500.4" y="192.2" width="38" height="69.8" rx="4"/><rect class="gy b-sig" style="--i:9" x="561.6" y="177.6" width="38" height="84.4" rx="4"/><rect class="gy b-sig" style="--i:10" x="622.7" y="164.4" width="38" height="97.6" rx="4"/><rect class="gy b-sig" style="--i:11" x="683.8" y="122.9" width="38" height="139.1" rx="4"/><rect class="gy b-sig" style="--i:12" x="744.9" y="107.2" width="38" height="154.8" rx="4"/><rect class="gy b-sig" style="--i:13" x="806.0" y="90.8" width="38" height="171.2" rx="4"/><rect class="gy b-sig" style="--i:14" x="867.1" y="106.3" width="38" height="155.7" rx="4"/><rect class="gy b-sig" style="--i:15" x="928.2" y="65.0" width="38" height="197.0" rx="4"/><rect class="gy b-sig" style="--i:16" x="989.3" y="36.0" width="38" height="226.0" rx="4"/><rect class="gy b-sig" style="--i:17" x="1050.4" y="72.3" width="38" height="189.7" rx="4"/></g>
+          <polyline class="draw" style="--i:6" pathLength="1" points="30.6,251.0 91.7,249.8 152.8,246.2 213.9,247.6 275.0,246.3 336.1,245.5 397.2,241.6 458.3,245.8 519.4,242.3 580.6,241.3 641.7,238.9 702.8,237.7 763.9,232.4 825.0,239.0 886.1,240.4 947.2,237.0 1008.3,220.7 1069.4,226.8" fill="none" stroke="var(--amber)" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+          <g class="fade" style="--i:8" text-anchor="middle"><text class="t-ink" x="30.6" y="230.8" style="font-size:19px">4.729</text><text class="t-ink" x="1008.3" y="26.0" style="font-size:19px">50.327</text><text class="t-ink" x="1069.4" y="62.3" style="font-size:19px">42.241</text><text class="t-amb" x="1069.4" y="212.8" style="font-size:18px">7.835</text></g>
+          <line class="ax" x1="0" y1="262" x2="1100" y2="262"/>
+          <g text-anchor="middle"><text class="t-mute" x="30.6" y="292">2007</text> <text class="t-mute" x="213.9" y="292">2010</text> <text class="t-mute" x="397.2" y="292">2013</text> <text class="t-mute" x="580.6" y="292">2016</text> <text class="t-mute" x="763.9" y="292">2019</text> <text class="t-mute" x="947.2" y="292">2022</text> <text class="t-mute" x="1069.4" y="292">2024</text></g>
+        </svg></div>
+      </div>
+      <div class="grid" style="gap:12px;align-content:start">
+        <div class="stat rv" style="--i:1"><span class="big" style="font-size:48px" data-count="61833">61.833</span><span class="lbl">acidentes por animais peçonhentos em 2024</span></div>
+        <div class="stat rv" style="--i:2"><span class="big" style="font-size:48px">68%</span><span class="lbl">foram por escorpião; 13% por aranha; 1% por lagarta</span></div>
+        <div class="stat rv" style="--i:3;border-left-color:var(--amber)"><span class="big amb" style="font-size:48px">738</span><span class="lbl">acidentes por escorpião em 1988 — o primeiro ano da série do CVE</span></div>
+        <div class="card rv" style="--i:4;background:var(--amber-soft)"><p style="margin:0;font-size:15px">Urbanização, entulho e baratas favorecem o <i>T. serrulatus</i>, que se reproduz por partenogênese. O Ministério não aponta causa única; melhor notificação também pesa.</p></div>
+      </div>
+    </div>
+    <p class="src">Fonte: Divisão de Zoonoses/CVE/SES-SP, Sinan — acidentes por tipo de animal, 2007–2025 (dados de 27/03/2025).</p>
+  </div>
+</section>
+
+<!-- E3 ÓBITOS / CRIANÇAS -->
+<section class="sl" id="epi-obitos" data-t="Quem morre" style="background:var(--amber-soft)">
+  <div class="wrap">
+    <div class="grid" style="grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:36px;align-items:center">
+      <div>
+        <p class="eyebrow">Estado de São Paulo · escorpionismo, 2013–2022</p>
+        <h2 class="rv" style="font-size:66px;max-width:15ch">Quase todo óbito por escorpião é de criança.</h2>
+        <p class="lead rv" style="--i:1">73 óbitos por escorpião no estado em 10 anos; 72 deles em menores de 15 anos — <b>53% entre 1 e 4 anos</b>.</p>
+        <div class="grid g2 rv" style="--i:2;margin-top:14px">
+          <div class="card dark"><div class="big amb" style="font-size:46px">69%</div><p style="margin:6px 0 0">morreram em município <b class="em">com</b> ponto de soro: o que falhou foi o tempo</p></div>
+          <div class="card"><div class="big" style="font-size:46px">7</div><p style="margin:6px 0 0">óbitos infantis na <b>DRS de Taubaté</b> — o Vale do Paraíba</p></div>
+        </div>
+      </div>
+      <div class="chart-wrap rv" style="--i:2">
+        <p style="font-weight:600;color:var(--ink);margin:0 0 4px">Óbitos por escorpião por ano, SP <span style="font-weight:400;color:var(--muted)">· todas as idades</span></p>
+        <div class="scrollx"><svg viewBox="0 0 1100 240" role="img" aria-label="Óbitos por escorpião no estado de São Paulo por ano, 2010 a 2024: 1, 0, 2, 3, 2, 7, 7, 7, 13, 9, 7, 7, 11, 7, 5."><rect class="gy b-mute" style="--i:0" x="14.7" y="187.7" width="44" height="12.3" rx="4"/><text class="t-mute fade" style="--i:0;font-size:19px" x="36.7" y="179.7" text-anchor="middle">1</text><rect class="gy b-mute" style="--i:1" x="88.0" y="200.0" width="44" height="0.0" rx="4"/><text class="t-mute fade" style="--i:1;font-size:19px" x="110.0" y="192.0" text-anchor="middle">0</text><rect class="gy b-mute" style="--i:2" x="161.3" y="175.4" width="44" height="24.6" rx="4"/><text class="t-mute fade" style="--i:2;font-size:19px" x="183.3" y="167.4" text-anchor="middle">2</text><rect class="gy b-mute" style="--i:3" x="234.7" y="163.1" width="44" height="36.9" rx="4"/><text class="t-mute fade" style="--i:3;font-size:19px" x="256.7" y="155.1" text-anchor="middle">3</text><rect class="gy b-mute" style="--i:4" x="308.0" y="175.4" width="44" height="24.6" rx="4"/><text class="t-mute fade" style="--i:4;font-size:19px" x="330.0" y="167.4" text-anchor="middle">2</text><rect class="gy b-mute" style="--i:5" x="381.3" y="113.8" width="44" height="86.2" rx="4"/><text class="t-mute fade" style="--i:5;font-size:19px" x="403.3" y="105.8" text-anchor="middle">7</text><rect class="gy b-mute" style="--i:6" x="454.7" y="113.8" width="44" height="86.2" rx="4"/><text class="t-mute fade" style="--i:6;font-size:19px" x="476.7" y="105.8" text-anchor="middle">7</text><rect class="gy b-mute" style="--i:7" x="528.0" y="113.8" width="44" height="86.2" rx="4"/><text class="t-mute fade" style="--i:7;font-size:19px" x="550.0" y="105.8" text-anchor="middle">7</text><rect class="gy b-amb" style="--i:8" x="601.3" y="40.0" width="44" height="160.0" rx="4"/><text class="t-mute fade" style="--i:8;font-size:19px" x="623.3" y="32.0" text-anchor="middle">13</text><rect class="gy b-amb" style="--i:9" x="674.7" y="89.2" width="44" height="110.8" rx="4"/><text class="t-mute fade" style="--i:9;font-size:19px" x="696.7" y="81.2" text-anchor="middle">9</text><rect class="gy b-mute" style="--i:10" x="748.0" y="113.8" width="44" height="86.2" rx="4"/><text class="t-mute fade" style="--i:10;font-size:19px" x="770.0" y="105.8" text-anchor="middle">7</text><rect class="gy b-mute" style="--i:11" x="821.3" y="113.8" width="44" height="86.2" rx="4"/><text class="t-mute fade" style="--i:11;font-size:19px" x="843.3" y="105.8" text-anchor="middle">7</text><rect class="gy b-amb" style="--i:12" x="894.7" y="64.6" width="44" height="135.4" rx="4"/><text class="t-mute fade" style="--i:12;font-size:19px" x="916.7" y="56.6" text-anchor="middle">11</text><rect class="gy b-mute" style="--i:13" x="968.0" y="113.8" width="44" height="86.2" rx="4"/><text class="t-mute fade" style="--i:13;font-size:19px" x="990.0" y="105.8" text-anchor="middle">7</text><rect class="gy b-mute" style="--i:14" x="1041.3" y="138.5" width="44" height="61.5" rx="4"/><text class="t-mute fade" style="--i:14;font-size:19px" x="1063.3" y="130.5" text-anchor="middle">5</text><line class="ax" x1="0" y1="200" x2="1100" y2="200"/><text class="t-mute" x="36.7" y="232" text-anchor="middle" style="font-size:18px">2010</text> <text class="t-mute" x="183.3" y="232" text-anchor="middle" style="font-size:18px">2012</text> <text class="t-mute" x="330.0" y="232" text-anchor="middle" style="font-size:18px">2014</text> <text class="t-mute" x="476.7" y="232" text-anchor="middle" style="font-size:18px">2016</text> <text class="t-mute" x="623.3" y="232" text-anchor="middle" style="font-size:18px">2018</text> <text class="t-mute" x="770.0" y="232" text-anchor="middle" style="font-size:18px">2020</text> <text class="t-mute" x="916.7" y="232" text-anchor="middle" style="font-size:18px">2022</text> <text class="t-mute" x="1063.3" y="232" text-anchor="middle" style="font-size:18px">2024</text></svg></div>
+        <p class="dl-note" style="margin:8px 0 0">Letalidade de 0,01–0,05%: com 40 mil acidentes, poucos morrem — e quem morre é a criança pequena. Aranha: até 3 óbitos/ano. Lonomia: nenhum óbito registrado em SP desde 1998.</p>
+      </div>
+    </div>
+    <p class="src">Fontes: CVE/SES-SP, escorpionismo 1988–2025 e Lonomia 1998–2025; Silva ROL et al. Braz J Implantol Health Sci. 2024;6(9):3556-67.</p>
+  </div>
+</section>
+
+<!-- E4 VALE -->
+<section class="sl" id="epi-vale" data-t="Vale do Paraíba">
+  <div class="wrap">
+    <p class="eyebrow">Epidemiologia · Vale do Paraíba e Litoral Norte · GVE de ocorrência, 2024</p>
+    <h2 class="rv">Aqui, a aranha passa o escorpião</h2>
+    <div class="chart-wrap">
+      <div class="stk-legend rv"><span><i style="background:var(--amber)"></i>Aranha</span><span><i style="background:var(--signal)"></i>Escorpião</span><span><i style="background:var(--ink-soft)"></i>Serpente</span><span><i style="background:var(--bar-mute)"></i>Abelha</span><span><i style="background:#2f8f6b"></i>Lagarta</span><span><i style="background:var(--line-strong)"></i>Outros / ign.</span></div>
+      <div class="stk hl"><div class="lb">GVE 27 · São José dos Campos<small>864 acidentes</small></div><div class="bar gx" style="--i:1"><i class="a" style="width:54.5%">54%</i><i class="e" style="width:24.4%">24%</i><i class="s" style="width:7.2%">7%</i><i class="b" style="width:6.7%"></i><i class="l" style="width:1.2%"></i><i class="o" style="width:6%"></i></div></div>
+      <div class="stk"><div class="lb">GVE 28 · Caraguatatuba<small>402 acidentes</small></div><div class="bar gx" style="--i:2"><i class="a" style="width:50.7%">51%</i><i class="e" style="width:1.2%"></i><i class="s" style="width:24.4%">24%</i><i class="b" style="width:13.7%">14%</i><i class="l" style="width:3.2%"></i><i class="o" style="width:6.8%"></i></div></div>
+      <div class="stk"><div class="lb">GVE 33 · Taubaté<small>1.877 acidentes</small></div><div class="bar gx" style="--i:3"><i class="a" style="width:27.3%">27%</i><i class="e" style="width:55.6%">56%</i><i class="s" style="width:4.7%"></i><i class="b" style="width:5.2%"></i><i class="l" style="width:.7%"></i><i class="o" style="width:6.5%"></i></div></div>
+      <div class="stk mute"><div class="lb">Estado de São Paulo<small>61.833 acidentes</small></div><div class="bar gx" style="--i:4"><i class="a" style="width:12.7%">13%</i><i class="e" style="width:68.3%">68%</i><i class="s" style="width:3.6%"></i><i class="b" style="width:9.9%">10%</i><i class="l" style="width:1.1%"></i><i class="o" style="width:4.4%"></i></div></div>
+    </div>
+    <div class="grid g3" style="margin-top:16px">
+      <div class="card rv" style="--i:5"><p style="margin:0"><b>SJC:</b> 471 aranhas, 211 escorpiões, 10 lagartas — e <b>1 óbito por escorpião</b> em 2024.</p></div>
+      <div class="card rv" style="--i:6"><p style="margin:0"><b>Taubaté</b> segue o padrão do estado: o escorpião já domina, com 1.044 acidentes.</p></div>
+      <div class="card rv" style="--i:7"><p style="margin:0"><b>Litoral Norte:</b> só 5 escorpiões; serpente em 1 de cada 4 acidentes.</p></div>
+    </div>
+    <p class="src">Fonte: Divisão de Zoonoses/CVE/SES-SP, Sinan — acidentes e óbitos por tipo e GVE de ocorrência, 2024 (dados de 27/03/2025).</p>
+  </div>
+</section>
+
+<!-- E5 SJC -->
+<section class="sl" id="epi-sjc" data-t="São José dos Campos">
+  <div class="wrap">
+    <p class="eyebrow">Epidemiologia · São José dos Campos</p>
+    <h2 class="rv">Muita picada, pouco soro</h2>
+    <div class="grid" style="grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:24px">
+      <div class="chart-wrap rv">
+        <p class="eyebrow" style="color:var(--ink)">Hospital Municipal · 2025 · atendimentos e soroterapias</p>
+        <div class="hbar duo"><div class="lb">Aranha</div><div class="tr"><div class="b gx" style="width:100%;background:var(--amber)"></div><span class="v">321 · <b>13 soros (4%)</b></span></div></div>
+        <div class="hbar duo"><div class="lb">Escorpião</div><div class="tr"><div class="b gx" style="width:44.2%;background:var(--signal);--i:1"></div><span class="v">142 · <b>7 soros (5%)</b></span></div></div>
+        <div class="hbar duo"><div class="lb">Serpente</div><div class="tr"><div class="b gx" style="width:11.2%;--i:2"></div><span class="v">36 · <b>19 soros (53%)</b></span></div></div>
+        <div class="hbar duo"><div class="lb">Lonomia</div><div class="tr"><div class="b gx" style="width:4%;background:#2f8f6b;--i:3"></div><span class="v">13</span></div></div>
+        <div class="card dark rv" style="--i:4;margin-top:14px"><p style="margin:0">Na aranha e no escorpião, <b class="em">mais de 95% saíram sem soro</b>: analgesia e observação. O soro é exceção — por isso a classificação na ficha precisa bater com as ampolas.</p></div>
+      </div>
+      <div class="grid" style="gap:14px;align-content:start">
+        <div class="card rv" style="--i:2">
+          <p class="eyebrow" style="color:var(--amber)">GVE 27 · aranhas por gênero, 2024</p>
+          <div class="hbar sm"><div class="lb">Phoneutria</div><div class="tr"><div class="b gx" style="width:92.7%;background:var(--signal);--i:2"></div><span class="v">139</span></div></div>
+          <div class="hbar sm"><div class="lb">Loxosceles</div><div class="tr"><div class="b gx" style="width:68%;background:var(--amber);--i:3"></div><span class="v">102</span></div></div>
+          <div class="hbar sm"><div class="lb">Latrodectus</div><div class="tr"><div class="b gx" style="width:0;--i:4"></div><span class="v">0</span></div></div>
+          <div class="hbar sm"><div class="lb">Outras</div><div class="tr"><div class="b gx" style="width:100%;--i:5"></div><span class="v">150</span></div></div>
+          <div class="hbar sm"><div class="lb">Ignorado</div><div class="tr"><div class="b gx" style="width:53.3%;background:var(--line-strong);--i:6"></div><span class="v">80</span></div></div>
+        </div>
+        <div class="card rv" style="--i:3"><p style="margin:0"><b>Referência regional:</b> o Hospital Municipal (Vila Industrial) tem soro para serpente, escorpião, aranha e <b>Lonomia</b>. Também: Hospital de Clínicas Sul e UPA São Francisco Xavier.</p></div>
+      </div>
+    </div>
+    <p class="src">Fontes: Prefeitura de São José dos Campos, "Hospital Municipal alerta sobre riscos de animais peçonhentos", 08/01/2026; CVE/SES-SP, aranhas por gênero e GVE, 2024.</p>
   </div>
 </section>
 
@@ -885,6 +1037,79 @@ table.cmp th{font-family:var(--display);font-size:20px}
   </div>
 </section>
 
+<!-- N1 VIGILÂNCIA -->
+<section class="sl" id="vigilancia" data-t="Conduta da vigilância">
+  <div class="wrap">
+    <p class="eyebrow">Vigilância · notificação</p>
+    <h2 class="rv">Todo acidente se notifica — mesmo sem soro</h2>
+    <div class="steps">
+      <div class="card step rv" style="--i:0"><div class="num">1</div><h3>Notificar</h3><p><b>Imediata, até 24 h</b>, para a Secretaria Municipal. Leve também.</p><span class="who">Serviço que atendeu</span></div>
+      <div class="card step rv" style="--i:1"><div class="num">2</div><h3>Classificar</h3><p>Leve, moderado ou grave; soro e nº de ampolas</p><span class="who">Médico assistente</span></div>
+      <div class="card step rv" style="--i:2"><div class="num">3</div><h3>Investigar</h3><p>Local e zona de ocorrência, tempo até o atendimento, trabalho</p><span class="who">VE municipal</span></div>
+      <div class="card step rv" style="--i:3"><div class="num">4</div><h3>Agir no local</h3><p>Busca de escorpiões, manejo de entulho e baratas, orientação</p><span class="who">CCZ / zoonoses</span></div>
+      <div class="card step rv" style="--i:4"><div class="num">5</div><h3>Encerrar</h3><p>Evolução, complicações e relação com o trabalho</p><span class="who">Serviço + VE</span></div>
+    </div>
+    <div class="grid g2" style="margin-top:18px">
+      <div class="card dark rv" style="--i:6"><p style="margin:0">⚡ <b class="em">Óbito ou caso grave em criança:</b> comunicar de imediato a Vigilância Epidemiológica municipal; investigar o tempo até o soro.</p></div>
+      <div class="card rv" style="--i:7;background:var(--signal-soft)"><p style="margin:0">💉 O soro é distribuído pelo Ministério aos <b>pontos estratégicos</b> (em SJC, 3 PESA 24 h). Cada ampola usada é registrada — a ficha justifica o estoque.</p></div>
+    </div>
+    <p class="src">Fontes: Portaria GM/MS nº 1.120/2022 (lista nacional: notificação imediata à SMS); Ministério da Saúde, Guia de Vigilância em Saúde; Prefeitura de SJC, jan/2026.</p>
+  </div>
+</section>
+
+<!-- N2 FICHA SINAN -->
+<section class="sl" id="sinan" data-t="Ficha do SINAN">
+  <div class="wrap">
+    <p class="eyebrow">Vigilância · ficha de investigação do SINAN</p>
+    <h2 class="rv">Uma ficha para todos os peçonhentos</h2>
+    <div class="grid" style="grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:32px;align-items:center">
+      <div class="form rv">
+        <div class="hd">SINAN · Ficha de Investigação · Acidentes por Animais Peçonhentos</div>
+        <div class="row"><span class="bn">1</span><div style="flex:1"><div class="nm">Dados gerais e do paciente</div><div class="ln gx" style="width:70%"></div></div></div>
+        <div class="row"><span class="bn">2</span><div style="flex:1"><div class="nm">Residência</div><div class="ln gx" style="width:56%;--i:1"></div></div></div>
+        <div class="row hot"><span class="bn">3</span><div style="flex:1"><div class="nm">Antecedentes: data, local, zona, tempo picada→atendimento</div><div class="ln gx" style="width:80%;--i:2;background:#e3c08f"></div></div></div>
+        <div class="row"><span class="bn">4</span><div style="flex:1"><div class="nm">Dados clínicos: local, sistêmico, tempo de coagulação</div><div class="ln gx" style="width:66%;--i:3"></div></div></div>
+        <div class="row hot"><span class="bn">5</span><div style="flex:1"><div class="nm">Tipo de acidente: animal e gênero</div><div class="ln gx" style="width:60%;--i:4;background:#e3c08f"></div></div></div>
+        <div class="row hot"><span class="bn">6</span><div style="flex:1"><div class="nm">Tratamento: classificação, soro, ampolas</div><div class="ln gx" style="width:74%;--i:5;background:#e3c08f"></div></div></div>
+        <div class="row"><span class="bn">7</span><div style="flex:1"><div class="nm">Conclusão: complicações, trabalho, evolução</div><div class="ln gx" style="width:62%;--i:6"></div></div></div>
+        <div style="display:flex"><span class="stamp pop" style="--i:8">Notificar em até 24 h</span></div>
+      </div>
+      <div class="grid" style="gap:14px">
+        <div class="card rv" style="--i:2"><div class="iconrow"><div class="ic amb">3</div><div><h3>Antecedentes</h3><p>Local de ocorrência e zona dizem ao CCZ <b>onde</b> procurar o escorpião. O tempo até o atendimento explica o óbito.</p></div></div></div>
+        <div class="card rv" style="--i:3"><div class="iconrow"><div class="ic amb">5</div><div><h3>Tipo de acidente</h3><p>Aranha: <b>Phoneutria, Loxosceles, Latrodectus</b>. Lagarta: <b>Lonomia</b> ou outra. Se o paciente trouxe o animal, registre.</p></div></div></div>
+        <div class="card rv" style="--i:4"><div class="iconrow"><div class="ic amb">6</div><div><h3>Tratamento</h3><p>Classificação de gravidade, tipo de soro e número de ampolas — os dois têm de bater com o protocolo.</p></div></div></div>
+      </div>
+    </div>
+    <p class="src">Esquema da ficha de investigação de Acidentes por Animais Peçonhentos do SINAN (portalsinan.saude.gov.br).</p>
+  </div>
+</section>
+
+<!-- N3 FICHA ERROS -->
+<section class="sl" id="sinan-erros" data-t="Onde a ficha falha">
+  <div class="wrap">
+    <p class="eyebrow">Vigilância · ficha de investigação do SINAN</p>
+    <h2 class="rv">Onde a ficha costuma falhar</h2>
+    <div class="grid" style="grid-template-columns:minmax(0,1fr) minmax(0,1.8fr);gap:28px;align-items:center">
+      <div class="card dark rv" style="text-align:center">
+        <svg viewBox="0 0 280 280" width="240" height="240" role="img" aria-label="Rosca com 47% preenchido: acidentes por aranha sem o gênero informado em São Paulo, 2024" style="display:block;margin:0 auto">
+          <circle cx="140" cy="140" r="110" fill="none" stroke="#2f5361" stroke-width="44"/>
+          <circle class="draw" pathLength="1" style="stroke-dasharray:.475 1.525;transition-duration:1.6s" cx="140" cy="140" r="110" fill="none" stroke="#efac6b" stroke-width="44" transform="rotate(-90 140 140)"/>
+          <text x="140" y="158" text-anchor="middle" font-family="Fraunces, Georgia, serif" font-size="56" font-weight="700" fill="#f2f0e9">47%</text>
+        </svg>
+        <p style="margin-top:12px">dos acidentes por aranha em SP (2024) <b class="em">sem o gênero</b> — 3.719 de 7.835. No GVE 27: 17%.</p>
+      </div>
+      <div class="grid" style="gap:0">
+        <div class="msg rv" style="--i:1;font-size:20px"><span class="n">?</span><span><b>Gênero da aranha em branco</b> — sem ele, não se sabe se o problema local é armadeira ou aranha-marrom</span></div>
+        <div class="msg rv" style="--i:2;font-size:20px"><span class="n">≠</span><span><b>Classificação que não bate com as ampolas</b> — "leve" com soro, ou "grave" sem soro</span></div>
+        <div class="msg rv" style="--i:3;font-size:20px"><span class="n">◷</span><span><b>Tempo picada→atendimento em branco</b> — é o dado que explica o óbito da criança</span></div>
+        <div class="msg rv" style="--i:4;font-size:20px"><span class="n">⌂</span><span><b>Local de ocorrência vago</b> — o CCZ não sabe em que quarteirão procurar escorpião</span></div>
+        <div class="msg rv" style="--i:5;font-size:20px"><span class="n">☺</span><span><b>Relação com o trabalho</b> — jardineiro, pedreiro, gari: some a saúde do trabalhador</span></div>
+      </div>
+    </div>
+    <p class="src">Fonte: CVE/SES-SP, acidentes por tipo de aranha, 2007–2025, e por GVE de ocorrência, 2024 (dados de 27/03/2025).</p>
+  </div>
+</section>
+
 <!-- 27 FIM -->
 <section class="sl hero" id="fim" data-t="Fim">
   <div class="wrap">
@@ -926,6 +1151,11 @@ table.cmp th{font-family:var(--display);font-size:20px}
       <li>Chippaux JP, Goyffon M. Epidemiology of scorpionism: a global appraisal. Acta Trop. 2008;107(2):71-9.</li>
       <li>Carrijo-Carvalho LC, Chudzinski-Tavassi AM. The venom of the Lonomia caterpillar: an overview. Toxicon. 2007;49(6):741-57.</li>
       <li>Bulas dos soros antiaracnídico, antiloxoscélico, antiescorpiônico e antilonômico — Instituto Butantan.</li>
+      <li>Brasil. Ministério da Saúde/SVSA. Boletim Epidemiológico — Morbimortalidade por animais peçonhentos no Brasil, 2010–2024. Número especial, 22 dez. 2025.</li>
+      <li>CVE/SES-SP, Divisão de Zoonoses. Acidentes por animais peçonhentos: dados estatísticos por tipo, GVE de ocorrência e série histórica (Sinan; dados de 27/03/2025).</li>
+      <li>Silva ROL et al. Panorama dos óbitos por escorpionismo em pediatria no estado de São Paulo. Braz J Implantol Health Sci. 2024;6(9):3556-67.</li>
+      <li>Prefeitura de São José dos Campos. Hospital Municipal alerta sobre riscos de animais peçonhentos. 08/01/2026.</li>
+      <li>Brasil. Portaria GM/MS nº 1.120, de 13 de maio de 2022 — Lista Nacional de Notificação Compulsória.</li>
     </ol>
     <p class="dl-note rv" style="--i:2;margin-top:24px">Material de estudo, não substitui protocolo institucional. Doses de soro conforme a classificação clínica e o protocolo vigente do Ministério da Saúde; em dúvida, contate o CIATox da região. <a href="/biblio/saude-coletiva">← Voltar para o acervo</a></p>
   </div>

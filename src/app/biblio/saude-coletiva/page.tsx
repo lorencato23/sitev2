@@ -20,7 +20,7 @@ const presentations = [
   {
     title: "Animais peçonhentos: aranhas, Lonomia e escorpiões",
     description:
-      "Phoneutria, Loxosceles, Latrodectus, Lonomia e Tityus: habitat, mecanismo do veneno, clínica, exames, complicações e soroterapia. Navegação por slides, com toque para avançar.",
+      "Phoneutria, Loxosceles, Latrodectus, Lonomia e Tityus: epidemiologia no Brasil, em São Paulo e no Vale do Paraíba, mecanismo do veneno, clínica, soroterapia e notificação no SINAN. Navegação por slides, com toque para avançar.",
     href: "/biblio/saude-coletiva/animais-peconhentos",
   },
 ];
