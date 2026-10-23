@@ -34,11 +34,11 @@ const items: LibraryItem[] = [
   {
     title: "Saúde Coletiva",
     description:
-      "Apresentações de leptospirose e de acidentes por animais peçonhentos, com dados, mecanismos e conduta.",
+      "Apresentações de leptospirose, acidentes por animais peçonhentos e desigualdade na exposição a deslizamentos, com dados, mecanismos e conduta.",
     type: "Coleção",
     area: "Saúde coletiva",
     href: "/biblio/saude-coletiva",
-    status: "2 materiais",
+    status: "3 materiais",
   },
 ];
 

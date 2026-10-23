@@ -6,7 +6,7 @@ import { pageMeta } from "@/lib/metadata";
 export const metadata = pageMeta({
   title: "Saúde Coletiva",
   description:
-    "Apresentações de leptospirose, com dados de São José dos Campos e do Vale do Paraíba, e de acidentes por animais peçonhentos.",
+    "Apresentações de leptospirose, com dados de São José dos Campos e do Vale do Paraíba, de acidentes por animais peçonhentos e de desigualdade na exposição a deslizamentos em São José dos Campos.",
   path: "/biblio/saude-coletiva",
 });
 
@@ -22,6 +22,12 @@ const presentations = [
     description:
       "Phoneutria, Loxosceles, Latrodectus, Lonomia e Tityus: epidemiologia no Brasil, em São Paulo e no Vale do Paraíba, mecanismo do veneno, clínica, soroterapia e notificação no SINAN. Navegação por slides, com toque para avançar.",
     href: "/biblio/saude-coletiva/animais-peconhentos",
+  },
+  {
+    title: "Onde a terra cede: renda, deslizamentos e saúde em São José dos Campos",
+    description:
+      "Estudo ecológico com dados públicos: quem mora nos terrenos de alta suscetibilidade a deslizamentos, mortalidade, distância até as UBS, gastos da Prefeitura e custo das obras do PMRR 2025. Mapa 3D interativo e navegação por slides.",
+    href: "/biblio/saude-coletiva/deslizamentos-sjc",
   },
 ];
 
