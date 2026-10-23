@@ -31,6 +31,15 @@ const items: LibraryItem[] = [
     href: "/biblio/saude-mental",
     status: "3 materiais",
   },
+  {
+    title: "Saúde Coletiva",
+    description:
+      "Apresentações de leptospirose e de acidentes por animais peçonhentos, com dados, mecanismos e conduta.",
+    type: "Coleção",
+    area: "Saúde coletiva",
+    href: "/biblio/saude-coletiva",
+    status: "2 materiais",
+  },
 ];
 
 const filters = ["Todos", "Coleções", "Apresentações", "Guias"];

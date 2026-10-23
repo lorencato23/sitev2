@@ -1,0 +1,1014 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Leptospirose — da suspeita clínica à ficha do SINAN</title>
+<meta name="description" content="Apresentação para o estágio de Vigilância Epidemiológica: definição, quadro clínico, definição de caso, epidemiologia em São Paulo e no Vale do Paraíba, exames, formas graves, conduta, ficha do SINAN e prevenção.">
+<link rel="canonical" href="https://drlorencato.com/biblio/saude-coletiva/leptospirose.html">
+<meta property="og:title" content="Leptospirose — da suspeita clínica à ficha do SINAN">
+<meta property="og:description" content="Apresentação de vigilância epidemiológica com dados de São José dos Campos e do Vale do Paraíba.">
+<meta property="og:image" content="https://drlorencato.com/biblio/saude-coletiva/leptospirose/enchente-itaoca-2014.jpg">
+<link rel="icon" href="/icon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..700;1,9..144,400..600&family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap">
+<script>(function(){var t=null;try{t=localStorage.getItem("lepto-tema");}catch(e){}if(t!=="light"&&t!=="dark"){t=(window.matchMedia&&matchMedia("(prefers-color-scheme: dark)").matches)?"dark":"light";}document.documentElement.setAttribute("data-theme",t);})();</script>
+<style>
+:root{
+  --paper:#f6f3ea;--paper-soft:#efeadd;--surface:#fdfcf8;--ink:#131619;--ink-soft:#3f4750;--muted:#5b6570;
+  --line:#e0dac9;--line-strong:#c6bda5;--signal:#1c3ecf;--signal-soft:#e9edfc;--amber:#8a4109;--amber-soft:#f8ecdc;
+  --bar-mute:#9aa1a8;--hero:#0c1014;--hero-ink:#f2f0e9;--hero-soft:#c3cad3;
+  --display:"Fraunces",Georgia,"Times New Roman",serif;--sans:"IBM Plex Sans","Segoe UI",Arial,sans-serif;--mono:"IBM Plex Mono",ui-monospace,monospace;
+}
+html[data-theme="dark"]{
+  --paper:#0c1014;--paper-soft:#11161c;--surface:#151b22;--ink:#f2f0e9;--ink-soft:#c3cad3;--muted:#9aa4b1;
+  --line:#262e37;--line-strong:#38424d;--signal:#8aa5ff;--signal-soft:#18213a;--amber:#efac6b;--amber-soft:#2a1f11;--bar-mute:#5d6873;
+}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{margin:0;overflow:hidden;background:#000;color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:var(--signal)}
+a:focus-visible,button:focus-visible{outline:2px solid var(--signal);outline-offset:3px}
+.skip{position:absolute;left:12px;top:12px;transform:translateY(-200%);background:var(--surface);color:var(--ink);padding:8px 12px;border-radius:8px;z-index:20}
+.skip:focus{transform:none}
+/* barra superior */
+.top{position:fixed;inset:0 0 auto 0;height:56px;z-index:10;display:flex;align-items:center;gap:16px;padding:0 20px;background:color-mix(in srgb,var(--paper) 88%,transparent);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.top a.back{font-family:var(--mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;color:var(--muted);white-space:nowrap}
+.top a.back:hover{color:var(--signal)}
+.top .ttl{flex:1;min-width:0;font-family:var(--display);font-size:17px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.top .where{font-family:var(--mono);font-size:12px;color:var(--muted);white-space:nowrap}
+.prog{position:fixed;left:0;top:55px;height:2px;width:100%;transform-origin:left;transform:scaleX(0);background:var(--signal);z-index:11}
+.navbtns{display:flex;gap:6px}
+.navbtns button{width:36px;height:36px;border-radius:50%;border:1px solid var(--line-strong);background:var(--surface);color:var(--ink);font-size:16px;cursor:pointer}
+.navbtns button:hover{border-color:var(--signal);color:var(--signal)}
+
+/* seções */
+#stage{position:fixed;inset:0;overflow:hidden;background:#000;touch-action:manipulation;-webkit-user-select:none;user-select:none}
+#deck{width:1280px;height:720px;position:absolute;left:50%;top:50%;transform-origin:center center;overflow:hidden;background:var(--paper)}
+.sl{position:absolute;inset:0;padding:30px 64px 40px;display:flex;align-items:center;visibility:hidden;opacity:0;background:var(--paper)}
+.sl.live{visibility:visible;opacity:1;transition:opacity .45s ease}
+.wrap{max-width:1296px}
+#rail{position:absolute;left:64px;right:64px;bottom:14px;height:3px;display:flex;gap:4px;z-index:5;pointer-events:none}
+#rail i{flex:1;border-radius:2px;background:var(--line)}#rail i.done{background:var(--line-strong)}#rail i.cur{background:var(--signal)}
+#count{position:absolute;right:20px;top:8px;font-family:var(--mono);font-size:13px;color:var(--muted);z-index:5;pointer-events:none}
+#home{position:absolute;left:64px;top:16px;font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);text-decoration:none;z-index:6}
+#help{position:fixed;left:50%;bottom:28px;transform:translateX(-50%);background:rgba(12,16,20,.86);color:#f2f0e9;font-family:var(--mono);font-size:13px;padding:10px 16px;border-radius:999px;opacity:0;transition:opacity .4s;pointer-events:none;z-index:20;white-space:nowrap}
+#help.show{opacity:1}
+.sl:nth-of-type(even){background:var(--paper-soft)}
+.wrap{width:100%;margin:0 auto}
+.eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--amber);margin:0 0 8px}
+h1,h2,h3{font-family:var(--display);font-weight:600;letter-spacing:-.015em;margin:0}
+h2{font-size:46px;line-height:1.08;margin-bottom:18px;max-width:34ch}
+h3{font-size:22px;line-height:1.25;margin-bottom:8px}
+p{margin:0 0 10px;color:var(--ink-soft)}
+.lead{font-size:19px;max-width:44em}
+ul{margin:0;padding-left:20px;color:var(--ink-soft)}
+li{margin:3px 0}
+b,strong{color:var(--ink)}
+.src{font-family:var(--mono);font-size:12px;color:var(--muted);margin-top:14px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:22px 24px}
+.card.dark{background:var(--ink);border-color:var(--ink)}
+.card.dark h3,.card.dark p,.card.dark b,.card.dark li{color:var(--paper)}
+.card.dark .em{color:var(--amber)}
+html[data-theme="dark"] .card.dark{background:#1d2530;border-color:#2c3744}html[data-theme="dark"] .card.dark h3,html[data-theme="dark"] .card.dark p,html[data-theme="dark"] .card.dark b,html[data-theme="dark"] .card.dark li{color:var(--ink)}
+.card.warn{border:2px solid var(--amber);background:var(--amber-soft)}
+.card.sig{border-top:5px solid var(--signal)}
+.card.amb{border-top:5px solid var(--amber)}
+.tag{display:inline-block;font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;padding:4px 10px;border-radius:999px;background:var(--signal-soft);color:var(--signal);margin-bottom:10px}
+.tag.amb{background:var(--amber-soft);color:var(--amber)}
+.grid{display:grid;gap:18px}
+.g2{grid-template-columns:repeat(2,minmax(0,1fr))}
+.g3{grid-template-columns:repeat(3,minmax(0,1fr))}
+.g4{grid-template-columns:repeat(4,minmax(0,1fr))}
+
+
+.big{font-family:var(--display);font-size:72px;line-height:1;font-weight:650;color:var(--signal)}
+.big.amb{color:var(--amber)}
+.scrollx{overflow:visible}
+.scrollx>svg{display:block;width:100%;height:auto}
+
+svg text{font-family:var(--sans)}
+.sl svg[viewBox]{max-width:100%;height:auto}
+.sl svg[viewBox]:not([width]):not(.down){width:100%;display:block}
+/* animação */
+.rv{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s ease;transition-delay:calc(var(--i,0) * 110ms)}
+.in .rv{opacity:1;transform:none}
+.draw{stroke-dasharray:1;stroke-dashoffset:1;transition:stroke-dashoffset 1.3s ease;transition-delay:calc(var(--i,0) * 160ms)}
+.in .draw{stroke-dashoffset:0}
+.gy{transform:scaleY(0);transform-origin:bottom;transform-box:fill-box;transition:transform .9s cubic-bezier(.2,.8,.2,1);transition-delay:calc(var(--i,0) * 45ms)}
+.in .gy{transform:scaleY(1)}
+.gx{transform:scaleX(0);transform-origin:left;transition:transform 1s cubic-bezier(.2,.8,.2,1);transition-delay:calc(var(--i,0) * 90ms)}
+.in .gx{transform:scaleX(1)}
+.pop{opacity:0;transform:scale(.4);transform-box:fill-box;transform-origin:center;transition:opacity .5s ease,transform .6s cubic-bezier(.3,1.6,.5,1);transition-delay:calc(var(--i,0) * 120ms)}
+.in .pop{opacity:1;transform:none}
+.fade{opacity:0;transition:opacity .8s ease;transition-delay:calc(var(--i,0) * 120ms)}
+.in .fade{opacity:1}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .rv,.draw,.gy,.gx,.pop,.fade{transition:none!important;opacity:1!important;transform:none!important;stroke-dashoffset:0!important}
+}
+/* capa */
+.hero{color:var(--hero-ink);background:var(--hero);overflow:hidden}
+.hero:nth-of-type(even){background:var(--hero)}
+.hero img.bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.55}
+.hero:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(12,16,20,.96) 0%,rgba(12,16,20,.85) 45%,rgba(12,16,20,.3) 100%)}
+.hero .wrap{position:relative;z-index:1}
+.hero h1{font-size:128px;line-height:.98;color:var(--hero-ink);margin:12px 0 22px}
+.hero h1 em{font-style:italic;color:#efac6b;font-weight:500}
+.hero .lead{color:var(--hero-soft)}
+.hero .eyebrow{color:#efac6b}
+.hero .meta{font-family:var(--mono);font-size:13px;color:var(--hero-soft);margin-top:28px}
+.hero .credit{position:absolute;right:16px;bottom:12px;z-index:1;font-family:var(--mono);font-size:11px;color:#c3cad3}
+.stops{display:flex;flex-wrap:wrap;gap:10px;margin-top:34px}
+.stops a{font-family:var(--mono);font-size:12px;letter-spacing:.08em;color:var(--hero-ink);text-decoration:none;border:1px solid rgba(242,240,233,.3);border-radius:999px;padding:8px 14px}
+.stops a:hover{border-color:#efac6b;color:#efac6b}
+.stops a span{color:#efac6b;margin-right:6px}
+.hint{font-family:var(--mono);font-size:12px;color:var(--hero-soft);margin-top:18px}
+/* fluxogramas */
+.flow{display:flex;flex-direction:column;align-items:center;gap:0}
+.node{border-radius:14px;padding:16px 22px;text-align:center;font-weight:600}
+.node.dark{background:var(--ink);color:var(--paper)}
+.node.dark .em{color:var(--amber)}
+html[data-theme="dark"] .node.dark{background:#1d2530;color:var(--ink)}
+.node.sig{background:var(--signal);color:#fff}
+.node.amb{background:var(--amber);color:#fff}
+html[data-theme="dark"] .node.sig,html[data-theme="dark"] .node.amb{color:#0c1014}
+.node.q{background:var(--surface);border:2px solid var(--ink);border-radius:999px}
+.down{width:24px;height:40px;display:block}
+.down path{stroke:var(--line-strong);stroke-width:3;fill:none}
+.right{width:56px;height:24px;flex:none}
+.right path{stroke:var(--amber);stroke-width:3;fill:none}
+.or{display:flex;align-items:center;justify-content:center}
+.or span{width:64px;height:64px;border-radius:50%;background:var(--amber);color:#fff;display:grid;place-items:center;font-weight:700;font-family:var(--mono)}
+html[data-theme="dark"] .or span{color:#0c1014}
+.split{display:grid;grid-template-columns:1fr 80px 1fr;gap:12px;width:100%;align-items:stretch}
+
+.outcome .k{font-family:var(--mono);font-size:12px;letter-spacing:.12em;font-weight:600;margin-bottom:6px}
+.k.ok{color:var(--signal)}.k.no{color:var(--amber)}.k.mu{color:var(--muted)}
+/* gráficos */
+.chart-wrap{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:20px 20px 12px}
+.ax{stroke:var(--line-strong);stroke-width:2}
+.t-mute{fill:var(--muted);font-size:20px}
+.t-ink{fill:var(--ink);font-size:22px;font-weight:600}
+.t-sig{fill:var(--signal);font-size:22px;font-weight:600}
+.t-amb{fill:var(--amber);font-size:22px;font-weight:700}
+.b-sig{fill:var(--signal)}.b-mute{fill:var(--bar-mute)}.b-amb{fill:var(--amber)}.b-soft{fill:var(--signal-soft)}
+.hbar{display:grid;grid-template-columns:200px 1fr;gap:14px;align-items:center;margin:8px 0}
+.hbar .lb{text-align:right;font-size:15px;color:var(--ink-soft)}
+.hbar .tr{display:flex;align-items:center;gap:10px}
+.hbar .b{height:28px;border-radius:0 6px 6px 0;background:var(--bar-mute)}
+.hbar.hl .lb,.hbar.hl .v{color:var(--amber);font-weight:700}.hbar.hl .b{background:var(--amber)}
+.hbar.vl .lb,.hbar.vl .v{color:var(--signal);font-weight:600}.hbar.vl .b{background:var(--signal)}
+.hbar .v{font-family:var(--mono);font-size:14px;color:var(--ink-soft)}
+
+table{width:100%;border-collapse:collapse;font-size:16px;background:var(--surface);border-radius:14px;overflow:hidden}
+th{background:var(--ink);color:var(--paper);text-align:left;padding:12px 14px;font-weight:600}
+html[data-theme="dark"] th{background:#1d2530;color:var(--ink)}
+td{padding:11px 14px;border-top:1px solid var(--line);color:var(--ink-soft)}
+td.n,th.n{text-align:right;font-family:var(--mono)}
+tr.rv{transition-delay:calc(var(--i,0) * 90ms)}
+.pill{display:inline-block;border-radius:999px;padding:8px 16px;font-weight:600;font-size:15px;background:var(--amber-soft);color:var(--ink)}
+.pill.sig{background:var(--signal-soft)}
+.chips{display:flex;flex-wrap:wrap;gap:10px}
+.stat{display:flex;flex-direction:column;gap:2px;border-left:4px solid var(--signal);padding:4px 0 4px 16px}
+.stat .lbl{font-size:14px;color:var(--muted)}
+.iconrow{display:flex;gap:14px;align-items:flex-start}
+.ic{flex:none;width:40px;height:40px;border-radius:12px;background:var(--signal-soft);color:var(--signal);display:grid;place-items:center;font-size:20px;font-weight:700}
+.ic.amb{background:var(--amber-soft);color:var(--amber)}
+.arrowglyph{font-family:var(--display);font-size:46px;line-height:1;font-weight:700;width:52px;text-align:center}
+.arrowglyph.up{color:var(--amber)}.arrowglyph.dn{color:var(--signal)}
+.in .arrowglyph{animation:nudge 1.2s ease 1s 2}
+@keyframes nudge{50%{transform:translateY(-6px)}}
+.photo{width:100%;border-radius:14px;display:block;object-fit:cover}
+.cap{font-size:14px;color:var(--muted);margin-top:8px}
+.steps{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:14px;position:relative}
+
+
+.step .num{font-family:var(--display);font-size:40px;color:var(--signal);line-height:1}
+.who{display:inline-block;margin-top:10px;font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--signal);background:var(--signal-soft);border-radius:999px;padding:4px 10px}
+.form{background:var(--surface);border-radius:12px;box-shadow:0 14px 34px rgba(19,22,25,.14);overflow:hidden}
+.form .hd{background:var(--ink);color:var(--paper);padding:12px 18px;font-weight:600;font-size:15px}
+html[data-theme="dark"] .form .hd{background:#1d2530;color:var(--ink)}
+.form .row{display:flex;gap:14px;align-items:center;padding:10px 18px;border-top:1px solid var(--line)}
+.form .row .bn{flex:none;width:30px;height:30px;border-radius:50%;background:var(--bar-mute);color:#fff;display:grid;place-items:center;font-weight:700;font-size:14px}
+.form .row .nm{font-weight:600;font-size:15px;color:var(--ink)}
+.form .row .ln{height:6px;border-radius:3px;background:var(--line);margin-top:6px}
+.form .row.hot{background:var(--amber-soft);box-shadow:inset 6px 0 0 var(--amber)}
+.form .row.hot .bn{background:var(--amber)}
+.stamp{display:inline-block;margin:16px 18px 18px auto;font-family:var(--mono);font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--amber);border:3px solid var(--amber);border-radius:8px;padding:6px 14px;transform:rotate(-5deg)}
+.msg{display:flex;gap:18px;align-items:center;border-top:1px solid var(--line);padding:16px 0;font-family:var(--display);font-size:28px;line-height:1.3;color:var(--ink)}
+.msg:last-child{border-bottom:1px solid var(--line)}
+.msg .n{font-family:var(--mono);font-size:14px;color:var(--amber);flex:none;width:36px}
+.fim{display:grid;grid-template-columns:1.3fr 1fr;gap:48px;align-items:center}
+
+.sticker{background:#fff;border-radius:20px;padding:16px;box-shadow:0 16px 40px rgba(0,0,0,.25);transform:rotate(2deg);max-width:440px;justify-self:center}
+.sticker img{width:100%;display:block;border-radius:8px}
+.sticker p{color:#131619;text-align:center;font-style:italic;margin:10px 0 2px}
+.refs li{margin:8px 0;font-size:15px}
+.dl-note{font-size:14px;color:var(--muted)}
+.pulse{animation:pulse 2.4s ease-in-out infinite;transform-box:fill-box;transform-origin:center}
+@keyframes pulse{50%{transform:scale(1.08)}}
+@media (prefers-reduced-motion:reduce){.pulse,.in .arrowglyph{animation:none}}
+
+
+#theme{position:absolute;left:16px;top:6px;z-index:7;width:34px;height:34px;border-radius:50%;border:1px solid var(--line-strong);background:var(--surface);color:var(--ink);font-size:16px;line-height:1;cursor:pointer;display:grid;place-items:center;padding:0}
+#theme:hover{border-color:var(--signal);color:var(--signal)}
+</style>
+</head>
+<body>
+<div id="stage">
+<div id="deck" role="region" aria-roledescription="apresentação" aria-label="Leptospirose">
+
+
+<!-- 01 CAPA -->
+<section class="sl hero" id="inicio" data-t="Capa">
+  <img class="bg" src="/biblio/saude-coletiva/leptospirose/enchente-itaoca-2014.jpg" alt="" fetchpriority="high">
+  <div class="wrap">
+    <p class="eyebrow rv">Estágio de Vigilância Epidemiológica</p>
+    <h1 class="rv" style="--i:1">Lepto<em>spirose</em></h1>
+    <p class="lead rv" style="--i:2">Da suspeita clínica à ficha do SINAN — com os dados de São José dos Campos e do Vale do Paraíba.</p>
+    <nav class="stops rv" style="--i:3" aria-label="Paradas da apresentação">
+      <a href="#definicao"><span>1</span>A doença</a>
+      <a href="#suspeito"><span>2</span>Vigilância</a>
+      <a href="#epi-sp"><span>3</span>Dados</a>
+      <a href="#exames"><span>4</span>Clínica</a>
+      <a href="#conduta"><span>5</span>Ação</a>
+      <a href="#prev-individual"><span>6</span>Prevenção</a>
+    </nav>
+    <p class="meta rv" style="--i:4">Gabriel Lorencato · outubro de 2026 · CID-10 A27 · notificação compulsória · <a href="/biblio/saude-coletiva" style="color:#efac6b">← Acervo</a></p>
+    <p class="hint rv" style="--i:5">Toque à direita para avançar, à esquerda para voltar · F: tela cheia</p>
+  </div>
+  <p class="credit">Foto: Marcelo Camargo/Agência Brasil (CC BY 3.0 BR) · Itaoca, SP, 2014</p>
+</section>
+
+<!-- 02 DEFINIÇÃO -->
+<section class="sl" id="definicao" data-t="Definição e transmissão">
+  <div class="wrap">
+    <p class="eyebrow">01 · Definição e transmissão</p>
+    <h2 class="rv">Do rato à pele: o ciclo da leptospira</h2>
+    <div class="grid" style="grid-template-columns:minmax(0,340px) minmax(0,1fr);gap:28px" id="ciclo-grid">
+      <div class="grid" style="gap:16px">
+        <figure class="rv" style="margin:0;--i:1"><img class="photo" style="aspect-ratio:16/9" src="/biblio/saude-coletiva/leptospirose/rattus-norvegicus.jpg" alt="Ratazana (Rattus norvegicus) caminhando na beira da água" loading="lazy"><figcaption class="cap"><b>Reservatório:</b> <i>Rattus norvegicus</i> elimina leptospiras na urina por toda a vida, sem adoecer.</figcaption></figure>
+        <figure class="rv" style="margin:0;--i:2"><img class="photo" style="aspect-ratio:16/9" src="/biblio/saude-coletiva/leptospirose/leptospira-interrogans.jpg" alt="Leptospira interrogans em microscopia eletrônica de varredura: bactérias finas em espiral" loading="lazy"><figcaption class="cap"><b>Agente:</b> <i>Leptospira interrogans</i>, uma espiroqueta.</figcaption></figure>
+      </div>
+      <div>
+        <div class="scrollx"><svg style="max-height:500px" viewBox="0 0 760 560" role="img" aria-label="Ciclo: o rato elimina leptospiras na urina, que contaminam água, lama e solo; o ser humano se infecta pelo contato, pela pele lesada, pele imersa ou mucosas. Cães, bovinos e suínos também eliminam a bactéria.">
+          <defs><marker id="ah" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="var(--amber)"/></marker></defs>
+          <g class="pop" style="--i:1"><rect x="10" y="40" width="200" height="120" rx="14" fill="var(--surface)" stroke="var(--line-strong)" stroke-width="2"/><text x="110" y="92" text-anchor="middle" class="t-ink">Rato</text><text x="110" y="122" text-anchor="middle" class="t-mute">reservatório</text></g>
+          <path class="draw" style="--i:2" pathLength="1" d="M214 100 H296" stroke="var(--amber)" stroke-width="4" fill="none" marker-end="url(#ah)"/>
+          <text x="255" y="84" text-anchor="middle" class="t-amb fade" style="--i:2;font-size:19px">urina</text>
+          <g class="pop" style="--i:3"><rect x="300" y="40" width="200" height="120" rx="14" fill="var(--signal-soft)" stroke="var(--signal)" stroke-width="2"/><text x="400" y="88" text-anchor="middle" class="t-ink">Ambiente</text><text x="400" y="116" text-anchor="middle" class="t-mute" style="font-size:17px">água, lama, solo</text><text x="400" y="138" text-anchor="middle" class="t-mute" style="font-size:17px">enchente, esgoto, lixo</text></g>
+          <path class="draw" style="--i:4" pathLength="1" d="M504 100 H586" stroke="var(--amber)" stroke-width="4" fill="none" marker-end="url(#ah)"/>
+          <text x="545" y="84" text-anchor="middle" class="t-amb fade" style="--i:4;font-size:19px">contato</text>
+          <g class="pop" style="--i:5"><rect x="590" y="40" width="160" height="120" rx="14" fill="var(--ink)"/><text x="670" y="90" text-anchor="middle" style="fill:var(--paper);font-size:22px;font-weight:600">Humano</text><text x="670" y="120" text-anchor="middle" style="fill:var(--amber);font-size:16px">hospedeiro</text><text x="670" y="140" text-anchor="middle" style="fill:var(--amber);font-size:16px">acidental</text></g>
+          <g class="pop" style="--i:6"><rect x="300" y="250" width="200" height="96" rx="14" fill="var(--surface)" stroke="var(--amber)" stroke-width="2" stroke-dasharray="8 6"/><text x="400" y="290" text-anchor="middle" class="t-ink" style="font-size:20px">Outros animais</text><text x="400" y="320" text-anchor="middle" class="t-mute" style="font-size:17px">cães, bovinos, suínos</text></g>
+          <path class="draw" style="--i:7" pathLength="1" d="M400 248 V166" stroke="var(--amber)" stroke-width="3" fill="none" marker-end="url(#ah)"/>
+          <path class="draw" style="--i:7" pathLength="1" d="M670 164 V226" stroke="var(--line-strong)" stroke-width="3" fill="none"/>
+          <g class="pop" style="--i:8"><rect x="560" y="230" width="190" height="190" rx="14" fill="var(--surface)" stroke="var(--line-strong)" stroke-width="2"/><text x="580" y="266" class="t-ink" style="font-size:19px">Portas de entrada</text><text x="580" y="304" class="t-mute" style="font-size:17px">• pele com lesão</text><text x="580" y="334" class="t-mute" style="font-size:17px">• pele íntegra imersa</text><text x="592" y="356" class="t-mute" style="font-size:17px">por muito tempo</text><text x="580" y="388" class="t-mute" style="font-size:17px">• mucosas</text></g>
+          <g class="pop" style="--i:9"><rect x="10" y="420" width="490" height="110" rx="14" fill="var(--amber-soft)" stroke="var(--amber)" stroke-width="2"/><text x="34" y="466" class="t-amb" style="font-size:22px">Incubação: 1 a 30 dias</text><text x="34" y="500" class="t-mute" style="font-size:18px">em geral 5 a 14 — investigar os últimos 30 dias</text></g>
+        </svg></div>
+      </div>
+    </div>
+    <p class="src">Fotos: Charles J. Sharp (CC BY-SA 4.0); CDC/PHIL (domínio público). Fonte: Ministério da Saúde, Guia de Vigilância em Saúde.</p>
+  </div>
+</section>
+
+<!-- 03 CLÍNICA -->
+<section class="sl" id="clinica" data-t="Quadro clínico">
+  <div class="wrap">
+    <p class="eyebrow">02 · Quadro clínico</p>
+    <h2 class="rv">Uma doença bifásica</h2>
+    <div class="grid" style="grid-template-columns:minmax(0,7fr) minmax(0,13fr);gap:20px" id="clin-grid">
+      <div class="grid" style="gap:14px;align-content:start">
+        <div class="node sig gx" style="text-align:left">Fase precoce · dias 1 a 7</div>
+        <div class="card rv" style="--i:1">
+          <h3>Síndrome febril aguda</h3>
+          <ul>
+            <li>Febre súbita, cefaleia</li>
+            <li>Mialgia — <b>panturrilha dolorosa</b></li>
+            <li><b>Sufusão conjuntival</b></li>
+            <li>Náuseas, vômitos, anorexia</li>
+          </ul>
+          <p class="pill sig" style="margin-top:14px">Fácil de confundir com dengue e gripe</p>
+        </div>
+      </div>
+      <div class="grid" style="gap:14px;align-content:start">
+        <div class="node amb gx" style="--i:2;text-align:left">Fase tardia · da 2ª semana em diante</div>
+        <div class="grid g2">
+          <div class="card rv" style="--i:3;background:var(--signal-soft)"><div class="big"><span data-count="85" data-pre="≈ ">≈ 85</span>%</div><p style="margin-top:8px">Melhora: leve e autolimitada, muitas vezes sem diagnóstico</p></div>
+          <div class="card dark rv" style="--i:4"><div class="big amb"><span data-count="15" data-pre="≈ ">≈ 15</span>%</div><p style="margin-top:8px">Formas graves: Weil, hemorragia pulmonar, miocardite</p></div>
+        </div>
+        <div class="card warn rv" style="--i:5">
+          <h3>Síndrome de Weil — a tríade</h3>
+          <div class="chips" style="align-items:center"><span class="pill">Icterícia rubínica</span><b style="color:var(--amber);font-size:24px">+</b><span class="pill">Lesão renal aguda</span><b style="color:var(--amber);font-size:24px">+</b><span class="pill">Hemorragia</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 04 CASO SUSPEITO -->
+<section class="sl" id="suspeito" data-t="Caso suspeito">
+  <div class="wrap">
+    <p class="eyebrow">03 · Definição de caso</p>
+    <h2 class="rv">Caso suspeito, passo a passo</h2>
+    <div class="flow">
+      <div class="node dark rv" style="font-family:var(--display);font-size:32px"><span class="em">Febre + cefaleia + mialgia</span></div>
+      <svg class="down fade" style="--i:1" viewBox="0 0 24 40" aria-hidden="true"><path d="M12 2 V34 M5 27 L12 36 L19 27"/></svg>
+      <p class="rv" style="--i:1;font-style:italic;margin:0 0 8px">e pelo menos um dos critérios</p>
+      <div class="split">
+        <div class="card sig rv" style="--i:2"><h3>Critério 1 · Exposição em 30 dias</h3><ul><li>Enchente, alagamento, lama ou água parada</li><li>Fossa, esgoto, lixo ou entulho</li><li>Ocupação de risco: coleta de lixo, reciclagem, córregos, esgoto, animais, lavoura alagada</li><li>Vínculo com caso confirmado em laboratório</li><li>Moradia ou trabalho em área de risco</li></ul></div>
+        <div class="or pop" style="--i:3"><span>OU</span></div>
+        <div class="card amb rv" style="--i:4"><h3>Critério 2 · Pelo menos um sinal</h3><ul><li>Sufusão conjuntival</li><li>Sinais de insuficiência renal aguda</li><li>Icterícia e/ou aumento de bilirrubinas</li><li>Fenômeno hemorrágico</li></ul></div>
+      </div>
+      <svg class="down fade" style="--i:5" viewBox="0 0 24 40" aria-hidden="true"><path d="M12 2 V34 M5 27 L12 36 L19 27"/></svg>
+      <div class="node amb pop" style="--i:6;font-size:22px">CASO SUSPEITO: notificar, colher e tratar</div>
+    </div>
+    <p class="src">Fonte: Ministério da Saúde, Guia de Vigilância em Saúde. A definição é sensível de propósito: notificar a mais e descartar depois.</p>
+  </div>
+</section>
+
+<!-- 05 CONFIRMAÇÃO -->
+<section class="sl" id="confirmacao" data-t="Confirmar ou descartar">
+  <div class="wrap">
+    <p class="eyebrow">03 · Definição de caso</p>
+    <h2 class="rv">Confirmar ou descartar: depende do dia</h2>
+    <div class="flow">
+      <div class="node q rv">Amostra colhida em que dia de doença?</div>
+      <svg class="down fade" style="--i:1" viewBox="0 0 24 40" aria-hidden="true"><path d="M12 2 V34 M5 27 L12 36 L19 27"/></svg>
+      <div class="grid g2" style="width:100%">
+        <div class="grid" style="gap:12px">
+          <div class="node sig rv" style="--i:1">Até o 7º dia</div>
+          <div class="grid g2" style="gap:12px">
+            <div class="card outcome rv" style="--i:2"><div class="k ok">✓ CONFIRMA</div><p>PCR positivo no sangue (ou cultura)</p></div>
+            <div class="card warn outcome rv" style="--i:3"><div class="k no">NÃO DESCARTA</div><p>Sorologia não reagente: colher <b>2ª amostra</b></p></div>
+          </div>
+        </div>
+        <div class="grid" style="gap:12px">
+          <div class="node amb rv" style="--i:1">A partir do 7º dia</div>
+          <div class="grid g2" style="gap:12px">
+            <div class="card outcome rv" style="--i:4"><div class="k ok">✓ CONFIRMA</div><p>ELISA-IgM reagente, ou MAT com soroconversão, ↑ 4× ou ≥ 800</p></div>
+            <div class="card outcome rv" style="--i:5"><div class="k mu">DESCARTA</div><p>Não reagente em amostra adequada, ou outro diagnóstico</p></div>
+          </div>
+        </div>
+      </div>
+      <div class="card dark rv" style="--i:6;margin-top:18px;width:100%"><p style="margin:0">⚠ Sem exame, ou óbito antes da 2ª amostra → <b class="em">critério clínico-epidemiológico</b></p></div>
+    </div>
+    <p class="src">Fonte: Ministério da Saúde, Guia de Vigilância em Saúde. Confira os pontos de corte com o laboratório de referência.</p>
+  </div>
+</section>
+
+<!-- 06 EPI SP -->
+<section class="sl" id="epi-sp" data-t="Epidemiologia em SP">
+  <div class="wrap">
+    <p class="eyebrow">04 · Epidemiologia · Estado de São Paulo</p>
+    <h2 class="rv">Menos casos, a mesma letalidade</h2>
+    <div class="grid" style="grid-template-columns:minmax(0,2fr) minmax(0,1fr);gap:22px" id="episp-grid">
+      <div class="chart-wrap rv">
+        <p style="font-weight:600;color:var(--ink);margin:0 0 4px">Casos confirmados por ano</p>
+        <div class="scrollx"><svg viewBox="0 0 1100 300" role="img" aria-label="Barras: 892 casos em 2010, 981 em 2011, caindo até 297 em 2021; 455 em 2024 e 450 em 2025">
+          <g>
+          <rect class="gy b-sig" style="--i:0" x="14.7" y="70.1" width="44" height="181.9" rx="4"/><rect class="gy b-sig" style="--i:1" x="88" y="52" width="44" height="200" rx="4"/><rect class="gy b-sig" style="--i:2" x="161.3" y="93.4" width="44" height="158.6" rx="4"/><rect class="gy b-sig" style="--i:3" x="234.7" y="58.5" width="44" height="193.5" rx="4"/><rect class="gy b-sig" style="--i:4" x="308" y="98.9" width="44" height="153.1" rx="4"/><rect class="gy b-sig" style="--i:5" x="381.3" y="124" width="44" height="128" rx="4"/><rect class="gy b-sig" style="--i:6" x="454.7" y="130.9" width="44" height="121.1" rx="4"/><rect class="gy b-sig" style="--i:7" x="528" y="142.5" width="44" height="109.5" rx="4"/><rect class="gy b-sig" style="--i:8" x="601.3" y="145.4" width="44" height="106.6" rx="4"/><rect class="gy b-sig" style="--i:9" x="674.7" y="134.2" width="44" height="117.8" rx="4"/><rect class="gy b-mute" style="--i:10" x="748" y="183.7" width="44" height="68.3" rx="4"/><rect class="gy b-mute" style="--i:11" x="821.3" y="191.4" width="44" height="60.6" rx="4"/><rect class="gy b-sig" style="--i:13" x="968" y="159.2" width="44" height="92.8" rx="4"/><rect class="gy b-sig" style="--i:14" x="1041.3" y="160.3" width="44" height="91.7" rx="4"/>
+          </g>
+          <g class="fade" style="--i:6" text-anchor="middle">
+          <text class="t-mute" x="36.7" y="62">892</text><text class="t-mute" x="110" y="44">981</text><text class="t-mute" x="183.3" y="85">778</text><text class="t-mute" x="256.7" y="50">949</text><text class="t-mute" x="330" y="91">751</text><text class="t-mute" x="403.3" y="116">628</text><text class="t-mute" x="476.7" y="123">594</text><text class="t-mute" x="550" y="134">537</text><text class="t-mute" x="623.3" y="137">523</text><text class="t-mute" x="696.7" y="126">578</text><text class="t-mute" x="770" y="176">335</text><text class="t-mute" x="843.3" y="183">297</text><text class="t-mute" x="990" y="151">455</text><text class="t-mute" x="1063.3" y="152">450</text>
+          </g>
+          <line class="ax" x1="0" y1="252" x2="1100" y2="252"/>
+          <g text-anchor="middle"><text class="t-mute" x="36.7" y="282">2010</text><text class="t-mute" x="256.7" y="282">2013</text><text class="t-mute" x="476.7" y="282">2016</text><text class="t-mute" x="696.7" y="282">2019</text><text class="t-mute" x="770" y="282">’20</text><text class="t-mute" x="843.3" y="282">’21</text><text class="t-mute" x="916.7" y="282">…</text><text class="t-mute" x="990" y="282">’24</text><text class="t-mute" x="1063.3" y="282">’25</text></g>
+        </svg></div>
+        <p style="font-weight:600;color:var(--ink);margin:14px 0 4px">Letalidade (%) <span style="font-weight:400;color:var(--muted)">· tracejado = média 2010–2021, 12,9%</span></p>
+        <div class="scrollx"><svg viewBox="0 0 1100 150" role="img" aria-label="Linha de letalidade entre 9,9% e 16,7% ao ano, máxima em 2020; 15,2% em 2024 e 13,8% em 2025">
+          <line x1="0" y1="61.4" x2="1100" y2="61.4" stroke="var(--muted)" stroke-width="2" stroke-dasharray="10 8"/>
+          <polyline class="draw" pathLength="1" points="36.7,71.2 110,71.8 183.3,91 256.7,72 330,64.8 403.3,45.1 476.7,70.5 550,41 623.3,29.4 696.7,51.6 770,22.8 843.3,48.6" fill="none" stroke="var(--amber)" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+          <polyline class="draw" style="--i:4" pathLength="1" points="990,38.4 1063.3,52.2" fill="none" stroke="var(--amber)" stroke-width="4" stroke-linecap="round"/>
+          <g class="fade" style="--i:5"><circle cx="770" cy="22.8" r="10" fill="var(--amber)"/><text x="790" y="22" class="t-amb" style="font-size:19px">16,7% (2020)</text><text x="183.3" y="122" text-anchor="middle" class="t-mute" style="font-size:17px">9,9% (2012)</text><text x="990" y="24" text-anchor="middle" class="t-amb" style="font-size:17px">15,2%</text></g>
+        </svg></div>
+        <p class="dl-note">Barras cinzas: 2020–2021, subnotificação na pandemia. 2022–2023 fora da série publicada.</p>
+      </div>
+      <div class="grid" style="gap:10px;align-content:start">
+        <div class="stat rv" style="--i:1"><span class="big" style="font-size:52px" data-count="7843">7.843</span><span class="lbl">casos confirmados, 2010–2021</span></div>
+        <div class="stat rv" style="--i:2"><span class="big" style="font-size:52px" data-count="1009">1.009</span><span class="lbl">óbitos</span></div>
+        <div class="card rv" style="--i:3;padding:14px 18px"><div class="iconrow"><div class="ic amb">☂</div><p style="margin:0"><b>Sazonal:</b> pico de novembro a abril, mas o ano todo — e mais letal nos meses frios</p></div></div>
+        <div class="card rv" style="--i:4;padding:14px 18px"><div class="iconrow"><div class="ic">⌂</div><p style="margin:0"><b>Urbana:</b> adquirida sobretudo no domicílio, por urina de roedor</p></div></div>
+        <div class="card rv" style="--i:5;padding:14px 18px"><div class="iconrow"><div class="ic">♂</div><p style="margin:0"><b>81% homens;</b> maior risco entre 35 e 64 anos</p></div></div>
+      </div>
+    </div>
+    <p class="src">Fontes: Buzzar &amp; Spínola, BEPA 2023 (CVE/SES-SP); tabelas CVE/SINAN 2024–2025.</p>
+  </div>
+</section>
+
+<!-- 07 LETALIDADE -->
+<section class="sl" id="letalidade" data-t="1 em cada 8" style="background:var(--amber-soft)">
+  <div class="wrap">
+    <div class="grid" style="grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:40px;align-items:center" id="leta-grid">
+      <div>
+        <p class="eyebrow">Estado de São Paulo, 2010–2021</p>
+        <h2 class="rv" style="font-size:84px;max-width:14ch">1 em cada 8 casos confirmados morreu.</h2>
+        <p class="lead rv" style="--i:1">O serviço reconhece o paciente ictérico e deixa passar as formas leves e anictéricas.</p>
+      </div>
+      <div>
+        <svg viewBox="0 0 640 520" role="img" aria-label="Oito figuras de pessoas; sete claras e uma escura: um óbito a cada oito casos">
+          <g class="pop" style="--i:1"><circle cx="80" cy="60" r="40" fill="var(--line-strong)"/><path d="M25 240 L25 165 A55 55 0 0 1 135 165 L135 240 Z" fill="var(--line-strong)"/></g>
+          <g class="pop" style="--i:2"><circle cx="240" cy="60" r="40" fill="var(--line-strong)"/><path d="M185 240 L185 165 A55 55 0 0 1 295 165 L295 240 Z" fill="var(--line-strong)"/></g>
+          <g class="pop" style="--i:3"><circle cx="400" cy="60" r="40" fill="var(--line-strong)"/><path d="M345 240 L345 165 A55 55 0 0 1 455 165 L455 240 Z" fill="var(--line-strong)"/></g>
+          <g class="pop" style="--i:4"><circle cx="560" cy="60" r="40" fill="var(--line-strong)"/><path d="M505 240 L505 165 A55 55 0 0 1 615 165 L615 240 Z" fill="var(--line-strong)"/></g>
+          <g class="pop" style="--i:5"><circle cx="80" cy="320" r="40" fill="var(--line-strong)"/><path d="M25 500 L25 425 A55 55 0 0 1 135 425 L135 500 Z" fill="var(--line-strong)"/></g>
+          <g class="pop" style="--i:6"><circle cx="240" cy="320" r="40" fill="var(--line-strong)"/><path d="M185 500 L185 425 A55 55 0 0 1 295 425 L295 500 Z" fill="var(--line-strong)"/></g>
+          <g class="pop" style="--i:7"><circle cx="400" cy="320" r="40" fill="var(--line-strong)"/><path d="M345 500 L345 425 A55 55 0 0 1 455 425 L455 500 Z" fill="var(--line-strong)"/></g>
+          <g class="pop" style="--i:10"><circle cx="560" cy="320" r="40" fill="var(--amber)"/><path d="M505 500 L505 425 A55 55 0 0 1 615 425 L615 500 Z" fill="var(--amber)"/></g>
+        </svg>
+        <p class="rv" style="--i:6;text-align:center;font-weight:600;color:var(--ink)"><span data-count="12.9" data-dec="1">12,9</span>% de letalidade · 15,2% em 2024</p>
+      </div>
+    </div>
+    <p class="src">Fonte: Buzzar &amp; Spínola, BEPA 2023 — 1.009 óbitos em 7.843 casos; CVE/SINAN 2024.</p>
+  </div>
+</section>
+
+<!-- 08 RANKING -->
+<section class="sl" id="epi-vale" data-t="Vale do Paraíba">
+  <div class="wrap">
+    <p class="eyebrow">05 · Incidência média por 100 mil, 2010–2021 · 10 maiores de 28 regionais</p>
+    <h2 class="rv">SJC: 7ª maior incidência do estado</h2>
+    <div class="grid" style="grid-template-columns:minmax(0,1.7fr) minmax(0,1fr);gap:26px" id="rank-grid">
+      <div class="chart-wrap" style="position:relative">
+        <div class="hbar"><div class="lb">Registro</div><div class="tr"><div class="b gx" style="width:100%;--i:0"></div><span class="v">4,33</span></div></div>
+        <div class="hbar"><div class="lb">Santos</div><div class="tr"><div class="b gx" style="width:74.4%;--i:1"></div><span class="v">3,22</span></div></div>
+        <div class="hbar"><div class="lb">Mogi das Cruzes</div><div class="tr"><div class="b gx" style="width:63%;--i:2"></div><span class="v">2,73</span></div></div>
+        <div class="hbar"><div class="lb">Assis</div><div class="tr"><div class="b gx" style="width:43.9%;--i:3"></div><span class="v">1,90</span></div></div>
+        <div class="hbar"><div class="lb">Campinas</div><div class="tr"><div class="b gx" style="width:42.7%;--i:4"></div><span class="v">1,85</span></div></div>
+        <div class="hbar"><div class="lb">Osasco</div><div class="tr"><div class="b gx" style="width:40%;--i:5"></div><span class="v">1,73</span></div></div>
+        <div class="hbar hl"><div class="lb">São José dos Campos</div><div class="tr"><div class="b gx" style="width:39.5%;--i:6"></div><span class="v">1,71</span></div></div>
+        <div class="hbar"><div class="lb">Capital</div><div class="tr"><div class="b gx" style="width:35.8%;--i:7"></div><span class="v">1,55</span></div></div>
+        <div class="hbar vl"><div class="lb">Caraguatatuba</div><div class="tr"><div class="b gx" style="width:34.6%;--i:8"></div><span class="v">1,50</span></div></div>
+        <div class="hbar vl"><div class="lb">Taubaté</div><div class="tr"><div class="b gx" style="width:34.6%;--i:9"></div><span class="v">1,50</span></div></div>
+        <p class="dl-note" style="margin:10px 0 0">Média do estado: <b>1,49</b> por 100 mil. Laranja: GVE 27 (SJC). Azul: as outras regionais do Vale e Litoral Norte.</p>
+      </div>
+      <div class="grid" style="gap:16px;align-content:start">
+        <div class="card dark rv" style="--i:2">
+          <p class="eyebrow" style="color:var(--amber)">GVE 27 · 2010–2021</p>
+          <div class="grid g3" style="gap:10px">
+            <div><div class="big" style="color:var(--paper);font-size:44px" data-count="214">214</div><p>casos</p></div>
+            <div><div class="big" style="color:var(--paper);font-size:44px" data-count="25">25</div><p>óbitos</p></div>
+            <div><div class="big amb" style="font-size:44px"><span data-count="11.7" data-dec="1">11,7</span>%</div><p>letalidade</p></div>
+          </div>
+          <p style="font-size:15px;margin-top:8px">SJC, Jacareí, Caçapava, Igaratá, Jambeiro, Monteiro Lobato, Paraibuna, Santa Branca</p>
+        </div>
+        <div class="card rv" style="--i:3"><h3>Surto de 1987, SJC</h3><p>Banho em piscina de água natural num clube; sorovar Pomona em 91% dos casos. Exposição recreacional — não é só enchente.</p></div>
+      </div>
+    </div>
+    <p class="src">Fontes: BEPA 2023 (CVE/SES-SP), Tabela 1; Rev Inst Med Trop São Paulo, 1990 (PMID 2135496).</p>
+  </div>
+</section>
+
+<!-- 09 RECENTE -->
+<section class="sl" id="epi-recente" data-t="Anos recentes">
+  <div class="wrap">
+    <p class="eyebrow">05 · GVE 27 São José dos Campos · anos recentes</p>
+    <h2 class="rv">Muitas notificações, poucas confirmações</h2>
+    <div class="grid" style="grid-template-columns:minmax(0,1.6fr) minmax(0,1fr);gap:24px" id="rec-grid">
+      <div class="chart-wrap">
+        <p class="eyebrow" style="color:var(--ink)">O funil de 2025</p>
+        <div class="hbar vl"><div class="lb">Notificados</div><div class="tr"><div class="b gx" style="width:88%;height:56px"></div><span class="v" style="font-size:22px">276</span></div></div>
+        <div class="hbar hl"><div class="lb">Confirmados</div><div class="tr"><div class="b gx" style="width:5.1%;height:56px;--i:4"></div><span class="v" style="font-size:22px">16 <small>(5,8%)</small></span></div></div>
+        <div class="hbar"><div class="lb">Óbitos</div><div class="tr"><div class="b gx" style="width:1%;min-width:5px;height:56px;background:var(--ink);--i:8"></div><span class="v" style="font-size:22px">1</span></div></div>
+        <div class="card dark rv" style="--i:6;margin-top:18px;display:flex;gap:18px;align-items:center"><div class="big amb" style="white-space:nowrap">≈ 6%</div><p style="margin:0">das notificações confirmam. Cada descarte depende de amostra colhida no tempo certo.</p></div>
+      </div>
+      <div class="grid" style="gap:16px;align-content:start">
+        <table class="rv" style="--i:2">
+          <thead><tr><th>Ano</th><th class="n">Notif.</th><th class="n">Conf.</th><th class="n">Óbitos</th></tr></thead>
+          <tbody><tr><td>2024</td><td class="n">256</td><td class="n">15</td><td class="n">1</td></tr><tr><td>2025</td><td class="n">276</td><td class="n">16</td><td class="n">1</td></tr><tr><td>2026*</td><td class="n">175</td><td class="n">10</td><td class="n">2</td></tr></tbody>
+        </table>
+        <div class="card rv" style="--i:3;background:var(--amber-soft)"><p class="eyebrow">Só o município de SJC</p><p>2025: <b>12 casos, 1 óbito</b><br>2026*: <b>8 casos, 1 óbito</b><br>2024: não consta na tabela pública por município</p></div>
+      </div>
+    </div>
+    <p class="src">Fonte: SINAN/CVE/SES-SP, tabelas por GVE e município. *2026 parcial, dados de 06/10/2026, sujeitos a revisão.</p>
+  </div>
+</section>
+
+<!-- 10 MAPA -->
+<section class="sl" id="mapa-2026" data-t="Casos de 2026">
+  <div class="wrap">
+    <p class="eyebrow">05 · Casos confirmados em 2026, até 06/10 · ao longo da Via Dutra</p>
+    <h2 class="rv">Onde estão os casos de 2026</h2>
+    <div class="chart-wrap scrollx"><svg viewBox="0 0 1664 560" role="img" aria-label="Esquema do Vale do Paraíba ao longo da Via Dutra, com círculos proporcionais aos casos de 2026: São José dos Campos 8, Taubaté 8, Ubatuba 5, Guaratinguetá 3; Pindamonhangaba, Aparecida e Lorena 2; Jacareí, Caçapava, Potim e Canas 1. Óbitos em SJC, Jacareí, Taubaté e Aparecida.">
+      <line class="draw" pathLength="1" x1="40" y1="220" x2="585" y2="220" stroke="var(--amber)" stroke-width="12" stroke-linecap="round"/>
+      <line class="draw" style="--i:2" pathLength="1" x1="585" y1="220" x2="1630" y2="220" stroke="var(--signal)" stroke-width="12" stroke-linecap="round"/>
+      <line class="fade" style="--i:4" x1="670" y1="232" x2="670" y2="436" stroke="var(--bar-mute)" stroke-width="8" stroke-dasharray="14 10"/>
+      <g text-anchor="middle">
+        <g class="pop" style="--i:3"><circle cx="90" cy="220" r="22" fill="var(--amber)" stroke="var(--surface)" stroke-width="4"/><text x="90" y="229" fill="#fff" font-size="24" font-weight="700">1</text></g>
+        <g class="pop" style="--i:4"><circle cx="300" cy="220" r="40" fill="var(--amber)" stroke="var(--surface)" stroke-width="4"/><text x="300" y="231" fill="#fff" font-size="30" font-weight="700">8</text></g>
+        <g class="pop" style="--i:5"><circle cx="500" cy="220" r="22" fill="var(--amber)" stroke="var(--surface)" stroke-width="4"/><text x="500" y="229" fill="#fff" font-size="24" font-weight="700">1</text></g>
+        <g class="pop" style="--i:6"><circle cx="670" cy="220" r="40" fill="var(--signal)" stroke="var(--surface)" stroke-width="4"/><text x="670" y="231" fill="#fff" font-size="30" font-weight="700">8</text></g>
+        <g class="pop" style="--i:7"><circle cx="850" cy="220" r="26" fill="var(--signal)" stroke="var(--surface)" stroke-width="4"/><text x="850" y="229" fill="#fff" font-size="24" font-weight="700">2</text></g>
+        <g class="pop" style="--i:8"><circle cx="1030" cy="220" r="26" fill="var(--signal)" stroke="var(--surface)" stroke-width="4"/><text x="1030" y="229" fill="#fff" font-size="24" font-weight="700">2</text></g>
+        <g class="pop" style="--i:9"><circle cx="1170" cy="220" r="22" fill="var(--signal)" stroke="var(--surface)" stroke-width="4"/><text x="1170" y="229" fill="#fff" font-size="24" font-weight="700">1</text></g>
+        <g class="pop" style="--i:10"><circle cx="1310" cy="220" r="29" fill="var(--signal)" stroke="var(--surface)" stroke-width="4"/><text x="1310" y="229" fill="#fff" font-size="24" font-weight="700">3</text></g>
+        <g class="pop" style="--i:11"><circle cx="1460" cy="220" r="26" fill="var(--signal)" stroke="var(--surface)" stroke-width="4"/><text x="1460" y="229" fill="#fff" font-size="24" font-weight="700">2</text></g>
+        <g class="pop" style="--i:12"><circle cx="1600" cy="220" r="22" fill="var(--signal)" stroke="var(--surface)" stroke-width="4"/><text x="1600" y="229" fill="#fff" font-size="24" font-weight="700">1</text></g>
+        <g class="pop" style="--i:13"><circle cx="670" cy="470" r="34" fill="var(--bar-mute)" stroke="var(--surface)" stroke-width="4"/><text x="670" y="480" fill="#fff" font-size="28" font-weight="700">5</text></g>
+        <g class="fade" style="--i:5" font-size="22">
+          <text x="90" y="160" fill="var(--ink)">Jacareí</text><text x="300" y="160" fill="var(--ink)" font-weight="700">São José dos Campos</text><text x="500" y="160" fill="var(--ink)">Caçapava</text><text x="670" y="160" fill="var(--ink)" font-weight="700">Taubaté</text><text x="850" y="160" fill="var(--ink)">Pindamonhangaba</text><text x="1030" y="160" fill="var(--ink)">Aparecida</text><text x="1170" y="160" fill="var(--ink)">Potim</text><text x="1310" y="160" fill="var(--ink)">Guaratinguetá</text><text x="1460" y="160" fill="var(--ink)">Lorena</text><text x="1600" y="160" fill="var(--ink)">Canas</text>
+        </g>
+        <g class="fade" style="--i:12" font-size="21" font-weight="700" fill="var(--amber)">
+          <text x="90" y="292">1 óbito</text><text x="300" y="292">1 óbito</text><text x="610" y="292">1 óbito</text><text x="1030" y="292">1 óbito</text>
+        </g>
+      </g>
+      <text class="fade" style="--i:13" x="722" y="478" font-size="22" fill="var(--ink)"><tspan font-weight="700">Ubatuba</tspan> · Litoral Norte</text>
+      <g class="fade" style="--i:14" font-size="20">
+        <circle cx="1000" cy="420" r="9" fill="var(--amber)"/><text x="1016" y="427" fill="var(--ink-soft)">GVE 27 São José dos Campos</text>
+        <circle cx="1000" cy="458" r="9" fill="var(--signal)"/><text x="1016" y="465" fill="var(--ink-soft)">GVE 33 Taubaté</text>
+        <circle cx="1000" cy="496" r="9" fill="var(--bar-mute)"/><text x="1016" y="503" fill="var(--ink-soft)">GVE 28 Caraguatatuba</text>
+        <text x="1000" y="540" fill="var(--muted)" font-size="18">Número no círculo = casos · esquema fora de escala</text>
+      </g>
+      <g class="pop" style="--i:15"><rect x="40" y="380" width="520" height="150" rx="16" fill="var(--ink)"/><text x="68" y="420" fill="var(--amber)" font-family="IBM Plex Mono, monospace" font-size="17" letter-spacing="2">VALE + LITORAL NORTE · 2026</text><text x="68" y="470" fill="var(--paper)" font-family="Fraunces, Georgia, serif" font-size="40" font-weight="700">34 casos · 4 óbitos</text><text x="68" y="508" fill="var(--paper)" font-size="19" opacity=".8">GVE 27: 10 · GVE 33: 19 · GVE 28: 5</text></g>
+    </svg></div>
+    <p class="src">Fonte: SINANNET/CVE/SES-SP, casos e óbitos por município de residência, 2026 (dados de 06/10/2026, parciais).</p>
+  </div>
+</section>
+
+<!-- 11 EXAMES INESPECÍFICOS -->
+<section class="sl" id="exames" data-t="Exames inespecíficos">
+  <div class="wrap">
+    <p class="eyebrow">06 · Exames inespecíficos</p>
+    <h2 class="rv">O laboratório que sugere leptospirose</h2>
+    <div class="grid g4">
+      <div class="card rv" style="--i:0"><div class="iconrow"><div class="arrowglyph up">↑</div><div><h3>Creatinina e ureia</h3><p>Lesão renal aguda</p></div></div></div>
+      <div class="card warn rv" style="--i:1"><div class="iconrow"><div class="arrowglyph dn">↓</div><div><h3>Potássio</h3><p><b>Normal ou baixo</b> na IRA: pista!</p></div></div></div>
+      <div class="card rv" style="--i:2"><div class="iconrow"><div class="arrowglyph up">↑↑</div><div><h3>Bilirrubina direta</h3><p>Muito alta</p></div></div></div>
+      <div class="card warn rv" style="--i:3"><div class="iconrow"><div class="arrowglyph up" style="font-size:30px">↑</div><div><h3>Transaminases</h3><p>Só <b>discretas</b>, em geral &lt; 5×: pista!</p></div></div></div>
+      <div class="card rv" style="--i:4"><div class="iconrow"><div class="arrowglyph up">↑</div><div><h3>CPK</h3><p>Miosite: a dor na panturrilha</p></div></div></div>
+      <div class="card rv" style="--i:5"><div class="iconrow"><div class="arrowglyph up">↑</div><div><h3>Leucócitos</h3><p>Neutrofilia com desvio</p></div></div></div>
+      <div class="card rv" style="--i:6"><div class="iconrow"><div class="arrowglyph dn">↓</div><div><h3>Plaquetas</h3><p>Plaquetopenia frequente</p></div></div></div>
+      <div class="card rv" style="--i:7"><div class="iconrow"><div class="arrowglyph dn" style="font-size:30px">⌕</div><div><h3>Urina tipo I</h3><p>Proteinúria, hematúria, cilindros</p></div></div></div>
+    </div>
+    <div class="card dark rv" style="--i:8;margin-top:18px"><p style="margin:0">Completar: gasometria (acidose), <b class="em">RX de tórax</b> (infiltrado = hemorragia pulmonar), coagulograma e ECG.</p></div>
+    <p class="src">Fonte: Ministério da Saúde, Leptospirose: diagnóstico e manejo clínico. Bordas laranja = achados que ajudam a diferenciar.</p>
+  </div>
+</section>
+
+<!-- 12 EXAMES ESPECÍFICOS -->
+<section class="sl" id="exames-esp" data-t="Exames específicos">
+  <div class="wrap">
+    <p class="eyebrow">06 · Exames específicos</p>
+    <h2 class="rv">O exame certo depende do dia da doença</h2>
+    <div class="chart-wrap scrollx"><svg viewBox="0 0 1664 600" role="img" aria-label="Ao longo de 28 dias: leptospiras no sangue sobem e caem na primeira semana; anticorpos IgM sobem a partir do 7º dia; leptospiras na urina a partir da segunda semana. PCR e cultura até o 7º dia; ELISA-IgM e microaglutinação depois, com amostras pareadas.">
+      <line x1="432" y1="40" x2="432" y2="360" stroke="var(--ink)" stroke-width="2" stroke-dasharray="8 8"/>
+      <path class="fade" style="--i:5" d="M 600 330 C 800 250, 1100 250, 1608 270" fill="none" stroke="var(--bar-mute)" stroke-width="4" stroke-dasharray="12 10"/>
+      <path class="draw" pathLength="1" d="M 40 356 C 120 356, 150 110, 236 110 S 420 330, 600 356" fill="none" stroke="var(--signal)" stroke-width="6" stroke-linecap="round"/>
+      <path class="draw" style="--i:3" pathLength="1" d="M 376 356 C 560 356, 640 90, 936 90 L 1608 100" fill="none" stroke="var(--amber)" stroke-width="6" stroke-linecap="round"/>
+      <line class="ax" x1="40" y1="360" x2="1620" y2="360"/>
+      <g class="fade" style="--i:2">
+        <text x="60" y="66" class="t-sig" style="font-size:24px">Leptospiras no sangue</text>
+        <text x="444" y="68" class="t-ink" style="font-size:22px">7º dia</text>
+      </g>
+      <text class="fade t-amb" style="--i:5;font-size:24px" x="980" y="58">Anticorpos (IgM, depois IgG)</text>
+      <text class="fade t-mute" style="--i:7;font-size:22px;font-weight:600" x="1200" y="310">Leptospiras na urina</text>
+      <g text-anchor="middle" class="t-mute"><text x="60" y="392">dia 0</text><text x="432" y="392">dia 7</text><text x="824" y="392">dia 14</text><text x="1216" y="392">dia 21</text><text x="1600" y="392">dia 28</text></g>
+      <g class="fade" style="--i:8">
+        <rect x="40" y="420" width="386" height="60" rx="10" fill="var(--signal)"/><text x="64" y="458" fill="#fff" font-size="24" font-weight="700">PCR · cultura (sangue)</text>
+        <rect x="438" y="420" width="1170" height="60" rx="10" fill="var(--amber)"/><text x="470" y="458" fill="#fff" font-size="24" font-weight="700">ELISA-IgM · microaglutinação (MAT) — amostras pareadas</text>
+      </g>
+      <g class="fade" style="--i:10">
+        <rect x="40" y="510" width="460" height="56" rx="28" fill="var(--signal-soft)"/><text x="66" y="546" fill="var(--ink)" font-size="23"><tspan font-weight="700">1ª amostra:</tspan> no atendimento</text>
+        <rect x="760" y="510" width="560" height="56" rx="28" fill="var(--amber-soft)"/><text x="786" y="546" fill="var(--ink)" font-size="23"><tspan font-weight="700">2ª amostra:</tspan> 7 a 14 dias depois</text>
+      </g>
+    </svg></div>
+    <p class="lead rv" style="--i:3;margin-top:16px"><b>Na suspeita, colha e trate:</b> o resultado não deve atrasar o antibiótico. Sorologia antes do 7º dia não descarta.</p>
+    <p class="src">Esquema didático, sem escala vertical. Fontes: MS; CCZ de São José dos Campos, fev/2023 (amostras pareadas com 7 a 10 dias de intervalo).</p>
+  </div>
+</section>
+
+<!-- 13 GRAVES -->
+<section class="sl" id="graves" data-t="Formas graves">
+  <div class="wrap">
+    <p class="eyebrow">07 · Formas graves e atípicas</p>
+    <h2 class="rv">Onde a leptospira ataca</h2>
+    <div class="grid" style="grid-template-columns:minmax(0,1.9fr) minmax(0,1fr);gap:24px;align-items:center" id="body-grid">
+      <div class="scrollx"><svg viewBox="0 0 1000 640" role="img" aria-label="Silhueta humana com órgãos destacados. Formas graves: hemorragia pulmonar, icterícia rubínica, lesão renal aguda. Atípicas ou precoces: meningite asséptica, sufusão conjuntival e uveíte, miocardite, mialgia e rabdomiólise.">
+        <g transform="translate(300 0)" class="fade">
+          <path d="M120 155 L70 330 L92 336 L138 200 Z" fill="var(--line-strong)"/><path d="M280 155 L330 330 L308 336 L262 200 Z" fill="var(--line-strong)"/>
+          <path d="M125 355 L140 620 L185 620 L196 380 Z" fill="var(--line-strong)"/><path d="M275 355 L260 620 L215 620 L204 380 Z" fill="var(--line-strong)"/>
+          <path d="M120 150 Q200 135 280 150 L300 360 Q200 385 100 360 Z" fill="var(--line-strong)"/>
+          <rect x="182" y="112" width="36" height="34" fill="var(--line-strong)"/><circle cx="200" cy="70" r="52" fill="var(--line-strong)"/>
+        </g>
+        <g transform="translate(300 0)">
+          <ellipse class="pop" style="--i:1" cx="200" cy="52" rx="38" ry="24" fill="var(--signal)" opacity=".75"/>
+          <circle class="pop" style="--i:2" cx="183" cy="80" r="7" fill="var(--signal)"/><circle class="pop" style="--i:2" cx="217" cy="80" r="7" fill="var(--signal)"/>
+          <ellipse class="pop pulse" style="--i:3" cx="170" cy="205" rx="26" ry="45" fill="var(--amber)"/><ellipse class="pop pulse" style="--i:3" cx="230" cy="205" rx="26" ry="45" fill="var(--amber)"/>
+          <circle class="pop" style="--i:4" cx="212" cy="232" r="16" fill="var(--signal)"/>
+          <ellipse class="pop" style="--i:5" cx="175" cy="280" rx="45" ry="22" fill="var(--amber)"/>
+          <ellipse class="pop" style="--i:6" cx="165" cy="320" rx="12" ry="18" fill="var(--amber)"/><ellipse class="pop" style="--i:6" cx="235" cy="320" rx="12" ry="18" fill="var(--amber)"/>
+          <ellipse class="pop" style="--i:7" cx="160" cy="520" rx="14" ry="40" fill="var(--signal)" opacity=".75"/><ellipse class="pop" style="--i:7" cx="240" cy="520" rx="14" ry="40" fill="var(--signal)" opacity=".75"/>
+        </g>
+        <g stroke-width="2" fill="none">
+          <path class="draw" style="--i:2" pathLength="1" d="M282 58 H462" stroke="var(--signal)"/>
+          <path class="draw" style="--i:4" pathLength="1" d="M282 205 H444" stroke="var(--amber)"/>
+          <path class="draw" style="--i:5" pathLength="1" d="M282 280 H430" stroke="var(--amber)"/>
+          <path class="draw" style="--i:7" pathLength="1" d="M282 520 H446" stroke="var(--signal)"/>
+          <path class="draw" style="--i:3" pathLength="1" d="M718 80 H524" stroke="var(--signal)"/>
+          <path class="draw" style="--i:4" pathLength="1" d="M718 232 H528" stroke="var(--signal)"/>
+          <path class="draw" style="--i:6" pathLength="1" d="M718 320 H547" stroke="var(--amber)"/>
+        </g>
+        <g class="fade" style="--i:3" text-anchor="end">
+          <text x="272" y="54" fill="var(--ink)" font-size="24" font-weight="700">Meningite asséptica</text><text x="272" y="82" fill="var(--muted)" font-size="19">fase imune; líquor linfocítico</text>
+          <text x="272" y="200" fill="var(--amber)" font-size="24" font-weight="700">Hemorragia pulmonar</text><text x="272" y="228" fill="var(--muted)" font-size="19">pode matar sem icterícia</text>
+          <text x="272" y="276" fill="var(--amber)" font-size="24" font-weight="700">Icterícia rubínica</text><text x="272" y="304" fill="var(--muted)" font-size="19">bilirrubina muito alta</text>
+          <text x="272" y="516" fill="var(--ink)" font-size="24" font-weight="700">Mialgia, rabdomiólise</text><text x="272" y="544" fill="var(--muted)" font-size="19">panturrilha dolorosa, CPK ↑</text>
+        </g>
+        <g class="fade" style="--i:5">
+          <text x="728" y="76" fill="var(--ink)" font-size="24" font-weight="700">Sufusão conjuntival</text><text x="728" y="104" fill="var(--muted)" font-size="19">precoce; uveíte é tardia</text>
+          <text x="728" y="228" fill="var(--ink)" font-size="24" font-weight="700">Miocardite</text><text x="728" y="256" fill="var(--muted)" font-size="19">arritmias, alterações de ECG</text>
+          <text x="728" y="316" fill="var(--amber)" font-size="24" font-weight="700">Lesão renal aguda</text><text x="728" y="344" fill="var(--muted)" font-size="19">não oligúrica, potássio baixo</text>
+        </g>
+      </svg></div>
+      <div class="grid" style="gap:14px">
+        <div class="card warn rv" style="--i:6"><h3>Síndrome de Weil</h3><p>Icterícia + lesão renal + hemorragia. Na hemorragia pulmonar, letalidade acima de 50%.</p></div>
+        <p class="rv" style="--i:7;font-size:15px"><b style="color:var(--amber)">■</b> laranja: forma grave &nbsp; <b style="color:var(--signal)">■</b> azul: atípica ou precoce</p>
+        <p class="rv dl-note" style="--i:8">Também: pancreatite e colecistite alitiásica (simulam abdome agudo); na gestação, risco de abortamento e óbito fetal.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 14 ALERTA -->
+<section class="sl" id="alerta" data-t="Sinais de alerta">
+  <div class="wrap">
+    <p class="eyebrow">07 · Sinais de alerta</p>
+    <h2 class="rv">Qualquer um destes: internar</h2>
+    <div class="grid g4">
+      <div class="card rv" style="--i:0;border-left:6px solid var(--amber)"><div class="ic amb">!</div><h3 style="margin-top:12px">Dispneia, tosse, taquipneia</h3></div>
+      <div class="card rv" style="--i:1;border-left:6px solid var(--amber)"><div class="ic amb">!</div><h3 style="margin-top:12px">Hemoptise ou outro sangramento</h3></div>
+      <div class="card rv" style="--i:2;border-left:6px solid var(--amber)"><div class="ic amb">!</div><h3 style="margin-top:12px">Oligúria</h3></div>
+      <div class="card rv" style="--i:3;border-left:6px solid var(--amber)"><div class="ic amb">!</div><h3 style="margin-top:12px">Hipotensão</h3></div>
+      <div class="card rv" style="--i:4;border-left:6px solid var(--amber)"><div class="ic amb">!</div><h3 style="margin-top:12px">Alteração da consciência</h3></div>
+      <div class="card rv" style="--i:5;border-left:6px solid var(--amber)"><div class="ic amb">!</div><h3 style="margin-top:12px">Vômitos frequentes</h3></div>
+      <div class="card rv" style="--i:6;border-left:6px solid var(--amber)"><div class="ic amb">!</div><h3 style="margin-top:12px">Arritmia</h3></div>
+      <div class="card rv" style="--i:7;border-left:6px solid var(--amber)"><div class="ic amb">!</div><h3 style="margin-top:12px">Icterícia</h3></div>
+    </div>
+    <div class="grid g2" style="margin-top:18px">
+      <div class="node amb rv" style="--i:8;text-align:left">Com sinal de alerta: hospital, antibiótico venoso, avaliar UTI</div>
+      <div class="node rv" style="--i:9;text-align:left;background:var(--signal-soft);color:var(--ink)">Sem sinal de alerta: via oral e reavaliar em 24 a 72 h</div>
+    </div>
+    <p class="src">Fonte: Ministério da Saúde, Leptospirose: diagnóstico e manejo clínico.</p>
+  </div>
+</section>
+
+<!-- 15 DD -->
+<section class="sl" id="dd" data-t="Diagnóstico diferencial">
+  <div class="wrap">
+    <p class="eyebrow">08 · Diagnóstico diferencial</p>
+    <h2 class="rv">Leptospirose ou dengue?</h2>
+    <div class="grid" style="grid-template-columns:minmax(0,1.7fr) minmax(0,1fr);gap:24px" id="dd-grid">
+      <div class="scrollx"><table style="min-width:520px">
+        <thead><tr><th>Achado</th><th>Leptospirose</th><th>Dengue</th></tr></thead>
+        <tbody>
+          <tr class="rv" style="--i:1"><td>Leucócitos</td><td><b>↑</b> neutrofilia, desvio</td><td><b>↓</b> leucopenia</td></tr>
+          <tr class="rv" style="--i:2"><td>Plaquetas</td><td><b>↓</b></td><td><b>↓↓</b></td></tr>
+          <tr class="rv" style="--i:3"><td>Creatinina</td><td><b>↑</b> lesão renal</td><td>em geral normal</td></tr>
+          <tr class="rv" style="--i:4"><td>Bilirrubina</td><td><b>↑↑</b> icterícia</td><td>normal ou leve ↑</td></tr>
+          <tr class="rv" style="--i:5"><td>CPK</td><td><b>↑</b> miosite</td><td>normal ou leve ↑</td></tr>
+          <tr class="rv" style="--i:6"><td>Sufusão conjuntival</td><td><b>típica</b></td><td>hiperemia, sem sufusão</td></tr>
+          <tr class="rv" style="--i:7"><td>Dor em panturrilha</td><td><b>típica</b></td><td>mialgia difusa</td></tr>
+        </tbody>
+      </table></div>
+      <div class="grid" style="gap:14px;align-content:start">
+        <p class="eyebrow" style="color:var(--ink)">Também pensar em</p>
+        <div class="chips rv" style="--i:3"><span class="pill">Febre amarela</span><span class="pill">Febre maculosa</span><span class="pill">Hantavirose</span><span class="pill sig">Hepatites virais</span><span class="pill sig">Influenza, covid-19</span><span class="pill sig">Malária</span><span class="pill sig">Sepse, colangite</span><span class="pill sig">SHU / PTT</span></div>
+        <div class="card dark rv" style="--i:5"><p style="margin:0">Dengue e leptospirose sobem juntas na estação de chuvas: com exposição a água ou rato, <b class="em">pense nas duas</b>.</p></div>
+      </div>
+    </div>
+    <p class="src">Laranja: diferenciais com transmissão em SP que mudam a conduta da vigilância. São tendências, não regras — os quadros se sobrepõem.</p>
+  </div>
+</section>
+
+<!-- 16 CONDUTA -->
+<section class="sl" id="conduta" data-t="Conduta clínica">
+  <div class="wrap">
+    <p class="eyebrow">09 · Conduta clínica</p>
+    <h2 class="rv">Antibiótico na suspeita, sem esperar exame</h2>
+    <div class="flow">
+      <div class="node dark rv">Caso suspeito</div>
+      <svg class="down fade" style="--i:1" viewBox="0 0 24 40" aria-hidden="true"><path d="M12 2 V34 M5 27 L12 36 L19 27"/></svg>
+      <div class="node q rv" style="--i:1;border-color:var(--amber)">⚠ Sinais de alerta?</div>
+      <svg class="down fade" style="--i:2" viewBox="0 0 24 40" aria-hidden="true"><path d="M12 2 V34 M5 27 L12 36 L19 27"/></svg>
+      <div class="grid g2" style="width:100%">
+        <div class="grid" style="gap:10px">
+          <div class="card sig rv" style="--i:2"><p class="k ok" style="font-family:var(--mono);font-size:12px;letter-spacing:.12em">NÃO · AMBULATÓRIO · ORAL 5 A 7 DIAS</p><ul><li><b>Doxiciclina</b> 100 mg de 12/12 h</li><li><b>Amoxicilina</b> 500 mg de 8/8 h</li><li>Criança: amoxicilina 50 mg/kg/dia, 8/8 h</li><li>Hidratar, orientar retorno</li></ul></div>
+          <div class="node rv" style="--i:4;background:var(--signal-soft);color:var(--ink);font-weight:500">Piorou ou sem melhora em 72 h → internar</div>
+        </div>
+        <div class="grid" style="gap:10px">
+          <div class="card amb rv" style="--i:3"><p class="k no" style="font-family:var(--mono);font-size:12px;letter-spacing:.12em">SIM · INTERNAÇÃO · VENOSO ≥ 7 DIAS</p><ul><li><b>Penicilina G cristalina</b> 1,5 milhão UI 6/6 h</li><li><b>Ceftriaxona</b> 1 a 2 g/dia</li><li>Ampicilina 1 g 6/6 h ou cefotaxima 1 g 6/6 h</li><li>Alternativa: azitromicina 500 mg/dia</li></ul></div>
+          <div class="node dark rv" style="--i:5;font-weight:500"><span class="em">UTI:</span> hemorragia pulmonar, choque, IRA grave</div>
+        </div>
+      </div>
+    </div>
+    <p class="src">Doses de adulto. Fonte: Ministério da Saúde, Leptospirose: diagnóstico e manejo clínico. Doxiciclina: evitar em gestantes e menores de 9 anos. Confira o protocolo do seu serviço.</p>
+  </div>
+</section>
+
+<!-- 17 VIGILÂNCIA -->
+<section class="sl" id="vigilancia" data-t="Conduta da vigilância">
+  <div class="wrap">
+    <p class="eyebrow">09 · Conduta da vigilância</p>
+    <h2 class="rv">Da notificação ao encerramento</h2>
+    <div class="steps">
+      <div class="card step rv" style="--i:0"><div class="num">1</div><h3>Notificar</h3><p>Na suspeita, sem esperar resultado</p><span class="who">Unidade de saúde</span></div>
+      <div class="card step rv" style="--i:1"><div class="num">2</div><h3>Colher</h3><p>1ª e 2ª amostras ao Adolfo Lutz</p><span class="who">Unidade + IAL</span></div>
+      <div class="card step rv" style="--i:2"><div class="num">3</div><h3>Investigar</h3><p>Exposições em 30 dias, local provável de infecção</p><span class="who">VE municipal</span></div>
+      <div class="card step rv" style="--i:3"><div class="num">4</div><h3>Agir no local</h3><p>Abrigos e alimento de roedores, orientação</p><span class="who">CCZ</span></div>
+      <div class="card step rv" style="--i:4"><div class="num">5</div><h3>Encerrar</h3><p>Em até 60 dias: classificação, critério, evolução</p><span class="who">VE municipal</span></div>
+    </div>
+    <div class="card dark rv" style="--i:6;margin-top:18px"><p style="margin:0">⚡ <b class="em">Óbito, surto ou aglomerado de casos:</b> comunicar de imediato a Vigilância Epidemiológica municipal.</p></div>
+    <p class="src">Fontes: Ministério da Saúde; CCZ de São José dos Campos, boletim fev/2023.</p>
+  </div>
+</section>
+
+<!-- 18 SINAN -->
+<section class="sl" id="sinan" data-t="Ficha do SINAN">
+  <div class="wrap">
+    <p class="eyebrow">10 · Ficha de investigação do SINAN</p>
+    <h2 class="rv">Sete blocos — três decidem a qualidade</h2>
+    <div class="grid" style="grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:32px;align-items:center" id="sinan-grid">
+      <div class="form rv">
+        <div class="hd">SINAN · Ficha de Investigação · Leptospirose</div>
+        <div class="row"><span class="bn">1</span><div style="flex:1"><div class="nm">Dados gerais</div><div class="ln gx" style="width:70%"></div></div></div>
+        <div class="row"><span class="bn">2</span><div style="flex:1"><div class="nm">Paciente e residência</div><div class="ln gx" style="width:58%;--i:1"></div></div></div>
+        <div class="row hot"><span class="bn">3</span><div style="flex:1"><div class="nm">Antecedentes epidemiológicos</div><div class="ln gx" style="width:80%;--i:2;background:#e3c08f"></div></div></div>
+        <div class="row"><span class="bn">4</span><div style="flex:1"><div class="nm">Dados clínicos</div><div class="ln gx" style="width:66%;--i:3"></div></div></div>
+        <div class="row"><span class="bn">5</span><div style="flex:1"><div class="nm">Atendimento e hospitalização</div><div class="ln gx" style="width:50%;--i:4"></div></div></div>
+        <div class="row hot"><span class="bn">6</span><div style="flex:1"><div class="nm">Dados laboratoriais</div><div class="ln gx" style="width:74%;--i:5;background:#e3c08f"></div></div></div>
+        <div class="row hot"><span class="bn">7</span><div style="flex:1"><div class="nm">Conclusão</div><div class="ln gx" style="width:62%;--i:6;background:#e3c08f"></div></div></div>
+        <div style="display:flex"><span class="stamp pop" style="--i:8">Encerrar em até 60 dias</span></div>
+      </div>
+      <div class="grid" style="gap:14px">
+        <div class="card rv" style="--i:2"><div class="iconrow"><div class="ic amb">3</div><div><h3>Antecedentes</h3><p>Ocupação e situações de risco nos 30 dias: enchente, rio, fossa, lixo, roedores, animais, caixa d’água, terreno baldio.</p></div></div></div>
+        <div class="card rv" style="--i:3"><div class="iconrow"><div class="ic amb">6</div><div><h3>Laboratório</h3><p>Data e resultado de cada amostra; na MAT, sorovar e título. Sem 2ª amostra, o caso pode ficar sem conclusão.</p></div></div></div>
+        <div class="card rv" style="--i:4"><div class="iconrow"><div class="ic amb">7</div><div><h3>Conclusão</h3><p>Classificação, critério e local provável de infecção — bairro, zona e ambiente. É o que leva o CCZ ao endereço certo.</p></div></div></div>
+      </div>
+    </div>
+    <p class="src">Esquema da ficha de investigação de Leptospirose do SINAN (portalsinan.saude.gov.br).</p>
+  </div>
+</section>
+
+<!-- 19 SINAN ERROS -->
+<section class="sl" id="sinan-erros" data-t="Onde a ficha falha">
+  <div class="wrap">
+    <p class="eyebrow">10 · Ficha de investigação do SINAN</p>
+    <h2 class="rv">Onde a ficha costuma falhar</h2>
+    <div class="grid" style="grid-template-columns:minmax(0,1fr) minmax(0,1.8fr);gap:28px;align-items:center" id="err-grid">
+      <div class="card dark rv" style="text-align:center">
+        <svg viewBox="0 0 280 280" width="240" height="240" role="img" aria-label="Rosca com metade preenchida: 50% das fichas sem ocupação" style="display:block;margin:0 auto">
+          <circle cx="140" cy="140" r="110" fill="none" stroke="#2f5361" stroke-width="44"/>
+          <circle class="draw" pathLength="1" style="stroke-dasharray:.5 1.5;transition-duration:1.6s" cx="140" cy="140" r="110" fill="none" stroke="#efac6b" stroke-width="44" transform="rotate(-90 140 140)"/>
+          <text x="140" y="158" text-anchor="middle" font-family="Fraunces, Georgia, serif" font-size="56" font-weight="700" fill="#f2f0e9">50%</text>
+        </svg>
+        <p style="margin-top:12px">das fichas de SP (2010–2021) com a <b class="em">ocupação em branco</b></p>
+      </div>
+      <div class="grid" style="gap:0">
+        <div class="msg rv" style="--i:1;font-size:20px"><span class="n">⚠</span><span><b>Sem 2ª amostra</b> — descarte com sorologia precoce, ou caso sem conclusão</span></div>
+        <div class="msg rv" style="--i:2;font-size:20px"><span class="n">⌂</span><span><b>Local provável de infecção vago</b> — sem endereço e ambiente, o CCZ não sabe onde intervir</span></div>
+        <div class="msg rv" style="--i:3;font-size:20px"><span class="n">◷</span><span><b>Data dos primeiros sintomas errada</b> — é ela que diz se a sorologia foi colhida cedo demais</span></div>
+        <div class="msg rv" style="--i:4;font-size:20px"><span class="n">☺</span><span><b>Relação com o trabalho em branco</b> — catadores, garis, pedreiros: some a saúde do trabalhador</span></div>
+      </div>
+    </div>
+    <p class="src">Fonte: Buzzar &amp; Spínola, BEPA 2023, Tabela 3 — 3.964 de 7.843 casos com ocupação em branco.</p>
+  </div>
+</section>
+
+<!-- 20 PREVENÇÃO INDIVIDUAL -->
+<section class="sl" id="prev-individual" data-t="Prevenção individual">
+  <div class="wrap">
+    <p class="eyebrow">11 · Prevenção individual</p>
+    <h2 class="rv">Durante, depois e até 30 dias</h2>
+    <div class="grid g3">
+      <div class="card sig rv" style="--i:0"><h3>☂ Durante a enchente</h3><ul><li>Não nadar, brincar nem beber água de alagamento</li><li><b>Botas e luvas</b> no contato com água ou lama</li><li>Cobrir feridas com curativo impermeável</li></ul></div>
+      <div class="card amb rv" style="--i:1"><h3>⌂ Depois: a limpeza</h3><ul><li>Retirar a lama de botas e luvas</li><li>Lavar pisos, paredes e objetos; desinfetar</li><li>Descartar alimentos e remédios molhados</li><li>Desinfetar a caixa d’água antes de usar</li></ul></div>
+      <div class="card dark rv" style="--i:2"><h3 class="em">◷ Até 30 dias depois</h3><p>Febre, dor de cabeça e <b>dor na panturrilha</b>? Procurar UBS ou UPA e <b>contar sobre a exposição</b>.</p></div>
+    </div>
+    <div class="card rv" style="--i:4;margin-top:18px;background:var(--signal-soft);display:flex;flex-wrap:wrap;gap:18px;align-items:center;justify-content:center">
+      <p class="eyebrow" style="color:var(--ink);margin:0;width:100%;text-align:center">Receita da desinfecção</p>
+      <svg class="pop" style="--i:5" width="80" height="88" viewBox="0 0 120 120" aria-hidden="true"><path d="M26 62 L94 62 L90 110 L30 110 Z" fill="#8fb3c2"/><path d="M20 20 L100 20 L90 110 L30 110 Z" fill="none" stroke="var(--ink)" stroke-width="6" stroke-linejoin="round"/></svg>
+      <p style="margin:0;max-width:200px"><b>1 copo (200 ml)</b> de água sanitária 2,5%</p>
+      <span class="big amb" style="font-size:44px">+</span>
+      <svg class="pop" style="--i:6" width="80" height="88" viewBox="0 0 120 120" aria-hidden="true"><path d="M15 32 Q60 -8 105 32" fill="none" stroke="var(--ink)" stroke-width="5"/><path d="M19 56 L101 56 L95 115 L25 115 Z" fill="#8fb3c2"/><path d="M15 32 L105 32 L95 115 L25 115 Z" fill="none" stroke="var(--ink)" stroke-width="6" stroke-linejoin="round"/></svg>
+      <p style="margin:0;max-width:150px"><b>1 balde (20 L)</b> de água</p>
+      <span class="big amb" style="font-size:44px">=</span>
+      <p style="margin:0;max-width:260px">Pano úmido em pisos, paredes e bancadas; deixar secar ao ar</p>
+    </div>
+    <p class="src">Fontes: Prefeitura de São José dos Campos (alerta de chuvas); CVE/SES-SP, alerta de leptospirose à população.</p>
+  </div>
+</section>
+
+<!-- 21 PREVENÇÃO COLETIVA -->
+<section class="sl" id="prev-coletiva" data-t="Prevenção coletiva">
+  <div class="wrap">
+    <p class="eyebrow">11 · Prevenção coletiva e pública</p>
+    <h2 class="rv">Tirar do rato água, abrigo e alimento</h2>
+    <div class="grid" style="grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:28px;align-items:center" id="tri-grid">
+      <div style="width:100%;min-width:0"><svg width="780" height="620" style="display:block;width:100%;height:auto" viewBox="0 0 780 620" role="img" aria-label="Triângulo dos três As do controle de roedores: alimento (lixo tampado, ração recolhida à noite), abrigo (sem entulho e mato, frestas vedadas) e água (esgoto vedado, caixa d’água tampada). Sem os três, a colônia não se instala.">
+        <path class="draw" pathLength="1" d="M390 100 L150 510 L630 510 Z" fill="none" stroke="var(--amber)" stroke-width="4" stroke-linejoin="round"/>
+        <path class="fade" style="--i:3" d="M390 100 L150 510 L630 510 Z" fill="var(--amber-soft)"/>
+        <g class="pop" style="--i:1"><rect x="230" y="0" width="320" height="190" rx="16" fill="var(--surface)" stroke="var(--amber)" stroke-width="2"/><text x="390" y="62" text-anchor="middle" font-family="Fraunces, Georgia, serif" font-size="32" font-weight="700" fill="var(--ink)">Alimento</text><text x="390" y="110" text-anchor="middle" font-size="22" fill="var(--ink-soft)">Lixo tampado;</text><text x="390" y="140" text-anchor="middle" font-size="22" fill="var(--ink-soft)">ração recolhida à noite</text></g>
+        <g class="pop" style="--i:2"><rect x="0" y="410" width="300" height="200" rx="16" fill="var(--surface)" stroke="var(--amber)" stroke-width="2"/><text x="150" y="472" text-anchor="middle" font-family="Fraunces, Georgia, serif" font-size="32" font-weight="700" fill="var(--ink)">Abrigo</text><text x="150" y="520" text-anchor="middle" font-size="22" fill="var(--ink-soft)">Sem entulho e mato;</text><text x="150" y="550" text-anchor="middle" font-size="22" fill="var(--ink-soft)">frestas vedadas</text></g>
+        <g class="pop" style="--i:3"><rect x="480" y="410" width="300" height="200" rx="16" fill="var(--surface)" stroke="var(--amber)" stroke-width="2"/><text x="630" y="472" text-anchor="middle" font-family="Fraunces, Georgia, serif" font-size="32" font-weight="700" fill="var(--ink)">Água</text><text x="630" y="520" text-anchor="middle" font-size="22" fill="var(--ink-soft)">Esgoto vedado;</text><text x="630" y="550" text-anchor="middle" font-size="22" fill="var(--ink-soft)">caixa d’água tampada</text></g>
+        <g class="fade" style="--i:5" text-anchor="middle" font-family="Fraunces, Georgia, serif" font-size="26" font-weight="700" fill="var(--amber)"><text x="390" y="300">Sem os três,</text><text x="390" y="334">a colônia</text><text x="390" y="368">não se instala</text></g>
+      </svg></div>
+      <div class="grid" style="gap:12px">
+        <p class="eyebrow" style="color:var(--ink)">O que cabe ao poder público</p>
+        <div class="grid g2" style="gap:10px">
+          <div class="card rv" style="--i:1;padding:14px 16px">Esgoto e saneamento</div>
+          <div class="card rv" style="--i:2;padding:14px 16px">Drenagem urbana</div>
+          <div class="card rv" style="--i:3;padding:14px 16px">Coleta regular de lixo</div>
+          <div class="card rv" style="--i:4;padding:14px 16px">Moradia fora de área alagável</div>
+          <div class="card rv" style="--i:5;padding:14px 16px">EPI para garis e catadores</div>
+          <div class="card rv" style="--i:6;padding:14px 16px">Alerta e educação na chuva</div>
+        </div>
+        <div class="card dark rv" style="--i:7"><p style="margin:0"><b class="em">Raticida é complemento.</b> Sem mexer nos três A, a colônia volta em semanas.</p></div>
+      </div>
+    </div>
+    <p class="src">Fontes: Ministério da Saúde, Guia de Vigilância em Saúde; CCZ de São José dos Campos, boletim fev/2023.</p>
+  </div>
+</section>
+
+<!-- 22 PREVENÇÃO VALE -->
+<section class="sl" id="prev-vale" data-t="Ações no Vale">
+  <div class="wrap">
+    <p class="eyebrow">11 · O que o poder público faz no Vale do Paraíba</p>
+    <h2 class="rv">Antes da chuva e depois do caso</h2>
+    <div class="grid" style="grid-template-columns:minmax(0,1.6fr) minmax(0,1fr);gap:26px" id="vale-grid">
+      <div>
+        <p class="eyebrow" style="color:var(--ink)">Antes e durante as chuvas</p>
+        <div class="grid g2">
+          <div class="card rv" style="--i:0"><span class="tag amb">SJC · Defesa Civil</span><h3>Operação Verão 2025–26</h3><p>Monitora chuva (Cemaden), vistoria áreas de risco, alerta por SMS: CEP para 40199. Até 31/03.</p></div>
+          <div class="card rv" style="--i:1"><span class="tag amb">SJC · Saúde</span><h3>Alerta de chuvas</h3><p>Orienta limpeza pós-enchente, hipoclorito, caixa d’água e sinais de alerta.</p></div>
+          <div class="card rv" style="--i:2"><span class="tag">Taubaté · CAS</span><h3>Roedores em praças</h3><p>Ago/2026: manejo integrado em praças e canteiros — limpeza, esconderijos e raticida.</p></div>
+          <div class="card rv" style="--i:3"><span class="tag" style="background:var(--paper-soft);color:var(--muted)">Estado · CVE</span><h3>Alerta à população</h3><p>Botas, luvas, curativo impermeável, não nadar em alagamento.</p></div>
+        </div>
+      </div>
+      <div class="flow" style="align-items:stretch">
+        <p class="eyebrow" style="color:var(--ink)">Depois do caso · SJC</p>
+        <div class="node dark rv" style="--i:2">Caso suspeito ou confirmado</div>
+        <svg class="down fade" style="--i:3;align-self:center" viewBox="0 0 24 40" aria-hidden="true"><path d="M12 2 V34 M5 27 L12 36 L19 27"/></svg>
+        <div class="card rv" style="--i:3;text-align:center"><b>VE + CCZ:</b> visita domiciliar</div>
+        <svg class="down fade" style="--i:4;align-self:center" viewBox="0 0 24 40" aria-hidden="true"><path d="M12 2 V34 M5 27 L12 36 L19 27"/></svg>
+        <div class="card rv" style="--i:4;text-align:center">Achar abrigos e alimento de roedores</div>
+        <svg class="down fade" style="--i:5;align-self:center" viewBox="0 0 24 40" aria-hidden="true"><path d="M12 2 V34 M5 27 L12 36 L19 27"/></svg>
+        <div class="card warn rv" style="--i:5;text-align:center">Orientar barreiras físicas, manejo do ambiente e dos animais</div>
+        <p class="rv dl-note" style="--i:6;margin-top:10px">Pedidos ao CCZ de SJC: <b>156</b></p>
+      </div>
+    </div>
+    <p class="src">Fontes: Prefeituras de SJC (Defesa Civil, nov/2025; Saúde; CCZ, fev/2023) e de Taubaté (ago/2026); CVE/SES-SP. Não encontrei avaliação publicada do impacto dessas ações nos casos da região.</p>
+  </div>
+</section>
+
+<!-- 23 COREIA -->
+<section class="sl" id="prev-coreia" data-t="O exemplo da Coreia">
+  <div class="wrap">
+    <p class="eyebrow">11 · Um exemplo de fora · Coreia do Sul · casos notificados por ano, 1984–2015</p>
+    <h2 class="rv">Vacinou, caiu; parou, voltou</h2>
+    <div class="chart-wrap scrollx"><svg viewBox="0 0 1664 380" role="img" aria-label="Casos de leptospirose na Coreia do Sul por ano: pico de 500 em 1987; 4 a 25 casos por ano durante a vacinação de 1991 a 1997; volta para 50 a 200 casos por ano depois de 1998">
+      <rect class="fade" x="238" y="40" width="495" height="290" fill="var(--signal-soft)"/>
+      <g>
+      <rect class="gy b-mute" style="--i:0;opacity:.6" x="49.8" y="218" width="30" height="112" rx="3"/><rect class="gy b-mute" style="--i:1;opacity:.6" x="99.3" y="182.2" width="30" height="147.8" rx="3"/><rect class="gy b-mute" style="--i:2;opacity:.6" x="148.8" y="302" width="30" height="28" rx="3"/><rect class="gy b-amb" style="--i:3" x="198.3" y="50" width="30" height="280" rx="3"/>
+      <rect class="gy b-sig" style="--i:4" x="247.8" y="302.6" width="30" height="27.4" rx="3"/><rect class="gy b-sig" style="--i:5" x="297.3" y="303.7" width="30" height="26.3" rx="3"/><rect class="gy b-sig" style="--i:6" x="346.8" y="251.6" width="30" height="78.4" rx="3"/><rect class="gy b-sig" style="--i:7" x="396.3" y="316" width="30" height="14" rx="3"/><rect class="gy b-sig" style="--i:8" x="445.8" y="322.7" width="30" height="7.3" rx="2"/><rect class="gy b-sig" style="--i:9" x="495.3" y="327" width="30" height="3"/><rect class="gy b-sig" style="--i:10" x="544.8" y="326.1" width="30" height="3.9"/><rect class="gy b-sig" style="--i:11" x="594.3" y="322.7" width="30" height="7.3" rx="2"/><rect class="gy b-sig" style="--i:12" x="643.8" y="326.6" width="30" height="3.4"/><rect class="gy b-sig" style="--i:13" x="693.3" y="327" width="30" height="3"/>
+      <rect class="gy b-mute" style="--i:14" x="742.8" y="279.6" width="30" height="50.4" rx="3"/><rect class="gy b-mute" style="--i:15" x="792.3" y="257.2" width="30" height="72.8" rx="3"/><rect class="gy b-mute" style="--i:16" x="841.8" y="270.6" width="30" height="59.4" rx="3"/><rect class="gy b-mute" style="--i:17" x="891.3" y="255.5" width="30" height="74.5" rx="3"/><rect class="gy b-mute" style="--i:18" x="940.8" y="261.7" width="30" height="68.3" rx="3"/><rect class="gy b-mute" style="--i:19" x="990.3" y="263.4" width="30" height="66.6" rx="3"/><rect class="gy b-mute" style="--i:20" x="1039.8" y="251" width="30" height="79" rx="3"/><rect class="gy b-mute" style="--i:21" x="1089.3" y="283.5" width="30" height="46.5" rx="3"/><rect class="gy b-mute" style="--i:22" x="1138.8" y="263.4" width="30" height="66.6" rx="3"/><rect class="gy b-mute" style="--i:23" x="1188.3" y="213.5" width="30" height="116.5" rx="3"/><rect class="gy b-mute" style="--i:24" x="1237.8" y="274" width="30" height="56" rx="3"/><rect class="gy b-mute" style="--i:25" x="1287.3" y="295.3" width="30" height="34.7" rx="3"/><rect class="gy b-mute" style="--i:26" x="1336.8" y="293" width="30" height="37" rx="3"/><rect class="gy b-mute" style="--i:27" x="1386.3" y="302.6" width="30" height="27.4" rx="3"/><rect class="gy b-mute" style="--i:28" x="1435.8" y="314.3" width="30" height="15.7" rx="3"/><rect class="gy b-mute" style="--i:29" x="1485.3" y="302" width="30" height="28" rx="3"/><rect class="gy b-mute" style="--i:30" x="1534.8" y="297.5" width="30" height="32.5" rx="3"/><rect class="gy b-mute" style="--i:31" x="1584.3" y="271.8" width="30" height="58.2" rx="3"/>
+      </g>
+      <line class="ax" x1="40" y1="330" x2="1624" y2="330"/>
+      <g class="fade" style="--i:8">
+        <text x="213" y="38" text-anchor="middle" font-family="Fraunces, Georgia, serif" font-size="32" font-weight="700" fill="var(--amber)">500</text>
+        <text x="44" y="120" class="t-mute" style="font-size:19px">1984–86:</text><text x="44" y="144" class="t-mute" style="font-size:19px">estimativas</text>
+        <text x="252" y="82" class="t-sig" style="font-size:22px">Vacinação 1988–1997</text><text x="252" y="110" class="t-ink" style="font-size:20px;font-weight:400">1991–97: 4 a 25 casos/ano</text>
+      </g>
+      <text class="fade t-ink" style="--i:20;font-size:21px" x="770" y="178"><tspan font-weight="700">Sem vacina, a partir de 1998:</tspan><tspan font-weight="400"> 50 a 200 casos/ano</tspan></text>
+      <g text-anchor="middle" class="t-mute"><text x="65" y="362">1984</text><text x="213" y="362" style="fill:var(--amber);font-weight:700">1987</text><text x="362" y="362">1990</text><text x="609" y="362">1995</text><text x="857" y="362">2000</text><text x="1104" y="362">2005</text><text x="1352" y="362">2010</text><text x="1599" y="362">2015</text></g>
+    </svg></div>
+    <div class="grid g3" style="margin-top:16px">
+      <div class="card rv" style="--i:1"><h3>O problema</h3><p>Surtos de hemorragia pulmonar em lavradores, após enchentes na colheita do arroz.</p></div>
+      <div class="card sig rv" style="--i:2"><h3>A intervenção</h3><p>Vacina de cepa local para moradores e soldados das áreas endêmicas, 400 mil frascos/ano, e campanha todo setembro.</p></div>
+      <div class="card dark rv" style="--i:3"><h3 class="em">Não foi erradicação</h3><p>A vacina saiu do programa em 1997: protegia só contra o tipo da vacina e por pouco tempo. Os casos voltaram — ainda bem abaixo de 1987.</p></div>
+    </div>
+    <p class="src">Fonte: Kim MJ. Infect Chemother 2019;51(3):315-329, Fig. 1 (dados do KCDC; o texto cita 562 casos notificados em 1987); 1984–86: estimativas sorológicas. Roedores: Epidemiol Infect (PMID 10030719). Nenhum lugar erradicou a leptospirose: o reservatório animal continua.</p>
+  </div>
+</section>
+
+<!-- 24 MENSAGENS -->
+<section class="sl" id="mensagens" data-t="Para levar">
+  <div class="wrap">
+    <p class="eyebrow">Para levar</p>
+    <h2 class="rv">Cinco mensagens</h2>
+    <div>
+      <div class="msg rv" style="--i:1"><span class="n">01</span>Suspeite o ano todo — a infecção é urbana e dentro de casa, não só na enchente.</div>
+      <div class="msg rv" style="--i:2"><span class="n">02</span>Notifique e trate na suspeita; o exame não deve atrasar o antibiótico.</div>
+      <div class="msg rv" style="--i:3"><span class="n">03</span>Sorologia antes do 7º dia não descarta: colha a segunda amostra.</div>
+      <div class="msg rv" style="--i:4"><span class="n">04</span>Quem não fica amarelo também morre: hemorragia pulmonar.</div>
+      <div class="msg rv" style="--i:5"><span class="n">05</span>Ocupação e local provável de infecção bem preenchidos levam o CCZ ao lugar certo.</div>
+    </div>
+  </div>
+</section>
+
+<!-- 25 FIM -->
+<section class="sl hero" id="fim" data-t="Fim">
+  <div class="wrap">
+    <div class="fim">
+      <div>
+        <p class="eyebrow rv">Fim · obrigado!</p>
+        <h1 class="rv" style="--i:1;font-size:76px">Prevenção nível ratazana: <em>até ela já usa galocha.</em></h1>
+        <p class="lead rv" style="--i:2">Enchente e limpeza pós-chuva: botas e luvas. Na dúvida: notifique, colha a 2ª amostra e trate.</p>
+      </div>
+      <figure class="sticker pop" style="--i:3;margin:0">
+        <img src="https://media.tenor.com/_AZJmhAry0gAAAAd/rat-dancing-meme.gif" alt="Ratazana animada dançando, de galochas pretas" width="480" height="480" loading="lazy">
+        <p><i>Rattus norvegicus</i>, devidamente paramentada</p>
+        <p style="font-style:normal;font-size:12px;color:#5b6570">GIF: Tenor</p>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- 26 REFERÊNCIAS -->
+<section class="sl" id="referencias" data-t="Referências">
+  <div class="wrap">
+    <p class="eyebrow">Referências</p>
+    <h2 class="rv">Fontes</h2>
+    <ol class="refs rv" style="--i:1">
+      <li>Brasil. Ministério da Saúde. Guia de Vigilância em Saúde — capítulo Leptospirose (edição vigente).</li>
+      <li>Brasil. Ministério da Saúde. Leptospirose: diagnóstico e manejo clínico. Brasília, 2014.</li>
+      <li>Buzzar MR, Spínola RMF. Informe epidemiológico da vigilância da leptospirose — série histórica 2010–2021. BEPA. 2023;20(220). <a href="https://periodicos.saude.sp.gov.br/BEPA182/article/view/37951">Disponível online</a>.</li>
+      <li>CVE/SES-SP. Leptospirose: casos notificados, confirmados e óbitos por GVE e município de residência, 2024–2026 (SINANNET; dados de 06/10/2026). <a href="https://www.saude.sp.gov.br/resources/cve-centro-de-vigilancia-epidemiologica/areas-de-vigilancia/doencas-de-transmissao-por-vetores-e-zoonoses/dados/lepto/lepto26_cncccioblet_gve.pdf">Tabela de 2026 por GVE</a>.</li>
+      <li>Centro de Controle de Zoonoses de São José dos Campos. O assunto da vez: Leptospirose. Boletim, fevereiro de 2023.</li>
+      <li>Surto de leptospirose humana por atividade recreacional no município de São José dos Campos, SP: estudo soroepidemiológico. Rev Inst Med Trop São Paulo, 1990 (<a href="https://pubmed.ncbi.nlm.nih.gov/2135496">PMID 2135496</a>).</li>
+      <li>Ficha de Investigação de Leptospirose — SINAN (<a href="https://portalsinan.saude.gov.br/">portalsinan.saude.gov.br</a>).</li>
+      <li>Kim MJ. Historical Review of Leptospirosis in the Korea (1945–2015). Infect Chemother. 2019;51(3):315-329. <a href="https://doi.org/10.3947/ic.2019.51.3.315">doi:10.3947/ic.2019.51.3.315</a>.</li>
+      <li>Prefeitura de São José dos Campos: alerta de leptospirose na época de chuvas; Operação Verão 2025–2026 (Defesa Civil, nov/2025). Prefeitura de Taubaté: controle de roedores em praças (ago/2026). CVE/SES-SP: alerta de leptospirose à população.</li>
+      <li>Imagens: enchente em Itaoca-SP, Marcelo Camargo/Agência Brasil, CC BY 3.0 BR; ratazana, Charles J. Sharp, CC BY-SA 4.0; <i>Leptospira interrogans</i>, CDC/PHIL, domínio público (via Wikimedia Commons). GIF: Tenor.</li>
+    </ol>
+    <p class="dl-note rv" style="--i:2;margin-top:24px">Material de estudo, não substitui protocolo institucional. Dados de 2026 são parciais e podem mudar. <a href="/biblio/saude-coletiva">← Voltar para o acervo</a></p>
+  </div>
+</section>
+
+<button type="button" id="theme" aria-label="Alternar tema claro ou escuro" title="Claro/escuro (D)"></button>
+<div id="rail" aria-hidden="true"></div>
+<div id="count" aria-live="polite"></div>
+</div>
+</div>
+<div id="help">toque à direita: avançar · à esquerda: voltar · F: tela cheia · D: claro/escuro</div>
+
+<script>
+(function(){
+  'use strict';
+  var W=1280,H=720;
+  var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var deck=document.getElementById('deck');
+  var S=Array.prototype.slice.call(document.querySelectorAll('.sl'));
+  var railEl=document.getElementById('rail'),rail=S.map(function(){var i=document.createElement('i');railEl.appendChild(i);return i;});
+  var countEl=document.getElementById('count');
+  var si=-1;
+  function fit(){var k=Math.min(innerWidth/W,innerHeight/H);deck.style.transform='translate(-50%,-50%) scale('+k+')';}
+  addEventListener('resize',fit);fit();
+  var fmt=function(v,d){return v.toLocaleString('pt-BR',{minimumFractionDigits:d,maximumFractionDigits:d});};
+  function count(el){var end=parseFloat(el.dataset.count),d=parseInt(el.dataset.dec||'0',10),pre=el.dataset.pre||'';
+    if(reduce){el.textContent=pre+fmt(end,d);return;}
+    var t0=null;function step(t){if(!t0)t0=t;var p=Math.min(1,(t-t0)/1400),e=1-Math.pow(1-p,3);el.textContent=pre+fmt(end*e,d);if(p<1&&S[si]&&S[si].contains(el))requestAnimationFrame(step);}
+    requestAnimationFrame(step);}
+  function go(i,fromHash){
+    i=Math.max(0,Math.min(S.length-1,i)); if(i===si)return;
+    if(si>=0){var old=S[si];old.classList.remove('live');old.setAttribute('aria-hidden','true');(function(o){setTimeout(function(){if(!o.classList.contains('live'))o.classList.remove('in');},460);})(old);}
+    si=i;var s=S[si];s.classList.remove('in');s.removeAttribute('aria-hidden');s.classList.add('live');
+    void s.offsetWidth; requestAnimationFrame(function(){s.classList.add('in');s.querySelectorAll('[data-count]').forEach(count);});
+    rail.forEach(function(el,k){el.className=k<si?'done':(k===si?'cur':'');});
+    countEl.textContent=String(si+1).padStart(2,'0')+' / '+String(S.length).padStart(2,'0');
+    if(!fromHash&&history.replaceState)history.replaceState(null,'','#'+s.id);
+  }
+  function next(){go(si+1);} function prev(){go(si-1);}
+  S.forEach(function(s){s.setAttribute('aria-hidden','true');});
+  var start=0;if(location.hash){var t=document.getElementById(location.hash.slice(1));var k=S.indexOf(t);if(k>=0)start=k;}
+  go(start,true);
+  addEventListener('hashchange',function(){var t=document.getElementById(location.hash.slice(1));var k=S.indexOf(t);if(k>=0)go(k,true);});
+  var helpEl=document.getElementById('help'),helpT;
+  function flashHelp(){helpEl.classList.add('show');clearTimeout(helpT);helpT=setTimeout(function(){helpEl.classList.remove('show');},2800);}
+  addEventListener('keydown',function(e){var k=e.key;
+    if(k==='ArrowRight'||k==='ArrowDown'||k==='PageDown'||k===' '||k==='Enter'){e.preventDefault();next();}
+    else if(k==='ArrowLeft'||k==='ArrowUp'||k==='PageUp'){e.preventDefault();prev();}
+    else if(k==='Home'){e.preventDefault();go(0);} else if(k==='End'){e.preventDefault();go(S.length-1);}
+    else if(k==='f'||k==='F'){toggleFull();} else if(k==='?'||k==='h'||k==='H'){flashHelp();}
+  });
+  function toggleFull(){var d=document,el=d.documentElement;
+    if(!(d.fullscreenElement||d.webkitFullscreenElement)){(el.requestFullscreen||el.webkitRequestFullscreen||function(){}).call(el);}
+    else{(d.exitFullscreen||d.webkitExitFullscreen||function(){}).call(d);}}
+  var tx=null,ty=null,swipedUntil=0;
+  addEventListener('pointerdown',function(e){if(e.pointerType==='touch'){tx=e.clientX;ty=e.clientY;}});
+  addEventListener('pointerup',function(e){if(e.pointerType!=='touch'||tx===null)return;var dx=e.clientX-tx,dy=e.clientY-ty;tx=null;
+    if(Math.abs(dx)>60&&Math.abs(dx)>Math.abs(dy)){swipedUntil=performance.now()+450;dx<0?next():prev();}});
+  addEventListener('click',function(e){if(performance.now()<swipedUntil)return;if(e.target.closest('a,button'))return;
+    (e.clientX<innerWidth*0.25)?prev():next();});
+  var themeBtn=document.getElementById('theme');
+  function paintBtn(){var dark=document.documentElement.getAttribute('data-theme')==='dark';themeBtn.textContent=dark?'☀':'☾';themeBtn.setAttribute('aria-pressed',dark?'true':'false');}
+  function toggleTheme(){var t=document.documentElement.getAttribute('data-theme')==='dark'?'light':'dark';document.documentElement.setAttribute('data-theme',t);try{localStorage.setItem('lepto-tema',t);}catch(e){}paintBtn();}
+  themeBtn.addEventListener('click',function(e){e.stopPropagation();toggleTheme();});
+  addEventListener('keydown',function(e){if(e.key==='d'||e.key==='D')toggleTheme();});
+  paintBtn();
+  flashHelp();
+})();
+</script>
+</body>
+</html>
