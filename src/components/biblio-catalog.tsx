@@ -29,12 +29,12 @@ const items: LibraryItem[] = [
     type: "Coleção",
     area: "Saúde mental",
     href: "/biblio/saude-mental",
-    status: "3 materiais",
+    status: "4 materiais",
   },
   {
     title: "Saúde Coletiva",
     description:
-      "Apresentações de leptospirose, acidentes por animais peçonhentos e desigualdade na exposição a deslizamentos, com dados, mecanismos e conduta.",
+      "Apresentações de leptospirose, acidentes por animais peçonhentos e desigualdade na exposição a deslizamentos, com dados, mecanismos e conduta, e o artigo do estudo sobre deslizamentos.",
     type: "Coleção",
     area: "Saúde coletiva",
     href: "/biblio/saude-coletiva",
