@@ -1,0 +1,1068 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#0d1117">
+<title>EN03 · Tireoidopatias · Pocket Handbook · Elite Edition v5.2</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700;9..40,800&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   MEDICAL HANDBOOK PREMIUM · ELITE EDITION · CSS FRAMEWORK
+   Copy this ENTIRE block verbatim into the <style> tag of the
+   output HTML. Do NOT modify design tokens, colors, or
+   typography — they are calibrated for legibility and print.
+============================================================ */
+:root{
+  --bg:#f1eee5;--bg-tint:#ebe8de;--paper:#ffffff;--paper-tint:#fbf9f3;
+  --ink:#0e1116;--ink-soft:#232830;--ink-mute:#545b69;--ink-faint:#8a91a0;--ink-ghost:#b8bdc7;
+  --line:#e2dfd5;--line-soft:#ece9df;--line-strong:#c9c5b8;
+  --c-prim:#0b5d4e;--c-clin:#1d4570;--c-diag:#5e2f78;--c-tx:#a8481a;--c-emerg:#a31b35;--c-pearl:#7a6014;
+  --ank-hy:#b88e0a;--ank-hy-bg:#fef4c8;--ank-dec:#1d4ea3;--ank-dec-bg:#dde7f8;
+  --ank-dgr:#a31b25;--ank-dgr-bg:#fadcdc;--ank-prl:#3e6a2e;--ank-prl-bg:#d8e6cf;
+  --ank-myt:#6a3a1a;--ank-myt-bg:#f0dec5;--ank-con:#5a4070;--ank-con-bg:#e3d6f0;
+  --ank-evo:#0d6373;--ank-evo-bg:#cde5e9;
+  --sh-sm:0 1px 2px rgba(14,17,22,.04),0 1px 1px rgba(14,17,22,.03);
+  --sh-md:0 6px 16px -8px rgba(14,17,22,.10),0 2px 4px rgba(14,17,22,.04);
+  --sh-lg:0 20px 40px -22px rgba(14,17,22,.18),0 4px 10px -4px rgba(14,17,22,.08);
+  --r:10px;--r-lg:14px;--r-xl:20px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;scroll-padding-top:120px}
+body{font-family:'DM Sans',system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.5;font-size:15px;letter-spacing:-.005em;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:-1;background:radial-gradient(900px 500px at -10% -5%,rgba(11,93,78,.04),transparent 60%),radial-gradient(800px 450px at 110% 10%,rgba(163,27,53,.035),transparent 55%)}
+a{color:inherit;text-decoration:none}
+
+/* FIXED HEADER */
+.header{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(13,17,23,.82);backdrop-filter:saturate(160%) blur(20px);-webkit-backdrop-filter:saturate(160%) blur(20px);border-bottom:1px solid rgba(255,255,255,.06)}
+.header-row{max-width:1080px;margin:0 auto;padding:10px 20px;display:flex;align-items:center;gap:14px;color:#f0eee5}
+.h-mark{width:30px;height:30px;border-radius:7px;background:linear-gradient(135deg,#d4b94a 0%,#a07f1a 100%);display:grid;place-items:center;font:800 13px/1 'DM Sans';color:#1a1500;letter-spacing:-.04em;box-shadow:inset 0 1px 0 rgba(255,255,255,.3),0 1px 2px rgba(0,0,0,.4);flex-shrink:0}
+.h-titles{display:flex;flex-direction:column;line-height:1.15;min-width:0}
+.h-title{font-weight:700;font-size:14px;letter-spacing:-.02em}
+.h-sub{font-size:10.5px;color:#9fa298;font-weight:500;letter-spacing:.08em;text-transform:uppercase}
+.h-edition{margin-left:auto;font:500 10px/1 'DM Mono',monospace;color:#9fa298;letter-spacing:.05em;padding:5px 9px;border:1px solid rgba(255,255,255,.1);border-radius:999px;white-space:nowrap}
+.h-author{font:700 10.5px/1 'DM Mono',monospace;color:#d4b94a;letter-spacing:.04em;padding:6px 10px;border:1px solid rgba(212,185,74,.35);background:rgba(212,185,74,.08);border-radius:999px;white-space:nowrap;display:inline-flex;align-items:center;gap:6px}
+.h-author::before{content:"●";font-size:6px;color:#d4b94a}
+@media(max-width:560px){.h-edition{display:none}.h-author{margin-left:auto}}
+
+/* STICKY TOC */
+.toc{position:sticky;top:50px;z-index:90;background:rgba(241,238,229,.92);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}
+.toc-inner{max-width:1080px;margin:0 auto;padding:10px 16px;display:flex;gap:6px;overflow-x:auto;scrollbar-width:none;-ms-overflow-style:none}
+.toc-inner::-webkit-scrollbar{display:none}
+.toc-chip{flex:none;font:600 11px/1 'DM Sans';letter-spacing:.06em;text-transform:uppercase;padding:7px 12px;background:var(--paper);border:1px solid var(--line);border-radius:999px;color:var(--ink-soft);transition:all .15s;white-space:nowrap;cursor:pointer}
+.toc-chip:hover{background:var(--paper-tint);border-color:var(--ink-faint);color:var(--ink)}
+.toc-chip-num{display:inline-block;font-family:'DM Mono',monospace;color:var(--ink-faint);margin-right:5px;font-weight:500;font-size:10px}
+
+/* LAYOUT */
+.wrap{max-width:1080px;margin:0 auto;padding:24px 20px 80px}
+.section{margin:48px 0 18px;padding-top:8px}
+.section:first-child{margin-top:14px}
+.section-eyebrow{font:700 10.5px/1 'DM Sans';letter-spacing:.18em;text-transform:uppercase;color:var(--c-prim);margin-bottom:8px;display:flex;align-items:center;gap:10px}
+.section-eyebrow::before{content:"";width:24px;height:1.5px;background:var(--c-prim)}
+.section-title{font-size:26px;font-weight:700;letter-spacing:-.03em;line-height:1.1}
+.section-sub{margin-top:6px;font-size:13.5px;color:var(--ink-mute);max-width:680px}
+
+/* HERO */
+.hero{margin:20px 0 28px;padding:26px 28px;background:linear-gradient(180deg,#fdfcf6 0%,#f7f4e8 100%);border:1px solid var(--line);border-radius:var(--r-xl);box-shadow:var(--sh-md);position:relative;overflow:hidden}
+.hero::after{content:"";position:absolute;top:0;right:0;bottom:0;left:0;background:radial-gradient(400px 200px at 100% 0%,rgba(163,27,53,.06),transparent 60%),radial-gradient(360px 200px at 0% 100%,rgba(11,93,78,.05),transparent 60%);pointer-events:none}
+.hero-tag{font:700 10.5px/1 'DM Sans';letter-spacing:.2em;text-transform:uppercase;color:var(--c-emerg);display:inline-flex;align-items:center;gap:8px;margin-bottom:10px}
+.hero-tag::before{content:"";width:18px;height:1.5px;background:currentColor}
+.hero h1{font-size:34px;font-weight:800;letter-spacing:-.035em;line-height:1.02;margin-bottom:8px}
+.hero h1 em{font-style:italic;font-weight:500;color:var(--ink-mute)}
+.hero-lead{font-size:14.5px;color:var(--ink-mute);max-width:660px;line-height:1.55}
+.hero-stamp{position:absolute;top:20px;right:22px;font:700 10.5px/1 'DM Mono',monospace;letter-spacing:.04em;padding:7px 11px 7px 18px;border:1.5px dashed rgba(163,27,53,.45);color:rgba(163,27,53,.9);border-radius:5px;background:rgba(255,255,255,.55);transform:rotate(-3deg);z-index:2;box-shadow:0 2px 6px rgba(163,27,53,.08)}
+.hero-stamp::before{content:"●";position:absolute;left:7px;top:50%;transform:translateY(-50%);color:rgba(163,27,53,.7);font-size:7px}
+.hero-sig{margin-top:14px;display:flex;align-items:center;gap:10px;font:600 11px/1 'DM Sans';color:var(--ink-mute);letter-spacing:.04em}
+.hero-sig::before{content:"";flex:none;width:22px;height:1.5px;background:var(--c-emerg)}
+.hero-sig b{color:var(--c-emerg);font-weight:700;font-family:'DM Mono',monospace;letter-spacing:.02em}
+@media(max-width:560px){.hero{padding:22px 20px}.hero h1{font-size:26px}.section-title{font-size:22px}.hero-stamp{position:static;display:inline-block;transform:none;margin-bottom:14px}}
+
+/* POCKET CARD 0 */
+.pocket{background:#0e1116;color:#f0eee5;border-radius:var(--r-xl);padding:24px 26px 26px;margin:0 0 28px;position:relative;overflow:hidden;box-shadow:var(--sh-lg)}
+.pocket::before{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(600px 300px at 100% 0%,rgba(212,185,74,.07),transparent 60%),radial-gradient(500px 280px at 0% 100%,rgba(163,27,53,.08),transparent 60%)}
+.pocket-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:18px;flex-wrap:wrap;position:relative}
+.pocket-eyebrow{font:700 10.5px/1 'DM Sans';letter-spacing:.2em;text-transform:uppercase;color:#d4b94a;display:flex;align-items:center;gap:9px}
+.pocket-eyebrow::before{content:"●";color:#d4b94a;font-size:9px;animation:pulse 2.4s ease infinite}
+@keyframes pulse{50%{opacity:.4}}
+.pocket-title{font-size:22px;font-weight:700;letter-spacing:-.02em;line-height:1.15;color:#fff}
+.pocket-sub{font-size:12.5px;color:#9aa0a8;margin-top:2px}
+.pocket-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px;position:relative}
+.pocket-card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-left:3px solid var(--accent,#d4b94a);border-radius:var(--r);padding:12px 14px}
+.pocket-card .pc-trig{font:700 10px/1.1 'DM Sans';letter-spacing:.12em;text-transform:uppercase;color:var(--accent,#d4b94a);margin-bottom:6px;display:flex;align-items:center;gap:6px}
+.pocket-card .pc-trig::before{content:"";width:4px;height:4px;background:currentColor;border-radius:50%}
+.pocket-card .pc-act{font-size:13.5px;line-height:1.4;color:#dedfd5}
+.pocket-card .pc-act b{color:#fff;font-weight:600}
+.pocket-card.emerg{--accent:#ff8a96}.pocket-card.dec{--accent:#7cb0ff}.pocket-card.tx{--accent:#ffb085}.pocket-card.clin{--accent:#b0e0d4}
+
+/* LEGEND */
+.legend{background:var(--paper);border:1px solid var(--line);border-radius:var(--r-lg);padding:18px 20px;margin-bottom:28px;box-shadow:var(--sh-sm)}
+.lg-title{font:700 10.5px/1 'DM Sans';letter-spacing:.16em;text-transform:uppercase;color:var(--ink-faint);margin-bottom:12px}
+.lg-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:8px 14px}
+.lg-item{display:flex;align-items:center;gap:9px;font-size:12.5px;color:var(--ink-soft)}
+.dot{width:9px;height:9px;border-radius:50%;flex-shrink:0;box-shadow:0 0 0 2px var(--paper),0 0 0 3px currentColor}
+.dot.c1{color:var(--c-prim);background:var(--c-prim)}.dot.c2{color:var(--c-clin);background:var(--c-clin)}.dot.c3{color:var(--c-diag);background:var(--c-diag)}.dot.c4{color:var(--c-tx);background:var(--c-tx)}.dot.c5{color:var(--c-emerg);background:var(--c-emerg)}.dot.c6{color:var(--c-pearl);background:var(--c-pearl)}
+.lg-divider{height:1px;background:var(--line-soft);margin:14px 0}
+.lg-anchors{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:8px}
+.ank{display:inline-flex;align-items:center;gap:5px;font:700 9.5px/1 'DM Sans';letter-spacing:.12em;text-transform:uppercase;padding:4px 8px 4px 7px;border-radius:999px;border:1px solid;vertical-align:middle;white-space:nowrap}
+.ank::before{content:"";width:4px;height:4px;border-radius:50%;background:currentColor}
+.ank-hy{color:var(--ank-hy);background:var(--ank-hy-bg);border-color:#e5cd72}
+.ank-dec{color:var(--ank-dec);background:var(--ank-dec-bg);border-color:#9fbae6}
+.ank-dgr{color:var(--ank-dgr);background:var(--ank-dgr-bg);border-color:#e29ca0}
+.ank-prl{color:var(--ank-prl);background:var(--ank-prl-bg);border-color:#a8c298}
+.ank-myt{color:var(--ank-myt);background:var(--ank-myt-bg);border-color:#d0b181}
+.ank-con{color:var(--ank-con);background:var(--ank-con-bg);border-color:#bba7d3}
+.ank-evo{color:var(--ank-evo);background:var(--ank-evo-bg);border-color:#8fc1c9}
+.lg-explain{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:6px 14px;font-size:11.5px;color:var(--ink-mute);margin-top:10px}
+.lg-explain b{font-weight:700}
+.lg-explain .ehy b{color:var(--ank-hy)}.lg-explain .edec b{color:var(--ank-dec)}.lg-explain .edgr b{color:var(--ank-dgr)}.lg-explain .eprl b{color:var(--ank-prl)}.lg-explain .emyt b{color:var(--ank-myt)}.lg-explain .econ b{color:var(--ank-con)}.lg-explain .eevo b{color:var(--ank-evo)}
+
+/* EVIDENCE CHIPS */
+.ev{display:inline-flex;align-items:center;font:600 9.5px/1 'DM Mono',monospace;letter-spacing:.04em;padding:3px 6px 2px;border-radius:4px;background:#eeebde;color:var(--ink-soft);border:1px solid var(--line);vertical-align:middle;margin-left:3px}
+.ev-acr{background:#fadcdc;color:#a31b25;border-color:#e29ca0}
+.ev-eular{background:#dde7f8;color:#1d4ea3;border-color:#9fbae6}
+.ev-sbr{background:#e3d6f0;color:#5a4070;border-color:#bba7d3}
+.ev-nice{background:#cde5e9;color:#0d6373;border-color:#8fc1c9}
+.ev-expert{background:#eeebde;color:#7a6014;border-color:#d0b181}
+.ev-cochrane{background:#d8e6cf;color:#3e6a2e;border-color:#a8c298}
+
+/* CARD */
+.card{background:var(--paper);border:1px solid var(--line);border-radius:var(--r-lg);margin-bottom:22px;box-shadow:var(--sh-md);overflow:hidden;break-inside:avoid}
+.card-head{padding:18px 22px 15px;border-bottom:1px solid var(--line-soft);position:relative;background:linear-gradient(180deg,#fcfaf2 0%,#ffffff 100%)}
+.card-head::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--accent,var(--c-prim))}
+.card-eyebrow{font:700 10px/1 'DM Sans';letter-spacing:.16em;text-transform:uppercase;color:var(--accent,var(--c-prim));margin-bottom:5px;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.card-num{font-family:'DM Mono',monospace;font-weight:500;color:var(--ink-faint);font-size:10.5px;letter-spacing:0}
+.card h3{font-size:21px;font-weight:700;letter-spacing:-.025em;color:var(--ink);line-height:1.15;display:flex;align-items:center;gap:9px;flex-wrap:wrap}
+.card-sub{margin-top:6px;font-size:13px;color:var(--ink-mute)}
+.card-body{padding:20px 22px 24px}
+.card.prim{--accent:var(--c-prim)}.card.clin{--accent:var(--c-clin)}.card.diag{--accent:var(--c-diag)}.card.tx{--accent:var(--c-tx)}.card.emerg{--accent:var(--c-emerg)}.card.pearl{--accent:var(--c-pearl)}
+@media(max-width:560px){.card-head{padding:16px 18px 14px}.card-body{padding:18px 18px 20px}.card h3{font-size:18px}}
+
+/* QUICK VIEW */
+.quick{background:var(--paper-tint);border:1px solid var(--line);border-left:3px solid var(--accent,var(--c-prim));border-radius:var(--r);padding:13px 16px;margin:0 0 16px}
+.quick-label{font:700 9.5px/1 'DM Sans';letter-spacing:.16em;text-transform:uppercase;color:var(--accent,var(--c-prim));margin-bottom:6px}
+.quick-body{font-size:13.5px;line-height:1.45;color:var(--ink-soft)}
+.quick-body b{color:var(--ink);font-weight:600}
+
+/* SUB-TITLE */
+.sub-title{font:700 10.5px/1 'DM Sans';letter-spacing:.16em;text-transform:uppercase;color:var(--ink-soft);margin:18px 0 10px;display:flex;align-items:center;gap:9px;border-bottom:1px dashed var(--line);padding-bottom:6px}
+.sub-title::before{content:"";width:4px;height:4px;border-radius:50%;background:var(--accent,var(--ink-soft))}
+.sub-title:first-child{margin-top:0}
+
+/* TEXT */
+p{color:var(--ink-soft);margin-bottom:8px;font-size:14px;line-height:1.5}
+p:last-child{margin-bottom:0}
+strong{color:var(--ink);font-weight:600}
+ul.bullets{list-style:none;padding:0;margin:0 0 10px}
+ul.bullets li{position:relative;padding:5px 0 5px 20px;font-size:13.5px;line-height:1.5;color:var(--ink-soft);border-bottom:1px dashed var(--line-soft)}
+ul.bullets li:last-child{border-bottom:none}
+ul.bullets li::before{content:"";position:absolute;left:5px;top:13px;width:4px;height:4px;border-radius:50%;background:var(--accent,var(--ink-mute))}
+ul.bullets li b{color:var(--ink);font-weight:600}
+
+/* DISEASE BOX */
+.disease{border:1px solid var(--line);border-radius:var(--r);margin:14px 0;overflow:hidden;background:var(--paper)}
+.disease-head{padding:12px 16px;background:linear-gradient(180deg,#faf7eb 0%,#f1eddc 100%);border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap}
+.disease-name{font-weight:700;color:var(--ink);font-size:14.5px;letter-spacing:-.015em}
+.disease-tag{font:600 10px/1 'DM Sans';letter-spacing:.08em;text-transform:uppercase;color:var(--ink-mute)}
+.disease-body{padding:14px 16px}
+.disease-rows{display:grid;gap:0}
+.disease-row{display:grid;grid-template-columns:130px 1fr;gap:12px;padding:8px 0;border-bottom:1px dashed var(--line-soft)}
+.disease-row:last-child{border-bottom:none;padding-bottom:0}
+.disease-row:first-child{padding-top:0}
+.disease-row .k{font:700 10px/1.2 'DM Sans';letter-spacing:.12em;text-transform:uppercase;color:var(--accent,var(--ink-faint));padding-top:2px}
+.disease-row .v{font-size:13.5px;color:var(--ink-soft);line-height:1.5}
+.disease-row .v b{color:var(--ink)}
+@media(max-width:560px){.disease-row{grid-template-columns:1fr;gap:3px;padding:6px 0 8px}.disease-row .k{padding-top:0}}
+
+/* DEEP DIVE */
+.deep{margin:16px 0 6px;border:1px solid var(--line);border-radius:var(--r);background:linear-gradient(180deg,#fdfcf6 0%,#f9f6ea 100%);overflow:hidden}
+.deep>summary{list-style:none;cursor:pointer;padding:11px 16px;display:flex;align-items:center;justify-content:space-between;font:700 11px/1 'DM Sans';letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft);user-select:none;transition:background .15s}
+.deep>summary::-webkit-details-marker{display:none}
+.deep>summary::after{content:"+";font-size:18px;font-weight:600;color:var(--ink-faint);transition:transform .2s;font-family:'DM Mono',monospace}
+.deep[open]>summary::after{transform:rotate(45deg)}
+.deep>summary:hover{background:rgba(0,0,0,.02)}
+.deep-content{padding:14px 16px 16px;border-top:1px dashed var(--line)}
+.deep-content p{font-size:13px;color:var(--ink-mute);line-height:1.55}
+.deep-content p b{color:var(--ink-soft)}
+
+/* MNEMONIC */
+.mnemo{background:var(--paper-tint);border:1px solid var(--line);border-radius:var(--r);padding:14px 16px;margin:14px 0}
+.mnemo-title{font:700 10.5px/1 'DM Sans';letter-spacing:.16em;text-transform:uppercase;color:var(--c-pearl);margin-bottom:10px;display:flex;align-items:center;gap:8px}
+.mnemo-title b{background:var(--ink);color:#fff;padding:3px 7px;border-radius:4px;font-size:10px;letter-spacing:.06em}
+.mnemo-grid{display:grid;gap:5px}
+.mnemo-row{display:grid;grid-template-columns:28px 1fr;gap:10px;align-items:baseline;font-size:13px;color:var(--ink-soft);padding:3px 0}
+.mnemo-letter{display:grid;place-items:center;width:24px;height:24px;background:var(--ink);color:#fff;border-radius:5px;font:800 12px/1 'DM Sans';letter-spacing:-.02em}
+.mnemo-row b{color:var(--ink);font-weight:600}
+.mnemo-row em{font-style:italic;color:var(--ink-mute);font-size:12px}
+
+/* SCORE BOX */
+.score{border:1px solid var(--line);border-radius:var(--r);margin:14px 0;background:var(--paper);overflow:hidden}
+.score-head{padding:11px 14px;background:linear-gradient(180deg,#f5f1e0 0%,#ede9d6 100%);border-bottom:1px solid var(--line)}
+.score-name{font:700 13px/1.2 'DM Sans';color:var(--ink);letter-spacing:-.01em}
+.score-purpose{font:500 10.5px/1.2 'DM Sans';color:var(--ink-mute);letter-spacing:.06em;text-transform:uppercase;margin-top:3px}
+.score-rows{display:grid;gap:0}
+.score-row{display:grid;grid-template-columns:90px 1fr;gap:12px;align-items:start;padding:9px 14px;border-bottom:1px dashed var(--line-soft);font-size:13px}
+.score-row:last-child{border-bottom:none}
+.score-grade{font:800 12px/1.2 'DM Mono',monospace;color:var(--c-emerg);letter-spacing:-.01em}
+.score-desc{color:var(--ink-soft);line-height:1.45}
+.score-desc b{color:var(--ink)}
+
+/* STACKED TABLE */
+.stbl{margin:14px 0;border:1px solid var(--line);border-radius:var(--r);background:var(--paper);overflow:hidden}
+.stbl-head,.stbl-row{display:grid;gap:14px;padding:10px 14px;align-items:start}
+.stbl-head{background:#faf7eb;border-bottom:2px solid var(--line);font:700 10.5px/1 'DM Sans';letter-spacing:.1em;text-transform:uppercase;color:var(--ink)}
+.stbl-row{border-bottom:1px solid var(--line-soft);font-size:13px;color:var(--ink-soft);line-height:1.5}
+.stbl-row:last-child{border-bottom:none}
+.stbl-row:nth-child(even){background:#fcfaf2}
+.stbl-row b{color:var(--ink);font-weight:600}
+.stbl-row .col1{font-weight:600;color:var(--ink)}
+.stbl-2{grid-template-columns:1fr 2fr}
+.stbl-3{grid-template-columns:1fr 1.3fr 1.5fr}
+.stbl-4{grid-template-columns:1.2fr 1fr 1fr 1.2fr}
+@media(max-width:680px){
+  .stbl-head{display:none}
+  .stbl-row{grid-template-columns:1fr !important;gap:12px;padding:14px 16px}
+  .stbl-row .col{display:block;min-width:0;word-wrap:break-word;overflow-wrap:anywhere}
+  .stbl-row .col::before{content:attr(data-l);display:block;font:700 9.5px/1.3 'DM Sans';letter-spacing:.12em;text-transform:uppercase;color:var(--ink-mute);margin-bottom:4px}
+  .stbl-row .col1{font-weight:700;font-size:15px;padding-bottom:8px;margin-bottom:6px;border-bottom:1px dashed var(--line)}
+  .stbl-row .col1::before{display:none}
+}
+
+/* CALLOUT BOXES */
+.box{border-radius:var(--r);padding:14px 16px;margin:14px 0;position:relative;border:1px solid}
+.box-label{position:absolute;top:-9px;left:14px;font:700 9.5px/1 'DM Sans';letter-spacing:.16em;text-transform:uppercase;padding:3px 9px;border-radius:999px;color:#fff}
+.box-title{font-weight:700;color:var(--ink);font-size:14px;margin:2px 0 6px}
+.box-body{font-size:13.5px;line-height:1.5;color:var(--ink-soft)}
+.box-body b{color:var(--ink)}
+.box-body ul{list-style:none;padding:0;margin:4px 0 0}
+.box-body ul li{position:relative;padding:3px 0 3px 20px}
+.box-body ul li::before{content:"→";position:absolute;left:0;top:3px;font-weight:700;color:var(--bx-color)}
+.box.decision{background:#f1f5fc;border-color:#c4d3eb;--bx-color:var(--ank-dec)}.box.decision .box-label{background:var(--ank-dec)}
+.box.danger{background:#fbf0f0;border-color:#e5c2c2;--bx-color:var(--ank-dgr)}.box.danger .box-label{background:var(--ank-dgr)}.box.danger .box-body b{color:var(--ank-dgr)}
+.box.pearl{background:#f1f7ed;border-color:#c1d5b3;--bx-color:var(--ank-prl)}.box.pearl .box-label{background:var(--ank-prl)}
+.box.hy{background:#fcf6dd;border-color:#e3cf78;--bx-color:var(--ank-hy)}.box.hy .box-label{background:var(--ank-hy)}
+.box.myth{background:#f8eed8;border-color:#d0b181;--bx-color:var(--ank-myt)}.box.myth .box-label{background:var(--ank-myt)}
+.box.controversy{background:#f1e9f6;border-color:#bba7d3;--bx-color:var(--ank-con)}.box.controversy .box-label{background:var(--ank-con)}
+.box.evolving{background:#dff0f2;border-color:#8fc1c9;--bx-color:var(--ank-evo)}.box.evolving .box-label{background:var(--ank-evo)}
+
+/* ALGORITHM TREE */
+.algo{background:linear-gradient(180deg,#fcfaf2 0%,#f5f0dc 100%);border:1px solid var(--line-strong);border-radius:var(--r-lg);padding:18px;margin:14px 0;overflow-x:auto}
+.tree{font-size:13px}
+.tree-line{padding:6px 0}
+.tree-node{display:inline-block;padding:8px 12px;background:var(--paper);border:1.5px solid var(--ink-soft);border-radius:7px;font-weight:600;color:var(--ink);font-size:12.5px;box-shadow:var(--sh-sm)}
+.tree-node.start{background:var(--ink);color:#fff;border-color:var(--ink)}
+.tree-node.dec{background:#fff7d6;border-color:#e3cf78;color:#6b520a}
+.tree-node.dx{background:#dde7f8;border-color:#9fbae6;color:#1d4ea3}
+.tree-node.dgr{background:#fadcdc;border-color:#e29ca0;color:#a31b25}
+.tree-node.action{background:#d8e6cf;border-color:#a8c298;color:#3e6a2e}
+.tree-branch{margin-left:14px;border-left:1.5px dashed #b8b094;padding:6px 0 6px 18px;margin-top:6px;margin-bottom:2px;position:relative}
+.tree-branch::before{content:"";position:absolute;left:-1.5px;top:-4px;width:14px;height:14px;border-left:1.5px solid #b8b094;border-bottom:1.5px solid #b8b094;border-radius:0 0 0 6px}
+.tree-label{display:inline-block;font:700 9.5px/1 'DM Sans';letter-spacing:.12em;text-transform:uppercase;padding:3px 7px;border-radius:4px;margin-bottom:5px}
+.tree-label.yes{background:#fadcdc;color:#a31b25}.tree-label.no{background:#d8e6cf;color:#3e6a2e}
+
+/* FOOTER */
+.foot{margin-top:48px;padding-top:22px;border-top:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;font-size:11px;color:var(--ink-faint);letter-spacing:.04em;flex-wrap:wrap;gap:8px}
+.foot-mono{font-family:'DM Mono',monospace}
+.foot-author{font:800 14px/1.1 'DM Mono',monospace;color:var(--ink);letter-spacing:.02em;margin-bottom:3px}
+.foot-meta{font:500 11px/1.3 'DM Sans';color:var(--ink-faint);letter-spacing:.04em}
+
+/* WATERMARK */
+.watermark{position:fixed;bottom:calc(14px + env(safe-area-inset-bottom,0px));right:calc(14px + env(safe-area-inset-right,0px));font:600 10px/1 'DM Mono',monospace;letter-spacing:.04em;color:rgba(14,17,22,.55);background:rgba(255,255,255,.85);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);padding:6px 10px;border-radius:99px;border:1px solid rgba(14,17,22,.1);box-shadow:0 2px 8px rgba(14,17,22,.06);z-index:50;pointer-events:none;user-select:none}
+@media(max-width:560px){.watermark{bottom:calc(10px + env(safe-area-inset-bottom,0px));right:calc(10px + env(safe-area-inset-right,0px));font-size:9px;padding:5px 8px}}
+
+/* PRINT */
+@media print{
+  body{background:#fff;font-size:10.5pt}
+  body::before{display:none}
+  .header,.toc{position:static;background:#0e1116;color:#fff}
+  .wrap{padding:14px;max-width:100%}
+  .card,.hero,.legend,.pocket{box-shadow:none !important;break-inside:avoid}
+  .hero::after,.pocket::before{display:none}
+  .pocket{background:#1a1d24;color:#f0eee5}
+  .ank,.box,.disease,.score,.algo,.stbl,.deep,.mnemo,.quick{box-shadow:none !important;break-inside:avoid}
+  .deep:not([open]) .deep-content{display:block}
+  .deep>summary::after{display:none}
+  .watermark{position:fixed;bottom:8mm;right:8mm;background:none;border:none;color:rgba(0,0,0,.5)}
+  .hero-stamp{transform:none;position:absolute}
+}
+</style>
+</head>
+<body>
+<header class="header"><div class="header-row"><div class="h-mark">T</div><div class="h-titles"><div class="h-title">Tireoidopatias · Pocket Handbook</div><div class="h-sub">Elite edition · Endocrinologia clínica · EN03</div></div><div class="h-author">@dr.lorencato</div><div class="h-edition">v5.2</div></div></header>
+<nav class="toc"><div class="toc-inner"><a href="#pocket" class="toc-chip"><span class="toc-chip-num">0</span>Pocket</a><a href="#redflags" class="toc-chip"><span class="toc-chip-num">A</span>Red Flags</a><a href="#approach" class="toc-chip"><span class="toc-chip-num">B</span>Apresentação</a><a href="#primarias" class="toc-chip"><span class="toc-chip-num">C</span>Entidades</a><a href="#secundarias" class="toc-chip"><span class="toc-chip-num">D</span>Secundárias</a><a href="#algoritmo" class="toc-chip"><span class="toc-chip-num">E</span>Algoritmo</a><a href="#tratamento" class="toc-chip"><span class="toc-chip-num">F</span>Tratamento</a><a href="#pitfalls" class="toc-chip"><span class="toc-chip-num">G</span>Pitfalls</a><a href="#pearls" class="toc-chip"><span class="toc-chip-num">H</span>Pearls</a></div></nav>
+<main>
+<div class="wrap">
+<div class="hero">
+<div class="hero-stamp">@dr.lorencato</div>
+<div class="hero-tag">Endocrinologia · EN03 · Tireoide</div>
+<h1>Tireoidopatias<br><em>do eixo TSH–T4 ao nódulo, da tempestade ao mixedema</em></h1>
+<p class="hero-lead">Hipotireoidismo primário (Hashimoto, subclínico, pós-ablativo) e central, doença de Graves com orbitopatia, bócio multinodular tóxico e adenoma tóxico, tireoidites destrutivas e por fármacos, nódulo tireoidiano pelo ACR TI-RADS e pelo Bethesda 2023, carcinoma diferenciado segundo a ATA 2025, carcinoma medular e NEM 2, anaplásico e linfoma, hipotireoidismo congênito pelo PCDT 2021, e as duas emergências — crise tireotóxica e coma mixedematoso — com a tradução para o SUS (RENAME, rhTSH incorporado em 2024, PCDT do CDT em revisão na CONITEC).</p>
+<div class="hero-sig">Compilação clínica por <b>@dr.lorencato</b> · Elite Edition v5.2 · status clinical_review · fontes conferidas em 2026-10-26</div>
+</div>
+
+<div id="pocket" class="pocket">
+<div class="pocket-head"><div><div class="pocket-eyebrow">Pocket Card 0 · 5 segundos</div><div class="pocket-title">Decisões Críticas — Tireoide</div><div class="pocket-sub">PS · Enfermaria · UTI · Ambulatório (rastreio na gestação: GO10)</div></div></div>
+<div class="pocket-grid">
+<div class="pocket-card emerg"><div class="pc-trig">Tireotóxico com febre, delirium, FA rápida ou IC</div><div class="pc-act">Crise tireotóxica é diagnóstico clínico (Burch-Wartofsky ≥45 ou JTA TS1): <b>UTI, propranolol 60–80 mg 4/4 h, PTU 500–1.000 mg de ataque e 250 mg 4/4 h (ou metimazol 60–80 mg/dia), iodo 1 h depois, hidrocortisona 300 mg → 100 mg 8/8 h</b> e o gatilho. Não espere o T4L.</div></div>
+<div class="pocket-card emerg"><div class="pc-trig">Rebaixamento + hipotermia + hiponatremia ou hipercapnia</div><div class="pc-act">Coma mixedematoso: <b>hidrocortisona 100 mg IV 8/8 h antes ou junto da levotiroxina</b>, LT4 em dose de ataque (200–400 µg IV; sem forma IV no Brasil, 300–500 µg por SNE), via aérea, aquecimento passivo, procurar pneumonia. Mortalidade 25–50%.</div></div>
+<div class="pocket-card emerg"><div class="pc-trig">Febre ou dor de garganta em uso de tionamida</div><div class="pc-act">Agranulocitose até prova em contrário: <b>suspender o antitireoidiano e colher hemograma no mesmo dia</b>. Neutrófilos &lt;500/mm³ → internar, antibiótico de amplo espectro se febre, G-CSF a critério; nunca trocar metimazol por PTU (reação cruzada).</div></div>
+<div class="pocket-card dec"><div class="pc-trig">TSH suprimido</div><div class="pc-act">T4L + <b>T3 total</b> (T3-toxicose). Tireotoxicose confirmada → causa antes da droga: <b>TRAb</b> (Graves), cintilografia/captação se nódulo ou TRAb negativo. Captação baixa = tireoidite, iodo ou hormônio exógeno: <b>tionamida não funciona</b>.</div></div>
+<div class="pocket-card dec"><div class="pc-trig">Nódulo tireoidiano</div><div class="pc-act"><b>TSH primeiro</b>: baixo → cintilografia (quente quase nunca é câncer, não punciona). Normal/alto → US com TI-RADS; PAAF pelo par categoria × tamanho (ACR: <b>TR5 ≥1 cm, TR4 ≥1,5 cm, TR3 ≥2,5 cm</b>). Sem US de rastreio em assintomático.</div></div>
+<div class="pocket-card dec"><div class="pc-trig">TSH alto com T4L normal</div><div class="pc-act"><b>Repita em 6–12 semanas</b> com T4L e anti-TPO (metade normaliza). Tratar: TSH ≥10, gestação ou desejo de gestar; considerar 7–10 com sintomas, cardiopatia ou anti-TPO+. Idoso: referência por idade (até 6,3 mUI/L &gt;80 anos).</div></div>
+<div class="pocket-card tx"><div class="pc-trig">Levotiroxina</div><div class="pc-act"><b>1,6 µg/kg/dia</b> no adulto jovem sem cardiopatia; idoso &gt;80 anos ou coronariopata <b>12,5–25 µg</b> e +12,5–25 µg a cada 4–8 semanas. Jejum de 30–60 min ou ao deitar (≥3 h após jantar), longe de cálcio, ferro e IBP; TSH 6–8 semanas após cada ajuste.</div></div>
+<div class="pocket-card tx"><div class="pc-trig">Metimazol na doença de Graves</div><div class="pc-act">Dose única por T4L: <b>5–10 mg</b> se 1–1,5× LSN, <b>10–20 mg</b> se 1,5–2×, <b>30–40 mg</b> se 2–3×; hemograma e TGP basais; controle por T4L/T3 a cada 4–6 semanas (TSH demora meses). Curso de <b>12–18 meses</b>, TRAb antes de suspender.</div></div>
+<div class="pocket-card tx"><div class="pc-trig">Carcinoma diferenciado em 2026</div><div class="pc-act">ATA 2025: <b>lobectomia</b> para cT1N0 (≤2 cm) e preferível em cT2N0 de baixo risco; vigilância ativa em cT1aN0M0; <b>RAI não rotineira no baixo risco</b>; TSH dentro da referência para quem tem resposta excelente. SUS: rhTSH incorporado (2024).</div></div>
+<div class="pocket-card clin"><div class="pc-trig">Graves e gravidez</div><div class="pc-act">ATA 2026: <b>PTU na pré-concepção e no 1º trimestre</b> (ou suspender a droga em baixa dose e baixo risco de recidiva), T4L no limite superior da referência; TRAb no 1º tri e em 18–22 sem se &gt;3× LSN; RAI contraindicado e gravidez só 6 meses após.</div></div>
+<div class="pocket-card clin"><div class="pc-trig">Dor cervical anterior + VHS alta</div><div class="pc-act">De Quervain: tireotoxicose com <b>captação baixa</b> e tireoglobulina alta. AINE; sem resposta em 48–72 h ou dor intensa, <b>prednisona 40 mg/dia</b> por 1–2 semanas e desmame em 2–4 semanas (ou mais); betabloqueador para sintomas; tionamida não.</div></div>
+<div class="pocket-card clin"><div class="pc-trig">Amiodarona e tireoide</div><div class="pc-act">Hipotireoidismo → <b>levotiroxina sem suspender a amiodarona</b>. Tireotoxicose tipo 1 (BMN, Graves latente) → metimazol; tipo 2 (destrutiva) → <b>prednisona 0,5–0,7 mg/kg/dia ~3 meses</b>; mista ou incerta → ambos. Decisão de suspender é do cardiologista.</div></div>
+</div>
+</div>
+
+<div class="legend">
+<div class="lg-title">Sistema de legendas</div>
+<div class="lg-grid"><div class="lg-item"><span class="dot c1"></span> Fisiopatologia / Classificação</div><div class="lg-item"><span class="dot c2"></span> Clínica / Apresentação</div><div class="lg-item"><span class="dot c3"></span> Diagnóstico / Exames</div><div class="lg-item"><span class="dot c4"></span> Tratamento / Conduta</div><div class="lg-item"><span class="dot c5"></span> Emergências / Red Flags</div><div class="lg-item"><span class="dot c6"></span> Nuances / Pearls</div></div>
+<div class="lg-divider"></div>
+<div class="lg-anchors"><span class="ank ank-hy">HIGH-YIELD</span><span class="ank ank-dec">DECISION</span><span class="ank ank-dgr">DANGER</span><span class="ank ank-prl">PEARL</span><span class="ank ank-myt">MYTH</span><span class="ank ank-con">CONTROVERSY</span><span class="ank ank-evo">EVOLVING</span></div>
+<div class="lg-explain"><div class="ehy"><b>HIGH-YIELD</b> — prova/prática frequente</div><div class="edec"><b>DECISION</b> — muda a conduta</div><div class="edgr"><b>DANGER</b> — erro grave / risco crítico</div><div class="eprl"><b>PEARL</b> — nuance de especialista</div><div class="emyt"><b>MYTH</b> — mito vivo na prática</div><div class="econ"><b>CONTROVERSY</b> — debate sem consenso</div><div class="eevo"><b>EVOLVING</b> — mudança recente</div></div>
+</div>
+
+<section id="redflags">
+<div class="section"><div class="section-eyebrow"><span>A</span> Red Flags</div><h2 class="section-title">A tireoide mata pouco, mas mata rápido quando mata</h2><div class="section-sub">Quase toda tireoidopatia é ambulatorial. As exceções são poucas e previsíveis: as duas descompensações extremas (tempestade e mixedema), a toxicidade das tionamidas, a via aérea depois da tireoidectomia, o olho que perde visão e a massa que cresce em semanas. Cada linha: sinal objetivo → suspeita → conduta imediata.</div></div>
+<div class="card emerg">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">A.1</span> Emergências tireoidianas</div><h3>Sinais que não esperam o próximo retorno <span class="ank ank-dgr">DANGER</span></h3></div>
+<div class="card-body">
+<div class="mnemo"><div class="mnemo-title"><b>TIREOIDE</b> oito alarmes que mudam o nível de cuidado</div><div class="mnemo-grid">
+<div class="mnemo-row"><span class="mnemo-letter">T</span><span><b>Tempestade tireotóxica</b> · febre ≥38,5 °C, taquicardia &gt;130 ou FA rápida, IC, agitação, delirium, icterícia, diarreia — num tireotóxico com gatilho (infecção, cirurgia, parto, iodo, suspensão de tionamida)</span></div>
+<div class="mnemo-row"><span class="mnemo-letter">I</span><span><b>Infecção sob tionamida</b> · febre, odinofagia, úlceras orais nos primeiros 90 dias de metimazol ou PTU (agranulocitose)</span></div>
+<div class="mnemo-row"><span class="mnemo-letter">R</span><span><b>Respiração ameaçada</b> · estridor, hematoma cervical expansivo nas primeiras 24 h de tireoidectomia, bócio mergulhante com Pemberton, paralisia bilateral de prega vocal após extubação</span></div>
+<div class="mnemo-row"><span class="mnemo-letter">E</span><span><b>Encefalopatia fria</b> · rebaixamento, hipotermia, bradicardia, hiponatremia, hipercapnia, hipoglicemia em hipotireoideo não tratado ou que suspendeu a levotiroxina (coma mixedematoso)</span></div>
+<div class="mnemo-row"><span class="mnemo-letter">O</span><span><b>Olho que perde visão</b> · baixa de acuidade, discromatopsia, defeito pupilar aferente, edema de disco ou exposição corneana na orbitopatia de Graves (neuropatia óptica distireoidiana)</span></div>
+<div class="mnemo-row"><span class="mnemo-letter">I</span><span><b>Icterícia sob PTU</b> · TGP &gt;3× LSN, colúria, anorexia — hepatite hepatocelular fulminante, mais comum em crianças e gestantes</span></div>
+<div class="mnemo-row"><span class="mnemo-letter">D</span><span><b>Duplo déficit hormonal</b> · hipotireoidismo central ou poliglandular autoimune: levotiroxina antes de corrigir o cortisol precipita crise adrenal</span></div>
+<div class="mnemo-row"><span class="mnemo-letter">E</span><span><b>Expansão cervical em semanas</b> · massa pétrea, disfonia, disfagia, dispneia em idoso (anaplásico) ou em Hashimoto conhecido (linfoma primário)</span></div>
+</div></div>
+<div class="sub-title">Red flag → suspeita → conduta</div>
+<div class="stbl stbl-3">
+<div class="stbl-head stbl-3"><div>Red flag</div><div>Suspeita</div><div>Conduta imediata</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Red flag">Tireotoxicose conhecida ou bócio + febre, FC &gt;130 ou FA, congestão, agitação ou confusão, dor abdominal com icterícia; pós-operatório, pós-parto, pós-contraste iodado ou suspensão do metimazol</div><div class="col" data-l="Suspeita">Crise tireotóxica (descompensação de órgãos por tireotoxicose com sensibilidade adrenérgica aumentada; T4L não é necessariamente maior que na tireotoxicose simples)</div><div class="col" data-l="Conduta"><b>Calcular Burch-Wartofsky (≥45 = crise; 25–44 = iminente) ou JTA</b>; UTI; propranolol 60–80 mg VO/SNE 4/4 h (esmolol se IC grave); PTU 500–1.000 mg e 250 mg 4/4 h; SSKI 5 gotas 6/6 h só 1 h depois da tionamida; hidrocortisona 300 mg IV e 100 mg 8/8 h; antitérmico (paracetamol, nunca AAS), volume, tratar o gatilho</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Red flag">Idoso, frio ou inverno, sedativo/opioide recente, rebaixamento, T axilar &lt;35 °C, FC &lt;50, Na &lt;130, PaCO2 alta, cicatriz de tireoidectomia ou história de radioiodo</div><div class="col" data-l="Suspeita">Coma mixedematoso (hipometabolismo extremo, hipoventilação de origem central e muscular, SIADH-símile, frequentemente com pneumonia oculta)</div><div class="col" data-l="Conduta"><b>Colher TSH, T4L e cortisol e tratar sem esperar</b>: hidrocortisona 100 mg IV 8/8 h; LT4 200–400 µg IV de ataque (no Brasil, sem LT4 IV: dose alta por SNE — confirmar protocolo local) e manutenção; IOT/VM se hipercapnia; aquecimento passivo; hemoculturas e antibiótico se suspeita infecciosa; evitar salina hipotônica e sedativos</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Red flag">Febre ou faringite nos primeiros 3 meses de metimazol ou PTU</div><div class="col" data-l="Suspeita">Agranulocitose idiossincrásica (0,1–0,3%; 85% nos primeiros 90 dias; anticorpos antineutrófilo)</div><div class="col" data-l="Conduta"><b>Suspender a droga e hemograma no mesmo dia</b>; neutrófilos &lt;500 → internação, antibiótico de amplo espectro, G-CSF considerado; contraindicação definitiva às duas tionamidas → RAI ou cirurgia (iodo + betabloqueador + corticoide como ponte)</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Red flag">Hematoma cervical, abaulamento e estridor nas primeiras 6–24 h de tireoidectomia ou paratireoidectomia</div><div class="col" data-l="Suspeita">Sangramento no leito cervical com congestão venosa e edema laríngeo (não é compressão traqueal pura)</div><div class="col" data-l="Conduta"><b>Abrir a ferida à beira do leito (pele, platisma e rafe da musculatura pré-tireoidiana)</b> para descomprimir, chamar cirurgião e anestesia; IOT por profissional experiente; se impossível, via aérea cirúrgica — o edema glótico pode persistir após drenar</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Red flag">Parestesia perioral, Chvostek/Trousseau, laringoespasmo ou QT longo após tireoidectomia total</div><div class="col" data-l="Suspeita">Hipoparatireoidismo pós-operatório (transitório em até 30%; permanente em 1–3%)</div><div class="col" data-l="Conduta"><b>Gluconato de cálcio 10% 10–20 mL IV em 10 min</b> e infusão contínua se sintomático; PTH no POI dirige cálcio + calcitriol profilático (ATA 2025, rec. 24); seguimento no EN06</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Red flag">Orbitopatia de Graves com queda de acuidade, cores dessaturadas, defeito pupilar aferente, edema de papila ou úlcera de córnea por lagoftalmo</div><div class="col" data-l="Suspeita">Neuropatia óptica distireoidiana (compressão no ápice orbitário por músculos hipertrofiados) ou ceratopatia de exposição</div><div class="col" data-l="Conduta"><b>Oftalmologia em 24 h</b>; metilprednisolona IV 500–1.000 mg/dia por 3 dias (repetir na semana seguinte); sem resposta em 1–2 semanas → descompressão orbitária urgente; lubrificação e oclusão noturna</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Red flag">TGP &gt;3× LSN, icterícia ou anorexia em uso de PTU; colestase com metimazol</div><div class="col" data-l="Suspeita">Hepatotoxicidade por tionamida: hepatocelular (PTU, risco de falência hepática) ou colestática (metimazol)</div><div class="col" data-l="Conduta"><b>Suspender, TGP/TGO/bilirrubinas/INR</b>; sinais de insuficiência hepática → centro de transplante; tireotoxicose controlada com betabloqueador e preparo para tratamento definitivo</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Red flag">Idoso com massa cervical que dobra em semanas, consistência pétrea, disfonia, estridor ou síndrome de veia cava</div><div class="col" data-l="Suspeita">Carcinoma anaplásico (mediana de sobrevida ~5 meses sem terapia-alvo) ou linfoma primário de tireoide (DLBCL sobre Hashimoto)</div><div class="col" data-l="Conduta"><b>Biópsia por agulha grossa no mesmo dia, BRAF V600E por imuno-histoquímica</b>, TC cervicotorácica, avaliar via aérea; centro oncológico em dias — dabrafenibe + trametinibe neoadjuvante muda ressecabilidade; linfoma → R-CHOP</div></div>
+</div>
+<div class="box danger"><span class="box-label">DANGER</span><div class="box-title">Na tempestade, a ordem das drogas é mecanismo, não ritual</div><div class="box-body">Primeiro o <b>betabloqueador</b> (controla a hiperatividade adrenérgica que mata — FA, isquemia, IC de alto débito) e a <b>tionamida</b> (bloqueia a organificação via tireoperoxidase; PTU em dose alta também inibe a desiodase tipo 1 periférica). Só <b>1 h depois o iodo</b> (SSKI ou Lugol): ele bloqueia a liberação do hormônio pré-formado (efeito Wolff-Chaikoff e inibição da proteólise da tireoglobulina), mas, dado antes do bloqueio da síntese, vira substrato e alimenta a crise (Jod-Basedow). <b>Hidrocortisona</b> fecha o esquema: reduz a conversão T4→T3 e cobre insuficiência adrenal relativa (degradação acelerada do cortisol) ou autoimune associada. Em IC com FE reduzida, o propranolol pode precipitar choque: use esmolol titulável e monitorize. Colestiramina 4 g 6/6 h interrompe a circulação êntero-hepática; plasmaférese é resgate. Mortalidade de 10–30%; o registro japonês mostrou queda para 5,5% quando o protocolo foi seguido.</div></div>
+<div class="box danger"><span class="box-label">DANGER</span><div class="box-title">Coma mixedematoso: o corticoide vem antes do hormônio</div><div class="box-body">A levotiroxina acelera o metabolismo e a depuração do cortisol; em quem tem insuficiência adrenal autoimune associada (Schmidt) ou hipopituitarismo, dar T4 sem cortisol precipita crise adrenal. Por isso: <b>hidrocortisona 100 mg IV 8/8 h até excluir insuficiência adrenal</b> (cortisol basal colhido antes). O aquecimento é passivo — reaquecimento ativo provoca vasodilatação periférica e colapso em quem está vasoconstrito e hipovolêmico. A hiponatremia é de SIADH-símile: restrição hídrica e, se &lt;120 mEq/L com sintomas, salina 3% em bolus (correção ≤8–10 mEq/L/24 h). Opioides, benzodiazepínicos e propofol prolongam a hipoventilação; a extubação costuma atrasar por miopatia e edema de vias aéreas.</div></div>
+</div>
+</div>
+</section>
+
+<section id="approach">
+<div class="section"><div class="section-eyebrow"><span>B</span> Por Apresentação</div><h2 class="section-title">Mapa sindrômico — cinco portas de entrada</h2><div class="section-sub">O paciente não chega com "Graves": chega com perda de peso e palpitação, com cansaço e TSH 9, com nódulo achado na US de carótida, com dor no pescoço ou com um exame que não faz sentido. Cada porta tem um primeiro exame que separa o problema.</div></div>
+
+<div class="card clin">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">B.1</span> Tireotoxicose</div><h3>Palpitação, perda de peso, tremor, intolerância ao calor <span class="ank ank-dec">DECISION</span></h3><div class="card-sub">Hipertireoidismo (síntese aumentada) ou tireotoxicose sem hipertireoidismo (destruição ou exógeno)</div></div>
+<div class="card-body">
+<div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">TSH suprimido → T4L e <b>T3 total</b>. A pergunta seguinte não é "qual dose de metimazol", é <b>"a glândula está produzindo ou vazando?"</b>. Orbitopatia ou TRAb positivo fecha Graves; sem isso, cintilografia com captação: alta e difusa (Graves), heterogênea (BMT), focal com supressão do resto (adenoma tóxico), baixa (tireoidite, iodo, factícia, struma ovarii).</div></div>
+<ul class="bullets">
+<li><b>Graves:</b> mulher 20–50 anos, bócio difuso com sopro, orbitopatia, mixedema pré-tibial, outras autoimunes; TRAb sensível ~97%; US hipoecogênica e hipervascular ao Doppler (velocidade de pico na artéria tireóidea inferior alta).</li>
+<li><b>BMT e adenoma tóxico:</b> idosa, bócio nodular antigo, tireotoxicose leve com predomínio cardiovascular (FA), frequentemente T3-toxicose ou subclínica; precipitada por contraste iodado ou amiodarona (Jod-Basedow).</li>
+<li><b>Destrutiva:</b> dor cervical e VHS alta (De Quervain); 2–12 meses pós-parto sem dor (tireoidite pós-parto); amiodarona, lítio, interferon, inibidores de checkpoint; razão T3 total (ng/dL) / T4 total (µg/dL) &gt;20 sugere síntese aumentada (Graves, BMT); &lt;20 sugere destruição.</li>
+<li><b>Exógena:</b> fórmulas para emagrecer, excesso de LT4; TSH suprimido, <b>tireoglobulina baixa</b> e captação baixa, sem bócio.</li>
+<li><b>TSH normal ou alto com T4L alto:</b> TSHoma ou resistência ao hormônio tireoidiano — ou interferência de ensaio (biotina, anticorpos heterófilos, anti-T4) antes de pedir RM de sela.</li>
+<li><b>Idoso apatético:</b> FA nova, IC refratária, perda ponderal e depressão sem hiperatividade adrenérgica — TSH em toda FA de início recente.</li>
+</ul>
+<div class="box hy"><span class="box-label">HIGH-YIELD</span><div class="box-title">Hipertireoidismo ≠ tireotoxicose</div><div class="box-body">Todo hipertireoidismo causa tireotoxicose, mas tireoidites e ingestão de hormônio causam tireotoxicose com glândula hipofuncionante. A captação de 24 h é o divisor: alta exige bloquear a síntese (tionamida, RAI, cirurgia); baixa exige esperar a fase destrutiva passar com betabloqueador (ou corticoide). Tratar tireoidite com metimazol só acrescenta risco de agranulocitose.</div></div>
+</div>
+</div>
+
+<div class="card clin">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">B.2</span> Hipofunção</div><h3>Fadiga, ganho de peso, frio, constipação, TSH alto <span class="ank ank-hy">HIGH-YIELD</span></h3><div class="card-sub">Primário (TSH alto) × central (TSH baixo ou inapropriadamente normal com T4L baixo)</div></div>
+<div class="card-body">
+<div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">TSH alto + T4L baixo = primário manifesto (Hashimoto em &gt;90% fora de áreas de carência de iodo). TSH alto + T4L normal = subclínico: <b>repetir antes de rotular</b>. T4L baixo com TSH normal ou baixo = central (sela, outros eixos, cortisol antes da LT4) ou eutireoidiano doente no internado.</div></div>
+<ul class="bullets">
+<li><b>Sinais de mixedema:</b> fácies infiltrada, madarose lateral, macroglossia, voz rouca, pele seca e amarelada (carotenemia), relaxamento lento do reflexo aquileu, bradicardia, HAS diastólica, derrame pericárdico de instalação lenta.</li>
+<li><b>Laboratório que denuncia:</b> LDL alto (menos receptor de LDL hepático), CK alta, hiponatremia, anemia normocítica ou macrocítica (anemia perniciosa associada), hiperprolactinemia (TRH estimula lactotrofos), creatinina discretamente alta.</li>
+<li><b>Quem rastrear:</b> bócio, cirurgia ou radiação cervical, RAI prévia, DM1 e outras autoimunes, Down e Turner, amiodarona, lítio, inibidores de tirosina-quinase e de checkpoint, dislipidemia grave, infertilidade.</li>
+<li><b>Iatrogênico:</b> pós-tireoidectomia (E89.0) e pós-RAI: hipotireoidismo esperado — rever TSH 4–6 semanas após RAI e iniciar LT4 assim que T4L cair.</li>
+<li><b>Transitório:</b> fase hipotireóidea de tireoidite subaguda ou pós-parto, recuperação do eutireoidiano doente (TSH sobe até 10–20 por semanas), excesso de iodo em autoimune (Wolff-Chaikoff sem escape).</li>
+</ul>
+</div>
+</div>
+
+<div class="card clin">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">B.3</span> Nódulo e bócio</div><h3>Nódulo palpável, incidentaloma, bócio que cresce <span class="ank ank-dec">DECISION</span></h3><div class="card-sub">Funcionalidade primeiro, morfologia depois, citologia só quando muda conduta</div></div>
+<div class="card-body">
+<div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Nódulos à US em até 50–60% dos adultos; malignidade em 5–10% dos que chegam à avaliação. Sequência: <b>TSH → (baixo) cintilografia → (normal/alto) US com TI-RADS → PAAF se a categoria e o tamanho indicarem → Bethesda</b>. Incidentaloma no PET-FDG com captação focal tem risco ~30%: US e PAAF se ≥1 cm.</div></div>
+<ul class="bullets">
+<li><b>Risco clínico alto:</b> radiação cervical na infância, história familiar de CDT não medular ou NEM 2, crescimento rápido, nódulo pétreo e fixo, disfonia por paralisia de prega, linfonodo cervical, idade &lt;20 ou &gt;70 anos, sexo masculino.</li>
+<li><b>Bócio compressivo:</b> dispneia aos esforços ou decúbito, disfagia, Pemberton positivo (congestão facial ao elevar os braços) → TC cervicotorácica sem contraste iodado se possível, espirometria com alça fluxo-volume.</li>
+<li><b>Calcitonina:</b> não rotineira (ETA 2023); dosar se Bethesda III–IV, US suspeita, cirurgia ou ablação planejadas, diarreia/flushing ou história de CMT/NEM 2.</li>
+</ul>
+</div>
+</div>
+
+<div class="card clin">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">B.4</span> Dor cervical anterior</div><h3>Pescoço dolorido com ou sem febre <span class="ank ank-hy">HIGH-YIELD</span></h3><div class="card-sub">De Quervain, hemorragia intranodular, tireoidite supurativa, anaplásico</div></div>
+<div class="card-body">
+<div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Dor difusa irradiada para mandíbula e ouvido, 2–8 semanas após IVAS, VHS &gt;50 mm/h, tireotoxicose com captação baixa = <b>De Quervain</b>. Dor súbita focal sobre nódulo com crescimento = <b>hemorragia em nódulo/cisto</b> (US). Febre alta, flutuação, lobo esquerdo, criança = <b>supurativa</b> por fístula do seio piriforme (US/TC, PAAF com cultura, antibiótico e drenagem).</div></div>
+<ul class="bullets">
+<li>Captação de 24 h &lt;1–5% e tireoglobulina alta separam De Quervain de Graves com bócio doloroso (raro).</li>
+<li>US: áreas hipoecogênicas mal delimitadas e hipovasculares que migram ("creeping") — não confundir com nódulo suspeito e não puncionar na fase aguda.</li>
+<li>Massa pétrea dolorosa em idoso com crescimento em semanas: anaplásico até prova em contrário (A.1).</li>
+</ul>
+</div>
+</div>
+
+<div class="card clin">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">B.5</span> Exames discordantes</div><h3>Quando TSH e T4L não conversam <span class="ank ank-prl">PEARL</span></h3><div class="card-sub">Ensaio, fármaco, fase de doença, gestação, doença grave</div></div>
+<div class="card-body">
+<div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Antes de inventar doença rara, procure: <b>biotina</b> (≥5 mg/dia falseia imunoensaios estreptavidina-biotina: TSH falsamente baixo e T4L/T3 falsamente altos — suspender 2–3 dias), <b>adesão irregular à LT4</b> (T4L alto e TSH alto juntos após "tomar tudo na véspera"), <b>fase de recuperação</b> após tratar hipertireoidismo (TSH suprimido por meses com T4L normal) e <b>doença aguda grave</b>.</div></div>
+<ul class="bullets">
+<li><b>T4 total alto com T4L normal:</b> TBG alta (estrogênio, gestação, hepatite, tamoxifeno), hipertiroxinemia disalbuminêmica familiar — eutireoidismo.</li>
+<li><b>Heparina:</b> ativa lipase in vitro, libera ácidos graxos que deslocam T4 → T4L falsamente alto na amostra colhida após heparina.</li>
+<li><b>Gestação:</b> hCG estimula o receptor de TSH no fim do 1º trimestre (TSH baixo fisiológico); use a referência por trimestre do laboratório ou, na falta, limite superior ~4,0 mUI/L (GO10).</li>
+<li><b>Internado na UTI:</b> T3 baixo, rT3 alto, TSH baixo e T4L normal ou baixo = eutireoidiano doente; dopamina, dobutamina e glicocorticoide suprimem TSH. Não dosar sem suspeita forte (D.7).</li>
+<li><b>Imunoterapia oncológica:</b> tireoidite indolor com tireotoxicose em 4–8 semanas e hipotireoidismo permanente depois (anti-PD-1 + anti-CTLA-4 &gt; monoterapia).</li>
+</ul>
+</div>
+</div>
+</section>
+
+<section id="primarias">
+<div class="section"><div class="section-eyebrow"><span>C</span> Entidades Primárias</div><h2 class="section-title">Hipofunção, Graves, nódulo e carcinoma diferenciado</h2><div class="section-sub">As quatro entidades que o contrato do EN03 define como primárias. O medular, o anaplásico e o linfoma ficam na D, como subitens do câncer; as emergências, as tireoidites e as formas nodulares tóxicas também. Cada box traz CID-10 OMS/DATASUS, fonte de conduta e a linha que muda a decisão.</div></div>
+
+<div class="card prim">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">C.1</span> Entidade primária</div><h3>Hipotireoidismo primário — Hashimoto, subclínico e pós-ablativo <span class="ank ank-hy">HIGH-YIELD</span> <span class="ank ank-dec">DECISION</span></h3><div class="card-sub">Falência folicular autoimune ou iatrogênica com TSH compensatório</div></div>
+<div class="card-body">
+<div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Prevalência de manifesto 0,3–3,7% e de subclínico 4–10% (mais em mulheres e idosos). <b>Diagnóstico é laboratorial; tratamento é levotiroxina em monoterapia, dose por peso e por coração</b>. A decisão difícil não é o manifesto: é o TSH 5–10 com T4L normal, onde idade, gestação, anti-TPO e sintomas decidem.</div></div>
+<div class="disease">
+<div class="disease-head"><div class="disease-name">Hipotireoidismo primário (tireoidite crônica autoimune, subclínico, pós-procedimento)</div><div class="disease-tag">CID-10 E06.3 · E03.9 · E89.0</div></div>
+<div class="disease-body"><div class="disease-rows">
+<div class="disease-row"><div class="k">Epidemiologia</div><div class="v">Hashimoto é a causa de &gt;90% do hipotireoidismo permanente em regiões iodo-suficientes como o Brasil (sal iodado desde 1956); mulher:homem 7–10:1, pico 40–60 anos. Progressão do subclínico para manifesto ~2–5%/ano, maior com anti-TPO positivo e TSH &gt;10 (Whickham: 4,3%/ano com ambos). Associações: DM1, celíaca, gastrite atrófica, vitiligo, Addison (Schmidt), Down, Turner, SOP. Causas iatrogênicas: tireoidectomia, RAI, radioterapia cervical, amiodarona, lítio, inibidores de tirosina-quinase e de checkpoint.</div></div>
+<div class="disease-row"><div class="k">Fisiopatologia</div><div class="v">Perda de tolerância a TPO e tireoglobulina (polimorfismos HLA-DR3/DR5, CTLA-4, PTPN22), infiltrado linfocitário com centros germinativos, apoptose folicular mediada por Fas/FasL e citotoxicidade CD8+; anticorpos anti-TPO fixam complemento. Alguns pacientes têm TRAb bloqueador (forma atrófica, sem bócio). O TSH alto mantém o bócio e eleva a desiodase tipo 1 intratireoidiana, sustentando o T3 por mais tempo que o T4 — por isso T3 não serve para diagnosticar hipotireoidismo. Metaplasia oncocítica (células de Hürthle/Askanazy) é marca citológica; risco de linfoma MALT/DLBCL aumentado.</div></div>
+<div class="disease-row"><div class="k">Clínica</div><div class="v">Lentificação metabólica (fadiga, frio, constipação, bradipsiquismo, depressão) e depósito de glicosaminoglicanos (mixedema sem cacifo, macroglossia, rouquidão, túnel do carpo, derrame pericárdico). Menorragia, infertilidade, galactorreia por hiperprolactinemia. Ganho de peso é modesto (2–5 kg, sobretudo água e GAG): hipotireoidismo não explica obesidade. Bócio firme, lobulado e indolor; ou glândula atrófica. Encefalopatia responsiva a esteroide (de Hashimoto) é rara e não depende da função tireoidiana.</div></div>
+<div class="disease-row"><div class="k">Diagnóstico</div><div class="v">TSH alto + T4L baixo (manifesto) ou T4L normal (subclínico, confirmar em 6–12 semanas — metade normaliza). Anti-TPO uma vez (prognóstico de progressão; não repetir para seguimento). US só se bócio ou nódulo palpável: hipoecogenicidade heterogênea e pseudonódulos. T3 e cintilografia não têm papel. Idoso: referência por idade (P97,5 de 4,7 aos 60–69, 5,6 aos 70–79 e 6,3 mUI/L &gt;80 anos). <span class="ev ev-acr">ATA 2014</span> <span class="ev ev-sbr">SBEM 2022</span></div></div>
+<div class="disease-row"><div class="k">Tratamento</div><div class="v"><b>Levotiroxina em monoterapia</b> (meia-vida ~7 dias, conversão periférica fisiológica): dose plena de 1,6 µg/kg/dia de peso ideal no adulto saudável &lt;60–65 anos; 25–50 µg com titulação no subclínico e no idoso saudável; 12,5–25 µg em &gt;80 anos ou coronariopata, +12,5–25 µg a cada 4–8 semanas. Pós-tireoidectomia total: 1,6–1,8 µg/kg. Alvo: TSH na referência (idoso 2–6 mUI/L, SBEM 2022). Subclínico: tratar TSH ≥10; considerar 7–10 com cardiopatia/alto risco CV &lt;65 anos, sintomas (teste terapêutico de 3–6 meses), anti-TPO+ ou dislipidemia; gestação e desejo de gestar → GO10. Combinação T4/T3 não é rotina (sem superioridade consistente em ECR). <span class="ev ev-acr">ATA 2014</span> <span class="ev ev-sbr">SBEM 2022</span> <span class="ev ev-sbr">RENAME 2022</span></div></div>
+<div class="disease-row"><div class="k">Prognóstico</div><div class="v">Reposição adequada normaliza a sobrevida. Supertratamento (TSH &lt;0,1) aumenta FA (3×) e fratura em mulheres pós-menopausa — 20–30% dos usuários de LT4 estão supertratados. Hipotireoidismo manifesto não tratado associa-se a DAC (LDL, HAS diastólica, disfunção endotelial) e, na gestação, a perda fetal e prejuízo cognitivo.</div></div>
+<div class="disease-row"><div class="k">O que muda conduta</div><div class="v"><b>T4L baixo, TSH ≥10, gestação ou plano de gestar mudam de "repetir" para "tratar"; idade &gt;80 anos ou coronariopatia mudam a dose inicial (12,5–25 µg); TSH baixo ou normal com T4L baixo muda o diagnóstico (central: cortisol e sela antes da LT4); necessidade &gt;2,5 µg/kg muda a investigação (adesão, celíaca, H. pylori, gastrite atrófica, fármacos).</b></div></div>
+</div></div>
+</div>
+<div class="score">
+<div class="score-head"><div class="score-name">Hipotireoidismo subclínico — quando tratar (TSH confirmado, T4L normal) <span class="ev ev-sbr">SBEM 2022</span></div><div class="score-purpose">Decisão por faixa de TSH × idade × contexto; nunca com dosagem única</div></div>
+<div class="score-rows">
+<div class="score-row"><div class="score-grade">TSH ≥10</div><div class="score-desc"><b>Tratar</b> em &lt;65–70 anos; ≥65 anos considerar, sobretudo com risco CV alto; ≥80–85 anos, conduta expectante é aceitável (SBEM 2022)</div></div>
+<div class="score-row"><div class="score-grade">TSH 7–10</div><div class="score-desc">&lt;65 anos com cardiopatia, alto risco CV, sintomas ou dislipidemia aterogênica: <b>considerar</b>; idoso: não tratar (TSH sobe com a idade)</div></div>
+<div class="score-row"><div class="score-grade">TSH acima da referência até 7</div><div class="score-desc">Seguir TSH a cada 6–12 meses; teste terapêutico só com sintomas e reavaliar em 3–6 meses (suspender se sem ganho)</div></div>
+<div class="score-row"><div class="score-grade">Gestação / pré-concepção</div><div class="score-desc">Regras próprias (ATA 2026): repetir se TSH &lt;6, tratar manifesto, decisão compartilhada no subclínico do 1º tri → GO10</div></div>
+</div>
+</div>
+<details class="deep"><summary>Deep dive · Farmacologia da levotiroxina, desiodases e por que a monoterapia ainda vence</summary><div class="deep-content">
+<p><b>Absorção.</b> A LT4 sódica é absorvida no jejuno e íleo proximal (biodisponibilidade 70–80% em jejum), num processo que depende do pH gástrico para dissolver o comprimido: gastrite atrófica, <i>H. pylori</i> e IBP reduzem a absorção e elevam a dose necessária em 20–30%. Cálcio, ferro, sevelamer, colestiramina, sucralfato e hidróxido de alumínio formam complexos insolúveis no lúmen (separar ≥4 h); café expresso, leite de soja e fibra competem. Formulações líquidas e cápsulas de gel mole dispensam a dissolução e toleram o café da manhã. Tomar ao deitar, ≥3 h após o jantar, produz TSH ligeiramente menor que pela manhã — alternativa válida para quem não mantém jejum. Indutores de UGT e CYP3A4 (rifampicina, carbamazepina, fenitoína, fenobarbital) e inibidores de tirosina-quinase aceleram a depuração; estrogênio oral e tamoxifeno elevam a TBG e a dose exigida.</p>
+<p><b>Desiodases.</b> A D1 (fígado, rim, tireoide) gera a maior parte do T3 circulante e é inibida por PTU, amiodarona, propranolol em dose alta, glicocorticoide e contraste iodado; a D2 (hipófise, hipotálamo, músculo, tecido adiposo marrom) gera o T3 intracelular que regula o TSH e é estimulada no hipotireoidismo, defendendo o cérebro; a D3 (placenta, pele, SNC, tecidos em doença grave) inativa T4 em rT3 e T3 em T2. Esse arranjo explica dois fenômenos clínicos: o paciente tireoidectomizado em LT4 com TSH normal tem T3 sérico 10–15% menor e T4 15–20% maior que o eutireoidiano com glândula (a tireoide secreta ~20% do T3 diário), e o polimorfismo Thr92Ala do gene DIO2 reduz a atividade da D2 em alguns tecidos — a hipótese biológica para o subgrupo que permanece sintomático com TSH normal.</p>
+<p><b>Por que T4/T3 não é rotina.</b> Os ensaios de combinação (mais de uma dezena, a maioria cruzados e curtos) não mostraram ganho consistente de qualidade de vida, cognição ou humor; as metanálises confirmam neutralidade, com sinal de preferência subjetiva em parte dos pacientes. A liotironina de liberação imediata produz picos de T3 em 2–4 h (taquicardia, FA em idosos) e T3 baixo no vale; extratos de tireoide dessecada têm razão T4:T3 de ~4:1, muito mais T3 que a secreção humana (~14:1). ATA 2014 e SBEM 2022 mantêm LT4 como padrão; o consenso ETA/ATA/BTA de 2021 aceita teste de combinação em pacientes selecionados, sem doença cardíaca e com TSH já normal, por tempo definido. No Brasil, a liotironina isolada não está no SUS.</p>
+<p><b>Refratariedade.</b> Necessidade &gt;2,5 µg/kg/dia ou &gt;250–300 µg sem explicação exige checar adesão (o teste de absorção de LT4 com 1.000–1.500 µg e T4 total seriado separa pseudomá-absorção de má-absorção verdadeira), celíaca (anti-transglutaminase IgA), gastrite atrófica, giardíase, supercrescimento bacteriano, cirurgia bariátrica, intolerância à lactose e interação medicamentosa. O tratamento da causa costuma reduzir a dose em semanas.</p>
+</div></details>
+<div class="box pearl"><span class="box-label">PEARL</span><div class="box-title">O TSH no idoso é outra régua</div><div class="box-body">A curva do TSH se desloca para a direita com a idade sem perda de função (menor bioatividade do TSH, menor sensibilidade periférica). Centenários com TSH alto têm sobrevida maior em coortes (Leiden 85-plus, Ashkenazi). Por isso a SBEM fixa alvo de 2–6 mUI/L para o idoso em LT4 e não trata o subclínico &lt;10 acima de 65–70 anos; o TRUST (2017) não mostrou benefício sintomático da LT4 em idosos com TSH 4,6–19,9.</div></div>
+</div>
+</div>
+
+<div class="card prim">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">C.2</span> Entidade primária</div><h3>Doença de Graves e orbitopatia <span class="ank ank-hy">HIGH-YIELD</span> <span class="ank ank-dec">DECISION</span></h3><div class="card-sub">Autoimunidade contra o receptor de TSH: bócio difuso, tireotoxicose, olho, pele</div></div>
+<div class="card-body">
+<div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Causa de 60–80% da tireotoxicose. Diagnóstico: tireotoxicose + <b>TRAb positivo</b> (ou orbitopatia típica). Três tratamentos definitivos possíveis e uma escolha compartilhada: <b>metimazol 12–18 meses</b> (remissão em 40–50%), <b>RAI</b> (contraindicado na orbitopatia ativa moderada-grave, na gestação e na lactação) ou <b>tireoidectomia total</b>. O olho tem curso próprio e decide junto.</div></div>
+<div class="disease">
+<div class="disease-head"><div class="disease-name">Doença de Graves (bócio difuso tóxico) com oftalmopatia tireoidiana</div><div class="disease-tag">CID-10 E05.0 · H06.2*</div></div>
+<div class="disease-body"><div class="disease-rows">
+<div class="disease-row"><div class="k">Epidemiologia</div><div class="v">Incidência 20–30/100.000/ano; mulher:homem 5–10:1; pico 30–60 anos. Gêmeos monozigóticos ~35% de concordância. Gatilhos: tabagismo (dobra o risco de orbitopatia e reduz resposta ao tratamento), estresse, pós-parto, excesso de iodo, alentuzumabe (reconstituição imune), inibidores de checkpoint. Orbitopatia clinicamente relevante em 25–40%, grave em 3–5%; dermopatia 1–4%; acropatia &lt;1%.</div></div>
+<div class="disease-row"><div class="k">Fisiopatologia</div><div class="v">Imunoglobulinas estimuladoras (TSI) ligam o domínio extracelular do TSHR e ativam Gs/AMPc e Gq/PLC: hipertrofia e hiperplasia folicular, aumento de NIS, TPO e tireoglobulina, vascularização. Na órbita, fibroblastos orbitários (pré-adipócitos CD34+ e fibrócitos) coexpressam TSHR e IGF-1R num complexo de sinalização; a ativação induz hialuronano (edema, aumento de volume muscular), adipogênese e citocinas (IL-6, IL-16, RANTES) — base racional para teprotumumabe (anti-IGF-1R) e tocilizumabe (anti-IL-6R). O efeito do RAI na orbitopatia vem da liberação antigênica e do pico de TRAb que dura meses.</div></div>
+<div class="disease-row"><div class="k">Clínica</div><div class="v">Tireotoxicose hiperadrenérgica (palpitação, tremor fino, sudorese, perda de peso com apetite aumentado, hiperdefecação, fraqueza proximal, oligomenorreia) + bócio difuso com sopro/frêmito. Específicos de Graves: proptose, quemose, edema palpebral, restrição de motilidade (reto inferior e medial primeiro), mixedema pré-tibial em casca de laranja, acropatia. Retração palpebral e lid lag ocorrem em qualquer tireotoxicose. Paralisia periódica hipocalêmica (homens asiáticos, após carboidrato), FA em 10–15% dos &gt;60 anos, IC de alto débito, osteoporose.</div></div>
+<div class="disease-row"><div class="k">Diagnóstico</div><div class="v">TSH suprimido, T4L e/ou T3 altos (T3-toxicose em ~5%, mais no início); <b>TRAb</b> (sensibilidade ~97%, especificidade ~99% pelos ensaios de 3ª geração). Cintilografia/captação se TRAb negativo, nódulo associado ou suspeita de tireoidite. Hemograma e TGP basais (leucopenia leve e transaminases altas da própria tireotoxicose). Orbitopatia: CAS (≥3/7 = ativa) e gravidade EUGOGO; TC de órbita sem contraste se dúvida, assimetria ou suspeita de neuropatia óptica. <span class="ev ev-acr">ATA 2016</span> <span class="ev ev-eular">ETA 2018</span></div></div>
+<div class="disease-row"><div class="k">Tratamento</div><div class="v">Betabloqueador (propranolol 20–40 mg 6/6–8/8 h; atenolol ou metoprolol se asma leve). <b>Metimazol</b> (dose pelo T4L, F2) por 12–18 meses, depois suspender se TRAb negativo; TRAb ainda positivo → mais 12 meses ou definitivo; <b>metimazol de baixa dose (2,5–10 mg) por anos é alternativa legítima</b> ao definitivo (ETA 2018). <b>RAI</b> com eutireoidismo prévio (suspender metimazol 3–7 dias antes); profilaxia com prednisona 0,3–0,5 mg/kg/dia iniciada 1–3 dias após o RAI e retirada em ~3 meses (0,2 mg/kg/dia por 6 semanas se risco menor) quando há orbitopatia leve ativa ou tabagismo. <b>Tireotoxicose e cirurgia:</b> tireoidectomia total por cirurgião de alto volume, com metimazol até eutireoidismo e SSKI 1–2 gotas 3×/dia por 10 dias antes. Orbitopatia moderada-grave ativa → F1. <span class="ev ev-acr">ATA 2016</span> <span class="ev ev-eular">ETA 2018</span> <span class="ev ev-eular">ATA/ETA TED 2022</span></div></div>
+<div class="disease-row"><div class="k">Prognóstico</div><div class="v">Recidiva após curso de tionamida 50–55%, quase toda no 1º ano; preditores (escore GREAT): idade jovem, T4L muito alto, bócio grande, TRAb alto, tabagismo, HLA de risco. RAI controla 80–90% com dose única; hipotireoidismo pós-RAI é a regra e o objetivo prático. Tireoidectomia total: cura ~100%, hipoparatireoidismo permanente 1–2% e paralisia recorrencial &lt;1% em centros de alto volume. Orbitopatia ativa dura 6–18 meses e evolui para fibrose inativa.</div></div>
+<div class="disease-row"><div class="k">O que muda conduta</div><div class="v"><b>Orbitopatia ativa moderada-grave proíbe RAI e põe tionamida ou cirurgia na frente; gestação ou plano de gestar trocam metimazol por PTU (ou suspendem); TRAb positivo aos 12–18 meses adia a suspensão; agranulocitose ou hepatite tóxica mudam para tratamento definitivo; bócio volumoso compressivo ou nódulo suspeito indicam cirurgia.</b></div></div>
+</div></div>
+</div>
+<div class="score">
+<div class="score-head"><div class="score-name">Orbitopatia de Graves — atividade (CAS) e gravidade (EUGOGO) <span class="ev ev-eular">EUGOGO 2021</span></div><div class="score-purpose">Atividade decide se há o que imunossuprimir; gravidade decide se vale o risco</div></div>
+<div class="score-rows">
+<div class="score-row"><div class="score-grade">CAS (1 ponto cada)</div><div class="score-desc">Dor retrobulbar espontânea; dor à movimentação ocular; eritema palpebral; eritema conjuntival; edema palpebral; inflamação de carúncula ou plica; quemose. <b>≥3/7 = ativa</b> (no seguimento, +3 itens: aumento de proptose ≥2 mm, piora de motilidade ≥8°, queda de acuidade)</div></div>
+<div class="score-row"><div class="score-grade">Leve</div><div class="score-desc">Retração palpebral &lt;2 mm, partes moles leves, proptose &lt;3 mm acima do normal, sem diplopia ou diplopia transitória, córnea responsiva a lubrificante</div></div>
+<div class="score-row"><div class="score-grade">Moderada-grave</div><div class="score-desc">Retração ≥2 mm, partes moles moderadas/graves, proptose ≥3 mm acima do normal para etnia e sexo (Hertel), diplopia inconstante ou constante</div></div>
+<div class="score-row"><div class="score-grade">Ameaça à visão</div><div class="score-desc">Neuropatia óptica distireoidiana ou ruptura corneana → pulso IV e descompressão (urgência)</div></div>
+</div>
+</div>
+<details class="deep"><summary>Deep dive · TRAb, remissão e a escolha entre tionamida, radioiodo e cirurgia</summary><div class="deep-content">
+<p><b>O anticorpo é heterogêneo.</b> O TRAb engloba anticorpos estimuladores (TSI), bloqueadores (TBAb) e neutros, com epítopos distintos no domínio de ferradura rico em leucina do TSHR. Os imunoensaios de 3ª geração (competição com o monoclonal M22) medem a ligação, não a função: um TRAb positivo em hipotireoideo atrófico é bloqueador. Bioensaios com células transfectadas distinguem TSI de TBAb e explicam pacientes que alternam fases de hiper e hipo, ou a gestante tratada com RAI anos antes que ainda tem TRAb capaz de atravessar a placenta (IgG1, transferência ativa pelo FcRn a partir de ~20 semanas) e causar hipertireoidismo fetal.</p>
+<p><b>As tionamidas são imunomoduladoras de modo modesto.</b> Metimazol e PTU inibem a TPO (iodação e acoplamento); o PTU inibe também a D1 periférica. Reduzem o TRAb ao longo de meses, sobretudo por corrigir a tireotoxicose (o hormônio tireoidiano é imunoestimulante), e a remissão após 12–18 meses é de 40–50% em adultos e 20–30% em crianças. Esquema "bloqueia e repõe" (metimazol alto + LT4) não aumenta remissão e dobra efeitos adversos — abandonado. Cursos longos de baixa dose (5–10 mg por 5–10 anos) atingem remissão de 60–85% em estudos iranianos e europeus, com toxicidade que se concentra nos primeiros 90 dias: depois disso, manter metimazol é seguro e passa a competir de igual para igual com RAI e cirurgia (ETA 2018). O escore GREAT (idade, T4L, bócio, TRAb e, na versão GREAT+, haplótipos HLA e PTPN22) estratifica a chance de recidiva e ajuda a orientar quem deve ir cedo para o definitivo.</p>
+<p><b>Efeitos adversos que mudam conduta.</b> Rash e prurido em 5% (anti-histamínico e troca possível); artralgia migratória é sinal precoce de síndrome lúpica ou de vasculite ANCA-MPO (mais com PTU, anos de uso) e manda parar a droga. Agranulocitose (0,1–0,3%) é dose-dependente com metimazol (rara &lt;10 mg) e independente de dose com PTU; reação cruzada é a regra, então quem fez agranulocitose não recebe a outra tionamida. Hepatite hepatocelular grave com PTU levou o FDA a um alerta em 2010 e limitou o PTU à tempestade, ao 1º trimestre e à alergia ao metimazol. Embriopatia do metimazol (aplasia cútis, atresia de cóanas ou esôfago, fístula traqueoesofágica, onfalocele) ocorre em 3–5% das expostas entre 6 e 10 semanas; com PTU, até 3% (cistos de face e pescoço, malformação urinária), em geral menos graves.</p>
+<p><b>Radioiodo e cirurgia.</b> O 131I emite partículas β (alcance de 1–2 mm) que causam necrose folicular e fibrose em 6–12 semanas; atividade fixa de 10–15 mCi ou calculada por captação e volume. O objetivo prático é hipotireoidismo, mais previsível do que eutireoidismo. Contraindicações: gestação, lactação (suspender ≥3 meses antes), plano de gestar em 6 meses, orbitopatia ativa moderada-grave, suspeita de câncer, incapacidade de cumprir proteção radiológica. Lítio 900 mg/dia por alguns dias aumenta a retenção do iodo. A tireoidectomia total é preferida em bócio grande (&gt;80 g) ou compressivo, nódulo suspeito, hiperparatireoidismo concomitante, orbitopatia ativa grave, gestação planejada em breve e desejo de controle rápido; em 2025 o EUGOGO e o ATA/ETA convergem em que RAI com corticoide pode ser reconsiderada em orbitopatia moderada já em tratamento com IVMP, mas ainda não é prática padrão.</p>
+</div></details>
+<div class="box decision"><span class="box-label">DECISION</span><div class="box-title">Graves em populações especiais</div><div class="box-body"><b>Gestação (ATA 2026):</b> ao planejar, trocar metimazol por PTU ou tratar de forma definitiva antes; com baixa dose (≤5–10 mg) e ≥6 meses de eutireoidismo, considerar suspender ao confirmar gravidez e monitorar a cada 1–2 semanas; alvo T4L no limite superior da referência da gestante (o feto é mais sensível à tionamida); continuidade de PTU × troca por metimazol após 16 semanas ficou como questão aberta. TRAb no 1º trimestre; &gt;3× LSN → repetir em 18–22 semanas e US fetal seriada (bócio, taquicardia &gt;160, hidropisia, idade óssea). Cirurgia, se necessária, no 2º trimestre. <b>Lactação:</b> metimazol até 20–30 mg/dia ou PTU até 450 mg/dia são compatíveis (doses citadas pela ATA 2016; a ATA 2026 manteve a compatibilidade). <b>Criança:</b> metimazol 0,2–0,5 mg/kg/dia (até 1 mg/kg/dia em casos graves) por 24–36 meses (ETA 2018); PTU proibido pela hepatotoxicidade; RAI evitado &lt;5 anos e com limite de atividade entre 5 e 10.</div></div>
+</div>
+</div>
+
+<div class="card prim">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">C.3</span> Entidade primária</div><h3>Nódulo tireoidiano e bócio atóxico <span class="ank ank-hy">HIGH-YIELD</span> <span class="ank ank-dec">DECISION</span></h3><div class="card-sub">Função → ultrassonografia estratificada → citologia só quando muda conduta</div></div>
+<div class="card-body">
+<div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">É aqui que a apostila de 2025 mais envelheceu. O nódulo não se decide por "≥1 cm com um achado suspeito": decide-se pelo <b>par categoria TI-RADS × maior diâmetro</b>, e a citologia é laudada pelo <b>Bethesda 2023</b> (seis categorias com nome único, risco médio de malignidade e AUS em dois subgrupos). Nódulo quente não se punciona; nódulo &lt;1 cm, em regra, também não.</div></div>
+<div class="disease">
+<div class="disease-head"><div class="disease-name">Nódulo tireoidiano solitário, bócio multinodular e bócio difuso não tóxicos</div><div class="disease-tag">CID-10 E04.1 · E04.2 · E04.0 · E01.0</div></div>
+<div class="disease-body"><div class="disease-rows">
+<div class="disease-row"><div class="k">Epidemiologia</div><div class="v">Palpáveis em 4–7%; à US em 20–68% (aumenta com idade, sexo feminino, carência de iodo, IMC). Malignidade em 5–10% dos nódulos avaliados, quase toda carcinoma papilífero. A epidemia de microcarcinomas detectados por imagem (Coreia, 2000–2011: incidência 15×, mortalidade estável) é a razão de a ETA desaconselhar US de rastreio em assintomático e de a ATA 2025 aceitar vigilância ativa.</div></div>
+<div class="disease-row"><div class="k">Fisiopatologia</div><div class="v">Nódulos benignos são expansões clonais (adenoma folicular, nódulo hiperplásico/coloide), cistos por degeneração hemorrágica e pseudonódulos de tireoidite. Autonomia funcional decorre de mutação ativadora somática do TSHR ou de GNAS (via AMPc: crescimento e síntese sem TSH) — biologia de baixo potencial maligno, por isso o nódulo quente dispensa citologia. A malignidade segue duas vias moleculares: BRAF-like (BRAF V600E, fusões RET/PTC e NTRK; papilífero clássico, invasivo) e RAS-like (NRAS/HRAS/KRAS, PAX8::PPARG, EIF1AX; neoplasias foliculares encapsuladas, NIFTP, folicular).</div></div>
+<div class="disease-row"><div class="k">Clínica</div><div class="v">Assintomático na maioria. Sinais de alto risco: crescimento rápido, consistência pétrea, fixação, disfonia com paralisia de prega, linfonodo cervical, irradiação na infância, família com CDT ou NEM 2. Bócio volumoso: dispneia, estridor, disfagia, Pemberton, extensão subesternal (mergulhante), compressão de veia cava.</div></div>
+<div class="disease-row"><div class="k">Diagnóstico</div><div class="v"><b>TSH</b> → baixo: cintilografia (99mTc ou 123I); hipercaptante = autônomo, sem PAAF. Normal/alto: <b>US com TI-RADS</b> (ACR 2017 ou EU-TIRADS) e avaliação linfonodal cervical. <b>PAAF guiada por US</b> conforme score (ao lado); linfonodo suspeito → PAAF do linfonodo com dosagem de tireoglobulina no lavado. Calcitonina dirigida (Bethesda III–IV, US suspeita, antes de cirurgia ou ablação, história de CMT/NEM 2; corte &gt;30 pg/mL mulher, &gt;34 homem — ETA 2023). Teste molecular em Bethesda III–IV onde disponível (não no SUS). TC sem contraste iodado para bócio mergulhante. <span class="ev ev-nice">ACR TI-RADS 2017</span> <span class="ev ev-eular">ETA 2023</span> <span class="ev ev-nice">Bethesda 2023</span></div></div>
+<div class="disease-row"><div class="k">Tratamento</div><div class="v">Benigno (Bethesda II): seguimento por US em intervalos pela categoria (EU-TIRADS 3/4: 3–5 anos; TIRADS alto: repetir PAAF em 12–24 meses); <b>LT4 supressiva não é indicada</b> (eficácia pequena, risco de FA e osteoporose — ETA 2023). Sintomático ou cosmético: cisto puro ou predominante → <b>etanol percutâneo</b> (1ª linha); sólido benigno com sintomas → <b>ablação térmica</b> (radiofrequência, laser, micro-ondas) com duas citologias benignas, ou lobectomia; bócio multinodular compressivo → tireoidectomia total (RAI se inelegível). Bethesda III–VI → tabela ao lado e C.4. <span class="ev ev-eular">ETA 2023</span></div></div>
+<div class="disease-row"><div class="k">Prognóstico</div><div class="v">Nódulos benignos crescem pouco (≥50% de volume em 5 anos em ~15%) e raramente se tornam malignos; o falso-negativo da PAAF benigna é ~2–4%, maior em nódulos &gt;4 cm. NIFTP (antigo papilífero variante folicular encapsulado não invasivo) tem recorrência &lt;1% e não é mais carcinoma (OMS 2022).</div></div>
+<div class="disease-row"><div class="k">O que muda conduta</div><div class="v"><b>TSH baixo muda o exame (cintilografia, não PAAF); a categoria TI-RADS e o tamanho mudam puncionar × seguir; linfonodo suspeito ou extensão extratireoidiana à US mandam puncionar mesmo abaixo do limiar; Bethesda III–IV levam a repetir PAAF, teste molecular ou lobectomia diagnóstica; V–VI levam à cirurgia (ou vigilância ativa no cT1aN0M0); calcitonina alta muda tudo para medular (D.8).</b></div></div>
+</div></div>
+</div>
+<div class="score">
+<div class="score-head"><div class="score-name">ACR TI-RADS — pontos por achado e conduta por categoria <span class="ev ev-nice">ACR TI-RADS 2017</span></div><div class="score-purpose">Somar 1 achado de cada uma das 4 primeiras categorias + todos os focos ecogênicos presentes</div></div>
+<div class="score-rows">
+<div class="score-row"><div class="score-grade">Composição</div><div class="score-desc">Cístico ou quase todo cístico 0 · espongiforme 0 · misto cístico-sólido 1 · sólido ou quase todo sólido 2</div></div>
+<div class="score-row"><div class="score-grade">Ecogenicidade</div><div class="score-desc">Anecoico 0 · hiper ou isoecoico 1 · hipoecoico 2 · muito hipoecoico (mais que a musculatura pré-tireoidiana) 3</div></div>
+<div class="score-row"><div class="score-grade">Forma · margem</div><div class="score-desc">Mais alto que largo no corte transversal 3 · margem lisa ou mal definida 0 · lobulada ou irregular 2 · extensão extratireoidiana 3</div></div>
+<div class="score-row"><div class="score-grade">Focos ecogênicos</div><div class="score-desc">Nenhum ou artefato em cauda de cometa 0 · macrocalcificação 1 · calcificação periférica (em casca) 2 · focos puntiformes 3</div></div>
+<div class="score-row"><div class="score-grade">TR1–TR2 (0–2)</div><div class="score-desc">Benigno / não suspeito: <b>sem PAAF</b></div></div>
+<div class="score-row"><div class="score-grade">TR3 (3)</div><div class="score-desc">Levemente suspeito: <b>PAAF ≥2,5 cm</b>; seguir se ≥1,5 cm (US em 1, 3 e 5 anos)</div></div>
+<div class="score-row"><div class="score-grade">TR4 (4–6)</div><div class="score-desc">Moderadamente suspeito: <b>PAAF ≥1,5 cm</b>; seguir se ≥1,0 cm (1, 2, 3 e 5 anos)</div></div>
+<div class="score-row"><div class="score-grade">TR5 (≥7)</div><div class="score-desc">Altamente suspeito: <b>PAAF ≥1,0 cm</b>; seguir se ≥0,5 cm (anual por 5 anos). EU-TIRADS (ETA 2023): PAAF se EU-5 &gt;10 mm, EU-4 &gt;15 mm, EU-3 &gt;20 mm</div></div>
+</div>
+</div>
+<div class="score">
+<div class="score-head"><div class="score-name">Bethesda 2023 (3ª edição) — risco médio de malignidade e conduta <span class="ev ev-nice">Bethesda 2023</span></div><div class="score-purpose">Nomes únicos por categoria; ROM médio (faixa) aplicável a adultos</div></div>
+<div class="score-rows">
+<div class="score-row"><div class="score-grade">I · Não diagnóstico</div><div class="score-desc">ROM ~13% (5–20). Repetir PAAF guiada por US (cisto puro: sem repetição obrigatória); persistente → core biopsy, molecular ou cirurgia/seguimento conforme US</div></div>
+<div class="score-row"><div class="score-grade">II · Benigno</div><div class="score-desc">ROM ~4% (2–7). Seguimento clínico e por US; repetir PAAF se TIRADS alto ou crescimento significativo</div></div>
+<div class="score-row"><div class="score-grade">III · AUS</div><div class="score-desc">ROM ~22% (13–30); <b>AUS-nuclear</b> com risco maior que <b>AUS-outro</b> (arquitetural, oncocítica, Hürthle). Repetir PAAF, teste molecular, lobectomia diagnóstica ou vigilância</div></div>
+<div class="score-row"><div class="score-grade">IV · Neoplasia folicular</div><div class="score-desc">ROM ~30% (23–34); inclui oncocítica. Teste molecular ou <b>lobectomia diagnóstica</b> (a citologia não vê invasão capsular ou vascular)</div></div>
+<div class="score-row"><div class="score-grade">V · Suspeito de malignidade</div><div class="score-desc">ROM ~74% (67–83). Cirurgia (lobectomia ou total conforme ATA 2025) ± molecular para planejar extensão</div></div>
+<div class="score-row"><div class="score-grade">VI · Maligno</div><div class="score-desc">ROM ~97% (97–100). Papilífero, medular, anaplásico, linfoma, metástase: conduta pelo tipo (C.4, D.8, D.9)</div></div>
+</div>
+</div>
+<details class="deep"><summary>Deep dive · Como os sistemas de US, a citologia e a biologia molecular se encaixam</summary><div class="deep-content">
+<p><b>Por que pontos, e não "qualquer achado suspeito".</b> A ATA 2015 classificava nódulos por padrões (alta, intermediária, baixa e muito baixa suspeição) e indicava PAAF ≥1 cm nos padrões alto e intermediário; é o critério que a apostila ensina. O ACR TI-RADS atribui pontos a cada descritor do léxico e associa a cada categoria um limiar próprio de PAAF e de seguimento; o resultado, validado em coortes cirúrgicas, é reduzir em 20–50% as punções de nódulos benignos sem perder carcinomas clinicamente relevantes (os perdidos são, em sua maioria, microcarcinomas). EU-TIRADS (ETA 2023), K-TIRADS e C-TIRADS seguem a mesma lógica com limiares ligeiramente diferentes; nenhum provou superioridade consistente, e o que importa é o serviço usar um sistema de forma reprodutível. Achados com maior razão de verossimilhança: microcalcificações (corpos psamomatosos), forma mais alta que larga (crescimento centrífugo através dos planos teciduais), margem infiltrativa e extensão extratireoidiana; halo completo e aspecto espongiforme falam a favor de benignidade. Elastografia e Doppler não entram na pontuação.</p>
+<p><b>O que a citologia não enxerga.</b> O papilífero é diagnosticado pelo núcleo (sulcos, inclusões pseudonucleares, cromatina clara em vidro fosco, sobreposição) — por isso Bethesda V–VI tem ROM alto. Já carcinoma folicular e adenoma folicular são idênticos ao citológico: a diferença é invasão capsular ou vascular, vista só na histologia de parafina (nem a congelação resolve). Daí a categoria IV ser "neoplasia folicular", tratada com lobectomia diagnóstica. A 3ª edição do Bethesda abandonou nomes alternativos ("lesão folicular de significado indeterminado", "suspeito para neoplasia folicular"), alinhou a nomenclatura à OMS 2022 (neoplasia oncocítica em vez de Hürthle; NIFTP como neoplasia de baixo risco, o que reduziu o ROM das categorias III–V) e dividiu o AUS em AUS-nuclear (atipia nuclear focal, risco maior, mais RAS e BRAF K601E) e AUS-outro.</p>
+<p><b>Teste molecular.</b> Painéis de DNA/RNA por sequenciamento (ThyroSeq v3, Afirma GSC + Xpression Atlas, ThyGeNEXT/ThyraMIR) têm valor preditivo negativo de 95–97% em Bethesda III–IV com prevalência de câncer ~25–30%, permitindo vigilância em vez de lobectomia diagnóstica em até metade dos casos; um resultado positivo de alto risco (BRAF V600E, fusões RET/NTRK/ALK, TERT promotor, TP53) informa a extensão cirúrgica. Não estão no SUS e custam caro no setor privado; sem eles, a estratégia brasileira usual é repetir a PAAF no AUS e operar a neoplasia folicular. A calcitonina dirigida resolve o outro ponto cego: o carcinoma medular costuma vir como Bethesda III–V com células plasmocitoides ou fusiformes e imunocitoquímica positiva para calcitonina no lavado.</p>
+<p><b>Nódulo em situações especiais.</b> Na gestante, a PAAF pode ser feita em qualquer trimestre; cirurgia de nódulo suspeito costuma aguardar o pós-parto, salvo crescimento ou linfonodos (2º trimestre). Na criança, o risco de malignidade por nódulo é maior (~20–25%) e o TI-RADS é menos validado; o tamanho importa menos que os achados. Incidentaloma com captação focal no PET-FDG tem risco de câncer de ~30% e merece US com estratificação; captação difusa costuma ser tireoidite.</p>
+</div></details>
+<div class="box hy"><span class="box-label">HIGH-YIELD</span><div class="box-title">Os dois nódulos que a prova adora</div><div class="box-body"><b>TSH suprimido + nódulo</b>: cintilografia, não PAAF — o nódulo hipercaptante tem risco de câncer &lt;1%; tratamento é do hipertireoidismo (D.3). <b>Nódulo + diarreia ou flushing, ou família com feocromocitoma</b>: calcitonina e CEA antes da cirurgia; se medular, metanefrinas e cálcio antes de qualquer anestesia (D.8).</div></div>
+</div>
+</div>
+
+<div class="card prim">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">C.4</span> Entidade primária</div><h3>Carcinoma diferenciado da tireoide — papilífero, folicular e oncocítico <span class="ank ank-hy">HIGH-YIELD</span> <span class="ank ank-evo">EVOLVING</span></h3><div class="card-sub">Tratamento proporcional ao risco: de vigilância ativa a cirurgia total + RAI + sistêmica guiada por alvo</div></div>
+<div class="card-body">
+<div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Sobrevida específica &gt;98% em 10 anos no estádio I. A ATA 2025 consolidou a <b>desescalada</b>: lobectomia para cT1N0 sem fatores de risco (≤2 cm) e preferível até 4 cm, vigilância ativa ou ablação no microcarcinoma cT1aN0M0, <b>RAI não rotineira no baixo risco</b>, risco de recorrência em quatro níveis, TSH dentro da referência para quem responde bem. O carcinoma medular é subitem (D.8); anaplásico e linfoma em D.9.</div></div>
+<div class="disease">
+<div class="disease-head"><div class="disease-name">Neoplasia maligna da glândula tireoide — carcinoma derivado da célula folicular, bem diferenciado</div><div class="disease-tag">CID-10 C73 · CID-O M8260/3 · M8330/3 · M8290/3</div></div>
+<div class="disease-body"><div class="disease-rows">
+<div class="disease-row"><div class="k">Epidemiologia</div><div class="v">Câncer endócrino mais comum; no Brasil, ~16.700 casos novos/ano (INCA 2023–2025), 4º mais incidente em mulheres. Papilífero 85–90% (pico 30–50 anos; radiação na infância é o fator mais forte — Chernobyl, Fukushima), folicular 5–10% (carência de iodo, idade maior), oncocítico 3–5%. Síndromes: PTEN/Cowden, PAF (variante cribriforme-morular, APC), DICER1, complexo de Carney, Werner. A ATA 2025 oferece teste germinativo dirigido (PHTS, DICER1 em pediátricos, APC na cribriforme-morular).</div></div>
+<div class="disease-row"><div class="k">Fisiopatologia</div><div class="v">Ativação da via MAPK: BRAF V600E (~60% dos papilíferos clássicos; menor avidez por iodo por repressão de NIS), fusões RET::PTC (radiação; criança), NTRK e ALK; RAS e PAX8::PPARG no folicular e no IEFVPTC; mutações de DNA mitocondrial e perda cromossômica no oncocítico. TERT promotor e TP53 marcam desdiferenciação (pouco diferenciado, anaplásico) e refratariedade ao RAI. O papilífero dissemina por via linfática (N1 em 20–50%; micrometástases em até 80%), o folicular e o oncocítico por via hematogênica (pulmão, osso).</div></div>
+<div class="disease-row"><div class="k">Clínica</div><div class="v">Nódulo assintomático ou linfonodo cervical lateral (às vezes cístico, em jovem); disfonia por invasão do recorrente; metástase óssea lítica ou pulmonar miliar (folicular, jovem). Tireotoxicose por metástases funcionantes é rara. Histologias de pior prognóstico: células altas, colunar, hobnail, esclerosante difusa, sólida; folicular e oncocítico amplamente invasivos; carcinoma de alto grau derivado da célula folicular (OMS 2022).</div></div>
+<div class="disease-row"><div class="k">Diagnóstico</div><div class="v">PAAF Bethesda V–VI; US cervical pré-operatória dos compartimentos central e lateral em todos (PAAF de linfonodo &gt;8–10 mm se mudar conduta); TC/RM com contraste se suspeita de doença invasiva ou volumosa; laringoscopia se disfonia, cirurgia cervical prévia ou extensão posterior. <b>Não dosar Tg pré-operatória, não fazer PET-FDG de rotina, não fazer genômica pré-operatória rotineira</b>. Estadiamento AJCC 8ª ed. (idade de corte 55 anos) para mortalidade; ATA 2025 para recorrência. <span class="ev ev-acr">ATA 2025</span> <span class="ev ev-sbr">CONITEC 2026 (CP 88)</span></div></div>
+<div class="disease-row"><div class="k">Tratamento</div><div class="v"><b>cT1aN0M0 (≤1 cm):</b> vigilância ativa (US 6–12 meses; operar se crescer ≥3 mm, N1, extensão ou preferência) ou ablação percutânea em selecionados; se operar, lobectomia. <b>cT1bN0 (1–2 cm):</b> lobectomia (forte). <b>cT2N0 (2–4 cm) de baixo risco:</b> lobectomia preferível; total se RAI desejada, nódulos contralaterais suspeitos ou preferência. <b>&gt;4 cm, extensão grosseira (T4), cN1 ou M1:</b> tireoidectomia total + esvaziamento terapêutico do compartimento acometido (central VI/VII; lateral IIa, III, IV, Vb); esvaziamento central profilático só em T3–T4 ou quando muda RAI. Pós-operatório: Tg e anti-Tg em 6–12 semanas, risco ATA 2025, RAI conforme tabela ao lado (preparo com rhTSH preferido; abstinência de LT4 por 3–4 semanas é alternativa), PCI pós-dose. <b>Refratário progressivo:</b> painel molecular; lenvatinibe 24 mg/dia em 1ª linha (sorafenibe alternativa), cabozantinibe em 2ª; selpercatinibe/pralsetinibe (RET), larotrectinibe/entrectinibe (NTRK), dabrafenibe + trametinibe (BRAF V600E). <span class="ev ev-acr">ATA 2025</span> <span class="ev ev-sbr">Portarias SECTICS 42 e 43/2024</span></div></div>
+<div class="disease-row"><div class="k">Prognóstico</div><div class="v">Mortalidade baixa, recorrência variável: &lt;10% no baixo risco, &gt;30% no alto. A reestratificação dinâmica (resposta excelente, indeterminada, bioquímica ou estruturalmente incompleta) aos 6–24 meses prediz melhor que o risco inicial. Baixo risco com resposta excelente sustentada por 10–15 anos pode ser considerado em remissão e sair de vigilância oncológica (ATA 2025, rec. 48).</div></div>
+<div class="disease-row"><div class="k">O que muda conduta</div><div class="v"><b>Tamanho e cN/cM pré-operatórios mudam lobectomia × total; histologia agressiva, invasão vascular, número e tamanho de linfonodos mudam o risco e a indicação de RAI; Tg pós-operatória e anti-Tg mudam a resposta e o alvo de TSH; ausência de captação com doença estrutural progressiva define refratariedade e leva a sistêmica (fora do SUS para lenvatinibe/sorafenibe).</b></div></div>
+</div></div>
+</div>
+<div class="score">
+<div class="score-head"><div class="score-name">Risco de recorrência ATA 2025 (4 níveis) e RAI inicial <span class="ev ev-acr">ATA 2025</span></div><div class="score-purpose">Estimativa de persistência/recorrência estrutural ~3 meses após a cirurgia; integra histologia, linfonodos, AJCC, imagem e Tg</div></div>
+<div class="score-rows">
+<div class="score-row"><div class="score-grade">Baixo (&lt;10%)</div><div class="score-desc">Intratireoidiano sem invasão vascular, ressecção completa, sem histologia agressiva, cN0 ou ≤5 micrometástases (&lt;2 mm); IEFVPTC; folicular minimamente invasivo sem angioinvasão. <b>RAI não rotineira</b>; se usada, 30–50 mCi (1,1–1,85 GBq)</div></div>
+<div class="score-row"><div class="score-grade">Baixo-intermediário (10–15%)</div><div class="score-desc">Achados intermediários de menor peso (p. ex., extensão extratireoidiana microscópica, pequeno volume de N1). <b>Considerar RAI</b>, 30–100 mCi</div></div>
+<div class="score-row"><div class="score-grade">Intermediário-alto (16–30%)</div><div class="score-desc">Histologia agressiva (células altas, hobnail, colunar), invasão vascular no papilífero, cN1 ou &gt;5 linfonodos de 0,2–3 cm. <b>Considerar RAI</b>, 30–100 mCi</div></div>
+<div class="score-row"><div class="score-grade">Alto (&gt;30%)</div><div class="score-desc">Extensão extratireoidiana grosseira, ressecção incompleta, M1, linfonodo &gt;3 cm, Tg pós-operatória sugerindo metástase, folicular/oncocítico com invasão vascular extensa. <b>RAI rotineira</b>, 100–150 mCi; M1: 100–200 mCi ou dosimetria</div></div>
+<div class="score-row"><div class="score-grade">Atenção</div><div class="score-desc">A figura com os critérios exatos da ATA 2025 é imagem no PDF; os itens acima foram reconstruídos do texto e da Tabela 10 — conferir no original antes de decisão individual</div></div>
+</div>
+</div>
+<details class="deep"><summary>Deep dive · Por que a ATA 2025 desescalou: lobectomia, RAI e TSH</summary><div class="deep-content">
+<p><b>Extensão cirúrgica.</b> Coortes do NCDB e do SEER com dezenas de milhares de pacientes mostram sobrevida equivalente entre lobectomia e tireoidectomia total para tumores de 1–4 cm sem fatores de risco após ajuste para variáveis clínicas; a total acrescenta hipoparatireoidismo permanente (1–3%), lesão bilateral do recorrente (rara, porém catastrófica) e reposição vitalícia. A ATA 2025 converteu a recomendação de 2015 ("pode ser suficiente") em recomendação forte de lobectomia para cT1N0 e em preferência para cT2N0 de baixo risco. O custo é o seguimento: depois de lobectomia, a tireoglobulina não é marcador confiável (a glândula remanescente a produz) e o acompanhamento é por US. Completar a tireoidectomia faz sentido quando a histologia revela fatores que mudam a indicação de RAI — não por multifocalidade isolada.</p>
+<p><b>RAI tem três objetivos diferentes.</b> Ablação de remanescente (facilitar seguimento por Tg), terapia adjuvante (destruir doença microscópica presumida) e tratamento de doença conhecida. O ESTIMABL2 (2022) randomizou 776 pacientes de baixo risco após tireoidectomia total para RAI 30 mCi com rhTSH ou nenhuma RAI: 95,6% versus 95,9% sem evento em 3 anos — não inferioridade, com seguimento ainda curto. O HiLo e o ESTIMABL1 já tinham mostrado que 30 mCi equivalem a 100 mCi quando se faz RAI no baixo risco. Biologia também pesa: tumores RAS-like e com fusão RET captam bem; BRAF V600E com TERT promotor ou TP53 perdem NIS e respondem mal. O preparo com rhTSH é preferido à abstinência de LT4 (mesma taxa de ablação, sem semanas de hipotireoidismo); no SUS, o rhTSH foi incorporado em 2024 para quem tem contraindicação à abstinência ou não eleva TSH (Portaria SECTICS 43/2024). Gestação deve ser evitada por 6 meses após RAI; amamentação deve ter cessado há ≥3 meses.</p>
+<p><b>TSH: o fim da supressão para todos.</b> O racional da supressão é que o TSHR das células do CDT estimula crescimento e expressão de Tg e NIS. Mas o benefício só é demonstrável em alto risco ou doença persistente; no baixo e intermediário com resposta excelente, TSH suprimido não reduz recorrência (coortes do NTCTCSG, dados japoneses) e aumenta FA, perda óssea em pós-menopausa e sintomas. Por isso a ATA 2025 abandonou os alvos numéricos fixos de 2015 (0,5–2; 0,1–0,5; &lt;0,1) e passou a individualizar: resposta excelente ou indeterminada → TSH dentro da referência; resposta bioquímica ou estrutural incompleta → TSH abaixo da referência, ponderando FA e osteoporose; após lobectomia, TSH na referência sem necessidade de LT4 se o lobo remanescente basta.</p>
+<p><b>Resposta à terapia (Tabela 9).</b> Após total + RAI: excelente = Tg não estimulada &lt;0,2 ng/mL (ou estimulada &lt;1) com imagem negativa; indeterminada = Tg 0,2–1 (estimulada 1–10) ou anti-Tg estável/em queda; bioquímica incompleta = Tg &gt;1 (estimulada &gt;10) ou anti-Tg subindo; estrutural incompleta = doença visível. Após total sem RAI, os cortes sobem (excelente &lt;2,5 ng/mL; incompleta &gt;5). A anti-Tg deve ser dosada quantitativamente em toda Tg (interferência em ~25%); anti-Tg em ascensão vale como marcador tumoral. O refratário ao RAI exige ter recebido dose terapêutica: ausência de captação na PCI pós-dose com doença estrutural, ou progressão &lt;6 meses após RAI com captação.</p>
+</div></details>
+<div class="box danger"><span class="box-label">DANGER</span><div class="box-title">Tg "indetectável" com anti-Tg positivo não é remissão</div><div class="box-body">Anticorpos antitireoglobulina sequestram o antígeno e produzem Tg falsamente baixa nos imunométricos. Toda Tg deve vir com anti-Tg quantitativo no mesmo ensaio; anti-Tg positivo transforma o anti-Tg em marcador (queda = boa resposta; subida = doença) e põe o US cervical no centro do seguimento. A Tg por espectrometria de massa (LC-MS/MS) contorna a interferência onde disponível.</div></div>
+</div>
+</div>
+</section>
+
+<section id="secundarias">
+<div class="section"><div class="section-eyebrow"><span>D</span> Entidades Secundárias</div><h2 class="section-title">Emergências, formas nodulares tóxicas, tireoidites, fármacos e os cânceres menos comuns</h2><div class="section-sub">Dez boxes que completam o diferencial. Entidades raras que compartilham raciocínio foram agrupadas (tireoidites em um box; tireotoxicoses raras em outro; anaplásico com linfoma), conforme a regra de cobertura sem atomização.</div></div>
+
+<div class="card emerg">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">D.1</span> Emergência</div><h3>Crise tireotóxica (tempestade tireoidiana) <span class="ank ank-dgr">DANGER</span> <span class="ank ank-dec">DECISION</span></h3><div class="card-sub">Falência de órgãos por tireotoxicose descompensada</div></div>
+<div class="card-body">
+<div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">1–2% das internações por tireotoxicose; mortalidade 10–30%. <b>Diagnóstico clínico, tratamento imediato e multimodal na UTI</b>: betabloqueador + tionamida + iodo (1 h depois) + corticoide + suporte + gatilho.</div></div>
+<div class="disease">
+<div class="disease-head"><div class="disease-name">Crise ou tempestade tireotóxica</div><div class="disease-tag">CID-10 E05.5</div></div>
+<div class="disease-body"><div class="disease-rows">
+<div class="disease-row"><div class="k">Fisiopatologia</div><div class="v">Não é "mais hormônio": a fração livre sobe rápido (queda de ligação a TBG na doença aguda), a densidade e a sensibilidade de receptores β aumentam e a resposta a catecolaminas do estresse é amplificada. Gatilhos: infecção (o principal), suspensão de tionamida, cirurgia (inclusive tireoidectomia sem preparo), parto, trauma, contraste iodado, RAI, CAD, IAM, TEP, palpação vigorosa.</div></div>
+<div class="disease-row"><div class="k">Clínica</div><div class="v">Febre (até 40–41 °C), taquicardia desproporcional, FA, IC de alto débito que vira baixo débito (cardiomiopatia tireotóxica), agitação, delirium, convulsão, coma, náusea, vômitos, diarreia, icterícia (pior prognóstico). Idoso: forma apatética com IC e rebaixamento.</div></div>
+<div class="disease-row"><div class="k">Diagnóstico</div><div class="v">Burch-Wartofsky: termorregulação (5–30), SNC (10–30), gastro-hepático (10–20), FC (5–25), IC (5–15), FA (10), gatilho (10); <b>≥45 = crise, 25–44 = iminente</b>. JTA: tireotoxicose + SNC, ou + ≥3 de febre, taquicardia, IC, gastrointestinal/hepático. TSH, T4L, T3, hemograma, função hepática, glicemia, lactato, culturas, ECG, ecocardiograma. <span class="ev ev-acr">ATA 2016</span> <span class="ev ev-expert">JTA/JES 2016</span></div></div>
+<div class="disease-row"><div class="k">Tratamento</div><div class="v">Propranolol 60–80 mg VO/SNE 4/4 h (esmolol 250–500 µg/kg em bolus e 50–100 µg/kg/min se IC ou instabilidade); PTU 500–1.000 mg de ataque e 250 mg 4/4 h, ou metimazol 60–80 mg/dia (20 mg 6/6 h; JTA prefere metimazol); SSKI 5 gotas (250 mg) 6/6 h ou Lugol 8–10 gotas 6–8/8 h, ≥1 h após a tionamida; hidrocortisona 300 mg IV e 100 mg 8/8 h (dexametasona 2 mg 6/6 h alternativa); paracetamol e resfriamento; volume e glicose; colestiramina 4 g 6/6 h; plasmaférese ou tireoidectomia de urgência se refratário em 24–48 h. Evitar AAS (desloca T4 da TBG). <span class="ev ev-acr">ATA 2016</span></div></div>
+<div class="disease-row"><div class="k">O que muda conduta</div><div class="v"><b>BWPS ≥45 ou JTA TS1 = UTI e esquema completo; IC com FE baixa troca propranolol por esmolol titulado; alergia ou agranulocitose prévia a tionamida → iodo + corticoide + colestiramina como ponte para tireoidectomia; melhora em 24–72 h permite reduzir doses e planejar tratamento definitivo (RAI ou cirurgia).</b></div></div>
+</div></div>
+</div>
+</div>
+</div>
+
+<div class="card emerg">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">D.2</span> Emergência</div><h3>Coma mixedematoso <span class="ank ank-dgr">DANGER</span></h3><div class="card-sub">Hipotireoidismo descompensado com falência neurológica e respiratória</div></div>
+<div class="card-body">
+<div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Idosa, inverno, hipotireoidismo não tratado ou abandonado, gatilho (pneumonia, sedativo, AVC, IAM, sangramento). Hipotermia + rebaixamento + hiponatremia + hipercapnia. <b>Tratar na suspeita; corticoide junto da LT4</b>.</div></div>
+<div class="disease">
+<div class="disease-head"><div class="disease-name">Coma mixedematoso</div><div class="disease-tag">CID-10 E03.5</div></div>
+<div class="disease-body"><div class="disease-rows">
+<div class="disease-row"><div class="k">Fisiopatologia</div><div class="v">Queda da termogênese (menos Na⁺/K⁺-ATPase e UCP), da resposta ventilatória à hipóxia e à hipercapnia, miopatia respiratória e obstrução por macroglossia; menos receptores β cardíacos e mais tônus α (vasoconstrição, PA diastólica alta que vira choque); excreção de água livre reduzida (ADH inapropriado, menor TFG) → hiponatremia; gliconeogênese e depuração de insulina reduzidas → hipoglicemia.</div></div>
+<div class="disease-row"><div class="k">Clínica</div><div class="v">Torpor a coma (raramente "loucura mixedematosa" com psicose), hipotermia (&lt;35 °C em 80%; febre ausente mesmo com sepse), bradicardia, hipotensão, hipoventilação, íleo, retenção urinária, derrames serosos, mixedema facial, cicatriz de tireoidectomia.</div></div>
+<div class="disease-row"><div class="k">Diagnóstico</div><div class="v">Clínico; TSH alto e T4L muito baixo (central: TSH baixo ou normal), cortisol basal antes do corticoide, gasometria, Na, glicemia, CK, lactato, culturas, ECG (baixa voltagem, QT longo), ecocardiograma (derrame). Escore de Popoveniuc ≥60 sugere fortemente. <span class="ev ev-acr">ATA 2014</span></div></div>
+<div class="disease-row"><div class="k">Tratamento</div><div class="v">UTI; <b>hidrocortisona 100 mg IV 8/8 h</b> (até cortisol normal); LT4 IV 200–400 µg de ataque e 50–100 µg/dia (≈1,6 µg/kg × 0,75) — dose menor em idoso/coronariopata; LT3 5–20 µg IV e 2,5–10 µg 8/8 h é opção da ATA 2014. <b>No Brasil não há LT4 nem LT3 injetáveis registradas</b>: usar LT4 por SNE em dose de ataque maior (300–500 µg; absorção intestinal reduzida) — confirmar protocolo local. IOT/VM se hipercapnia ou rebaixamento; aquecimento passivo; volume com cristaloide isotônico e glicose; restrição hídrica ou salina 3% se Na &lt;120 sintomático; antibiótico empírico se suspeita de infecção.</div></div>
+<div class="disease-row"><div class="k">O que muda conduta</div><div class="v"><b>Cortisol baixo ou insuficiência adrenal conhecida mantém hidrocortisona; doença coronariana ativa reduz a dose de LT4 e contraindica LT3 em bolus; hipercapnia indica VM (não VNI em rebaixado com macroglossia); hipotensão sem resposta a volume pede vasopressor e busca de sepse, sangramento ou tamponamento.</b></div></div>
+</div></div>
+</div>
+</div>
+</div>
+
+<div class="card diag">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">D.3</span> Hipertireoidismo nodular</div><h3>Bócio multinodular tóxico, adenoma tóxico e hipertireoidismo subclínico <span class="ank ank-dec">DECISION</span></h3><div class="card-sub">Autonomia funcional: não remite, então o tratamento é definitivo</div></div>
+<div class="card-body">
+<div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Segunda e terceira causas de hipertireoidismo, mais em idosos e em carência de iodo. <b>Tionamida controla, mas não cura</b>: RAI (atividade maior que no Graves) ou cirurgia; ablação térmica no adenoma. Subclínico grau 2 (TSH &lt;0,1) em ≥65 anos trata-se.</div></div>
+<div class="disease">
+<div class="disease-head"><div class="disease-name">Tireotoxicose com bócio multinodular tóxico e com nódulo tóxico único (Plummer)</div><div class="disease-tag">CID-10 E05.2 · E05.1</div></div>
+<div class="disease-body"><div class="disease-rows">
+<div class="disease-row"><div class="k">Fisiopatologia</div><div class="v">Mutações somáticas ativadoras do TSHR (60–80% dos adenomas tóxicos) ou de GNAS (Gsα, &lt;5%) mantêm o AMPc alto sem TSH; no BMT, clones autônomos surgem ao longo de décadas de estímulo (carência de iodo). Excesso de iodo (contraste, amiodarona) desmascara a autonomia (Jod-Basedow). Marine-Lenhart: Graves sobre nódulo autônomo.</div></div>
+<div class="disease-row"><div class="k">Clínica</div><div class="v">Tireotoxicose geralmente leve, T3-toxicose comum, predomínio cardiovascular (FA, IC) e osteoporose; sem orbitopatia; bócio nodular com compressão; adenoma tóxico em geral &gt;2,5–3 cm.</div></div>
+<div class="disease-row"><div class="k">Diagnóstico</div><div class="v">TSH baixo, T3 total alto com T4L normal ou alto; cintilografia: múltiplos focos quentes e frios (BMT) ou nódulo quente com supressão do restante (adenoma); US com TI-RADS dos nódulos <b>frios</b> e PAAF se indicada. <span class="ev ev-acr">ATA 2016</span></div></div>
+<div class="disease-row"><div class="k">Tratamento</div><div class="v"><b>RAI</b> (BMT exige atividade maior pela captação menor; reduz o bócio em ~40% em 1 ano) ou <b>cirurgia</b> (tireoidectomia total no BMT, lobectomia no adenoma) se bócio grande ou compressivo, nódulo suspeito, hiperparatireoidismo ou necessidade de controle rápido. Adenoma: RAI, lobectomia ou ablação por radiofrequência. Metimazol de baixa dose a longo prazo em idoso frágil com expectativa de vida curta. <b>Subclínico (ATA 2016):</b> TSH &lt;0,1 → tratar se ≥65 anos, cardiopatia, osteoporose, pós-menopausa sem estrogênio ou sintomas; TSH 0,1–0,4 → considerar nesses mesmos grupos; jovem assintomático → observar. <span class="ev ev-acr">ATA 2016</span> <span class="ev ev-eular">ETA 2023</span></div></div>
+<div class="disease-row"><div class="k">O que muda conduta</div><div class="v"><b>Nódulo frio suspeito em BMT obriga PAAF antes do RAI; bócio compressivo ou subesternal leva à cirurgia; exposição prevista a contraste iodado ou amiodarona em quem tem autonomia pede metimazol profilático; idade ≥65 anos ou FA tornam o subclínico grau 2 indicação de tratamento.</b></div></div>
+</div></div>
+</div>
+</div>
+</div>
+
+<div class="card diag">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">D.4</span> Tireoidites</div><h3>Subaguda granulomatosa, indolor e pós-parto, supurativa e Riedel <span class="ank ank-hy">HIGH-YIELD</span></h3><div class="card-sub">Destruição folicular: tireotoxicose sem hipertireoidismo, depois hipotireoidismo</div></div>
+<div class="card-body">
+<div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Curso trifásico (tireotoxicose 4–8 semanas → hipotireoidismo 2–4 meses → recuperação) com <b>captação baixa e Tg alta</b>. A dor separa De Quervain das indolores. Tratamento é sintomático: betabloqueador, anti-inflamatório ou corticoide, LT4 transitória. Tionamida não tem papel.</div></div>
+<div class="disease">
+<div class="disease-head"><div class="disease-name">Tireoidite subaguda, tireoidite pós-parto, tireoidite aguda e tireoidite fibrosante</div><div class="disease-tag">CID-10 E06.1 · O90.5 · E06.0 · E06.5</div></div>
+<div class="disease-body"><div class="disease-rows">
+<div class="disease-row"><div class="k">Subaguda (De Quervain)</div><div class="v">Pós-viral (Coxsackie, adenovírus, caxumba, SARS-CoV-2, pós-vacinal), HLA-B35; granulomas com células gigantes. Dor cervical anterior irradiada, febre, bócio doloroso, VHS &gt;50, PCR alta. AINE (ibuprofeno 400–800 mg 8/8 h); dor intensa ou falha em 48–72 h → <b>prednisona 40 mg/dia por 1–2 semanas e desmame em 2–4 semanas ou mais</b> (recidiva em 10–20% no desmame); propranolol 20–40 mg 8/8 h. Hipotireoidismo permanente em 5–15%. <span class="ev ev-acr">ATA 2016</span></div></div>
+<div class="disease-row"><div class="k">Indolor e pós-parto</div><div class="v">Variantes de tireoidite linfocítica autoimune (anti-TPO+). Pós-parto em 5–10% das puérperas (até 25% no DM1), 1–6 meses após o parto (ou aborto); risco de hipotireoidismo permanente de 20–50% em 10 anos e de recorrência nas gestações seguintes. Também por lítio, interferon, amiodarona tipo 2, inibidores de checkpoint e de tirosina-quinase. Fase tóxica: betabloqueador (propranolol ou metoprolol na lactante). Fase hipo: LT4 se sintomática, amamentando ou planejando gestar, com tentativa de retirada em 6–12 meses; TSH anual depois. Depressão pós-parto → TSH. <span class="ev ev-acr">ATA 2026 gestação</span></div></div>
+<div class="disease-row"><div class="k">Aguda supurativa</div><div class="v">Bacteriana (<i>S. aureus</i>, <i>S. pyogenes</i>, anaeróbios); criança com fístula do seio piriforme (lobo esquerdo, recorrente) ou imunossuprimido (fungos, <i>Pneumocystis</i>). Febre alta, dor, flutuação, função normal. US/TC, PAAF com Gram e cultura, antibiótico IV e drenagem; esofagograma ou laringoscopia para a fístula após a fase aguda.</div></div>
+<div class="disease-row"><div class="k">Riedel</div><div class="v">Fibrose invasiva da tireoide e tecidos vizinhos, frequentemente doença relacionada a IgG4 (fibrose retroperitoneal e mediastinal, colangite esclerosante, pseudotumor orbitário). Bócio pétreo "lenhoso", compressão, hipoparatireoidismo, paralisia recorrencial. Biópsia aberta (excluir anaplásico e linfoma); glicocorticoide, tamoxifeno, rituximabe; cirurgia limitada à descompressão (istmectomia).</div></div>
+<div class="disease-row"><div class="k">O que muda conduta</div><div class="v"><b>Captação baixa contraindica tionamida e RAI; dor intensa ou falha do AINE indicam corticoide; febre alta com flutuação indica drenagem e antibiótico; massa pétrea fixa exige biópsia para afastar câncer; puérpera com tireoidite precisa de TSH anual e aviso de recorrência.</b></div></div>
+</div></div>
+</div>
+</div>
+</div>
+
+<div class="card diag">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">D.5</span> Fármacos e iodo</div><h3>Amiodarona, lítio, imunoterapia e contraste iodado <span class="ank ank-dec">DECISION</span></h3><div class="card-sub">Mesmo fármaco, mecanismos opostos: excesso de iodo, citotoxicidade e autoimunidade</div></div>
+<div class="card-body">
+<div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Amiodarona tem 37% de iodo em peso (75 mg de iodo por 200 mg; ~6 mg/dia liberados) e meia-vida de ~100 dias. <b>Hipotireoidismo (AIH) não exige suspendê-la; tireotoxicose (AIT) exige classificar em tipo 1 ou 2</b>. TSH basal e a cada 3–6 meses em todo usuário de amiodarona, lítio e inibidor de checkpoint.</div></div>
+<div class="disease">
+<div class="disease-head"><div class="disease-name">Tireoidite induzida por droga e hipotireoidismo por medicamentos</div><div class="disease-tag">CID-10 E06.4 · E03.2</div></div>
+<div class="disease-body"><div class="disease-rows">
+<div class="disease-row"><div class="k">Amiodarona</div><div class="v"><b>AIH</b> (mais em iodo-suficientes e anti-TPO+; falha de escape do Wolff-Chaikoff): LT4, manter amiodarona. <b>AIT tipo 1</b> (BMN ou Graves latente; Jod-Basedow): Doppler com fluxo aumentado, captação baixa-normal (pode ser detectável) → metimazol 30–40 mg/dia (± perclorato, não disponível no Brasil). <b>AIT tipo 2</b> (tireoidite destrutiva em glândula normal; mais comum hoje): fluxo ausente, captação nula, IL-6 alta → <b>prednisona 0,5–0,7 mg/kg/dia por ~3 meses</b>. Mista/incerta: metimazol + prednisona. Refratária com cardiopatia grave: tireoidectomia total de urgência. Suspender ou não a amiodarona é decisão conjunta com o cardiologista (a dronedarona não tem iodo). <span class="ev ev-eular">ETA 2018 amiodarona</span></div></div>
+<div class="disease-row"><div class="k">Lítio</div><div class="v">Inibe a liberação de hormônio e a organificação; hipotireoidismo em 5–35% e bócio em até 50%, tireoidite indolor e hiperparatireoidismo. LT4 e manter o lítio se ele funciona; TSH a cada 6–12 meses.</div></div>
+<div class="disease-row"><div class="k">Imunoterapia oncológica</div><div class="v">Anti-PD-1/PD-L1 (5–10%) e combinação com anti-CTLA-4 (15–20%): tireoidite indolor com tireotoxicose em 4–8 semanas seguida de hipotireoidismo permanente; não interromper a imunoterapia por isso. Hipofisite (ipilimumabe) causa hipotireoidismo central com insuficiência adrenal — cortisol antes da LT4. Alentuzumabe: Graves em ~30%. Inibidores de tirosina-quinase (sunitinibe): hipotireoidismo e aumento da dose de LT4.</div></div>
+<div class="disease-row"><div class="k">Contraste iodado</div><div class="v">Hipertireoidismo em 0,1–0,3% (até 5–10% em idosos com BMN em área de carência de iodo), 2–12 semanas após; hipotireoidismo em autoimunes e neonatos. Metimazol profilático só em alto risco (autonomia conhecida, idoso cardiopata); TSH 4–6 semanas após em quem tem doença nodular.</div></div>
+<div class="disease-row"><div class="k">O que muda conduta</div><div class="v"><b>Doppler e captação separam AIT 1 (metimazol) de AIT 2 (prednisona); arritmia ameaçadora com AIT refratária leva à tireoidectomia; hipofisite por imunoterapia muda a ordem (corticoide antes da LT4); lítio bem-sucedido não se suspende por hipotireoidismo.</b></div></div>
+</div></div>
+</div>
+</div>
+</div>
+
+<div class="card diag">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">D.6</span> Tireotoxicoses raras</div><h3>Factícia, mediada por hCG, struma ovarii, TSHoma e resistência ao hormônio <span class="ank ank-prl">PEARL</span></h3><div class="card-sub">Quando o padrão laboratorial não fecha com Graves nem com tireoidite</div></div>
+<div class="card-body">
+<div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Três perguntas resolvem quase todas: <b>o TSH está suprimido?</b> (se não, central ou interferência), <b>a captação cervical está baixa?</b> (factícia, struma ovarii, tireoidite), <b>a tireoglobulina está baixa?</b> (só a factícia).</div></div>
+<div class="disease">
+<div class="disease-head"><div class="disease-name">Tireotoxicose factícia, por tecido ectópico, por hCG e por secreção inapropriada de TSH</div><div class="disease-tag">CID-10 E05.4 · E05.3 · E05.8 · O01</div></div>
+<div class="disease-body"><div class="disease-rows">
+<div class="disease-row"><div class="k">Factícia</div><div class="v">LT4 ou T3 em "fórmulas" de emagrecimento, transtorno factício, supertratamento. TSH suprimido, captação baixa, <b>Tg baixa</b> (diferencia de tireoidite), sem bócio. T3 exógeno: T4L baixo com T3 alto. Retirada e betabloqueador.</div></div>
+<div class="disease-row"><div class="k">Mediada por hCG</div><div class="v">hCG compartilha a subunidade α e tem homologia com o TSH; cada 10.000 UI/L de hCG reduz o TSH ~0,1 mUI/L. Tireotoxicose gestacional transitória (1–3%, com hiperêmese, gemelar) no fim do 1º trimestre: TRAb negativo, sem bócio, resolução até 18–20 semanas — <b>sem tionamida</b> (ATA 2026), hidratação e antiemético. Mola hidatiforme e coriocarcinoma (hCG &gt;200.000): tireotoxicose franca, eventualmente crise no esvaziamento → betabloqueador e preparo antes do procedimento (GO12).</div></div>
+<div class="disease-row"><div class="k">Struma ovarii</div><div class="v">Teratoma com &gt;50% de tecido tireoidiano (1–3% dos teratomas; tireotoxicose em 5–8% deles): captação cervical baixa com captação pélvica na PCI. Ooforectomia; malignização rara (CDT ovariano).</div></div>
+<div class="disease-row"><div class="k">TSHoma e RHT</div><div class="v">T4L/T3 altos com TSH normal ou alto (excluir antes biotina, anticorpos heterófilos e anti-T4 com outra plataforma de ensaio). <b>TSHoma</b>: subunidade α alta (razão α/TSH &gt;1), sem resposta ao TRH, macroadenoma em 70–80%, cossecreção de GH/PRL → octreotida pré-operatória e cirurgia transesfenoidal (EN05). <b>Resistência ao hormônio tireoidiano β</b> (mutação de THRB, autossômica dominante): família afetada, subunidade α normal, RM normal, TSH responde ao TRH → não tratar a glândula (betabloqueador se taquicardia; nunca RAI ou tireoidectomia). <span class="ev ev-acr">ATA 2016</span></div></div>
+<div class="disease-row"><div class="k">O que muda conduta</div><div class="v"><b>Tg baixa com captação baixa = exógena (retirar, não tratar a tireoide); TRAb negativo no 1º trimestre com hiperêmese = hCG (não usar tionamida); TSH não suprimido com hormônios altos = repetir em outro ensaio e só então RM de sela; RHT contraindica ablação.</b></div></div>
+</div></div>
+</div>
+</div>
+</div>
+
+<div class="card diag">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">D.7</span> Hipofunção não primária</div><h3>Hipotireoidismo central e síndrome do eutireoidiano doente <span class="ank ank-dgr">DANGER</span></h3><div class="card-sub">TSH baixo ou "normal" com T4L baixo: hipófise, hipotálamo ou doença sistêmica</div></div>
+<div class="card-body">
+<div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">No central, <b>o TSH não serve para titular a dose</b>: o alvo é T4L na metade superior da referência, e o cortisol vem antes. No eutireoidiano doente, o melhor exame é não pedir exame — e não repor.</div></div>
+<div class="disease">
+<div class="disease-head"><div class="disease-name">Hipopituitarismo com deficiência de TSH e anormalidades das provas tireoidianas na doença grave</div><div class="disease-tag">CID-10 E23.0 · E07.8 (eutireoidiano doente sem código nominal)</div></div>
+<div class="disease-body"><div class="disease-rows">
+<div class="disease-row"><div class="k">Central</div><div class="v">Macroadenoma, cirurgia ou radioterapia selar, apoplexia, Sheehan, hipofisite (autoimune, ipilimumabe), craniofaringioma, mutações (PROP1, POU1F1, TSHB). TSH baixo, normal ou levemente alto (TSH imunorreativo com bioatividade reduzida) com T4L baixo; avaliar todos os eixos e RM de sela (EN05). Glicocorticoide antes ou junto da LT4 se cortisol baixo; LT4 ~1,6 µg/kg, <b>alvo T4L na metade superior</b>, controle 6–8 semanas após ajuste. GH e estrogênio oral aumentam a necessidade de LT4. <span class="ev ev-acr">ATA 2014</span></div></div>
+<div class="disease-row"><div class="k">Eutireoidiano doente</div><div class="v">Sepse, choque, grandes queimados, IAM, cirurgia, desnutrição, jejum: citocinas inibem D1 e ativam D3 (T3 baixo, rT3 alto), reduzem TBG e, nos graves, deprimem o TRH (TSH e T4 baixos — pior prognóstico). Na recuperação o TSH sobe transitoriamente até 10–20 mUI/L. Dopamina, dobutamina, glicocorticoide, octreotida e opioides suprimem TSH; heparina falseia T4L. <b>Não tratar</b> (ensaios com T3/T4 não mostraram benefício); repetir 4–6 semanas após a alta. Exceção a investigar: T4L muito baixo com TSH baixo e quadro sugestivo de hipopituitarismo.</div></div>
+<div class="disease-row"><div class="k">O que muda conduta</div><div class="v"><b>T4L baixo com TSH inapropriado fora da UTI = sela e cortisol antes da LT4; no central, titular por T4L; no doente agudo, só dosar com suspeita forte e reinterpretar após recuperação; TSH 10–20 na convalescença não é hipotireoidismo até repetir.</b></div></div>
+</div></div>
+</div>
+</div>
+</div>
+
+<div class="card prim">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">D.8</span> Subitem do câncer</div><h3>Carcinoma medular da tireoide e NEM 2 <span class="ank ank-hy">HIGH-YIELD</span> <span class="ank ank-dgr">DANGER</span></h3><div class="card-sub">Tumor neuroendócrino da célula C: calcitonina, CEA e RET</div></div>
+<div class="card-body">
+<div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">1–2% dos cânceres de tireoide (os 5% clássicos caíram com a epidemia de papilíferos); 25% hereditários (NEM 2A, 2B, familiar isolado). <b>Antes de operar: metanefrinas (feocromocitoma), cálcio e PTH, RET germinativo, calcitonina e CEA</b>. Sem RAI e sem supressão de TSH: a célula C não capta iodo nem tem TSHR.</div></div>
+<div class="disease">
+<div class="disease-head"><div class="disease-name">Carcinoma medular (esporádico e hereditário) — mesma topografia de neoplasia maligna da tireoide da C.4</div><div class="disease-tag">CID-10 D44.8 (NEM 2) · CID-O M8345/3</div></div>
+<div class="disease-body"><div class="disease-rows">
+<div class="disease-row"><div class="k">Genética</div><div class="v">RET germinativo (ganho de função, autossômico dominante, penetrância ~100% para CMT): <b>risco mais alto</b> M918T (NEM 2B: hábito marfanoide, neuromas mucosos, ganglioneuromatose intestinal, feocromocitoma em 50%, sem hiperparatireoidismo); <b>alto</b> C634 e A883F (NEM 2A: feocromocitoma 50%, hiperparatireoidismo 20–30%, líquen amiloide cutâneo, Hirschsprung); <b>moderado</b> demais códons. Esporádico: RET somático (M918T, ~50%, pior prognóstico) ou RAS.</div></div>
+<div class="disease-row"><div class="k">Clínica</div><div class="v">Nódulo no terço superior do lobo (onde há mais células C), linfonodos cervicais já ao diagnóstico em 50–70% dos palpáveis; diarreia secretora e flushing com doença volumosa (calcitonina, CGRP, VIP); Cushing ectópico raro (ACTH). Familiar: bilateral, multicêntrico, precedido por hiperplasia de células C.</div></div>
+<div class="disease-row"><div class="k">Diagnóstico</div><div class="v">Citologia com células fusiformes/plasmocitoides e amiloide; imunocitoquímica e calcitonina no lavado da PAAF. Calcitonina sérica e CEA pré-operatórios; calcitonina &gt;500 pg/mL → TC de pescoço/tórax e fígado (RM ou TC trifásica), RM de coluna/pelve ou cintilografia óssea, PET-FDG ou 68Ga-DOTATATE/18F-DOPA conforme disponibilidade. <b>RET germinativo em todo CMT</b>. <span class="ev ev-acr">ATA MTC 2015</span> <span class="ev ev-sbr">SBEM 2014</span></div></div>
+<div class="disease-row"><div class="k">Tratamento</div><div class="v">Feocromocitoma primeiro (bloqueio α e adrenalectomia — EN04). <b>Tireoidectomia total + esvaziamento central (nível VI)</b>; esvaziamento lateral se linfonodo lateral clínico ou calcitonina muito alta. Hiperparatireoidismo da NEM 2A: ressecção das glândulas aumentadas no mesmo tempo. LT4 em dose de reposição (TSH normal). <b>Profilática:</b> M918T no 1º ano de vida; C634/A883F antes ou aos 5 anos (guiada pela calcitonina); moderado quando a calcitonina subir. Doença metastática progressiva: selpercatinibe ou pralsetinibe (RET mutado), vandetanibe ou cabozantinibe; radioterapia externa para ressecção incompleta ou dor óssea.</div></div>
+<div class="disease-row"><div class="k">Prognóstico</div><div class="v">Sobrevida em 10 anos ~95% se restrito à tireoide, ~75% com linfonodos, ~40% com metástase. Calcitonina indetectável 2–3 meses após cirurgia = cura bioquímica; tempo de duplicação de calcitonina e CEA &lt;6 meses = doença agressiva.</div></div>
+<div class="disease-row"><div class="k">O que muda conduta</div><div class="v"><b>Feocromocitoma não excluído suspende a cirurgia; RET germinativo positivo leva ao rastreio de familiares de 1º grau e à tireoidectomia profilática pela idade do códon; calcitonina pós-operatória define seguimento (indetectável: anual; &lt;150 pg/mL: US cervical; &gt;150: imagem para metástase à distância).</b></div></div>
+</div></div>
+</div>
+</div>
+</div>
+
+<div class="card prim">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">D.9</span> Subitem do câncer</div><h3>Carcinoma anaplásico e linfoma primário da tireoide <span class="ank ank-dgr">DANGER</span> <span class="ank ank-evo">EVOLVING</span></h3><div class="card-sub">As duas massas que crescem em semanas: uma letal, outra curável</div></div>
+<div class="card-body">
+<div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Anaplásico: idoso, massa que dobra em semanas, todo estádio IV; <b>BRAF V600E em 40–50% → dabrafenibe + trametinibe</b>. Linfoma: mulher idosa com Hashimoto, massa difusa de crescimento rápido; <b>biópsia por agulha grossa ou cirúrgica e quimioimunoterapia</b> — a tireoidectomia não trata linfoma.</div></div>
+<div class="disease">
+<div class="disease-head"><div class="disease-name">Carcinoma indiferenciado (anaplásico) e linfoma não Hodgkin primário da tireoide</div><div class="disease-tag">CID-10 C85.9 (linfoma) · CID-O M8021/3 (anaplásico)</div></div>
+<div class="disease-body"><div class="disease-rows">
+<div class="disease-row"><div class="k">Anaplásico</div><div class="v">1–2% dos cânceres de tireoide e ~40% das mortes; desdiferenciação de CDT prévio (TP53, TERT promotor, PIK3CA sobre BRAF ou RAS). Estádio IVA (intratireoidiano), IVB (extensão ou N1), IVC (M1). Diagnóstico por core ou biópsia aberta com imuno-histoquímica (PAX8 positivo, Tg negativa, calcitonina negativa, marcadores linfoides negativos) e <b>BRAF V600E por IHQ em horas</b>. Tratamento em centro de referência: IVA/IVB ressecável → cirurgia + RT com quimiossensibilização; BRAF mutado → dabrafenibe 150 mg 12/12 h + trametinibe 2 mg/dia (inclusive neoadjuvante, transformando irressecável em ressecável); sem alvo → quimiorradioterapia (paclitaxel, carboplatina, doxorrubicina), imunoterapia em estudo; traqueostomia profilática não é rotina (decisão individual). Mediana de sobrevida histórica 5 meses; ~1–2 anos com terapia-alvo. <span class="ev ev-acr">ATA ATC 2021</span></div></div>
+<div class="disease-row"><div class="k">Linfoma primário</div><div class="v">2–5% das neoplasias tireoidianas; risco 40–80× maior em Hashimoto. DLBCL (~70%, agressivo) ou MALT (indolente, extranodal da zona marginal). Citologia sugere; confirmação por core ou biópsia com citometria de fluxo. Estadiamento por PET-CT. DLBCL: R-CHOP + RT conforme estádio; MALT localizado: RT isolada ou cirurgia. Sobrevida em 5 anos &gt;80% no MALT localizado.</div></div>
+<div class="disease-row"><div class="k">O que muda conduta</div><div class="v"><b>BRAF V600E positivo muda o anaplásico de paliativo para potencialmente ressecável; diagnóstico de linfoma afasta cirurgia ampla e leva a quimioimunoterapia; estridor ou compressão exigem decisão imediata de via aérea.</b></div></div>
+</div></div>
+</div>
+</div>
+</div>
+
+<div class="card tx">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">D.10</span> Ponte com a pediatria</div><h3>Hipotireoidismo congênito <span class="ank ank-hy">HIGH-YIELD</span> <span class="ank ank-dec">DECISION</span></h3><div class="card-sub">Principal causa evitável de deficiência intelectual: triagem, confirmação e LT4 antes de 14 dias</div></div>
+<div class="card-body">
+<div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">~1:2.000–3.000 nascidos vivos. <b>Teste do pezinho entre 48 h e 5 dias</b>; TSH em papel-filtro &lt;10 normal, 10–20 repetir, &gt;20 convocar com urgência para TSH e T4L venosos. Confirmado → <b>LT4 10–15 µg/kg/dia</b> triturada, sem esperar a etiologia.</div></div>
+<div class="disease">
+<div class="disease-head"><div class="disease-name">Hipotireoidismo congênito com e sem bócio, disormonogênese e transitório neonatal</div><div class="disease-tag">CID-10 E03.1 · E03.0 · E07.1 · P72.2</div></div>
+<div class="disease-body"><div class="disease-rows">
+<div class="disease-row"><div class="k">Fisiopatologia</div><div class="v">Disgenesia (~85%: ectopia sublingual a mais comum, agenesia, hipoplasia; genes PAX8, NKX2-1, FOXE1, TSHR) e disormonogênese (~15%: TPO, TG, DUOX2, SLC26A4 da pendrina — Pendred com surdez, SLC5A5 do NIS), com bócio. Central em 1:16.000–1:100.000 (associado a outras deficiências hipofisárias). Transitório: iodo, tionamida materna, TRAb bloqueador materno, prematuridade com nutrição parenteral. O T4 materno transplacentário (25–50% do normal) protege ao nascer e explica a clínica pobre.</div></div>
+<div class="disease-row"><div class="k">Clínica</div><div class="v">95% assintomáticos ao nascer. Depois: icterícia prolongada, sonolência, sucção débil, constipação, choro rouco, macroglossia, hérnia umbilical, fontanela posterior ampla, hipotonia, pele seca; sem tratamento, atraso do desenvolvimento e baixa estatura (cretinismo).</div></div>
+<div class="disease-row"><div class="k">Diagnóstico</div><div class="v">PNTN (Portaria GM/MS 822/2001): TSH em papel-filtro, corte de 10 mUI/L. Coleta antes de 48 h → falso-positivo. Prematuro, baixo peso ou internado: repetir com 1 mês ou na alta, ou triagem tripla (5º, 10º e 30º dia). Confirmação: TSH venoso &gt;10 mUI/L com T4L ou T4 total baixos (referência 4–30 dias: TSH &lt;9 mUI/L; T4L 0,8–2,3 ng/dL). Etiologia: US cervical (com Doppler), cintilografia se a US não resolver, tireoglobulina, radiografia de joelho (epífises). <span class="ev ev-sbr">PCDT HC 2021</span></div></div>
+<div class="disease-row"><div class="k">Tratamento</div><div class="v"><b>LT4 10–15 µg/kg/dia</b> VO 1×/dia (12–17 µg/kg nos graves; média 50 µg no RN a termo, 25–37,5 µg no pré-termo), iniciada idealmente nos primeiros 14 dias, comprimido triturado em pouca água ou leite materno, na colher (não na mamadeira); evitar soja, ferro e cálcio próximos; manter aleitamento. Se insuficiência adrenal: corticoide 3–5 dias antes. Metas nos 3 primeiros anos: T4L 1,4–2,3 ng/dL (ou T4 total 10–16 µg/dL) e TSH 0,4–4 mUI/L; exames 2 e 4 semanas após iniciar, depois a cada 1–2 meses até 6 meses, 2–3 meses até 3 anos, 6–12 meses depois; 4 semanas após cada ajuste. Suspeita de transitório (sem etiologia definida, tireoide tópica normal, dose estável) → suspender após 3 anos e dosar TSH mensal por 3 meses (&lt;5 mUI/L = transitório). LT4 12,5 e 37,5 µg no componente básico (CONITEC 544/2020). <span class="ev ev-sbr">PCDT HC 2021</span></div></div>
+<div class="disease-row"><div class="k">O que muda conduta</div><div class="v"><b>TSH &gt;20 no pezinho muda de "repetir" para "convocar hoje"; T4L baixo confirma e inicia LT4 no mesmo dia, sem esperar US ou cintilografia; prematuridade muda o calendário de coleta; ausência de etiologia definida prevê reavaliação aos 3 anos. Puericultura e seguimento → PD.</b></div></div>
+</div></div>
+</div>
+</div>
+</div>
+</section>
+
+<section id="algoritmo">
+<div class="section"><div class="section-eyebrow"><span>E</span> Algoritmo</div><h2 class="section-title">Do TSH à conduta — uma árvore para função, outra para forma</h2><div class="section-sub">A tireoide tem dois eixos independentes que se cruzam: função (TSH, T4L, T3) e morfologia (US, citologia). A árvore começa pela pergunta que separa urgência de ambulatório e termina em conduta com dose ou alvo.</div></div>
+<div class="card prim">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">E.1</span> Árvore de decisão</div><h3>Função tireoidiana e nódulo <span class="ank ank-dec">DECISION</span></h3></div>
+<div class="card-body">
+<div class="algo"><div class="tree">
+<div class="tree-line"><span class="tree-node start">Suspeita clínica, rastreio dirigido, nódulo ou exame alterado → TSH (+ T4L)</span></div>
+<div class="tree-branch"><div class="tree-label yes">Instável: febre, delirium, FA rápida, IC — ou rebaixamento com hipotermia</div>
+<div class="tree-line"><span class="tree-node dgr">BWPS ≥45/JTA → crise tireotóxica: UTI, propranolol, PTU ou metimazol, iodo 1 h depois, hidrocortisona (D.1). Mixedema → hidrocortisona + LT4 de ataque + VM (D.2)</span></div></div>
+<div class="tree-branch"><div class="tree-label yes">TSH baixo</div>
+<div class="tree-line"><span class="tree-node dx">T4L + T3 total: ambos normais = subclínico (repetir em 6–12 sem); algum alto = tireotoxicose</span></div>
+<div class="tree-branch"><div class="tree-label yes">TRAb positivo ou orbitopatia</div><div class="tree-line"><span class="tree-node action">→ Graves: propranolol + metimazol pela faixa de T4L; escolha compartilhada de 12–18 meses de ATD × RAI × cirurgia (C.2, F1.2)</span></div></div>
+<div class="tree-branch"><div class="tree-label no">TRAb negativo, nódulo ou dúvida</div><div class="tree-line"><span class="tree-node dec">Cintilografia com captação de 24 h</span></div>
+<div class="tree-branch"><div class="tree-label yes">Captação alta focal ou heterogênea</div><div class="tree-line"><span class="tree-node action">→ Adenoma tóxico ou BMT: RAI ou cirurgia; PAAF só dos nódulos frios suspeitos (D.3)</span></div></div>
+<div class="tree-branch"><div class="tree-label no">Captação baixa</div><div class="tree-line"><span class="tree-node action">→ Dor/VHS alta: De Quervain (AINE ou prednisona 40 mg). Indolor/pós-parto/fármaco: betabloqueador. Tg baixa: factícia. Sem tionamida (D.4–D.6)</span></div></div>
+</div>
+</div>
+<div class="tree-branch"><div class="tree-label yes">TSH alto</div>
+<div class="tree-line"><span class="tree-node dx">T4L baixo = manifesto · T4L normal = subclínico (repetir com anti-TPO)</span></div>
+<div class="tree-branch"><div class="tree-label yes">Manifesto, ou subclínico com TSH ≥10 / gestação</div><div class="tree-line"><span class="tree-node action">→ LT4 1,6 µg/kg (jovem) ou 12,5–25 µg (idoso, coronariopata); TSH em 6–8 sem; gestante → GO10</span></div></div>
+<div class="tree-branch"><div class="tree-label no">Subclínico TSH &lt;10, não gestante</div><div class="tree-line"><span class="tree-node action">→ Seguir 6–12 meses; considerar LT4 em &lt;65 anos com cardiopatia/sintomas e TSH 7–10; idoso: referência por idade</span></div></div>
+</div>
+<div class="tree-branch"><div class="tree-label no">TSH normal ou baixo com T4L baixo</div>
+<div class="tree-line"><span class="tree-node dgr">Internado grave → eutireoidiano doente, não repor. Ambulatório → central: cortisol (corticoide antes), RM de sela, LT4 pelo T4L (D.7)</span></div></div>
+<div class="tree-branch"><div class="tree-label no">TSH normal/alto + nódulo</div>
+<div class="tree-line"><span class="tree-node dec">US com TI-RADS + linfonodos: PAAF se TR5 ≥1 cm · TR4 ≥1,5 cm · TR3 ≥2,5 cm, ou linfonodo/extensão suspeitos</span></div>
+<div class="tree-branch"><div class="tree-label no">Bethesda II</div><div class="tree-line"><span class="tree-node action">→ US em 1–5 anos pela categoria; sintoma → etanol (cisto) ou ablação térmica/lobectomia; sem LT4</span></div></div>
+<div class="tree-branch"><div class="tree-label yes">Bethesda III–IV</div><div class="tree-line"><span class="tree-node action">→ Repetir PAAF (III), calcitonina, teste molecular se disponível, lobectomia diagnóstica</span></div></div>
+<div class="tree-branch"><div class="tree-label yes">Bethesda V–VI</div><div class="tree-line"><span class="tree-node dgr">→ Medular? calcitonina/RET/metanefrinas antes (D.8). CDT: cT1aN0 vigilância ativa; ≤4 cm cN0 lobectomia; &gt;4 cm, T4, N1, M1 total + esvaziamento; RAI pelo risco ATA 2025 (C.4)</span></div></div>
+</div>
+</div></div>
+<div class="box decision"><span class="box-label">DECISION</span><div class="box-title">Raciocínio em 6 passos — a sequência mental diante de um exame de tireoide</div><div class="box-body"><ol class="bullets">
+<li><b>Primeiro pergunte se o paciente está instável.</b> Tempestade e mixedema não esperam laboratório: o diagnóstico é clínico e o tratamento começa com o sangue colhido.</li>
+<li><b>Depois, leia o TSH como espelho do T4L — e desconfie quando o espelho distorce.</b> TSH e T4L se movem em sentidos opostos no primário; quando andam juntos, pense em central, fase de recuperação, adesão irregular, biotina ou doença aguda antes de pensar em doença rara.</li>
+<li><b>Na tireotoxicose, a pergunta que define o tratamento é síntese × vazamento.</b> TRAb, Doppler e captação dizem se a glândula produz (tionamida, RAI, cirurgia) ou se está liberando estoque (esperar, betabloquear, corticoide).</li>
+<li><b>No hipotireoidismo subclínico, a decisão é por contexto, não por número.</b> Confirmar, depois pesar idade, gestação, coração, anti-TPO e sintomas; no idoso, a régua é outra.</li>
+<li><b>No nódulo, função antes de forma, forma antes de citologia.</b> TSH baixo leva à cintilografia; normal, ao TI-RADS; a PAAF só entra quando a categoria e o tamanho cruzam o limiar, e o Bethesda define o próximo passo.</li>
+<li><b>No câncer, trate o risco e não o rótulo.</b> O mesmo "papilífero" vai de vigilância ativa a total + RAI + inibidor de quinase; o medular exige afastar feocromocitoma antes do bisturi; o anaplásico exige BRAF em horas.</li>
+</ol></div></div>
+</div>
+</div>
+</section>
+
+<section id="tratamento">
+<div class="section"><div class="section-eyebrow"><span>F</span> Tratamento Integrado</div><h2 class="section-title">F1 · Estratégia por entidade · F2 · Doses Operacionais</h2><div class="section-sub">Escadas por entidade (hipotireoidismo, Graves e orbitopatia, nodular tóxico, tireoidites e fármacos, nódulo, CDT, medular, emergências), acesso no SUS separado da recomendação internacional, a tabela de doses com número, via, frequência e ajuste, e os cenários em que o erro é previsível.</div></div>
+
+<div class="card tx">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">F.1</span> Estratégia</div><h3>Escadas terapêuticas por entidade <span class="ank ank-dec">DECISION</span></h3></div>
+<div class="card-body">
+<div class="sub-title">F1.1 · Hipotireoidismo primário</div>
+<ul class="bullets">
+<li><b>Início:</b> LT4 1,6 µg/kg/dia (peso ideal) no adulto saudável; 25–50 µg no subclínico e no idoso saudável &lt;80 anos (ou dose plena, SBEM 2022); 12,5–25 µg em &gt;80 anos, coronariopatia ou arritmia, com +12,5–25 µg a cada 4–8 semanas.</li>
+<li><b>Titulação:</b> TSH 6–8 semanas após cada mudança; ajustes de 12,5–25 µg (ou 10–15% da dose semanal). Estável: TSH a cada 6–12 meses. Alvo: referência do laboratório; idoso 2–6 mUI/L.</li>
+<li><b>Administração:</b> jejum de 30–60 min com água, ou ao deitar ≥3 h após jantar; separar 4 h de cálcio, ferro, sevelamer, colestiramina; IBP crônico, gastrite atrófica, celíaca e cirurgia bariátrica aumentam a dose. Trocar de marca ou de genérico exige TSH em 6 semanas (bioequivalência ±10%).</li>
+<li><b>Situações que mudam a dose:</b> gestação (+25–30% ao positivar o teste; GO10), estrogênio oral, ganho de peso, síndrome nefrótica, indutores enzimáticos (+); envelhecimento, perda ponderal, androgênio (−).</li>
+<li><b>Refratário (&gt;2,5 µg/kg):</b> adesão e teste de absorção; celíaca, <i>H. pylori</i>, gastrite atrófica, interações; formulação líquida ou cápsula de gel; LT4 semanal supervisionada em não aderentes selecionados.</li>
+</ul>
+<div class="sub-title">F1.2 · Doença de Graves</div>
+<ul class="bullets">
+<li><b>Controle imediato:</b> propranolol 20–40 mg 6/6–8/8 h (também reduz conversão T4→T3 em dose alta) ou atenolol 25–100 mg 1–2×/dia; diltiazem ou verapamil se β-bloqueio contraindicado.</li>
+<li><b>Tionamida (1ª linha na maioria no Brasil):</b> metimazol pela faixa de T4L; T4L/T3 a cada 4–6 semanas, reduzir 30–50% ao normalizar; manutenção 5–10 mg. 12–18 meses → TRAb: negativo → suspender e seguir TSH a cada 1–3 meses por 6–12 meses (recidiva 50% no 1º ano); positivo → mais 12 meses, metimazol de baixa dose a longo prazo ou definitivo.</li>
+<li><b>RAI:</b> preferir se recidiva, comorbidade cirúrgica, contraindicação a tionamida, desejo do paciente; contraindicado em gestação, lactação, plano de gestar &lt;6 meses, orbitopatia ativa moderada-grave; idoso cardiopata deve estar eutireóideo com metimazol antes (suspender 3–7 dias antes; reintroduzir 3–7 dias depois se necessário). TSH/T4L em 4–6 semanas; hipotireoidismo esperado em 2–6 meses.</li>
+<li><b>Tireoidectomia total:</b> bócio &gt;80 g ou compressivo, nódulo suspeito, hiperparatireoidismo, orbitopatia ativa grave, gestação desejada logo, falha ou toxicidade de tionamida. Preparo: eutireoidismo com metimazol; SSKI 1–2 gotas (50–100 mg de iodo) 3×/dia por 10 dias antes (reduz vascularização e sangramento); urgência sem tempo → betabloqueador + iodo + dexametasona + colestiramina por 5–7 dias. PTH/cálcio no pós-operatório; LT4 1,6 µg/kg no 1º dia.</li>
+<li><b>Orbitopatia:</b> todos — cessar tabagismo, eutireoidismo estável (evitar hipotireoidismo pós-RAI), lubrificante, óculos, prisma, cabeceira elevada. Leve ativa → selênio 100 µg (selenito) 2×/dia por 6 meses. Moderada-grave ativa → <b>metilprednisolona IV 500 mg/semana por 6 semanas e 250 mg/semana por 6 semanas (4,5 g)</b>, ± micofenolato 0,72 g/dia (EUGOGO 1ª linha), ou <b>teprotumumabe 10 mg/kg e depois 20 mg/kg IV a cada 3 semanas (8 infusões)</b> quando proptose ou diplopia predominam (ATA/ETA 2022; registrado na Anvisa, fora do SUS; atenção a hiperglicemia, perda auditiva, DII); RT orbitária se diplopia progressiva; tocilizumabe ou rituximabe em corticorresistente. Ameaça à visão → pulso 0,5–1 g/dia por 3 dias e descompressão se sem resposta em 1–2 semanas. Inativa → cirurgia reabilitadora na ordem descompressão → estrabismo → pálpebra. Dose cumulativa de metilprednisolona &gt;8 g é proibida (hepatotoxicidade fatal).</li>
+</ul>
+<div class="box decision"><span class="box-label">DECISION</span><div class="box-title">Tionamida, radioiodo ou cirurgia — critérios que inclinam</div><div class="box-body"><b>Tionamida:</b> maior chance de remissão (mulher, doença leve, bócio pequeno, TRAb baixo), orbitopatia ativa, gestação planejada a médio prazo, idoso com expectativa limitada, acesso restrito a medicina nuclear. <b>RAI:</b> recidiva, comorbidade cirúrgica, contraindicação a tionamida, sem orbitopatia ativa, sem gestação em 6 meses. <b>Cirurgia:</b> bócio grande, compressão, nódulo suspeito, hiperparatireoidismo, orbitopatia ativa moderada-grave com hipertireoidismo de difícil controle, desejo de solução rápida e cirurgião de alto volume disponível.</div></div>
+<div class="sub-title">F1.3 · BMT, adenoma tóxico e subclínico</div>
+<ul class="bullets">
+<li>Definitivo: RAI (BMT e adenoma) ou cirurgia (total no BMT; lobectomia no adenoma); radiofrequência no adenoma &lt;20–30 mL em centros experientes.</li>
+<li>Metimazol de baixa dose prolongado: idoso frágil, recusa de definitivo; ponte antes do RAI em cardiopata.</li>
+<li>Subclínico grau 2 (TSH &lt;0,1) em ≥65 anos, cardiopata, osteoporose ou pós-menopausa: tratar a causa; grau 1 (0,1–0,4): considerar nos mesmos grupos; jovem assintomático: TSH a cada 6–12 meses.</li>
+</ul>
+<div class="sub-title">F1.4 · Tireoidites e fármacos</div>
+<ul class="bullets">
+<li>De Quervain: AINE → prednisona 40 mg/dia por 1–2 semanas e desmame em 2–4 semanas ou mais; propranolol na fase tóxica; LT4 temporária se hipotireoidismo sintomático (reavaliar em 6–12 meses).</li>
+<li>Pós-parto/indolor: betabloqueador (propranolol ou metoprolol; compatíveis com aleitamento); LT4 na fase hipo se sintomática, amamentando ou planejando gestar.</li>
+<li>Amiodarona: AIH → LT4; AIT 1 → metimazol 30–40 mg/dia e depois definitivo; AIT 2 → prednisona 0,5–0,7 mg/kg/dia por ~3 meses com desmame; mista → ambos; refratária e instável → tireoidectomia.</li>
+<li>Imunoterapia: fase tóxica → betabloqueador; hipotireoidismo → LT4; manter imunoterapia; hipofisite → hidrocortisona antes da LT4.</li>
+</ul>
+<div class="sub-title">F1.5 · Nódulo e bócio atóxico</div>
+<ul class="bullets">
+<li>Benigno assintomático: seguimento por US; sem LT4 supressiva; sem iodo.</li>
+<li>Cisto ou predominantemente cístico recorrente: aspiração + etanol (1ª linha).</li>
+<li>Sólido benigno sintomático: ablação térmica (radiofrequência, laser) com duas citologias benignas e laringoscopia prévia, ou lobectomia.</li>
+<li>Bócio multinodular compressivo ou mergulhante: tireoidectomia total; RAI (± rhTSH, fora de bula) em inelegíveis.</li>
+<li>Bethesda III–IV: repetir PAAF/molecular/lobectomia diagnóstica; V–VI: cirurgia conforme C.4.</li>
+</ul>
+<div class="sub-title">F1.6 · Carcinoma diferenciado</div>
+<ul class="bullets">
+<li><b>Cirurgia pelo cTNM</b>: vigilância ativa ou ablação (cT1aN0M0 selecionado) → lobectomia (cT1–cT2 N0 de baixo risco) → total + esvaziamento terapêutico (&gt;4 cm, T4, cN1, M1). Avaliação de voz e laringoscopia seletiva; preservação de paratireoides; cálcio + calcitriol guiados por PTH após total.</li>
+<li><b>Pós-operatório:</b> Tg + anti-Tg em 6–12 semanas, US em 6–12 meses, risco ATA 2025. RAI: baixo risco → não rotineira; intermediário → considerar (30–100 mCi); alto → 100–150 mCi; M1 → 100–200 mCi ou dosimetria. Preparo: rhTSH (preferido; no SUS para contraindicação à abstinência) ou suspensão da LT4 por 3–4 semanas (TSH &gt;30); dieta pobre em iodo por 1–2 semanas; PCI 2–10 dias após.</li>
+<li><b>TSH:</b> resposta excelente/indeterminada → dentro da referência; incompleta → abaixo da referência, ponderando FA e osteoporose. Reestratificar a cada consulta.</li>
+<li><b>Doença persistente/recorrente:</b> cirurgia para linfonodo ≥8–10 mm; etanol ou radiofrequência se reoperação de alto risco; RAI se captante; RT externa para irressecável.</li>
+<li><b>Refratário progressivo:</b> painel molecular → alvo (RET, NTRK, ALK, BRAF) ou lenvatinibe 24 mg/dia (dose menor inicial possível) → cabozantinibe. No SUS, quimioterapia paliativa pela APAC oncológica; lenvatinibe e sorafenibe não incorporados (2024).</li>
+</ul>
+<div class="sub-title">F1.7 · Medular, anaplásico e linfoma</div>
+<ul class="bullets">
+<li>Medular: metanefrinas → adrenalectomia se feocromocitoma → total + nível VI; RET germinativo e rastreio familiar; calcitonina e CEA 2–3 meses após; metastático progressivo → selpercatinibe/pralsetinibe (RET) ou vandetanibe/cabozantinibe.</li>
+<li>Anaplásico: BRAF em horas; dabrafenibe + trametinibe se mutado; cirurgia + quimiorradioterapia se ressecável; cuidado paliativo precoce.</li>
+<li>Linfoma: R-CHOP ± RT (DLBCL); RT ou cirurgia (MALT localizado).</li>
+</ul>
+<div class="sub-title">F1.8 · Emergências — sequência na tempestade e no mixedema</div>
+<div class="mnemo"><div class="mnemo-title"><b>CRISE</b> cinco frentes da tempestade tireotóxica (a ordem de início é β → síntese → iodo)</div><div class="mnemo-grid">
+<div class="mnemo-row"><span class="mnemo-letter">C</span><span><b>Corticoide</b> · hidrocortisona 300 mg IV e 100 mg 8/8 h (ou dexametasona 2 mg 6/6 h): menos conversão T4→T3 e cobertura de insuficiência adrenal relativa</span></div>
+<div class="mnemo-row"><span class="mnemo-letter">R</span><span><b>Ritmo e resfriamento</b> · propranolol 60–80 mg 4/4 h ou esmolol titulado; paracetamol, compressas, volume com glicose; anticoagular FA conforme CHA₂DS₂-VASc</span></div>
+<div class="mnemo-row"><span class="mnemo-letter">I</span><span><b>Iodo depois</b> · SSKI 5 gotas 6/6 h ou Lugol 8–10 gotas 6–8/8 h, sempre ≥1 h após a tionamida (bloqueia liberação; antes dela, vira substrato)</span></div>
+<div class="mnemo-row"><span class="mnemo-letter">S</span><span><b>Síntese bloqueada</b> · PTU 500–1.000 mg e 250 mg 4/4 h ou metimazol 20 mg 6/6 h, por VO, SNE ou via retal manipulada</span></div>
+<div class="mnemo-row"><span class="mnemo-letter">E</span><span><b>Estopim tratado</b> · culturas e antibiótico se infecção, controle de CAD, TEP, IAM; colestiramina 4 g 6/6 h; plasmaférese ou tireoidectomia se refratário em 24–48 h</span></div>
+</div></div>
+<ul class="bullets">
+<li><b>Transição da tempestade:</b> com melhora clínica em 24–72 h, suspender o iodo primeiro (em 1–2 semanas, para não atrasar RAI por meses), reduzir corticoide em dias, converter PTU para metimazol quando estável e planejar o definitivo (RAI após washout de iodo de 3–6 semanas, ou cirurgia com o próprio esquema como preparo).</li>
+<li><b>Coma mixedematoso:</b> hidrocortisona junto; LT4 em ataque e manutenção diária, com ECG e troponina em idoso; T4L sobe em 1–2 dias e a temperatura em 24–48 h — ausência de melhora em 48 h obriga procurar sepse, sangramento, insuficiência adrenal não coberta e erro de via (absorção enteral reduzida). Desmame ventilatório costuma levar dias.</li>
+<li><b>Cirurgia não tireoidiana em paciente descompensado:</b> tireotoxicose — adiar eletiva até eutireoidismo; urgência → betabloqueador, tionamida, iodo e corticoide no perioperatório (o mesmo esquema da tempestade, em doses menores). Hipotireoidismo manifesto leve ou moderado não contraindica urgência; grave adia eletiva e pede cuidado com sedativos, hipotermia e íleo.</li>
+</ul>
+<div class="sub-title">F1.9 · Gestação e lactação — a parte que é deste HP</div>
+<ul class="bullets">
+<li><b>Rastreio, referência por trimestre e ajuste de LT4 da hipotireóidea grávida</b> estão no GO10 (D.8). Aqui ficam as decisões de doença estabelecida: Graves, nódulo e câncer.</li>
+<li><b>Graves gestante:</b> PTU no 1º trimestre na menor dose que mantenha T4L no limite superior da referência (ou suspender se baixa dose e baixo risco de recidiva); após 16 semanas, manter PTU ou trocar para metimazol é decisão individual (ATA 2026); betabloqueador por poucas semanas (restrição de crescimento com uso prolongado); TRAb no 1º tri e 18–22 sem; neonatologista avisado se TRAb alto (tireotoxicose neonatal em 1–5% dos filhos de mães com TRAb alto, inclusive pós-ablação).</li>
+<li><b>Nódulo e CDT na gestante:</b> PAAF em qualquer trimestre; papilífero descoberto na gestação sem progressão → cirurgia no pós-parto; crescimento ≥20% ou N1 → tireoidectomia no 2º trimestre. RAI só após a gestação e com amamentação encerrada há ≥3 meses.</li>
+<li><b>Lactação:</b> metimazol ≤20–30 mg/dia ou PTU ≤450 mg/dia compatíveis (dose após a mamada); betabloqueador preferido propranolol ou metoprolol; cintilografia com 99mTc exige pausa de 12–24 h; 131I contraindica amamentação naquela criança.</li>
+</ul>
+<div class="sub-title">F1.10 · Interações que mudam a dose de levotiroxina</div>
+<div class="stbl stbl-3">
+<div class="stbl-head stbl-3"><div>Situação ou fármaco</div><div>Mecanismo</div><div>O que fazer</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Situação">Carbonato de cálcio, sulfato ferroso, antiácidos de alumínio, sevelamer</div><div class="col" data-l="Mecanismo">Quelação/adsorção intraluminal</div><div class="col" data-l="Fazer">Separar ≥4 h; TSH em 6–8 semanas se iniciar ou suspender</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Situação">IBP crônico, gastrite atrófica, H. pylori</div><div class="col" data-l="Mecanismo">pH gástrico alto reduz dissolução do comprimido</div><div class="col" data-l="Fazer">Aumentar 20–30% ou usar líquida/cápsula de gel; tratar H. pylori</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Situação">Estrogênio oral, tamoxifeno, raloxifeno, gestação</div><div class="col" data-l="Mecanismo">TBG mais alta sequestra T4</div><div class="col" data-l="Fazer">TSH 6–8 semanas após iniciar; via transdérmica não altera TBG</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Situação">Rifampicina, carbamazepina, fenitoína, fenobarbital, sertralina</div><div class="col" data-l="Mecanismo">Indução de UGT/CYP e maior depuração</div><div class="col" data-l="Fazer">Monitorar TSH; ajustar em 12,5–25 µg</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Situação">Inibidores de tirosina-quinase (sunitinibe, sorafenibe, lenvatinibe)</div><div class="col" data-l="Mecanismo">Tireoidite destrutiva, maior D3, menor absorção</div><div class="col" data-l="Fazer">TSH mensal no início; no CDT, aumentar LT4 para manter o alvo</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Situação">Cirurgia bariátrica (sobretudo derivação), celíaca, DII</div><div class="col" data-l="Mecanismo">Menor superfície ou mucosa absortiva</div><div class="col" data-l="Fazer">TSH a cada 3 meses no 1º ano; dose por peso atual; anti-transglutaminase</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Situação">Varfarina em paciente que inicia ou ajusta LT4</div><div class="col" data-l="Mecanismo">Eutireoidismo aumenta catabolismo de fatores de coagulação</div><div class="col" data-l="Fazer">INR semanal nas 4 semanas seguintes a mudança de função</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Situação">Café, leite, soja, fibra no café da manhã</div><div class="col" data-l="Mecanismo">Competição e adsorção</div><div class="col" data-l="Fazer">Jejum de 30–60 min ou dose ao deitar; manter o hábito constante</div></div>
+</div>
+<div class="box danger"><span class="box-label">DANGER</span><div class="box-title">Quatro prescrições que causam dano previsível</div><div class="box-body"><b>(1)</b> Iodo antes da tionamida na tempestade (substrato para mais hormônio). <b>(2)</b> Levotiroxina antes do corticoide no hipotireoidismo central ou na suspeita de Addison (crise adrenal). <b>(3)</b> PTU como 1ª escolha fora da tempestade, do 1º trimestre ou da alergia ao metimazol (hepatite fulminante). <b>(4)</b> RAI em orbitopatia ativa moderada-grave ou em tabagista sem profilaxia com corticoide (piora ocular em 15–20%).</div></div>
+<div class="box hy"><span class="box-label">HIGH-YIELD</span><div class="box-title">SUS × recomendação internacional (out/2026)</div><div class="box-body"><b>No componente básico (RENAME):</b> levotiroxina 12,5, 25, 37,5, 50 e 100 µg; tiamazol (metimazol) 5 e 10 mg; propiltiouracila 100 mg; propranolol; prednisona; hidrocortisona 100 e 500 mg IV. <b>Procedimentos:</b> cintilografia e captação, PAAF, tireoidectomia, iodoterapia do CDT (SIGTAP 03.04.09.001-8 a .006-9, 30–250 mCi) e do hipertireoidismo em serviços de medicina nuclear (código a confirmar). <b>Incorporado em 2024:</b> tireotrofina alfa (rhTSH) para CDT com indicação de RAI e contraindicação à abstinência (Portaria SECTICS/MS 43/2024). <b>Não incorporados:</b> lenvatinibe e sorafenibe (Portaria SECTICS/MS 42/2024), teprotumumabe (sem avaliação CONITEC), teste molecular de nódulo, LT4 e LT3 injetáveis (sem registro). Iodeto de potássio (SSKI) e Lugol são de manipulação. PCDT do CDT de 2014 em revisão (CP 88/2026).</div></div>
+</div>
+</div>
+
+<div class="card tx">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">F.2</span> Doses operacionais</div><h3>Tabela de doses — adulto, salvo indicação <span class="ank ank-hy">HIGH-YIELD</span></h3></div>
+<div class="card-body">
+<div class="stbl stbl-4">
+<div class="stbl-head stbl-4"><div>Fármaco</div><div>Dose</div><div>Via · frequência · duração</div><div>Notas (mecanismo, ajuste, segurança)</div></div>
+<div class="stbl-row stbl-4"><div class="col col1" data-l="Fármaco">Levotiroxina — reposição</div><div class="col" data-l="Dose">1,6 µg/kg/dia (1,6–1,8 pós-tireoidectomia total)</div><div class="col" data-l="Via">VO 1×/dia, jejum 30–60 min ou ao deitar · contínuo</div><div class="col" data-l="Notas">Meia-vida 7 dias: estado de equilíbrio em 6 semanas; dose perdida pode ser dobrada no dia seguinte <span class="ev ev-acr">ATA 2014</span></div></div>
+<div class="stbl-row stbl-4"><div class="col col1" data-l="Fármaco">Levotiroxina — idoso/cardiopata</div><div class="col" data-l="Dose">12,5–25 µg/dia; +12,5–25 µg a cada 4–8 sem</div><div class="col" data-l="Via">VO 1×/dia</div><div class="col" data-l="Notas">Alvo TSH 2–6 no idoso; angina nova → reduzir e investigar DAC <span class="ev ev-sbr">SBEM 2022</span></div></div>
+<div class="stbl-row stbl-4"><div class="col col1" data-l="Fármaco">Levotiroxina — subclínico</div><div class="col" data-l="Dose">25–50 µg/dia (ou 1,1–1,2 µg/kg)</div><div class="col" data-l="Via">VO 1×/dia; TSH em 6–8 sem</div><div class="col" data-l="Notas">Teste terapêutico sintomático: reavaliar em 3–6 meses e suspender se sem ganho</div></div>
+<div class="stbl-row stbl-4"><div class="col col1" data-l="Fármaco">Levotiroxina — coma mixedematoso</div><div class="col" data-l="Dose">200–400 µg de ataque; 50–100 µg/dia (≈1,6 µg/kg × 0,75 IV)</div><div class="col" data-l="Via">IV (sem registro no Brasil) ou SNE em dose maior (300–500 µg de ataque) · confirmar protocolo local</div><div class="col" data-l="Notas">Sempre com hidrocortisona; menor em idoso/coronariopata; LT3 5–20 µg IV e 2,5–10 µg 8/8 h é opção ATA (indisponível)</div></div>
+<div class="stbl-row stbl-4"><div class="col col1" data-l="Fármaco">Levotiroxina — congênito</div><div class="col" data-l="Dose">10–15 µg/kg/dia (12–17 nos graves; ~50 µg no RN a termo)</div><div class="col" data-l="Via">VO 1×/dia, comprimido triturado em água ou leite materno, antes de 14 dias de vida</div><div class="col" data-l="Notas">Meta T4L 1,4–2,3 ng/dL e TSH 0,4–4 nos 3 primeiros anos <span class="ev ev-sbr">PCDT HC 2021</span></div></div>
+<div class="stbl-row stbl-4"><div class="col col1" data-l="Fármaco">Metimazol — Graves</div><div class="col" data-l="Dose">5–10 mg (T4L 1–1,5× LSN) · 10–20 mg (1,5–2×) · 30–40 mg (2–3×)</div><div class="col" data-l="Via">VO 1×/dia (doses &gt;20 mg podem ser divididas) · 12–18 meses</div><div class="col" data-l="Notas">Inibe TPO; agranulocitose dose-dependente; hemograma e TGP basais; manutenção 2,5–10 mg <span class="ev ev-acr">ATA 2016</span></div></div>
+<div class="stbl-row stbl-4"><div class="col col1" data-l="Fármaco">Metimazol — criança</div><div class="col" data-l="Dose">0,2–0,5 mg/kg/dia (até 1 mg/kg/dia)</div><div class="col" data-l="Via">VO 1×/dia · 24–36 meses</div><div class="col" data-l="Notas">PTU proibido em crianças (hepatotoxicidade) <span class="ev ev-eular">ETA 2018</span></div></div>
+<div class="stbl-row stbl-4"><div class="col col1" data-l="Fármaco">Metimazol — tempestade</div><div class="col" data-l="Dose">60–80 mg/dia (20 mg 6/6 h)</div><div class="col" data-l="Via">VO/SNE (via retal manipulada se necessário)</div><div class="col" data-l="Notas">JTA prefere metimazol; ATA aceita ambos</div></div>
+<div class="stbl-row stbl-4"><div class="col col1" data-l="Fármaco">Propiltiouracila — 1º trimestre/alergia</div><div class="col" data-l="Dose">50–150 mg 8/8 h (100–450 mg/dia)</div><div class="col" data-l="Via">VO 8/8 h</div><div class="col" data-l="Notas">Equivalência ~20:1 com metimazol; hepatite hepatocelular — TGP se sintomas</div></div>
+<div class="stbl-row stbl-4"><div class="col col1" data-l="Fármaco">Propiltiouracila — tempestade</div><div class="col" data-l="Dose">500–1.000 mg de ataque; 250 mg 4/4 h</div><div class="col" data-l="Via">VO/SNE</div><div class="col" data-l="Notas">Inibe D1 periférica além da TPO <span class="ev ev-acr">ATA 2016</span></div></div>
+<div class="stbl-row stbl-4"><div class="col col1" data-l="Fármaco">Propranolol — sintomático</div><div class="col" data-l="Dose">10–40 mg 6/6 a 8/8 h</div><div class="col" data-l="Via">VO · até eutireoidismo</div><div class="col" data-l="Notas">Dose ≥160 mg/dia reduz T4→T3; evitar em asma grave; metoprolol na lactante</div></div>
+<div class="stbl-row stbl-4"><div class="col col1" data-l="Fármaco">Propranolol — tempestade</div><div class="col" data-l="Dose">60–80 mg 4/4 h</div><div class="col" data-l="Via">VO/SNE</div><div class="col" data-l="Notas">Esmolol 250–500 µg/kg em bolus e 50–100 µg/kg/min se IC ou instabilidade</div></div>
+<div class="stbl-row stbl-4"><div class="col col1" data-l="Fármaco">Atenolol</div><div class="col" data-l="Dose">25–100 mg</div><div class="col" data-l="Via">VO 1–2×/dia</div><div class="col" data-l="Notas">β1-seletivo; ajustar na DRC</div></div>
+<div class="stbl-row stbl-4"><div class="col col1" data-l="Fármaco">Iodeto de potássio (SSKI ~50 mg/gota)</div><div class="col" data-l="Dose">Tempestade: 5 gotas (250 mg) 6/6 h · pré-operatório: 1–2 gotas 3×/dia por 10 dias</div><div class="col" data-l="Via">VO diluído em suco ou leite</div><div class="col" data-l="Notas">Só ≥1 h após tionamida; manipulação — conferir concentração</div></div>
+<div class="stbl-row stbl-4"><div class="col col1" data-l="Fármaco">Lugol (iodo 5% + iodeto 10%)</div><div class="col" data-l="Dose">Tempestade: 8–10 gotas 6–8/8 h · pré-op: 5–7 gotas 8/8 h por 7–10 dias</div><div class="col" data-l="Via">VO</div><div class="col" data-l="Notas">~6–8 mg de iodo/gota; fórmulas variam — confirmar com a farmácia</div></div>
+<div class="stbl-row stbl-4"><div class="col col1" data-l="Fármaco">Hidrocortisona — tempestade</div><div class="col" data-l="Dose">300 mg de ataque; 100 mg 8/8 h</div><div class="col" data-l="Via">IV</div><div class="col" data-l="Notas">Reduz T4→T3 e cobre insuficiência adrenal relativa; dexametasona 2 mg 6/6 h alternativa</div></div>
+<div class="stbl-row stbl-4"><div class="col col1" data-l="Fármaco">Hidrocortisona — coma mixedematoso</div><div class="col" data-l="Dose">100 mg 8/8 h</div><div class="col" data-l="Via">IV até cortisol normal</div><div class="col" data-l="Notas">Antes ou junto da LT4 <span class="ev ev-acr">ATA 2014</span></div></div>
+<div class="stbl-row stbl-4"><div class="col col1" data-l="Fármaco">Colestiramina</div><div class="col" data-l="Dose">4 g 6/6 h</div><div class="col" data-l="Via">VO</div><div class="col" data-l="Notas">Quebra a circulação êntero-hepática de T4/T3; separar 4 h das outras drogas</div></div>
+<div class="stbl-row stbl-4"><div class="col col1" data-l="Fármaco">Prednisona — De Quervain</div><div class="col" data-l="Dose">40 mg/dia</div><div class="col" data-l="Via">VO 1–2 sem, desmame em 2–4 sem ou mais</div><div class="col" data-l="Notas">Recidiva no desmame em 10–20% <span class="ev ev-acr">ATA 2016</span></div></div>
+<div class="stbl-row stbl-4"><div class="col col1" data-l="Fármaco">Prednisona — AIT tipo 2</div><div class="col" data-l="Dose">0,5–0,7 mg/kg/dia</div><div class="col" data-l="Via">VO ~3 meses com desmame</div><div class="col" data-l="Notas">Piora ao desmamar → retomar <span class="ev ev-eular">ETA 2018</span></div></div>
+<div class="stbl-row stbl-4"><div class="col col1" data-l="Fármaco">Prednisona — profilaxia pós-RAI</div><div class="col" data-l="Dose">0,3–0,5 mg/kg/dia (0,2 mg/kg se risco menor)</div><div class="col" data-l="Via">VO, início 1–3 dias após RAI, retirada em ~3 meses (6 sem na dose baixa)</div><div class="col" data-l="Notas">Orbitopatia leve ativa ou tabagista <span class="ev ev-eular">EUGOGO 2021</span></div></div>
+<div class="stbl-row stbl-4"><div class="col col1" data-l="Fármaco">Metilprednisolona — orbitopatia moderada-grave</div><div class="col" data-l="Dose">500 mg/sem × 6 + 250 mg/sem × 6 (4,5 g)</div><div class="col" data-l="Via">IV semanal · 12 semanas</div><div class="col" data-l="Notas">Cumulativa &gt;8 g proibida; TGP, glicemia, PA; ± micofenolato <span class="ev ev-eular">ATA/ETA TED 2022</span></div></div>
+<div class="stbl-row stbl-4"><div class="col col1" data-l="Fármaco">Metilprednisolona — neuropatia óptica</div><div class="col" data-l="Dose">500–1.000 mg/dia por 3 dias (repetir na 2ª semana)</div><div class="col" data-l="Via">IV</div><div class="col" data-l="Notas">Sem resposta em 1–2 sem → descompressão</div></div>
+<div class="stbl-row stbl-4"><div class="col col1" data-l="Fármaco">Micofenolato sódico</div><div class="col" data-l="Dose">0,72 g/dia</div><div class="col" data-l="Via">VO 24 semanas, com IVMP</div><div class="col" data-l="Notas">EUGOGO 2021 1ª linha combinada; teratogênico</div></div>
+<div class="stbl-row stbl-4"><div class="col col1" data-l="Fármaco">Teprotumumabe</div><div class="col" data-l="Dose">10 mg/kg na 1ª infusão; 20 mg/kg nas 7 seguintes</div><div class="col" data-l="Via">IV a cada 3 semanas · 8 infusões</div><div class="col" data-l="Notas">Anti-IGF-1R; hipoacusia, hiperglicemia, piora de DII; contracepção; fora do SUS</div></div>
+<div class="stbl-row stbl-4"><div class="col col1" data-l="Fármaco">Selênio (selenito)</div><div class="col" data-l="Dose">100 µg 2×/dia</div><div class="col" data-l="Via">VO 6 meses</div><div class="col" data-l="Notas">Orbitopatia leve ativa; a apostila grafa "100 mg" — é microgramas</div></div>
+<div class="stbl-row stbl-4"><div class="col col1" data-l="Fármaco">AINE — De Quervain</div><div class="col" data-l="Dose">Ibuprofeno 400–800 mg 8/8 h ou naproxeno 500 mg 12/12 h</div><div class="col" data-l="Via">VO até alívio, em geral 1–4 semanas</div><div class="col" data-l="Notas">Falha em 48–72 h → prednisona</div></div>
+<div class="stbl-row stbl-4"><div class="col col1" data-l="Fármaco">Gluconato de cálcio 10% — hipocalcemia pós-op</div><div class="col" data-l="Dose">10–20 mL em 10 min; infusão 0,5–1,5 mg/kg/h de cálcio elementar</div><div class="col" data-l="Via">IV</div><div class="col" data-l="Notas">Com carbonato de cálcio VO + calcitriol 0,25–0,5 µg 12/12 h (EN06)</div></div>
+<div class="stbl-row stbl-4"><div class="col col1" data-l="Fármaco">131I — Graves</div><div class="col" data-l="Dose">10–15 mCi fixa ou calculada (captação e volume)</div><div class="col" data-l="Via">VO dose única</div><div class="col" data-l="Notas">β-hCG negativo; sem gestação por 6 meses; lactação suspensa ≥3 meses antes</div></div>
+<div class="stbl-row stbl-4"><div class="col col1" data-l="Fármaco">131I — BMT/adenoma</div><div class="col" data-l="Dose">Atividade maior que no Graves (frequentemente 15–30 mCi)</div><div class="col" data-l="Via">VO dose única</div><div class="col" data-l="Notas">Conforme serviço de medicina nuclear — confirmar protocolo local</div></div>
+<div class="stbl-row stbl-4"><div class="col col1" data-l="Fármaco">131I — CDT</div><div class="col" data-l="Dose">Baixo risco (se usada) 30–50 mCi · intermediário 30–100 · alto 100–150 · M1 100–200 ou dosimetria</div><div class="col" data-l="Via">VO, após rhTSH ou abstinência de LT4</div><div class="col" data-l="Notas">&gt;150 mCi em &gt;70 anos ou DRC só com dosimetria <span class="ev ev-acr">ATA 2025</span></div></div>
+<div class="stbl-row stbl-4"><div class="col col1" data-l="Fármaco">Tireotrofina alfa (rhTSH)</div><div class="col" data-l="Dose">0,9 mg</div><div class="col" data-l="Via">IM em 2 dias consecutivos; RAI 24 h após a 2ª dose</div><div class="col" data-l="Notas">SUS desde 2024 para contraindicação à abstinência <span class="ev ev-sbr">Portaria SECTICS 43/2024</span></div></div>
+<div class="stbl-row stbl-4"><div class="col col1" data-l="Fármaco">Lenvatinibe — CDT refratário</div><div class="col" data-l="Dose">24 mg/dia (início menor possível)</div><div class="col" data-l="Via">VO contínuo</div><div class="col" data-l="Notas">HAS, proteinúria, fístula; avaliar a cada 2 sem nos 2 primeiros meses; fora do SUS <span class="ev ev-acr">ATA 2025</span></div></div>
+<div class="stbl-row stbl-4"><div class="col col1" data-l="Fármaco">Dabrafenibe + trametinibe — anaplásico BRAF V600E</div><div class="col" data-l="Dose">150 mg 12/12 h + 2 mg 1×/dia</div><div class="col" data-l="Via">VO contínuo</div><div class="col" data-l="Notas">Febre (pirexia), neoadjuvante possível; oncologia</div></div>
+</div>
+</div>
+</div>
+
+<div class="card tx">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">F.3</span> Cenários</div><h3>Caso → conduta certa → erro típico <span class="ank ank-dgr">DANGER</span></h3></div>
+<div class="card-body">
+<div class="stbl stbl-3">
+<div class="stbl-head stbl-3"><div>Caso</div><div>Conduta certa</div><div>Erro típico</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Caso">Mulher 28 anos, Graves, T4L 2,5× LSN, deseja engravidar em 1 ano</div><div class="col" data-l="Conduta certa">Discutir definitivo antes da gestação (cirurgia ou RAI com 6 meses de intervalo) ou trocar para PTU ao tentar conceber; TRAb na gestação</div><div class="col" data-l="Erro típico">Manter metimazol 30 mg sem plano e descobrir a gravidez na 8ª semana (janela da embriopatia)</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Caso">Idoso 82 anos, TSH 8,5, T4L normal, assintomático</div><div class="col" data-l="Conduta certa">Repetir e observar; TSH dentro da referência para a idade</div><div class="col" data-l="Erro típico">Iniciar 50 µg de LT4 e precipitar FA</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Caso">Puérpera de 3 meses com palpitação, sem dor cervical, TSH suprimido</div><div class="col" data-l="Conduta certa">TRAb e/ou captação (sem RAI diagnóstico se amamenta; usar 99mTc com pausa curta ou Doppler): tireoidite pós-parto → betabloqueador</div><div class="col" data-l="Erro típico">Metimazol empírico para "Graves pós-parto" sem distinguir destruição de síntese</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Caso">Nódulo de 8 mm TR5 em mulher de 45 anos, sem linfonodo</div><div class="col" data-l="Conduta certa">US anual (ACR: seguir ≥0,5 cm); PAAF só se crescer, linfonodo ou extensão</div><div class="col" data-l="Erro típico">PAAF imediata, achado de microcarcinoma e tireoidectomia total</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Caso">Papilífero de 1,8 cm, cN0, intratireoidiano</div><div class="col" data-l="Conduta certa">Lobectomia; sem RAI; TSH na referência; US de seguimento</div><div class="col" data-l="Erro típico">Total + 100 mCi + TSH &lt;0,1 "por segurança"</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Caso">Calcitonina 850 pg/mL em nódulo Bethesda IV</div><div class="col" data-l="Conduta certa">Medular: RET, metanefrinas, cálcio, CEA, imagem cervical e de fígado; total + nível VI após excluir feocromocitoma</div><div class="col" data-l="Erro típico">Lobectomia diagnóstica como em qualquer neoplasia folicular</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Caso">Cardiopata em amiodarona com TSH suprimido, T4L alto, Doppler sem fluxo</div><div class="col" data-l="Conduta certa">AIT tipo 2: prednisona 0,5–0,7 mg/kg/dia; decisão sobre amiodarona com cardiologista</div><div class="col" data-l="Erro típico">Metimazol isolado por meses enquanto a FA piora</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Caso">Pós-operatório de tireoidectomia total, 4 h, abaulamento cervical e estridor</div><div class="col" data-l="Conduta certa">Abrir a ferida à beira do leito e chamar o cirurgião</div><div class="col" data-l="Erro típico">Aguardar TC ou tentar IOT repetidamente sem descomprimir</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Caso">Paciente na UTI com sepse: T3 baixo, T4L baixo-normal, TSH 0,2</div><div class="col" data-l="Conduta certa">Eutireoidiano doente: não repor; repetir após a recuperação</div><div class="col" data-l="Erro típico">Iniciar LT4 ou T3 "para ajudar o coração"</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Caso">TSH 0,02, T4L e T3 altos em mulher sem bócio, sem sintomas, usando suplemento capilar com biotina</div><div class="col" data-l="Conduta certa">Suspender biotina 2–3 dias e repetir (ou outra plataforma de ensaio); TRAb falso-positivo pelo mesmo mecanismo</div><div class="col" data-l="Erro típico">Diagnosticar Graves e iniciar metimazol</div></div>
+</div>
+</div>
+</div>
+</section>
+
+<section id="pitfalls">
+<div class="section"><div class="section-eyebrow"><span>G</span> Pitfalls · Mitos · Controvérsias</div><h2 class="section-title">Erros Operacionais + Mitos Vivos + Debates Atuais</h2><div class="section-sub">Na tireoide, os erros graves são quase sempre de sequência (iodo antes da tionamida, hormônio antes do cortisol, PAAF antes do TSH) e de excesso (tratar número, puncionar microcarcinoma, suprimir TSH de quem não precisa).</div></div>
+<div class="card pearl">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">G.1</span> Pegadinhas</div><h3>10 erros operacionais em tireoidopatias <span class="ank ank-dgr">DANGER</span></h3></div>
+<div class="card-body">
+<div class="stbl stbl-2">
+<div class="stbl-head stbl-2"><div>Erro comum</div><div>Correto</div></div>
+<div class="stbl-row stbl-2"><div class="col col1" data-l="Erro">Pedir US de tireoide para avaliar TSH alterado ou como rastreio</div><div class="col" data-l="Correto">US é exame de morfologia: indicada por nódulo palpável, bócio, linfonodo ou risco específico; a função se resolve com TSH, T4L, T3 e TRAb.</div></div>
+<div class="stbl-row stbl-2"><div class="col col1" data-l="Erro">Puncionar nódulo com TSH suprimido</div><div class="col" data-l="Correto">TSH baixo → cintilografia; nódulo hipercaptante não se punciona (citologia folicular induz cirurgia desnecessária).</div></div>
+<div class="stbl-row stbl-2"><div class="col col1" data-l="Erro">Titular levotiroxina pelo TSH no hipotireoidismo central</div><div class="col" data-l="Correto">TSH não reflete a dose quando a hipófise falha; alvo é T4L na metade superior da referência, com cortisol avaliado antes.</div></div>
+<div class="stbl-row stbl-2"><div class="col col1" data-l="Erro">Monitorar o início do metimazol pelo TSH</div><div class="col" data-l="Correto">O TSH fica suprimido por meses após o eutireoidismo; use T4L e T3 total a cada 4–6 semanas até estabilizar.</div></div>
+<div class="stbl-row stbl-2"><div class="col col1" data-l="Erro">Tratar tireoidite subaguda ou pós-parto com metimazol</div><div class="col" data-l="Correto">Destruição não é síntese: betabloqueador, AINE ou prednisona; tionamida só acrescenta risco.</div></div>
+<div class="stbl-row stbl-2"><div class="col col1" data-l="Erro">Repor LT4 com base num único TSH de 6–8 em assintomático</div><div class="col" data-l="Correto">Repetir em 6–12 semanas com T4L e anti-TPO; metade normaliza; considerar a idade.</div></div>
+<div class="stbl-row stbl-2"><div class="col col1" data-l="Erro">Trocar metimazol por PTU após agranulocitose</div><div class="col" data-l="Correto">Reação cruzada é a regra: contraindicação às duas tionamidas e tratamento definitivo (RAI ou cirurgia com ponte de iodo, betabloqueador e corticoide).</div></div>
+<div class="stbl-row stbl-2"><div class="col col1" data-l="Erro">Manter TSH &lt;0,1 em todo paciente com carcinoma diferenciado</div><div class="col" data-l="Correto">ATA 2025: TSH dentro da referência na resposta excelente ou indeterminada; abaixo só na incompleta, pesando FA e osso.</div></div>
+<div class="stbl-row stbl-2"><div class="col col1" data-l="Erro">Operar carcinoma medular sem dosar metanefrinas</div><div class="col" data-l="Correto">Todo CMT é NEM 2 até prova em contrário: excluir feocromocitoma (e tratá-lo primeiro), dosar cálcio e PTH, pedir RET germinativo.</div></div>
+<div class="stbl-row stbl-2"><div class="col col1" data-l="Erro">Dosar TSH, T4L e T3 de rotina no paciente de UTI e repor hormônio</div><div class="col" data-l="Correto">Eutireoidiano doente é adaptação: só dosar com suspeita forte, não repor, reavaliar após a recuperação.</div></div>
+</div>
+</div>
+</div>
+<div class="card pearl">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">G.2</span> Mitos e controvérsias</div><h3>O que se repete sem base e o que ainda se discute <span class="ank ank-myt">MYTH</span> <span class="ank ank-con">CONTROVERSY</span></h3></div>
+<div class="card-body">
+<div class="box myth"><span class="box-label">MYTH</span><div class="box-title">"O hipotireoidismo explica a obesidade, e a levotiroxina emagrece"</div><div class="box-body">O ganho de peso do hipotireoidismo manifesto é de 2–5 kg, majoritariamente água e glicosaminoglicanos, e se desfaz com a reposição. A relação TSH × IMC é bidirecional: a leptina estimula o TRH, e obesos têm TSH discretamente mais alto que normaliza com a perda de peso. Doses suprafisiológicas de LT4 para emagrecer causam perda de massa magra e óssea, FA e tireotoxicose factícia.</div></div>
+<div class="box myth"><span class="box-label">MYTH</span><div class="box-title">"Dieta sem glúten, selênio ou iodo curam Hashimoto"</div><div class="box-body">Selênio reduz títulos de anti-TPO em alguns estudos, mas sem efeito consistente em função tireoidiana ou progressão; dieta sem glúten só tem papel com celíaca comprovada (que deve ser rastreada, pois coexiste e reduz a absorção de LT4). Iodo em excesso piora a autoimunidade e induz hipotireoidismo em autoimunes (falha de escape do Wolff-Chaikoff). O selênio tem indicação real em outro cenário: orbitopatia leve ativa.</div></div>
+<div class="box myth"><span class="box-label">MYTH</span><div class="box-title">"Olhar fixo e lid lag significam orbitopatia de Graves"</div><div class="box-body">Retração palpebral e atraso palpebral resultam do tônus simpático sobre o músculo de Müller e aparecem em qualquer tireotoxicose, inclusive factícia e tireoidite. Orbitopatia é outra coisa: proptose medida no exoftalmômetro, inflamação de partes moles, restrição de motilidade e músculos aumentados na imagem. A distinção muda a escolha entre RAI e tionamida.</div></div>
+<div class="box controversy"><span class="box-label">CONTROVERSY</span><div class="box-title">Tratar o hipotireoidismo subclínico com TSH 4,5–10 em adultos jovens?</div><div class="box-body">A favor: associação com doença coronariana e IC em metanálises de coortes quando TSH ≥7, melhora de LDL, progressão em anti-TPO+. Contra: ECR e metanálises (TRUST em idosos, 2017; metanálise de ECR no JAMA, 2018) sem benefício em sintomas ou qualidade de vida, e risco de supertratamento. A diretriz BMJ Rapid Recommendations de 2019 desaconselha tratar a maioria; SBEM 2022 propõe considerar a partir de 7 em &lt;65 anos com cardiopatia. Na prática: tratar o contexto, não o número.</div></div>
+<div class="box controversy"><span class="box-label">CONTROVERSY</span><div class="box-title">Teprotumumabe ou pulso de metilprednisolona como 1ª linha na orbitopatia moderada-grave ativa?</div><div class="box-body">ATA/ETA 2022 colocam o teprotumumabe como preferido quando há proptose significativa ou diplopia (redução média de proptose de ~3 mm, superior ao IVMP); o EUGOGO 2021 mantém IVMP 4,5 g + micofenolato como 1ª linha pela eficácia na atividade, custo e segurança a longo prazo. A comparação de 2025 dos dois documentos mostra que a divergência é exatamente essa, agravada pelas recaídas de 30–50% após teprotumumabe, pela ototoxicidade e pelo custo — no SUS a questão não se coloca (sem incorporação).</div></div>
+<div class="box controversy"><span class="box-label">CONTROVERSY</span><div class="box-title">RAI adjuvante no risco intermediário</div><div class="box-body">A ATA 2025 dividiu o intermediário em dois níveis justamente porque o benefício do RAI não é homogêneo: há sinal de ganho de sobrevida (SEER) em N1 extenso, histologia agressiva e idade avançada, mas não em micrometástases ou extensão microscópica isolada. Faltam ECR específicos (o IoN, britânico, está em andamento); a decisão é individual e multidisciplinar, e a CONITEC 2026 adota o mesmo racional para o SUS.</div></div>
+</div>
+</div>
+</section>
+
+<section id="pearls">
+<div class="section"><div class="section-eyebrow"><span>H</span> Pearls · Evolving</div><h2 class="section-title">H1 · Pearls de Especialista · H2 · Áreas em Evolução</h2><div class="section-sub">Oito nuances que separam quem lê exames de quem entende o eixo; e cinco mudanças reais de 2023–2026 que invalidam parte do que se aprendeu antes.</div></div>
+<div class="card pearl">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">H.1</span> Pearls</div><h3>Nuances que mudam a decisão <span class="ank ank-prl">PEARL</span></h3></div>
+<div class="card-body">
+<div class="box pearl"><span class="box-label">PEARL</span><div class="box-title">O TSH é logarítmico: pequenas mudanças de T4L, grandes mudanças de TSH</div><div class="box-body">A relação log-linear faz uma variação de 2× no T4L produzir variação de ~100× no TSH. Por isso o TSH é o melhor teste de rastreio em quem tem eixo intacto — e o pior em quem não tem (central, recuperação de tireotoxicose, doença aguda, primeiras semanas de LT4). Ajustar dose antes de 6 semanas é ler um TSH ainda fora do equilíbrio.</div></div>
+<div class="box pearl"><span class="box-label">PEARL</span><div class="box-title">Tireoglobulina sérica separa a tireotoxicose exógena de todas as outras</div><div class="box-body">Toda tireotoxicose endógena, por síntese ou por destruição, eleva a Tg; a ingestão de hormônio a suprime (TSH baixo cala a glândula). Captação baixa + Tg baixa = factícia; captação baixa + Tg alta = tireoidite ou iodo. É o exame que resolve o paciente que nega usar "fórmulas".</div></div>
+<div class="box pearl"><span class="box-label">PEARL</span><div class="box-title">A embriopatia do metimazol tem janela: 6 a 10 semanas</div><div class="box-body">A organogênese de face, esôfago e pele ocorre nessa janela, e o teste de gravidez costuma positivar com 4–5 semanas. Daí a regra prática da ATA 2026: quem usa metimazol e pode engravidar deve fazer teste ao primeiro atraso e trocar ou suspender imediatamente; o PTU entra justamente para atravessar esse período, e depois volta-se a discutir.</div></div>
+<div class="box pearl"><span class="box-label">PEARL</span><div class="box-title">TRAb positivo em mulher tratada com RAI ou cirurgia ainda ameaça o feto</div><div class="box-body">A ablação elimina a fonte de hormônio materno, não os plasmócitos que produzem TRAb. Uma gestante eutireóidea em LT4 após RAI pode ter TRAb alto atravessando a placenta a partir de ~20 semanas e causar hipertireoidismo fetal sem nenhum sinal na mãe. TRAb no 1º trimestre em toda mulher com Graves atual ou passado; &gt;3× LSN → repetir em 18–22 semanas e US fetal.</div></div>
+<div class="box pearl"><span class="box-label">PEARL</span><div class="box-title">Hiponatremia e CK alta podem ser a única pista de hipotireoidismo</div><div class="box-body">Miopatia hipotireóidea eleva CK a 5–10× o normal (e é exacerbada por estatina); a hiponatremia vem de menor TFG e ADH inapropriado. Em rabdomiólise "sem causa" ou em hiponatremia euvolêmica, TSH antes de rotular SIADH idiopática — e cortisol, porque a insuficiência adrenal faz o mesmo.</div></div>
+<div class="box pearl"><span class="box-label">PEARL</span><div class="box-title">O microcarcinoma papilífero é mais comum em autópsias do que na clínica</div><div class="box-body">Estudos de necropsia encontram microcarcinomas em 10–35% das tireoides; a vigilância ativa japonesa (Kuma, Ito) mostrou crescimento ≥3 mm em ~8% e N1 em ~4% em 10 anos, com cirurgia de resgate sem perda de sobrevida. A doença existe, mas a progressão é a exceção: o dano está em puncionar e operar o que nunca mataria.</div></div>
+<div class="box pearl"><span class="box-label">PEARL</span><div class="box-title">O hipertireoidismo muda a farmacologia de quase tudo</div><div class="box-body">Aumenta a depuração de digoxina e de propranolol (doses maiores), acelera o catabolismo dos fatores dependentes de vitamina K (mais sensibilidade à varfarina — reduzir dose e INR semanal) e eleva a demanda de insulina. Ao atingir eutireoidismo, tudo se inverte: reavaliar anticoagulante e digitálico a cada mudança de função.</div></div>
+<div class="box pearl"><span class="box-label">PEARL</span><div class="box-title">Hipocalcemia pós-tireoidectomia de Graves pode ser fome óssea, não só paratireoide</div><div class="box-body">A tireotoxicose aumenta a reabsorção óssea; corrigida bruscamente pela cirurgia, o osso capta cálcio e fósforo com voracidade. PTH normal ou alto com cálcio, fósforo e magnésio baixos e fosfatase alcalina alta distingue a fome óssea do hipoparatireoidismo — e exige cálcio em dose maior e por mais tempo; vitamina D pré-operatória reduz o risco.</div></div>
+</div>
+</div>
+<div class="card pearl">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">H.2</span> Evolving</div><h3>Mudanças reais 2023–2026 <span class="ank ank-evo">EVOLVING</span></h3></div>
+<div class="card-body">
+<div class="box evolving"><span class="box-label">EVOLVING</span><div class="box-title">ATA 2025 para carcinoma diferenciado: desescalada formalizada</div><div class="box-body">Lobectomia como recomendação forte para cT1N0 e preferência para cT2N0 de baixo risco; vigilância ativa e ablação percutânea no cT1aN0M0; estratificação de recorrência em quatro níveis (baixo, baixo-intermediário, intermediário-alto, alto); RAI não rotineira no baixo risco (ESTIMABL2); alvos numéricos fixos de TSH substituídos por decisão pela resposta; alta da vigilância oncológica após 10–15 anos de resposta excelente.</div></div>
+<div class="box evolving"><span class="box-label">EVOLVING</span><div class="box-title">ATA 2026 para gestação: menos tratamento, mais confirmação</div><div class="box-body">Não tratar eutireoidianas apenas por anti-TPO positivo (inclusive em infertilidade e aborto de repetição); repetir TSH levemente alto antes de iniciar LT4; rastreio dirigido por 12 fatores de risco (idade e IMC saíram); PTU na pré-concepção e no 1º trimestre, com possibilidade de suspender a tionamida em baixo risco; iodo 150 µg/dia desde 3 meses antes da concepção. Texto integral não lido para este HP; detalhes no GO10 após conferência.</div></div>
+<div class="box evolving"><span class="box-label">EVOLVING</span><div class="box-title">Bethesda 2023 e OMS 2022: nomes únicos e menos "câncer" nas zonas cinzentas</div><div class="box-body">Seis categorias com um só nome, ROM médio por categoria, AUS em dois subgrupos e nomenclatura OMS (NIFTP como neoplasia de baixo risco, neoplasia oncocítica, carcinoma de alto grau derivado da célula folicular). O efeito prático: menos lobectomias "para diagnóstico" quando há teste molecular e mais clareza sobre o que é indolente.</div></div>
+<div class="box evolving"><span class="box-label">EVOLVING</span><div class="box-title">Terapia-alvo virou padrão nos cânceres raros</div><div class="box-body">Selpercatinibe superou cabozantinibe/vandetanibe no CMT com RET mutado (LIBRETTO-531, NEJM 2023); dabrafenibe + trametinibe mudou o anaplásico BRAF V600E, inclusive como neoadjuvante; inibidores de NTRK e ALK para CDT refratário com fusão. Para o SUS, a fronteira continua: lenvatinibe e sorafenibe não incorporados (2024) e o PCDT do CDT em revisão (CP 88/2026), com rhTSH já incorporado.</div></div>
+<div class="box evolving"><span class="box-label">EVOLVING</span><div class="box-title">Orbitopatia: biológicos e a fronteira do IGF-1R</div><div class="box-body">Teprotumumabe (registrado na Anvisa em 2023) mudou o tratamento da proptose; anti-IGF-1R subcutâneos e anti-FcRn (que reduzem IgG total, inclusive TRAb) estão em ensaios de fase 3 para orbitopatia e para a própria doença de Graves. Ainda sem lugar em diretriz e sem acesso público; o padrão no SUS permanece IVMP, RT e cirurgia.</div></div>
+</div>
+</div>
+</section>
+
+</div>
+</main>
+
+<footer>
+<div class="wrap">
+<div class="foot">
+<div>
+<div class="foot-author">@dr.lorencato</div>
+<div class="foot-meta">EN03 · Tireoidopatias · Pocket Handbook Elite · v5.2 · Endocrinologia · fontes conferidas em 2026-10-26</div>
+</div>
+<div class="foot-mono">Compilação clínica · status clinical_review até signoff humano · não é orientação clínica individual</div>
+</div>
+<div class="foot-meta"><b>Bibliografia rastreável</b> (fonte · ano · papel no HP · identificador). Registro completo: library/sources/EN03_tireoidopatias.md.
+<ol>
+<li id="src-1">Ringel MD, Sosa JA, et al. 2025 American Thyroid Association Management Guidelines for Adult Patients with Differentiated Thyroid Cancer. Thyroid 2025;35(8) · 2025 · CDT: extensão cirúrgica, vigilância ativa, risco em 4 níveis, RAI, TSH, seguimento, sistêmica · doi:10.1177/10507256251363120 (texto integral lido; Fig. 2 é imagem)</li>
+<li id="src-2">Ross DS, Burch HB, et al. 2016 ATA Guidelines for Diagnosis and Management of Hyperthyroidism and Other Causes of Thyrotoxicosis. Thyroid 2016;26:1343–1421 · 2016 · Graves, nodular tóxico, crise (Tabela 7), subclínico, tireoidites, preparo cirúrgico · doi:10.1089/thy.2016.0229 (texto integral lido)</li>
+<li id="src-3">Burch HB, Perros P, et al. Management of Thyroid Eye Disease: ATA/ETA Consensus Statement. Thyroid 2022;32:1439–1470 · 2022 · orbitopatia: selênio, IVMP 4,5 g, teprotumumabe, RT, descompressão · doi:10.1089/thy.2022.0251 (key points lidos)</li>
+<li id="src-4">Kahaly GJ, et al. 2018 ETA Guideline for the Management of Graves' Hyperthyroidism. Eur Thyroid J 2018;7:167–186 · 2018 · duração de ATD, TRAb, baixa dose prolongada, criança · doi:10.1159/000490384 (resumo)</li>
+<li id="src-5">Bartalena L, et al. 2021 EUGOGO clinical practice guidelines for the medical management of Graves' orbitopathy. Eur J Endocrinol 2021;185:G43–G67 · 2021 · CAS/gravidade, IVMP + micofenolato, profilaxia pós-RAI · doi:10.1530/EJE-21-0479 (resumo); comparação EUGOGO × ATA/ETA, Eur Thyroid J 2025;14(6) · doi:10.1530/ETJ-25-0318</li>
+<li id="src-6">Durante C, Hegedüs L, et al. 2023 ETA Clinical Practice Guidelines for thyroid nodule management. Eur Thyroid J 2023;12(5):e230067 · 2023 · nódulo: TSH/cintilografia, EU-TIRADS, calcitonina, Bethesda × conduta, ablação, sem LT4 · doi:10.1530/ETJ-23-0067 (recomendações lidas no PMC)</li>
+<li id="src-7">Tessler FN, et al. ACR TI-RADS: White Paper of the ACR TI-RADS Committee. J Am Coll Radiol 2017;14:587–595 · 2017 · pontuação e limiares de PAAF · doi:10.1016/j.jacr.2017.01.046</li>
+<li id="src-8">Ali SZ, Baloch ZW, et al. The 2023 Bethesda System for Reporting Thyroid Cytopathology. Thyroid 2023;33:1039–1044 · 2023 · categorias, ROM, AUS em 2 subgrupos · doi:10.1089/thy.2023.0141 (resumo; ROM a conferir no atlas)</li>
+<li id="src-9">Jonklaas J, et al. Guidelines for the Treatment of Hypothyroidism (ATA Task Force). Thyroid 2014;24:1670–1751 · 2014 · LT4, combinação, coma mixedematoso, central · doi:10.1089/thy.2014.0028 (sem atualização ATA até out/2026)</li>
+<li id="src-10">Mazeto GMFS, Sgarbi JA, et al. Approach to adult patients with primary hypothyroidism in some special situations: SBEM position statement. Arch Endocrinol Metab 2022;66:871–882 · 2022 · TSH por idade, subclínico no idoso e no cardiopata, refratário · doi:10.20945/2359-3997000000545</li>
+<li id="src-11">Wells SA, et al. Revised ATA Guidelines for the Management of Medullary Thyroid Carcinoma. Thyroid 2015;25:567–610 · 2015 · RET, calcitonina, feocromocitoma, profilática · doi:10.1089/thy.2014.0335; Maia AL, et al. Carcinoma medular: recomendações SBEM. Arq Bras Endocrinol Metab 2014;58:667–700 · doi:10.1590/0004-2730000003427</li>
+<li id="src-12">Korevaar TIM, Leung AM, et al. ATA 2026 Guidelines for Thyroid Disease in Preconception, Pregnancy, and Postpartum. Thyroid 2026;36(5):481–544 · 2026 · Graves na gestação, TRAb, tireotoxicose gestacional, pós-parto · doi:10.1177/10507256261445624 (texto integral não lido; resumo PubMed e sumários secundários)</li>
+<li id="src-13">Satoh T, et al. 2016 Guidelines for the management of thyroid storm (JTA/JES). Endocr J 2016;63:1025–1064 · 2016 · critérios JTA e manejo · doi:10.1507/endocrj.EJ16-0336; Furukawa Y, et al. JCEM 2024;110:e87 · mortalidade com protocolo · doi:10.1210/clinem/dgae124</li>
+<li id="src-14">Bartalena L, et al. 2018 ETA Guidelines for the Management of Amiodarone-Associated Thyroid Dysfunction. Eur Thyroid J 2018;7:55–66 · 2018 · AIH, AIT 1, 2 e mista · doi:10.1159/000486957</li>
+<li id="src-15">Bible KC, et al. 2021 ATA Guidelines for Management of Patients with Anaplastic Thyroid Cancer. Thyroid 2021;31:337–386 · 2021 · BRAF, terapia-alvo, via aérea · doi:10.1089/thy.2020.0944 (não relido nesta captura)</li>
+<li id="src-16">Ministério da Saúde. PCDT Hipotireoidismo Congênito — Portaria Conjunta SAES/SCTIE nº 05, de 16/04/2021 · 2021 · triagem, confirmação, LT4, metas, reavaliação aos 3 anos · gov.br/conitec (PDF lido)</li>
+<li id="src-17">Ministério da Saúde/CONITEC. PCDT Carcinoma Diferenciado da Tireoide — Portaria SAS/MS nº 7/2014 e Relatório preliminar da revisão (Consulta Pública nº 88, ago/2026); Portarias SECTICS/MS nº 42/2024 (sorafenibe e lenvatinibe não incorporados) e nº 43/2024 (rhTSH incorporado) · 2014/2024/2026 · acesso SUS, SIGTAP da iodoterapia · gov.br/conitec (preliminar lido)</li>
+<li id="src-18">Ministério da Saúde. RENAME 2022 (anexos) e Portaria GM/MS nº 6.324/2024 (RENAME 2024) · 2022/2024 · levotiroxina, tiamazol, propiltiouracila, hidrocortisona no componente básico · RENAME 2022 lida; 2024 não conferida item a item</li>
+<li id="src-19">Sociedade Brasileira de Endocrinologia e Metabologia. Consenso de hipertireoidismo (Maia AL et al., ABEM 2013;57:205–232, doi:10.1590/S0004-27302013000300006) e atualização do consenso de nódulos e CDT (Rosário PW et al., ABEM 2013;57:240–264, doi:10.1590/S0004-27302013000400002) · 2013 · contexto brasileiro (desatualizados frente a ATA 2025/ETA 2023; não relidos)</li>
+<li id="src-20">Apostila MED/Medcurso 2025 — END 1, Tireoide (parte de suprarrenal → EN04) · 2025 · piso editorial de cobertura, não fonte de conduta · vault Who is PubMed</li>
+<li id="src-21">DATASUS CID-10 (OMS) e CID-O-3 · códigos E01–E07, E23.0, E89.0, C73, C85.9, D44.8, H06.2*, O01, O90.5, P72.2; morfologias M8260/3, M8290/3, M8330/3, M8345/3, M8021/3 · www2.datasus.gov.br/cid10</li>
+</ol>
+</div>
+</div>
+</footer>
+<div class="watermark">@dr.lorencato · EN03 Tireoidopatias v5.2</div>
+</body>
+</html>

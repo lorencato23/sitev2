@@ -1,0 +1,1138 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#0d1117">
+<title>Reanimação e Transição Neonatal · Pocket Handbook · Elite Edition · PD01</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700;9..40,800&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   MEDICAL HANDBOOK PREMIUM · ELITE EDITION · CSS FRAMEWORK
+   Copy this ENTIRE block verbatim into the <style> tag of the
+   output HTML. Do NOT modify design tokens, colors, or
+   typography — they are calibrated for legibility and print.
+============================================================ */
+:root{
+  --bg:#f1eee5;--bg-tint:#ebe8de;--paper:#ffffff;--paper-tint:#fbf9f3;
+  --ink:#0e1116;--ink-soft:#232830;--ink-mute:#545b69;--ink-faint:#8a91a0;--ink-ghost:#b8bdc7;
+  --line:#e2dfd5;--line-soft:#ece9df;--line-strong:#c9c5b8;
+  --c-prim:#0b5d4e;--c-clin:#1d4570;--c-diag:#5e2f78;--c-tx:#a8481a;--c-emerg:#a31b35;--c-pearl:#7a6014;
+  --ank-hy:#b88e0a;--ank-hy-bg:#fef4c8;--ank-dec:#1d4ea3;--ank-dec-bg:#dde7f8;
+  --ank-dgr:#a31b25;--ank-dgr-bg:#fadcdc;--ank-prl:#3e6a2e;--ank-prl-bg:#d8e6cf;
+  --ank-myt:#6a3a1a;--ank-myt-bg:#f0dec5;--ank-con:#5a4070;--ank-con-bg:#e3d6f0;
+  --ank-evo:#0d6373;--ank-evo-bg:#cde5e9;
+  --sh-sm:0 1px 2px rgba(14,17,22,.04),0 1px 1px rgba(14,17,22,.03);
+  --sh-md:0 6px 16px -8px rgba(14,17,22,.10),0 2px 4px rgba(14,17,22,.04);
+  --sh-lg:0 20px 40px -22px rgba(14,17,22,.18),0 4px 10px -4px rgba(14,17,22,.08);
+  --r:10px;--r-lg:14px;--r-xl:20px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;scroll-padding-top:120px}
+body{font-family:'DM Sans',system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.5;font-size:15px;letter-spacing:-.005em;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:-1;background:radial-gradient(900px 500px at -10% -5%,rgba(11,93,78,.04),transparent 60%),radial-gradient(800px 450px at 110% 10%,rgba(163,27,53,.035),transparent 55%)}
+a{color:inherit;text-decoration:none}
+
+/* FIXED HEADER */
+.header{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(13,17,23,.82);backdrop-filter:saturate(160%) blur(20px);-webkit-backdrop-filter:saturate(160%) blur(20px);border-bottom:1px solid rgba(255,255,255,.06)}
+.header-row{max-width:1080px;margin:0 auto;padding:10px 20px;display:flex;align-items:center;gap:14px;color:#f0eee5}
+.h-mark{width:30px;height:30px;border-radius:7px;background:linear-gradient(135deg,#d4b94a 0%,#a07f1a 100%);display:grid;place-items:center;font:800 13px/1 'DM Sans';color:#1a1500;letter-spacing:-.04em;box-shadow:inset 0 1px 0 rgba(255,255,255,.3),0 1px 2px rgba(0,0,0,.4);flex-shrink:0}
+.h-titles{display:flex;flex-direction:column;line-height:1.15;min-width:0}
+.h-title{font-weight:700;font-size:14px;letter-spacing:-.02em}
+.h-sub{font-size:10.5px;color:#9fa298;font-weight:500;letter-spacing:.08em;text-transform:uppercase}
+.h-edition{margin-left:auto;font:500 10px/1 'DM Mono',monospace;color:#9fa298;letter-spacing:.05em;padding:5px 9px;border:1px solid rgba(255,255,255,.1);border-radius:999px;white-space:nowrap}
+.h-author{font:700 10.5px/1 'DM Mono',monospace;color:#d4b94a;letter-spacing:.04em;padding:6px 10px;border:1px solid rgba(212,185,74,.35);background:rgba(212,185,74,.08);border-radius:999px;white-space:nowrap;display:inline-flex;align-items:center;gap:6px}
+.h-author::before{content:"●";font-size:6px;color:#d4b94a}
+@media(max-width:560px){.h-edition{display:none}.h-author{margin-left:auto}}
+
+/* STICKY TOC */
+.toc{position:sticky;top:50px;z-index:90;background:rgba(241,238,229,.92);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}
+.toc-inner{max-width:1080px;margin:0 auto;padding:10px 16px;display:flex;gap:6px;overflow-x:auto;scrollbar-width:none;-ms-overflow-style:none}
+.toc-inner::-webkit-scrollbar{display:none}
+.toc-chip{flex:none;font:600 11px/1 'DM Sans';letter-spacing:.06em;text-transform:uppercase;padding:7px 12px;background:var(--paper);border:1px solid var(--line);border-radius:999px;color:var(--ink-soft);transition:all .15s;white-space:nowrap;cursor:pointer}
+.toc-chip:hover{background:var(--paper-tint);border-color:var(--ink-faint);color:var(--ink)}
+.toc-chip-num{display:inline-block;font-family:'DM Mono',monospace;color:var(--ink-faint);margin-right:5px;font-weight:500;font-size:10px}
+
+/* LAYOUT */
+.wrap{max-width:1080px;margin:0 auto;padding:24px 20px 80px}
+.section{margin:48px 0 18px;padding-top:8px}
+.section:first-child{margin-top:14px}
+.section-eyebrow{font:700 10.5px/1 'DM Sans';letter-spacing:.18em;text-transform:uppercase;color:var(--c-prim);margin-bottom:8px;display:flex;align-items:center;gap:10px}
+.section-eyebrow::before{content:"";width:24px;height:1.5px;background:var(--c-prim)}
+.section-title{font-size:26px;font-weight:700;letter-spacing:-.03em;line-height:1.1}
+.section-sub{margin-top:6px;font-size:13.5px;color:var(--ink-mute);max-width:680px}
+
+/* HERO */
+.hero{margin:20px 0 28px;padding:26px 28px;background:linear-gradient(180deg,#fdfcf6 0%,#f7f4e8 100%);border:1px solid var(--line);border-radius:var(--r-xl);box-shadow:var(--sh-md);position:relative;overflow:hidden}
+.hero::after{content:"";position:absolute;top:0;right:0;bottom:0;left:0;background:radial-gradient(400px 200px at 100% 0%,rgba(163,27,53,.06),transparent 60%),radial-gradient(360px 200px at 0% 100%,rgba(11,93,78,.05),transparent 60%);pointer-events:none}
+.hero-tag{font:700 10.5px/1 'DM Sans';letter-spacing:.2em;text-transform:uppercase;color:var(--c-emerg);display:inline-flex;align-items:center;gap:8px;margin-bottom:10px}
+.hero-tag::before{content:"";width:18px;height:1.5px;background:currentColor}
+.hero h1{font-size:34px;font-weight:800;letter-spacing:-.035em;line-height:1.02;margin-bottom:8px}
+.hero h1 em{font-style:italic;font-weight:500;color:var(--ink-mute)}
+.hero-lead{font-size:14.5px;color:var(--ink-mute);max-width:660px;line-height:1.55}
+.hero-stamp{position:absolute;top:20px;right:22px;font:700 10.5px/1 'DM Mono',monospace;letter-spacing:.04em;padding:7px 11px 7px 18px;border:1.5px dashed rgba(163,27,53,.45);color:rgba(163,27,53,.9);border-radius:5px;background:rgba(255,255,255,.55);transform:rotate(-3deg);z-index:2;box-shadow:0 2px 6px rgba(163,27,53,.08)}
+.hero-stamp::before{content:"●";position:absolute;left:7px;top:50%;transform:translateY(-50%);color:rgba(163,27,53,.7);font-size:7px}
+.hero-sig{margin-top:14px;display:flex;align-items:center;gap:10px;font:600 11px/1 'DM Sans';color:var(--ink-mute);letter-spacing:.04em}
+.hero-sig::before{content:"";flex:none;width:22px;height:1.5px;background:var(--c-emerg)}
+.hero-sig b{color:var(--c-emerg);font-weight:700;font-family:'DM Mono',monospace;letter-spacing:.02em}
+@media(max-width:560px){.hero{padding:22px 20px}.hero h1{font-size:26px}.section-title{font-size:22px}.hero-stamp{position:static;display:inline-block;transform:none;margin-bottom:14px}}
+
+/* POCKET CARD 0 */
+.pocket{background:#0e1116;color:#f0eee5;border-radius:var(--r-xl);padding:24px 26px 26px;margin:0 0 28px;position:relative;overflow:hidden;box-shadow:var(--sh-lg)}
+.pocket::before{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(600px 300px at 100% 0%,rgba(212,185,74,.07),transparent 60%),radial-gradient(500px 280px at 0% 100%,rgba(163,27,53,.08),transparent 60%)}
+.pocket-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:18px;flex-wrap:wrap;position:relative}
+.pocket-eyebrow{font:700 10.5px/1 'DM Sans';letter-spacing:.2em;text-transform:uppercase;color:#d4b94a;display:flex;align-items:center;gap:9px}
+.pocket-eyebrow::before{content:"●";color:#d4b94a;font-size:9px;animation:pulse 2.4s ease infinite}
+@keyframes pulse{50%{opacity:.4}}
+.pocket-title{font-size:22px;font-weight:700;letter-spacing:-.02em;line-height:1.15;color:#fff}
+.pocket-sub{font-size:12.5px;color:#9aa0a8;margin-top:2px}
+.pocket-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px;position:relative}
+.pocket-card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-left:3px solid var(--accent,#d4b94a);border-radius:var(--r);padding:12px 14px}
+.pocket-card .pc-trig{font:700 10px/1.1 'DM Sans';letter-spacing:.12em;text-transform:uppercase;color:var(--accent,#d4b94a);margin-bottom:6px;display:flex;align-items:center;gap:6px}
+.pocket-card .pc-trig::before{content:"";width:4px;height:4px;background:currentColor;border-radius:50%}
+.pocket-card .pc-act{font-size:13.5px;line-height:1.4;color:#dedfd5}
+.pocket-card .pc-act b{color:#fff;font-weight:600}
+.pocket-card.emerg{--accent:#ff8a96}.pocket-card.dec{--accent:#7cb0ff}.pocket-card.tx{--accent:#ffb085}.pocket-card.clin{--accent:#b0e0d4}
+
+/* LEGEND */
+.legend{background:var(--paper);border:1px solid var(--line);border-radius:var(--r-lg);padding:18px 20px;margin-bottom:28px;box-shadow:var(--sh-sm)}
+.lg-title{font:700 10.5px/1 'DM Sans';letter-spacing:.16em;text-transform:uppercase;color:var(--ink-faint);margin-bottom:12px}
+.lg-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:8px 14px}
+.lg-item{display:flex;align-items:center;gap:9px;font-size:12.5px;color:var(--ink-soft)}
+.dot{width:9px;height:9px;border-radius:50%;flex-shrink:0;box-shadow:0 0 0 2px var(--paper),0 0 0 3px currentColor}
+.dot.c1{color:var(--c-prim);background:var(--c-prim)}.dot.c2{color:var(--c-clin);background:var(--c-clin)}.dot.c3{color:var(--c-diag);background:var(--c-diag)}.dot.c4{color:var(--c-tx);background:var(--c-tx)}.dot.c5{color:var(--c-emerg);background:var(--c-emerg)}.dot.c6{color:var(--c-pearl);background:var(--c-pearl)}
+.lg-divider{height:1px;background:var(--line-soft);margin:14px 0}
+.lg-anchors{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:8px}
+.ank{display:inline-flex;align-items:center;gap:5px;font:700 9.5px/1 'DM Sans';letter-spacing:.12em;text-transform:uppercase;padding:4px 8px 4px 7px;border-radius:999px;border:1px solid;vertical-align:middle;white-space:nowrap}
+.ank::before{content:"";width:4px;height:4px;border-radius:50%;background:currentColor}
+.ank-hy{color:var(--ank-hy);background:var(--ank-hy-bg);border-color:#e5cd72}
+.ank-dec{color:var(--ank-dec);background:var(--ank-dec-bg);border-color:#9fbae6}
+.ank-dgr{color:var(--ank-dgr);background:var(--ank-dgr-bg);border-color:#e29ca0}
+.ank-prl{color:var(--ank-prl);background:var(--ank-prl-bg);border-color:#a8c298}
+.ank-myt{color:var(--ank-myt);background:var(--ank-myt-bg);border-color:#d0b181}
+.ank-con{color:var(--ank-con);background:var(--ank-con-bg);border-color:#bba7d3}
+.ank-evo{color:var(--ank-evo);background:var(--ank-evo-bg);border-color:#8fc1c9}
+.lg-explain{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:6px 14px;font-size:11.5px;color:var(--ink-mute);margin-top:10px}
+.lg-explain b{font-weight:700}
+.lg-explain .ehy b{color:var(--ank-hy)}.lg-explain .edec b{color:var(--ank-dec)}.lg-explain .edgr b{color:var(--ank-dgr)}.lg-explain .eprl b{color:var(--ank-prl)}.lg-explain .emyt b{color:var(--ank-myt)}.lg-explain .econ b{color:var(--ank-con)}.lg-explain .eevo b{color:var(--ank-evo)}
+
+/* EVIDENCE CHIPS */
+.ev{display:inline-flex;align-items:center;font:600 9.5px/1 'DM Mono',monospace;letter-spacing:.04em;padding:3px 6px 2px;border-radius:4px;background:#eeebde;color:var(--ink-soft);border:1px solid var(--line);vertical-align:middle;margin-left:3px}
+.ev-acr{background:#fadcdc;color:#a31b25;border-color:#e29ca0}
+.ev-eular{background:#dde7f8;color:#1d4ea3;border-color:#9fbae6}
+.ev-sbr{background:#e3d6f0;color:#5a4070;border-color:#bba7d3}
+.ev-nice{background:#cde5e9;color:#0d6373;border-color:#8fc1c9}
+.ev-expert{background:#eeebde;color:#7a6014;border-color:#d0b181}
+.ev-cochrane{background:#d8e6cf;color:#3e6a2e;border-color:#a8c298}
+
+/* CARD */
+.card{background:var(--paper);border:1px solid var(--line);border-radius:var(--r-lg);margin-bottom:22px;box-shadow:var(--sh-md);overflow:hidden;break-inside:avoid}
+.card-head{padding:18px 22px 15px;border-bottom:1px solid var(--line-soft);position:relative;background:linear-gradient(180deg,#fcfaf2 0%,#ffffff 100%)}
+.card-head::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--accent,var(--c-prim))}
+.card-eyebrow{font:700 10px/1 'DM Sans';letter-spacing:.16em;text-transform:uppercase;color:var(--accent,var(--c-prim));margin-bottom:5px;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.card-num{font-family:'DM Mono',monospace;font-weight:500;color:var(--ink-faint);font-size:10.5px;letter-spacing:0}
+.card h3{font-size:21px;font-weight:700;letter-spacing:-.025em;color:var(--ink);line-height:1.15;display:flex;align-items:center;gap:9px;flex-wrap:wrap}
+.card-sub{margin-top:6px;font-size:13px;color:var(--ink-mute)}
+.card-body{padding:20px 22px 24px}
+.card.prim{--accent:var(--c-prim)}.card.clin{--accent:var(--c-clin)}.card.diag{--accent:var(--c-diag)}.card.tx{--accent:var(--c-tx)}.card.emerg{--accent:var(--c-emerg)}.card.pearl{--accent:var(--c-pearl)}
+@media(max-width:560px){.card-head{padding:16px 18px 14px}.card-body{padding:18px 18px 20px}.card h3{font-size:18px}}
+
+/* QUICK VIEW */
+.quick{background:var(--paper-tint);border:1px solid var(--line);border-left:3px solid var(--accent,var(--c-prim));border-radius:var(--r);padding:13px 16px;margin:0 0 16px}
+.quick-label{font:700 9.5px/1 'DM Sans';letter-spacing:.16em;text-transform:uppercase;color:var(--accent,var(--c-prim));margin-bottom:6px}
+.quick-body{font-size:13.5px;line-height:1.45;color:var(--ink-soft)}
+.quick-body b{color:var(--ink);font-weight:600}
+
+/* SUB-TITLE */
+.sub-title{font:700 10.5px/1 'DM Sans';letter-spacing:.16em;text-transform:uppercase;color:var(--ink-soft);margin:18px 0 10px;display:flex;align-items:center;gap:9px;border-bottom:1px dashed var(--line);padding-bottom:6px}
+.sub-title::before{content:"";width:4px;height:4px;border-radius:50%;background:var(--accent,var(--ink-soft))}
+.sub-title:first-child{margin-top:0}
+
+/* TEXT */
+p{color:var(--ink-soft);margin-bottom:8px;font-size:14px;line-height:1.5}
+p:last-child{margin-bottom:0}
+strong{color:var(--ink);font-weight:600}
+ul.bullets{list-style:none;padding:0;margin:0 0 10px}
+ul.bullets li{position:relative;padding:5px 0 5px 20px;font-size:13.5px;line-height:1.5;color:var(--ink-soft);border-bottom:1px dashed var(--line-soft)}
+ul.bullets li:last-child{border-bottom:none}
+ul.bullets li::before{content:"";position:absolute;left:5px;top:13px;width:4px;height:4px;border-radius:50%;background:var(--accent,var(--ink-mute))}
+ul.bullets li b{color:var(--ink);font-weight:600}
+
+/* DISEASE BOX */
+.disease{border:1px solid var(--line);border-radius:var(--r);margin:14px 0;overflow:hidden;background:var(--paper)}
+.disease-head{padding:12px 16px;background:linear-gradient(180deg,#faf7eb 0%,#f1eddc 100%);border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap}
+.disease-name{font-weight:700;color:var(--ink);font-size:14.5px;letter-spacing:-.015em}
+.disease-tag{font:600 10px/1 'DM Sans';letter-spacing:.08em;text-transform:uppercase;color:var(--ink-mute)}
+.disease-body{padding:14px 16px}
+.disease-rows{display:grid;gap:0}
+.disease-row{display:grid;grid-template-columns:130px 1fr;gap:12px;padding:8px 0;border-bottom:1px dashed var(--line-soft)}
+.disease-row:last-child{border-bottom:none;padding-bottom:0}
+.disease-row:first-child{padding-top:0}
+.disease-row .k{font:700 10px/1.2 'DM Sans';letter-spacing:.12em;text-transform:uppercase;color:var(--accent,var(--ink-faint));padding-top:2px}
+.disease-row .v{font-size:13.5px;color:var(--ink-soft);line-height:1.5}
+.disease-row .v b{color:var(--ink)}
+@media(max-width:560px){.disease-row{grid-template-columns:1fr;gap:3px;padding:6px 0 8px}.disease-row .k{padding-top:0}}
+
+/* DEEP DIVE */
+.deep{margin:16px 0 6px;border:1px solid var(--line);border-radius:var(--r);background:linear-gradient(180deg,#fdfcf6 0%,#f9f6ea 100%);overflow:hidden}
+.deep>summary{list-style:none;cursor:pointer;padding:11px 16px;display:flex;align-items:center;justify-content:space-between;font:700 11px/1 'DM Sans';letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft);user-select:none;transition:background .15s}
+.deep>summary::-webkit-details-marker{display:none}
+.deep>summary::after{content:"+";font-size:18px;font-weight:600;color:var(--ink-faint);transition:transform .2s;font-family:'DM Mono',monospace}
+.deep[open]>summary::after{transform:rotate(45deg)}
+.deep>summary:hover{background:rgba(0,0,0,.02)}
+.deep-content{padding:14px 16px 16px;border-top:1px dashed var(--line)}
+.deep-content p{font-size:13px;color:var(--ink-mute);line-height:1.55}
+.deep-content p b{color:var(--ink-soft)}
+
+/* MNEMONIC */
+.mnemo{background:var(--paper-tint);border:1px solid var(--line);border-radius:var(--r);padding:14px 16px;margin:14px 0}
+.mnemo-title{font:700 10.5px/1 'DM Sans';letter-spacing:.16em;text-transform:uppercase;color:var(--c-pearl);margin-bottom:10px;display:flex;align-items:center;gap:8px}
+.mnemo-title b{background:var(--ink);color:#fff;padding:3px 7px;border-radius:4px;font-size:10px;letter-spacing:.06em}
+.mnemo-grid{display:grid;gap:5px}
+.mnemo-row{display:grid;grid-template-columns:28px 1fr;gap:10px;align-items:baseline;font-size:13px;color:var(--ink-soft);padding:3px 0}
+.mnemo-letter{display:grid;place-items:center;width:24px;height:24px;background:var(--ink);color:#fff;border-radius:5px;font:800 12px/1 'DM Sans';letter-spacing:-.02em}
+.mnemo-row b{color:var(--ink);font-weight:600}
+.mnemo-row em{font-style:italic;color:var(--ink-mute);font-size:12px}
+
+/* SCORE BOX */
+.score{border:1px solid var(--line);border-radius:var(--r);margin:14px 0;background:var(--paper);overflow:hidden}
+.score-head{padding:11px 14px;background:linear-gradient(180deg,#f5f1e0 0%,#ede9d6 100%);border-bottom:1px solid var(--line)}
+.score-name{font:700 13px/1.2 'DM Sans';color:var(--ink);letter-spacing:-.01em}
+.score-purpose{font:500 10.5px/1.2 'DM Sans';color:var(--ink-mute);letter-spacing:.06em;text-transform:uppercase;margin-top:3px}
+.score-rows{display:grid;gap:0}
+.score-row{display:grid;grid-template-columns:90px 1fr;gap:12px;align-items:start;padding:9px 14px;border-bottom:1px dashed var(--line-soft);font-size:13px}
+.score-row:last-child{border-bottom:none}
+.score-grade{font:800 12px/1.2 'DM Mono',monospace;color:var(--c-emerg);letter-spacing:-.01em}
+.score-desc{color:var(--ink-soft);line-height:1.45}
+.score-desc b{color:var(--ink)}
+
+/* STACKED TABLE */
+.stbl{margin:14px 0;border:1px solid var(--line);border-radius:var(--r);background:var(--paper);overflow:hidden}
+.stbl-head,.stbl-row{display:grid;gap:14px;padding:10px 14px;align-items:start}
+.stbl-head{background:#faf7eb;border-bottom:2px solid var(--line);font:700 10.5px/1 'DM Sans';letter-spacing:.1em;text-transform:uppercase;color:var(--ink)}
+.stbl-row{border-bottom:1px solid var(--line-soft);font-size:13px;color:var(--ink-soft);line-height:1.5}
+.stbl-row:last-child{border-bottom:none}
+.stbl-row:nth-child(even){background:#fcfaf2}
+.stbl-row b{color:var(--ink);font-weight:600}
+.stbl-row .col1{font-weight:600;color:var(--ink)}
+.stbl-2{grid-template-columns:1fr 2fr}
+.stbl-3{grid-template-columns:1fr 1.3fr 1.5fr}
+.stbl-4{grid-template-columns:1.2fr 1fr 1fr 1.2fr}
+@media(max-width:680px){
+  .stbl-head{display:none}
+  .stbl-row{grid-template-columns:1fr !important;gap:12px;padding:14px 16px}
+  .stbl-row .col{display:block;min-width:0;word-wrap:break-word;overflow-wrap:anywhere}
+  .stbl-row .col::before{content:attr(data-l);display:block;font:700 9.5px/1.3 'DM Sans';letter-spacing:.12em;text-transform:uppercase;color:var(--ink-mute);margin-bottom:4px}
+  .stbl-row .col1{font-weight:700;font-size:15px;padding-bottom:8px;margin-bottom:6px;border-bottom:1px dashed var(--line)}
+  .stbl-row .col1::before{display:none}
+}
+
+/* CALLOUT BOXES */
+.box{border-radius:var(--r);padding:14px 16px;margin:14px 0;position:relative;border:1px solid}
+.box-label{position:absolute;top:-9px;left:14px;font:700 9.5px/1 'DM Sans';letter-spacing:.16em;text-transform:uppercase;padding:3px 9px;border-radius:999px;color:#fff}
+.box-title{font-weight:700;color:var(--ink);font-size:14px;margin:2px 0 6px}
+.box-body{font-size:13.5px;line-height:1.5;color:var(--ink-soft)}
+.box-body b{color:var(--ink)}
+.box-body ul{list-style:none;padding:0;margin:4px 0 0}
+.box-body ul li{position:relative;padding:3px 0 3px 20px}
+.box-body ul li::before{content:"→";position:absolute;left:0;top:3px;font-weight:700;color:var(--bx-color)}
+.box.decision{background:#f1f5fc;border-color:#c4d3eb;--bx-color:var(--ank-dec)}.box.decision .box-label{background:var(--ank-dec)}
+.box.danger{background:#fbf0f0;border-color:#e5c2c2;--bx-color:var(--ank-dgr)}.box.danger .box-label{background:var(--ank-dgr)}.box.danger .box-body b{color:var(--ank-dgr)}
+.box.pearl{background:#f1f7ed;border-color:#c1d5b3;--bx-color:var(--ank-prl)}.box.pearl .box-label{background:var(--ank-prl)}
+.box.hy{background:#fcf6dd;border-color:#e3cf78;--bx-color:var(--ank-hy)}.box.hy .box-label{background:var(--ank-hy)}
+.box.myth{background:#f8eed8;border-color:#d0b181;--bx-color:var(--ank-myt)}.box.myth .box-label{background:var(--ank-myt)}
+.box.controversy{background:#f1e9f6;border-color:#bba7d3;--bx-color:var(--ank-con)}.box.controversy .box-label{background:var(--ank-con)}
+.box.evolving{background:#dff0f2;border-color:#8fc1c9;--bx-color:var(--ank-evo)}.box.evolving .box-label{background:var(--ank-evo)}
+
+/* ALGORITHM TREE */
+.algo{background:linear-gradient(180deg,#fcfaf2 0%,#f5f0dc 100%);border:1px solid var(--line-strong);border-radius:var(--r-lg);padding:18px;margin:14px 0;overflow-x:auto}
+.tree{font-size:13px}
+.tree-line{padding:6px 0}
+.tree-node{display:inline-block;padding:8px 12px;background:var(--paper);border:1.5px solid var(--ink-soft);border-radius:7px;font-weight:600;color:var(--ink);font-size:12.5px;box-shadow:var(--sh-sm)}
+.tree-node.start{background:var(--ink);color:#fff;border-color:var(--ink)}
+.tree-node.dec{background:#fff7d6;border-color:#e3cf78;color:#6b520a}
+.tree-node.dx{background:#dde7f8;border-color:#9fbae6;color:#1d4ea3}
+.tree-node.dgr{background:#fadcdc;border-color:#e29ca0;color:#a31b25}
+.tree-node.action{background:#d8e6cf;border-color:#a8c298;color:#3e6a2e}
+.tree-branch{margin-left:14px;border-left:1.5px dashed #b8b094;padding:6px 0 6px 18px;margin-top:6px;margin-bottom:2px;position:relative}
+.tree-branch::before{content:"";position:absolute;left:-1.5px;top:-4px;width:14px;height:14px;border-left:1.5px solid #b8b094;border-bottom:1.5px solid #b8b094;border-radius:0 0 0 6px}
+.tree-label{display:inline-block;font:700 9.5px/1 'DM Sans';letter-spacing:.12em;text-transform:uppercase;padding:3px 7px;border-radius:4px;margin-bottom:5px}
+.tree-label.yes{background:#fadcdc;color:#a31b25}.tree-label.no{background:#d8e6cf;color:#3e6a2e}
+
+/* FOOTER */
+.foot{margin-top:48px;padding-top:22px;border-top:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;font-size:11px;color:var(--ink-faint);letter-spacing:.04em;flex-wrap:wrap;gap:8px}
+.foot-mono{font-family:'DM Mono',monospace}
+.foot-author{font:800 14px/1.1 'DM Mono',monospace;color:var(--ink);letter-spacing:.02em;margin-bottom:3px}
+.foot-meta{font:500 11px/1.3 'DM Sans';color:var(--ink-faint);letter-spacing:.04em}
+
+/* WATERMARK */
+.watermark{position:fixed;bottom:calc(14px + env(safe-area-inset-bottom,0px));right:calc(14px + env(safe-area-inset-right,0px));font:600 10px/1 'DM Mono',monospace;letter-spacing:.04em;color:rgba(14,17,22,.55);background:rgba(255,255,255,.85);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);padding:6px 10px;border-radius:99px;border:1px solid rgba(14,17,22,.1);box-shadow:0 2px 8px rgba(14,17,22,.06);z-index:50;pointer-events:none;user-select:none}
+@media(max-width:560px){.watermark{bottom:calc(10px + env(safe-area-inset-bottom,0px));right:calc(10px + env(safe-area-inset-right,0px));font-size:9px;padding:5px 8px}}
+
+/* PRINT */
+@media print{
+  body{background:#fff;font-size:10.5pt}
+  body::before{display:none}
+  .header,.toc{position:static;background:#0e1116;color:#fff}
+  .wrap{padding:14px;max-width:100%}
+  .card,.hero,.legend,.pocket{box-shadow:none !important;break-inside:avoid}
+  .hero::after,.pocket::before{display:none}
+  .pocket{background:#1a1d24;color:#f0eee5}
+  .ank,.box,.disease,.score,.algo,.stbl,.deep,.mnemo,.quick{box-shadow:none !important;break-inside:avoid}
+  .deep:not([open]) .deep-content{display:block}
+  .deep>summary::after{display:none}
+  .watermark{position:fixed;bottom:8mm;right:8mm;background:none;border:none;color:rgba(0,0,0,.5)}
+  .hero-stamp{transform:none;position:absolute}
+}
+</style>
+</head>
+<body>
+<header class="header"><div class="header-row"><div class="h-mark">R</div><div class="h-titles"><div class="h-title">Reanimação e Transição Neonatal · Pocket Handbook</div><div class="h-sub">Elite edition · Neonatologia · PD01</div></div><div class="h-author">@dr.lorencato</div><div class="h-edition">v5.2</div></div></header>
+<nav class="toc"><div class="toc-inner"><a href="#pocket" class="toc-chip"><span class="toc-chip-num">0</span>Pocket</a><a href="#redflags" class="toc-chip"><span class="toc-chip-num">A</span>Red Flags</a><a href="#approach" class="toc-chip"><span class="toc-chip-num">B</span>Apresentação</a><a href="#primarias" class="toc-chip"><span class="toc-chip-num">C</span>Entidades</a><a href="#secundarias" class="toc-chip"><span class="toc-chip-num">D</span>Secundárias</a><a href="#algoritmo" class="toc-chip"><span class="toc-chip-num">E</span>Algoritmo</a><a href="#tratamento" class="toc-chip"><span class="toc-chip-num">F</span>Tratamento</a><a href="#pitfalls" class="toc-chip"><span class="toc-chip-num">G</span>Pitfalls</a><a href="#pearls" class="toc-chip"><span class="toc-chip-num">H</span>Pearls</a></div></nav>
+<main>
+<div class="wrap">
+<div class="hero">
+<div class="hero-stamp">@dr.lorencato</div>
+<div class="hero-tag">Pediatria · Neonatologia · PD01 · Sala de parto</div>
+<h1>Reanimação e Transição Neonatal<br><em>o minuto de ouro, do clampeamento à adrenalina</em></h1>
+<p class="hero-lead">Da fisiologia da transição (aeração pulmonar, queda da resistência vascular pulmonar e clampeamento fisiológico do cordão) ao RN que não respira: estímulo tátil antes do clampeamento, passos iniciais em 30 segundos, VPP em ar ambiente no ≥34 semanas e com O2 a 60% no &lt;34 semanas (Diretrizes SBP 2026), ações corretivas, máscara laríngea, intubação, massagem 3:1 e adrenalina pela veia umbilical; termorregulação, mecônio, hérnia diafragmática, pneumotórax, hipovolemia, prematuridade extrema e reconhecimento da encefalopatia hipóxico-isquêmica elegível à hipotermia terapêutica.</p>
+<div class="hero-sig">Compilação clínica por <b>@dr.lorencato</b> · Elite Edition v5.2 · status clinical_review · fontes conferidas em 2026-10-26</div>
+</div>
+
+<div id="pocket" class="pocket">
+<div class="pocket-head"><div><div class="pocket-eyebrow">Pocket Card 0 · 5 segundos</div><div class="pocket-title">Decisões Críticas — Sala de Parto</div><div class="pocket-sub">Centro obstétrico · Sala de reanimação · Transporte · UTI neonatal</div></div></div>
+<div class="pocket-grid">
+<div class="pocket-card emerg"><div class="pc-trig">Não respira ou hipotônico ao nascer</div><div class="pc-act">Estímulo tátil delicado no dorso por ~15 s ainda com cordão. Respirou: clampeie com ≥60 s. Não respirou: <b>clampeie, leve à mesa, passos iniciais em ≤30 s e VPP dentro do primeiro minuto de vida</b>.</div></div>
+<div class="pocket-card emerg"><div class="pc-trig">FC &lt;60 bpm após VPP efetiva</div><div class="pc-act">Só depois de via aérea assegurada (cânula) e 30 s de ventilação corrigida: <b>massagem com dois polegares, 3:1 (90 compressões + 30 ventilações/min) e O2 a 100%</b>; reavalie a cada 60 s.</div></div>
+<div class="pocket-card emerg"><div class="pc-trig">FC &lt;60 apesar de cânula + massagem</div><div class="pc-act">Cateterismo venoso umbilical de urgência: <b>adrenalina 0,1 mg/mL (1 mL da ampola + 9 mL SF) 0,2 mL/kg IV (0,02 mg/kg)</b>, flush de 3 mL; repetir a cada 3–5 min. Via traqueal só uma vez (1 mL/kg) enquanto o cateter não chega.</div></div>
+<div class="pocket-card dec"><div class="pc-trig">Qual o parâmetro que manda?</div><div class="pc-act">A <b>frequência cardíaca</b> (ausculta por 6 s × 10 nos passos iniciais; monitor cardíaco assim que houver VPP). Cor e Apgar <b>não</b> indicam manobras. FC que sobe = ventilação que funciona.</div></div>
+<div class="pocket-card dec"><div class="pc-trig">VPP não melhora a FC em 30 s</div><div class="pc-act">Antes de subir O2, corrija a técnica: <b>MR. SOPA</b> — reajuste a máscara, reposicione o pescoço, aspire se obstruído, abra a boca, aumente a pressão (até 40 cmH2O), alternativa de via aérea (máscara laríngea ≥34 sem e ≥2 kg, ou cânula).</div></div>
+<div class="pocket-card dec"><div class="pc-trig">Mecônio no líquido amniótico</div><div class="pc-act">Vigoroso fica com a mãe e clampeia com ≥60 s. Não vigoroso recebe o mesmo fluxo de qualquer RN: <b>sem laringoscopia nem aspiração traqueal de rotina</b>; aspiração traqueal só se houver obstrução que impede a ventilação.</div></div>
+<div class="pocket-card tx"><div class="pc-trig">Oxigênio para começar a VPP</div><div class="pc-act"><b>≥34 semanas: ar ambiente (21%). &lt;34 semanas: 60% com Peça-T e blender</b> (SBP 2026). Titule pela SpO2 pré-ductal (pulso radial direito), ±20% a cada 30 s. Massagem: 100%.</div></div>
+<div class="pocket-card tx"><div class="pc-trig">Parâmetros iniciais de ventilação</div><div class="pc-act">Frequência <b>30–60/min</b> ("aperta-solta-solta"); Peça-T com fluxo 10 L/min, pressão máxima 40, <b>Pinsp 20–30 (≥34 sem) ou 20–25 cmH2O (&lt;34 sem), PEEP 5 (5–6 no prematuro)</b>; ajuste pela expansão torácica leve após 3–5 ventilações.</div></div>
+<div class="pocket-card tx"><div class="pc-trig">Palidez, pulsos fracos, sangramento</div><div class="pc-act">Hipovolemia (DPP, vasa prévia, rotura de cordão): <b>SF 0,9% 10 mL/kg IV em 5–10 min</b>, repetível uma vez; anemia fetal grave → concentrado de hemácias O negativo. Sem bicarbonato, sem naloxona.</div></div>
+<div class="pocket-card clin"><div class="pc-trig">Prematuro &lt;34 semanas</div><div class="pc-act">Sala a 23–25 °C, <b>saco plástico sem secar o corpo, touca dupla, colchão térmico se &lt;30 sem</b>, gases aquecidos e umidificados; monitor e oxímetro já nos passos iniciais. Respira com desconforto: CPAP 5–6 cmH2O.</div></div>
+<div class="pocket-card clin"><div class="pc-trig">Abdome escavado + desconforto</div><div class="pc-act">Hérnia diafragmática: <b>intubar imediatamente e passar sonda gástrica aberta; nunca VPP prolongada por máscara</b> (distende alças intratorácicas e comprime o pulmão hipoplásico).</div></div>
+<div class="pocket-card clin"><div class="pc-trig">Precisou de reanimação extensa e tem ≥35–36 sem</div><div class="pc-act">Gasometria de cordão e exame neurológico seriado: <b>janela de 6 h para hipotermia terapêutica</b>. Na sala, apenas normotermia (36,5–37,5 °C), evitando &gt;38 °C; o resfriamento é decidido na UTI.</div></div>
+</div>
+</div>
+
+<div class="legend">
+<div class="lg-title">Sistema de legendas</div>
+<div class="lg-grid"><div class="lg-item"><span class="dot c1"></span> Fisiopatologia / Classificação</div><div class="lg-item"><span class="dot c2"></span> Clínica / Apresentação</div><div class="lg-item"><span class="dot c3"></span> Diagnóstico / Exames</div><div class="lg-item"><span class="dot c4"></span> Tratamento / Conduta</div><div class="lg-item"><span class="dot c5"></span> Emergências / Red Flags</div><div class="lg-item"><span class="dot c6"></span> Nuances / Pearls</div></div>
+<div class="lg-divider"></div>
+<div class="lg-anchors"><span class="ank ank-hy">HIGH-YIELD</span> <span class="ank ank-dec">DECISION</span> <span class="ank ank-dgr">DANGER</span> <span class="ank ank-prl">PEARL</span> <span class="ank ank-myt">MYTH</span> <span class="ank ank-con">CONTROVERSY</span> <span class="ank ank-evo">EVOLVING</span></div>
+<div class="lg-explain"><div class="ehy"><b>HIGH-YIELD</b> — prova/prática frequente</div><div class="edec"><b>DECISION</b> — muda a conduta</div><div class="edgr"><b>DANGER</b> — erro grave / risco crítico</div><div class="eprl"><b>PEARL</b> — nuance de especialista</div><div class="emyt"><b>MYTH</b> — mito vivo na prática</div><div class="econ"><b>CONTROVERSY</b> — debate sem consenso</div><div class="eevo"><b>EVOLVING</b> — mudança recente</div></div>
+</div>
+
+<section id="redflags">
+<div class="section">
+<div class="section-eyebrow"><span>A</span> Red Flags</div>
+<div class="section-title">Cada 30 segundos de atraso na VPP custa 16% a mais de morte ou morbidade</div>
+<div class="section-sub">Na sala de parto o alarme não é a cianose nem o Apgar: é a frequência cardíaca que não sobe, o tórax que não expande e o RN que esfria. Os sinais abaixo exigem ação nos segundos seguintes, não depois do primeiro minuto.</div>
+</div>
+
+<div class="card emerg">
+<div class="card-head">
+<div class="card-eyebrow"><span class="card-num">A.1</span> Emergências da sala de parto</div>
+<h3>Sinais de alarme ao nascer <span class="ank ank-dgr">DANGER</span></h3>
+<div class="card-sub">Sinal objetivo → suspeita → ação imediata, com o número que a sustenta</div>
+</div>
+<div class="card-body">
+<div class="mnemo">
+<div class="mnemo-title"><b>APNEIA</b> o que não pode passar despercebido nos primeiros minutos</div>
+<div class="mnemo-grid">
+<div class="mnemo-row"><span class="mnemo-letter">A</span><span><b>Apneia ou gasping após os passos iniciais</b> · respiração inadequada com glote fechada: VPP antes de 60 s de vida</span></div>
+<div class="mnemo-row"><span class="mnemo-letter">P</span><span><b>Palidez, pulsos débeis, perda sanguínea</b> · hipovolemia aguda: SF 10 mL/kg pela veia umbilical</span></div>
+<div class="mnemo-row"><span class="mnemo-letter">N</span><span><b>Não melhora com VPP corrigida</b> · pneumotórax, hérnia diafragmática, obstrução de via aérea, cânula mal posicionada</span></div>
+<div class="mnemo-row"><span class="mnemo-letter">E</span><span><b>Escavado (abdome) com tórax abaulado</b> · hérnia diafragmática: intubar, sonda gástrica aberta, sem máscara</span></div>
+<div class="mnemo-row"><span class="mnemo-letter">I</span><span><b>Instabilidade térmica</b> · &lt;36,5 °C (prematuro: mortalidade sobe 55% abaixo de 36 °C) ou &gt;38 °C (agrava lesão hipóxico-isquêmica)</span></div>
+<div class="mnemo-row"><span class="mnemo-letter">A</span><span><b>Assistolia ou FC &lt;60 bpm</b> · cânula + massagem 3:1 + O2 100%; persistindo, adrenalina IV</span></div>
+</div>
+</div>
+
+<div class="sub-title">A.1a · Tabela de alarme — sinal, suspeita, conduta</div>
+<div class="stbl stbl-3">
+<div class="stbl-head stbl-3"><div>Red flag</div><div>Suspeita</div><div>Conduta imediata</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Red flag">RN ≥34 sem que não respira nem chora e está flácido ao sair do útero</div><div class="col" data-l="Suspeita">Apneia primária ou secundária; depressão por asfixia, drogas maternas, malformação</div><div class="col" data-l="Conduta"><b>Estímulo tátil no dorso ~15 s com cordão intacto; sem resposta, clampear, mesa aquecida, passos iniciais ≤30 s e VPP em ar ambiente até 60 s de vida</b></div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Red flag">FC &lt;100 bpm ou respiração irregular depois dos passos iniciais</div><div class="col" data-l="Suspeita">Transição falhando; pulmão ainda cheio de líquido</div><div class="col" data-l="Conduta"><b>VPP 30–60/min, Pinsp 20–30 cmH2O, PEEP 5; monitor cardíaco de 3 eletrodos e oxímetro no pulso radial direito enquanto outro ventila</b></div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Red flag">FC continua &lt;100 após 30 s de VPP com máscara</div><div class="col" data-l="Suspeita">Escape face-máscara, via aérea obstruída, pressão baixa (a causa em quase todos)</div><div class="col" data-l="Conduta"><b>Ações corretivas antes de oxigênio; persistindo, máscara laríngea (≥34 sem e ≥2.000 g) ou intubação</b></div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Red flag">FC &lt;60 bpm após 30 s de VPP efetiva por cânula</div><div class="col" data-l="Suspeita">Hipoxemia miocárdica com perfusão coronariana insuficiente</div><div class="col" data-l="Conduta"><b>Massagem 3:1 com dois polegares no terço inferior do esterno, 1/3 do diâmetro AP, O2 100%, reavaliar em 60 s</b></div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Red flag">FC &lt;60 bpm após 60 s de massagem coordenada com ventilação por cânula</div><div class="col" data-l="Suspeita">Parada iminente; checar cânula, pneumotórax, tamponamento, hipovolemia</div><div class="col" data-l="Conduta"><b>Cateter venoso umbilical; adrenalina 0,02 mg/kg IV a cada 3–5 min; SF 10 mL/kg se perda ou choque</b></div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Red flag">Melhora inicial com cânula seguida de piora súbita (FC e SpO2 caem)</div><div class="col" data-l="Suspeita">Deslocamento ou obstrução da cânula, desconexão, falta de gás, pneumotórax hipertensivo</div><div class="col" data-l="Conduta"><b>Marca no lábio, expansão e ausculta, CO2 colorimétrico, conexões e fonte; transiluminação ou punção no 2º EIC hemiclavicular se pneumotórax</b></div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Red flag">Abdome escavado, ausculta assimétrica, bulhas desviadas à direita</div><div class="col" data-l="Suspeita">Hérnia diafragmática congênita (Bochdalek, esquerda)</div><div class="col" data-l="Conduta"><b>Intubação imediata, sonda gástrica calibrosa aberta, pressões baixas, alvo de SpO2 pré-ductal; nada de VPP por máscara</b></div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Red flag">Temperatura axilar &lt;36,5 °C na admissão (ou &gt;38 °C)</div><div class="col" data-l="Suspeita">Falha da cadeia térmica; hipertermia iatrogênica</div><div class="col" data-l="Conduta"><b>Reaquecer com protocolo e monitorar temperatura e glicemia; evitar hipertermia no asfixiado</b></div></div>
+</div>
+
+<div class="box danger"><span class="box-label">DANGER</span><div class="box-title">Bradicardia neonatal é problema de ventilação até prova em contrário</div><div class="box-body">No RN a parada é quase sempre <b>asfíxica</b>: hipoxemia, hipercapnia e acidose deprimem o nó sinusal e o miocárdio. Por isso a resposta é <b>aerar o pulmão</b>, não comprimir o tórax nem dar droga. Iniciar massagem antes de a ventilação estar assegurada (cânula ou máscara laríngea bem posicionada) reduz a eficácia da VPP e atrasa a única intervenção que reverte a maioria das bradicardias. Nove em cada dez RN ventilados por máscara melhoram sem outro procedimento.</div></div>
+<div class="box danger"><span class="box-label">DANGER</span><div class="box-title">Nunca transportar com FC &lt;100 bpm e nunca iniciar hipotermia na sala</div><div class="box-body">O transporte para a UTI acontece só depois da estabilização cardiorrespiratória, em incubadora de dupla parede pré-aquecida, com oxímetro e balão autoinflável à mão. O RN asfixiado sai da sala <b>normotérmico</b>: o resfriamento terapêutico depende de critérios gasométricos e de exame neurológico que só se reúnem na unidade neonatal, dentro de 6 h de vida. Hipertermia (&gt;38 °C) piora o dano neuronal e deve ser evitada em qualquer idade gestacional.</div></div>
+</div>
+</div>
+</section>
+
+<section id="approach">
+<div class="section">
+<div class="section-eyebrow"><span>B</span> Por Apresentação</div>
+<div class="section-title">Mapa Sindrômico — o que o RN mostra nos primeiros 60 segundos</div>
+<div class="section-sub">Três perguntas ao nascer (idade gestacional, respira ou chora, tônus em flexão) dividem os RN em fluxos distintos; os padrões abaixo levam do achado à via de conduta e ao diagnóstico que deve ser procurado.</div>
+</div>
+
+<div class="card clin">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">B.1</span> Padrão 1</div><h3>RN ≥34 semanas que chora e tem tônus em flexão</h3><div class="card-sub">Transição normal: o trabalho é não atrapalhar</div></div>
+<div class="card-body">
+<div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Cerca de oito em cada dez RN. <b>Clampeamento com no mínimo 60 s</b>, contato pele a pele coberto por tecido aquecido, cabeça seca com touca, vias aéreas pérvias e avaliação continuada; <b>amamentação na primeira hora</b>. O aspecto do líquido amniótico (inclusive meconial) não muda esse fluxo.</div></div>
+<ul class="bullets">
+<li><b>FC:</b> ausculta precordial depois de posicionado no tórax materno; FC ≥100 bpm é o esperado.</li>
+<li><b>Aspiração:</b> não rotineira; só se secreção obstrui a via aérea (boca antes das narinas, sonda 8–10, até 100 mmHg).</li>
+<li><b>Temperatura:</b> normotermia 36,5–37,5 °C; sala 23–25 °C, portas fechadas; o pele a pele eleva a temperatura e reduz hipoglicemia e admissão.</li>
+<li><b>Atenção:</b> a SpO2 normal leva 5–10 min para passar de 90%; acrocianose nos primeiros minutos é fisiológica.</li>
+</ul>
+<div class="box hy"><span class="box-label">HIGH-YIELD</span><div class="box-title">Clampeamento ≥60 s também no prematuro vigoroso</div><div class="box-body">A apostila de 2025 traz "≥30 s" para o &lt;34 semanas (SBP 2022). Nas Diretrizes SBP 2026 e no ILCOR 2024 (recomendação forte, certeza moderada) o mínimo passou a <b>60 segundos para qualquer idade gestacional</b> quando o RN não precisa de reanimação imediata; a metanálise de dados individuais com 3.260 RN &lt;37 sem mostrou redução de 32% na chance de morte.</div></div>
+</div>
+</div>
+
+<div class="card clin">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">B.2</span> Padrão 2</div><h3>RN que não respira, faz gasping ou está flácido</h3><div class="card-sub">Apneia primária ou secundária: não há como distinguir na sala, então trate como secundária</div></div>
+<div class="card-body">
+<div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Cerca de dois em cada dez RN. <b>Estímulo tátil no dorso por ~15 s antes do clampeamento</b>; se respirar, clampear com ≥60 s; se não, <b>clampear e levar à mesa</b> (ou, se ≥28 sem, ordenha de cordão intacto 3 vezes antes de clampear &lt;60 s). Passos iniciais em ≤30 s; apneia, respiração irregular ou FC &lt;100 → <b>VPP até 60 s de vida</b>.</div></div>
+<ul class="bullets">
+<li><b>Interrupção da circulação placentária</b> (DPP, placenta prévia sangrando, nó verdadeiro) indica clampeamento imediato.</li>
+<li><b>Gasping</b> é respiração inadequada: suspiros profundos entremeados de apneia, típicos de hipóxia avançada.</li>
+<li><b>Estímulos vigorosos ou prolongados</b> (palmadas, chacoalhar) machucam e atrasam a VPP.</li>
+<li><b>Investigue depois</b>: opioide nas 4 h antes do parto, sulfato de magnésio, anestesia geral, asfixia aguda (gasometria de cordão), malformação.</li>
+</ul>
+</div>
+</div>
+
+<div class="card clin">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">B.3</span> Padrão 3</div><h3>Prematuro &lt;34 semanas</h3><div class="card-sub">Mesmo algoritmo, outra fisiologia: pulmão deficiente em surfactante, pele que perde calor por evaporação</div></div>
+<div class="card-body">
+<div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Vigoroso: <b>clampeamento ≥60 s</b> coberto por plástico estéril e campo aquecido sobre o abdome materno. <b>32–33 sem</b> podem ficar em pele a pele com monitorização contínua; <b>&lt;32 sem vão sempre à mesa</b>: saco plástico sem secar o corpo, touca dupla, monitor e oxímetro nos passos iniciais. Desconforto com FC ≥100: <b>CPAP 5–6 cmH2O</b>; apneia/FC &lt;100: <b>VPP com Peça-T e O2 60%</b>.</div></div>
+<ul class="bullets">
+<li><b>Equipe:</b> 2–3 profissionais, um pediatra apto a todos os procedimentos; equipe e material próprios para cada gemelar.</li>
+<li><b>Ordenha de cordão</b> só ≥28 sem; contraindicada &lt;28 sem (excesso de hemorragia peri-intraventricular grave (hemorragia peri-intraventricular grave no ensaio PREMOD2)lt;28 sem em ensaio randomizado de 23–31 sem).</li>
+<li><b>Interface:</b> máscara facial ou cânula; máscara laríngea não estudada &lt;34 sem (menor tamanho no Brasil: nº 1, 2–5 kg).</li>
+<li><b>Surfactante</b>: não é rotina na sala de parto; indicado nas primeiras 2 h conforme desconforto, depois da estabilização (tema do PD02).</li>
+</ul>
+</div>
+</div>
+
+<div class="card clin">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">B.4</span> Padrão 4</div><h3>RN banhado em mecônio</h3><div class="card-sub">O mecônio muda a equipe presente, não o algoritmo</div></div>
+<div class="card-body">
+<div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Pelo menos <b>dois profissionais</b>, um médico apto a intubar. Nada de aspiração no desprendimento do polo cefálico. <b>Vigoroso: junto da mãe, clampeamento ≥60 s.</b> Não vigoroso: estímulo, clampeamento, passos iniciais e VPP no minuto de ouro; laringoscopia e aspiração traqueal só diante de obstrução que impede a ventilação.</div></div>
+<ul class="bullets">
+<li><b>Por que mudou:</b> aspirar a traqueia antes de ventilar não reduziu síndrome de aspiração meconial, EHI nem mortalidade (metanálise de 4 ECR, 581 RN) e atrasava a VPP.</li>
+<li><b>Se aspirar:</b> uma única vez, cânula traqueal + dispositivo aspirador de mecônio, 80–100 mmHg, e VPP logo em seguida.</li>
+<li><b>Evolução:</b> taquipneia, hipoxemia e hipertensão pulmonar nas horas seguintes são assunto do PD02.</li>
+</ul>
+</div>
+</div>
+
+<div class="card clin">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">B.5</span> Padrão 5</div><h3>VPP bem feita que não melhora o RN</h3><div class="card-sub">Quando a técnica está certa, procure a anatomia ou o volume</div></div>
+<div class="card-body">
+<div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Primeiro confirme a técnica (MR. SOPA; na cânula, a sequência de 9 verificações). Se tudo está certo: <b>pneumotórax</b> (assimetria, hipofonese, piora súbita), <b>hérnia diafragmática</b> (abdome escavado), <b>obstrução congênita da via aérea</b> (Pierre Robin, atresia de coanas), <b>derrames/hidropsia</b>, <b>hipovolemia</b> (palidez, pulsos fracos) e <b>tamponamento</b>. Cardiopatia cianogênica ducto-dependente não melhora a SpO2 com O2, mas a FC responde à ventilação.</div></div>
+<ul class="bullets">
+<li><b>SpO2 pré e pós-ductal</b> com diferença &gt;3–5% sugere shunt direita-esquerda pelo canal (hipertensão pulmonar persistente).</li>
+<li><b>CO2 colorimétrico negativo com cânula na traqueia</b> ocorre quando não há fluxo pulmonar (parada) — falso-negativo.</li>
+<li><b>Glicemia</b>: medir cedo no RN que precisou de massagem, adrenalina ou que tem EHI (ILCOR 2025).</li>
+</ul>
+<div class="box decision"><span class="box-label">DECISION</span><div class="box-title">Quando parar de procurar a falha técnica</div><div class="box-body">Depois de duas rodadas de correção com melhora transitória e piora, ou de assimetria nova à ausculta, trate como <b>complicação anatômica</b>: transiluminação ou punção diagnóstica do hemitórax suspeito, sonda gástrica, exame do abdome e da face. O tempo gasto reajustando uma máscara bem posicionada é tempo de hipóxia.</div></div>
+</div>
+</div>
+</section>
+
+<section id="primarias">
+<div class="section">
+<div class="section-eyebrow"><span>C</span> Entidades Primárias</div>
+<div class="section-title">Disease Boxes — da transição normal à parada asfíxica</div>
+<div class="section-sub">Seis entidades organizam o raciocínio da sala de parto: a transição que dá certo, o RN deprimido, a reanimação avançada, o prematuro, a hipotermia e a asfixia com encefalopatia que precisa ser reconhecida antes de 6 horas.</div>
+</div>
+
+<div class="card prim">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">C.1</span> Transição</div><h3>Transição cardiorrespiratória e RN vigoroso <span class="ank ank-hy">HIGH-YIELD</span></h3><div class="card-sub">A troca da placenta pelo pulmão em menos de um minuto</div></div>
+<div class="card-body">
+<div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Ao nascer, o pulmão cheio de líquido precisa ser aerado para que a <b>resistência vascular pulmonar caia</b>, o fluxo pulmonar aumente e o retorno venoso pulmonar passe a encher o ventrículo esquerdo no lugar do sangue umbilical. Quem respira antes do clampeamento faz essa troca sem perder pré-carga. Por isso, no RN vigoroso: <b>clampeamento ≥60 s, pele a pele, normotermia e amamentação na primeira hora</b>.</div></div>
+<div class="disease">
+<div class="disease-head"><div class="disease-name">Transição normal ao nascimento — RN vigoroso</div><div class="disease-tag">CID-10 Z38.0 · nascido vivo, único, hospitalar <span class="ev ev-sbr">SBP 2026</span> <span class="ev ev-eular">ILCOR 2024</span></div></div>
+<div class="disease-body"><div class="disease-rows">
+<div class="disease-row"><div class="k">Epidemiologia</div><div class="v">Cerca de 80% dos nascimentos; no Brasil, ~2,4 milhões de nascidos vivos/ano, dos quais ~480 mil precisam de alguma ajuda para iniciar a respiração. Parto cesáreo sem trabalho de parto aumenta a chance de precisar de VPP mesmo no termo sem fator de risco (menor reabsorção do líquido pulmonar mediada por catecolaminas).</div></div>
+<div class="disease-row"><div class="k">Fisiopatologia</div><div class="v">Três fases que se sobrepõem: (1) <b>clareamento do líquido das vias aéreas</b> pela pressão transpulmonar da inspiração; (2) líquido no interstício, que retorna ao alvéolo se não houver capacidade residual funcional (CRF) — daí o papel da PEEP; (3) troca gasosa e ventilação homogênea. A aeração reduz a resistência vascular pulmonar (O2 alveolar, NO, prostaciclina), o forame oval fecha funcionalmente em 1–2 h e o canal arterial reduz o fluxo após ~10 h, fechando entre o 3º e o 10º dia (PaO2 alta e queda de PGE2).</div></div>
+<div class="disease-row"><div class="k">Clínica</div><div class="v">Choro ou respiração regular e tônus em flexão logo ao nascer, FC ≥100 bpm à ausculta. A SpO2 pré-ductal parte de ~60–65% no 1º minuto e só passa de 85% perto do 5º; a cor não é critério de conduta. Desconforto leve transitório (gemido, taquipneia) é comum após cesárea.</div></div>
+<div class="disease-row"><div class="k">Diagnóstico</div><div class="v">Três perguntas ao nascer: <b>idade gestacional ≥34 sem? respira ou chora? tônus em flexão?</b> Sim às três = boa vitalidade, independentemente do líquido amniótico. Apgar no 1º e 5º minutos documenta, mas não indica manobras <span class="ev ev-sbr">SBP 2026</span>.</div></div>
+<div class="disease-row"><div class="k">Tratamento</div><div class="v"><b>Clampeamento ≥60 s</b> (OMS: 1–3 min) com RN sobre o abdome/tórax materno; secar cabeça e corpo, touca, retirar campos úmidos, pele a pele coberto por tecido aquecido com boca e narinas visíveis; sala 23–25 °C; aspiração só se secreção obstrui; FC por ausculta; amamentação na primeira hora (Passo 4 da IHAC). Cuidados de rotina depois: vitamina K 1 mg IM, profilaxia ocular, identificação <span class="ev ev-eular">ILCOR 2024 · forte</span> <span class="ev ev-nice">MS 2014</span></div></div>
+<div class="disease-row"><div class="k">Prognóstico</div><div class="v">Excelente. O clampeamento ≥60 s aumenta hemoglobina nas primeiras 24 h e ferritina aos 3–6 meses (menos anemia do lactente), à custa de mais policitemia e icterícia que precisa de seguimento (remissão ao PD02).</div></div>
+<div class="disease-row"><div class="k">O que muda conduta</div><div class="v"><b>O que muda conduta:</b> qualquer "não" às três perguntas tira o RN do colo e leva ao estímulo tátil e à mesa; DPP, placenta prévia sangrando ou nó verdadeiro de cordão impõem clampeamento imediato; RN em pele a pele que evolui com desconforto e SpO2 abaixo do alvo sai do colo para avaliação e suporte.</div></div>
+</div></div>
+</div>
+<div class="score">
+<div class="score-head"><div class="score-name">SpO2 pré-ductal alvo por minuto de vida <span class="ev ev-sbr">SBP 2026</span></div><div class="score-purpose">Sensor no pulso radial direito; vale para ≥34 e &lt;34 semanas; obrigatória sempre que houver VPP, CPAP ou O2</div></div>
+<div class="score-rows">
+<div class="score-row"><div class="score-grade">2 min</div><div class="score-desc"><b>65–70%</b> · a leitura confiável demora 1–2 min e exige débito cardíaco com perfusão periférica</div></div>
+<div class="score-row"><div class="score-grade">3 min</div><div class="score-desc"><b>70–75%</b> (ERC 2025 usa o mesmo alvo)</div></div>
+<div class="score-row"><div class="score-grade">4 min</div><div class="score-desc"><b>75–80%</b></div></div>
+<div class="score-row"><div class="score-grade">5 min</div><div class="score-desc"><b>80–85%</b> · não atingir 80% aos 5 min no &lt;32 sem associa-se a HPIV grave e morte</div></div>
+<div class="score-row"><div class="score-grade">10 min</div><div class="score-desc"><b>85–95%</b> · acima de 95% com O2 suplementar = reduzir FiO2 (hiperóxia)</div></div>
+</div>
+</div>
+<details class="deep">
+<summary>Deep dive · Fisiologia da transição e o clampeamento fisiológico do cordão</summary>
+<div class="deep-content">
+<p>Na vida fetal o pulmão é um órgão secretor: o epitélio respiratório bombeia ativamente cloreto para a luz, arrastando água e mantendo os sáculos distendidos por um volume de líquido próximo da CRF, o que estimula o crescimento pulmonar. A glote permanece fechada a maior parte do tempo para reter esse líquido. Nos dias que antecedem o trabalho de parto, o surto de catecolaminas, vasopressina e glicocorticoides inverte o transporte: os canais epiteliais de sódio (ENaC) passam a reabsorver sódio e água para o interstício. A cesárea eletiva antes de 39 semanas priva o feto desse preparo, e é por isso que a taquipneia transitória e a necessidade de VPP são mais frequentes nesse grupo.</p>
+<p>A maior parte do líquido que resta ao nascer não é espremida pelo canal de parto; ela é empurrada através do epitélio para o interstício pelo gradiente de pressão transpulmonar gerado nas primeiras inspirações — que são profundas, com pressões negativas intensas. O líquido intersticial é drenado depois pelos linfáticos e capilares em horas, e enquanto isso pode refluir para o espaço aéreo na expiração. Essa é a base fisiológica para oferecer PEEP: manter a CRF recém-formada e impedir o retorno do líquido. Na apneia a glote volta a se fechar, e uma ventilação com máscara pode simplesmente não chegar ao pulmão; com respiração rítmica a glote se abre.</p>
+<p>A aeração desencadeia a transição cardiovascular. O aumento do O2 alveolar e a distensão mecânica liberam óxido nítrico e prostaciclina, e a resistência vascular pulmonar cai abruptamente; o fluxo pulmonar, que era cerca de 10% do débito combinado (90% do sangue da artéria pulmonar desviava pelo canal arterial para a aorta descendente), multiplica-se. Antes do clampeamento, o retorno venoso umbilical é a principal fonte de pré-carga do ventrículo esquerdo, via ducto venoso, veia cava inferior e forame oval. Se o cordão é clampeado antes da aeração, o RN perde de uma só vez essa pré-carga e ganha pós-carga (a placenta de baixa resistência sai do circuito), sem que o retorno venoso pulmonar ainda exista: o débito do VE cai, a FC cai e o fluxo cerebral oscila. Esse é o argumento do clampeamento "fisiológico" — clampear depois que o pulmão assumiu a pré-carga — e explica por que a SBP 2026 passou a pedir estímulo tátil com cordão intacto no RN que não respira.</p>
+<p>A transfusão placentária acrescenta até 25% do volume sanguíneo do RN. Ela não é movida pela gravidade nem pelas contrações uterinas, e sim pelas variações de pressão intratorácica da respiração espontânea; posicionar o RN abaixo ou acima do introito pouco importa. No pré-termo, a metanálise de dados individuais de 20 ensaios (3.260 RN) mostrou menos mortes com clampeamento ≥60 s; no termo, os ganhos são hematológicos e de ferro, com aumento de policitemia sintomática e de icterícia com indicação de fototerapia que precisam de vigilância. A ordenha de cordão intacto (20 cm, três vezes, em ~2 s cada) é a forma de oferecer transfusão quando não se pode esperar, mas gera picos de pressão e fluxo que o cérebro do extremo prematuro não tolera — daí a contraindicação abaixo de 28 semanas.</p>
+</div>
+</details>
+</div>
+</div>
+
+<div class="card prim">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">C.2</span> RN deprimido</div><h3>RN deprimido ao nascer: apneia primária, secundária e asfixia ao nascer <span class="ank ank-dec">DECISION</span></h3><div class="card-sub">O algoritmo até a VPP por cânula: onde se resolvem 99% das reanimações</div></div>
+<div class="card-body">
+<div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Sem respiração regular ou com hipotonia: estímulo tátil, clampeamento, passos iniciais em 30 s e, persistindo apneia, respiração irregular ou <b>FC &lt;100 bpm, VPP no minuto de ouro</b>. A FC é o termômetro: sobe em 15–30 s se a ventilação chega ao alvéolo. <b>Falha = técnica</b> até prova em contrário; depois, interface alternativa.</div></div>
+<div class="disease">
+<div class="disease-head"><div class="disease-name">Depressão respiratória ao nascer · asfixia ao nascer</div><div class="disease-tag">CID-10 P21.0 · P21.1 (P21 existe na CID-10 OMS/DATASUS; foi excluído do ICD-10-CM) <span class="ev ev-sbr">SBP 2026</span> <span class="ev ev-eular">ILCOR 2025</span></div></div>
+<div class="disease-body"><div class="disease-rows">
+<div class="disease-row"><div class="k">Epidemiologia</div><div class="v">1 em cada 10 RN recebe VPP, 1 em 100 é intubado, 1–3 em 1.000 recebem massagem ou medicações quando a ventilação é bem feita. No Brasil (2023), 20% dos óbitos neonatais precoces associaram-se a asfixia, hipóxia ao nascer ou aspiração meconial — três RN ≥2.500 g por dia. O risco de morte ou morbidade cresce 16% a cada 30 s de atraso para iniciar a VPP.</div></div>
+<div class="disease-row"><div class="k">Fisiopatologia</div><div class="v">Hipóxia intraparto produz primeiro <b>apneia primária</b> (responde a estímulo), depois gasping e <b>apneia secundária</b> (só responde a VPP), com bradicardia por depressão miocárdica hipóxica e vagal. Na apneia a glote está fechada; a aeração pela VPP reabre a glote, recruta a CRF, derruba a resistência pulmonar e reoxigena o miocárdio.</div></div>
+<div class="disease-row"><div class="k">Clínica</div><div class="v">Apneia, gasping ou respiração irregular; hipotonia; FC &lt;100 bpm; palidez ou cianose. CID P21.0: FC &lt;100 em queda, apneia ou gasping, palidez, atonia (Apgar 0–3 no 1º minuto); P21.1: respiração ausente ou irregular com FC ≥100 e algum tônus (Apgar 4–7).</div></div>
+<div class="disease-row"><div class="k">Diagnóstico</div><div class="v">Clínico e dinâmico: respiração por inspeção do tórax, FC por ausculta (6 s × 10) nos passos iniciais e por <b>monitor cardíaco de 3 eletrodos assim que houver VPP</b> (ausculta e palpação do cordão subestimam a FC em 15–25 bpm; o oxímetro demora e subestima) <span class="ev ev-eular">ILCOR 2023</span>. Gasometria de sangue arterial de cordão para caracterizar acidose metabólica.</div></div>
+<div class="disease-row"><div class="k">Tratamento</div><div class="v"><b>VPP com máscara facial em ar ambiente (≥34 sem), 30–60/min, Pinsp 20–30 cmH2O, PEEP 5 com Peça-T</b> (preferida) ou balão autoinflável (sempre disponível). Após 30 s sem melhora: ações corretivas (MR. SOPA); persistindo, máscara laríngea (≥34 sem e ≥2.000 g) ou intubação. Após IOT, VPP com O2 60% e titulação pela SpO2. CPAP no ≥34 sem só se SpO2 abaixo do alvo (risco de pneumotórax) <span class="ev ev-sbr">SBP 2026</span> <span class="ev ev-acr">AHA/AAP 2025</span></div></div>
+<div class="disease-row"><div class="k">Prognóstico</div><div class="v">Nove em cada dez RN ventilados por máscara melhoram sem outro procedimento. Apgar baixo no 1º minuto reflete depressão intraparto; Apgar baixo que persiste no 10º–20º minuto prediz morte e sequela.</div></div>
+<div class="disease-row"><div class="k">O que muda conduta</div><div class="v"><b>O que muda conduta:</b> FC após 30 s de VPP — ≥100 com respiração regular suspende a VPP; &lt;100 exige corrigir técnica e trocar interface; &lt;60 com via aérea assegurada indica massagem. A necessidade de VPP por cânula ou prolongada define transporte em incubadora com suporte e avaliação de EHI.</div></div>
+</div></div>
+</div>
+<div class="score">
+<div class="score-head"><div class="score-name">Boletim de Apgar (Virginia Apgar, 1952) <span class="ev ev-sbr">SBP 2026</span></div><div class="score-purpose">1º e 5º minutos; se &lt;7 no 5º, repetir a cada 5 min até o 20º; registrar junto com as manobras feitas (Apgar ampliado). Nunca indica reanimação.</div></div>
+<div class="score-rows">
+<div class="score-row"><div class="score-grade">FC</div><div class="score-desc">0 ausente · 1 &lt;100 bpm · 2 ≥100 bpm</div></div>
+<div class="score-row"><div class="score-grade">Respiração</div><div class="score-desc">0 ausente · 1 irregular, fraca, choro débil · 2 regular, choro forte</div></div>
+<div class="score-row"><div class="score-grade">Tônus</div><div class="score-desc">0 flácido · 1 alguma flexão · 2 movimentos ativos</div></div>
+<div class="score-row"><div class="score-grade">Irritabilidade reflexa</div><div class="score-desc">0 ausente · 1 careta · 2 choro, tosse ou espirro</div></div>
+<div class="score-row"><div class="score-grade">Cor</div><div class="score-desc">0 cianose ou palidez · 1 extremidades cianóticas · 2 rosado</div></div>
+</div>
+</div>
+<details class="deep">
+<summary>Deep dive · Apneia primária e secundária, gasping, glote e reflexo trigeminal</summary>
+<div class="deep-content">
+<p>O modelo clássico de asfixia aguda (Dawes, primatas recém-nascidos com oclusão do cordão) descreve uma sequência estereotipada. Nos primeiros minutos de hipóxia há taquipneia e esforço respiratório vigoroso; segue-se a <b>apneia primária</b>, com bradicardia mediada por quimiorreflexo e vago e pressão arterial mantida pela vasoconstrição periférica que redistribui fluxo para cérebro, coração e adrenais. Nessa fase, estímulo sensorial ou a simples exposição ao ar frio ainda reiniciam a respiração. Se a hipóxia continua, surgem os <b>gasps</b> — esforços profundos, espaçados, gerados por um centro gerador de padrão pontino-bulbar mais resistente à hipóxia — que diminuem de frequência até o "último gasp". Começa a <b>apneia secundária</b>: o miocárdio esgota o glicogênio, a acidose se aprofunda, a pressão cai e nenhum estímulo desperta a respiração; só a ventilação com pressão positiva reverte o quadro, e quanto mais tempo após o último gasp, mais demora o retorno da respiração espontânea.</p>
+<p>A consequência prática é decisiva: na sala de parto <b>não há como saber em qual fase o RN está</b>, porque o processo pode ter começado intraútero. Um RN apneico deve ser tratado como em apneia secundária: estímulo breve, sem insistir, e VPP. A recomendação de estímulo tátil no dorso por cerca de 15 segundos antes do clampeamento aproveita a fase primária quando ela existe — ativação de mecanorreceptores somáticos e viscerais e do centro respiratório — e um estudo observacional com 2.563 RN que não choraram mostrou 84% mais chance de respiração espontânea quando o estímulo veio antes do clampeamento.</p>
+<p>A glote é o segundo protagonista. Imagens de contraste em coelhos prematuros mostraram que, sem respiração espontânea, a laringe permanece fechada e a VPP por máscara insufla estômago, não pulmão; os breves momentos de abertura coincidem com esforços inspiratórios. Isso explica por que a VPP "funciona" melhor quando o RN tem algum drive, por que o estímulo e a PEEP ajudam e por que a falha da ventilação por máscara muitas vezes não é escape, e sim obstrução glótica — uma das razões para a máscara laríngea e a cânula como interfaces alternativas.</p>
+<p>O terceiro elemento é o <b>reflexo trigeminocardíaco</b>: a pressão da máscara sobre a região perioral, inervada pelo trigêmeo, ativa vias do tronco que, pelo vago, causam apneia, bradicardia e fechamento glótico. Em prematuros &lt;33 semanas que respiravam, 54% pararam de respirar após a aplicação da máscara (mediana de 5 s até a apneia, duração de 28 s), com relação inversa à idade gestacional; no termo, a apneia ocorreu em 10% das aplicações, mais na primeira. Daí as recomendações de aplicar a máscara com delicadeza, do queixo para o nariz, com a pegada em "C" e "E" e sem empurrar a face contra a mão — e de reservar a VPP a quem tem FC &lt;100 ou apneia, avaliando com cuidado o RN com respiração apenas irregular.</p>
+</div>
+</details>
+</div>
+</div>
+
+<div class="card prim">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">C.3</span> Reanimação avançada</div><h3>Bradicardia &lt;60 bpm e assistolia: massagem e adrenalina <span class="ank ank-dgr">DANGER</span></h3><div class="card-sub">1 a 3 por mil nascimentos — raro, cronometrado, feito a três</div></div>
+<div class="card-body">
+<div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body"><b>FC &lt;60 bpm após 30 s de VPP efetiva por cânula</b>: massagem com dois polegares no terço inferior do esterno, 3:1, 120 eventos/min, O2 100%, reavaliar a cada 60 s. Sem resposta após 60 s de massagem bem feita: <b>cateter venoso umbilical e adrenalina 0,02 mg/kg IV</b> (0,2 mL/kg da solução 0,1 mg/mL), repetida a cada 3–5 min; SF 10 mL/kg se suspeita de hipovolemia.</div></div>
+<div class="disease">
+<div class="disease-head"><div class="disease-name">Bradicardia neonatal grave e parada cardiorrespiratória ao nascer</div><div class="disease-tag">CID-10 P29.1 · I46.9 <span class="ev ev-eular">ILCOR 2025</span> <span class="ev ev-sbr">SBP 2026</span></div></div>
+<div class="disease-body"><div class="disease-rows">
+<div class="disease-row"><div class="k">Epidemiologia</div><div class="v">1–3/1.000 nascidos vivos ≥34 sem quando a VPP é aplicada de forma adequada; muito mais frequente no prematuro de muito baixo peso (6% dos RN de 23–31 sem na Rede Brasileira de Pesquisas Neonatais, com sobrevida de 1 em 3).</div></div>
+<div class="disease-row"><div class="k">Fisiopatologia</div><div class="v">Hipoxemia e acidose levam à insuficiência do fluxo coronariano, queda da contratilidade e da FC; sem débito, o pulmão ventilado não tem sangue para oxigenar. A compressão do coração contra a coluna eleva a pressão aórtica, e na descompressão as coronárias se enchem: a <b>pressão de perfusão coronariana</b> (diastólica aórtica menos pressão do átrio direito) é o determinante do retorno da circulação.</div></div>
+<div class="disease-row"><div class="k">Clínica</div><div class="v">FC &lt;60 bpm ou não detectável no monitor apesar de VPP com expansão torácica; palidez, ausência de esforço respiratório, SpO2 não detectável. Monitor pode mostrar atividade elétrica sem pulso: confirme por ausculta.</div></div>
+<div class="disease-row"><div class="k">Diagnóstico</div><div class="v">FC pelo monitor cardíaco (eletrodos em mamilos e flanco direito, ou braços e coxa); antes de massagear, <b>confirmar via aérea</b>: marca da cânula no lábio, CO2 colorimétrico, expansão simétrica, ausculta axilar <span class="ev ev-eular">ILCOR 2025 · boa prática</span>.</div></div>
+<div class="disease-row"><div class="k">Tratamento</div><div class="v"><b>Massagem</b>: dois polegares sobrepostos ou justapostos, terço inferior do esterno abaixo da linha intermamilar poupando o xifoide, profundidade 1/3 do diâmetro AP, reexpansão completa, 3:1 sincronizado (90 + 30/min), compressor atrás da cabeça, troca a cada 2–5 min. <b>Adrenalina IV/IO 0,01–0,03 mg/kg</b> (prática: 0,02 mg/kg = 0,2 mL/kg de 0,1 mg/mL) com flush de 3 mL SF; <b>endotraqueal 0,05–0,1 mg/kg</b> (prática: 1 mL/kg, uma vez, sem flush); repetir IV a cada 3–5 min. Volume se perda ou choque. Sem bicarbonato, atropina ou naloxona <span class="ev ev-sbr">SBP 2026</span> <span class="ev ev-eular">ILCOR 2020/2025</span></div></div>
+<div class="disease-row"><div class="k">Prognóstico</div><div class="v">Ausência de retorno da circulação após 10–20 min de reanimação intensiva associa-se a alto risco de morte e de sequela moderada/grave, mas nenhuma duração prediz desfecho de forma consistente; com hipotermia terapêutica, 2 em 5 RN com Apgar 0 no 10º minuto sobrevivem e 1 em 5 sem sequela moderada/grave.</div></div>
+<div class="disease-row"><div class="k">O que muda conduta</div><div class="v"><b>O que muda conduta:</b> FC &gt;60 após 60 s de massagem interrompe as compressões e inicia a redução do O2 pela SpO2; FC &lt;60 mantida após adrenalina obriga a rever cânula, compressões, acesso, dose, pneumotórax, tamponamento e volume; reanimação avançada contínua por ~20 min abre a discussão de interrupção com equipe e família.</div></div>
+</div></div>
+</div>
+<details class="deep">
+<summary>Deep dive · Por que 3:1, por que dois polegares e o que a adrenalina faz no RN asfixiado</summary>
+<div class="deep-content">
+<p>A relação 3:1 com 120 eventos por minuto é uma escolha fisiológica, não uma simplificação didática. No adulto a parada é predominantemente arrítmica e o sangue arterial está oxigenado no momento do colapso, de modo que a prioridade é o fluxo; no RN o colapso é asfíxico e o pulmão pode nem ter sido aerado, então a ventilação mantém peso proporcional maior. Estudos em leitões asfixiados mostram que ciclos coordenados de três compressões e uma insuflação reduzem o tempo até o retorno da circulação espontânea em comparação com compressões contínuas e ventilação assíncrona, e por isso o 3:1 é mantido <b>mesmo com cânula traqueal</b>, ao contrário da pediatria e do adulto. Alternativas como compressões contínuas com insuflação sustentada sobreposta permanecem em pesquisa.</p>
+<p>A técnica dos dois polegares com as mãos envolvendo o tórax gera picos de pressão sistólica e de perfusão coronariana maiores, permite a profundidade correta (um terço do diâmetro anteroposterior) com menos fadiga e acerta mais vezes o terço inferior do esterno, onde está a maior parte do ventrículo esquerdo. Polegares sobrepostos concentram a força numa área mais circunscrita ao coração. As complicações — fratura de costelas, pneumotórax, hemotórax e laceração hepática — vêm sobretudo da compressão sobre o xifoide e da profundidade excessiva. Sessenta segundos de compressão ininterrupta são o tempo mínimo para construir pressão de perfusão coronariana; interromper para "ver como está" a cada 15 s derruba a pressão diastólica e recomeça a construção do zero.</p>
+<p>A adrenalina age em receptores α1 vasculares, elevando a resistência vascular sistêmica e a pressão diastólica aórtica — justamente o que falta ao RN asfixiado, que costuma ter vasodilatação com resistência sistêmica baixa —, e em β1 miocárdicos, aumentando cronotropismo, dromotropismo e inotropismo. Doses acima de 0,1 mg/kg por qualquer via causam hipertensão grave, disfunção miocárdica pós-reanimação e pior desfecho neurológico, razão pela qual a dose única prática (0,02 mg/kg IV; 0,1 mg/kg traqueal) existe para reduzir erro de cálculo. A solução precisa ser diluída a 0,1 mg/mL (1 mL da ampola de 1 mg/mL em 9 mL de SF); oxidada, fica rosada (adrenocromo) ou marrom e deve ser descartada. Pela via traqueal, a absorção alveolar num pulmão com pouco fluxo e líquido residual é lenta e imprevisível: dose maior, uma única vez, sem empurrar com salina, e jamais atrasando o cateter.</p>
+<p>O cateter venoso umbilical (3,5 ou 5 F, preenchido com SF, conectado a torneira e seringa) entra 3–4 cm além do ânulo, apenas até refluir sangue — posição periférica, evitando o fígado, onde a infusão de drogas pode causar necrose hepática e trombose portal. A veia é a estrutura única, de parede fina e ovalada, geralmente às 12 horas; as duas artérias são menores e de parede espessa. A via intraóssea (superfície anteromedial da tíbia, 1–2 cm abaixo e medial à tuberosidade, profundidade de 0,5–0,75 cm entre 1.500–2.499 g e ~1 cm entre 2.500–3.500 g) é alternativa quando o cateterismo não é factível, com complicações descritas que vão de extravasamento a síndrome compartimental e amputação.</p>
+</div>
+</details>
+</div>
+</div>
+
+<div class="card prim">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">C.4</span> Prematuro</div><h3>RN pré-termo &lt;34 semanas: estabilização nos primeiros minutos <span class="ank ank-hy">HIGH-YIELD</span></h3><div class="card-sub">Estabilizar sem lesar: CRF, calor e oxigênio na medida</div></div>
+<div class="card-body">
+<div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Vigoroso: <b>clampeamento ≥60 s</b>; 32–33 sem podem ficar em pele a pele monitorizados; &lt;32 sem sempre à mesa. Não vigoroso: estímulo 15 s, clampeamento (ordenha se ≥28 sem). <b>Saco plástico, touca dupla, colchão térmico &lt;30 sem, gases aquecidos</b>. Desconforto com FC ≥100: <b>CPAP 5–6 cmH2O</b>. Apneia/FC &lt;100: <b>VPP com Peça-T, O2 60%, Pinsp 20–25, PEEP 5–6</b>. Sem insuflação sustentada; sem máscara laríngea.</div></div>
+<div class="disease">
+<div class="disease-head"><div class="disease-name">Prematuridade (&lt;34 semanas) e baixo peso ao nascer na sala de parto</div><div class="disease-tag">CID-10 P07.3 · P07.1 <span class="ev ev-sbr">SBP 2026 &lt;34 sem</span> <span class="ev ev-eular">ILCOR 2025</span></div></div>
+<div class="disease-body"><div class="disease-rows">
+<div class="disease-row"><div class="k">Epidemiologia</div><div class="v">A necessidade de reanimação cresce quanto menor a IG e o peso. Na Rede Brasileira de Pesquisas Neonatais (2014–2024), dos 12.870 RN de 23–31 sem, 8.951 receberam VPP e 42% foram ventilados por cânula na sala de parto; 39% dos de 23–27 sem e 71% dos de 28–31 sem chegaram à UTI em CPAP.</div></div>
+<div class="disease-row"><div class="k">Fisiopatologia</div><div class="v">Deficiência de surfactante, parede torácica complacente, musculatura fraca, drive respiratório imaturo e reabsorção lenta do líquido pulmonar dificultam formar e manter a CRF; poucas insuflações com volume corrente &gt;8 mL/kg já desencadeiam inflamação pulmonar e cerebral. Pele fina, alta relação superfície/massa e pouca gordura marrom tornam a perda evaporativa de calor dominante.</div></div>
+<div class="disease-row"><div class="k">Clínica</div><div class="v">Apneia ou respiração irregular frequentes, gemido, retrações e SpO2 abaixo do alvo; FC baixa por hipóxia. A máscara facial vaza com frequência (mediana de 29% do gás, chegando a 70%) e pode induzir apneia trigeminal.</div></div>
+<div class="disease-row"><div class="k">Diagnóstico</div><div class="v">IG pela melhor estimativa obstétrica (DUM ou USG de 1º trimestre); peso para cânula e doses. <b>Monitor cardíaco e oxímetro para todos os &lt;34 sem levados à mesa</b>, colocados durante os passos iniciais (em ≤30 s, a dois profissionais) <span class="ev ev-sbr">SBP 2026</span>.</div></div>
+<div class="disease-row"><div class="k">Tratamento</div><div class="v"><b>CPAP 5–6 cmH2O</b> por Peça-T e máscara (fluxo ~10 L/min, gás aquecido e umidificado) se FC ≥100 e desconforto ou SpO2 baixa; <b>VPP com Peça-T e O2 60%</b>, 30–60/min, Pinsp 20–25, PEEP 5–6, pressão máxima 30–40; titulação de 20% a cada 30 s pela SpO2. IOT se VPP por máscara não efetiva, prolongada ou massagem: cânula 2,5 (24–28 sem, 500–1.000 g) e 3,0 (28–34 sem, 1.000–2.000 g); marca no lábio 5,5 cm (23–24 sem) a 7,5 cm (33–34 sem). Surfactante não rotineiro na sala <span class="ev ev-sbr">SBP 2026</span> <span class="ev ev-eular">ILCOR 2025 · ≥30% &lt;32 sem</span></div></div>
+<div class="disease-row"><div class="k">Prognóstico</div><div class="v">Hipotermia &lt;36 °C no &lt;32 sem eleva mortalidade em 55% e risco de HPIV, ROP, sepse e DBP; reanimação avançada multiplica morte e sequela do neurodesenvolvimento. CPAP precoce em vez de IOT reduz morte ou DBP (um sobrevivente a mais sem DBP a cada 20 RN de 24–30 sem).</div></div>
+<div class="disease-row"><div class="k">O que muda conduta</div><div class="v"><b>O que muda conduta:</b> 32–33 × &lt;32 sem (pele a pele monitorizado × mesa obrigatória); ≥28 × &lt;28 sem (ordenha permitida × contraindicada); peso estimado ≥2.000 g (só então a máscara laríngea entra como opção); FiO2 &gt;40% ou falha do CPAP antecipam surfactante na UTI (PD02).</div></div>
+</div></div>
+</div>
+<details class="deep">
+<summary>Deep dive · Oxigênio inicial no prematuro, CPAP e a queda da insuflação sustentada</summary>
+<div class="deep-content">
+<p>Poucas recomendações mudaram tanto em dez anos quanto a FiO2 para começar a VPP no prematuro. Em 2015–2018 o ILCOR sugeria iniciar com concentração baixa (21–30%) em &lt;35 semanas, por analogia ao termo, em que a reanimação com ar reduziu a mortalidade em cerca de 27% frente a O2 100% e evitou o estresse oxidativo da hiperóxia (lipoperoxidação, glutationa oxidada, lesão de reperfusão). O prematuro, porém, tem resposta diferente: sua vasculatura pulmonar depende mais do O2 alveolar para relaxar, a troca gasosa é limitada pela imaturidade e pela falta de surfactante, e a hipóxia prolongada nos primeiros minutos associa-se a bradicardia e a hemorragia peri-intraventricular. A metanálise em rede de dados individuais NETMOTION (12 ensaios, 1.055 RN &lt;32 sem) mostrou menor mortalidade com FiO2 inicial alta (≥0,90) versus baixa (≤0,30), com certeza baixa. O ILCOR 2025 traduziu isso como "é razoável começar com ≥30%" no &lt;32 sem, sem recomendação para 32–34+6 semanas.</p>
+<p>A SBP 2026 foi além e fixou <b>60%</b> para todo &lt;34 semanas, apoiada também no ensaio TORPIDO 30/60 (23–28 sem; FiO2 0,60 versus 0,30): o desfecho primário, morte ou lesão cerebral até 36 semanas corrigidas, não diferiu (47% × 48%), mas o grupo 60% atingiu mais vezes a SpO2 alvo e FC ≥100 aos 5 minutos, teve menos hipóxia e bradicardia e precisou menos de massagem e adrenalina. O ERC 2025 recomenda ≥30% abaixo de 32 semanas e ar ambiente a partir de 32 — divergência real na faixa de 32–33 semanas que deve ser resolvida pelo protocolo local. Em qualquer escolha, o oxigênio inicial é só o ponto de partida: o blender, a oximetria pré-ductal e o ajuste de 20% a cada 30 s (o atraso entre o blender e o RN gira em torno de 30 s) é que evitam tanto a hipóxia quanto a hiperóxia.</p>
+<p>O CPAP aplicado logo após o nascimento mantém abertos sáculos ainda em fase de reabsorção de líquido e pobres em surfactante, recruta de forma mais homogênea, preserva a CRF na expiração e reduz atelectrauma, migração de neutrófilos e formação de membrana hialina; também ajuda a manter a via aérea superior pérvia e a glote aberta. Metanálise de três ensaios (2.364 RN de 24–30 sem) mostrou que CPAP em vez de intubação na primeira hora reduz morte ou DBP sem aumentar escape de ar; a metanálise guarda-chuva sugere maior benefício abaixo de 28 semanas e com pressão mínima de 5 cmH2O. O balão autoinflável não gera CPAP nem PEEP confiável, mesmo com válvula, por isso a Peça-T é obrigatória no prematuro.</p>
+<p>A insuflação sustentada (5–15 s de pressão contínua nas primeiras ventilações) parecia elegante: aerar o pulmão uniformemente antes da ventilação corrente. O ensaio SAIL foi interrompido por excesso de mortes precoces no braço de insuflação sustentada em RN de 23–26 semanas, e a metanálise de 10 ensaios (1.502 RN) confirmou aumento de óbito nos dois primeiros dias e de mortalidade hospitalar no subgrupo &lt;28 sem. Hipóteses incluem a insuflação contra glote fechada, a sobredistensão regional e a queda do retorno venoso por pressão intratorácica sustentada. Hoje ela não é recomendada fora de pesquisa; as cinco insuflações de até 3 s do ERC são outra técnica e não devem ser confundidas com ela.</p>
+</div>
+</details>
+</div>
+</div>
+
+<div class="card prim">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">C.5</span> Termorregulação</div><h3>Hipotermia neonatal e a cadeia térmica da sala de parto <span class="ank ank-dec">DECISION</span></h3><div class="card-sub">A temperatura de admissão é preditor de morte e indicador de qualidade</div></div>
+<div class="card-body">
+<div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Meta <b>36,5–37,5 °C</b> (normotermia OMS) desde o nascimento até a admissão. ≥34 sem: sala 23–25 °C, secar, retirar campos úmidos, touca, pele a pele, fonte radiante ligada antes. &lt;34 sem: <b>saco plástico sem secar o corpo + touca dupla</b>, colchão térmico &lt;30 sem, gases aquecidos e umidificados, temperatura axilar a cada 10 min. Evitar &gt;38 °C.</div></div>
+<div class="disease">
+<div class="disease-head"><div class="disease-name">Hipotermia do recém-nascido</div><div class="disease-tag">CID-10 P80.8 · P80.9 (P80.0 = síndrome de lesão pelo frio) <span class="ev ev-eular">ILCOR 2023</span> <span class="ev ev-sbr">SBP 2026</span></div></div>
+<div class="disease-body"><div class="disease-rows">
+<div class="disease-row"><div class="k">Epidemiologia</div><div class="v">Mais frequente quanto menor a IG e o peso e em partos fora do hospital ou não planejados; a hipotermia de admissão é um dos principais indicadores de qualidade da assistência na sala de parto.</div></div>
+<div class="disease-row"><div class="k">Fisiopatologia</div><div class="v">Perda por <b>evaporação</b> (pele molhada, imatura), <b>condução</b> (mesa, balança, mãos frias), <b>convecção</b> (ar-condicionado, portas) e <b>radiação</b> (paredes e janelas frias). O RN não tirita: produz calor por termogênese química na gordura marrom (noradrenalina → receptor β3 → lipólise e desacoplamento mitocondrial pela UCP1), que consome O2 e glicose.</div></div>
+<div class="disease-row"><div class="k">Clínica</div><div class="v">Hipotermia leve 36,0–36,4 °C, moderada 32,0–35,9 °C, grave &lt;32 °C (classificação da OMS). Consequências: aumento da resistência vascular pulmonar e do shunt, hipóxia, acidose metabólica, hipoglicemia, bradicardia, desconforto respiratório, coagulopatia; esclerema e edema no frio grave.</div></div>
+<div class="disease-row"><div class="k">Diagnóstico</div><div class="v">Temperatura axilar com termômetro digital periódica durante a estabilização e <b>obrigatoriamente na admissão</b> à UTI ou ao alojamento conjunto, registrada como indicador <span class="ev ev-sbr">SBP 2026</span>.</div></div>
+<div class="disease-row"><div class="k">Tratamento</div><div class="v">Prevenção: sala ≥23 °C (≥34 e &lt;34 sem), contato pele a pele no ≥34 sem, plástico no &lt;34 sem (recomendação forte), touca, colchão térmico quando a auditoria mostra hipotermia (risco de hipertermia), gases aquecidos e umidificados, incubadora de transporte pré-aquecida. Reaquecimento com protocolo, monitorização frequente da temperatura e da glicemia; não há evidência para preferir reaquecimento rápido (≥0,5 °C/h) ou lento <span class="ev ev-eular">ILCOR 2023 · plástico forte</span> <span class="ev ev-eular">ILCOR 2024 · reaquecimento</span></div></div>
+<div class="disease-row"><div class="k">Prognóstico</div><div class="v">Relação dose-resposta: cada grau abaixo da normotermia aumenta morte e morbidade no prematuro; o efeito é tanto maior quanto menor o peso. Hipertermia de admissão também se associa a desfecho adverso.</div></div>
+<div class="disease-row"><div class="k">O que muda conduta</div><div class="v"><b>O que muda conduta:</b> idade gestacional (secar × não secar e ensacar), peso &lt;1.000 g ou IG &lt;30 sem (colchão químico), asfixia com possível EHI (normotermia estrita, evitar &gt;38 °C, nunca resfriar na sala) e temperatura de admissão (protocolo de reaquecimento + glicemia).</div></div>
+</div></div>
+</div>
+<details class="deep">
+<summary>Deep dive · Termogênese sem tremor, ambiente térmico neutro e o paradoxo do RN asfixiado</summary>
+<div class="deep-content">
+<p>O recém-nascido a termo tem área de superfície por quilo cerca de três vezes maior que a do adulto, camada de gordura subcutânea fina e, no prematuro, estrato córneo quase inexistente até 32–34 semanas, de modo que a perda insensível de água pela pele (e, com ela, o calor latente de evaporação) pode ser dez vezes maior que no termo. Nos primeiros minutos após o nascimento, molhado e exposto a uma sala a 20 °C, um RN pode perder 0,2–1 °C por minuto. A primeira linha de defesa é comportamental e postural (flexão) e a segunda é vasoconstrição periférica, mas a produção de calor depende da <b>termogênese sem tremor</b>.</p>
+<p>A gordura marrom, concentrada na região interescapular, perirrenal, axilar e mediastinal, é rica em mitocôndrias e em proteína desacopladora 1 (UCP1, termogenina). O frio estimula receptores cutâneos e o hipotálamo, que ativa fibras simpáticas: a noradrenalina age em receptores β3 do adipócito marrom, ativa a lipólise, e os ácidos graxos liberados abrem a UCP1, que dissipa o gradiente de prótons da membrana mitocondrial interna como calor em vez de sintetizar ATP. O custo é alto em O2 e glicose — e é aí que a hipotermia fecha um círculo vicioso: o consumo de O2 sobe, a noradrenalina causa vasoconstrição pulmonar, a resistência vascular pulmonar aumenta e o shunt pelo canal e pelo forame piora a hipoxemia; a lipólise e a glicólise anaeróbia geram acidose metabólica e consomem as reservas de glicogênio, levando à hipoglicemia. O prematuro tem menos gordura marrom e menor capacidade de recrutar esse mecanismo.</p>
+<p>O <b>ambiente térmico neutro</b> é a faixa de temperatura em que o RN mantém a temperatura central com o menor consumo de O2. Fora dela, mesmo que o termômetro ainda mostre normotermia, o RN está gastando energia para isso — o que importa num paciente que acabou de sair de hipóxia. É por esse motivo que o saco de polietileno, que bloqueia a evaporação sem impedir o calor radiante, superou a secagem no prematuro, e que a umidificação dos gases e o colchão químico (com limite de 40 °C e um campo de algodão interposto) são adicionados quando a auditoria local mostra hipotermia de admissão.</p>
+<p>O paradoxo está no RN asfixiado. A hipotermia terapêutica a 33,5 °C reduz morte ou incapacidade na EHI moderada a grave, mas a hipotermia <b>acidental</b> na sala de parto não é tratamento: acontece sem controle, sem sedação, sem monitorização de coagulação, glicemia e pressão, e piora a resistência pulmonar. Ao mesmo tempo, a hipertermia agrava a lesão neuronal (temperaturas elevadas nas primeiras horas associam-se a mais morte ou incapacidade na EHI). A conduta é a normotermia estrita na sala e no transporte, e a decisão de resfriar fica para a unidade neonatal, com critérios objetivos, dentro das 6 horas.</p>
+</div>
+</details>
+</div>
+</div>
+
+<div class="card prim">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">C.6</span> Asfixia perinatal com EHI</div><h3>Encefalopatia hipóxico-isquêmica: reconhecer e encaminhar em até 6 horas <span class="ank ank-dec">DECISION</span></h3><div class="card-sub">O papel da sala de parto termina na elegibilidade; o tratamento é da UTI neonatal (PD02)</div></div>
+<div class="card-body">
+<div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">RN ≥35–36 semanas que precisou de reanimação prolongada: <b>gasometria de cordão ou da 1ª hora</b>, registro preciso do Apgar até 20 min e da VPP, <b>exame neurológico seriado</b> e contato precoce com centro que faça hipotermia. Critérios clássicos: evidência de asfixia (pH ≤7,0 ou BE ≤−16, ou evento sentinela com Apgar ≤5 aos 10 min ou VPP além de 10 min) + encefalopatia moderada a grave antes de 6 h.</div></div>
+<div class="disease">
+<div class="disease-head"><div class="disease-name">Encefalopatia hipóxico-isquêmica do RN (asfixia perinatal)</div><div class="disease-tag">CID-10 P91.6 (conferir na tabela DATASUS) <span class="ev ev-cochrane">NICHD 2005</span> <span class="ev ev-eular">ILCOR 2024</span></div></div>
+<div class="disease-body"><div class="disease-rows">
+<div class="disease-row"><div class="k">Epidemiologia</div><div class="v">1–3/1.000 nascidos vivos a termo em países de alta renda, muito mais em baixa e média renda; asfixia perinatal responde por ~24% das mortes neonatais no mundo (~600 mil/ano). Principal causa de convulsão no RN a termo (40–60%).</div></div>
+<div class="disease-row"><div class="k">Fisiopatologia</div><div class="v">Falência energética primária durante a hipóxia-isquemia (queda de ATP, despolarização, influxo de cálcio, excitotoxicidade glutamatérgica), fase latente de 6 h com recuperação parcial e falência energética secundária a partir de 6–24 h (estresse oxidativo, inflamação, apoptose). A janela latente é o alvo da hipotermia. No termo predomina lesão de núcleos da base, tálamo e córtex parassagital; no prematuro, de substância branca periventricular.</div></div>
+<div class="disease-row"><div class="k">Clínica</div><div class="v">Alteração da consciência, do tônus, dos reflexos primitivos e da regulação autonômica nas primeiras horas; convulsões precoces; disfunção multiorgânica (miocárdio, rim, fígado, intestino, coagulação, SIADH). Fatores de risco: DPP, prolapso ou nó de cordão, rotura uterina, pré-eclâmpsia, infecção, anemia fetal.</div></div>
+<div class="disease-row"><div class="k">Diagnóstico</div><div class="v">Sem critério isolado. Combina acidose metabólica grave no cordão (pH &lt;7,0), Apgar 0–3 por mais de 5 min, encefalopatia (Sarnat) e disfunção de outros órgãos; aEEG/EEG, ressonância nos dias 4–7 e lactato complementam na UTI <span class="ev ev-cochrane">NICHD 2005</span>.</div></div>
+<div class="disease-row"><div class="k">Tratamento</div><div class="v">Na sala: reanimação efetiva, normotermia (evitar &gt;38 °C), evitar hiperóxia e hipocapnia, medir glicemia cedo. Na UTI (PD02): <b>hipotermia corporal total a 33,5 °C (33–34 °C) iniciada antes de 6 h, por 72 h, reaquecimento lento em ≥4 h</b>, em centro com protocolo e suporte completo; anticonvulsivante, suporte hemodinâmico, glicemia e eletrólitos <span class="ev ev-eular">ILCOR 2024 · boa prática</span></div></div>
+<div class="disease-row"><div class="k">Prognóstico</div><div class="v">No NICHD, hipotermia reduziu morte ou incapacidade moderada/grave de 62% para 44% (RR 0,72). EHI leve: geralmente boa; grave (Sarnat III): alta mortalidade e sequela. Apgar 0–1 aos 10 min não é sentença: sobrevida sem sequela grave é possível, especialmente com hipotermia.</div></div>
+<div class="disease-row"><div class="k">O que muda conduta</div><div class="v"><b>O que muda conduta:</b> IG ≥35–36 sem e &lt;6 h de vida com acidose ou evento sentinela + encefalopatia moderada/grave = encaminhar/iniciar hipotermia em centro capacitado; ausência de UTI com protocolo = transferir, não resfriar improvisadamente (hipotermia sem estrutura pode causar dano); prematuro &lt;35–36 sem fica fora dos critérios-padrão.</div></div>
+</div></div>
+</div>
+<div class="score">
+<div class="score-head"><div class="score-name">Estadiamento de Sarnat &amp; Sarnat (1976), forma usada na triagem para hipotermia <span class="ev ev-expert">Sarnat 1976</span></div><div class="score-purpose">Avaliar consciência, atividade espontânea, postura, tônus, reflexos primitivos e sistema autonômico; moderada ou grave antes de 6 h = elegível</div></div>
+<div class="score-rows">
+<div class="score-row"><div class="score-grade">Leve (I)</div><div class="score-desc">Hiperalerta, irritável, tônus normal ou aumentado, Moro exagerado, midríase, taquicardia; sem convulsões; dura &lt;24 h, prognóstico em geral bom</div></div>
+<div class="score-row"><div class="score-grade">Moderada (II)</div><div class="score-desc"><b>Letargia</b>, hipotonia, postura distal em flexão, sucção e Moro fracos, miose, bradicardia, convulsões frequentes; principal grupo beneficiado pela hipotermia</div></div>
+<div class="score-row"><div class="score-grade">Grave (III)</div><div class="score-desc"><b>Estupor ou coma</b>, flacidez, descerebração, reflexos primitivos ausentes, pupilas fixas ou pouco reativas, apneia; convulsões ou EEG suprimido; alta mortalidade</div></div>
+</div>
+</div>
+<details class="deep">
+<summary>Deep dive · Falência energética secundária e o que a sala de parto pode estragar</summary>
+<div class="deep-content">
+<p>Na hipóxia-isquemia grave, o neurônio perde a fosforilação oxidativa em minutos: o ATP e a fosfocreatina caem, a Na+/K+-ATPase para, a membrana despolariza e o glutamato é liberado em excesso e não recaptado. A ativação de receptores NMDA e AMPA abre canais de cálcio; o cálcio intracelular ativa proteases, fosfolipases, óxido nítrico sintase e endonucleases, e parte dos neurônios morre por necrose ainda durante o insulto. Quando a circulação e a oxigenação são restabelecidas pela reanimação, o metabolismo energético se recupera parcialmente — é a <b>fase latente</b>, de cerca de 6 horas, em que a espectroscopia por ressonância mostra fosfatos de alta energia quase normais.</p>
+<p>A partir de 6 a 24 horas, mesmo com oxigenação e perfusão adequadas, instala-se a <b>falência energética secundária</b>: disfunção mitocondrial persistente, liberação de citocromo c e ativação de caspases (apoptose), estresse oxidativo pela reperfusão (xantina oxidase, ferro livre num cérebro pobre em antioxidantes), inflamação microglial e convulsões que aumentam a demanda. A magnitude dessa segunda fase correlaciona-se com o desfecho do neurodesenvolvimento. A hipotermia terapêutica reduz o metabolismo cerebral em cerca de 5% por grau, diminui a liberação de glutamato, a produção de radicais livres e a apoptose, e precisa começar dentro da fase latente para funcionar — daí as 6 horas.</p>
+<p>A sala de parto pode piorar essa evolução de quatro maneiras evitáveis. A <b>hiperóxia</b> (VPP com 100% sem titulação, SpO2 persistentemente acima de 95%) alimenta a lesão de reperfusão e reduz o fluxo cerebral; foi por isso que a reanimação com ar ambiente reduziu mortalidade no termo. A <b>hipocapnia</b> por hiperventilação com balão causa vasoconstrição cerebral. A <b>hipertermia</b> aumenta excitotoxicidade e metabolismo. A <b>hipoglicemia ou hiperglicemia</b> após a reanimação, frequente em quem recebeu massagem ou adrenalina, também se associa a pior desfecho; o ILCOR 2025 retirou a antiga recomendação de glicose empírica e passou a pedir medida precoce e seriada, com infusão guiada pela glicemia.</p>
+<p>O resto pertence ao cuidado pós-reanimação: a anotação precisa de tempos (início da VPP, intubação, massagem, doses de adrenalina, FC ≥100), do Apgar ampliado e do resultado da gasometria de cordão é o que permite à equipe da UTI decidir a elegibilidade dentro da janela. Nos países de baixa e média renda, o ensaio HELIX mostrou que resfriar sem estrutura de terapia intensiva não reduz morte ou incapacidade e pode aumentar mortalidade; o ILCOR 2024 sugere hipotermia nesses locais apenas onde houver cuidado neonatal adequado e protocolo idêntico ao dos ensaios.</p>
+</div>
+</details>
+</div>
+</div>
+</section>
+
+<section id="secundarias">
+<div class="section">
+<div class="section-eyebrow"><span>D</span> Entidades Secundárias</div>
+<div class="section-title">Situações especiais que mudam o algoritmo</div>
+<div class="section-sub">Mecônio, hérnia diafragmática, escapes de ar e derrames, hipovolemia, prematuridade no limite da viabilidade, via aérea congenitamente difícil e depressão por drogas maternas: cada uma altera um passo específico da reanimação.</div>
+</div>
+
+<div class="card diag">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">D.1</span> Mecônio</div><h3>Líquido amniótico meconial e risco de aspiração <span class="ank ank-dec">DECISION</span></h3></div>
+<div class="card-body">
+<div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Mecônio indica possível sofrimento fetal e convoca <b>dois profissionais, um apto a intubar</b>. Nada de aspirar no períneo; vigoroso fica com a mãe; não vigoroso segue o fluxo comum, com <b>VPP antes de 60 s e sem laringoscopia de rotina</b>. <b>O que muda conduta:</b> só a obstrução da via aérea que impede a ventilação justifica intubar e aspirar a traqueia.</div></div>
+<div class="disease">
+<div class="disease-head"><div class="disease-name">Aspiração neonatal de mecônio (risco na sala de parto)</div><div class="disease-tag">CID-10 P24.0 <span class="ev ev-eular">ILCOR 2025 · EvUp</span> <span class="ev ev-sbr">SBP 2026</span></div></div>
+<div class="disease-body"><div class="disease-rows">
+<div class="disease-row"><div class="k">Fisiopatologia</div><div class="v">Eliminação de mecônio intraútero por maturidade intestinal (pós-termo) ou estímulo vagal da hipóxia; o gasping fetal aspira o mecônio, que obstrui vias aéreas (efeito válvula, aprisionamento de ar, pneumotórax), inativa o surfactante e causa pneumonite química, com hipertensão pulmonar persistente nos casos graves.</div></div>
+<div class="disease-row"><div class="k">Diagnóstico</div><div class="v">Líquido tinto observado no parto; síndrome de aspiração meconial é diagnóstico posterior (desconforto + radiografia com infiltrado grosseiro e hiperinsuflação) — PD02.</div></div>
+<div class="disease-row"><div class="k">Tratamento</div><div class="v">Mesmo algoritmo de qualquer RN; aspiração de boca e narinas só se obstrução. <b>Laringoscopia imediata e aspiração traqueal de rotina não devem ser feitas</b> (sem diferença em SAM, EHI ou sobrevida; atrasam a VPP). Se houver obstrução: cânula + dispositivo aspirador de mecônio a 80–100 mmHg, uma vez, seguida de VPP <span class="ev ev-eular">ILCOR 2022/2025</span></div></div>
+<div class="disease-row"><div class="k">O que muda conduta</div><div class="v"><b>O que muda conduta:</b> vitalidade ao nascer (vigoroso = mãe; não vigoroso = mesa e VPP) e suspeita de obstrução após VPP corretamente aplicada.</div></div>
+</div></div>
+</div>
+</div>
+</div>
+
+<div class="card diag">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">D.2</span> Malformação</div><h3>Hérnia diafragmática congênita <span class="ank ank-dgr">DANGER</span></h3></div>
+<div class="card-body">
+<div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Diagnóstico pré-natal em boa parte dos casos; ao nascer, desconforto, <b>abdome escavado</b>, tórax abaulado, MV reduzido à esquerda e bulhas à direita. <b>Intubar imediatamente, sonda gástrica calibrosa aberta, nunca VPP por máscara.</b> Ventilação gentil (Pinsp baixa, PEEP), alvo de SpO2 pré-ductal e transferência a centro cirúrgico neonatal.</div></div>
+<div class="disease">
+<div class="disease-head"><div class="disease-name">Hérnia diafragmática congênita (Bochdalek)</div><div class="disease-tag">CID-10 Q79.0 <span class="ev ev-sbr">SBP 2026</span> <span class="ev ev-expert">Expert · cirurgia pediátrica</span></div></div>
+<div class="disease-body"><div class="disease-rows">
+<div class="disease-row"><div class="k">Epidemiologia</div><div class="v">~1:2.500–4.000 nascidos vivos; 85% posterolateral esquerda (Bochdalek); Morgagni (retroesternal) e hiatal são raras; associação com cardiopatias, cromossomopatias e outras anomalias em até 40%.</div></div>
+<div class="disease-row"><div class="k">Fisiopatologia</div><div class="v">Falha de fechamento do canal pleuroperitoneal (~8ª semana) com herniação de vísceras e <b>hipoplasia pulmonar bilateral</b> (mais ipsilateral), menor número de gerações brônquicas e vasculares e remodelamento arteriolar → hipertensão pulmonar e disfunção ventricular.</div></div>
+<div class="disease-row"><div class="k">Diagnóstico</div><div class="v">USG pré-natal (relação pulmão-cabeça observada/esperada, posição do fígado); ao nascer, clínica e radiografia com alças no tórax e sonda gástrica acima do diafragma.</div></div>
+<div class="disease-row"><div class="k">Tratamento</div><div class="v"><b>Intubação traqueal e sonda gástrica imediata</b> se houver necessidade de VPP; evitar insuflar o estômago; pressões inspiratórias baixas para não romper o pulmão hipoplásico (pneumotórax contralateral é a complicação temida); SpO2 pré-ductal guia o O2; cirurgia diferida após estabilização (PD/cirurgia pediátrica) <span class="ev ev-sbr">SBP 2026</span></div></div>
+<div class="disease-row"><div class="k">O que muda conduta</div><div class="v"><b>O que muda conduta:</b> diagnóstico pré-natal (equipe e plano no briefing, parto em centro terciário) e qualquer suspeita clínica ao nascer — a máscara facial passa de primeira escolha a contraindicada.</div></div>
+</div></div>
+</div>
+</div>
+</div>
+
+<div class="card diag">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">D.3</span> Escapes e coleções</div><h3>Pneumotórax, derrames pleurais e hidropsia na sala de parto <span class="ank ank-dgr">DANGER</span></h3></div>
+<div class="card-body">
+<div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Piora súbita durante VPP ou CPAP, assimetria de expansão e ausculta, desvio do ictus, distensão abdominal: <b>pneumotórax hipertensivo</b>. Transiluminação se disponível; instável, <b>punção com cateter 18–20G no 2º espaço intercostal na linha hemiclavicular</b> conectado a torneira e seringa, e depois drenagem. Hidropsia com derrames volumosos pode exigir toracocentese/paracentese para ventilar.</div></div>
+<div class="disease">
+<div class="disease-head"><div class="disease-name">Pneumotórax perinatal e coleções pleurais/hidropsia fetal</div><div class="disease-tag">CID-10 P25.1 · P83.2 <span class="ev ev-sbr">SBP 2026 · Quadro 6/7</span> <span class="ev ev-eular">ILCOR 2022 · CPAP termo</span></div></div>
+<div class="disease-body"><div class="disease-rows">
+<div class="disease-row"><div class="k">Epidemiologia</div><div class="v">Pneumotórax espontâneo em 1–2% dos termos (sintomático em menos); risco aumenta com VPP, mecônio, HDC, hipoplasia pulmonar e CPAP no ≥34 sem (coorte de 6.913 RN ≥35 sem: OR 5,5).</div></div>
+<div class="disease-row"><div class="k">Fisiopatologia</div><div class="v">Pressões transpulmonares altas nas primeiras respirações ou na VPP rompem alvéolos hiperdistendidos; o ar disseca pelo interstício (enfisema intersticial) até pleura ou mediastino. Hidropsia: acúmulo de líquido em ≥2 compartimentos por anemia fetal, cardiopatia, arritmia, infecção ou linfática; derrames comprimem pulmões.</div></div>
+<div class="disease-row"><div class="k">Diagnóstico</div><div class="v">Clínico na instabilidade; transiluminação com luz fria; radiografia ou US à beira do leito quando estável.</div></div>
+<div class="disease-row"><div class="k">Tratamento</div><div class="v">Descompressão por punção no instável, depois dreno; pequeno e estável: observação. Na hidropsia: equipe ampliada, intubação precoce, punção de derrames que impedem ventilar, concentrado de hemácias O negativo se anemia grave <span class="ev ev-sbr">SBP 2026</span></div></div>
+<div class="disease-row"><div class="k">O que muda conduta</div><div class="v"><b>O que muda conduta:</b> instabilidade hemodinâmica (punção imediata, sem esperar imagem) e uso de CPAP no termo com SpO2 no alvo (não indicado — restringir reduz pneumotórax).</div></div>
+</div></div>
+</div>
+</div>
+</div>
+
+<div class="card diag">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">D.4</span> Volume</div><h3>Hipovolemia aguda e choque hemorrágico ao nascer <span class="ank ank-dec">DECISION</span></h3></div>
+<div class="card-body">
+<div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Suspeite quando a FC não sobe apesar de VPP e massagem adequadas, ou diante de <b>palidez, má perfusão, pulsos débeis e história de sangramento</b> (DPP, placenta prévia, vasa prévia, rotura ou nó apertado de cordão, transfusão feto-materna ou feto-fetal). <b>SF 0,9% 10 mL/kg IV em 5–10 min</b>, repetível uma vez após rever tudo; anemia fetal grave: hemácias O negativo.</div></div>
+<div class="disease">
+<div class="disease-head"><div class="disease-name">Perda sanguínea fetal com hipovolemia neonatal</div><div class="disease-tag">CID-10 P50.9 · P61.3 <span class="ev ev-sbr">SBP 2026</span> <span class="ev ev-eular">ILCOR 2025 · EvUp volume</span></div></div>
+<div class="disease-body"><div class="disease-rows">
+<div class="disease-row"><div class="k">Fisiopatologia</div><div class="v">Perda aguda reduz pré-carga; sem volume, a massagem e a adrenalina não geram débito. Hemoglobina inicial pode ser normal (sem tempo para hemodiluição).</div></div>
+<div class="disease-row"><div class="k">Diagnóstico</div><div class="v">Clínico; é difícil separar o asfixiado euvolêmico (vasoconstrito, pálido) do hipovolêmico — a história obstétrica decide.</div></div>
+<div class="disease-row"><div class="k">Tratamento</div><div class="v">SF 10 mL/kg lento (5–10 min); albumina não é superior e Ringer lactato não está na sala e precipita com hemoderivados. <b>Cautela sem choque ou perda evidente</b>: volume no miocárdio lesado pela asfixia precipita edema pulmonar e HPIV <span class="ev ev-sbr">SBP 2026</span></div></div>
+<div class="disease-row"><div class="k">O que muda conduta</div><div class="v"><b>O que muda conduta:</b> história de sangramento ou sinais de choque (dá volume) × asfixia sem perda (não dá rotineiramente); resposta esperada é FC subindo, pulsos e cor melhorando.</div></div>
+</div></div>
+</div>
+</div>
+</div>
+
+<div class="card diag">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">D.5</span> Limite da viabilidade</div><h3>Prematuridade extrema e a decisão de reanimar <span class="ank ank-con">CONTROVERSY</span></h3></div>
+<div class="card-body">
+<div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">&lt;22 semanas: em geral imaturos demais — <b>cuidado de conforto e apoio à família</b>. <b>22–23 semanas: zona cinzenta</b>, decisão individualizada e compartilhada antes do parto. <b>≥24 semanas: intervenção máxima</b> justificada. Sem certeza ou sem tempo para conversar, reanimar e decidir depois na UTI.</div></div>
+<div class="disease">
+<div class="disease-head"><div class="disease-name">Imaturidade extrema e extremo baixo peso</div><div class="disease-tag">CID-10 P07.2 · P07.0 <span class="ev ev-sbr">SBP 2026 · ética</span> <span class="ev ev-eular">ILCOR 2025</span></div></div>
+<div class="disease-body"><div class="disease-rows">
+<div class="disease-row"><div class="k">Epidemiologia</div><div class="v">Brasil 2024: 13.173 nascidos de 22–27 sem, 48% sobreviveram ao período neonatal. Rede Brasileira (2014–2024, sem anomalias): sobrevida hospitalar 10% (23 sem), 28% (24), 48% (25), 59% (26), 72% (27); sem morbidade maior 0,7%, 4%, 14%, 24%, 41%. NICHD (EUA): ~50% de sobrevida a partir de 23 semanas.</div></div>
+<div class="disease-row"><div class="k">Diagnóstico</div><div class="v">A IG é imprecisa (USG 2º trimestre ±7 dias; peso estimado ±15%; pálpebras fundidas em 20% de 24–27 sem); corticoide antenatal, corioamnionite, CIUR, gemelaridade e sexo modificam o risco.</div></div>
+<div class="disease-row"><div class="k">Tratamento</div><div class="v">Protocolo institucional multiprofissional; conversa pré-natal com a família; se reanimar, aplicar todo o pacote do &lt;34 sem (cânula 2,0/2,5 e lâmina 00/000 abaixo de 24 sem e 500 g, marca 5,5 cm) <span class="ev ev-sbr">SBP 2026</span></div></div>
+<div class="disease-row"><div class="k">O que muda conduta</div><div class="v"><b>O que muda conduta:</b> IG melhor estimada, corticoide antenatal, desejo informado dos pais e estrutura disponível; tudo registrado em prontuário.</div></div>
+</div></div>
+</div>
+<details class="deep">
+<summary>Deep dive · Por que a idade gestacional sozinha não decide e como conduzir a conversa</summary>
+<div class="deep-content">
+<p>Os limites da viabilidade são populacionais, mas a decisão é individual, e os números divergem bastante entre redes. No NICHD norte-americano (2013–2018), a sobrevida hospitalar foi de 11% com 22 semanas, 49% com 23, 70% com 24 e 79% com 25; a sobrevida sem sequelas maiores aos 22–26 meses foi de 4%, 13%, 26% e 39% respectivamente. Centros que oferecem tratamento ativo sistemático a partir de 22 semanas relatam sobrevida de 40–55% nessa idade, e há relatos isolados de sobreviventes de 21 semanas. Na Rede Brasileira de Pesquisas Neonatais, a sobrevida de 50% só é alcançada entre 25 e 26 semanas, e a sobrevida sem morbidade maior (DBP, HPIV grave, leucomalácia, ROP tratada) é baixa até 27 semanas. A diferença não é biológica: reflete corticoide antenatal, via e local de parto, equipe presente e a própria decisão de oferecer cuidado ativo — uma profecia que se autorrealiza quando a instituição não reanima.</p>
+<p>Por isso a SBP pede que cada serviço tenha protocolo próprio para a "zona cinzenta" de 22–23 semanas, construído pela equipe obstétrica e neonatal e baseado nos próprios resultados. A estimativa de IG deve ser a melhor disponível (DUM confiável ou USG precoce), lembrando que metade das gestantes não recorda bem a DUM e que o exame físico do RN erra 1–2 semanas. O modelo do NICHD combina IG, peso, sexo, gemelaridade e corticoide antenatal e mostra como cada fator desloca a probabilidade em uma semana inteira.</p>
+<p>A conversa com a família, sempre que possível antes do nascimento, deve apresentar opções reais (cuidado ativo pleno, prova terapêutica, cuidado de conforto), com números locais, incertezas e o direito de mudar de ideia. Se não houve conversa ou não há certeza sobre a decisão, a regra é reanimar e reavaliar com a família na UTI, porque a retirada de suporte é eticamente equivalente à não instituição e permite decidir com mais informação. A presença dos pais durante a reanimação é razoável quando eles desejam e a instituição permite. Qualquer decisão — inclusive a de não reanimar ou de interromper após ~20 minutos de reanimação avançada sem resposta — deve ser registrada de forma fidedigna no prontuário da mãe e do RN.</p>
+</div>
+</details>
+</div>
+</div>
+
+<div class="card diag">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">D.6</span> Via aérea difícil</div><h3>Obstrução congênita da via aérea: Pierre Robin e atresia de coanas <span class="ank ank-prl">PEARL</span></h3></div>
+<div class="card-body">
+<div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Micrognatia com glossoptose: <b>decúbito ventral ou lateral, cânula nasofaríngea</b> (cânula traqueal 2,5–3,0 cortada, ponta na faringe posterior) e, se precisa de VPP, <b>máscara laríngea como interface de primeira escolha</b>. Atresia bilateral de coanas: cianose que melhora com o choro e piora em repouso — <b>cânula orofaríngea (Guedel) ou chupeta de McGovern</b> e sonda que não passa pelas narinas.</div></div>
+<div class="disease">
+<div class="disease-head"><div class="disease-name">Sequência de Pierre Robin e atresia de coanas</div><div class="disease-tag">CID-10 Q87.0 · Q30.0 <span class="ev ev-sbr">SBP 2026 · máscara laríngea</span> <span class="ev ev-eular">ILCOR 2022</span></div></div>
+<div class="disease-body"><div class="disease-rows">
+<div class="disease-row"><div class="k">Fisiopatologia</div><div class="v">Robin: micrognatia → glossoptose → obstrução orofaríngea (± fenda palatina em U). Coanas: o RN é respirador nasal obrigatório nas primeiras semanas; atresia bilateral obstrui a via aérea fora do choro.</div></div>
+<div class="disease-row"><div class="k">Diagnóstico</div><div class="v">Inspeção da face; sonda 6–8 F que não progride pelas narinas; nasofibroscopia e TC depois.</div></div>
+<div class="disease-row"><div class="k">Tratamento</div><div class="v">Posicionamento e cânula nasofaríngea no Robin; Guedel/McGovern na atresia de coanas; <b>máscara laríngea</b> na VPP de via aérea difícil (≥34 sem, ≥2.000 g); IOT por especialista com videolaringoscópio; correção cirúrgica eletiva <span class="ev ev-sbr">SBP 2026</span></div></div>
+<div class="disease-row"><div class="k">O que muda conduta</div><div class="v"><b>O que muda conduta:</b> a máscara facial e a intubação convencional falham com frequência; antecipar no briefing quando há diagnóstico pré-natal.</div></div>
+</div></div>
+</div>
+</div>
+</div>
+
+<div class="card diag">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">D.7</span> Drogas maternas</div><h3>Depressão respiratória por opioide, anestesia geral ou sulfato de magnésio <span class="ank ank-myt">MYTH</span></h3></div>
+<div class="card-body">
+<div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Opioide materno nas 4 h antes do parto, anestesia geral ou MgSO4 entram no briefing como fatores de risco. O tratamento do RN deprimido é <b>o mesmo algoritmo: ventilar</b>. <b>Naloxona não é recomendada na sala de parto</b> (sem benefício clínico demonstrado, segurança não estabelecida, risco de abstinência e convulsão no filho de usuária crônica).</div></div>
+<div class="disease">
+<div class="disease-head"><div class="disease-name">Depressão neonatal por fármacos maternos</div><div class="disease-tag">CID-10 P04.0 · P04.1 <span class="ev ev-sbr">SBP 2026</span> <span class="ev ev-cochrane">Cochrane naloxona</span></div></div>
+<div class="disease-body"><div class="disease-rows">
+<div class="disease-row"><div class="k">Fisiopatologia</div><div class="v">Opioides e anestésicos atravessam a placenta e deprimem o drive respiratório; o magnésio causa hipotonia e depressão respiratória por bloqueio neuromuscular e central.</div></div>
+<div class="disease-row"><div class="k">Diagnóstico</div><div class="v">Anamnese materna; RN com FC preservada e apneia/hipoventilação é o padrão típico.</div></div>
+<div class="disease-row"><div class="k">Tratamento</div><div class="v">VPP até respiração espontânea eficaz; monitorar por horas (a meia-vida pode exceder a da ventilação manual); naloxona fora do algoritmo <span class="ev ev-sbr">SBP 2026</span> <span class="ev ev-eular">ERC 2025</span></div></div>
+<div class="disease-row"><div class="k">O que muda conduta</div><div class="v"><b>O que muda conduta:</b> a causa não muda a reanimação, mas muda o tempo de observação e o risco de síndrome de abstinência (filho de usuária de opioide).</div></div>
+</div></div>
+</div>
+</div>
+</div>
+</section>
+
+<section id="algoritmo">
+<div class="section">
+<div class="section-eyebrow"><span>E</span> Algoritmo</div>
+<div class="section-title">Do nascimento à adrenalina, em blocos de 30 e 60 segundos</div>
+<div class="section-sub">O fluxograma é o mesmo para ≥34 e &lt;34 semanas; mudam o destino do RN vigoroso, a proteção térmica, o oxigênio inicial, o momento da monitorização e a interface. Cada decisão depende da FC e da respiração reavaliadas ao fim de cada bloco.</div>
+</div>
+
+<div class="card prim">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">E.1</span> Fluxograma integrado</div><h3>Reanimação neonatal em sala de parto — SBP 2026 / ILCOR 2025 <span class="ank ank-dec">DECISION</span></h3></div>
+<div class="card-body">
+<div class="algo">
+<div class="tree">
+<div class="tree-line"><span class="tree-node start">Antes: anamnese materna · material testado · briefing com líder definido · sala 23–25 °C</span></div>
+<div class="tree-branch">
+<div class="tree-label yes">Nascimento: respira ou chora E tônus em flexão?</div>
+<div class="tree-line"><span class="tree-node dec">Sim → boa vitalidade</span></div>
+<div class="tree-branch">
+<div class="tree-label no">≥34 sem ou 32–33 sem</div>
+<div class="tree-line"><span class="tree-node action">→ Clampeamento ≥60 s · pele a pele aquecido (32–33 sem com FC, SpO2 e temperatura monitorizadas) · amamentação</span></div>
+</div>
+<div class="tree-branch">
+<div class="tree-label no">&lt;32 sem</div>
+<div class="tree-line"><span class="tree-node action">→ Clampeamento ≥60 s sob plástico e campo aquecido → mesa: saco plástico, touca dupla, monitor + oxímetro</span></div>
+</div>
+</div>
+<div class="tree-branch">
+<div class="tree-label yes">Não → estímulo tátil no dorso ~15 s com cordão intacto</div>
+<div class="tree-line"><span class="tree-node dec">Respirou e tônus em flexão?</span></div>
+<div class="tree-branch">
+<div class="tree-label no">Sim</div>
+<div class="tree-line"><span class="tree-node action">→ Clampeamento ≥60 s e fluxo do RN vigoroso</span></div>
+</div>
+<div class="tree-branch">
+<div class="tree-label yes">Não</div>
+<div class="tree-line"><span class="tree-node dgr">→ Clampear (ordenha de cordão intacto se ≥28 sem; clampeamento imediato se DPP/sangramento) → mesa sob calor radiante</span></div>
+<div class="tree-line"><span class="tree-node dx">Passos iniciais ≤30 s: calor (secar ≥34 sem; saco plástico &lt;34 sem), pescoço em leve extensão, aspirar só se obstruído</span></div>
+<div class="tree-branch">
+<div class="tree-label yes">Apneia, respiração irregular ou FC &lt;100?</div>
+<div class="tree-line"><span class="tree-node dgr">→ VPP até 60 s de vida · 30–60/min · ≥34 sem ar ambiente; &lt;34 sem O2 60% (Peça-T) · monitor + oxímetro</span></div>
+<div class="tree-branch">
+<div class="tree-label yes">FC &lt;100 após 30 s</div>
+<div class="tree-line"><span class="tree-node dec">MR. SOPA → máscara laríngea (≥34 sem, ≥2 kg) ou cânula traqueal; após IOT O2 60% e titular pela SpO2</span></div>
+<div class="tree-branch">
+<div class="tree-label yes">FC &lt;60 após 30 s de VPP efetiva por cânula</div>
+<div class="tree-line"><span class="tree-node dgr">→ Massagem 3:1 (dois polegares) + O2 100% · reavaliar a cada 60 s · considerar cateter umbilical</span></div>
+<div class="tree-branch">
+<div class="tree-label yes">FC &lt;60 após 60 s de massagem</div>
+<div class="tree-line"><span class="tree-node dgr">→ Adrenalina 0,02 mg/kg IV (0,2 mL/kg de 0,1 mg/mL) a cada 3–5 min · SF 10 mL/kg se perda/choque · rever pneumotórax e tamponamento</span></div>
+</div>
+<div class="tree-branch">
+<div class="tree-label no">FC &gt;60</div>
+<div class="tree-line"><span class="tree-node action">→ Suspender massagem, manter VPP, reduzir O2 pela SpO2</span></div>
+</div>
+</div>
+<div class="tree-branch">
+<div class="tree-label no">FC ≥100 e respiração regular</div>
+<div class="tree-line"><span class="tree-node action">→ Suspender VPP; extubação individualizada; cuidados pós-reanimação</span></div>
+</div>
+</div>
+</div>
+<div class="tree-branch">
+<div class="tree-label no">FC ≥100, respira, mas desconforto ou SpO2 &lt; alvo</div>
+<div class="tree-line"><span class="tree-node action">→ &lt;34 sem: CPAP 5–6 cmH2O (Peça-T) · ≥34 sem: CPAP só se SpO2 abaixo do alvo (risco de pneumotórax)</span></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="mnemo">
+<div class="mnemo-title"><b>MR. SOPA</b> ações corretivas quando a VPP não eleva a FC (cada uma seguida de checagem do tórax e da FC)</div>
+<div class="mnemo-grid">
+<div class="mnemo-row"><span class="mnemo-letter">M</span><span><b>Máscara</b> · readaptar delicadamente do queixo ao nariz; pegada em C-E ou técnica de duas mãos com outro ventilando</span></div>
+<div class="mnemo-row"><span class="mnemo-letter">R</span><span><b>Reposicionar</b> · pescoço em leve extensão, coxim sob os ombros se preciso</span></div>
+<div class="mnemo-row"><span class="mnemo-letter">S</span><span><b>Sucção</b> · aspirar boca e depois narinas se houver secreção</span></div>
+<div class="mnemo-row"><span class="mnemo-letter">O</span><span><b>Open (abrir a boca)</b> · ventilar com a boca levemente aberta</span></div>
+<div class="mnemo-row"><span class="mnemo-letter">P</span><span><b>Pressão</b> · aumentar ~5 cmH2O por vez, até 40 cmH2O no máximo</span></div>
+<div class="mnemo-row"><span class="mnemo-letter">A</span><span><b>Alternativa de via aérea</b> · máscara laríngea ou cânula traqueal; sonda orogástrica aberta na VPP prolongada</span></div>
+</div>
+</div>
+
+<div class="box decision"><span class="box-label">DECISION</span><div class="box-title">Raciocínio em 6 passos na sala de parto</div><div class="box-body">
+<ol>
+<li><b>Antes de nascer, pergunte quem vai nascer</b>: idade gestacional, líquido, fatores de risco, malformação conhecida, desejo da família no extremo prematuro. Isso define quantas pessoas, que interface, que O2 inicial e quem lidera.</li>
+<li><b>Ao nascer, três perguntas em segundos</b> (IG, respira/chora, tônus). Se tudo é "sim", seu trabalho é proteger o calor e esperar o clampeamento; se algo é "não", estimule por 15 s com o cordão intacto — isso separa a apneia primária, que responde, da que exige ventilação.</li>
+<li><b>Na mesa, 30 s para calor e via aérea</b>, e só então a primeira leitura de FC por ausculta. Apneia, respiração irregular ou FC &lt;100 encerram a discussão: VPP antes de completar 60 s de vida, com monitor e oxímetro sendo colocados por outra pessoa.</li>
+<li><b>A cada 30 s, leia a FC como resposta à ventilação</b>. Se não sobe, a hipótese número um é que o ar não está chegando ao alvéolo: corrija a técnica antes de pensar em oxigênio; esgotada a técnica, troque a interface.</li>
+<li><b>Massagem só com o pulmão ventilado</b>: FC &lt;60 depois de 30 s de VPP efetiva por cânula. Agora o problema é perfusão coronariana: 3:1, O2 100%, 60 s sem interrupção, cateter umbilical já sendo preparado pelo terceiro membro.</li>
+<li><b>Se nada responde, procure o que a técnica não resolve</b> — pneumotórax, tamponamento, hipovolemia, hérnia, cânula fora — e, perto de 20 minutos de reanimação avançada sem resposta, abra a conversa sobre interromper com a equipe e a família.</li>
+</ol></div></div>
+
+<div class="box danger"><span class="box-label">DANGER</span><div class="box-title">Os atalhos que matam</div><div class="box-body">Pular a VPP para "dar O2 inalatório" no RN apneico; aspirar a traqueia do RN meconial antes de ventilar; comprimir o tórax com a máscara vazando; dar adrenalina na traqueia e esquecer o cateter; aumentar O2 para 100% no termo antes de corrigir a técnica; resfriar o RN asfixiado na sala. Todos aparecem em auditorias de óbito por asfixia.</div></div>
+</div>
+</div>
+</section>
+
+<section id="tratamento">
+<div class="section">
+<div class="section-eyebrow"><span>F</span> Tratamento Integrado</div>
+<div class="section-title">F1 · Estratégia por situação · F2 · Doses e parâmetros operacionais</div>
+<div class="section-sub">A "terapêutica" da sala de parto é feita de calor, ar, pressão, oxigênio na medida, compressões e duas drogas. O que separa a reanimação boa da ruim é a ordem, o tempo e a técnica — e a preparação feita antes de o RN nascer.</div>
+</div>
+
+<div class="card tx">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">F.1</span> Estratégia</div><h3>Escadas de conduta por situação clínica <span class="ank ank-dec">DECISION</span></h3></div>
+<div class="card-body">
+
+<div class="sub-title">F1.1 · Preparo, equipe e briefing (toda sala de parto)</div>
+<ul class="bullets">
+<li><b>Anamnese materna antes de cada nascimento</b>: idade materna (&lt;16 ou &gt;35 anos), obesidade, diabetes, síndromes hipertensivas, infecção/corioamnionite, drogas ilícitas, opioide nas 4 h anteriores, sulfato de magnésio, anestesia geral, IG &lt;39 ou ≥41 sem, gestação múltipla, polidrâmnio/oligoâmnio, aloimunização, hidropsia, malformação, CTG anormal, DPP, placenta prévia, prolapso ou nó de cordão, líquido meconial, cesárea, fórcipe/vácuo, apresentação não cefálica, trabalho de parto &gt;24 h ou período expulsivo &gt;2 h.</li>
+<li><b>Equipe</b>: em todo parto, ao menos um profissional cuja única função é o RN e que saiba fazer passos iniciais e VPP com máscara; com fatores de risco, 2–3 profissionais, sendo um médico apto a intubar, massagear e indicar drogas (de preferência pediatra; a SBP recomenda pediatra em todo nascimento); &lt;34 sem: 2–3 profissionais com pediatra apto a todos os procedimentos; gemelares: uma equipe e um material por RN.</li>
+<li><b>Material testado antes</b> com lista de verificação: fonte de calor ligada, sala 23–25 °C, aspirador (80–100 mmHg), balão autoinflável de ~240 mL com reservatório e manômetro, Peça-T com blender e umidificador, máscaras redondas de três tamanhos, máscara laríngea nº 1, laringoscópio com lâminas 00/0/1 (videolaringoscópio opcional), cânulas 2,5/3,0/3,5/4,0, detector de CO2 colorimétrico, monitor de 3 vias com eletrodos neonatais, oxímetro com sensor neonatal, saco plástico 30 × 50 cm, touca dupla, colchão químico, kit de cateterismo umbilical, adrenalina diluída e SF em seringas de 20 mL, relógio com ponteiro de segundos.</li>
+<li><b>Briefing</b> com obstetrícia, anestesia, enfermagem: plano de manejo do cordão, quem lidera, quem ventila, quem monitora, quem cateteriza; comunicação em alça fechada. O ILCOR 2025 criou declaração de boa prática para o briefing sempre que se antecipa reanimação; após o evento, <b>debriefing</b> estruturado.</li>
+<li><b>Precauções padrão</b> em todo nascimento: higiene das mãos, EPI conforme exposição, descarte seguro de perfurocortantes.</li>
+</ul>
+
+<div class="sub-title">F1.2 · RN vigoroso: transição sem interferência e cuidados de rotina</div>
+<ul class="bullets">
+<li><b>Primeira linha</b>: clampeamento ≥60 s (idealmente após o início da respiração), pele a pele com cobertura aquecida, touca, vias aéreas pérvias, avaliação continuada de respiração, tônus e atividade, amamentação na primeira hora. Pode-se usar cobertura plástica sobre o RN em pele a pele (redução de 43% da hipotermia).</li>
+<li><b>Cuidados de rotina após a estabilização</b> (sem atrasar o pele a pele): <b>vitamina K1 1 mg IM</b> (prevenção da doença hemorrágica); <b>profilaxia ocular</b> com iodopovidona 2,5%, eritromicina 0,5% ou tetraciclina 1% (nitrato de prata 1% só na falta destes — NT MS 11/2024); clampe do cordão a 2–3 cm do anel, coto limpo e seco (clorexidina diária por uma semana no parto domiciliar sem material estéril); identificação do binômio; antropometria; vacinas da maternidade (PD05).</li>
+<li><b>Alojamento conjunto</b>: mãe em boas condições; RN estável com boa vitalidade, sucção, controle térmico, peso ≥1.800 g e IG ≥34 sem.</li>
+<li><b>Marcar o RN de risco</b> para acompanhamento prioritário na atenção básica: baixo peso, prematuridade, asfixia grave (Apgar &lt;5 no 5º minuto), internação ou intercorrência na maternidade, mãe adolescente ou com baixa escolaridade, morte de criança &lt;5 anos na família, residência em área de risco.</li>
+</ul>
+
+<div class="sub-title">F1.3 · RN ≥34 semanas sem boa vitalidade: ventilação</div>
+<ul class="bullets">
+<li><b>Estímulo tátil</b> no dorso, delicado, ~15 s, antes do clampeamento; respirou → clampeamento ≥60 s; não respirou → clampear (opção: <b>ordenha de cordão intacto</b>, 20 cm, três vezes, e clampear antes de 60 s; ILCOR 2025 sugere a ordenha em vez do clampeamento precoce no não vigoroso).</li>
+<li><b>Passos iniciais ≤30 s</b>: fonte radiante, secar cabeça e corpo, desprezar campos úmidos, touca, decúbito dorsal com pescoço em leve extensão (coxim se necessário); aspirar só se obstrução (sonda 8–10, boca → narinas, ≤100 mmHg; nunca a hipofaringe).</li>
+<li><b>VPP em ar ambiente</b> antes de 60 s se apneia, respiração irregular ou FC &lt;100: Peça-T preferida (fluxo 10 L/min, pressão máxima 40, Pinsp 20–30, PEEP 5) ou balão autoinflável (válvula de escape ativa, manômetro, 30–60/min, "aperta-solta-solta"); reajustar a pressão após 3–5 ventilações para expansão torácica leve. Sem insuflação sustentada no ≥34 sem.</li>
+<li><b>Monitor e oxímetro</b> colocados por outro profissional enquanto se ventila; O2 suplementar só se a SpO2 não atingir o alvo depois de corrigida a técnica, em degraus de 20% a cada 30 s com blender (o balão autoinflável sem blender não titula: 21% desconectado ou 90–100% com O2 a 5 L/min e reservatório).</li>
+<li><b>Falha após 30 s</b> (FC &lt;100 ou sem respiração regular): MR. SOPA; sonda orogástrica aberta se VPP prolongada; persistindo, <b>máscara laríngea</b> (≥34 sem e ≥2.000 g; mesmos parâmetros; CO2 colorimétrico confirma) ou <b>intubação traqueal</b>.</li>
+<li><b>Intubação</b>: indicada se VPP por máscara não efetiva, prolongada, massagem cardíaca ou hérnia diafragmática; cada tentativa ≤30 s, voltando à máscara entre elas; videolaringoscopia aumenta o sucesso, sobretudo do operador menos experiente (ILCOR 2025, condicional, certeza moderada); confirmar por CO2 colorimétrico (&lt;10 s) e FC subindo; ventilar com <b>O2 60%</b> logo após a IOT e titular.</li>
+<li><b>Desconforto com FC ≥100 e SpO2 no alvo</b>: observar sem pressão positiva. CPAP 5–6 cmH2O com Peça-T e máscara só se a SpO2 está abaixo do alvo (OR 5,5 de pneumotórax com CPAP no ≥35 sem).</li>
+</ul>
+
+<div class="sub-title">F1.4 · Prematuro &lt;34 semanas</div>
+<ul class="bullets">
+<li><b>Cordão</b>: vigoroso ≥60 s (sobre o abdome materno, cabeça seca, corpo sob plástico estéril e campo aquecido); não vigoroso: estímulo 15 s, clampeamento; ordenha de cordão intacto só ≥28 sem; &lt;28 sem: clampear em &lt;30 s se não respira. Reanimação com cordão intacto: só pesquisa.</li>
+<li><b>32–33 sem vigoroso</b>: pele a pele com um dos pais, novo plástico e campo aquecido, touca dupla, temperatura axilar a cada 10 min, oxímetro e vigilância respiratória (morbidade respiratória ~20%). <b>&lt;32 sem</b>: sempre à mesa após o clampeamento.</li>
+<li><b>Passos iniciais a dois, ≤30 s</b>: saco plástico sem secar o corpo (face fora), touca dupla (plástica + lã/algodão), colchão químico se &lt;30 sem (limite 40 °C, campo interposto), coxim sob os ombros, aspiração só se obstruído (sonda 6–8), monitor cardíaco e oxímetro.</li>
+<li><b>CPAP</b> 5–6 cmH2O (Peça-T, máscara, ~10 L/min, gás aquecido e umidificado) se FC ≥100 com desconforto ou SpO2 abaixo do alvo; sonda orogástrica se prolongado.</li>
+<li><b>VPP com Peça-T e O2 60%</b>, Pinsp 20–25, PEEP 5–6, 30–60/min; titular por SpO2; balão autoinflável só se a Peça-T falhar. Máscara aplicada com extrema delicadeza (reflexo trigeminal). Intubação se VPP por máscara não efetiva, prolongada ou massagem.</li>
+<li><b>Surfactante</b>: não rotineiro na sala (LISA na sala em estudo); indicação nas primeiras 2 h conforme evolução — remissão ao PD02.</li>
+</ul>
+
+<div class="box hy"><span class="box-label">HIGH-YIELD</span><div class="box-title">Cânula traqueal: diâmetro e profundidade pela IG e peso</div><div class="box-body">Além de ver as cordas vocais entre as marcas da cânula, fixe a cânula pela marca no lábio superior. Tenha sempre um tamanho acima e um abaixo. Cânula 2,0 mm é em geral evitada (resistência expiratória), mas é factível em 22–23 semanas.</div></div>
+<div class="stbl stbl-4">
+<div class="stbl-head stbl-4"><div>IG / peso estimado</div><div>Cânula (DI) · sonda · lâmina</div><div>Marca no lábio superior</div><div>Observação</div></div>
+<div class="stbl-row stbl-4"><div class="col col1" data-l="IG/peso">&lt;24 sem · &lt;500 g</div><div class="col" data-l="Material">2,0/2,5 mm · sonda 6 · lâmina 000/00</div><div class="col" data-l="Marca">~5,5 cm (22–24 sem)</div><div class="col" data-l="Obs">Videolaringoscópio depende de lâmina pequena</div></div>
+<div class="stbl-row stbl-4"><div class="col col1" data-l="IG/peso">24–28 sem · 500–1.000 g</div><div class="col" data-l="Material">2,5 mm · sonda 6 · lâmina 00</div><div class="col" data-l="Marca">6,0 (25–26 sem, 700–899 g) · 6,5 (27–29 sem, 900–1.099 g)</div><div class="col" data-l="Obs">Máscara laríngea não indicada</div></div>
+<div class="stbl-row stbl-4"><div class="col col1" data-l="IG/peso">28–34 sem · 1.000–2.000 g</div><div class="col" data-l="Material">3,0 mm · sonda 6 ou 8 · lâmina 0</div><div class="col" data-l="Marca">7,0 (30–32 sem) · 7,5 (33–34 sem, 1.500–1.800 g)</div><div class="col" data-l="Obs">Fio-guia opcional; ponta nunca além do orifício</div></div>
+<div class="stbl-row stbl-4"><div class="col col1" data-l="IG/peso">35–38 sem · 2.000–3.000 g</div><div class="col" data-l="Material">3,5 mm · sonda 8 · lâmina 1</div><div class="col" data-l="Marca">8,0 (35–37 sem) · 8,5 (38–40 sem)</div><div class="col" data-l="Obs">Máscara laríngea nº 1 alternativa (≥2 kg)</div></div>
+<div class="stbl-row stbl-4"><div class="col col1" data-l="IG/peso">&gt;38 sem · &gt;3.000 g</div><div class="col" data-l="Material">3,5 ou 4,0 mm · sonda 8 · lâmina 1</div><div class="col" data-l="Marca">8,5–9,0 (40–43 sem, 3.200–4.200 g)</div><div class="col" data-l="Obs">Sem balonete; linha radiopaca</div></div>
+</div>
+
+<div class="sub-title">F1.5 · Reanimação avançada: massagem, acesso e medicações</div>
+<ul class="bullets">
+<li><b>Indicação</b>: FC &lt;60 após 30 s de VPP efetiva por cânula (ou máscara laríngea se IOT impossível — boa prática ILCOR 2025 no ≥34 sem). O2 sobe para 100%.</li>
+<li><b>Técnica</b>: dois polegares (sobrepostos ou justapostos, fletidos se justapostos) no terço inferior do esterno, abaixo da linha intermamilar, poupando o xifoide; profundidade de 1/3 do diâmetro AP; liberação total sem perder contato; 3:1 com 120 eventos/min; compressor atrás da cabeça, ventilador ao lado (libera o cordão para o cateter); revezar a cada 2–5 min.</li>
+<li><b>Reavaliação a cada 60 s</b>: FC &gt;60 → parar compressões e reduzir O2 pela SpO2; FC ≥100 e respiração regular → suspender VPP. Falha → rever 14 itens (cânula, obstrução, pressão, O2, local/profundidade/ritmo, diástole, sincronia, posição da equipe, pneumotórax, tamponamento).</li>
+<li><b>Acesso</b>: cateter venoso umbilical de emergência, técnica estéril, 3–4 cm além do ânulo até refluxo; IO na tíbia se cateterismo não factível. Equipe mínima de três (ventila, comprime, cateteriza).</li>
+<li><b>Adrenalina</b> se FC &lt;60 após 60 s de massagem adequada; IV a cada 3–5 min; considerar volume se perda ou choque; persistindo FC &lt;60, revisar acesso (refluxo), dose e intervalo.</li>
+<li><b>Não usar</b> bicarbonato de sódio (reduz pressão de perfusão coronariana, hiperosmolaridade, hipernatremia, piora da acidose intracelular por CO2), naloxona, atropina, albumina ou vasopressores na sala.</li>
+</ul>
+
+<div class="box danger"><span class="box-label">DANGER</span><div class="box-title">Adrenalina: diluição obrigatória e dose máxima</div><div class="box-body">No Brasil a ampola é 1 mg/mL; <b>sempre diluir 1 mL em 9 mL de SF (0,1 mg/mL)</b>, qualquer que seja a via. Seringa de 1 mL para IV (0,2 mL/kg) e de 5 mL para traqueal (1 mL/kg). Doses &gt;0,1 mg/kg por qualquer via causam hipertensão grave, disfunção miocárdica e pior desfecho neurológico. Identificar a seringa com concentração, data e hora; solução rosada ou marrom = descartar.</div></div>
+
+<div class="sub-title">F1.6 · Termorregulação em toda a cadeia</div>
+<ul class="bullets">
+<li><b>Ambiente</b>: sala de parto e de reanimação a 23–25 °C, portas fechadas, fonte radiante ligada antes, normotermia materna antes, durante e depois do parto.</li>
+<li><b>≥34 sem</b>: secar e trocar campos, touca, pele a pele; plástico como adicional em pele a pele ou quando o pele a pele não é possível.</li>
+<li><b>&lt;34 sem</b>: plástico (forte), touca, colchão químico onde a auditoria mostra hipotermia, gases aquecidos e umidificados; temperatura a cada 10 min.</li>
+<li><b>Transporte</b>: incubadora de dupla parede, bateria carregada e ligada à rede até a saída; temperatura ajustada ao peso (34–35 °C no ≥34 sem no texto da SBP; o anexo cita 35–37 °C — usar o protocolo local); prematuro segue no saco plástico com touca dupla.</li>
+<li><b>Hipotermia de admissão</b>: reaquecer com protocolo, monitorizar temperatura e glicemia; evitar hipertermia. <b>Asfixiado</b>: normotermia estrita, sem resfriamento na sala.</li>
+</ul>
+
+<div class="sub-title">F1.7 · Situações especiais</div>
+<ul class="bullets">
+<li><b>Mecônio</b>: fluxo comum; aspiração traqueal única por cânula + aspirador de mecônio só se obstrução após VPP efetiva.</li>
+<li><b>Hérnia diafragmática</b>: IOT imediata + sonda gástrica aberta; pressões baixas; nunca máscara prolongada.</li>
+<li><b>Pneumotórax hipertensivo</b>: punção com cateter 18–20G no 2º EIC na linha hemiclavicular (ou 4º EIC na linha axilar anterior), torneira e seringa; depois drenagem.</li>
+<li><b>Hipovolemia</b>: SF 10 mL/kg em 5–10 min; anemia fetal grave: concentrado de hemácias O negativo.</li>
+<li><b>Via aérea difícil</b>: máscara laríngea como primeira interface; Robin em prono com cânula nasofaríngea; atresia de coanas com Guedel.</li>
+<li><b>Opioide materno</b>: ventilar; sem naloxona.</li>
+</ul>
+
+<div class="sub-title">F1.8 · Pós-reanimação, transporte, ética e qualidade</div>
+<ul class="bullets">
+<li><b>Destino</b>: quem recebeu VPP prolongada, IOT, massagem ou adrenalina vai para área de terapia intensiva (alto risco de deterioração).</li>
+<li><b>Transporte</b> só com FC ≥100; pescoço em leve extensão com coxim, decúbito dorsal; cânula fixada com fitas longas até a região malar (pele limpa com água destilada); três cenários de suporte: sem suporte, CPAP com sonda orogástrica aberta (atenção ao pneumotórax no ≥34 sem) ou ventilação por Peça-T/ventilador com cilindros e blender; oxímetro sempre; balão de reserva.</li>
+<li><b>Cateter umbilical</b> em geral retirado na sala (posição da ponta incerta); se mantido, curativo oclusivo transparente e radiografia obrigatória na UTI.</li>
+<li><b>Primeiras horas</b>: glicemia precoce e seriada (risco maior em prematuros, quem recebeu massagem/adrenalina, EHI), gasometria, temperatura, avaliação neurológica para elegibilidade à hipotermia (&lt;6 h) — manual de cuidados pós-reanimação da SBP e PD02.</li>
+<li><b>Ética</b>: no ≥34 sem, não iniciar só diante de anomalia letal comprovada e decisão prévia com a família; na dúvida, reanimar. Sem resposta após reanimação completa, discutir interrupção por volta de 20 min após o nascimento, individualizando IG, anomalias, duração do insulto, qualidade da reanimação, desejo familiar e estrutura pós-reanimação. Presença dos pais é razoável quando desejada e possível.</li>
+<li><b>Registro e qualidade</b>: Apgar ampliado concomitante às manobras, tempos, doses, temperatura de admissão; debriefing; indicadores (clampeamento ≥60 s, pele a pele, VPP iniciada &lt;60 s, FC no monitor, O2 máximo 21% no ≥34 sem, sucesso na 1ª IOT, normotermia de admissão, escape de ar).</li>
+</ul>
+
+<div class="box decision"><span class="box-label">DECISION</span><div class="box-title">Brasil × internacional: onde a SBP 2026 diverge e por quê</div><div class="box-body">
+<ul>
+<li><b>O2 inicial &lt;34 sem: 60%</b> (SBP) × ≥30% em &lt;32 sem e sem recomendação em 32–34+6 (ILCOR) × ar ambiente ≥32 sem (ERC). Para a prova brasileira e para a prática no país, vale a SBP.</li>
+<li><b>Ventilação inicial</b>: SBP e AHA/AAP iniciam diretamente com 30–60/min; ERC usa cinco insuflações de até 3 s (Pinsp 30 ≥32 sem; 25 &lt;32 sem) antes da ventilação a 30/min e PEEP inicial 6.</li>
+<li><b>Adrenalina</b>: ILCOR e SBP repetem a cada 3–5 min; ERC especifica a cada 4 min.</li>
+<li><b>Máscara laríngea na massagem</b>: ERC a recomenda sempre que IOT não for possível; ILCOR 2025 como boa prática no ≥34 sem; a SBP não a recomenda como interface rotineira durante a massagem.</li>
+<li><b>Glicose</b>: ERC administra glicose 10% 2 mL/kg se a glicemia estiver baixa durante a reanimação; ILCOR/SBP pedem medir cedo e tratar guiado pelo valor.</li>
+</ul></div></div>
+
+<div class="sub-title">F1.9 · Cenários — caso → conduta certa → erro típico</div>
+<div class="stbl stbl-3">
+<div class="stbl-head stbl-3"><div>Caso</div><div>Conduta certa</div><div>Erro típico</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Caso">Termo, cesárea eletiva, chora, tônus bom, líquido meconial espesso</div><div class="col" data-l="Conduta">Fica com a mãe; clampeamento ≥60 s; pele a pele</div><div class="col" data-l="Erro">Levar à mesa e aspirar a traqueia "porque o mecônio é espesso"</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Caso">Termo, apneico e hipotônico ao nascer, cordão pulsando</div><div class="col" data-l="Conduta">Estímulo no dorso ~15 s; sem resposta, clampear (ou ordenha) e passos iniciais; VPP em ar ambiente antes de 60 s</div><div class="col" data-l="Erro">Palmadas e fricção prolongadas por 1–2 min antes da VPP</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Caso">VPP com máscara há 30 s, FC 70, tórax não expande, SpO2 60% aos 3 min</div><div class="col" data-l="Conduta">MR. SOPA; persistindo, máscara laríngea ou IOT</div><div class="col" data-l="Erro">Subir O2 para 100% mantendo a máscara vazando</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Caso">29 semanas, respira com gemido e retração, FC 140</div><div class="col" data-l="Conduta">Saco plástico, touca dupla, monitor e oxímetro; CPAP 5–6 cmH2O com Peça-T; O2 titulado pela SpO2</div><div class="col" data-l="Erro">Intubar "profilaticamente" para dar surfactante na sala</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Caso">27 semanas, apneico após estímulo</div><div class="col" data-l="Conduta">Clampear sem ordenha (&lt;28 sem), saco plástico, VPP com Peça-T e O2 60%, Pinsp 20–25, PEEP 5–6</div><div class="col" data-l="Erro">Ordenhar o cordão ou fazer insuflação sustentada de 15 s</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Caso">Intubado, FC 50 após 30 s de VPP com expansão adequada</div><div class="col" data-l="Conduta">Massagem 3:1 com dois polegares e O2 100%, 60 s sem interrupção; preparar cateter</div><div class="col" data-l="Erro">Interromper a cada 15 s para auscultar; dar adrenalina antes da massagem</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Caso">FC 40 após 60 s de massagem bem feita; cateter ainda não pronto</div><div class="col" data-l="Conduta">Adrenalina traqueal 0,1 mg/kg (1 mL/kg) uma vez e cateter umbilical imediato para dose IV</div><div class="col" data-l="Erro">Repetir doses traqueais e adiar o acesso venoso</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Caso">DPP com sangramento materno; RN pálido, pulsos fracos, FC 50 apesar de massagem e adrenalina</div><div class="col" data-l="Conduta">SF 10 mL/kg IV em 5–10 min; reavaliar; considerar hemácias O negativo</div><div class="col" data-l="Erro">Bicarbonato de sódio para "corrigir a acidose"</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Caso">Desconforto progressivo, abdome escavado, MV ausente à esquerda</div><div class="col" data-l="Conduta">IOT imediata, sonda gástrica aberta, ventilação com pressões baixas</div><div class="col" data-l="Erro">Insistir na VPP por máscara</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Caso">38 semanas, VPP por 10 min, pH de cordão 6,9, letárgico e hipotônico com 1 h</div><div class="col" data-l="Conduta">Normotermia, glicemia, contato com centro de hipotermia; decisão dentro de 6 h</div><div class="col" data-l="Erro">Desligar a fonte radiante na sala "para já começar a hipotermia"</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Caso">Mãe recebeu morfina 2 h antes; RN com FC 120 e apneia</div><div class="col" data-l="Conduta">VPP até respiração eficaz e observação prolongada</div><div class="col" data-l="Erro">Naloxona IM e retirada da ventilação</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Caso">Termo após cesárea, gemente, FC 150, SpO2 88% aos 10 min em ar</div><div class="col" data-l="Conduta">Observação monitorizada, sem CPAP (SpO2 no alvo)</div><div class="col" data-l="Erro">CPAP de rotina, com pneumotórax subsequente</div></div>
+</div>
+</div>
+</div>
+
+<div class="card tx">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">F.2</span> Doses Operacionais</div><h3>Drogas, fluidos e parâmetros da sala de parto <span class="ank ank-hy">HIGH-YIELD</span></h3></div>
+<div class="card-body">
+<div class="stbl stbl-3">
+<div class="stbl-head stbl-3"><div>Fármaco / intervenção</div><div>Dose / parâmetro</div><div>Indicação / notas</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Adrenalina IV ou IO (solução 0,1 mg/mL)</div><div class="col" data-l="Dose"><b>0,02 mg/kg = 0,2 mL/kg</b> (faixa 0,01–0,03 mg/kg) em bolus rápido + flush de SF 3 mL; repetir a cada 3–5 min. 1 kg 0,2 mL · 2 kg 0,4 mL · 3 kg 0,6 mL · 4 kg 0,8 mL (seringa de 1 mL)</div><div class="col" data-l="Notas">FC &lt;60 após 60 s de massagem coordenada com VPP por cânula e O2 100%. α1: ↑ pressão diastólica aórtica e perfusão coronariana; β1: crono/inotropismo. ERC: repetir a cada 4 min <span class="ev ev-sbr">SBP 2026</span></div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Adrenalina endotraqueal (0,1 mg/mL)</div><div class="col" data-l="Dose"><b>0,1 mg/kg = 1 mL/kg</b> (faixa 0,05–0,1 mg/kg), <b>dose única</b>, dentro da cânula, sem flush, seguida de VPP. 2 kg 2 mL · 3 kg 3 mL · 4 kg 4 mL (seringa de 5 mL)</div><div class="col" data-l="Notas">Só enquanto o cateter é obtido; absorção lenta e imprevisível. Se não responder, dose IV assim que houver acesso, sem esperar intervalo <span class="ev ev-eular">ILCOR 2020</span></div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Soro fisiológico 0,9% (expansor)</div><div class="col" data-l="Dose"><b>10 mL/kg IV/IO em 5–10 min</b>; pode repetir 10 mL/kg após rever técnica, acesso e dose de adrenalina</div><div class="col" data-l="Notas">Perda sanguínea ou sinais de choque (palidez, má perfusão, pulsos débeis) ou FC que não sobe. Volume no asfixiado euvolêmico → edema pulmonar e HPIV</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Concentrado de hemácias O Rh negativo</div><div class="col" data-l="Dose">10 mL/kg IV (mesma lógica do expansor) — <b>confirmar protocolo de hemoterapia local</b></div><div class="col" data-l="Notas">Suspeita de anemia fetal grave (aloimunização, transfusão feto-fetal ou feto-materna, hidropsia)</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Glicose 10%</div><div class="col" data-l="Dose">2 mL/kg IV/IO em bolus <b>se glicemia baixa</b> (ERC 2025), seguida de infusão contínua guiada pela glicemia</div><div class="col" data-l="Notas">Medir glicemia cedo e seriar em quem recebeu massagem/adrenalina, prematuros e EHI; não dar empiricamente (ILCOR 2025). Limiar terapêutico: protocolo local (PD02)</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Bicarbonato de sódio</div><div class="col" data-l="Dose"><b>Não usar</b></div><div class="col" data-l="Notas">Recomendação retirada pelo ILCOR; reduz resistência sistêmica e perfusão coronariana, gera CO2 que piora acidose intracelular, hipernatremia e hiperosmolaridade (risco de HPIV)</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Naloxona</div><div class="col" data-l="Dose"><b>Não usar na sala de parto</b></div><div class="col" data-l="Notas">Sem efeito clínico relevante demonstrado; segurança não avaliada; abstinência e convulsão no filho de usuária crônica <span class="ev ev-cochrane">Cochrane</span></div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Oxigênio — início da VPP</div><div class="col" data-l="Dose"><b>≥34 sem: 21%</b> · <b>&lt;34 sem: 60%</b> (SBP 2026) · após IOT no ≥34 sem: 60% · massagem: 100%</div><div class="col" data-l="Notas">Titular ±20% a cada 30 s pela SpO2 pré-ductal (alvos 2–10 min); blender obrigatório; reduzir assim que possível. ILCOR: ≥30% &lt;32 sem <span class="ev ev-sbr">SBP 2026</span></div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">VPP com Peça-T</div><div class="col" data-l="Dose">Fluxo 10 L/min · pressão máxima 30–40 cmH2O · <b>Pinsp 20–30 (≥34) / 20–25 (&lt;34) cmH2O</b> · <b>PEEP 5 (≥34) / 5–6 (&lt;34)</b> · 30–60/min ("ocluuui-solta-solta")</div><div class="col" data-l="Notas">Reajustar Pinsp após 3–5 ventilações para expansão leve; volume corrente &gt;8 mL/kg lesa o pulmão prematuro; gases aquecidos e umidificados no &lt;34 sem</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">VPP com balão autoinflável (~240 mL)</div><div class="col" data-l="Dose">30–60/min ("aperta-solta-solta") · Pinsp inicial 20–30 cmH2O (manômetro), raramente 30–40 · válvula de escape 30–40 cmH2O ativa</div><div class="col" data-l="Notas">Não gera CPAP nem PEEP confiável; não titula FiO2 mesmo com blender; deve estar sempre pronto como reserva</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">CPAP na sala de parto</div><div class="col" data-l="Dose"><b>5–6 cmH2O</b> por Peça-T e máscara, fluxo ~10 L/min</div><div class="col" data-l="Notas">&lt;34 sem: desconforto ou SpO2 baixa com FC ≥100. ≥34 sem: só SpO2 abaixo do alvo. Sonda orogástrica se prolongado. ERC: PEEP/CPAP inicial 6</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Massagem cardíaca</div><div class="col" data-l="Dose">3:1 · 90 compressões + 30 ventilações/min · profundidade 1/3 AP · terço inferior do esterno · 60 s antes de reavaliar</div><div class="col" data-l="Notas">Dois polegares; trocar o compressor a cada 2–5 min; O2 100% e retorno à titulação quando a SpO2 for legível</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Aspiração de vias aéreas</div><div class="col" data-l="Dose">Sonda 8–10 (≥34) ou 6–8 (&lt;34) · pressão máxima 80–100 mmHg · boca antes das narinas</div><div class="col" data-l="Notas">Só se obstrução; aspiração de rotina atrasa a SpO2 e a VPP e causa bradicardia vagal</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Cateter venoso umbilical</div><div class="col" data-l="Dose">3,5 ou 5 F, lúmen único, preenchido com SF · introduzir 3–4 cm após o ânulo até refluxo</div><div class="col" data-l="Notas">Posição periférica (evitar fígado); cuidado com embolia gasosa; retirar após as drogas ou fixar e radiografar</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Agulha intraóssea (tíbia)</div><div class="col" data-l="Dose">Face anteromedial, 1–2 cm abaixo e medial à tuberosidade · profundidade 0,5–0,75 cm (1.500–2.499 g) ou ~1 cm (2.500–3.500 g)</div><div class="col" data-l="Notas">Alternativa ao cateter umbilical; consultar o fabricante; vigiar extravasamento e síndrome compartimental</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Vitamina K1 (fitomenadiona)</div><div class="col" data-l="Dose"><b>1 mg IM</b> dose única ao nascer (SC citada na apostila)</div><div class="col" data-l="Notas">Prevenção da doença hemorrágica do RN; após o pele a pele/primeira mamada. Dose de prematuros &lt;1.000 g: protocolo local (PD02) <span class="ev ev-nice">MS 2014</span></div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Profilaxia da conjuntivite neonatal</div><div class="col" data-l="Dose"><b>Iodopovidona 2,5%</b> (1 gota em cada olho), ou eritromicina 0,5% ou tetraciclina 1% pomada; nitrato de prata 1% só na falta das demais</div><div class="col" data-l="Notas">NT MS 11/2024 (texto integral não lido — confirmar posologia e momento na nota); recusa familiar registrada em prontuário <span class="ev ev-nice">MS 2024</span></div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Clorexidina no coto umbilical</div><div class="col" data-l="Dose">1×/dia por 7 dias</div><div class="col" data-l="Notas">Parto domiciliar sem material estéril; no hospital, coto limpo e seco (álcool 70% controverso)</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Hipotermia terapêutica (referência, UTI)</div><div class="col" data-l="Dose">Temperatura central 33,5 °C (33–34) · início &lt;6 h · 72 h · reaquecimento em ≥4 h</div><div class="col" data-l="Notas">Só em centro com protocolo; indicação e manejo no PD02 <span class="ev ev-eular">ILCOR 2024</span></div></div>
+</div>
+<div class="box hy"><span class="box-label">HIGH-YIELD</span><div class="box-title">Acesso no SUS × recomendação internacional</div><div class="box-body">Tudo o que a reanimação exige é barato e está na RENAME: adrenalina, SF, oxigênio, vitamina K, cateter umbilical. As lacunas brasileiras são de estrutura e treinamento — Peça-T com blender e umidificador, monitor com eletrodos neonatais, máscara laríngea nº 1, videolaringoscópio com lâminas pequenas, colchão químico e incubadora de transporte. O PRN-SBP mostrou que ≥7 profissionais treinados por mil nascidos vivos no município reduzem em 12% a chance de óbito neonatal por asfixia (São Paulo, 2011–2020). Onde não há Peça-T, o balão autoinflável bem usado continua salvando vidas.</div></div>
+</div>
+</div>
+</section>
+
+<section id="pitfalls">
+<div class="section">
+<div class="section-eyebrow"><span>G</span> Pitfalls · Mitos · Controvérsias</div>
+<div class="section-title">Erros Operacionais + Mitos Vivos + Debates Atuais</div>
+<div class="section-sub">Boa parte dos erros na sala de parto vem de condutas que já foram corretas: aspiração traqueal no mecônio, O2 a 100%, naloxona, bicarbonato, clampeamento imediato. A apostila de 2025 ainda carrega algumas delas.</div>
+</div>
+
+<div class="card pearl">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">G.1</span> Pegadinhas</div><h3>10 erros operacionais na sala de parto</h3></div>
+<div class="card-body">
+<div class="stbl stbl-2">
+<div class="stbl-head stbl-2"><div>Erro Comum</div><div>Correto</div></div>
+<div class="stbl-row stbl-2"><div class="col col1" data-l="Erro">Usar Apgar do 1º minuto para decidir iniciar a reanimação</div><div class="col" data-l="Correto">A decisão é tomada antes do 1º minuto por respiração, tônus e FC; o Apgar documenta a resposta e tem valor prognóstico quando persiste baixo.</div></div>
+<div class="stbl-row stbl-2"><div class="col col1" data-l="Erro">Avaliar cianose para indicar O2 ou VPP</div><div class="col" data-l="Correto">Cor é subjetiva e a SpO2 normal só passa de 85% perto do 5º minuto; O2 é guiado pela oximetria pré-ductal e VPP pela FC e respiração.</div></div>
+<div class="stbl-row stbl-2"><div class="col col1" data-l="Erro">Iniciar VPP no termo com O2 a 100% "para garantir"</div><div class="col" data-l="Correto">Ar ambiente no ≥34 sem (VPP com ar reduziu mortalidade em 27%); O2 só após corrigir técnica e se SpO2 abaixo do alvo.</div></div>
+<div class="stbl-row stbl-2"><div class="col col1" data-l="Erro">Clampear de imediato todo RN que não chora</div><div class="col" data-l="Correto">Estímulo tátil ~15 s com cordão intacto; respirou, clampeamento ≥60 s; não respirou, clampear (ou ordenha ≥28 sem) sem atrasar a VPP.</div></div>
+<div class="stbl-row stbl-2"><div class="col col1" data-l="Erro">Iniciar massagem com FC 50 durante VPP por máscara que não expande o tórax</div><div class="col" data-l="Correto">Primeiro garantir ventilação efetiva (corretivas, cânula); massagem só com FC &lt;60 após 30 s de VPP efetiva com via aérea assegurada.</div></div>
+<div class="stbl-row stbl-2"><div class="col col1" data-l="Erro">Usar ampola de adrenalina pura (1 mg/mL) ou dose de 0,1 mg/kg IV</div><div class="col" data-l="Correto">Sempre diluir a 0,1 mg/mL; IV 0,02 mg/kg (0,2 mL/kg); traqueal 0,1 mg/kg (1 mL/kg) uma vez.</div></div>
+<div class="stbl-row stbl-2"><div class="col col1" data-l="Erro">Avançar o cateter umbilical até a veia cava "como no cateter de UTI"</div><div class="col" data-l="Correto">Na emergência, 3–4 cm além do ânulo até refluir sangue (posição periférica), evitando o fígado; posição central só com radiografia na UTI.</div></div>
+<div class="stbl-row stbl-2"><div class="col col1" data-l="Erro">Secar o prematuro de 28 semanas antes de colocá-lo no saco plástico</div><div class="col" data-l="Correto">No &lt;34 sem o corpo vai molhado para o saco de polietileno (só a cabeça é seca, com touca dupla); secar retarda e aumenta perda de calor.</div></div>
+<div class="stbl-row stbl-2"><div class="col col1" data-l="Erro">Oferecer CPAP rotineiro ao termo gemente com SpO2 no alvo</div><div class="col" data-l="Correto">Observar; CPAP no ≥34 sem só com SpO2 abaixo do alvo, pelo risco de pneumotórax (OR 5,5).</div></div>
+<div class="stbl-row stbl-2"><div class="col col1" data-l="Erro">Transportar o RN logo após a massagem "porque a UTI tem mais recursos"</div><div class="col" data-l="Correto">Transportar só com FC ≥100, estabilizado, em incubadora aquecida, com oxímetro, suporte respiratório adequado e balão de reserva.</div></div>
+</div>
+</div>
+</div>
+
+<div class="card pearl">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">G.2</span> Mitos · Controvérsias</div><h3>Mitos vivos e debates atuais</h3></div>
+<div class="card-body">
+<div class="box myth"><span class="box-label">MYTH</span><div class="box-title">"RN com mecônio espesso precisa de aspiração traqueal antes de ventilar"</div><div class="box-body">Foi regra até 2015. Ensaios randomizados e observacionais não mostraram redução de síndrome de aspiração meconial, EHI ou morte com a intubação e aspiração antes da VPP, e o procedimento atrasa a ventilação de um RN já hipóxico. Hoje o RN meconial não vigoroso recebe o mesmo algoritmo; a aspiração traqueal fica reservada à obstrução que impede a ventilação, e a aspiração no períneo foi abandonada.</div></div>
+<div class="box myth"><span class="box-label">MYTH</span><div class="box-title">"Bicarbonato corrige a acidose e ajuda o coração a responder"</div><div class="box-body">A acidose do asfixiado é tratada com ventilação e restauração do débito. O bicarbonato reduz a resistência vascular sistêmica e a pressão de perfusão coronariana, gera CO2 que atravessa membranas e acidifica o intracelular e o liquor, e a carga hiperosmolar associa-se a hemorragia intracraniana no prematuro. O ILCOR retirou a antiga recomendação e a SBP e o ERC não o recomendam.</div></div>
+<div class="box myth"><span class="box-label">MYTH</span><div class="box-title">"Apgar baixo é sinônimo de asfixia e prediz paralisia cerebral"</div><div class="box-body">O Apgar do 1º minuto reflete depressão intraparto e tem muitos falsos-positivos (drogas maternas, prematuridade, malformações) e falsos-negativos. Asfixia exige acidose metabólica grave, encefalopatia e disfunção de órgãos. Mesmo Apgar 0–1 aos 10 minutos não é sentença: com hipotermia terapêutica, cerca de 1 em 5 sobrevive sem sequela moderada ou grave.</div></div>
+<div class="box controversy"><span class="box-label">CONTROVERSY</span><div class="box-title">Quanto oxigênio para começar a ventilar o prematuro?</div><div class="box-body">A SBP 2026 escolheu 60% para todo &lt;34 sem, com base na metanálise NETMOTION (mortalidade menor com FiO2 alta, certeza baixa) e no TORPIDO 30/60 (sem diferença no desfecho primário, melhor estabilidade fisiológica com 60%). O ILCOR 2025 só diz "≥30%" abaixo de 32 sem e não recomenda nada entre 32 e 34+6; o ERC usa ar ambiente a partir de 32 sem. O ensaio HiLo (30 × 60% em 23–28 sem, desfecho de neurodesenvolvimento) pode mudar a recomendação; o ponto de consenso é titular cedo pela oximetria.</div></div>
+<div class="box controversy"><span class="box-label">CONTROVERSY</span><div class="box-title">Clampear ou reanimar com o cordão intacto?</div><div class="box-body">A fisiologia favorece ventilar antes de clampear, e há plataformas para reanimar junto ao leito materno. Mas os ensaios de reanimação com cordão intacto (VentFirst em &lt;29 sem; estudos italiano e holandês em &lt;30 sem; três estudos no termo não vigoroso) não excluíram benefício nem dano. ILCOR, SBP e ERC restringem a prática à pesquisa; a ordenha de cordão intacto (≥28 sem) é a alternativa pragmática hoje.</div></div>
+<div class="box controversy"><span class="box-label">CONTROVERSY</span><div class="box-title">Quando parar a reanimação?</div><div class="box-body">A ausência de retorno da circulação após 10–20 minutos se associa a alto risco de morte e sequela, mas séries com hipotermia terapêutica mostram sobreviventes sem sequela grave. Os documentos convergem para discutir a interrupção perto dos 20 minutos, com a família, ponderando IG, malformações, duração do insulto, adequação da reanimação e estrutura disponível. A decisão é individual e precisa ser registrada; não existe cronômetro que a substitua.</div></div>
+</div>
+</div>
+</section>
+
+<section id="pearls">
+<div class="section">
+<div class="section-eyebrow"><span>H</span> Pearls · Evolving</div>
+<div class="section-title">H1 · Pearls de Especialista · H2 · O que mudou de 2022 para 2026</div>
+<div class="section-sub">As nuances que separam quem segue o fluxograma de quem entende por que ele é assim, e as mudanças concretas do ciclo ILCOR 2025 / SBP 2026 que a apostila de 2025 ainda não traz.</div>
+</div>
+
+<div class="card pearl">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">H.1</span> Pearls</div><h3>8 nuances que distinguem o especialista</h3></div>
+<div class="card-body">
+<div class="box pearl"><span class="box-label">PEARL</span><div class="box-title">A FC é o melhor monitor da ventilação, não do coração</div><div class="box-body">Em 15–30 s de VPP que realmente aera o pulmão, a FC sobe. Se não sobe, o problema quase sempre é ar que não chega ao alvéolo (escape, obstrução, glote fechada, pressão insuficiente), e não falha cardíaca primária. Por isso a sequência de verificação começa pela máscara e termina na cânula antes de chegar às drogas — e por isso a SBP pede monitor cardíaco assim que a VPP começa, já que ausculta e palpação do cordão subestimam a FC em 15–25 bpm e podem disparar massagem desnecessária.</div></div>
+<div class="box pearl"><span class="box-label">PEARL</span><div class="box-title">Clampeamento tardio é uma intervenção hemodinâmica, não só hematológica</div><div class="box-body">O ganho de ferro aos 6 meses é o argumento conhecido; o argumento fisiológico é a pré-carga. Enquanto o cordão pulsa, o retorno umbilical sustenta o enchimento do VE até que o fluxo pulmonar o substitua. Clampear antes da aeração tira pré-carga e acrescenta pós-carga no pior momento. É essa lógica que justifica o estímulo tátil com cordão intacto e a ordenha no RN não vigoroso.</div></div>
+<div class="box pearl"><span class="box-label">PEARL</span><div class="box-title">A máscara pode causar a apneia que você está tentando tratar</div><div class="box-body">O reflexo trigeminocardíaco desencadeado pela pressão da máscara na face causa apneia, bradicardia e fechamento glótico — em 54% dos prematuros &lt;33 sem que respiravam. Aplique do queixo para o nariz, com a pegada em C-E e sem pressionar; no prematuro que respira com desconforto, CPAP bem aplicado, não VPP; e considere a técnica de duas mãos quando o selo é difícil.</div></div>
+<div class="box pearl"><span class="box-label">PEARL</span><div class="box-title">Massagem antes da via aérea assegurada é massagem em vão</div><div class="box-body">Compressões reduzem a eficácia da VPP e só funcionam com sangue oxigenado chegando às coronárias. A regra "cânula antes da massagem" não é burocracia: num coração asfíxico, a ventilação efetiva reverte a maioria das bradicardias, e a massagem sem ventilação apenas move sangue venoso. Se a intubação falha no ≥34 sem, a máscara laríngea é a ponte (boa prática ILCOR 2025).</div></div>
+<div class="box pearl"><span class="box-label">PEARL</span><div class="box-title">A dose traqueal de adrenalina é um placebo que atrasa o cateter</div><div class="box-body">A absorção alveolar num pulmão com fluxo mínimo e líquido residual é imprevisível; em modelos animais a resposta à via traqueal é menor e mais lenta mesmo com doses cinco a dez vezes maiores. Ela existe para não deixar a equipe de mãos vazias por 1–2 minutos, nunca para substituir o acesso. Uma dose, e o terceiro membro já com o cateter umbilical nas mãos.</div></div>
+<div class="box pearl"><span class="box-label">PEARL</span><div class="box-title">No asfixiado, o oxigênio que salva no minuto 2 lesa no minuto 15</div><div class="box-body">Durante a massagem o O2 a 100% faz sentido (oximetria ilegível, tecidos hipóxicos). Assim que a circulação volta, a hiperóxia alimenta lesão de reperfusão e reduz o fluxo cerebral, num cérebro que entra na fase latente da EHI. Desça o O2 pela SpO2 alvo, evite hipocapnia por hiperventilação com balão e evite a hipertermia: as três decisões afetam a falência energética secundária.</div></div>
+<div class="box pearl"><span class="box-label">PEARL</span><div class="box-title">Prematuro que piora com CPAP pode estar com a glote fechada ou com o pulmão estourado</div><div class="box-body">Queda de FC e SpO2 durante o CPAP tem duas leituras opostas: apneia (glote fechada, drive insuficiente — indica VPP) ou pneumotórax (pressão excessiva em pulmão heterogêneo — indica descompressão). Olhe o tórax e a curva da FC antes de subir pressão: a correção de uma é o agravamento da outra.</div></div>
+<div class="box pearl"><span class="box-label">PEARL</span><div class="box-title">A temperatura de admissão é o indicador mais honesto da equipe</div><div class="box-body">Ela integra sala, fonte radiante, plástico, touca, gases e transporte, e se correlaciona com mortalidade de forma dose-dependente no prematuro. Medi-la e divulgá-la mensalmente muda comportamento mais do que qualquer aula; a SBP a lista entre os indicadores de qualidade junto com clampeamento ≥60 s, VPP antes de 60 s e sucesso na primeira intubação.</div></div>
+</div>
+</div>
+
+<div class="card pearl">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">H.2</span> Evolving</div><h3>7 mudanças reais — ILCOR 2025 e Diretrizes SBP 2026</h3></div>
+<div class="card-body">
+<div class="box evolving"><span class="box-label">EVOLVING</span><div class="box-title">O2 inicial de 60% no &lt;34 semanas (SBP 2026)</div><div class="box-body">Em 2022 a SBP pedia 30%. A mudança para 60% veio do NETMOTION e do TORPIDO 30/60; o ILCOR 2025 abandonou o "21–30%" de 2018 e passou a "≥30%" no &lt;32 sem. Para o ≥34 sem nada mudou: ar ambiente.</div></div>
+<div class="box evolving"><span class="box-label">EVOLVING</span><div class="box-title">Estímulo tátil antes do clampeamento e ordenha de cordão intacto no não vigoroso</div><div class="box-body">A SBP 2026 introduziu o estímulo no dorso por ~15 s com o cordão intacto em todo RN sem boa vitalidade. O ILCOR 2025 sugeriu a ordenha de cordão intacto em vez do clampeamento precoce no termo e prematuro tardio não vigoroso (menos EHI moderada/grave e menos hipotermia terapêutica no ensaio de 1.730 RN), mantendo a contraindicação abaixo de 28 semanas.</div></div>
+<div class="box evolving"><span class="box-label">EVOLVING</span><div class="box-title">Clampeamento ≥60 s também no prematuro vigoroso</div><div class="box-body">O "≥30 s" para &lt;34 sem (SBP 2022) foi substituído por ≥60 s, alinhado ao ILCOR 2024 (forte, certeza moderada) e à metanálise de dados individuais com redução de 32% na mortalidade.</div></div>
+<div class="box evolving"><span class="box-label">EVOLVING</span><div class="box-title">Frequência de VPP 30–60/min e nova tabela de SpO2 alvo</div><div class="box-body">AHA/AAP 2025 e SBP 2026 ampliaram a frequência de 40–60 para 30–60 por minuto. Os alvos de SpO2 passaram a ser minuto a minuto (2 min 65–70%, 3 min 70–75%, 4 min 75–80%, 5 min 80–85%, 10 min 85–95%), incorporando dados de prematuros que evoluíram sem lesão cerebral.</div></div>
+<div class="box evolving"><span class="box-label">EVOLVING</span><div class="box-title">Videolaringoscopia sugerida para a intubação neonatal</div><div class="box-body">Nova revisão sistemática do ILCOR 2025 (6 ECR, 817 RN): maior sucesso global (RR 1,43) e na primeira tentativa (RR 1,56), sobretudo com operadores menos experientes. Recomendação condicional onde houver recurso e treino, com laringoscópio convencional sempre de reserva.</div></div>
+<div class="box evolving"><span class="box-label">EVOLVING</span><div class="box-title">Máscara laríngea durante a massagem e via aérea alternativa</div><div class="box-body">O ILCOR 2025 criou declaração de boa prática: no ≥34 sem em massagem, se a cânula não for possível, ventilar pela máscara laríngea é razoável. O ERC 2025 vai além e a considera sempre que houver compressões. A SBP 2026 mantém a máscara laríngea como alternativa à máscara facial e à cânula no ≥34 sem e ≥2.000 g.</div></div>
+<div class="box evolving"><span class="box-label">EVOLVING</span><div class="box-title">Glicemia após a reanimação: medir em vez de infundir às cegas</div><div class="box-body">A antiga sugestão de glicose IV empírica (2010) foi considerada superada; o ILCOR 2025 pede glicemia precoce e seriada em quem recebeu massagem ou adrenalina, prematuros e EHI, com infusão guiada pelo valor, evitando tanto hipo quanto hiperglicemia.</div></div>
+</div>
+</div>
+</section>
+
+</div>
+</main>
+
+<footer>
+<div class="wrap">
+<div class="foot">
+<div><div class="foot-author">@dr.lorencato</div><div class="foot-meta">Reanimação e Transição Neonatal · Pocket Handbook Elite · v5.2 · Neonatologia · PD01</div></div>
+<div class="foot-mono">Compilação clínica · status clinical_review até signoff humano · fontes conferidas em 2026-10-26</div>
+</div>
+<div class="foot-meta"><b>Bibliografia rastreável</b> (fonte · ano · papel no HP · identificador)
+<ol>
+<li id="src-1">Almeida MFB, Guinsburg R; Programa Brasileiro de Reanimação Neonatal da SBP. Reanimação do recém-nascido ≥34 semanas em sala de parto: Diretrizes 2026 da Sociedade Brasileira de Pediatria (12/06/2026) · 2026 · conduta brasileira no ≥34 sem: preparo, cordão, passos iniciais, VPP, interfaces, IOT, CPAP, massagem, medicações, ética, transporte, qualidade · doi:10.25060/PRN-SBP-2026-1 · lido integralmente; parafraseado (documento sem reprodução autorizada)</li>
+<li id="src-2">Guinsburg R, Almeida MFB; PRN-SBP. Reanimação do recém-nascido &lt;34 semanas em sala de parto: Diretrizes 2026 da SBP (12/06/2026) · 2026 · conduta no &lt;34 sem: cordão, termorregulação, CPAP, O2 60%, Peça-T, cânulas, limites da viabilidade · doi:10.25060/PRN-SBP-2026-2</li>
+<li id="src-3">Liley HG, Weiner GM, Wyckoff MH et al. Neonatal Life Support: 2025 International Liaison Committee on Resuscitation Consensus on Science With Treatment Recommendations. Resuscitation 2025;215(Suppl 2):110816 (também Circulation 2025 e Pediatrics 2026) · 2025 · base científica de todas as recomendações (força e certeza) · doi:10.1016/j.resuscitation.2025.110816</li>
+<li id="src-4">Lee HC, Strand ML, Finan E et al. Part 5: Neonatal Resuscitation: 2025 American Heart Association and American Academy of Pediatrics Guidelines for CPR and ECC. Circulation 2025;152(16 Suppl 2):S385–S423 · 2025 · diretriz norte-americana (NRP 9ª ed.): clampeamento, frequência 30–60/min · doi:10.1161/CIR.0000000000001367 · texto integral não lido (resumo e sínteses secundárias)</li>
+<li id="src-5">Hogeveen M, Monnelly V, Binkhorst M et al. European Resuscitation Council Guidelines 2025 Newborn Resuscitation and Support of Transition of Infants at Birth. Resuscitation 2025;215(Suppl 1):110766 · 2025 · diretriz europeia: insuflações iniciais, PEEP 6, O2 por IG, alvos de SpO2, adrenalina a cada 4 min, glicose · doi:10.1016/j.resuscitation.2025.110766 · conteúdo via Mileder LP, Wagner M. Z Geburtshilfe Neonatol 2026;230:179–84, doi:10.1055/a-2847-3068</li>
+<li id="src-6">Sotiropoulos JX, Oei JL, Schmölzer GM et al. Initial oxygen concentration for the resuscitation of infants born at less than 32 weeks' gestation: systematic review and IPD network meta-analysis (NETMOTION). JAMA Pediatr 2024;178:774–83 · 2024 · O2 inicial no prematuro · doi:10.1001/jamapediatrics.2024.1848</li>
+<li id="src-7">Shankaran S, Laptook AR, Ehrenkranz RA et al. Whole-body hypothermia for neonates with hypoxic-ischemic encephalopathy. N Engl J Med 2005;353:1574–84 · 2005 · critérios de elegibilidade e efeito da hipotermia terapêutica · doi:10.1056/NEJMcps050929</li>
+<li id="src-8">Sarnat HB, Sarnat MS. Neonatal encephalopathy following fetal distress: a clinical and electroencephalographic study. Arch Neurol 1976;33:696–705 · 1976 · estadiamento da EHI · DOI não conferido nesta edição</li>
+<li id="src-9">Ministério da Saúde. Atenção à saúde do recém-nascido: guia para os profissionais de saúde, vol. 1, 2ª ed., 2014; e Nota Técnica nº 11/2024 (profilaxia da conjuntivite neonatal) · 2014/2024 · cuidados de rotina, vitamina K, profilaxia ocular, alojamento conjunto (SUS) · bvsms.saude.gov.br · nota técnica não lida na íntegra</li>
+<li id="src-10">Apostila PED 1 — Neonatologia e Reanimação Neonatal (MED, 2025) · 2025 · piso de cobertura editorial; condutas substituídas pelas fontes acima onde divergem · uso interno</li>
+<li id="src-11">Organização Mundial da Saúde. CID-10, versão 2019 (base da CID-10 DATASUS) · 2019 · códigos dos boxes (P21 e P91.6 a conferir na tabela DATASUS) · icd.who.int/browse10/2019</li>
+</ol>
+</div>
+</div>
+</footer>
+<div class="watermark">@dr.lorencato · PD01 Reanimação Neonatal v5.2</div>
+</body>
+</html>

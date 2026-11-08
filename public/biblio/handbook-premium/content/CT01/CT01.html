@@ -1,0 +1,1059 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#0d1117">
+<title>Trauma Inicial e Trauma Torácico · Pocket Handbook · Elite Edition · CT01</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700;9..40,800&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   MEDICAL HANDBOOK PREMIUM · ELITE EDITION · CSS FRAMEWORK
+   Copy this ENTIRE block verbatim into the <style> tag of the
+   output HTML. Do NOT modify design tokens, colors, or
+   typography — they are calibrated for legibility and print.
+============================================================ */
+:root{
+  --bg:#f1eee5;--bg-tint:#ebe8de;--paper:#ffffff;--paper-tint:#fbf9f3;
+  --ink:#0e1116;--ink-soft:#232830;--ink-mute:#545b69;--ink-faint:#8a91a0;--ink-ghost:#b8bdc7;
+  --line:#e2dfd5;--line-soft:#ece9df;--line-strong:#c9c5b8;
+  --c-prim:#0b5d4e;--c-clin:#1d4570;--c-diag:#5e2f78;--c-tx:#a8481a;--c-emerg:#a31b35;--c-pearl:#7a6014;
+  --ank-hy:#b88e0a;--ank-hy-bg:#fef4c8;--ank-dec:#1d4ea3;--ank-dec-bg:#dde7f8;
+  --ank-dgr:#a31b25;--ank-dgr-bg:#fadcdc;--ank-prl:#3e6a2e;--ank-prl-bg:#d8e6cf;
+  --ank-myt:#6a3a1a;--ank-myt-bg:#f0dec5;--ank-con:#5a4070;--ank-con-bg:#e3d6f0;
+  --ank-evo:#0d6373;--ank-evo-bg:#cde5e9;
+  --sh-sm:0 1px 2px rgba(14,17,22,.04),0 1px 1px rgba(14,17,22,.03);
+  --sh-md:0 6px 16px -8px rgba(14,17,22,.10),0 2px 4px rgba(14,17,22,.04);
+  --sh-lg:0 20px 40px -22px rgba(14,17,22,.18),0 4px 10px -4px rgba(14,17,22,.08);
+  --r:10px;--r-lg:14px;--r-xl:20px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;scroll-padding-top:120px}
+body{font-family:'DM Sans',system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.5;font-size:15px;letter-spacing:-.005em;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:-1;background:radial-gradient(900px 500px at -10% -5%,rgba(11,93,78,.04),transparent 60%),radial-gradient(800px 450px at 110% 10%,rgba(163,27,53,.035),transparent 55%)}
+a{color:inherit;text-decoration:none}
+
+/* FIXED HEADER */
+.header{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(13,17,23,.82);backdrop-filter:saturate(160%) blur(20px);-webkit-backdrop-filter:saturate(160%) blur(20px);border-bottom:1px solid rgba(255,255,255,.06)}
+.header-row{max-width:1080px;margin:0 auto;padding:10px 20px;display:flex;align-items:center;gap:14px;color:#f0eee5}
+.h-mark{width:30px;height:30px;border-radius:7px;background:linear-gradient(135deg,#d4b94a 0%,#a07f1a 100%);display:grid;place-items:center;font:800 13px/1 'DM Sans';color:#1a1500;letter-spacing:-.04em;box-shadow:inset 0 1px 0 rgba(255,255,255,.3),0 1px 2px rgba(0,0,0,.4);flex-shrink:0}
+.h-titles{display:flex;flex-direction:column;line-height:1.15;min-width:0}
+.h-title{font-weight:700;font-size:14px;letter-spacing:-.02em}
+.h-sub{font-size:10.5px;color:#9fa298;font-weight:500;letter-spacing:.08em;text-transform:uppercase}
+.h-edition{margin-left:auto;font:500 10px/1 'DM Mono',monospace;color:#9fa298;letter-spacing:.05em;padding:5px 9px;border:1px solid rgba(255,255,255,.1);border-radius:999px;white-space:nowrap}
+.h-author{font:700 10.5px/1 'DM Mono',monospace;color:#d4b94a;letter-spacing:.04em;padding:6px 10px;border:1px solid rgba(212,185,74,.35);background:rgba(212,185,74,.08);border-radius:999px;white-space:nowrap;display:inline-flex;align-items:center;gap:6px}
+.h-author::before{content:"●";font-size:6px;color:#d4b94a}
+@media(max-width:560px){.h-edition{display:none}.h-author{margin-left:auto}}
+
+/* STICKY TOC */
+.toc{position:sticky;top:50px;z-index:90;background:rgba(241,238,229,.92);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}
+.toc-inner{max-width:1080px;margin:0 auto;padding:10px 16px;display:flex;gap:6px;overflow-x:auto;scrollbar-width:none;-ms-overflow-style:none}
+.toc-inner::-webkit-scrollbar{display:none}
+.toc-chip{flex:none;font:600 11px/1 'DM Sans';letter-spacing:.06em;text-transform:uppercase;padding:7px 12px;background:var(--paper);border:1px solid var(--line);border-radius:999px;color:var(--ink-soft);transition:all .15s;white-space:nowrap;cursor:pointer}
+.toc-chip:hover{background:var(--paper-tint);border-color:var(--ink-faint);color:var(--ink)}
+.toc-chip-num{display:inline-block;font-family:'DM Mono',monospace;color:var(--ink-faint);margin-right:5px;font-weight:500;font-size:10px}
+
+/* LAYOUT */
+.wrap{max-width:1080px;margin:0 auto;padding:24px 20px 80px}
+.section{margin:48px 0 18px;padding-top:8px}
+.section:first-child{margin-top:14px}
+.section-eyebrow{font:700 10.5px/1 'DM Sans';letter-spacing:.18em;text-transform:uppercase;color:var(--c-prim);margin-bottom:8px;display:flex;align-items:center;gap:10px}
+.section-eyebrow::before{content:"";width:24px;height:1.5px;background:var(--c-prim)}
+.section-title{font-size:26px;font-weight:700;letter-spacing:-.03em;line-height:1.1}
+.section-sub{margin-top:6px;font-size:13.5px;color:var(--ink-mute);max-width:680px}
+
+/* HERO */
+.hero{margin:20px 0 28px;padding:26px 28px;background:linear-gradient(180deg,#fdfcf6 0%,#f7f4e8 100%);border:1px solid var(--line);border-radius:var(--r-xl);box-shadow:var(--sh-md);position:relative;overflow:hidden}
+.hero::after{content:"";position:absolute;top:0;right:0;bottom:0;left:0;background:radial-gradient(400px 200px at 100% 0%,rgba(163,27,53,.06),transparent 60%),radial-gradient(360px 200px at 0% 100%,rgba(11,93,78,.05),transparent 60%);pointer-events:none}
+.hero-tag{font:700 10.5px/1 'DM Sans';letter-spacing:.2em;text-transform:uppercase;color:var(--c-emerg);display:inline-flex;align-items:center;gap:8px;margin-bottom:10px}
+.hero-tag::before{content:"";width:18px;height:1.5px;background:currentColor}
+.hero h1{font-size:34px;font-weight:800;letter-spacing:-.035em;line-height:1.02;margin-bottom:8px}
+.hero h1 em{font-style:italic;font-weight:500;color:var(--ink-mute)}
+.hero-lead{font-size:14.5px;color:var(--ink-mute);max-width:660px;line-height:1.55}
+.hero-stamp{position:absolute;top:20px;right:22px;font:700 10.5px/1 'DM Mono',monospace;letter-spacing:.04em;padding:7px 11px 7px 18px;border:1.5px dashed rgba(163,27,53,.45);color:rgba(163,27,53,.9);border-radius:5px;background:rgba(255,255,255,.55);transform:rotate(-3deg);z-index:2;box-shadow:0 2px 6px rgba(163,27,53,.08)}
+.hero-stamp::before{content:"●";position:absolute;left:7px;top:50%;transform:translateY(-50%);color:rgba(163,27,53,.7);font-size:7px}
+.hero-sig{margin-top:14px;display:flex;align-items:center;gap:10px;font:600 11px/1 'DM Sans';color:var(--ink-mute);letter-spacing:.04em}
+.hero-sig::before{content:"";flex:none;width:22px;height:1.5px;background:var(--c-emerg)}
+.hero-sig b{color:var(--c-emerg);font-weight:700;font-family:'DM Mono',monospace;letter-spacing:.02em}
+@media(max-width:560px){.hero{padding:22px 20px}.hero h1{font-size:26px}.section-title{font-size:22px}.hero-stamp{position:static;display:inline-block;transform:none;margin-bottom:14px}}
+
+/* POCKET CARD 0 */
+.pocket{background:#0e1116;color:#f0eee5;border-radius:var(--r-xl);padding:24px 26px 26px;margin:0 0 28px;position:relative;overflow:hidden;box-shadow:var(--sh-lg)}
+.pocket::before{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(600px 300px at 100% 0%,rgba(212,185,74,.07),transparent 60%),radial-gradient(500px 280px at 0% 100%,rgba(163,27,53,.08),transparent 60%)}
+.pocket-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:18px;flex-wrap:wrap;position:relative}
+.pocket-eyebrow{font:700 10.5px/1 'DM Sans';letter-spacing:.2em;text-transform:uppercase;color:#d4b94a;display:flex;align-items:center;gap:9px}
+.pocket-eyebrow::before{content:"●";color:#d4b94a;font-size:9px;animation:pulse 2.4s ease infinite}
+@keyframes pulse{50%{opacity:.4}}
+.pocket-title{font-size:22px;font-weight:700;letter-spacing:-.02em;line-height:1.15;color:#fff}
+.pocket-sub{font-size:12.5px;color:#9aa0a8;margin-top:2px}
+.pocket-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px;position:relative}
+.pocket-card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-left:3px solid var(--accent,#d4b94a);border-radius:var(--r);padding:12px 14px}
+.pocket-card .pc-trig{font:700 10px/1.1 'DM Sans';letter-spacing:.12em;text-transform:uppercase;color:var(--accent,#d4b94a);margin-bottom:6px;display:flex;align-items:center;gap:6px}
+.pocket-card .pc-trig::before{content:"";width:4px;height:4px;background:currentColor;border-radius:50%}
+.pocket-card .pc-act{font-size:13.5px;line-height:1.4;color:#dedfd5}
+.pocket-card .pc-act b{color:#fff;font-weight:600}
+.pocket-card.emerg{--accent:#ff8a96}.pocket-card.dec{--accent:#7cb0ff}.pocket-card.tx{--accent:#ffb085}.pocket-card.clin{--accent:#b0e0d4}
+
+/* LEGEND */
+.legend{background:var(--paper);border:1px solid var(--line);border-radius:var(--r-lg);padding:18px 20px;margin-bottom:28px;box-shadow:var(--sh-sm)}
+.lg-title{font:700 10.5px/1 'DM Sans';letter-spacing:.16em;text-transform:uppercase;color:var(--ink-faint);margin-bottom:12px}
+.lg-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:8px 14px}
+.lg-item{display:flex;align-items:center;gap:9px;font-size:12.5px;color:var(--ink-soft)}
+.dot{width:9px;height:9px;border-radius:50%;flex-shrink:0;box-shadow:0 0 0 2px var(--paper),0 0 0 3px currentColor}
+.dot.c1{color:var(--c-prim);background:var(--c-prim)}.dot.c2{color:var(--c-clin);background:var(--c-clin)}.dot.c3{color:var(--c-diag);background:var(--c-diag)}.dot.c4{color:var(--c-tx);background:var(--c-tx)}.dot.c5{color:var(--c-emerg);background:var(--c-emerg)}.dot.c6{color:var(--c-pearl);background:var(--c-pearl)}
+.lg-divider{height:1px;background:var(--line-soft);margin:14px 0}
+.lg-anchors{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:8px}
+.ank{display:inline-flex;align-items:center;gap:5px;font:700 9.5px/1 'DM Sans';letter-spacing:.12em;text-transform:uppercase;padding:4px 8px 4px 7px;border-radius:999px;border:1px solid;vertical-align:middle;white-space:nowrap}
+.ank::before{content:"";width:4px;height:4px;border-radius:50%;background:currentColor}
+.ank-hy{color:var(--ank-hy);background:var(--ank-hy-bg);border-color:#e5cd72}
+.ank-dec{color:var(--ank-dec);background:var(--ank-dec-bg);border-color:#9fbae6}
+.ank-dgr{color:var(--ank-dgr);background:var(--ank-dgr-bg);border-color:#e29ca0}
+.ank-prl{color:var(--ank-prl);background:var(--ank-prl-bg);border-color:#a8c298}
+.ank-myt{color:var(--ank-myt);background:var(--ank-myt-bg);border-color:#d0b181}
+.ank-con{color:var(--ank-con);background:var(--ank-con-bg);border-color:#bba7d3}
+.ank-evo{color:var(--ank-evo);background:var(--ank-evo-bg);border-color:#8fc1c9}
+.lg-explain{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:6px 14px;font-size:11.5px;color:var(--ink-mute);margin-top:10px}
+.lg-explain b{font-weight:700}
+.lg-explain .ehy b{color:var(--ank-hy)}.lg-explain .edec b{color:var(--ank-dec)}.lg-explain .edgr b{color:var(--ank-dgr)}.lg-explain .eprl b{color:var(--ank-prl)}.lg-explain .emyt b{color:var(--ank-myt)}.lg-explain .econ b{color:var(--ank-con)}.lg-explain .eevo b{color:var(--ank-evo)}
+
+/* EVIDENCE CHIPS */
+.ev{display:inline-flex;align-items:center;font:600 9.5px/1 'DM Mono',monospace;letter-spacing:.04em;padding:3px 6px 2px;border-radius:4px;background:#eeebde;color:var(--ink-soft);border:1px solid var(--line);vertical-align:middle;margin-left:3px}
+.ev-acr{background:#fadcdc;color:#a31b25;border-color:#e29ca0}
+.ev-eular{background:#dde7f8;color:#1d4ea3;border-color:#9fbae6}
+.ev-sbr{background:#e3d6f0;color:#5a4070;border-color:#bba7d3}
+.ev-nice{background:#cde5e9;color:#0d6373;border-color:#8fc1c9}
+.ev-expert{background:#eeebde;color:#7a6014;border-color:#d0b181}
+.ev-cochrane{background:#d8e6cf;color:#3e6a2e;border-color:#a8c298}
+
+/* CARD */
+.card{background:var(--paper);border:1px solid var(--line);border-radius:var(--r-lg);margin-bottom:22px;box-shadow:var(--sh-md);overflow:hidden;break-inside:avoid}
+.card-head{padding:18px 22px 15px;border-bottom:1px solid var(--line-soft);position:relative;background:linear-gradient(180deg,#fcfaf2 0%,#ffffff 100%)}
+.card-head::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--accent,var(--c-prim))}
+.card-eyebrow{font:700 10px/1 'DM Sans';letter-spacing:.16em;text-transform:uppercase;color:var(--accent,var(--c-prim));margin-bottom:5px;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.card-num{font-family:'DM Mono',monospace;font-weight:500;color:var(--ink-faint);font-size:10.5px;letter-spacing:0}
+.card h3{font-size:21px;font-weight:700;letter-spacing:-.025em;color:var(--ink);line-height:1.15;display:flex;align-items:center;gap:9px;flex-wrap:wrap}
+.card-sub{margin-top:6px;font-size:13px;color:var(--ink-mute)}
+.card-body{padding:20px 22px 24px}
+.card.prim{--accent:var(--c-prim)}.card.clin{--accent:var(--c-clin)}.card.diag{--accent:var(--c-diag)}.card.tx{--accent:var(--c-tx)}.card.emerg{--accent:var(--c-emerg)}.card.pearl{--accent:var(--c-pearl)}
+@media(max-width:560px){.card-head{padding:16px 18px 14px}.card-body{padding:18px 18px 20px}.card h3{font-size:18px}}
+
+/* QUICK VIEW */
+.quick{background:var(--paper-tint);border:1px solid var(--line);border-left:3px solid var(--accent,var(--c-prim));border-radius:var(--r);padding:13px 16px;margin:0 0 16px}
+.quick-label{font:700 9.5px/1 'DM Sans';letter-spacing:.16em;text-transform:uppercase;color:var(--accent,var(--c-prim));margin-bottom:6px}
+.quick-body{font-size:13.5px;line-height:1.45;color:var(--ink-soft)}
+.quick-body b{color:var(--ink);font-weight:600}
+
+/* SUB-TITLE */
+.sub-title{font:700 10.5px/1 'DM Sans';letter-spacing:.16em;text-transform:uppercase;color:var(--ink-soft);margin:18px 0 10px;display:flex;align-items:center;gap:9px;border-bottom:1px dashed var(--line);padding-bottom:6px}
+.sub-title::before{content:"";width:4px;height:4px;border-radius:50%;background:var(--accent,var(--ink-soft))}
+.sub-title:first-child{margin-top:0}
+
+/* TEXT */
+p{color:var(--ink-soft);margin-bottom:8px;font-size:14px;line-height:1.5}
+p:last-child{margin-bottom:0}
+strong{color:var(--ink);font-weight:600}
+ul.bullets{list-style:none;padding:0;margin:0 0 10px}
+ul.bullets li{position:relative;padding:5px 0 5px 20px;font-size:13.5px;line-height:1.5;color:var(--ink-soft);border-bottom:1px dashed var(--line-soft)}
+ul.bullets li:last-child{border-bottom:none}
+ul.bullets li::before{content:"";position:absolute;left:5px;top:13px;width:4px;height:4px;border-radius:50%;background:var(--accent,var(--ink-mute))}
+ul.bullets li b{color:var(--ink);font-weight:600}
+
+/* DISEASE BOX */
+.disease{border:1px solid var(--line);border-radius:var(--r);margin:14px 0;overflow:hidden;background:var(--paper)}
+.disease-head{padding:12px 16px;background:linear-gradient(180deg,#faf7eb 0%,#f1eddc 100%);border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap}
+.disease-name{font-weight:700;color:var(--ink);font-size:14.5px;letter-spacing:-.015em}
+.disease-tag{font:600 10px/1 'DM Sans';letter-spacing:.08em;text-transform:uppercase;color:var(--ink-mute)}
+.disease-body{padding:14px 16px}
+.disease-rows{display:grid;gap:0}
+.disease-row{display:grid;grid-template-columns:130px 1fr;gap:12px;padding:8px 0;border-bottom:1px dashed var(--line-soft)}
+.disease-row:last-child{border-bottom:none;padding-bottom:0}
+.disease-row:first-child{padding-top:0}
+.disease-row .k{font:700 10px/1.2 'DM Sans';letter-spacing:.12em;text-transform:uppercase;color:var(--accent,var(--ink-faint));padding-top:2px}
+.disease-row .v{font-size:13.5px;color:var(--ink-soft);line-height:1.5}
+.disease-row .v b{color:var(--ink)}
+@media(max-width:560px){.disease-row{grid-template-columns:1fr;gap:3px;padding:6px 0 8px}.disease-row .k{padding-top:0}}
+
+/* DEEP DIVE */
+.deep{margin:16px 0 6px;border:1px solid var(--line);border-radius:var(--r);background:linear-gradient(180deg,#fdfcf6 0%,#f9f6ea 100%);overflow:hidden}
+.deep>summary{list-style:none;cursor:pointer;padding:11px 16px;display:flex;align-items:center;justify-content:space-between;font:700 11px/1 'DM Sans';letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft);user-select:none;transition:background .15s}
+.deep>summary::-webkit-details-marker{display:none}
+.deep>summary::after{content:"+";font-size:18px;font-weight:600;color:var(--ink-faint);transition:transform .2s;font-family:'DM Mono',monospace}
+.deep[open]>summary::after{transform:rotate(45deg)}
+.deep>summary:hover{background:rgba(0,0,0,.02)}
+.deep-content{padding:14px 16px 16px;border-top:1px dashed var(--line)}
+.deep-content p{font-size:13px;color:var(--ink-mute);line-height:1.55}
+.deep-content p b{color:var(--ink-soft)}
+
+/* MNEMONIC */
+.mnemo{background:var(--paper-tint);border:1px solid var(--line);border-radius:var(--r);padding:14px 16px;margin:14px 0}
+.mnemo-title{font:700 10.5px/1 'DM Sans';letter-spacing:.16em;text-transform:uppercase;color:var(--c-pearl);margin-bottom:10px;display:flex;align-items:center;gap:8px}
+.mnemo-title b{background:var(--ink);color:#fff;padding:3px 7px;border-radius:4px;font-size:10px;letter-spacing:.06em}
+.mnemo-grid{display:grid;gap:5px}
+.mnemo-row{display:grid;grid-template-columns:28px 1fr;gap:10px;align-items:baseline;font-size:13px;color:var(--ink-soft);padding:3px 0}
+.mnemo-letter{display:grid;place-items:center;width:24px;height:24px;background:var(--ink);color:#fff;border-radius:5px;font:800 12px/1 'DM Sans';letter-spacing:-.02em}
+.mnemo-row b{color:var(--ink);font-weight:600}
+.mnemo-row em{font-style:italic;color:var(--ink-mute);font-size:12px}
+
+/* SCORE BOX */
+.score{border:1px solid var(--line);border-radius:var(--r);margin:14px 0;background:var(--paper);overflow:hidden}
+.score-head{padding:11px 14px;background:linear-gradient(180deg,#f5f1e0 0%,#ede9d6 100%);border-bottom:1px solid var(--line)}
+.score-name{font:700 13px/1.2 'DM Sans';color:var(--ink);letter-spacing:-.01em}
+.score-purpose{font:500 10.5px/1.2 'DM Sans';color:var(--ink-mute);letter-spacing:.06em;text-transform:uppercase;margin-top:3px}
+.score-rows{display:grid;gap:0}
+.score-row{display:grid;grid-template-columns:90px 1fr;gap:12px;align-items:start;padding:9px 14px;border-bottom:1px dashed var(--line-soft);font-size:13px}
+.score-row:last-child{border-bottom:none}
+.score-grade{font:800 12px/1.2 'DM Mono',monospace;color:var(--c-emerg);letter-spacing:-.01em}
+.score-desc{color:var(--ink-soft);line-height:1.45}
+.score-desc b{color:var(--ink)}
+
+/* STACKED TABLE */
+.stbl{margin:14px 0;border:1px solid var(--line);border-radius:var(--r);background:var(--paper);overflow:hidden}
+.stbl-head,.stbl-row{display:grid;gap:14px;padding:10px 14px;align-items:start}
+.stbl-head{background:#faf7eb;border-bottom:2px solid var(--line);font:700 10.5px/1 'DM Sans';letter-spacing:.1em;text-transform:uppercase;color:var(--ink)}
+.stbl-row{border-bottom:1px solid var(--line-soft);font-size:13px;color:var(--ink-soft);line-height:1.5}
+.stbl-row:last-child{border-bottom:none}
+.stbl-row:nth-child(even){background:#fcfaf2}
+.stbl-row b{color:var(--ink);font-weight:600}
+.stbl-row .col1{font-weight:600;color:var(--ink)}
+.stbl-2{grid-template-columns:1fr 2fr}
+.stbl-3{grid-template-columns:1fr 1.3fr 1.5fr}
+.stbl-4{grid-template-columns:1.2fr 1fr 1fr 1.2fr}
+@media(max-width:680px){
+  .stbl-head{display:none}
+  .stbl-row{grid-template-columns:1fr !important;gap:12px;padding:14px 16px}
+  .stbl-row .col{display:block;min-width:0;word-wrap:break-word;overflow-wrap:anywhere}
+  .stbl-row .col::before{content:attr(data-l);display:block;font:700 9.5px/1.3 'DM Sans';letter-spacing:.12em;text-transform:uppercase;color:var(--ink-mute);margin-bottom:4px}
+  .stbl-row .col1{font-weight:700;font-size:15px;padding-bottom:8px;margin-bottom:6px;border-bottom:1px dashed var(--line)}
+  .stbl-row .col1::before{display:none}
+}
+
+/* CALLOUT BOXES */
+.box{border-radius:var(--r);padding:14px 16px;margin:14px 0;position:relative;border:1px solid}
+.box-label{position:absolute;top:-9px;left:14px;font:700 9.5px/1 'DM Sans';letter-spacing:.16em;text-transform:uppercase;padding:3px 9px;border-radius:999px;color:#fff}
+.box-title{font-weight:700;color:var(--ink);font-size:14px;margin:2px 0 6px}
+.box-body{font-size:13.5px;line-height:1.5;color:var(--ink-soft)}
+.box-body b{color:var(--ink)}
+.box-body ul{list-style:none;padding:0;margin:4px 0 0}
+.box-body ul li{position:relative;padding:3px 0 3px 20px}
+.box-body ul li::before{content:"→";position:absolute;left:0;top:3px;font-weight:700;color:var(--bx-color)}
+.box.decision{background:#f1f5fc;border-color:#c4d3eb;--bx-color:var(--ank-dec)}.box.decision .box-label{background:var(--ank-dec)}
+.box.danger{background:#fbf0f0;border-color:#e5c2c2;--bx-color:var(--ank-dgr)}.box.danger .box-label{background:var(--ank-dgr)}.box.danger .box-body b{color:var(--ank-dgr)}
+.box.pearl{background:#f1f7ed;border-color:#c1d5b3;--bx-color:var(--ank-prl)}.box.pearl .box-label{background:var(--ank-prl)}
+.box.hy{background:#fcf6dd;border-color:#e3cf78;--bx-color:var(--ank-hy)}.box.hy .box-label{background:var(--ank-hy)}
+.box.myth{background:#f8eed8;border-color:#d0b181;--bx-color:var(--ank-myt)}.box.myth .box-label{background:var(--ank-myt)}
+.box.controversy{background:#f1e9f6;border-color:#bba7d3;--bx-color:var(--ank-con)}.box.controversy .box-label{background:var(--ank-con)}
+.box.evolving{background:#dff0f2;border-color:#8fc1c9;--bx-color:var(--ank-evo)}.box.evolving .box-label{background:var(--ank-evo)}
+
+/* ALGORITHM TREE */
+.algo{background:linear-gradient(180deg,#fcfaf2 0%,#f5f0dc 100%);border:1px solid var(--line-strong);border-radius:var(--r-lg);padding:18px;margin:14px 0;overflow-x:auto}
+.tree{font-size:13px}
+.tree-line{padding:6px 0}
+.tree-node{display:inline-block;padding:8px 12px;background:var(--paper);border:1.5px solid var(--ink-soft);border-radius:7px;font-weight:600;color:var(--ink);font-size:12.5px;box-shadow:var(--sh-sm)}
+.tree-node.start{background:var(--ink);color:#fff;border-color:var(--ink)}
+.tree-node.dec{background:#fff7d6;border-color:#e3cf78;color:#6b520a}
+.tree-node.dx{background:#dde7f8;border-color:#9fbae6;color:#1d4ea3}
+.tree-node.dgr{background:#fadcdc;border-color:#e29ca0;color:#a31b25}
+.tree-node.action{background:#d8e6cf;border-color:#a8c298;color:#3e6a2e}
+.tree-branch{margin-left:14px;border-left:1.5px dashed #b8b094;padding:6px 0 6px 18px;margin-top:6px;margin-bottom:2px;position:relative}
+.tree-branch::before{content:"";position:absolute;left:-1.5px;top:-4px;width:14px;height:14px;border-left:1.5px solid #b8b094;border-bottom:1.5px solid #b8b094;border-radius:0 0 0 6px}
+.tree-label{display:inline-block;font:700 9.5px/1 'DM Sans';letter-spacing:.12em;text-transform:uppercase;padding:3px 7px;border-radius:4px;margin-bottom:5px}
+.tree-label.yes{background:#fadcdc;color:#a31b25}.tree-label.no{background:#d8e6cf;color:#3e6a2e}
+
+/* FOOTER */
+.foot{margin-top:48px;padding-top:22px;border-top:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;font-size:11px;color:var(--ink-faint);letter-spacing:.04em;flex-wrap:wrap;gap:8px}
+.foot-mono{font-family:'DM Mono',monospace}
+.foot-author{font:800 14px/1.1 'DM Mono',monospace;color:var(--ink);letter-spacing:.02em;margin-bottom:3px}
+.foot-meta{font:500 11px/1.3 'DM Sans';color:var(--ink-faint);letter-spacing:.04em}
+
+/* WATERMARK */
+.watermark{position:fixed;bottom:calc(14px + env(safe-area-inset-bottom,0px));right:calc(14px + env(safe-area-inset-right,0px));font:600 10px/1 'DM Mono',monospace;letter-spacing:.04em;color:rgba(14,17,22,.55);background:rgba(255,255,255,.85);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);padding:6px 10px;border-radius:99px;border:1px solid rgba(14,17,22,.1);box-shadow:0 2px 8px rgba(14,17,22,.06);z-index:50;pointer-events:none;user-select:none}
+@media(max-width:560px){.watermark{bottom:calc(10px + env(safe-area-inset-bottom,0px));right:calc(10px + env(safe-area-inset-right,0px));font-size:9px;padding:5px 8px}}
+
+/* PRINT */
+@media print{
+  body{background:#fff;font-size:10.5pt}
+  body::before{display:none}
+  .header,.toc{position:static;background:#0e1116;color:#fff}
+  .wrap{padding:14px;max-width:100%}
+  .card,.hero,.legend,.pocket{box-shadow:none !important;break-inside:avoid}
+  .hero::after,.pocket::before{display:none}
+  .pocket{background:#1a1d24;color:#f0eee5}
+  .ank,.box,.disease,.score,.algo,.stbl,.deep,.mnemo,.quick{box-shadow:none !important;break-inside:avoid}
+  .deep:not([open]) .deep-content{display:block}
+  .deep>summary::after{display:none}
+  .watermark{position:fixed;bottom:8mm;right:8mm;background:none;border:none;color:rgba(0,0,0,.5)}
+  .hero-stamp{transform:none;position:absolute}
+}
+</style>
+</head>
+<body>
+<header class="header"><div class="header-row"><div class="h-mark">T</div><div class="h-titles"><div class="h-title">Trauma Inicial e Tórax · Pocket Handbook</div><div class="h-sub">Elite edition · Cirurgia do trauma · CT01</div></div><div class="h-author">@dr.lorencato</div><div class="h-edition">v5.2</div></div></header>
+<nav class="toc"><div class="toc-inner"><a href="#pocket" class="toc-chip"><span class="toc-chip-num">0</span>Pocket</a><a href="#redflags" class="toc-chip"><span class="toc-chip-num">A</span>Red Flags</a><a href="#approach" class="toc-chip"><span class="toc-chip-num">B</span>Apresentação</a><a href="#primarias" class="toc-chip"><span class="toc-chip-num">C</span>Entidades</a><a href="#secundarias" class="toc-chip"><span class="toc-chip-num">D</span>Secundárias</a><a href="#algoritmo" class="toc-chip"><span class="toc-chip-num">E</span>Algoritmo</a><a href="#tratamento" class="toc-chip"><span class="toc-chip-num">F</span>Tratamento</a><a href="#pitfalls" class="toc-chip"><span class="toc-chip-num">G</span>Pitfalls</a><a href="#pearls" class="toc-chip"><span class="toc-chip-num">H</span>Pearls</a></div></nav>
+<main>
+<div class="wrap">
+<div class="hero">
+<div class="hero-stamp">@dr.lorencato</div>
+<div class="hero-tag">Cirurgia do trauma · CT01 · Avaliação inicial e tórax</div>
+<h1>xABCDE, Via Aérea e Trauma Torácico<br><em>os primeiros sessenta minutos, do torniquete à toracotomia</em></h1>
+<p class="hero-lead">Da hemorragia exsanguinante que passou a vir antes da via aérea (ATLS 11ª edição, PHTLS) à sequência rápida com videolaringoscópio e à cricotireoidostomia; do pneumotórax hipertensivo, aberto e oculto ao hemotórax maciço e retido; do tamponamento à toracotomia de reanimação; da lesão contusa de aorta ao tórax instável com contusão pulmonar; com ressuscitação de controle de danos ancorada na Diretriz Europeia de Sangramento no Trauma (6ª edição, 2023), no WSES-AAST 2025 para o tórax, no ácido tranexâmico do CRASH-2 e nos protocolos do SAMU 192.</p>
+<div class="hero-sig">Compilação clínica por <b>@dr.lorencato</b> · Elite Edition v5.2 · status clinical_review</div>
+</div>
+
+<div id="pocket" class="pocket">
+<div class="pocket-head"><div><div class="pocket-eyebrow">Pocket Card 0 · 5 segundos</div><div class="pocket-title">Decisões Críticas — Trauma Inicial e Tórax</div><div class="pocket-sub">APH · Sala vermelha · Centro cirúrgico · UTI</div></div></div>
+<div class="pocket-grid">
+<div class="pocket-card emerg"><div class="pc-trig">Sangue jorrando de membro</div><div class="pc-act">O "x" vem antes do A: <b>torniquete alto e apertado (ou compressão direta + gaze hemostática em junção)</b> nos primeiros segundos, anotando o horário. Só depois via aérea e coluna.</div></div>
+<div class="pocket-card emerg"><div class="pc-trig">Dispneia + hipotensão + MV abolido + jugular cheia</div><div class="pc-act">Pneumotórax hipertensivo é diagnóstico clínico: <b>descompressão imediata no 4º–5º EIC entre linhas axilares anterior e média no adulto</b> (agulha longa ou toracostomia digital), 2º EIC hemiclavicular na criança; dreno em seguida.</div></div>
+<div class="pocket-card emerg"><div class="pc-trig">Ferida precordial + choque ou PCR</div><div class="pc-act">eFAST subxifoide: derrame pericárdico = <b>toracotomia/esternotomia</b>. PCR com sinais de vida após trauma torácico penetrante: <b>toracotomia anterolateral esquerda na sala</b> (EAST 2015, recomendação forte).</div></div>
+<div class="pocket-card dec"><div class="pc-trig">Choque no politraumatizado</div><div class="pc-act">Hemorrágico até prova em contrário. Procure <b>cinco cavidades: chão (externo), tórax, abdome, pelve, ossos longos</b> com eFAST + RX AP de tórax e pelve; descarte as obstrutivas (tensão, tamponamento).</div></div>
+<div class="pocket-card dec"><div class="pc-trig">Ativar transfusão maciça?</div><div class="pc-act">Escore ABC ≥2 (penetrante de tronco, FAST+, PAS ≤90, FC ≥120) ou ≥3 CH em 1 hora: <b>ativar protocolo de transfusão maciça</b> e não esperar o laboratório.</div></div>
+<div class="pocket-card dec"><div class="pc-trig">Drenou e saiu muito sangue</div><div class="pc-act">Instabilidade com fonte torácica, saída imediata ≥1.500 mL ou &gt;200 mL/h por 3 h consecutivas: <b>toracotomia</b> (WSES-AAST 2025). O débito orienta; a fisiologia decide.</div></div>
+<div class="pocket-card tx"><div class="pc-trig">Sangra ou vai sangrar, &lt;3 h do trauma</div><div class="pc-act"><b>Ácido tranexâmico 1 g IV em 10 min + 1 g IV em 8 h</b>, o mais cedo possível (ideal na primeira hora, ainda no APH). Depois de 3 h não iniciar.</div></div>
+<div class="pocket-card tx"><div class="pc-trig">Ressuscitação de controle de danos</div><div class="pc-act">Cristaloide só como ponte; <b>CH:plasma:plaquetas 1:1:1</b>, PAS 80–90 mmHg sem TCE (PAM ≥80 com TCE grave), cálcio iônico 1,1–1,3 mmol/L com cloreto de cálcio, fibrinogênio &gt;1,5 g/L, normotermia.</div></div>
+<div class="pocket-card tx"><div class="pc-trig">Ferida torácica aspirativa</div><div class="pc-act">Curativo oclusivo valvulado (três lados ou dispositivo com válvula) no APH; no hospital <b>dreno em local distante da ferida</b> e fechamento cirúrgico. Oclusão nos 4 lados sem dreno gera tensão.</div></div>
+<div class="pocket-card clin"><div class="pc-trig">Intubado que dessatura</div><div class="pc-act"><b>DOPE</b>: deslocamento do tubo, obstrução, pneumotórax (agora hipertensivo sob pressão positiva), equipamento. Desconecte, ventile com bolsa, olhe a capnografia, ausculte e passe a sonda de aspiração.</div></div>
+<div class="pocket-card clin"><div class="pc-trig">Desaceleração + mediastino alargado</div><div class="pc-act">Angio-TC de tórax no estável; <b>esmolol para controle de impulso</b> enquanto se tratam lesões mais letais; TEVAR é o reparo de escolha nos graus III–IV (SVS). RX normal não exclui.</div></div>
+<div class="pocket-card clin"><div class="pc-trig">Idoso com 3+ arcos costais fraturados</div><div class="pc-act">A morte vem da pneumonia, não da fratura: <b>analgesia multimodal agressiva (bloqueio regional/epidural), fisioterapia e UTI de baixo limiar</b>; considere fixação cirúrgica em 48–72 h no tórax instável.</div></div>
+</div>
+</div>
+
+<div class="legend">
+<div class="lg-title">Sistema de legendas</div>
+<div class="lg-grid"><div class="lg-item"><span class="dot c1"></span> Fisiopatologia / Classificação</div><div class="lg-item"><span class="dot c2"></span> Clínica / Apresentação</div><div class="lg-item"><span class="dot c3"></span> Diagnóstico / Exames</div><div class="lg-item"><span class="dot c4"></span> Tratamento / Conduta</div><div class="lg-item"><span class="dot c5"></span> Emergências / Red Flags</div><div class="lg-item"><span class="dot c6"></span> Nuances / Pearls</div></div>
+<div class="lg-divider"></div>
+<div class="lg-anchors"><span class="ank ank-hy">HIGH-YIELD</span><span class="ank ank-dec">DECISION</span><span class="ank ank-dgr">DANGER</span><span class="ank ank-prl">PEARL</span><span class="ank ank-myt">MYTH</span><span class="ank ank-con">CONTROVERSY</span><span class="ank ank-evo">EVOLVING</span></div>
+<div class="lg-explain"><div class="ehy"><b>HIGH-YIELD</b> — prova/prática frequente</div><div class="edec"><b>DECISION</b> — muda a conduta</div><div class="edgr"><b>DANGER</b> — erro grave / risco crítico</div><div class="eprl"><b>PEARL</b> — nuance de especialista</div><div class="emyt"><b>MYTH</b> — mito vivo na prática</div><div class="econ"><b>CONTROVERSY</b> — debate sem consenso</div><div class="eevo"><b>EVOLVING</b> — mudança recente</div></div>
+</div>
+
+<section id="redflags">
+<div class="section"><div class="section-eyebrow"><span>A</span> Red Flags</div><div class="section-title">O que mata nos primeiros minutos — e se trata com as mãos</div><div class="section-sub">No trauma, quase toda red flag tem conduta imediata executável antes de qualquer exame: comprimir, descomprimir, drenar, intubar, abrir. Cada linha: sinal objetivo → suspeita → conduta concreta.</div></div>
+<div class="card emerg">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">A.1</span> Emergências</div><h3>As seis lesões torácicas letais do exame primário <span class="ank ank-dgr">DANGER</span></h3></div>
+<div class="card-body">
+<div class="mnemo"><div class="mnemo-title"><b>ATOMFC</b> seis lesões que se diagnosticam pelo exame físico e se tratam antes da imagem</div><div class="mnemo-grid">
+<div class="mnemo-row"><span class="mnemo-letter">A</span><span><b>Airway — obstrução ou lesão laringotraqueal</b> · estridor, rouquidão, enfisema cervical, hematoma em expansão, incapacidade de deglutir saliva</span></div>
+<div class="mnemo-row"><span class="mnemo-letter">T</span><span><b>Tensão — pneumotórax hipertensivo</b> · desconforto respiratório, MV abolido, timpanismo, desvio traqueal tardio, turgência jugular, hipotensão; no ventilado, pressão de pico subindo e PA caindo</span></div>
+<div class="mnemo-row"><span class="mnemo-letter">O</span><span><b>Open — pneumotórax aberto</b> · ferida aspirativa; quando o diâmetro do orifício se aproxima de 2/3 do diâmetro traqueal o ar entra preferencialmente pela parede</span></div>
+<div class="mnemo-row"><span class="mnemo-letter">M</span><span><b>Massive — hemotórax maciço</b> · choque + MV abolido + macicez + jugulares colabadas; &gt;1.500 mL ou 1/3 da volemia no hemitórax</span></div>
+<div class="mnemo-row"><span class="mnemo-letter">F</span><span><b>Flail — tórax instável com contusão</b> · respiração paradoxal palpável, hipoxemia que piora nas primeiras 24–48 h</span></div>
+<div class="mnemo-row"><span class="mnemo-letter">C</span><span><b>Cardiac — tamponamento</b> · hipotensão + jugular túrgida + bulhas abafadas (Beck é minoria), pulso paradoxal, AESP; eFAST subxifoide decide</span></div>
+</div></div>
+<div class="sub-title">Red flag → suspeita → conduta imediata</div>
+<div class="stbl stbl-3">
+<div class="stbl-head stbl-3"><div>Red flag</div><div>Suspeita</div><div>Conduta imediata</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Red flag">Sangramento pulsátil ou em jato de membro, poça de sangue crescente, amputação traumática</div><div class="col" data-l="Suspeita">Hemorragia externa exsanguinante — o "x" do xABCDE</div><div class="col" data-l="Conduta"><b>Torniquete 5–7 cm proximal à lesão, apertado até cessar o sangramento distal</b> (segundo torniquete se não parar); junção (axila/virilha/pescoço): tamponamento com gaze hemostática + compressão por 3 min</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Red flag">Desconforto respiratório + hipotensão + MV abolido + timpanismo, ou PA despencando logo após IOT e ventilação</div><div class="col" data-l="Suspeita">Pneumotórax hipertensivo (causa mais comum: ventilação com pressão positiva sobre lesão pleural não reconhecida)</div><div class="col" data-l="Conduta"><b>Descompressão sem RX</b>: adulto no 4º–5º EIC entre linhas axilares anterior e média (agulha/cateter longo ou toracostomia digital); criança 2º EIC hemiclavicular; drenagem tubular logo após</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Red flag">Choque + MV ausente + macicez no mesmo lado + jugulares colabadas</div><div class="col" data-l="Suspeita">Hemotórax maciço (vasos sistêmicos, hilares, mamária interna, intercostais)</div><div class="col" data-l="Conduta"><b>Dreno calibroso no 5º EIC + hemoderivados em proporção fixa + preparar toracotomia</b>; considerar autotransfusão do sangue drenado</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Red flag">Ferida na "caixa cardíaca" (clavículas, rebordos costais, linhas hemiclaviculares) + hipotensão ou jugular túrgida</div><div class="col" data-l="Suspeita">Tamponamento cardíaco por lesão penetrante (VD é a câmara mais atingida)</div><div class="col" data-l="Conduta"><b>eFAST subxifoide imediato</b>; positivo com instabilidade: esternotomia/toracotomia; pericardiocentese só como ponte quando não há cirurgião</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Red flag">Sem pulso central após trauma, com atividade elétrica ou sinais de vida recentes</div><div class="col" data-l="Suspeita">Parada traumática: hipovolemia, hipóxia, tensão, tamponamento</div><div class="col" data-l="Conduta"><b>Tratar as causas reversíveis antes e acima das compressões</b>: via aérea, descompressão torácica bilateral, volume/sangue, controle de hemorragia; toracotomia conforme tempo de RCP e mecanismo</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Red flag">Hematoma cervical em expansão, estridor, enfisema subcutâneo cervical, voz alterada, hemoptise</div><div class="col" data-l="Suspeita">Lesão vascular cervical ou laringotraqueal com via aérea em risco</div><div class="col" data-l="Conduta"><b>Via aérea definitiva precoce, pelo operador mais experiente, com plano cirúrgico montado</b>; compressão do sangramento; centro cirúrgico</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Red flag">Pneumotórax que persiste com borbulhamento intenso e pulmão que não expande após dreno bem posicionado</div><div class="col" data-l="Suspeita">Lesão traqueobrônquica de grande via aérea (geralmente a até 2,5 cm da carina)</div><div class="col" data-l="Conduta"><b>Segundo dreno, intubação seletiva contralateral guiada por broncoscopia, broncoscopia diagnóstica e toracotomia</b></div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Red flag">Colapso circulatório ou déficit neurológico focal súbito após ferida pulmonar, sobretudo ao iniciar ventilação com pressão positiva</div><div class="col" data-l="Suspeita">Embolia gasosa sistêmica (fístula broncovenosa pulmonar)</div><div class="col" data-l="Conduta"><b>FiO2 100%, Trendelenburg/decúbito lateral esquerdo, minimizar pressão na via aérea, isolamento pulmonar; toracotomia com clampeamento do hilo</b></div></div>
+</div>
+<div class="box danger"><span class="box-label">DANGER</span><div class="box-title">Não peça RX para confirmar pneumotórax hipertensivo</div><div class="box-body">O diagnóstico é clínico. O ultrassom (ausência de deslizamento pleural com ponto pulmonar) ajuda quando já está na mão e não atrasa, mas a mesa de RX é o lugar onde o paciente para. No ventilado, a tríade é <b>pressão de pico subindo, SpO2 caindo e hipotensão</b>: desconecte, descomprima e só depois investigue. A falha da agulha é frequente (parede espessa, cateter curto, dobra, deslocamento); se não houver resposta, faça <b>toracostomia digital</b> no mesmo ponto do dreno e passe o dreno em seguida.</div></div>
+<div class="box danger"><span class="box-label">DANGER</span><div class="box-title">Volume que "melhora" o tamponamento é armadilha</div><div class="box-body">A infusão aumenta transitoriamente a pressão de enchimento e a PA, e isso atrasa o diagnóstico de uma lesão que se resolve com a mão do cirurgião. No paciente com ferida na caixa cardíaca, <b>a resposta transitória a volume não afasta tamponamento</b>: repita o eFAST pericárdico, porque o hemopericárdio pode se formar durante a ressuscitação, e, se houver líquido, leve à sala.</div></div>
+<div class="box decision"><span class="box-label">DECISION</span><div class="box-title">Quando o "C" passa à frente do "A"</div><div class="box-body">Com hemorragia externa exsanguinante, o atraso de um minuto para comprimir custa mais que o atraso de um minuto para intubar. No hipotenso grave, a <b>indução para sequência rápida sem reposição prévia leva a hipotensão peri-intubação e parada</b>: ATLS 11 orienta corrigir o choque (sangue, não cristaloide) antes da IOT sempre que a oxigenação permitir, mantendo via aérea básica com O2 enquanto se transfunde.</div></div>
+</div>
+</div>
+</section>
+
+<section id="approach">
+<div class="section"><div class="section-eyebrow"><span>B</span> Por Apresentação</div><div class="section-title">Mapa sindrômico — da porta da sala vermelha ao dreno</div><div class="section-sub">No trauma o raciocínio é fisiológico antes de anatômico: o que ameaça oxigenação e perfusão agora. Os cinco padrões abaixo mapeiam a queixa ou o sinal para o diferencial e para a ação, sem esperar o diagnóstico de órgão.</div></div>
+
+<div class="card clin">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">B.1</span> Padrão 1</div><h3>Politraumatizado chegando: preparação, triagem e exame primário <span class="ank ank-hy">HIGH-YIELD</span></h3><div class="card-sub">Sistema antes de doença: líder, sala, sangue e sequência</div></div>
+<div class="card-body">
+<div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">A avaliação inicial tem nove etapas (preparação, triagem, exame primário com reanimação simultânea, adjuntos, exame secundário, adjuntos do secundário, reavaliação, tratamento definitivo/transferência). O exame primário segue <b>xABCDE</b> e é <b>interrompido para tratar</b> o que encontra; o secundário só começa quando a fisiologia tende à normalização.</div></div>
+<ul class="bullets">
+<li><b>Preparação:</b> pré-notificação pelo APH (mecanismo, horário, sinais vitais, intervenções), líder de equipe definido, equipamentos de via aérea e de via aérea cirúrgica abertos, cristaloide e sangue aquecidos, sala aquecida, EPI. Bolsa de sangue O (Rh negativo em mulheres em idade fértil) disponível antes da chegada.</li>
+<li><b>Triagem:</b> com múltiplas vítimas e capacidade suficiente, o mais grave primeiro; em desastre (demanda &gt; capacidade), quem tem maior chance de sobreviver com os recursos disponíveis. O método START classifica em segundos por respiração, perfusão e comando (ver score).</li>
+<li><b>Distribuição das mortes:</b> o modelo trimodal clássico (segundos-minutos por lesão de aorta, coração, tronco e medula alta; minutos-horas por hemorragia, hemopneumotórax e hematomas intracranianos — a "hora de ouro"; dias-semanas por sepse e disfunção orgânica) hoje é mais bimodal nos sistemas maduros, com o pico tardio achatado pela terapia intensiva. A mortalidade evitável concentra-se na hemorragia das primeiras horas.</li>
+<li><b>Adjuntos do primário:</b> monitorização (ECG, SpO2, capnografia, PA), gasometria com lactato e déficit de base, tipagem, βhCG, eFAST, RX AP de tórax e de pelve no trauma fechado; sonda vesical apenas sem sinais de lesão uretral (sangue no meato, equimose perineal, fratura pélvica); sonda gástrica oral se suspeita de fratura de base de crânio.</li>
+<li><b>Exame secundário:</b> história AMPLA (alergias, medicamentos — anticoagulantes e antiagregantes mudam a conduta —, passado médico/gestação, líquidos e última refeição, ambiente e mecanismo) e exame da cabeça aos pés, incluindo dorso, períneo e axilas. TC de corpo inteiro só no paciente hemodinamicamente estável.</li>
+<li><b>Restrição de movimento da coluna:</b> não é mais imobilização reflexa. Indicada quando há risco real (mecanismo perigoso, dor ou déficit, rebaixamento, intoxicação, lesão distrativa); prancha longa só para extricação/transporte. Liberação clínica por NEXUS ou Regra Canadense e TC de coluna até T1 ficam detalhadas no CT03.</li>
+</ul>
+<div class="score"><div class="score-head"><div class="score-name">START — Simple Triage and Rapid Treatment <span class="ev ev-expert">Apostila 2025 · ATLS 11</span></div><div class="score-purpose">Triagem de múltiplas vítimas em &lt;60 s por vítima; mnemônico "30 – 2 – pode fazer"</div></div><div class="score-rows">
+<div class="score-row"><div class="score-grade">Verde</div><div class="score-desc"><b>Anda</b>. Lesões sem risco imediato; pode auxiliar no atendimento das demais vítimas.</div></div>
+<div class="score-row"><div class="score-grade">Vermelho</div><div class="score-desc">Respira só após abertura da via aérea, ou <b>FR &gt;30</b>, ou <b>enchimento capilar &gt;2 s</b> (ou pulso radial ausente), ou <b>não obedece a comandos simples</b>. Tratamento mínimo e transporte imediato.</div></div>
+<div class="score-row"><div class="score-grade">Amarelo</div><div class="score-desc">Não anda, mas respira com FR ≤30, perfusão ≤2 s e obedece a comandos. Pode aguardar com cuidados no local.</div></div>
+<div class="score-row"><div class="score-grade">Preto</div><div class="score-desc"><b>Não respira mesmo após abertura da via aérea</b>. Óbito ou sem chance de sobrevida com os recursos do cenário.</div></div>
+</div></div>
+<div class="box hy"><span class="box-label">HIGH-YIELD</span><div class="box-title">Índices de trauma: fisiológico, anatômico e combinado</div><div class="box-body"><b>RTS</b> (Revised Trauma Score) é fisiológico e de admissão: 0,9368 × Glasgow codificado + 0,7326 × PAS codificada + 0,2908 × FR codificada (0 a ~7,84; quanto maior, melhor). <b>ISS</b> é anatômico e retrospectivo: soma dos quadrados dos três maiores AIS em três regiões diferentes (1–75; AIS 6 em qualquer região = 75); ISS ≥16 define trauma grave, mortalidade em torno de 10%. <b>TRISS</b> combina RTS, ISS, idade (≤54 ou &gt;54 anos) e mecanismo (contuso/penetrante) para probabilidade de sobrevida e auditoria de qualidade.</div></div>
+</div>
+</div>
+
+<div class="card clin">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">B.2</span> Padrão 2</div><h3>Via aérea ameaçada <span class="ank ank-dec">DECISION</span></h3><div class="card-sub">Quem fala tem via aérea hoje; quem tem trauma de face, pescoço ou queimadura pode não ter em uma hora</div></div>
+<div class="card-body">
+<div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Paciente que conversa com voz normal raramente tem obstrução significativa: O2 sob máscara com reservatório (10–15 L/min). A decisão de <b>via aérea definitiva</b> (tubo com balonete na traqueia, fixado e ventilado) é por <b>falha de proteção, oxigenação ou ventilação, ou por ameaça previsível</b>. Indicações clássicas: apneia, Glasgow ≤8, risco de aspiração, hipoxemia refratária à máscara, comprometimento iminente (inalação, fratura de face, hematoma cervical em expansão, convulsões).</div></div>
+<ul class="bullets">
+<li><b>Sinais de comprometimento:</b> agitação (hipóxia), letargia (hipercapnia), estridor, rouquidão, gorgolejo, uso de musculatura acessória, cianose tardia. Corpo estranho, sangue e vômito: aspiração rígida; vômito intenso: lateralização em bloco.</li>
+<li><b>Manobras básicas com proteção cervical:</b> tração da mandíbula (jaw thrust) ou elevação do mento, cânula orofaríngea (só sem reflexo de vômito) ou nasofaríngea (evitar se suspeita de fratura de base de crânio).</li>
+<li><b>Primeira escolha definitiva:</b> intubação orotraqueal em sequência rápida, com estabilização manual em linha e abertura anterior do colar; <b>videolaringoscópio passou a ferramenta principal</b> para sucesso na primeira tentativa (ATLS 11). Confirmação obrigatória por capnografia em forma de onda.</li>
+<li><b>Dispositivos de resgate:</b> supraglóticos (máscara laríngea, tubo laríngeo) são ponte para oxigenar, não via aérea definitiva.</li>
+<li><b>Não intubo, não oxigeno:</b> cricotireoidostomia cirúrgica (bisturi-bougie-tubo 6,0 com balonete) no adulto; abaixo de ~12 anos, cricotireoidostomia por punção com ventilação a jato como ponte (30–45 min de oxigenação, retenção de CO2 progressiva). Traqueostomia de emergência é exceção (ex.: fratura de laringe).</li>
+<li><b>Lesão cervical/laríngea:</b> enfisema subcutâneo, crepitação laríngea e rouquidão apontam fratura de laringe — IOT cuidadosa, idealmente guiada por fibroscopia; se impossível, traqueostomia.</li>
+</ul>
+<div class="mnemo"><div class="mnemo-title"><b>DOPE</b> intubado ou em ventilação que piora de repente</div><div class="mnemo-grid">
+<div class="mnemo-row"><span class="mnemo-letter">D</span><span><b>Deslocamento</b> · extubação acidental ou intubação seletiva (tubo migrou para o brônquio direito no transporte)</span></div>
+<div class="mnemo-row"><span class="mnemo-letter">O</span><span><b>Obstrução</b> · coágulo, secreção espessa, tubo dobrado ou mordido</span></div>
+<div class="mnemo-row"><span class="mnemo-letter">P</span><span><b>Pneumotórax</b> · simples que virou hipertensivo pela pressão positiva</span></div>
+<div class="mnemo-row"><span class="mnemo-letter">E</span><span><b>Equipamento</b> · cilindro vazio, circuito desconectado, ventilador em falha, tubo de calibre inadequado</span></div>
+</div></div>
+<div class="box decision"><span class="box-label">DECISION</span><div class="box-title">Via aérea difícil no trauma é a regra, não a exceção</div><div class="box-body">LEMON (olhar externo, regra 3-3-2, Mallampati, obstrução, mobilidade cervical) ajuda, mas no trauma <b>o simples uso do colar já define via aérea difícil</b> e a mobilidade cervical não deve ser testada. Defina falha como três tentativas sem sucesso (ou 1–2 se dessaturação), e deixe o kit de cricotireoidostomia aberto antes da primeira laringoscopia. Pré-oxigenação, cabeceira elevada (proclive em bloco se coluna em risco) e oxigênio nasal de alto fluxo durante a apneia aumentam a janela de segurança.</div></div>
+</div>
+</div>
+
+<div class="card clin">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">B.3</span> Padrão 3</div><h3>Dispneia e hipoxemia após trauma de tórax</h3><div class="card-sub">O exame do tórax em 20 segundos separa ar, sangue, parede e parênquima</div></div>
+<div class="card-body">
+<div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Inspeção (assimetria, respiração paradoxal, feridas, inclusive dorso e axilas), palpação (crepitação óssea, enfisema subcutâneo, desvio traqueal), percussão (timpanismo × macicez) e ausculta. Some <b>jugulares</b> e <b>PA</b>: o par jugular cheia/vazia e timpanismo/macicez discrimina tensão, hemotórax maciço e tamponamento à beira do leito.</div></div>
+<div class="stbl stbl-4">
+<div class="stbl-head stbl-4"><div>Achado</div><div>Pneumotórax hipertensivo</div><div>Hemotórax maciço</div><div>Tamponamento</div></div>
+<div class="stbl-row stbl-4"><div class="col col1" data-l="Achado">Murmúrio vesicular</div><div class="col" data-l="Tensão"><b>Abolido no lado afetado</b></div><div class="col" data-l="Hemotórax"><b>Abolido no lado afetado</b></div><div class="col" data-l="Tamponamento">Presente e simétrico</div></div>
+<div class="stbl-row stbl-4"><div class="col col1" data-l="Achado">Percussão</div><div class="col" data-l="Tensão">Hipertimpânica</div><div class="col" data-l="Hemotórax"><b>Maciça</b></div><div class="col" data-l="Tamponamento">Normal</div></div>
+<div class="stbl-row stbl-4"><div class="col col1" data-l="Achado">Jugulares</div><div class="col" data-l="Tensão">Túrgidas (podem estar vazias se hipovolemia associada)</div><div class="col" data-l="Hemotórax"><b>Colabadas</b></div><div class="col" data-l="Tamponamento"><b>Túrgidas, Kussmaul</b></div></div>
+<div class="stbl-row stbl-4"><div class="col col1" data-l="Achado">Traqueia</div><div class="col" data-l="Tensão">Desvio contralateral (sinal tardio)</div><div class="col" data-l="Hemotórax">Central ou desvio discreto</div><div class="col" data-l="Tamponamento">Central</div></div>
+<div class="stbl-row stbl-4"><div class="col col1" data-l="Achado">eFAST</div><div class="col" data-l="Tensão">Ausência de deslizamento pleural, sem linhas B, ponto pulmonar</div><div class="col" data-l="Hemotórax">Líquido anecoico acima do diafragma</div><div class="col" data-l="Tamponamento"><b>Derrame pericárdico com colapso diastólico de VD</b></div></div>
+<div class="stbl-row stbl-4"><div class="col col1" data-l="Achado">Conduta</div><div class="col" data-l="Tensão"><b>Descompressão → dreno</b></div><div class="col" data-l="Hemotórax"><b>Dreno calibroso + sangue → toracotomia</b></div><div class="col" data-l="Tamponamento"><b>Esternotomia/toracotomia</b></div></div>
+</div>
+<ul class="bullets">
+<li><b>Lesões do secundário que comprometem menos a ventilação:</b> fraturas costais, tórax instável, contusão pulmonar, pneumotórax e hemotórax simples. Hipoxemia que aparece ou piora em 24–48 h com consolidação que não respeita fissuras é contusão até prova em contrário.</li>
+<li><b>Enfisema subcutâneo extenso:</b> pneumotórax (frequentemente sob o dreno), lesão traqueobrônquica, ruptura esofágica; a TC define.</li>
+<li><b>Pneumotórax espontâneo</b> (primário em jovem longilíneo tabagista; secundário em DPOC/tuberculose) está fora deste HP: o manejo por tamanho (≥2 cm no hilo pelo critério europeu, ≥3 cm no ápice pelo americano) e estabilidade, a aspiração e a pleurodese ficam no <b>RP04</b> (pleura).</li>
+</ul>
+</div>
+</div>
+
+<div class="card clin">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">B.4</span> Padrão 4</div><h3>Choque no politraumatizado <span class="ank ank-dgr">DANGER</span></h3><div class="card-sub">Hemorrágico até prova em contrário; obstrutivo é a exceção que se trata com agulha e bisturi</div></div>
+<div class="card-body">
+<div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Taquicardia, pele fria, enchimento lento, ansiedade e estreitamento da pressão de pulso aparecem antes da queda da PAS. <b>Índice de choque (FC/PAS) &gt;1</b> e lactato/déficit de base elevados anunciam transfusão. Se o choque não responde e não há sangramento óbvio, pense nas obstrutivas (tensão, tamponamento), na contusão miocárdica e no neurogênico (bradicardia relativa, pele quente).</div></div>
+<ul class="bullets">
+<li><b>Fontes de hemorragia:</b> "chão e mais quatro" — externa (couro cabeludo e extremidades), tórax (eFAST/RX), abdome (eFAST; fígado e baço), pelve e retroperitônio (RX de pelve, cinta pélvica), ossos longos (fêmur até 1.500 mL; úmero/tíbia até 750 mL).</li>
+<li><b>Populações que mascaram:</b> idoso (betabloqueador, reserva menor, "PA normal" que é hipotensão para o hipertenso crônico), gestante (hipervolemia relativa mascara perda de até 30%), atleta (bradicardia basal), criança (mantém PA até perda de ~30–45%; taquicardia e má perfusão são os sinais precoces), marcapasso.</li>
+<li><b>Choque neurogênico:</b> hipotensão com bradicardia e extremidades quentes após lesão medular alta. Não é diagnóstico de exclusão inicial: só depois de afastar hemorragia (detalhe no CT03).</li>
+<li><b>Hipotermia, acidose e coagulopatia</b> formam a tríade letal (hoje "diamante letal" com a hipocalcemia): cada uma piora as outras. Previna desde a cena.</li>
+</ul>
+<div class="box hy"><span class="box-label">HIGH-YIELD</span><div class="box-title">AESP no trauma é choque obstrutivo ou hipovolemia extrema até prova em contrário</div><div class="box-body">Atividade elétrica organizada sem pulso, com ecocardiografia mostrando contração ("pseudo-AESP"), é o perfil de tamponamento, tensão ou exsanguinação. A conduta é <b>tratar a causa</b> (descompressão bilateral, pericárdio, sangue), não fazer ciclos prolongados de adrenalina e compressões, que no coração vazio não geram fluxo.</div></div>
+</div>
+</div>
+
+<div class="card clin">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">B.5</span> Padrão 5</div><h3>Ferida penetrante do tórax, do pescoço e da transição toracoabdominal</h3><div class="card-sub">O trajeto define as estruturas; a fisiologia define a sala</div></div>
+<div class="card-body">
+<div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Instável com ferida transmediastinal = lesão exsanguinante até prova em contrário e vai à sala. Estável: RX (com marcadores radiopacos nos orifícios), eFAST e angio-TC definem trajeto. Ferida abaixo da linha mamilar (4º EIC anterior, 6º lateral, 8º posterior) é <b>toracoabdominal</b> até prova em contrário: diafragma e vísceras abdominais entram no diferencial.</div></div>
+<ul class="bullets">
+<li><b>Caixa cardíaca (quadrilátero de Ziedler):</b> limites variam entre autores — clavículas, rebordos costais e linhas hemiclaviculares é o mais aceito. Toda ferida nessa área é lesão cardíaca ou de grandes vasos até eFAST negativo, e pontos de entrada no epigástrio, escápula e base do pescoço também atingem o coração.</li>
+<li><b>Pescoço:</b> ferida que não ultrapassa o platisma é superficial. Sinais maiores (sangramento ativo, hematoma em expansão, instabilidade, sopro/frêmito, déficit neurológico, enfisema/bolhas pela ferida, estridor, hemoptise) indicam exploração imediata; os demais, angio-TC independentemente da zona (ver D.5).</li>
+<li><b>Transição toracoabdominal esquerda no estável:</b> lesão diafragmática oculta em até 40% das facadas; laparoscopia/toracoscopia diagnóstica em 24 h quando a TC não exclui (WSES-AAST 2025). O manejo abdominal pertence ao <b>CT02</b>.</li>
+<li><b>Objeto empalado:</b> não remover fora do centro cirúrgico; fixar e transportar.</li>
+<li><b>Profilaxia antitetânica e antibiótica:</b> feridas penetrantes têm benefício de antibiótico na drenagem (empiema); vacina e imunoglobulina conforme situação vacinal (detalhe de feridas no CT04).</li>
+</ul>
+</div>
+</div>
+</section>
+
+<section id="primarias">
+<div class="section"><div class="section-eyebrow"><span>C</span> Entidades Primárias</div><div class="section-title">Disease boxes — avaliação inicial, choque e as lesões torácicas que matam na primeira hora</div><div class="section-sub">Seis entidades com box próprio: o sistema xABCDE, o choque hemorrágico com a coagulopatia induzida pelo trauma, o pneumotórax (hipertensivo, aberto e simples), o hemotórax, o tamponamento e a lesão traumática da aorta torácica.</div></div>
+
+<div class="card prim">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">C.1</span> Sistema</div><h3>Avaliação inicial do politraumatizado (xABCDE) <span class="ank ank-hy">HIGH-YIELD</span></h3><div class="card-sub">Politrauma: lesões em ≥2 sistemas, ao menos uma (ou a soma) com risco à vida</div></div>
+<div class="card-body">
+<div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Sequência por letalidade temporal: o que mata primeiro é tratado primeiro. <b>x</b> hemorragia externa exsanguinante → <b>A</b> via aérea com restrição de movimento cervical → <b>B</b> ventilação → <b>C</b> circulação e controle de hemorragia → <b>D</b> disfunção neurológica → <b>E</b> exposição e controle térmico. Reavaliar xABCDE a cada intervenção e a cada piora.</div></div>
+<div class="disease">
+<div class="disease-head"><div class="disease-name">Politraumatismo — exame primário e reanimação</div><div class="disease-tag">CID-10 T07 · T06.5 <span class="ev ev-acr">ATLS 11 · 2025</span> <span class="ev ev-nice">MS SAMU 192 · AT1</span></div></div>
+<div class="disease-body"><div class="disease-rows">
+<div class="disease-row"><div class="k">Epidemiologia</div><div class="v">Principal causa de morte até os 44 anos; no Brasil, causas externas ocupam o terceiro lugar global de óbitos. Cerca de 25% das mortes no politrauma têm componente torácico, e a hemorragia é a principal causa de morte evitável. Integração APH–hospital falha em parcela relevante dos óbitos preveníveis.</div></div>
+<div class="disease-row"><div class="k">Fisiopatologia</div><div class="v">A hierarquia reflete o tempo até a lesão celular irreversível: exsanguinação de grande artéria em 2–5 min, hipóxia cerebral em 4–6 min, choque hemorrágico não controlado em minutos a horas. Hipoperfusão gera metabolismo anaeróbio, lactato e acidose, que somados à hipotermia e à hemodiluição degradam a hemostasia (coagulopatia induzida pelo trauma, C.2).</div></div>
+<div class="disease-row"><div class="k">Clínica</div><div class="v">A — fala normal? estridor, gorgolejo, trauma de face/pescoço. B — FR, SpO2, expansão, ausculta, percussão, enfisema. C — pulsos, pele, enchimento, PA, FC, sangramento externo e as quatro cavidades. D — Glasgow (com pupilas: Glasgow-P = Glasgow − resposta pupilar), força dos membros, glicemia. E — despir todo, rolar em bloco para o dorso, aquecer.</div></div>
+<div class="disease-row"><div class="k">Diagnóstico</div><div class="v">Clínico, com adjuntos que não tiram o paciente da sala: eFAST (pericárdio, pleuras, quadrantes abdominais), RX AP de tórax e pelve no fechado, gasometria com lactato e déficit de base, ECG contínuo, capnografia. TC de corpo inteiro precoce apenas no estável <span class="ev ev-eular">Diretriz Europeia 2023 · 1B</span>.</div></div>
+<div class="disease-row"><div class="k">Tratamento</div><div class="v">Torniquete/compressão no x; via aérea definitiva quando indicada; O2 para SpO2 ≥94% sem hiperóxia; descompressão e drenagem no B; dois acessos calibrosos (14–16 G) ou intraósseo; sangue precoce e ácido tranexâmico no C; prevenir hipotermia no E <span class="ev ev-acr">ATLS 11</span> <span class="ev ev-nice">SAMU AT1/AT4</span>.</div></div>
+<div class="disease-row"><div class="k">Prognóstico</div><div class="v">Dependente do tempo até o controle da hemorragia e da adesão ao sistema (centro de trauma, transporte direto). ISS ≥16 marca mortalidade ≈10%; TRISS audita sobrevida esperada.</div></div>
+<div class="disease-row"><div class="k">O que muda conduta</div><div class="v"><b>Instabilidade hemodinâmica</b> separa o caminho "sala de cirurgia/hemodinâmica" do caminho "TC de corpo inteiro"; <b>falha de oxigenação ou proteção</b> define a via aérea definitiva; <b>recursos insuficientes</b> definem transferência precoce — que não deve esperar exames que não mudarão a conduta do hospital de origem.</div></div>
+</div></div>
+</div>
+<details class="deep"><summary>Deep dive · Por que o "x" veio antes do A, e o que isso não muda</summary><div class="deep-content">
+<p>O ABCDE do ATLS nasceu em 1978 a partir de uma ordem de prioridades fisiológicas: sem via aérea não há oxigenação; sem ventilação não há troca; sem circulação não há entrega. Essa lógica pressupõe que o tempo até a morte por obstrução de via aérea é menor do que o tempo até a morte por hemorragia — verdade para o paciente com obstrução completa, falso para o paciente com secção de artéria femoral ou axilar, que exsanguina em poucos minutos. A experiência militar (TCCC, com o MARCH: massive hemorrhage, airway, respiration, circulation, hypothermia/head) mostrou que a hemorragia de extremidade era a principal causa de morte evitável em combate e que o torniquete aplicado antes do choque reduzia mortalidade. O PHTLS incorporou o "X" para o atendimento pré-hospitalar e, em 2025, a 11ª edição do ATLS o levou ao ambiente hospitalar (xABCDE), junto com o conceito de ressuscitação de controle de danos.</p>
+<p>O que o "x" <b>não</b> é: não é a circulação inteira antes da via aérea. O x restringe-se à hemorragia <b>externa e compressível</b> com potencial exsanguinante — torniquete, compressão direta, gaze hemostática, tamponamento de ferida juncional. O sangramento não compressível do tronco (tórax, abdome, pelve, retroperitônio) continua no C, porque seu controle exige procedimentos que dependem de via aérea e ventilação garantidas. Nas equipes com vários membros, as letras são executadas em paralelo (o "ABCDE horizontal"), e a ordem descreve prioridade de decisão, não sequência de mãos.</p>
+<p>Outra mudança conceitual da 11ª edição é a <b>interação C ↔ A</b>: induzir sequência rápida no paciente em choque profundo remove o tônus simpático e a pressão intratorácica positiva reduz o retorno venoso; o resultado é hipotensão peri-intubação e parada. A recomendação passa a ser restaurar volume circulante com sangue antes da indução sempre que a oxigenação se mantém com manobras básicas e O2. A capnografia contínua também ganha papel de monitor hemodinâmico: queda súbita do EtCO2 com tubo bem posicionado é queda de débito cardíaco.</p>
+<p>Na prova brasileira o xABCDE aparece tanto como "ATLS 11" quanto como "PHTLS/APH"; a apostila 2025, escrita antes da publicação do manual, ainda o restringia ao pré-hospitalar. O protocolo AT1 do SAMU 192 (2014, revisão 2015) já trazia "controlar sangramentos externos com compressão direta e/ou torniquete" dentro do C, sem mudar a ordem formal. A anotação do autor usa SxABCDE, com S de segurança da cena, que é o primeiro passo dos protocolos PE1–PE3 do SAMU.</p>
+</div></details>
+</div>
+</div>
+
+<div class="card prim">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">C.2</span> Circulação</div><h3>Choque hemorrágico e coagulopatia induzida pelo trauma <span class="ank ank-dgr">DANGER</span></h3><div class="card-sub">A principal causa de morte evitável; a coagulopatia começa na cena, antes do primeiro cristaloide</div></div>
+<div class="card-body">
+<div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Controle da fonte é o tratamento; o resto é ponte. <b>Ressuscitação de controle de danos</b>: hipotensão permissiva, cristaloide mínimo, hemoderivados em proporção fixa precoce, ácido tranexâmico em até 3 h, cálcio, fibrinogênio, normotermia e cirurgia/angioembolização sem demora.</div></div>
+<div class="disease">
+<div class="disease-head"><div class="disease-name">Choque hemorrágico traumático e coagulopatia induzida pelo trauma</div><div class="disease-tag">CID-10 T79.4 · coagulopatia sem código nominal <span class="ev ev-eular">Diretriz Europeia 2023</span> <span class="ev ev-cochrane">CRASH-2 2010</span></div></div>
+<div class="disease-body"><div class="disease-rows">
+<div class="disease-row"><div class="k">Epidemiologia</div><div class="v">Cerca de um terço dos traumatizados graves chega ao hospital já coagulopático; a coagulopatia na admissão multiplica a mortalidade. A hemorragia responde pela maioria das mortes nas primeiras 24 h e pela maior fração das mortes evitáveis.</div></div>
+<div class="disease-row"><div class="k">Fisiopatologia</div><div class="v">Choque + lesão tecidual ativam trombomodulina–proteína C (anticoagulação e fibrinólise via consumo de PAI-1), lesam o glicocálice endotelial (autoheparinização), depletam fibrinogênio (o primeiro fator a cair) e disfuncionam plaquetas. Hemodiluição por cristaloide, hipotermia (&lt;35 °C reduz atividade enzimática e plaquetária) e acidose (pH &lt;7,2 reduz a atividade do complexo protrombinase) completam o ciclo; o citrato das bolsas quela cálcio ionizado.</div></div>
+<div class="disease-row"><div class="k">Clínica</div><div class="v">Taquicardia, estreitamento da pressão de pulso, enchimento capilar &gt;2 s, pele fria e pegajosa, ansiedade progredindo a confusão, oligúria; hipotensão é tardia. Sangramento difuso em superfícies cruentas e acessos é sinal de coagulopatia estabelecida.</div></div>
+<div class="disease-row"><div class="k">Diagnóstico</div><div class="v">Estimativa clínica combinando fisiologia, padrão anatômico, mecanismo e resposta à infusão inicial; <b>índice de choque e/ou pressão de pulso</b> para gravidade e necessidade transfusional (1C); Hb/Ht seriados (normal inicial não exclui), lactato ou déficit de base (1B); TP/INR, fibrinogênio Clauss, plaquetas e/ou viscoelastometria (ROTEM/TEG) precoces e repetidos (1C) <span class="ev ev-eular">Diretriz Europeia 2023</span>.</div></div>
+<div class="disease-row"><div class="k">Tratamento</div><div class="v">PAS-alvo 80–90 mmHg (PAM 50–60) até controle da hemorragia sem TCE (1B); PAM ≥80 mmHg no TCE grave (1C); noradrenalina se a meta não for atingida com volume (1C); cristaloide isotônico limitado, evitar Ringer lactato hipotônico no TCE grave e coloides; Hb-alvo 7–9 g/dL; plasma:CH ≥1:2 (PROPPR: 1:1:1 reduz morte por exsanguinação) ou estratégia guiada por concentrado de fibrinogênio; fibrinogênio ≤1,5 g/L → 3–4 g; plaquetas &gt;50 mil (&gt;100 mil no TCE); cálcio iônico normal com cloreto de cálcio; ácido tranexâmico 1 g + 1 g/8 h em até 3 h (1A) <span class="ev ev-eular">Diretriz Europeia 2023</span> <span class="ev ev-acr">PROPPR 2015</span>.</div></div>
+<div class="disease-row"><div class="k">Prognóstico</div><div class="v">Cada minuto até o controle da fonte importa; TXA reduziu a morte por sangramento de 5,7% para 4,9% no CRASH-2, com benefício máximo na primeira hora e possível dano após 3 h.</div></div>
+<div class="disease-row"><div class="k">O que muda conduta</div><div class="v"><b>Resposta à infusão inicial</b> (rápida, transitória ou ausente) define observação, angio-TC/embolização ou sala imediata; <b>escore ABC ≥2 ou ≥3 CH/hora</b> define transfusão maciça; <b>TCE grave associado</b> anula a hipotensão permissiva; <b>uso de anticoagulante</b> define reversão específica.</div></div>
+</div></div>
+</div>
+<div class="score"><div class="score-head"><div class="score-name">Estimativa de perda sanguínea — classes clássicas (ATLS 10, homem de 70 kg) <span class="ev ev-acr">ATLS 10 · 2018</span></div><div class="score-purpose">A 11ª edição substituiu as classes I–IV por categorias de perda (de mínima a exsanguinação); a lógica fisiológica permanece</div></div><div class="score-rows">
+<div class="score-row"><div class="score-grade">Classe I</div><div class="score-desc">&lt;15% (&lt;750 mL). FC, PA, pressão de pulso e FR normais; ansiedade discreta. Equivale a uma doação de sangue.</div></div>
+<div class="score-row"><div class="score-grade">Classe II</div><div class="score-desc">15–30% (750–1.500 mL). FC 100–120, <b>pressão de pulso reduzida</b> (diastólica sobe por catecolaminas), FR 20–30, PAS preservada; déficit de base −2 a −6. Cristaloide inicial; alguns precisam de sangue.</div></div>
+<div class="score-row"><div class="score-grade">Classe III</div><div class="score-desc">31–40% (1.500–2.000 mL). FC 120–140, <b>PAS cai</b>, FR 30–40, confusão, diurese 5–15 mL/h; déficit de base −6 a −10. Sangue e controle da fonte.</div></div>
+<div class="score-row"><div class="score-grade">Classe IV</div><div class="score-desc">&gt;40% (&gt;2.000 mL). FC &gt;140 (ou bradicardia pré-terminal), PAS muito baixa, pressão de pulso mínima, letargia, anúria; déficit de base &lt;−10. Transfusão maciça e intervenção imediata.</div></div>
+</div></div>
+<div class="score"><div class="score-head"><div class="score-name">Escore ABC (Assessment of Blood Consumption) <span class="ev ev-acr">ATLS 11 · Nunez 2009</span></div><div class="score-purpose">Prediz transfusão maciça na admissão; 1 ponto por item; ≥2 = ativar protocolo (sensibilidade ~75%, especificidade ~86%)</div></div><div class="score-rows">
+<div class="score-row"><div class="score-grade">1</div><div class="score-desc">Mecanismo penetrante de tronco</div></div>
+<div class="score-row"><div class="score-grade">1</div><div class="score-desc">FAST positivo</div></div>
+<div class="score-row"><div class="score-grade">1</div><div class="score-desc">PAS ≤90 mmHg na chegada</div></div>
+<div class="score-row"><div class="score-grade">1</div><div class="score-desc">FC ≥120 bpm na chegada</div></div>
+</div></div>
+<details class="deep"><summary>Deep dive · Coagulopatia induzida pelo trauma: da proteína C ativada ao "diamante letal"</summary><div class="deep-content">
+<p>Até o início dos anos 2000 a coagulopatia do trauma era entendida como iatrogênica: diluição por cristaloide, hipotermia e acidose, a "tríade letal". Os trabalhos de Brohi e Cohen mostraram que um quarto a um terço dos pacientes chega com TP prolongado <b>antes</b> de qualquer infusão relevante, e que essa coagulopatia aguda depende de duas condições simultâneas: hipoperfusão (déficit de base elevado) e lesão tecidual extensa. O mecanismo central é endotelial. A hipoperfusão aumenta a expressão de trombomodulina; o complexo trombina–trombomodulina desvia a trombina da formação de fibrina para a ativação da proteína C, que inativa os fatores Va e VIIIa (anticoagulação) e consome o inibidor do ativador do plasminogênio tipo 1, liberando o t-PA (hiperfibrinólise). O glicocálice endotelial, rico em sindecano-1 e heparan sulfato, descama e libera glicosaminoglicanos com efeito heparina-símile. Plaquetas circulantes entram num estado de "exaustão" funcional, com contagem preservada e agregação reduzida.</p>
+<p>O fibrinogênio é o primeiro fator a atingir nível crítico: valores abaixo de 1,5–2 g/L na admissão predizem mortalidade, e o plasma fresco é ineficiente para elevá-lo além de ~1,5 g/L pelo volume necessário. Daí as duas escolas da Diretriz Europeia de 2023: a estratégia de razão fixa (plasma:CH ≥1:2, plaquetas precoces, derivada do PROPPR) e a estratégia guiada por viscoelastometria com concentrado de fibrinogênio e complexo protrombínico. O CRYOSTAT-2 (JAMA 2023) testou 6 g de fibrinogênio equivalente em crioprecipitado empírico e precoce em todos os pacientes com protocolo de hemorragia maciça e não reduziu mortalidade em 28 dias (25,3% × 26,1%) — reforçando que a reposição deve ser dirigida por nível ou viscoelastometria, não universal.</p>
+<p>O ácido tranexâmico, análogo da lisina, bloqueia o sítio de ligação do plasminogênio à fibrina e inibe a fibrinólise. No CRASH-2 (20.211 pacientes em 40 países) reduziu a mortalidade total de 16,0% para 14,5% e a morte por sangramento de 5,7% para 4,9%; a análise por tempo mostrou benefício maior até 1 h, ainda presente entre 1 e 3 h, e aumento de morte por sangramento quando iniciado após 3 h — provavelmente porque a fibrinólise precoce dá lugar a um fenótipo de "fibrinolysis shutdown" tardio, protrombótico. O PATCH-Trauma (NEJM 2023), em sistemas de trauma avançados, não aumentou a sobrevida com bom desfecho funcional aos 6 meses, mas reduziu a mortalidade em 28 dias (17,3% × 21,8%) sem excesso de eventos trombóticos.</p>
+<p>A hipocalcemia é o quarto vértice ("diamante letal"): cada unidade de CH ou plasma traz cerca de 3 g de citrato, cuja metabolização hepática falha no choque. Cálcio ionizado é cofator dos fatores II, VII, IX e X e da adesão plaquetária, e participa da contratilidade e do tônus vascular; valores &lt;0,9 mmol/L devem ser corrigidos prontamente e &lt;0,8 associam-se a arritmias. O cloreto de cálcio a 10% oferece 270 mg de cálcio elementar por 10 mL, três vezes o gluconato, e não depende de metabolismo hepático para liberar o íon.</p>
+</div></details>
+</div>
+</div>
+
+<div class="card prim">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">C.3</span> Ventilação</div><h3>Pneumotórax traumático: hipertensivo, aberto e simples/oculto <span class="ank ank-hy">HIGH-YIELD</span></h3><div class="card-sub">O mesmo ar pleural com três fisiologias e três condutas</div></div>
+<div class="card-body">
+<div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body"><b>Hipertensivo</b>: mecanismo valvular, colapso ipsilateral, desvio mediastinal, queda do retorno venoso → descompressão já e dreno. <b>Aberto</b>: ferida que equilibra pressões → curativo valvulado, dreno distante e fechamento. <b>Simples/oculto</b>: sem repercussão → dreno se grande, sintomático, ventilação com pressão positiva ou transporte aéreo; observação de 24 h se pequeno e estável.</div></div>
+<div class="disease">
+<div class="disease-head"><div class="disease-name">Pneumotórax traumático</div><div class="disease-tag">CID-10 S27.0 · S21.1 · S21.2 <span class="ev ev-eular">WSES-AAST 2025</span> <span class="ev ev-nice">SAMU AT10–AT12</span></div></div>
+<div class="disease-body"><div class="disease-rows">
+<div class="disease-row"><div class="k">Epidemiologia</div><div class="v">Risco global de pneumotórax simples ou hipertensivo de ~20% no politrauma, chegando a 50% no trauma torácico grave. A causa mais comum de pneumotórax hipertensivo no hospital é a ventilação com pressão positiva sobre lesão pleural não reconhecida; no fechado sem ventilação, a ruptura alveolar "em saco de papel" e a laceração por costela.</div></div>
+<div class="disease-row"><div class="k">Fisiopatologia</div><div class="v">Hipertensivo: entrada de ar sem saída eleva a pressão pleural acima da atmosférica, colapsa o pulmão, desvia o mediastino, comprime o pulmão contralateral e reduz o retorno venoso (angulação de cavas e pressão intratorácica) → choque obstrutivo. Aberto: orifício ≥2/3 do diâmetro traqueal oferece resistência menor que a via aérea e o ar entra pela parede na inspiração.</div></div>
+<div class="disease-row"><div class="k">Clínica</div><div class="v">Hipertensivo no respirando espontaneamente: dispneia intensa, taquicardia, hipoxemia, MV abolido, timpanismo; jugular túrgida e desvio de traqueia são tardios e podem faltar. No ventilado: hipotensão abrupta, pressão de pico subindo, SpO2 caindo. Aberto: ferida que "aspira". Simples: dor pleurítica, MV reduzido, percussão normal ou timpânica, sem instabilidade.</div></div>
+<div class="disease-row"><div class="k">Diagnóstico</div><div class="v">Hipertensivo: <b>clínico</b>, sem RX. eFAST mais sensível que RX supino (sensibilidade do RX em supino 28–75%); TC no estável detecta o oculto <span class="ev ev-eular">WSES-AAST 2025 · E-FAST/RX no instável</span>.</div></div>
+<div class="disease-row"><div class="k">Tratamento</div><div class="v">Hipertensivo: descompressão (adulto 4º–5º EIC entre linhas axilares anterior e média; criança 2º EIC hemiclavicular; toracostomia digital se a agulha falhar) e dreno. Aberto: curativo oclusivo valvulado, dreno longe da ferida, fechamento cirúrgico. Simples: dreno é a escolha; cateteres finos (8,5–16 Fr ou 18–24 Fr) aceitáveis no pneumotórax isolado; pequeno (≤2 cm) no estável pode ser observado por ≥24 h <span class="ev ev-eular">WSES-AAST 2025 · LoE low, GoR moderate</span> <span class="ev ev-acr">ATLS 10/11</span>.</div></div>
+<div class="disease-row"><div class="k">Prognóstico</div><div class="v">Excelente quando reconhecido; hipertensivo não tratado evolui para AESP. Escape aéreo persistente além de 3–5 dias leva a VATS.</div></div>
+<div class="disease-row"><div class="k">O que muda conduta</div><div class="v"><b>Instabilidade</b> (descomprimir sem imagem); <b>ventilação mecânica, cirurgia sob anestesia geral ou transporte aéreo</b> (drenar mesmo pequeno); <b>pulmão que não reexpande com borbulhamento intenso</b> (lesão de grande via aérea, D.2); <b>lesão medular associada</b> (drenagem precoce pelo risco de falência respiratória).</div></div>
+</div></div>
+</div>
+<details class="deep"><summary>Deep dive · Fisiologia do pneumotórax hipertensivo, do local da agulha e do pneumotórax oculto</summary><div class="deep-content">
+<p>O pneumotórax hipertensivo é, antes de tudo, um problema de oxigenação e só depois de débito. Modelos animais e séries humanas de pacientes respirando espontaneamente mostram que a hipoxemia e a taquicardia precedem em minutos a hipotensão: o paciente acordado compensa aumentando a frequência e o esforço contralateral, e a queda de retorno venoso só se instala quando a pressão pleural ipsilateral excede de forma sustentada a pressão atrial direita. No paciente sob ventilação com pressão positiva a sequência se comprime — cada ciclo injeta volume no espaço pleural e a pressão intratorácica já é positiva —, o que explica a hipotensão precoce e catastrófica logo após a intubação. Por isso o ventilado deve ser descomprimido ao primeiro sinal, e a pausa da ventilação com bolsa ajuda a separar pneumotórax de auto-PEEP.</p>
+<p>A mudança do local de descompressão no adulto, do 2º espaço intercostal na linha hemiclavicular para o 4º–5º espaço entre as linhas axilares anterior e média (ATLS 10, mantida na 11ª edição), veio de estudos de TC e de cadáver: a espessura da parede no 2º EIC anterior supera o comprimento de cateteres de 5 cm em fração substancial dos adultos, e o cateter dobra ou sai com a movimentação. Lateralmente, a parede é mais fina, mas o risco de lesão de diafragma, fígado e baço exige que o ponto fique acima da linha mamilar. Cateteres de 8 cm aumentam a taxa de sucesso. Na criança, a parede fina mantém o 2º EIC hemiclavicular. A WSES-AAST 2025 aceita ambos os sítios no adulto e lembra que, em hospital com dreno disponível, a <b>toracostomia digital</b> — incisão e dissecção romba até a pleura no mesmo ponto do dreno, abrindo com o dedo — é mais confiável e é o passo natural antes do tubo.</p>
+<p>O pneumotórax oculto (invisível no RX em supino e detectado por TC ou ultrassom) é frequente no fechado grave. Ensaios como o OPTICC compararam observação com drenagem e mostraram que a maioria dos pacientes, inclusive alguns em ventilação mecânica, pode ser observada com vigilância, desde que a equipe esteja pronta para drenar à menor deterioração; a WSES recomenda observação por pelo menos 24 h nos pequenos e estáveis e lembra que a conduta deve ser guiada pela clínica, não pelo tamanho. O transporte aéreo continua sendo indicação clássica de drenagem: a queda de pressão ambiental em cabine expande o ar aprisionado (lei de Boyle) e converte simples em hipertensivo.</p>
+<p>No pneumotórax aberto, o curativo de três pontas funciona como válvula unidirecional: colado à pele na inspiração, descola na expiração. O selamento nos quatro lados sem dreno transforma a lesão em pneumotórax hipertensivo; dispositivos comerciais com válvula fazem o mesmo de forma mais confiável. O dreno nunca deve ser passado pela ferida, que está contaminada e tem trajeto imprevisível.</p>
+</div></details>
+</div>
+</div>
+
+<div class="card prim">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">C.4</span> Ventilação + circulação</div><h3>Hemotórax: maciço, simples e retido <span class="ank ank-dec">DECISION</span></h3><div class="card-sub">Todo derrame pleural no trauma é sangue até prova em contrário</div></div>
+<div class="card-body">
+<div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Maciço (&gt;1.500 mL ou 1/3 da volemia): choque + MV abolido + macicez + jugulares vazias → dreno calibroso, sangue e toracotomia se o sangramento persiste. Simples: dreno resolve ~85%. Retido após dreno: VATS precoce (≤4 dias pela EAST; 3–7 dias pela apostila), não trombolítico, para evitar empiema e encarceramento.</div></div>
+<div class="disease">
+<div class="disease-head"><div class="disease-name">Hemotórax e hemopneumotórax traumáticos</div><div class="disease-tag">CID-10 S27.1 · S27.2 <span class="ev ev-eular">WSES-AAST 2025</span> <span class="ev ev-acr">EAST 2021</span></div></div>
+<div class="disease-body"><div class="disease-rows">
+<div class="disease-row"><div class="k">Epidemiologia</div><div class="v">Mais frequente no penetrante e no fechado de alta energia com fraturas costais/esternais e tórax instável. Fontes habituais: laceração pulmonar (sistema de baixa pressão, autolimitada), intercostais e mamária interna (circulação sistêmica, sangram mais), grandes vasos, coração e hilo. Cada hemitórax comporta 2,5–3 L.</div></div>
+<div class="disease-row"><div class="k">Fisiopatologia</div><div class="v">Perda volêmica + ocupação do espaço pleural (hipoxemia por colapso) e, raramente, efeito de massa com desvio ("hemotórax hipertensivo"). O sangue desfibrina-se no espaço pleural; o que coagula e não drena fica retido, organiza-se em fibrotórax ou infecta (empiema).</div></div>
+<div class="disease-row"><div class="k">Clínica</div><div class="v">Maciço: choque, MV abolido, macicez, jugulares colabadas (túrgidas só se tensão ou tamponamento associados). Simples: dor, dispneia leve, macicez basal. O RX em supino pode não mostrar até 1 L; em ortostase, frontal a partir de ~300 mL.</div></div>
+<div class="disease-row"><div class="k">Diagnóstico</div><div class="v">eFAST mais sensível e rápido que RX (97,5% × 92,5%; ~1 × 14 min); TC no estável (30–45 UH sangue líquido, 45–70 UH coágulo) quantifica e identifica sangramento ativo e retido <span class="ev ev-eular">WSES-AAST 2025</span>.</div></div>
+<div class="disease-row"><div class="k">Tratamento</div><div class="v">Instável: dreno calibroso independentemente do volume; estável: drenar se ≥500 mL; &lt;300 mL pode ser observado com RX de controle em 24 h <span class="ev ev-eular">WSES-AAST 2025 · GoR moderate</span>. No estável, pigtail 14 Fr tem eficácia igual ao dreno 28–32 Fr, com menos dor <span class="ev ev-acr">EAST 2021 · RCT Kulvatunyou 2021</span>. Cirurgia: instabilidade por sangramento torácico, &gt;1.500 mL em 24 h ou &gt;200 mL/h por 3 h consecutivas sem outra fonte <span class="ev ev-eular">WSES-AAST 2025 · GoR strong</span>. Retido: VATS precoce, não trombolítico (EAST 2021). Antibiótico profilático na inserção reduz empiema (EAST 2022, condicional).</div></div>
+<div class="disease-row"><div class="k">Prognóstico</div><div class="v">Dreno isolado resolve a maioria; hemotórax retido &gt;300 mL é o principal fator de risco para empiema pós-traumático; hemotórax tardio (18 h a 6 dias) ocorre após múltiplas fraturas costais, sobretudo em idosos e anticoagulados.</div></div>
+<div class="disease-row"><div class="k">O que muda conduta</div><div class="v"><b>Fisiologia e tendência do débito</b>, não um número isolado: drenagem inicial grande que cessa no estável pode ser observada, e débito "baixo" no instável pode refletir dreno coagulado. <b>Ferida central com hemotórax residual</b> obriga a afastar lesão cardíaca direita descomprimindo para a pleura.</div></div>
+</div></div>
+</div>
+<details class="deep"><summary>Deep dive · Por que o número do dreno perdeu a hegemonia, e a vida do hemotórax depois do dreno</summary><div class="deep-content">
+<p>Os limiares de 1.500 mL imediatos e 200 mL/h por 2 a 4 horas nasceram de séries militares e civis do século XX como substitutos operacionais de "sangramento cirúrgico". Eles continuam úteis, mas têm duas falhas estruturais. Primeiro, o volume inicial mistura sangue acumulado ao longo do tempo pré-hospitalar com sangramento ativo; um paciente que drena 1.600 mL e para, com hemodinâmica estável, frequentemente não precisa de toracotomia (o próprio Sabiston admite conduta conservadora nesse cenário). Segundo, o débito subestima o sangramento quando o dreno coagula, dobra ou está mal posicionado, e o sangue continua a se acumular no hemitórax enquanto o frasco "parece seco". Por isso a 11ª edição do ATLS, segundo os resumos públicos, deixou de basear a indicação de toracotomia no débito do dreno, privilegiando a fisiologia e a necessidade transfusional; a WSES-AAST 2025 mantém números (&gt;1.500 mL em 24 h, &gt;200 mL/h por 3 h consecutivas) mas os subordina à instabilidade e explicitamente alerta que o débito isolado pode enganar.</p>
+<p>O calibre do dreno é outro dogma revisto. A recomendação tradicional de 36–40 Fr para hemotórax baseava-se no medo de obstrução por coágulo. O ensaio multicêntrico de Kulvatunyou (2021) randomizou pigtail percutâneo 14 Fr contra dreno aberto 28–32 Fr em pacientes estáveis e encontrou a mesma taxa de falha (hemotórax retido exigindo segunda intervenção: 11% × 13%), com experiência de inserção muito melhor; a EAST recomenda condicionalmente o pigtail no estável. No instável, no maciço e na suspeita de sangramento ativo, o dreno calibroso (28 Fr ou mais; a WSES não vê diferença acima de 32 Fr) segue sendo a escolha, porque precisamos de drenagem rápida e de um monitor confiável de débito.</p>
+<p>Depois do dreno, o hemotórax retido (volume residual visível na TC, frequentemente definido como &gt;300–500 mL) é o divisor entre recuperação simples e empiema, fibrotórax e encarceramento pulmonar. A VATS precoce evacua coágulo antes da organização em fibrina rígida, reduz dias de dreno e internação e evita a decorticação aberta; a EAST favorece VATS em até 4 dias em vez de tentar fibrinolítico intrapleural, que no trauma atrasa a resolução e aumenta custo e complicações. A apostila cita janela de 3 a 7 dias. A aspiração contínua de baixa pressão após trauma penetrante ajuda a reexpandir e a evitar coágulo, mas não há diferença entre aspiração e selo d'água simples no pneumotórax ou hemotórax não complicado.</p>
+<p>A autotransfusão do sangue drenado (coletado em sistema com anticoagulante) é recurso clássico do hemotórax maciço quando o hemocentro é distante, e a recuperação intraoperatória de células é sugerida pela Diretriz Europeia (2B) em sangramento cavitário grave.</p>
+</div></details>
+</div>
+</div>
+
+<div class="card prim">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">C.5</span> Circulação</div><h3>Tamponamento cardíaco traumático <span class="ank ank-dgr">DANGER</span></h3><div class="card-sub">A "armadilha do C": pouco sangue, muita repercussão</div></div>
+<div class="card-body">
+<div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Ferida penetrante na caixa cardíaca (ou fechado com ruptura de câmara) + hipotensão + jugulares túrgidas. 100–150 mL agudos bastam para tamponar. <b>eFAST subxifoide</b> confirma (acurácia 90–95% em mãos treinadas, repetir se negativo e piora). Tratamento definitivo: esternotomia ou toracotomia com reparo da lesão; pericardiocentese só como ponte.</div></div>
+<div class="disease">
+<div class="disease-head"><div class="disease-name">Ferimento cardíaco com hemopericárdio</div><div class="disease-tag">CID-10 S26.0 <span class="ev ev-acr">EAST 2015</span> <span class="ev ev-nice">SAMU AT15</span></div></div>
+<div class="disease-body"><div class="disease-rows">
+<div class="disease-row"><div class="k">Epidemiologia</div><div class="v">Predomina no penetrante (PAF e arma branca) em regiões com alta violência; o VD é a câmara mais atingida pela posição anterior, seguido do VE e átrios. Lacerações extensas de miocárdio e pericárdio exsanguinam para a pleura e matam na cena, sem tamponar.</div></div>
+<div class="disease-row"><div class="k">Fisiopatologia</div><div class="v">Coágulo sela o orifício pericárdico; o sangue das câmaras acumula entre os folhetos, e o pericárdio não distendido tem curva pressão-volume vertical. A pressão intrapericárdica supera a diastólica de VD e AD, colapsa as câmaras direitas na diástole, reduz o volume diastólico final e o débito. A interdependência ventricular explica o pulso paradoxal.</div></div>
+<div class="disease-row"><div class="k">Clínica</div><div class="v">Hipotensão, jugulares distendidas, bulhas abafadas — a tríade de Beck completa em apenas 30–40%. Pulso paradoxal (&gt;10 mmHg de queda da PAS na inspiração), Kussmaul, pressão de pulso reduzida, baixa voltagem e alternância elétrica, AESP.</div></div>
+<div class="disease-row"><div class="k">Diagnóstico</div><div class="v">eFAST pericárdico imediato e seriado; ecocardiograma transtorácico se inconclusivo; janela pericárdica subxifoide no estável com eFAST duvidoso e trajeto suspeito. TC não é exame para o instável <span class="ev ev-eular">WSES-AAST 2025 · US no peri-parada</span>.</div></div>
+<div class="disease-row"><div class="k">Tratamento</div><div class="v">Instável com eFAST positivo: esternotomia mediana (centro cirúrgico) ou toracotomia anterolateral esquerda/clamshell (sala de emergência, peri-parada), pericardiotomia anterior ao frênico, controle digital do orifício, sutura com pontos em U. Sem pulso com sinais de vida após penetrante torácico: toracotomia na sala, recomendação forte <span class="ev ev-acr">EAST 2015</span>. Pericardiocentese guiada por US só quando não há cirurgião e o transporte é longo; retirar 15–20 mL já melhora a hemodinâmica <span class="ev ev-nice">SAMU AT15</span>.</div></div>
+<div class="disease-row"><div class="k">Prognóstico</div><div class="v">Ferida cardíaca por arma branca que chega com pulso tem a melhor sobrevida entre as toracotomias (~35% dos que chegam em choque com ferida cardíaca penetrante, WTA 2012); PAF de alta energia e múltiplas câmaras pior.</div></div>
+<div class="disease-row"><div class="k">O que muda conduta</div><div class="v"><b>eFAST pericárdico positivo no instável</b> = sala; <b>hemotórax esquerdo com eFAST pericárdico negativo</b> não exclui ferida cardíaca descomprimindo para a pleura; <b>tempo de RCP e sinais de vida</b> decidem toracotomia na sala.</div></div>
+</div></div>
+</div>
+<details class="deep"><summary>Deep dive · Hemodinâmica do tamponamento agudo e a pericardiocentese que não resolve</summary><div class="deep-content">
+<p>A diferença entre o derrame pericárdico crônico de 1 litro bem tolerado e o hemopericárdio traumático de 150 mL que mata está na complacência. O pericárdio fibroso tem curva pressão-volume em J: uma porção plana inicial, que acomoda poucas dezenas de mililitros, seguida de uma porção quase vertical. No trauma o volume se acumula em minutos, sem tempo para o estiramento do tecido conjuntivo, e o paciente cai direto na porção íngreme. Pela mesma razão, a retirada de 15 a 20 mL — que desloca o ponto de volta para a porção menos íngreme da curva — produz melhora hemodinâmica desproporcional ao volume, o que é usado como argumento a favor da pericardiocentese. O problema é que o sangue intrapericárdico do trauma coagula com frequência, a agulha aspira pouco ou nada, a fonte continua sangrando e o procedimento consome minutos e pode lacerar coronária ou ventrículo; daí o lugar restrito da pericardiocentese como ponte em ambiente sem cirurgião.</p>
+<p>O pulso paradoxal é uma exacerbação de um fenômeno fisiológico. Na inspiração, a pressão intratorácica cai, o retorno venoso ao coração direito aumenta e o septo interventricular se desloca para a esquerda. Com o pericárdio cheio, o volume total do coração está fixo: o ganho do VD é pago com perda do VE, o volume sistólico do VE cai e a PAS cai mais de 10 mmHg. O sinal de Kussmaul (elevação paradoxal da pressão jugular na inspiração) é mais típico de pericardite constritiva, mas pode aparecer no tamponamento. O colapso diastólico do átrio e do ventrículo direitos no ecocardiograma é o equivalente de imagem da pressão intrapericárdica acima da intracavitária.</p>
+<p>Ressuscitação volêmica eleva a pressão venosa e transitoriamente devolve gradiente de enchimento, o que explica por que o paciente "melhora" com cristaloide e piora em seguida; ventilação com pressão positiva e sedativos na indução fazem o oposto e precipitam parada — se a intubação é inevitável, deve ser feita com a equipe cirúrgica pronta para abrir. Na sala, a toracotomia anterolateral esquerda no 4º–5º EIC dá acesso rápido ao pericárdio (abrir longitudinalmente, anterior ao nervo frênico), à aorta descendente para clampeamento e ao hilo esquerdo; a extensão transesternal (clamshell) expõe o coração inteiro e o hemitórax direito. A esternotomia é a via de eleição em sala cirúrgica para lesões cardíacas e de aorta ascendente.</p>
+</div></details>
+</div>
+</div>
+
+<div class="card prim">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">C.6</span> Grandes vasos</div><h3>Lesão traumática da aorta torácica (contusa) <span class="ank ank-hy">HIGH-YIELD</span></h3><div class="card-sub">Desaceleração horizontal, istmo aórtico e um RX que pode ser normal</div></div>
+<div class="card-body">
+<div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">A maioria morre na cena; quem chega vivo tem a ruptura contida pela adventícia ou pelo hematoma periaórtico. Suspeite pelo <b>mecanismo</b> (colisão frontal ou lateral em alta velocidade, ejeção, queda de grande altura), confirme por <b>angio-TC</b>, controle o impulso com <b>esmolol</b> e repare com <b>TEVAR</b> nos graus III–IV depois de tratar o que mata antes.</div></div>
+<div class="disease">
+<div class="disease-head"><div class="disease-name">Lesão contusa da aorta torácica</div><div class="disease-tag">CID-10 S25.0 <span class="ev ev-sbr">SVS 2026 · update</span> <span class="ev ev-eular">WSES-AAST 2025</span></div></div>
+<div class="disease-body"><div class="disease-rows">
+<div class="disease-row"><div class="k">Epidemiologia</div><div class="v">Responsável por fração importante das mortes imediatas em colisões automobilísticas; 54–65% no istmo, distal à subclávia esquerda (ligamento arterioso); arco 10–14%; aorta descendente distal/hiato 13–18%. Cerca de 20% sobrevivem inicialmente com hematoma contido, com alto risco de ruptura nas primeiras horas.</div></div>
+<div class="disease-row"><div class="k">Fisiopatologia</div><div class="v">Na desaceleração, o arco e a aorta ascendente, móveis, continuam se deslocando enquanto a descendente está fixa pelas intercostais e pela pleura; o cisalhamento concentra-se no istmo. Mecanismos acessórios: "pinçamento ósseo" entre esterno/clavícula e coluna e o golpe de aríete pela elevação súbita de pressão intraluminal.</div></div>
+<div class="disease-row"><div class="k">Clínica</div><div class="v">Pobre e mascarada por lesões distrativas: dor interescapular, assimetria de pulsos ou PA entre membros superiores e inferiores (pseudocoarctação), sopro interescapular, rouquidão, hipotensão inexplicada.</div></div>
+<div class="disease-row"><div class="k">Diagnóstico</div><div class="v">RX: mediastino &gt;8 cm, perda do botão aórtico, desvio da traqueia/SNG para a direita, rebaixamento do brônquio-fonte esquerdo, capuz apical, obliteração da janela aortopulmonar, fratura de 1º–2º arcos — mas o alargamento esteve presente em só 27,7% das lesões confirmadas. Angio-TC é o método de rastreamento e graduação (sensibilidade e especificidade próximas de 100%) <span class="ev ev-eular">WSES-AAST 2025</span>.</div></div>
+<div class="disease-row"><div class="k">Tratamento</div><div class="v">Controle de impulso (betabloqueador de ação curta, alvo de FC e PA conforme protocolo; apostila: FC &lt;80 bpm e PAM 60–70 mmHg); grau I: clínico com imagem seriada; graus III–IV: TEVAR, preferido ao reparo aberto; grau IV/instável: emergência; no estável, reparo após tratar TCE, hemorragia abdominal ou tamponamento (atrasar &gt;24 h associou-se a menor mortalidade na revisão sistemática da SVS) <span class="ev ev-sbr">SVS 2026</span>.</div></div>
+<div class="disease-row"><div class="k">Prognóstico</div><div class="v">Com TEVAR, curto prazo excelente; mortalidade relacionada à aorta concentra-se no grau IV. Seguimento por imagem (TC em 24 h, 1 semana, 3, 6 e 12 meses é um esquema proposto pela WSES).</div></div>
+<div class="disease-row"><div class="k">O que muda conduta</div><div class="v"><b>Grau da lesão na angio-TC</b> (I a IV); <b>hipotensão</b> (não vai à TC: sala/híbrida); <b>lesões concorrentes mais letais</b> (priorizar craniotomia, laparotomia, toracotomia por tamponamento, mantendo controle de impulso); <b>anatomia da subclávia esquerda</b> para planejar a cobertura.</div></div>
+</div></div>
+</div>
+<div class="score"><div class="score-head"><div class="score-name">Graduação da lesão contusa de aorta (SVS) <span class="ev ev-sbr">SVS 2011 · update 2026</span></div><div class="score-purpose">Gradua por angio-TC e orienta a estratégia; o update de 2026 revisou indicação e momento do reparo (confirmar recomendações no texto integral)</div></div><div class="score-rows">
+<div class="score-row"><div class="score-grade">I</div><div class="score-desc">Lesão intimal. Tratamento clínico com controle de impulso e TC de controle; TEVAR associou-se a maior mortalidade relacionada à aorta que o tratamento não operatório nos graus I–II na revisão de 2025.</div></div>
+<div class="score-row"><div class="score-grade">II</div><div class="score-desc">Hematoma intramural. Tendência atual a manejo não operatório selecionado com vigilância; historicamente TEVAR.</div></div>
+<div class="score-row"><div class="score-grade">III</div><div class="score-desc"><b>Pseudoaneurisma</b>. TEVAR; no estável, reparo pode ser postergado para depois de 24 h e das lesões prioritárias.</div></div>
+<div class="score-row"><div class="score-grade">IV</div><div class="score-desc"><b>Ruptura livre</b> (extravasamento). Reparo de emergência; maior mortalidade relacionada à aorta.</div></div>
+</div></div>
+<details class="deep"><summary>Deep dive · Controle de impulso, o momento do TEVAR e a subclávia esquerda</summary><div class="deep-content">
+<p>O conceito de "terapia anti-impulso" vem da dissecção aórtica: reduzir a força de cisalhamento sobre a parede (dP/dt) depende tanto da frequência cardíaca quanto da pressão. Por isso o betabloqueador vem antes do vasodilatador — o nitroprussiato isolado aumenta a taquicardia reflexa e o dP/dt. No trauma, a droga de escolha é o esmolol, betabloqueador β1-seletivo com meia-vida de 9 minutos, que pode ser desligado se o paciente sangrar por outra fonte ou desenvolver hipotensão. Alvos de PA variam entre protocolos (PAS ≤100–120 mmHg ou PAM 60–70 mmHg; FC &lt;80–100 bpm) e precisam ser compatibilizados com a perfusão cerebral no TCE e da medula, que depende da circulação intercostal — o conflito clássico entre "proteger a aorta" e "proteger o cérebro" é resolvido caso a caso, frequentemente aceitando alvos mais altos no TCE grave.</p>
+<p>A história natural mudou com o reconhecimento de que a ruptura de lesões contidas é rara depois das primeiras horas sob controle de impulso. Séries dos anos 1990 operavam todos de emergência por toracotomia esquerda com clampeamento, com paraplegia de 5–10% e alta mortalidade. O TEVAR, com endoprótese introduzida pela femoral, reduziu mortalidade e paraplegia, e virou primeira linha nos graus II–IV pela SVS de 2011. A revisão sistemática que embasou o update de 2026 encontrou maior mortalidade com TEVAR precoce (&lt;24 h) do que com reparo tardio no paciente estável, e maior mortalidade com TEVAR muito precoce (&lt;9 h) no TCE concomitante — reforçando que o paciente estável se beneficia de ir primeiro à craniotomia, à laparotomia ou à UTI, com reparo programado. O update também tratou do uso de heparina no intraoperatório (associada a menor mortalidade) e da cobertura da subclávia esquerda, necessária em boa parte das lesões do istmo pela proximidade da zona de ancoragem: a cobertura sem revascularização pode aumentar eventos isquêmicos (membro superior, AVC posterior, isquemia medular), e a revascularização seletiva (bypass carótido-subclávio) é discutida por anatomia vertebral dominante, artéria mamária usada em revascularização miocárdica prévia e risco medular.</p>
+<p>Detalhe técnico com impacto: a aorta do jovem politraumatizado é pequena e hipovolêmica na TC de admissão, e o superdimensionamento excessivo da prótese leva a colapso ("infolding") e trombose; o planejamento é feito com medidas em reconstruções de linha central e, se possível, após ressuscitação. No grau I, a conduta é clínica com angio-TC de controle; boa parte das lesões intimais pequenas cicatriza.</p>
+</div></details>
+</div>
+</div>
+</section>
+
+<section id="secundarias">
+<div class="section"><div class="section-eyebrow"><span>D</span> Entidades Secundárias</div><div class="section-title">Parede, parênquima, grande via aérea, miocárdio, embolias e pescoço</div><div class="section-sub">Entidades do exame secundário e lesões raras agrupadas por abordagem comum. Menos letais na primeira hora, mas responsáveis por boa parte da morbidade dos dias seguintes — e por erros clássicos de prova.</div></div>
+
+<div class="card diag">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">D.1</span> Parede + parênquima</div><h3>Fraturas costais, tórax instável e contusão pulmonar <span class="ank ank-dec">DECISION</span></h3><div class="card-sub">O problema respiratório é o pulmão embaixo e a dor, não o segmento solto</div></div>
+<div class="card-body">
+<div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Tórax instável: ≥2 arcos consecutivos fraturados em ≥2 pontos (alguns autores exigem 3) ou disjunção costocondral → movimento paradoxal. A insuficiência respiratória vem quase sempre da <b>contusão pulmonar subjacente</b> e da hipoventilação por dor. Tratamento: O2, analgesia eficaz (regional), fisioterapia, ventilação conforme a gasometria; fixação cirúrgica precoce nos selecionados. Nunca enfaixar.</div></div>
+<div class="disease">
+<div class="disease-head"><div class="disease-name">Fraturas de arcos costais e esterno, tórax instável e contusão pulmonar</div><div class="disease-tag">CID-10 S22.5 · S22.4 · S22.2 · S27.3 <span class="ev ev-eular">WSES-AAST 2025</span> <span class="ev ev-acr">EAST 2016 analgesia</span></div></div>
+<div class="disease-body"><div class="disease-rows">
+<div class="disease-row"><div class="k">Epidemiologia</div><div class="v">Fraturas do 4º ao 10º arco são as mais comuns. Contusão em ~40% do trauma fechado de tórax; mortalidade ~10%, maior no idoso, no pneumopata e com lesões associadas. Criança pode ter contusão grave sem fratura pela elasticidade costal — fratura costal na criança indica energia alta.</div></div>
+<div class="disease-row"><div class="k">Fisiopatologia</div><div class="v">Segmento instável é sugado na inspiração pela pressão pleural negativa e abaula na expiração; o trabalho respiratório aumenta e a dor reduz o volume corrente e a tosse. A contusão é hemorragia alveolar e intersticial com edema e inflamação: shunt, queda de complacência, risco de pneumonia e SDRA (definição global de 2023 aceita SpO2/FiO2 e ultrassom).</div></div>
+<div class="disease-row"><div class="k">Clínica</div><div class="v">Dor intensa à inspiração, crepitação, respiração paradoxal (palpável antes de visível), hipoxemia que piora nas primeiras 24–48 h. Marcadores de energia: 1º–3º arcos, escápula e clavícula (grandes vasos, TCE, coluna); 10º–12º (baço e fígado); esterno (aorta, miocárdio, esôfago — mas fratura isolada de esterno não prediz contusão miocárdica).</div></div>
+<div class="disease-row"><div class="k">Diagnóstico</div><div class="v">Clínico + RX; TC quantifica contusão (volume prediz pneumonia/SDRA) e planeja fixação com reconstrução 3D. Contusão atravessa fissuras e não respeita segmentos; atelectasia respeita. O RX pode só mostrar consolidação após 24–48 h — achado radiológico precoce indica contusão grave <span class="ev ev-eular">WSES-AAST 2025</span>.</div></div>
+<div class="disease-row"><div class="k">Tratamento</div><div class="v">O2 para normoxemia sem hiperóxia; analgesia multimodal com epidural ou bloqueios (paravertebral, eretor da espinha, serrátil, intercostal) como opções <span class="ev ev-acr">EAST 2016 · condicional</span>; VNI na insuficiência respiratória com vigilância; IOT se FR &gt;40, hipoxemia refratária, rebaixamento ou lesões que exigem cirurgia; volume criterioso (sem restrição nem excesso); sem corticoide e sem antibiótico profilático. <b>Fixação cirúrgica</b>: considerar em todo tórax instável estável hemodinamicamente e em ≥3 fraturas desviadas do 3º ao 10º arco ou falha de desmame; fazer em 48–72 h (LoE high, GoR strong); instabilidade hemodinâmica contraindica <span class="ev ev-eular">WSES-AAST 2025</span>.</div></div>
+<div class="disease-row"><div class="k">Prognóstico</div><div class="v">Idoso: cada arco fraturado a mais aumenta pneumonia e mortalidade. Fixação reduz traqueostomia, pneumonia, tempo de ventilação e dor crônica, sem efeito consistente em mortalidade.</div></div>
+<div class="disease-row"><div class="k">O que muda conduta</div><div class="v"><b>Idade, número de arcos, capacidade vital/tosse e reserva pulmonar</b> definem UTI e analgesia regional; <b>falha de desmame ou deterioração respiratória com tórax instável</b> indica fixação; <b>contusão grave precoce no RX</b> antecipa necessidade de ventilação na primeira hora.</div></div>
+</div></div>
+</div>
+<details class="deep"><summary>Deep dive · Mecânica do segmento instável, contusão como lesão inflamatória e a virada da fixação costal</summary><div class="deep-content">
+<p>Durante décadas o tórax instável foi tratado como problema mecânico: estabilização externa com sacos de areia, tração, enfaixamento e, nos anos 1950–60, "estabilização pneumática interna" por ventilação mecânica prolongada, que mantinha o segmento alinhado à custa de semanas de tubo. A virada veio quando Trinkle (1975) mostrou que, controlando dor e evitando sobrecarga hídrica, a maioria não precisava de ventilação: o fator determinante da insuficiência respiratória não era o segmento móvel, e sim a contusão subjacente. Isso explica por que o enfaixamento circunferencial é contraindicado — ele reduz ainda mais a expansão e a tosse, promovendo atelectasia e pneumonia.</p>
+<p>A contusão pulmonar é uma lesão de evolução, não um evento. A energia transmitida rompe a interface alvéolo-capilar; sangue e plasma inundam alvéolos e interstício nas primeiras horas, e em seguida instala-se resposta inflamatória com recrutamento de neutrófilos, perda de surfactante e aumento da permeabilidade, que pode atingir o pulmão contralateral e evoluir para SDRA em 24–72 h. A curva clínica descreve isso: hipoxemia que piora no segundo dia. Volume em excesso aumenta o edema pulmonar não cardiogênico da área lesada; a restrição hídrica, por outro lado, prejudica a perfusão sistêmica de um paciente que frequentemente está sangrando. A recomendação é equilíbrio guiado por metas. Ventilação protetora (volume corrente de 6 mL/kg de peso predito, platô &lt;30 cmH2O) e posicionamento com o pulmão sadio para baixo em lesões unilaterais graves ajudam; ventilação diferencial e ECMO venovenosa (sobrevida ~68% em séries de trauma) ficam para a falha.</p>
+<p>A fixação cirúrgica de costelas (SSRF) saiu do campo da exceção depois de ensaios randomizados e meta-análises mostrando menos dias de ventilação, menos pneumonia e traqueostomia, menor custo e retorno mais precoce ao trabalho no tórax instável. A janela importa: até 72 h a redução é mais fácil (antes do calo, do hematoma organizado e da rigidez) e evitam-se as complicações da ventilação; entre 3 e 7 dias permite identificar quem falhou no tratamento não operatório, ao custo de cirurgia mais longa. Costelas 1–2 e 11–12 raramente se fixam, porque pouco contribuem para a mecânica; 3–10, e sobretudo 6–8, são as que mais reduzem o volume torácico quando desviadas. TCE e contusão não são contraindicações absolutas; instabilidade hemodinâmica é.</p>
+</div></details>
+</div>
+</div>
+
+<div class="card diag">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">D.2</span> Lesões raras agrupadas</div><h3>Árvore traqueobrônquica, diafragma, esôfago torácico e ducto torácico</h3><div class="card-sub">Raras, de diagnóstico tardio e com o mesmo princípio: suspeitar pelo padrão, confirmar por endoscopia ou TC, reparar</div></div>
+<div class="card-body">
+<div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body"><b>Traqueobrônquica</b>: enfisema extenso, hemoptise, pneumotórax com escape aéreo maciço e pulmão que não expande → broncoscopia, IOT guiada distal à lesão, segundo dreno, reparo. <b>Diafragma</b>: esquerdo no fechado (lacerações grandes), pequeno no penetrante (oculto, hérnia anos depois) → TC, videolaparoscopia/toracoscopia, reparo sempre. <b>Esôfago</b>: trajeto transmediastinal → TC com contraste/esofagoscopia; reparo nas primeiras horas. <b>Quilotórax</b>: líquido leitoso (ou hemático) com triglicerídeos altos → drenagem, dieta com TCM/NPT, ligadura do ducto se alto débito.</div></div>
+<div class="disease">
+<div class="disease-head"><div class="disease-name">Lesões traqueobrônquicas, diafragmáticas, esofágicas e do ducto torácico</div><div class="disease-tag">CID-10 S27.4 · S27.5 · S27.8 <span class="ev ev-eular">WSES-AAST 2025</span></div></div>
+<div class="disease-body"><div class="disease-rows">
+<div class="disease-row"><div class="k">Epidemiologia</div><div class="v">Traqueobrônquica: rara e muito letal na cena; a maioria a até 2,5 cm da carina. Diafragma: ~0,4% de todos os traumas, até 42% nos toracoabdominais; 63% penetrantes. Esôfago torácico: raro, quase sempre penetrante. Quilotórax traumático: mais iatrogênico (esofagectomia, linfadenectomia, cardiopatia congênita) que acidental.</div></div>
+<div class="disease-row"><div class="k">Fisiopatologia</div><div class="v">Brônquio-fonte: desaceleração com carina fixa, ou compressão anteroposterior com glote fechada. Diafragma: aumento súbito da pressão intra-abdominal no fechado (esquerdo, sem a proteção hepática; lacerações &gt;5 cm); herniação de estômago, cólon e baço com o gradiente pleuroperitoneal. Esôfago: mediastinite em horas pela saliva e suco gástrico. Ducto torácico: cruza da direita (abaixo de T5) para a esquerda — lesão baixa dá quilotórax direito, alta dá esquerdo.</div></div>
+<div class="disease-row"><div class="k">Clínica</div><div class="v">Traqueobrônquica: enfisema subcutâneo e mediastinal, hemoptise, pneumotórax hipertensivo que persiste com borbulhamento contínuo; "pulmão caído" (fallen lung) na imagem. Diafragma: frequentemente silente; hipoxemia por herniação; RX com câmara gástrica ou SNG no hemitórax esquerdo. Esôfago: dor, enfisema, febre e sepse tardias. Quilotórax: drenagem persistente leitosa após início da dieta.</div></div>
+<div class="disease-row"><div class="k">Diagnóstico</div><div class="v">Broncoscopia é o padrão-ouro da via aérea (sensibilidade ~90%); TC melhor para estruturas associadas; TC com contraste ou esofagoscopia na suspeita de perfuração (esofagografia + endoscopia somam acurácia próxima de 100%); TC é o melhor exame para diafragma, com laparoscopia/toracoscopia em 24 h quando persiste suspeita no penetrante toracoabdominal <span class="ev ev-eular">WSES-AAST 2025 · GoR strong</span>. Quilotórax: triglicerídeos &gt;110 mg/dL ou quilomícrons no líquido.</div></div>
+<div class="disease-row"><div class="k">Tratamento</div><div class="v">Via aérea: garantir via aérea com IOT cuidadosa guiada por broncoscopia, tubo distal à lesão ou intubação seletiva; reparo cirúrgico em rupturas grandes, escape aéreo persistente ou lesões associadas (pequenas e não complicadas podem ser conservadoras) — toracotomia posterolateral direita para traqueia distal, carina e brônquio-fonte direito e, em geral, também para o esquerdo proximal. Diafragma: reparo sempre (laparotomia no agudo, laparoscopia selecionada; fio inabsorvível ou absorção lenta) e dreno torácico após. Esôfago: reparo primário em duas camadas com drenagem nas primeiras horas; tardio: desvio/exclusão, drenagem mediastinal, antibiótico. Quilotórax: drenagem, TCM ou NPT, pleurodese se &lt;500 mL/dia persistente, ligadura do ducto se &gt;1 L/dia <span class="ev ev-expert">Apostila 2025 · conduta clássica</span>.</div></div>
+<div class="disease-row"><div class="k">Prognóstico</div><div class="v">Diafragma: morbimortalidade dita pelas lesões associadas (mortalidade 18–40%); lesão não reparada evolui para hérnia com encarceramento anos depois. Esôfago: mortalidade cresce com cada hora de atraso. Via aérea: estenose tardia se reparo atrasado.</div></div>
+<div class="disease-row"><div class="k">O que muda conduta</div><div class="v"><b>Pulmão que não reexpande com dreno bem posicionado</b> (broncoscopia); <b>ferida toracoabdominal esquerda no estável com TC não diagnóstica</b> (laparoscopia em 24 h); <b>tempo desde a perfuração esofágica</b> (reparo primário × desvio); <b>débito diário do quilo</b> (conservador × ligadura). Em laparoscopia por lesão diafragmática, o pneumoperitônio pode causar pneumotórax hipertensivo — dreno de prontidão.</div></div>
+</div></div>
+</div>
+</div>
+</div>
+
+<div class="card diag">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">D.3</span> Miocárdio</div><h3>Lesão cardíaca contusa (contusão miocárdica)</h3><div class="card-sub">ECG + troponina para excluir, eco para quem tem hipotensão ou arritmia</div></div>
+<div class="card-body">
+<div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Suspeitar em impacto anterior de alta energia. <b>ECG e troponina I na admissão</b>: ambos normais excluem lesão clinicamente relevante e permitem alta ou leito não monitorizado (EAST 2012); qualquer alteração → monitorização. Eco apenas para hipotensão ou arritmia. VD é a câmara mais atingida.</div></div>
+<div class="disease">
+<div class="disease-head"><div class="disease-name">Contusão miocárdica / lesão cardíaca contusa</div><div class="disease-tag">CID-10 S26.8 <span class="ev ev-acr">EAST 2012</span></div></div>
+<div class="disease-body"><div class="disease-rows">
+<div class="disease-row"><div class="k">Epidemiologia</div><div class="v">Presente em proporção substancial do trauma fechado grave de tórax; metade relacionada a colisões automobilísticas; atropelamento, moto e quedas &gt;6 m completam.</div></div>
+<div class="disease-row"><div class="k">Fisiopatologia</div><div class="v">Hemorragia subepicárdica e intramiocárdica, necrose de fibras, edema; disfunção de VD (anterior) e substrato arritmogênico. Formas extremas: ruptura de câmara (tamponamento), ruptura de septo, de valva (insuficiência aguda) ou de cordoalha; commotio cordis é fenômeno elétrico sem lesão estrutural.</div></div>
+<div class="disease-row"><div class="k">Clínica</div><div class="v">Taquicardia sinusal inexplicada, extrassístoles ventriculares múltiplas, fibrilação atrial, bloqueio de ramo direito, alterações de ST; hipotensão com PVC elevada sem pneumotórax ou tamponamento sugere falência de VD.</div></div>
+<div class="disease-row"><div class="k">Diagnóstico</div><div class="v">ECG isolado não exclui; ECG + troponina I normais têm valor preditivo negativo próximo de 100%; fratura de esterno isolada não prediz contusão; TC ou RM cardíaca diferenciam IAM primário (o infarto que causou o acidente) de contusão <span class="ev ev-acr">EAST 2012</span>.</div></div>
+<div class="disease-row"><div class="k">Tratamento</div><div class="v">Monitorização por 24–48 h se ECG novo alterado ou troponina elevada; antiarrítmico conforme ritmo; suporte de VD com volume criterioso e inotrópico (dobutamina na disfunção miocárdica, Diretriz Europeia 1C); lesão estrutural → cirurgia.</div></div>
+<div class="disease-row"><div class="k">Prognóstico</div><div class="v">Geralmente transitória e benigna; arritmias graves concentram-se nas primeiras 24 h, sobretudo em quem tem distúrbio de condução.</div></div>
+<div class="disease-row"><div class="k">O que muda conduta</div><div class="v"><b>ECG + troponina I</b> (ambos normais = libera; um alterado = monitoriza); <b>hipotensão/arritmia</b> (eco); <b>troponina muito alta com padrão isquêmico regional</b> (pensar em IAM e cateterismo quando o sangramento permitir).</div></div>
+</div></div>
+</div>
+</div>
+</div>
+
+<div class="card diag">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">D.4</span> Complicações embólicas</div><h3>Embolia gasosa sistêmica e síndrome da embolia gordurosa</h3><div class="card-sub">Duas embolias, duas janelas de tempo: segundos após ventilar o pulmão lesado, 24–72 h após fraturar o fêmur</div></div>
+<div class="card-body">
+<div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body"><b>Gasosa</b>: fístula broncovenosa no pulmão lesado + pressão positiva → ar nas veias pulmonares, coronárias e cérebro: colapso súbito, arritmia, déficit focal. FiO2 100%, Trendelenburg, isolar o pulmão, toracotomia com clampeamento do hilo. <b>Gordurosa</b>: fratura de osso longo/pelve → hipoxemia, alteração neurológica e petéquias em 24–72 h. Suporte; fixação precoce previne.</div></div>
+<div class="disease">
+<div class="disease-head"><div class="disease-name">Embolia gasosa traumática e embolia gordurosa traumática</div><div class="disease-tag">CID-10 T79.0 · T79.1 <span class="ev ev-eular">WSES-AAST 2025</span></div></div>
+<div class="disease-body"><div class="disease-rows">
+<div class="disease-row"><div class="k">Epidemiologia</div><div class="v">Gasosa: rara, subdiagnosticada, quase sempre fatal sem toracotomia; associada a lesão pulmonar penetrante central e a ventilação com pressões altas. Gordurosa: síndrome clínica em 0,5–11% dos politraumas com fratura de ossos longos/pelve; embolização subclínica é quase universal.</div></div>
+<div class="disease-row"><div class="k">Fisiopatologia</div><div class="v">Gasosa: gradiente via aérea → veia pulmonar quando a pressão alveolar supera a venosa (pressão positiva, hipovolemia); o ar segue para AE, VE, aorta, coronárias e cérebro. Gordurosa: teoria mecânica (glóbulos de medula entram em veias abertas) e bioquímica (lipase gera ácidos graxos livres tóxicos ao endotélio pulmonar e cerebral).</div></div>
+<div class="disease-row"><div class="k">Clínica</div><div class="v">Gasosa: parada ou arritmia súbita após IOT, déficit focal sem TCE, bolhas nos vasos retinianos, ar espumoso em cateter arterial. Gordurosa: tríade (insuficiência respiratória, confusão/convulsões/déficits, petéquias em tórax superior, axilas, conjuntivas); febre, trombocitopenia, anemia, gordura na urina; RM com "starfield" de difusão.</div></div>
+<div class="disease-row"><div class="k">Diagnóstico</div><div class="v">Ambos clínicos; eco/ETE e ultrassom mostram microbolhas; TC pode mostrar ar vascular mas não exclui; angio-TC na suspeita de embolia com eco para decisão imediata <span class="ev ev-eular">WSES-AAST 2025</span>.</div></div>
+<div class="disease-row"><div class="k">Tratamento</div><div class="v">Gasosa: O2 100%, Trendelenburg e decúbito lateral esquerdo (benefício hemodinâmico incerto em animais), reduzir pressões da via aérea, isolamento pulmonar/ventilação diferencial, toracotomia com clampeamento do hilo e aspiração de ar do ventrículo e da aorta; oxigenoterapia hiperbárica na embolia cerebral (melhor em até 6 h) <span class="ev ev-eular">WSES-AAST 2025</span>. Gordurosa: suporte ventilatório e hemodinâmico; corticoide controverso; prevenção com estabilização precoce das fraturas (fixação rígida em 24 h reduziu a incidência ~5 vezes).</div></div>
+<div class="disease-row"><div class="k">Prognóstico</div><div class="v">Gasosa: mortalidade altíssima. Gordurosa: mortalidade 5–15%, maior pela insuficiência respiratória; déficits neurológicos costumam regredir.</div></div>
+<div class="disease-row"><div class="k">O que muda conduta</div><div class="v"><b>Deterioração súbita logo após iniciar pressão positiva em ferida pulmonar</b> (pensar em embolia gasosa, não só em tensão); <b>hipoxemia e confusão no 2º dia após fratura de fêmur</b> (gordurosa, não TCE tardio); <b>timing da fixação</b> de ossos longos.</div></div>
+</div></div>
+</div>
+</div>
+</div>
+
+<div class="card diag">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">D.5</span> Pescoço</div><h3>Trauma cervical penetrante e via aérea laringotraqueal <span class="ank ank-dgr">DANGER</span></h3><div class="card-sub">Platisma, sinais maiores e angio-TC — a era do "no-zone"</div></div>
+<div class="card-body">
+<div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Ferida que não viola o platisma é superficial. Violou: <b>sinais maiores</b> (instabilidade, sangramento ativo, hematoma em expansão, bolhas/enfisema pela ferida, estridor, hemoptise, déficit neurológico) → via aérea definitiva precoce e exploração imediata. Sem sinais maiores: <b>angio-TC independentemente da zona</b>, completada por endoscopia/esofagografia e laringoscopia/broncoscopia conforme trajeto.</div></div>
+<div class="disease">
+<div class="disease-head"><div class="disease-name">Ferimento cervical com lesão laringotraqueal e/ou vascular</div><div class="disease-tag">CID-10 S11.0 · S15.0 · S11.2 <span class="ev ev-sbr">WTA 2013 · no-zone</span> <span class="ev ev-expert">Apostila 2025</span></div></div>
+<div class="disease-body"><div class="disease-rows">
+<div class="disease-row"><div class="k">Epidemiologia</div><div class="v">Mortalidade em torno de 10%; vasos são as estruturas mais atingidas (artérias em ~18% e veias em ~26% dos penetrantes); laringe é frequentemente lesada no fechado e pode ser silenciosa; esôfago raramente no fechado.</div></div>
+<div class="disease-row"><div class="k">Fisiopatologia</div><div class="v">Estruturas vitais com pouca proteção de partes moles. Hematoma cervical em expansão comprime e desloca a laringe; lesão contusa de carótida/vertebral (dissecção) produz AVC após intervalo de horas a dias.</div></div>
+<div class="disease-row"><div class="k">Clínica</div><div class="v">Zona I (fúrcula–cricoide; acesso difícil, grandes vasos torácicos), II (cricoide–ângulo da mandíbula; carótidas, jugulares, laringe, faringe), III (ângulo–base do crânio; carótida distal). Voz rouca ou "de batata quente", disfagia, dor ao deglutir, enfisema, sopro.</div></div>
+<div class="disease-row"><div class="k">Diagnóstico</div><div class="v">Angio-TC (preferida) ou Doppler; arteriografia se fragmentos metálicos obscurecem; TC de pescoço é o exame de escolha da laringe no fechado; esofagografia + EDA são complementares (sensibilidades isoladas 50–90% e 29–83%) <span class="ev ev-expert">Apostila 2025</span> <span class="ev ev-sbr">WTA 2013</span>.</div></div>
+<div class="disease-row"><div class="k">Tratamento</div><div class="v">Via aérea: IOT pelo mais experiente, guiada por fibroscopia se enfisema; via aérea cirúrgica se obstrução no nível ou acima da laringe ou distorção grave (traqueostomia na lesão laríngea). Hemorragia: compressão digital até a sala (sonda de Foley insuflada na ferida como ponte). Vascular contusa sem extravasamento: antiagregante ou heparina; com pseudoaneurisma/extravasamento: endovascular ou cirurgia. Esôfago: reparo primário em 12 h; tardio, desvio e drenagem.</div></div>
+<div class="disease-row"><div class="k">Prognóstico</div><div class="v">Esofágica: a maior parte das mortes vem do atraso diagnóstico. Laríngea: disfonia e estenose tardias sem reparo precoce.</div></div>
+<div class="disease-row"><div class="k">O que muda conduta</div><div class="v"><b>Sinais maiores</b> (sala) × <b>ausência de sinais</b> (angio-TC); <b>enfisema cervical</b> (IOT por fibroscopia ou via cirúrgica, nunca intubação às cegas repetida); <b>fratura de laringe</b> (traqueostomia em vez de cricotireoidostomia).</div></div>
+</div></div>
+</div>
+</div>
+</div>
+</section>
+
+<section id="algoritmo">
+<div class="section"><div class="section-eyebrow"><span>E</span> Algoritmo</div><div class="section-title">Da chegada à sala: xABCDE com o tórax no centro</div><div class="section-sub">A árvore começa pela pergunta que separa o paciente que vai morrer em minutos do que tem tempo para imagem: há sangramento exsanguinante, ar ou sangue sob tensão, tamponamento ou parada?</div></div>
+<div class="card prim">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">E.1</span> Algoritmo</div><h3>Trauma com comprometimento torácico ou choque <span class="ank ank-dec">DECISION</span></h3></div>
+<div class="card-body">
+<div class="algo"><div class="tree">
+<div class="tree-line"><span class="tree-node start">Politraumatizado na sala vermelha (xABCDE em paralelo, líder definido)</span></div>
+<div class="tree-branch"><div class="tree-label yes">Sangramento externo exsanguinante?</div>
+<div class="tree-line"><span class="tree-node dgr">→ x: torniquete / compressão / gaze hemostática juncional; ativar PTM</span></div></div>
+<div class="tree-branch"><div class="tree-label yes">Sem pulso central?</div>
+<div class="tree-line"><span class="tree-node dgr">→ Parada traumática: via aérea + O2, descompressão bilateral (toracostomia digital), sangue, eFAST pericárdico</span></div>
+<div class="tree-branch"><div class="tree-label yes">Penetrante torácico com sinais de vida / RCP &lt;15 min · contuso RCP &lt;10 min</div>
+<div class="tree-line"><span class="tree-node action">→ Toracotomia anterolateral esquerda: pericardiotomia, controle cardíaco, clampeamento aórtico</span></div></div>
+<div class="tree-branch"><div class="tree-label no">Contuso sem sinais de vida / assistolia sem tamponamento</div>
+<div class="tree-line"><span class="tree-node dx">→ Toracotomia não indicada (EAST condicional contra); considerar encerramento</span></div></div></div>
+<div class="tree-branch"><div class="tree-label yes">A em risco (Glasgow ≤8, obstrução, hipoxemia refratária)?</div>
+<div class="tree-line"><span class="tree-node action">→ IOT em sequência rápida com videolaringoscópio, capnografia; corrigir choque antes da indução; falhou → cricotireoidostomia</span></div></div>
+<div class="tree-branch"><div class="tree-label yes">B: MV abolido + instabilidade?</div>
+<div class="tree-line"><span class="tree-node dec">Percussão e jugulares (eFAST pleural se disponível)</span></div>
+<div class="tree-branch"><div class="tree-label yes">Timpanismo / jugular cheia</div>
+<div class="tree-line"><span class="tree-node action">→ Descompressão 4º–5º EIC (criança 2º EIC hemiclavicular) → dreno</span></div></div>
+<div class="tree-branch"><div class="tree-label yes">Macicez / jugular vazia</div>
+<div class="tree-line"><span class="tree-node action">→ Dreno calibroso + PTM; persistência hemodinâmica ou &gt;1.500 mL/24 h ou &gt;200 mL/h × 3 h → toracotomia</span></div></div>
+<div class="tree-branch"><div class="tree-label yes">Ferida aspirativa</div>
+<div class="tree-line"><span class="tree-node action">→ Curativo valvulado; dreno longe da ferida; fechamento cirúrgico</span></div></div></div>
+<div class="tree-branch"><div class="tree-label yes">C: choque persiste?</div>
+<div class="tree-line"><span class="tree-node dec">eFAST: pericárdio · pleuras · abdome · RX de pelve</span></div>
+<div class="tree-branch"><div class="tree-label yes">Pericárdio +</div>
+<div class="tree-line"><span class="tree-node dgr">→ Esternotomia/toracotomia; pericardiocentese só como ponte sem cirurgião</span></div></div>
+<div class="tree-branch"><div class="tree-label yes">Abdome + ou pelve instável</div>
+<div class="tree-line"><span class="tree-node dx">→ Laparotomia / cinta pélvica, angioembolização, packing (CT02)</span></div></div>
+<div class="tree-branch"><div class="tree-label no">Tudo negativo e não responde</div>
+<div class="tree-line"><span class="tree-node dx">→ Reavaliar tórax/eFAST seriado; contusão miocárdica; neurogênico; sangramento externo oculto (dorso, couro cabeludo)</span></div></div></div>
+<div class="tree-branch"><div class="tree-label no">Estável após xABCDE</div>
+<div class="tree-line"><span class="tree-node action">→ Exame secundário + TC de corpo inteiro com angio-TC de tórax (aorta, via aérea, diafragma, contusão) → tratamento definitivo ou transferência</span></div></div>
+</div></div>
+<div class="box decision"><span class="box-label">DECISION</span><div class="box-title">Raciocínio em 6 passos — a sequência mental na sala vermelha</div><div class="box-body"><ul>
+<li><b>Passo 1 — há sangue saindo que eu possa parar com a mão agora?</b> Se sim, isso é o primeiro gesto e a equipe segue em paralelo; o torniquete não espera o colar.</li>
+<li><b>Passo 2 — tem pulso central?</b> Sem pulso, a pergunta não é "qual o ritmo", é "qual causa reversível": hipóxia, tensão, tamponamento, hipovolemia. Trate as quatro em paralelo e decida a toracotomia pelo mecanismo e pelo tempo de RCP.</li>
+<li><b>Passo 3 — oxigena e protege?</b> Se não, via aérea definitiva — mas no choque profundo, primeiro sangue, depois indução, com plano cirúrgico aberto.</li>
+<li><b>Passo 4 — o tórax explica o choque?</b> MV abolido com instabilidade obriga a decidir entre ar e sangue pela percussão e pelas jugulares; descomprimir ou drenar antes da imagem.</li>
+<li><b>Passo 5 — onde está o sangue?</b> eFAST e RX AP de tórax e pelve dividem os pacientes entre sala (pericárdio, tórax, abdome), hemodinâmica (pelve, órgão sólido no respondedor) e TC (estável).</li>
+<li><b>Passo 6 — o que ainda não vi?</b> Aorta (mecanismo), via aérea (escape aéreo), diafragma (toracoabdominal), contusão que vai piorar em 24 h — o exame secundário e a TC existem para isso, e a reavaliação contínua para o que muda.</li>
+</ul></div></div>
+<div class="score"><div class="score-head"><div class="score-name">Toracotomia de reanimação na sala de emergência — seleção <span class="ev ev-acr">EAST 2015</span> <span class="ev ev-sbr">WTA 2012</span></div><div class="score-purpose">Sinais de vida: pupilas reativas, movimento espontâneo, esforço respiratório, atividade elétrica organizada, PA ou pulso palpável no APH</div></div><div class="score-rows">
+<div class="score-row"><div class="score-grade">Forte a favor</div><div class="score-desc">Sem pulso <b>com sinais de vida</b> após <b>penetrante torácico</b> (sobrevida 21,3%; neurologicamente intacta 11,7%).</div></div>
+<div class="score-row"><div class="score-grade">Condicional a favor</div><div class="score-desc">Penetrante torácico sem sinais de vida (8,3%); penetrante extratorácico com sinais de vida (15,6%) ou sem (2,9%); <b>contuso com sinais de vida</b> (4,6%).</div></div>
+<div class="score-row"><div class="score-grade">Condicional contra</div><div class="score-desc"><b>Contuso sem sinais de vida</b> (sobrevida 0,7%; intacta 0,1%).</div></div>
+<div class="score-row"><div class="score-grade">WTA (tempo)</div><div class="score-desc">Indicar se RCP pré-hospitalar &lt;10 min no contuso, &lt;15 min no penetrante de tronco, &lt;5 min no penetrante de pescoço/extremidade, ou choque profundo refratário. Após abrir: assistolia sem tamponamento = óbito; recuperação = PAS &gt;70 mmHg com clampeamento aórtico.</div></div>
+</div></div>
+</div>
+</div>
+</section>
+
+<section id="tratamento">
+<div class="section"><div class="section-eyebrow"><span>F</span> Tratamento Integrado</div><div class="section-title">F1 · Estratégia por entidade · F2 · Procedimentos e doses operacionais</div><div class="section-sub">No trauma, "tratamento" é majoritariamente procedimento e hemoderivado. F1 organiza a escada de cada entidade; a tabela de procedimentos mostra a técnica e o erro típico; a tabela de cenários traduz em conduta; F2 traz as doses com número, via, frequência e a nota que muda a decisão.</div></div>
+
+<div class="card tx">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">F.1</span> Estratégia</div><h3>Escadas terapêuticas por entidade <span class="ank ank-dec">DECISION</span></h3></div>
+<div class="card-body">
+<div class="sub-title">F1.1 · Hemorragia externa (x)</div>
+<ul class="bullets">
+<li><b>Primeira linha:</b> compressão direta firme com gaze sobre o ponto sangrante (não "por cima do curativo encharcado" sem pressão), por pelo menos 3 minutos.</li>
+<li><b>Membro:</b> torniquete comercial 5–7 cm proximal à ferida (no APH sob pressa, "alto e apertado"), até parar o sangramento e o pulso distal; anotar horário; segundo torniquete proximal se não controlar. Afrouxar para "testar" na sala só com controle cirúrgico disponível; tempos até ~2 h são bem tolerados, e a anotação do autor registra limite operacional de até 6 h.</li>
+<li><b>Junção (axila, virilha, base do pescoço):</b> tamponamento da ferida com gaze hemostática (caulim/quitosana) + compressão; dispositivos juncionais; sonda de Foley insuflada na ferida cervical.</li>
+<li><b>Evitar:</b> pinçamento às cegas no fundo da ferida (lesa nervos e veias); torniquete venoso (pouco apertado) que aumenta o sangramento.</li>
+</ul>
+<div class="sub-title">F1.2 · Via aérea no trauma (A)</div>
+<ul class="bullets">
+<li><b>Básico:</b> O2 10–15 L/min com reservatório; jaw thrust com estabilização manual em linha; aspiração rígida; cânula oro/nasofaríngea.</li>
+<li><b>Definitiva — sequência rápida:</b> pré-oxigenar 3 min (ou 8 respirações vitais), O2 nasal de alto fluxo na apneia, otimizar hemodinâmica com sangue, induzir com dose reduzida no choque (etomidato ou cetamina), bloquear (succinilcolina ou rocurônio), laringoscopia com videolaringoscópio e bougie, confirmar por capnografia em onda. Pressão cricoide não é obrigatória e deve ser liberada se atrapalhar a visão ou a ventilação.</li>
+<li><b>Resgate:</b> dispositivo supraglótico de 2ª geração para oxigenar; falhou e dessatura → <b>cricotireoidostomia cirúrgica</b> (bisturi-bougie-tubo 6,0). Abaixo de ~12 anos: punção com cateter 14 G e ventilação a jato (ou bolsa com adaptador) como ponte para traqueostomia.</li>
+<li><b>Após a IOT:</b> ventilação protetora, sem hiperventilação (exceto herniação iminente), PaCO2 35–40 mmHg, sonda orogástrica, vigiar DOPE e pneumotórax por pressão positiva.</li>
+</ul>
+<div class="mnemo"><div class="mnemo-title"><b>LEMON</b> preditores de via aérea difícil (adaptado ao trauma)</div><div class="mnemo-grid">
+<div class="mnemo-row"><span class="mnemo-letter">L</span><span><b>Look externally</b> · trauma de face e mandíbula, sangue na via aérea, barba, obesidade, pescoço curto, retrognatismo</span></div>
+<div class="mnemo-row"><span class="mnemo-letter">E</span><span><b>Evaluate 3-3-2</b> · abertura interincisivos ≥3 dedos, mento-hioide ≥3 dedos, tireoide-assoalho da boca ≥2 dedos</span></div>
+<div class="mnemo-row"><span class="mnemo-letter">M</span><span><b>Mallampati</b> · frequentemente impossível de avaliar no trauma (supino, colar, rebaixado)</span></div>
+<div class="mnemo-row"><span class="mnemo-letter">O</span><span><b>Obstruction</b> · hematoma, edema por inalação, corpo estranho, fratura de laringe</span></div>
+<div class="mnemo-row"><span class="mnemo-letter">N</span><span><b>Neck mobility</b> · <b>não testar</b> no trauma: a restrição cervical já a torna difícil por definição</span></div>
+</div></div>
+<div class="sub-title">F1.3 · Pneumotórax (B)</div>
+<ul class="bullets">
+<li><b>Hipertensivo:</b> descompressão imediata → toracostomia digital se a agulha falhar → dreno no 4º–5º EIC entre linhas axilares anterior e média, sobre a borda superior da costela inferior (o feixe neurovascular corre na borda inferior).</li>
+<li><b>Aberto:</b> curativo valvulado (três lados ou dispositivo) → dreno em local distante → fechamento cirúrgico da ferida; antibiótico profilático (penetrante).</li>
+<li><b>Simples:</b> dreno (cateter fino aceitável no isolado); observação ≥24 h se ≤2 cm e estável; drenagem obrigatória antes de transporte aéreo ou anestesia geral; oculto pode ser observado com vigilância.</li>
+<li><b>Retirada do dreno:</b> pulmão expandido, sem escape aéreo por 24–48 h (a apostila cita 48–72 h), débito baixo; teste em selo d'água sem aspiração antes de retirar é prática comum. Escape aéreo &gt;3–5 dias: VATS.</li>
+</ul>
+<div class="sub-title">F1.4 · Hemotórax (B/C)</div>
+<ul class="bullets">
+<li><b>Instável ou maciço:</b> dreno calibroso (28–32 Fr) no 5º EIC + PTM + autotransfusão se disponível; toracotomia se a instabilidade persiste por fonte torácica, &gt;1.500 mL em 24 h ou &gt;200 mL/h por 3 h consecutivas sem outra causa (WSES-AAST 2025). Sangramento contínuo com menos de 1.500 mL também indica cirurgia.</li>
+<li><b>Estável:</b> ≥500 mL drenar (pigtail 14 Fr é alternativa ao tubo); &lt;300 mL observar com RX em 24 h; sangramento persistente no estável: angioembolização (intercostal/mamária) ou VATS.</li>
+<li><b>Retido:</b> TC define volume; VATS precoce (≤4 dias, EAST) em vez de fibrinolítico; antibiótico na drenagem de retido; empiema: drenagem + antibiótico de amplo espectro + decorticação por VATS se falha.</li>
+</ul>
+<div class="box hy"><span class="box-label">HIGH-YIELD</span><div class="box-title">Vias de toracotomia por lesão</div><div class="box-body">Coração na emergência: <b>anterolateral esquerda</b> (4º–5º EIC), com extensão em clamshell. Coração e aorta ascendente/arco/cavas/vasos pulmonares no centro cirúrgico: <b>esternotomia mediana</b>. Pulmão e hilo: posterolateral. Traqueia proximal: cervical em colar. Traqueia distal, carina, brônquio-fonte direito e esquerdo proximal: <b>posterolateral direita</b>. Aorta descendente: posterolateral esquerda. Esôfago: 2/3 superiores pela direita (4º–5º EIC), 1/3 inferior pela esquerda (6º–7º EIC).</div></div>
+<div class="sub-title">F1.5 · Tamponamento (C)</div>
+<ul class="bullets">
+<li><b>Instável com eFAST pericárdico positivo:</b> sala de cirurgia (esternotomia) se o paciente ainda tem pulso e o centro cirúrgico está próximo; toracotomia na sala se peri-parada.</li>
+<li><b>Estável com eFAST duvidoso e trajeto suspeito:</b> janela pericárdica subxifoide; positiva → esternotomia. Algumas séries mostram que feridas cardíacas com hemopericárdio drenado e estável podem ser manejadas só com drenagem pericárdica — conduta de centro especializado.</li>
+<li><b>Sem cirurgião, transporte longo:</b> pericardiocentese subxifoide guiada por US, cateter sobre agulha deixado no saco para reaspirar; não substitui a cirurgia.</li>
+</ul>
+<div class="sub-title">F1.6 · Choque hemorrágico (C) — ressuscitação de controle de danos</div>
+<ul class="bullets">
+<li><b>Acesso:</b> dois periféricos calibrosos (14–16 G) ou intraósseo (úmero proximal ou tíbia; primeira escolha na criança sem acesso), cateter central calibroso (introdutor 8,5 Fr) ou dissecção de safena como alternativas.</li>
+<li><b>Volume:</b> cristaloide aquecido apenas como ponte (no ATLS 10, bolus de 1 L no adulto e 20 mL/kg na criança &lt;40 kg; no ATLS 11, limitar e trocar cedo por sangue); evitar coloide e grandes volumes de SF 0,9% (acidose hiperclorêmica).</li>
+<li><b>Sangue:</b> CH O (Rh negativo em mulher fértil e criança; O positivo em homens se estoque limitado) até tipagem; PTM com plasma:plaquetas:CH 1:1:1 (aceitável até 1:1:2); crioprecipitado/fibrinogênio guiado por nível ou viscoelastometria; resumos do ATLS 11 descrevem pacote com crioprecipitado (1:1:1:1) — confirmar no protocolo local.</li>
+<li><b>Metas:</b> PAS 80–90 mmHg sem TCE (cautela no idoso hipertenso); PAM ≥80 no TCE grave; Hb 7–9 g/dL; fibrinogênio &gt;1,5 g/L; plaquetas &gt;50 mil (&gt;100 mil no TCE); cálcio ionizado 1,1–1,3 mmol/L; temperatura &gt;35 °C; lactato em queda; diurese 0,5 mL/kg/h no adulto, 1 mL/kg/h na criança, 2 mL/kg/h no lactente.</li>
+<li><b>Controle da fonte:</b> cirurgia de controle de danos, angioembolização, cinta pélvica e packing — o tratamento que salva; nada acima substitui.</li>
+</ul>
+<div class="box danger"><span class="box-label">DANGER</span><div class="box-title">Hipotensão permissiva não vale para o TCE grave nem para a medula</div><div class="box-body">A PAS de 80–90 mmHg reduz o ressangramento no trauma penetrante de tronco, mas no TCE grave uma única hipotensão dobra a mortalidade. Com Glasgow ≤8 a meta é <b>PAM ≥80 mmHg</b> (Diretriz Europeia 2023), e os resumos do ATLS 11 trazem metas de PAS por idade no TCE (&gt;100 mmHg entre 50 e 69 anos; &gt;110 mmHg entre 15 e 49 ou acima de 70); a lesão medular pede PAM elevada (85–90 mmHg) por dias — detalhe no CT03. No idoso hipertenso, "90 mmHg" pode já ser hipoperfusão.</div></div>
+<div class="sub-title">F1.7 · Parada cardiorrespiratória traumática</div>
+<ul class="bullets">
+<li><b>Princípio:</b> tratar causas reversíveis tem prioridade sobre compressões e adrenalina (ERC): oxigenação/ventilação, descompressão torácica bilateral (toracostomia digital no ventilado), controle de hemorragia e reposição com sangue, eFAST para tamponamento.</li>
+<li><b>Toracotomia de reanimação:</b> ver score em E.1 — melhores resultados no penetrante torácico com sinais de vida; tempo de RCP define futilidade (WTA). Objetivos: aliviar tamponamento, controlar sangramento cardíaco ou hilar, massagem interna, clampeamento da aorta descendente, tratar embolia gasosa.</li>
+<li><b>REBOA:</b> zona I como alternativa ao clampeamento aórtico na hemorragia subdiafragmática; contraindicado quando a fonte é torácica ou há tamponamento (WSES). Recomendações divergentes em 2025 (G.2).</li>
+<li><b>Sem cirurgião:</b> pericardiocentese por agulha se suspeita de tamponamento; descompressão bilateral; sangue.</li>
+</ul>
+<div class="sub-title">F1.8 · Tórax instável, fraturas costais e contusão</div>
+<ul class="bullets">
+<li><b>Analgesia em degraus:</b> paracetamol + dipirona regulares; opioide titulado (evitar sedação e depressão respiratória); cetamina em dose analgésica; lidocaína tópica; <b>bloqueio regional</b> (eretor da espinha, serrátil anterior, paravertebral, intercostal) ou epidural torácica nos múltiplos/bilaterais e no idoso.</li>
+<li><b>Suporte respiratório:</b> O2, fisioterapia e espirometria de incentivo; VNI ou cânula nasal de alto fluxo na hipoxemia sem rebaixamento; IOT se FR &gt;40, PaO2 &lt;60 mmHg/SpO2 &lt;90% apesar de O2, rebaixamento, doença pulmonar crônica descompensada ou necessidade de cirurgia.</li>
+<li><b>Cirurgia:</b> fixação em 48–72 h nos selecionados (WSES-AAST 2025); VATS concomitante se hemotórax persistente ou suspeita de lesão de órgão.</li>
+<li><b>Nunca:</b> enfaixar, estabilizar o segmento com peso ou fita, restringir volume a ponto de hipoperfundir.</li>
+</ul>
+<div class="sub-title">F1.9 · Lesão contusa de aorta</div>
+<ul class="bullets">
+<li><b>Imediato:</b> controle de impulso com esmolol (FC e PA-alvo do protocolo; apostila FC &lt;80 e PAM 60–70) e analgesia; vasodilatador (nitroprussiato ou clevidipina; nicardipina onde disponível) só após betabloqueio.</li>
+<li><b>Definitivo:</b> TEVAR nos graus III–IV (emergência no IV/instável; programado após 24 h e após lesões prioritárias no estável); grau I clínico; grau II individualizado. Transferência para centro com cirurgia vascular/endovascular à menor suspeita.</li>
+</ul>
+<div class="sub-title">F1.10 · Lesões raras (via aérea, diafragma, esôfago, quilotórax, embolias, pescoço)</div>
+<ul class="bullets">
+<li><b>Traqueobrônquica:</b> IOT guiada por fibroscopia distal à lesão/seletiva, segundo dreno, reparo primário precoce (idealmente em 24 h); stent em maus candidatos.</li>
+<li><b>Diafragma:</b> reparo sempre que a condição permitir; dreno após o reparo; antibiótico na exploração.</li>
+<li><b>Esôfago:</b> reparo primário em até 12–24 h; tardio: desvio, drenagem e nutrição por gastrostomia/jejunostomia.</li>
+<li><b>Embolia gasosa:</b> O2 100%, Trendelenburg, isolamento pulmonar, toracotomia com clampeamento do hilo; hiperbárica na cerebral. <b>Gordurosa:</b> suporte e fixação precoce das fraturas.</li>
+</ul>
+<div class="box decision"><span class="box-label">DECISION</span><div class="box-title">Populações especiais que mudam a conduta</div><div class="box-body"><ul>
+<li><b>Gestante:</b> deslocamento manual do útero para a esquerda (ou decúbito lateral esquerdo em prancha) a partir de ~20 semanas ou fundo acima da cicatriz umbilical; fibrinogênio preferencialmente &gt;200 mg/dL e &lt;100 mg/dL sugere CIVD por descolamento; imunoglobulina anti-D na Rh negativa; cesárea perimortem se não houver retorno da circulação em ~4 min de PCR com útero ≥20 semanas.</li>
+<li><b>Idoso:</b> fragilidade em vez de idade isolada; queda da própria altura com anticoagulante é trauma grave; reversão imediata do anticoagulante na hemorragia; limiar baixo para UTI nas fraturas costais.</li>
+<li><b>Criança:</b> descompressão no 2º EIC hemiclavicular; intraósseo cedo; cricotireoidostomia cirúrgica relativa contraindicada &lt;12 anos; PA normal mascara choque (PAS mínima ≈70 + 2 × idade em anos).</li>
+<li><b>Anticoagulado/antiagregado:</b> varfarina → complexo protrombínico + vitamina K; dabigatrana → idarucizumabe; anti-Xa → complexo protrombínico ou andexanete conforme disponibilidade; antiagregante → não transfundir plaquetas de rotina (Diretriz Europeia 1C).</li>
+</ul></div></div>
+</div>
+</div>
+
+<div class="card tx">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">F.1b</span> Procedimentos</div><h3>Técnica dos procedimentos de beira de leito e o erro típico de cada um <span class="ank ank-hy">HIGH-YIELD</span></h3></div>
+<div class="card-body">
+<div class="stbl stbl-3">
+<div class="stbl-head stbl-3"><div>Procedimento</div><div>Técnica essencial</div><div>Erro típico</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Procedimento">Descompressão por agulha</div><div class="col" data-l="Técnica">Adulto: 4º–5º EIC entre linhas axilares anterior e média (ou 2º EIC hemiclavicular como alternativa), cateter longo (≥8 cm) sobre a borda superior da costela; criança: 2º EIC hemiclavicular. Ouvir o escape e manter o cateter fixo até o dreno.</div><div class="col" data-l="Erro">Cateter curto em parede espessa, dobra, saída do cateter no transporte; tomar a ausência de "chiado" como exclusão de tensão; ponto medial à linha hemiclavicular (vasos mamários e coração)</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Procedimento">Toracostomia digital</div><div class="col" data-l="Técnica">Incisão de 3–4 cm no 4º–5º EIC à frente da linha axilar média, dissecção romba com pinça sobre a costela, perfuração da pleura e varredura com o dedo; no ventilado, descomprime de imediato e pode ficar sem tubo até o dreno.</div><div class="col" data-l="Erro">Fazer no respirando espontaneamente sem dreno logo em seguida (vira pneumotórax aberto); incisão baixa demais (abdome)</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Procedimento">Drenagem pleural</div><div class="col" data-l="Técnica">"Triângulo de segurança": borda do grande dorsal, borda do peitoral maior, linha do mamilo/sulco inframamário (5º EIC). Anestesia generosa do periósteo e da pleura, incisão, dissecção romba sobre a borda superior da costela, exploração digital, tubo dirigido posterossuperior; selo d'água; RX de controle; antibiótico profilático na inserção (EAST, condicional).</div><div class="col" data-l="Erro">Trocater (lesão de pulmão, coração, fígado, baço); dreno no tecido subcutâneo ou na fissura; orifício lateral fora da pleura; dreno pela própria ferida; inserção baixa sem explorar (diafragma elevado no fechado)</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Procedimento">Curativo do pneumotórax aberto</div><div class="col" data-l="Técnica">Material impermeável quadrado maior que a ferida fixado em três lados (válvula) ou dispositivo comercial valvulado; reavaliar tensão; dreno no hospital longe da ferida.</div><div class="col" data-l="Erro">Fixar os quatro lados sem dreno; não reavaliar após ventilação com pressão positiva</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Procedimento">Pericardiocentese</div><div class="col" data-l="Técnica">Subxifoide, agulha a 45° em direção à ponta da escápula esquerda (ou guiada por US pela janela de maior coleção), aspiração contínua, ECG; retirar 15–20 mL já melhora; deixar cateter.</div><div class="col" data-l="Erro">Achar que resolveu: sangue coagulado não aspira e a fonte continua; atrasar a cirurgia</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Procedimento">Cricotireoidostomia cirúrgica</div><div class="col" data-l="Técnica">Laringe estabilizada com mão não dominante; incisão vertical na pele (anatomia incerta) e transversa na membrana cricotireoidea; bougie, tubo 6,0 com balonete; capnografia.</div><div class="col" data-l="Erro">Hesitar até a parada hipóxica; incisão alta (tireóidea) ou baixa (traqueia/istmo); usar em &lt;12 anos em vez da punção</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Procedimento">Toracotomia anterolateral esquerda</div><div class="col" data-l="Técnica">Paciente com braço esquerdo elevado, incisão do esterno à linha axilar média no 4º–5º EIC (sulco inframamário), afastador de Finochietto; pericardiotomia longitudinal anterior ao frênico; dedo no orifício cardíaco; clampeamento da aorta descendente contra a coluna; clamshell se necessário.</div><div class="col" data-l="Erro">Abrir o pericárdio transversalmente sobre o frênico; esquecer o hemitórax direito; clampear o esôfago no lugar da aorta (passar SNG ajuda a diferenciar)</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Procedimento">Torniquete</div><div class="col" data-l="Técnica">Proximal à ferida, apertado até cessar sangramento e pulso distal; horário anotado; segundo torniquete se necessário.</div><div class="col" data-l="Erro">Torniquete frouxo (venoso), sobre articulação, ou retirado no PS antes do controle cirúrgico</div></div>
+</div>
+</div>
+</div>
+
+<div class="card tx">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">F.1c</span> Cenários</div><h3>Caso → conduta certa → erro típico <span class="ank ank-dec">DECISION</span></h3></div>
+<div class="card-body">
+<div class="stbl stbl-3">
+<div class="stbl-head stbl-3"><div>Caso</div><div>Conduta certa</div><div>Erro típico</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Caso">Motociclista, PA 70/40, FC 140, MV abolido à direita, macicez, jugulares vazias</div><div class="col" data-l="Conduta">Dreno calibroso no 5º EIC direito + PTM + TXA; saída de 1.800 mL e persistência do choque → toracotomia</div><div class="col" data-l="Erro">Puncionar o 2º EIC "porque é pneumotórax"; esperar RX; repor 3 L de cristaloide</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Caso">Intubado no APH, chega com SpO2 82% e PA caindo; MV reduzido à esquerda</div><div class="col" data-l="Conduta">DOPE: checar posição do tubo (seletiva à direita?) e capnografia; se tubo ok, descompressão/toracostomia digital à esquerda</div><div class="col" data-l="Erro">Drenar a esquerda sem checar se o tubo está no brônquio direito; aumentar a pressão do ventilador</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Caso">Facada paraesternal esquerda, PA 80/50, jugulares túrgidas, MV presente</div><div class="col" data-l="Conduta">eFAST subxifoide → derrame → esternotomia no centro cirúrgico (ou toracotomia se peri-parada)</div><div class="col" data-l="Erro">Pericardiocentese como tratamento definitivo; TC para "ver o trajeto"</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Caso">Ferimento por PAF no tórax, sem pulso há 6 min, atividade elétrica organizada no monitor</div><div class="col" data-l="Conduta">Toracotomia de reanimação anterolateral esquerda imediata, com descompressão do hemitórax direito e sangue</div><div class="col" data-l="Erro">Ciclos de RCP e adrenalina conforme ACLS sem tratar a causa</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Caso">Colisão frontal a 100 km/h, estável, RX com mediastino de 9 cm</div><div class="col" data-l="Conduta">Angio-TC de tórax; esmolol; pseudoaneurisma (grau III) → TEVAR programado após tratar baço sangrante e TCE</div><div class="col" data-l="Erro">Arteriografia como primeiro exame; ir direto ao TEVAR com hemorragia abdominal ativa; liberar porque o RX "não parece tão alargado"</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Caso">Idoso de 78 anos em uso de apixabana, queda de escada, 5 arcos fraturados à direita, SpO2 93%</div><div class="col" data-l="Conduta">UTI, analgesia regional (bloqueio do eretor da espinha ou epidural), fisioterapia, TC de crânio, avaliar reversão se sangramento, considerar fixação</div><div class="col" data-l="Erro">Alta com analgésico oral; opioide em bolus que deprime a respiração; esquecer o anticoagulante</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Caso">Dreno bem posicionado à direita com borbulhamento intenso e pulmão colabado; enfisema cervical</div><div class="col" data-l="Conduta">Segundo dreno, broncoscopia, IOT seletiva esquerda guiada se ventilação inadequada, toracotomia posterolateral direita</div><div class="col" data-l="Erro">Aumentar a aspiração e aguardar; trocar o dreno por outro igual</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Caso">Facada no 7º EIC esquerdo linha axilar anterior, estável, RX e FAST normais</div><div class="col" data-l="Conduta">TC; se não exclui lesão diafragmática, laparoscopia/toracoscopia diagnóstica em 24 h e reparo</div><div class="col" data-l="Erro">Alta por exame normal; a hérnia diafragmática aparece meses ou anos depois</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Caso">Politrauma em choque, 2 h após o trauma, sem TXA no APH</div><div class="col" data-l="Conduta">Ácido tranexâmico 1 g IV em 10 min agora + 1 g em 8 h; PTM; controle da fonte</div><div class="col" data-l="Erro">Achar que "passou da hora" (o limite é 3 h); ou iniciar às 5 h por "estar sangrando"</div></div>
+</div>
+<div class="box evolving"><span class="box-label">EVOLVING</span><div class="box-title">SUS × recomendação internacional: o que existe na rede</div><div class="box-body">O protocolo do SAMU 192 (Suporte Avançado de Vida, 2014/2015) orienta compressão e torniquete, O2 para SpO2 ≥94%, cristaloide aquecido a 39 °C com meta de PAS &gt;80 mmHg (&gt;90 no TCE), descompressão torácica de alívio no pneumotórax hipertensivo (AT12), curativo de três pontos no aberto (AT11), pericardiocentese só com transporte prolongado e treinamento (AT15) e não traz ácido tranexâmico nem hemoderivado pré-hospitalar. No hospital, a disponibilidade de plaquetas e crioprecipitado em tempo real, de viscoelastometria, de concentrado de fibrinogênio e de REBOA varia muito; o protocolo de transfusão maciça e as metas acima precisam ser adaptados ao estoque e à logística do serviço (<b>confirmar protocolo local</b>). A Linha de Cuidado ao Trauma da Rede de Urgência (Portaria GM/MS 1.365/2013) organiza a regulação para centros de trauma.</div></div>
+</div>
+</div>
+
+<div class="card tx">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">F.2</span> Doses Operacionais</div><h3>Tabela de doses — trauma inicial e torácico (adulto, salvo indicação)</h3></div>
+<div class="card-body">
+<div class="stbl stbl-3">
+<div class="stbl-head stbl-3"><div>Fármaco / hemoderivado</div><div>Dose adulto</div><div>Indicação / notas</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Ácido tranexâmico</div><div class="col" data-l="Dose"><b>1 g IV em 10 min</b>, seguido de <b>1 g IV em infusão de 8 h</b>; iniciar até 3 h do trauma, idealmente &lt;1 h</div><div class="col" data-l="Notas">Sangramento ou risco de sangramento significativo <span class="ev ev-eular">Diretriz Europeia 2023 · 1A</span> <span class="ev ev-cochrane">CRASH-2</span>. Não iniciar após 3 h (aumento de morte por sangramento). Não esperar viscoelastometria. Resumos do ATLS 11 citam 2 g em bolus no TCE — confirmar no manual.</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Ácido tranexâmico — criança</div><div class="col" data-l="Dose">15 mg/kg IV (máx. 1 g) em 10 min + 2 mg/kg/h por 8 h</div><div class="col" data-l="Notas">Extrapolação do CRASH-2 usada em protocolos pediátricos; <b>confirmar protocolo pediátrico local</b>.</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Concentrado de hemácias O</div><div class="col" data-l="Dose">Iniciar sem tipagem; reavaliar a cada 1–2 unidades; criança 10–20 mL/kg</div><div class="col" data-l="Notas">O Rh negativo em mulheres em idade fértil e crianças; O positivo aceitável em homens. Alvo de Hb 7–9 g/dL (Diretriz Europeia 1C).</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Protocolo de transfusão maciça</div><div class="col" data-l="Dose">Pacotes plasma:plaquetas:CH <b>1:1:1</b> (aceitável ≥1:2 de plasma:CH)</div><div class="col" data-l="Notas">Ativar com ABC ≥2, ≥3 CH em 1 h ou julgamento clínico. PROPPR: 1:1:1 reduziu morte por exsanguinação em 24 h (9,2% × 14,6%) <span class="ev ev-acr">PROPPR 2015</span>.</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Plasma fresco congelado</div><div class="col" data-l="Dose">Em proporção com o CH no PTM; fora do PTM, 15 mL/kg guiado por TP/INR ou viscoelastometria</div><div class="col" data-l="Notas">Não usar para corrigir hipofibrinogenemia se houver crioprecipitado ou concentrado de fibrinogênio (1C). Grupo AB (ou A com baixo título) até tipagem.</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Concentrado de plaquetas</div><div class="col" data-l="Dose">1 unidade de aférese ou pool de 4–6 unidades randômicas (≈1 U/10 kg)</div><div class="col" data-l="Notas">Manter &gt;50.000/µL com sangramento; &gt;100.000/µL no TCE (2C). Não transfundir de rotina para reverter antiagregante (1C).</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Fibrinogênio (concentrado) ou crioprecipitado</div><div class="col" data-l="Dose"><b>3–4 g</b> de concentrado ou <b>15–20 U</b> de crioprecipitado (doador único); repetir conforme nível</div><div class="col" data-l="Notas">Fibrinogênio Clauss ≤1,5 g/L ou déficit funcional na viscoelastometria <span class="ev ev-eular">Diretriz Europeia 2023 · 1C/2C</span>. Crioprecipitado empírico de alta dose para todos não reduziu mortalidade (CRYOSTAT-2).</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Cloreto de cálcio 10%</div><div class="col" data-l="Dose"><b>10 mL (1 g; 270 mg de Ca elementar) IV</b> em 5–10 min, de preferência em acesso central; repetir guiado por cálcio ionizado</div><div class="col" data-l="Notas">Manter Ca ionizado 1,1–1,3 mmol/L; corrigir prontamente &lt;0,9 (1C). Extravasamento periférico causa necrose.</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Gluconato de cálcio 10%</div><div class="col" data-l="Dose">30 mL (3 g; ≈270 mg de Ca elementar) IV em 10 min</div><div class="col" data-l="Notas">Alternativa em acesso periférico; contém 1/3 do cálcio elementar do cloreto por volume; a Diretriz Europeia prefere o cloreto.</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Cristaloide isotônico aquecido</div><div class="col" data-l="Dose">ATLS 10: 1 L em bolus no adulto; 20 mL/kg na criança &lt;40 kg; aquecido a 37–40 °C (39 °C)</div><div class="col" data-l="Notas">Ponte até o sangue; volumes &gt;1,5 L associam-se a pior desfecho. Evitar Ringer lactato (hipotônico) no TCE grave (1B); SF 0,9% em grande volume causa acidose hiperclorêmica.</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Noradrenalina</div><div class="col" data-l="Dose">0,05–0,5 µg/kg/min IV contínua, titulada à PA-alvo</div><div class="col" data-l="Notas">Quando a estratégia restritiva não atinge a meta (1C); não substitui o controle da hemorragia; essencial no choque neurogênico e na vasoplegia.</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Dobutamina</div><div class="col" data-l="Dose">2,5–20 µg/kg/min IV</div><div class="col" data-l="Notas">Disfunção miocárdica (contusão com falência de VD) (Diretriz Europeia 1C).</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Etomidato</div><div class="col" data-l="Dose"><b>0,3 mg/kg IV</b> (reduzir a 0,15–0,2 mg/kg no choque)</div><div class="col" data-l="Notas">Indutor da sequência rápida citado pelo ATLS; estabilidade hemodinâmica; supressão adrenal transitória de dose única sem impacto demonstrado em mortalidade no RSI 2025.</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Cetamina (indução)</div><div class="col" data-l="Dose">1–2 mg/kg IV (0,5–1 mg/kg no choque)</div><div class="col" data-l="Notas">Mantém tônus simpático e reflexos; no RSI (NEJM 2025) não reduziu mortalidade versus etomidato e teve mais colapso cardiovascular (22,1% × 17,0%). Não contraindicada no TCE.</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Succinilcolina</div><div class="col" data-l="Dose"><b>1,5 mg/kg IV</b> (faixa 1–2 mg/kg)</div><div class="col" data-l="Notas">Bloqueador preferido pelo ATLS na sequência rápida. Eleva K em ~0,5 mEq/L; contraindicada se hipercalemia, história de hipertermia maligna, e após ~72 h de queimadura, esmagamento, desnervação, imobilização prolongada, miopatias.</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Rocurônio</div><div class="col" data-l="Dose"><b>1,2 mg/kg IV</b> para sequência rápida</div><div class="col" data-l="Notas">Alternativa quando succinilcolina é contraindicada; duração 45–60 min — em falha de via aérea, reversão com sugamadex.</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Sugamadex</div><div class="col" data-l="Dose">16 mg/kg IV (reversão imediata após 1,2 mg/kg de rocurônio)</div><div class="col" data-l="Notas">Resgate do "não intubo, não oxigeno" sob rocurônio; não substitui a cricotireoidostomia quando a via aérea superior está destruída.</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Fentanil (analgesia)</div><div class="col" data-l="Dose">0,5–1 µg/kg IV, repetir a cada 5–10 min titulado (25–50 µg por vez no adulto)</div><div class="col" data-l="Notas">Analgesia do trauma e das fraturas; doses menores no choque e no idoso; evitar como pré-tratamento da indução no hipotenso.</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Morfina</div><div class="col" data-l="Dose">0,05–0,1 mg/kg IV (2–4 mg) a cada 5–15 min titulada; PCA conforme protocolo</div><div class="col" data-l="Notas">Fraturas costais; monitorar FR e sedação; acumula na insuficiência renal.</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Cetamina (analgesia)</div><div class="col" data-l="Dose">0,1–0,3 mg/kg IV em bolus lento; infusão 0,1–0,2 mg/kg/h</div><div class="col" data-l="Notas">Poupador de opioide nas fraturas costais e no APH; não deprime o drive respiratório em doses subdissociativas.</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Paracetamol</div><div class="col" data-l="Dose">1 g VO/IV a cada 6 h (máx. 4 g/dia; 2–3 g/dia se hepatopatia, etilismo, baixo peso)</div><div class="col" data-l="Notas">Base da analgesia multimodal das fraturas costais.</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Dipirona</div><div class="col" data-l="Dose">1 g IV/VO a cada 6 h (até 2 g por dose em protocolos brasileiros; máx. 4 g/dia usual)</div><div class="col" data-l="Notas">Amplamente disponível no SUS; hipotensão na infusão rápida; agranulocitose rara.</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Bupivacaína (epidural torácica)</div><div class="col" data-l="Dose">0,0625–0,125% com fentanil 2 µg/mL, 4–10 mL/h</div><div class="col" data-l="Notas">Fraturas múltiplas/bilaterais no idoso (EAST 2016, condicional); contraindicada em coagulopatia, anticoagulação, instabilidade, lesão de coluna torácica — <b>confirmar protocolo da anestesiologia</b>.</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Ropivacaína (bloqueio fascial: eretor da espinha/serrátil)</div><div class="col" data-l="Dose">0,2–0,375%, 20–30 mL por lado; dose máxima ~3 mg/kg</div><div class="col" data-l="Notas">Alternativa à epidural quando anticoagulado; bloqueios bilaterais exigem cálculo cumulativo; tenha emulsão lipídica a 20% disponível.</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Lidocaína (anestesia do dreno)</div><div class="col" data-l="Dose">1–2%, até 4,5 mg/kg sem vasoconstritor (7 mg/kg com)</div><div class="col" data-l="Notas">Infiltrar pele, periósteo da costela inferior e pleura parietal; erro comum é anestesiar pouco a pleura.</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Esmolol</div><div class="col" data-l="Dose">Ataque 500 µg/kg IV em 1 min; infusão 50–300 µg/kg/min</div><div class="col" data-l="Notas">Controle de impulso na lesão de aorta; titular FC/PA-alvo do protocolo; suspender se hipotensão ou sangramento por outra fonte.</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Nitroprussiato de sódio</div><div class="col" data-l="Dose">0,3–3 µg/kg/min IV (máx. 10 µg/kg/min por curto período)</div><div class="col" data-l="Notas">Só após betabloqueio, se a PA permanece acima do alvo; toxicidade por cianeto em doses altas/prolongadas.</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Cefazolina (profilaxia na drenagem)</div><div class="col" data-l="Dose">2 g IV na inserção (3 g se ≥120 kg)</div><div class="col" data-l="Notas">Reduz empiema, maior benefício no penetrante (EAST 2022, condicional); a WSES não indica no pneumotórax contuso, indica no aberto, no penetrante e no retido. Duração além da dose única: <b>confirmar protocolo local</b>.</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Complexo protrombínico (4 fatores)</div><div class="col" data-l="Dose">25 UI/kg IV (dose inicial da Diretriz Europeia); ajustar por INR em protocolos de varfarina</div><div class="col" data-l="Notas">Reversão de antagonista da vitamina K (com vitamina K) e opção para anti-Xa quando não há andexanete.</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Vitamina K (fitomenadiona)</div><div class="col" data-l="Dose">5–10 mg IV lenta</div><div class="col" data-l="Notas">Sempre associada ao complexo protrombínico na reversão da varfarina; &gt;10 mg dificulta reanticoagular.</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Idarucizumabe</div><div class="col" data-l="Dose">5 g IV (2 × 2,5 g em bolus)</div><div class="col" data-l="Notas">Reversão da dabigatrana na hemorragia grave; nível por tempo de trombina diluído (Diretriz Europeia 2C).</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Oxigênio</div><div class="col" data-l="Dose">10–15 L/min por máscara com reservatório; titular para SpO2 ≥94%</div><div class="col" data-l="Notas">Evitar hiperóxia sustentada (Diretriz Europeia 2B); exceção na exsanguinação iminente e na embolia gasosa (FiO2 100%).</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Imunoglobulina anti-D</div><div class="col" data-l="Dose">300 µg IM (ajustar pelo teste de Kleihauer-Betke se hemorragia fetomaterna grande)</div><div class="col" data-l="Notas">Gestante Rh negativo com trauma abdominal/torácico relevante, em até 72 h.</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Profilaxia de TEV</div><div class="col" data-l="Dose">Compressão pneumática precoce; enoxaparina 40 mg SC 1×/dia (ou 30 mg 12/12 h em protocolos de trauma) após controle do sangramento</div><div class="col" data-l="Notas">Iniciar farmacológica em 24 h do controle da hemorragia (Diretriz Europeia 1B) e após TC de crânio estável se TCE; heparina não fracionada na insuficiência renal.</div></div>
+</div>
+</div>
+</div>
+</section>
+
+<section id="pitfalls">
+<div class="section"><div class="section-eyebrow"><span>G</span> Pitfalls · Mitos · Controvérsias</div><div class="section-title">Erros operacionais + mitos vivos + debates atuais</div><div class="section-sub">Os erros que mais matam no trauma torácico são de sequência e de tempo, não de conhecimento: imagem antes de descomprimir, cristaloide antes de sangue, número antes de fisiologia.</div></div>
+<div class="card pearl">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">G.1</span> Pegadinhas</div><h3>10 erros operacionais no trauma inicial e torácico</h3></div>
+<div class="card-body">
+<div class="stbl stbl-2">
+<div class="stbl-head stbl-2"><div>Erro comum</div><div>Correto</div></div>
+<div class="stbl-row stbl-2"><div class="col col1" data-l="Erro">Pedir RX de tórax para confirmar pneumotórax hipertensivo</div><div class="col" data-l="Correto">Diagnóstico clínico; descomprimir já. eFAST só se estiver na mão e não atrasar.</div></div>
+<div class="stbl-row stbl-2"><div class="col col1" data-l="Erro">Puncionar o 2º EIC hemiclavicular em adulto musculoso ou obeso com cateter curto</div><div class="col" data-l="Correto">4º–5º EIC entre linhas axilares anterior e média com cateter longo, ou toracostomia digital; 2º EIC hemiclavicular fica para a criança.</div></div>
+<div class="stbl-row stbl-2"><div class="col col1" data-l="Erro">Infundir 2–3 L de cristaloide para "normalizar a PA" antes do sangue</div><div class="col" data-l="Correto">Cristaloide é ponte; sangue precoce em proporção fixa, hipotensão permissiva (PAS 80–90) sem TCE, controle cirúrgico.</div></div>
+<div class="stbl-row stbl-2"><div class="col col1" data-l="Erro">Indicar toracotomia apenas pelo volume do frasco</div><div class="col" data-l="Correto">A fisiologia decide: instabilidade com fonte torácica opera mesmo com débito "baixo" (dreno coagulado); 1.500 mL que param no estável podem ser observados.</div></div>
+<div class="stbl-row stbl-2"><div class="col col1" data-l="Erro">Tratar o tamponamento com pericardiocentese e "observar"</div><div class="col" data-l="Correto">Pericardiocentese é ponte sem cirurgião; o tratamento é esternotomia/toracotomia com reparo da lesão.</div></div>
+<div class="stbl-row stbl-2"><div class="col col1" data-l="Erro">Fechar a ferida aspirativa nos quatro lados no APH</div><div class="col" data-l="Correto">Curativo valvulado (três lados) ou dispositivo com válvula; dreno no hospital longe da ferida, depois fechamento.</div></div>
+<div class="stbl-row stbl-2"><div class="col col1" data-l="Erro">Enfaixar o tórax instável para "estabilizar o segmento"</div><div class="col" data-l="Correto">Contraindicado: piora a ventilação. Analgesia regional, O2, fisioterapia, ventilação se necessário e fixação cirúrgica nos selecionados.</div></div>
+<div class="stbl-row stbl-2"><div class="col col1" data-l="Erro">Excluir lesão de aorta porque o RX tem mediastino normal</div><div class="col" data-l="Correto">O alargamento falta em mais de 70% das lesões; mecanismo de desaceleração significativa pede angio-TC no estável.</div></div>
+<div class="stbl-row stbl-2"><div class="col col1" data-l="Erro">Fazer ciclos de ACLS com adrenalina na parada traumática por hipovolemia</div><div class="col" data-l="Correto">Tratar a causa: descompressão bilateral, sangue, controle de hemorragia, eFAST e toracotomia selecionada; compressões têm papel secundário no coração vazio.</div></div>
+<div class="stbl-row stbl-2"><div class="col col1" data-l="Erro">Iniciar ácido tranexâmico 5 h após o trauma "porque continua sangrando"</div><div class="col" data-l="Correto">Benefício até 3 h, máximo na primeira hora; depois de 3 h o CRASH-2 mostrou aumento de morte por sangramento.</div></div>
+</div>
+</div>
+</div>
+<div class="card pearl">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">G.2</span> Mitos · Controvérsias</div><h3>Mitos vivos e debates atuais</h3></div>
+<div class="card-body">
+<div class="box myth"><span class="box-label">MYTH</span><div class="box-title">"Toda vítima de trauma precisa de colar cervical e prancha longa"</div><div class="box-body">A restrição de movimento é seletiva: indicada quando há risco real (mecanismo perigoso, dor ou déficit, rebaixamento, intoxicação, lesão distrativa). Na ferida penetrante isolada de tronco sem déficit, o colar não protege e atrapalha a via aérea e o exame do pescoço; a prancha longa é dispositivo de extricação e transporte, e a permanência nela causa úlcera e restrição ventilatória. Resumos do ATLS 11 enfatizam evitar colar em baixo risco e não deixar o dispositivo atrasar o controle de hemorragia e da via aérea.</div></div>
+<div class="box myth"><span class="box-label">MYTH</span><div class="box-title">"Na contusão miocárdica, troponina não serve para nada"</div><div class="box-body">A apostila de 2025 ainda diz que a troponina "não é recomendada". A EAST (2012) mostrou que <b>ECG e troponina I juntos</b> têm valor preditivo negativo próximo de 100%: ambos normais excluem lesão clinicamente relevante e permitem alta; qualquer alteração indica monitorização. O que não serve é o eco como rastreamento, nem a fratura de esterno isolada como marcador.</div></div>
+<div class="box myth"><span class="box-label">MYTH</span><div class="box-title">"Tríade de Beck é necessária para pensar em tamponamento"</div><div class="box-body">A tríade completa aparece em minoria (30–40%) dos tamponamentos traumáticos: bulhas abafadas são difíceis de ouvir numa sala ruidosa e jugulares podem estar vazias no hipovolêmico. Ferida na caixa cardíaca com hipotensão é tamponamento até o eFAST pericárdico negativo — e repetido.</div></div>
+<div class="box controversy"><span class="box-label">CONTROVERSY</span><div class="box-title">REBOA no trauma: ponte salvadora ou dano?</div><div class="box-body">A Diretriz Europeia de 2023 sugere considerar REBOA na hemorragia não compressível (2C). O UK-REBOA (JAMA 2023), único ensaio randomizado em hemorragia exsanguinante, teve mortalidade em 90 dias de 54% com REBOA × 42% sem, com mais mortes por sangramento nas primeiras 24 h (probabilidade posterior de dano de 86,9%). A EAST (2025) recomenda condicionalmente <b>contra</b> REBOA no instável por hemorragia subdiafragmática, mas <b>a favor</b> na parada traumática por sangramento subdiafragmático em comparação com a toracotomia; o ERC 2025 não recomenda REBOA na parada traumática. Consenso real: não usar quando a fonte é torácica ou há tamponamento (WSES), e só em centros com programa, treinamento e acesso rápido à hemostasia definitiva.</div></div>
+<div class="box controversy"><span class="box-label">CONTROVERSY</span><div class="box-title">Ácido tranexâmico pré-hospitalar em sistemas maduros</div><div class="box-body">O CRASH-2 foi feito majoritariamente em países de média e baixa renda, com TXA hospitalar. O PATCH-Trauma (NEJM 2023) testou TXA pré-hospitalar em sistemas avançados da Austrália, Nova Zelândia e Alemanha: não aumentou a sobrevida com bom desfecho funcional aos 6 meses (53,7% × 53,5%), mas a mortalidade em 28 dias caiu de 21,8% para 17,3%, sem excesso de trombose. Os críticos apontam que o desfecho primário foi neutro e que salvar vidas com sequela grave não é ganho inequívoco; os defensores lembram que a redução de morte é consistente com o CRASH-2. A Diretriz Europeia mantém 1A, preferencialmente a caminho do hospital. Outra divergência em aberto: dose de 2 g em bolus (usada no TCE e citada nos resumos do ATLS 11) × 1 g + 1 g.</div></div>
+<div class="box controversy"><span class="box-label">CONTROVERSY</span><div class="box-title">Toracotomia de reanimação no trauma contuso e o tempo de RCP</div><div class="box-body">A EAST (2015) prioriza <b>sinais de vida</b>: no contuso sem sinais de vida, recomendação condicional contra (sobrevida 0,7%); com sinais de vida, condicional a favor (4,6%). A WTA (2012) prioriza o <b>tempo de RCP pré-hospitalar</b> (&lt;10 min no contuso, &lt;15 min no penetrante de tronco). Estudos de 2025–2026 comparando a aderência a cada esquema mostram concordância imperfeita; e há o custo de recursos e o risco ocupacional (perfurocortante, sangue) para a equipe. O ATLS (desde a 10ª edição) admite a toracotomia também no contuso. Na prova, o penetrante torácico com sinais de vida é a indicação clássica; no contuso, a decisão é institucional.</div></div>
+</div>
+</div>
+</section>
+
+<section id="pearls">
+<div class="section"><div class="section-eyebrow"><span>H</span> Pearls · Evolving</div><div class="section-title">H1 · Pearls de especialista · H2 · O que mudou de 2023 a 2026</div><div class="section-sub">Cada pearl é uma ideia que muda o gesto na sala; cada evolving é uma mudança documentada em diretriz ou ensaio recente, não novidade de congresso.</div></div>
+<div class="card pearl">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">H.1</span> Pearls</div><h3>8 nuances que distinguem o especialista</h3></div>
+<div class="card-body">
+<div class="box pearl"><span class="box-label">PEARL</span><div class="box-title">O pneumotórax hipertensivo do paciente acordado é hipóxico antes de ser hipotenso</div><div class="box-body">Esperar hipotensão, desvio de traqueia e jugular túrgida no paciente respirando espontaneamente é esperar o pré-terminal. Taquipneia, taquicardia, dessaturação e MV abolido unilateral com dor torácica já autorizam descomprimir. No ventilado, a hipotensão é precoce porque a pressão positiva bombeia ar para o espaço pleural a cada ciclo; por isso a primeira causa de colapso após IOT no trauma é tensão até prova em contrário.</div></div>
+<div class="box pearl"><span class="box-label">PEARL</span><div class="box-title">Hemotórax residual após ferida central pode ser o coração esvaziando para a pleura</div><div class="box-body">O pericárdio lacerado descomprime o hemopericárdio no hemitórax, e o eFAST pericárdico fica negativo enquanto o dreno continua sangrando. Em ferida precordial com hemotórax que não seca, a WSES manda afastar lesão cardíaca direita com janela pericárdica, toracoscopia ou toracotomia — não basta "trocar o dreno".</div></div>
+<div class="box pearl"><span class="box-label">PEARL</span><div class="box-title">A capnografia é monitor de débito cardíaco durante a reanimação</div><div class="box-body">Com o tubo confirmado, uma queda abrupta do EtCO2 significa queda de fluxo pulmonar: tensão, tamponamento, exsanguinação ou embolia gasosa. A subida durante a toracotomia ou a transfusão é o primeiro sinal de que a manobra funcionou — antes do pulso palpável.</div></div>
+<div class="box pearl"><span class="box-label">PEARL</span><div class="box-title">Fibrinogênio é o primeiro fator a acabar, e o plasma não consegue repô-lo</div><div class="box-body">Abaixo de 1,5 g/L a hemostasia falha, e o plasma tem concentração de fibrinogênio próxima à do próprio paciente coagulopático: elevar o nível com plasma exige volumes incompatíveis. Por isso a Diretriz Europeia separa plasma (volume e fatores) de crioprecipitado/concentrado (fibrinogênio), e um TP "aceitável" com fibrinogênio baixo ainda sangra.</div></div>
+<div class="box pearl"><span class="box-label">PEARL</span><div class="box-title">No idoso com fraturas costais, a analgesia regional é intervenção de sobrevida</div><div class="box-body">A curva de mortalidade sobe a cada arco fraturado acima dos 65 anos, e a via final é hipoventilação, retenção de secreção e pneumonia. Bloqueio do eretor da espinha ou epidural torácica, fisioterapia agressiva e espirometria de incentivo deslocam essa curva; opioide sistêmico em doses altas desloca no sentido oposto. Queda de capacidade vital abaixo de ~1 L é sinal para UTI.</div></div>
+<div class="box pearl"><span class="box-label">PEARL</span><div class="box-title">Escape aéreo maciço com pulmão que não expande pede broncoscopia, não mais aspiração</div><div class="box-body">Aumentar a sucção num dreno conectado a uma lesão de brônquio-fonte só aumenta o desvio de volume corrente para a pleura e pode piorar a oxigenação. O "pulmão caído" (afastado do hilo, pendendo para a base) na imagem é sinal de transecção. O segundo dreno estabiliza, a broncoscopia diagnostica e posiciona o tubo, e o reparo precoce evita estenose.</div></div>
+<div class="box pearl"><span class="box-label">PEARL</span><div class="box-title">Lesão de aorta estável é uma cirurgia que pode esperar — o controle de impulso não</div><div class="box-body">O paciente com pseudoaneurisma contido e baço sangrando morre do baço. Com esmolol e analgesia a ruptura tardia é rara, e o TEVAR depois de 24 h teve menor mortalidade que o precoce no estável. O erro é inverter a ordem: levar à endovascular quem precisa de laparotomia, ou esquecer o betabloqueador enquanto se opera o abdome.</div></div>
+<div class="box pearl"><span class="box-label">PEARL</span><div class="box-title">Contusão pulmonar piora no segundo dia — o primeiro RX engana</div><div class="box-body">Consolidação que aparece só em 24–48 h é a regra; quando já está no RX de admissão, a lesão é grande e a ventilação provavelmente será necessária na primeira hora. A TC quantifica (o volume contuso prediz pneumonia e SDRA) e permite planejar UTI, ventilação protetora e balanço hídrico desde o início, em vez de reagir à dessaturação do dia seguinte.</div></div>
+</div>
+</div>
+<div class="card pearl">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">H.2</span> Evolving</div><h3>6 mudanças reais em trauma inicial e torácico (2023–2026)</h3></div>
+<div class="card-body">
+<div class="box evolving"><span class="box-label">EVOLVING</span><div class="box-title">ATLS 11ª edição (2025): xABCDE, controle de danos e choque antes da IOT</div><div class="box-body">O ACS adicionou o "x" de hemorragia exsanguinante ao início do mnemônico, formalizou a ressuscitação de controle de danos (hipotensão permissiva, cristaloide limitado, transfusão precoce), recomenda corrigir o choque antes da sequência rápida, colocou o videolaringoscópio como ferramenta principal, uniu cabeça e coluna no D, trocou as classes I–IV de hemorragia por categorias de perda e criou capítulos de trauma penetrante, sistemas de trauma e idoso. Os números finos (volumes, doses, metas) devem ser conferidos no manual.</div></div>
+<div class="box evolving"><span class="box-label">EVOLVING</span><div class="box-title">WSES-AAST 2025: primeira diretriz conjunta abrangente do trauma torácico</div><div class="box-body">Classificação em graus I–IV por função respiratória e hemodinâmica, uso da definição global de SDRA (SpO2/FiO2 e ultrassom), limiares de drenagem do hemotórax no estável (≥500 mL drena, &lt;300 mL observa), critérios de cirurgia (&gt;1.500 mL/24 h ou &gt;200 mL/h × 3 h), fixação costal em 48–72 h como recomendação forte de evidência alta, e o lugar da ECMO na falência cardiorrespiratória.</div></div>
+<div class="box evolving"><span class="box-label">EVOLVING</span><div class="box-title">Drenos menores para hemotórax no estável</div><div class="box-body">Do dogma de 36–40 Fr ao pigtail 14 Fr: o ensaio multicêntrico de Kulvatunyou (2021) mostrou falha equivalente com melhor tolerância, a EAST passou a recomendar condicionalmente o pigtail no estável e a WSES aceita cateteres finos no pneumotórax isolado. O tubo calibroso continua no instável e no maciço.</div></div>
+<div class="box evolving"><span class="box-label">EVOLVING</span><div class="box-title">Indução na sequência rápida: cetamina × etomidato (RSI, NEJM 2025)</div><div class="box-body">Em 2.365 adultos críticos, cetamina não reduziu a mortalidade em 28 dias (28,1% × 29,1%) e teve mais colapso cardiovascular na intubação (22,1% × 17,0%); a meta-análise de 2026 confirmou mais instabilidade pós-indução com cetamina frente ao etomidato. O "dogma" de que cetamina é sempre a escolha no hipotenso perdeu força; o ponto central passa a ser dose reduzida e reposição antes da indução.</div></div>
+<div class="box evolving"><span class="box-label">EVOLVING</span><div class="box-title">REBOA em retração depois do UK-REBOA</div><div class="box-body">O ensaio britânico (2023) sugeriu dano no uso hospitalar, a EAST (2025) passou a recomendar contra no choque por hemorragia subdiafragmática e o ERC 2025 não o recomenda na parada traumática. O uso ficou restrito a programas especializados e a cenários selecionados.</div></div>
+<div class="box evolving"><span class="box-label">EVOLVING</span><div class="box-title">Lesão contusa de aorta: SVS 2026 revê o "TEVAR para todo grau II–IV"</div><div class="box-body">A revisão sistemática que embasou o update focado (2026) encontrou maior mortalidade relacionada à aorta com TEVAR nos graus I–II do que com tratamento não operatório e maior mortalidade com reparo precoce (&lt;24 h) no estável, além de pior desfecho com reparo muito precoce no TCE. A tendência é tratar o grau II de forma seletiva, adiar o reparo no estável e padronizar heparina intraoperatória e vigilância por imagem.</div></div>
+</div>
+</div>
+</section>
+
+</div>
+</main>
+
+<footer>
+<div class="wrap">
+<div class="foot">
+<div><div class="foot-author">@dr.lorencato</div><div class="foot-meta">Trauma Inicial e Trauma Torácico · Pocket Handbook Elite · v5.2 · Cirurgia do trauma · CT01</div></div>
+<div class="foot-mono">Compilação clínica · status clinical_review até signoff humano · fontes conferidas em 2026-10-25</div>
+</div>
+<div class="foot-meta"><b>Bibliografia rastreável</b> (fonte · ano · papel no HP · identificador)
+<ol>
+<li id="src-1">American College of Surgeons — Advanced Trauma Life Support, 11ª edição (2025). Usado por meio de comunicação oficial do ACS ("Trauma care gets major upgrade with launch of ATLS 11", ACS Brief, 16/09/2025) e da revisão de Ramasamy et al., "Advanced trauma life support 2025: a brief review of updates", Injury 2026;57:113079 · 2025 · xABCDE, controle de danos, via aérea, prioridades · doi:10.1016/j.injury.2026.113079. O PDF local do manual não foi processado (restrição de uso declarada pelo ACS).</li>
+<li id="src-2">Coccolini F et al. Thoracic trauma WSES-AAST guidelines. World J Emerg Surg 2025;20:78 · 2025 · diagnóstico, pneumotórax, hemotórax, parede, diafragma, via aérea, vasos, contusão, embolias, ECMO · doi:10.1186/s13017-025-00651-1</li>
+<li id="src-3">Rossaint R et al. The European guideline on management of major bleeding and coagulopathy following trauma: sixth edition. Crit Care 2023;27:80 · 2023 · metas de PA, cristaloide, hemoderivados, fibrinogênio, plaquetas, cálcio, TXA, REBOA, reversão de anticoagulantes, TEV · doi:10.1186/s13054-023-04327-7</li>
+<li id="src-4">CRASH-2 collaborators. Effects of tranexamic acid on death, vascular occlusive events, and blood transfusion in trauma patients with significant haemorrhage. Lancet 2010;376:23–32; e análise de tempo, Lancet 2011;377:1096–101 · 2010/2011 · dose e janela do TXA · doi:10.1016/S0140-6736(10)60835-5 · doi:10.1016/S0140-6736(11)60278-X</li>
+<li id="src-5">PATCH-Trauma Investigators (Gruen RL et al.). Prehospital tranexamic acid for severe trauma. N Engl J Med 2023;389:127–36 · 2023 · TXA pré-hospitalar · doi:10.1056/NEJMoa2215457</li>
+<li id="src-6">Holcomb JB et al. Transfusion of plasma, platelets, and red blood cells in a 1:1:1 vs a 1:1:2 ratio (PROPPR). JAMA 2015;313:471–82 · 2015 · proporção da transfusão maciça · doi:10.1001/jama.2015.12</li>
+<li id="src-7">Davenport R et al. Early and empirical high-dose cryoprecipitate for hemorrhage after traumatic injury (CRYOSTAT-2). JAMA 2023;330:1882–91 · 2023 · fibrinogênio empírico · doi:10.1001/jama.2023.21019</li>
+<li id="src-8">Seamon MJ et al. An evidence-based approach to patient selection for emergency department thoracotomy: EAST practice management guideline. J Trauma Acute Care Surg 2015;79:159–73 · 2015 · indicações de toracotomia de reanimação · doi:10.1097/TA.0000000000000648</li>
+<li id="src-9">Burlew CC et al. Western Trauma Association critical decisions in trauma: resuscitative thoracotomy. J Trauma Acute Care Surg 2012;73:1359–63 · 2012 · limites de tempo de RCP · doi:10.1097/TA.0b013e318270d2df</li>
+<li id="src-10">Harfouche MN et al. REBOA in surgical and trauma patients: systematic review, meta-analysis and practice management guideline from EAST. Trauma Surg Acute Care Open 2025;10:e001730 · 2025 · REBOA · doi:10.1136/tsaco-2024-001730</li>
+<li id="src-11">Jansen JO et al. Emergency department REBOA in trauma patients with exsanguinating hemorrhage: the UK-REBOA randomized clinical trial. JAMA 2023;330:1862–71 · 2023 · REBOA · doi:10.1001/jama.2023.20850</li>
+<li id="src-12">Lott C et al. European Resuscitation Council Guidelines 2025 Special Circumstances in Resuscitation. Resuscitation 2025;215(Suppl 1):110753 · 2025 · parada traumática (texto integral não obtido; ponto sobre REBOA por resumo secundário) · doi:10.1016/j.resuscitation.2025.110753</li>
+<li id="src-13">Clancy K et al. Screening for blunt cardiac injury: an EAST practice management guideline. J Trauma Acute Care Surg 2012;73(5 Suppl 4):S301–6 · 2012 · ECG + troponina I · doi:10.1097/TA.0b013e318270193a</li>
+<li id="src-14">Patel NJ et al. Management of simple and retained hemothorax: EAST practice management guideline. Am J Surg 2021;221:873–84 · 2021 · pigtail, VATS precoce · doi:10.1016/j.amjsurg.2020.11.032</li>
+<li id="src-15">Kulvatunyou N et al. 14 Fr percutaneous catheter versus 28–32 Fr chest tube for traumatic hemothorax: multicenter RCT. J Trauma Acute Care Surg 2021;91:809–13 · 2021 · calibre do dreno · doi:10.1097/TA.0000000000003180</li>
+<li id="src-16">Freeman JJ et al. (EAST) Antibiotic prophylaxis for tube thoracostomy placement in trauma. Trauma Surg Acute Care Open 2022;7:e000886 · 2022 · profilaxia antibiótica · doi:10.1136/tsaco-2022-000886</li>
+<li id="src-17">Galvagno SM et al. Pain management for blunt thoracic trauma: EAST/Trauma Anesthesiology Society guideline. J Trauma Acute Care Surg 2016;81:936–51 · 2016 · analgesia epidural e multimodal · doi:10.1097/TA.0000000000001209</li>
+<li id="src-18">DuBose J et al. Society for Vascular Surgery clinical practice guideline on the management of blunt thoracic aortic injury: focused update. J Vasc Surg 2026;83:1281–90 · 2026 · lesão de aorta (resumo; texto integral não obtido) · doi:10.1016/j.jvs.2026.02.013 — e revisão sistemática de suporte, J Vasc Surg 2025 · doi:10.1016/j.jvs.2025.05.208</li>
+<li id="src-19">Casey JD et al. Ketamine or etomidate for tracheal intubation of critically ill adults (RSI). N Engl J Med 2025;394:1608–20 · 2025 · indução da sequência rápida · doi:10.1056/NEJMoa2511420</li>
+<li id="src-19b">Nunez TC et al. Early prediction of massive transfusion in trauma: simple as ABC (assessment of blood consumption)? J Trauma 2009;66:346–52 · 2009 · escore ABC · doi:10.1097/TA.0b013e3181961c35</li>
+<li id="src-20">Ministério da Saúde. Protocolos de Suporte Avançado de Vida — SAMU 192 (elaboração 2014, revisão 2015; edição 2016), protocolos AT1, AT4, AT8–AT15 · 2016 · conduta pré-hospitalar no SUS · bvsms.saude.gov.br (PDF local em library/sources/Cirurgia-Trauma)</li>
+<li id="src-21">Ministério da Saúde. Portaria GM/MS nº 1.365/2013 — Linha de Cuidado ao Trauma na Rede de Atenção às Urgências e Emergências · 2013 · organização SUS (não lida na íntegra nesta captura) · bvsms.saude.gov.br</li>
+<li id="src-22">OMS — CID-10, versão 2019 (base da CID-10 DATASUS) · consulta 2026-10-25 · códigos dos boxes · icd.who.int/browse10/2019</li>
+<li id="src-23">Apostila MED/Medcurso 2025 "CIR 1 — Trauma I (Avaliação Inicial e Trauma de Tórax)" e anotação do autor · 2025 · piso de cobertura (não fonte de conduta) · material do usuário</li>
+</ol></div>
+</div>
+</footer>
+<div class="watermark">@dr.lorencato · Trauma Inicial e Tórax CT01 v5.2</div>
+</body>
+</html>

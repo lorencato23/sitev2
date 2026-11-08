@@ -1,0 +1,1255 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#0d1117">
+<title>Cirrose, Hipertensão Portal e CHC · Pocket Handbook · Elite Edition · GH10</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700;9..40,800&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   MEDICAL HANDBOOK PREMIUM · ELITE EDITION · CSS FRAMEWORK
+   Copy this ENTIRE block verbatim into the <style> tag of the
+   output HTML. Do NOT modify design tokens, colors, or
+   typography — they are calibrated for legibility and print.
+============================================================ */
+:root{
+  --bg:#f1eee5;--bg-tint:#ebe8de;--paper:#ffffff;--paper-tint:#fbf9f3;
+  --ink:#0e1116;--ink-soft:#232830;--ink-mute:#545b69;--ink-faint:#8a91a0;--ink-ghost:#b8bdc7;
+  --line:#e2dfd5;--line-soft:#ece9df;--line-strong:#c9c5b8;
+  --c-prim:#0b5d4e;--c-clin:#1d4570;--c-diag:#5e2f78;--c-tx:#a8481a;--c-emerg:#a31b35;--c-pearl:#7a6014;
+  --ank-hy:#b88e0a;--ank-hy-bg:#fef4c8;--ank-dec:#1d4ea3;--ank-dec-bg:#dde7f8;
+  --ank-dgr:#a31b25;--ank-dgr-bg:#fadcdc;--ank-prl:#3e6a2e;--ank-prl-bg:#d8e6cf;
+  --ank-myt:#6a3a1a;--ank-myt-bg:#f0dec5;--ank-con:#5a4070;--ank-con-bg:#e3d6f0;
+  --ank-evo:#0d6373;--ank-evo-bg:#cde5e9;
+  --sh-sm:0 1px 2px rgba(14,17,22,.04),0 1px 1px rgba(14,17,22,.03);
+  --sh-md:0 6px 16px -8px rgba(14,17,22,.10),0 2px 4px rgba(14,17,22,.04);
+  --sh-lg:0 20px 40px -22px rgba(14,17,22,.18),0 4px 10px -4px rgba(14,17,22,.08);
+  --r:10px;--r-lg:14px;--r-xl:20px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;scroll-padding-top:120px}
+body{font-family:'DM Sans',system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.5;font-size:15px;letter-spacing:-.005em;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:-1;background:radial-gradient(900px 500px at -10% -5%,rgba(11,93,78,.04),transparent 60%),radial-gradient(800px 450px at 110% 10%,rgba(163,27,53,.035),transparent 55%)}
+a{color:inherit;text-decoration:none}
+
+/* FIXED HEADER */
+.header{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(13,17,23,.82);backdrop-filter:saturate(160%) blur(20px);-webkit-backdrop-filter:saturate(160%) blur(20px);border-bottom:1px solid rgba(255,255,255,.06)}
+.header-row{max-width:1080px;margin:0 auto;padding:10px 20px;display:flex;align-items:center;gap:14px;color:#f0eee5}
+.h-mark{width:30px;height:30px;border-radius:7px;background:linear-gradient(135deg,#d4b94a 0%,#a07f1a 100%);display:grid;place-items:center;font:800 13px/1 'DM Sans';color:#1a1500;letter-spacing:-.04em;box-shadow:inset 0 1px 0 rgba(255,255,255,.3),0 1px 2px rgba(0,0,0,.4);flex-shrink:0}
+.h-titles{display:flex;flex-direction:column;line-height:1.15;min-width:0}
+.h-title{font-weight:700;font-size:14px;letter-spacing:-.02em}
+.h-sub{font-size:10.5px;color:#9fa298;font-weight:500;letter-spacing:.08em;text-transform:uppercase}
+.h-edition{margin-left:auto;font:500 10px/1 'DM Mono',monospace;color:#9fa298;letter-spacing:.05em;padding:5px 9px;border:1px solid rgba(255,255,255,.1);border-radius:999px;white-space:nowrap}
+.h-author{font:700 10.5px/1 'DM Mono',monospace;color:#d4b94a;letter-spacing:.04em;padding:6px 10px;border:1px solid rgba(212,185,74,.35);background:rgba(212,185,74,.08);border-radius:999px;white-space:nowrap;display:inline-flex;align-items:center;gap:6px}
+.h-author::before{content:"●";font-size:6px;color:#d4b94a}
+@media(max-width:560px){.h-edition{display:none}.h-author{margin-left:auto}}
+
+/* STICKY TOC */
+.toc{position:sticky;top:50px;z-index:90;background:rgba(241,238,229,.92);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}
+.toc-inner{max-width:1080px;margin:0 auto;padding:10px 16px;display:flex;gap:6px;overflow-x:auto;scrollbar-width:none;-ms-overflow-style:none}
+.toc-inner::-webkit-scrollbar{display:none}
+.toc-chip{flex:none;font:600 11px/1 'DM Sans';letter-spacing:.06em;text-transform:uppercase;padding:7px 12px;background:var(--paper);border:1px solid var(--line);border-radius:999px;color:var(--ink-soft);transition:all .15s;white-space:nowrap;cursor:pointer}
+.toc-chip:hover{background:var(--paper-tint);border-color:var(--ink-faint);color:var(--ink)}
+.toc-chip-num{display:inline-block;font-family:'DM Mono',monospace;color:var(--ink-faint);margin-right:5px;font-weight:500;font-size:10px}
+
+/* LAYOUT */
+.wrap{max-width:1080px;margin:0 auto;padding:24px 20px 80px}
+.section{margin:48px 0 18px;padding-top:8px}
+.section:first-child{margin-top:14px}
+.section-eyebrow{font:700 10.5px/1 'DM Sans';letter-spacing:.18em;text-transform:uppercase;color:var(--c-prim);margin-bottom:8px;display:flex;align-items:center;gap:10px}
+.section-eyebrow::before{content:"";width:24px;height:1.5px;background:var(--c-prim)}
+.section-title{font-size:26px;font-weight:700;letter-spacing:-.03em;line-height:1.1}
+.section-sub{margin-top:6px;font-size:13.5px;color:var(--ink-mute);max-width:680px}
+
+/* HERO */
+.hero{margin:20px 0 28px;padding:26px 28px;background:linear-gradient(180deg,#fdfcf6 0%,#f7f4e8 100%);border:1px solid var(--line);border-radius:var(--r-xl);box-shadow:var(--sh-md);position:relative;overflow:hidden}
+.hero::after{content:"";position:absolute;top:0;right:0;bottom:0;left:0;background:radial-gradient(400px 200px at 100% 0%,rgba(163,27,53,.06),transparent 60%),radial-gradient(360px 200px at 0% 100%,rgba(11,93,78,.05),transparent 60%);pointer-events:none}
+.hero-tag{font:700 10.5px/1 'DM Sans';letter-spacing:.2em;text-transform:uppercase;color:var(--c-emerg);display:inline-flex;align-items:center;gap:8px;margin-bottom:10px}
+.hero-tag::before{content:"";width:18px;height:1.5px;background:currentColor}
+.hero h1{font-size:34px;font-weight:800;letter-spacing:-.035em;line-height:1.02;margin-bottom:8px}
+.hero h1 em{font-style:italic;font-weight:500;color:var(--ink-mute)}
+.hero-lead{font-size:14.5px;color:var(--ink-mute);max-width:660px;line-height:1.55}
+.hero-stamp{position:absolute;top:20px;right:22px;font:700 10.5px/1 'DM Mono',monospace;letter-spacing:.04em;padding:7px 11px 7px 18px;border:1.5px dashed rgba(163,27,53,.45);color:rgba(163,27,53,.9);border-radius:5px;background:rgba(255,255,255,.55);transform:rotate(-3deg);z-index:2;box-shadow:0 2px 6px rgba(163,27,53,.08)}
+.hero-stamp::before{content:"●";position:absolute;left:7px;top:50%;transform:translateY(-50%);color:rgba(163,27,53,.7);font-size:7px}
+.hero-sig{margin-top:14px;display:flex;align-items:center;gap:10px;font:600 11px/1 'DM Sans';color:var(--ink-mute);letter-spacing:.04em}
+.hero-sig::before{content:"";flex:none;width:22px;height:1.5px;background:var(--c-emerg)}
+.hero-sig b{color:var(--c-emerg);font-weight:700;font-family:'DM Mono',monospace;letter-spacing:.02em}
+@media(max-width:560px){.hero{padding:22px 20px}.hero h1{font-size:26px}.section-title{font-size:22px}.hero-stamp{position:static;display:inline-block;transform:none;margin-bottom:14px}}
+
+/* POCKET CARD 0 */
+.pocket{background:#0e1116;color:#f0eee5;border-radius:var(--r-xl);padding:24px 26px 26px;margin:0 0 28px;position:relative;overflow:hidden;box-shadow:var(--sh-lg)}
+.pocket::before{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(600px 300px at 100% 0%,rgba(212,185,74,.07),transparent 60%),radial-gradient(500px 280px at 0% 100%,rgba(163,27,53,.08),transparent 60%)}
+.pocket-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:18px;flex-wrap:wrap;position:relative}
+.pocket-eyebrow{font:700 10.5px/1 'DM Sans';letter-spacing:.2em;text-transform:uppercase;color:#d4b94a;display:flex;align-items:center;gap:9px}
+.pocket-eyebrow::before{content:"●";color:#d4b94a;font-size:9px;animation:pulse 2.4s ease infinite}
+@keyframes pulse{50%{opacity:.4}}
+.pocket-title{font-size:22px;font-weight:700;letter-spacing:-.02em;line-height:1.15;color:#fff}
+.pocket-sub{font-size:12.5px;color:#9aa0a8;margin-top:2px}
+.pocket-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px;position:relative}
+.pocket-card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-left:3px solid var(--accent,#d4b94a);border-radius:var(--r);padding:12px 14px}
+.pocket-card .pc-trig{font:700 10px/1.1 'DM Sans';letter-spacing:.12em;text-transform:uppercase;color:var(--accent,#d4b94a);margin-bottom:6px;display:flex;align-items:center;gap:6px}
+.pocket-card .pc-trig::before{content:"";width:4px;height:4px;background:currentColor;border-radius:50%}
+.pocket-card .pc-act{font-size:13.5px;line-height:1.4;color:#dedfd5}
+.pocket-card .pc-act b{color:#fff;font-weight:600}
+.pocket-card.emerg{--accent:#ff8a96}.pocket-card.dec{--accent:#7cb0ff}.pocket-card.tx{--accent:#ffb085}.pocket-card.clin{--accent:#b0e0d4}
+
+/* LEGEND */
+.legend{background:var(--paper);border:1px solid var(--line);border-radius:var(--r-lg);padding:18px 20px;margin-bottom:28px;box-shadow:var(--sh-sm)}
+.lg-title{font:700 10.5px/1 'DM Sans';letter-spacing:.16em;text-transform:uppercase;color:var(--ink-faint);margin-bottom:12px}
+.lg-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:8px 14px}
+.lg-item{display:flex;align-items:center;gap:9px;font-size:12.5px;color:var(--ink-soft)}
+.dot{width:9px;height:9px;border-radius:50%;flex-shrink:0;box-shadow:0 0 0 2px var(--paper),0 0 0 3px currentColor}
+.dot.c1{color:var(--c-prim);background:var(--c-prim)}.dot.c2{color:var(--c-clin);background:var(--c-clin)}.dot.c3{color:var(--c-diag);background:var(--c-diag)}.dot.c4{color:var(--c-tx);background:var(--c-tx)}.dot.c5{color:var(--c-emerg);background:var(--c-emerg)}.dot.c6{color:var(--c-pearl);background:var(--c-pearl)}
+.lg-divider{height:1px;background:var(--line-soft);margin:14px 0}
+.lg-anchors{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:8px}
+.ank{display:inline-flex;align-items:center;gap:5px;font:700 9.5px/1 'DM Sans';letter-spacing:.12em;text-transform:uppercase;padding:4px 8px 4px 7px;border-radius:999px;border:1px solid;vertical-align:middle;white-space:nowrap}
+.ank::before{content:"";width:4px;height:4px;border-radius:50%;background:currentColor}
+.ank-hy{color:var(--ank-hy);background:var(--ank-hy-bg);border-color:#e5cd72}
+.ank-dec{color:var(--ank-dec);background:var(--ank-dec-bg);border-color:#9fbae6}
+.ank-dgr{color:var(--ank-dgr);background:var(--ank-dgr-bg);border-color:#e29ca0}
+.ank-prl{color:var(--ank-prl);background:var(--ank-prl-bg);border-color:#a8c298}
+.ank-myt{color:var(--ank-myt);background:var(--ank-myt-bg);border-color:#d0b181}
+.ank-con{color:var(--ank-con);background:var(--ank-con-bg);border-color:#bba7d3}
+.ank-evo{color:var(--ank-evo);background:var(--ank-evo-bg);border-color:#8fc1c9}
+.lg-explain{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:6px 14px;font-size:11.5px;color:var(--ink-mute);margin-top:10px}
+.lg-explain b{font-weight:700}
+.lg-explain .ehy b{color:var(--ank-hy)}.lg-explain .edec b{color:var(--ank-dec)}.lg-explain .edgr b{color:var(--ank-dgr)}.lg-explain .eprl b{color:var(--ank-prl)}.lg-explain .emyt b{color:var(--ank-myt)}.lg-explain .econ b{color:var(--ank-con)}.lg-explain .eevo b{color:var(--ank-evo)}
+
+/* EVIDENCE CHIPS */
+.ev{display:inline-flex;align-items:center;font:600 9.5px/1 'DM Mono',monospace;letter-spacing:.04em;padding:3px 6px 2px;border-radius:4px;background:#eeebde;color:var(--ink-soft);border:1px solid var(--line);vertical-align:middle;margin-left:3px}
+.ev-acr{background:#fadcdc;color:#a31b25;border-color:#e29ca0}
+.ev-eular{background:#dde7f8;color:#1d4ea3;border-color:#9fbae6}
+.ev-sbr{background:#e3d6f0;color:#5a4070;border-color:#bba7d3}
+.ev-nice{background:#cde5e9;color:#0d6373;border-color:#8fc1c9}
+.ev-expert{background:#eeebde;color:#7a6014;border-color:#d0b181}
+.ev-cochrane{background:#d8e6cf;color:#3e6a2e;border-color:#a8c298}
+
+/* CARD */
+.card{background:var(--paper);border:1px solid var(--line);border-radius:var(--r-lg);margin-bottom:22px;box-shadow:var(--sh-md);overflow:hidden;break-inside:avoid}
+.card-head{padding:18px 22px 15px;border-bottom:1px solid var(--line-soft);position:relative;background:linear-gradient(180deg,#fcfaf2 0%,#ffffff 100%)}
+.card-head::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--accent,var(--c-prim))}
+.card-eyebrow{font:700 10px/1 'DM Sans';letter-spacing:.16em;text-transform:uppercase;color:var(--accent,var(--c-prim));margin-bottom:5px;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.card-num{font-family:'DM Mono',monospace;font-weight:500;color:var(--ink-faint);font-size:10.5px;letter-spacing:0}
+.card h3{font-size:21px;font-weight:700;letter-spacing:-.025em;color:var(--ink);line-height:1.15;display:flex;align-items:center;gap:9px;flex-wrap:wrap}
+.card-sub{margin-top:6px;font-size:13px;color:var(--ink-mute)}
+.card-body{padding:20px 22px 24px}
+.card.prim{--accent:var(--c-prim)}.card.clin{--accent:var(--c-clin)}.card.diag{--accent:var(--c-diag)}.card.tx{--accent:var(--c-tx)}.card.emerg{--accent:var(--c-emerg)}.card.pearl{--accent:var(--c-pearl)}
+@media(max-width:560px){.card-head{padding:16px 18px 14px}.card-body{padding:18px 18px 20px}.card h3{font-size:18px}}
+
+/* QUICK VIEW */
+.quick{background:var(--paper-tint);border:1px solid var(--line);border-left:3px solid var(--accent,var(--c-prim));border-radius:var(--r);padding:13px 16px;margin:0 0 16px}
+.quick-label{font:700 9.5px/1 'DM Sans';letter-spacing:.16em;text-transform:uppercase;color:var(--accent,var(--c-prim));margin-bottom:6px}
+.quick-body{font-size:13.5px;line-height:1.45;color:var(--ink-soft)}
+.quick-body b{color:var(--ink);font-weight:600}
+
+/* SUB-TITLE */
+.sub-title{font:700 10.5px/1 'DM Sans';letter-spacing:.16em;text-transform:uppercase;color:var(--ink-soft);margin:18px 0 10px;display:flex;align-items:center;gap:9px;border-bottom:1px dashed var(--line);padding-bottom:6px}
+.sub-title::before{content:"";width:4px;height:4px;border-radius:50%;background:var(--accent,var(--ink-soft))}
+.sub-title:first-child{margin-top:0}
+
+/* TEXT */
+p{color:var(--ink-soft);margin-bottom:8px;font-size:14px;line-height:1.5}
+p:last-child{margin-bottom:0}
+strong{color:var(--ink);font-weight:600}
+ul.bullets{list-style:none;padding:0;margin:0 0 10px}
+ul.bullets li{position:relative;padding:5px 0 5px 20px;font-size:13.5px;line-height:1.5;color:var(--ink-soft);border-bottom:1px dashed var(--line-soft)}
+ul.bullets li:last-child{border-bottom:none}
+ul.bullets li::before{content:"";position:absolute;left:5px;top:13px;width:4px;height:4px;border-radius:50%;background:var(--accent,var(--ink-mute))}
+ul.bullets li b{color:var(--ink);font-weight:600}
+
+/* DISEASE BOX */
+.disease{border:1px solid var(--line);border-radius:var(--r);margin:14px 0;overflow:hidden;background:var(--paper)}
+.disease-head{padding:12px 16px;background:linear-gradient(180deg,#faf7eb 0%,#f1eddc 100%);border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap}
+.disease-name{font-weight:700;color:var(--ink);font-size:14.5px;letter-spacing:-.015em}
+.disease-tag{font:600 10px/1 'DM Sans';letter-spacing:.08em;text-transform:uppercase;color:var(--ink-mute)}
+.disease-body{padding:14px 16px}
+.disease-rows{display:grid;gap:0}
+.disease-row{display:grid;grid-template-columns:130px 1fr;gap:12px;padding:8px 0;border-bottom:1px dashed var(--line-soft)}
+.disease-row:last-child{border-bottom:none;padding-bottom:0}
+.disease-row:first-child{padding-top:0}
+.disease-row .k{font:700 10px/1.2 'DM Sans';letter-spacing:.12em;text-transform:uppercase;color:var(--accent,var(--ink-faint));padding-top:2px}
+.disease-row .v{font-size:13.5px;color:var(--ink-soft);line-height:1.5}
+.disease-row .v b{color:var(--ink)}
+@media(max-width:560px){.disease-row{grid-template-columns:1fr;gap:3px;padding:6px 0 8px}.disease-row .k{padding-top:0}}
+
+/* DEEP DIVE */
+.deep{margin:16px 0 6px;border:1px solid var(--line);border-radius:var(--r);background:linear-gradient(180deg,#fdfcf6 0%,#f9f6ea 100%);overflow:hidden}
+.deep>summary{list-style:none;cursor:pointer;padding:11px 16px;display:flex;align-items:center;justify-content:space-between;font:700 11px/1 'DM Sans';letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft);user-select:none;transition:background .15s}
+.deep>summary::-webkit-details-marker{display:none}
+.deep>summary::after{content:"+";font-size:18px;font-weight:600;color:var(--ink-faint);transition:transform .2s;font-family:'DM Mono',monospace}
+.deep[open]>summary::after{transform:rotate(45deg)}
+.deep>summary:hover{background:rgba(0,0,0,.02)}
+.deep-content{padding:14px 16px 16px;border-top:1px dashed var(--line)}
+.deep-content p{font-size:13px;color:var(--ink-mute);line-height:1.55}
+.deep-content p b{color:var(--ink-soft)}
+
+/* MNEMONIC */
+.mnemo{background:var(--paper-tint);border:1px solid var(--line);border-radius:var(--r);padding:14px 16px;margin:14px 0}
+.mnemo-title{font:700 10.5px/1 'DM Sans';letter-spacing:.16em;text-transform:uppercase;color:var(--c-pearl);margin-bottom:10px;display:flex;align-items:center;gap:8px}
+.mnemo-title b{background:var(--ink);color:#fff;padding:3px 7px;border-radius:4px;font-size:10px;letter-spacing:.06em}
+.mnemo-grid{display:grid;gap:5px}
+.mnemo-row{display:grid;grid-template-columns:28px 1fr;gap:10px;align-items:baseline;font-size:13px;color:var(--ink-soft);padding:3px 0}
+.mnemo-letter{display:grid;place-items:center;width:24px;height:24px;background:var(--ink);color:#fff;border-radius:5px;font:800 12px/1 'DM Sans';letter-spacing:-.02em}
+.mnemo-row b{color:var(--ink);font-weight:600}
+.mnemo-row em{font-style:italic;color:var(--ink-mute);font-size:12px}
+
+/* SCORE BOX */
+.score{border:1px solid var(--line);border-radius:var(--r);margin:14px 0;background:var(--paper);overflow:hidden}
+.score-head{padding:11px 14px;background:linear-gradient(180deg,#f5f1e0 0%,#ede9d6 100%);border-bottom:1px solid var(--line)}
+.score-name{font:700 13px/1.2 'DM Sans';color:var(--ink);letter-spacing:-.01em}
+.score-purpose{font:500 10.5px/1.2 'DM Sans';color:var(--ink-mute);letter-spacing:.06em;text-transform:uppercase;margin-top:3px}
+.score-rows{display:grid;gap:0}
+.score-row{display:grid;grid-template-columns:90px 1fr;gap:12px;align-items:start;padding:9px 14px;border-bottom:1px dashed var(--line-soft);font-size:13px}
+.score-row:last-child{border-bottom:none}
+.score-grade{font:800 12px/1.2 'DM Mono',monospace;color:var(--c-emerg);letter-spacing:-.01em}
+.score-desc{color:var(--ink-soft);line-height:1.45}
+.score-desc b{color:var(--ink)}
+
+/* STACKED TABLE */
+.stbl{margin:14px 0;border:1px solid var(--line);border-radius:var(--r);background:var(--paper);overflow:hidden}
+.stbl-head,.stbl-row{display:grid;gap:14px;padding:10px 14px;align-items:start}
+.stbl-head{background:#faf7eb;border-bottom:2px solid var(--line);font:700 10.5px/1 'DM Sans';letter-spacing:.1em;text-transform:uppercase;color:var(--ink)}
+.stbl-row{border-bottom:1px solid var(--line-soft);font-size:13px;color:var(--ink-soft);line-height:1.5}
+.stbl-row:last-child{border-bottom:none}
+.stbl-row:nth-child(even){background:#fcfaf2}
+.stbl-row b{color:var(--ink);font-weight:600}
+.stbl-row .col1{font-weight:600;color:var(--ink)}
+.stbl-2{grid-template-columns:1fr 2fr}
+.stbl-3{grid-template-columns:1fr 1.3fr 1.5fr}
+.stbl-4{grid-template-columns:1.2fr 1fr 1fr 1.2fr}
+@media(max-width:680px){
+  .stbl-head{display:none}
+  .stbl-row{grid-template-columns:1fr !important;gap:12px;padding:14px 16px}
+  .stbl-row .col{display:block;min-width:0;word-wrap:break-word;overflow-wrap:anywhere}
+  .stbl-row .col::before{content:attr(data-l);display:block;font:700 9.5px/1.3 'DM Sans';letter-spacing:.12em;text-transform:uppercase;color:var(--ink-mute);margin-bottom:4px}
+  .stbl-row .col1{font-weight:700;font-size:15px;padding-bottom:8px;margin-bottom:6px;border-bottom:1px dashed var(--line)}
+  .stbl-row .col1::before{display:none}
+}
+
+/* CALLOUT BOXES */
+.box{border-radius:var(--r);padding:14px 16px;margin:14px 0;position:relative;border:1px solid}
+.box-label{position:absolute;top:-9px;left:14px;font:700 9.5px/1 'DM Sans';letter-spacing:.16em;text-transform:uppercase;padding:3px 9px;border-radius:999px;color:#fff}
+.box-title{font-weight:700;color:var(--ink);font-size:14px;margin:2px 0 6px}
+.box-body{font-size:13.5px;line-height:1.5;color:var(--ink-soft)}
+.box-body b{color:var(--ink)}
+.box-body ul{list-style:none;padding:0;margin:4px 0 0}
+.box-body ul li{position:relative;padding:3px 0 3px 20px}
+.box-body ul li::before{content:"→";position:absolute;left:0;top:3px;font-weight:700;color:var(--bx-color)}
+.box.decision{background:#f1f5fc;border-color:#c4d3eb;--bx-color:var(--ank-dec)}.box.decision .box-label{background:var(--ank-dec)}
+.box.danger{background:#fbf0f0;border-color:#e5c2c2;--bx-color:var(--ank-dgr)}.box.danger .box-label{background:var(--ank-dgr)}.box.danger .box-body b{color:var(--ank-dgr)}
+.box.pearl{background:#f1f7ed;border-color:#c1d5b3;--bx-color:var(--ank-prl)}.box.pearl .box-label{background:var(--ank-prl)}
+.box.hy{background:#fcf6dd;border-color:#e3cf78;--bx-color:var(--ank-hy)}.box.hy .box-label{background:var(--ank-hy)}
+.box.myth{background:#f8eed8;border-color:#d0b181;--bx-color:var(--ank-myt)}.box.myth .box-label{background:var(--ank-myt)}
+.box.controversy{background:#f1e9f6;border-color:#bba7d3;--bx-color:var(--ank-con)}.box.controversy .box-label{background:var(--ank-con)}
+.box.evolving{background:#dff0f2;border-color:#8fc1c9;--bx-color:var(--ank-evo)}.box.evolving .box-label{background:var(--ank-evo)}
+
+/* ALGORITHM TREE */
+.algo{background:linear-gradient(180deg,#fcfaf2 0%,#f5f0dc 100%);border:1px solid var(--line-strong);border-radius:var(--r-lg);padding:18px;margin:14px 0;overflow-x:auto}
+.tree{font-size:13px}
+.tree-line{padding:6px 0}
+.tree-node{display:inline-block;padding:8px 12px;background:var(--paper);border:1.5px solid var(--ink-soft);border-radius:7px;font-weight:600;color:var(--ink);font-size:12.5px;box-shadow:var(--sh-sm)}
+.tree-node.start{background:var(--ink);color:#fff;border-color:var(--ink)}
+.tree-node.dec{background:#fff7d6;border-color:#e3cf78;color:#6b520a}
+.tree-node.dx{background:#dde7f8;border-color:#9fbae6;color:#1d4ea3}
+.tree-node.dgr{background:#fadcdc;border-color:#e29ca0;color:#a31b25}
+.tree-node.action{background:#d8e6cf;border-color:#a8c298;color:#3e6a2e}
+.tree-branch{margin-left:14px;border-left:1.5px dashed #b8b094;padding:6px 0 6px 18px;margin-top:6px;margin-bottom:2px;position:relative}
+.tree-branch::before{content:"";position:absolute;left:-1.5px;top:-4px;width:14px;height:14px;border-left:1.5px solid #b8b094;border-bottom:1.5px solid #b8b094;border-radius:0 0 0 6px}
+.tree-label{display:inline-block;font:700 9.5px/1 'DM Sans';letter-spacing:.12em;text-transform:uppercase;padding:3px 7px;border-radius:4px;margin-bottom:5px}
+.tree-label.yes{background:#fadcdc;color:#a31b25}.tree-label.no{background:#d8e6cf;color:#3e6a2e}
+
+/* FOOTER */
+.foot{margin-top:48px;padding-top:22px;border-top:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;font-size:11px;color:var(--ink-faint);letter-spacing:.04em;flex-wrap:wrap;gap:8px}
+.foot-mono{font-family:'DM Mono',monospace}
+.foot-author{font:800 14px/1.1 'DM Mono',monospace;color:var(--ink);letter-spacing:.02em;margin-bottom:3px}
+.foot-meta{font:500 11px/1.3 'DM Sans';color:var(--ink-faint);letter-spacing:.04em}
+
+/* WATERMARK */
+.watermark{position:fixed;bottom:calc(14px + env(safe-area-inset-bottom,0px));right:calc(14px + env(safe-area-inset-right,0px));font:600 10px/1 'DM Mono',monospace;letter-spacing:.04em;color:rgba(14,17,22,.55);background:rgba(255,255,255,.85);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);padding:6px 10px;border-radius:99px;border:1px solid rgba(14,17,22,.1);box-shadow:0 2px 8px rgba(14,17,22,.06);z-index:50;pointer-events:none;user-select:none}
+@media(max-width:560px){.watermark{bottom:calc(10px + env(safe-area-inset-bottom,0px));right:calc(10px + env(safe-area-inset-right,0px));font-size:9px;padding:5px 8px}}
+
+/* PRINT */
+@media print{
+  body{background:#fff;font-size:10.5pt}
+  body::before{display:none}
+  .header,.toc{position:static;background:#0e1116;color:#fff}
+  .wrap{padding:14px;max-width:100%}
+  .card,.hero,.legend,.pocket{box-shadow:none !important;break-inside:avoid}
+  .hero::after,.pocket::before{display:none}
+  .pocket{background:#1a1d24;color:#f0eee5}
+  .ank,.box,.disease,.score,.algo,.stbl,.deep,.mnemo,.quick{box-shadow:none !important;break-inside:avoid}
+  .deep:not([open]) .deep-content{display:block}
+  .deep>summary::after{display:none}
+  .watermark{position:fixed;bottom:8mm;right:8mm;background:none;border:none;color:rgba(0,0,0,.5)}
+  .hero-stamp{transform:none;position:absolute}
+}
+</style>
+</head>
+<body>
+
+<header class="header"><div class="header-row"><div class="h-mark">H</div><div class="h-titles"><div class="h-title">Cirrose, HTP e CHC · Pocket Handbook</div><div class="h-sub">Elite edition · Hepatologia clínica · GH10</div></div><div class="h-author">@dr.lorencato</div><div class="h-edition">v5.2</div></div></header>
+
+<nav class="toc"><div class="toc-inner"><a href="#pocket" class="toc-chip"><span class="toc-chip-num">0</span>Pocket</a><a href="#redflags" class="toc-chip"><span class="toc-chip-num">A</span>Red Flags</a><a href="#approach" class="toc-chip"><span class="toc-chip-num">B</span>Apresentação</a><a href="#primarias" class="toc-chip"><span class="toc-chip-num">C</span>Entidades</a><a href="#secundarias" class="toc-chip"><span class="toc-chip-num">D</span>Secundárias</a><a href="#algoritmo" class="toc-chip"><span class="toc-chip-num">E</span>Algoritmo</a><a href="#tratamento" class="toc-chip"><span class="toc-chip-num">F</span>Tratamento</a><a href="#pitfalls" class="toc-chip"><span class="toc-chip-num">G</span>Pitfalls</a><a href="#pearls" class="toc-chip"><span class="toc-chip-num">H</span>Pearls</a></div></nav>
+
+<main>
+<div class="wrap">
+
+<div class="hero">
+<div class="hero-stamp">@dr.lorencato</div>
+<div class="hero-tag">Hepatologia · GH10 · Doença hepática crônica avançada</div>
+<h1>Cirrose, Hipertensão Portal e Carcinoma Hepatocelular<br><em>do fígado que ainda compensa ao fígado que precisa ser trocado</em></h1>
+<p class="hero-lead">Da doença hepática crônica avançada compensada (cACLD) e da hipertensão portal clinicamente significativa — que já pede carvedilol antes de qualquer variz sangrar — à ascite, à peritonite bacteriana espontânea, à hemorragia varicosa com TIPS preemptivo, à encefalopatia hepática, à LRA-síndrome hepatorrenal com terlipressina e ao carcinoma hepatocelular estadiado pelo BCLC; com as causas que o Brasil vê (álcool, MASLD, vírus, esquistossomose, Budd-Chiari, hemocromatose, Wilson, colangite biliar primária) e o transplante como horizonte de todo cirrótico descompensado. Conduta por Baveno VII/VIII, EASL, AASLD, ADQI-ICA 2024 e BCLC 2022/2026, com a tradução para o SUS (DDT do CHC 2022, SBH, Sistema Nacional de Transplantes).</p>
+<div class="hero-sig">Compilação clínica por <b>@dr.lorencato</b> · Elite Edition v5.2 · status clinical_review</div>
+</div>
+
+<div id="pocket" class="pocket">
+<div class="pocket-head"><div><div class="pocket-eyebrow">Pocket Card 0 · 5 segundos</div><div class="pocket-title">Decisões Críticas — Cirrose, HTP e CHC</div><div class="pocket-sub">PS · Enfermaria · UTI · Ambulatório de hepatologia</div></div></div>
+<div class="pocket-grid">
+<div class="pocket-card emerg"><div class="pc-trig">Cirrótico com hematêmese ou melena</div><div class="pc-act"><b>Vasoativo já (terlipressina 2 mg IV 4/4 h), ceftriaxona 1 g/dia, transfusão restritiva com alvo de Hb 7–8 g/dL</b>, EDA com ligadura em até 12 h. Child C &lt;14 ou B &gt;7 com sangramento ativo: TIPS preemptivo em &lt;72 h.</div></div>
+<div class="pocket-card emerg"><div class="pc-trig">Ascite + febre, dor, encefalopatia ou piora renal</div><div class="pc-act">Paracentese diagnóstica <b>antes do antibiótico</b>: PMN ≥250/mm³ = PBE. <b>Cefalosporina de 3ª geração + albumina 1,5 g/kg no D1 e 1 g/kg no D3</b>; nosocomial ou séptico: amplie para carbapenêmico conforme a flora local.</div></div>
+<div class="pocket-card emerg"><div class="pc-trig">Creatinina subiu ≥0,3 mg/dL em 48 h</div><div class="pc-act">É LRA (ICA-ADQI). <b>Suspenda diurético, NSBB, AINE e nefrotóxicos</b>, trate infecção, expanda conforme a causa. Sem resposta em 24 h e sem outra causa: <b>HRS-AKI → terlipressina + albumina</b>.</div></div>
+<div class="pocket-card dec"><div class="pc-trig">Elastografia ≥10 kPa num hepatopata</div><div class="pc-act">É cACLD. <b>≤15 kPa com plaquetas ≥150 mil afasta CSPH</b>; ≥25 kPa (vírus, álcool, MASLD não obesa) confirma. CSPH = <b>NSBB, de preferência carvedilol</b>, sem precisar de endoscopia.</div></div>
+<div class="pocket-card dec"><div class="pc-trig">Ascite nova, causa incerta</div><div class="pc-act"><b>GASA ≥1,1 g/dL = hipertensão portal</b>; proteína total &lt;2,5 g/dL sugere cirrose, ≥2,5 g/dL sugere causa cardíaca ou pós-sinusoidal. GASA &lt;1,1: carcinomatose, tuberculose, pâncreas.</div></div>
+<div class="pocket-card dec"><div class="pc-trig">Nódulo ≥1 cm no US de vigilância</div><div class="pc-act"><b>TC ou RM multifásica</b>: hiperrealce arterial + washout no cirrótico = CHC (LI-RADS 5), <b>sem biópsia</b>. Estadie pelo BCLC: performance status, Child-Pugh/ALBI e carga tumoral.</div></div>
+<div class="pocket-card tx"><div class="pc-trig">Primeira ascite moderada</div><div class="pc-act"><b>Sódio 80–120 mmol/dia + espironolactona 100 mg</b> (sobe de 100 em 100 até 400 mg); furosemida 40 mg (até 160 mg) se resposta lenta ou recidiva. Perda alvo: 0,5 kg/dia sem edema periférico.</div></div>
+<div class="pocket-card tx"><div class="pc-trig">Paracentese de grande volume</div><div class="pc-act">Retirou &gt;5 L: <b>albumina 6–8 g por litro removido</b> (20% ou 25%). Três ou mais paracenteses no ano: <b>avalie TIPS</b> e transplante.</div></div>
+<div class="pocket-card tx"><div class="pc-trig">Encefalopatia hepática manifesta</div><div class="pc-act">Procure e trate o precipitante. <b>Lactulose 25 mL de 1/1–2/2 h até evacuar</b>, depois titular para 2–3 evacuações pastosas/dia; após o 2º episódio, <b>rifaximina 550 mg 12/12 h</b>.</div></div>
+<div class="pocket-card clin"><div class="pc-trig">Todo cirrótico, a cada 6 meses</div><div class="pc-act"><b>US de abdome ± AFP</b> para CHC (Child A–B ou candidato a transplante). Child C fora de lista: a vigilância não muda desfecho.</div></div>
+<div class="pocket-card clin"><div class="pc-trig">Primeira descompensação</div><div class="pc-act">A sobrevida mediana cai de mais de 12 anos para cerca de 2 anos: <b>MELD ≥15 ou qualquer descompensação = encaminhar para centro transplantador</b>, sem esperar o MELD subir.</div></div>
+<div class="pocket-card clin"><div class="pc-trig">Coagulograma alterado antes de procedimento</div><div class="pc-act">INR não mede o risco hemorrágico do cirrótico (hemostasia reequilibrada). <b>Paracentese não exige plasma nem plaquetas</b>; plasma na HDA piora a pressão portal.</div></div>
+</div>
+</div>
+
+<div class="legend">
+<div class="lg-title">Sistema de legendas</div>
+<div class="lg-grid">
+<div class="lg-item"><span class="dot c1"></span> Fisiopatologia / Classificação</div>
+<div class="lg-item"><span class="dot c2"></span> Clínica / Apresentação</div>
+<div class="lg-item"><span class="dot c3"></span> Diagnóstico / Exames</div>
+<div class="lg-item"><span class="dot c4"></span> Tratamento / Conduta</div>
+<div class="lg-item"><span class="dot c5"></span> Emergências / Red Flags</div>
+<div class="lg-item"><span class="dot c6"></span> Nuances / Pearls</div>
+</div>
+<div class="lg-divider"></div>
+<div class="lg-anchors">
+<span class="ank ank-hy">HIGH-YIELD</span>
+<span class="ank ank-dec">DECISION</span>
+<span class="ank ank-dgr">DANGER</span>
+<span class="ank ank-prl">PEARL</span>
+<span class="ank ank-myt">MYTH</span>
+<span class="ank ank-con">CONTROVERSY</span>
+<span class="ank ank-evo">EVOLVING</span>
+</div>
+<div class="lg-explain">
+<div class="ehy"><b>HIGH-YIELD</b> — prova/prática frequente</div>
+<div class="edec"><b>DECISION</b> — muda a conduta</div>
+<div class="edgr"><b>DANGER</b> — erro grave / risco crítico</div>
+<div class="eprl"><b>PEARL</b> — nuance de especialista</div>
+<div class="emyt"><b>MYTH</b> — mito vivo na prática</div>
+<div class="econ"><b>CONTROVERSY</b> — debate sem consenso</div>
+<div class="eevo"><b>EVOLVING</b> — mudança recente</div>
+</div>
+</div>
+
+<!-- ============================================================ A -->
+<section id="redflags">
+<div class="section">
+<div class="section-eyebrow"><span>A</span> Red Flags</div>
+<div class="section-title">O cirrótico não descompensa devagar — descompensa num plantão</div>
+<div class="section-sub">Sangramento varicoso, PBE, LRA, encefalopatia e ACLF matam em dias; cada um tem um gatilho objetivo e uma ação nas primeiras horas.</div>
+</div>
+
+<div class="card emerg">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">A.1</span> Emergências</div><h3>Sinais de alarme no hepatopata <span class="ank ank-dgr">DANGER</span></h3></div>
+<div class="card-body">
+<div class="mnemo">
+<div class="mnemo-title"><b>CIRROSE</b> sete gatilhos que transformam a consulta em internação</div>
+<div class="mnemo-grid">
+<div class="mnemo-row"><span class="mnemo-letter">C</span><span><b>Confusão</b> · encefalopatia West Haven ≥2, asterixe, sonolência — procurar precipitante, proteger via aérea se grau 3–4</span></div>
+<div class="mnemo-row"><span class="mnemo-letter">I</span><span><b>Infecção</b> · febre, dor abdominal, hipotermia ou só piora inexplicada do estado geral — paracentese diagnóstica</span></div>
+<div class="mnemo-row"><span class="mnemo-letter">R</span><span><b>Rim</b> · creatinina ↑ ≥0,3 mg/dL em 48 h ou ≥50% em 7 dias, oligúria — protocolo de LRA</span></div>
+<div class="mnemo-row"><span class="mnemo-letter">R</span><span><b>Rubra</b> · hematêmese, melena, queda de Hb — HDA varicosa até prova em contrário</span></div>
+<div class="mnemo-row"><span class="mnemo-letter">O</span><span><b>Órgãos em falência</b> · hipotensão, lactato alto, INR disparando, hipoxemia — ACLF, CLIF-C, UTI</span></div>
+<div class="mnemo-row"><span class="mnemo-letter">S</span><span><b>Sódio</b> &lt;125 mmol/L ou queda rápida — suspender diurético, restringir água, cuidado com correção</span></div>
+<div class="mnemo-row"><span class="mnemo-letter">E</span><span><b>Emagrecimento e massa</b> · nódulo novo, AFP subindo, trombose portal nova, descompensação sem motivo — CHC</span></div>
+</div>
+</div>
+
+<div class="sub-title">A.1.1 · Sinal → suspeita → primeira hora</div>
+<div class="stbl stbl-3">
+<div class="stbl-head stbl-3"><div>Red flag</div><div>Suspeita</div><div>Conduta imediata</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Red flag">Hematêmese, melena ou queda de Hb ≥2 g/dL em cirrótico ou com estigmas de HTP</div><div class="col" data-l="Suspeita">Hemorragia varicosa (70% das HDA no cirrótico); gastropatia portal; úlcera péptica (GH02)</div><div class="col" data-l="Conduta"><b>Dois acessos calibrosos, terlipressina 2 mg IV 4/4 h (ou octreotida 50 µg + 50 µg/h), ceftriaxona 1 g IV/dia, Hb alvo 7–8 g/dL, eritromicina 250 mg IV 30–120 min antes da EDA, endoscopia em ≤12 h</b>; IOT se rebaixado ou vomitando sangue</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Red flag">Sangramento que não para após EDA + vasoativo, ou ressangramento em 5 dias</div><div class="col" data-l="Suspeita">Falha de tratamento (Baveno)</div><div class="col" data-l="Conduta"><b>TIPS de resgate com prótese recoberta de PTFE</b>; ponte com balão de Sengstaken-Blakemore (máx. 24 h) ou prótese metálica esofágica autoexpansível</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Red flag">Ascite com febre, dor abdominal, íleo, encefalopatia nova ou LRA</div><div class="col" data-l="Suspeita">PBE (prevalência 10–30% no internado com ascite); peritonite secundária se polimicrobiana</div><div class="col" data-l="Conduta"><b>Paracentese em até 6 h, PMN ≥250/mm³ → ceftriaxona ou cefotaxima + albumina 1,5 g/kg D1 e 1 g/kg D3</b>; hemoculturas e frasco de hemocultura à beira-leito com 10 mL de líquido</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Red flag">Creatinina ≥0,3 mg/dL acima da basal em 48 h, ou débito urinário ≤0,5 mL/kg/h por 6 h</div><div class="col" data-l="Suspeita">LRA: pré-renal, HRS-AKI, necrose tubular, pós-renal</div><div class="col" data-l="Conduta"><b>Suspender diuréticos, NSBB, lactulose em excesso, AINE, IECA/BRA e contraste</b>; albumina 1 g/kg (máx. 100 g) se estágio &gt;1A; sem resposta em 24 h → terlipressina + albumina</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Red flag">Sonolência, desorientação, asterixe, Glasgow ≤8</div><div class="col" data-l="Suspeita">Encefalopatia hepática; excluir hipoglicemia, hiponatremia, Wernicke, hematoma subdural, sepse, sedativos</div><div class="col" data-l="Conduta"><b>Glicemia capilar, tiamina antes da glicose no etilista, lactulose (VO/SNG ou enema), rifaximina</b>; West Haven 3–4: UTI, cabeceira 30°, via aérea definitiva</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Red flag">Hipotensão, lactato alto, ≥1 falência orgânica (rim, cérebro, coagulação, circulação, pulmão)</div><div class="col" data-l="Suspeita">ACLF (mortalidade de 28 dias 20–80% conforme o grau)</div><div class="col" data-l="Conduta"><b>UTI, tratar o precipitante (infecção, álcool, sangramento), avaliar transplante em centro de referência</b>; reavaliar no D3–D7 (CLIF-C ACLF &gt;70 sem transplante sugere futilidade)</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Red flag">Na &lt;125 mmol/L, ou &lt;120 com sintomas</div><div class="col" data-l="Suspeita">Hiponatremia hipervolêmica dilucional; diurético; precipita encefalopatia e mielinólise</div><div class="col" data-l="Conduta"><b>Suspender diurético, restringir água a 1–1,5 L/dia</b>; salina 3% só se sintomático grave ou transplante iminente; <b>correção ≤8 mmol/L/24 h (4–6 se alto risco)</b></div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Red flag">Dor abdominal aguda, ascite súbita, hepatomegalia dolorosa</div><div class="col" data-l="Suspeita">Budd-Chiari agudo, trombose portal com isquemia mesentérica, ruptura de CHC</div><div class="col" data-l="Conduta"><b>Doppler e angio-TC/RM; anticoagulação plena se trombose sem contraindicação</b>; lactato, diarreia sanguinolenta ou dor desproporcional = cirurgia/intervenção</div></div>
+</div>
+
+<div class="box danger">
+<span class="box-label">DANGER</span>
+<div class="box-title">HDA varicosa: o pacote que muda a sobrevida em seis semanas</div>
+<div class="box-body">Mortalidade de 6 semanas ainda em torno de 15–20%. O que reduz mortalidade não é a endoscopia isolada: é o <b>pacote</b> — vasoativo iniciado ainda na suspeita (antes da EDA), antibiótico profilático desde a admissão, transfusão restritiva (Hb 7–8 g/dL; a transfusão liberal aumentou ressangramento e morte no ensaio de Villanueva), ligadura elástica na EDA, lactulose para limpar o cólon e <b>TIPS preemptivo em &lt;72 h</b> (idealmente &lt;24 h) no Child C &lt;14 pontos ou Child B &gt;7 com sangramento ativo à endoscopia. Plasma fresco, plaquetas por número, ácido tranexâmico e fator VIIa não têm papel <span class="ev ev-nice">Baveno VII 2022</span>.</div>
+</div>
+
+<div class="box danger">
+<span class="box-label">DANGER</span>
+<div class="box-title">Betabloqueador no cirrótico que entrou em choque</div>
+<div class="box-body">NSBB reduz a reserva cardíaca justamente quando o cirrótico precisa dela. Em PAS &lt;90 mmHg, PAM &lt;65 mmHg, sepse, HDA ativa ou HRS-AKI, <b>reduza ou suspenda o NSBB</b> e reintroduza quando a hemodinâmica e o rim voltarem ao basal. A ideia da "janela terapêutica" dos betabloqueadores explica o paradoxo: protegem o compensado e o ascítico estável, mas podem precipitar LRA no refratário hipotenso <span class="ev ev-nice">Baveno VII 2022</span>.</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- ============================================================ B -->
+<section id="approach">
+<div class="section">
+<div class="section-eyebrow"><span>B</span> Por Apresentação</div>
+<div class="section-title">Mapa sindrômico — o hepatopata chega por um destes cinco caminhos</div>
+<div class="section-sub">A queixa define o primeiro exame; o estágio (compensado, CSPH, descompensado, ACLF) define a urgência.</div>
+</div>
+
+<div class="card clin">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">B.1</span> Padrão 1</div><h3>O assintomático com enzimas alteradas, plaquetopenia ou fígado "grosseiro" no US</h3><div class="card-sub">cACLD até prova em contrário</div></div>
+<div class="card-body">
+<div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">A cirrose compensada é silenciosa: <b>plaquetas &lt;150 mil, relação AST/ALT &gt;1, albumina limítrofe e baço aumentado</b> já contam a história. O passo seguinte é <b>FIB-4 e elastografia</b>, não biópsia.</div></div>
+<ul class="bullets">
+<li><b>FIB-4 &lt;1,3:</b> fibrose avançada improvável (em &gt;65 anos o corte baixo sobe para 2,0); ≥2,67 pede elastografia e encaminhamento.</li>
+<li><b>Elastografia transitória:</b> &lt;10 kPa afasta cACLD; 10–15 sugere; &gt;15 kPa é altamente sugestivo. Regra dos 5 (10-15-20-25 kPa) gradua o risco de descompensação.</li>
+<li><b>Estigmas:</b> aranhas vasculares, eritema palmar, ginecomastia, contratura de Dupuytren e hipertrofia de parótidas (etilismo), circulação colateral, baqueteamento.</li>
+<li><b>Etiologia sempre:</b> HBsAg, anti-HCV, ferritina e saturação de transferrina, autoanticorpos (FAN, AML, AMA), ceruloplasmina se &lt;40 anos, alfa-1-antitripsina, perfil metabólico, AUDIT.</li>
+</ul>
+<div class="box hy"><span class="box-label">HIGH-YIELD</span><div class="box-title">O que transforma achado em decisão</div><div class="box-body">cACLD com CSPH (LSM ≥25 kPa ou modelo ANTICIPATE ≥75%) = NSBB para prevenir descompensação. cACLD sem CSPH = tratar a causa, repetir elastografia anual, vigilância de CHC semestral se cirrose.</div></div>
+</div>
+</div>
+
+<div class="card clin">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">B.2</span> Padrão 2</div><h3>Aumento do volume abdominal</h3><div class="card-sub">ascite: hipertensão portal ou peritônio?</div></div>
+<div class="card-body">
+<div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Toda ascite nova (e toda internação de ascítico) merece <b>paracentese diagnóstica</b>: celularidade com diferencial, albumina para o GASA, proteína total, cultura em frasco de hemocultura. O GASA separa <b>HTP (≥1,1 g/dL)</b> de doença peritoneal.</div></div>
+<ul class="bullets">
+<li><b>Exame físico:</b> macicez móvel exige ~1,5 L; piparote só em ascite volumosa; o US detecta 100 mL.</li>
+<li><b>GASA ≥1,1 + proteína &lt;2,5:</b> cirrose (o fígado cirrótico "não vaza" proteína). <b>GASA ≥1,1 + proteína ≥2,5:</b> ascite cardíaca, Budd-Chiari, SOS (sinusoide preservado).</li>
+<li><b>GASA &lt;1,1:</b> carcinomatose peritoneal (citologia), tuberculose peritoneal (ADA &gt;39 U/L, linfócitos), ascite pancreática (amilase alta, GH07), síndrome nefrótica, serosite.</li>
+<li><b>Líquido turvo</b> = PMN; <b>leitoso</b> = quilosa (triglicerídeos &gt;200 mg/dL: linfoma, trauma, cirurgia); <b>hemorrágico</b> = neoplasia, CHC roto, punção traumática.</li>
+</ul>
+</div>
+</div>
+
+<div class="card clin">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">B.3</span> Padrão 3</div><h3>Hemorragia digestiva alta no paciente com estigmas</h3><div class="card-sub">variceal até prova em contrário</div></div>
+<div class="card-body">
+<div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Esplenomegalia, ascite, circulação colateral ou plaquetopenia num paciente com HDA = <b>tratar como varicosa antes da endoscopia</b>. O vasoativo não espera o diagnóstico; a endoscopia em ≤12 h confirma e trata.</div></div>
+<ul class="bullets">
+<li><b>Esofágicas</b> (a maioria): ligadura elástica. <b>Gástricas GOV2/IGV1</b>: cianoacrilato, BRTO ou TIPS + embolização.</li>
+<li><b>Gastropatia hipertensiva portal:</b> sangramento crônico, anemia ferropriva; NSBB e ferro, APC se refratária.</li>
+<li><b>GAVE (estômago em melancia):</b> antro com faixas vermelhas; não responde a NSBB nem a TIPS — APC, ligadura ou ablação.</li>
+<li><b>Úlcera péptica</b> também ocorre no cirrótico (GH02): IBP antes da EDA pode ser mantido só se houver indicação após o exame.</li>
+</ul>
+</div>
+</div>
+
+<div class="card clin">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">B.4</span> Padrão 4</div><h3>Confusão, sonolência ou mudança de comportamento</h3><div class="card-sub">encefalopatia — mas é diagnóstico de exclusão</div></div>
+<div class="card-body">
+<div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">No cirrótico confuso a pergunta é dupla: <b>é encefalopatia hepática?</b> e <b>o que a precipitou?</b> Hemorragia, infecção, constipação, diurético, hiponatremia, hipocalemia, sedativos e álcool explicam quase todos os episódios.</div></div>
+<ul class="bullets">
+<li><b>Asterixe</b> (flapping) é característico, mas também aparece na uremia e na carbonarcose.</li>
+<li><b>Amônia:</b> não gradua nem guia tratamento; <b>valor normal torna EH improvável</b> e pede outro diagnóstico (EASL 2022).</li>
+<li><b>Diferenciais obrigatórios:</b> hipoglicemia, Wernicke, delirium tremens, hematoma subdural (queda + coagulopatia), meningite, intoxicação, crise epiléptica não convulsiva.</li>
+<li><b>TC de crânio</b> se déficit focal, trauma, primeiro episódio sem precipitante ou ausência de resposta ao tratamento em 24–48 h.</li>
+</ul>
+</div>
+</div>
+
+<div class="card clin">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">B.5</span> Padrão 5</div><h3>Icterícia, perda de peso ou "descompensação sem motivo"</h3><div class="card-sub">hepatite alcoólica, ACLF, CHC, trombose portal</div></div>
+<div class="card-body">
+<div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Cirrótico estável que descompensa sem precipitante óbvio: procure <b>CHC</b> (imagem multifásica, AFP) e <b>trombose de veia porta</b>. Icterícia rápida em etilista com consumo recente: <b>hepatite alcoólica</b> (MELD &gt;20 = grave).</div></div>
+<ul class="bullets">
+<li><b>Hepatite alcoólica:</b> bilirrubina &gt;3 mg/dL, AST 50–400 U/L com AST/ALT &gt;1,5, consumo pesado até 60 dias antes, febre e leucocitose sem infecção.</li>
+<li><b>ACLF:</b> descompensação aguda + falência de órgãos; precipitada por infecção, álcool, HBV flare, DILI ou cirurgia.</li>
+<li><b>CHC:</b> dor em hipocôndrio direito, perda de peso, ascite hemorrágica, febre tumoral, hipoglicemia, eritrocitose, hipercalcemia paraneoplásica.</li>
+<li><b>Colestase</b> (FA e GGT altas, prurido): CBP, CEP, obstrução biliar — US primeiro.</li>
+</ul>
+<div class="box decision"><span class="box-label">DECISION</span><div class="box-title">Quando internar o descompensado</div><div class="box-body">HDA, suspeita de PBE ou de outra infecção, LRA, EH grau ≥2, Na &lt;125, ascite tensa com desconforto respiratório, icterícia progressiva ou qualquer falência orgânica. Ascite não complicada e EH grau 1 com causa clara podem seguir em ambulatório com retorno curto.</div></div>
+</div>
+</div>
+</section>
+
+<!-- ============================================================ C -->
+<section id="primarias">
+<div class="section">
+<div class="section-eyebrow"><span>C</span> Entidades Primárias</div>
+<div class="section-title">Disease boxes — da fibrose em ponte ao tumor</div>
+<div class="section-sub">Oito entidades que respondem por quase toda a morbimortalidade do hepatopata crônico: a doença de base, a síndrome hemodinâmica e as seis complicações que definem descompensação e prognóstico.</div>
+</div>
+
+<!-- C.1 -->
+<div class="card prim">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">C.1</span> Doença de base</div><h3>Cirrose hepática e doença hepática crônica avançada <span class="ank ank-hy">HIGH-YIELD</span></h3><div class="card-sub">cACLD compensada → descompensada → ACLF</div></div>
+<div class="card-body">
+<div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Cirrose é o estágio final comum das agressões crônicas ao fígado: <b>fibrose em septos + nódulos de regeneração</b> que distorcem a arquitetura e a microcirculação. O prognóstico não depende do nome histológico, depende do <b>estágio clínico</b>: compensada sem CSPH, compensada com CSPH, descompensada (ascite, HDA varicosa, EH) e ACLF.</div></div>
+<div class="disease">
+<div class="disease-head"><div class="disease-name">Cirrose hepática / cACLD</div><div class="disease-tag">CID-10 K74.6 outras cirroses e as não especificadas · K70.3 cirrose alcoólica</div></div>
+<div class="disease-body"><div class="disease-rows">
+<div class="disease-row"><div class="k">Epidemiologia</div><div class="v">Causa de cerca de 2,4% das mortes no mundo. No Brasil, álcool, hepatite C, hepatite B e MASLD dominam; a MASLD cresce como causa de cirrose e de CHC em fígado não cirrótico. Mortalidade anual de 1–2% na fase compensada sem CSPH e de ~20% após a primeira descompensação, com sobrevida mediana caindo de &gt;12 anos para ~2 anos.</div></div>
+<div class="disease-row"><div class="k">Fisiopatologia</div><div class="v">A lesão crônica ativa a célula estrelada (de Ito) do espaço de Disse, que perde as gotículas de vitamina A, vira miofibroblasto sob TGF-β e PDGF e deposita colágeno I e III. A capilarização sinusoidal (perda das fenestras e membrana basal) bloqueia a troca hepatócito–plasma, os shunts intra-hepáticos desviam sangue dos hepatócitos e a contração ativa de estreladas e a disfunção endotelial (pouco NO, muito endotelina e tromboxano) somam um componente dinâmico à resistência. O resultado é dupla falência: <b>de síntese/depuração</b> (albumina, fatores de coagulação, bilirrubina, amônia, estrogênios) e <b>hemodinâmica</b> (hipertensão portal).</div></div>
+<div class="disease-row"><div class="k">Clínica</div><div class="v">Compensada: assintomática ou fadiga, câimbras, estigmas cutâneos. Hiperestrogenismo por menor depuração e maior aromatização periférica de androgênios: aranhas vasculares no território da veia cava superior, eritema palmar, ginecomastia, atrofia testicular, rarefação pilosa. Descompensada: ascite, icterícia, HDA, EH, sarcopenia (preditor independente de mortalidade), infecções.</div></div>
+<div class="disease-row"><div class="k">Diagnóstico</div><div class="v">Na prática, não invasivo: elastografia (&gt;15 kPa altamente sugestivo de cACLD), plaquetas, achados de US (superfície nodular, hipertrofia do caudado, baço &gt;13 cm, recanalização da paraumbilical) e sinais clínicos de HTP. Biópsia só se a etiologia for incerta ou houver discordância. Laboratório: AST/ALT &gt;1, plaquetopenia, hipoalbuminemia, INR alargado, hipergamaglobulinemia policlonal (antígenos intestinais que escapam do filtro de Kupffer), hiponatremia <span class="ev ev-nice">Baveno VII 2022</span> <span class="ev ev-eular">EASL NIT 2021</span>.</div></div>
+<div class="disease-row"><div class="k">Tratamento</div><div class="v">Pilar 1: <b>remover a causa</b> (abstinência, antiviral para HBV/HCV, perda de peso, flebotomia, quelação, AUDC) — isso reduz pressão portal e pode recompensar. Pilar 2: <b>prevenir descompensação</b> (NSBB/carvedilol se CSPH). Pilar 3: <b>vigilância</b> (CHC semestral; varizes conforme o algoritmo). Pilar 4: nutrição (35 kcal/kg/dia, proteína 1,2–1,5 g/kg/dia, lanche noturno), vacinação (HAV, HBV, pneumococo, influenza, COVID-19), evitar AINE e benzodiazepínicos. Pilar 5: <b>transplante</b> quando descompensar ou MELD ≥15 <span class="ev ev-eular">EASL 2018</span>.</div></div>
+<div class="disease-row"><div class="k">Prognóstico</div><div class="v">Child-Pugh (A 5–6, B 7–9, C 10–15) e MELD (bilirrubina, INR, creatinina; MELD-Na acrescenta o sódio; MELD 3.0 acrescenta sexo feminino e albumina). Mortalidade em 3 meses: MELD &lt;10 ≈2%; 20–29 ≈20%; 30–39 ≈50%; ≥40 ≈70%. Recompensação (Baveno): causa removida, sem ascite sem diurético, sem EH sem lactulose/rifaximina, sem ressangramento por &gt;6 meses, e função hepática melhorada (Child A).</div></div>
+<div class="disease-row"><div class="k">O que muda conduta</div><div class="v"><b>Presença de CSPH</b> (inicia NSBB), <b>primeira descompensação</b> (encaminhar para transplante, iniciar profilaxias), <b>MELD ≥15</b> (lista), <b>causa tratável</b> (pode recompensar e dispensar transplante) e <b>ACLF</b> (UTI e transplante de urgência).</div></div>
+</div></div></div>
+
+<div class="score">
+<div class="score-head"><div class="score-name">Child-Turcotte-Pugh <span class="ev ev-eular">EASL 2018</span></div><div class="score-purpose">Reserva funcional · 5 variáveis × 1–3 pontos</div></div>
+<div class="score-rows">
+<div class="score-row"><div class="score-grade">Bilirrubina</div><div class="score-desc">&lt;2 mg/dL = 1 · 2–3 = 2 · &gt;3 = 3 (na CBP/CEP: &lt;4 / 4–10 / &gt;10)</div></div>
+<div class="score-row"><div class="score-grade">Albumina</div><div class="score-desc">&gt;3,5 g/dL = 1 · 2,8–3,5 = 2 · &lt;2,8 = 3</div></div>
+<div class="score-row"><div class="score-grade">INR</div><div class="score-desc">&lt;1,7 = 1 · 1,7–2,3 = 2 · &gt;2,3 = 3 (ou TP prolongado &lt;4 / 4–6 / &gt;6 s)</div></div>
+<div class="score-row"><div class="score-grade">Ascite</div><div class="score-desc">Ausente = 1 · leve/controlada com diurético = 2 · moderada a tensa ou refratária = 3</div></div>
+<div class="score-row"><div class="score-grade">Encefalopatia</div><div class="score-desc">Ausente = 1 · grau 1–2 ou controlada = 2 · grau 3–4 ou refratária = 3</div></div>
+<div class="score-row"><div class="score-grade">Classe</div><div class="score-desc"><b>A 5–6</b> (sobrevida em 1 ano ~100%) · <b>B 7–9</b> (~80%) · <b>C 10–15</b> (~45%). Duas variáveis subjetivas (ascite, EH) são a fraqueza do escore e o motivo de o MELD alocar órgãos.</div></div>
+</div>
+</div>
+
+<details class="deep"><summary>Deep dive · Da fibrose à falência — por que o cirrótico é imunodeprimido, hiperdinâmico e reequilibrado</summary>
+<div class="deep-content">
+<p><b>Fibrogênese e reversibilidade.</b> A célula estrelada ativada responde a sinais de dano (DAMPs liberados por hepatócitos em apoptose ou necroptose), a lipopolissacarídeo portal via TLR4 nas células de Kupffer e a citocinas (TGF-β1 como principal fibrogênico, PDGF como mitogênico). O colágeno intersticial depositado é remodelado por metaloproteinases (MMP-1, MMP-13) inibidas pelos TIMP-1 e TIMP-2. Enquanto houver predomínio de colágeno não reticulado, a fibrose regride ao se remover a agressão — é o que se vê após resposta virológica sustentada na hepatite C ou supressão do HBV, com queda da elastografia e às vezes da pressão portal. A ligação cruzada por lisil-oxidase (LOXL2) e a elastina estabilizam o septo maduro e tornam a regressão parcial; por isso a cirrose com nódulos pequenos, septos finos e "septos perfurados" (estágio Laennec 4A) regride mais do que a 4C.</p>
+<p><b>Disfunção imune associada à cirrose (CAID).</b> Coexistem imunodeficiência e inflamação sistêmica. Deficiência: menor síntese de complemento e de proteínas de reconhecimento, fagocitose de neutrófilos reduzida, menor capacidade de depuração das células de Kupffer (agravada pelos shunts portossistêmicos), baixa opsonização do líquido ascítico (proteína &lt;1,5 g/dL). Inflamação: translocação bacteriana por aumento de permeabilidade intestinal, supercrescimento e disbiose, gerando PAMPs que ativam TLR e inflamassoma, elevando IL-6, TNF-α e óxido nítrico. Essa inflamação é o motor comum da descompensação aguda e da ACLF (estudos CANONIC e PREDICT), não um epifenômeno.</p>
+<p><b>Circulação hiperdinâmica.</b> A vasodilatação esplâncnica (NO, CO, endocanabinoides, glucagon) reduz o volume arterial efetivo, ativa SRAA, sistema nervoso simpático e ADH, e o rim retém sódio e água livre — eis a ascite e a hiponatremia dilucional. O débito cardíaco sobe para compensar, até que a cardiomiopatia cirrótica (disfunção diastólica, resposta inotrópica reduzida ao estresse, QT longo) limite a reserva — a base fisiológica da "janela" do betabloqueador e da LRA após paracentese sem albumina.</p>
+<p><b>Hemostasia reequilibrada.</b> O fígado cirrótico produz menos fatores pró-coagulantes (II, V, VII, IX, X, XI), mas também menos anticoagulantes (proteína C, proteína S, antitrombina); o fator VIII e o fator de von Willebrand sobem (síntese endotelial), a ADAMTS13 cai, e a plaquetopenia é parcialmente compensada pelo vWF alto. TP e INR medem só a via pró-coagulante e não preveem sangramento; o equilíbrio é frágil e pende para trombose (TVP, TEV) tanto quanto para sangramento. Testes viscoelásticos (TEG, ROTEM) refletem melhor o balanço quando é preciso decidir transfusão.</p>
+<p><b>Por que o Child ainda é usado.</b> MELD prevê mortalidade de 90 dias e aloca órgãos; Child-Pugh ainda decide elegibilidade para ressecção, TACE, sorafenibe/imunoterapia, TIPS preemptivo e dose de fármacos (ajuste de DOAC, estatina, carvedilol). ALBI (albumina e bilirrubina) é o substituto objetivo no contexto oncológico.</p>
+</div></details>
+</div>
+</div>
+
+<!-- C.2 -->
+<div class="card prim">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">C.2</span> Síndrome hemodinâmica</div><h3>Hipertensão portal clinicamente significativa <span class="ank ank-dec">DECISION</span></h3><div class="card-sub">HVPG ≥10 mmHg — o divisor de águas do compensado</div></div>
+<div class="card-body">
+<div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Pressão portal = fluxo × resistência. HVPG normal 1–5 mmHg; <b>&gt;5 = HTP sinusoidal</b>; <b>≥10 = CSPH</b> (varizes, ascite e descompensação passam a acontecer); <b>≥12</b> = risco de sangramento varicoso; <b>&gt;20</b> durante HDA = alto risco de falha. Na prática a CSPH é diagnosticada sem cateter: elastografia + plaquetas.</div></div>
+<div class="disease">
+<div class="disease-head"><div class="disease-name">Hipertensão portal (cirrótica e não cirrótica)</div><div class="disease-tag">CID-10 K76.6 hipertensão portal</div></div>
+<div class="disease-body"><div class="disease-rows">
+<div class="disease-row"><div class="k">Epidemiologia</div><div class="v">CSPH presente em ~40–60% dos cACLD ao diagnóstico. Varizes esofágicas em ~30% dos compensados e ~60% dos descompensados; surgimento de novas varizes ~7–8%/ano; progressão de pequena para grande ~10–12%/ano. No Brasil, esquistossomose mansônica ainda responde por parte relevante da HTP pré-sinusoidal (Nordeste e Minas Gerais).</div></div>
+<div class="disease-row"><div class="k">Fisiopatologia</div><div class="v">Começa pela <b>resistência</b> (fixa: fibrose e nódulos; dinâmica: tônus da estrelada e do miofibroblasto, déficit de NO intra-hepático) e se perpetua pelo <b>fluxo</b> (vasodilatação esplâncnica e neoangiogênese via VEGF). Classificação topográfica: pré-hepática (trombose de porta ou esplênica), intra-hepática pré-sinusoidal (esquistossomose, PSVD, CBP inicial), sinusoidal (cirrose), pós-sinusoidal (SOS), pós-hepática (Budd-Chiari, pericardite constritiva, IC direita). Colaterais portossistêmicas: gastroesofágicas (coronária/gástrica esquerda → ázigos), retais, paraumbilicais (caput medusae), retroperitoneais (Retzius) e shunt esplenorrenal espontâneo.</div></div>
+<div class="disease-row"><div class="k">Clínica</div><div class="v">Esplenomegalia e hiperesplenismo (plaquetopenia, leucopenia), circulação colateral com fluxo centrífugo a partir do umbigo (diferente do fluxo ascendente da obstrução de cava inferior), sopro de Cruveilhier-Baumgarten, varizes, ascite. Na HTP pré-sinusoidal com fígado preservado, a apresentação típica é <b>HDA volumosa com função hepática normal</b>, sem ascite nem EH.</div></div>
+<div class="disease-row"><div class="k">Diagnóstico</div><div class="v">HVPG (pressão da veia hepática ocluída menos a livre) é o padrão-ouro na cirrose viral e alcoólica; subestima a pressão portal na pré-sinusoidal. Não invasivo: <b>LSM ≤15 kPa + plaquetas ≥150 mil afasta CSPH</b>; <b>LSM ≥25 kPa confirma</b> (vírus, álcool, MASLD com IMC &lt;30); modelo ANTICIPATE±NASH com probabilidade ≥75% ou elastografia esplênica &gt;55 kPa (sonda de 100 Hz) também confirmam (Baveno VIII). Doppler: fluxo portal lento ou hepatofugal, colaterais <span class="ev ev-nice">Baveno VII 2022</span> <span class="ev ev-nice">Baveno VIII 2026</span>.</div></div>
+<div class="disease-row"><div class="k">Tratamento</div><div class="v"><b>CSPH = NSBB, preferindo carvedilol</b> (6,25 mg/dia, subir para 6,25 mg 12/12 h após 3 dias; teto 12,5 mg/dia), para prevenir a primeira descompensação (estudo PREDESCI) — e quem usa NSBB não precisa de endoscopia de rastreio. Sem CSPH, NSBB não tem indicação. Intolerância ou contraindicação ao NSBB: EDA se LSM ≥20 kPa ou plaquetas ≤150 mil; varizes de alto risco → ligadura elástica <span class="ev ev-nice">Baveno VII 2022</span> <span class="ev ev-acr">AASLD 2024</span>.</div></div>
+<div class="disease-row"><div class="k">Prognóstico</div><div class="v">Cada 1 mmHg de HVPG acima de 10 aumenta o risco de descompensação. Resposta hemodinâmica ao NSBB (queda de HVPG ≥10% do basal ou para ≤12 mmHg) associa-se a menos sangramento, ascite e morte. Remoção da causa reduz HVPG na maioria, mas a CSPH pode persistir — por isso NSBB só é suspenso se a CSPH resolver.</div></div>
+<div class="disease-row"><div class="k">O que muda conduta</div><div class="v"><b>CSPH sim ou não</b> decide NSBB; <b>uso de NSBB</b> dispensa endoscopia; <b>HTP com HVPG &lt;10 ou elastografia baixa</b> sugere PSVD ou causa pré-hepática (procurar trombose, esquistossomose); <b>HVPG ≥16 mmHg</b> eleva o risco de cirurgia abdominal eletiva.</div></div>
+</div></div></div>
+
+<details class="deep"><summary>Deep dive · Fisiologia da pressão portal, HVPG e o racional do carvedilol</summary>
+<div class="deep-content">
+<p><b>Lei de Ohm aplicada ao sistema porta.</b> ΔP = Q × R. A resistência, pela lei de Poiseuille, varia com a quarta potência do raio: pequenas mudanças no tônus sinusoidal e na contratilidade dos miofibroblastos perisinusoidais alteram muito a pressão — por isso cerca de 25–30% da resistência intra-hepática da cirrose é "dinâmica" e farmacologicamente modulável (nitratos, estatinas, carvedilol pelo bloqueio α1). O aumento do fluxo vem da vasodilatação arteriolar esplâncnica mediada por NO (eNOS ativada por estresse de cisalhamento e por citocinas), CO, prostaciclina, endocanabinoides e glucagon, e da neoangiogênese dependente de VEGF e PlGF. Quando as colaterais se formam, elas não descomprimem: a resistência delas é maior que a do fígado normal, e o fluxo colateral se soma ao hiperfluxo.</p>
+<p><b>HVPG passo a passo.</b> Cateter com balão na veia hepática: a pressão ocluída (WHVP) reflete a pressão sinusoidal, que na cirrose equivale à portal porque a comunicação intersinusoidal está bloqueada pela fibrose; subtrai-se a pressão livre (FHVP), eliminando o efeito da pressão intra-abdominal e da pressão atrial. Gradiente &gt;5 = HTP sinusoidal; ≥10 = CSPH; ≥12 = risco de ruptura varicosa; &gt;20 na hemorragia aguda prevê falha de controle e morte (base histórica do TIPS preemptivo). Na HTP pré-sinusoidal (esquistossomose, PSVD) o HVPG é normal ou pouco elevado apesar de varizes calibrosas — a pressão alta está "antes" do sinusoide e o balão não a enxerga. Na CBP pode haver componente pré-sinusoidal que subestima a gravidade.</p>
+<p><b>Por que carvedilol.</b> Propranolol e nadolol bloqueiam β1 (reduzem débito cardíaco) e β2 (deixam o tônus α esplâncnico sem oposição, reduzindo o fluxo portal). O carvedilol acrescenta bloqueio α1, que reduz a resistência intra-hepática dinâmica; reduz HVPG mais do que o propranolol e responde em cerca de metade dos não respondedores ao propranolol. O PREDESCI (propranolol ou carvedilol × placebo em CSPH sem varizes grandes) reduziu descompensação, principalmente ascite; meta-análises individuais mostraram redução de mortalidade com carvedilol em CSPH. O preço é maior hipotensão sistêmica — por isso a dose máxima recomendada é baixa (12,5 mg/dia), e no ascítico a pressão arterial é o freio.</p>
+<p><b>Elastografia como hemodinâmica indireta.</b> A rigidez hepática correlaciona-se com HVPG até ~10–12 mmHg (fase em que a resistência fibrótica domina); acima disso, o componente de fluxo pesa mais e a correlação piora — daí o interesse na rigidez esplênica, que reflete congestão do território portal. Obesidade e esteato-hepatite inflamatória superestimam a rigidez, o que explica a perda de especificidade dos critérios de Baveno na MASLD com IMC ≥30 e o uso do modelo ANTICIPATE-NASH.</p>
+</div></details>
+</div>
+</div>
+
+<!-- C.3 -->
+<div class="card prim">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">C.3</span> Primeira descompensação mais comum</div><h3>Ascite cirrótica e ascite refratária <span class="ank ank-hy">HIGH-YIELD</span></h3><div class="card-sub">60% dos compensados desenvolvem ascite em 10 anos</div></div>
+<div class="card-body">
+<div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Ascite é a descompensação inaugural mais frequente e marca mortalidade de ~15% em 1 ano e ~44% em 5 anos. Grau 1 (só US), 2 (moderada, distensão simétrica), 3 (tensa). Tratamento: <b>restrição de sódio + antagonista mineralocorticoide ± furosemida</b>; refratária = <b>paracentese de grande volume com albumina ou TIPS</b>, e transplante.</div></div>
+<div class="disease">
+<div class="disease-head"><div class="disease-name">Ascite por hipertensão portal</div><div class="disease-tag">CID-10 R18 ascite</div></div>
+<div class="disease-body"><div class="disease-rows">
+<div class="disease-row"><div class="k">Epidemiologia</div><div class="v">~85% das ascites são por cirrose; 15% neoplásicas, cardíacas, tuberculosas, pancreáticas, nefróticas e outras. Ascite refratária em 5–10% dos ascíticos, com sobrevida mediana de ~6 meses sem transplante ou TIPS.</div></div>
+<div class="disease-row"><div class="k">Fisiopatologia</div><div class="v">Teoria da vasodilatação arterial periférica: vasodilatação esplâncnica → hipovolemia arterial efetiva → SRAA, simpático e ADH → retenção renal de sódio e água → ascite; a pressão sinusoidal alta e a hipoalbuminemia determinam onde o líquido se acumula. Sem CSPH (HVPG &lt;10–12 mmHg) não há ascite por cirrose. A teoria atual acrescenta a inflamação sistêmica por translocação bacteriana como amplificadora da vasodilatação.</div></div>
+<div class="disease-row"><div class="k">Clínica</div><div class="v">Ganho de peso, distensão, edema de membros inferiores, hérnia umbilical (risco de encarceramento e ruptura — síndrome de Flood), hidrotórax hepático (à direita em 85%), dispneia, saciedade precoce.</div></div>
+<div class="disease-row"><div class="k">Diagnóstico</div><div class="v">Paracentese diagnóstica (agulha no QIE, 2 dedos medial e 2 cranial à espinha ilíaca anterossuperior; complicações graves &lt;1%; não corrigir INR nem plaquetas de rotina). Pedir PMN, albumina (GASA), proteína total, cultura em frasco de hemocultura; conforme suspeita: glicose, LDH, amilase, ADA, citologia, triglicerídeos, bilirrubina <span class="ev ev-eular">EASL 2018</span> <span class="ev ev-acr">AASLD 2021</span>.</div></div>
+<div class="disease-row"><div class="k">Tratamento</div><div class="v">Grau 1: sem tratamento específico. Grau 2: <b>sódio 80–120 mmol/dia (4,6–6,9 g de sal; AASLD: 2 g de sódio)</b> e espironolactona 100 mg/dia, subindo 100 mg a cada 72 h até 400 mg; furosemida 40 mg/dia até 160 mg em recidivantes ou com resposta inadequada. Perda máxima: 0,5 kg/dia sem edema, 1 kg/dia com edema. Grau 3: <b>paracentese de grande volume + albumina 8 g/L removido</b> (6–8 g/L na AASLD, se &gt;5 L) e depois diurético. Restrição hídrica só se Na &lt;125. <b>Recorrente (≥3 paracenteses/ano) ou refratária: TIPS recoberto</b> se bilirrubina &lt;3 mg/dL, plaquetas &gt;75 mil, sem EH grau ≥2 recorrente, sem disfunção cardíaca ou hipertensão pulmonar importantes <span class="ev ev-eular">EASL TIPS 2025</span> <span class="ev ev-nice">Baveno VII 2022</span>.</div></div>
+<div class="disease-row"><div class="k">Prognóstico</div><div class="v">Hiponatremia, hipotensão arterial (PAM &lt;80 mmHg), creatinina elevada e ascite refratária são os piores marcadores; MELD-Na captura parte desse risco. O TIPS em candidatos selecionados melhora sobrevida livre de transplante em relação a paracenteses seriadas.</div></div>
+<div class="disease-row"><div class="k">O que muda conduta</div><div class="v"><b>GASA</b> (≥1,1 = HTP), <b>PMN ≥250</b> (PBE), <b>proteína &lt;1,5 g/dL</b> (considerar profilaxia primária se disfunção avançada), <b>refratariedade</b> (TIPS/transplante), <b>Na &lt;125 ou creatinina &gt;2</b> (suspender diurético), <b>PAS &lt;90</b> (reduzir NSBB).</div></div>
+</div></div></div>
+
+<div class="sub-title">C.3.1 · Ascite refratária — critérios do Clube Internacional da Ascite</div>
+<div class="stbl stbl-2">
+<div class="stbl-head stbl-2"><div>Critério</div><div>Definição operacional</div></div>
+<div class="stbl-row stbl-2"><div class="col col1" data-l="Critério">Resistente a diurético</div><div class="col" data-l="Definição">Sem resposta (perda &lt;0,8 kg em 4 dias e natriurese inferior à ingestão) com espironolactona 400 mg + furosemida 160 mg/dia por ≥1 semana e sódio &lt;90 mmol/dia</div></div>
+<div class="stbl-row stbl-2"><div class="col col1" data-l="Critério">Intratável por diurético</div><div class="col" data-l="Definição">Complicação impede a dose eficaz: EH sem outro precipitante, creatinina ↑ &gt;100% até &gt;2 mg/dL, Na ↓ &gt;10 mmol/L até &lt;125, K &lt;3 ou &gt;6 mmol/L, câimbras incapacitantes</div></div>
+<div class="stbl-row stbl-2"><div class="col col1" data-l="Critério">Recidiva precoce</div><div class="col" data-l="Definição">Reaparecimento de ascite grau 2–3 em ≤4 semanas da mobilização inicial</div></div>
+</div>
+
+<details class="deep"><summary>Deep dive · Formação da ascite, GASA e a disfunção circulatória pós-paracentese</summary>
+<div class="deep-content">
+<p><b>Starling no sinusoide.</b> No fígado normal o sinusoide fenestrado é permeável a proteínas: o gradiente oncótico entre plasma e espaço de Disse é quase nulo e a linfa hepática é rica em proteína. A pressão hidrostática sinusoidal elevada faz a produção de linfa ultrapassar a capacidade do ducto torácico (que pode chegar a 20 L/dia) e o excedente "transpira" pela cápsula de Glisson. Na cirrose, a capilarização reduz a permeabilidade a proteínas, por isso a ascite cirrótica tem proteína baixa (&lt;2,5 g/dL); na congestão pós-sinusoidal (IC direita, Budd-Chiari, SOS), o sinusoide preservado deixa passar proteína e o líquido tem GASA alto e proteína alta. O <b>GASA</b> (albumina sérica menos albumina ascítica, na mesma hora) estima o gradiente oncótico que se opõe ao hidrostático e, portanto, a pressão portal: ≥1,1 g/dL tem ~97% de acurácia para HTP. Ele não diz a causa da HTP e coexistência (cirrose + carcinomatose) acontece.</p>
+<p><b>Rim que retém sódio.</b> A angiotensina II aumenta a reabsorção proximal; a aldosterona age no túbulo coletor (canal ENaC) e é responsável pela maior parte da reabsorção distal — por isso o antagonista mineralocorticoide é a droga principal e a furosemida isolada falha (o sódio que escapa da alça é recapturado distalmente). A natriurese pode ser monitorada pela relação Na/K urinária em amostra isolada: &gt;1 sugere natriurese adequada (≥78 mmol/dia); paciente que não perde peso com Na/K &gt;1 está comendo sal.</p>
+<p><b>Disfunção circulatória pós-paracentese (PICD).</b> A retirada rápida de grande volume reduz a pressão intra-abdominal, aumenta o retorno venoso e o débito, mas acentua a vasodilatação arteriolar; nas 24–48 h seguintes, cai a resistência vascular sistêmica, sobe a atividade de renina (aumento &gt;50% define PICD) e surgem recidiva rápida da ascite, hiponatremia, LRA e maior mortalidade. A albumina previne melhor que dextrano, gelatina ou salina, sobretudo acima de 5 L; abaixo disso o benefício é menor e alguns serviços usam albumina também a partir de 3 L em pacientes com LRA ou hiponatremia. A albumina não é só expansor: tem domínios que ligam endotoxina, bilirrubina e óxido nítrico e efeito antioxidante (cisteína-34), parte do racional dos estudos de albumina de longo prazo.</p>
+<p><b>Por que o TIPS funciona e onde falha.</b> Converte a hipertensão sinusoidal em fluxo para a cava: cai a pressão sinusoidal e, em semanas, a renina e a aldosterona; a natriurese melhora e o diurético pode ser reduzido. O custo é a EH (25–50% conforme diâmetro do stent e idade) e a sobrecarga cardíaca — por isso a seleção exige função hepática razoável, ausência de EH grave recorrente e avaliação cardíaca (ecocardiograma, BNP). Stents recobertos de PTFE de 8 mm, dilatados em modo controlado, reduzem disfunção e encefalopatia em relação aos não recobertos.</p>
+</div></details>
+</div>
+</div>
+
+<!-- C.4 -->
+<div class="card prim">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">C.4</span> Infecção que descompensa</div><h3>Peritonite bacteriana espontânea <span class="ank ank-dgr">DANGER</span></h3><div class="card-sub">a paracentese que não foi feita é o erro mais caro do plantão</div></div>
+<div class="card-body">
+<div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Infecção do líquido ascítico sem foco cirúrgico intra-abdominal: <b>PMN ≥250/mm³</b>, cultura positiva em ~40%, quase sempre monomicrobiana (E. coli, Klebsiella, estreptococos; Gram-positivos e multirresistentes crescem no nosocomial). Até um terço é oligossintomática. <b>Antibiótico + albumina</b> reduz LRA e morte.</div></div>
+<div class="disease">
+<div class="disease-head"><div class="disease-name">PBE e variantes (bacterascite, ascite neutrocítica, peritonite secundária, empiema pleural espontâneo)</div><div class="disease-tag">CID-10 K65.0 peritonite aguda (sem código nominal para PBE)</div></div>
+<div class="disease-body"><div class="disease-rows">
+<div class="disease-row"><div class="k">Epidemiologia</div><div class="v">10–30% dos ascíticos internados; recorrência de ~70% em 1 ano sem profilaxia secundária. Mortalidade hospitalar 10–20% (até 50% se LRA). Fatores de risco: proteína ascítica &lt;1,5 g/dL, HDA, episódio prévio, Child C, uso de IBP.</div></div>
+<div class="disease-row"><div class="k">Fisiopatologia</div><div class="v">Translocação bacteriana (supercrescimento, permeabilidade aumentada, deficiência imune da mucosa) para linfonodos mesentéricos → bacteremia com depuração reticuloendotelial falha (shunts) → semeadura de um líquido com baixa opsonização (pouco complemento e proteína). A resposta inflamatória acentua a vasodilatação: o mecanismo de LRA e ACLF após PBE.</div></div>
+<div class="disease-row"><div class="k">Clínica</div><div class="v">Febre, dor abdominal, alteração do trânsito; ou só EH, LRA, hipotermia, piora inexplicada. Por isso a regra: <b>paracentese em toda internação de cirrótico com ascite</b> e em qualquer deterioração.</div></div>
+<div class="disease-row"><div class="k">Diagnóstico</div><div class="v">PMN ≥250/mm³ (líquido hemorrágico: descontar 1 PMN para cada 250 hemácias). <b>Bacterascite:</b> cultura + com PMN &lt;250 — tratar se sintomático; se não, repetir paracentese. <b>Neutrocítica cultura-negativa:</b> trata como PBE. <b>Secundária</b> (critérios de Runyon): ≥2 de proteína &gt;1 g/dL, glicose &lt;50 mg/dL, LDH acima do limite sérico, ou polimicrobiana, CEA &gt;5 ng/mL, FA &gt;240 U/L — TC e cirurgia <span class="ev ev-eular">EASL 2018</span> <span class="ev ev-acr">AASLD 2021</span>.</div></div>
+<div class="disease-row"><div class="k">Tratamento</div><div class="v">Comunitária sem sepse: <b>cefotaxima 2 g IV 8/8 h ou ceftriaxona 1–2 g IV/dia</b> por 5–7 dias. Nosocomial, uso recente de betalactâmico, choque ou ACLF: <b>piperacilina-tazobactam ou carbapenêmico ± cobertura de Gram-positivo</b> (vancomicina/daptomicina se MRSA/VRE prevalente) conforme epidemiologia local. <b>Albumina 1,5 g/kg no diagnóstico e 1 g/kg no D3</b>. Paracentese de controle em 48 h: queda de PMN &lt;25% = falha (trocar antibiótico, procurar secundária). Suspender NSBB se hipotensão ou LRA. <b>Profilaxia secundária</b> após o episódio: norfloxacino 400 mg/dia ou ciprofloxacino 500 mg/dia (ou sulfametoxazol-trimetoprim 800/160 mg/dia) <span class="ev ev-nice">Baveno VII 2022</span>.</div></div>
+<div class="disease-row"><div class="k">Prognóstico</div><div class="v">Sobrevida em 1 ano após PBE de 30–50%: todo episódio é indicação de avaliação para transplante. LRA durante a PBE é o principal preditor de morte.</div></div>
+<div class="disease-row"><div class="k">O que muda conduta</div><div class="v"><b>Local de aquisição e gravidade</b> (escolha do antibiótico), <b>bilirrubina &gt;4 mg/dL ou creatinina &gt;1 mg/dL</b> (subgrupo com benefício comprovado da albumina; na prática, todos recebem), <b>critérios de Runyon</b> (peritonite cirúrgica), <b>episódio prévio</b> (profilaxia indefinida), <b>proteína &lt;1,5 + Child ≥9 com bilirrubina ≥3 ou disfunção renal/hiponatremia</b> (profilaxia primária).</div></div>
+</div></div></div>
+
+<div class="box decision"><span class="box-label">DECISION</span><div class="box-title">Profilaxia antibiótica: quem, com o quê, por quanto tempo</div><div class="box-body"><b>HDA no cirrótico:</b> ceftriaxona 1 g IV/dia por até 7 dias (todos; benefício menor no Child A). <b>Secundária:</b> após qualquer PBE, por tempo indefinido ou até transplante/recompensação. <b>Primária:</b> proteína ascítica &lt;1,5 g/dL com Child-Pugh ≥9 e bilirrubina ≥3 mg/dL, ou creatinina ≥1,2 mg/dL, ureia ≥25 mg/dL (BUN) ou Na ≤130 — norfloxacino 400 mg/dia (estudo de Fernández) ou ciprofloxacino. <b>Rifaximina não é profilaxia de PBE</b> (Baveno VII).</div></div>
+</div>
+</div>
+
+<!-- C.5 -->
+<div class="card prim">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">C.5</span> Emergência hemorrágica</div><h3>Varizes esofagogástricas e hemorragia varicosa <span class="ank ank-dgr">DANGER</span></h3><div class="card-sub">profilaxia primária, episódio agudo, profilaxia secundária</div></div>
+<div class="card-body">
+<div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Risco de sangramento depende de <b>calibre (≥5 mm), sinais vermelhos e Child C</b>. Episódio agudo: vasoativo + antibiótico + transfusão restritiva + ligadura em ≤12 h, e TIPS preemptivo nos de alto risco. Depois: <b>NSBB + ligadura seriada</b> (profilaxia secundária); ressangrou apesar disso → TIPS.</div></div>
+<div class="disease">
+<div class="disease-head"><div class="disease-name">Varizes esofágicas e gástricas, gastropatia hipertensiva portal</div><div class="disease-tag">CID-10 I85.0 varizes esofagianas sangrantes · I85.9 sem sangramento · I86.4 varizes gástricas</div></div>
+<div class="disease-body"><div class="disease-rows">
+<div class="disease-row"><div class="k">Epidemiologia</div><div class="v">Sangramento varicoso em ~10–15%/ano nas varizes grandes; ressangramento de ~60% em 1–2 anos sem profilaxia secundária. Mortalidade de 6 semanas ~15–20% (&lt;5% no Child A, &gt;30% no Child C). Varizes gástricas estão em ~20% dos hipertensos portais; sangram menos, porém com mais gravidade.</div></div>
+<div class="disease-row"><div class="k">Fisiopatologia</div><div class="v">Ruptura quando a tensão da parede supera a resistência: T = (P transmural × raio) / espessura (Laplace). Por isso calibre, parede fina (sinais vermelhos: "red wale", manchas cereja, hematocístico) e pressão (HVPG ≥12) predizem sangramento. Na junção esofagogástrica, as veias da camada submucosa (zona em paliçada) são superficiais e sem suporte — sítio habitual da ruptura.</div></div>
+<div class="disease-row"><div class="k">Clínica</div><div class="v">Hematêmese volumosa, melena, choque, EH precipitada pela proteína do sangue no cólon, infecção (até 50% sem profilaxia) e LRA. Classificação de Sarin para gástricas: GOV1 (prolongamento das esofágicas pela pequena curvatura), GOV2 (para o fundo), IGV1 (fundo isolado; procurar trombose de veia esplênica), IGV2 (ectópicas gástricas).</div></div>
+<div class="disease-row"><div class="k">Diagnóstico</div><div class="v">EDA em ≤12 h após estabilização: variz com sangramento ativo, coágulo/"mamilo de fibrina" sobre variz, ou varizes como única lesão em paciente com HDA. Imagem com contraste (TC/RM) após o episódio para excluir trombose esplâncnica e CHC e mapear colaterais <span class="ev ev-nice">Baveno VII 2022</span>.</div></div>
+<div class="disease-row"><div class="k">Tratamento</div><div class="v"><b>Agudo:</b> terlipressina (2 mg IV 4/4 h por 48 h, depois 1 mg 4/4 h), octreotida (50 µg em bolus + 50 µg/h) ou somatostatina (250 µg + 250–500 µg/h) por 2–5 dias; ceftriaxona 1 g IV/dia; Hb 7–8 g/dL; IOT se rebaixamento ou hematêmese ativa; eritromicina 250 mg IV pré-EDA; <b>ligadura elástica</b> (esofágicas e GOV1), <b>cianoacrilato</b> (GOV2 e IGV1); lactulose. <b>TIPS preemptivo com PTFE em &lt;72 h</b> se Child C &lt;14 ou Child B &gt;7 com sangramento ativo à EDA (ou HVPG &gt;20); ACLF, EH e icterícia à admissão não contraindicam. Falha: TIPS de resgate; ponte com balão ou prótese esofágica. <b>Secundária:</b> NSBB (carvedilol ou propranolol) + ligadura a cada 2–4 semanas até erradicação; ressangramento → TIPS <span class="ev ev-nice">Baveno VII 2022</span> <span class="ev ev-eular">EASL TIPS 2025</span> <span class="ev ev-sbr">SBH 2017</span>.</div></div>
+<div class="disease-row"><div class="k">Prognóstico</div><div class="v">Preditores de morte em 6 semanas: Child C, MELD alto, falha de hemostasia primária, sangramento ativo à EDA, infecção. TIPS preemptivo reduziu mortalidade em 1 ano no Child C &lt;14 em ensaios e meta-análises de dados individuais.</div></div>
+<div class="disease-row"><div class="k">O que muda conduta</div><div class="v"><b>Child-Pugh e sangramento ativo</b> (TIPS preemptivo), <b>tipo de variz</b> (ligadura × cianoacrilato × BRTO), <b>ascite recorrente</b> (TIPS também como profilaxia secundária), <b>Child ≥14 ou MELD &gt;30 com lactato &gt;12 mmol/L</b> (TIPS possivelmente fútil sem transplante próximo), <b>anticoagulante em uso</b> (suspender até controle).</div></div>
+</div></div></div>
+
+<details class="deep"><summary>Deep dive · Por que o pacote funciona: vasoativos, antibiótico, sangue restritivo e TIPS precoce</summary>
+<div class="deep-content">
+<p><b>Vasoativos.</b> Terlipressina é análogo sintético da vasopressina com meia-vida longa e seletividade V1: constrição arteriolar esplâncnica, queda do fluxo portal e da pressão varicosa. É o único vasoativo com redução de mortalidade em meta-análise contra placebo; exige vigilância de isquemia (coronária, mesentérica, de extremidades) e de hiponatremia, sobretudo com função hepática preservada. Somatostatina e octreotida inibem a liberação de glucagon e outros vasodilatadores esplâncnicos e bloqueiam a hiperemia pós-prandial que o sangue no tubo digestivo provoca; a octreotida tem taquifilaxia rápida, por isso infusão contínua. Iniciar antes da endoscopia melhora a visualização, a hemostasia e reduz ressangramento precoce.</p>
+<p><b>Antibiótico.</b> A HDA aumenta a translocação bacteriana; infecção ocorre em até metade dos casos sem profilaxia e se associa a falha de hemostasia e ressangramento (endotoxina piora a pressão portal e a função plaquetária via NO e prostaciclina). A profilaxia reduz infecção, ressangramento e mortalidade — um dos raros exemplos de antibiótico profilático que salva vida. Ceftriaxona supera a quinolona oral no Child avançado e em ambientes com resistência.</p>
+<p><b>Transfusão restritiva.</b> Restituir volume eleva a pressão portal acima do basal (o leito esplâncnico é complacente e "enche" primeiro), favorecendo ressangramento. No ensaio de Villanueva (NEJM 2013), alvo de Hb 7–9 g/dL reduziu mortalidade, ressangramento e aumento do HVPG em relação a 9–11 g/dL, com benefício concentrado nos Child A e B. Pela mesma razão, plasma fresco expande volume sem corrigir a hemostasia reequilibrada, e o ácido tranexâmico (HALT-IT) não reduziu mortalidade e aumentou trombose venosa.</p>
+<p><b>TIPS preemptivo.</b> Os pacientes de alto risco morrem de ressangramento precoce e de descompensação nas primeiras semanas mesmo com terapia padrão. Fazer o TIPS recoberto nas primeiras 72 h, antes da falha, reduz falha de controle, ressangramento e mortalidade (García-Pagán, NEJM 2010; estudos multicêntricos posteriores). O critério de Child B &gt;7 com sangramento ativo é o mais discutido: o benefício de sobrevida é mais consistente no Child C 10–13. Baveno VIII manteve a janela de 72 h (ideal &lt;24 h) e reconheceu possível benefício até 1–2 semanas para quem a perdeu.</p>
+<p><b>Ligadura × escleroterapia × cianoacrilato.</b> A ligadura estrangula a variz e provoca trombose e fibrose com menos complicações que a escleroterapia (úlceras, estenoses, mediastinite). Nas varizes de fundo gástrico, o calibre e o fluxo tornam a banda ineficaz e arriscada; o N-butil-2-cianoacrilato polimeriza ao contato com sangue e oblitera o vaso, com risco de embolização (pulmonar, esplênica, sistêmica se shunt intracardíaco). BRTO oblitera o shunt gastrorrenal a partir da veia renal esquerda e, ao fechar o shunt, aumenta o fluxo portal hepático (bom para EH, ruim para ascite e varizes esofágicas).</p>
+</div></details>
+</div>
+</div>
+
+<!-- C.6 -->
+<div class="card prim">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">C.6</span> Neurologia do fígado</div><h3>Encefalopatia hepática <span class="ank ank-hy">HIGH-YIELD</span></h3><div class="card-sub">mínima (encoberta) e manifesta · episódica, recorrente, persistente</div></div>
+<div class="card-body">
+<div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Disfunção cerebral causada por insuficiência hepática e/ou shunt portossistêmico, com espectro de alterações psicométricas a coma. <b>Encoberta</b> (mínima + grau 1) e <b>manifesta</b> (grau ≥2: desorientação, asterixe). O tratamento é o precipitante + <b>lactulose</b>; <b>rifaximina</b> para prevenir recorrência.</div></div>
+<div class="disease">
+<div class="disease-head"><div class="disease-name">Encefalopatia hepática</div><div class="disease-tag">CID-10 K72.9 insuficiência hepática NE (inclui encefalopatia/coma hepático) · K72.1 crônica</div></div>
+<div class="disease-body"><div class="disease-rows">
+<div class="disease-row"><div class="k">Epidemiologia</div><div class="v">EH manifesta em 30–40% dos cirróticos ao longo da doença; encoberta em 20–80%. Após TIPS, 25–50%. Primeiro episódio de EH manifesta: sobrevida de ~40% em 1 ano. Recorrência de ~40% em 1 ano sem profilaxia secundária.</div></div>
+<div class="disease-row"><div class="k">Fisiopatologia</div><div class="v">Amônia de origem intestinal (ureases bacterianas, glutaminase do enterócito) escapa da depuração hepática (ciclo da ureia e glutamina sintetase perivenular) por insuficiência e shunt; no cérebro, o astrócito a converte em glutamina, que se acumula na mitocôndria ("cavalo de Troia"), gera estresse oxidativo e edema astrocitário de baixo grau. Somam-se inflamação sistêmica (sinergia amônia × citocinas), neuroesteroides que potencializam o receptor GABA-A, falsos neurotransmissores e manganês nos núcleos da base (hipersinal em T1 no pálido).</div></div>
+<div class="disease-row"><div class="k">Clínica</div><div class="v">Inversão do ciclo sono-vigília (precoce), bradipsiquismo, apraxia construcional, asterixe, hálito hepático (mercaptanos), hiper-reflexia e Babinski, rigidez; postura de descerebração no coma. Mínima: só testes (PHES, Stroop, teste de nomeação de animais &lt;15 em 1 min) — mas causa acidentes de trânsito e quedas.</div></div>
+<div class="disease-row"><div class="k">Diagnóstico</div><div class="v">Clínico e de exclusão. Amônia: valor normal questiona o diagnóstico (alto valor preditivo negativo); valor alto não define gravidade nem guia tratamento. Coletar sem garrote, em gelo, processar em 30 min. Procurar precipitante: HDA, infecção (paracentese), diurético, desidratação, hipocalemia/alcalose, hiponatremia, constipação, sedativos, opioides, álcool, TIPS, trombose portal, CHC <span class="ev ev-eular">EASL EH 2022</span> <span class="ev ev-acr">AASLD/EASL 2014</span>.</div></div>
+<div class="disease-row"><div class="k">Tratamento</div><div class="v"><b>Lactulose</b> 25 mL VO a cada 1–2 h até evacuar, depois titular (geralmente 15–30 mL 2–3×/dia) para 2–3 evacuações pastosas; enema de lactulose (300 mL em 700 mL de água) se impossível via oral. <b>PEG 3350 4 L em 4 h</b> é alternativa com resolução mais rápida (ensaio HELP). <b>Rifaximina 550 mg 12/12 h</b> associada à lactulose após recorrência (reduz recorrência e internações). L-ornitina-L-aspartato IV (20–30 g/dia) como adjuvante. Dieta: <b>não restringir proteína</b> (1,2–1,5 g/kg/dia), refeições fracionadas, lanche noturno. EH persistente com shunt espontâneo grande: embolização. Grau 3–4: UTI e proteção de via aérea <span class="ev ev-eular">EASL EH 2022</span>.</div></div>
+<div class="disease-row"><div class="k">Prognóstico</div><div class="v">EH manifesta é descompensação maior e indica avaliação de transplante. EH recorrente ou persistente apesar de lactulose + rifaximina é indicação de transplante independente do MELD (pode exigir priorização).</div></div>
+<div class="disease-row"><div class="k">O que muda conduta</div><div class="v"><b>Precipitante identificado</b> (tratar é o tratamento), <b>grau West Haven ≥3</b> (UTI, via aérea), <b>segundo episódio</b> (rifaximina), <b>EH pós-TIPS refratária</b> (redução do calibre do stent), <b>sinais focais/trauma</b> (TC de crânio), <b>amônia normal</b> (rever diagnóstico).</div></div>
+</div></div></div>
+
+<div class="score">
+<div class="score-head"><div class="score-name">West Haven + ISHEN <span class="ev ev-eular">EASL EH 2022</span></div><div class="score-purpose">Gravidade clínica da EH</div></div>
+<div class="score-rows">
+<div class="score-row"><div class="score-grade">Mínima</div><div class="score-desc">Exame normal; alterações só em testes psicométricos/neurofisiológicos — <b>encoberta</b></div></div>
+<div class="score-row"><div class="score-grade">Grau 1</div><div class="score-desc">Déficit de atenção, euforia ou ansiedade, alteração do sono, dificuldade de somar — <b>encoberta</b></div></div>
+<div class="score-row"><div class="score-grade">Grau 2</div><div class="score-desc">Letargia, <b>desorientação temporal</b>, comportamento inadequado, <b>asterixe</b> — <b>manifesta</b></div></div>
+<div class="score-row"><div class="score-grade">Grau 3</div><div class="score-desc">Sonolência a semitorpor, responde a estímulos, desorientação grosseira (espacial), confusão</div></div>
+<div class="score-row"><div class="score-grade">Grau 4</div><div class="score-desc">Coma, sem resposta a estímulo doloroso</div></div>
+</div>
+</div>
+
+<div class="mnemo">
+<div class="mnemo-title"><b>HEPÁTICA</b> precipitantes da encefalopatia (procure todos)</div>
+<div class="mnemo-grid">
+<div class="mnemo-row"><span class="mnemo-letter">H</span><span><b>Hemorragia digestiva</b> · proteína do sangue = carga de amônia</span></div>
+<div class="mnemo-row"><span class="mnemo-letter">E</span><span><b>Eletrólitos</b> · hipocalemia (aumenta amoniogênese renal) e alcalose (NH₃ atravessa a barreira), hiponatremia</span></div>
+<div class="mnemo-row"><span class="mnemo-letter">P</span><span><b>Prisão de ventre</b> · trânsito lento, mais tempo de produção bacteriana</span></div>
+<div class="mnemo-row"><span class="mnemo-letter">A</span><span><b>Azotemia e desidratação</b> · LRA, diurético excessivo, diarreia por lactulose</span></div>
+<div class="mnemo-row"><span class="mnemo-letter">T</span><span><b>TIPS ou shunt espontâneo</b> · desvio portossistêmico; trombose portal nova</span></div>
+<div class="mnemo-row"><span class="mnemo-letter">I</span><span><b>Infecção</b> · PBE, urinária, pneumonia, pele — sinergia inflamação × amônia</span></div>
+<div class="mnemo-row"><span class="mnemo-letter">C</span><span><b>Calmantes</b> · benzodiazepínicos, opioides, anti-histamínicos, IBP em excesso</span></div>
+<div class="mnemo-row"><span class="mnemo-letter">A</span><span><b>Álcool e abstinência</b> · e o CHC que progrediu</span></div>
+</div>
+</div>
+
+<details class="deep"><summary>Deep dive · Amônia, astrócito e por que lactulose e rifaximina funcionam por caminhos diferentes</summary>
+<div class="deep-content">
+<p><b>Metabolismo interórgão da amônia.</b> O intestino produz amônia pela desaminação bacteriana de proteínas e ureia e pela glutaminase do enterócito (a glutamina é o combustível do intestino delgado). O fígado tem dois sistemas em série: o ciclo da ureia nos hepatócitos periportais (alta capacidade, baixa afinidade) e a glutamina sintetase nos perivenulares (baixa capacidade, alta afinidade, "rede de segurança"). Na cirrose, ambos falham e os shunts desviam o sangue. O músculo esquelético passa a ser o principal destino alternativo (glutamina sintetase muscular) — razão mecanística pela qual a <b>sarcopenia aumenta o risco de EH</b> e pela qual restringir proteína (que agrava a sarcopenia) piora a doença. O rim produz amônia a partir da glutamina, mais ainda na hipocalemia; e a alcalose desloca o equilíbrio NH₄⁺ ↔ NH₃ para a forma gasosa, que atravessa a barreira hematoencefálica.</p>
+<p><b>Astrócito.</b> Único com glutamina sintetase no SNC, o astrócito detoxifica a amônia em glutamina, osmólito que o faz inchar. A hipótese do "cavalo de Troia": a glutamina entra na mitocôndria e é clivada de volta em amônia, gerando transição de permeabilidade mitocondrial, espécies reativas de oxigênio e nitrogênio e alteração da expressão gênica astrocitária (astrócitos de Alzheimer tipo II na histologia). Na insuficiência hepática aguda o edema é franco e causa hipertensão intracraniana; na crônica, compensações osmóticas (perda de mioinositol, visível na espectroscopia por RM) mantêm um edema de baixo grau, e a disfunção é sobretudo neurotransmissora — aumento do tônus GABAérgico por neuroesteroides que modulam o receptor GABA-A via proteína translocadora (TSPO), o que explica a sensibilidade extrema aos benzodiazepínicos e a resposta transitória ao flumazenil.</p>
+<p><b>Lactulose.</b> Dissacarídeo não absorvível fermentado pelas bactérias colônicas em ácidos orgânicos: acidifica o lúmen, convertendo NH₃ em NH₄⁺ não absorvível (efeito de "armadilha"), favorece a captação de nitrogênio pela biomassa bacteriana e acelera o trânsito (efeito catártico). Reduz mortalidade e recorrência em meta-análises. O excesso causa desidratação, hipernatremia e LRA — que precipitam EH: o objetivo é 2–3 evacuações pastosas, não diarreia.</p>
+<p><b>Rifaximina.</b> Rifamicina praticamente não absorvível (&lt;0,4%), ativa no lúmen intestinal; mais do que reduzir a carga bacteriana, modula a função e a composição da microbiota, reduz a produção de amônia e a translocação de endotoxina. O ensaio pivotal (Bass, NEJM 2010) mostrou redução de recorrência de EH e de internações em pacientes com ≥2 episódios, 91% em uso concomitante de lactulose — base da indicação como adjuvante na profilaxia secundária, não como monoterapia de primeira linha nem como profilaxia de PBE.</p>
+<p><b>Shunts espontâneos.</b> Shunt esplenorrenal ou gastrorrenal &gt;8 mm em paciente com EH persistente e MELD relativamente baixo é candidato a embolização (melhora a EH; pode piorar ascite e varizes). Rastrear com TC/angio-RM na EH recorrente "desproporcional" à função hepática.</p>
+</div></details>
+</div>
+</div>
+
+<!-- C.7 -->
+<div class="card prim">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">C.7</span> Rim do cirrótico</div><h3>LRA e síndrome hepatorrenal (HRS-AKI) <span class="ank ank-dec">DECISION</span></h3><div class="card-sub">ICA-ADQI 2024: diagnosticar rápido, tratar cedo</div></div>
+<div class="card-body">
+<div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">LRA no cirrótico usa o critério KDIGO (creatinina ↑ ≥0,3 mg/dL em 48 h ou ≥50% em 7 dias, e/ou débito ≤0,5 mL/kg/h por ≥6 h). <b>HRS-AKI</b> é o fenótipo funcional do ascítico: sem melhora em 24 h após ressuscitação adequada, sem outra causa forte. Tratamento: <b>terlipressina + albumina</b>, e transplante.</div></div>
+<div class="disease">
+<div class="disease-head"><div class="disease-name">Síndrome hepatorrenal (HRS-AKI, HRS-AKD, HRS-CKD) e LRA no cirrótico</div><div class="disease-tag">CID-10 K76.7 síndrome hepatorrenal</div></div>
+<div class="disease-body"><div class="disease-rows">
+<div class="disease-row"><div class="k">Epidemiologia</div><div class="v">LRA em 20–50% dos cirróticos internados. Causas: pré-renal (hipovolemia, diurético, HDA, diarreia) ~45%, necrose tubular aguda ~30%, HRS-AKI ~15–30%, pós-renal rara. HRS-AKI sem tratamento tem sobrevida mediana de semanas.</div></div>
+<div class="disease-row"><div class="k">Fisiopatologia</div><div class="v">Extremo da hipovolemia arterial efetiva: vasoconstrição renal cortical intensa (angiotensina II, noradrenalina, endotelina) com rim estruturalmente íntegro (rins de cirróticos funcionam quando transplantados). Inflamação sistêmica, disfunção cardíaca (cardiomiopatia cirrótica), pressão intra-abdominal alta e colemia (nefropatia biliar) somam-se — e lesão tubular pode coexistir, por isso a ADQI 2024 não exclui HRS na presença de biomarcadores de dano.</div></div>
+<div class="disease-row"><div class="k">Clínica</div><div class="v">Oligúria, sódio urinário muito baixo (&lt;10 mmol/L), hiponatremia, hipotensão arterial, ascite refratária. Antiga HRS tipo 1 (rápida, frequentemente após PBE) corresponde a HRS-AKI; antiga tipo 2 (lenta, na ascite refratária) corresponde a HRS-AKD/CKD.</div></div>
+<div class="disease-row"><div class="k">Diagnóstico</div><div class="v">Critérios HRS-AKI (ADQI-ICA 2024): cirrose com ascite; LRA por KDIGO; ausência de melhora da creatinina e/ou do débito em 24 h após ressuscitação volêmica adequada (quando clinicamente indicada); ausência de forte evidência de causa alternativa como causa primária. <b>Não é mais exigido</b> o desafio de 48 h com albumina 1 g/kg. Urina: sedimento, proteinúria, FENa (&lt;0,1–0,2% favorece HRS), NGAL urinário onde disponível; US renal <span class="ev ev-expert">ADQI-ICA 2024</span>.</div></div>
+<div class="disease-row"><div class="k">Tratamento</div><div class="v">Estágio 1A (creatinina &lt;1,5 mg/dL): remover fatores e observar. Estágio &gt;1A: suspender diurético e NSBB, <b>albumina 1 g/kg (máx. 100 g) por 2 dias</b> se hipovolemia não for óbvia, tratar infecção. HRS-AKI: <b>terlipressina</b> em bolus 1 mg IV 4/4–6/6 h (subir para 2 mg 4/4–6/6 h se creatinina não cair 25% em 48–72 h) ou <b>infusão contínua 2 mg/dia, subindo 2 mg/dia a cada 24 h até 12 mg/dia</b>, com <b>albumina 20–40 g/dia</b> ajustada à volemia. Alternativa: noradrenalina 0,5–3 mg/h (UTI, alvo de PAM +10 mmHg); midodrina + octreotida só se as anteriores impossíveis. Parar: creatinina a ≤0,3 mg/dL da basal, efeito adverso grave, sem melhora em 48–72 h na dose máxima, TRS ou 14 dias. Diálise como ponte para transplante <span class="ev ev-expert">ADQI-ICA 2024</span> <span class="ev ev-acr">AASLD 2021</span>.</div></div>
+<div class="disease-row"><div class="k">Prognóstico</div><div class="v">Resposta à terlipressina em 40–50%, melhor quando iniciada com creatinina &lt;2,25 mg/dL e quando a PAM sobe ≥15 mmHg. Recorrência frequente. Transplante é o tratamento definitivo; transplante combinado fígado-rim se diálise prolongada ou DRC estabelecida.</div></div>
+<div class="disease-row"><div class="k">O que muda conduta</div><div class="v"><b>Estágio ICA</b> (1A observa; &gt;1A expande), <b>resposta em 24 h</b> (HRS-AKI → vasoconstritor), <b>SpO₂ &lt;90%, sobrecarga ou ACLF grau 3</b> (risco de insuficiência respiratória com terlipressina — cautela), <b>isquemia coronária/periférica</b> (contraindica terlipressina), <b>creatinina já muito alta</b> (resposta menor: tratar cedo).</div></div>
+</div></div></div>
+
+<div class="score">
+<div class="score-head"><div class="score-name">Estadiamento ICA da LRA na cirrose <span class="ev ev-expert">ICA 2015 / ADQI 2024</span></div><div class="score-purpose">Gradua e define a primeira ação</div></div>
+<div class="score-rows">
+<div class="score-row"><div class="score-grade">1A</div><div class="score-desc">↑ ≥0,3 mg/dL ou 1,5–2× a basal, com creatinina final &lt;1,5 mg/dL — retirar fatores, observar</div></div>
+<div class="score-row"><div class="score-grade">1B</div><div class="score-desc">Mesmo critério com creatinina ≥1,5 mg/dL — retirar fatores + albumina 1 g/kg por 2 dias</div></div>
+<div class="score-row"><div class="score-grade">2</div><div class="score-desc">2–3× a basal — idem; reavaliar em 24 h para HRS-AKI</div></div>
+<div class="score-row"><div class="score-grade">3</div><div class="score-desc">&gt;3×, ou creatinina ≥4 mg/dL com aumento agudo ≥0,3, ou início de TRS — UTI, vasoconstritor se HRS-AKI, diálise como ponte</div></div>
+</div>
+</div>
+
+<details class="deep"><summary>Deep dive · Hemodinâmica renal da HRS e o paradoxo da terlipressina com albumina</summary>
+<div class="deep-content">
+<p><b>Rim no extremo da curva.</b> A autorregulação renal mantém filtração até PAM em torno de 65–70 mmHg; no cirrótico avançado, a curva desloca-se para a direita por ativação simpática e da angiotensina II, de modo que pressões "normais" para outros pacientes já reduzem a perfusão cortical. Prostaglandinas vasodilatadoras renais (PGE2, PGI2) sustentam a filtração — por isso um único AINE pode precipitar LRA, e por isso IECA/BRA (que tiram a constrição eferente e baixam a pressão sistêmica) são contraindicados no ascítico. A cardiomiopatia cirrótica impede que o débito aumente quando a vasodilatação piora (sepse, PBE, paracentese sem albumina), e a HRS surge quando a perfusão renal cai abaixo do limiar.</p>
+<p><b>Por que vasoconstritor trata o rim.</b> Terlipressina contrai o leito esplâncnico (receptor V1 vascular), redistribui volume para a circulação central, aumenta a PAM e a pressão de perfusão renal, e reduz a atividade de renina e da noradrenalina endógena. A albumina mantém a pré-carga e acrescenta efeitos não oncóticos. O estudo CONFIRM (2021) mostrou maior reversão da HRS com terlipressina + albumina do que com placebo + albumina, mas mais insuficiência respiratória — sobretudo em pacientes com sobrecarga, ACLF grau 3 ou creatinina muito elevada. Daí as precauções: avaliar volemia (POCUS, ausculta, SpO₂), reduzir a albumina quando a pré-carga já está otimizada e preferir infusão contínua, que alcança a mesma eficácia com dose diária menor e menos isquemia.</p>
+<p><b>A mudança de 2024 na definição.</b> O critério antigo (ICA 2015) exigia dois dias sem diurético com albumina 1 g/kg/dia e creatinina absoluta. Isso atrasava o vasoconstritor justamente quando a resposta é melhor (creatinina mais baixa) e causava sobrecarga em pacientes com hipoalbuminemia grave e cardiomiopatia. A ADQI-ICA 2024 harmonizou com KDIGO (incluindo débito urinário), aceitou ressuscitação individualizada em 24 h e admitiu que lesão tubular e DRC podem coexistir com o fenótipo funcional (terminologia HRS-AKI, HRS-AKD, HRS-CKD).</p>
+<p><b>Ponte e definitivo.</b> TRS não melhora a sobrevida de quem não vai para transplante e deve ser discutida como ponte; no candidato, mantém-se até o transplante. Após transplante, a função renal costuma recuperar em semanas se a HRS foi curta; diálise &gt;6–8 semanas antes do transplante, TFG &lt;30 mL/min/1,73 m² persistente ou doença renal estrutural indicam transplante combinado fígado-rim.</p>
+</div></details>
+</div>
+</div>
+
+<!-- C.8 -->
+<div class="card prim">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">C.8</span> Neoplasia</div><h3>Carcinoma hepatocelular <span class="ank ank-hy">HIGH-YIELD</span></h3><div class="card-sub">vigilância, diagnóstico sem biópsia, BCLC e transplante</div></div>
+<div class="card-body">
+<div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">≈90% dos tumores primários do fígado; ~90% surgem em fígado cirrótico (incidência 1–8%/ano conforme etiologia). <b>Vigilância semestral com US ± AFP</b>; nódulo ≥1 cm → TC/RM multifásica; <b>APHE + washout = CHC</b> no cirrótico. Tratamento pelo <b>BCLC</b>: ablação/ressecção/transplante (0–A), quimioembolização (B), sistêmico (C), suporte (D).</div></div>
+<div class="disease">
+<div class="disease-head"><div class="disease-name">Carcinoma hepatocelular</div><div class="disease-tag">CID-10 C22.0 carcinoma de células hepáticas</div></div>
+<div class="disease-body"><div class="disease-rows">
+<div class="disease-row"><div class="k">Epidemiologia</div><div class="v">3ª causa de morte por câncer no mundo. Fatores: cirrose de qualquer causa, HBV (mesmo sem cirrose: integração viral, proteína HBx), HCV (risco persiste após RVS se cirrose), álcool, MASLD/diabetes (inclusive sem cirrose), aflatoxina B1 (mutação TP53 R249S), hemocromatose, tirosinemia. Proteção: café, estatinas, metformina, AAS (associações observacionais).</div></div>
+<div class="disease-row"><div class="k">Fisiopatologia</div><div class="v">Ciclos de necrose-regeneração em microambiente inflamatório e fibrótico, encurtamento telomérico (mutação do promotor TERT é a mais precoce), ativação de β-catenina (CTNNB1), perda de TP53, displasia nodular (nódulo displásico de alto grau → CHC precoce). Neoangiogênese com suprimento arterial predominante — o substrato radiológico do hiper-realce arterial e do washout, e o racional da quimioembolização e dos antiangiogênicos.</div></div>
+<div class="disease-row"><div class="k">Clínica</div><div class="v">Assintomático na vigilância; tardiamente dor, perda de peso, descompensação, ascite hemorrágica, ruptura com hemoperitônio, febre, síndromes paraneoplásicas (hipoglicemia, eritrocitose, hipercalcemia, disfibrinogenemia). Trombose tumoral da porta (realce arterial do trombo) muda estadiamento.</div></div>
+<div class="disease-row"><div class="k">Diagnóstico</div><div class="v">Vigilância: cirróticos Child A–B (e C em lista), HBV crônica de risco intermediário/alto (PAGE-B), HCV com F3 após RVS conforme risco. Nódulo &lt;1 cm: US em 3–4 meses. ≥1 cm: TC ou RM multifásica; <b>LI-RADS 5 / critério EASL (APHE + washout em ≥1 cm) dispensa biópsia</b> no cirrótico; LR-4 e lesões atípicas: segundo método ou biópsia; fígado não cirrótico: biópsia. <b>AFP não é diagnóstica</b> (&gt;40% dos CHC têm AFP normal) — é prognóstica e entra em critérios de transplante. Estadiamento: TC de tórax, PS ECOG, Child-Pugh/ALBI <span class="ev ev-eular">EASL HCC 2025</span> <span class="ev ev-acr">AASLD 2023</span>.</div></div>
+<div class="disease-row"><div class="k">Tratamento</div><div class="v"><b>BCLC 0</b> (único ≤2 cm, PS 0, função preservada): ablação por radiofrequência/micro-ondas ou ressecção; <b>BCLC A</b> (único ou até 3 nódulos ≤3 cm): ressecção se sem CSPH relevante e bilirrubina normal, transplante se dentro de Milão e não ressecável, ablação; SBRT e TARE passam a opções potencialmente curativas no BCLC 2026. <b>BCLC B</b> (multinodular, PS 0): transplante se critérios expandidos, TACE se carga definida, sistêmico se difuso. <b>BCLC C</b> (invasão vascular, extra-hepático ou PS 1–2): imunoterapia combinada — atezolizumabe + bevacizumabe, durvalumabe + tremelimumabe (STRIDE), nivolumabe + ipilimumabe; lenvatinibe ou sorafenibe se imunoterapia contraindicada. <b>BCLC D</b>: suporte, transplante só se o tumor está dentro de Milão e a falência é hepática. <b>SUS (DDT 2022):</b> sorafenibe 1ª linha, regorafenibe 2ª linha, TACE convencional <span class="ev ev-eular">BCLC 2022</span> <span class="ev ev-eular">BCLC 2026</span> <span class="ev ev-sbr">MS DDT 2022</span>.</div></div>
+<div class="disease-row"><div class="k">Prognóstico</div><div class="v">Sobrevida mediana &gt;5 anos no BCLC 0–A tratado, &gt;2,5 anos no B, ~2 anos no C com imunoterapia combinada, ~3 meses no D. Recorrência pós-ressecção/ablação de 50–70% em 5 anos. Transplante dentro de Milão: sobrevida em 5 anos ~70%, recorrência 10–15%.</div></div>
+<div class="disease-row"><div class="k">O que muda conduta</div><div class="v"><b>Performance status</b> (PS ≥1 já tira do 0/A), <b>função hepática</b> (Child B avançado/C limita TACE e sistêmico), <b>CSPH</b> (contra ressecção), <b>Milão</b> (transplante), <b>AFP &gt;1.000 ng/mL</b> (biologia agressiva, contraindica transplante sem queda), <b>invasão vascular</b> (BCLC C), <b>varizes de alto risco antes de bevacizumabe</b> (tratar antes — risco de HDA).</div></div>
+</div></div></div>
+
+<div class="score">
+<div class="score-head"><div class="score-name">BCLC — estádio → primeira opção <span class="ev ev-eular">BCLC 2022/2026</span></div><div class="score-purpose">Integra tumor, PS e função hepática</div></div>
+<div class="score-rows">
+<div class="score-row"><div class="score-grade">0 · muito precoce</div><div class="score-desc">Único ≤2 cm, PS 0, Child A sem ascite — ablação (ou ressecção); se candidato a transplante, considerar transplante. Sobrevida &gt;5 anos</div></div>
+<div class="score-row"><div class="score-grade">A · precoce</div><div class="score-desc">Único qualquer tamanho ou 2–3 nódulos ≤3 cm, PS 0 — ressecção, transplante, ablação; SBRT/TARE (2026). &gt;5 anos</div></div>
+<div class="score-row"><div class="score-grade">B · intermediário</div><div class="score-desc">Multinodular além de A, PS 0, função preservada — transplante (critérios expandidos), TACE, sistêmico se difuso. &gt;2,5 anos</div></div>
+<div class="score-row"><div class="score-grade">C · avançado</div><div class="score-desc">Invasão portal ou extra-hepático, ou PS 1–2 — sistêmico (imunoterapia combinada). ~2 anos</div></div>
+<div class="score-row"><div class="score-grade">D · terminal</div><div class="score-desc">PS &gt;2 ou função hepática terminal não transplantável — cuidados paliativos. ~3 meses</div></div>
+</div>
+</div>
+
+<details class="deep"><summary>Deep dive · Imagem do CHC, critérios de transplante e a escolha do sistêmico</summary>
+<div class="deep-content">
+<p><b>Por que a imagem basta.</b> A hepatocarcinogênese na cirrose passa por nódulo regenerativo → displásico de baixo e alto grau → CHC precoce → CHC progredido. Ao longo desse caminho o nódulo perde as tríades portais (veia e artéria normais) e ganha artérias não pareadas por neoangiogênese: o suprimento torna-se arterial. Na fase arterial tardia o nódulo realça mais que o parênquima (APHE); na fase portal/tardia, quando o parênquima recebe o contraste portal, o nódulo "lava" (washout). A cápsula realçada tardiamente reforça. A combinação tem especificidade &gt;95% num fígado cirrótico — o contexto pré-teste é que valida o critério; em fígado não cirrótico (exceto HBV), metástase hipervascular e colangiocarcinoma podem imitar, e a biópsia é necessária. O ácido gadoxético (contraste hepatobiliar) mostra hipointensidade na fase hepatobiliar em nódulos que perderam OATP1B3, útil para nódulos sem APHE, mas não substitui os critérios maiores. O LI-RADS acrescenta tamanho e crescimento limiar (≥50% em ≤6 meses) e categorias LR-M (maligno não CHC: biópsia) e LR-TIV (tumor em veia).</p>
+<p><b>Critérios de transplante.</b> Milão (Mazzaferro, 1996): único ≤5 cm ou até 3 nódulos ≤3 cm, sem invasão vascular macroscópica nem extra-hepático; sobrevida em 4 anos de 75%, equivalente à de cirróticos sem tumor. Critérios expandidos combinam carga e biologia: UCSF (único ≤6,5 cm ou até 3 ≤4,5 cm com soma ≤8 cm), "up-to-seven", Metroticket 2.0 e o modelo francês da AFP (AFP &gt;1.000 ng/mL pontua contra). Downstaging com TACE/ablação para dentro de Milão, com período de observação de ≥3 meses, seleciona biologia favorável (UNOS-DS). No Brasil, o Sistema Nacional de Transplantes aloca por MELD e concede pontuação especial para CHC dentro de Milão (a apostila cita 20 pontos iniciais com aumento progressivo) — a regra vigente deve ser conferida na norma do SNT.</p>
+<p><b>Sistêmico de primeira linha.</b> IMbrave150: atezolizumabe (anti-PD-L1) + bevacizumabe (anti-VEGF) superou sorafenibe em sobrevida (mediana ~19 meses) — exige Child A, EDA nos últimos 6 meses e tratamento de varizes de alto risco (bevacizumabe aumenta sangramento), e cautela com doença autoimune e transplante prévio. HIMALAYA (STRIDE): dose única de tremelimumabe (anti-CTLA-4) + durvalumabe mensal — sem antiangiogênico, opção para quem tem risco hemorrágico. CheckMate 9DW: nivolumabe + ipilimumabe superou lenvatinibe/sorafenibe. Lenvatinibe (REFLECT, não inferior ao sorafenibe) e sorafenibe (SHARP) ficam para quem não pode receber imunoterapia; segunda linha: regorafenibe (RESORCE, após tolerância ao sorafenibe), cabozantinibe (CELESTIAL) e ramucirumabe se AFP ≥400 ng/mL (REACH-2). A imunoterapia tem menor eficácia sugerida na MASLD em subanálises, ponto ainda debatido. No SUS, o financiamento por APAC de "quimioterapia paliativa de carcinoma do fígado" limita o acesso aos imunoterápicos; a DDT de 2022 ancora a primeira linha no sorafenibe.</p>
+</div></details>
+</div>
+</div>
+</section>
+
+<!-- ============================================================ D -->
+<section id="secundarias">
+<div class="section">
+<div class="section-eyebrow"><span>D</span> Entidades Secundárias</div>
+<div class="section-title">Causas que mudam o tratamento e complicações que completam o diferencial</div>
+<div class="section-sub">Cada etiologia tratável pode recompensar a cirrose; cada HTP não cirrótica tem lógica própria. Hepatite autoimune, hepatites virais agudas e DILI ficam no GH09; Wilson neurológico no NE06; ascite pancreática no GH07.</div>
+</div>
+
+<!-- D.1 -->
+<div class="card diag">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">D.1</span> Etiologia</div><h3>Doença hepática associada ao álcool e hepatite alcoólica <span class="ank ank-dec">DECISION</span></h3></div>
+<div class="card-body">
+<div class="disease">
+<div class="disease-head"><div class="disease-name">Esteatose, hepatite alcoólica e insuficiência hepática alcoólica</div><div class="disease-tag">CID-10 K70.0 · K70.1 hepatite alcoólica · K70.4 · F10.2 dependência</div></div>
+<div class="disease-body"><div class="disease-rows">
+<div class="disease-row"><div class="k">Essência</div><div class="v">Risco a partir de ~20–30 g/dia (mulher) e 30–40 g/dia (homem) por anos; espectro esteatose (90%) → esteato-hepatite → fibrose → cirrose (10–20%). Etanol via ADH e CYP2E1 gera acetaldeído (adutos proteicos), NADH em excesso (lipogênese, hiperlactatemia, hiperuricemia) e ROS; LPS portal ativa Kupffer. Histologia: balonização, corpúsculos de Mallory-Denk, infiltrado neutrofílico, fibrose perivenular "em tela de galinheiro". Pistas: AST/ALT &gt;2 com AST &lt;400, GGT e VCM altos.</div></div>
+<div class="disease-row"><div class="k">Diagnóstico</div><div class="v">Hepatite alcoólica: icterícia de início &lt;8 semanas, bilirrubina &gt;3 mg/dL, AST &gt;50 (&lt;400) com AST/ALT &gt;1,5, consumo &gt;40–60 g/dia por ≥6 meses e até 60 dias antes. Gravidade: <b>MELD &gt;20</b> (ou Maddrey ≥32) = grave; biópsia só se dúvida <span class="ev ev-sbr">ACG 2024</span>.</div></div>
+<div class="disease-row"><div class="k">Tratamento</div><div class="v">Abstinência (fator prognóstico isolado mais forte), nutrição 35–40 kcal/kg, tiamina, rastreio de infecção antes do corticoide. Grave sem contraindicação (infecção ativa, HDA, LRA grave, HBV não tratado): <b>prednisolona 40 mg/dia por 28 dias</b> (metilprednisolona 32 mg IV se jejum); <b>Lille no D4 ou D7 &gt;0,45 = suspender</b>. N-acetilcisteína IV associada é opção discutida; pentoxifilina não reduz mortalidade. Transtorno por uso de álcool: baclofeno, acamprosato (naltrexona e dissulfiram evitados na cirrose avançada). Transplante precoce em selecionados não respondedores <span class="ev ev-sbr">ACG 2024</span>.</div></div>
+<div class="disease-row"><div class="k">O que muda conduta</div><div class="v"><b>MELD &gt;20</b> (corticoide e internação), <b>Lille &gt;0,45</b> (parar e discutir transplante), <b>infecção</b> (tratar antes), <b>abstinência sustentada</b> (pode recompensar e retirar da lista).</div></div>
+</div></div></div>
+</div>
+</div>
+
+<!-- D.2 -->
+<div class="card diag">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">D.2</span> Etiologia</div><h3>MASLD e MASH (esteatose associada à disfunção metabólica)</h3></div>
+<div class="card-body">
+<div class="disease">
+<div class="disease-head"><div class="disease-name">MASLD / MASH (antiga DHGNA/NASH) e MetALD</div><div class="disease-tag">CID-10 K76.0 degeneração gordurosa do fígado · K75.8 (esteato-hepatite, sem código nominal)</div></div>
+<div class="disease-body"><div class="disease-rows">
+<div class="disease-row"><div class="k">Essência</div><div class="v">Esteatose + ≥1 de 5 critérios cardiometabólicos (IMC/cintura, glicemia/DM2, PA, triglicerídeos, HDL), sem outra causa; MetALD = MASLD com álcool 140–350 g/semana (mulher) ou 210–420 (homem). ~30% dos adultos. Resistência insulínica, lipotoxicidade (diacilglicerol, ceramidas), PNPLA3 I148M e TM6SF2. A <b>fibrose</b>, não a inflamação, define prognóstico; a causa principal de morte ainda é cardiovascular.</div></div>
+<div class="disease-row"><div class="k">Diagnóstico</div><div class="v">FIB-4 em sequência: &lt;1,3 baixo risco; ≥1,3 → elastografia (&lt;8 kPa baixo; 8–12 indeterminado; &gt;12 fibrose avançada provável) ou ELF. Elastografia superestima em obesos (sonda XL) <span class="ev ev-eular">EASL-EASD-EASO 2024</span>.</div></div>
+<div class="disease-row"><div class="k">Tratamento</div><div class="v">Perda de peso ≥7–10% (≥10% regride fibrose; redução de ≥30% da rigidez); dieta mediterrânea, exercício; álcool mínimo ou zero com fibrose. MASH F2–F3: <b>resmetirom</b> (agonista THR-β; 80 mg/dia &lt;100 kg, 100 mg ≥100 kg, onde aprovado) e <b>semaglutida 2,4 mg SC/semana</b> (ESSENCE; AASLD nov/2025); pioglitazona e iSGLT2/arGLP-1 conforme comorbidade; cirurgia bariátrica sem CSPH. Cirrose descompensada: sem droga específica, transplante <span class="ev ev-acr">AASLD 2025</span>.</div></div>
+<div class="disease-row"><div class="k">O que muda conduta</div><div class="v"><b>FIB-4/elastografia</b> (quem encaminhar), <b>F2–F3</b> (fármaco), <b>cirrose</b> (vigilância CHC e de HTP, critérios de Baveno menos específicos se IMC ≥30), <b>CSPH</b> (bariátrica arriscada).</div></div>
+</div></div></div>
+</div>
+</div>
+
+<!-- D.3 -->
+<div class="card diag">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">D.3</span> Etiologia colestática</div><h3>Colangite biliar primária e colangite esclerosante primária</h3></div>
+<div class="card-body">
+<div class="disease">
+<div class="disease-head"><div class="disease-name">CBP e CEP (agrupadas: colestáticas crônicas imunomediadas)</div><div class="disease-tag">CID-10 K74.3 cirrose biliar primária · K83.0 colangite (CEP)</div></div>
+<div class="disease-body"><div class="disease-rows">
+<div class="disease-row"><div class="k">Essência</div><div class="v"><b>CBP:</b> mulher de meia-idade, destruição autoimune dos ductos interlobulares (lesão ductal florida, granulomas), anti-mitocôndria (AMA-M2 contra PDC-E2) em 95%; prurido, fadiga, xantelasmas, osteoporose, Sjögren e tireoidite associados. <b>CEP:</b> homem jovem com retocolite (70%), estenoses e dilatações multifocais intra e extra-hepáticas ("contas de rosário" na colangio-RM), p-ANCA atípico; risco de colangiocarcinoma, CCR e câncer de vesícula.</div></div>
+<div class="disease-row"><div class="k">Diagnóstico</div><div class="v">CBP: FA ≥1,5× LSN + AMA ≥1:40 (ou anti-sp100/gp210), biópsia raramente. CEP: colangio-RM; biópsia só para CEP de pequenos ductos ou sobreposição; excluir IgG4 <span class="ev ev-sbr">SBH 2019</span>.</div></div>
+<div class="disease-row"><div class="k">Tratamento</div><div class="v">CBP: <b>ácido ursodesoxicólico 13–15 mg/kg/dia</b> para sempre; resposta em 12 meses (FA e bilirrubina — critérios de Paris/Toronto/GLOBE). Resposta inadequada: fibratos (bezafibrato 400 mg/dia, off-label) ou agonistas PPAR (elafibranor, seladelpar, onde aprovados); ácido obeticólico contraindicado na cirrose descompensada e com retirada do mercado norte-americano em 2025 (confirmar situação na ANVISA). Prurido: colestiramina 4–16 g/dia, rifampicina, naltrexona, sertralina. CEP: sem droga que mude a história; dilatação endoscópica de estenose dominante (com escovado), colonoscopia anual, vigilância de colangiocarcinoma, transplante.</div></div>
+<div class="disease-row"><div class="k">O que muda conduta</div><div class="v"><b>Resposta ao AUDC</b> (segunda linha), <b>estenose dominante nova</b> (excluir colangiocarcinoma: CA 19-9, escovado), <b>DII associada</b> (colonoscopia anual), <b>prurido intratável ou bilirrubina &gt;6</b> (transplante; Child usa limites próprios de bilirrubina).</div></div>
+</div></div></div>
+</div>
+</div>
+
+<!-- D.4 -->
+<div class="card diag">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">D.4</span> Etiologia genética e congestiva</div><h3>Hemocromatose, Wilson hepático, alfa-1-antitripsina e cirrose cardíaca</h3></div>
+<div class="card-body">
+<div class="disease">
+<div class="disease-head"><div class="disease-name">Doenças hepáticas metabólicas e congestivas (agrupadas)</div><div class="disease-tag">CID-10 E83.1 hemocromatose · E83.0 Wilson · E88.0 alfa-1-antitripsina · K76.1 congestão passiva crônica</div></div>
+<div class="disease-body"><div class="disease-rows">
+<div class="disease-row"><div class="k">Essência</div><div class="v"><b>Hemocromatose HFE</b> (C282Y homozigoto; deficiência de hepcidina → absorção duodenal e liberação macrofágica de ferro sem freio): cirrose, DM ("diabetes bronzeado"), artropatia da 2ª–3ª MCF, hipogonadismo, cardiomiopatia, CHC. <b>Wilson</b> (ATP7B, cromossomo 13): cobre não excretado na bile; hepatite crônica, cirrose ou hepatite fulminante com hemólise Coombs-negativa e FA baixa, anel de Kayser-Fleischer. <b>Alfa-1-antitripsina</b> (PiZZ): polímero retido no retículo do hepatócito (glóbulos PAS+ diastase-resistentes) + enfisema panacinar. <b>Cirrose cardíaca</b>: IC direita, pericardite constritiva — fígado em noz-moscada, GASA alto com proteína alta.</div></div>
+<div class="disease-row"><div class="k">Diagnóstico</div><div class="v">HH: <b>saturação de transferrina &gt;45% (mulher) / &gt;50% (homem) + ferritina elevada</b> → genotipagem HFE; ferritina &gt;1.000 µg/L com transaminases ou plaquetas baixas sugere fibrose avançada. Wilson: ceruloplasmina &lt;20 mg/dL, cobre urinário de 24 h &gt;40 µg, lâmpada de fenda, cobre hepático, escore de Leipzig. A1AT: dosagem sérica e fenotipagem <span class="ev ev-eular">EASL HH 2022</span>.</div></div>
+<div class="disease-row"><div class="k">Tratamento</div><div class="v">HH: <b>flebotomia de 400–500 mL semanal</b> até ferritina &lt;50 µg/L, manutenção &lt;100; vigilância de CHC se fibrose avançada. Wilson: quelante (D-penicilamina 750–1.500 mg/dia ou trientina) e, na manutenção ou pré-sintomático, zinco 50 mg elementar 3×/dia; fulminante = transplante (escore de Wilson ≥11). A1AT: transplante na cirrose descompensada. Cardíaca: tratar a doença cardíaca; TIPS contraindicado com pressões de enchimento direitas altas.</div></div>
+<div class="disease-row"><div class="k">O que muda conduta</div><div class="v"><b>Ferritina &gt;1.000 µg/L</b> (estadiar fibrose), <b>Wilson fulminante</b> (transplante, não quelação), <b>GASA alto com proteína ≥2,5</b> (pensar no coração antes do fígado), <b>familiares de primeiro grau</b> (rastrear HH e Wilson).</div></div>
+</div></div></div>
+</div>
+</div>
+
+<!-- D.5 -->
+<div class="card diag">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">D.5</span> HTP pós-sinusoidal</div><h3>Síndrome de Budd-Chiari e síndrome de obstrução sinusoidal <span class="ank ank-dgr">DANGER</span></h3></div>
+<div class="card-body">
+<div class="disease">
+<div class="disease-head"><div class="disease-name">Budd-Chiari (obstrução do efluxo venoso hepático) e SOS/doença veno-oclusiva</div><div class="disease-tag">CID-10 I82.0 síndrome de Budd-Chiari · K76.5 doença hepática veno-oclusiva</div></div>
+<div class="disease-body"><div class="disease-rows">
+<div class="disease-row"><div class="k">Essência</div><div class="v">Budd-Chiari primário: trombose das veias hepáticas ou da cava supra-hepática; <b>neoplasia mieloproliferativa (JAK2 V617F)</b> em ~40%, SAF, HPN, fator V Leiden, anticoncepcional, gestação; membrana de cava (Ásia). Tríade dor + hepatomegalia + ascite (GASA alto, proteína alta); hipertrofia do caudado (drenagem própria para a cava). SOS: lesão endotelial sinusoidal após condicionamento de TCTH (ciclofosfamida, bussulfano) ou alcaloides pirrolizidínicos — ganho de peso, hepatomegalia dolorosa, icterícia.</div></div>
+<div class="disease-row"><div class="k">Diagnóstico</div><div class="v">Doppler (ausência de fluxo nas veias hepáticas, colaterais intra-hepáticas "em teia de aranha"), angio-TC/RM; biópsia só se as grandes veias estão pérvias. Rastrear NMP sempre (JAK2, CALR, biópsia de medula) <span class="ev ev-nice">Baveno VII 2022</span> <span class="ev ev-eular">EASL vascular 2025</span>.</div></div>
+<div class="disease-row"><div class="k">Tratamento</div><div class="v">Escada: <b>anticoagulação plena e por tempo indefinido</b> (HBPM → varfarina INR 2–3) + tratamento da causa → angioplastia/stent de estenoses curtas → TIPS → transplante (BCS-TIPS PI &gt;7 ou falha). Forma fulminante: TIPS de emergência e transplante. SOS: suporte, defibrotida (6,25 mg/kg IV 6/6 h por ≥21 dias) nas formas graves pós-TCTH.</div></div>
+<div class="disease-row"><div class="k">O que muda conduta</div><div class="v"><b>Obstrução curta</b> (angioplastia), <b>sem melhora com anticoagulação</b> (TIPS), <b>nódulos no seguimento</b> (maioria benigna, mas há CHC: imagem e AFP semestrais), <b>NMP</b> (hematologia, citorredução).</div></div>
+</div></div></div>
+</div>
+</div>
+
+<!-- D.6 -->
+<div class="card diag">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">D.6</span> HTP pré-hepática e pré-sinusoidal</div><h3>Trombose de veia porta, esquistossomose hepatoesplênica e PSVD</h3></div>
+<div class="card-body">
+<div class="disease">
+<div class="disease-head"><div class="disease-name">HTP não cirrótica (agrupada: fígado de função preservada, varizes grandes)</div><div class="disease-tag">CID-10 I81 trombose da veia porta · B65.1 esquistossomose por S. mansoni · PSVD sem código nominal</div></div>
+<div class="disease-body"><div class="disease-rows">
+<div class="disease-row"><div class="k">Essência</div><div class="v"><b>TVP na cirrose:</b> 10–25%, por fluxo portal lento, trombofilia adquirida e inflamação; pode ser achado ou causar descompensação. <b>TVP não cirrótica:</b> trombofilia, NMP, pancreatite, onfalite neonatal; crônica gera cavernoma. <b>Esquistossomose mansônica:</b> ovos nas vênulas portais → granulomas → fibrose periportal de Symmers ("haste de cachimbo" no US) → HTP pré-sinusoidal com esplenomegalia volumosa, varizes calibrosas e função hepática normal (sem ascite nem EH, salvo cirrose associada). <b>PSVD</b> (doença vascular porto-sinusoidal): HTP sem cirrose, HVPG e elastografia baixos, associada a imunodeficiências, tiopurinas, oxaliplatina, HIV.</div></div>
+<div class="disease-row"><div class="k">Diagnóstico</div><div class="v">Doppler confirmado por angio-TC/RM (trombo não realçado; realce arterial = trombo tumoral → CHC). Esquistossomose: epidemiologia, US com fibrose periportal, ovos nas fezes (Kato-Katz) ou biópsia retal. PSVD: biópsia &gt;20 mm sem cirrose + sinal específico de HTP ou lesão histológica específica <span class="ev ev-nice">Baveno VII 2022</span>.</div></div>
+<div class="disease-row"><div class="k">Tratamento</div><div class="v">TVP na cirrose: <b>anticoagular</b> se recente (&lt;6 meses) com oclusão &gt;50% do tronco ± mesentérica, sintomática, ou candidato a transplante; HBPM (enoxaparina 1 mg/kg 12/12 h) e depois HBPM, varfarina ou DOAC (Child A; cautela no B; evitar no C); manter ≥6 meses ou até transplante; tratar varizes de alto risco antes. Não cirrótica recente: anticoagular ≥6 meses (indefinido se trombofilia). Esquistossomose: <b>praziquantel 50 mg/kg dose única</b> (60 mg/kg em crianças) — não reverte fibrose avançada; HDA tratada como na cirrose; profilaxia secundária cirúrgica clássica brasileira: <b>desconexão ázigo-portal + esplenectomia</b> (preserva fluxo portal e função hepática). PSVD: varizes como na cirrose; TIPS ou transplante nas complicações graves.</div></div>
+<div class="disease-row"><div class="k">O que muda conduta</div><div class="v"><b>HTP com elastografia baixa</b> (não é cirrose: pensar nestas causas — e os critérios de Baveno para dispensar EDA não se aplicam), <b>trombo que realça</b> (CHC), <b>dor + diarreia sanguinolenta + lactato</b> (isquemia mesentérica), <b>candidato a transplante</b> (anticoagular qualquer TVP).</div></div>
+</div></div></div>
+</div>
+</div>
+
+<!-- D.7 -->
+<div class="card diag">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">D.7</span> Pulmão do cirrótico</div><h3>Síndrome hepatopulmonar e hipertensão portopulmonar</h3></div>
+<div class="card-body">
+<div class="disease">
+<div class="disease-head"><div class="disease-name">SHP e HPP (agrupadas: avaliação obrigatória pré-transplante)</div><div class="disease-tag">CID-10 K76.8 (SHP, sem código nominal) · I27.2 hipertensão pulmonar secundária</div></div>
+<div class="disease-body"><div class="disease-rows">
+<div class="disease-row"><div class="k">Essência</div><div class="v"><b>SHP</b> (5–30% dos candidatos): dilatações vasculares intrapulmonares por NO e endotelina-1 (receptor ETB) → distúrbio de difusão-perfusão e shunt. Platipneia, ortodeoxia (queda de SpO₂ ao sentar/ficar de pé — vasos dilatados nas bases), baqueteamento, aranhas. <b>HPP</b> (2–6%): vasoconstrição e remodelamento arteriolar pulmonar (pré-capilar) com HTP; dispneia, sinais de IC direita.</div></div>
+<div class="disease-row"><div class="k">Diagnóstico</div><div class="v">SHP: doença hepática/HTP + gasometria com gradiente A-a ≥15 mmHg (≥20 se &gt;64 anos) + <b>ecocardiograma com microbolhas</b> (bolhas no átrio esquerdo após 3 batimentos). HPP: eco transtorácico de rastreio em todo candidato; cateterismo direito com PAPm &gt;20 mmHg, POAP ≤15, RVP &gt;2 UW <span class="ev ev-eular">EASL LT 2024</span>.</div></div>
+<div class="disease-row"><div class="k">Tratamento</div><div class="v">SHP: O₂; <b>transplante resolve</b> e PaO₂ &lt;60 mmHg dá prioridade (exceção de MELD); PaO₂ &lt;45–50 eleva risco perioperatório. HPP: vasodilatadores pulmonares (antagonista de endotelina — macitentana —, inibidor de PDE5, prostanoides); suspender NSBB; transplante só se PAPm &lt;35 e RVP controlados com tratamento; TIPS contraindicado com HPP moderada a grave.</div></div>
+<div class="disease-row"><div class="k">O que muda conduta</div><div class="v"><b>Ortodeoxia + microbolhas</b> (SHP: priorizar transplante), <b>PAPm ≥35–45 mmHg</b> (alto risco de morte no transplante), <b>HPP</b> (retirar betabloqueador, contraindicar TIPS).</div></div>
+</div></div></div>
+</div>
+</div>
+
+<!-- D.8 -->
+<div class="card tx">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">D.8</span> Outras descompensações</div><h3>Hidrotórax hepático, hiponatremia hipervolêmica e ACLF <span class="ank ank-dgr">DANGER</span></h3></div>
+<div class="card-body">
+<div class="disease">
+<div class="disease-head"><div class="disease-name">Complicações agrupadas do descompensado</div><div class="disease-tag">CID-10 J94.8 hidrotórax · E87.1 hiponatremia · K72.0 insuficiência hepática aguda (sobre crônica)</div></div>
+<div class="disease-body"><div class="disease-rows">
+<div class="disease-row"><div class="k">Essência</div><div class="v"><b>Hidrotórax hepático</b> (5–10%): ascite passa por defeitos diafragmáticos (pressão negativa pleural); direita 85%, pode existir sem ascite visível. <b>Hiponatremia</b> (Na &lt;130 em ~22%): excesso de água livre por ADH não osmótico; marca gravidade (MELD-Na) e eleva risco de EH e de mielinólise no transplante. <b>ACLF:</b> descompensação aguda + falência orgânica (EASL-CLIF: rim, fígado, cérebro, coagulação, circulação, respiração) com mortalidade de 28 dias de ~22% (grau 1) a ~77% (grau 3).</div></div>
+<div class="disease-row"><div class="k">Diagnóstico</div><div class="v">Hidrotórax: toracocentese (transudato, gradiente albumina soro-pleura &gt;1,1; empiema espontâneo se PMN &gt;250 com cultura + ou &gt;500 sem cultura), excluir cardíaco/pulmonar. Hiponatremia: avaliar volemia, osmolalidade, diuréticos. ACLF: escore CLIF-C OF / CLIF-C ACLF, precipitante <span class="ev ev-eular">EASL ACLF 2023</span> <span class="ev ev-eular">EASL 2018</span>.</div></div>
+<div class="disease-row"><div class="k">Tratamento</div><div class="v">Hidrotórax: sódio + diuréticos, toracocentese de alívio; <b>dreno torácico contraindicado</b> (perda proteica, infecção, LRA); refratário → TIPS ou transplante; pleurodese só excepcional. Hiponatremia: suspender diurético se &lt;125, restrição hídrica 1–1,5 L/dia, albumina em casos selecionados, salina 3% se sintomática grave; tolvaptana não recomendada rotineiramente (hepatotoxicidade, uso &gt;30 dias proibido na hepatopatia pela FDA). ACLF: UTI, tratar precipitante, suporte de órgãos, transplante precoce em centro; plasmaférese ainda experimental.</div></div>
+<div class="disease-row"><div class="k">O que muda conduta</div><div class="v"><b>Grau de ACLF e evolução no D3–D7</b> (transplante × futilidade), <b>empiema espontâneo</b> (trata como PBE, sem dreno), <b>Na &lt;120 sintomático</b> (salina hipertônica com teto de correção), <b>hidrotórax refratário</b> (TIPS/transplante).</div></div>
+</div></div></div>
+</div>
+</div>
+</section>
+
+<!-- ============================================================ E -->
+<section id="algoritmo">
+<div class="section">
+<div class="section-eyebrow"><span>E</span> Algoritmo</div>
+<div class="section-title">Do hepatopata estável ao descompensado agudo — duas perguntas antes de tudo</div>
+<div class="section-sub">Primeiro: está compensado ou descompensado? Segundo: qual evento está acontecendo agora (sangramento, infecção, rim, cérebro)? O resto deriva disso.</div>
+</div>
+
+<div class="card prim">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">E.1</span> Algoritmo</div><h3>Árvore de decisão — cACLD e descompensação aguda <span class="ank ank-dec">DECISION</span></h3></div>
+<div class="card-body">
+<div class="algo"><div class="tree">
+<div class="tree-line"><span class="tree-node start">Hepatopatia crônica conhecida ou suspeita</span></div>
+<div class="tree-branch">
+<div class="tree-label yes">Ascite, HDA varicosa ou EH manifesta (agora ou no passado)?</div>
+<div class="tree-line"><span class="tree-node dgr">DESCOMPENSADA — qual evento agudo?</span></div>
+<div class="tree-branch"><div class="tree-label yes">Hematêmese/melena</div><div class="tree-line"><span class="tree-node action">→ Terlipressina 2 mg 4/4 h + ceftriaxona 1 g/d + Hb 7–8 + EDA ≤12 h com ligadura; Child C &lt;14 ou B &gt;7 ativo: TIPS &lt;72 h</span></div></div>
+<div class="tree-branch"><div class="tree-label yes">Ascite + febre/dor/EH/LRA</div><div class="tree-line"><span class="tree-node dx">Paracentese: PMN ≥250?</span></div>
+<div class="tree-branch"><div class="tree-label yes">Sim</div><div class="tree-line"><span class="tree-node action">→ Cefalosporina 3ª G (ou carbapenêmico se nosocomial/choque) + albumina 1,5 g/kg D1 e 1 g/kg D3; Runyon + → TC/cirurgia</span></div></div>
+<div class="tree-branch"><div class="tree-label no">Não</div><div class="tree-line"><span class="tree-node action">→ Procurar outra infecção (urina, tórax, pele, hemocultura); cultura + com PMN &lt;250 = bacterascite</span></div></div></div>
+<div class="tree-branch"><div class="tree-label yes">Creatinina ↑ ≥0,3 em 48 h</div><div class="tree-line"><span class="tree-node dx">Retirar diurético/NSBB/nefrotóxicos; albumina 1 g/kg se &gt;1A; resposta em 24 h?</span></div>
+<div class="tree-branch"><div class="tree-label no">Não, sem outra causa</div><div class="tree-line"><span class="tree-node dgr">→ HRS-AKI: terlipressina 2–12 mg/d contínua (ou 1–2 mg 4–6/6 h) + albumina 20–40 g/d; avaliar transplante</span></div></div>
+<div class="tree-branch"><div class="tree-label yes">Sim</div><div class="tree-line"><span class="tree-node action">→ LRA pré-renal: corrigir causa, reintroduzir diurético com cautela</span></div></div></div>
+<div class="tree-branch"><div class="tree-label yes">Confusão/asterixe</div><div class="tree-line"><span class="tree-node action">→ Excluir hipoglicemia/AVC/sedativo; precipitante; lactulose até 2–3 evacuações; grau ≥3 = UTI</span></div></div>
+<div class="tree-branch"><div class="tree-label yes">Falência orgânica</div><div class="tree-line"><span class="tree-node dgr">→ ACLF: UTI, precipitante, centro transplantador; reavaliar D3–D7</span></div></div>
+</div>
+<div class="tree-branch">
+<div class="tree-label no">Nunca descompensou</div>
+<div class="tree-line"><span class="tree-node dec">COMPENSADA — elastografia + plaquetas</span></div>
+<div class="tree-branch"><div class="tree-label no">LSM ≤15 kPa e plaquetas ≥150 mil</div><div class="tree-line"><span class="tree-node action">→ CSPH afastada: tratar causa, repetir LSM/plaquetas anualmente; sem EDA se LSM &lt;20 e plaquetas &gt;150 mil</span></div></div>
+<div class="tree-branch"><div class="tree-label yes">LSM ≥25 kPa ou ANTICIPATE ≥75% ou SSM &gt;55 kPa</div><div class="tree-line"><span class="tree-node dgr">→ CSPH: carvedilol 6,25 → 12,5 mg/d; sem EDA de rastreio; NSBB contraindicado → EDA e ligadura se alto risco</span></div></div>
+<div class="tree-branch"><div class="tree-label no">Zona cinzenta</div><div class="tree-line"><span class="tree-node dx">→ HVPG em centro, ou EDA (varizes = CSPH), ou repetir em 12 meses</span></div></div>
+<div class="tree-branch"><div class="tree-label yes">Em todo cirrótico</div><div class="tree-line"><span class="tree-node action">→ US ± AFP 6/6 meses; nódulo ≥1 cm → TC/RM multifásica → BCLC</span></div></div>
+</div>
+</div></div>
+
+<div class="box decision"><span class="box-label">DECISION</span><div class="box-title">Raciocínio em 6 passos — a sequência mental do plantão</div><div class="box-body">
+<ol>
+<li><b>Estágio primeiro.</b> Pergunte se já houve ascite, sangramento varicoso ou EH manifesta. A resposta separa um paciente com mortalidade anual de 1–2% de outro com 20% e muda tudo: profilaxias, transplante, tolerância a hipotensão.</li>
+<li><b>Hemodinâmica e via aérea.</b> Hipotensão no cirrótico é sepse, sangramento ou ACLF até prova em contrário; suspenda NSBB e diurético antes de qualquer outra prescrição, e intube se o rebaixamento ameaçar a via aérea durante a HDA.</li>
+<li><b>Agulha no abdome.</b> Se há ascite, a paracentese diagnóstica é o exame mais rentável da internação: decide PBE, sugere peritonite secundária e não exige correção de INR.</li>
+<li><b>Rim de hora em hora.</b> Compare a creatinina com a basal dos últimos 3 meses, não com o normal do laboratório; o cirrótico sarcopênico com creatinina de 1,2 pode estar em LRA estágio 2. Retire o que agride, expanda conforme a causa e reavalie em 24 h para decidir vasoconstritor.</li>
+<li><b>O cérebro tem precipitante.</b> Encefalopatia sem causa é exceção: procure sangue, infecção, distúrbio eletrolítico, constipação, sedativo — e trate o precipitante junto com a lactulose.</li>
+<li><b>Feche o episódio pensando no próximo.</b> Toda descompensação termina com: profilaxia secundária adequada (NSBB + ligadura, antibiótico pós-PBE, rifaximina pós-EH recorrente), causa tratada, MELD calculado e encaminhamento ao transplante quando MELD ≥15 ou descompensação.</li>
+</ol>
+</div></div>
+
+<div class="box hy"><span class="box-label">HIGH-YIELD</span><div class="box-title">GASA × proteína: a tabela que resolve a ascite de causa desconhecida</div><div class="box-body">GASA ≥1,1 e proteína &lt;2,5 g/dL: cirrose, hepatite alcoólica, metástases hepáticas maciças. GASA ≥1,1 e proteína ≥2,5: IC/constrictiva, Budd-Chiari, SOS, mixedema. GASA &lt;1,1 e proteína ≥2,5: carcinomatose peritoneal, tuberculose peritoneal, ascite pancreática ou biliar, serosite. GASA &lt;1,1 e proteína &lt;2,5: síndrome nefrótica, desnutrição grave.</div></div>
+</div>
+</div>
+</section>
+
+<!-- ============================================================ F -->
+<section id="tratamento">
+<div class="section">
+<div class="section-eyebrow"><span>F</span> Tratamento Integrado</div>
+<div class="section-title">F1 · Estratégia por entidade · F2 · Doses operacionais</div>
+<div class="section-sub">Escadas terapêuticas por complicação, cenários que caem no plantão e uma tabela de doses com número, via, frequência e duração — conferidas em Baveno VII/VIII, EASL, AASLD, ADQI-ICA 2024, ACG 2024 e DDT/MS 2022.</div>
+</div>
+
+<div class="card tx">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">F.1</span> Estratégia</div><h3>Escadas terapêuticas por entidade <span class="ank ank-dec">DECISION</span></h3></div>
+<div class="card-body">
+
+<div class="sub-title">F1.1 · Cirrose compensada — prevenir a primeira descompensação</div>
+<ul class="bullets">
+<li><b>Causa:</b> abstinência total de álcool; antiviral para HBV (tenofovir ou entecavir, conforme PCDT, fronteira GH09) e HCV (antiviral de ação direta; descompensado em centro); perda de peso; flebotomia; quelação; AUDC.</li>
+<li><b>CSPH:</b> carvedilol 6,25 mg/dia → 6,25 mg 12/12 h; alternativas propranolol ou nadolol titulados por FC 55–60 bpm e PAS ≥90. Sem CSPH: nenhum betabloqueador.</li>
+<li><b>NSBB contraindicado</b> (asma grave, bloqueio AV, intolerância): EDA se LSM ≥20 kPa ou plaquetas ≤150 mil; varizes ≥5 mm, sinais vermelhos ou Child C → ligadura a cada 2–4 semanas até erradicar, EDA em 3–6 meses e depois a cada 6–12 meses.</li>
+<li><b>Estatina</b> se houver indicação cardiovascular (Child A dose plena; Child B até sinvastatina 20 mg; evitar no C); Baveno VIII não a recomenda para prevenir descompensação. <b>AAS e anticoagulação</b> não devem ser negados quando indicados.</li>
+<li><b>Vigilância:</b> CHC semestral; elastografia anual; nutrição e exercício (sarcopenia); vacinas.</li>
+</ul>
+
+<div class="sub-title">F1.2 · Ascite</div>
+<ul class="bullets">
+<li><b>Grau 2:</b> sódio 80–120 mmol/dia + espironolactona 100 mg (escalonar a cada 72 h até 400); acrescentar furosemida 40 mg (até 160) na ascite recidivante ou se hipercalemia. Ginecomastia dolorosa: amilorida ou eplerenona (troca, não associação).</li>
+<li><b>Grau 3:</b> paracentese total com albumina (8 g/L; obrigatória acima de 5 L), depois diurético para evitar recidiva.</li>
+<li><b>Suspender diuréticos</b> se Na &lt;125, LRA, EH, câimbras incapacitantes; furosemida se K &lt;3; espironolactona se K &gt;6.</li>
+<li><b>Recorrente/refratária:</b> TIPS recoberto (≥3 paracenteses/ano) em selecionados; senão paracenteses seriadas com albumina; avaliar transplante; bomba de drenagem automática (alfapump) em centros. <b>NSBB</b> na ascite refratária: manter carvedilol/propranolol se PAS ≥90 e sem HRS-AKI; reduzir ou suspender se hipotensão.</li>
+<li><b>Evitar:</b> AINE, IECA/BRA, aminoglicosídeo, contraste iodado sem necessidade, restrição hídrica sem hiponatremia.</li>
+</ul>
+
+<div class="sub-title">F1.3 · PBE e infecções</div>
+<ul class="bullets">
+<li><b>Empírico:</b> comunitária leve → ceftriaxona/cefotaxima; nosocomial, sepse ou exposição a betalactâmico → piperacilina-tazobactam ou meropenem ± glicopeptídeo; 5–7 dias guiado pela paracentese de 48 h.</li>
+<li><b>Albumina</b> D1 e D3 em toda PBE; não em infecções extraperitoneais de rotina (ATTIRE, ADQI 2024).</li>
+<li><b>Profilaxia:</b> secundária indefinida; primária nos critérios de Fernández; HDA com ceftriaxona. IBP sem indicação aumenta PBE e EH — desprescrever.</li>
+</ul>
+
+<div class="sub-title">F1.4 · Hemorragia varicosa aguda</div>
+<ul class="bullets">
+<li><b>Hora 0:</b> acesso, tipagem, vasoativo, ceftriaxona, transfusão restritiva, IOT se necessário, lactulose, suspender NSBB e anticoagulante.</li>
+<li><b>≤12 h:</b> EDA com ligadura (esofágica/GOV1) ou cianoacrilato (GOV2/IGV1). IBP iniciado antes da EDA é suspenso após o exame se não houver úlcera.</li>
+<li><b>≤72 h:</b> TIPS preemptivo nos critérios; demais: vasoativo por 2–5 dias e início do NSBB após suspensão do vasoativo e estabilidade.</li>
+<li><b>Falha:</b> TIPS de resgate; ponte com balão (máx. 24 h, protegendo via aérea) ou prótese esofágica autoexpansível. Varizes gástricas refratárias: BRTO ou TIPS + embolização.</li>
+</ul>
+
+<div class="sub-title">F1.5 · Profilaxias de sangramento</div>
+<ul class="bullets">
+<li><b>Primária (compensado):</b> CSPH → NSBB (preferir carvedilol). <b>Primária (ascítico):</b> varizes de baixo risco → NSBB pode; alto risco → NSBB preferido à ligadura (Baveno VII), carvedilol preferido ao propranolol (Baveno VIII).</li>
+<li><b>Secundária:</b> NSBB + ligadura seriada; se ascite recorrente ou ressangramento → TIPS. Intolerância a um dos braços: manter o outro isolado.</li>
+<li><b>Gastropatia portal:</b> NSBB + ferro; APC se dependente de transfusão; TIPS em casos selecionados. GAVE: tratamento endoscópico, não NSBB.</li>
+</ul>
+
+<div class="sub-title">F1.6 · Encefalopatia hepática</div>
+<ul class="bullets">
+<li><b>Episódio:</b> precipitante + lactulose (ou PEG 4 L); rifaximina adicionada se não responde ou recorre; LOLA IV como adjuvante; zinco se deficiente.</li>
+<li><b>Profilaxia:</b> após 1º episódio, lactulose; após recorrência, lactulose + rifaximina; antes de TIPS eletivo em quem já teve EH, rifaximina.</li>
+<li><b>Refratária:</b> procurar shunt espontâneo (embolizar), reduzir o calibre do TIPS, transplante.</li>
+<li><b>Nunca:</b> restrição proteica prolongada, benzodiazepínicos (exceto abstinência alcoólica, preferindo lorazepam/oxazepam guiados por sintoma), metronidazol/neomicina prolongados.</li>
+</ul>
+
+<div class="sub-title">F1.7 · LRA e HRS-AKI</div>
+<ul class="bullets">
+<li><b>Estágio 1A:</b> retirar fatores, observar. <b>&gt;1A:</b> albumina 1 g/kg/dia por 2 dias (máx. 100 g/dia) se não houver sobrecarga; cristaloide balanceado se perda gastrointestinal; sangue se HDA.</li>
+<li><b>HRS-AKI:</b> terlipressina + albumina já no diagnóstico; noradrenalina em UTI se terlipressina indisponível ou contraindicada; avaliar SpO₂ e volemia diariamente.</li>
+<li><b>TRS</b> como ponte para transplante; transplante fígado-rim se diálise prolongada.</li>
+</ul>
+
+<div class="sub-title">F1.8 · CHC (BCLC) e acesso no Brasil</div>
+<ul class="bullets">
+<li><b>0/A:</b> ablação (≤3 cm), ressecção (sem CSPH relevante), transplante (Milão); SBRT/TARE quando ablação/ressecção inviáveis.</li>
+<li><b>B:</b> TACE convencional (lipiodol + quimioterápico) ou com microesferas; contraindicada se bilirrubina &gt;2–3, ascite, trombose portal principal, Child C.</li>
+<li><b>C:</b> atezolizumabe + bevacizumabe, STRIDE ou nivolumabe + ipilimumabe (ligar varizes antes de antiangiogênico); lenvatinibe/sorafenibe; 2ª linha regorafenibe, cabozantinibe, ramucirumabe (AFP ≥400).</li>
+<li><b>SUS:</b> DDT 2022 — rastreio por US semestral, ressecção/transplante/ablação/TACE, sorafenibe 1ª linha e regorafenibe 2ª via APAC; imunoterapia combinada sem incorporação nacional (confirmar protocolo do CACON/UNACON).</li>
+</ul>
+
+<div class="sub-title">F1.9 · Transplante hepático — indicação, momento e contraindicação</div>
+<ul class="bullets">
+<li><b>Indicar:</b> cirrose descompensada; MELD ≥15; CHC dentro de Milão (ou downstaging); SHP; EH recorrente; prurido/colangite intratáveis; insuficiência hepática aguda (GH09).</li>
+<li><b>Brasil:</b> alocação por gravidade (MELD), inscrição a partir de MELD 11 segundo a apostila; situações especiais para CHC, SHP e outras — <b>conferir regulamento técnico vigente do SNT</b>.</li>
+<li><b>Contraindicações:</b> câncer extra-hepático ativo, colangiocarcinoma fora de protocolo, sepse não controlada, HPP grave não responsiva, doença cardiopulmonar avançada, uso ativo de álcool/drogas sem plano, falta de suporte social. Idade, HIV controlado e TVP não são, isoladamente, contraindicações.</li>
+<li><b>Álcool:</b> a "regra dos 6 meses" de abstinência caiu como critério absoluto; avaliação psicossocial estruturada e transplante precoce na hepatite alcoólica grave não respondedora em centros.</li>
+</ul>
+
+<div class="sub-title">F1.11 · Procedimentos — indicação, técnica que importa e erro típico</div>
+<div class="stbl stbl-3">
+<div class="stbl-head stbl-3"><div>Procedimento</div><div>Indicação e técnica</div><div>Erro típico</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Procedimento">Paracentese diagnóstica</div><div class="col" data-l="Indicação">Toda ascite nova, toda internação de ascítico, qualquer deterioração. Agulha fina no QIE, evitar cicatrizes e vasos epigástricos inferiores (US à beira-leito ajuda); 10 mL em cada frasco de hemocultura no leito</div><div class="col" data-l="Erro">Mandar o líquido em frasco seco para cultura (positividade cai pela metade)</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Procedimento">Paracentese de grande volume</div><div class="col" data-l="Indicação">Ascite tensa ou refratária; retirada total em uma sessão é segura com albumina; drenar em 1–3 h</div><div class="col" data-l="Erro">Esquecer albumina acima de 5 L ou retirar volume grande de quem tem PBE ativa sem albumina da PBE</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Procedimento">Ligadura elástica</div><div class="col" data-l="Indicação">Sangramento agudo de esofágicas/GOV1; profilaxia primária se NSBB impossível; secundária com NSBB, sessões a cada 2–4 semanas até erradicar</div><div class="col" data-l="Erro">Esquecer a úlcera pós-ligadura (sangra no 7º–14º dia); manter IBP curto após a sessão é razoável</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Procedimento">Balão de Sengstaken-Blakemore</div><div class="col" data-l="Indicação">Ponte em sangramento refratário: balão gástrico insuflado e tracionado; esofágico só se persistir; no máximo 24 h, sempre com via aérea protegida</div><div class="col" data-l="Erro">Insuflar o balão gástrico no esôfago (ruptura) ou manter mais de 24 h (necrose)</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Procedimento">TIPS recoberto (PTFE, 8 mm)</div><div class="col" data-l="Indicação">Preemptivo na HDA de alto risco, resgate, ressangramento apesar de NSBB + ligadura, ascite recorrente/refratária, hidrotórax refratário, Budd-Chiari. Avaliar antes: ecocardiograma (IC, HP), bilirrubina, EH, anatomia portal, CHC</div><div class="col" data-l="Erro">Indicar em EH grave recorrente, bilirrubina &gt;5 mg/dL, IC ou HP importante — ou em Child ≥14 sem transplante à vista</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Procedimento">Cirurgia de HTP</div><div class="col" data-l="Indicação">Hoje rara na cirrose (TIPS e transplante a substituíram); derivação esplenorrenal distal (Warren) seletiva em centros; na esquistossomose, desconexão ázigo-portal + esplenectomia continua sendo a cirurgia brasileira de escolha</div><div class="col" data-l="Erro">Shunt portocava total em candidato a transplante (dificulta a anastomose e causa EH)</div></div>
+</div>
+
+<div class="sub-title">F1.12 · Cirrótico em situações especiais</div>
+<ul class="bullets">
+<li><b>Cirurgia eletiva extra-hepática:</b> risco cresce com Child, MELD (≥15 alto risco; VOCAL-Penn é a calculadora preferida pela EASL 2025), CSPH e cirurgia abdominal aberta. Child C e MELD &gt;20: adiar e discutir transplante antes; controlar ascite (hérnia umbilical: corrigir eletivamente quando a ascite estiver controlada, porque a ruptura e o encarceramento têm alta mortalidade).</li>
+<li><b>Gestação:</b> rara (anovulação, hipogonadismo), alto risco de HDA no 2º trimestre e no parto pelo aumento da volemia; fazer EDA antes ou no 2º trimestre, NSBB (propranolol) ou ligadura; parto vaginal com período expulsivo abreviado é aceitável; varfarina e sorafenibe contraindicados.</li>
+<li><b>Anticoagulação e DOAC:</b> Child A sem restrição relevante; Child B com cautela; Child C evitar DOAC (rivaroxabana contraindicada já no B); varfarina com INR de difícil interpretação.</li>
+<li><b>Analgesia e sedação:</b> paracetamol até 2 g/dia; opioides em dose baixa com laxativo; evitar AINE e dipirona em uso crônico no ascítico com função renal limítrofe (confirmar protocolo local); benzodiazepínico só para abstinência.</li>
+<li><b>Idoso e frágil:</b> Liver Frailty Index e dosagem de massa muscular entram na decisão de transplante e de TIPS; sarcopenia isolada não é indicação de TIPS.</li>
+</ul>
+
+<div class="sub-title">F1.13 · Tratar a causa — o único tratamento que pode recompensar</div>
+<ul class="bullets">
+<li><b>HBV:</b> todo cirrótico com HBV-DNA detectável recebe análogo de alta barreira (tenofovir ou entecavir — no descompensado, entecavir 1 mg/dia ou tenofovir), indefinidamente; pesquisar delta (anti-HDV). Esquema e acesso pelo PCDT de hepatite B (fronteira GH09).</li>
+<li><b>HCV:</b> antiviral de ação direta pangenotípico; na cirrose descompensada, sofosbuvir + velpatasvir com ribavirina por 12 semanas em centro, e inibidores de protease contraindicados no Child B/C. A RVS reduz HVPG e descompensação, mas a vigilância de CHC continua.</li>
+<li><b>Álcool:</b> abstinência é a medida de maior impacto em sobrevida; tratar o transtorno por uso (baclofeno, acamprosato, terapia psicossocial) dentro do próprio serviço de hepatologia aumenta a adesão.</li>
+<li><b>MASLD, hemocromatose, Wilson, CBP e hepatite autoimune:</b> perda ponderal e controle metabólico, flebotomia, quelação, AUDC e imunossupressão (GH09) respectivamente — e reavaliar CSPH depois, porque ela pode persistir mesmo com a causa controlada.</li>
+</ul>
+
+<div class="box danger"><span class="box-label">DANGER</span><div class="box-title">Fármacos que descompensam o cirrótico</div><div class="box-body"><b>AINE</b> (LRA, HDA, resistência a diurético) · <b>IECA/BRA</b> no ascítico · <b>aminoglicosídeos</b> · <b>benzodiazepínicos e opioides</b> (EH) · <b>IBP crônico sem indicação</b> (PBE, EH) · <b>contraste iodado</b> sem necessidade · <b>tolvaptana</b> (hepatotóxica). Paracetamol é o analgésico de escolha até 2 g/dia.</div></div>
+
+<div class="box hy"><span class="box-label">HIGH-YIELD</span><div class="box-title">Nutrição e sarcopenia: tratamento, não detalhe</div><div class="box-body">Sarcopenia (índice muscular de L3 na TC, força de preensão, Liver Frailty Index) prediz mortalidade, EH e complicações pós-transplante independentemente do MELD. Prescrever 35 kcal/kg/dia, proteína 1,2–1,5 g/kg/dia, jejum máximo de 3–6 h em vigília, <b>lanche noturno rico em carboidrato complexo e proteína</b> (o jejum noturno no cirrótico equivale a 2–3 dias de jejum no saudável), exercício resistido supervisionado; BCAA se intolerância a proteína.</div></div>
+
+<div class="sub-title">F1.10 · Cenários de plantão — caso → conduta certa → erro típico</div>
+<div class="stbl stbl-3">
+<div class="stbl-head stbl-3"><div>Caso</div><div>Conduta certa</div><div>Erro típico</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Caso">Child C 11 pontos, HDA varicosa controlada com ligadura, sem contraindicação</div><div class="col" data-l="Conduta"><b>TIPS preemptivo recoberto em &lt;72 h</b></div><div class="col" data-l="Erro">Esperar ressangrar para pensar em TIPS</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Caso">Ascítico internado por celulite, sem dor abdominal</div><div class="col" data-l="Conduta"><b>Paracentese diagnóstica na admissão</b></div><div class="col" data-l="Erro">Achar que a febre "já tem foco" e deixar uma PBE concomitante sem albumina</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Caso">PBE com creatinina de 1,6 mg/dL, PAS 85 mmHg, em carvedilol</div><div class="col" data-l="Conduta"><b>Suspender carvedilol e diurético, antibiótico + albumina 1,5 g/kg</b></div><div class="col" data-l="Erro">Manter NSBB "porque protege de sangramento"</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Caso">Creatinina 1,1 → 1,9 mg/dL em 2 dias, ascite, sem choque nem nefrotóxico, sem resposta em 24 h</div><div class="col" data-l="Conduta"><b>HRS-AKI: terlipressina + albumina já</b></div><div class="col" data-l="Erro">Insistir em mais 48 h de albumina até a creatinina passar de 2,5</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Caso">Cirrótico confuso com Na 118, uso de espironolactona e furosemida</div><div class="col" data-l="Conduta"><b>Suspender diuréticos, restrição hídrica, corrigir no máximo 8 mmol/L/24 h</b>; tratar EH</div><div class="col" data-l="Erro">Salina 3% sem teto e mielinólise pontina</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Caso">cACLD por HCV curado, LSM 11 kPa, plaquetas 180 mil</div><div class="col" data-l="Conduta"><b>Sem CSPH: alta da vigilância de HTP, manter vigilância de CHC</b></div><div class="col" data-l="Erro">EDA anual e propranolol "preventivo"</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Caso">CHC BCLC C, Child A, vai iniciar atezolizumabe + bevacizumabe</div><div class="col" data-l="Conduta"><b>EDA prévia e ligadura/NSBB se varizes de alto risco</b></div><div class="col" data-l="Erro">Iniciar bevacizumabe sem rastrear varizes</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Caso">Hidrotórax direito volumoso, ascite discreta</div><div class="col" data-l="Conduta"><b>Toracocentese de alívio + diurético; refratário → TIPS/transplante</b></div><div class="col" data-l="Erro">Dreno torácico fechado (fístula, LRA, empiema)</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Caso">Paciente de Pernambuco com HDA, baço enorme, albumina normal, elastografia 8 kPa</div><div class="col" data-l="Conduta"><b>Pensar em esquistossomose hepatoesplênica: tratar a HDA como varicosa, praziquantel, avaliar desconexão ázigo-portal + esplenectomia</b></div><div class="col" data-l="Erro">Rotular como cirrose e aplicar critérios de Baveno para dispensar EDA</div></div>
+</div>
+
+<div class="box decision"><span class="box-label">DECISION</span><div class="box-title">SUS × diretriz internacional — o que muda na prática brasileira</div><div class="box-body">Terlipressina, octreotida, albumina humana e ceftriaxona são de uso hospitalar e dependem da padronização local — confirme a disponibilidade e o protocolo da instituição. TIPS é oferecido em poucos centros públicos; onde não há, a profilaxia secundária é NSBB + ligadura e o resgate depende de balão e transferência. Imunoterapia para CHC não está na DDT de 2022 (sorafenibe e regorafenibe sim). O transplante é financiado pelo SUS em centros habilitados, com alocação por MELD pelo SNT.</div></div>
+</div>
+</div>
+
+<div class="card tx">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">F.2</span> Doses operacionais</div><h3>Tabela de doses — adulto <span class="ank ank-hy">HIGH-YIELD</span></h3></div>
+<div class="card-body">
+<div class="stbl stbl-3">
+<div class="stbl-head stbl-3"><div>Fármaco</div><div>Dose adulto</div><div>Indicação / notas</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Carvedilol</div><div class="col" data-l="Dose">6,25 mg VO 1×/dia; após 3 dias, 6,25 mg 12/12 h; máx. 12,5 mg/dia</div><div class="col" data-l="Notas">CSPH, profilaxia primária e secundária <span class="ev ev-nice">Baveno VII</span>. Bloqueio α1 reduz resistência intra-hepática; reduzir/suspender se PAS &lt;90, PAM &lt;65 ou HRS-AKI</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Propranolol</div><div class="col" data-l="Dose">20–40 mg VO 12/12 h, titular a cada 2–3 dias; máx. 320 mg/dia sem ascite, 160 mg/dia com ascite</div><div class="col" data-l="Notas">Alvo FC 55–60 bpm com PAS ≥90; mais efeito colateral (fadiga, broncoespasmo) que carvedilol</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Nadolol</div><div class="col" data-l="Dose">20–40 mg VO 1×/dia; máx. 160 mg/dia sem ascite, 80 mg/dia com ascite</div><div class="col" data-l="Notas">Excreção renal (ajustar na DRC); pouca disponibilidade no Brasil</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Terlipressina (HDA)</div><div class="col" data-l="Dose">2 mg IV 4/4 h por 48 h, depois 1 mg 4/4 h; total 2–5 dias</div><div class="col" data-l="Notas">Monitorar Na, isquemia, arritmia <span class="ev ev-nice">Baveno VII</span>; iniciar antes da EDA</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Terlipressina (HRS-AKI)</div><div class="col" data-l="Dose">Infusão contínua 2 mg/dia, +2 mg/dia a cada 24 h até 12 mg/dia; ou bolus 1 mg IV 4/4–6/6 h → 2 mg 4/4–6/6 h</div><div class="col" data-l="Notas">Escalonar se creatinina não cai ≥25%; parar após 14 dias, resposta completa ou sem resposta em 48–72 h na dose máxima <span class="ev ev-expert">ADQI-ICA 2024</span>. Cautela se SpO₂ &lt;90% ou ACLF 3</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Octreotida</div><div class="col" data-l="Dose">50 µg IV bolus + 50 µg/h contínuo por 2–5 dias</div><div class="col" data-l="Notas">HDA varicosa; taquifilaxia ao bolus repetido — manter infusão</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Somatostatina</div><div class="col" data-l="Dose">250 µg IV bolus (repetível) + 250–500 µg/h por 2–5 dias</div><div class="col" data-l="Notas">HDA varicosa; meia-vida de minutos</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Noradrenalina</div><div class="col" data-l="Dose">0,5 mg/h IV, +0,5 mg/h a cada 4 h até 3 mg/h</div><div class="col" data-l="Notas">HRS-AKI em UTI (alvo PAM +10 mmHg ou diurese &gt;50 mL/h); acesso central</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Midodrina + octreotida</div><div class="col" data-l="Dose">Midodrina 7,5–15 mg VO 8/8 h + octreotida 100–200 µg SC 8/8 h</div><div class="col" data-l="Notas">HRS-AKI só se terlipressina e noradrenalina impossíveis; eficácia inferior</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Albumina 20–25% (PBE)</div><div class="col" data-l="Dose">1,5 g/kg IV no D1 (máx. 150 g) + 1 g/kg no D3 (máx. 100 g)</div><div class="col" data-l="Notas">Reduz LRA e mortalidade <span class="ev ev-eular">EASL 2018</span>; cautela com sobrecarga</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Albumina (paracentese)</div><div class="col" data-l="Dose">6–8 g por litro removido (8 g/L EASL), se &gt;5 L</div><div class="col" data-l="Notas">Previne PICD <span class="ev ev-acr">AASLD 2021</span>; considerar a partir de 3 L se LRA ou ACLF</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Albumina (LRA &gt;1A / HRS-AKI)</div><div class="col" data-l="Dose">1 g/kg/dia por 2 dias (máx. 100 g/dia); na HRS-AKI, 20–40 g/dia com o vasoconstritor</div><div class="col" data-l="Notas">Ajustar diariamente à volemia; suspender se congestão</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Ceftriaxona</div><div class="col" data-l="Dose">1 g IV 24/24 h por até 7 dias (HDA); 1–2 g IV 24/24 h por 5–7 dias (PBE)</div><div class="col" data-l="Notas">Profilaxia na HDA <span class="ev ev-nice">Baveno VII</span>; tratamento da PBE comunitária</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Cefotaxima</div><div class="col" data-l="Dose">2 g IV 8/8 h por 5–7 dias</div><div class="col" data-l="Notas">PBE comunitária (fármaco dos ensaios originais)</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Piperacilina-tazobactam</div><div class="col" data-l="Dose">4,5 g IV 6/6 h (ajustar à função renal)</div><div class="col" data-l="Notas">PBE nosocomial/associada a cuidados; seguir antibiograma local</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Meropenem</div><div class="col" data-l="Dose">1 g IV 8/8 h (ajustar à função renal)</div><div class="col" data-l="Notas">PBE nosocomial com choque, ESBL; ± glicopeptídeo se MRSA</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Norfloxacino</div><div class="col" data-l="Dose">400 mg VO 1×/dia, contínuo</div><div class="col" data-l="Notas">Profilaxia primária (critérios) e secundária de PBE; seleção de Gram-positivos e resistentes</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Ciprofloxacino</div><div class="col" data-l="Dose">500 mg VO 1×/dia, contínuo</div><div class="col" data-l="Notas">Alternativa ao norfloxacino na profilaxia <span class="ev ev-acr">AASLD 2021</span></div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Sulfametoxazol-trimetoprim</div><div class="col" data-l="Dose">800/160 mg VO 1×/dia, contínuo</div><div class="col" data-l="Notas">Alternativa na profilaxia de PBE; hipercalemia com espironolactona</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Eritromicina</div><div class="col" data-l="Dose">250 mg IV em infusão, 30–120 min antes da EDA</div><div class="col" data-l="Notas">Esvazia o estômago e melhora a visão; evitar se QT longo</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Espironolactona</div><div class="col" data-l="Dose">100 mg VO 1×/dia, +100 mg a cada 72 h até 400 mg/dia</div><div class="col" data-l="Notas">Pilar da ascite <span class="ev ev-eular">EASL 2018</span>; hipercalemia, ginecomastia; efeito pleno em 3–5 dias</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Furosemida</div><div class="col" data-l="Dose">40 mg VO 1×/dia, +40 mg até 160 mg/dia</div><div class="col" data-l="Notas">Associada à espironolactona (relação clássica 100:40); IV evitar (LRA)</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Amilorida</div><div class="col" data-l="Dose">10–40 mg VO/dia</div><div class="col" data-l="Notas">Substitui espironolactona na ginecomastia dolorosa; menos potente (confirmar disponibilidade isolada)</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Lactulose</div><div class="col" data-l="Dose">EH aguda: 25 mL VO 1/1–2/2 h até evacuar; manutenção 15–30 mL 2–3×/dia; enema 300 mL + 700 mL de água</div><div class="col" data-l="Notas">Alvo 2–3 evacuações pastosas/dia; excesso desidrata <span class="ev ev-eular">EASL EH 2022</span></div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Polietilenoglicol 3350</div><div class="col" data-l="Dose">4 L VO/SNG em 4 h (dose única)</div><div class="col" data-l="Notas">EH manifesta aguda (HELP); alternativa à lactulose</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Rifaximina</div><div class="col" data-l="Dose">550 mg VO 12/12 h, contínuo</div><div class="col" data-l="Notas">Profilaxia secundária de EH com lactulose; não previne PBE</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">L-ornitina-L-aspartato</div><div class="col" data-l="Dose">20–30 g/dia IV (ou 3–6 g VO 3×/dia)</div><div class="col" data-l="Notas">Adjuvante na EH; estimula ciclo da ureia e glutamina sintetase muscular</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Tiamina</div><div class="col" data-l="Dose">100 mg IV/VO/dia antes de glicose; suspeita de Wernicke 200–500 mg IV 8/8 h</div><div class="col" data-l="Notas">Todo etilista internado (dose alta: confirmar protocolo local)</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Prednisolona</div><div class="col" data-l="Dose">40 mg VO 1×/dia por 28 dias (metilprednisolona 32 mg IV)</div><div class="col" data-l="Notas">Hepatite alcoólica MELD &gt;20; Lille D4/D7 &gt;0,45 = parar <span class="ev ev-sbr">ACG 2024</span></div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Baclofeno</div><div class="col" data-l="Dose">5–10 mg VO 8/8 h, titular até 30–60 mg/dia</div><div class="col" data-l="Notas">Transtorno por uso de álcool na cirrose; eliminação renal, sedação</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Acamprosato</div><div class="col" data-l="Dose">666 mg VO 8/8 h (333 mg 8/8 h se ClCr 30–50; &lt;60 kg: 1,33 g/dia pela bula europeia)</div><div class="col" data-l="Notas">Sem metabolismo hepático; contraindicado ClCr &lt;30</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Ácido ursodesoxicólico</div><div class="col" data-l="Dose">13–15 mg/kg/dia VO, contínuo</div><div class="col" data-l="Notas">CBP; resposta em 12 meses; na CEP, doses altas (28–30 mg/kg) são deletérias</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Flebotomia</div><div class="col" data-l="Dose">400–500 mL semanal (se Hb ≥12 g/dL)</div><div class="col" data-l="Notas">Hemocromatose: ferritina &lt;50 µg/L na indução, &lt;100 na manutenção <span class="ev ev-eular">EASL HH 2022</span></div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">D-penicilamina</div><div class="col" data-l="Dose">250–500 mg/dia, subir até 750–1.500 mg/dia em 2–4 tomadas (com piridoxina 25 mg/dia)</div><div class="col" data-l="Notas">Wilson; pode piorar o quadro neurológico no início; trientina como alternativa</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Acetato de zinco</div><div class="col" data-l="Dose">50 mg de zinco elementar VO 3×/dia, longe das refeições</div><div class="col" data-l="Notas">Wilson manutenção e pré-sintomático (induz metalotioneína enterocitária)</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Enoxaparina</div><div class="col" data-l="Dose">1 mg/kg SC 12/12 h</div><div class="col" data-l="Notas">TVP/Budd-Chiari; anti-Xa pouco confiável na cirrose; antes, tratar varizes de alto risco</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Praziquantel</div><div class="col" data-l="Dose">50 mg/kg VO dose única (crianças 60 mg/kg), dividido em 2 tomadas com 4 h de intervalo</div><div class="col" data-l="Notas">Esquistossomose mansônica (MS) <span class="ev ev-sbr">MS Brasil</span>; não reverte fibrose estabelecida</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Semaglutida</div><div class="col" data-l="Dose">0,25 mg SC/semana, escalonar a cada 4 semanas até 2,4 mg/semana</div><div class="col" data-l="Notas">MASH F2–F3 <span class="ev ev-acr">AASLD 2025</span>; não aprovada para cirrose (confirmar indicação ANVISA)</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Resmetirom</div><div class="col" data-l="Dose">80 mg VO/dia (&lt;100 kg) ou 100 mg/dia (≥100 kg)</div><div class="col" data-l="Notas">MASH F2–F3 onde aprovado; interação com estatinas (limitar dose); registro no Brasil a confirmar</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Atezolizumabe + bevacizumabe</div><div class="col" data-l="Dose">1.200 mg IV + 15 mg/kg IV a cada 21 dias</div><div class="col" data-l="Notas">CHC BCLC C/B não elegível a TACE, Child A <span class="ev ev-eular">BCLC 2022</span>; EDA prévia</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Tremelimumabe + durvalumabe (STRIDE)</div><div class="col" data-l="Dose">Tremelimumabe 300 mg IV dose única + durvalumabe 1.500 mg IV no D1, depois durvalumabe 1.500 mg a cada 4 semanas</div><div class="col" data-l="Notas">CHC avançado; sem antiangiogênico (opção se risco hemorrágico)</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Sorafenibe</div><div class="col" data-l="Dose">400 mg VO 12/12 h</div><div class="col" data-l="Notas">1ª linha no SUS (DDT 2022) <span class="ev ev-sbr">MS DDT 2022</span>; síndrome mão-pé, diarreia, HAS</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Lenvatinibe</div><div class="col" data-l="Dose">12 mg VO/dia (≥60 kg) ou 8 mg/dia (&lt;60 kg)</div><div class="col" data-l="Notas">1ª linha alternativa (REFLECT); HAS, proteinúria</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Regorafenibe</div><div class="col" data-l="Dose">160 mg VO/dia por 21 dias, ciclos de 28 dias</div><div class="col" data-l="Notas">2ª linha após sorafenibe tolerado (SUS)</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Salina hipertônica 3%</div><div class="col" data-l="Dose">100–150 mL IV em 10–20 min, repetir até melhora dos sintomas</div><div class="col" data-l="Notas">Hiponatremia sintomática grave; teto de 8 mmol/L/24 h (4–6 se desnutrido, etilista, hipocalêmico)</div></div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- ============================================================ G -->
+<section id="pitfalls">
+<div class="section">
+<div class="section-eyebrow"><span>G</span> Pitfalls · Mitos · Controvérsias</div>
+<div class="section-title">Erros operacionais + mitos vivos + debates atuais</div>
+<div class="section-sub">Os erros que mais matam o cirrótico são de omissão (paracentese não feita, TIPS não indicado) e de prescrição (betabloqueador no choque, plasma na HDA).</div>
+</div>
+
+<div class="card pearl">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">G.1</span> Pegadinhas</div><h3>10 erros operacionais em cirrose e hipertensão portal <span class="ank ank-dgr">DANGER</span></h3></div>
+<div class="card-body">
+<div class="stbl stbl-2">
+<div class="stbl-head stbl-2"><div>Erro comum</div><div>Correto</div></div>
+<div class="stbl-row stbl-2"><div class="col col1" data-l="Erro">Corrigir INR com plasma e plaquetas antes da paracentese</div><div class="col" data-l="Correto">Paracentese é segura sem correção; o INR não mede a hemostasia reequilibrada. Plasma só expande volume e aumenta pressão portal.</div></div>
+<div class="stbl-row stbl-2"><div class="col col1" data-l="Erro">Começar antibiótico antes de puncionar a ascite</div><div class="col" data-l="Correto">Puncionar primeiro (minutos, à beira-leito): o diagnóstico de PBE muda dose de albumina, duração e profilaxia secundária.</div></div>
+<div class="stbl-row stbl-2"><div class="col col1" data-l="Erro">Esperar a endoscopia para iniciar terlipressina</div><div class="col" data-l="Correto">Vasoativo na suspeita, ainda no PS; a EDA vem em até 12 h e não deve atrasar o fármaco.</div></div>
+<div class="stbl-row stbl-2"><div class="col col1" data-l="Erro">Transfundir até Hb 10 g/dL no sangramento varicoso</div><div class="col" data-l="Correto">Alvo 7–8 g/dL: transfusão liberal eleva pressão portal, ressangramento e mortalidade (exceto coronariopata ou sangramento maciço).</div></div>
+<div class="stbl-row stbl-2"><div class="col col1" data-l="Erro">Pedir amônia para diagnosticar e acompanhar EH</div><div class="col" data-l="Correto">Diagnóstico é clínico; amônia normal sugere outra causa, mas valor alto não gradua nem guia a titulação da lactulose.</div></div>
+<div class="stbl-row stbl-2"><div class="col col1" data-l="Erro">Restringir proteína no encefalopata</div><div class="col" data-l="Correto">1,2–1,5 g/kg/dia: o músculo é órgão de depuração de amônia; restrição agrava sarcopenia e EH.</div></div>
+<div class="stbl-row stbl-2"><div class="col col1" data-l="Erro">Usar creatinina "normal" de 1,1 mg/dL para afastar LRA no cirrótico sarcopênico</div><div class="col" data-l="Correto">Comparar com a basal: subida ≥0,3 em 48 h é LRA; a creatinina superestima a TFG pela baixa massa muscular.</div></div>
+<div class="stbl-row stbl-2"><div class="col col1" data-l="Erro">Fazer EDA de rastreio em quem já usa carvedilol por CSPH</div><div class="col" data-l="Correto">Quem usa NSBB não precisa de EDA de rastreio: o resultado não muda conduta (Baveno VII).</div></div>
+<div class="stbl-row stbl-2"><div class="col col1" data-l="Erro">Biopsiar nódulo de 2 cm com APHE e washout em cirrótico</div><div class="col" data-l="Correto">LI-RADS 5 é CHC sem biópsia; biopsia-se LR-M, LR-4 discordante ou fígado sem cirrose.</div></div>
+<div class="stbl-row stbl-2"><div class="col col1" data-l="Erro">Colocar dreno torácico no hidrotórax hepático</div><div class="col" data-l="Correto">Toracocentese de alívio + diurético; refratário vai para TIPS ou transplante — o dreno causa perda proteica, LRA e infecção.</div></div>
+</div>
+</div>
+</div>
+
+<div class="card pearl">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">G.2</span> Mitos · Controvérsias</div><h3>Mitos vivos e debates atuais</h3></div>
+<div class="card-body">
+<div class="box myth"><span class="box-label">MYTH</span><div class="box-title">"Cirrótico com INR alto está autoanticoagulado"</div><div class="box-body">O balanço reequilibrado pende tanto para trombose quanto para sangramento; TVP e TEV são frequentes e profilaxia de TEV no internado imobilizado é indicada como em qualquer clínico, salvo sangramento ativo ou plaquetas muito baixas.</div></div>
+<div class="box myth"><span class="box-label">MYTH</span><div class="box-title">"Betabloqueador é proibido na ascite refratária"</div><div class="box-body">O estudo que gerou o alarme era observacional. Baveno VII/VIII mantêm NSBB (carvedilol preferido) na ascite enquanto PAS ≥90, PAM ≥65 e sem HRS-AKI; o que se faz é reduzir ou suspender diante desses gatilhos e reintroduzir depois.</div></div>
+<div class="box myth"><span class="box-label">MYTH</span><div class="box-title">"Etilista só entra em lista após 6 meses de abstinência"</div><div class="box-body">A regra dos seis meses não prevê recaída melhor que uma avaliação psicossocial estruturada; centros com protocolo transplantam precocemente a hepatite alcoólica grave não respondedora com sobrevida semelhante à de outras indicações.</div></div>
+<div class="box controversy"><span class="box-label">CONTROVERSY</span><div class="box-title">Albumina de longo prazo no ascítico</div><div class="box-body">ANSWER (Itália, 40 g 2×/semana e depois semanal) mostrou mais sobrevida e menos complicações; MACHT (com midodrina) foi negativo e ATTIRE (para manter albumina sérica ≥3 g/dL em internados) não reduziu eventos e aumentou edema pulmonar. Baveno VII não fez recomendação formal; custo e disponibilidade pesam no SUS.</div></div>
+<div class="box controversy"><span class="box-label">CONTROVERSY</span><div class="box-title">TIPS preemptivo no Child B com sangramento ativo</div><div class="box-body">O critério entrou no Baveno VII, mas o benefício de sobrevida é consistente no Child C 10–13 e menos no Child B; estudos de vida real dividem-se. Alternativas propostas: Child B ≥8 com MELD alto ou HVPG &gt;20. A disponibilidade de TIPS 24/7 no Brasil é a limitação prática.</div></div>
+<div class="box controversy"><span class="box-label">CONTROVERSY</span><div class="box-title">Imunoterapia no CHC associado à MASLD</div><div class="box-body">Subanálises e dados experimentais sugeriram menor benefício de anti-PD-(L)1 na etiologia não viral (células T CD8+ PD1+ "exaustas" promovendo dano), mas ensaios recentes não confirmam de forma uniforme; as diretrizes não mudam a escolha por etiologia.</div></div>
+</div>
+</div>
+</section>
+
+<!-- ============================================================ H -->
+<section id="pearls">
+<div class="section">
+<div class="section-eyebrow"><span>H</span> Pearls · Evolving</div>
+<div class="section-title">H1 · Pearls de especialista · H2 · Áreas em evolução</div>
+<div class="section-sub">O que o hepatologista sabe e o residente ainda não: estágio antes de diagnóstico, rim antes de creatinina, e transplante como pergunta desde a primeira descompensação.</div>
+</div>
+
+<div class="card pearl">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">H.1</span> Pearls</div><h3>8 nuances que distinguem o especialista <span class="ank ank-prl">PEARL</span></h3></div>
+<div class="card-body">
+<div class="box pearl"><span class="box-label">PEARL</span><div class="box-title">CSPH, não variz, é o alvo do betabloqueador</div><div class="box-body">O NSBB deixou de ser "remédio de variz grande" para ser tratamento da síndrome hemodinâmica: previne ascite, a descompensação mais frequente. Por isso o gatilho é elastografia ≥25 kPa, não o calibre na endoscopia — e quem já usa NSBB dispensa a EDA.</div></div>
+<div class="box pearl"><span class="box-label">PEARL</span><div class="box-title">A primeira descompensação é a hora de ligar para o transplante</div><div class="box-body">A sobrevida mediana cai para cerca de dois anos depois da primeira ascite, HDA ou EH. Encaminhar só quando o MELD passar de 20 é chegar tarde: avaliação pré-transplante leva meses e a fragilidade progride.</div></div>
+<div class="box pearl"><span class="box-label">PEARL</span><div class="box-title">Relação Na/K urinária separa refratário de indisciplinado</div><div class="box-body">Ascite que não cede com Na/K urinário &gt;1 significa que o rim está excretando sódio e o paciente está ingerindo mais: a solução é a dieta, não subir diurético nem rotular de refratária e indicar TIPS.</div></div>
+<div class="box pearl"><span class="box-label">PEARL</span><div class="box-title">HDA com baço gigante e albumina normal no Nordeste é outra doença</div><div class="box-body">Esquistossomose hepatoesplênica e PSVD sangram com fígado que funciona: sem ascite, sem EH, elastografia baixa. Tolera bem cirurgia de desconexão, mas não admite as regras de Baveno para dispensar endoscopia nem o raciocínio de Child.</div></div>
+<div class="box pearl"><span class="box-label">PEARL</span><div class="box-title">Trombo portal que realça na fase arterial é tumor</div><div class="box-body">Trombose portal num cirrótico com CHC pode ser branda (fluxo lento) ou tumoral; realce arterial, expansão da veia e contiguidade com o nódulo indicam trombo tumoral, que muda o estádio para BCLC C e contraindica transplante e TACE convencional.</div></div>
+<div class="box pearl"><span class="box-label">PEARL</span><div class="box-title">A albumina da PBE é para o rim, a da paracentese é para a circulação</div><div class="box-body">Na PBE, 1,5 g/kg previne HRS-AKI induzida pela vasodilatação inflamatória; na paracentese, 8 g/L previne a disfunção circulatória pós-retirada. Nas infecções não peritoneais, a albumina sistemática não trouxe benefício e aumentou congestão.</div></div>
+<div class="box pearl"><span class="box-label">PEARL</span><div class="box-title">Vigilância de CHC só vale para quem pode ser tratado</div><div class="box-body">No Child C fora de lista, achar um CHC precoce não muda sobrevida — a cirrose mata antes. Vigilância semestral é para Child A–B e para candidatos a transplante; o US mal feito (LI-RADS de visualização C) pede troca por TC/RM abreviada.</div></div>
+<div class="box pearl"><span class="box-label">PEARL</span><div class="box-title">Hiponatremia no cirrótico é marcador, não alvo de "normalizar"</div><div class="box-body">Na baixo reflete ADH não osmótico e circulação hiperdinâmica avançada (MELD-Na); o perigo está mais na correção rápida (desnutrido, etilista, hipocalêmico, pré-transplante) do que no número. Restringir água só abaixo de 125 mmol/L.</div></div>
+</div>
+</div>
+
+<div class="card pearl">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">H.2</span> Evolving</div><h3>6 mudanças reais 2022–2026 <span class="ank ank-evo">EVOLVING</span></h3></div>
+<div class="card-body">
+<div class="box evolving"><span class="box-label">EVOLVING</span><div class="box-title">Baveno VIII (março de 2026)</div><div class="box-body">272 recomendações com consenso forte: CSPH também por modelo ANTICIPATE±NASH ≥75% e por elastografia esplênica &gt;55 kPa (100 Hz); carvedilol preferido inclusive no ascítico; estatina rebaixada; recompensação mantida com seguimento semestral; TIPS preemptivo com janela estendida possível; primeira orientação pediátrica. Texto integral não lido para este HP — revisar cortes no original.</div></div>
+<div class="box evolving"><span class="box-label">EVOLVING</span><div class="box-title">HRS-AKI redefinida (ADQI-ICA 2024)</div><div class="box-body">Fim do desafio obrigatório de 48 h com albumina, inclusão do débito urinário, aceitação de lesão tubular coexistente e terminologia HRS-AKI/AKD/CKD; terlipressina em infusão contínua como preferência.</div></div>
+<div class="box evolving"><span class="box-label">EVOLVING</span><div class="box-title">BCLC 2026</div><div class="box-body">SBRT e TARE entram como opções potencialmente curativas no 0/A; imunoterapia combinada consolidada no estádio C; quadro CUSE para decisão compartilhada; o estádio B segue sem recomendação de rotina para combinar TACE e sistêmico.</div></div>
+<div class="box evolving"><span class="box-label">EVOLVING</span><div class="box-title">Primeiros fármacos para MASH</div><div class="box-body">Resmetirom (FDA 2024) e semaglutida 2,4 mg (FDA agosto de 2025; atualização AASLD novembro de 2025) para MASH F2–F3; nenhum aprovado para cirrose. A elastografia substitui a biópsia na seleção.</div></div>
+<div class="box evolving"><span class="box-label">EVOLVING</span><div class="box-title">Diretrizes EASL 2024–2025 que reorganizam o tema</div><div class="box-body">CPG de TIPS (2025), de CHC (2025, vigilância personalizada por risco), de transplante (2024, ACLF e oncologia de transplante), de doenças vasculares (2025) e de cirurgia extra-hepática no cirrótico (2025) — a diretriz de cirrose descompensada de 2018 segue como base para ascite, PBE e hiponatremia.</div></div>
+<div class="box evolving"><span class="box-label">EVOLVING</span><div class="box-title">MELD 3.0 e a equidade de alocação</div><div class="box-body">Os EUA adotaram MELD 3.0 (sódio, albumina e sexo feminino) em 2023 para corrigir a desvantagem das mulheres, cuja creatinina menor subestima a gravidade. O Brasil aloca por MELD; a migração para MELD-Na/3.0 não foi confirmada nesta revisão.</div></div>
+</div>
+</div>
+</section>
+
+</div>
+</main>
+
+<footer>
+<div class="wrap">
+<div class="foot">
+<div>
+<div class="foot-author">@dr.lorencato</div>
+<div class="foot-meta">Cirrose, Hipertensão Portal e CHC · Pocket Handbook Elite · v5.2 · Hepatologia · GH10</div>
+</div>
+<div class="foot-mono">Compilação clínica · status clinical_review até signoff humano · fontes conferidas em 2026-10-26</div>
+</div>
+<div class="foot-meta"><b>Bibliografia rastreável</b> (fonte · ano · papel no HP · identificador)
+<ol>
+<li id="src-1">de Franchis R et al. Baveno VII — Renewing consensus in portal hypertension. J Hepatol 2022;76:959–974 · CSPH, NSBB, HDA, TIPS preemptivo, TVP, Budd-Chiari, PSVD · doi:10.1016/j.jhep.2021.12.022 (texto integral lido)</li>
+<li id="src-2">Baveno VIII — Advancing consensus in portal hypertension. J Hepatol 2026;85:993–1018 · cortes de CSPH, carvedilol, estatinas, recompensação · doi:10.1016/j.jhep.2026.07.030 (só resumo e síntese AGA; texto integral não lido)</li>
+<li id="src-3">EASL CPG for the management of patients with decompensated cirrhosis. J Hepatol 2018;69:406–460 · ascite, diuréticos, PBE, hiponatremia, hidrotórax · doi:10.1016/j.jhep.2018.03.024</li>
+<li id="src-4">Biggins SW et al. AASLD Practice Guidance: ascites, SBP and hepatorenal syndrome. Hepatology 2021;74:1014–1048 · ascite, PBE, profilaxias · doi:10.1002/hep.31884 (texto integral não lido)</li>
+<li id="src-5">Nadim MK et al. ADQI-ICA consensus on AKI and HRS-AKI in cirrhosis. J Hepatol 2024;81:163–183 · definição de LRA/HRS, terlipressina, albumina · doi:10.1016/j.jhep.2024.03.031</li>
+<li id="src-6">Kaplan DE et al. AASLD Practice Guidance on portal hypertension and varices. Hepatology 2024;79:1180–1211 · estratificação e profilaxia · doi:10.1097/HEP.0000000000000647</li>
+<li id="src-7">EASL CPG on TIPS. J Hepatol 2025;83:177–210 · indicações de TIPS · doi:10.1016/j.jhep.2025.01.029</li>
+<li id="src-8">EASL CPG on hepatic encephalopathy. J Hepatol 2022;77:807–824 · diagnóstico e tratamento da EH · doi:10.1016/j.jhep.2022.06.001; Vilstrup H et al. AASLD/EASL 2014, Hepatology 60:715–735 · West Haven · doi:10.1002/hep.27210</li>
+<li id="src-9">EASL CPG on acute-on-chronic liver failure. J Hepatol 2023;79:461–491 · ACLF · doi:10.1016/j.jhep.2023.04.021; EASL CPG on liver transplantation. J Hepatol 2024;81:1040–1086 · doi:10.1016/j.jhep.2024.07.032</li>
+<li id="src-10">EASL CPG on vascular diseases of the liver. J Hepatol 2025;84:399–456 · TVP, PSVD, Budd-Chiari, SOS · doi:10.1016/j.jhep.2025.08.001</li>
+<li id="src-11">EASL CPG on hepatocellular carcinoma. J Hepatol 2025;82:315–374 · vigilância, diagnóstico, tratamento · doi:10.1016/j.jhep.2024.08.028; Singal AG et al. AASLD HCC Guidance. Hepatology 2023;78:1922–1965 · doi:10.1097/HEP.0000000000000466</li>
+<li id="src-12">Reig M et al. BCLC 2022 update. J Hepatol 2022;76:681–693 · doi:10.1016/j.jhep.2021.11.018; BCLC 2026 update. J Hepatol 2026;84:631–654 · doi:10.1016/j.jhep.2025.10.020 (2026: só resumo)</li>
+<li id="src-13">Jophlin LA et al. ACG Clinical Guideline: Alcohol-associated liver disease. Am J Gastroenterol 2024;119:30–54 · hepatite alcoólica, TUA · doi:10.14309/ajg.0000000000002572</li>
+<li id="src-14">EASL-EASD-EASO CPG on MASLD 2024 · MASLD · J Hepatol 2024; Bansal MB et al. AASLD semaglutide for MASH update. Hepatology 2025;83:1326–1340 · doi:10.1097/HEP.0000000000001608; EASL CPG haemochromatosis. J Hepatol 2022;77:479–502 · doi:10.1016/j.jhep.2022.03.033</li>
+<li id="src-15">Ministério da Saúde. Diretrizes Diagnósticas e Terapêuticas do Carcinoma Hepatocelular no Adulto — Portaria Conjunta SAES/SECTICS nº 18/2022 · rastreio, tratamento e acesso SUS · gov.br/conitec</li>
+<li id="src-16">Sociedade Brasileira de Hepatologia: CHC (Arq Gastroenterol 2020;57 supl 1:1–20, doi:10.1590/S0004-2803.202000000-20; sistêmico 2023;60:106–131, doi:10.1590/S0004-2803.202301000-14); HDA varicosa (2017;54:349–355, doi:10.1590/S0004-2803.201700000-79); LRA na cirrose (2018;55:314–320, doi:10.1590/S0004-2803.201800000-71); doenças autoimunes (2019;56:232–241) · adaptação brasileira</li>
+<li id="src-17">Apostila MED 2025 HEP 2 — Cirrose e Complicações · piso de cobertura editorial, nunca fonte de conduta · vault (somente leitura)</li>
+</ol>
+</div>
+</div>
+</footer>
+
+<div class="watermark">@dr.lorencato · GH10 Cirrose HTP CHC v5.2</div>
+
+</body>
+</html>

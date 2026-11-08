@@ -1,0 +1,1097 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#0d1117">
+<title>EN02 · Diabetes — emergências e complicações (CAD, EHH, hipoglicemia, pé diabético) · Pocket Handbook · Elite Edition</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700;9..40,800&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   MEDICAL HANDBOOK PREMIUM · ELITE EDITION · CSS FRAMEWORK
+   Copy this ENTIRE block verbatim into the <style> tag of the
+   output HTML. Do NOT modify design tokens, colors, or
+   typography — they are calibrated for legibility and print.
+============================================================ */
+:root{
+  --bg:#f1eee5;--bg-tint:#ebe8de;--paper:#ffffff;--paper-tint:#fbf9f3;
+  --ink:#0e1116;--ink-soft:#232830;--ink-mute:#545b69;--ink-faint:#8a91a0;--ink-ghost:#b8bdc7;
+  --line:#e2dfd5;--line-soft:#ece9df;--line-strong:#c9c5b8;
+  --c-prim:#0b5d4e;--c-clin:#1d4570;--c-diag:#5e2f78;--c-tx:#a8481a;--c-emerg:#a31b35;--c-pearl:#7a6014;
+  --ank-hy:#b88e0a;--ank-hy-bg:#fef4c8;--ank-dec:#1d4ea3;--ank-dec-bg:#dde7f8;
+  --ank-dgr:#a31b25;--ank-dgr-bg:#fadcdc;--ank-prl:#3e6a2e;--ank-prl-bg:#d8e6cf;
+  --ank-myt:#6a3a1a;--ank-myt-bg:#f0dec5;--ank-con:#5a4070;--ank-con-bg:#e3d6f0;
+  --ank-evo:#0d6373;--ank-evo-bg:#cde5e9;
+  --sh-sm:0 1px 2px rgba(14,17,22,.04),0 1px 1px rgba(14,17,22,.03);
+  --sh-md:0 6px 16px -8px rgba(14,17,22,.10),0 2px 4px rgba(14,17,22,.04);
+  --sh-lg:0 20px 40px -22px rgba(14,17,22,.18),0 4px 10px -4px rgba(14,17,22,.08);
+  --r:10px;--r-lg:14px;--r-xl:20px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;scroll-padding-top:120px}
+body{font-family:'DM Sans',system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.5;font-size:15px;letter-spacing:-.005em;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:-1;background:radial-gradient(900px 500px at -10% -5%,rgba(11,93,78,.04),transparent 60%),radial-gradient(800px 450px at 110% 10%,rgba(163,27,53,.035),transparent 55%)}
+a{color:inherit;text-decoration:none}
+
+/* FIXED HEADER */
+.header{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(13,17,23,.82);backdrop-filter:saturate(160%) blur(20px);-webkit-backdrop-filter:saturate(160%) blur(20px);border-bottom:1px solid rgba(255,255,255,.06)}
+.header-row{max-width:1080px;margin:0 auto;padding:10px 20px;display:flex;align-items:center;gap:14px;color:#f0eee5}
+.h-mark{width:30px;height:30px;border-radius:7px;background:linear-gradient(135deg,#d4b94a 0%,#a07f1a 100%);display:grid;place-items:center;font:800 13px/1 'DM Sans';color:#1a1500;letter-spacing:-.04em;box-shadow:inset 0 1px 0 rgba(255,255,255,.3),0 1px 2px rgba(0,0,0,.4);flex-shrink:0}
+.h-titles{display:flex;flex-direction:column;line-height:1.15;min-width:0}
+.h-title{font-weight:700;font-size:14px;letter-spacing:-.02em}
+.h-sub{font-size:10.5px;color:#9fa298;font-weight:500;letter-spacing:.08em;text-transform:uppercase}
+.h-edition{margin-left:auto;font:500 10px/1 'DM Mono',monospace;color:#9fa298;letter-spacing:.05em;padding:5px 9px;border:1px solid rgba(255,255,255,.1);border-radius:999px;white-space:nowrap}
+.h-author{font:700 10.5px/1 'DM Mono',monospace;color:#d4b94a;letter-spacing:.04em;padding:6px 10px;border:1px solid rgba(212,185,74,.35);background:rgba(212,185,74,.08);border-radius:999px;white-space:nowrap;display:inline-flex;align-items:center;gap:6px}
+.h-author::before{content:"●";font-size:6px;color:#d4b94a}
+@media(max-width:560px){.h-edition{display:none}.h-author{margin-left:auto}}
+
+/* STICKY TOC */
+.toc{position:sticky;top:50px;z-index:90;background:rgba(241,238,229,.92);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}
+.toc-inner{max-width:1080px;margin:0 auto;padding:10px 16px;display:flex;gap:6px;overflow-x:auto;scrollbar-width:none;-ms-overflow-style:none}
+.toc-inner::-webkit-scrollbar{display:none}
+.toc-chip{flex:none;font:600 11px/1 'DM Sans';letter-spacing:.06em;text-transform:uppercase;padding:7px 12px;background:var(--paper);border:1px solid var(--line);border-radius:999px;color:var(--ink-soft);transition:all .15s;white-space:nowrap;cursor:pointer}
+.toc-chip:hover{background:var(--paper-tint);border-color:var(--ink-faint);color:var(--ink)}
+.toc-chip-num{display:inline-block;font-family:'DM Mono',monospace;color:var(--ink-faint);margin-right:5px;font-weight:500;font-size:10px}
+
+/* LAYOUT */
+.wrap{max-width:1080px;margin:0 auto;padding:24px 20px 80px}
+.section{margin:48px 0 18px;padding-top:8px}
+.section:first-child{margin-top:14px}
+.section-eyebrow{font:700 10.5px/1 'DM Sans';letter-spacing:.18em;text-transform:uppercase;color:var(--c-prim);margin-bottom:8px;display:flex;align-items:center;gap:10px}
+.section-eyebrow::before{content:"";width:24px;height:1.5px;background:var(--c-prim)}
+.section-title{font-size:26px;font-weight:700;letter-spacing:-.03em;line-height:1.1}
+.section-sub{margin-top:6px;font-size:13.5px;color:var(--ink-mute);max-width:680px}
+
+/* HERO */
+.hero{margin:20px 0 28px;padding:26px 28px;background:linear-gradient(180deg,#fdfcf6 0%,#f7f4e8 100%);border:1px solid var(--line);border-radius:var(--r-xl);box-shadow:var(--sh-md);position:relative;overflow:hidden}
+.hero::after{content:"";position:absolute;top:0;right:0;bottom:0;left:0;background:radial-gradient(400px 200px at 100% 0%,rgba(163,27,53,.06),transparent 60%),radial-gradient(360px 200px at 0% 100%,rgba(11,93,78,.05),transparent 60%);pointer-events:none}
+.hero-tag{font:700 10.5px/1 'DM Sans';letter-spacing:.2em;text-transform:uppercase;color:var(--c-emerg);display:inline-flex;align-items:center;gap:8px;margin-bottom:10px}
+.hero-tag::before{content:"";width:18px;height:1.5px;background:currentColor}
+.hero h1{font-size:34px;font-weight:800;letter-spacing:-.035em;line-height:1.02;margin-bottom:8px}
+.hero h1 em{font-style:italic;font-weight:500;color:var(--ink-mute)}
+.hero-lead{font-size:14.5px;color:var(--ink-mute);max-width:660px;line-height:1.55}
+.hero-stamp{position:absolute;top:20px;right:22px;font:700 10.5px/1 'DM Mono',monospace;letter-spacing:.04em;padding:7px 11px 7px 18px;border:1.5px dashed rgba(163,27,53,.45);color:rgba(163,27,53,.9);border-radius:5px;background:rgba(255,255,255,.55);transform:rotate(-3deg);z-index:2;box-shadow:0 2px 6px rgba(163,27,53,.08)}
+.hero-stamp::before{content:"●";position:absolute;left:7px;top:50%;transform:translateY(-50%);color:rgba(163,27,53,.7);font-size:7px}
+.hero-sig{margin-top:14px;display:flex;align-items:center;gap:10px;font:600 11px/1 'DM Sans';color:var(--ink-mute);letter-spacing:.04em}
+.hero-sig::before{content:"";flex:none;width:22px;height:1.5px;background:var(--c-emerg)}
+.hero-sig b{color:var(--c-emerg);font-weight:700;font-family:'DM Mono',monospace;letter-spacing:.02em}
+@media(max-width:560px){.hero{padding:22px 20px}.hero h1{font-size:26px}.section-title{font-size:22px}.hero-stamp{position:static;display:inline-block;transform:none;margin-bottom:14px}}
+
+/* POCKET CARD 0 */
+.pocket{background:#0e1116;color:#f0eee5;border-radius:var(--r-xl);padding:24px 26px 26px;margin:0 0 28px;position:relative;overflow:hidden;box-shadow:var(--sh-lg)}
+.pocket::before{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(600px 300px at 100% 0%,rgba(212,185,74,.07),transparent 60%),radial-gradient(500px 280px at 0% 100%,rgba(163,27,53,.08),transparent 60%)}
+.pocket-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:18px;flex-wrap:wrap;position:relative}
+.pocket-eyebrow{font:700 10.5px/1 'DM Sans';letter-spacing:.2em;text-transform:uppercase;color:#d4b94a;display:flex;align-items:center;gap:9px}
+.pocket-eyebrow::before{content:"●";color:#d4b94a;font-size:9px;animation:pulse 2.4s ease infinite}
+@keyframes pulse{50%{opacity:.4}}
+.pocket-title{font-size:22px;font-weight:700;letter-spacing:-.02em;line-height:1.15;color:#fff}
+.pocket-sub{font-size:12.5px;color:#9aa0a8;margin-top:2px}
+.pocket-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px;position:relative}
+.pocket-card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-left:3px solid var(--accent,#d4b94a);border-radius:var(--r);padding:12px 14px}
+.pocket-card .pc-trig{font:700 10px/1.1 'DM Sans';letter-spacing:.12em;text-transform:uppercase;color:var(--accent,#d4b94a);margin-bottom:6px;display:flex;align-items:center;gap:6px}
+.pocket-card .pc-trig::before{content:"";width:4px;height:4px;background:currentColor;border-radius:50%}
+.pocket-card .pc-act{font-size:13.5px;line-height:1.4;color:#dedfd5}
+.pocket-card .pc-act b{color:#fff;font-weight:600}
+.pocket-card.emerg{--accent:#ff8a96}.pocket-card.dec{--accent:#7cb0ff}.pocket-card.tx{--accent:#ffb085}.pocket-card.clin{--accent:#b0e0d4}
+
+/* LEGEND */
+.legend{background:var(--paper);border:1px solid var(--line);border-radius:var(--r-lg);padding:18px 20px;margin-bottom:28px;box-shadow:var(--sh-sm)}
+.lg-title{font:700 10.5px/1 'DM Sans';letter-spacing:.16em;text-transform:uppercase;color:var(--ink-faint);margin-bottom:12px}
+.lg-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:8px 14px}
+.lg-item{display:flex;align-items:center;gap:9px;font-size:12.5px;color:var(--ink-soft)}
+.dot{width:9px;height:9px;border-radius:50%;flex-shrink:0;box-shadow:0 0 0 2px var(--paper),0 0 0 3px currentColor}
+.dot.c1{color:var(--c-prim);background:var(--c-prim)}.dot.c2{color:var(--c-clin);background:var(--c-clin)}.dot.c3{color:var(--c-diag);background:var(--c-diag)}.dot.c4{color:var(--c-tx);background:var(--c-tx)}.dot.c5{color:var(--c-emerg);background:var(--c-emerg)}.dot.c6{color:var(--c-pearl);background:var(--c-pearl)}
+.lg-divider{height:1px;background:var(--line-soft);margin:14px 0}
+.lg-anchors{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:8px}
+.ank{display:inline-flex;align-items:center;gap:5px;font:700 9.5px/1 'DM Sans';letter-spacing:.12em;text-transform:uppercase;padding:4px 8px 4px 7px;border-radius:999px;border:1px solid;vertical-align:middle;white-space:nowrap}
+.ank::before{content:"";width:4px;height:4px;border-radius:50%;background:currentColor}
+.ank-hy{color:var(--ank-hy);background:var(--ank-hy-bg);border-color:#e5cd72}
+.ank-dec{color:var(--ank-dec);background:var(--ank-dec-bg);border-color:#9fbae6}
+.ank-dgr{color:var(--ank-dgr);background:var(--ank-dgr-bg);border-color:#e29ca0}
+.ank-prl{color:var(--ank-prl);background:var(--ank-prl-bg);border-color:#a8c298}
+.ank-myt{color:var(--ank-myt);background:var(--ank-myt-bg);border-color:#d0b181}
+.ank-con{color:var(--ank-con);background:var(--ank-con-bg);border-color:#bba7d3}
+.ank-evo{color:var(--ank-evo);background:var(--ank-evo-bg);border-color:#8fc1c9}
+.lg-explain{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:6px 14px;font-size:11.5px;color:var(--ink-mute);margin-top:10px}
+.lg-explain b{font-weight:700}
+.lg-explain .ehy b{color:var(--ank-hy)}.lg-explain .edec b{color:var(--ank-dec)}.lg-explain .edgr b{color:var(--ank-dgr)}.lg-explain .eprl b{color:var(--ank-prl)}.lg-explain .emyt b{color:var(--ank-myt)}.lg-explain .econ b{color:var(--ank-con)}.lg-explain .eevo b{color:var(--ank-evo)}
+
+/* EVIDENCE CHIPS */
+.ev{display:inline-flex;align-items:center;font:600 9.5px/1 'DM Mono',monospace;letter-spacing:.04em;padding:3px 6px 2px;border-radius:4px;background:#eeebde;color:var(--ink-soft);border:1px solid var(--line);vertical-align:middle;margin-left:3px}
+.ev-acr{background:#fadcdc;color:#a31b25;border-color:#e29ca0}
+.ev-eular{background:#dde7f8;color:#1d4ea3;border-color:#9fbae6}
+.ev-sbr{background:#e3d6f0;color:#5a4070;border-color:#bba7d3}
+.ev-nice{background:#cde5e9;color:#0d6373;border-color:#8fc1c9}
+.ev-expert{background:#eeebde;color:#7a6014;border-color:#d0b181}
+.ev-cochrane{background:#d8e6cf;color:#3e6a2e;border-color:#a8c298}
+
+/* CARD */
+.card{background:var(--paper);border:1px solid var(--line);border-radius:var(--r-lg);margin-bottom:22px;box-shadow:var(--sh-md);overflow:hidden;break-inside:avoid}
+.card-head{padding:18px 22px 15px;border-bottom:1px solid var(--line-soft);position:relative;background:linear-gradient(180deg,#fcfaf2 0%,#ffffff 100%)}
+.card-head::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--accent,var(--c-prim))}
+.card-eyebrow{font:700 10px/1 'DM Sans';letter-spacing:.16em;text-transform:uppercase;color:var(--accent,var(--c-prim));margin-bottom:5px;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.card-num{font-family:'DM Mono',monospace;font-weight:500;color:var(--ink-faint);font-size:10.5px;letter-spacing:0}
+.card h3{font-size:21px;font-weight:700;letter-spacing:-.025em;color:var(--ink);line-height:1.15;display:flex;align-items:center;gap:9px;flex-wrap:wrap}
+.card-sub{margin-top:6px;font-size:13px;color:var(--ink-mute)}
+.card-body{padding:20px 22px 24px}
+.card.prim{--accent:var(--c-prim)}.card.clin{--accent:var(--c-clin)}.card.diag{--accent:var(--c-diag)}.card.tx{--accent:var(--c-tx)}.card.emerg{--accent:var(--c-emerg)}.card.pearl{--accent:var(--c-pearl)}
+@media(max-width:560px){.card-head{padding:16px 18px 14px}.card-body{padding:18px 18px 20px}.card h3{font-size:18px}}
+
+/* QUICK VIEW */
+.quick{background:var(--paper-tint);border:1px solid var(--line);border-left:3px solid var(--accent,var(--c-prim));border-radius:var(--r);padding:13px 16px;margin:0 0 16px}
+.quick-label{font:700 9.5px/1 'DM Sans';letter-spacing:.16em;text-transform:uppercase;color:var(--accent,var(--c-prim));margin-bottom:6px}
+.quick-body{font-size:13.5px;line-height:1.45;color:var(--ink-soft)}
+.quick-body b{color:var(--ink);font-weight:600}
+
+/* SUB-TITLE */
+.sub-title{font:700 10.5px/1 'DM Sans';letter-spacing:.16em;text-transform:uppercase;color:var(--ink-soft);margin:18px 0 10px;display:flex;align-items:center;gap:9px;border-bottom:1px dashed var(--line);padding-bottom:6px}
+.sub-title::before{content:"";width:4px;height:4px;border-radius:50%;background:var(--accent,var(--ink-soft))}
+.sub-title:first-child{margin-top:0}
+
+/* TEXT */
+p{color:var(--ink-soft);margin-bottom:8px;font-size:14px;line-height:1.5}
+p:last-child{margin-bottom:0}
+strong{color:var(--ink);font-weight:600}
+ul.bullets{list-style:none;padding:0;margin:0 0 10px}
+ul.bullets li{position:relative;padding:5px 0 5px 20px;font-size:13.5px;line-height:1.5;color:var(--ink-soft);border-bottom:1px dashed var(--line-soft)}
+ul.bullets li:last-child{border-bottom:none}
+ul.bullets li::before{content:"";position:absolute;left:5px;top:13px;width:4px;height:4px;border-radius:50%;background:var(--accent,var(--ink-mute))}
+ul.bullets li b{color:var(--ink);font-weight:600}
+
+/* DISEASE BOX */
+.disease{border:1px solid var(--line);border-radius:var(--r);margin:14px 0;overflow:hidden;background:var(--paper)}
+.disease-head{padding:12px 16px;background:linear-gradient(180deg,#faf7eb 0%,#f1eddc 100%);border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap}
+.disease-name{font-weight:700;color:var(--ink);font-size:14.5px;letter-spacing:-.015em}
+.disease-tag{font:600 10px/1 'DM Sans';letter-spacing:.08em;text-transform:uppercase;color:var(--ink-mute)}
+.disease-body{padding:14px 16px}
+.disease-rows{display:grid;gap:0}
+.disease-row{display:grid;grid-template-columns:130px 1fr;gap:12px;padding:8px 0;border-bottom:1px dashed var(--line-soft)}
+.disease-row:last-child{border-bottom:none;padding-bottom:0}
+.disease-row:first-child{padding-top:0}
+.disease-row .k{font:700 10px/1.2 'DM Sans';letter-spacing:.12em;text-transform:uppercase;color:var(--accent,var(--ink-faint));padding-top:2px}
+.disease-row .v{font-size:13.5px;color:var(--ink-soft);line-height:1.5}
+.disease-row .v b{color:var(--ink)}
+@media(max-width:560px){.disease-row{grid-template-columns:1fr;gap:3px;padding:6px 0 8px}.disease-row .k{padding-top:0}}
+
+/* DEEP DIVE */
+.deep{margin:16px 0 6px;border:1px solid var(--line);border-radius:var(--r);background:linear-gradient(180deg,#fdfcf6 0%,#f9f6ea 100%);overflow:hidden}
+.deep>summary{list-style:none;cursor:pointer;padding:11px 16px;display:flex;align-items:center;justify-content:space-between;font:700 11px/1 'DM Sans';letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft);user-select:none;transition:background .15s}
+.deep>summary::-webkit-details-marker{display:none}
+.deep>summary::after{content:"+";font-size:18px;font-weight:600;color:var(--ink-faint);transition:transform .2s;font-family:'DM Mono',monospace}
+.deep[open]>summary::after{transform:rotate(45deg)}
+.deep>summary:hover{background:rgba(0,0,0,.02)}
+.deep-content{padding:14px 16px 16px;border-top:1px dashed var(--line)}
+.deep-content p{font-size:13px;color:var(--ink-mute);line-height:1.55}
+.deep-content p b{color:var(--ink-soft)}
+
+/* MNEMONIC */
+.mnemo{background:var(--paper-tint);border:1px solid var(--line);border-radius:var(--r);padding:14px 16px;margin:14px 0}
+.mnemo-title{font:700 10.5px/1 'DM Sans';letter-spacing:.16em;text-transform:uppercase;color:var(--c-pearl);margin-bottom:10px;display:flex;align-items:center;gap:8px}
+.mnemo-title b{background:var(--ink);color:#fff;padding:3px 7px;border-radius:4px;font-size:10px;letter-spacing:.06em}
+.mnemo-grid{display:grid;gap:5px}
+.mnemo-row{display:grid;grid-template-columns:28px 1fr;gap:10px;align-items:baseline;font-size:13px;color:var(--ink-soft);padding:3px 0}
+.mnemo-letter{display:grid;place-items:center;width:24px;height:24px;background:var(--ink);color:#fff;border-radius:5px;font:800 12px/1 'DM Sans';letter-spacing:-.02em}
+.mnemo-row b{color:var(--ink);font-weight:600}
+.mnemo-row em{font-style:italic;color:var(--ink-mute);font-size:12px}
+
+/* SCORE BOX */
+.score{border:1px solid var(--line);border-radius:var(--r);margin:14px 0;background:var(--paper);overflow:hidden}
+.score-head{padding:11px 14px;background:linear-gradient(180deg,#f5f1e0 0%,#ede9d6 100%);border-bottom:1px solid var(--line)}
+.score-name{font:700 13px/1.2 'DM Sans';color:var(--ink);letter-spacing:-.01em}
+.score-purpose{font:500 10.5px/1.2 'DM Sans';color:var(--ink-mute);letter-spacing:.06em;text-transform:uppercase;margin-top:3px}
+.score-rows{display:grid;gap:0}
+.score-row{display:grid;grid-template-columns:90px 1fr;gap:12px;align-items:start;padding:9px 14px;border-bottom:1px dashed var(--line-soft);font-size:13px}
+.score-row:last-child{border-bottom:none}
+.score-grade{font:800 12px/1.2 'DM Mono',monospace;color:var(--c-emerg);letter-spacing:-.01em}
+.score-desc{color:var(--ink-soft);line-height:1.45}
+.score-desc b{color:var(--ink)}
+
+/* STACKED TABLE */
+.stbl{margin:14px 0;border:1px solid var(--line);border-radius:var(--r);background:var(--paper);overflow:hidden}
+.stbl-head,.stbl-row{display:grid;gap:14px;padding:10px 14px;align-items:start}
+.stbl-head{background:#faf7eb;border-bottom:2px solid var(--line);font:700 10.5px/1 'DM Sans';letter-spacing:.1em;text-transform:uppercase;color:var(--ink)}
+.stbl-row{border-bottom:1px solid var(--line-soft);font-size:13px;color:var(--ink-soft);line-height:1.5}
+.stbl-row:last-child{border-bottom:none}
+.stbl-row:nth-child(even){background:#fcfaf2}
+.stbl-row b{color:var(--ink);font-weight:600}
+.stbl-row .col1{font-weight:600;color:var(--ink)}
+.stbl-2{grid-template-columns:1fr 2fr}
+.stbl-3{grid-template-columns:1fr 1.3fr 1.5fr}
+.stbl-4{grid-template-columns:1.2fr 1fr 1fr 1.2fr}
+@media(max-width:680px){
+  .stbl-head{display:none}
+  .stbl-row{grid-template-columns:1fr !important;gap:12px;padding:14px 16px}
+  .stbl-row .col{display:block;min-width:0;word-wrap:break-word;overflow-wrap:anywhere}
+  .stbl-row .col::before{content:attr(data-l);display:block;font:700 9.5px/1.3 'DM Sans';letter-spacing:.12em;text-transform:uppercase;color:var(--ink-mute);margin-bottom:4px}
+  .stbl-row .col1{font-weight:700;font-size:15px;padding-bottom:8px;margin-bottom:6px;border-bottom:1px dashed var(--line)}
+  .stbl-row .col1::before{display:none}
+}
+
+/* CALLOUT BOXES */
+.box{border-radius:var(--r);padding:14px 16px;margin:14px 0;position:relative;border:1px solid}
+.box-label{position:absolute;top:-9px;left:14px;font:700 9.5px/1 'DM Sans';letter-spacing:.16em;text-transform:uppercase;padding:3px 9px;border-radius:999px;color:#fff}
+.box-title{font-weight:700;color:var(--ink);font-size:14px;margin:2px 0 6px}
+.box-body{font-size:13.5px;line-height:1.5;color:var(--ink-soft)}
+.box-body b{color:var(--ink)}
+.box-body ul{list-style:none;padding:0;margin:4px 0 0}
+.box-body ul li{position:relative;padding:3px 0 3px 20px}
+.box-body ul li::before{content:"→";position:absolute;left:0;top:3px;font-weight:700;color:var(--bx-color)}
+.box.decision{background:#f1f5fc;border-color:#c4d3eb;--bx-color:var(--ank-dec)}.box.decision .box-label{background:var(--ank-dec)}
+.box.danger{background:#fbf0f0;border-color:#e5c2c2;--bx-color:var(--ank-dgr)}.box.danger .box-label{background:var(--ank-dgr)}.box.danger .box-body b{color:var(--ank-dgr)}
+.box.pearl{background:#f1f7ed;border-color:#c1d5b3;--bx-color:var(--ank-prl)}.box.pearl .box-label{background:var(--ank-prl)}
+.box.hy{background:#fcf6dd;border-color:#e3cf78;--bx-color:var(--ank-hy)}.box.hy .box-label{background:var(--ank-hy)}
+.box.myth{background:#f8eed8;border-color:#d0b181;--bx-color:var(--ank-myt)}.box.myth .box-label{background:var(--ank-myt)}
+.box.controversy{background:#f1e9f6;border-color:#bba7d3;--bx-color:var(--ank-con)}.box.controversy .box-label{background:var(--ank-con)}
+.box.evolving{background:#dff0f2;border-color:#8fc1c9;--bx-color:var(--ank-evo)}.box.evolving .box-label{background:var(--ank-evo)}
+
+/* ALGORITHM TREE */
+.algo{background:linear-gradient(180deg,#fcfaf2 0%,#f5f0dc 100%);border:1px solid var(--line-strong);border-radius:var(--r-lg);padding:18px;margin:14px 0;overflow-x:auto}
+.tree{font-size:13px}
+.tree-line{padding:6px 0}
+.tree-node{display:inline-block;padding:8px 12px;background:var(--paper);border:1.5px solid var(--ink-soft);border-radius:7px;font-weight:600;color:var(--ink);font-size:12.5px;box-shadow:var(--sh-sm)}
+.tree-node.start{background:var(--ink);color:#fff;border-color:var(--ink)}
+.tree-node.dec{background:#fff7d6;border-color:#e3cf78;color:#6b520a}
+.tree-node.dx{background:#dde7f8;border-color:#9fbae6;color:#1d4ea3}
+.tree-node.dgr{background:#fadcdc;border-color:#e29ca0;color:#a31b25}
+.tree-node.action{background:#d8e6cf;border-color:#a8c298;color:#3e6a2e}
+.tree-branch{margin-left:14px;border-left:1.5px dashed #b8b094;padding:6px 0 6px 18px;margin-top:6px;margin-bottom:2px;position:relative}
+.tree-branch::before{content:"";position:absolute;left:-1.5px;top:-4px;width:14px;height:14px;border-left:1.5px solid #b8b094;border-bottom:1.5px solid #b8b094;border-radius:0 0 0 6px}
+.tree-label{display:inline-block;font:700 9.5px/1 'DM Sans';letter-spacing:.12em;text-transform:uppercase;padding:3px 7px;border-radius:4px;margin-bottom:5px}
+.tree-label.yes{background:#fadcdc;color:#a31b25}.tree-label.no{background:#d8e6cf;color:#3e6a2e}
+
+/* FOOTER */
+.foot{margin-top:48px;padding-top:22px;border-top:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;font-size:11px;color:var(--ink-faint);letter-spacing:.04em;flex-wrap:wrap;gap:8px}
+.foot-mono{font-family:'DM Mono',monospace}
+.foot-author{font:800 14px/1.1 'DM Mono',monospace;color:var(--ink);letter-spacing:.02em;margin-bottom:3px}
+.foot-meta{font:500 11px/1.3 'DM Sans';color:var(--ink-faint);letter-spacing:.04em}
+
+/* WATERMARK */
+.watermark{position:fixed;bottom:calc(14px + env(safe-area-inset-bottom,0px));right:calc(14px + env(safe-area-inset-right,0px));font:600 10px/1 'DM Mono',monospace;letter-spacing:.04em;color:rgba(14,17,22,.55);background:rgba(255,255,255,.85);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);padding:6px 10px;border-radius:99px;border:1px solid rgba(14,17,22,.1);box-shadow:0 2px 8px rgba(14,17,22,.06);z-index:50;pointer-events:none;user-select:none}
+@media(max-width:560px){.watermark{bottom:calc(10px + env(safe-area-inset-bottom,0px));right:calc(10px + env(safe-area-inset-right,0px));font-size:9px;padding:5px 8px}}
+
+/* PRINT */
+@media print{
+  body{background:#fff;font-size:10.5pt}
+  body::before{display:none}
+  .header,.toc{position:static;background:#0e1116;color:#fff}
+  .wrap{padding:14px;max-width:100%}
+  .card,.hero,.legend,.pocket{box-shadow:none !important;break-inside:avoid}
+  .hero::after,.pocket::before{display:none}
+  .pocket{background:#1a1d24;color:#f0eee5}
+  .ank,.box,.disease,.score,.algo,.stbl,.deep,.mnemo,.quick{box-shadow:none !important;break-inside:avoid}
+  .deep:not([open]) .deep-content{display:block}
+  .deep>summary::after{display:none}
+  .watermark{position:fixed;bottom:8mm;right:8mm;background:none;border:none;color:rgba(0,0,0,.5)}
+  .hero-stamp{transform:none;position:absolute}
+}
+</style>
+</head>
+<body>
+<header class="header"><div class="header-row"><div class="h-mark">C</div><div class="h-titles"><div class="h-title">Crises do diabetes · Pocket Handbook</div><div class="h-sub">Elite edition · Endocrinologia clínica · EN02</div></div><div class="h-author">@dr.lorencato</div><div class="h-edition">v5.2</div></div></header>
+<nav class="toc"><div class="toc-inner"><a href="#pocket" class="toc-chip"><span class="toc-chip-num">0</span>Pocket</a><a href="#redflags" class="toc-chip"><span class="toc-chip-num">A</span>Red Flags</a><a href="#approach" class="toc-chip"><span class="toc-chip-num">B</span>Apresentação</a><a href="#primarias" class="toc-chip"><span class="toc-chip-num">C</span>Entidades</a><a href="#secundarias" class="toc-chip"><span class="toc-chip-num">D</span>Secundárias</a><a href="#algoritmo" class="toc-chip"><span class="toc-chip-num">E</span>Algoritmo</a><a href="#tratamento" class="toc-chip"><span class="toc-chip-num">F</span>Tratamento</a><a href="#pitfalls" class="toc-chip"><span class="toc-chip-num">G</span>Pitfalls</a><a href="#pearls" class="toc-chip"><span class="toc-chip-num">H</span>Pearls</a></div></nav>
+<main>
+<div class="wrap">
+<div class="hero">
+<div class="hero-stamp">@dr.lorencato</div>
+<div class="hero-tag">Endocrinologia · EN02 · Emergências e complicações</div>
+<h1>Diabetes: emergências e complicações<br><em>do β-hidroxibutirato ao probe-to-bone</em></h1>
+<p class="hero-lead">Cetoacidose diabética (incluindo a euglicêmica dos iSGLT2 e a pediátrica com edema cerebral), estado hiperglicêmico hiperosmolar e sua forma mista, hipoglicemia grave e a investigação da hipoglicemia fora do diabetes, pé diabético infectado com osteomielite e Charcot ativo, infecções que só o diabético descompensado faz, e as pontes para retina com ameaça visual (OE02) e DRD avançada (NU03): consenso ADA/EASD/JBDS/AACE 2024, ADA Standards 2026, JBDS-HHS, ISPAD 2022, IWGDF/IDSA 2023 e a tradução para o Brasil (SBD, PCDT DM1 2019 e DM2 2026).</p>
+<div class="hero-sig">Compilação clínica por <b>@dr.lorencato</b> · Elite Edition v5.2 · status clinical_review</div>
+</div>
+
+<div id="pocket" class="pocket">
+<div class="pocket-head"><div><div class="pocket-eyebrow">Pocket Card 0 · 5 segundos</div><div class="pocket-title">Decisões Críticas — Crises do diabetes</div><div class="pocket-sub">PS · UTI · Enfermaria · Ambulatório do pé (tratamento crônico no EN01)</div></div></div>
+<div class="pocket-grid">
+<div class="pocket-card emerg"><div class="pc-trig">Diabético com vômitos, dor abdominal, taquipneia</div><div class="pc-act">É CAD até prova contrária, <b>com qualquer glicemia</b>: β-hidroxibutirato capilar + gasometria venosa + K agora. BHB ≥3 mmol/L e pH &lt;7,3 ou HCO3 &lt;18 fecham o diagnóstico; ~10% são euglicêmicas (iSGLT2, gestação, jejum).</div></div>
+<div class="pocket-card emerg"><div class="pc-trig">Coma ou confusão em diabético sem glicemia à mão</div><div class="pc-act">Colher glicemia e dar <b>glicose 50% 25 g IV</b> (50 mL) sem esperar o resultado; tiamina 100 mg IV junto se etilista ou desnutrido. Hipoglicemia acorda em minutos; se não acordar, pense em EHH, AVC, sepse.</div></div>
+<div class="pocket-card emerg"><div class="pc-trig">Criança em CAD piora a consciência após 4–12 h</div><div class="pc-act">Edema cerebral até prova contrária: <b>manitol 0,5–1 g/kg IV em 10–15 min</b> (ou NaCl 3% 2,5–5 mL/kg), cabeceira 30°, reduzir fluido em 1/3, UTI. Tratar antes da TC.</div></div>
+<div class="pocket-card dec"><div class="pc-trig">Potássio antes da insulina</div><div class="pc-act"><b>K &lt;3,5 (ADA) ou &lt;3,3 (SBD): não iniciar insulina</b>; KCl 10–20 mEq/h até subir. K 3,5–5,0: 20–30 mEq por litro de soro. K &gt;5,0: insulina sem K, dosar a cada 2 h. Exige diurese.</div></div>
+<div class="pocket-card dec"><div class="pc-trig">CAD × EHH × mista</div><div class="pc-act">EHH: glicemia ≥600, osm efetiva &gt;300 (ADA) ou ≥320 (SBD/JBDS), pH ≥7,3, HCO3 ≥15, BHB &lt;3. <b>Um terço é misto</b>: trate a acidose como CAD (0,1 U/kg/h) e a osmolalidade com a cautela do EHH.</div></div>
+<div class="pocket-card dec"><div class="pc-trig">Úlcera no pé com osso palpável</div><div class="pc-act"><b>Probe-to-bone + RX + VHS/PCR</b>; dúvida → RM. Infecção = ≥2 sinais inflamatórios; grave = SIRS → internar, cirurgia em 24–48 h se abscesso, necrose ou gás, e avaliação vascular no mesmo dia.</div></div>
+<div class="pocket-card tx"><div class="pc-trig">Insulina na CAD moderada-grave</div><div class="pc-act">Regular IV <b>0,1 U/kg/h</b> sem bolus; glicemia &lt;250 → reduzir para 0,05 U/kg/h e soro glicosado 5–10% mantendo 150–200 mg/dL até cetonemia &lt;0,6 e pH ≥7,3. Basal SC precoce 0,15–0,3 U/kg encurta a internação.</div></div>
+<div class="pocket-card tx"><div class="pc-trig">Fluidos no adulto</div><div class="pc-act">Cristaloide <b>15–20 mL/kg (1–1,5 L) na 1ª hora</b>, depois 250–500 mL/h; balanceado (Ringer lactato) resolve a CAD mais rápido. No EHH, 50% do déficit em 8–12 h e queda de osmolalidade de 3–8 mOsm/kg/h.</div></div>
+<div class="pocket-card tx"><div class="pc-trig">Hipoglicemia</div><div class="pc-act">Consciente: <b>15 g de glicose VO</b>, glicemia em 15 min, repetir (PCDT 2026: 30 g no nível 2). Inconsciente sem acesso: <b>glucagon 1 mg IM/SC</b> (0,5 mg se &lt;25 kg). Com acesso: glicose 50% 25 g IV ou glicose 10% 150–200 mL.</div></div>
+<div class="pocket-card clin"><div class="pc-trig">Transição IV → SC</div><div class="pc-act">Basal SC <b>1–2 h antes</b> de desligar a bomba (SBD: ≥2 h com regular). Dose total 0,5–0,6 U/kg/dia se virgem de insulina (0,3 se DRC/frágil), 50% basal. Desligar sem sobreposição = CAD de rebote.</div></div>
+<div class="pocket-card clin"><div class="pc-trig">Sulfonilureia + hipoglicemia</div><div class="pc-act">Internar e observar <b>≥24 h</b> (glibenclamida dura, sobretudo com TFG baixa). Recorrência apesar de glicose: <b>octreotida 50–100 mcg SC 6/6–12/12 h</b>. Nunca alta após a primeira glicemia normal.</div></div>
+<div class="pocket-card clin"><div class="pc-trig">Pé vermelho, quente e edemaciado sem ferida</div><div class="pc-act">Neuropata com diferença de temperatura &gt;2 °C entre os pés = <b>Charcot ativo</b> até prova contrária: imobilizar com bota gessada de contato total até o joelho já, RX e RM. Não é celulite nem gota.</div></div>
+</div>
+</div>
+
+<div class="legend">
+<div class="lg-title">Sistema de legendas</div>
+<div class="lg-grid"><div class="lg-item"><span class="dot c1"></span> Fisiopatologia / Classificação</div><div class="lg-item"><span class="dot c2"></span> Clínica / Apresentação</div><div class="lg-item"><span class="dot c3"></span> Diagnóstico / Exames</div><div class="lg-item"><span class="dot c4"></span> Tratamento / Conduta</div><div class="lg-item"><span class="dot c5"></span> Emergências / Red Flags</div><div class="lg-item"><span class="dot c6"></span> Nuances / Pearls</div></div>
+<div class="lg-divider"></div>
+<div class="lg-anchors"><span class="ank ank-hy">HIGH-YIELD</span><span class="ank ank-dec">DECISION</span><span class="ank ank-dgr">DANGER</span><span class="ank ank-prl">PEARL</span><span class="ank ank-myt">MYTH</span><span class="ank ank-con">CONTROVERSY</span><span class="ank ank-evo">EVOLVING</span></div>
+<div class="lg-explain"><div class="ehy"><b>HIGH-YIELD</b> — prova/prática frequente</div><div class="edec"><b>DECISION</b> — muda a conduta</div><div class="edgr"><b>DANGER</b> — erro grave / risco crítico</div><div class="eprl"><b>PEARL</b> — nuance de especialista</div><div class="emyt"><b>MYTH</b> — mito vivo na prática</div><div class="econ"><b>CONTROVERSY</b> — debate sem consenso</div><div class="eevo"><b>EVOLVING</b> — mudança recente</div></div>
+</div>
+
+<section id="redflags">
+<div class="section"><div class="section-eyebrow"><span>A</span> Red Flags</div><h2 class="section-title">O diabético que morre no plantão morre de potássio, de osmolalidade, de glicose baixa ou de pé</h2><div class="section-sub">A mortalidade intra-hospitalar da CAD caiu para 0,2% no DM1 e ~1% no DM2 nos países de alta renda, mas passa de 20% onde o diagnóstico atrasa; o EHH mata 5–20%, e a forma mista mais que as duas. Quase toda morte evitável vem de quatro erros: insulina antes do potássio, osmolalidade derrubada rápido demais, hipoglicemia iatrogênica na bomba e infecção profunda do pé tratada como celulite. Cada linha abaixo: sinal objetivo → suspeita → conduta imediata.</div></div>
+<div class="card emerg">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">A.1</span> Emergências</div><h3>Sinais de alarme nas crises do diabetes <span class="ank ank-dgr">DANGER</span></h3></div>
+<div class="card-body">
+<div class="mnemo"><div class="mnemo-title"><b>CRISES</b> seis armadilhas letais do plantão do diabético</div><div class="mnemo-grid">
+<div class="mnemo-row"><span class="mnemo-letter">C</span><span><b>Cetonemia com glicemia "boa"</b> · iSGLT2, gestação, jejum, álcool, bomba de insulina desconectada: CAD euglicêmica (&lt;200–250 mg/dL) com BHB ≥3 mmol/L</span></div>
+<div class="mnemo-row"><span class="mnemo-letter">R</span><span><b>Rebaixamento depois que o tratamento começou</b> · edema cerebral (criança, CAD nova, pH muito baixo, ureia alta, pCO2 baixa), hipoglicemia ou hiponatremia iatrogênica</span></div>
+<div class="mnemo-row"><span class="mnemo-letter">I</span><span><b>Insulina antes do potássio</b> · K &lt;3,5 mEq/L na admissão ou queda abaixo de 2,5 durante a bomba: arritmia ventricular, fraqueza respiratória, íleo</span></div>
+<div class="mnemo-row"><span class="mnemo-letter">S</span><span><b>Sulfonilureia ou insulina com TFG baixa</b> · hipoglicemia que volta horas depois da glicose; alta precoce mata</span></div>
+<div class="mnemo-row"><span class="mnemo-letter">E</span><span><b>Estado hiperosmolar no idoso</b> · osmolalidade efetiva ≥320–350, Na corrigido &gt;160, coma, TEV e rabdomiólise; queda de osmolalidade &gt;8 mOsm/kg/h ou de Na &gt;10 mEq/L/24 h</span></div>
+<div class="mnemo-row"><span class="mnemo-letter">S</span><span><b>Sepse com porta no pé</b> · úlcera + SIRS, crepitação, bolhas, necrose, dor desproporcional ao exame: infecção necrotizante ou abscesso de compartimento plantar</span></div>
+</div></div>
+<div class="sub-title">Red flag → suspeita → conduta</div>
+<div class="stbl stbl-3">
+<div class="stbl-head stbl-3"><div>Red flag</div><div>Suspeita</div><div>Conduta imediata</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Red flag">pH venoso &lt;7,0, HCO3 &lt;10 mEq/L, BHB &gt;6 mmol/L, estupor ou coma, choque</div><div class="col" data-l="Suspeita">CAD grave (consenso 2024) ou mista CAD-EHH; precipitante crítico (IAM, sepse, pancreatite, AVC)</div><div class="col" data-l="Conduta"><b>UTI</b>, dois acessos, monitor cardíaco contínuo, cristaloide 1 L/h até perfusão, insulina regular IV 0,1 U/kg/h por bomba, glicemia de 1/1 h, K/gasometria de 2/2 h; ECG, troponina, lactato, lipase e culturas para o precipitante</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Red flag">K &lt;3,5 mEq/L (ADA) ou &lt;3,3 (SBD) antes da insulina; ou K ≤2,5 durante a bomba</div><div class="col" data-l="Suspeita">Depleção corporal grave de K (déficit típico 3–5 mEq/kg); insulina vai empurrar o restante para dentro da célula</div><div class="col" data-l="Conduta"><b>Segurar a insulina</b>; KCl 10–20 mEq/h IV (acima de 20 mEq/h, acesso central e monitor), dosar K de 1/1 h; iniciar insulina só quando K ≥3,5. K ≤2,5 sob tratamento triplica a mortalidade</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Red flag">Náusea, dor abdominal, taquipneia em usuário de iSGLT2, com glicemia 120–250 mg/dL; pós-operatório, dieta cetogênica, álcool, LADA</div><div class="col" data-l="Suspeita">CAD euglicêmica: glicosúria contínua mantém a glicemia baixa enquanto a relação glucagon/insulina dispara a cetogênese</div><div class="col" data-l="Conduta"><b>BHB capilar e gasometria já</b>; suspender o iSGLT2; soro glicosado 5–10% desde o início junto com cristaloide e insulina; não usar a glicemia como marcador de resolução</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Red flag">Criança ou adolescente em CAD com cefaleia nova, vômitos recorrentes, irritabilidade, queda de FC sem causa, HAS, piora do Glasgow 4–12 h após o início</div><div class="col" data-l="Suspeita">Edema cerebral (0,5–1% das CAD pediátricas, mortalidade até 25–40%)</div><div class="col" data-l="Conduta"><b>Manitol 0,5–1 g/kg IV em 10–15 min ou NaCl 3% 2,5–5 mL/kg</b>, cabeceira a 30°, reduzir infusão de fluido, UTI pediátrica; TC só depois de tratar; intubação se necessário evitando hipocapnia agressiva</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Red flag">Idoso com DM2 (ou sem diagnóstico), dias de poliúria, sonolento, glicemia "HI" no glicosímetro, Na corrigido &gt;155–160, osmolalidade efetiva &gt;320</div><div class="col" data-l="Suspeita">EHH (déficit de água 8–12 L, 100–220 mL/kg); precipitantes: infecção, AVC, IAM, diurético, corticoide, antipsicótico atípico</div><div class="col" data-l="Conduta"><b>SF 0,9% 1 L/h nas primeiras horas</b> com balanço e osmolalidade de 1/1–2/2 h; insulina 0,05 U/kg/h só quando a glicemia parar de cair com fluido (ou já, se BHB &gt;1–3); enoxaparina profilática; checar CK</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Red flag">Hipoglicemia grave em usuário de glibenclamida, gliclazida ou NPH com TFG &lt;30, idoso, sem alimentação</div><div class="col" data-l="Suspeita">Hipoglicemia prolongada e recorrente (meia-vida efetiva estendida pelo metabólito ativo e pela menor depuração de insulina)</div><div class="col" data-l="Conduta"><b>Internar, glicose 10% em infusão contínua, glicemia de 1/1 h por ≥24 h</b>; recorrência → octreotida 50–100 mcg SC 6/6–12/12 h; suspender o secretagogo definitivamente</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Red flag">Úlcera plantar com crepitação, bolhas hemorrágicas, necrose cinzenta, flutuação, dor desproporcional, febre ou hipotermia, leucócitos &gt;12.000</div><div class="col" data-l="Suspeita">Infecção grave IWGDF/IDSA 4: abscesso profundo, fasceíte necrosante, gangrena gasosa, síndrome compartimental</div><div class="col" data-l="Conduta"><b>Cirurgião no mesmo turno</b> (drenagem/desbridamento em 24–48 h, antes se necrotizante), piperacilina-tazobactam 4,5 g IV 6/6 h ± vancomicina; avaliação vascular urgente; hemoculturas e fragmento de tecido profundo</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Red flag">Crosta nasal negra, necrose de palato, dor facial, ptose ou oftalmoplegia em diabético com acidose</div><div class="col" data-l="Suspeita">Mucormicose rinocerebral (Rhizopus/Mucor, angioinvasão, trombose de seio cavernoso)</div><div class="col" data-l="Conduta"><b>Anfotericina B lipossomal 5–10 mg/kg/dia IV</b> + desbridamento cirúrgico extenso + correção da acidose; RM de seios/órbita; cada dia de atraso aumenta a mortalidade</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Red flag">Perda visual súbita, cortina, dor ocular com olho vermelho em diabético de longa data</div><div class="col" data-l="Suspeita">Hemorragia vítrea por retinopatia proliferativa, descolamento tracional, glaucoma neovascular</div><div class="col" data-l="Conduta"><b>Oftalmologista em 24 h</b> (anti-VEGF, panfotocoagulação, vitrectomia → OE02); manter AAS se indicado (não aumenta sangramento retiniano)</div></div>
+</div>
+<div class="box danger"><span class="box-label">DANGER</span><div class="box-title">A primeira hora da CAD tem ordem fixa: volume → potássio → insulina</div><div class="box-body">Insulina antes do volume desloca glicose e água para o intracelular e derruba a pressão em quem está com déficit de 4–6 L; insulina antes do potássio desloca o K que sobrou e provoca hipocalemia letal em pacientes que chegam com K "normal" mas déficit corporal total. Sequência segura: (1) cristaloide 15–20 mL/kg na primeira hora; (2) K sérico (gasometria venosa serve) e diurese; (3) só então insulina regular 0,1 U/kg/h. O bolus de 0,1 U/kg saiu da rotina (SBD R12, consenso 2024): só se houver atraso para montar a bomba, e nunca em criança.</div></div>
+<div class="box danger"><span class="box-label">DANGER</span><div class="box-title">Hipoglicemia e hipocalemia são as complicações mais frequentes do próprio tratamento</div><div class="box-body">No consenso 2024, hipoglicemia &lt;70 mg/dL ocorre em 16–28% das CAD tratadas e &lt;40 mg/dL em 2% (mortalidade ~4,8 vezes maior); hipocalemia &lt;3,5 em ~55% das CAD e 51% dos EHH. Prevenção: glicemia capilar de 1/1 a 2/2 h, reduzir a infusão para 0,05 U/kg/h e acrescentar SG 5–10% assim que a glicemia cair abaixo de 250 mg/dL, K de 2/2 h nas primeiras horas e depois de 4/4 h, e reposição de KCl iniciada assim que o K ficar abaixo de 5,0 mEq/L.</div></div>
+</div>
+</div>
+</section>
+
+<section id="approach">
+<div class="section"><div class="section-eyebrow"><span>B</span> Por Apresentação</div><h2 class="section-title">Mapa Sindrômico — o que o diabético traz ao PS</h2><div class="section-sub">A queixa raramente é "estou em cetoacidose". É dor abdominal, sonolência, um pé vermelho ou um coma com glicosímetro mostrando LO ou HI. Cada padrão abaixo é um diferencial, não um diagnóstico.</div></div>
+
+<div class="card clin">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">B.1</span> Padrão 1</div><h3>Dor abdominal, vômitos e respiração rápida e profunda</h3><div class="card-sub">CAD, CAD euglicêmica, ou abdome agudo que precipitou a CAD</div></div>
+<div class="card-body">
+<div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Em horas a 1–2 dias, poliúria e polidipsia viram <b>náusea, vômitos, dor abdominal difusa e Kussmaul</b>; hálito cetônico; consciência geralmente preservada. A dor da CAD correlaciona-se com a gravidade da acidose e deve melhorar em 12–24 h de tratamento: se não melhorar, ou se a acidose for leve e a dor intensa, procure pancreatite, apendicite, isquemia mesentérica.</div></div>
+<ul class="bullets">
+<li><b>Exames da primeira meia hora:</b> glicemia, BHB capilar ou sérico, gasometria venosa, Na, K, Cl, ureia, creatinina, fósforo, hemograma, osmolalidade calculada, ânion gap, ECG; lipase, culturas, RX de tórax e EAS conforme o precipitante.</li>
+<li><b>Precipitantes:</b> infecção (pneumonia, ITU) e omissão de insulina são os dois grandes; DM1 de abertura (forma frequente de diagnóstico em crianças e adolescentes, mais ainda quando o diagnóstico atrasa); bomba de insulina desconectada; iSGLT2; corticoide; antipsicóticos atípicos; inibidores de checkpoint (DM1 fulminante); cocaína; álcool; gestação.</li>
+<li><b>Armadilhas do laboratório:</b> amilase e lipase sobem sem pancreatite (até 3× o normal), creatinina falsamente alta (acetoacetato interfere no método de Jaffé), leucocitose até 25.000 por estresse; acima disso ou com desvio, procurar infecção.</li>
+<li><b>Glicemia "normal":</b> ~10% das CAD têm glicemia &lt;200 mg/dL; o critério do consenso 2024 é glicemia ≥200 <b>ou diabetes conhecido</b>.</li>
+</ul>
+<div class="box hy"><span class="box-label">HIGH-YIELD</span><div class="box-title">Cetonúria pelo nitroprussiato não vê o β-hidroxibutirato</div><div class="box-body">A fita urinária reage com acetoacetato e acetona; o BHB, que é 75–90% dos cetoácidos na CAD (razão BHB:AcAc até 10:1 pelo estado redox NADH/NAD+ alto), passa despercebido. Na admissão a cetonúria pode subestimar; durante o tratamento o BHB é oxidado a acetoacetato e a fita "piora" enquanto o paciente melhora. Diagnóstico e resolução usam BHB sérico ou capilar.</div></div>
+</div>
+</div>
+
+<div class="card clin">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">B.2</span> Padrão 2</div><h3>Idoso sonolento, desidratado, glicosímetro marcando "HI"</h3><div class="card-sub">EHH, forma mista, AVC ou sepse que precipitaram a crise</div></div>
+<div class="card-body">
+<div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Dias a semanas de poliúria em quem bebe pouco (idoso, acamado, institucionalizado), até que a <b>hiperosmolalidade causa rebaixamento</b>, às vezes com déficit focal ou convulsão que imitam AVC. Mucosas secas, taquicardia, hipotensão postural, oligúria. Sem Kussmaul, pouca dor abdominal.</div></div>
+<ul class="bullets">
+<li><b>Calcular sempre:</b> osmolalidade efetiva = 2 × Na + glicose/18 (normal 275–295); total = efetiva + ureia/6 (ADA usa BUN/2,8). Rebaixamento com osmolalidade efetiva &lt;320 exige outra causa (AVC, meningite, sepse, intoxicação).</li>
+<li><b>Na corrigido</b> = Na medido + 1,6 × (glicose − 100)/100 (2,4 se glicose &gt;400): um Na "normal" com glicose de 1.000 mg/dL esconde hipernatremia real e déficit de água livre.</li>
+<li><b>Forma mista:</b> até um terço das crises tem BHB ≥3 ou pH &lt;7,3 junto com osmolalidade alta; mortalidade maior que de CAD ou EHH isolados.</li>
+<li><b>Complicações associadas:</b> TEV, rabdomiólise (CK), IRA pré-renal, IAM silencioso, úlcera de pressão no calcanhar em quem chega prostrado.</li>
+</ul>
+<div class="box decision"><span class="box-label">DECISION</span><div class="box-title">O EHH é tratado primeiro com água, não com insulina</div><div class="box-body">Só o volume já derruba a glicemia 50–70 mg/dL/h (diluição + glicosúria com perfusão renal restaurada). A JBDS-HHS recomenda iniciar insulina 0,05 U/kg/h quando a glicemia parar de cair com fluido; a exceção é BHB &gt;1 mmol/L ou acidose, quando a insulina entra junto com o volume (0,1 U/kg/h se BHB ≥3 ou pH &lt;7,3).</div></div>
+</div>
+</div>
+
+<div class="card clin">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">B.3</span> Padrão 3</div><h3>Sudorese, tremor, comportamento estranho ou coma com glicemia baixa</h3><div class="card-sub">Hipoglicemia iatrogênica, alcoólica, séptica, adrenal ou endógena</div></div>
+<div class="card-body">
+<div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Sintomas <b>autonômicos</b> (adrenérgicos: tremor, palpitação, ansiedade; colinérgicos: sudorese, fome, parestesia) a partir de ~55–60 mg/dL e <b>neuroglicopênicos</b> (confusão, alteração de comportamento, déficit focal, convulsão, coma) abaixo de ~50 mg/dL. Em quem usa insulina ou secretagogo, a causa é quase sempre o fármaco; fora do diabetes, só investigue se houver tríade de Whipple documentada.</div></div>
+<ul class="bullets">
+<li><b>Classificação ADA/IHSG:</b> nível 1 &lt;70 e ≥54 mg/dL; nível 2 &lt;54; nível 3 = alteração mental ou física que exige ajuda de terceiros, qualquer que seja a glicemia.</li>
+<li><b>Precipitantes:</b> refeição omitida (~35%), dose excessiva (~20%), álcool (~10%), exercício (~6%), TFG em queda, interação com sulfonilureia (fluoroquinolonas, claritromicina, SMX-TMP, metronidazol, fluconazol), gastroparesia, perda de peso.</li>
+<li><b>No DM1 com hipoglicemias novas:</b> pensar em insuficiência adrenal autoimune, doença celíaca, hipotireoidismo, gastroparesia e lipohipertrofia (absorção errática).</li>
+<li><b>Hipoglicemia sem percepção (HAAF):</b> nível 2 sem sintomas adrenérgicos = falência autonômica associada à hipoglicemia; evitar qualquer hipoglicemia por 2–3 semanas restaura parte da resposta.</li>
+</ul>
+</div>
+</div>
+
+<div class="card clin">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">B.4</span> Padrão 4</div><h3>Pé do diabético: ferida, vermelhidão, edema ou dor</h3><div class="card-sub">Úlcera neuropática, neuroisquêmica, infectada, osteomielite, Charcot, gota, TVP</div></div>
+<div class="card-body">
+<div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Toda lesão é classificada em três eixos: <b>isquemia</b> (pulsos, ITB, pressão de hálux), <b>infecção</b> (IWGDF/IDSA 1–4, com ou sem osteomielite) e <b>profundidade</b> (probe-to-bone). Pé quente e edemaciado sem porta de entrada em neuropata é Charcot até prova contrária; pé frio, pálido e doloroso é isquemia crítica.</div></div>
+<ul class="bullets">
+<li><b>Neuropática:</b> plantar, sob cabeça de metatarso ou hálux, indolor, calo hiperceratótico em anel, pé quente com pulsos amplos e veias dorsais dilatadas (shunt arteriovenoso por autonomopatia).</li>
+<li><b>Isquêmica ou neuroisquêmica:</b> bordas do pé, dedos e calcanhar, dolorosa (se ainda houver sensibilidade), pálida, sem calo, pé frio, rubor de declive, pulsos ausentes; ITB pode ser falsamente normal (&gt;1,3) por calcificação de Mönckeberg.</li>
+<li><b>Infecção:</b> ≥2 de edema/endurecimento, eritema &gt;0,5 cm, dor/sensibilidade, calor, secreção purulenta; a neuropatia e a isquemia atenuam os sinais, e febre falta em até metade das infecções moderadas.</li>
+<li><b>Diferenciais do pé vermelho:</b> Charcot ativo, gota, fratura por estresse, TVP, dermatite de estase, erisipela sem úlcera.</li>
+</ul>
+<div class="box decision"><span class="box-label">DECISION</span><div class="box-title">Teste de elevação para separar Charcot de celulite</div><div class="box-body">Elevar o membro por 1–2 minutos: o rubor do Charcot (hiperemia neurovascular) diminui; o da celulite persiste. Charcot não tem porta de entrada nem SIRS, e a PCR é normal ou pouco elevada. Na dúvida, RM; e na ausência dela, trate como Charcot provável (imobilizar) enquanto esclarece.</div></div>
+</div>
+</div>
+
+<div class="card clin">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">B.5</span> Padrão 5</div><h3>Acidose metabólica com ânion gap alto no diabético</h3><div class="card-sub">Nem toda acidose de diabético é cetoacidose diabética</div></div>
+<div class="card-body">
+<div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">AG = Na − (Cl + HCO3), normal 8–12 (corrigir para albumina: +2,5 por g/dL abaixo de 4). AG alto com <b>BHB ≥3</b> e glicemia alta ou iSGLT2 → CAD. AG alto com <b>lactato &gt;4–5</b> → choque, sepse, metformina com TFG baixa. AG alto com BHB alto e glicemia normal ou baixa em etilista → cetoacidose alcoólica. Gap osmolar alto → metanol ou etilenoglicol.</div></div>
+<div class="mnemo"><div class="mnemo-title"><b>GOLDMARK</b> causas de acidose com ânion gap alto</div><div class="mnemo-grid">
+<div class="mnemo-row"><span class="mnemo-letter">G</span><span><b>Glicóis</b> · etilenoglicol e propilenoglicol (lorazepam IV em alta dose); gap osmolar alto</span></div>
+<div class="mnemo-row"><span class="mnemo-letter">O</span><span><b>Oxoprolina</b> · ácido piroglutâmico com paracetamol crônico em desnutrido ou séptico</span></div>
+<div class="mnemo-row"><span class="mnemo-letter">L</span><span><b>L-lactato</b> · choque, sepse, metformina com TFG &lt;30, isquemia mesentérica</span></div>
+<div class="mnemo-row"><span class="mnemo-letter">D</span><span><b>D-lactato</b> · síndrome do intestino curto, fermentação bacteriana</span></div>
+<div class="mnemo-row"><span class="mnemo-letter">M</span><span><b>Metanol</b> · alteração visual, gap osmolar alto</span></div>
+<div class="mnemo-row"><span class="mnemo-letter">A</span><span><b>Aspirina</b> · alcalose respiratória associada, zumbido</span></div>
+<div class="mnemo-row"><span class="mnemo-letter">R</span><span><b>Renal</b> · uremia com TFG muito baixa (NU03)</span></div>
+<div class="mnemo-row"><span class="mnemo-letter">K</span><span><b>Cetoacidose</b> · diabética, euglicêmica, alcoólica e de jejum</span></div>
+</div></div>
+<div class="box hy"><span class="box-label">HIGH-YIELD</span><div class="box-title">A acidose hiperclorêmica da fase de recuperação não é falha do tratamento</div><div class="box-body">Com volume e insulina, o cetoânion é excretado na urina como sal de sódio (perdendo o potencial de regenerar HCO3) e o cloreto do SF 0,9% (154 mEq/L) substitui o ânion; o AG fecha enquanto o HCO3 fica baixo. Por isso o consenso 2024 não usa AG nem HCO3 isolado para declarar resolução, e sim BHB &lt;0,6 mmol/L com pH ≥7,3 ou HCO3 ≥18. O cristaloide balanceado reduz esse fenômeno.</div></div>
+</div>
+</div>
+</section>
+
+<section id="primarias">
+<div class="section"><div class="section-eyebrow"><span>C</span> Entidades Primárias</div><h2 class="section-title">As três crises que o contrato manda dominar</h2><div class="section-sub">Cetoacidose, estado hiperosmolar e hipoglicemia grave são a mesma moeda vista de lados diferentes: o equilíbrio entre insulina e hormônios contrarreguladores. Cada box traz critérios do consenso ADA/EASD/JBDS/AACE 2024 e da SBD, a conduta que muda o desfecho e um deep dive com o mecanismo.</div></div>
+
+<div class="card prim">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">C.1</span> Entidade primária</div><h3>Cetoacidose diabética (CAD) <span class="ank ank-hy">HIGH-YIELD</span> <span class="ank ank-dgr">DANGER</span></h3><div class="card-sub">Insulinopenia absoluta ou relativa + excesso de glucagon, catecolaminas e cortisol</div></div>
+<div class="card-body">
+<div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Tríade: <b>glicemia ≥200 mg/dL ou DM conhecido + BHB ≥3,0 mmol/L (ou cetonúria ≥2+) + pH &lt;7,3 e/ou HCO3 &lt;18</b> (ADA/consenso 2024; SBD usa HCO3 &lt;15). Tratamento em quatro frentes: volume, potássio, insulina e precipitante. Resolve-se quando BHB &lt;0,6, pH ≥7,3 ou HCO3 ≥18; a glicemia normaliza muito antes da cetose.</div></div>
+<div class="disease">
+<div class="disease-head"><div class="disease-name">Cetoacidose diabética</div><div class="disease-tag">CID-10 E10.1 · E11.1 · E13.1 (com coma: E1x.0)</div></div>
+<div class="disease-body"><div class="disease-rows">
+<div class="disease-row"><div class="k">Epidemiologia</div><div class="v">Taxas em ascensão na última década: até 44,5–82,6 crises por 1.000 pessoas-ano no DM1 e até 3,2 por 1.000 no DM2 (ADA 2026, sec. 16). Mortalidade intra-hospitalar 0,2% (DM1) a ~1% (DM2) em países de alta renda; 23–41% em séries de países de baixa e média renda, onde o diagnóstico atrasa. Mortalidade em 1 ano após uma CAD é 13 vezes a da população geral — CAD recorrente é marcador de vulnerabilidade social, transtorno alimentar e omissão de insulina. Cerca de um terço dos episódios graves é híbrido CAD-EHH.</div></div>
+<div class="disease-row"><div class="k">Fisiopatologia</div><div class="v">Insulina baixa + glucagon alto invertem o metabolismo hepático: glicogenólise e gliconeogênese (lactato, alanina, glicerol) aumentam a produção de glicose, e a captação periférica cai (GLUT4 sem insulina). No adipócito, a lipase hormônio-sensível desinibida libera ácidos graxos livres; no hepatócito, a queda do malonil-CoA (inibição da acetil-CoA carboxilase pelo glucagon) libera a CPT-1, e os acil-CoA entram na mitocôndria para β-oxidação e cetogênese. Acetoacetato e β-hidroxibutirato são ácidos fortes (pKa ~3,6–4,7) totalmente dissociados: consomem HCO3 e abrem o ânion gap. Glicosúria provoca diurese osmótica com perda de água (déficit ~100 mL/kg), Na, K, Mg e fosfato.</div></div>
+<div class="disease-row"><div class="k">Clínica</div><div class="v">Instalação em horas a 1–2 dias: poliúria, polidipsia, perda ponderal, náusea, vômitos, dor abdominal (pode simular abdome agudo), Kussmaul, hálito cetônico, taquicardia e hipotensão; alteração de consciência proporcional à osmolalidade e ao pH. Hipotermia relativa pode mascarar infecção.</div></div>
+<div class="disease-row"><div class="k">Diagnóstico</div><div class="v">BHB sérico ou capilar é o padrão (sensibilidade e especificidade &gt;90% para ≥3,0 mmol/L); cetonúria só se BHB indisponível. Gasometria venosa basta (diferença de pH venoso-arterial ~0,02–0,03); arterial se hipóxia ou HCO3 muito baixo. K inicial costuma ser normal ou alto (acidose, hiperosmolalidade e insulinopenia o tiram da célula) apesar de déficit de 3–5 mEq/kg; só ~5% chegam hipocalêmicos. Na corrigido pela glicose. AG &gt;12 apoia mas não é critério de primeira linha. Faixa SBD: BHB 1,5–3 = "risco", confirmar com gasometria <span class="ev ev-acr">ADA/EASD/JBDS 2024</span> <span class="ev ev-sbr">SBD 2023 R1–R4</span></div></div>
+<div class="disease-row"><div class="k">Tratamento</div><div class="v">(1) Cristaloide 15–20 mL/kg (1–1,5 L) na primeira hora, depois 250–500 mL/h guiado por PA, FC, diurese e Na corrigido; balanceado (Ringer lactato) preferível por resolver mais rápido. (2) K: &lt;3,5 → KCl 10–20 mEq/h e adiar insulina; 3,5–5,0 → 20–30 mEq/L de soro (alvo 4–5); &gt;5,0 → sem K, dosar 2/2 h. (3) Insulina regular IV 0,1 U/kg/h sem bolus; glicemia &lt;250 → 0,05 U/kg/h + SG 5–10%, alvo 150–200 mg/dL. CAD leve a moderada não complicada: análogo ultrarrápido SC 0,1 U/kg 1/1 h ou 0,2 U/kg 2/2 h em observação ou sala de emergência. (4) Bicarbonato só se pH &lt;7,0 (SBD &lt;6,9); fosfato só se &lt;1,0 mg/dL com fraqueza muscular, disfunção respiratória ou cardíaca. (5) Transição: basal SC 1–2 h antes de desligar a bomba <span class="ev ev-acr">ADA 2026 Fig. 16.1</span> <span class="ev ev-sbr">SBD 2023 R5–R16</span></div></div>
+<div class="disease-row"><div class="k">Prognóstico</div><div class="v">Com protocolo, a resolução ocorre em 12–24 h na maioria. Morte decorre do precipitante (sepse, IAM), de hipocalemia, de edema cerebral (raro no adulto, &lt;0,1%) e de atraso. Uma CAD é motivo para revisar adesão, acesso a insulina, saúde mental e prescrever cetonemia capilar domiciliar.</div></div>
+<div class="disease-row"><div class="k">O que muda conduta</div><div class="v"><b>K da admissão</b> (segura ou libera a insulina); <b>gravidade</b> (leve → SC na emergência; moderada → intermediária; grave → UTI); <b>glicemia &lt;250</b> (reduz insulina e acrescenta glicose, nunca desliga a bomba); <b>iSGLT2 ou glicemia &lt;200</b> (glicose desde o início); <b>pH &lt;7,0</b> (considerar bicarbonato); <b>gestação</b> (CAD com glicemia baixa e risco fetal: obstetrícia junto, GO13).</div></div>
+</div></div>
+</div>
+<div class="score">
+<div class="score-head"><div class="score-name">Gravidade da CAD — consenso ADA/EASD/JBDS/AACE 2024 <span class="ev ev-acr">Umpierrez 2024</span></div><div class="score-purpose">Define nível de cuidado e via de insulina; basta um critério da faixa mais grave</div></div>
+<div class="score-rows">
+<div class="score-row"><div class="score-grade">Leve</div><div class="score-desc">pH 7,25–7,30 ou HCO3 15–18 mEq/L; BHB 3–6 mmol/L; <b>alerta</b>. Enfermaria, observação ou sala de emergência; insulina SC aceitável.</div></div>
+<div class="score-row"><div class="score-grade">Moderada</div><div class="score-desc">pH 7,00–7,24 e HCO3 10 a &lt;15; BHB 3–6; alerta ou sonolento. Unidade intermediária; insulina IV ou SC em protocolo monitorizado.</div></div>
+<div class="score-row"><div class="score-grade">Grave</div><div class="score-desc"><b>pH &lt;7,0 e HCO3 &lt;10; BHB &gt;6</b>; estupor ou coma. UTI, insulina IV, monitor contínuo.</div></div>
+<div class="score-row"><div class="score-grade">SBD</div><div class="score-desc">Gravidade principalmente pelo pH venoso: leve 7,20–7,30; moderada 7,10–7,20; grave &lt;7,10 (tabela da diretriz brasileira citada na apostila).</div></div>
+</div>
+</div>
+<details class="deep">
+<summary>Deep dive · Cetogênese, potássio e por que a glicemia mente</summary>
+<div class="deep-content">
+<p><b>O interruptor hepático.</b> A cetogênese não é consequência simples da lipólise; ela exige que o fígado mude de programa. O glucagon, via AMPc e PKA, fosforila e inibe a acetil-CoA carboxilase, derrubando o malonil-CoA, que é o freio fisiológico da carnitina-palmitoiltransferase 1. Sem esse freio, os ácidos graxos de cadeia longa entram na mitocôndria, a β-oxidação gera acetil-CoA além da capacidade do ciclo de Krebs (o oxaloacetato está desviado para a gliconeogênese) e a HMG-CoA sintase mitocondrial condensa o excedente em acetoacetato. O estado redox mitocondrial muito reduzido (NADH/NAD+ alto) empurra a β-hidroxibutirato desidrogenase no sentido do BHB, e por isso a razão BHB:acetoacetato vai de ~1:1 no jejum a 3:1–10:1 na CAD — o que explica a cegueira do nitroprussiato e a "piora" paradoxal da cetonúria durante a recuperação, quando o NADH cai e o BHB volta a acetoacetato.</p>
+<p><b>Por que basta pouca insulina para evitar cetose e muita para evitar hiperglicemia.</b> A curva dose-resposta da insulina é deslocada: a antilipólise e a antiketogênese saturam com concentrações portais muito menores que as necessárias para suprimir a produção hepática de glicose e estimular a captação muscular. É o fundamento da divisão entre CAD (insulina praticamente ausente) e EHH (insulina residual suficiente para frear lipólise, insuficiente para a glicose), e também da CAD euglicêmica: com iSGLT2, a glicosúria reduz a glicemia, o pâncreas secreta menos insulina, a célula α (que também expressa SGLT2 e sente menos glicose) secreta mais glucagon, e a razão glucagon/insulina portal sobe sem que a glicemia denuncie.</p>
+<p><b>O potássio que engana.</b> O K extracelular é 2% do total corporal (~3.500 mEq). Na CAD, três forças o deslocam para fora da célula: falta de insulina (que estimula a Na+/K+-ATPase), hiperosmolalidade (arraste por solvente quando a água sai da célula) e, em menor grau, acidose orgânica (os cetoânions acompanham o H+ para dentro, por isso o deslocamento é menor que nas acidoses minerais). O K que sai é filtrado e perdido pela diurese osmótica e pelo hiperaldosteronismo secundário à hipovolemia; o paciente chega com K normal e déficit de 3–5 mEq/kg. Insulina e correção do volume revertem as três forças ao mesmo tempo, e a queda esperada é de 1–2 mEq/L nas primeiras horas. Daí a regra de não iniciar insulina com K &lt;3,5 e de começar a repor quando o K cair abaixo de 5,0.</p>
+<p><b>Sódio, fosfato e cloro.</b> Cada 100 mg/dL de glicose acima de 100 puxa água do intracelular e reduz o Na em ~1,6 mEq/L (Katz) — Hillier mostrou que acima de 400 mg/dL o fator real se aproxima de 2,4. Se o Na não sobe à medida que a glicose cai, há excesso de água livre e risco de edema cerebral; se sobe muito, hipotônico. O fosfato segue o K (déficit ~1 mmol/kg), mas a reposição rotineira não muda desfecho e provoca hipocalcemia; reserva-se a fosfato &lt;1 mg/dL com fraqueza respiratória, hemólise, insuficiência cardíaca. O cloreto suprafisiológico do SF 0,9% (154 contra 103 mEq/L) gera a acidose hiperclorêmica da fase de recuperação, uma das razões pelas quais a subanálise SMART/SALT-ED mostrou resolução mais rápida com balanceado (mediana 13,0 contra 16,9 h).</p>
+<p><b>Bicarbonato e o paradoxo do liquor.</b> NaHCO3 gera CO2, que atravessa a barreira hematoencefálica mais rápido que o HCO3; o pH liquórico pode cair enquanto o plasmático sobe. Além disso, o pH mais alto reduz o estímulo a oxidar cetoânions (que regeneram HCO3 sozinhos), desvia a curva da hemoglobina para a esquerda e piora a hipocalemia. Por isso só se considera com pH &lt;7,0: 100 mmol em 400 mL de água estéril em 2 h, repetindo até pH &gt;7,0 (consenso); SBD: 50–100 mmol diluídos com pH &lt;6,9.</p>
+</div>
+</details>
+</div>
+</div>
+
+<div class="card prim">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">C.2</span> Entidade primária</div><h3>Estado hiperglicêmico hiperosmolar (EHH) e crise mista <span class="ank ank-hy">HIGH-YIELD</span> <span class="ank ank-dec">DECISION</span></h3><div class="card-sub">Insulina residual suficiente para frear a cetose, insuficiente para a glicose; a água é o problema</div></div>
+<div class="card-body">
+<div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Critérios ADA 2026: <b>glicemia ≥600 mg/dL, osmolalidade efetiva &gt;300 (ou total &gt;320) mOsm/kg, pH ≥7,3 e HCO3 ≥15, BHB &lt;3,0</b>. SBD 2025 e JBDS usam osmolalidade ≥320. Idoso com DM2, dias de evolução, rebaixamento, déficit de água de 8–12 L. Prioridade: volume com queda lenta de osmolalidade; insulina em dose menor e mais tarde; heparina profilática.</div></div>
+<div class="disease">
+<div class="disease-head"><div class="disease-name">Estado hiperglicêmico hiperosmolar</div><div class="disease-tag">CID-10 E11.0 (coma hiperosmolar) · E11.8 + E87.0 sem coma · sem código nominal OMS</div></div>
+<div class="disease-body"><div class="disease-rows">
+<div class="disease-row"><div class="k">Epidemiologia</div><div class="v">Menos de 1% das internações de diabéticos, porém mais letal que a CAD: mortalidade intra-hospitalar caiu de 1,44% (2008) para 0,77% (2018) nos EUA, mas 5–20% em séries com idosos e comorbidade; crise mista CAD-EHH tem a maior mortalidade (8% contra 5% e 3%). Cresce em crianças e adultos jovens obesos com DM2, frequentemente afrodescendentes ou hispânicos.</div></div>
+<div class="disease-row"><div class="k">Fisiopatologia</div><div class="v">Concentrações portais de insulina residual mantêm a lipase hormônio-sensível e a CPT-1 sob controle, sem cetogênese relevante; a glicose sobe lentamente, a diurese osmótica é prolongada e a ingestão de água é limitada (sede embotada no idoso, demência, imobilidade). A hiperosmolalidade desidrata o neurônio, que gera osmólitos idiogênicos (mioinositol, taurina, glutamina) em 24–48 h; corrigir rápido demais inverte o gradiente e edemacia o cérebro. Hiperviscosidade, hemoconcentração e ativação endotelial explicam o excesso de TEV, IAM e AVC.</div></div>
+<div class="disease-row"><div class="k">Clínica</div><div class="v">Dias a semanas de poliúria e perda de peso, depois sonolência, delirium, convulsões focais, hemiparesia reversível, coma (correlaciona-se com osmolalidade efetiva, em geral &gt;330). Desidratação grave, hipotensão, oligúria. Pouca dor abdominal, sem Kussmaul. Precipitantes: infecção (40–60%), AVC, IAM, pancreatite, tiazídico, corticoide, antipsicótico atípico, nutrição enteral hipertônica.</div></div>
+<div class="disease-row"><div class="k">Diagnóstico</div><div class="v">Osmolalidade efetiva = 2 × Na + glicose/18 (a ureia é osmol ineficaz e não move água). Na corrigido costuma revelar hipernatremia. BHB &lt;3 e pH ≥7,3 separam do quadro misto; lactato pode elevar o AG sem cetose. Avaliar CK (rabdomiólise), troponina, ECG, culturas, TC de crânio se déficit focal persistente após correção parcial <span class="ev ev-acr">ADA 2026 Tab. 16.1</span> <span class="ev ev-nice">JBDS-HHS 2023</span></div></div>
+<div class="disease-row"><div class="k">Tratamento</div><div class="v">SF 0,9% como fluido inicial (repor 50% do déficit estimado em 8–12 h e o restante em 24–48 h; 1 L/h se hipovolemia grave, alíquotas de 250 mL em idoso cardiopata ou renal). Metas de segurança: queda de glicemia ≤90–120 mg/dL/h, de osmolalidade 3–8 mOsm/kg/h, de Na ≤10 mEq/L em 24 h; NaCl 0,45% só se a osmolalidade não cair apesar de volume e insulina adequados. Insulina regular IV 0,05 U/kg/h quando a glicemia parar de cair só com fluido (JBDS) — 0,1 U/kg/h se BHB ≥3 ou pH &lt;7,3 (mista). Glicose 5–10% quando a glicemia &lt;250–300, alvo 200–250 mg/dL nas primeiras 24 h. K como na CAD. Enoxaparina profilática salvo contraindicação <span class="ev ev-acr">Consenso 2024</span> <span class="ev ev-sbr">SBD 2025 SHHNC</span></div></div>
+<div class="disease-row"><div class="k">Prognóstico</div><div class="v">Pior com idade avançada, osmolalidade &gt;350, coma na chegada e gravidade do precipitante. Sequelas neurológicas (mielinólise pontina e extrapontina) quando a osmolalidade e o Na caem rápido. Muitos sobreviventes não precisam de insulina a longo prazo; reavaliar com HbA1c e peptídeo C após a alta (EN01).</div></div>
+<div class="disease-row"><div class="k">O que muda conduta</div><div class="v"><b>BHB e pH</b> (mista → insulina 0,1 U/kg/h e simultânea ao volume); <b>Na corrigido e osmolalidade seriados</b> (velocidade de fluido e tonicidade); <b>cardiopata ou DRC</b> (alíquotas pequenas, monitorização hemodinâmica); <b>rebaixamento desproporcional à osmolalidade</b> (procurar AVC, meningite); <b>resolução</b> só com osmolalidade &lt;300 (ADA) ou &lt;315 (SBD), diurese ≥0,5 mL/kg/h e cognição de volta ao basal.</div></div>
+</div></div>
+</div>
+<div class="stbl stbl-3">
+<div class="stbl-head stbl-3"><div>Parâmetro</div><div>CAD</div><div>EHH</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Parâmetro">Instalação</div><div class="col" data-l="CAD">Horas a 1–2 dias</div><div class="col" data-l="EHH">Dias a semanas</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Parâmetro">Glicemia</div><div class="col" data-l="CAD">≥200 (ou DM prévio); 10% euglicêmica</div><div class="col" data-l="EHH"><b>≥600 mg/dL</b></div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Parâmetro">Cetose / acidose</div><div class="col" data-l="CAD">BHB ≥3; pH &lt;7,3 ou HCO3 &lt;18</div><div class="col" data-l="EHH">BHB &lt;3; pH ≥7,3; HCO3 ≥15</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Parâmetro">Osmolalidade efetiva</div><div class="col" data-l="CAD">Variável, em geral &lt;320</div><div class="col" data-l="EHH">&gt;300 (ADA) / ≥320 (SBD, JBDS)</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Parâmetro">Déficit de água</div><div class="col" data-l="CAD">~100 mL/kg (4–6 L)</div><div class="col" data-l="EHH">100–220 mL/kg (8–12 L)</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Parâmetro">Insulina IV</div><div class="col" data-l="CAD">0,1 U/kg/h após volume e K</div><div class="col" data-l="EHH">0,05 U/kg/h quando a glicemia estabilizar com fluido</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Parâmetro">Alvo glicêmico até resolver</div><div class="col" data-l="CAD">150–200 mg/dL</div><div class="col" data-l="EHH">200–250 mg/dL (JBDS 180–270)</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Parâmetro">Resolução</div><div class="col" data-l="CAD">BHB &lt;0,6 + pH ≥7,3 ou HCO3 ≥18</div><div class="col" data-l="EHH">Osm &lt;300, diurese &gt;0,5 mL/kg/h, glicemia &lt;250, cognição normal</div></div>
+</div>
+<details class="deep">
+<summary>Deep dive · Osmolalidade efetiva, osmólitos idiogênicos e a velocidade segura</summary>
+<div class="deep-content">
+<p><b>Osmolalidade efetiva e tonicidade.</b> Água move-se entre compartimentos por solutos que não atravessam livremente a membrana: sódio (bombeado para fora) e glicose (que sem insulina não entra no músculo e no adipócito). Ureia e etanol atravessam e não mudam o volume celular; por isso a osmolalidade total (que inclui a ureia) superestima a tonicidade em quem tem azotemia pré-renal, e o rebaixamento de consciência correlaciona-se melhor com a efetiva. A divergência ADA (&gt;300 efetiva ou &gt;320 total) × SBD/JBDS (≥320) é sobretudo de nomenclatura: a JBDS usa a fórmula 2Na + glicose + ureia em mmol/L, que é a total.</p>
+<p><b>Adaptação cerebral.</b> Em minutos, o neurônio hipertonizado perde água e, para recuperar volume, captura Na, K e Cl (fase rápida); em 24–48 h, sintetiza ou importa osmólitos orgânicos — mioinositol, taurina, glutamina, glutamato, betaína. Essa proteção é lenta para sair: se a tonicidade plasmática cai mais rápido do que o cérebro consegue eliminar osmólitos, entra água e o encéfalo edemacia; se o Na sobe e depois cai em oscilação, ou se a correção é feita em quem também é desnutrido e hipocalêmico, a oligodendroglia sofre a desmielinização osmótica pontina e extrapontina. Daí os três limites do consenso 2024 e da JBDS: osmolalidade 3–8 mOsm/kg/h, glicemia ≤90–120 mg/dL/h, Na ≤10 mEq/L em 24 h.</p>
+<p><b>Por que o Na sobe durante o tratamento e isso é esperado.</b> À medida que a glicose sai do extracelular (insulina, glicosúria), a água a acompanha para dentro da célula e o Na medido sobe; com glicose caindo 100 mg/dL, espera-se alta de 1,6–2,4 mEq/L. O que importa é a tonicidade total: se a glicose cai 300 mg/dL (−16,7 mOsm) e o Na sobe 5 mEq/L (+10 mOsm), a osmolalidade efetiva caiu ~7 mOsm — dentro do limite. Um Na que sobe enquanto a osmolalidade não cai indica balanço positivo insuficiente de água livre; aí entra o NaCl 0,45% ou água livre enteral. Um Na que despenca com glicose estável indica excesso de água livre — reduzir velocidade e aumentar tonicidade.</p>
+<p><b>Por que adiar a insulina.</b> No EHH, só o volume reduz a glicemia em 50–70 mg/dL/h; a insulina precoce, ao jogar glicose (e água) para dentro da célula, acelera a queda de osmolalidade e pode precipitar colapso circulatório em quem ainda não foi reexpandido. A JBDS propõe começar a infusão fixa de 0,05 U/kg/h quando a glicemia parar de cair com fluido, salvo cetonemia &gt;1 mmol/L. O consenso 2024 diferencia: 0,05 U/kg/h no EHH sem cetose significativa e 0,1 U/kg/h na forma mista (BHB ≥3, pH &lt;7,3 ou HCO3 &lt;18).</p>
+<p><b>Trombose.</b> Hemoconcentração, hiperviscosidade, hiperglicemia que aumenta fator tecidual e PAI-1, e imobilidade explicam TEV e eventos arteriais. Profilaxia com HBPM em dose profilática para todos sem contraindicação; anticoagulação plena só com trombose documentada (consenso 2024). O exame do calcanhar e a proteção contra úlcera de pressão também fazem parte do protocolo britânico, porque o paciente chega imóvel, neuropata e hipoperfundido.</p>
+</div>
+</details>
+</div>
+</div>
+
+<div class="card prim">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">C.3</span> Entidade primária</div><h3>Hipoglicemia grave no diabetes tratado <span class="ank ank-hy">HIGH-YIELD</span> <span class="ank ank-dgr">DANGER</span></h3><div class="card-sub">Complicação aguda mais frequente; limitante do controle glicêmico</div></div>
+<div class="card-body">
+<div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Nível 3 = <b>precisou de terceiros</b>, independentemente do valor. Consciente: glicose oral 15 g e repetir em 15 min. Inconsciente: <b>glucagon 1 mg IM/SC</b> (ou nasal 3 mg) fora do hospital; no hospital, <b>glicose IV</b>. Depois, identificar a causa, observar o tempo de ação do fármaco e <b>desintensificar</b>: um único nível 2 ou 3 obriga rever o esquema (ADA 6.19).</div></div>
+<div class="disease">
+<div class="disease-head"><div class="disease-name">Hipoglicemia grave no diabético</div><div class="disease-tag">CID-10 E16.0 (induzida por fármaco) · E16.2 · causa externa Y42.3</div></div>
+<div class="disease-body"><div class="disease-rows">
+<div class="disease-row"><div class="k">Epidemiologia</div><div class="v">Responde por 6–10% das mortes no DM1 (apostila; "dead-in-bed"). Risco máximo com insulinoterapia intensiva, depois basal, depois sulfonilureia e glinidas; quase inexistente com metformina, iSGLT2, GLP-1 e iDPP-4 isolados. Fatores maiores de alto risco (ADA 2026 Tab. 6.5): nível 2 ou 3 nos últimos 3–6 meses, insulina intensiva, hipoglicemia sem percepção, falência renal, déficit cognitivo, cirurgia metabólica. Outros: ≥75 anos, sexo feminino, variabilidade, polifarmácia, DCV, neuropatia, gastroparesia, betabloqueador, insegurança alimentar, jejum religioso.</div></div>
+<div class="disease-row"><div class="k">Fisiopatologia</div><div class="v">Defesas em sequência: queda da secreção de insulina (~80 mg/dL), glucagon e adrenalina (~65–70), cortisol e GH (~65), sintomas (~55) e cognição comprometida (&lt;50). No DM1 e no DM2 avançado, a primeira e a segunda defesas falham: insulina exógena não "desliga", e a célula α perde a resposta (sem o sinal intrailhota de queda de insulina). Hipoglicemias repetidas rebaixam o limiar da adrenalina e dos sintomas (falência autonômica associada à hipoglicemia, HAAF): o primeiro sinal passa a ser confusão.</div></div>
+<div class="disease-row"><div class="k">Clínica</div><div class="v">Autonômicos (tremor, palpitação, ansiedade, sudorese, fome, parestesia) e neuroglicopênicos (confusão, alteração de comportamento, disartria, déficit focal que imita AVC, convulsão, coma). Hipoglicemia noturna: pesadelos, sudorese, cefaleia matinal. Repercussão cardiovascular: QT longo, arritmia ventricular, isquemia; associação com mortalidade no ACCORD e ADVANCE.</div></div>
+<div class="disease-row"><div class="k">Diagnóstico</div><div class="v">Glicemia capilar confirmada por plasmática quando possível (sensor de CGM pode falsear por compressão noturna). Em todo episódio grave: rever doses, horários, TFG, interações (sulfonilureia + fluoroquinolona, claritromicina, SMX-TMP, metronidazol, fluconazol), álcool, exercício, perda ponderal, gastroparesia; no DM1, cortisol (insuficiência adrenal), anti-transglutaminase, TSH. Rastrear percepção anualmente: "Você sempre percebe quando a glicose está baixa?" (Gold/Clarke) <span class="ev ev-acr">ADA 2026 6.10–6.19</span> <span class="ev ev-expert">Endocrine Society 2023</span></div></div>
+<div class="disease-row"><div class="k">Tratamento</div><div class="v">Consciente: 15 g de glicose (comprimidos, gel, 1 colher de sopa de açúcar, 150 mL de suco ou refrigerante comum), reavaliar em 15 min e repetir; depois lanche se a próxima refeição está longe. Em alça fechada: 5–10 g. Usuário de acarbose: só glicose pura. Inconsciente fora do hospital: glucagon 1 mg IM/SC (0,5 mg se &lt;25 kg) ou nasal 3 mg; preferir apresentações sem reconstituição. Hospital: glicose 50% 25 g IV (50 mL) ou glicose 10% 150–200 mL em 15 min, glicemia em 10–15 min, depois infusão de glicose 10% se o fármaco persiste. Tiamina 100 mg IV no etilista ou desnutrido sem atrasar a glicose. Sulfonilureia: internação ≥24 h; recorrência → octreotida <span class="ev ev-acr">ADA 2026 6.15–6.16</span> <span class="ev ev-sbr">PCDT DM2 2026</span></div></div>
+<div class="disease-row"><div class="k">Prognóstico</div><div class="v">Episódios graves predizem novos episódios (o maior fator de risco é o episódio anterior), queda, fratura, acidente de trânsito, demência (relação bidirecional) e eventos cardiovasculares. CGM com alarmes, bomba com suspensão preditiva e educação estruturada reduzem a recorrência.</div></div>
+<div class="disease-row"><div class="k">O que muda conduta</div><div class="v"><b>Nível 2 ou 3</b> (reavaliar plano, desintensificar ou trocar classe); <b>sulfonilureia ou TFG &lt;30</b> (observação ≥24 h, suspender secretagogo); <b>sem percepção</b> (CGM, afrouxar metas por semanas, treinamento); <b>DM1 com piora inexplicada</b> (pesquisar insuficiência adrenal e celíaca); <b>motorista</b> (orientar não dirigir com glicemia &lt;90 sem tratar); <b>glucagon</b> prescrito a todo usuário de insulina.</div></div>
+</div></div>
+</div>
+<div class="score">
+<div class="score-head"><div class="score-name">Classificação da hipoglicemia — ADA 2026 / IHSG <span class="ev ev-acr">ADA 2026 Tab. 6.4</span></div><div class="score-purpose">Define urgência e revisão do esquema; adotada pelo PCDT DM2 2026</div></div>
+<div class="score-rows">
+<div class="score-row"><div class="score-grade">Nível 1</div><div class="score-desc">Glicemia <b>&lt;70 e ≥54 mg/dL</b> (alerta). Tratar com 15 g de carboidrato; limiar das respostas adrenérgicas no não diabético.</div></div>
+<div class="score-row"><div class="score-grade">Nível 2</div><div class="score-desc">Glicemia <b>&lt;54 mg/dL</b> (clinicamente importante). Limiar neuroglicopênico; sem sintomas = hipoglicemia sem percepção. PCDT 2026 sugere 30 g de carboidrato.</div></div>
+<div class="score-row"><div class="score-grade">Nível 3</div><div class="score-desc"><b>Evento grave com alteração mental ou física que exige ajuda de terceiros</b>, qualquer glicemia. Glucagon ou glicose IV; reavaliação obrigatória do esquema.</div></div>
+</div>
+</div>
+<details class="deep">
+<summary>Deep dive · Contrarregulação, HAAF e por que o DM1 perde o glucagon</summary>
+<div class="deep-content">
+<p><b>A hierarquia das defesas.</b> O cérebro consome ~20–25% da energia basal e depende de glicose transportada por GLUT1 (barreira) e GLUT3 (neurônio) com Km próximo da glicemia fisiológica: quando a glicose plasmática cai abaixo de ~55 mg/dL, o transporte vira limitante. A primeira defesa é parar de secretar insulina, o que libera glicogenólise e gliconeogênese hepáticas; a segunda é o glucagon, cuja secreção depende em parte do "sinal de desligamento" da insulina intrailhota (a queda de insulina e zinco no microambiente parácrino desinibe a célula α); a terceira é a adrenalina (β2: glicogenólise e lipólise; α2: inibição de insulina residual), e a quarta, lenta, cortisol e GH, que só ajudam após horas.</p>
+<p><b>Por que o DM1 perde o glucagon.</b> Sem células β, não há queda de insulina endógena no espaço intrailhota quando a glicose cai — a insulina presente é exógena, sistêmica e não regulada. A célula α, embora preservada em número, deixa de "perceber" a hipoglicemia; em 5 anos de doença a resposta do glucagon praticamente desaparece. A partir daí, a defesa depende da adrenalina, justamente a que sofre com hipoglicemias repetidas.</p>
+<p><b>HAAF (falência autonômica associada à hipoglicemia, Cryer).</b> Um episódio de hipoglicemia reduz a resposta simpatoadrenal e sintomática ao episódio seguinte em 24–48 h, deslocando o limiar para glicemias mais baixas; o mecanismo envolve adaptação do hipotálamo ventromedial (aumento de captação de lactato e cetonas como combustível alternativo, mudanças em sinalização GABAérgica e opioide, efeito do cortisol do episódio prévio). Cria-se o ciclo vicioso: hipoglicemia → menos sintomas → hipoglicemia mais profunda. A reversibilidade é a base da recomendação de evitar qualquer hipoglicemia por 2–3 semanas, com metas mais frouxas e CGM com alarme, para recuperar parte da percepção.</p>
+<p><b>Sulfonilureia, rim e duração.</b> Glibenclamida tem metabólitos ativos de excreção renal e ligação prolongada ao receptor SUR1; com TFG baixa, a hipoglicemia pode durar 24–72 h, e cada bolus de glicose estimula nova secreção de insulina pela célula β sensibilizada. A octreotida (análogo da somatostatina, via SSTR2/5 na célula β) inibe a exocitose de insulina e quebra esse ciclo; reduz recorrência e necessidade de glicose em estudos de toxicologia. A insulina exógena também tem depuração renal (~30–40%), o que explica por que a hipoglicemia pode ser a primeira manifestação de DRC avançada (NU03).</p>
+<p><b>Betabloqueador e álcool.</b> Betabloqueadores não seletivos atenuam tremor e palpitação (a sudorese, colinérgica, persiste) e retardam a recuperação por bloquear a glicogenólise β2; os cardiosseletivos interferem menos. O álcool inibe a gliconeogênese (aumenta NADH, desviando piruvato para lactato e oxaloacetato para malato) e prolonga a hipoglicemia de quem já esgotou o glicogênio — aqui o glucagon falha, porque não há glicogênio para mobilizar, e a glicose IV é a única saída.</p>
+</div>
+</details>
+</div>
+</div>
+</section>
+
+<section id="secundarias">
+<div class="section"><div class="section-eyebrow"><span>D</span> Entidades Secundárias</div><h2 class="section-title">Variações das crises, o pé e as pontes para retina e rim</h2><div class="section-sub">Pé diabético com osteomielite é um box só (regra do contrato); Charcot ganhou box próprio porque o diferencial com infecção muda a conduta no primeiro dia. Retinopatia com ameaça visual e DRD avançada aparecem como pontes: o que o plantonista precisa reconhecer e para onde encaminhar, com o detalhe em OE02 e NU03. Rastreio de retina, rim e neuropatia, e a dor neuropática, estão no EN01.</div></div>
+
+<div class="card diag">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">D.1</span> Entidade secundária</div><h3>CAD na criança e no adolescente · edema cerebral <span class="ank ank-dgr">DANGER</span></h3><div class="card-sub">ISPAD 2022: mesma doença, outro risco, outro volume e nenhum bolus</div></div>
+<div class="card-body">
+<div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Critérios ISPAD: glicemia &gt;200 mg/dL, pH venoso &lt;7,3 ou HCO3 &lt;18, BHB ≥3 mmol/L (ou cetonúria moderada a grande). Bolus de <b>10–20 mL/kg em 20–30 min</b> só se choque ou desidratação importante, reposição do déficit em 24–48 h, <b>insulina 0,05–0,1 U/kg/h sem bolus, iniciada 1 h após o começo do fluido</b>. O edema cerebral é a principal causa de morte por CAD na infância.</div></div>
+<div class="disease">
+<div class="disease-head"><div class="disease-name">CAD pediátrica e edema cerebral</div><div class="disease-tag">CID-10 G93.6 (edema cerebral) · a CAD em si recebe o código de C.1</div></div>
+<div class="disease-body"><div class="disease-rows">
+<div class="disease-row"><div class="k">Epidemiologia</div><div class="v">CAD ao diagnóstico do DM1 é mais comum em menores de 5 anos, em famílias com menor acesso e onde o diagnóstico atrasa; a pandemia de COVID-19 aumentou a frequência. Edema cerebral clinicamente aparente em 0,5–1% das CAD pediátricas, com mortalidade de 21–24% e sequela em 15–35% (ISPAD); no adulto, &lt;0,1%.</div></div>
+<div class="disease-row"><div class="k">Fisiopatologia</div><div class="v">Hipoperfusão cerebral durante a desidratação e lesão de reperfusão, ativação de NHE1 e NKCC1 no endotélio e astrócito, neuroinflamação, além do componente osmótico clássico. O PECARN FLUID (NEJM 2018, n=1.389) mostrou que velocidade e teor de NaCl do fluido não mudam o desfecho neurológico, deslocando o foco da "culpa do soro" para a gravidade da própria CAD.</div></div>
+<div class="disease-row"><div class="k">Clínica</div><div class="v">Surge tipicamente 4–12 h após o início do tratamento (pode estar presente na admissão ou até 24–48 h). Fatores de risco: pH muito baixo, pCO2 muito baixa, ureia alta, menor idade, DM1 novo, bicarbonato, Na que não sobe à medida que a glicose cai, bolus de insulina na primeira hora, volume excessivo nas primeiras 4 h. Sinais: cefaleia, vômitos recorrentes, irritabilidade ou letargia, bradicardia inapropriada, HAS, incontinência, piora do Glasgow; tardios: postura anormal, paralisia de nervo craniano (VI), pupilas anormais, padrão respiratório irregular.</div></div>
+<div class="disease-row"><div class="k">Diagnóstico</div><div class="v">Clínico, à beira do leito (critérios diagnósticos de Muir: um critério diagnóstico, dois maiores, ou um maior + dois menores). A neuroimagem não deve atrasar o tratamento; serve para excluir trombose venosa ou hemorragia depois de estabilizar <span class="ev ev-eular">ISPAD 2022</span></div></div>
+<div class="disease-row"><div class="k">Tratamento</div><div class="v">Manitol 0,5–1 g/kg IV em 10–20 min (repetir em 30 min se não responder) ou NaCl 3% 2,5–5 mL/kg em 10–15 min; reduzir a infusão de fluido em um terço; cabeceira elevada; intubar se necessário, evitando hiperventilação agressiva (pCO2 muito baixa associa-se a pior desfecho). SBD (adulto): manitol 0,25–0,5 g/kg <span class="ev ev-eular">ISPAD 2022</span> <span class="ev ev-sbr">SBD 2023</span></div></div>
+<div class="disease-row"><div class="k">O que muda conduta</div><div class="v"><b>Alteração neurológica após o início do tratamento</b> = manitol ou salina hipertônica imediatamente, antes da TC; <b>idade &lt;5 anos, pH &lt;7,1, ureia alta</b> = UTI pediátrica e avaliação neurológica de 1/1 h; <b>adolescente de 16–18 anos</b> = protocolo pediátrico ou adulto conforme a equipe (JBDS remete os seguidos por equipe adulta ao protocolo adulto).</div></div>
+</div></div>
+</div>
+<details class="deep">
+<summary>Deep dive · Do dogma osmótico ao PECARN: o que sabemos sobre o edema cerebral da CAD</summary>
+<div class="deep-content">
+<p><b>A hipótese osmótica e seus limites.</b> Durante décadas, o edema cerebral foi atribuído à queda rápida da osmolalidade plasmática em um cérebro carregado de osmólitos idiogênicos, e por isso o fluido hipotônico e o volume generoso eram culpados. A teoria não explica três observações: edema subclínico (redução de ventrículos na TC, aumento do coeficiente de difusão aparente na RM) existe na maioria das crianças em CAD já antes do tratamento; o edema clínico se correlaciona mais com marcadores de desidratação e hipoperfusão (ureia alta, pCO2 baixa) do que com a velocidade de queda da glicose; e o padrão de difusão na RM sugere edema vasogênico, não citotóxico osmótico puro.</p>
+<p><b>Modelo atual.</b> Hipoperfusão cerebral durante a desidratação grave e a hipocapnia (vasoconstrição cerebral pela hiperventilação compensatória), seguida de reperfusão com o tratamento, ativa cotransportadores iônicos do endotélio da barreira (NHE1, NKCC1), gera estresse oxidativo e liberação de citocinas (IL-1β, TNF-α), aumenta a permeabilidade e produz edema vasogênico; a cetose e a acidose contribuem para a ativação da micróglia. Esse modelo explica por que crianças com pCO2 muito baixa e ureia alta sofrem mais e por que o bicarbonato (que aumenta pCO2 liquórica e desvia a curva da hemoglobina) foi associado ao edema em séries retrospectivas.</p>
+<p><b>O ensaio PECARN FLUID.</b> 1.389 episódios de CAD em 13 serviços randomizados em quatro braços (NaCl 0,9% ou 0,45%, reposição rápida ou lenta do déficit). Nem a velocidade nem a concentração de sódio alteraram queda do Glasgow, lesão cerebral clinicamente aparente ou memória e QI no seguimento. O resultado sustenta a ISPAD 2022: reexpandir sem medo quem está em choque (bolus de 10–20 mL/kg), repor o déficit (estimado em 5–10% do peso) em 24–48 h e não restringir fluido por receio de edema; e manter as medidas que têm racional fisiopatológico — não fazer bolus de insulina, iniciar a infusão uma hora depois do fluido, evitar bicarbonato e acompanhar o Na corrigido.</p>
+<p><b>Insulina e potássio na criança.</b> A infusão de 0,05–0,1 U/kg/h resolve a acidose no mesmo tempo; a dose menor serve à criança pequena ou muito sensível. A insulina não é reduzida enquanto há cetose: quando a glicemia cai abaixo de 250–300 mg/dL, acrescenta-se glicose (5%, depois 10–12,5% se necessário) para manter 150–250 mg/dL. O potássio entra com o início da insulina (ou antes, se hipocalêmico), em concentração de ~40 mmol/L de fluido, ajustada a 5–6 mmol/kg/dia de teto prático; se hipercalêmico, adia-se até haver diurese. Os números deste deep dive vêm da ISPAD 2022, cujo texto integral não foi lido nesta captura — conferir antes de protocolar.</p>
+</div>
+</details>
+</div>
+</div>
+
+<div class="card diag">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">D.2</span> Entidade secundária</div><h3>CAD euglicêmica e as outras cetoacidoses <span class="ank ank-dec">DECISION</span></h3><div class="card-sub">iSGLT2, gestação, jejum, álcool; e a acidose láctica da metformina como diferencial</div></div>
+<div class="card-body">
+<div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">SBD: glicemia &lt;200 mg/dL, pH &lt;7,3, HCO3 &lt;18, AG &gt;10–12 e cetonemia elevada. Mesmo tratamento da CAD, mas com <b>glicose 5–10% desde o início</b> (junto com o cristaloide) e o iSGLT2 suspenso. Cetoacidose alcoólica e de jejum têm BHB alto com glicemia normal ou baixa e respondem a glicose + tiamina, sem insulina em bomba.</div></div>
+<div class="disease">
+<div class="disease-head"><div class="disease-name">CAD euglicêmica e cetoacidoses não diabéticas</div><div class="disease-tag">CID-10 E87.2 (acidose) · sem código nominal OMS para CAD-E</div></div>
+<div class="disease-body"><div class="disease-rows">
+<div class="disease-row"><div class="k">Epidemiologia</div><div class="v">~10% das CAD têm glicemia &lt;200 (ADA 2026). No DM1, iSGLT2 multiplicam o risco de CAD por 5–17 e não são recomendados; no DM2, o risco é baixo (0,6–4,9 por 1.000 pessoas-ano; RR ~1,7–2,5), concentrado em cirurgia, jejum prolongado, dieta muito pobre em carboidrato, álcool, desidratação, autoimunidade latente (LADA). Na gestação, até 2% das grávidas com diabetes pré-gestacional fazem CAD, muitas com glicemia normal.</div></div>
+<div class="disease-row"><div class="k">Fisiopatologia</div><div class="v">iSGLT2: glicosúria reduz glicemia e insulina, glucagon sobe, a excreção renal de cetoânions cai (maior reabsorção) e a hipovolemia ativa o eixo contrarregulador. Gestação: resistência à insulina mediada por hormônios placentários, alcalose respiratória crônica com menor tampão (HCO3 basal ~19–20) e cetogênese acelerada do jejum. Cetoacidose alcoólica: etanol eleva NADH (BHB predomina ainda mais), inanição esgota glicogênio, vômitos contraem volume.</div></div>
+<div class="disease-row"><div class="k">Diagnóstico</div><div class="v">Pedir BHB e gasometria em qualquer usuário de iSGLT2 com náusea, vômitos, dor abdominal, mal-estar ou taquipneia, independentemente da glicemia; a cetonúria subestima. Diferenciais de AG alto: lactato (metformina com TFG &lt;30, sepse, choque — "MALA" quando lactato &gt;5 com nível de metformina alto), uremia, tóxicos (gap osmolar) <span class="ev ev-sbr">SBD 2023 CAD-E</span> <span class="ev ev-acr">ADA 2026 sec. 16</span></div></div>
+<div class="disease-row"><div class="k">Tratamento</div><div class="v">Suspender o iSGLT2; cristaloide + glicose 5–10% desde a primeira hora; insulina IV 0,05–0,1 U/kg/h titulada para manter glicemia 150–200 enquanto a cetonemia cai; K como na CAD. Resolução por BHB e pH, nunca pela glicemia. Após a CAD, o consenso 2024 não recomenda reintroduzir iSGLT2 de rotina no DM2; no DM1, não usar. Prevenção: suspender 3 dias antes de cirurgia eletiva (FDA; ertugliflozina 4) e em doença aguda com jejum <span class="ev ev-acr">Consenso 2024</span></div></div>
+<div class="disease-row"><div class="k">O que muda conduta</div><div class="v"><b>Usuário de iSGLT2 com sintomas gastrointestinais</b> = BHB antes de qualquer outra hipótese; <b>gestante</b> = CAD com glicemia baixa, avaliar vitalidade fetal e obstetrícia junto (GO13); <b>lactato &gt;5 com metformina e TFG baixa</b> = acidose láctica, considerar hemodiálise (remove metformina e corrige acidose); <b>etilista</b> = glicose + tiamina, sem bomba de insulina, salvo se diabético com hiperglicemia.</div></div>
+</div></div>
+</div>
+</div>
+</div>
+
+<div class="card tx">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">D.3</span> Entidade secundária</div><h3>Pé diabético: úlcera, infecção e osteomielite <span class="ank ank-hy">HIGH-YIELD</span> <span class="ank ank-dec">DECISION</span></h3><div class="card-sub">IWGDF 2023: "doença do pé relacionada ao diabetes" — neuropatia, isquemia e infecção na mesma lesão</div></div>
+<div class="card-body">
+<div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Classificar toda úlcera por <b>SINBAD</b> (local, isquemia, neuropatia, infecção, área, profundidade), a infecção por <b>IWGDF/IDSA</b> e a isquemia por <b>WIfI</b>. Úlcera sem infecção não recebe antibiótico. Infecção leve: oral contra cocos gram-positivos por 1–2 semanas. Moderada a grave: internar se grave ou com comorbidade, cirurgia precoce, cobertura ampla. Osteomielite: probe-to-bone + RX + VHS/PCR; RM na dúvida; biópsia óssea guia o antibiótico; 6 semanas sem ressecção.</div></div>
+<div class="disease">
+<div class="disease-head"><div class="disease-name">Pé diabético infectado e osteomielite</div><div class="disease-tag">CID-10 E10.5 · E11.5 · L97 · M86 (úlcera neuropática pura: E1x.4)</div></div>
+<div class="disease-body"><div class="disease-rows">
+<div class="disease-row"><div class="k">Epidemiologia</div><div class="v">Incidência de úlcera ao longo da vida 19–34%; recorrência de 40% em 1 ano e 65% em 3 anos após cicatrizar; 40–70% das amputações não traumáticas de membros inferiores (PCDT DM2 2026). Cerca de metade das úlceras está infectada na apresentação e ~20% das infecções moderadas a graves envolvem osso. Mortalidade em 5 anos após amputação maior comparável à de neoplasias.</div></div>
+<div class="disease-row"><div class="k">Fisiopatologia</div><div class="v">Neuropatia sensitiva (perda de sensibilidade protetora) + motora (atrofia intrínseca, dedos em garra, proeminência de cabeças metatarsais) + autonômica (anidrose, fissuras, shunts arteriovenosos) geram pressão plantar alta sem dor; o trauma repetitivo forma calo, hemorragia subcalosa e úlcera. A doença arterial periférica (infrapoplítea, calcificada, multissegmentar) limita a cicatrização; a disfunção de neutrófilos pela hiperglicemia e a anatomia em compartimentos do pé permitem disseminação rápida ao longo de bainhas tendíneas.</div></div>
+<div class="disease-row"><div class="k">Clínica</div><div class="v">Infecção = ≥2 de edema/endurecimento, eritema &gt;0,5 cm, dor/sensibilidade, calor, secreção purulenta, sem outra causa (trauma, gota, Charcot, fratura, TVP). Osteomielite: úlcera &gt;2 cm² ou &gt;3 mm de profundidade, osso visível ou tocado, "dedo em salsicha", úlcera que não cicatriza apesar de descarga e perfusão adequadas.</div></div>
+<div class="disease-row"><div class="k">Diagnóstico</div><div class="v">Combinar probe-to-bone, RX simples e VHS (&gt;70 mm/h sugestivo), PCR ou procalcitonina como estudos iniciais; RM quando persiste a dúvida (PET-CT, cintilografia com leucócitos ou SPECT como alternativas). Cultura de tecido profundo por curetagem ou biópsia após desbridamento, nunca swab superficial; na osteomielite, fragmento ósseo (cirúrgico ou percutâneo) para cultura e histologia. Isquemia: pulsos, Doppler com ondas, ITB (0,9–1,3 normal), índice hálux-braquial ≥0,70 e pressão de hálux; TcPO2 em casos selecionados <span class="ev ev-eular">IWGDF/IDSA 2023</span></div></div>
+<div class="disease-row"><div class="k">Tratamento</div><div class="v">Leve: cobrir estreptococo β-hemolítico e S. aureus (cefalexina; amoxicilina-clavulanato se antibiótico recente; SMX-TMP, doxiciclina ou clindamicina se MRSA ou alergia), 1–2 semanas. Moderada a grave: amoxicilina-clavulanato, ampicilina-sulbactam ou ceftriaxona ± metronidazol; piperacilina-tazobactam se antibiótico recente, úlcera macerada ou clima quente (Pseudomonas); carbapenêmico se ESBL; vancomicina ou linezolida se risco de MRSA. Desbridamento e drenagem em 24–48 h na moderada e grave; cirurgião e cirurgião vascular juntos se houver DAP. Osteomielite: 6 semanas sem ressecção; até 3 semanas após amputação menor com margem óssea positiva; antibiótico sem cirurgia é opção na osteomielite de antepé sem abscesso, sem DAP e sem osso exposto. Revascularização urgente se pressão de tornozelo &lt;50 mmHg, ITB &lt;0,4, pressão de hálux &lt;30 ou TcPO2 &lt;25 <span class="ev ev-eular">IWGDF/IDSA 2023</span> <span class="ev ev-sbr">PCDT DM2 2026</span></div></div>
+<div class="disease-row"><div class="k">Prognóstico</div><div class="v">Remissão de osteomielite só é declarada após ≥6 meses do fim do antibiótico. Cicatrização depende de descarga (bota de contato total para úlcera plantar neuropática), perfusão, controle da infecção e educação. Mesmo cicatrizado, o pé está "em remissão", não curado.</div></div>
+<div class="disease-row"><div class="k">O que muda conduta</div><div class="v"><b>Grau IWGDF/IDSA</b> (1 = sem antibiótico; 2 = oral ambulatorial; 3 com comorbidade ou 4 = internar e IV); <b>sinais de necrose, gás, abscesso profundo ou síndrome compartimental</b> = cirurgia urgente; <b>DAP</b> (pressão de hálux &lt;30) = revascularização antes ou junto da cirurgia; <b>probe-to-bone positivo</b> = osteomielite provável, biópsia óssea e 6 semanas; <b>úlcera plantar neuropática</b> = descarga não removível até o joelho.</div></div>
+</div></div>
+</div>
+<div class="score">
+<div class="score-head"><div class="score-name">Classificação IWGDF/IDSA 2023 da infecção do pé <span class="ev ev-eular">IWGDF/IDSA 2023 Tab. 1</span></div><div class="score-purpose">Gravidade orienta via, local de tratamento e cirurgia; acrescentar "(O)" quando há osteomielite</div></div>
+<div class="score-rows">
+<div class="score-row"><div class="score-grade">1 · Não infectado</div><div class="score-desc">Sem sinais locais ou sistêmicos. <b>Não usar antibiótico</b> (nem para "prevenir" infecção ou acelerar cicatrização).</div></div>
+<div class="score-row"><div class="score-grade">2 · Leve</div><div class="score-desc">≥2 sinais locais; eritema &gt;0,5 e &lt;2 cm ao redor da ferida; só pele e subcutâneo; sem SIRS. Oral, ambulatorial, 1–2 semanas.</div></div>
+<div class="score-row"><div class="score-grade">3 · Moderada</div><div class="score-desc">Eritema ≥2 cm ou acometimento de tecidos profundos (tendão, músculo, articulação, osso); sem SIRS. <b>3(O)</b> se osteomielite.</div></div>
+<div class="score-row"><div class="score-grade">4 · Grave</div><div class="score-desc">Qualquer infecção com ≥2 critérios de SIRS: T &gt;38 ou &lt;36 °C, FC &gt;90, FR &gt;20 ou PaCO2 &lt;32 mmHg, leucócitos &gt;12.000, &lt;4.000 ou &gt;10% bastões. <b>Internar, IV, cirurgia</b>. 4(O) se osteomielite.</div></div>
+</div>
+</div>
+<div class="score">
+<div class="score-head"><div class="score-name">Estratificação de risco de úlcera IWGDF 2023 <span class="ev ev-eular">IWGDF 2023 Practical</span></div><div class="score-purpose">Frequência de exame do pé (opinião de especialistas)</div></div>
+<div class="score-rows">
+<div class="score-row"><div class="score-grade">0 · Muito baixo</div><div class="score-desc">Sem perda de sensibilidade protetora e sem DAP. Anual.</div></div>
+<div class="score-row"><div class="score-grade">1 · Baixo</div><div class="score-desc">Perda de sensibilidade protetora <b>ou</b> DAP. A cada 6–12 meses.</div></div>
+<div class="score-row"><div class="score-grade">2 · Moderado</div><div class="score-desc">PSP + DAP, ou PSP + deformidade, ou DAP + deformidade. A cada 3–6 meses.</div></div>
+<div class="score-row"><div class="score-grade">3 · Alto</div><div class="score-desc">PSP ou DAP <b>e</b> úlcera prévia, amputação (menor ou maior) ou DRC terminal. A cada 1–3 meses.</div></div>
+</div>
+</div>
+<details class="deep">
+<summary>Deep dive · Por que o pé diabético infecta, esconde e destrói osso</summary>
+<div class="deep-content">
+<p><b>A biomecânica da úlcera neuropática.</b> A perda de fibras grossas (propriocepção, vibração) e finas (dor, temperatura) remove o alarme que faria o paciente mancar ou trocar de calçado. A neuropatia motora atrofia lumbricais e interósseos; o desequilíbrio entre flexores e extensores longos produz dedos em garra e desloca o coxim gorduroso plantar para distal, expondo as cabeças metatarsais. Glicação do colágeno enrijece tendões e cápsulas (mobilidade articular limitada, equino por encurtamento do tríceps sural), aumentando a pressão no antepé. O ciclo de carga repetida sob pressão alta, não um trauma único, gera inflamação, calo, hemorragia subcalosa e úlcera — por isso a descarga (bota de contato total, órtese de marcha tornada não removível) é tratamento e não acessório: úlceras plantares neuropáticas cicatrizam em 6–8 semanas com descarga não removível e se cronificam sem ela.</p>
+<p><b>Por que a infecção se espalha rápido e se esconde.</b> O pé tem compartimentos (medial, central, lateral, interósseo) limitados por fáscias rígidas; pus sob pressão segue bainhas tendíneas para o retropé e a perna, e o aumento de pressão compartimental compromete a perfusão já precária. A hiperglicemia reduz quimiotaxia, fagocitose e burst oxidativo dos neutrófilos; a DAP limita o aporte de leucócitos e de antibiótico. A neuropatia elimina dor, e a isquemia atenua rubor e calor; metade das infecções moderadas não tem febre nem leucocitose. Por isso o IWGDF define infecção por ≥2 sinais locais e pede marcadores (PCR, VHS, procalcitonina) quando o exame é ambíguo, e recomenda explorar a profundidade com sonda metálica estéril.</p>
+<p><b>Microbiologia.</b> Infecção aguda e superficial em quem não usou antibiótico é quase sempre S. aureus e estreptococos β-hemolíticos; crônica, profunda, previamente tratada ou necrótica é polimicrobiana com bacilos gram-negativos e anaeróbios obrigatórios. Pseudomonas aparece em úlceras maceradas, com curativo úmido prolongado ou em clima quente — e o Brasil está majoritariamente em clima tropical, o que torna razoável considerar cobertura antipseudomonas na infecção moderada a grave com esses fatores (o IWGDF dispensa a cobertura de rotina em clima temperado). Corynebacterium e estafilococos coagulase-negativos geralmente são colonizantes, salvo em fragmento ósseo.</p>
+<p><b>Osteomielite: contiguidade, não via hematogênica.</b> O osso é infectado a partir da úlcera (cortical → medular), e o antepé (falanges e metatarsos) concentra a maioria dos casos. O probe-to-bone tem alto valor preditivo positivo em populações de alta prevalência e alto valor preditivo negativo nas de baixa; o RX muda 2–3 semanas depois do início (perda cortical, reação periosteal, sequestro, invólucro, cloaca), e a RM (edema medular em T1 hipointenso confluente) é o exame mais acurado. A cultura de fragmento ósseo é a referência porque o swab de úlcera concorda com o osso em menos da metade dos casos. A ressecção do osso infectado encurta o antibiótico para ~3 semanas se a margem é positiva (e dias se margem limpa); o tratamento clínico exclusivo, por 6 semanas, funciona em osteomielite de antepé sem abscesso, sem DAP e sem osso exposto, como mostrou o ensaio de Lázaro-Martínez. A remissão só é declarada após 6 meses sem recidiva.</p>
+<p><b>Isquemia.</b> Calcificação medial (Mönckeberg) torna as artérias incompressíveis e o ITB falsamente normal ou &gt;1,3; as artérias digitais são poupadas, por isso a pressão de hálux e o índice hálux-braquial são mais confiáveis. Uma úlcera com pressão de hálux &lt;30 mmHg ou TcPO2 &lt;25 dificilmente cicatriza sem revascularização; a WIfI integra ferida, isquemia e infecção para estimar risco de amputação e benefício da revascularização.</p>
+</div>
+</details>
+</div>
+</div>
+
+<div class="card tx">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">D.4</span> Entidade secundária</div><h3>Neuro-osteoartropatia de Charcot ativa <span class="ank ank-dec">DECISION</span></h3><div class="card-sub">Pé vermelho, quente e edemaciado em neuropata, sem ferida: imobilizar antes de entender tudo</div></div>
+<div class="card-body">
+<div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Processo inflamatório estéril que leva a fraturas, luxações e colapso do mediopé (pé em mata-borrão). Diagnóstico por <b>clínica + imagem</b> (RX; se normal, RM). Tratamento: <b>descarga e imobilização com bota gessada de contato total até o joelho</b> (segunda escolha: órtese até o joelho tornada não removível) até remissão, frequentemente por meses. Bisfosfonato e outros fármacos não são recomendados.</div></div>
+<div class="disease">
+<div class="disease-head"><div class="disease-name">Charcot ativo</div><div class="disease-tag">CID-10 E11.6 + M14.6 (artropatia neuropática)</div></div>
+<div class="disease-body"><div class="disease-rows">
+<div class="disease-row"><div class="k">Epidemiologia</div><div class="v">0,1–0,8% dos diabéticos, até 13% dos de alto risco em centros de pé; idade 50–60 anos, longa duração de diabetes, neuropatia densa; frequentemente após trauma mínimo, cirurgia do pé ou transplante (corticoide). Bilateral em até 25% ao longo do tempo.</div></div>
+<div class="disease-row"><div class="k">Fisiopatologia</div><div class="v">Gatilho (microtrauma não percebido) em pé insensível e com hiperfluxo autonômico ativa a via RANKL/RANK/osteoprotegerina e citocinas (TNF-α, IL-1β), aumentando a osteoclastogênese; o osso osteopênico fratura sob carga continuada, e a inflamação perpetua-se enquanto há carga. Teorias neurotraumática e neurovascular são complementares.</div></div>
+<div class="disease-row"><div class="k">Diagnóstico</div><div class="v">Diferença de temperatura &gt;2 °C entre os pés (termometria infravermelha) apoia e serve para seguir atividade. RX pode ser normal no estágio 0; a RM mostra edema medular e microfraturas. Diferencial principal: osteomielite (porta de entrada, úlcera, localização em antepé ou calcâneo, sequestro); Charcot ocorre sem ferida e no mediopé <span class="ev ev-eular">IWGDF 2023 Charcot</span></div></div>
+<div class="disease-row"><div class="k">Tratamento</div><div class="v">Bota de contato total até o joelho (primeira escolha), órtese até o joelho tornada não removível (segunda), removível usada o tempo todo (terceira); muletas para reduzir carga. Continuar enquanto houver inflamação; retirar quando não houver sinais clínicos e houver consolidação radiográfica; depois calçado sob medida e órteses. Cirurgia (artrodese, exostectomia) para deformidade instável ou proeminência ulcerada <span class="ev ev-eular">IWGDF 2023 Charcot</span></div></div>
+<div class="disease-row"><div class="k">O que muda conduta</div><div class="v"><b>Pé quente sem ferida em neuropata</b> = imobilizar hoje (tratar como Charcot provável se não houver RM); <b>úlcera sobre a deformidade</b> = investigar osteomielite sobreposta; <b>remissão</b> = transição gradual de carga, risco de reativação.</div></div>
+</div></div>
+</div>
+</div>
+</div>
+
+<div class="card diag">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">D.5</span> Entidade secundária</div><h3>Hipoglicemia fora do diabetes: insulinoma, factícia, pós-bariátrica <span class="ank ank-prl">PEARL</span></h3><div class="card-sub">Só investigue se houver tríade de Whipple; colha tudo durante a hipoglicemia</div></div>
+<div class="card-body">
+<div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Tríade de Whipple: sintomas compatíveis, glicemia plasmática baixa e alívio ao corrigir. No adulto aparentemente saudável, a pergunta-chave é se há <b>hiperinsulinismo endógeno</b> (insulinoma, nesidioblastose, pós-bypass, sulfonilureia oculta, anticorpo anti-insulina) ou <b>insulina exógena</b> (peptídeo C suprimido). No doente, pense primeiro em fármacos, sepse, insuficiência hepática ou renal, insuficiência adrenal e tumores não ilhota.</div></div>
+<div class="mnemo"><div class="mnemo-title"><b>EXPLAIN</b> causas de hipoglicemia no não diabético</div><div class="mnemo-grid">
+<div class="mnemo-row"><span class="mnemo-letter">E</span><span><b>Exógenos</b> · insulina ou sulfonilureia (acidental, factícia, criminosa), álcool, quinino, pentamidina, fluoroquinolonas</span></div>
+<div class="mnemo-row"><span class="mnemo-letter">X</span><span><b>Pituitária e adrenal (deficiências)</b> · hipopituitarismo, insuficiência adrenal (EN04/EN05)</span></div>
+<div class="mnemo-row"><span class="mnemo-letter">P</span><span><b>Pós-prandial pós-bariátrica</b> · bypass gástrico em Y de Roux, 1–3 h após refeição</span></div>
+<div class="mnemo-row"><span class="mnemo-letter">L</span><span><b>Liver</b> · insuficiência hepática grave, doenças de depósito de glicogênio</span></div>
+<div class="mnemo-row"><span class="mnemo-letter">A</span><span><b>Autoimune</b> · anticorpos anti-insulina (Hirata) ou antirreceptor</span></div>
+<div class="mnemo-row"><span class="mnemo-letter">I</span><span><b>Insulinoma e nesidioblastose</b> · hiperinsulinismo endógeno de jejum ou pós-prandial</span></div>
+<div class="mnemo-row"><span class="mnemo-letter">N</span><span><b>Neoplasia não ilhota e infecção</b> · tumores mesenquimais secretando IGF-2 grande, sepse, inanição</span></div>
+</div></div>
+<div class="disease">
+<div class="disease-head"><div class="disease-name">Hipoglicemia do não diabético</div><div class="disease-tag">CID-10 E16.1 · D13.7 (insulinoma) · E16.8</div></div>
+<div class="disease-body"><div class="disease-rows">
+<div class="disease-row"><div class="k">Epidemiologia</div><div class="v">Insulinoma: 1–4 casos por milhão/ano, 90% benignos, 90% solitários, 90% &lt;2 cm, distribuídos por todo o pâncreas; ~5–10% associados a NEM1. Hipoglicemia pós-bypass cresce com a cirurgia bariátrica.</div></div>
+<div class="disease-row"><div class="k">Fisiopatologia</div><div class="v">Insulinoma secreta insulina sem supressão pela glicose: glicogenólise e cetogênese ficam bloqueadas (BHB baixo) e o glucagon IV ainda libera glicogênio (resposta ≥25 mg/dL). Pós-bypass: esvaziamento rápido, pico de GLP-1 e hipersecreção de insulina pós-prandial. Tumor não ilhota: IGF-2 incompletamente processado ativa receptores de insulina com insulina e peptídeo C suprimidos.</div></div>
+<div class="disease-row"><div class="k">Diagnóstico</div><div class="v">Durante a hipoglicemia espontânea ou no jejum supervisionado de até 72 h (glicemia &lt;55 mg/dL com sintomas): insulina ≥3 µU/mL, peptídeo C ≥0,6 ng/mL, pró-insulina ≥5 pmol/L, BHB ≤2,7 mmol/L e pesquisa negativa de sulfonilureia = hiperinsulinismo endógeno; insulina alta com peptídeo C suprimido = insulina exógena. Localização: TC/RM trifásica, ecoendoscopia, PET com análogo de GLP-1 (exendina) onde disponível <span class="ev ev-expert">Endocrine Society 2009</span></div></div>
+<div class="disease-row"><div class="k">Tratamento</div><div class="v">Insulinoma: enucleação ou pancreatectomia parcial (curativa na maioria); diazóxido, análogos da somatostatina ou everolimo se irressecável ou maligno. Pós-bypass: dieta fracionada pobre em carboidrato rápido, acarbose; casos graves com análogo da somatostatina ou reversão. Factícia: abordagem psiquiátrica. Valores de corte do jejum de 72 h vêm do guideline de 2009 (conferir texto integral).</div></div>
+<div class="disease-row"><div class="k">O que muda conduta</div><div class="v"><b>Peptídeo C</b> (separa endógeno de exógeno); <b>pesquisa de sulfonilureia</b> (obrigatória antes de buscar tumor); <b>NEM1</b> (cálcio, PTH, prolactina, família); <b>hipoglicemia só pós-prandial após bypass</b> (dieta primeiro, não pancreatectomia).</div></div>
+</div></div>
+</div>
+</div>
+</div>
+
+<div class="card diag">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">D.6</span> Entidade secundária</div><h3>Infecções típicas do diabético descompensado <span class="ank ank-dgr">DANGER</span></h3><div class="card-sub">Mucormicose rinocerebral, otite externa maligna, pielonefrite e colecistite enfisematosas</div></div>
+<div class="card-body">
+<div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Infecções raras fora do diabetes, letais quando reconhecidas tarde, e que exigem <b>cirurgia + antimicrobiano específico + correção da acidose</b>. Fasceíte necrosante e choque séptico estão no II03; aqui fica o que é próprio do diabético.</div></div>
+<div class="disease">
+<div class="disease-head"><div class="disease-name">Infecções associadas à cetoacidose e ao diabetes mal controlado</div><div class="disease-tag">CID-10 B46.1 · H60.2 · N10 · K81.0</div></div>
+<div class="disease-body"><div class="disease-rows">
+<div class="disease-row"><div class="k">Epidemiologia</div><div class="v">Mucormicose: acidose (sobretudo CAD) e ferro livre são os grandes fatores; surto na Índia durante a COVID-19 com corticoide. Otite externa maligna: idoso diabético, Pseudomonas aeruginosa. Pielonefrite enfisematosa: &gt;90% em diabéticos, mais em mulheres, E. coli e Klebsiella, frequentemente com obstrução.</div></div>
+<div class="disease-row"><div class="k">Fisiopatologia</div><div class="v">Na acidose, a transferrina libera ferro, que Rhizopus usa (sideróforos) para crescer; a hiperglicemia aumenta a expressão endotelial de GRP78, receptor da invasina CotH do fungo, e a angioinvasão causa trombose e necrose. Fermentação da glicose tecidual por enterobactérias produz CO2 e H2 nas formas enfisematosas.</div></div>
+<div class="disease-row"><div class="k">Diagnóstico</div><div class="v">Mucormicose: escara negra nasal ou palatina, dor facial, proptose, oftalmoplegia; biópsia com hifas largas não septadas em ângulo reto; RM. Otite externa maligna: otalgia intensa noturna, otorreia, tecido de granulação no assoalho do conduto, paralisia facial; TC/RM e cintilografia. Pielonefrite enfisematosa: sepse urinária que não melhora em 48–72 h; TC mostra gás no parênquima (classificação de Huang-Tseng) <span class="ev ev-expert">Expert opinion · sem diretriz capturada</span></div></div>
+<div class="disease-row"><div class="k">Tratamento</div><div class="v">Mucormicose: anfotericina B lipossomal 5–10 mg/kg/dia IV + desbridamento extenso e repetido; isavuconazol ou posaconazol como resgate ou sequência; corrigir a CAD. Otite externa maligna: ciprofloxacino 750 mg VO 12/12 h ou antipseudomonas IV por 6–8 semanas. Pielonefrite enfisematosa: antibiótico IV + drenagem percutânea ou desobstrução; nefrectomia nas formas extensas. Colecistite enfisematosa: colecistectomia urgente <span class="ev ev-expert">Expert opinion · sem diretriz capturada</span></div></div>
+<div class="disease-row"><div class="k">O que muda conduta</div><div class="v"><b>Necrose negra no nariz ou palato com acidose</b> = anfotericina e cirurgia no mesmo dia; <b>otalgia intensa refratária no idoso diabético</b> = imagem e cobertura antipseudomonas prolongada; <b>pielonefrite sem resposta em 48–72 h</b> = TC para gás ou abscesso.</div></div>
+</div></div>
+</div>
+</div>
+</div>
+
+<div class="card diag">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">D.7</span> Ponte para OE02</div><h3>Retinopatia diabética com ameaça visual <span class="ank ank-dec">DECISION</span></h3><div class="card-sub">O que o clínico reconhece e encaminha em dias; rastreio e classificação básica no EN01</div></div>
+<div class="card-body">
+<div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Encaminhar <b>prontamente</b> qualquer edema macular, RDNP moderada ou pior e qualquer RD proliferativa (ADA 12.9). Perda visual súbita (hemorragia vítrea, descolamento tracional) ou olho vermelho doloroso com pressão alta (glaucoma neovascular) = oftalmologista em 24 h.</div></div>
+<div class="disease">
+<div class="disease-head"><div class="disease-name">Retinopatia proliferativa e edema macular</div><div class="disease-tag">CID-10 E11.3 + H36.0 · H43.1 (hemorragia vítrea) · H40.5</div></div>
+<div class="disease-body"><div class="disease-rows">
+<div class="disease-row"><div class="k">Epidemiologia</div><div class="v">Principal causa de cegueira irreversível entre 25 e 75 anos em países desenvolvidos. Piora precoce transitória quando a HbA1c cai muito rápido (DCCT, semaglutida no SUSTAIN-6), sobretudo em quem já tem retinopatia avançada.</div></div>
+<div class="disease-row"><div class="k">Fisiopatologia</div><div class="v">Perda de pericitos, microaneurismas, quebra da barreira hematorretiniana (edema macular) e oclusão capilar; a isquemia induz VEGF via HIF-1α, que gera neovasos frágeis na retina, no disco e na íris, com hemorragia vítrea e tração fibrovascular.</div></div>
+<div class="disease-row"><div class="k">Diagnóstico</div><div class="v">Fundoscopia sob midríase ou retinografia; OCT quantifica o edema macular; angiografia para isquemia. Classificação: RDNP leve, moderada, grave (regra 4-2-1: hemorragias nos 4 quadrantes, ensalsichamento venoso em 2, IRMA em 1) e RDP <span class="ev ev-acr">ADA 2026 12.9–12.13</span></div></div>
+<div class="disease-row"><div class="k">Tratamento</div><div class="v">Anti-VEGF intravítreo é primeira linha no edema macular que envolve o centro com perda visual; panfotocoagulação na RDP de alto risco (anti-VEGF é alternativa razoável); laser focal ou corticoide intravítreo se edema persistente; vitrectomia para hemorragia vítrea que não clareia ou descolamento tracional macular. Retinopatia não contraindica AAS. Detalhe em OE02 e no PCDT de Retinopatia Diabética <span class="ev ev-acr">ADA 2026 12.10–12.14</span></div></div>
+<div class="disease-row"><div class="k">O que muda conduta</div><div class="v"><b>RDNP grave, RDP ou edema macular</b> = encaminhamento prioritário; <b>baixa visual súbita</b> = urgência oftalmológica; <b>início de GLP-1 ou insulinização intensa em retinopatia avançada</b> = queda gradual da HbA1c e retina antes e 3–6 meses depois (EN01).</div></div>
+</div></div>
+</div>
+</div>
+</div>
+
+<div class="card diag">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">D.8</span> Ponte para NU03</div><h3>Doença renal do diabetes avançada: o que muda no plantão <span class="ank ank-dec">DECISION</span></h3><div class="card-sub">TFG &lt;30, diálise e transplante: a insulina dura mais, a HbA1c engana, o potássio sobe</div></div>
+<div class="card-body">
+<div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Com TFG &lt;30, <b>a depuração de insulina cai</b> (rim faz ~30–40% dela) e a gliconeogênese renal desaparece: hipoglicemia pode ser a primeira manifestação. Reduzir insulina (~25% com TFG &lt;30 e até 50% em diálise), suspender glibenclamida e metformina (&lt;30), manter iSGLT2 já em uso até a diálise. Encaminhar ao nefrologista com TFG &lt;30, queda rápida ou albuminúria em ascensão (ADA 11.12).</div></div>
+<div class="disease">
+<div class="disease-head"><div class="disease-name">DRD avançada e terminal</div><div class="disease-tag">CID-10 E11.2 + N08.3 · N18.5</div></div>
+<div class="disease-body"><div class="disease-rows">
+<div class="disease-row"><div class="k">Epidemiologia</div><div class="v">Diabetes é a principal causa de DRC dialítica no mundo; no Brasil divide o primeiro lugar com a nefropatia hipertensiva. Mortalidade cardiovascular domina; hipoglicemia grave é mais frequente nos dias sem diálise e após a sessão (dialisato com glicose 100 mg/dL e remoção de insulina).</div></div>
+<div class="disease-row"><div class="k">Fisiopatologia</div><div class="v">Glomeruloesclerose difusa e nodular (Kimmelstiel-Wilson), arteriolosclerose hialina e fibrose tubulointersticial. Hipoaldosteronismo hiporreninêmico (ATR tipo IV) causa hipercalemia com acidose hiperclorêmica desproporcional à TFG. Uremia aumenta resistência à insulina e, paradoxalmente, a meia-vida dela.</div></div>
+<div class="disease-row"><div class="k">Diagnóstico</div><div class="v">HbA1c subestima a glicemia com anemia, eritropoetina e transfusão; frutosamina e CGM são alternativas, com CGM preferível na diálise. Biópsia se sedimento ativo, proteinúria nefrótica abrupta, DM1 com &lt;5 anos de doença, queda rápida da TFG ou ausência de retinopatia <span class="ev ev-acr">ADA 2026 sec. 11</span> <span class="ev ev-nice">KDIGO 2022</span></div></div>
+<div class="disease-row"><div class="k">Tratamento</div><div class="v">iSGLT2 mantido com TFG &lt;20 até a diálise (ADA 11.11a); GLP-1 pode ser iniciado em diálise (11.11b); insulina com análogos e doses reduzidas; linagliptina sem ajuste renal. Hipercalemia: tratar sem abandonar bloqueio do SRAA quando possível (NU04). Indicação dialítica e transplante (incluindo rim-pâncreas no DM1) em NU03 <span class="ev ev-acr">ADA 2026 11.11–11.12</span></div></div>
+<div class="disease-row"><div class="k">O que muda conduta</div><div class="v"><b>TFG &lt;30</b> = revisar insulina e secretagogos, suspender metformina, nefrologista; <b>hipoglicemia nova em DM2 estável</b> = pensar em queda da TFG; <b>HbA1c "boa" em dialítico</b> = não confiar, usar CGM ou glicemias; <b>K &gt;6 com alteração no ECG</b> = emergência (NU04).</div></div>
+</div></div>
+</div>
+</div>
+</div>
+</section>
+
+<section id="algoritmo">
+<div class="section"><div class="section-eyebrow"><span>E</span> Algoritmo</div><h2 class="section-title">Do glicosímetro ao nível de cuidado em quatro perguntas</h2><div class="section-sub">A árvore começa pela pergunta que separa as crises — a glicose está baixa ou alta, e há cetose? — e termina em conduta com dose e alvo. A segunda árvore cobre o pé.</div></div>
+<div class="card prim">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">E.1</span> Algoritmo</div><h3>Diabético descompensado no PS <span class="ank ank-dec">DECISION</span></h3></div>
+<div class="card-body">
+<div class="algo"><div class="tree">
+<div class="tree-line"><span class="tree-node start">Diabético (ou suspeito) com mal-estar, vômitos, rebaixamento ou taquipneia</span></div>
+<div class="tree-branch"><div class="tree-label yes">Glicemia &lt;70 mg/dL?</div>
+<div class="tree-line"><span class="tree-node dgr">Hipoglicemia: consciente → 15 g VO; inconsciente → glicose 50% 25 g IV ou glucagon 1 mg IM</span></div>
+<div class="tree-branch"><div class="tree-label yes">Sulfonilureia, TFG &lt;30, insulina de ação longa ou álcool</div><div class="tree-line"><span class="tree-node action">→ Internar ≥24 h, glicose 10% contínua, glicemia 1/1 h; octreotida se recorrer</span></div></div>
+<div class="tree-branch"><div class="tree-label no">Causa clara e resolvida (refeição omitida com rápida)</div><div class="tree-line"><span class="tree-node action">→ Alimentar, observar 2–4 h, ajustar dose, glucagon na receita</span></div></div>
+</div>
+<div class="tree-branch"><div class="tree-label no">Glicemia ≥200 ou DM conhecido com sintomas</div>
+<div class="tree-line"><span class="tree-node dec">BHB capilar/sérico + gasometria venosa + Na, K, Cl, ureia, creatinina, osmolalidade</span></div>
+<div class="tree-branch"><div class="tree-label yes">BHB ≥3 e pH &lt;7,3 ou HCO3 &lt;18</div>
+<div class="tree-line"><span class="tree-node dx">CAD → classificar gravidade; osmolalidade efetiva &gt;300–320 = mista</span></div>
+<div class="tree-branch"><div class="tree-label yes">K &lt;3,5</div><div class="tree-line"><span class="tree-node dgr">→ Volume + KCl 10–20 mEq/h; insulina só com K ≥3,5</span></div></div>
+<div class="tree-branch"><div class="tree-label no">K ≥3,5</div><div class="tree-line"><span class="tree-node action">→ Leve: análogo SC 0,1 U/kg 1/1 h · Moderada/grave: regular IV 0,1 U/kg/h · glicemia &lt;250: 0,05 U/kg/h + SG 5–10%</span></div></div>
+</div>
+<div class="tree-branch"><div class="tree-label no">BHB &lt;3, pH ≥7,3, glicemia ≥600, osm &gt;300–320</div>
+<div class="tree-line"><span class="tree-node dx">EHH</span></div>
+<div class="tree-branch"><div class="tree-label yes">Hipovolemia</div><div class="tree-line"><span class="tree-node action">→ SF 0,9% 1 L/h, depois 50% do déficit em 8–12 h; osm 3–8 mOsm/kg/h; HBPM</span></div></div>
+<div class="tree-branch"><div class="tree-label no">Glicemia parou de cair só com volume</div><div class="tree-line"><span class="tree-node action">→ Insulina 0,05 U/kg/h; alvo 200–250 mg/dL</span></div></div>
+</div>
+<div class="tree-branch"><div class="tree-label no">Acidose com AG alto, BHB baixo</div><div class="tree-line"><span class="tree-node dgr">→ Lactato (metformina, sepse), uremia, tóxicos com gap osmolar</span></div></div>
+</div>
+</div></div>
+
+<div class="box decision"><span class="box-label">DECISION</span><div class="box-title">Raciocínio em 6 passos diante do diabético descompensado</div><div class="box-body">
+<ol>
+<li><b>Primeiro pergunte se a glicose está baixa.</b> Hipoglicemia mata em minutos e se corrige em minutos; no coma sem glicemia disponível, colha e dê glicose 50% 25 g IV, porque o dano de tratar um coma hiperglicêmico com 25 g é desprezível e o de deixar uma hipoglicemia sem tratar não é.</li>
+<li><b>Se está alta, a pergunta seguinte não é "quanto", é "há cetose?".</b> O BHB separa CAD de EHH melhor que a glicemia; a glicemia baixa não exclui CAD em quem usa iSGLT2, está grávida ou em jejum.</li>
+<li><b>Calcule osmolalidade efetiva e Na corrigido antes do primeiro litro.</b> Eles dizem se o problema central é ácido (CAD), água (EHH) ou os dois (mista), e definem a velocidade segura de correção.</li>
+<li><b>Olhe o potássio antes de pedir a insulina.</b> K &lt;3,5 inverte a ordem: potássio primeiro, insulina depois; K &gt;5,0 libera a insulina sem reposição.</li>
+<li><b>Escolha o nível de cuidado pela gravidade, não pela glicemia.</b> CAD leve e alerta pode ser tratada com análogo SC na sala de emergência; pH &lt;7,0, coma, choque, precipitante crítico ou EHH com osmolalidade muito alta vão para UTI.</li>
+<li><b>Procure e trate o precipitante na primeira hora</b> (infecção, IAM, AVC, pancreatite, omissão de insulina, iSGLT2, corticoide), e só declare resolução pelos critérios do consenso — nunca pela glicemia.</li>
+</ol></div></div>
+</div>
+</div>
+
+<div class="card tx">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">E.2</span> Algoritmo</div><h3>Úlcera no pé do diabético <span class="ank ank-dec">DECISION</span></h3></div>
+<div class="card-body">
+<div class="algo"><div class="tree">
+<div class="tree-line"><span class="tree-node start">Úlcera ou pé vermelho em diabético</span></div>
+<div class="tree-branch"><div class="tree-label yes">Sem ferida, pé quente, edemaciado, neuropata</div><div class="tree-line"><span class="tree-node dx">→ Charcot ativo provável: RX ± RM; bota de contato total até o joelho</span></div></div>
+<div class="tree-branch"><div class="tree-label no">Há úlcera</div>
+<div class="tree-line"><span class="tree-node dec">Pulsos, ITB, pressão de hálux · ≥2 sinais inflamatórios? · probe-to-bone</span></div>
+<div class="tree-branch"><div class="tree-label yes">SIRS, necrose, gás, abscesso, isquemia crítica</div><div class="tree-line"><span class="tree-node dgr">→ Grau 4: internar, pip-tazo ± vancomicina IV, cirurgia em &lt;24–48 h, cirurgião vascular</span></div></div>
+<div class="tree-branch"><div class="tree-label yes">Eritema ≥2 cm ou tecido profundo, sem SIRS</div><div class="tree-line"><span class="tree-node action">→ Grau 3: amoxi-clavulanato ou ceftriaxona + metronidazol; internar se comorbidade; desbridamento</span></div></div>
+<div class="tree-branch"><div class="tree-label yes">Eritema &lt;2 cm, superficial</div><div class="tree-line"><span class="tree-node action">→ Grau 2: cefalexina 500 mg 6/6 h por 1–2 semanas, ambulatorial</span></div></div>
+<div class="tree-branch"><div class="tree-label no">Sem sinais de infecção</div><div class="tree-line"><span class="tree-node action">→ Grau 1: sem antibiótico; desbridar, descarga, curativo, tratar isquemia</span></div></div>
+<div class="tree-branch"><div class="tree-label yes">Probe-to-bone + ou RX alterado</div><div class="tree-line"><span class="tree-node dx">→ Osteomielite: RM se dúvida, biópsia óssea, 6 semanas (3 se ressecção com margem +)</span></div></div>
+</div>
+</div></div>
+<div class="box hy"><span class="box-label">HIGH-YIELD</span><div class="box-title">Isquemia antes de antibiótico mais largo</div><div class="box-body">Úlcera que não melhora com antibiótico adequado por 2–4 semanas raramente precisa de outro antibiótico; precisa de três perguntas: há osso infectado (RM, biópsia), há pus não drenado (exploração cirúrgica) e há perfusão (pressão de hálux &lt;30 mmHg ou TcPO2 &lt;25 → revascularização)? O IWGDF manda reavaliar após 4 semanas sem resolução em vez de prolongar indefinidamente.</div></div>
+</div>
+</div>
+</section>
+
+<section id="tratamento">
+<div class="section"><div class="section-eyebrow"><span>F</span> Tratamento Integrado</div><h2 class="section-title">F1 · Estratégia por entidade · F2 · Doses operacionais · F3 · Monitorização e cenários</h2><div class="section-sub">Condutas do consenso ADA/EASD/JBDS/AACE 2024 e da ADA 2026 como base, SBD onde ela diverge ou acrescenta, JBDS para o EHH, ISPAD 2022 para a criança, IWGDF/IDSA 2023 para o pé. Onde as fontes discordam, as duas cifras aparecem com o dono de cada uma; o protocolo institucional decide. Acesso no SUS em F5, separado da recomendação internacional.</div></div>
+
+<div class="card tx">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">F.1</span> Estratégia</div><h3>Escadas terapêuticas por entidade <span class="ank ank-dec">DECISION</span></h3></div>
+<div class="card-body">
+
+<div class="sub-title">F1.1 · Cetoacidose diabética no adulto</div>
+<ul class="bullets">
+<li><b>Hora 0 (diagnóstico e precipitante):</b> dois acessos, BHB, gasometria venosa, eletrólitos com fósforo e magnésio, ureia, creatinina, hemograma, ECG; culturas, RX de tórax, lipase, troponina e β-hCG conforme contexto. Classificar gravidade e decidir local (observação, intermediária, UTI).</li>
+<li><b>Hora 0–1 (volume):</b> cristaloide 15–20 mL/kg (1–1,5 L); preferir Ringer lactato ou Plasma-Lyte se disponível (resolução ~4 h mais rápida na subanálise SMART/SALT-ED); em choque, repetir bolus. Cardiopata, renal crônico, dialítico e idoso: alíquotas de 250 mL com reavaliação.</li>
+<li><b>Hora 1 (potássio e insulina):</b> com K ≥3,5 (SBD 3,3) e diurese, insulina regular IV 0,1 U/kg/h por bomba, sem bolus; KCl 20–30 mEq em cada litro se K 3,5–5,0. Se a glicemia não cair 50–70 mg/dL na primeira hora apesar de hidratação, conferir acesso e solução e dobrar a taxa (SBD).</li>
+<li><b>Horas 2–12 (manutenção):</b> fluido 250–500 mL/h guiado por PA, FC, diurese e Na corrigido (Na corrigido normal ou alto → NaCl 0,45% é opção; baixo → isotônico). Corrigir metade do déficit em 8–12 h e o restante em 24–48 h.</li>
+<li><b>Glicemia &lt;250 mg/dL:</b> reduzir insulina para 0,05 U/kg/h (SBD: 0,02–0,05) e acrescentar SG 5–10%, titulando as duas infusões para glicemia 150–200 mg/dL. Nunca desligar a insulina enquanto houver cetose; em protocolo de enfermagem com taxa variável, não descer abaixo de 1 U/h.</li>
+<li><b>Basal SC precoce:</b> glargina 0,15–0,3 U/kg SC nas primeiras horas, mantendo a bomba, reduz hiperglicemia de rebote e tempo de internação sem aumentar hipoglicemia (consenso 2024).</li>
+<li><b>Resolução e transição:</b> BHB &lt;0,6 mmol/L + pH ≥7,3 ou HCO3 ≥18 e paciente comendo → basal (e prandial) SC 1–2 h antes de desligar a bomba (SBD: ≥2 h, 30–120 min de sobreposição após a primeira dose SC). Dose: esquema prévio se adequado; virgem de insulina 0,5–0,6 U/kg/dia (0,3 se DRC, frágil, idoso), 50% basal e 50% prandial. Degludeca não é recomendada nessa transição (SBD) por demorar a atingir estado de equilíbrio.</li>
+<li><b>CAD leve a moderada não complicada:</b> análogo ultrarrápido SC (lispro, asparte, glulisina) 0,1 U/kg a cada 1 h ou 0,2 U/kg a cada 2 h, reduzindo para 0,05 U/kg/h (ou 0,1 a cada 2 h) com glicemia &lt;250; exige volume adequado, glicemia capilar horária e enfermagem disponível. Não usar na CAD grave, no EHH ou em choque (absorção SC imprevisível).</li>
+</ul>
+<div class="box danger"><span class="box-label">DANGER</span><div class="box-title">Desligar a bomba quando a glicemia normaliza é o erro mais comum da enfermaria</div><div class="box-body">A glicemia cai em 6–8 h; a cetose leva 12–24 h. Se a insulina é suspensa porque a glicemia chegou a 180, a lipólise e a cetogênese voltam em 30–60 minutos (meia-vida da insulina IV ~5–7 min). A resposta à glicemia normal é <b>dar glicose</b>, não tirar insulina. O mesmo vale para a transição: desligar a bomba sem basal SC prévia produz CAD de rebote nas 4–6 h seguintes.</div></div>
+
+<div class="sub-title">F1.2 · Estado hiperglicêmico hiperosmolar e crise mista</div>
+<ul class="bullets">
+<li><b>Volume como tratamento principal:</b> SF 0,9% 1 L/h nas primeiras 1–2 h se hipovolemia grave; depois taxas que reponham ~50% do déficit (100–220 mL/kg) em 8–12 h, guiadas por osmolalidade, Na corrigido e balanço de 1/1 a 2/2 h nas primeiras 6 h.</li>
+<li><b>Limites de velocidade:</b> osmolalidade efetiva 3–8 mOsm/kg/h, glicemia ≤90–120 mg/dL/h, Na ≤10 mEq/L em 24 h. Se a osmolalidade não cai com volume adequado e insulina, trocar para NaCl 0,45%.</li>
+<li><b>Insulina:</b> 0,05 U/kg/h quando a glicemia parar de cair só com fluido (JBDS) ou desde o início se BHB &gt;1 mmol/L; crise mista (BHB ≥3, pH &lt;7,3 ou HCO3 &lt;18) → 0,1 U/kg/h simultânea ao volume. Glicose 5–10% quando a glicemia &lt;250–300 mg/dL, alvo 200–250 até resolver.</li>
+<li><b>Proteção:</b> enoxaparina profilática, proteção de calcanhares, CK seriada, glicemia horária, K como na CAD, fosfato e magnésio diários.</li>
+<li><b>Resolução:</b> osmolalidade &lt;300 (SBD: &lt;315), diurese &gt;0,5 mL/kg/h, glicemia &lt;250 e cognição de volta ao basal; costuma levar mais que a CAD (24–72 h). Muitos voltam a esquema oral depois; decisão com HbA1c e peptídeo C (EN01).</li>
+</ul>
+<div class="box decision"><span class="box-label">DECISION</span><div class="box-title">Quando o Na sobe durante o tratamento do EHH</div><div class="box-body">Subida de Na proporcional à queda da glicose é esperada (1,6–2,4 mEq/L por 100 mg/dL). O que importa é a osmolalidade efetiva: se ela cai 3–8 mOsm/kg/h, continue. Se o Na sobe e a osmolalidade não cai, falta água livre → NaCl 0,45% ou água enteral. Se o Na cai rápido com glicose estável, sobra água livre → reduzir taxa e voltar ao isotônico.</div></div>
+
+<div class="sub-title">F1.3 · CAD na criança e no adolescente</div>
+<ul class="bullets">
+<li><b>Volume:</b> só se choque ou desidratação importante, bolus de 10–20 mL/kg de cristaloide isotônico em 20–30 min, repetível; déficit estimado em 5–10% do peso reposto em 24–48 h somado à manutenção; fluido isotônico (SF 0,9% ou balanceado) nas primeiras 4–6 h.</li>
+<li><b>Insulina:</b> 0,05–0,1 U/kg/h IV sem bolus, iniciada 1 h após o começo do fluido; não reduzir abaixo de 0,05 enquanto houver acidose — acrescentar glicose 5% (até 10–12,5%) quando a glicemia &lt;250–300 para manter 150–250 mg/dL.</li>
+<li><b>Potássio:</b> ~40 mmol/L de fluido a partir do início da insulina (antes, se hipocalêmico; adiar se hipercalêmico até haver diurese).</li>
+<li><b>Vigilância neurológica:</b> Glasgow e sinais de edema cerebral de 1/1 h nas primeiras 12–24 h; manitol à beira do leito.</li>
+<li><b>Bicarbonato:</b> não usar de rotina; só acidose extrema com comprometimento cardíaco, hipercalemia grave ou intoxicação associada.</li>
+</ul>
+
+<div class="sub-title">F1.4 · CAD euglicêmica, iSGLT2 e gestação</div>
+<ul class="bullets">
+<li><b>Suspender o iSGLT2</b> na admissão e não reintroduzir de rotina após a CAD no DM2 (consenso 2024); no DM1 não usar.</li>
+<li><b>Glicose desde o início:</b> SG 5–10% junto com o cristaloide quando a glicemia está &lt;250 na chegada; insulina 0,05–0,1 U/kg/h ajustada para manter 150–200 mg/dL até BHB &lt;0,6.</li>
+<li><b>Gestante:</b> CAD com glicemias mais baixas (às vezes &lt;200), HCO3 basal já reduzido pela alcalose respiratória da gestação; monitorização fetal contínua após 24 semanas, mesmo protocolo de volume, K e insulina, decúbito lateral esquerdo; obstetrícia junto (GO13).</li>
+<li><b>Prevenção perioperatória:</b> suspender iSGLT2 3 dias antes de cirurgia eletiva (ertugliflozina 4; SBD cita 3–4 dias para grande porte); reiniciar quando houver ingesta oral e o risco de cetose tiver passado.</li>
+</ul>
+
+<div class="sub-title">F1.5 · Hipoglicemia</div>
+<ul class="bullets">
+<li><b>Consciente:</b> glicose 15 g (nível 1; PCDT 2026 sugere 30 g no nível 2), glicemia em 15 min, repetir até &gt;70; depois carboidrato complexo se a próxima refeição está a mais de 1 h. Evitar gordura e proteína na correção inicial. Acarbose em uso: glicose pura.</li>
+<li><b>Inconsciente fora do hospital:</b> glucagon 1 mg IM/SC (0,5 mg se &lt;25 kg) ou nasal 3 mg; lateralizar (vômito é comum); nunca alimento pela boca de quem não protege a via aérea.</li>
+<li><b>Hospital:</b> glicose 50% 25 g IV (50 mL; na falta de acesso calibroso, glicose 10% 150–200 mL em 15 min); glicemia em 10–15 min; manter glicose 10% em infusão se o fármaco ainda age. Tiamina 100 mg IV no etilista ou desnutrido, sem atrasar a glicose.</li>
+<li><b>Sulfonilureia:</b> internar e observar ≥24 h (glibenclamida até 72 h com DRC); octreotida 50–100 mcg SC a cada 6–12 h se recorrer apesar de glicose; não dar alta após a primeira glicemia normal.</li>
+<li><b>Depois do episódio:</b> rever dose, horário e tipo de insulina (NPH noturna → análogo basal), suspender glibenclamida, ajustar à TFG, prescrever glucagon e treinar familiar, CGM com alarme para alto risco, metas mais frouxas por semanas se sem percepção.</li>
+</ul>
+<div class="box pearl"><span class="box-label">PEARL</span><div class="box-title">Glucagon falha quando não há glicogênio</div><div class="box-body">Etilista em jejum, desnutrido, hepatopata grave e quem já recebeu várias doses não respondem ao glucagon porque ele age mobilizando glicogênio hepático. Nesses, glicose IV é a única saída. O mesmo raciocínio explica por que a hipoglicemia alcoólica pode recorrer horas depois.</div></div>
+
+<div class="sub-title">F1.6 · Pé diabético infectado e osteomielite</div>
+<ul class="bullets">
+<li><b>Grau 1 (sem infecção):</b> sem antibiótico. Desbridamento do calo e do tecido necrótico (salvo isquemia grave não revascularizada), descarga, curativo, controle glicêmico, avaliação vascular.</li>
+<li><b>Grau 2 (leve):</b> oral contra estreptococo e S. aureus por 1–2 semanas (cefalexina; clindamicina, SMX-TMP ou doxiciclina se alergia ou MRSA; amoxicilina-clavulanato se antibiótico recente). Cultura de tecido profundo se falha ou antibiótico prévio.</li>
+<li><b>Grau 3 (moderada):</b> amoxicilina-clavulanato, ampicilina-sulbactam ou cefalosporina de 2ª/3ª geração + metronidazol; piperacilina-tazobactam se antibiótico recente, úlcera macerada ou clima quente; internar se comorbidade relevante ou necessidade de IV; desbridamento cirúrgico em 24–48 h.</li>
+<li><b>Grau 4 (grave):</b> internar, IV de amplo espectro (piperacilina-tazobactam ou carbapenêmico) + vancomicina ou linezolida se risco de MRSA; cirurgia de urgência se abscesso, necrose, gás, síndrome compartimental; cirurgião vascular no mesmo dia se DAP.</li>
+<li><b>Duração:</b> partes moles 1–2 semanas (até 3–4 se extensa, lenta ou com DAP grave); osteomielite 6 semanas sem ressecção, até 3 semanas após amputação menor com margem óssea positiva, poucos dias se margem limpa. Reavaliar diagnóstico e tratamento se não houver resolução em 4 semanas.</li>
+<li><b>Não fazer:</b> antibiótico tópico associado ao sistêmico, oxigenoterapia hiperbárica para tratar infecção, G-CSF, prata ou mel como tratamento da infecção (IWGDF/IDSA 2023).</li>
+<li><b>Descarga e perfusão:</b> úlcera plantar neuropática → bota de contato total ou órtese até o joelho não removível; revascularização urgente se pressão de tornozelo &lt;50, ITB &lt;0,4, hálux &lt;30 ou TcPO2 &lt;25 mmHg.</li>
+</ul>
+<div class="box danger"><span class="box-label">DANGER</span><div class="box-title">Infecção grave do pé com isquemia é emergência dupla</div><div class="box-body">Drenar sem revascularizar deixa uma ferida que não cicatriza; revascularizar sem drenar deixa um compartimento séptico. A IWGDF/IDSA pede consulta cirúrgica e vascular urgentes juntas para decidir a sequência: em geral, drenagem e desbridamento de controle de foco em até 24–48 h e revascularização logo em seguida, antes da cirurgia definitiva.</div></div>
+
+<div class="sub-title">F1.7 · Charcot ativo</div>
+<ul class="bullets">
+<li><b>Imobilizar e descarregar já:</b> bota gessada de contato total até o joelho (trocas semanais no início), órtese até o joelho não removível como segunda opção; muletas ou cadeira de rodas.</li>
+<li><b>Seguimento:</b> temperatura cutânea comparativa, edema e imagem a cada 2–4 semanas; manter até ausência de inflamação e consolidação radiográfica; depois calçado sob medida e órtese de proteção.</li>
+<li><b>Sem fármaco para encurtar a fase ativa</b> (bisfosfonatos, calcitonina, denosumabe não recomendados pelo IWGDF 2023); vitamina D e cálcio conforme recomendação local para quem tem risco de deficiência.</li>
+</ul>
+
+<div class="sub-title">F1.8 · Prevenção de recorrência e alta</div>
+<ul class="bullets">
+<li><b>Depois de uma CAD:</b> revisar causa (omissão, custo, transtorno alimentar, depressão, bomba), educação estruturada de dias de doença, cetonemia capilar disponível, plano escrito, consulta em 1–2 semanas (ADA 16.17–16.18).</li>
+<li><b>Regras de dias de doença (DM1 e insulinizados):</b> nunca suspender a basal, medir glicemia e cetona a cada 2–4 h se glicemia &gt;250 ou sintomas, doses extras de insulina rápida conforme cetonemia, hidratação com líquidos sem açúcar se glicemia alta e com açúcar se baixa, procurar o PS se BHB ≥1,5–3 mmol/L com vômitos, se não conseguir hidratar ou se dispneia.</li>
+<li><b>Suspender temporariamente em doença aguda com jejum ou desidratação:</b> metformina, iSGLT2, diuréticos, IECA/BRA e AINE (mnemônico britânico "SADMANS", EN01); GLP-1 se vômitos.</li>
+<li><b>Depois de hipoglicemia grave:</b> glucagon na receita, CGM se insulina intensiva, revisão do esquema e da TFG, orientação para direção de veículos.</li>
+<li><b>Depois de úlcera:</b> risco IWGDF 3 — revisão a cada 1–3 meses, calçado terapêutico, educação, termometria domiciliar quando disponível, tratamento de calos e unhas por podólogo.</li>
+</ul>
+<div class="box hy"><span class="box-label">HIGH-YIELD</span><div class="box-title">Critérios de UTI nas crises hiperglicêmicas</div><div class="box-body">CAD grave (pH &lt;7,0, HCO3 &lt;10, BHB &gt;6 ou estupor/coma), EHH grave ou com coma, instabilidade hemodinâmica, precipitante crítico (IAM, sepse, hemorragia digestiva, pancreatite grave), insuficiência respiratória, K &lt;2,5 ou &gt;6,5 com alteração no ECG, gestante com CAD e criança com risco de edema cerebral. CAD leve a moderada não complicada pode ser conduzida em unidade intermediária ou sala de emergência com enfermagem treinada.</div></div>
+</div>
+</div>
+
+<div class="card tx">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">F.2</span> Doses operacionais</div><h3>Tabela de doses — crises do diabetes e pé <span class="ank ank-hy">HIGH-YIELD</span></h3></div>
+<div class="card-body">
+<div class="sub-title">F2.1 · Fluidos, insulina e eletrólitos (adulto)</div>
+<div class="stbl stbl-3">
+<div class="stbl-head stbl-3"><div>Fármaco / solução</div><div>Dose adulto</div><div>Indicação / notas</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">SF 0,9% ou Ringer lactato</div><div class="col" data-l="Dose"><b>15–20 mL/kg (1–1,5 L) na 1ª hora</b>; consenso: 500–1.000 mL/h nas primeiras 2–4 h; depois 250–500 mL/h</div><div class="col" data-l="Indicação">CAD e EHH; balanceado resolve CAD mais rápido (SBD R7 IIa); cardiopata/DRC: 250 mL por vez. No EHH, SF 0,9% é o fluido inicial (JBDS)</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">NaCl 0,45%</div><div class="col" data-l="Dose">250–500 mL/h</div><div class="col" data-l="Indicação">Na corrigido ≥150 na CAD (SBD R8) ou osmolalidade que não cai no EHH apesar de volume e insulina adequados</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">SG 5% ou 10%</div><div class="col" data-l="Dose">Associado ao cristaloide (150–250 mL/h) ou em Y</div><div class="col" data-l="Indicação">Glicemia &lt;250 (CAD) ou &lt;250–300 (EHH); desde o início na CAD euglicêmica. SG 10% se a infusão de insulina precisa ficar alta para fechar a cetose</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Insulina regular IV (100 U em 100 mL SF = 1 U/mL)</div><div class="col" data-l="Dose"><b>0,1 U/kg/h</b> (CAD moderada/grave; EHH misto); <b>0,05 U/kg/h</b> (EHH sem cetose; CAD com glicemia &lt;250)</div><div class="col" data-l="Indicação">Sem bolus (SBD R12); bolus 0,1 U/kg IV/IM só se atraso para montar a bomba; preencher o equipo descartando ~20 mL pela adsorção ao plástico. SBD: 0,02–0,05 U/kg/h com glicemia 200–250. Taxa variável de enfermagem: mínimo 1 U/h</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Análogo ultrarrápido SC (lispro, asparte, glulisina)</div><div class="col" data-l="Dose"><b>0,1 U/kg a cada 1 h ou 0,2 U/kg a cada 2 h</b>; com glicemia &lt;250: 0,05 U/kg/h ou 0,1 U/kg a cada 2 h</div><div class="col" data-l="Indicação">CAD leve a moderada não complicada (ADA 2026 Fig. 16.1). Apostila/esquema antigo: 0,3 U/kg inicial e 0,2 U/kg a cada 2 h. Não usar em choque, CAD grave ou EHH</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Glargina SC precoce</div><div class="col" data-l="Dose">0,15–0,3 U/kg SC 1×/dia</div><div class="col" data-l="Indicação">Durante a infusão IV para evitar rebote e encurtar internação (consenso 2024); diminui o risco da transição</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Insulina SC na transição</div><div class="col" data-l="Dose">Virgem: <b>0,5–0,6 U/kg/dia</b> (0,3 se DRC, frágil); SBD: 0,4–0,8 U/kg/dia ou média da taxa IV das últimas 4–6 h × 24 × 60–80%</div><div class="col" data-l="Indicação">50% basal + 50% prandial; basal 1–2 h antes de desligar a bomba (SBD ≥2 h). Basal 2×/dia pode cobrir melhor. Degludeca não recomendada nesta fase (SBD)</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">KCl 19,1% (2,5 mEq/mL; ampola 10 mL ≈ 25 mEq)</div><div class="col" data-l="Dose"><b>K 3,5–5,0: 20–30 mEq por litro</b> (ADA Fig.: 10–20 mEq/L); <b>K &lt;3,5: 10–20 mEq/h</b> e insulina suspensa</div><div class="col" data-l="Indicação">Alvo K 4–5; exige diurese ~0,5 mL/kg/h; &gt;20 mEq/h só por acesso central com monitor. SBD: limiares 3,3 e 5,2; 10–30 mEq/h para K &lt;5,2 (R10). K 2 h após iniciar insulina, depois a cada 2–4 h</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Bicarbonato de sódio 8,4% (1 mEq/mL)</div><div class="col" data-l="Dose"><b>100 mEq (100 mL) em 400 mL de água estéril em 2 h</b>, repetir até pH &gt;7,0 (consenso); SBD: 50–100 mmol em 200–400 mL</div><div class="col" data-l="Indicação">Só pH &lt;7,0 (ADA) ou &lt;6,9 (SBD); acrescentar KCl (o bicarbonato derruba o K); não usar em criança salvo exceções</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Fosfato de potássio</div><div class="col" data-l="Dose">20–30 mEq/L de fluido</div><div class="col" data-l="Indicação">Fosfato &lt;1,0 mg/dL com fraqueza muscular, insuficiência respiratória ou cardíaca, anemia hemolítica; monitorar cálcio (hipocalcemia)</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Enoxaparina</div><div class="col" data-l="Dose">40 mg SC 1×/dia (TFG &lt;30: 20 mg)</div><div class="col" data-l="Indicação">Profilaxia de TEV no EHH e na CAD com coma, idade &gt;50 ou risco trombótico; anticoagulação plena só com trombose comprovada</div></div>
+</div>
+
+<div class="sub-title">F2.2 · Criança, edema cerebral e hipoglicemia</div>
+<div class="stbl stbl-3">
+<div class="stbl-head stbl-3"><div>Fármaco</div><div>Dose</div><div>Indicação / notas</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Cristaloide isotônico (criança)</div><div class="col" data-l="Dose">10–20 mL/kg em 20–30 min, repetir se choque</div><div class="col" data-l="Indicação">Depois, déficit de 5–10% em 24–48 h + manutenção (ISPAD 2022 — conferir texto integral)</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Insulina regular IV (criança)</div><div class="col" data-l="Dose">0,05–0,1 U/kg/h, sem bolus, 1 h após início do fluido</div><div class="col" data-l="Indicação">Não reduzir abaixo de 0,05 enquanto houver acidose; glicose 5–12,5% para manter 150–250 mg/dL</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">KCl (criança)</div><div class="col" data-l="Dose">~40 mmol/L do fluido</div><div class="col" data-l="Indicação">A partir da insulina; antes se hipocalêmico; adiar se K alto até haver diurese</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Manitol 20%</div><div class="col" data-l="Dose"><b>0,5–1 g/kg (2,5–5 mL/kg) IV em 10–20 min</b>; repetir em 30 min se sem resposta. Adulto (SBD): 0,25–0,5 g/kg</div><div class="col" data-l="Indicação">Edema cerebral; tratar antes da TC</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">NaCl 3%</div><div class="col" data-l="Dose">2,5–5 mL/kg IV em 10–15 min</div><div class="col" data-l="Indicação">Alternativa ao manitol no edema cerebral (ISPAD)</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Glicose oral</div><div class="col" data-l="Dose"><b>15 g</b> (nível 1); 30 g no nível 2 (PCDT 2026); 5–10 g em alça fechada</div><div class="col" data-l="Indicação">Reavaliar em 15 min e repetir; 15 g ≈ 1 colher de sopa de açúcar ≈ 150 mL de suco ou refrigerante comum ≈ 3–4 comprimidos de 4 g</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Glucagon IM/SC (pó + diluente)</div><div class="col" data-l="Dose"><b>1 mg</b>; 0,5 mg se &lt;25 kg</div><div class="col" data-l="Indicação">Hipoglicemia grave sem acesso venoso; vômitos frequentes; falha em etilista ou desnutrido (sem glicogênio)</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Glucagon nasal / dasiglucagon</div><div class="col" data-l="Dose">Nasal 3 mg; dasiglucagon 0,6 mg SC</div><div class="col" data-l="Indicação">Preferidos por dispensarem reconstituição (Endocrine Society 2023, forte); disponibilidade no Brasil a confirmar</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Glicose 50%</div><div class="col" data-l="Dose"><b>25 g = 50 mL IV</b> (apostila: 30 mL diluídos em 100 mL de SF; fórmula (100 − glicemia) × 0,4 em mL)</div><div class="col" data-l="Indicação">Hipoglicemia com acesso venoso; glicemia em 10–15 min; flebite e extravasamento — preferir veia calibrosa</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Glicose 10%</div><div class="col" data-l="Dose">150–200 mL em 15 min (bolus); manutenção 50–100 mL/h</div><div class="col" data-l="Indicação">Alternativa menos irritante (JBDS hipoglicemia — não lido integralmente); infusão contínua na hipoglicemia por sulfonilureia ou insulina de ação longa</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Tiamina</div><div class="col" data-l="Dose">100 mg IV ou IM</div><div class="col" data-l="Indicação">Etilista, desnutrido, hiperêmese, bariátrico: junto com a glicose, sem atrasá-la (prevenção de Wernicke)</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Octreotida</div><div class="col" data-l="Dose">50–100 mcg SC a cada 6–12 h</div><div class="col" data-l="Indicação">Hipoglicemia recorrente por sulfonilureia apesar de glicose (literatura de toxicologia; não está em diretriz de diabetes)</div></div>
+</div>
+
+<div class="sub-title">F2.3 · Antimicrobianos do pé diabético e das infecções do descompensado</div>
+<div class="stbl stbl-3">
+<div class="stbl-head stbl-3"><div>Fármaco</div><div>Dose adulto (TFG normal)</div><div>Indicação / notas</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Cefalexina</div><div class="col" data-l="Dose">500 mg–1 g VO 6/6 h</div><div class="col" data-l="Indicação">Grau 2 sem antibiótico recente (cocos gram-positivos); 1–2 semanas</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Amoxicilina-clavulanato</div><div class="col" data-l="Dose">875/125 mg VO 12/12 h (ou 500/125 8/8 h); IV 1 g/200 mg 8/8 h</div><div class="col" data-l="Indicação">Grau 2 com antibiótico recente; grau 3 sem fatores complicadores; cobre anaeróbios</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Clindamicina</div><div class="col" data-l="Dose">300–450 mg VO 6/6–8/8 h; 600 mg IV 8/8 h</div><div class="col" data-l="Indicação">Alergia a β-lactâmico; MRSA comunitário (checar resistência induzível); associada a cefalosporina na isquemia/necrose</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Sulfametoxazol-trimetoprima</div><div class="col" data-l="Dose">800/160 mg, 1–2 comprimidos VO 12/12 h</div><div class="col" data-l="Indicação">MRSA; cuidado com hipercalemia (DRD, IECA) e com sulfonilureia (potencializa hipoglicemia)</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Doxiciclina</div><div class="col" data-l="Dose">100 mg VO 12/12 h</div><div class="col" data-l="Indicação">MRSA ou alergia; não cobre estreptococo de forma confiável isoladamente</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Levofloxacino / ciprofloxacino</div><div class="col" data-l="Dose">Levo 750 mg VO/IV 1×/dia; cipro 500–750 mg VO 12/12 h (400 mg IV 8/8–12/12 h)</div><div class="col" data-l="Indicação">Alternativas; cipro na otite externa maligna (750 mg 12/12 h por 6–8 semanas); quinolona + sulfonilureia = disglicemia</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Ceftriaxona + metronidazol</div><div class="col" data-l="Dose">Ceftriaxona 1–2 g IV 1×/dia; metronidazol 500 mg IV/VO 8/8 h</div><div class="col" data-l="Indicação">Grau 3 com necrose ou isquemia; opção de baixo custo no SUS</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Ampicilina-sulbactam</div><div class="col" data-l="Dose">3 g IV 6/6 h</div><div class="col" data-l="Indicação">Grau 3–4 sem antibiótico recente; cobre anaeróbios</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Piperacilina-tazobactam</div><div class="col" data-l="Dose"><b>4,5 g IV 6/6 h</b> (ou infusão estendida 8/8 h)</div><div class="col" data-l="Indicação">Grau 4, antibiótico recente, úlcera macerada, clima quente (Pseudomonas); associar vancomicina se risco de MRSA</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Ertapenem / meropenem</div><div class="col" data-l="Dose">Ertapenem 1 g IV 1×/dia; meropenem 1 g IV 8/8 h</div><div class="col" data-l="Indicação">ESBL ou falha; ertapenem não cobre Pseudomonas</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Vancomicina</div><div class="col" data-l="Dose">15–20 mg/kg IV 8/8–12/12 h (ataque 25–30 mg/kg no grave), guiada por AUC ou vale</div><div class="col" data-l="Indicação">Risco de MRSA (internação recente, hemodiálise, colonização prévia); nefrotoxicidade somada à IRA da crise</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Linezolida</div><div class="col" data-l="Dose">600 mg VO/IV 12/12 h</div><div class="col" data-l="Indicação">MRSA com boa biodisponibilidade oral; &gt;2 semanas: plaquetopenia, neuropatia óptica e periférica, interação serotoninérgica</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Anfotericina B lipossomal</div><div class="col" data-l="Dose"><b>5–10 mg/kg/dia IV</b></div><div class="col" data-l="Indicação">Mucormicose (10 mg/kg se SNC); com desbridamento e correção da acidose</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Isavuconazol</div><div class="col" data-l="Dose">200 mg 8/8 h por 6 doses, depois 200 mg/dia (VO/IV)</div><div class="col" data-l="Indicação">Mucormicose: resgate, intolerância ou sequência oral</div></div>
+</div>
+<div class="box decision"><span class="box-label">DECISION</span><div class="box-title">Ajuste renal e interações que pesam no diabético</div><div class="box-body">A IRA pré-renal está em ~50% das crises e a DRD é comum: ajuste piperacilina-tazobactam, meropenem, vancomicina, SMX-TMP e levofloxacino à TFG. Quinolonas, SMX-TMP, claritromicina, metronidazol e fluconazol potencializam sulfonilureias (hipoglicemia); quinolonas também causam hiperglicemia. Linezolida prolongada agrava neuropatia periférica — no pé neuropático, é um efeito adverso que se confunde com a doença.</div></div>
+</div>
+</div>
+
+<div class="card tx">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">F.3</span> Monitorização</div><h3>O que medir e com que frequência na crise hiperglicêmica</h3></div>
+<div class="card-body">
+<div class="stbl stbl-3">
+<div class="stbl-head stbl-3"><div>Parâmetro</div><div>Frequência</div><div>Ação que dispara</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Parâmetro">Glicemia capilar</div><div class="col" data-l="Frequência">1/1 h com insulina IV; 1/1–2/2 h no esquema SC</div><div class="col" data-l="Ação">&lt;250: reduzir insulina e iniciar glicose; &lt;70: glicose IV e revisar taxas; queda &lt;50 mg/dL/h: checar acesso e dobrar taxa</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Parâmetro">Potássio</div><div class="col" data-l="Frequência">Admissão, 2 h após iniciar insulina, depois 2/2–4/4 h até resolver</div><div class="col" data-l="Ação">&lt;3,5 suspender insulina e repor; &lt;5,0 iniciar reposição; ECG se &lt;3 ou &gt;6</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Parâmetro">BHB e gasometria venosa</div><div class="col" data-l="Frequência">2/2–4/4 h</div><div class="col" data-l="Ação">Queda esperada de BHB ~0,5 mmol/L/h e alta de HCO3 ~3 mEq/L/h (SBD); se não, revisar insulina e precipitante</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Parâmetro">Na, osmolalidade efetiva</div><div class="col" data-l="Frequência">2/2 h nas primeiras 6 h no EHH; 4/4 h na CAD</div><div class="col" data-l="Ação">Osm caindo &gt;8 mOsm/kg/h ou Na &gt;10 mEq/L/24 h: reduzir fluido ou aumentar tonicidade</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Parâmetro">Diurese e balanço</div><div class="col" data-l="Frequência">Horários (sonda se coma ou oligúria)</div><div class="col" data-l="Ação">&lt;0,5 mL/kg/h após volume: IRA ou volume insuficiente; não repor K sem diurese</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Parâmetro">Estado neurológico</div><div class="col" data-l="Frequência">1/1 h na criança e no EHH com coma</div><div class="col" data-l="Ação">Piora após melhora: edema cerebral, hipoglicemia, hiponatremia, AVC</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Parâmetro">Fósforo, magnésio, ureia, creatinina, CK</div><div class="col" data-l="Frequência">12/12–24/24 h</div><div class="col" data-l="Ação">Fosfato &lt;1 com fraqueza; Mg baixo dificulta corrigir K; CK alta no EHH = rabdomiólise</div></div>
+</div>
+</div>
+</div>
+
+<div class="card tx">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">F.4</span> Cenários</div><h3>Caso → conduta certa → erro típico <span class="ank ank-dgr">DANGER</span></h3></div>
+<div class="card-body">
+<div class="stbl stbl-3">
+<div class="stbl-head stbl-3"><div>Caso</div><div>Conduta certa</div><div>Erro típico</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Caso">DM1, 22 anos, pH 7,05, HCO3 6, BHB 6,8, K 3,1, glicemia 480</div><div class="col" data-l="Conduta certa">UTI; SF/Ringer 1 L/h; <b>KCl 10–20 mEq/h e insulina adiada</b> até K ≥3,5; depois 0,1 U/kg/h; bicarbonato não (pH ≥7,0)</div><div class="col" data-l="Erro típico">Insulina em bolus na chegada porque "a glicemia está alta"; arritmia por hipocalemia</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Caso">DM2 em dapagliflozina, 3º dia de pós-operatório, náusea, glicemia 168, pH 7,18, BHB 5,2</div><div class="col" data-l="Conduta certa">CAD euglicêmica: suspender iSGLT2; cristaloide + <b>SG 10% desde o início</b> + insulina 0,05–0,1 U/kg/h, K; resolução por BHB</div><div class="col" data-l="Erro típico">Descartar CAD pela glicemia "normal" e tratar como íleo pós-operatório</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Caso">Idoso, glicemia 1.100, Na 138, osmolalidade efetiva ~337, pH 7,36, BHB 0,8, sonolento</div><div class="col" data-l="Conduta certa">EHH: Na corrigido ~154–163; <b>SF 0,9% 1 L/h</b> e depois guiado por osmolalidade; insulina 0,05 U/kg/h quando a glicemia parar de cair; enoxaparina; meta 3–8 mOsm/kg/h</div><div class="col" data-l="Erro típico">Insulina 0,1 U/kg/h desde a admissão + NaCl 0,45% rápido: queda brusca da osmolalidade, colapso e edema cerebral</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Caso">CAD em resolução, glicemia 160, BHB 1,8, pH 7,26; enfermagem pergunta se desliga a bomba</div><div class="col" data-l="Conduta certa">Manter insulina 0,05 U/kg/h e <b>aumentar glicose</b> (SG 10%) para 150–200 mg/dL até BHB &lt;0,6</div><div class="col" data-l="Erro típico">Desligar a bomba e "cobrir com escala SC": CAD recidiva em horas</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Caso">CAD resolvida, paciente almoçando, glargina não prescrita, bomba desligada às 12 h</div><div class="col" data-l="Conduta certa">Basal SC 1–2 h <b>antes</b> de desligar (ou glargina precoce já no 1º dia) e prandial com a refeição</div><div class="col" data-l="Erro típico">Desligar sem sobreposição; glicemia 400 e BHB 3 às 17 h</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Caso">Idosa, glibenclamida 10 mg/dia, TFG 25, encontrada confusa com glicemia 32; melhora com glicose 50%</div><div class="col" data-l="Conduta certa">Internar, glicose 10% contínua, glicemia 1/1 h por ≥24–72 h; octreotida se recorrer; <b>suspender glibenclamida para sempre</b></div><div class="col" data-l="Erro típico">Alta da emergência após 2 h com glicemia 140</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Caso">DM2, úlcera plantar de 2 cm sob a 1ª cabeça metatarsal, sem eritema nem secreção, pulsos presentes</div><div class="col" data-l="Conduta certa">Grau 1: <b>sem antibiótico</b>; desbridar calo, descarga não removível até o joelho, curativo, RX se profunda</div><div class="col" data-l="Erro típico">Ciprofloxacino "profilático" por 14 dias e chinelo</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Caso">Úlcera no 2º dedo com osso tocado à sonda, RX com erosão cortical, VHS 85, sem DAP</div><div class="col" data-l="Conduta certa">Osteomielite de antepé: biópsia óssea para cultura; <b>6 semanas</b> de antibiótico dirigido ou ressecção/amputação menor com ~3 semanas se margem positiva</div><div class="col" data-l="Erro típico">Swab superficial guiando antibiótico de 10 dias</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Caso">Neuropata, mediopé quente, edemaciado, eritematoso, 2,8 °C mais quente que o outro, sem ferida, PCR normal</div><div class="col" data-l="Conduta certa">Charcot ativo provável: <b>bota de contato total até o joelho</b> já, RX e RM, seguimento por temperatura</div><div class="col" data-l="Erro típico">Tratar como celulite com antibiótico e liberar carga: colapso do arco em semanas</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Caso">Criança de 4 anos, DM1 novo, pH 6,98, 6 h de tratamento, começa a vomitar e fica bradicárdica</div><div class="col" data-l="Conduta certa">Edema cerebral: <b>manitol 0,5–1 g/kg</b> ou NaCl 3% imediato, reduzir fluido, UTI; TC depois</div><div class="col" data-l="Erro típico">Esperar a TC para tratar; hiperventilar agressivamente</div></div>
+</div>
+</div>
+</div>
+
+<div class="card tx">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">F.5</span> SUS e Brasil</div><h3>O que muda na rede pública</h3></div>
+<div class="card-body">
+<ul class="bullets">
+<li><b>Insulinas:</b> regular, NPH e, desde as Portarias SECTICS 948/949 de 2025, análogos de ação rápida e prolongada também para DM2 (PCDT DM2 2026; PCDT DM1 2019 para o DM1). A insulina regular IV da bomba e a transição para basal-bolus são viáveis com o que a rede dispõe.</li>
+<li><b>Cetonemia capilar:</b> fitas de BHB não são distribuídas de forma ampla pela atenção primária; no hospital sem BHB, a SBD aceita AG &gt;12 e cetonúria com a ressalva de que subestimam e "pioram" na recuperação.</li>
+<li><b>Glucagon:</b> a disponibilidade ambulatorial pelo SUS não foi confirmada nesta captura; glicose 50% e 10% estão em qualquer unidade de urgência. Glucagon nasal e dasiglucagon: registro e comercialização no Brasil a confirmar.</li>
+<li><b>Pé diabético:</b> PCDT DM2 2026 manda encaminhar à urgência úlcera infectada, infecção em expansão, isquemia crítica, gangrena, suspeita de Charcot agudo ou edema e rubor inexplicados; deformidade importante, pulsos ausentes ou suspeita de isquemia vão à atenção especializada. Exame do pé ao diagnóstico e anualmente, com monofilamento + segundo teste (diapasão preferido). Manual do Pé Diabético do MS (2016) para a organização da rede.</li>
+<li><b>Antibióticos:</b> cefalexina, amoxicilina-clavulanato, SMX-TMP, clindamicina, ciprofloxacino, ceftriaxona e metronidazol cobrem a maior parte dos graus 2 e 3 com o que a rede tem; carbapenêmicos, vancomicina e linezolida seguem a CCIH local.</li>
+<li><b>Retina e rim:</b> PCDT de Retinopatia Diabética (anti-VEGF, laser) e rede de terapia renal substitutiva → OE02 e NU03.</li>
+</ul>
+<div class="box hy"><span class="box-label">HIGH-YIELD</span><div class="box-title">Diretriz brasileira × consenso internacional em prova</div><div class="box-body">Provas brasileiras costumam cobrar a SBD: K de corte 3,3 e 5,2, HCO3 &lt;15 no diagnóstico, bicarbonato com pH &lt;6,9, gravidade pelo pH venoso (7,20–7,30; 7,10–7,20; &lt;7,10), AG &lt;12 na resolução e EHH com osmolalidade ≥320. O consenso 2024/ADA 2026 usa 3,5 e 5,0, HCO3 &lt;18, pH &lt;7,0, gravidade por pH/HCO3/BHB/consciência, resolução por BHB &lt;0,6 e osmolalidade efetiva &gt;300. Saiba as duas e diga qual está usando.</div></div>
+</div>
+</div>
+</section>
+
+<section id="pitfalls">
+<div class="section"><div class="section-eyebrow"><span>G</span> Pitfalls · Mitos · Controvérsias</div><h2 class="section-title">Erros Operacionais + Mitos Vivos + Debates Atuais</h2><div class="section-sub">Os erros abaixo aparecem em prontuário de verdade e em prova. A maioria nasce de olhar a glicemia quando o problema é cetona, potássio, água ou osso.</div></div>
+<div class="card pearl">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">G.1</span> Pegadinhas</div><h3>10 Erros Operacionais nas crises do diabetes</h3></div>
+<div class="card-body">
+<div class="stbl stbl-2">
+<div class="stbl-head stbl-2"><div>Erro Comum</div><div>Correto</div></div>
+<div class="stbl-row stbl-2"><div class="col col1" data-l="Erro">Iniciar insulina assim que chega a glicemia de 500, antes do potássio</div><div class="col" data-l="Correto">Volume primeiro, K em seguida; com K &lt;3,5 (SBD 3,3), repor 10–20 mEq/h e adiar a insulina. O déficit corporal de K é de 3–5 mEq/kg mesmo com K sérico normal.</div></div>
+<div class="stbl-row stbl-2"><div class="col col1" data-l="Erro">Descartar CAD porque a glicemia é 170 mg/dL</div><div class="col" data-l="Correto">~10% das CAD são euglicêmicas (iSGLT2, gestação, jejum, álcool); o critério é glicemia ≥200 <b>ou</b> DM conhecido, com BHB ≥3 e acidose.</div></div>
+<div class="stbl-row stbl-2"><div class="col col1" data-l="Erro">Guiar o tratamento pela cetonúria e achar que piorou quando a fita fica 3+</div><div class="col" data-l="Correto">Usar BHB sérico ou capilar; a fita de nitroprussiato não mede BHB e fica mais positiva quando o BHB é convertido em acetoacetato na recuperação.</div></div>
+<div class="stbl-row stbl-2"><div class="col col1" data-l="Erro">Suspender a bomba de insulina quando a glicemia chega a 200</div><div class="col" data-l="Correto">Reduzir para 0,05 U/kg/h e acrescentar SG 5–10%; insulina continua até BHB &lt;0,6 e pH ≥7,3 ou HCO3 ≥18.</div></div>
+<div class="stbl-row stbl-2"><div class="col col1" data-l="Erro">Declarar resolução quando o AG fecha, mesmo com HCO3 de 14</div><div class="col" data-l="Correto">A acidose hiperclorêmica da recuperação mantém HCO3 baixo com AG normal; o critério do consenso é BHB &lt;0,6 com pH ≥7,3 ou HCO3 ≥18 (a SBD ainda cita AG, a ADA não).</div></div>
+<div class="stbl-row stbl-2"><div class="col col1" data-l="Erro">Desligar a bomba e só depois prescrever a insulina basal</div><div class="col" data-l="Correto">Basal SC 1–2 h antes (SBD ≥2 h) de desligar, ou glargina precoce já nas primeiras horas; a insulina IV some em minutos.</div></div>
+<div class="stbl-row stbl-2"><div class="col col1" data-l="Erro">No EHH, insulina 0,1 U/kg/h desde a admissão e NaCl 0,45% para "baixar o sódio"</div><div class="col" data-l="Correto">Volume isotônico primeiro; insulina 0,05 U/kg/h quando a glicemia parar de cair; osmolalidade 3–8 mOsm/kg/h e Na ≤10 mEq/L em 24 h; hipotônico só se a osmolalidade não cair.</div></div>
+<div class="stbl-row stbl-2"><div class="col col1" data-l="Erro">Dar alta 2 h após hipoglicemia por glibenclamida porque a glicemia normalizou</div><div class="col" data-l="Correto">Internar e monitorar ≥24 h (até 72 h com DRC), glicose contínua, octreotida se recorrer, suspender o secretagogo.</div></div>
+<div class="stbl-row stbl-2"><div class="col col1" data-l="Erro">Prescrever antibiótico para úlcera do pé sem sinais de infecção, guiado por swab</div><div class="col" data-l="Correto">Grau 1 não recebe antibiótico; quando houver infecção, cultura de tecido profundo por curetagem ou biópsia (osso na osteomielite), nunca swab superficial.</div></div>
+<div class="stbl-row stbl-2"><div class="col col1" data-l="Erro">Tratar pé quente, vermelho e edemaciado de neuropata como celulite e liberar a carga</div><div class="col" data-l="Correto">Sem porta de entrada e com diferença de temperatura &gt;2 °C, é Charcot ativo até prova contrária: bota de contato total até o joelho e RM.</div></div>
+</div>
+</div>
+</div>
+<div class="card pearl">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">G.2</span> Mitos · Controvérsias</div><h3>Mitos Vivos e Debates Atuais</h3></div>
+<div class="card-body">
+<div class="box myth"><span class="box-label">MYTH</span><div class="box-title">"Bicarbonato acelera a recuperação da CAD grave"</div><div class="box-body">Ensaios e séries não mostram resolução mais rápida da acidose, menor tempo de internação ou menor mortalidade com bicarbonato em pH 6,9–7,1; há hipocalemia, sobrecarga de sódio, acidose liquórica paradoxal, retardo da depuração de cetonas e, na criança, associação com edema cerebral. A ADA 2026 limita a pH &lt;7,0 e a SBD a pH &lt;6,9, sempre com reposição de K.</div></div>
+<div class="box myth"><span class="box-label">MYTH</span><div class="box-title">"Soro demais causa edema cerebral na criança com CAD"</div><div class="box-body">O PECARN FLUID (NEJM 2018, 1.389 episódios) randomizou reposição rápida × lenta e NaCl 0,9% × 0,45% e não encontrou diferença em lesão cerebral clínica, Glasgow ou memória. O edema relaciona-se mais à gravidade da CAD (pH, pCO2, ureia) e à lesão de hipoperfusão-reperfusão. Restringir volume de quem está em choque por medo de edema é o erro; o bolus de insulina e o bicarbonato, esses sim, seguem desaconselhados.</div></div>
+<div class="box myth"><span class="box-label">MYTH</span><div class="box-title">"Glicemia normal no glicosímetro exclui cetoacidose"</div><div class="box-body">Na CAD euglicêmica, glicosúria (iSGLT2), gestação, jejum, álcool ou insulina parcialmente mantida baixam a glicemia enquanto a cetogênese continua. A ADA estima ~10% das CAD com glicemia &lt;200 mg/dL. Por isso o consenso 2024 trocou "glicemia &gt;250" por "≥200 ou diabetes conhecido" e colocou o BHB no centro do diagnóstico.</div></div>
+<div class="box controversy"><span class="box-label">CONTROVERSY</span><div class="box-title">Cristaloide balanceado ou SF 0,9% na CAD?</div><div class="box-body">A subanálise de SMART/SALT-ED (172 adultos) mostrou resolução mais rápida com balanceado (13,0 × 16,9 h) e a SBD dá IIa para Ringer lactato; os grandes ensaios gerais em UTI (BaSICS, PLUS) não mostraram benefício de mortalidade, e o lactato do Ringer preocupa quem não conhece sua metabolização (é convertido em HCO3, não piora a acidose). O consenso 2024 aceita os dois. No EHH, a JBDS mantém SF 0,9% porque o Ringer é mais hipotônico (~273 mOsm/L) e acelera a queda de osmolalidade.</div></div>
+<div class="box controversy"><span class="box-label">CONTROVERSY</span><div class="box-title">Quando iniciar insulina no EHH</div><div class="box-body">A JBDS recomenda aguardar a glicemia parar de cair com fluido antes de iniciar 0,05 U/kg/h (exceto com cetonemia), para não acelerar a queda de osmolalidade em quem ainda está contraído. O consenso 2024 e a SBD iniciam 0,05 U/kg/h após a reexpansão inicial e a avaliação do K. A evidência para os dois é observacional; o que ambos compartilham é dose menor que na CAD e alvo de queda de osmolalidade de 3–8 mOsm/kg/h.</div></div>
+<div class="box controversy"><span class="box-label">CONTROVERSY</span><div class="box-title">Reintroduzir iSGLT2 depois de uma CAD euglicêmica no DM2</div><div class="box-body">O benefício cardiorrenal do iSGLT2 é robusto, e muitos episódios têm gatilho claro (cirurgia, jejum, dieta cetogênica). O consenso 2024 não recomenda reintroduzir de rotina por falta de dados de segurança; alguns nefrologistas e cardiologistas reintroduzem em quem tem IC ou DRC, após excluir insulinopenia (peptídeo C, anti-GAD) e com educação sobre suspensão em dias de doença e cetonemia domiciliar. Decisão individual e compartilhada.</div></div>
+</div>
+</div>
+</section>
+
+<section id="pearls">
+<div class="section"><div class="section-eyebrow"><span>H</span> Pearls · Evolving</div><h2 class="section-title">H1 · Pearls de Especialista · H2 · Áreas em Evolução</h2><div class="section-sub">O que distingue quem conduz a crise com segurança: ler o laboratório que engana, antecipar o rebote e reconhecer o pé antes do osso.</div></div>
+<div class="card pearl">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">H.1</span> Pearls</div><h3>8 Nuances que Distinguem o Expert</h3></div>
+<div class="card-body">
+<div class="box pearl"><span class="box-label">PEARL</span><div class="box-title">O Na que não sobe enquanto a glicose cai é um alarme de água livre</div><div class="box-body">Com a glicose saindo do extracelular, a água a acompanha e o Na medido deve subir 1,6–2,4 mEq/L para cada 100 mg/dL de queda. Na estável ou caindo nesse cenário significa que está entrando água livre demais (fluido hipotônico, SG em excesso, ingestão oral) e a osmolalidade efetiva está despencando — o padrão associado a edema cerebral na criança. Acompanhe o Na corrigido, não o medido.</div></div>
+<div class="box pearl"><span class="box-label">PEARL</span><div class="box-title">Amilase, lipase e creatinina mentem na CAD</div><div class="box-body">Hiperamilasemia e hiperlipasemia (até 3× o normal, às vezes mais) ocorrem sem pancreatite em até um quarto das CAD; o acetoacetato interfere no método colorimétrico de Jaffé e eleva falsamente a creatinina. Pancreatite se diagnostica por dor típica que não melhora com a correção da acidose e por imagem; IRA, pela evolução e pela ureia. A hipertrigliceridemia grave da CAD, por sua vez, causa pseudo-hiponatremia em métodos indiretos.</div></div>
+<div class="box pearl"><span class="box-label">PEARL</span><div class="box-title">CAD de repetição é diagnóstico psicossocial até prova contrária</div><div class="box-body">Omissão de insulina é a principal causa de CAD recorrente em adolescentes e adultos jovens, e por trás dela estão custo, depressão, transtorno alimentar com omissão deliberada para perder peso ("diabulimia"), abuso de substâncias (cannabis aumenta o risco) e violência doméstica. A mortalidade em 1 ano após CAD é 13 vezes a da população; a alta sem avaliação de saúde mental e de acesso é parte do problema.</div></div>
+<div class="box pearl"><span class="box-label">PEARL</span><div class="box-title">A insulina IV some em minutos, a SC leva horas</div><div class="box-body">A meia-vida plasmática da insulina regular IV é de 5–7 minutos; a basal SC demora 1–2 h para atingir nível útil. Bomba desligada, acesso perdido ou equipo trocado sem reprimir resultam em cetose em menos de 1 h. Preencher o equipo descartando ~20 mL da solução (a insulina adsorve ao PVC) evita as primeiras horas de subdose.</div></div>
+<div class="box pearl"><span class="box-label">PEARL</span><div class="box-title">Hipoglicemia nova em DM2 estável é sinal de outra doença</div><div class="box-body">Quem tolerava o esquema há anos e passa a fazer hipoglicemias perdeu peso, perdeu TFG (menor depuração de insulina e sulfonilureia, menor gliconeogênese renal), começou um antimicrobiano que interage, desenvolveu insuficiência adrenal ou hipotireoidismo, ou está com gastroparesia. Desintensificar sem investigar é tratar o sintoma.</div></div>
+<div class="box pearl"><span class="box-label">PEARL</span><div class="box-title">ITB normal não exclui isquemia no pé diabético</div><div class="box-body">A calcificação da média (Mönckeberg) torna artérias tibiais incompressíveis: ITB &gt;1,3 é anormal, e mesmo valores "normais" podem esconder doença distal. Ondas de Doppler trifásicas ou bifásicas, índice hálux-braquial ≥0,70 e pressão de hálux são mais confiáveis; pressão de hálux &lt;30 mmHg ou TcPO2 &lt;25 prediz não cicatrização sem revascularização.</div></div>
+<div class="box pearl"><span class="box-label">PEARL</span><div class="box-title">Osteomielite do pé se trata pelo osso, não pela úlcera</div><div class="box-body">Swab da úlcera concorda com a cultura óssea em menos da metade dos casos; uma biópsia óssea (cirúrgica ou percutânea através de pele íntegra) define o agente e permite antibiótico oral de alta biodisponibilidade. A remissão só pode ser declarada 6 meses após o fim do tratamento, e o "dedo em salsicha" (eritema e edema de todo o dedo, sem limites) é quase patognomônico de osteomielite subjacente.</div></div>
+<div class="box pearl"><span class="box-label">PEARL</span><div class="box-title">Leucocitose de até 25 mil é da CAD; febre não</div><div class="box-body">Cortisol e catecolaminas causam leucocitose com desvio proporcional à cetonemia; acima de 25.000/mm³, ou com bastões &gt;10%, procure infecção. A CAD, pela vasodilatação e acidose, tende a hipotermia: febre, ainda que baixa, sugere infecção como precipitante, e normotermia não a exclui.</div></div>
+</div>
+</div>
+<div class="card pearl">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">H.2</span> Evolving</div><h3>6 mudanças reais em 2023–2026</h3></div>
+<div class="card-body">
+<div class="box evolving"><span class="box-label">EVOLVING</span><div class="box-title">Consenso de crises hiperglicêmicas 2024: a glicemia saiu do centro</div><div class="box-body">Primeira atualização desde 2009, assinada por ADA, EASD, JBDS, AACE e DTS: glicemia ≥200 <b>ou</b> diabetes conhecido, BHB ≥3 como critério de cetose, HCO3 &lt;18, gravidade por pH, HCO3, BHB e consciência, resolução por BHB &lt;0,6 sem uso do AG, e EHH com osmolalidade efetiva &gt;300 ou total &gt;320. A ADA 2026 incorporou os critérios (Tab. 16.1).</div></div>
+<div class="box evolving"><span class="box-label">EVOLVING</span><div class="box-title">Basal SC precoce durante a infusão IV</div><div class="box-body">Ensaios pequenos mostraram que glargina 0,15–0,3 U/kg nas primeiras horas, mantendo a bomba, reduz hiperglicemia de rebote, encurta o tempo até resolução e a internação, sem mais hipoglicemia. O consenso 2024 passou a sugerir; muitos protocolos brasileiros ainda não incorporaram.</div></div>
+<div class="box evolving"><span class="box-label">EVOLVING</span><div class="box-title">CAD leve a moderada fora da UTI, com insulina SC</div><div class="box-body">Análogos ultrarrápidos a cada 1–2 h, com volume e monitorização adequados, equivalem à insulina IV na CAD leve a moderada não complicada, com menor custo e sem leito de UTI. A ADA 2026 incluiu o braço SC no fluxograma (Fig. 16.1); a SBD mantém recomendação IIb para CAD leve.</div></div>
+<div class="box evolving"><span class="box-label">EVOLVING</span><div class="box-title">Monitorização contínua de cetonas</div><div class="box-body">Sensores de BHB intersticial, isolados ou combinados ao CGM, estão em desenvolvimento e citados pela ADA 2026 como futura ferramenta de prevenção de CAD, sobretudo em usuários de bomba e de iSGLT2 com DM1. No Brasil, por ora, a cetonemia capilar é o recurso disponível, e nem sempre na rede pública.</div></div>
+<div class="box evolving"><span class="box-label">EVOLVING</span><div class="box-title">IWGDF 2023: nova nomenclatura, Charcot e antibiótico mais curto</div><div class="box-body">"Doença do pé relacionada ao diabetes" substitui "pé diabético"; a primeira diretriz específica de Charcot ativo; recomendação de não cobrir Pseudomonas de rotina em clima temperado; até 3 semanas de antibiótico após amputação menor com margem óssea positiva (antes 6); opção de tratamento clínico exclusivo na osteomielite de antepé selecionada; e SINBAD e WIfI como classificações de referência.</div></div>
+<div class="box evolving"><span class="box-label">EVOLVING</span><div class="box-title">Glucagon pronto para uso</div><div class="box-body">Glucagon nasal e dasiglucagon, que dispensam reconstituição, resolvem a hipoglicemia grave mais rápido nas mãos de leigos; a Endocrine Society 2023 deu recomendação forte para preferi-los, e a ADA 2026 reforça prescrever glucagon a todo usuário de insulina. No Brasil, a disponibilidade dessas apresentações precisa ser confirmada; o kit com pó e diluente continua sendo o padrão.</div></div>
+</div>
+</div>
+</section>
+
+</div>
+</main>
+
+<footer>
+<div class="wrap">
+<div class="foot">
+<div><div class="foot-author">@dr.lorencato</div><div class="foot-meta">EN02 · Diabetes: emergências e complicações · Pocket Handbook Elite · v5.2 · Endocrinologia</div></div>
+<div class="foot-mono">Compilação clínica · fontes conferidas em 2026-10-26 · status clinical_review até signoff humano · não é orientação clínica individual</div>
+</div>
+<div class="foot-meta"><b>Bibliografia rastreável</b>
+<ol>
+<li id="src-1">ADA Professional Practice Committee. Standards of Care in Diabetes—2026, seções 6, 11, 12 e 16. Diabetes Care 2026;49(Suppl 1) · 2026 · papel: critérios de CAD/EHH, fluxograma de tratamento, hipoglicemia, glucagon, retina, pé, DRC · doi:10.2337/dc26-S006 · S011 · S012 · S016 (PDF local, seções lidas)</li>
+<li id="src-2">Umpierrez GE et al. Hyperglycemic Crises in Adults With Diabetes: A Consensus Report (ADA/EASD/JBDS/AACE/DTS). Diabetes Care 2024;47(8):1257–1275 · 2024 · papel: diagnóstico, gravidade, fluidos, insulina, K, bicarbonato, fosfato, resolução, transição · doi:10.2337/dci24-0032 · PMID 39052901 (leitura parcial)</li>
+<li id="src-3">Mustafa OG et al. Management of Hyperosmolar Hyperglycaemic State in Adults: updated JBDS guideline. Diabet Med 2023;40(3):e15005 · 2022 · papel: EHH (início da insulina, metas de osmolalidade, prevenção de dano) · doi:10.1111/dme.15005 · PMID 36370077 (resumo)</li>
+<li id="src-4">Glaser N et al. ISPAD Clinical Practice Consensus Guidelines 2022: Diabetic ketoacidosis and hyperglycemic hyperosmolar state. Pediatr Diabetes 2022;23(7):835–856 · 2022 · papel: CAD pediátrica e edema cerebral · doi:10.1111/pedi.13406 · PMID 36250645 (texto integral não lido; números a conferir)</li>
+<li id="src-5">Kuppermann N et al. (PECARN FLUID). Clinical Trial of Fluid Infusion Rates for Pediatric DKA. N Engl J Med 2018;378:2275–2287 · 2018 · papel: fluido e desfecho neurológico · doi:10.1056/NEJMoa1716816</li>
+<li id="src-6">Self WH et al. Balanced crystalloids vs saline in adults with DKA. JAMA Netw Open 2020;3(11):e2024596 · 2020 · papel: escolha do cristaloide · doi:10.1001/jamanetworkopen.2020.24596</li>
+<li id="src-7">McCall AL et al. Management of Individuals With Diabetes at High Risk for Hypoglycemia: Endocrine Society Guideline. J Clin Endocrinol Metab 2023;108(3):529–562 · 2023 · papel: prevenção de hipoglicemia, glucagon sem reconstituição · doi:10.1210/clinem/dgac596</li>
+<li id="src-8">Cryer PE et al. Evaluation and management of adult hypoglycemic disorders: Endocrine Society Guideline. J Clin Endocrinol Metab 2009;94(3):709–728 · 2009 · papel: Whipple, hipoglicemia do não diabético · doi:10.1210/jc.2008-1410</li>
+<li id="src-9">Schaper NC et al. Practical guidelines on the prevention and management of diabetes-related foot disease (IWGDF 2023). Diabetes Metab Res Rev 2024;40(3):e3657 · 2023 · papel: estratificação de risco, SINBAD, isquemia, descarga, Charcot · doi:10.1002/dmrr.3657 (PDF oficial lido)</li>
+<li id="src-10">Senneville É et al. IWGDF/IDSA Guidelines on the Diagnosis and Treatment of Diabetes-related Foot Infections (2023). Clin Infect Dis 2023 · DMRR 2024;40:e3687 · 2023 · papel: classificação, osteomielite, antibiótico, duração, cirurgia · doi:10.1093/cid/ciad527 (PDF oficial lido)</li>
+<li id="src-11">Wukich DK et al. Guidelines on the diagnosis and treatment of active Charcot neuro-osteoarthropathy (IWGDF 2023). DMRR 2024;40(3):e3646 · 2023 · papel: Charcot · doi:10.1002/dmrr.3646</li>
+<li id="src-12">Sociedade Brasileira de Diabetes. Diagnóstico e tratamento da cetoacidose diabética (Santomauro AT et al.), revisão 27/03/2023, Edição 2026 · papel: conduta brasileira R1–R16 · doi:10.29327/5238993.2023-6 · e CAD euglicêmica (rev. 18/04/2023) doi:10.29327/557753.2022-22</li>
+<li id="src-13">Sociedade Brasileira de Diabetes. Manejo da síndrome hiperglicêmica hiperosmolar não cetótica (Santomauro Jr AC et al.) · 2025 · papel: critérios e metas brasileiras do EHH · doi:10.29327/5660187.2025-5 (lido por fonte secundária; conferir)</li>
+<li id="src-14">Ministério da Saúde/CONITEC. PCDT Diabete Melito Tipo 2 (Portaria SCTIE nº 13/2026) e PCDT DM1 (Portaria Conjunta nº 17/2019) · 2026/2019 · papel: hipoglicemia no SUS, rede do pé, insulinas disponíveis · gov.br/conitec (PDFs locais)</li>
+<li id="src-15">Apostila END 2 — Diabetes Mellitus (MED 2025) · 2025 · papel: piso editorial de cobertura, nunca conduta · vault Who is PubMed</li>
+</ol>
+</div>
+</div>
+</footer>
+<div class="watermark">@dr.lorencato · EN02 Crises do diabetes v5.2</div>
+</body>
+</html>

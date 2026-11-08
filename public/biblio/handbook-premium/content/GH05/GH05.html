@@ -1,0 +1,1317 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#0d1117">
+<title>DII e Colites Não Infecciosas · Pocket Handbook · Elite Edition · GH05</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700;9..40,800&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   MEDICAL HANDBOOK PREMIUM · ELITE EDITION · CSS FRAMEWORK
+   Copy this ENTIRE block verbatim into the <style> tag of the
+   output HTML. Do NOT modify design tokens, colors, or
+   typography — they are calibrated for legibility and print.
+============================================================ */
+:root{
+  --bg:#f1eee5;--bg-tint:#ebe8de;--paper:#ffffff;--paper-tint:#fbf9f3;
+  --ink:#0e1116;--ink-soft:#232830;--ink-mute:#545b69;--ink-faint:#8a91a0;--ink-ghost:#b8bdc7;
+  --line:#e2dfd5;--line-soft:#ece9df;--line-strong:#c9c5b8;
+  --c-prim:#0b5d4e;--c-clin:#1d4570;--c-diag:#5e2f78;--c-tx:#a8481a;--c-emerg:#a31b35;--c-pearl:#7a6014;
+  --ank-hy:#b88e0a;--ank-hy-bg:#fef4c8;--ank-dec:#1d4ea3;--ank-dec-bg:#dde7f8;
+  --ank-dgr:#a31b25;--ank-dgr-bg:#fadcdc;--ank-prl:#3e6a2e;--ank-prl-bg:#d8e6cf;
+  --ank-myt:#6a3a1a;--ank-myt-bg:#f0dec5;--ank-con:#5a4070;--ank-con-bg:#e3d6f0;
+  --ank-evo:#0d6373;--ank-evo-bg:#cde5e9;
+  --sh-sm:0 1px 2px rgba(14,17,22,.04),0 1px 1px rgba(14,17,22,.03);
+  --sh-md:0 6px 16px -8px rgba(14,17,22,.10),0 2px 4px rgba(14,17,22,.04);
+  --sh-lg:0 20px 40px -22px rgba(14,17,22,.18),0 4px 10px -4px rgba(14,17,22,.08);
+  --r:10px;--r-lg:14px;--r-xl:20px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;scroll-padding-top:120px}
+body{font-family:'DM Sans',system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.5;font-size:15px;letter-spacing:-.005em;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:-1;background:radial-gradient(900px 500px at -10% -5%,rgba(11,93,78,.04),transparent 60%),radial-gradient(800px 450px at 110% 10%,rgba(163,27,53,.035),transparent 55%)}
+a{color:inherit;text-decoration:none}
+
+/* FIXED HEADER */
+.header{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(13,17,23,.82);backdrop-filter:saturate(160%) blur(20px);-webkit-backdrop-filter:saturate(160%) blur(20px);border-bottom:1px solid rgba(255,255,255,.06)}
+.header-row{max-width:1080px;margin:0 auto;padding:10px 20px;display:flex;align-items:center;gap:14px;color:#f0eee5}
+.h-mark{width:30px;height:30px;border-radius:7px;background:linear-gradient(135deg,#d4b94a 0%,#a07f1a 100%);display:grid;place-items:center;font:800 13px/1 'DM Sans';color:#1a1500;letter-spacing:-.04em;box-shadow:inset 0 1px 0 rgba(255,255,255,.3),0 1px 2px rgba(0,0,0,.4);flex-shrink:0}
+.h-titles{display:flex;flex-direction:column;line-height:1.15;min-width:0}
+.h-title{font-weight:700;font-size:14px;letter-spacing:-.02em}
+.h-sub{font-size:10.5px;color:#9fa298;font-weight:500;letter-spacing:.08em;text-transform:uppercase}
+.h-edition{margin-left:auto;font:500 10px/1 'DM Mono',monospace;color:#9fa298;letter-spacing:.05em;padding:5px 9px;border:1px solid rgba(255,255,255,.1);border-radius:999px;white-space:nowrap}
+.h-author{font:700 10.5px/1 'DM Mono',monospace;color:#d4b94a;letter-spacing:.04em;padding:6px 10px;border:1px solid rgba(212,185,74,.35);background:rgba(212,185,74,.08);border-radius:999px;white-space:nowrap;display:inline-flex;align-items:center;gap:6px}
+.h-author::before{content:"●";font-size:6px;color:#d4b94a}
+@media(max-width:560px){.h-edition{display:none}.h-author{margin-left:auto}}
+
+/* STICKY TOC */
+.toc{position:sticky;top:50px;z-index:90;background:rgba(241,238,229,.92);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}
+.toc-inner{max-width:1080px;margin:0 auto;padding:10px 16px;display:flex;gap:6px;overflow-x:auto;scrollbar-width:none;-ms-overflow-style:none}
+.toc-inner::-webkit-scrollbar{display:none}
+.toc-chip{flex:none;font:600 11px/1 'DM Sans';letter-spacing:.06em;text-transform:uppercase;padding:7px 12px;background:var(--paper);border:1px solid var(--line);border-radius:999px;color:var(--ink-soft);transition:all .15s;white-space:nowrap;cursor:pointer}
+.toc-chip:hover{background:var(--paper-tint);border-color:var(--ink-faint);color:var(--ink)}
+.toc-chip-num{display:inline-block;font-family:'DM Mono',monospace;color:var(--ink-faint);margin-right:5px;font-weight:500;font-size:10px}
+
+/* LAYOUT */
+.wrap{max-width:1080px;margin:0 auto;padding:24px 20px 80px}
+.section{margin:48px 0 18px;padding-top:8px}
+.section:first-child{margin-top:14px}
+.section-eyebrow{font:700 10.5px/1 'DM Sans';letter-spacing:.18em;text-transform:uppercase;color:var(--c-prim);margin-bottom:8px;display:flex;align-items:center;gap:10px}
+.section-eyebrow::before{content:"";width:24px;height:1.5px;background:var(--c-prim)}
+.section-title{font-size:26px;font-weight:700;letter-spacing:-.03em;line-height:1.1}
+.section-sub{margin-top:6px;font-size:13.5px;color:var(--ink-mute);max-width:680px}
+
+/* HERO */
+.hero{margin:20px 0 28px;padding:26px 28px;background:linear-gradient(180deg,#fdfcf6 0%,#f7f4e8 100%);border:1px solid var(--line);border-radius:var(--r-xl);box-shadow:var(--sh-md);position:relative;overflow:hidden}
+.hero::after{content:"";position:absolute;top:0;right:0;bottom:0;left:0;background:radial-gradient(400px 200px at 100% 0%,rgba(163,27,53,.06),transparent 60%),radial-gradient(360px 200px at 0% 100%,rgba(11,93,78,.05),transparent 60%);pointer-events:none}
+.hero-tag{font:700 10.5px/1 'DM Sans';letter-spacing:.2em;text-transform:uppercase;color:var(--c-emerg);display:inline-flex;align-items:center;gap:8px;margin-bottom:10px}
+.hero-tag::before{content:"";width:18px;height:1.5px;background:currentColor}
+.hero h1{font-size:34px;font-weight:800;letter-spacing:-.035em;line-height:1.02;margin-bottom:8px}
+.hero h1 em{font-style:italic;font-weight:500;color:var(--ink-mute)}
+.hero-lead{font-size:14.5px;color:var(--ink-mute);max-width:660px;line-height:1.55}
+.hero-stamp{position:absolute;top:20px;right:22px;font:700 10.5px/1 'DM Mono',monospace;letter-spacing:.04em;padding:7px 11px 7px 18px;border:1.5px dashed rgba(163,27,53,.45);color:rgba(163,27,53,.9);border-radius:5px;background:rgba(255,255,255,.55);transform:rotate(-3deg);z-index:2;box-shadow:0 2px 6px rgba(163,27,53,.08)}
+.hero-stamp::before{content:"●";position:absolute;left:7px;top:50%;transform:translateY(-50%);color:rgba(163,27,53,.7);font-size:7px}
+.hero-sig{margin-top:14px;display:flex;align-items:center;gap:10px;font:600 11px/1 'DM Sans';color:var(--ink-mute);letter-spacing:.04em}
+.hero-sig::before{content:"";flex:none;width:22px;height:1.5px;background:var(--c-emerg)}
+.hero-sig b{color:var(--c-emerg);font-weight:700;font-family:'DM Mono',monospace;letter-spacing:.02em}
+@media(max-width:560px){.hero{padding:22px 20px}.hero h1{font-size:26px}.section-title{font-size:22px}.hero-stamp{position:static;display:inline-block;transform:none;margin-bottom:14px}}
+
+/* POCKET CARD 0 */
+.pocket{background:#0e1116;color:#f0eee5;border-radius:var(--r-xl);padding:24px 26px 26px;margin:0 0 28px;position:relative;overflow:hidden;box-shadow:var(--sh-lg)}
+.pocket::before{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(600px 300px at 100% 0%,rgba(212,185,74,.07),transparent 60%),radial-gradient(500px 280px at 0% 100%,rgba(163,27,53,.08),transparent 60%)}
+.pocket-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:18px;flex-wrap:wrap;position:relative}
+.pocket-eyebrow{font:700 10.5px/1 'DM Sans';letter-spacing:.2em;text-transform:uppercase;color:#d4b94a;display:flex;align-items:center;gap:9px}
+.pocket-eyebrow::before{content:"●";color:#d4b94a;font-size:9px;animation:pulse 2.4s ease infinite}
+@keyframes pulse{50%{opacity:.4}}
+.pocket-title{font-size:22px;font-weight:700;letter-spacing:-.02em;line-height:1.15;color:#fff}
+.pocket-sub{font-size:12.5px;color:#9aa0a8;margin-top:2px}
+.pocket-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px;position:relative}
+.pocket-card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-left:3px solid var(--accent,#d4b94a);border-radius:var(--r);padding:12px 14px}
+.pocket-card .pc-trig{font:700 10px/1.1 'DM Sans';letter-spacing:.12em;text-transform:uppercase;color:var(--accent,#d4b94a);margin-bottom:6px;display:flex;align-items:center;gap:6px}
+.pocket-card .pc-trig::before{content:"";width:4px;height:4px;background:currentColor;border-radius:50%}
+.pocket-card .pc-act{font-size:13.5px;line-height:1.4;color:#dedfd5}
+.pocket-card .pc-act b{color:#fff;font-weight:600}
+.pocket-card.emerg{--accent:#ff8a96}.pocket-card.dec{--accent:#7cb0ff}.pocket-card.tx{--accent:#ffb085}.pocket-card.clin{--accent:#b0e0d4}
+
+/* LEGEND */
+.legend{background:var(--paper);border:1px solid var(--line);border-radius:var(--r-lg);padding:18px 20px;margin-bottom:28px;box-shadow:var(--sh-sm)}
+.lg-title{font:700 10.5px/1 'DM Sans';letter-spacing:.16em;text-transform:uppercase;color:var(--ink-faint);margin-bottom:12px}
+.lg-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:8px 14px}
+.lg-item{display:flex;align-items:center;gap:9px;font-size:12.5px;color:var(--ink-soft)}
+.dot{width:9px;height:9px;border-radius:50%;flex-shrink:0;box-shadow:0 0 0 2px var(--paper),0 0 0 3px currentColor}
+.dot.c1{color:var(--c-prim);background:var(--c-prim)}.dot.c2{color:var(--c-clin);background:var(--c-clin)}.dot.c3{color:var(--c-diag);background:var(--c-diag)}.dot.c4{color:var(--c-tx);background:var(--c-tx)}.dot.c5{color:var(--c-emerg);background:var(--c-emerg)}.dot.c6{color:var(--c-pearl);background:var(--c-pearl)}
+.lg-divider{height:1px;background:var(--line-soft);margin:14px 0}
+.lg-anchors{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:8px}
+.ank{display:inline-flex;align-items:center;gap:5px;font:700 9.5px/1 'DM Sans';letter-spacing:.12em;text-transform:uppercase;padding:4px 8px 4px 7px;border-radius:999px;border:1px solid;vertical-align:middle;white-space:nowrap}
+.ank::before{content:"";width:4px;height:4px;border-radius:50%;background:currentColor}
+.ank-hy{color:var(--ank-hy);background:var(--ank-hy-bg);border-color:#e5cd72}
+.ank-dec{color:var(--ank-dec);background:var(--ank-dec-bg);border-color:#9fbae6}
+.ank-dgr{color:var(--ank-dgr);background:var(--ank-dgr-bg);border-color:#e29ca0}
+.ank-prl{color:var(--ank-prl);background:var(--ank-prl-bg);border-color:#a8c298}
+.ank-myt{color:var(--ank-myt);background:var(--ank-myt-bg);border-color:#d0b181}
+.ank-con{color:var(--ank-con);background:var(--ank-con-bg);border-color:#bba7d3}
+.ank-evo{color:var(--ank-evo);background:var(--ank-evo-bg);border-color:#8fc1c9}
+.lg-explain{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:6px 14px;font-size:11.5px;color:var(--ink-mute);margin-top:10px}
+.lg-explain b{font-weight:700}
+.lg-explain .ehy b{color:var(--ank-hy)}.lg-explain .edec b{color:var(--ank-dec)}.lg-explain .edgr b{color:var(--ank-dgr)}.lg-explain .eprl b{color:var(--ank-prl)}.lg-explain .emyt b{color:var(--ank-myt)}.lg-explain .econ b{color:var(--ank-con)}.lg-explain .eevo b{color:var(--ank-evo)}
+
+/* EVIDENCE CHIPS */
+.ev{display:inline-flex;align-items:center;font:600 9.5px/1 'DM Mono',monospace;letter-spacing:.04em;padding:3px 6px 2px;border-radius:4px;background:#eeebde;color:var(--ink-soft);border:1px solid var(--line);vertical-align:middle;margin-left:3px}
+.ev-acr{background:#fadcdc;color:#a31b25;border-color:#e29ca0}
+.ev-eular{background:#dde7f8;color:#1d4ea3;border-color:#9fbae6}
+.ev-sbr{background:#e3d6f0;color:#5a4070;border-color:#bba7d3}
+.ev-nice{background:#cde5e9;color:#0d6373;border-color:#8fc1c9}
+.ev-expert{background:#eeebde;color:#7a6014;border-color:#d0b181}
+.ev-cochrane{background:#d8e6cf;color:#3e6a2e;border-color:#a8c298}
+
+/* CARD */
+.card{background:var(--paper);border:1px solid var(--line);border-radius:var(--r-lg);margin-bottom:22px;box-shadow:var(--sh-md);overflow:hidden;break-inside:avoid}
+.card-head{padding:18px 22px 15px;border-bottom:1px solid var(--line-soft);position:relative;background:linear-gradient(180deg,#fcfaf2 0%,#ffffff 100%)}
+.card-head::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--accent,var(--c-prim))}
+.card-eyebrow{font:700 10px/1 'DM Sans';letter-spacing:.16em;text-transform:uppercase;color:var(--accent,var(--c-prim));margin-bottom:5px;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.card-num{font-family:'DM Mono',monospace;font-weight:500;color:var(--ink-faint);font-size:10.5px;letter-spacing:0}
+.card h3{font-size:21px;font-weight:700;letter-spacing:-.025em;color:var(--ink);line-height:1.15;display:flex;align-items:center;gap:9px;flex-wrap:wrap}
+.card-sub{margin-top:6px;font-size:13px;color:var(--ink-mute)}
+.card-body{padding:20px 22px 24px}
+.card.prim{--accent:var(--c-prim)}.card.clin{--accent:var(--c-clin)}.card.diag{--accent:var(--c-diag)}.card.tx{--accent:var(--c-tx)}.card.emerg{--accent:var(--c-emerg)}.card.pearl{--accent:var(--c-pearl)}
+@media(max-width:560px){.card-head{padding:16px 18px 14px}.card-body{padding:18px 18px 20px}.card h3{font-size:18px}}
+
+/* QUICK VIEW */
+.quick{background:var(--paper-tint);border:1px solid var(--line);border-left:3px solid var(--accent,var(--c-prim));border-radius:var(--r);padding:13px 16px;margin:0 0 16px}
+.quick-label{font:700 9.5px/1 'DM Sans';letter-spacing:.16em;text-transform:uppercase;color:var(--accent,var(--c-prim));margin-bottom:6px}
+.quick-body{font-size:13.5px;line-height:1.45;color:var(--ink-soft)}
+.quick-body b{color:var(--ink);font-weight:600}
+
+/* SUB-TITLE */
+.sub-title{font:700 10.5px/1 'DM Sans';letter-spacing:.16em;text-transform:uppercase;color:var(--ink-soft);margin:18px 0 10px;display:flex;align-items:center;gap:9px;border-bottom:1px dashed var(--line);padding-bottom:6px}
+.sub-title::before{content:"";width:4px;height:4px;border-radius:50%;background:var(--accent,var(--ink-soft))}
+.sub-title:first-child{margin-top:0}
+
+/* TEXT */
+p{color:var(--ink-soft);margin-bottom:8px;font-size:14px;line-height:1.5}
+p:last-child{margin-bottom:0}
+strong{color:var(--ink);font-weight:600}
+ul.bullets{list-style:none;padding:0;margin:0 0 10px}
+ul.bullets li{position:relative;padding:5px 0 5px 20px;font-size:13.5px;line-height:1.5;color:var(--ink-soft);border-bottom:1px dashed var(--line-soft)}
+ul.bullets li:last-child{border-bottom:none}
+ul.bullets li::before{content:"";position:absolute;left:5px;top:13px;width:4px;height:4px;border-radius:50%;background:var(--accent,var(--ink-mute))}
+ul.bullets li b{color:var(--ink);font-weight:600}
+
+/* DISEASE BOX */
+.disease{border:1px solid var(--line);border-radius:var(--r);margin:14px 0;overflow:hidden;background:var(--paper)}
+.disease-head{padding:12px 16px;background:linear-gradient(180deg,#faf7eb 0%,#f1eddc 100%);border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap}
+.disease-name{font-weight:700;color:var(--ink);font-size:14.5px;letter-spacing:-.015em}
+.disease-tag{font:600 10px/1 'DM Sans';letter-spacing:.08em;text-transform:uppercase;color:var(--ink-mute)}
+.disease-body{padding:14px 16px}
+.disease-rows{display:grid;gap:0}
+.disease-row{display:grid;grid-template-columns:130px 1fr;gap:12px;padding:8px 0;border-bottom:1px dashed var(--line-soft)}
+.disease-row:last-child{border-bottom:none;padding-bottom:0}
+.disease-row:first-child{padding-top:0}
+.disease-row .k{font:700 10px/1.2 'DM Sans';letter-spacing:.12em;text-transform:uppercase;color:var(--accent,var(--ink-faint));padding-top:2px}
+.disease-row .v{font-size:13.5px;color:var(--ink-soft);line-height:1.5}
+.disease-row .v b{color:var(--ink)}
+@media(max-width:560px){.disease-row{grid-template-columns:1fr;gap:3px;padding:6px 0 8px}.disease-row .k{padding-top:0}}
+
+/* DEEP DIVE */
+.deep{margin:16px 0 6px;border:1px solid var(--line);border-radius:var(--r);background:linear-gradient(180deg,#fdfcf6 0%,#f9f6ea 100%);overflow:hidden}
+.deep>summary{list-style:none;cursor:pointer;padding:11px 16px;display:flex;align-items:center;justify-content:space-between;font:700 11px/1 'DM Sans';letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft);user-select:none;transition:background .15s}
+.deep>summary::-webkit-details-marker{display:none}
+.deep>summary::after{content:"+";font-size:18px;font-weight:600;color:var(--ink-faint);transition:transform .2s;font-family:'DM Mono',monospace}
+.deep[open]>summary::after{transform:rotate(45deg)}
+.deep>summary:hover{background:rgba(0,0,0,.02)}
+.deep-content{padding:14px 16px 16px;border-top:1px dashed var(--line)}
+.deep-content p{font-size:13px;color:var(--ink-mute);line-height:1.55}
+.deep-content p b{color:var(--ink-soft)}
+
+/* MNEMONIC */
+.mnemo{background:var(--paper-tint);border:1px solid var(--line);border-radius:var(--r);padding:14px 16px;margin:14px 0}
+.mnemo-title{font:700 10.5px/1 'DM Sans';letter-spacing:.16em;text-transform:uppercase;color:var(--c-pearl);margin-bottom:10px;display:flex;align-items:center;gap:8px}
+.mnemo-title b{background:var(--ink);color:#fff;padding:3px 7px;border-radius:4px;font-size:10px;letter-spacing:.06em}
+.mnemo-grid{display:grid;gap:5px}
+.mnemo-row{display:grid;grid-template-columns:28px 1fr;gap:10px;align-items:baseline;font-size:13px;color:var(--ink-soft);padding:3px 0}
+.mnemo-letter{display:grid;place-items:center;width:24px;height:24px;background:var(--ink);color:#fff;border-radius:5px;font:800 12px/1 'DM Sans';letter-spacing:-.02em}
+.mnemo-row b{color:var(--ink);font-weight:600}
+.mnemo-row em{font-style:italic;color:var(--ink-mute);font-size:12px}
+
+/* SCORE BOX */
+.score{border:1px solid var(--line);border-radius:var(--r);margin:14px 0;background:var(--paper);overflow:hidden}
+.score-head{padding:11px 14px;background:linear-gradient(180deg,#f5f1e0 0%,#ede9d6 100%);border-bottom:1px solid var(--line)}
+.score-name{font:700 13px/1.2 'DM Sans';color:var(--ink);letter-spacing:-.01em}
+.score-purpose{font:500 10.5px/1.2 'DM Sans';color:var(--ink-mute);letter-spacing:.06em;text-transform:uppercase;margin-top:3px}
+.score-rows{display:grid;gap:0}
+.score-row{display:grid;grid-template-columns:90px 1fr;gap:12px;align-items:start;padding:9px 14px;border-bottom:1px dashed var(--line-soft);font-size:13px}
+.score-row:last-child{border-bottom:none}
+.score-grade{font:800 12px/1.2 'DM Mono',monospace;color:var(--c-emerg);letter-spacing:-.01em}
+.score-desc{color:var(--ink-soft);line-height:1.45}
+.score-desc b{color:var(--ink)}
+
+/* STACKED TABLE */
+.stbl{margin:14px 0;border:1px solid var(--line);border-radius:var(--r);background:var(--paper);overflow:hidden}
+.stbl-head,.stbl-row{display:grid;gap:14px;padding:10px 14px;align-items:start}
+.stbl-head{background:#faf7eb;border-bottom:2px solid var(--line);font:700 10.5px/1 'DM Sans';letter-spacing:.1em;text-transform:uppercase;color:var(--ink)}
+.stbl-row{border-bottom:1px solid var(--line-soft);font-size:13px;color:var(--ink-soft);line-height:1.5}
+.stbl-row:last-child{border-bottom:none}
+.stbl-row:nth-child(even){background:#fcfaf2}
+.stbl-row b{color:var(--ink);font-weight:600}
+.stbl-row .col1{font-weight:600;color:var(--ink)}
+.stbl-2{grid-template-columns:1fr 2fr}
+.stbl-3{grid-template-columns:1fr 1.3fr 1.5fr}
+.stbl-4{grid-template-columns:1.2fr 1fr 1fr 1.2fr}
+@media(max-width:680px){
+  .stbl-head{display:none}
+  .stbl-row{grid-template-columns:1fr !important;gap:12px;padding:14px 16px}
+  .stbl-row .col{display:block;min-width:0;word-wrap:break-word;overflow-wrap:anywhere}
+  .stbl-row .col::before{content:attr(data-l);display:block;font:700 9.5px/1.3 'DM Sans';letter-spacing:.12em;text-transform:uppercase;color:var(--ink-mute);margin-bottom:4px}
+  .stbl-row .col1{font-weight:700;font-size:15px;padding-bottom:8px;margin-bottom:6px;border-bottom:1px dashed var(--line)}
+  .stbl-row .col1::before{display:none}
+}
+
+/* CALLOUT BOXES */
+.box{border-radius:var(--r);padding:14px 16px;margin:14px 0;position:relative;border:1px solid}
+.box-label{position:absolute;top:-9px;left:14px;font:700 9.5px/1 'DM Sans';letter-spacing:.16em;text-transform:uppercase;padding:3px 9px;border-radius:999px;color:#fff}
+.box-title{font-weight:700;color:var(--ink);font-size:14px;margin:2px 0 6px}
+.box-body{font-size:13.5px;line-height:1.5;color:var(--ink-soft)}
+.box-body b{color:var(--ink)}
+.box-body ul{list-style:none;padding:0;margin:4px 0 0}
+.box-body ul li{position:relative;padding:3px 0 3px 20px}
+.box-body ul li::before{content:"→";position:absolute;left:0;top:3px;font-weight:700;color:var(--bx-color)}
+.box.decision{background:#f1f5fc;border-color:#c4d3eb;--bx-color:var(--ank-dec)}.box.decision .box-label{background:var(--ank-dec)}
+.box.danger{background:#fbf0f0;border-color:#e5c2c2;--bx-color:var(--ank-dgr)}.box.danger .box-label{background:var(--ank-dgr)}.box.danger .box-body b{color:var(--ank-dgr)}
+.box.pearl{background:#f1f7ed;border-color:#c1d5b3;--bx-color:var(--ank-prl)}.box.pearl .box-label{background:var(--ank-prl)}
+.box.hy{background:#fcf6dd;border-color:#e3cf78;--bx-color:var(--ank-hy)}.box.hy .box-label{background:var(--ank-hy)}
+.box.myth{background:#f8eed8;border-color:#d0b181;--bx-color:var(--ank-myt)}.box.myth .box-label{background:var(--ank-myt)}
+.box.controversy{background:#f1e9f6;border-color:#bba7d3;--bx-color:var(--ank-con)}.box.controversy .box-label{background:var(--ank-con)}
+.box.evolving{background:#dff0f2;border-color:#8fc1c9;--bx-color:var(--ank-evo)}.box.evolving .box-label{background:var(--ank-evo)}
+
+/* ALGORITHM TREE */
+.algo{background:linear-gradient(180deg,#fcfaf2 0%,#f5f0dc 100%);border:1px solid var(--line-strong);border-radius:var(--r-lg);padding:18px;margin:14px 0;overflow-x:auto}
+.tree{font-size:13px}
+.tree-line{padding:6px 0}
+.tree-node{display:inline-block;padding:8px 12px;background:var(--paper);border:1.5px solid var(--ink-soft);border-radius:7px;font-weight:600;color:var(--ink);font-size:12.5px;box-shadow:var(--sh-sm)}
+.tree-node.start{background:var(--ink);color:#fff;border-color:var(--ink)}
+.tree-node.dec{background:#fff7d6;border-color:#e3cf78;color:#6b520a}
+.tree-node.dx{background:#dde7f8;border-color:#9fbae6;color:#1d4ea3}
+.tree-node.dgr{background:#fadcdc;border-color:#e29ca0;color:#a31b25}
+.tree-node.action{background:#d8e6cf;border-color:#a8c298;color:#3e6a2e}
+.tree-branch{margin-left:14px;border-left:1.5px dashed #b8b094;padding:6px 0 6px 18px;margin-top:6px;margin-bottom:2px;position:relative}
+.tree-branch::before{content:"";position:absolute;left:-1.5px;top:-4px;width:14px;height:14px;border-left:1.5px solid #b8b094;border-bottom:1.5px solid #b8b094;border-radius:0 0 0 6px}
+.tree-label{display:inline-block;font:700 9.5px/1 'DM Sans';letter-spacing:.12em;text-transform:uppercase;padding:3px 7px;border-radius:4px;margin-bottom:5px}
+.tree-label.yes{background:#fadcdc;color:#a31b25}.tree-label.no{background:#d8e6cf;color:#3e6a2e}
+
+/* FOOTER */
+.foot{margin-top:48px;padding-top:22px;border-top:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;font-size:11px;color:var(--ink-faint);letter-spacing:.04em;flex-wrap:wrap;gap:8px}
+.foot-mono{font-family:'DM Mono',monospace}
+.foot-author{font:800 14px/1.1 'DM Mono',monospace;color:var(--ink);letter-spacing:.02em;margin-bottom:3px}
+.foot-meta{font:500 11px/1.3 'DM Sans';color:var(--ink-faint);letter-spacing:.04em}
+
+/* WATERMARK */
+.watermark{position:fixed;bottom:calc(14px + env(safe-area-inset-bottom,0px));right:calc(14px + env(safe-area-inset-right,0px));font:600 10px/1 'DM Mono',monospace;letter-spacing:.04em;color:rgba(14,17,22,.55);background:rgba(255,255,255,.85);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);padding:6px 10px;border-radius:99px;border:1px solid rgba(14,17,22,.1);box-shadow:0 2px 8px rgba(14,17,22,.06);z-index:50;pointer-events:none;user-select:none}
+@media(max-width:560px){.watermark{bottom:calc(10px + env(safe-area-inset-bottom,0px));right:calc(10px + env(safe-area-inset-right,0px));font-size:9px;padding:5px 8px}}
+
+/* PRINT */
+@media print{
+  body{background:#fff;font-size:10.5pt}
+  body::before{display:none}
+  .header,.toc{position:static;background:#0e1116;color:#fff}
+  .wrap{padding:14px;max-width:100%}
+  .card,.hero,.legend,.pocket{box-shadow:none !important;break-inside:avoid}
+  .hero::after,.pocket::before{display:none}
+  .pocket{background:#1a1d24;color:#f0eee5}
+  .ank,.box,.disease,.score,.algo,.stbl,.deep,.mnemo,.quick{box-shadow:none !important;break-inside:avoid}
+  .deep:not([open]) .deep-content{display:block}
+  .deep>summary::after{display:none}
+  .watermark{position:fixed;bottom:8mm;right:8mm;background:none;border:none;color:rgba(0,0,0,.5)}
+  .hero-stamp{transform:none;position:absolute}
+}
+</style>
+</head>
+<body>
+
+<header class="header"><div class="header-row"><div class="h-mark">D</div><div class="h-titles"><div class="h-title">DII e Colites Não Infecciosas · Pocket Handbook</div><div class="h-sub">Elite edition · Gastroenterologia clínica · GH05</div></div><div class="h-author">@dr.lorencato</div><div class="h-edition">v5.2</div></div></header>
+
+<nav class="toc"><div class="toc-inner"><a href="#pocket" class="toc-chip"><span class="toc-chip-num">0</span>Pocket</a><a href="#redflags" class="toc-chip"><span class="toc-chip-num">A</span>Red Flags</a><a href="#approach" class="toc-chip"><span class="toc-chip-num">B</span>Apresentação</a><a href="#primarias" class="toc-chip"><span class="toc-chip-num">C</span>Entidades</a><a href="#secundarias" class="toc-chip"><span class="toc-chip-num">D</span>Secundárias</a><a href="#algoritmo" class="toc-chip"><span class="toc-chip-num">E</span>Algoritmo</a><a href="#tratamento" class="toc-chip"><span class="toc-chip-num">F</span>Tratamento</a><a href="#pitfalls" class="toc-chip"><span class="toc-chip-num">G</span>Pitfalls</a><a href="#pearls" class="toc-chip"><span class="toc-chip-num">H</span>Pearls</a></div></nav>
+
+<main>
+<div class="wrap">
+
+<div class="hero">
+<div class="hero-stamp">@dr.lorencato</div>
+<div class="hero-tag">Gastroenterologia · GH05 · Doença inflamatória intestinal</div>
+<h1>Doença Inflamatória Intestinal e Colites Não Infecciosas<br><em>da diarreia com sangue ao biológico certo, sem perder o cólon que perfura</em></h1>
+<p class="hero-lead">Doença de Crohn e retocolite ulcerativa do diagnóstico (calprotectina, ileocolonoscopia, enterorressonância, exclusão de C. difficile, CMV e tuberculose intestinal) à escolha entre 5-ASA, budesonida, tiopurina, anti-TNF, vedolizumabe, ustequinumabe, anti-IL-23, inibidores de JAK e moduladores de S1P; a colite aguda grave com o relógio do terceiro dia e o megacólon tóxico; doença perianal, manifestações extraintestinais, vigilância de displasia, gestação e criança; e as colites que imitam DII — microscópica, isquêmica, actínica, por fármacos e por inibidores de checkpoint. Conduta por ACG 2025, ECCO, UEG e, para o SUS, PCDT de Doença de Crohn 2026 e de Retocolite Ulcerativa 2024, com o consenso GEDIIB.</p>
+<div class="hero-sig">Compilação clínica por <b>@dr.lorencato</b> · Elite Edition v5.2 · status clinical_review</div>
+</div>
+
+<div id="pocket" class="pocket">
+<div class="pocket-head"><div><div class="pocket-eyebrow">Pocket Card 0 · 5 segundos</div><div class="pocket-title">Decisões Críticas — DII e Colites</div><div class="pocket-sub">PS · Enfermaria · Ambulatório de DII · Centro de infusão</div></div></div>
+<div class="pocket-grid">
+<div class="pocket-card emerg"><div class="pc-trig">≥6 evacuações com sangue + FC &gt;90, febre, Hb &lt;10,5 ou VHS/PCR alta</div><div class="pc-act">É colite aguda grave (Truelove-Witts). <b>Internar, metilprednisolona 60 mg/dia IV, enoxaparina 40 mg SC/dia, toxina de C. difficile, retossigmoidoscopia sem preparo com biópsia para CMV em 24–72 h</b>, cirurgião no D1.</div></div>
+<div class="pocket-card emerg"><div class="pc-trig">Colite grave + distensão, dor, cólon transverso &gt;6 cm</div><div class="pc-act">Megacólon tóxico. <b>Suspender opioide, anticolinérgico e antidiarreico, jejum, SNG, corticoide IV, radiografia seriada</b>; sem melhora em 24–72 h ou perfuração: <b>colectomia subtotal com ileostomia</b>.</div></div>
+<div class="pocket-card emerg"><div class="pc-trig">Dia 3 de corticoide IV: &gt;8 evacuações, ou 3–8 com PCR &gt;45 mg/L</div><div class="pc-act">Critério de Oxford: <b>~85% de colectomia</b> se nada mudar. <b>Resgate já: infliximabe 5 mg/kg IV</b> (10 mg/kg se albumina &lt;2,5 g/dL) ou ciclosporina 2 mg/kg/dia IV contínua; sem resposta em 5–7 dias, colectomia.</div></div>
+<div class="pocket-card dec"><div class="pc-trig">Diarreia crônica: inflamatória ou funcional?</div><div class="pc-act"><b>Calprotectina fecal</b>: &lt;50 µg/g torna DII improvável; &gt;100–250 µg/g pede ileocolonoscopia com biópsias de áreas doentes e sadias, inclusive do íleo terminal.</div></div>
+<div class="pocket-card dec"><div class="pc-trig">Úlceras ileocecais em paciente brasileiro</div><div class="pc-act">Antes de chamar de Crohn e imunossuprimir, <b>exclua tuberculose intestinal</b>: biópsia com cultura e PCR para micobactéria, radiografia de tórax, IGRA/PT; granuloma caseoso, úlcera transversal e válvula patente favorecem TB.</div></div>
+<div class="pocket-card dec"><div class="pc-trig">Antes de qualquer biológico, JAK ou tiopurina</div><div class="pc-act"><b>PT ≥5 mm ou IGRA reagente = tratar ILTB e começar o imunobiológico ≥4 semanas depois</b>; HBsAg, anti-HBc, anti-HBs, anti-HCV, anti-HIV, VZV; vacinas vivas (febre amarela, tríplice viral, varicela) antes, nunca durante.</div></div>
+<div class="pocket-card tx"><div class="pc-trig">Proctite ou colite esquerda leve a moderada</div><div class="pc-act"><b>Mesalazina tópica é a âncora</b>: supositório 1 g à noite na proctite; enema 1 g/dia + mesalazina oral 2,4–4,8 g/dia na colite esquerda. Oral isolado é inferior.</div></div>
+<div class="pocket-card tx"><div class="pc-trig">Crohn moderado a grave ou de alto risco</div><div class="pc-act">Terapia avançada cedo, sem exigir falha de tudo: <b>infliximabe 5 mg/kg IV sem 0-2-6 e 8/8 sem + azatioprina 2–2,5 mg/kg/dia</b>. Mesalazina não trata Crohn (ACG 2025).</div></div>
+<div class="pocket-card tx"><div class="pc-trig">Fístula perianal complexa</div><div class="pc-act"><b>RM de pelve + exame sob anestesia, drenagem e seton antes do anti-TNF</b>; infliximabe é o de escolha (IV ou SC após indução IV no SUS), com metronidazol ou ciprofloxacino nas primeiras semanas.</div></div>
+<div class="pocket-card clin"><div class="pc-trig">Paciente com DII internado</div><div class="pc-act"><b>Profilaxia farmacológica de TEV mesmo com sangramento retal</b>: o risco trombótico da colite ativa supera o do sangramento. Só a hemorragia maciça contraindica.</div></div>
+<div class="pocket-card clin"><div class="pc-trig">Colite há 8 anos ou CEP</div><div class="pc-act"><b>Colonoscopia de vigilância com cromoendoscopia</b> a partir de 8 anos de sintomas (colite além do reto ou ≥30% do cólon no Crohn); <b>CEP: desde o diagnóstico e anual</b>.</div></div>
+<div class="pocket-card clin"><div class="pc-trig">Gestante com DII em remissão</div><div class="pc-act"><b>Não suspenda 5-ASA, tiopurina nem anti-TNF</b>: a doença ativa é o maior risco fetal. Metotrexato, JAK e S1P são contraindicados. RN exposto a anti-TNF: <b>adiar BCG e rotavírus para depois de 6 meses</b>.</div></div>
+</div>
+</div>
+
+<div class="legend">
+<div class="lg-title">Sistema de legendas</div>
+<div class="lg-grid">
+<div class="lg-item"><span class="dot c1"></span> Fisiopatologia / Classificação</div>
+<div class="lg-item"><span class="dot c2"></span> Clínica / Apresentação</div>
+<div class="lg-item"><span class="dot c3"></span> Diagnóstico / Exames</div>
+<div class="lg-item"><span class="dot c4"></span> Tratamento / Conduta</div>
+<div class="lg-item"><span class="dot c5"></span> Emergências / Red Flags</div>
+<div class="lg-item"><span class="dot c6"></span> Nuances / Pearls</div>
+</div>
+<div class="lg-divider"></div>
+<div class="lg-anchors">
+<span class="ank ank-hy">HIGH-YIELD</span>
+<span class="ank ank-dec">DECISION</span>
+<span class="ank ank-dgr">DANGER</span>
+<span class="ank ank-prl">PEARL</span>
+<span class="ank ank-myt">MYTH</span>
+<span class="ank ank-con">CONTROVERSY</span>
+<span class="ank ank-evo">EVOLVING</span>
+</div>
+<div class="lg-explain">
+<div class="ehy"><b>HIGH-YIELD</b> — prova/prática frequente</div>
+<div class="edec"><b>DECISION</b> — muda a conduta</div>
+<div class="edgr"><b>DANGER</b> — erro grave / risco crítico</div>
+<div class="eprl"><b>PEARL</b> — nuance de especialista</div>
+<div class="emyt"><b>MYTH</b> — mito vivo na prática</div>
+<div class="econ"><b>CONTROVERSY</b> — debate sem consenso</div>
+<div class="eevo"><b>EVOLVING</b> — mudança recente</div>
+</div>
+</div>
+
+<!-- ============================================================ A -->
+<section id="redflags">
+<div class="section">
+<div class="section-eyebrow"><span>A</span> Red Flags</div>
+<div class="section-title">A colite que perfura dá sinais dias antes — e quase todos são números</div>
+<div class="section-sub">Colite aguda grave, megacólon tóxico, abscesso, obstrução, hemorragia, infecção oportunista e TEV são as formas de a DII matar; cada uma tem gatilho objetivo e ação na primeira hora.</div>
+</div>
+
+<div class="card emerg">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">A.1</span> Emergências</div><h3>Sinais de alarme no paciente com DII <span class="ank ank-dgr">DANGER</span></h3></div>
+<div class="card-body">
+<div class="mnemo">
+<div class="mnemo-title"><b>PERFURA</b> sete gatilhos que transformam a consulta de DII em internação</div>
+<div class="mnemo-grid">
+<div class="mnemo-row"><span class="mnemo-letter">P</span><span><b>Pulso &gt;90 e febre &gt;37,8 °C</b> com ≥6 evacuações sanguinolentas — colite aguda grave pelos critérios de Truelove-Witts</span></div>
+<div class="mnemo-row"><span class="mnemo-letter">E</span><span><b>Expansão do cólon</b> · transverso &gt;5,5–6 cm na radiografia, distensão, ruídos ausentes — megacólon tóxico</span></div>
+<div class="mnemo-row"><span class="mnemo-letter">R</span><span><b>Rigidez e descompressão dolorosa</b> · perfuração livre, peritonite — corticoide mascara, peça TC</span></div>
+<div class="mnemo-row"><span class="mnemo-letter">F</span><span><b>Febre com massa em fossa ilíaca direita</b> · abscesso ou flegmão no Crohn penetrante — drenar antes de imunossuprimir</span></div>
+<div class="mnemo-row"><span class="mnemo-letter">U</span><span><b>Último antibiótico ou imunossupressor recente</b> · C. difficile e CMV superpostos — pesquisar antes de escalar</span></div>
+<div class="mnemo-row"><span class="mnemo-letter">R</span><span><b>Retenção: vômitos, cólica, parada de gases</b> · estenose em suboclusão, raramente câncer — dieta zero, SNG, TC</span></div>
+<div class="mnemo-row"><span class="mnemo-letter">A</span><span><b>Anemia que despenca ou hematoquezia maciça</b> · hemorragia grave — transfusão, angio-TC, cirurgia</span></div>
+</div>
+</div>
+
+<div class="sub-title">A.1.1 · Sinal → suspeita → primeira hora</div>
+<div class="stbl stbl-3">
+<div class="stbl-head stbl-3"><div>Red flag</div><div>Suspeita</div><div>Conduta imediata</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Red flag">≥6 evacuações/dia com sangue e pelo menos um de: FC &gt;90 bpm, T &gt;37,8 °C, Hb &lt;10,5 g/dL, VHS &gt;30 mm/h (ou PCR &gt;30 mg/L)</div><div class="col" data-l="Suspeita">Colite aguda grave (RCU ou colite de Crohn); risco de colectomia de ~30% na internação</div><div class="col" data-l="Conduta"><b>Internar com equipe clínico-cirúrgica; metilprednisolona 60 mg/dia IV (ou hidrocortisona 100 mg IV 6/6 h); hidratação, K e Mg; enoxaparina 40 mg SC/dia; toxina e GDH de C. difficile; retossigmoidoscopia flexível sem preparo com biópsia para CMV</b></div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Red flag">Distensão abdominal, dor, toxemia; cólon transverso &gt;6 cm na radiografia; ar na parede</div><div class="col" data-l="Suspeita">Megacólon tóxico (inflamação da muscular própria, perda do tônus, NO induzido)</div><div class="col" data-l="Conduta"><b>Retirar opioide, anticolinérgico, loperamida; jejum, SNG, correção de K/Mg, corticoide IV, antibiótico de amplo espectro (aqui sim), radiografia a cada 12–24 h</b>; colectomia se piora ou sem melhora em 24–72 h</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Red flag">Peritonite, pneumoperitônio, dor desproporcional em quem usa corticoide</div><div class="col" data-l="Suspeita">Perfuração (mortalidade multiplica ao perfurar antes da cirurgia)</div><div class="col" data-l="Conduta"><b>TC de abdome; cirurgia de urgência — colectomia subtotal com ileostomia terminal e fechamento do coto retal</b>; piperacilina-tazobactam ou equivalente</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Red flag">Crohn com febre, massa dolorosa em fossa ilíaca direita, leucocitose</div><div class="col" data-l="Suspeita">Abscesso intra-abdominal ou flegmão (doença penetrante B3)</div><div class="col" data-l="Conduta"><b>Entero-TC ou TC com contraste; abscesso &gt;2–3 cm: drenagem percutânea + antibiótico (ex.: ceftriaxona + metronidazol); suspender imunossupressão até drenar</b>; anti-TNF só depois</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Red flag">Dor perianal intensa, abaulamento flutuante, febre</div><div class="col" data-l="Suspeita">Abscesso perianal ou perirretal</div><div class="col" data-l="Conduta"><b>Drenagem cirúrgica no mesmo dia e seton se houver fístula</b>; RM de pelve; só então anti-TNF</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Red flag">Vômitos, cólica em ondas, distensão, parada de eliminação em Crohn ileal</div><div class="col" data-l="Suspeita">Estenose inflamatória ou fibrótica em suboclusão; câncer de delgado se estenose nova em doença antiga</div><div class="col" data-l="Conduta"><b>Dieta zero, SNG, hidratação, entero-TC/RM para separar inflamação de fibrose</b>; inflamatória: corticoide IV/biológico; fibrótica curta: dilatação endoscópica ou estricturoplastia</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Red flag">Hematoquezia maciça, instabilidade, Hb caindo &gt;2 g/dL</div><div class="col" data-l="Suspeita">Hemorragia grave da colite (mais RCU) ou úlcera ileal profunda (Crohn)</div><div class="col" data-l="Conduta"><b>Ressuscitação, transfusão restritiva, angio-TC</b>; refratária = indicação de colectomia</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Red flag">Febre, tosse, dispneia ou cefaleia em uso de anti-TNF, JAK ou corticoide em dose alta</div><div class="col" data-l="Suspeita">Tuberculose disseminada, histoplasmose, Pneumocystis, listeriose, sepse</div><div class="col" data-l="Conduta"><b>Suspender o imunossupressor, culturas, TC de tórax, investigar micobactéria e fungos</b>; PJP com SMX-TMP se tripla imunossupressão</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Red flag">Edema assimétrico de membro, dispneia súbita, cefaleia com papiledema em DII ativa</div><div class="col" data-l="Suspeita">TVP, TEP, trombose venosa cerebral ou portal (risco 2–3× basal; 8× na crise)</div><div class="col" data-l="Conduta"><b>Doppler, angio-TC; anticoagulação plena</b> (detalhes no HO03/RP04)</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Red flag">Olho vermelho doloroso com fotofobia e baixa visual</div><div class="col" data-l="Suspeita">Uveíte anterior ou esclerite (não episclerite)</div><div class="col" data-l="Conduta"><b>Oftalmologia no mesmo dia</b>; corticoide tópico/sistêmico; anti-TNF monoclonal se recorrente</div></div>
+</div>
+
+<div class="box danger">
+<span class="box-label">DANGER</span>
+<div class="box-title">Colite aguda grave: o relógio do dia 3 manda mais que o cirurgião ou o clínico</div>
+<div class="box-body">A mortalidade da colite aguda grave caiu de ~25% para &lt;1% quando três coisas se tornaram rotina: corticoide IV em dose fixa (sem pulsoterapia — não há ganho acima de 60 mg de metilprednisolona), <b>avaliação objetiva no terceiro dia</b> (índice de Oxford: &gt;8 evacuações, ou 3–8 com PCR &gt;45 mg/L) e <b>colectomia sem atraso</b> quando o resgate falha. Cada dia de corticoide perdido num cólon que não responde aumenta o risco de perfuração, de desnutrição e de complicação pós-operatória. Prolongar corticoide IV além de 7–10 dias "para ver" é o erro que mata.</div>
+</div>
+
+<div class="box danger">
+<span class="box-label">DANGER</span>
+<div class="box-title">Antidiarreico e opioide na colite ativa precipitam megacólon</div>
+<div class="box-body">Loperamida, difenoxilato, codeína, morfina e anticolinérgicos (hioscina) reduzem a motilidade de um cólon cuja muscular já está inflamada e paralisada pelo óxido nítrico e pela IL-1; o resultado é dilatação, estase bacteriana e translocação. Na colite aguda — por DII, C. difficile, Shigella ou CMV — estão proibidos. Hipocalemia e hipomagnesemia (diarreia profusa) têm o mesmo efeito e devem ser corrigidas ativamente. Em colite crônica leve e estável, loperamida à noite é aceitável.</div>
+</div>
+
+<div class="box decision">
+<span class="box-label">DECISION</span>
+<div class="box-title">Excluir infecção não é etapa opcional — é a primeira</div>
+<div class="box-body">Toda agudização de DII exige <b>pesquisa de C. difficile (GDH + toxina ou PCR)</b> e coprocultura; toda colite refratária a corticoide exige <b>biópsia para CMV</b> (imuno-histoquímica, inclusões em H&amp;E; a PCR no sangue não basta). A superinfecção por C. difficile dobra a mortalidade e a de colectomia e responde a vancomicina oral 125 mg 6/6 h, não a mais corticoide (manejo no GH03). No Brasil, antes do primeiro corticoide ou biológico, acrescente <b>Strongyloides</b> (tratamento empírico com ivermectina em área endêmica, conforme PCDT RCU) e <b>tuberculose</b>.</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- ============================================================ B -->
+<section id="approach">
+<div class="section">
+<div class="section-eyebrow"><span>B</span> Por Apresentação</div>
+<div class="section-title">Cinco portas de entrada — e a pergunta que abre cada uma</div>
+<div class="section-sub">O paciente não chega com "Crohn": chega com diarreia com sangue, dor em fossa ilíaca direita, fístula, anemia sem causa ou criança que parou de crescer. Mapeie a queixa para o diferencial antes de nomear a doença.</div>
+</div>
+
+<div class="card clin">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">B.1</span> Padrão</div><h3>Diarreia com sangue, muco e urgência há semanas <span class="ank ank-hy">HIGH-YIELD</span></h3><div class="card-sub">colite: inflamatória, infecciosa, isquêmica ou neoplásica?</div></div>
+<div class="card-body">
+<div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Sangue misturado às fezes, tenesmo, urgência e evacuação noturna há <b>mais de 4–6 semanas</b> apontam para colite crônica; o primeiro diagnóstico é <b>retocolite ulcerativa</b> até prova em contrário, mas a primeira conduta é <b>excluir infecção</b> (C. difficile, Shigella, Campylobacter, Salmonella, E. coli O157, ameba) e a segunda é <b>retossigmoidoscopia ou colonoscopia com biópsia</b>.</div></div>
+<ul class="bullets">
+<li><b>Proctite pura:</b> sangue vivo com fezes formadas ou até constipação (o cólon proximal fica lento), tenesmo, pseudodiarreia de muco e pus; sintomas sistêmicos ausentes.</li>
+<li><b>Colite extensa:</b> diarreia noturna, cólica, emagrecimento, anemia ferropriva, hipoalbuminemia por exsudação, febre nas formas graves.</li>
+<li><b>Idoso com dor súbita em flanco esquerdo e sangue em 24 h:</b> colite isquêmica (D.5), não DII de início tardio, até a endoscopia mostrar segmento de fronteira vascular.</li>
+<li><b>Viagem, surto familiar, febre alta precoce:</b> colite infecciosa (GH03) — a histologia mostra arquitetura de criptas preservada, ao contrário da DII.</li>
+<li><b>Paciente com câncer em imunoterapia:</b> colite por inibidor de checkpoint (D.6); graduar CTCAE e iniciar corticoide sem esperar colonoscopia se grau ≥2.</li>
+</ul>
+<div class="box hy">
+<span class="box-label">HIGH-YIELD</span>
+<div class="box-title">Sem sangue, pense duas vezes em RCU</div>
+<div class="box-body">A RCU é doença de mucosa friável: hematoquezia está presente em ~90% dos casos. Diarreia aquosa, volumosa e sem sangue em mulher de meia-idade com colonoscopia normal é colite microscópica até a biópsia dizer o contrário; em jovem com dor e emagrecimento, é Crohn de delgado.</div>
+</div>
+</div>
+</div>
+
+<div class="card clin">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">B.2</span> Padrão</div><h3>Dor em fossa ilíaca direita, diarreia e emagrecimento no jovem</h3><div class="card-sub">ileíte: Crohn, tuberculose, Yersinia, apendicite, linfoma</div></div>
+<div class="card-body">
+<div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Dor crônica em fossa ilíaca direita com massa palpável, diarreia sem sangue visível, febre baixa e perda de peso é <b>ileocolite de Crohn</b> na maioria; no Brasil, <b>tuberculose intestinal</b> é o diferencial obrigatório e muda tudo, porque corticoide e anti-TNF a disseminam.</div></div>
+<ul class="bullets">
+<li><b>Exame inicial:</b> hemograma, PCR, albumina, ferritina, B12, calprotectina, parasitológico e pesquisa de C. difficile.</li>
+<li><b>Ileocolonoscopia com ≥2 biópsias de cada segmento</b> (íleo, cólon direito, transverso, esquerdo, reto), inclusive de mucosa normal.</li>
+<li><b>Enterorressonância</b> (preferida no jovem e para seguimento) ou entero-TC para extensão, estenose e fístula; ultrassom intestinal como alternativa sem radiação.</li>
+<li><b>Yersinia enterocolitica</b> imita ileíte terminal aguda com adenite mesentérica (pseudoapendicite) e regride em semanas.</li>
+<li><b>Apendicectomia prévia "por apendicite" com dor persistente</b> é Crohn ileocecal não reconhecido em boa parte dos casos.</li>
+</ul>
+</div>
+</div>
+
+<div class="card clin">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">B.3</span> Padrão</div><h3>Fístula, abscesso ou fissura perianal atípica</h3><div class="card-sub">a doença perianal pode preceder a luminal</div></div>
+<div class="card-body">
+<div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Fissura <b>lateral</b>, indolor, múltipla ou larga, plicomas edemaciados, fístula recidivante ou com múltiplos orifícios: pense em <b>Crohn perianal</b>, presente em até 1/4 dos pacientes e anterior ao diagnóstico luminal em ~4–17%. Toda fístula complexa pede <b>RM de pelve</b> e ileocolonoscopia.</div></div>
+<ul class="bullets">
+<li>Fissura comum é posterior na linha média e dolorosa; a de Crohn foge desse padrão.</li>
+<li>Fístula retovaginal ou com proctite associada tem pior prognóstico de cicatrização.</li>
+<li>Diferenciais: hidradenite supurativa, tuberculose perianal, linfogranuloma venéreo, actinomicose, carcinoma.</li>
+</ul>
+</div>
+</div>
+
+<div class="card clin">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">B.4</span> Padrão</div><h3>Anemia, artrite, uveíte, eritema nodoso ou colestase "sem causa"</h3><div class="card-sub">manifestações extraintestinais que chegam antes do intestino</div></div>
+<div class="card-body">
+<div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Anemia ferropriva refratária em jovem, <b>fosfatase alcalina elevada com colangiorressonância em contas de rosário</b> (CEP), sacroileíte HLA-B27, eritema nodoso, pioderma ou uveíte podem ser a primeira face da DII. Calprotectina e colonoscopia fecham o circuito.</div></div>
+<ul class="bullets">
+<li>CEP sem DII conhecida: colonoscopia com biópsias seriadas mesmo sem sintomas — 70–80% têm colite, frequentemente pancolite com reto poupado e ileíte de refluxo.</li>
+<li>Nefrolitíase de oxalato em paciente com diarreia crônica: má absorção ileal de gordura (Crohn ou ressecção).</li>
+<li>B12 baixa e diarreia: íleo terminal doente ou ressecado &gt;60 cm, ou supercrescimento bacteriano proximal a estenose.</li>
+</ul>
+</div>
+</div>
+
+<div class="card clin">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">B.5</span> Padrão</div><h3>Criança ou adolescente que parou de crescer</h3><div class="card-sub">Crohn pediátrico se apresenta pelo canal de crescimento</div></div>
+<div class="card-body">
+<div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Queda de canal de estatura, atraso puberal, anemia, aftas e dor abdominal, às vezes <b>sem diarreia</b>: é Crohn até prova em contrário. A DII pediátrica é mais extensa, mais grave e exige endoscopia alta e baixa no diagnóstico (D.9); a diarreia aguda da criança fica no PD06.</div></div>
+<ul class="bullets">
+<li>Antes dos 6 anos (VEO-IBD) e sobretudo antes dos 2 anos: investigar monogenia (IL-10/IL-10R, DGC, XIAP) e imunodeficiência.</li>
+<li>Calprotectina tem valores fisiologicamente mais altos abaixo dos 4 anos — interpretar com cautela.</li>
+</ul>
+</div>
+</div>
+
+<div class="card diag">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">B.6</span> Comparativo</div><h3>Retocolite ulcerativa × doença de Crohn <span class="ank ank-hy">HIGH-YIELD</span></h3><div class="card-sub">o quadro que a prova sempre cobra</div></div>
+<div class="card-body">
+<div class="stbl stbl-3">
+<div class="stbl-head stbl-3"><div>Característica</div><div>Retocolite ulcerativa</div><div>Doença de Crohn</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Característica">Distribuição</div><div class="col" data-l="RCU">Só cólon; começa no reto e sobe de forma <b>contínua e circunferencial</b></div><div class="col" data-l="Crohn">Boca ao ânus; <b>salteada</b>, segmentar e assimétrica; íleo terminal em ~70%</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Característica">Profundidade</div><div class="col" data-l="RCU">Mucosa (submucosa só na colite grave)</div><div class="col" data-l="Crohn"><b>Transmural</b>: estenose, fístula, abscesso, fat wrapping</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Característica">Reto</div><div class="col" data-l="RCU">Quase sempre acometido (exceção: tratamento tópico, CEP, criança)</div><div class="col" data-l="Crohn">Poupado em ~50% das colites de Crohn</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Característica">Endoscopia</div><div class="col" data-l="RCU">Perda da trama vascular, granularidade, friabilidade, úlceras rasas, pseudopólipos</div><div class="col" data-l="Crohn">Aftas, úlceras longitudinais serpiginosas, pedra de calçamento, estenose de válvula ileocecal</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Característica">Histologia</div><div class="col" data-l="RCU">Distorção difusa de criptas, plasmocitose basal, criptite, abscesso de cripta, depleção de mucina</div><div class="col" data-l="Crohn">Inflamação focal, <b>granuloma não caseoso</b> (15–30%), agregados linfoides transmurais, mucina preservada</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Característica">Perianal</div><div class="col" data-l="RCU">Ausente (fissura comum pode existir)</div><div class="col" data-l="Crohn">Fístulas e abscessos em até 1/4</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Característica">Tabagismo</div><div class="col" data-l="RCU">Protetor; ex-fumante tem início ou piora</div><div class="col" data-l="Crohn">Fator de risco, pior evolução e mais recorrência pós-operatória</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Característica">Sorologia</div><div class="col" data-l="RCU">p-ANCA ~60–70%</div><div class="col" data-l="Crohn">ASCA ~60%; nenhuma serve para diagnóstico (ACG 2025)</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Característica">Cirurgia</div><div class="col" data-l="RCU">Proctocolectomia é curativa do intestino</div><div class="col" data-l="Crohn">Não cura; recorre na anastomose; poupar intestino</div></div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- ============================================================ C -->
+<section id="primarias">
+<div class="section">
+<div class="section-eyebrow"><span>C</span> Entidades Primárias</div>
+<div class="section-title">Disease boxes — duas doenças crônicas e uma emergência</div>
+<div class="section-sub">Doença de Crohn e retocolite ulcerativa compartilham arsenal mas não lógica; a colite aguda grave tem raciocínio temporal próprio e ganha box separado porque é onde o erro de dias custa um cólon ou uma vida.</div>
+</div>
+
+<!-- C.1 -->
+<div class="card prim">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">C.1</span> Entidade âncora</div><h3>Doença de Crohn <span class="ank ank-hy">HIGH-YIELD</span></h3><div class="card-sub">inflamação transmural, salteada e progressiva da boca ao ânus</div></div>
+<div class="card-body">
+<div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Doença <b>progressiva e destrutiva</b>: metade dos pacientes que começam com fenótipo inflamatório terá estenose, fístula ou abscesso em 20 anos. Diagnóstico = clínica + ileocolonoscopia + histologia + imagem do delgado. Tratamento moderno = <b>estratificar risco e entrar cedo com terapia avançada</b> (anti-TNF ± tiopurina, ustequinumabe, vedolizumabe, anti-IL-23, upadacitinibe), mirando cicatrização endoscópica, não só sintoma. Mesalazina não tem papel.</div></div>
+<div class="disease">
+<div class="disease-head"><div class="disease-name">Doença de Crohn (enterite regional)</div><div class="disease-tag">CID-10 K50.0 delgado · K50.1 intestino grosso · K50.8 outras (ileocolônica, alto) · K50.9 não especificada</div></div>
+<div class="disease-body"><div class="disease-rows">
+<div class="disease-row"><div class="k">Epidemiologia</div><div class="v">Pico bimodal (15–30 e 50–70 anos), discreto predomínio feminino no Brasil. Incidência brasileira de 3,22/100.000 em 2019 e prevalência de 33,7/100.000, contra &gt;300/100.000 na Alemanha e no Canadá — país em transição epidemiológica, com incidência subindo nas regiões urbanizadas. História familiar em primeiro grau é o fator de risco mais forte; tabagismo dobra o risco e piora a evolução; AINE, antibióticos na infância e dieta ultraprocessada são associações ambientais.</div></div>
+<div class="disease-row"><div class="k">Fisiopatologia</div><div class="v">Falha da tolerância à microbiota em hospedeiro geneticamente suscetível: variantes de <b>NOD2/CARD15</b> (sensor de muramil-dipeptídeo, reduz defensinas das células de Paneth), <b>ATG16L1</b> e <b>IRGM</b> (autofagia), <b>IL23R</b>; a barreira cede, antígenos bacterianos alcançam a lâmina própria e a resposta Th1/Th17 (IL-12, IL-23, IFN-γ, IL-17, TNF) torna-se crônica e transmural. Os granulomas são a tentativa macrofágica de conter o antígeno; a fibrose resulta da ativação de miofibroblastos por TGF-β e IL-13 e é em grande parte independente da inflamação, o que explica estenoses que não respondem ao biológico.</div></div>
+<div class="disease-row"><div class="k">Clínica</div><div class="v">Ileocolite (~50%): dor em fossa ilíaca direita, diarreia, emagrecimento, febre baixa, massa palpável. Ileíte isolada (~30%): dor pós-prandial, suboclusão, má absorção (B12, sais biliares, gordura). Colite de Crohn (~20%): diarreia com sangue que imita RCU, frequentemente com reto poupado e doença perianal. Trato alto (até 5%): dor epigástrica, úlceras aftosas, estenose pilórica. Fadiga é sintoma cardinal e subvalorizado. Sintomas correlacionam mal com inflamação — CDAI não se correlaciona com SES-CD.</div></div>
+<div class="disease-row"><div class="k">Diagnóstico</div><div class="v">Sem achado patognomônico: soma de dados. <b>Calprotectina</b> (corte 50–100 µg/g para separar inflamação de funcional) <span class="ev ev-sbr">ACG 2025</span>; <b>ileocolonoscopia com biópsias</b> de áreas doentes e sadias e foto do íleo; endoscopia alta se sintomas altos; <b>imagem do delgado em todo diagnóstico</b> — enterorressonância preferida abaixo dos 35 anos e para seguimento, entero-TC equivalente em acurácia, ultrassom intestinal como adjunto; cápsula só após excluir estenose. Sorologias (ASCA, p-ANCA) e teste genético não diagnosticam. Exames de entrada: hemograma, PCR, albumina, ferritina, B12, folato, 25-OH-vitamina D, função renal e hepática. No SUS, o diagnóstico exige laudo endoscópico, cirúrgico, anatomopatológico ou radiológico <span class="ev ev-nice">PCDT DC 2026</span>.</div></div>
+<div class="disease-row"><div class="k">Tratamento</div><div class="v"><b>Leve, ileocecal, baixo risco:</b> budesonida de liberação ileal 9 mg/dia VO por 8 semanas com desmame (não serve para manutenção) ou observação vigiada. <b>Moderado a grave ou com fatores de mau prognóstico:</b> prednisona 40–60 mg/dia só como ponte; não exigir falha da terapia convencional para iniciar terapia avançada <span class="ev ev-sbr">ACG 2025</span>. Opções com recomendação forte: infliximabe (de preferência com azatioprina em quem é virgem de ambos), adalimumabe, certolizumabe, vedolizumabe, ustequinumabe, risanquizumabe, mirikizumabe, guselcumabe e upadacitinibe (este após exposição a anti-TNF). <b>SUS:</b> sulfassalazina só na doença colônica leve; corticoide + azatioprina (ou metotrexato) → anti-TNF (infliximabe, adalimumabe, certolizumabe) → ustequinumabe ou vedolizumabe <span class="ev ev-nice">PCDT DC 2026</span>. Tabagismo: cessação é intervenção terapêutica com efeito comparável ao de um imunossupressor.</div></div>
+<div class="disease-row"><div class="k">Prognóstico</div><div class="v">Só 20–30% têm curso indolente. Risco de cirurgia em 10 anos caiu de ~47% (antes de 2000) para ~26–30% na era biológica; risco de segunda ressecção em 10 anos ~30–35%; recorrência endoscópica pós-ileocolectomia de até 90% sem profilaxia. Mortalidade 1,4× a da população (câncer gastrointestinal, pulmão). Adenocarcinoma de delgado é raro, mas de diagnóstico tardio.</div></div>
+<div class="disease-row"><div class="k">O que muda conduta</div><div class="v"><b>Fatores de alto risco</b> (diagnóstico antes dos 30 anos, doença extensa ou ileal, perianal, úlceras profundas, estenose ou penetração ao diagnóstico, necessidade precoce de corticoide) → terapia avançada imediata. <b>Abscesso</b> → drenar e adiar imunossupressão. <b>Estenose fibrótica curta</b> → dilatação ou estricturoplastia, não escalada. <b>Ileocecal limitada (&lt;40 cm) refratária</b> → ileocolectomia laparoscópica é alternativa ao anti-TNF. <b>Tuberculose não excluída</b> → não imunossuprimir.</div></div>
+</div></div></div>
+
+<div class="score">
+<div class="score-head"><div class="score-name">Classificação de Montreal — Crohn <span class="ev ev-nice">ECCO 2024</span></div><div class="score-purpose">Fenótipo para prognóstico e escolha terapêutica</div></div>
+<div class="score-rows">
+<div class="score-row"><div class="score-grade">A · idade</div><div class="score-desc"><b>A1 ≤16 anos</b> · A2 17–40 · A3 &gt;40 (Paris divide A1 em A1a &lt;10 e A1b 10–17 na criança)</div></div>
+<div class="score-row"><div class="score-grade">L · local</div><div class="score-desc"><b>L1 ileal</b> · L2 colônica · L3 ileocolônica · <b>L4 modificador</b> de trato alto (somável: L1+L4)</div></div>
+<div class="score-row"><div class="score-grade">B · comportamento</div><div class="score-desc"><b>B1</b> não estenosante e não penetrante · <b>B2</b> estenosante · <b>B3</b> penetrante (fístula, abscesso) · <b>p</b> perianal (modificador). O comportamento migra de B1 para B2/B3 com o tempo; a localização é estável.</div></div>
+<div class="score-row"><div class="score-grade">Atividade</div><div class="score-desc"><b>Harvey-Bradshaw</b> (bem-estar 0–4, dor 0–3, nº de evacuações líquidas, massa 0–3, 1 ponto por complicação): ≤4 remissão · 5–7 leve · 8–16 moderada · &gt;16 grave; queda ≥3 = resposta. <b>CDAI</b> &lt;150 remissão, 150–220 leve, 220–450 moderada, &gt;450 grave. O PCDT 2026 usa IHB (5–7 leve a moderada; &gt;8 moderada a grave).</div></div>
+<div class="score-row"><div class="score-grade">Endoscopia</div><div class="score-desc"><b>SES-CD</b> (úlceras, superfície ulcerada, superfície afetada, estenose em 5 segmentos): 0–2 remissão; resposta = queda &gt;50%. <b>Rutgeerts</b> pós-ileocolectomia: i0 normal · i1 ≤5 aftas · i2 &gt;5 aftas com mucosa normal entre elas ou lesão restrita à anastomose · i3 ileíte difusa aftosa · i4 úlceras grandes, nódulos ou estenose. i2–i4 = recorrência que pede tratamento.</div></div>
+</div>
+</div>
+
+<details class="deep"><summary>Deep dive · Imunopatogenia do Crohn: barreira, autofagia e o eixo IL-23/Th17 que os biológicos atacam</summary>
+<div class="deep-content">
+<p><b>Genética.</b> Mais de 240 loci de suscetibilidade a DII foram mapeados por GWAS, mas a herdabilidade explicada continua modesta; a concordância em gêmeos monozigóticos é de ~30–50% no Crohn e de 10–15% na RCU, o que coloca o ambiente e a microbiota no centro. NOD2 foi o primeiro gene descrito: as três variantes principais (R702W, G908R e a mutação de mudança de quadro 1007fs) reduzem a resposta ao muramil-dipeptídeo do peptidoglicano, diminuem a secreção de α-defensinas pelas células de Paneth no íleo e se associam a doença ileal, estenosante e de início precoce. Homozigose para NOD2 multiplica o risco em ~20–40 vezes, mas a penetrância é baixa — a maioria dos portadores nunca adoece.</p>
+<p><b>Autofagia e células de Paneth.</b> ATG16L1 T300A e IRGM comprometem a xenofagia (eliminação de bactérias intracelulares, como E. coli aderente-invasiva) e a formação de grânulos de Paneth; o estresse de retículo endoplasmático (XBP1) completa o defeito epitelial. O resultado é um íleo com defesa antimicrobiana insuficiente, o que explica a predileção ileal da doença e a relação com disbiose (redução de Faecalibacterium prausnitzii, produtor de butirato e indutor de células T reguladoras).</p>
+<p><b>Resposta imune.</b> Células dendríticas CD103+ e macrófagos da lâmina própria, que normalmente toleram a microbiota, passam a produzir IL-12 e IL-23. A IL-12 (p35/p40) polariza Th1 com IFN-γ; a IL-23 (p19/p40) estabiliza Th17 patogênicos que produzem IL-17A, IL-22, GM-CSF e mais TNF, e ativa células linfoides inatas do grupo 3. O TNF amplifica tudo: aumenta a permeabilidade por internalização de proteínas de junção, induz apoptose epitelial e recruta neutrófilos. A fisiologia dá o mapa dos alvos: anti-TNF bloqueia o amplificador; ustequinumabe bloqueia a subunidade p40 comum à IL-12 e à IL-23; risanquizumabe, mirikizumabe e guselcumabe bloqueiam só a p19, poupando a via IL-12/Th1 antiviral e antitumoral; vedolizumabe impede que linfócitos com integrina α4β7 se liguem à MAdCAM-1 do endotélio intestinal e entrem na mucosa; JAK1 (upadacitinibe) corta a sinalização de várias citocinas de uma vez (IL-6, IFN-γ, IL-23 via JAK2/TYK2 parcialmente). Natalizumabe, anti-α4 não seletivo, também bloqueia a VCAM-1 cerebral e permite LEMP pelo vírus JC — por isso saiu da prática.</p>
+<p><b>Por que a doença é transmural e fibrosante.</b> Agregados linfoides se formam ao longo dos vasos linfáticos da submucosa até a serosa; a linfangite e a obstrução linfática mesentérica explicam o "fat wrapping", em que o tecido adiposo mesentérico abraça a alça e produz adipocinas pró-inflamatórias e fibrogênicas (creeping fat). A fibrose depende de miofibroblastos ativados por TGF-β, IL-13, IL-17 e por rigidez da matriz, um circuito que se autoperpetua mesmo quando a inflamação é controlada — fundamento para tratar cedo, antes que o dano estrutural fique irreversível (conceito de "janela de oportunidade" e índice de Lémann).</p>
+</div>
+</details>
+
+<details class="deep"><summary>Deep dive · Treat-to-target no Crohn: alvos STRIDE-II, monitorização terapêutica e perda de resposta</summary>
+<div class="deep-content">
+<p><b>Alvos.</b> O STRIDE-II (IOIBD 2021) separa alvos por horizonte. Curto prazo: resposta sintomática (queda de dor e frequência). Médio prazo: remissão clínica e normalização de PCR e calprotectina. Longo prazo: <b>cicatrização endoscópica</b> (SES-CD &lt;3 ou ausência de úlceras), restauração da qualidade de vida e ausência de incapacidade; na criança, crescimento normal. Cicatrização transmural em enterorressonância ou ultrassom é alvo adjunto, ainda não formal. A estratégia de controle estreito (estudo CALM) — escalonar o tratamento por calprotectina ≥250 µg/g ou PCR ≥5 mg/L em vez de esperar sintomas — produziu mais cicatrização mucosa e menos progressão.</p>
+<p><b>Ritmo de reavaliação.</b> Esperar alguma melhora em 2–4 semanas e resposta máxima até 12–16 semanas após a indução (PCDT 2026). Calprotectina a cada 3 meses no primeiro ano de doença ativa, a cada 6 meses no segundo e anual depois, nunca em intervalo menor que 3 meses no protocolo do SUS; ≤100 µg/g afasta atividade intestinal, e &gt;250 µg/g em duas consultas no assintomático em biológico triplica o risco de cirurgia, internação, fístula ou estenose. Para doença ileal o corte de 100 µg/g é preferido, porque o íleo eleva menos a calprotectina que o cólon.</p>
+<p><b>Monitorização terapêutica (TDM) dos anti-TNF.</b> A perda de resposta secundária atinge ~1/3 dos respondedores. Diante dela, dosar nível de vale e anticorpo antifármaco separa quatro cenários: (1) nível baixo sem anticorpo — subdose por clearance alto (inflamação intensa, hipoalbuminemia, IMC alto, perda fecal na colite grave): intensificar dose ou encurtar intervalo; (2) nível baixo com anticorpo em título baixo — intensificar e associar imunomodulador; (3) anticorpo em título alto — trocar para outro anti-TNF; (4) nível adequado (infliximabe &gt;5 µg/mL, adalimumabe &gt;7,5 µg/mL, certolizumabe &gt;20 µg/mL em manutenção) e doença ativa — falha mecanística: mudar de classe. Antes de concluir por falha, confirme que a doença está realmente ativa (endoscopia, imagem, calprotectina) e exclua SII sobreposta, diarreia por ácidos biliares pós-ressecção, supercrescimento bacteriano, estenose fibrótica e C. difficile. Variantes HLA-DQA1*05 aumentam a imunogenicidade dos anti-TNF e são argumento para terapia combinada.</p>
+<p><b>Terapia combinada.</b> O estudo SONIC mostrou remissão livre de corticoide em 57% com infliximabe + azatioprina, 44% com infliximabe isolado e 30% com azatioprina isolada; o benefício decorre sobretudo de menor imunogenicidade e níveis mais altos. Após 6–12 meses de remissão livre de corticoide, retirar o imunomodulador não aumentou a recaída nas meta-análises citadas pelo PCDT. O custo é o risco de linfoma (≈1:1.000 pacientes-ano com tiopurina) e de linfoma hepatoesplênico de células T, concentrado em homens jovens — subgrupo em que se prefere metotrexato como parceiro ou monoterapia biológica com TDM.</p>
+</div>
+</details>
+</div>
+</div>
+
+<!-- C.2 -->
+<div class="card prim">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">C.2</span> Entidade âncora</div><h3>Retocolite ulcerativa <span class="ank ank-hy">HIGH-YIELD</span></h3><div class="card-sub">inflamação mucosa contínua que sobe do reto</div></div>
+<div class="card-body">
+<div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Hematoquezia, urgência e tenesmo; extensão pela classificação de Montreal (E1 proctite, E2 esquerda, E3 extensa) e gravidade por Truelove-Witts ou Mayo definem tudo. <b>Leve a moderada = mesalazina</b> (tópica na distal, tópica + oral na esquerda, oral ≥2–2,4 g na extensa); <b>moderada a grave ou refratária = corticoide como ponte e terapia avançada</b> mantida com o mesmo agente que induziu. Colectomia cura o intestino.</div></div>
+<div class="disease">
+<div class="disease-head"><div class="disease-name">Retocolite ulcerativa (colite ulcerativa)</div><div class="disease-tag">CID-10 K51.0 enterocolite ulcerativa · K51.2 proctite · K51.3 retossigmoidite · K51.5 colite esquerda · K51.8 outras · K51.9 não especificada</div></div>
+<div class="disease-body"><div class="disease-rows">
+<div class="disease-row"><div class="k">Epidemiologia</div><div class="v">Mais frequente que o Crohn no adulto. No Brasil a incidência subiu de 5,7 para 6,9/100.000/ano na última década (PCDT RCU). Pico entre 20 e 40 anos e segundo pico após os 60. Tabagismo é protetor e a cessação pode precipitar o início ou a piora; apendicectomia antes dos 20 anos por apendicite verdadeira reduz o risco. Na apresentação, 30–50% têm proctite ou proctossigmoidite, 30–40% colite esquerda e 20–30% colite extensa; 10–20% das proctites progridem em 10 anos.</div></div>
+<div class="disease-row"><div class="k">Fisiopatologia</div><div class="v">Doença da barreira epitelial colônica: camada de muco mais fina e permeável (MUC2, menor sulfatação), epitélio com menor oxidação de butirato e menor expressão de PPAR-γ, resposta imune com componente Th2 atípico mediado por células NKT (IL-13 induz apoptose epitelial e ruptura das junções por claudina-2) e Th17. A inflamação é contínua a partir do reto porque a carga bacteriana e a exposição a ácidos biliares são máximas no cólon distal; poupar o reto só ocorre com tratamento tópico, na CEP e em crianças. O p-ANCA reconhece antígenos nucleares de neutrófilos e reflete reatividade cruzada a bactérias, não causa.</div></div>
+<div class="disease-row"><div class="k">Clínica</div><div class="v">Diarreia com sangue (~90%), urgência, tenesmo, evacuação noturna, exsudato mucopurulento. Na proctite, fezes formadas com sangue e até constipação proximal. Na extensa: febre, emagrecimento, anemia, hipoalbuminemia. Ileíte de refluxo superficial pode ocorrer na pancolite e não muda o diagnóstico. "Mancha periapendicular" e colite com reto poupado na CEP são fenótipos reconhecidos.</div></div>
+<div class="disease-row"><div class="k">Diagnóstico</div><div class="v">Excluir C. difficile e demais infecções <span class="ev ev-sbr">ACG 2025</span>. Colonoscopia com intubação do íleo e biópsias de áreas doentes e sadias (inclusive reto aparentemente normal); na colite grave, retossigmoidoscopia sem preparo basta (risco de perfuração). Histologia: <b>distorção arquitetural difusa de criptas e plasmocitose basal</b> indicam cronicidade; criptite e abscesso de cripta indicam atividade. Mayo endoscópico ou UCEIS para gravidade. Calprotectina para resposta, suspeita de recaída e manutenção. Sorologia não diagnostica nem prognostica. Endoscopia alta e imagem do delgado só se houver suspeita de Crohn. No SUS, inclusão exige endoscopia + histologia sugestiva <span class="ev ev-nice">PCDT RCU 2024</span>. Colite indeterminada / DII não classificada (10–15% das colites): seguir como RCU, revisar com evolução e cirurgia.</div></div>
+<div class="disease-row"><div class="k">Tratamento</div><div class="v"><b>Proctite:</b> supositório de mesalazina 1 g/dia. <b>Esquerda:</b> enema de mesalazina 1 g/dia + mesalazina oral 2,4–4,8 g/dia (ou sulfassalazina 2–4 g/dia). <b>Extensa leve-moderada:</b> mesalazina oral ≥2–2,4 g/dia, dose única possível; sem resposta, budesonida MMX 9 mg/dia ou prednisona 40–60 mg/dia; não trocar de uma formulação de 5-ASA para outra. <b>Moderada a grave:</b> terapia avançada — infliximabe (preferido entre anti-TNF, idealmente com azatioprina), adalimumabe, golimumabe, vedolizumabe (superior ao adalimumabe no VARSITY), ustequinumabe, risanquizumabe, mirikizumabe, guselcumabe, tofacitinibe, upadacitinibe, ozanimode e etrasimode <span class="ev ev-sbr">ACG 2025</span>. <b>SUS:</b> aminossalicilato oral e tópico → prednisona → azatioprina → infliximabe, vedolizumabe ou tofacitinibe após falha de azatioprina por ≥12 semanas; ciclosporina e infliximabe na colite aguda grave <span class="ev ev-nice">PCDT RCU 2024</span>. Manutenção: o mesmo fármaco que induziu; corticoide nunca.</div></div>
+<div class="disease-row"><div class="k">Prognóstico</div><div class="v">A maioria alterna surtos e remissões; ~15% têm colite aguda grave em algum momento; colectomia em 10 anos ~10–15% (maior na colite extensa, PCR alta, hipoalbuminemia, idade jovem ao diagnóstico, necessidade precoce de corticoide). Risco de câncer colorretal ligado a duração, extensão, inflamação persistente, CEP e história familiar; a vigilância moderna e o controle mucoso derrubaram as estimativas antigas (de 18% em 30 anos para &lt;5% nas coortes recentes).</div></div>
+<div class="disease-row"><div class="k">O que muda conduta</div><div class="v"><b>Extensão</b> (decide via tópica × oral), <b>gravidade</b> (Truelove-Witts grave → internação, C.3), <b>fatores de mau prognóstico</b> com doença leve-moderada (idade &lt;40, colite extensa, Mayo endoscópico 3 ou úlceras profundas, PCR/albumina alteradas, internação prévia, corticodependência) → tratar como moderada a grave, <b>falha de 5-ASA em 8 semanas</b> → mudar de classe, <b>corticodependência</b> (≥2 cursos/ano ou recaída ao desmamar) → terapia poupadora, <b>displasia</b> → ressecção endoscópica ou colectomia.</div></div>
+</div></div></div>
+
+<div class="score">
+<div class="score-head"><div class="score-name">Escore de Mayo e Montreal — RCU <span class="ev ev-sbr">ACG 2025</span></div><div class="score-purpose">Extensão e atividade clinicoendoscópica</div></div>
+<div class="score-rows">
+<div class="score-row"><div class="score-grade">Montreal E</div><div class="score-desc"><b>E1 proctite</b> (até a junção retossigmoide, ~15–18 cm da margem anal) · <b>E2 esquerda</b> (até a flexura esplênica) · <b>E3 extensa</b> (além da flexura esplênica, inclui pancolite)</div></div>
+<div class="score-row"><div class="score-grade">Frequência</div><div class="score-desc">0 normal · 1 = 1–2 a mais que o habitual · 2 = 3–4 a mais · 3 = ≥5 a mais</div></div>
+<div class="score-row"><div class="score-grade">Sangramento</div><div class="score-desc">0 nenhum · 1 raias em menos da metade das evacuações · 2 sangue evidente na maioria · 3 só sangue</div></div>
+<div class="score-row"><div class="score-grade">Endoscopia</div><div class="score-desc"><b>0</b> normal ou inativa · <b>1</b> eritema, trama vascular reduzida, friabilidade leve · <b>2</b> eritema marcado, ausência de trama, friabilidade, erosões · <b>3</b> sangramento espontâneo, ulceração. <b>Mayo 0–1 = melhora endoscópica (alvo)</b>.</div></div>
+<div class="score-row"><div class="score-grade">Avaliação global</div><div class="score-desc">0 normal · 1 leve · 2 moderada · 3 grave. Total 0–12: remissão ≤2 sem subescore &gt;1; leve 3–5; moderada 6–10; grave 11–12. Mayo parcial (sem endoscopia) e o índice de atividade da ACG (PROs + calprotectina + PCR + endoscopia) são usados no consultório.</div></div>
+</div>
+</div>
+
+<details class="deep"><summary>Deep dive · Histologia da cronicidade, extensão por biópsia e o paradoxo do tabaco na RCU</summary>
+<div class="deep-content">
+<p><b>Cronicidade versus atividade.</b> O patologista separa duas camadas de informação. A arquitetura — criptas ramificadas, encurtadas, com espaçamento irregular e atrofia, plasmocitose basal (plasmócitos entre a base das criptas e a muscular da mucosa) e metaplasia de células de Paneth no cólon esquerdo — denuncia lesão crônica e é o que separa DII de colite infecciosa autolimitada, que mostra inflamação aguda com arquitetura preservada. A atividade — neutrófilos na lâmina própria, criptite, abscessos de cripta, erosão e ulceração — gradua a inflamação e entra nos índices histológicos de Geboes, Nancy e Robarts. Plasmocitose basal é o primeiro sinal a aparecer: pode estar presente nas duas primeiras semanas, quando a distorção ainda não se instalou, e por isso a biópsia muito precoce pode ser inconclusiva.</p>
+<p><b>Remissão histológica.</b> A persistência de neutrófilos com mucosa endoscopicamente cicatrizada (Mayo 0) prediz recaída, corticoide e colectomia; o ACG 2025 reconhece a associação, mas não a adota como alvo formal porque não há estudo prospectivo mostrando que perseguir a histologia melhora desfecho além do alvo endoscópico. Na prática, o alvo é Mayo 0–1 e calprotectina normal; a histologia entra quando se cogita desescalonar.</p>
+<p><b>Extensão é histológica, não só endoscópica.</b> A inflamação microscópica pode ultrapassar o limite visível, e a extensão máxima já documentada (não a atual) define o risco de câncer e o intervalo de vigilância; daí biopsiar o cólon proximal aparentemente normal na colonoscopia índice. A "mancha periapendicular" (inflamação do orifício apendicular com cólon intermediário normal) aparece em até 1/3 das colites distais e não muda prognóstico.</p>
+<p><b>Tabaco.</b> A nicotina aumenta a espessura do muco colônico, reduz citocinas Th2 e modula a resposta via receptores nicotínicos α7 em macrófagos (via colinérgica anti-inflamatória). Ensaios com adesivo de nicotina mostraram benefício marginal à custa de efeitos adversos e o PCDT não o recomenda; recomendar fumar é obviamente inaceitável. No Crohn o efeito é oposto — o tabaco aumenta a produção de radicais livres, a trombose microvascular e a disfunção de macrófagos — e é um dos fatores de recorrência pós-operatória mais fortes.</p>
+<p><b>Por que a RCU é "curável" e o Crohn não.</b> A RCU não ultrapassa o cólon; removido o órgão-alvo (proctocolectomia com bolsa ileal ou ileostomia definitiva), a doença intestinal acaba, embora a bolsa possa inflamar (bolsite, D.3) e as manifestações extraintestinais independentes da atividade (CEP, espondilite) persistam. No Crohn, o defeito de barreira e a resposta imune estão em todo o intestino; a ressecção remove o segmento doente, mas a doença volta na anastomose em meses.</p>
+</div>
+</details>
+</div>
+</div>
+
+<!-- C.3 -->
+<div class="card emerg">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">C.3</span> Emergência</div><h3>Colite aguda grave e megacólon tóxico <span class="ank ank-dgr">DANGER</span> <span class="ank ank-dec">DECISION</span></h3><div class="card-sub">internação com relógio: dia 0, dia 3, dia 7</div></div>
+<div class="card-body">
+<div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">≥6 evacuações sanguinolentas + toxicidade sistêmica = <b>colite aguda grave</b>. Interne com cirurgião, <b>corticoide IV em dose fixa, profilaxia de TEV, C. difficile e CMV</b>, sem antidiarreico nem opioide. Avalie objetivamente no <b>terceiro dia</b>: falhou → <b>infliximabe ou ciclosporina</b>; falhou de novo ou complicou → <b>colectomia subtotal</b>. Megacólon tóxico é a forma com dilatação &gt;6 cm e toxemia.</div></div>
+<div class="disease">
+<div class="disease-head"><div class="disease-name">Colite aguda grave / megacólon tóxico</div><div class="disease-tag">CID-10 K59.3 megacólon tóxico · associar o código da doença de base (RCU ou Crohn)</div></div>
+<div class="disease-body"><div class="disease-rows">
+<div class="disease-row"><div class="k">Epidemiologia</div><div class="v">Até 25% dos pacientes com RCU terão um episódio; em 1/3 dos casos é a primeira manifestação da doença. Cerca de 1/3 não responde ao corticoide IV. Megacólon tóxico complica &lt;2–5% das colites graves; além da DII, ocorre em C. difficile, Salmonella, Shigella, Campylobacter, ameba, CMV e colite isquêmica.</div></div>
+<div class="disease-row"><div class="k">Fisiopatologia</div><div class="v">A inflamação ultrapassa a mucosa e alcança a muscular própria; NO sintetizado por iNOS em neutrófilos e macrófagos relaxa o músculo liso, a IL-1β e a IL-6 inibem a contratilidade, e a hipocalemia, a hipomagnesemia, os opioides e os anticolinérgicos removem o pouco tônus que resta. O cólon dilata (transverso e direito, os segmentos mais altos em decúbito dorsal acumulam gás), a parede afina, a tensão aumenta pela lei de Laplace, a perfusão cai e a translocação bacteriana produz toxemia. Na colite grave, a perda fecal de proteína e a hipoalbuminemia aceleram o clearance de anticorpos monoclonais (perda de infliximabe nas fezes), o que fundamenta intensificar a dose.</div></div>
+<div class="disease-row"><div class="k">Clínica</div><div class="v">Diarreia sanguinolenta volumosa, dor, taquicardia, febre, prostração, anemia. No megacólon: distensão, timpanismo, ruídos diminuídos — e paradoxalmente <b>menos evacuações</b> (não é melhora). Sinais peritoneais podem estar ausentes sob corticoide; desconfie de dor desproporcional e de queda da frequência com piora geral.</div></div>
+<div class="disease-row"><div class="k">Diagnóstico</div><div class="v"><b>Truelove-Witts grave:</b> ≥6 evacuações/dia com sangue + ≥1 de FC &gt;90, T &gt;37,8 °C, Hb &lt;10,5 g/dL, VHS &gt;30 mm/h <span class="ev ev-nice">PCDT RCU 2024</span>. <b>Megacólon (Jalan):</b> cólon &gt;6 cm na radiografia + ≥3 de febre &gt;38,6 °C, FC &gt;120, leucócitos &gt;10.500, anemia, + ≥1 de desidratação, alteração de consciência, distúrbio eletrolítico ou hipotensão. Exames: hemograma, PCR diária, albumina, K, Mg, função renal; C. difficile; retossigmoidoscopia flexível sem preparo em até 72 h (idealmente 24 h) com biópsia para CMV; radiografia de abdome na admissão e conforme evolução (dilatação &gt;5,5 cm prediz colectomia); TC se suspeita de perfuração <span class="ev ev-sbr">ACG 2025</span>. Colonoscopia completa e preparo estão contraindicados.</div></div>
+<div class="disease-row"><div class="k">Tratamento</div><div class="v"><b>Dia 0:</b> metilprednisolona 60 mg/dia IV ou hidrocortisona 100 mg IV 6/6 h (sem benefício acima disso); enoxaparina 40 mg SC/dia; cristaloide, K e Mg; transfusão se Hb &lt;7–8; dieta oral ou enteral se tolerada (NPT só se desnutrição grave ou íleo — não há "repouso intestinal" terapêutico); retirar AINE, opioide, anticolinérgico e antidiarreico; <b>antibiótico não é rotina</b> — só com infecção, megacólon ou suspeita de perfuração <span class="ev ev-sbr">ACG 2025</span>. Se C. difficile positivo: vancomicina VO 125 mg 6/6 h mantendo corticoide. <b>Dia 3:</b> Oxford positivo (&gt;8 evacuações, ou 3–8 com PCR &gt;45 mg/L) → resgate: infliximabe 5 mg/kg IV (10 mg/kg ou indução acelerada se albumina &lt;2,5 g/dL) ou ciclosporina 2 mg/kg/dia IV em infusão contínua (nível 200–400 ng/mL; Mg e colesterol normais; evitar se em uso prévio de azatioprina ou insuficiência renal). <b>Dia 5–7 do resgate sem resposta, ou a qualquer hora com perfuração, hemorragia maciça ou megacólon que piora:</b> colectomia subtotal com ileostomia terminal e coto retal; não fazer resgate sequencial (infliximabe após ciclosporina ou vice-versa) fora de centro especializado.</div></div>
+<div class="disease-row"><div class="k">Prognóstico</div><div class="v">Mortalidade &lt;1% em centros com protocolo; ~30–40% de colectomia em 1 ano entre os refratários a corticoide mesmo com resgate. Após resgate com ciclosporina, transição para ciclosporina VO 5 mg/kg/dia e azatioprina (PCDT) ou vedolizumabe; após infliximabe, manter infliximabe.</div></div>
+<div class="disease-row"><div class="k">O que muda conduta</div><div class="v"><b>Índice de Oxford no dia 3</b> (resgate), <b>albumina &lt;2,5 g/dL</b> (dose maior de infliximabe), <b>tiopurina prévia ou creatinina alterada</b> (preferir infliximabe a ciclosporina), <b>CMV com inclusões abundantes na biópsia</b> (ganciclovir 5 mg/kg IV 12/12 h), <b>C. difficile</b> (vancomicina oral), <b>dilatação &gt;5,5–6 cm, ar livre, sangramento maciço</b> (cirurgia).</div></div>
+</div></div></div>
+
+<div class="score">
+<div class="score-head"><div class="score-name">Truelove-Witts e índice de Oxford <span class="ev ev-sbr">ACG 2025</span></div><div class="score-purpose">Gravidade na admissão e resposta no 3º dia de corticoide IV</div></div>
+<div class="score-rows">
+<div class="score-row"><div class="score-grade">Leve</div><div class="score-desc">&lt;4 evacuações/dia, sangue ocasional, afebril, FC normal, Hb normal, VHS &lt;20 mm/h</div></div>
+<div class="score-row"><div class="score-grade">Moderada</div><div class="score-desc">4–6 evacuações/dia, sangue, toxicidade mínima (entre leve e grave)</div></div>
+<div class="score-row"><div class="score-grade">Grave</div><div class="score-desc"><b>≥6 evacuações/dia com sangue + ≥1</b>: FC &gt;90 bpm, T &gt;37,8 °C, Hb &lt;10,5 g/dL, VHS &gt;30 mm/h. Fulminante: &gt;10 evacuações, sangramento contínuo, necessidade de transfusão, dilatação colônica.</div></div>
+<div class="score-row"><div class="score-grade">Oxford dia 3</div><div class="score-desc"><b>&gt;8 evacuações/dia, ou 3–8 com PCR &gt;45 mg/L</b> → ~85% de colectomia na mesma internação sem resgate. (O PCDT RCU escreve "mg/dL"; o critério original de Travis é em mg/L.)</div></div>
+<div class="score-row"><div class="score-grade">Outros preditores</div><div class="score-desc">Escore de Ho (frequência, dilatação, hipoalbuminemia), índice sueco (frequência + 0,14 × PCR ≥8 no dia 3), UCEIS ≥7, úlceras profundas na sigmoidoscopia.</div></div>
+</div>
+</div>
+
+<details class="deep"><summary>Deep dive · Infliximabe × ciclosporina, a farmacocinética da colite grave e o que se sabe de JAK no resgate</summary>
+<div class="deep-content">
+<p><b>Equivalência dos resgates.</b> O CYSIF (115 pacientes, 27 centros) e o CONSTRUCT (270 pacientes) não mostraram diferença de falha de tratamento ou de colectomia em 1–2 anos entre ciclosporina 2 mg/kg/dia e infliximabe 5 mg/kg nas semanas 0, 2 e 6; a meta-análise usada pelo PCDT RCU encontrou resposta clínica de ~43% e colectomia de ~26% em 3 meses e ~34% em 12 meses com ciclosporina, sem diferença estatística para o infliximabe, e uma coorte de vida real de 740 pacientes registrou mais eventos adversos graves com infliximabe (26% × 15%). A escolha é operacional: ciclosporina exige infusão contínua, dosagem sérica, controle de pressão, creatinina, magnésio e colesterol (hipocolesterolemia e hipomagnesemia baixam o limiar de convulsão), e oferece meia-vida curta — se falhar, a cirurgia não encontra imunossupressão residual; infliximabe é mais simples, já serve como manutenção e é preferido em quem falhou tiopurina (a ciclosporina funciona como ponte para a tiopurina, inútil se ela já falhou) e em quem tem disfunção renal.</p>
+<p><b>Por que a dose padrão falha.</b> Na colite grave, o clearance do infliximabe é várias vezes maior: perda fecal da droga pela mucosa ulcerada, carga inflamatória (TNF consome anticorpo), catabolismo de IgG aumentado na hipoalbuminemia (o receptor FcRn que protege a IgG da degradação fica saturado) e formação precoce de anticorpos. Daí as estratégias de indução acelerada (três doses em 3–4 semanas) e de 10 mg/kg. O ensaio PREDICT-UC, citado no ACG 2025, não mostrou diferença global entre 10 e 5 mg/kg na dose inicial, mas mostrou mais resposta no dia 7 com 10 mg/kg quando a albumina era &lt;2,5 g/dL; o ACG sugere considerar intensificação nesse subgrupo.</p>
+<p><b>Inibidores de JAK no resgate.</b> Tofacitinibe 10 mg três vezes ao dia (dose fora da bula) somado ao corticoide no TACOS (estudo indiano, unicêntrico) reduziu a necessidade de resgate e de colectomia, e séries retrospectivas com upadacitinibe 30 mg duas vezes ao dia ou 45 mg/dia mostraram respostas rápidas pelo início de ação em dias e por não sofrerem perda fecal como os anticorpos. O ACG 2025 julga os dados insuficientes para uso rotineiro após falha de corticoide ou de infliximabe; o risco trombótico, já alto na colite grave internada, é o argumento contrário. Mantém-se como ponte em centros experientes, com anticoagulação profilática.</p>
+<p><b>Cirurgia como tratamento, não como fracasso.</b> Infliximabe e ciclosporina pré-operatórios não aumentaram complicações da colectomia nas análises do ACG; o que aumenta é corticoide prolongado, hipoalbuminemia e desnutrição. A colectomia subtotal com ileostomia terminal preserva o reto e a pelve para uma proctectomia com bolsa ileal em segundo ou terceiro tempo, quando o paciente estiver nutrido e sem corticoide; anastomose primária com bolsa no paciente grave e imunossuprimido é contraindicada.</p>
+</div>
+</details>
+
+<div class="box danger">
+<span class="box-label">DANGER</span>
+<div class="box-title">Queda do número de evacuações com piora do estado geral não é melhora</div>
+<div class="box-body">No megacólon, a frequência cai porque o cólon parou. Taquicardia que sobe, abdome que distende, leucocitose que cresce e PCR que não cai no paciente que "evacuou menos" pedem radiografia e cirurgião imediatamente; sob corticoide em dose alta, a perfuração pode cursar sem defesa abdominal.</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- ============================================================ D -->
+<section id="secundarias">
+<div class="section">
+<div class="section-eyebrow"><span>D</span> Entidades Secundárias</div>
+<div class="section-title">O que acompanha a DII, o que a complica e o que a imita</div>
+<div class="section-sub">Manifestações extraintestinais, doença perianal e bolsa ileal completam a DII; colite microscópica, isquêmica, actínica, por fármacos e por checkpoint, tuberculose e Behçet completam o diferencial; gestação e criança mudam doses e escolhas.</div>
+</div>
+
+<!-- D.1 -->
+<div class="card diag">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">D.1</span> Sistêmica</div><h3>Manifestações extraintestinais <span class="ank ank-hy">HIGH-YIELD</span></h3><div class="card-sub">acompanham a atividade ou seguem curso próprio</div></div>
+<div class="card-body">
+<div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Até 1/3 a metade dos pacientes terá pelo menos uma. A pergunta que decide o tratamento: <b>segue a atividade intestinal?</b> Se sim (artrite periférica tipo 1, eritema nodoso, episclerite, aftas), tratar o intestino resolve; se não (espondilite, uveíte, CEP, pioderma em parte), precisa de tratamento próprio e às vezes de biológico escolhido por ela. <b>O que muda conduta:</b> uveíte, esclerite e pioderma exigem especialista no dia; CEP exige colonoscopia anual.</div></div>
+<div class="disease">
+<div class="disease-head"><div class="disease-name">Manifestações extraintestinais da DII</div><div class="disease-tag">CID-10 M07.4 artropatia na doença de Crohn · M07.5 artropatia na colite ulcerativa · L52 eritema nodoso · L88 pioderma gangrenoso · H20.0 iridociclite · H15.1 episclerite</div></div>
+<div class="disease-body"><div class="disease-rows">
+<div class="disease-row"><div class="k">Articulares</div><div class="v"><b>Tipo 1</b>: oligoartrite (&lt;5) de grandes articulações dos membros inferiores, assimétrica, autolimitada em semanas, <b>paralela à atividade</b>. <b>Tipo 2</b>: poliartrite simétrica de pequenas articulações, curso independente, meses a anos. <b>Axial</b>: sacroileíte e espondilite, independentes da atividade, HLA-B27 em parte; tratamento reumatológico (RD01). Artralgia sem sinovite é a forma mais comum. AINE em curso curto é tolerável na doença estável; prefira paracetamol, sulfassalazina na periférica e anti-TNF monoclonal (infliximabe, adalimumabe) quando há doença axial.</div></div>
+<div class="disease-row"><div class="k">Cutâneas</div><div class="v"><b>Eritema nodoso</b> (paniculite septal, nódulos dolorosos pré-tibiais, mais em mulher e no Crohn): segue a atividade. <b>Pioderma gangrenoso</b> (úlcera dolorosa de borda violácea solapada, patergia — não desbridar): parcialmente independente; corticoide sistêmico, infliximabe. Síndrome de Sweet (dermatose neutrofílica febril), estomatite aftosa, Crohn metastático (granulomas cutâneos à distância). Lesões paradoxais por anti-TNF (psoríase palmoplantar) e câncer de pele não melanoma com tiopurina são do tratamento, não da doença.</div></div>
+<div class="disease-row"><div class="k">Oculares</div><div class="v"><b>Episclerite</b>: vermelhidão sem dor intensa nem baixa visual, segue a atividade, colírio lubrificante ou corticoide tópico. <b>Esclerite</b> (dor intensa, risco visual) e <b>uveíte anterior</b> (fotofobia, dor, visão turva, frequentemente HLA-B27): oftalmologista em 24 h, corticoide tópico ou sistêmico, anti-TNF monoclonal se recorrente.</div></div>
+<div class="disease-row"><div class="k">Hepatobiliares</div><div class="v"><b>Colangite esclerosante primária</b> em ~3–8% da RCU (70–80% dos portadores de CEP têm DII): colestase, colangiorressonância com estenoses multifocais; risco de colangiocarcinoma e de câncer colorretal muito aumentado; colite com reto poupado e ileíte de refluxo. Esteatose (corticoide, desnutrição), colelitíase de colesterol (perda ileal de sais biliares), hepatotoxicidade de tiopurinas (hiperplasia nodular regenerativa) e de metotrexato. A CEP como doença está fora deste HP (GH08).</div></div>
+<div class="disease-row"><div class="k">Renais, ósseas e hematológicas</div><div class="v">Nefrolitíase de <b>oxalato de cálcio</b> (Crohn ileal: o cálcio luminal fica preso à gordura não absorvida e o oxalato livre é absorvido no cólon) e de <b>ácido úrico</b> (desidratação, urina ácida da ileostomia); amiloidose AA; nefrite intersticial por 5-ASA. Osteoporose (corticoide, inflamação, vitamina D) — densitometria se corticoide &gt;3 meses. <b>Anemia ferropriva</b> é a manifestação sistêmica mais comum: ferro IV se Hb &lt;10 g/dL, doença ativa ou intolerância oral. <b>TEV</b> 2–3× mais frequente, 8× na crise e em internados.</div></div>
+<div class="disease-row"><div class="k">Diagnóstico</div><div class="v">Exame dirigido em toda consulta (articulações, pele, olhos), fosfatase alcalina e GGT anuais, densitometria em fatores de risco, EAS e ultrassom se cólica renal <span class="ev ev-nice">ECCO 2024</span>.</div></div>
+<div class="disease-row"><div class="k">Tratamento</div><div class="v">Tratar a DII nas formas paralelas; nas independentes, escolher terapia avançada que cubra também o órgão extraintestinal: anti-TNF monoclonal para espondilite, uveíte e pioderma; ustequinumabe/anti-IL-23 se psoríase; vedolizumabe tem ação intestinal seletiva e pode não controlar manifestações independentes <span class="ev ev-sbr">ACG 2025</span>. Encaminhar pioderma, colestase e suspeita de CEP a serviço de referência (PCDT RCU).</div></div>
+<div class="disease-row"><div class="k">O que muda conduta</div><div class="v"><b>Uveíte/esclerite</b> e <b>pioderma</b> (especialista no dia, corticoide sistêmico, preferir anti-TNF monoclonal), <b>espondilite</b> (anti-TNF em vez de vedolizumabe), <b>FA elevada persistente</b> (colangiorressonância), <b>CEP</b> (colonoscopia anual desde o diagnóstico), <b>internação</b> (profilaxia de TEV).</div></div>
+</div></div></div>
+<div class="box pearl">
+<span class="box-label">PEARL</span>
+<div class="box-title">Episclerite dói pouco e segue o intestino; uveíte dói, embaça e não espera</div>
+<div class="box-body">Na episclerite a hiperemia é setorial e superficial (os vasos se movem com cotonete e clareiam com fenilefrina) e a visão é normal; na uveíte anterior há fotofobia, dor ciliar, miose e hiperemia perilímbica, e a sinéquia posterior pode deixar sequela em dias. Essa distinção é o que a prova pede e o que a emergência precisa.</div>
+</div>
+</div>
+</div>
+
+<!-- D.2 -->
+<div class="card diag">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">D.2</span> Complicação</div><h3>Doença de Crohn perianal e fístulas <span class="ank ank-dec">DECISION</span></h3><div class="card-sub">drenar primeiro, tratar depois</div></div>
+<div class="card-body">
+<div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Fístula perianal ocorre em até 1/4 dos pacientes com Crohn e sinaliza doença agressiva. <b>Sepse primeiro</b>: abscesso drenado e seton antes de qualquer imunossupressor; <b>RM de pelve</b> (ou ultrassom endoanal) e exame sob anestesia classificam a fístula; <b>infliximabe é o tratamento de escolha</b> da complexa. <b>O que muda conduta:</b> simples assintomática não exige anti-TNF; complexa exige; proctite ativa piora o prognóstico e indica controle luminal.</div></div>
+<div class="disease">
+<div class="disease-head"><div class="disease-name">Crohn perianal: fístulas e abscessos</div><div class="disease-tag">CID-10 K60.3 fístula anal · K60.4 fístula retal · K61.0 abscesso anal · N82.3 fístula retovaginal</div></div>
+<div class="disease-body"><div class="disease-rows">
+<div class="disease-row"><div class="k">Fisiopatologia</div><div class="v">Úlcera profunda do canal anal ou do reto penetra o complexo esfincteriano; a transição epitelial-mesenquimal no trajeto (TNF e TGF-β) mantém o túnel epitelizado, e a infecção das glândulas criptoglandulares produz abscessos de repetição. Proctite ativa impede a cicatrização.</div></div>
+<div class="disease-row"><div class="k">Classificação</div><div class="v"><b>Simples</b>: baixa (superficial, interesfincteriana ou transesfincteriana baixa), orifício único, sem abscesso, sem estenose anal nem proctite. <b>Complexa</b>: alta (transesfincteriana alta, supra ou extraesfincteriana), múltiplos orifícios, abscesso, estenose, fístula retovaginal ou proctite associada. Parks descreve o trajeto anatômico; a AGA/ECCO, o prognóstico.</div></div>
+<div class="disease-row"><div class="k">Diagnóstico</div><div class="v"><b>RM de pelve</b> (acurácia ~90%) e/ou ultrassom endoanal, exame sob anestesia pelo coloproctologista; colonoscopia para avaliar proctite <span class="ev ev-sbr">ACG 2025</span>.</div></div>
+<div class="disease-row"><div class="k">Tratamento</div><div class="v"><b>Abscesso</b>: drenagem + seton frouxo (não cortante). <b>Simples sintomática</b>: metronidazol 500 mg VO 8/8 h e/ou ciprofloxacino 500 mg VO 12/12 h por 4–8 semanas; fistulotomia só se baixa e sem proctite. <b>Complexa</b>: infliximabe 5 mg/kg IV nas semanas 0, 2 e 6 e a cada 8 semanas (alvo de nível sérico mais alto, &gt;10–20 µg/mL), associado a antibiótico nas primeiras semanas e a tiopurina; adalimumabe como alternativa ou após falha; vedolizumabe, ustequinumabe e upadacitinibe com evidência fraca <span class="ev ev-sbr">ACG 2025</span>. <b>SUS</b>: infliximabe IV ou <b>infliximabe SC 120 mg a cada 2 semanas após indução IV (≥18 anos)</b> como apresentação preferencial de manutenção; adalimumabe após falha; vedolizumabe preferido ao ustequinumabe após anti-TNF; sem resposta após 3 doses de infliximabe, suspender <span class="ev ev-nice">PCDT DC 2026</span>. Refratária: avanço de retalho, LIFT, desvio fecal, proctectomia; células-tronco mesenquimais (darvadstrocel) sem disponibilidade no SUS.</div></div>
+<div class="disease-row"><div class="k">O que muda conduta</div><div class="v"><b>Abscesso</b> (drenar antes do anti-TNF), <b>complexidade</b> (antibiótico isolado × anti-TNF), <b>proctite</b> (controle luminal agressivo; pior chance de cura), <b>fístula retovaginal</b> (cirurgia reconstrutiva após controle), <b>estenose anal</b> (dilatação, risco de estoma).</div></div>
+</div></div></div>
+<details class="deep"><summary>Deep dive · Anatomia de Parks, seton e o que significa "cicatrizar" uma fístula de Crohn</summary>
+<div class="deep-content">
+<p><b>Parks (1976)</b> classifica o trajeto pela relação com os esfíncteres: interesfincteriana (entre esfíncter interno e externo, ~45% das fístulas criptoglandulares), transesfincteriana (atravessa o externo; baixa ou alta conforme a fração do esfíncter envolvida), supraesfincteriana (sobe pelo espaço interesfincteriano, cruza acima do puborretal e desce pela fossa isquiorretal) e extraesfincteriana (do reto à pele por fora de todo o complexo, frequentemente secundária a doença pélvica). Crohn produz proporção maior de fístulas altas, ramificadas, com abscessos em ferradura e extensões supralevantadoras, o que torna a fistulotomia perigosa para a continência.</p>
+<p><b>Seton.</b> O fio frouxo (não cortante) mantém o trajeto drenando, impede o fechamento do orifício externo com abscesso residual e permite que o anti-TNF atue sem sepse. A retirada costuma ocorrer após a indução (semana 6–8) quando a drenagem cessa; retirar cedo demais associa-se a novo abscesso, mantê-lo indefinidamente impede o fechamento. Seton cortante é proscrito no Crohn pelo risco de incontinência.</p>
+<p><b>Desfechos.</b> No ACCENT II, infliximabe 5 mg/kg a cada 8 semanas manteve resposta (redução ≥50% dos orifícios drenantes) em 46% e fechamento completo em 36% na semana 54, contra 23% e 19% com placebo. Fechamento clínico (orifício seco à compressão) não é cicatrização radiológica: na RM, o trajeto pode persistir com hipersinal em T2 por meses e a fibrose (sinal baixo em T2, sem realce) é o marcador de cura profunda. Retirar o anti-TNF após fechamento clínico leva a recaída em ~40% em 2 anos (meta-análise de dados individuais citada pelo PCDT), mais em tabagistas e com história de proctite; o retratamento funciona em ~80%. Níveis séricos maiores se associam a fechamento: alvos de infliximabe &gt;10 µg/mL na manutenção são usados em centros de referência.</p>
+<p><b>Fístula retovaginal</b> raramente fecha só com medicamento; após controle luminal e perianal, avanço de retalho retal ou vaginal, interposição de músculo grácil ou de Martius. Na falha repetida com proctite grave, o desvio (ileostomia ou colostomia) controla os sintomas em quase todos, mas o trânsito é reconstruído em menos da metade, e a proctectomia acaba sendo necessária em parte deles — daí a importância de tratar cedo e com nível sérico adequado.</p>
+</div>
+</details>
+</div>
+</div>
+
+<!-- D.3 -->
+<div class="card tx">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">D.3</span> Pós-operatório</div><h3>Bolsite e colite de derivação</h3><div class="card-sub">inflamação do intestino reconstruído ou excluído</div></div>
+<div class="card-body">
+<div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Após proctocolectomia com bolsa ileal (IPAA), até metade terá <b>bolsite</b>: aumento de frequência, urgência, cólica, sangue, febre; confirma-se por bolsoscopia com biópsia. Segmento excluído do trânsito (colostomia, Hartmann) desenvolve <b>colite de derivação</b> por falta de ácidos graxos de cadeia curta. <b>O que muda conduta:</b> bolsite que não responde a antibiótico é crônica ou Crohn da bolsa — imunossupressão, não mais antibiótico.</div></div>
+<div class="disease">
+<div class="disease-head"><div class="disease-name">Bolsite (pouchite) e colite de derivação</div><div class="disease-tag">CID-10 K91.8 outros transtornos do aparelho digestivo pós-procedimento · sem código nominal na CID-10 OMS</div></div>
+<div class="disease-body"><div class="disease-rows">
+<div class="disease-row"><div class="k">Fisiopatologia</div><div class="v">Bolsite: a estase fecal na bolsa leva a metaplasia colônica do íleo, disbiose e resposta imune do mesmo tipo da RCU — por isso é rara na bolsa por polipose adenomatosa familiar. Fatores de risco: colite extensa, CEP, p-ANCA alto, manifestações extraintestinais, AINE. Colite de derivação: o colonócito usa butirato como principal combustível; sem fluxo fecal, a mucosa atrofia e inflama (aftas, friabilidade), imitando DII.</div></div>
+<div class="disease-row"><div class="k">Diagnóstico</div><div class="v">Sintomas + bolsoscopia (eritema, úlceras, friabilidade) + histologia (PDAI ≥7). Excluir C. difficile, CMV, isquemia, "cuffite" (inflamação do manguito retal residual — trata-se com mesalazina supositório), Crohn da bolsa (fístula, úlceras pré-bolsa no íleo aferente, estenose) e bolsa irritável <span class="ev ev-expert">ECCO 2022 · EARNEST 2023</span>.</div></div>
+<div class="disease-row"><div class="k">Tratamento</div><div class="v"><b>Aguda</b>: ciprofloxacino 500 mg VO 12/12 h ou metronidazol 500 mg VO 8/8 h por 14 dias (cipro com menos efeito adverso). <b>Recorrente</b>: combinação ou rotação de antibióticos; probiótico multicepas (formulação De Simone) para prevenção de recorrência. <b>Crônica antibiótico-refratária</b>: budesonida oral 9 mg/dia, vedolizumabe (único com ensaio randomizado — EARNEST), anti-TNF, ustequinumabe. <b>Derivação</b>: reconstruir o trânsito resolve; enquanto isso, enemas de ácidos graxos de cadeia curta ou de mesalazina.</div></div>
+<div class="disease-row"><div class="k">O que muda conduta</div><div class="v"><b>Fístula, estenose ou ileíte pré-bolsa</b> (Crohn da bolsa: terapia avançada; risco de perda da bolsa), <b>falha de 2 cursos de antibiótico</b> (bolsite crônica), <b>sangue com inflamação só no manguito</b> (cuffite: tópico).</div></div>
+</div></div></div>
+</div>
+</div>
+
+<!-- D.4 -->
+<div class="card diag">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">D.4</span> Colite não-DII</div><h3>Colite microscópica: colagenosa e linfocítica <span class="ank ank-hy">HIGH-YIELD</span></h3><div class="card-sub">diarreia aquosa crônica com colonoscopia normal</div></div>
+<div class="card-body">
+<div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Mulher acima de 50 anos, diarreia aquosa, noturna, com urgência e incontinência, <b>colonoscopia macroscopicamente normal</b>: é colite microscópica em ~13% das diarreias aquosas crônicas. Diagnóstico é <b>biópsia do cólon direito e esquerdo</b>; tratamento é <b>budesonida oral</b>. Suspenda IBP, AINE e ISRS se a cronologia sugerir. <b>O que muda conduta:</b> não precisa de vigilância oncológica e calprotectina não serve para diagnosticar nem monitorar.</div></div>
+<div class="disease">
+<div class="disease-head"><div class="disease-name">Colite microscópica (colagenosa, linfocítica, incompleta)</div><div class="disease-tag">CID-10 K52.8 outras gastroenterites e colites não infecciosas especificadas</div></div>
+<div class="disease-body"><div class="disease-rows">
+<div class="disease-row"><div class="k">Epidemiologia</div><div class="v">Incidência ~11/100.000 pessoas-ano, prevalência ~120/100.000; mais em mulheres, idosos e tabagistas atuais. Associação com doença celíaca (2–4%), tireoidite autoimune e uso crônico de <b>IBP (lansoprazol sobretudo), AINE, ISRS</b>, estatinas e acarbose — associação, não necessariamente causa <span class="ev ev-eular">UEG/EMCG 2021</span>.</div></div>
+<div class="disease-row"><div class="k">Fisiopatologia</div><div class="v">Resposta imune mucosa a antígenos luminais (sais biliares, fármacos, bactérias) com infiltrado linfoplasmocitário; na forma colagenosa, desequilíbrio entre deposição (TGF-β, fibroblastos pericriptais) e degradação de colágeno subepitelial. A diarreia é secretória: menor absorção de Na/Cl pelo epitélio inflamado e barreira de colágeno que dificulta a absorção de água.</div></div>
+<div class="disease-row"><div class="k">Diagnóstico</div><div class="v">Ileocolonoscopia com biópsias de pelo menos cólon direito e esquerdo em frascos separados (só reto não basta). <b>Colagenosa</b>: banda colágena subepitelial ≥10 µm + infiltrado da lâmina própria. <b>Linfocítica</b>: ≥20 linfócitos intraepiteliais/100 enterócitos com banda &lt;10 µm. <b>Incompleta</b>: banda 5–10 µm ou 10–20 LIE. Rastrear celíaca em todos; pesquisar diarreia por ácidos biliares se não responder à budesonida <span class="ev ev-eular">UEG/EMCG 2021</span>.</div></div>
+<div class="disease-row"><div class="k">Tratamento</div><div class="v"><b>Indução</b>: budesonida 9 mg/dia VO por 6–8 semanas (remissão ~80%). <b>Manutenção</b> nas recidivas frequentes: menor dose eficaz, 3–6 mg/dia (6 mg/dia por 6 meses reduziu recaída). Mesalazina, bismuto, probióticos, antibióticos, prednisona e metotrexato não são recomendados. Loperamida na doença leve; colestiramina 4 g 1–3×/dia se diarreia biliar coexistente. Refratária à budesonida: tiopurina, anti-TNF ou vedolizumabe; cirurgia é último recurso.</div></div>
+<div class="disease-row"><div class="k">O que muda conduta</div><div class="v"><b>Fármaco suspeito com relação temporal</b> (suspender), <b>celíaca associada</b> (dieta sem glúten), <b>falha de budesonida</b> (rever diagnóstico, diarreia biliar, celíaca refratária, depois imunossupressão).</div></div>
+</div></div></div>
+</div>
+</div>
+
+<!-- D.5 -->
+<div class="card emerg">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">D.5</span> Colite não-DII</div><h3>Colite isquêmica <span class="ank ank-dgr">DANGER</span></h3><div class="card-sub">a forma mais comum de isquemia intestinal</div></div>
+<div class="card-body">
+<div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Idoso com fatores de risco cardiovascular, <b>dor súbita leve a moderada em flanco ou fossa ilíaca esquerda seguida de hematoquezia em 24 h</b>. Hipoperfusão não oclusiva da microcirculação nas zonas de fronteira (flexura esplênica — ponto de Griffiths; junção retossigmoide — ponto de Sudeck). A maioria regride com suporte. <b>O que muda conduta:</b> acometimento <b>isolado do cólon direito</b> pode ser a ponta de uma isquemia mesentérica aguda por oclusão da AMS — angio-TC já (GH06).</div></div>
+<div class="disease">
+<div class="disease-head"><div class="disease-name">Colite isquêmica (isquemia colônica)</div><div class="disease-tag">CID-10 K55.0 transtornos vasculares agudos do intestino · K55.1 crônicos · K55.9 não especificados</div></div>
+<div class="disease-body"><div class="disease-rows">
+<div class="disease-row"><div class="k">Etiologia</div><div class="v">Baixo fluxo (choque, sepse, ICC, desidratação, cirurgia de aorta com ligadura da mesentérica inferior, hemodiálise, maratona), vasoespasmo (cocaína, vasopressores, triptanos, alosetrona), trombofilia e vasculite em jovens, constipação grave e obstrução distal (câncer ou volvo), fármacos (estrogênio, interferon, imunoterapia).</div></div>
+<div class="disease-row"><div class="k">Clínica</div><div class="v">Dor em cólica, urgência e evacuação com sangue vivo ou marrom em até 24 h. Gangrena (~15%): peritonite, febre, íleo, acidose lática. Forma crônica segmentar: colite persistente ou estenose em semanas a meses.</div></div>
+<div class="disease-row"><div class="k">Diagnóstico</div><div class="v">TC com contraste (espessamento segmentar, sinal da impressão digital, pneumatose ou ar portal = gravidade); colonoscopia com mínima insuflação em até 48 h, com biópsia (necrose hialina da lâmina própria, criptas "fantasmas", hemorragia) — evitar se peritonite. Excluir infecção (C. difficile, E. coli O157). Classicamente o enema opaco mostra "thumbprinting" <span class="ev ev-sbr">ACG 2015</span>.</div></div>
+<div class="disease-row"><div class="k">Tratamento</div><div class="v">Suporte: hidratação, otimizar débito, suspender vasoconstritores, jejum se íleo. Antibiótico (ex.: ceftriaxona + metronidazol ou piperacilina-tazobactam) nas formas moderadas e graves. <b>Cirurgia</b> (colectomia segmentar sem anastomose primária) se peritonite, pneumoperitônio, gangrena na endoscopia, sangramento maciço, piora clínica ou colite fulminante; colite crônica ou estenose sintomática por meses: ressecção eletiva <span class="ev ev-sbr">ACG 2015</span>.</div></div>
+<div class="disease-row"><div class="k">O que muda conduta</div><div class="v"><b>Cólon direito isolado</b> (angio-TC para AMS), <b>sinais de gravidade</b> (sexo masculino, hipotensão, taquicardia, dor sem sangramento, Hb &lt;12, ureia elevada, LDH alta, Na &lt;136, leucocitose &gt;15 mil — mais cirurgia e mortalidade), <b>pneumatose/ar portal</b>, <b>jovem sem fator de risco</b> (trombofilia, vasculite, cocaína).</div></div>
+</div></div></div>
+</div>
+</div>
+
+<!-- D.6 -->
+<div class="card tx">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">D.6</span> Colites não-DII</div><h3>Colites iatrogênicas: actínica, por fármacos e por inibidores de checkpoint <span class="ank ank-dec">DECISION</span></h3><div class="card-sub">a anamnese de radioterapia e imunoterapia faz o diagnóstico</div></div>
+<div class="card-body">
+<div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Radioterapia pélvica prévia + sangramento retal = <b>proctite actínica</b> (aguda nas semanas da RT; crônica meses a anos depois, com telangiectasias). Paciente em anti-PD-1, anti-PD-L1 ou anti-CTLA-4 com diarreia = <b>colite por checkpoint</b> até prova em contrário — graduar e dar corticoide cedo. <b>O que muda conduta:</b> grau ≥3 de colite por checkpoint ou refratária a corticoide em 48–72 h → infliximabe ou vedolizumabe.</div></div>
+<div class="disease">
+<div class="disease-head"><div class="disease-name">Colites iatrogênicas (actínica, fármacos, imunoterapia)</div><div class="disease-tag">CID-10 K52.0 colite devida a radiação · K62.7 proctite por radiação · K52.1 gastroenterite e colite tóxicas (fármacos)</div></div>
+<div class="disease-body"><div class="disease-rows">
+<div class="disease-row"><div class="k">Actínica</div><div class="v">Aguda: dano às células em divisão das criptas durante a RT, diarreia e tenesmo, autolimitada. Crônica (endarterite obliterante, fibrose, isquemia, neovasos frágeis): sangramento por telangiectasias, estenose, fístula, 6 meses a anos após RT de próstata, colo uterino ou reto. Tratamento: coagulação com plasma de argônio (primeira linha endoscópica), formalina tópica 4%, sucralfato em enema, oxigenoterapia hiperbárica nos refratários; evitar biópsia da parede anterior do reto irradiado (fístula retovaginal ou retovesical).</div></div>
+<div class="disease-row"><div class="k">Por fármacos</div><div class="v">AINE (colite e diafragmas no cólon direito, além de reativar DII), micofenolato (padrão símile-DII ou símile-GVHD), idelalisibe, ipilimumabe, kayexalato com sorbitol (necrose), sais de ouro, glutaraldeído (colite química pós-endoscopia), laxativos estimulantes (melanose — não é colite). Retirada do agente é o tratamento.</div></div>
+<div class="disease-row"><div class="k">Checkpoint</div><div class="v">Mais frequente e grave com anti-CTLA-4 (ipilimumabe) e combinação anti-CTLA-4 + anti-PD-1; mediana de início 6–8 semanas. Graduação CTCAE: G1 &lt;4 evacuações acima do basal; G2 4–6; G3 ≥7, incontinência, internação; G4 risco de vida. Pesquisar infecção (C. difficile), calprotectina e lactoferrina, TC; colonoscopia ou sigmoidoscopia com biópsia (úlceras e inflamação histológica predizem refratariedade) <span class="ev ev-sbr">AGA 2021</span>.</div></div>
+<div class="disease-row"><div class="k">Tratamento</div><div class="v"><b>G1</b>: manter imunoterapia, hidratação, loperamida se infecção excluída. <b>G2</b>: suspender temporariamente; prednisona 1 mg/kg/dia VO (budesonida 9 mg/dia como opção nas formas leves). <b>G3–G4</b>: internar, metilprednisolona 1–2 mg/kg/dia IV; sem resposta em 48–72 h → <b>infliximabe 5 mg/kg IV</b> (repetir em 2 semanas se necessário) ou <b>vedolizumabe 300 mg IV</b>; desmame do corticoide em 4–6 semanas. Introduzir infliximabe ou vedolizumabe cedo (já no diagnóstico, se úlceras extensas) reduz exposição ao corticoide e recorrência. Reexposição à imunoterapia: decisão oncológica individual, com vigilância <span class="ev ev-sbr">AGA 2021</span>.</div></div>
+<div class="disease-row"><div class="k">O que muda conduta</div><div class="v"><b>Grau ≥2 de colite por checkpoint</b> (corticoide e suspensão), <b>refratariedade em 72 h</b> (biológico), <b>perfuração ou megacólon</b> (cirurgia), <b>sangramento actínico transfusional</b> (argônio), <b>fármaco na cronologia</b> (retirar antes de imunossuprimir).</div></div>
+</div></div></div>
+</div>
+</div>
+
+<!-- D.7 -->
+<div class="card diag">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">D.7</span> Diferencial</div><h3>Mímicos de Crohn: tuberculose intestinal e Behçet intestinal <span class="ank ank-dgr">DANGER</span></h3><div class="card-sub">imunossuprimir o diagnóstico errado dissemina a micobactéria</div></div>
+<div class="card-body">
+<div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">No Brasil, úlceras ileocecais exigem afastar <b>tuberculose intestinal</b> antes de corticoide e anti-TNF. Úlceras orais e genitais recorrentes com úlcera ileocecal grande, redonda e profunda pensam em <b>Behçet</b>. <b>O que muda conduta:</b> na dúvida genuína entre TB e Crohn, prova terapêutica com tuberculostáticos por 8–12 semanas com reavaliação endoscópica é aceita pelos consensos asiáticos e pelo GEDIIB.</div></div>
+<div class="disease">
+<div class="disease-head"><div class="disease-name">Tuberculose intestinal e Behçet intestinal (mímicos)</div><div class="disease-tag">CID-10 A18.3 tuberculose do intestino, peritônio e gânglios mesentéricos · M35.2 doença de Behçet</div></div>
+<div class="disease-body"><div class="disease-rows">
+<div class="disease-row"><div class="k">TB × Crohn</div><div class="v">A favor de TB: úlceras <b>transversais/circunferenciais</b>, válvula ileocecal patente e deformada, menos de 4 segmentos, granulomas <b>caseosos, grandes e confluentes</b> com faixa de histiócitos, linfonodos necróticos com realce periférico na TC, ascite, TB pulmonar ativa ou prévia, IGRA/PT positivos. A favor de Crohn: úlceras longitudinais, aftas, pedra de calçamento, lesões salteadas extensas, doença perianal, sinal do pente (vasa recta ingurgitados), fat wrapping, granulomas pequenos e esparsos.</div></div>
+<div class="disease-row"><div class="k">Diagnóstico</div><div class="v">Biópsias múltiplas com histologia, BAAR, cultura e PCR (Xpert MTB/RIF) do tecido; radiografia e TC de tórax; IGRA ou PT (não diferenciam infecção latente de doença) <span class="ev ev-nice">GEDIIB 2023</span>.</div></div>
+<div class="disease-row"><div class="k">Behçet intestinal</div><div class="v">Úlceras ileocecais solitárias ou poucas, grandes (&gt;1 cm), ovais e profundas com bordas bem definidas, risco alto de perfuração e hemorragia; aftas orais em quase todos, úlceras genitais, uveíte, patergia, HLA-B51. Tratamento com 5-ASA, corticoide, azatioprina, anti-TNF; cirurgia por perfuração (RD03 para a vasculite).</div></div>
+<div class="disease-row"><div class="k">Tratamento</div><div class="v">TB confirmada ou provável: esquema RIPE padrão do Ministério da Saúde por 6 meses; resposta clínica e endoscópica em 8–12 semanas sustenta o diagnóstico. Nunca iniciar anti-TNF sem esse passo em paciente com suspeita.</div></div>
+<div class="disease-row"><div class="k">O que muda conduta</div><div class="v"><b>Granuloma caseoso ou PCR positiva</b> (tratar TB), <b>dúvida irredutível</b> (prova terapêutica), <b>úlcera solitária profunda com aftas</b> (Behçet; vigiar perfuração), <b>ILTB</b> (tratar antes do biológico).</div></div>
+</div></div></div>
+</div>
+</div>
+
+<!-- D.8 -->
+<div class="card pearl">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">D.8</span> População especial</div><h3>DII na gestação e na lactação <span class="ank ank-dec">DECISION</span></h3><div class="card-sub">a doença ativa ameaça mais o feto que o remédio</div></div>
+<div class="card-body">
+<div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Conceber em remissão (≥3–6 meses) e manter o tratamento que funciona. <b>5-ASA, sulfassalazina (com folato), tiopurina, anti-TNF, ustequinumabe e vedolizumabe podem ser mantidos</b>; <b>metotrexato, JAK e S1P são contraindicados</b>. <b>O que muda conduta:</b> doença perianal ativa ou fístula retovaginal indica cesárea; RN exposto a biológico não recebe vacina viva nos primeiros 6 meses.</div></div>
+<div class="disease">
+<div class="disease-head"><div class="disease-name">Doença inflamatória intestinal na gestação</div><div class="disease-tag">CID-10 O99.6 doenças do aparelho digestivo complicando a gravidez, o parto e o puerpério</div></div>
+<div class="disease-body"><div class="disease-rows">
+<div class="disease-row"><div class="k">Fertilidade e curso</div><div class="v">Fertilidade igual à da população se em remissão; reduzida na doença ativa e após IPAA (aderências tubárias — preferir laparoscopia). Doença ativa na concepção: 1/3 permanece ativa e 1/3 piora; associa-se a abortamento, prematuridade e baixo peso. Sulfassalazina causa oligospermia reversível no homem.</div></div>
+<div class="disease-row"><div class="k">Fármacos</div><div class="v"><b>Sulfassalazina</b>: segura, com ácido fólico 2 mg/dia; PCDT alerta para kernicterus no 3º trimestre. <b>Mesalazina</b>: segura (PCDT cita até 3 g/dia estudados). <b>Corticoide</b>: prednisona (inativada pela 11β-HSD2 placentária); risco de diabetes gestacional. <b>Azatioprina</b>: manter (não iniciar na gestação); possível risco de prematuridade. <b>Anti-TNF</b>: manter; PCDT DC permite suspender entre 22–24 semanas apenas em baixo risco (remissão &gt;6 meses, IHB ≤4, calprotectina &lt;150 µg/g, sem MEI) e retomar logo após o parto; certolizumabe (sem Fc, transferência placentária mínima) é o biológico preferido pelo PCDT para quem precisa iniciar. <b>Ustequinumabe e vedolizumabe</b>: dados tranquilizadores crescentes; o PCDT RCU não os preconiza na gestação. <b>Metotrexato</b>: teratogênico (suspender ≥3 meses antes). <b>Tofacitinibe, upadacitinibe, ozanimode, etrasimode</b>: contraindicados. <b>Metronidazol</b>: evitar no 1º trimestre e na amamentação <span class="ev ev-nice">PCDT DC 2026</span> <span class="ev ev-nice">ECCO 2023</span>.</div></div>
+<div class="disease-row"><div class="k">Exames</div><div class="v">Calprotectina e PCR válidas; retossigmoidoscopia flexível é segura; RM sem gadolínio e ultrassom intestinal para delgado.</div></div>
+<div class="disease-row"><div class="k">Parto e RN</div><div class="v">Via obstétrica, exceto doença perianal ativa ou bolsa ileal (cesárea preferida para proteger o esfíncter). RN exposto a anti-TNF ou outro biológico: <b>BCG e rotavírus adiados para depois dos 6 meses</b> (o BCG ao nascer é regra no Brasil — o pediatra precisa saber); vacinas inativadas no calendário normal. Amamentação permitida com 5-ASA, corticoide (esperar 4 h após dose alta), tiopurina e anti-TNF.</div></div>
+<div class="disease-row"><div class="k">O que muda conduta</div><div class="v"><b>Planejamento</b> (remissão antes de conceber; trocar MTX/JAK/S1P), <b>atividade na gestação</b> (tratar plenamente, inclusive biológico), <b>perianal ativo</b> (cesárea), <b>exposição a biológico</b> (adiar vacinas vivas do RN).</div></div>
+</div></div></div>
+</div>
+</div>
+
+<!-- D.9 -->
+<div class="card pearl">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">D.9</span> População especial</div><h3>DII pediátrica: crescimento, nutrição enteral exclusiva e doses por peso</h3><div class="card-sub">competência — o PD06 remete DII a este HP</div></div>
+<div class="card-body">
+<div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">~25% das DII começam antes dos 20 anos; o Crohn pediátrico é mais extenso (L3 + L4), mais frequentemente estenosante e compromete crescimento e puberdade. <b>Nutrição enteral exclusiva (NEE)</b> é a indução de primeira linha no Crohn luminal de baixo e médio risco; corticoide prolongado é proibido; anti-TNF precoce no alto risco.</div></div>
+<ul class="bullets">
+<li><b>Classificação de Paris:</b> A1a &lt;10 anos, A1b 10–17; G0/G1 sem/com atraso de crescimento; L4a acima e L4b abaixo do ângulo de Treitz. Atividade pelo <b>PCDAI</b> (Crohn) e <b>PUCAI</b> (RCU: &lt;10 remissão, 10–34 leve, 35–64 moderada, ≥65 grave).</li>
+<li><b>NEE:</b> fórmula polimérica (nenhuma superioridade da elementar) cobrindo 100% das necessidades por 6–8 semanas, por boca ou sonda, reintrodução alimentar gradual; remissão de 60–80%, com mais cicatrização mucosa e ganho ponderal que o corticoide <span class="ev ev-nice">GEDIIB 2023</span>. Dieta de exclusão do Crohn com nutrição parcial é alternativa.</li>
+<li><b>Corticoide:</b> prednisona 1 mg/kg/dia VO, <b>máximo 40 mg/dia</b>, desmame em até 4 semanas após remissão (GEDIIB); metilprednisolona IV 1–1,5 mg/kg/dia (máx. 60 mg) na colite aguda grave pediátrica (ECCO/ESPGHAN 2018).</li>
+<li><b>5-ASA na RCU:</b> mesalazina 60–80 mg/kg/dia VO em 2 tomadas, máximo 4,8 g/dia (ECCO/ESPGHAN) — o PCDT RCU cita 30–50 mg/kg/dia; sulfassalazina 50–75 mg/kg/dia, máximo 4 g/dia.</li>
+<li><b>Imunomoduladores:</b> azatioprina 2–2,5 mg/kg/dia; mercaptopurina 1–1,5 mg/kg/dia; metotrexato 15 mg/m² SC 1×/semana (máx. 25 mg), preferido em meninos pelo risco de linfoma hepatoesplênico.</li>
+<li><b>Biológicos:</b> infliximabe 5 mg/kg IV sem 0, 2, 6 e 8/8 sem (≥6 anos no SUS; combinar com imunomodulador); adalimumabe ≥40 kg 160/80 mg e 40 mg 14/14 dias, &lt;40 kg 80/40 mg e 20 mg 14/14 dias (PCDT: 10–20 mg); vedolizumabe e tofacitinibe não preconizados &lt;18 anos no PCDT RCU.</li>
+<li><b>Fístula perianal simples:</b> metronidazol 20–30 mg/kg/dia e/ou ciprofloxacino 10–20 mg/kg/dia (GEDIIB); o PCDT DC desaconselha ciprofloxacino em crianças.</li>
+<li><b>Cirurgia</b> ileocecal precoce é opção válida no Crohn localizado com déficit de crescimento antes do estirão puberal.</li>
+</ul>
+<div class="box hy">
+<span class="box-label">HIGH-YIELD</span>
+<div class="box-title">Na criança com Crohn, o crescimento é desfecho clínico, não detalhe</div>
+<div class="box-body">Estatura e velocidade de crescimento em curva, estadiamento de Tanner e idade óssea entram em cada consulta. A inflamação (IL-6 inibe IGF-1), a desnutrição e o corticoide somam-se; corrigir apenas a nutrição sem controlar a inflamação não recupera o canal. A janela é a puberdade: depois do fechamento das epífises, a estatura perdida não volta.</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- ============================================================ E -->
+<section id="algoritmo">
+<div class="section">
+<div class="section-eyebrow"><span>E</span> Algoritmo</div>
+<div class="section-title">Da diarreia com sangue à terapia certa</div>
+<div class="section-sub">A árvore começa pela pergunta que muda o destino do paciente — está grave hoje? — e termina em conduta com dose e prazo, não em rótulo.</div>
+</div>
+
+<div class="card diag">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">E.1</span> Árvore</div><h3>Suspeita de DII ou colite <span class="ank ank-dec">DECISION</span></h3></div>
+<div class="card-body">
+<div class="algo">
+<div class="tree">
+<div class="tree-line"><span class="tree-node start">Diarreia ≥4–6 semanas, sangue, urgência, dor, emagrecimento ou MEI</span></div>
+<div class="tree-branch">
+<div class="tree-label yes">Toxicidade? ≥6 evacuações com sangue + FC &gt;90, febre, Hb &lt;10,5, VHS/PCR alta, distensão</div>
+<div class="tree-line"><span class="tree-node dgr">Colite aguda grave → internar, metilprednisolona 60 mg/dia IV, enoxaparina, C. difficile, sigmoidoscopia com biópsia para CMV, radiografia, cirurgião</span></div>
+<div class="tree-branch">
+<div class="tree-label yes">Dia 3: Oxford positivo (&gt;8/dia, ou 3–8 + PCR &gt;45 mg/L)</div>
+<div class="tree-line"><span class="tree-node action">→ Infliximabe 5 mg/kg IV (10 mg/kg se albumina &lt;2,5) ou ciclosporina 2 mg/kg/dia IV; sem resposta em 5–7 dias → colectomia subtotal</span></div>
+</div>
+<div class="tree-branch">
+<div class="tree-label yes">Megacólon, perfuração ou hemorragia maciça a qualquer momento</div>
+<div class="tree-line"><span class="tree-node dgr">→ Colectomia subtotal + ileostomia terminal de urgência</span></div>
+</div>
+<div class="tree-branch">
+<div class="tree-label no">Respondeu</div>
+<div class="tree-line"><span class="tree-node action">→ Prednisona VO 40 mg com desmame + terapia de manutenção (a que resgatou, ou tiopurina/vedolizumabe após ciclosporina)</span></div>
+</div>
+</div>
+<div class="tree-branch">
+<div class="tree-label no">Sem toxicidade</div>
+<div class="tree-line"><span class="tree-node dec">Excluir infecção (C. difficile, coprocultura, parasitológico) · calprotectina · hemograma, PCR, albumina, ferritina</span></div>
+<div class="tree-branch">
+<div class="tree-label no">Calprotectina &lt;50 µg/g, sem alarme</div>
+<div class="tree-line"><span class="tree-node action">→ DII improvável: considerar SII, colite microscópica (se diarreia aquosa: biópsias D+E), diarreia biliar (GH04)</span></div>
+</div>
+<div class="tree-branch">
+<div class="tree-label yes">Calprotectina alta ou alarme</div>
+<div class="tree-line"><span class="tree-node dx">Ileocolonoscopia com biópsias seriadas + imagem do delgado (enterorressonância)</span></div>
+<div class="tree-branch">
+<div class="tree-label yes">Colite contínua desde o reto</div>
+<div class="tree-line"><span class="tree-node dx">RCU → Montreal E1/E2/E3 + Mayo</span></div>
+<div class="tree-branch"><div class="tree-label no">Leve a moderada, sem mau prognóstico</div><div class="tree-line"><span class="tree-node action">→ E1: mesalazina supositório 1 g · E2: enema 1 g + oral 2,4–4,8 g · E3: oral ≥2,4 g; reavaliar em 8 sem</span></div></div>
+<div class="tree-branch"><div class="tree-label yes">Moderada a grave, corticodependente ou falha de 5-ASA</div><div class="tree-line"><span class="tree-node action">→ Rastreio pré-imunossupressão → terapia avançada (SUS: azatioprina → infliximabe, vedolizumabe ou tofacitinibe)</span></div></div>
+</div>
+<div class="tree-branch">
+<div class="tree-label yes">Lesões salteadas, ileíte, transmural, perianal</div>
+<div class="tree-line"><span class="tree-node dec">Crohn provável → excluir tuberculose intestinal (biópsia com PCR/cultura, tórax, IGRA) · Montreal A/L/B/p</span></div>
+<div class="tree-branch"><div class="tree-label yes">Abscesso ou sepse perianal</div><div class="tree-line"><span class="tree-node dgr">→ Drenagem (percutânea ou cirúrgica) + seton + antibiótico antes de qualquer imunossupressor</span></div></div>
+<div class="tree-branch"><div class="tree-label no">Leve, ileocecal, baixo risco</div><div class="tree-line"><span class="tree-node action">→ Budesonida 9 mg/dia 8 sem ou observação vigiada com calprotectina</span></div></div>
+<div class="tree-branch"><div class="tree-label yes">Moderado a grave ou alto risco</div><div class="tree-line"><span class="tree-node action">→ Infliximabe + azatioprina (ou outro avançado); estenose fibrótica curta: dilatação/estricturoplastia; reavaliar SES-CD em 6–12 meses</span></div></div>
+</div>
+<div class="tree-branch">
+<div class="tree-label no">Segmentar em fronteira vascular, idoso, dor súbita</div>
+<div class="tree-line"><span class="tree-node action">→ Colite isquêmica: suporte; cólon direito isolado → angio-TC (GH06)</span></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="box decision">
+<span class="box-label">DECISION</span>
+<div class="box-title">Raciocínio em 7 passos — a sequência mental diante de uma colite</div>
+<div class="box-body">
+<ul>
+<li><b>Passo 1 — o paciente precisa de leito hoje?</b> Conte evacuações com sangue e olhe pulso, temperatura, hemoglobina e PCR. Truelove-Witts grave muda tudo o que vem depois: o tratamento deixa de ser ambulatorial e passa a ter relógio.</li>
+<li><b>Passo 2 — tem infecção por trás?</b> Antes de chamar de surto, peça C. difficile e coprocultura; se refratário a corticoide, biopsie para CMV. Imunossuprimir uma colite infecciosa é o erro mais caro.</li>
+<li><b>Passo 3 — é inflamação ou função?</b> Calprotectina baixa com exame normal tira a DII da frente e evita colonoscopia desnecessária; alta leva à endoscopia com biópsias em todos os segmentos.</li>
+<li><b>Passo 4 — RCU ou Crohn?</b> Contínua a partir do reto, só mucosa, sem perianal: RCU. Salteada, transmural, ileal ou perianal: Crohn. No Brasil, antes de selar Crohn, descarte tuberculose intestinal.</li>
+<li><b>Passo 5 — quanto e quão grave?</b> Montreal (extensão, localização, comportamento) e índice de atividade; some os fatores de mau prognóstico. Doença leve com mau prognóstico é tratada como grave.</li>
+<li><b>Passo 6 — há complicação que se trata com faca ou agulha?</b> Abscesso drena, estenose fibrótica dilata ou opera, fístula complexa ganha seton, câncer ou displasia não visível ressecável vai para colectomia. Imunossupressor só depois.</li>
+<li><b>Passo 7 — escolha o fármaco pela doença, pela pessoa e pelo SUS.</b> Fenótipo, gravidade, manifestações extraintestinais, idade, infecção, gestação e disponibilidade no PCDT decidem; rastreio de TB, hepatites, HIV e vacinas antes da primeira dose; reavalie com calprotectina em 3 meses e endoscopia em 6–12 meses, mirando cicatrização mucosa.</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- ============================================================ F -->
+<section id="tratamento">
+<div class="section">
+<div class="section-eyebrow"><span>F</span> Tratamento</div>
+<div class="section-title">Escadas por doença, doses de indução e manutenção, e o que o SUS oferece</div>
+<div class="section-sub">F1 organiza a estratégia por entidade; F2 dá a dose concreta de cada fármaco (indução × manutenção, via e intervalo); F3 traz os cenários que mais ensinam; F4 separa o PCDT da diretriz internacional.</div>
+</div>
+
+<div class="card tx">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">F.1</span> Estratégia</div><h3>Escadas terapêuticas por entidade <span class="ank ank-dec">DECISION</span></h3></div>
+<div class="card-body">
+
+<div class="sub-title">F1.1 · Retocolite ulcerativa leve a moderada</div>
+<ul class="bullets">
+<li><b>Proctite (E1):</b> mesalazina supositório 1 g à noite por 4–8 semanas; refratária: associar corticoide tópico ou mesalazina oral; ainda refratária: supositório de tacrolimo ou de beclometasona (ACG) e, sem resposta, tratar como moderada a grave — a extensão não limita o acesso a terapia avançada.</li>
+<li><b>Colite esquerda (E2):</b> enema de mesalazina 1 g/dia + mesalazina oral 2,4–4,8 g/dia (ou sulfassalazina 2–4 g/dia). Combinação tópica + oral supera cada uma isolada. Enema de corticoide é inferior ao de mesalazina, mas serve para quem não tolera.</li>
+<li><b>Extensa (E3):</b> mesalazina oral 2–2,4 g/dia na leve (4,8 g não aumenta remissão na leve; ajuda na moderada), dose única diária possível; resposta em 2–8 semanas. Sem resposta em 8 semanas: budesonida MMX 9 mg/dia por 8 semanas ou prednisona 40–60 mg/dia — não trocar uma formulação de 5-ASA por outra.</li>
+<li><b>Manutenção:</b> o 5-ASA que induziu — oral ≥1,5–2 g/dia na esquerda e extensa; supositório 1 g/dia ou 3×/semana na proctite. Episódio único de proctite pode dispensar manutenção (PCDT). Corticoide nunca mantém remissão.</li>
+<li><b>Corticodependência</b> (recaída ao desmamar, &gt;2 cursos/ano) ou corticorresistência: subir para F1.2.</li>
+</ul>
+<div class="box hy">
+<span class="box-label">HIGH-YIELD</span>
+<div class="box-title">Sulfassalazina e mesalazina têm a mesma eficácia na RCU — a diferença é tolerância e custo</div>
+<div class="box-body">A sulfapiridina, liberada pela azorredutase bacteriana no cólon, carrega os efeitos adversos (cefaleia, náusea, hemólise, agranulocitose, hepatite, oligospermia reversível, antagonismo de folato). O PCDT prefere sulfassalazina pelo custo, com ácido fólico, e troca para mesalazina na intolerância ou no homem que quer ter filhos. As duas podem causar nefrite intersticial: creatinina e EAS antes e a cada 4–6 meses.</div>
+</div>
+
+<div class="sub-title">F1.2 · Retocolite ulcerativa moderada a grave (ambulatorial)</div>
+<ul class="bullets">
+<li><b>Ponte:</b> prednisona 40–60 mg/dia VO (0,75–1 mg/kg, máx. 60 mg) até resposta (5–7 dias), redução de 5–10 mg/semana até 20 mg e depois 2,5–5 mg/semana; budesonida MMX 9 mg/dia na moderada. Ivermectina empírica antes do corticoide em área endêmica de Strongyloides (PCDT).</li>
+<li><b>Manutenção poupadora:</b> azatioprina 2–2,5 mg/kg/dia após corticoide (sozinha não induz). Metotrexato não funciona na RCU.</li>
+<li><b>Terapia avançada</b> (falha ou dependência; ou de início se mau prognóstico): infliximabe com azatioprina (o anti-TNF preferido; único com dado de combinação — UC SUCCESS), vedolizumabe (perfil intestinal seletivo, preferível em idoso, infecção ou neoplasia prévia; superior ao adalimumabe no VARSITY), ustequinumabe, risanquizumabe, mirikizumabe, guselcumabe, tofacitinibe, upadacitinibe, ozanimode, etrasimode, adalimumabe, golimumabe.</li>
+<li><b>Escolha da segunda linha:</b> falha primária de anti-TNF com nível adequado = trocar de mecanismo; perda secundária com anticorpo = outro anti-TNF ou outro mecanismo; JAK é a opção oral de início rápido, com restrição em ≥65 anos, tabagista ou com risco cardiovascular/trombótico. Não manter 5-ASA junto ao biológico "para somar" (ACG sugere contra).</li>
+<li><b>SUS:</b> infliximabe, vedolizumabe (limitado ao custo do infliximabe) e tofacitinibe após falha de azatioprina por ≥12 semanas; reavaliar a cada 12 meses; suspender por falha primária em 3 meses (biológicos) ou na semana 16 (tofacitinibe).</li>
+<li><b>Colectomia eletiva</b> (proctocolectomia com IPAA) se refratária, corticodependente apesar de terapia otimizada, displasia ou câncer.</li>
+</ul>
+
+<div class="sub-title">F1.3 · Colite aguda grave</div>
+<ul class="bullets">
+<li><b>D0:</b> metilprednisolona 60 mg/dia IV (ou hidrocortisona 100 mg IV 6/6 h) — sem pulsoterapia; enoxaparina 40 mg SC/dia; K, Mg, hidratação; dieta enteral se tolerada; sem antibiótico de rotina; sem opioide, anticolinérgico, AINE, antidiarreico; C. difficile; sigmoidoscopia sem preparo com biópsia em 24–72 h; cirurgião avalia no primeiro dia.</li>
+<li><b>D3:</b> Oxford positivo → resgate: infliximabe 5 mg/kg (10 mg/kg ou indução acelerada se albumina &lt;2,5 g/dL) ou ciclosporina 2 mg/kg/dia IV contínua (prefira infliximabe se já usava tiopurina ou se creatinina alterada; o PCDT RCU põe ciclosporina como primeira escolha em serviço experiente).</li>
+<li><b>D5–7 do resgate:</b> sem resposta → colectomia subtotal com ileostomia. Não fazer resgate sequencial rotineiro.</li>
+<li><b>Transição:</b> ciclosporina → ciclosporina VO 5 mg/kg/dia em 2 tomadas por 12 semanas + azatioprina + SMX-TMP 800/160 mg 3×/semana (tripla imunossupressão); infliximabe → manter infliximabe a cada 8 semanas.</li>
+</ul>
+<div class="box danger">
+<span class="box-label">DANGER</span>
+<div class="box-title">Ciclosporina com magnésio ou colesterol baixos convulsiona</div>
+<div class="box-body">A ciclosporina é lipofílica e transportada por lipoproteínas; com colesterol total &lt;120 mg/dL a fração livre que entra no SNC aumenta, e a hipomagnesemia (comum na diarreia grave) reduz o limiar convulsivo e potencializa a neurotoxicidade (PRES). Corrija o magnésio antes, dose o nível sérico (alvo 200–400 ng/mL na infusão contínua), monitore pressão e creatinina, e não use se a creatinina já estiver alterada.</div>
+</div>
+
+<div class="sub-title">F1.4 · Doença de Crohn luminal</div>
+<ul class="bullets">
+<li><b>Estratificar risco no diagnóstico:</b> idade &lt;30, doença extensa, ileal ou de trato alto, perianal, úlceras profundas, estenose ou penetração, corticoide precoce, tabagismo — qualquer um empurra para terapia avançada precoce (estratégia top-down acelerada; o PROFILE mostrou mais remissão com infliximabe + imunomodulador desde o início).</li>
+<li><b>Leve ileocecal:</b> budesonida 9 mg/dia VO por 8 semanas com desmame de 3 mg a cada 2 semanas; não manter. Sem fator de risco e assintomático: observação com calprotectina e imagem. Sulfassalazina só na colite de Crohn leve. Antibiótico não trata inflamação luminal.</li>
+<li><b>Moderado a grave:</b> prednisona 40–60 mg/dia como ponte curta (ou nenhuma, se a terapia avançada já está planejada); infliximabe 5 mg/kg + azatioprina 2–2,5 mg/kg/dia nos virgens; alternativas com recomendação forte: adalimumabe, certolizumabe, vedolizumabe, ustequinumabe, risanquizumabe (preferido ao ustequinumabe após anti-TNF — SEQUENCE), mirikizumabe, guselcumabe, upadacitinibe (após anti-TNF).</li>
+<li><b>Manutenção:</b> o agente que induziu; tiopurina ou metotrexato após indução com corticoide; budesonida e corticoide nunca. Retirar imunomodulador da combinação após 6–12 meses de remissão livre de corticoide é aceitável.</li>
+<li><b>Grave/fulminante internado:</b> TC para abscesso e perfuração; corticoide IV (metilprednisolona 40–60 mg/dia) ou infliximabe após excluir sepse; nutrição enteral; cirurgia se obstrução, perfuração ou refratariedade.</li>
+<li><b>Estenose:</b> inflamatória responde à terapia avançada (CREOLE com adalimumabe); fibrótica, curta (&lt;5 cm) e acessível: dilatação endoscópica com balão; longa, múltipla ou refratária: estricturoplastia (Heineke-Mikulicz até 10 cm; Finney; Michelassi para segmentos longos) ou ressecção econômica.</li>
+<li><b>SUS:</b> corticoide + azatioprina ou metotrexato IM → anti-TNF de 1ª linha (infliximabe preferido; adalimumabe e certolizumabe) se sem resposta em 6 semanas e IHB &gt;8 → troca intraclasse possível → ustequinumabe ou vedolizumabe após falha ou intolerância ao anti-TNF.</li>
+</ul>
+<div class="box controversy">
+<span class="box-label">CONTROVERSY</span>
+<div class="box-title">Ressecção ileocecal precoce × anti-TNF no Crohn ileal limitado</div>
+<div class="box-body">No LIR!C, ileocolectomia laparoscópica em ileíte terminal limitada (&lt;40 cm), não estenosante, refratária a terapia convencional, teve qualidade de vida semelhante ao infliximabe em 1 ano e, no seguimento de 5 anos, ~1/4 dos operados não precisou de nenhum tratamento, enquanto quase metade do grupo infliximabe acabou operado. O PCDT 2026 incorporou a cirurgia como alternativa ao anti-TNF nesse fenótipo; a decisão depende de preferência do paciente, risco de recorrência e acesso cirúrgico de qualidade.</div>
+</div>
+
+<div class="sub-title">F1.5 · Crohn perianal e pós-operatório</div>
+<ul class="bullets">
+<li><b>Perianal:</b> sepse primeiro (drenagem, seton frouxo), RM de pelve; simples: metronidazol e/ou ciprofloxacino 4–8 semanas; complexa: infliximabe (nível sérico alto) + antibiótico nas primeiras semanas ± tiopurina, adalimumabe como alternativa; ustequinumabe, vedolizumabe e upadacitinibe com evidência fraca; cirurgia reparadora com a doença luminal e retal controladas.</li>
+<li><b>Prevenção de recorrência pós-ileocolectomia:</b> pare de fumar. Baixo risco: observação. Alto risco (tabagismo, cirurgia prévia, doença penetrante, perianal, granulomas e plexite mioentérica na peça): anti-TNF (adalimumabe preferido no PCDT) ou vedolizumabe; azatioprina 2–2,5 mg/kg/dia como opção de menor risco; metronidazol 1–2 g/dia por 3 meses após ressecção de delgado como adjuvante.</li>
+<li><b>Ileocolonoscopia 6–12 meses após a cirurgia</b> com escore de Rutgeerts; i2–i4 → iniciar ou escalar (POCER). Calprotectina &gt;100–150 µg/g sugere recorrência entre as colonoscopias.</li>
+</ul>
+
+<div class="sub-title">F1.6 · Cirurgia na DII</div>
+<ul class="bullets">
+<li><b>RCU urgente</b> (colite aguda grave refratária, megacólon, perfuração, hemorragia): colectomia subtotal + ileostomia terminal + coto retal; reconstrução tardia com proctectomia e bolsa ileal em J (IPAA), em 2 ou 3 tempos.</li>
+<li><b>RCU eletiva</b> (refratária, displasia, câncer, crescimento na criança): proctocolectomia com IPAA — 5–7 evacuações/dia, continência boa na maioria, fertilidade feminina reduzida (laparoscopia atenua); alternativas: proctocolectomia com ileostomia definitiva (idoso, esfíncter ruim), colectomia com anastomose ileorretal (selecionados, reto poupado, sem displasia).</li>
+<li><b>Crohn:</b> cirurgia trata complicação, não cura. Poupar intestino (estricturoplastia, ressecção com margem macroscópica livre apenas — margem microscópica não reduz recorrência), anastomose ampla laterolateral; abscesso drenado antes; otimizar nutrição e retirar corticoide (&gt;20 mg/dia de prednisona por &gt;6 semanas aumenta complicação séptica) — NEE pré-operatória reduz complicações.</li>
+<li><b>Síndrome do intestino curto</b> após múltiplas ressecções (&lt;200 cm de delgado remanescente): manejo em GH04.</li>
+</ul>
+
+<div class="sub-title">F1.7 · Antes de imunossuprimir e durante: rastreio e segurança</div>
+<div class="mnemo">
+<div class="mnemo-title"><b>PREBIO</b> o checklist antes da primeira dose de biológico, JAK ou tiopurina</div>
+<div class="mnemo-grid">
+<div class="mnemo-row"><span class="mnemo-letter">P</span><span><b>PT ou IGRA + radiografia de tórax</b> · ILTB tratada e início do imunobiológico após 4 semanas</span></div>
+<div class="mnemo-row"><span class="mnemo-letter">R</span><span><b>Rastreio viral</b> · HBsAg, anti-HBc, anti-HBs, anti-HCV, anti-HIV — profilaxia antiviral se HBsAg+</span></div>
+<div class="mnemo-row"><span class="mnemo-letter">E</span><span><b>EBV e VZV</b> · EBV-negativo jovem evita tiopurina; VZV-negativo vacina antes</span></div>
+<div class="mnemo-row"><span class="mnemo-letter">B</span><span><b>Bichos</b> · Strongyloides (ivermectina empírica em área endêmica), parasitológico, C. difficile se ativo</span></div>
+<div class="mnemo-row"><span class="mnemo-letter">I</span><span><b>Imunizações</b> · inativadas sempre; vivas (febre amarela, tríplice viral, varicela) ≥4 semanas antes, nunca durante</span></div>
+<div class="mnemo-row"><span class="mnemo-letter">O</span><span><b>Oncológico e órgãos</b> · colpocitologia/HPV, pele, TPMT/NUDT15, ECG e fundo de olho para S1P, lipídios e risco CV para JAK</span></div>
+</div>
+</div>
+<ul class="bullets">
+<li><b>Tuberculose:</b> anamnese, radiografia de tórax e PT ou IGRA. PT ≥5 mm, IGRA reagente, imagem de TB prévia não tratada ou contato recente → tratar ILTB (esquemas do MS: 6–9 meses de isoniazida, 4 meses de rifampicina ou 3HP) e iniciar o biológico/JAK após 4 semanas; TB ativa: o biológico pode começar junto ou 4 semanas após o RIPE, a critério da equipe. PT/IGRA negativos: repetir anualmente (PCDT DC 2026; RCU revisado em 2025).</li>
+<li><b>Hepatites e HIV:</b> HBsAg, anti-HBc total, anti-HBs, anti-HCV, anti-HIV. HBsAg+ → profilaxia antiviral (entecavir ou tenofovir) antes e durante (GH09); anti-HBc isolado → monitorar HBV-DNA ou profilaxia conforme o grau de imunossupressão; anti-HBs negativo → vacinar.</li>
+<li><b>Outros:</b> sorologia de varicela (vacinar suscetível antes), Strongyloides (ivermectina empírica em área endêmica antes de corticoide), EBV antes de tiopurina em homem jovem (soronegativo: preferir não usar — mononucleose primária com HLH e linfoma), TPMT e NUDT15 antes de tiopurina, colpocitologia/HPV anual em mulheres imunossuprimidas, dermatologia anual com tiopurina e anti-TNF.</li>
+<li><b>Vacinas:</b> inativadas a qualquer momento (influenza anual, pneumocócicas, hepatite B, HPV, COVID-19, herpes-zóster recombinante — especialmente antes de JAK). <b>Vivas atenuadas (febre amarela, tríplice viral, varicela, dengue) ≥4 semanas antes</b> e nunca sob anti-TNF, JAK, tiopurina em dose plena ou corticoide ≥20 mg/dia por ≥2 semanas — dado de alta relevância no Brasil, onde a vacina de febre amarela é rotina.</li>
+<li><b>Riscos de classe:</b> tiopurina — mielotoxicidade, pancreatite (suspender), hepatotoxicidade, linfoma, linfoma hepatoesplênico, câncer de pele não melanoma; anti-TNF — infecções granulomatosas, psoríase paradoxal, desmielinização, piora de IC classe III–IV, lúpus induzido; vedolizumabe — intestinal seletivo, sem sinal de LEMP; ustequinumabe/anti-IL-23 — o perfil de infecção mais favorável; JAK — herpes-zóster, TEV, eventos cardiovasculares e neoplasia (alerta pós-ORAL Surveillance), dislipidemia; S1P — bradicardia na primeira dose, bloqueio AV, edema macular, hipertensão, linfopenia, teratogenicidade.</li>
+</ul>
+
+<div class="sub-title">F1.8 · Vigilância de displasia e câncer colorretal</div>
+<ul class="bullets">
+<li><b>Quem:</b> RCU com extensão além do reto e Crohn colônico com ≥1/3 (PCDT: ≥30%) do cólon, a partir de <b>8 anos de sintomas</b> (PCDT DC: 8–10 anos); <b>CEP: desde o diagnóstico e anualmente</b>; proctite isolada segue rastreio populacional.</li>
+<li><b>Intervalo por risco (ECCO 2023):</b> alto — inflamação ativa extensa moderada a grave, estenose ou displasia nos últimos 5 anos, CEP, CCR em parente de 1º grau &lt;50 anos — anual; intermediário — inflamação leve extensa, pseudopólipos, CCR em parente de 1º grau ≥50 anos — 2–3 anos; baixo — 5 anos.</li>
+<li><b>Como:</b> colonoscopia de alta definição em remissão, com bom preparo, <b>cromoendoscopia com corante ou virtual</b> e biópsias dirigidas (SCENIC); biópsias aleatórias (4 por segmento a cada 10 cm) em CEP, cólon tubular ou cromoendoscopia indisponível.</li>
+<li><b>Achados:</b> displasia visível ressecável endoscopicamente → ressecção completa (mucosectomia, dissecção submucosa) e vigilância encurtada; displasia invisível → confirmar com segundo patologista e repetir cromoendoscopia; displasia de alto grau invisível ou multifocal, lesão não ressecável ou câncer → colectomia. O termo "DALM" foi abandonado.</li>
+<li>Quimioprevenção: controle da inflamação é a melhor; ácido ursodesoxicólico em dose alta aumenta o risco na CEP (não usar com esse fim).</li>
+</ul>
+
+<div class="sub-title">F1.9 · Colites não-DII</div>
+<ul class="bullets">
+<li><b>Microscópica:</b> retirar IBP/AINE/ISRS suspeitos; budesonida 9 mg/dia 6–8 semanas; recidiva frequente → 3–6 mg/dia; refratária → rever diarreia biliar e celíaca, depois tiopurina, anti-TNF ou vedolizumabe.</li>
+<li><b>Isquêmica:</b> suporte e antibiótico nas formas moderadas e graves; cirurgia para gangrena, perfuração e falha; angio-TC se cólon direito isolado.</li>
+<li><b>Checkpoint:</b> G2 prednisona 1 mg/kg/dia; G3–4 metilprednisolona 1–2 mg/kg/dia IV; refratária em 72 h → infliximabe 5 mg/kg ou vedolizumabe 300 mg; desmame em 4–6 semanas.</li>
+<li><b>Actínica crônica:</b> plasma de argônio, formalina 4% tópica, sucralfato em enema, oxigênio hiperbárico; evitar biópsia da parede anterior do reto irradiado.</li>
+</ul>
+</div>
+</div>
+
+<div class="card tx">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">F.2</span> Doses operacionais</div><h3>Doses de indução × manutenção (adulto, salvo indicação) <span class="ank ank-hy">HIGH-YIELD</span></h3><div class="card-sub">conferir bula, peso, função renal e hepática; pediatria em D.9</div></div>
+<div class="card-body">
+<div class="stbl stbl-4">
+<div class="stbl-head stbl-4"><div>Fármaco</div><div>Indução</div><div>Manutenção</div><div>Notas / fonte</div></div>
+
+<div class="stbl-row stbl-4"><div class="col col1" data-l="Fármaco">Mesalazina oral</div><div class="col" data-l="Indução">2,4–4,8 g/dia VO em 1–3 tomadas (sachê: até 4 g 1×/dia)</div><div class="col" data-l="Manutenção">2–2,4 g/dia (mín. 1,5 g) VO</div><div class="col" data-l="Notas">RCU; sem papel no Crohn (ACG 2025). Creatinina e EAS antes e a cada 4–6 meses (nefrite intersticial) <span class="ev ev-nice">PCDT RCU 2024</span></div></div>
+<div class="stbl-row stbl-4"><div class="col col1" data-l="Fármaco">Mesalazina supositório</div><div class="col" data-l="Indução">1 g via retal à noite</div><div class="col" data-l="Manutenção">1 g/dia ou 250 mg–1 g 3×/semana</div><div class="col" data-l="Notas">Proctite; recaída em uso 3×/semana → voltar a diário</div></div>
+<div class="stbl-row stbl-4"><div class="col col1" data-l="Fármaco">Mesalazina enema</div><div class="col" data-l="Indução">1 g via retal à noite (ACG: ≥1 g)</div><div class="col" data-l="Manutenção">1 g/dia ou em dias alternados</div><div class="col" data-l="Notas">Colite esquerda, sempre com oral; o enema de 3 g saiu do SUS em 2021</div></div>
+<div class="stbl-row stbl-4"><div class="col col1" data-l="Fármaco">Sulfassalazina</div><div class="col" data-l="Indução">2–4 g/dia VO em 2 tomadas, iniciar 1 g/dia e escalonar</div><div class="col" data-l="Manutenção">2 g/dia (1 g 12/12 h)</div><div class="col" data-l="Notas">+ ácido fólico 5 mg 3×/semana (PCDT) ou 1–2 mg/dia; oligospermia reversível; o PCDT DC escreve 2–4 comprimidos de 500 mg 8/8 h (3–6 g/dia) — dose a conferir</div></div>
+<div class="stbl-row stbl-4"><div class="col col1" data-l="Fármaco">Budesonida de liberação ileal</div><div class="col" data-l="Indução">9 mg/dia VO por 8 semanas</div><div class="col" data-l="Manutenção">Não usar (3–6 mg não difere de placebo)</div><div class="col" data-l="Notas">Crohn ileocecal leve a moderado; desmame 3 mg a cada 2 semanas; não está no PCDT <span class="ev ev-sbr">ACG 2025</span></div></div>
+<div class="stbl-row stbl-4"><div class="col col1" data-l="Fármaco">Budesonida MMX</div><div class="col" data-l="Indução">9 mg/dia VO por 8 semanas</div><div class="col" data-l="Manutenção">Não usar</div><div class="col" data-l="Notas">RCU leve a moderada após falha de 5-ASA; colite microscópica: 9 mg/dia 6–8 sem, manutenção 3–6 mg/dia</div></div>
+<div class="stbl-row stbl-4"><div class="col col1" data-l="Fármaco">Prednisona</div><div class="col" data-l="Indução">40–60 mg/dia VO pela manhã (0,75–1 mg/kg, máx. 60 mg)</div><div class="col" data-l="Manutenção">Não usar; desmame 5–10 mg/semana até 20 mg, depois 2,5–5 mg/semana</div><div class="col" data-l="Notas">Resposta em 5–7 dias; &gt;60 mg sem ganho; cálcio + vitamina D; densitometria se &gt;3 meses <span class="ev ev-nice">PCDT RCU 2024</span></div></div>
+<div class="stbl-row stbl-4"><div class="col col1" data-l="Fármaco">Metilprednisolona</div><div class="col" data-l="Indução">60 mg/dia IV (RCU grave); 40–60 mg/dia IV (Crohn grave)</div><div class="col" data-l="Manutenção">Transição para prednisona VO 40 mg</div><div class="col" data-l="Notas">Dose única ou fracionada; o PCDT DC traz 1 mg/kg/dia 6/6 h — acima do teto de 60 mg do ACG <span class="ev ev-sbr">ACG 2025</span></div></div>
+<div class="stbl-row stbl-4"><div class="col col1" data-l="Fármaco">Hidrocortisona</div><div class="col" data-l="Indução">100 mg IV 6/6 h (ou 8/8 h)</div><div class="col" data-l="Manutenção">—</div><div class="col" data-l="Notas">Equivalente à metilprednisolona 60 mg; 7–10 dias no máximo antes de decidir</div></div>
+<div class="stbl-row stbl-4"><div class="col col1" data-l="Fármaco">Azatioprina</div><div class="col" data-l="Indução">50 mg/dia VO, subir em 2–4 semanas</div><div class="col" data-l="Manutenção">2–2,5 mg/kg/dia VO 1×/dia</div><div class="col" data-l="Notas">TPMT/NUDT15 antes (deficiência homozigótica = não usar); efeito após 12–17 semanas; hemograma e TGO/TGP semanais no 1º mês, depois mensal/trimestral; alopurinol exige 25–33% da dose <span class="ev ev-nice">PCDT DC 2026</span></div></div>
+<div class="stbl-row stbl-4"><div class="col col1" data-l="Fármaco">Mercaptopurina</div><div class="col" data-l="Indução">—</div><div class="col" data-l="Manutenção">1–1,5 mg/kg/dia VO</div><div class="col" data-l="Notas">Alternativa à azatioprina (ACG 0,75–1,5 mg/kg); não consta nos PCDT</div></div>
+<div class="stbl-row stbl-4"><div class="col col1" data-l="Fármaco">Metotrexato</div><div class="col" data-l="Indução">25 mg SC ou IM 1×/semana</div><div class="col" data-l="Manutenção">15 mg SC/IM 1×/semana (PCDT: 12,5–25 mg IM); 12,5–15 mg como parceiro de anti-TNF</div><div class="col" data-l="Notas">Só Crohn; + ácido fólico 5 mg VO 1×/semana fora do dia do MTX; teratogênico; hemograma e transaminases a cada 1–2 meses</div></div>
+<div class="stbl-row stbl-4"><div class="col col1" data-l="Fármaco">Ciclosporina</div><div class="col" data-l="Indução">2 mg/kg/dia IV em infusão contínua por até 7 dias (nível 200–400 ng/mL)</div><div class="col" data-l="Manutenção">5 mg/kg/dia VO em 2 tomadas por 12 semanas, ponte para azatioprina</div><div class="col" data-l="Notas">Colite aguda grave refratária; Mg, colesterol, PA, creatinina; SMX-TMP 800/160 mg 3×/semana se tripla imunossupressão <span class="ev ev-nice">PCDT RCU 2024</span></div></div>
+<div class="stbl-row stbl-4"><div class="col col1" data-l="Fármaco">Infliximabe IV</div><div class="col" data-l="Indução">5 mg/kg IV (≥2 h) nas semanas 0, 2 e 6</div><div class="col" data-l="Manutenção">5 mg/kg a cada 8 semanas; otimizar para 10 mg/kg ou intervalo de 4–6 semanas</div><div class="col" data-l="Notas">Crohn, RCU, fístula; colite grave com albumina &lt;2,5: 10 mg/kg ou indução acelerada; hepatograma antes de cada dose (suspender se &gt;5× LSN); contraindicado em IC NYHA III–IV <span class="ev ev-nice">PCDT DC 2026</span></div></div>
+<div class="stbl-row stbl-4"><div class="col col1" data-l="Fármaco">Infliximabe SC</div><div class="col" data-l="Indução">Após 2 doses IV de 5 mg/kg (semanas 0 e 2)</div><div class="col" data-l="Manutenção">120 mg SC a cada 2 semanas a partir da semana 6; escalonar para 240 mg se perda de resposta</div><div class="col" data-l="Notas">SUS: só Crohn com fístula perianal complexa, ≥18 anos; sem resposta após 6 doses (2 IV + 4 SC), suspender <span class="ev ev-nice">PCDT DC 2026</span></div></div>
+<div class="stbl-row stbl-4"><div class="col col1" data-l="Fármaco">Adalimumabe</div><div class="col" data-l="Indução">160 mg SC na semana 0 e 80 mg na semana 2</div><div class="col" data-l="Manutenção">40 mg SC a cada 2 semanas desde a semana 4; otimizar para 40 mg/semana (ou 80 mg 14/14 dias)</div><div class="col" data-l="Notas">Crohn ≥6 anos no SUS; &lt;40 kg: 80/40 mg e 20 mg 14/14 dias; não incorporado para RCU no SUS</div></div>
+<div class="stbl-row stbl-4"><div class="col col1" data-l="Fármaco">Certolizumabe pegol</div><div class="col" data-l="Indução">400 mg SC nas semanas 0, 2 e 4</div><div class="col" data-l="Manutenção">400 mg SC a cada 4 semanas</div><div class="col" data-l="Notas">Crohn ≥18 anos; sem fração Fc — transferência placentária mínima (preferido na gestação pelo PCDT DC)</div></div>
+<div class="stbl-row stbl-4"><div class="col col1" data-l="Fármaco">Golimumabe</div><div class="col" data-l="Indução">200 mg SC na semana 0 e 100 mg na semana 2</div><div class="col" data-l="Manutenção">50 mg (&lt;80 kg) ou 100 mg (≥80 kg) SC a cada 4 semanas</div><div class="col" data-l="Notas">Só RCU; não está no PCDT RCU; dose de bula — conferir</div></div>
+<div class="stbl-row stbl-4"><div class="col col1" data-l="Fármaco">Vedolizumabe</div><div class="col" data-l="Indução">300 mg IV (30 min) nas semanas 0, 2 e 6; no Crohn, dose extra na semana 10 se sem resposta</div><div class="col" data-l="Manutenção">300 mg IV a cada 8 semanas (otimizar para 4/4 sem) ou 108 mg SC a cada 2 semanas após 2 doses IV</div><div class="col" data-l="Notas">RCU e Crohn (2ª linha no SUS para Crohn; RCU no SUS limitado ao custo do IFX); não usar na colite aguda grave; avaliar benefício até a semana 14 <span class="ev ev-nice">PCDT RCU 2024</span></div></div>
+<div class="stbl-row stbl-4"><div class="col col1" data-l="Fármaco">Ustequinumabe</div><div class="col" data-l="Indução">Dose única IV ~6 mg/kg: ≤55 kg 260 mg · 56–85 kg 390 mg · &gt;85 kg 520 mg</div><div class="col" data-l="Manutenção">90 mg SC na semana 8, depois a cada 12 semanas (ou 8/8 sem)</div><div class="col" data-l="Notas">SUS: Crohn ≥18 anos após falha de anti-TNF; não usar na fístula perianal pelo PCDT; RCU fora do PCDT <span class="ev ev-nice">PCDT DC 2026</span></div></div>
+<div class="stbl-row stbl-4"><div class="col col1" data-l="Fármaco">Risanquizumabe</div><div class="col" data-l="Indução">Crohn 600 mg IV · RCU 1.200 mg IV, nas semanas 0, 4 e 8</div><div class="col" data-l="Manutenção">180 ou 360 mg SC na semana 12 e a cada 8 semanas</div><div class="col" data-l="Notas">Anti-IL-23 p19; superior ao ustequinumabe após anti-TNF (SEQUENCE); fora do SUS (Rol ANS 2026) <span class="ev ev-sbr">ACG 2025</span></div></div>
+<div class="stbl-row stbl-4"><div class="col col1" data-l="Fármaco">Mirikizumabe</div><div class="col" data-l="Indução">RCU 300 mg IV · Crohn 900 mg IV, nas semanas 0, 4 e 8</div><div class="col" data-l="Manutenção">RCU 200 mg SC · Crohn 300 mg SC, a cada 4 semanas desde a semana 12</div><div class="col" data-l="Notas">Anti-IL-23 p19; fora do SUS; a indução do Crohn é IV (o texto do ACG escreve "subcutaneously" — erro editorial a conferir na bula)</div></div>
+<div class="stbl-row stbl-4"><div class="col col1" data-l="Fármaco">Guselcumabe</div><div class="col" data-l="Indução">200 mg IV nas semanas 0, 4 e 8 (RCU e Crohn) ou, no Crohn, 400 mg SC nas semanas 0, 4 e 8</div><div class="col" data-l="Manutenção">100 mg SC a cada 8 semanas (desde a semana 16) ou 200 mg SC a cada 4 semanas (desde a semana 12)</div><div class="col" data-l="Notas">Anti-IL-23 p19; fora do SUS</div></div>
+<div class="stbl-row stbl-4"><div class="col col1" data-l="Fármaco">Tofacitinibe</div><div class="col" data-l="Indução">10 mg VO 12/12 h por 8 semanas (até 16)</div><div class="col" data-l="Manutenção">5 mg VO 12/12 h; 10 mg 12/12 h só na perda de resposta, pelo menor tempo</div><div class="col" data-l="Notas">Só RCU (SUS: adulto após falha de convencional ou biológico); suspender sem benefício na semana 16; herpes-zóster, TEV, risco CV <span class="ev ev-nice">PCDT RCU 2024</span></div></div>
+<div class="stbl-row stbl-4"><div class="col col1" data-l="Fármaco">Upadacitinibe</div><div class="col" data-l="Indução">RCU 45 mg/dia VO por 8 semanas (até 16) · Crohn 45 mg/dia por 12 semanas</div><div class="col" data-l="Manutenção">15 ou 30 mg/dia VO (30 mg preferido em refratários)</div><div class="col" data-l="Notas">JAK1 seletivo; fora do SUS; ajuste com inibidor forte de CYP3A4; contraindicado na gestação <span class="ev ev-sbr">ACG 2025</span></div></div>
+<div class="stbl-row stbl-4"><div class="col col1" data-l="Fármaco">Ozanimode</div><div class="col" data-l="Indução">0,23 mg/dia VO dias 1–4, 0,46 mg dias 5–7</div><div class="col" data-l="Manutenção">0,92 mg/dia VO a partir do dia 8</div><div class="col" data-l="Notas">S1P (RCU); ECG antes, fundoscopia se diabetes ou uveíte; fora do PCDT; registro e disponibilidade no Brasil a conferir</div></div>
+<div class="stbl-row stbl-4"><div class="col col1" data-l="Fármaco">Etrasimode</div><div class="col" data-l="Indução">2 mg/dia VO (sem titulação)</div><div class="col" data-l="Manutenção">2 mg/dia VO</div><div class="col" data-l="Notas">S1P (RCU); fora do SUS; registro no Brasil a conferir</div></div>
+<div class="stbl-row stbl-4"><div class="col col1" data-l="Fármaco">Metronidazol</div><div class="col" data-l="Indução">500 mg VO 8/8 h (ou 10–20 mg/kg/dia) por 4–8 semanas</div><div class="col" data-l="Manutenção">Pós-ressecção: 1–2 g/dia por 3 meses</div><div class="col" data-l="Notas">Fístula perianal, bolsite (14 dias), abscesso; neuropatia periférica no uso prolongado; sem álcool até 3 dias após</div></div>
+<div class="stbl-row stbl-4"><div class="col col1" data-l="Fármaco">Ciprofloxacino</div><div class="col" data-l="Indução">500 mg VO 12/12 h por 4–8 semanas (bolsite: 14 dias)</div><div class="col" data-l="Manutenção">—</div><div class="col" data-l="Notas">Fístula perianal (com adalimumabe supera monoterapia), bolsite; tendinopatia, QT longo</div></div>
+<div class="stbl-row stbl-4"><div class="col col1" data-l="Fármaco">Enoxaparina</div><div class="col" data-l="Indução">40 mg SC 1×/dia em todo internado com DII ativa</div><div class="col" data-l="Manutenção">Enquanto internado; estender após alta em casos selecionados</div><div class="col" data-l="Notas">Sangramento retal não contraindica; ajuste se ClCr &lt;30 mL/min <span class="ev ev-sbr">ACG 2025</span></div></div>
+<div class="stbl-row stbl-4"><div class="col col1" data-l="Fármaco">Ferro IV (carboximaltose)</div><div class="col" data-l="Indução">Déficit total: 1.000 mg IV (máx. 1.000 mg por aplicação; 20 mg/kg)</div><div class="col" data-l="Manutenção">Repor se ferritina &lt;100 µg/L na doença ativa</div><div class="col" data-l="Notas">Preferido se Hb &lt;10 g/dL, doença ativa ou intolerância oral; hipofosfatemia com carboximaltose; disponibilidade SUS variável</div></div>
+<div class="stbl-row stbl-4"><div class="col col1" data-l="Fármaco">Colestiramina</div><div class="col" data-l="Indução">4 g VO 1–3×/dia, longe de outros fármacos</div><div class="col" data-l="Manutenção">Menor dose eficaz</div><div class="col" data-l="Notas">Diarreia biliar pós-ressecção ileal &lt;100 cm; piora a esteatorreia se &gt;100 cm ressecados</div></div>
+<div class="stbl-row stbl-4"><div class="col col1" data-l="Fármaco">Vancomicina oral</div><div class="col" data-l="Indução">125 mg VO 6/6 h por 10 dias</div><div class="col" data-l="Manutenção">—</div><div class="col" data-l="Notas">C. difficile superposto na DII; manter o tratamento da DII (detalhes no GH03)</div></div>
+<div class="stbl-row stbl-4"><div class="col col1" data-l="Fármaco">Ganciclovir</div><div class="col" data-l="Indução">5 mg/kg IV 12/12 h por 5–10 dias, depois valganciclovir 900 mg VO 12/12 h até 2–3 semanas</div><div class="col" data-l="Manutenção">—</div><div class="col" data-l="Notas">CMV tecidual com inclusões na colite refratária a corticoide; ajuste renal</div></div>
+</div>
+<div class="box decision">
+<span class="box-label">DECISION</span>
+<div class="box-title">Dose medida no nível, não no calendário</div>
+<div class="box-body">Para anti-TNF, a otimização guiada por nível de vale e anticorpo resolve dúvidas que a dose fixa não resolve: perda de resposta com nível baixo e sem anticorpo pede intensificação; com anticorpo alto pede troca intraclasse; com nível adequado pede outro mecanismo. Para vedolizumabe, ustequinumabe e anti-IL-23 a dosagem sérica não tem alvos validados e o ACG 2025 não recomenda usá-la.</div>
+</div>
+</div>
+</div>
+
+<div class="card tx">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">F.3</span> Cenários</div><h3>Caso → conduta certa → erro típico <span class="ank ank-dec">DECISION</span></h3></div>
+<div class="card-body">
+<div class="stbl stbl-3">
+<div class="stbl-head stbl-3"><div>Caso</div><div>Conduta certa</div><div>Erro típico</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Caso">RCU no 3º dia de metilprednisolona, 7 evacuações/dia, PCR 62 mg/L</div><div class="col" data-l="Conduta certa">Oxford positivo: infliximabe 5 mg/kg (ou ciclosporina) hoje, cirurgião ao lado</div><div class="col" data-l="Erro típico">"Mais uns dias de corticoide" ou pulsoterapia</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Caso">Colite grave internada com sangramento retal</div><div class="col" data-l="Conduta certa">Enoxaparina 40 mg SC/dia</div><div class="col" data-l="Erro típico">Suspender profilaxia "porque sangra"</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Caso">Proctite leve com mesalazina oral 4,8 g sem melhora</div><div class="col" data-l="Conduta certa">Supositório de mesalazina 1 g à noite</div><div class="col" data-l="Erro típico">Subir para corticoide sistêmico sem tentar a via tópica</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Caso">Crohn ileal moderado em mesalazina há 1 ano</div><div class="col" data-l="Conduta certa">Suspender a mesalazina e iniciar terapia eficaz (budesonida como ponte, terapia avançada conforme risco)</div><div class="col" data-l="Erro típico">Manter 5-ASA "porque é seguro"</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Caso">Crohn com febre e massa em fossa ilíaca direita, candidato a anti-TNF</div><div class="col" data-l="Conduta certa">TC; abscesso → drenagem percutânea + antibiótico; anti-TNF depois</div><div class="col" data-l="Erro típico">Iniciar infliximabe com abscesso não drenado</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Caso">Úlceras ileocecais transversais, IGRA reagente, morador de periferia urbana</div><div class="col" data-l="Conduta certa">Biópsia com PCR e cultura para micobactéria; se dúvida, prova terapêutica com RIPE</div><div class="col" data-l="Erro típico">Chamar de Crohn e prescrever prednisona</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Caso">Vai iniciar adalimumabe; PT de 7 mm, radiografia normal</div><div class="col" data-l="Conduta certa">Tratar ILTB e começar o biológico após 4 semanas</div><div class="col" data-l="Erro típico">Repetir PT ou adiar o biológico até terminar a ILTB</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Caso">Jovem de 22 anos vai viajar para área de febre amarela e acabou de iniciar azatioprina + infliximabe</div><div class="col" data-l="Conduta certa">Vacina contraindicada; orientar risco e repelente; idealmente vacinar ≥4 semanas antes de imunossuprimir</div><div class="col" data-l="Erro típico">Aplicar vacina viva sob imunossupressão</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Caso">Gestante de 20 semanas com Crohn em remissão sob infliximabe</div><div class="col" data-l="Conduta certa">Manter; considerar pausa às 22–24 semanas só se baixo risco; avisar o pediatra sobre BCG</div><div class="col" data-l="Erro típico">Suspender ao saber da gravidez</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Caso">Perda de resposta ao infliximabe: nível 0,8 µg/mL, anticorpo alto</div><div class="col" data-l="Conduta certa">Trocar para outro anti-TNF (ou outro mecanismo) e associar imunomodulador</div><div class="col" data-l="Erro típico">Dobrar a dose do infliximabe</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Caso">Mulher de 62 anos, diarreia aquosa noturna, colonoscopia normal, usa lansoprazol</div><div class="col" data-l="Conduta certa">Biópsias de cólon direito e esquerdo; suspender IBP; budesonida 9 mg/dia</div><div class="col" data-l="Erro típico">Rotular como SII sem biópsia</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Caso">Melanoma em ipilimumabe + nivolumabe, 8 evacuações/dia</div><div class="col" data-l="Conduta certa">G3: internar, metilprednisolona 1–2 mg/kg/dia IV; sem resposta em 72 h, infliximabe</div><div class="col" data-l="Erro típico">Loperamida e esperar a colonoscopia</div></div>
+</div>
+</div>
+</div>
+
+<div class="card tx">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">F.4</span> Acesso</div><h3>SUS/PCDT × diretriz internacional</h3><div class="card-sub">o que o paciente consegue pelo Componente Especializado em 2026</div></div>
+<div class="card-body">
+<div class="stbl stbl-3">
+<div class="stbl-head stbl-3"><div>Classe</div><div>Doença de Crohn (PCDT 2026)</div><div>Retocolite ulcerativa (PCDT 2024)</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Classe">Aminossalicilatos</div><div class="col" data-l="Crohn">Sulfassalazina (colônica leve); mesalazina na intolerância — evidência marginal</div><div class="col" data-l="RCU">Sulfassalazina; mesalazina comprimido, sachê, supositório e enema 1 g</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Classe">Corticoides</div><div class="col" data-l="Crohn">Prednisona, metilprednisolona, hidrocortisona; <b>budesonida não incluída</b></div><div class="col" data-l="RCU">Prednisona, hidrocortisona; <b>budesonida MMX não incluída</b></div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Classe">Imunomoduladores</div><div class="col" data-l="Crohn">Azatioprina, metotrexato IM</div><div class="col" data-l="RCU">Azatioprina, ciclosporina (colite aguda grave)</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Classe">Anti-TNF</div><div class="col" data-l="Crohn">Infliximabe IV (≥6 anos) e SC (fístula perianal complexa, ≥18 anos), adalimumabe (≥6 anos), certolizumabe (≥18)</div><div class="col" data-l="RCU">Infliximabe (≥6 anos)</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Classe">Anti-integrina</div><div class="col" data-l="Crohn">Vedolizumabe após anti-TNF (Portaria SECTICS nº 34/2025)</div><div class="col" data-l="RCU">Vedolizumabe (custo limitado ao do infliximabe)</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Classe">Anti-IL-12/23 e anti-IL-23</div><div class="col" data-l="Crohn">Ustequinumabe após anti-TNF (Portaria SECTICS nº 1/2024); anti-IL-23 p19 não</div><div class="col" data-l="RCU">Nenhum</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Classe">Pequenas moléculas</div><div class="col" data-l="Crohn">Nenhuma (upadacitinibe não)</div><div class="col" data-l="RCU">Tofacitinibe (adulto); upadacitinibe, ozanimode e etrasimode não</div></div>
+</div>
+<div class="box evolving">
+<span class="box-label">EVOLVING</span>
+<div class="box-title">O PCDT de Crohn de 2026 aproximou o SUS da prática, mas não da ACG</div>
+<div class="box-body">A Portaria Conjunta nº 51/2026 substituiu o protocolo de 2017 incorporando ustequinumabe e vedolizumabe como segunda linha, infliximabe subcutâneo para fístula perianal complexa, calprotectina para monitorização, Harvey-Bradshaw como escore operacional, ileocolectomia precoce como alternativa ao anti-TNF e prevenção de recorrência pós-operatória com adalimumabe. Continua exigindo falha de corticoide e imunomodulador antes do anti-TNF — o oposto da recomendação da ACG 2025 de não exigir falha da terapia convencional — e não inclui budesonida, anti-IL-23 p19 nem upadacitinibe.</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- ============================================================ G -->
+<section id="pitfalls">
+<div class="section">
+<div class="section-eyebrow"><span>G</span> Pitfalls · Mitos · Controvérsias</div>
+<div class="section-title">Os erros que custam um cólon</div>
+<div class="section-sub">Dez erros recorrentes no PS e no ambulatório de DII, três mitos que a apostila de 2025 ainda carrega e três debates abertos.</div>
+</div>
+
+<div class="card pearl">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">G.1</span> Pitfalls</div><h3>Erro comum → correto <span class="ank ank-dgr">DANGER</span></h3></div>
+<div class="card-body">
+<div class="stbl stbl-2">
+<div class="stbl-head stbl-2"><div>Erro Comum</div><div>Correto</div></div>
+<div class="stbl-row stbl-2"><div class="col col1" data-l="Erro">Tratar a agudização da DII sem pesquisar C. difficile e CMV</div><div class="col" data-l="Correto">C. difficile em toda agudização; biópsia para CMV em toda colite refratária a corticoide. Superinfecção dobra colectomia e mortalidade e se trata com antimicrobiano, não com mais imunossupressão.</div></div>
+<div class="stbl-row stbl-2"><div class="col col1" data-l="Erro">Manter corticoide IV por 10–14 dias esperando resposta na colite aguda grave</div><div class="col" data-l="Correto">Avaliar no dia 3 pelo índice de Oxford e resgatar com infliximabe ou ciclosporina; sem resposta em 5–7 dias do resgate, colectomia.</div></div>
+<div class="stbl-row stbl-2"><div class="col col1" data-l="Erro">Prescrever loperamida, codeína ou hioscina para "aliviar" a colite ativa</div><div class="col" data-l="Correto">Proibidos na colite aguda (megacólon). Corrija potássio e magnésio. Loperamida só na doença crônica leve e estável.</div></div>
+<div class="stbl-row stbl-2"><div class="col col1" data-l="Erro">Usar mesalazina como tratamento de Crohn ileal</div><div class="col" data-l="Correto">A ACG 2025 recomenda contra 5-ASA para indução e manutenção no Crohn; sulfassalazina só na colite de Crohn leve. Budesonida para ileocecal leve; terapia avançada no restante.</div></div>
+<div class="stbl-row stbl-2"><div class="col col1" data-l="Erro">Manter corticoide ou budesonida como "manutenção"</div><div class="col" data-l="Correto">Corticoide induz, nunca mantém. Corticodependência é indicação de terapia poupadora (tiopurina, biológico, pequena molécula), não de dose baixa crônica.</div></div>
+<div class="stbl-row stbl-2"><div class="col col1" data-l="Erro">Iniciar anti-TNF em Crohn com abscesso ou fístula perianal sem drenagem</div><div class="col" data-l="Correto">Drenar (percutâneo ou cirúrgico) e colocar seton antes; imunossupressão só depois que a sepse estiver controlada.</div></div>
+<div class="stbl-row stbl-2"><div class="col col1" data-l="Erro">Diagnosticar Crohn por úlcera ileocecal e iniciar imunossupressão sem excluir tuberculose</div><div class="col" data-l="Correto">Biópsia com BAAR, cultura e PCR, tórax, IGRA/PT; na dúvida, prova terapêutica com RIPE. Anti-TNF numa TB intestinal produz TB disseminada.</div></div>
+<div class="stbl-row stbl-2"><div class="col col1" data-l="Erro">Suspender a profilaxia de TEV no internado porque há sangue nas fezes</div><div class="col" data-l="Correto">Enoxaparina 40 mg SC/dia em todo internado com DII ativa; o risco trombótico supera o hemorrágico (recomendação forte da ACG 2025).</div></div>
+<div class="stbl-row stbl-2"><div class="col col1" data-l="Erro">Suspender biológico e tiopurina ao descobrir a gravidez</div><div class="col" data-l="Correto">Manter: recaída na gestação é o maior risco. Suspender metotrexato, JAK e S1P (idealmente antes de conceber). Adiar BCG e rotavírus do RN exposto.</div></div>
+<div class="stbl-row stbl-2"><div class="col col1" data-l="Erro">Considerar remissão quando os sintomas melhoram</div><div class="col" data-l="Correto">Sintoma correlaciona mal com inflamação. Alvo é calprotectina normal e cicatrização endoscópica (Mayo 0–1, SES-CD &lt;3); reavaliar objetivamente em 3–12 meses.</div></div>
+</div>
+</div>
+</div>
+
+<div class="box myth">
+<span class="box-label">MYTH</span>
+<div class="box-title">"Anti-TNF não serve para manutenção na RCU"</div>
+<div class="box-body">A apostila de 2025 afirma isso, mas os ensaios ACT 1 (infliximabe até a semana 54), ULTRA 2 (adalimumabe) e PURSUIT (golimumabe) foram desenhados justamente para manutenção, e todas as diretrizes vigentes — ACG 2025, ECCO e o PCDT RCU 2024 — mandam manter o fármaco que induziu a remissão. Trocar um anti-TNF eficaz por 5-ASA em quem tinha doença moderada a grave é receita de recaída.</div>
+</div>
+
+<div class="box myth">
+<span class="box-label">MYTH</span>
+<div class="box-title">"Na colite grave, antibiótico de amplo espectro é obrigatório para todos"</div>
+<div class="box-body">Os ensaios randomizados de antibiótico (ciprofloxacino, metronidazol, combinações) na colite aguda grave não reduziram colectomia; a ACG 2025 recomenda contra o uso rotineiro. Antibiótico é indicado quando há infecção documentada, megacólon tóxico, suspeita de perfuração ou abscesso. O PCDT RCU 2024 também não o inclui no manejo padrão.</div>
+</div>
+
+<div class="box myth">
+<span class="box-label">MYTH</span>
+<div class="box-title">"Paciente com DII precisa de dieta zero e nutrição parenteral para descansar o intestino"</div>
+<div class="box-body">Repouso intestinal não altera a evolução da colite aguda grave; a ACG 2025 sugere contra NPT com esse objetivo. Alimentação oral ou enteral mantém a barreira, reduz translocação e infecção de cateter. No Crohn, a nutrição enteral exclusiva é terapêutica (sobretudo na criança) e pré-operatória; NPT fica para íleo, obstrução, fístula de alto débito ou intestino curto.</div>
+</div>
+
+<div class="box controversy">
+<span class="box-label">CONTROVERSY</span>
+<div class="box-title">Top-down precoce para todos ou só para alto risco?</div>
+<div class="box-body">O PROFILE (2024) testou se um biomarcador transcriptômico guiaria a escolha entre step-up e top-down; o biomarcador falhou, mas o braço top-down (infliximabe + imunomodulador desde o diagnóstico) teve remissão sustentada livre de corticoide e cirurgia muito superior (~79% × 15%), em todos os subgrupos. A ACG 2025 sugere não exigir falha da convencional; o PCDT 2026 ainda exige corticoide e imunomodulador antes do anti-TNF. O custo, o risco de supertratar os 20–30% com curso indolente e a ausência de preditores validados mantêm o debate.</div>
+</div>
+
+<div class="box controversy">
+<span class="box-label">CONTROVERSY</span>
+<div class="box-title">Infliximabe ou ciclosporina no resgate da colite aguda grave</div>
+<div class="box-body">CYSIF e CONSTRUCT mostraram eficácia semelhante; a ACG deixa a escolha à experiência do serviço, à exposição prévia a tiopurina e à albumina, enquanto o PCDT RCU põe a ciclosporina como primeira escolha em serviço experiente e o infliximabe em quem usava azatioprina ou tem disfunção renal. Na prática, a maioria dos centros brasileiros e internacionais usa infliximabe pela facilidade e pela continuidade como manutenção; os inibidores de JAK aparecem como terceira via, sem aval das diretrizes.</div>
+</div>
+
+<div class="box controversy">
+<span class="box-label">CONTROVERSY</span>
+<div class="box-title">Suspender o anti-TNF no terceiro trimestre</div>
+<div class="box-body">Infliximabe e adalimumabe atravessam a placenta ativamente pelo FcRn a partir do segundo trimestre e persistem no lactente por até 6–12 meses. Coortes como a PIANO não mostraram aumento de infecção no primeiro ano com exposição contínua, e a recaída materna após a suspensão é real. O PCDT DC 2026 permite suspender às 22–24 semanas só em baixo risco; o consenso ECCO 2023 tende a manter durante toda a gestação ajustando a última dose. O que é consenso: o RN exposto não recebe vacina viva até 6 meses.</div>
+</div>
+</section>
+
+<!-- ============================================================ H -->
+<section id="pearls">
+<div class="section">
+<div class="section-eyebrow"><span>H</span> Pearls · Evolving</div>
+<div class="section-title">O que o especialista sabe e a prova cobra</div>
+<div class="section-sub">Oito nuances com o argumento que as sustenta e as mudanças reais dos últimos anos — muitas, porque a DII é das áreas que mais mudou desde 2020.</div>
+</div>
+
+<div class="box pearl">
+<span class="box-label">PEARL</span>
+<div class="box-title">Reto poupado não descarta RCU — depende de quem é o paciente</div>
+<div class="box-body">Reto aparentemente normal ocorre na RCU tratada com enemas ou supositórios (o tratamento tópico "esfria" a doença distal), na colite associada à CEP (fenótipo com predomínio proximal, ileíte de refluxo e reto relativamente poupado) e em crianças no diagnóstico. Antes de reclassificar como Crohn, biopsie o reto: a histologia costuma mostrar cronicidade que a endoscopia não vê.</div>
+</div>
+
+<div class="box pearl">
+<span class="box-label">PEARL</span>
+<div class="box-title">Hipoalbuminemia na colite grave consome o anticorpo — dose padrão vira subdose</div>
+<div class="box-body">A albumina baixa espelha a perda proteica pela mucosa e a saturação do FcRn, que protegeria a IgG da degradação; o infliximabe é eliminado pelas fezes e catabolizado mais rápido. Por isso a albumina &lt;2,5 g/dL é o gatilho para considerar 10 mg/kg ou indução acelerada, e por isso a perda de resposta precoce é mais comum justamente nos mais graves.</div>
+</div>
+
+<div class="box pearl">
+<span class="box-label">PEARL</span>
+<div class="box-title">O tamanho da ressecção ileal define o tipo de diarreia e o tratamento</div>
+<div class="box-body">Ressecção ou doença ileal &lt;100 cm: os sais biliares não reabsorvidos chegam ao cólon e estimulam secreção de cloro (diarreia colerética) — responde à colestiramina. Ressecção &gt;100 cm: o fígado não repõe o pool, há esteatorreia por falta de micelas, e a colestiramina piora; trata-se com restrição de gordura, triglicerídeos de cadeia média e reposição de B12 parenteral. Acima de 60 cm ressecados, B12 anual é obrigatória.</div>
+</div>
+
+<div class="box pearl">
+<span class="box-label">PEARL</span>
+<div class="box-title">Nefrolitíase de oxalato no Crohn é doença do intestino, não do rim</div>
+<div class="box-body">Na má absorção de gordura, o cálcio luminal saponifica com os ácidos graxos e deixa o oxalato livre; os sais biliares e os ácidos graxos aumentam a permeabilidade colônica ao oxalato, e a hiperoxalúria entérica forma cálculos. Por isso só ocorre com cólon preservado — o paciente com ileostomia faz cálculo de ácido úrico pela desidratação e urina ácida. Tratamento: dieta pobre em oxalato e gordura, cálcio às refeições, citrato e hidratação.</div>
+</div>
+
+<div class="box pearl">
+<span class="box-label">PEARL</span>
+<div class="box-title">Homem jovem EBV-negativo não deve receber tiopurina</div>
+<div class="box-body">A primoinfecção por EBV sob tiopurina pode causar mononucleose grave, linfo-histiocitose hemofagocítica e linfoma pós-transplante-símile; e a combinação tiopurina + anti-TNF concentra os casos de linfoma hepatoesplênico de células T (quase sempre fatal) em homens com menos de 35 anos. Sorologia de EBV antes, metotrexato como parceiro ou monoterapia biológica nesse perfil, e reavaliar a combinação após 6–12 meses de remissão.</div>
+</div>
+
+<div class="box pearl">
+<span class="box-label">PEARL</span>
+<div class="box-title">Vedolizumabe é intestinal: ótimo para o idoso, fraco para a articulação</div>
+<div class="box-body">Ao bloquear só a α4β7 que se liga à MAdCAM-1 do endotélio intestinal, o vedolizumabe tem o menor impacto sistêmico entre os biológicos — preferido em idosos, em neoplasia recente e em infecções de repetição — mas tem início de ação lento (até 10–14 semanas no Crohn), não é opção na colite aguda grave e não controla espondilite, uveíte ou pioderma independentes da atividade. Artrite periférica tipo 1 melhora, porque segue o intestino.</div>
+</div>
+
+<div class="box pearl">
+<span class="box-label">PEARL</span>
+<div class="box-title">Psoríase nova em quem usa anti-TNF é efeito paradoxal, não doença nova</div>
+<div class="box-body">Até 5–10% dos usuários desenvolvem psoríase (frequentemente palmoplantar pustulosa ou do couro cabeludo) por desinibição do interferon tipo I de células dendríticas plasmocitoides quando o TNF é bloqueado. Leve: tratamento tópico e manter o anti-TNF; extensa ou refratária: trocar para ustequinumabe ou anti-IL-23, que tratam as duas doenças.</div>
+</div>
+
+<div class="box pearl">
+<span class="box-label">PEARL</span>
+<div class="box-title">Colite isquêmica do cólon direito não é a mesma doença da esquerda</div>
+<div class="box-body">A isquemia segmentar da flexura esplênica ou do sigmoide é quase sempre não oclusiva e benigna. A do cólon direito isolado compartilha irrigação com o íleo pela artéria mesentérica superior, cursa com mais gangrena, mais cirurgia e mortalidade de até 20%, e pode ser o primeiro sinal de embolia ou trombose da AMS: angio-TC mesmo que o paciente pareça bem.</div>
+</div>
+
+<div class="box evolving">
+<span class="box-label">EVOLVING</span>
+<div class="box-title">Anti-IL-23 p19 entrou nas duas doenças</div>
+<div class="box-body">Entre 2022 e 2025, risanquizumabe, mirikizumabe e guselcumabe foram aprovados para Crohn e RCU com indução IV (e, para guselcumabe no Crohn, também SC); no SEQUENCE, risanquizumabe superou ustequinumabe em remissão endoscópica após falha de anti-TNF. A ACG 2025 os coloca com recomendação forte; no SUS, ainda não.</div>
+</div>
+
+<div class="box evolving">
+<span class="box-label">EVOLVING</span>
+<div class="box-title">Formas subcutâneas de manutenção de infliximabe e vedolizumabe</div>
+<div class="box-body">Infliximabe SC 120 mg a cada 2 semanas (CT-P13; LIBERTY) e vedolizumabe SC 108 mg a cada 2 semanas (VISIBLE) mantêm remissão de forma equivalente à via IV após indução IV. O PCDT DC 2026 incorporou o infliximabe SC para a fístula perianal complexa; a equivalência para doses escalonadas ainda não está estabelecida.</div>
+</div>
+
+<div class="box evolving">
+<span class="box-label">EVOLVING</span>
+<div class="box-title">Ultrassom intestinal como ferramenta de seguimento</div>
+<div class="box-body">Espessura da parede (&gt;3 mm no cólon e íleo), sinal Doppler, perda da estratificação e gordura inflamatória mudam em semanas com o tratamento e antecipam a resposta endoscópica; a ACG 2025 o reconhece como adjunto para diagnóstico e monitorização, sem radiação e à beira do leito.</div>
+</div>
+
+<div class="box evolving">
+<span class="box-label">EVOLVING</span>
+<div class="box-title">Moduladores de S1P e JAK seletivos — terapia oral avançada</div>
+<div class="box-body">Ozanimode e etrasimode (RCU) sequestram linfócitos nos linfonodos; upadacitinibe (JAK1) induz resposta em dias na RCU e no Crohn. O sinal de segurança do ORAL Surveillance (tofacitinibe em artrite reumatoide de alto risco cardiovascular) restringiu os JAK em ≥65 anos, tabagistas e pacientes com risco trombótico ou cardiovascular, sem invalidá-los na DII.</div>
+</div>
+
+<div class="box evolving">
+<span class="box-label">EVOLVING</span>
+<div class="box-title">Novas diretrizes ECCO de 2026 para RCU e infecções</div>
+<div class="box-body">A ECCO publicou em junho–julho de 2026 novas diretrizes de tratamento clínico e cirúrgico da RCU e de infecções na DII. O texto integral não foi lido para este HP (acesso bloqueado); as condutas aqui seguem ACG 2025 e PCDT. Conferir na revisão clínica se alguma recomendação de ASUC, de posicionamento de terapias avançadas ou de rastreio infeccioso mudou.</div>
+</div>
+</section>
+
+</div>
+</main>
+
+<footer>
+<div class="wrap">
+<div class="foot">
+<div>
+<div class="foot-author">@dr.lorencato</div>
+<div class="foot-meta">DII e Colites Não Infecciosas · Pocket Handbook Elite · v5.2 · Gastroenterologia · GH05</div>
+</div>
+<div class="foot-mono">Compilação clínica · status clinical_review até signoff humano · fontes conferidas em 2026-11-03</div>
+</div>
+<div class="foot-meta"><b>Bibliografia rastreável</b> (fonte · ano · papel no HP · identificador)
+<ol>
+<li id="src-1">Lichtenstein GR et al. ACG Clinical Guideline: Management of Crohn's Disease in Adults. Am J Gastroenterol 2025;120:1225–1264 · diagnóstico, escada, doses de biológicos e JAK, fístula, pós-operatório · doi:10.14309/ajg.0000000000003465 (PDF conferido; tabelas lidas na íntegra)</li>
+<li id="src-2">Rubin DT et al. ACG Clinical Guideline Update: Ulcerative Colitis in Adults. Am J Gastroenterol 2025;120:1187–1224 · 5-ASA, terapias avançadas, colite aguda grave, TEV · doi:10.14309/ajg.0000000000003463 (PDF conferido; tabelas lidas na íntegra)</li>
+<li id="src-3">Ministério da Saúde. PCDT Doença de Crohn — Portaria Conjunta SAES/SCTIE nº 51, de 18/05/2026 · escada SUS, doses, infliximabe SC, IHB, calprotectina, rastreio de TB/hepatites, gestação, pediatria · gov.br/saude (lido na íntegra)</li>
+<li id="src-4">Ministério da Saúde. PCDT Retocolite Ulcerativa — Portaria Conjunta SAES/SECTICS nº 9, de 12/09/2024 (republicada em 2025 com monitoramento de TB harmonizado) · escada SUS, doses, ciclosporina, tofacitinibe, pediatria · gov.br/saude (lido na íntegra)</li>
+<li id="src-5">Gordon H et al. ECCO Guidelines on Therapeutics in Crohn's Disease: Medical Treatment. J Crohns Colitis 2024;18:1531–1555 · posicionamento europeu · doi:10.1093/ecco-jcc/jjae091; Surgical Treatment, 2024;18:1556–1582 · doi:10.1093/ecco-jcc/jjae089 (texto integral não lido)</li>
+<li id="src-6">ECCO Guidelines on Therapeutics in Ulcerative Colitis: Medical Treatment (2026) · doi:10.1093/ecco-jcc/jjag066; Surgical Treatment (2026) · doi:10.1093/ecco-jcc/jjag072; edição anterior Raine T et al. 2022;16:2–17 · doi:10.1093/ecco-jcc/jjab178 (só metadados; não usados para conduta)</li>
+<li id="src-7">Gordon H et al. ECCO Guidelines on Extraintestinal Manifestations in IBD. J Crohns Colitis 2024;18:1–37 · D.1 · doi:10.1093/ecco-jcc/jjad108; ECCO Guidelines on IBD and Malignancies. 2023;17:827–854 · vigilância de displasia · doi:10.1093/ecco-jcc/jjac187 (não lidos integralmente)</li>
+<li id="src-8">Torres J et al. European Crohn's and Colitis Guidelines on Sexuality, Fertility, Pregnancy, and Lactation. J Crohns Colitis 2023;17:1–27 · D.8 · doi:10.1093/ecco-jcc/jjac115 (não lido integralmente)</li>
+<li id="src-9">van Rheenen PF et al. Medical Management of Paediatric Crohn's Disease: ECCO-ESPGHAN Guideline Update. J Crohns Colitis 2021;15:171–194 · doi:10.1093/ecco-jcc/jjaa161; Turner D et al. Paediatric UC, ECCO-ESPGHAN. J Pediatr Gastroenterol Nutr 2018;67:257–291 · doi:10.1097/MPG.0000000000002035 · D.9</li>
+<li id="src-10">Miehlke S et al. European guidelines on microscopic colitis (UEG/EMCG). United European Gastroenterol J 2021;9:13–37 · D.4 · doi:10.1177/2050640620951905 (texto integral lido)</li>
+<li id="src-11">Brandt LJ et al. ACG Clinical Guideline: colon ischemia. Am J Gastroenterol 2015;110:18–44 · D.5 · doi:10.1038/ajg.2014.395</li>
+<li id="src-12">Dougan M et al. AGA Clinical Practice Update on Diagnosis and Management of Immune Checkpoint Inhibitor Colitis and Hepatitis. Gastroenterology 2021;160:1384–1393 · D.6 · doi:10.1053/j.gastro.2020.08.063</li>
+<li id="src-13">Turner D et al. STRIDE-II. Gastroenterology 2021;160:1570–1583 · alvos terapêuticos · doi:10.1053/j.gastro.2020.12.031</li>
+<li id="src-14">GEDIIB: Imbrizi M et al. Second Brazilian Consensus on the Management of Crohn's Disease in Adults; Baima JP et al. Second Brazilian Consensus on Ulcerative Colitis in Adults; Lomazi EA et al. Brazilian Consensus on IBD in Pediatric Patients. Arq Gastroenterol 2022;59(supl 1), publ. 2023 · adaptação brasileira, TB intestinal, doses pediátricas · doi:10.1590/S0004-2803.2022005S1-02 / -03 / -04</li>
+<li id="src-15">Apostila MED 2025 GAS 2 — Diarreias e Doenças Intestinais (DII, l. 947–1800; colite isquêmica, l. 3018–3053) · piso de cobertura editorial, nunca fonte de conduta · vault (somente leitura)</li>
+</ol>
+</div>
+</div>
+</footer>
+
+<div class="watermark">@dr.lorencato · GH05 DII e Colites v5.2</div>
+
+</body>
+</html>

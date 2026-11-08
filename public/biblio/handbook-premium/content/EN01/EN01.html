@@ -1,0 +1,988 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#0d1117">
+<title>EN01 · Diabetes — diagnóstico e tratamento crônico (DM1, DM2, insulina, GLP-1) · Pocket Handbook · Elite Edition</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700;9..40,800&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   MEDICAL HANDBOOK PREMIUM · ELITE EDITION · CSS FRAMEWORK
+   Copy this ENTIRE block verbatim into the <style> tag of the
+   output HTML. Do NOT modify design tokens, colors, or
+   typography — they are calibrated for legibility and print.
+============================================================ */
+:root{
+  --bg:#f1eee5;--bg-tint:#ebe8de;--paper:#ffffff;--paper-tint:#fbf9f3;
+  --ink:#0e1116;--ink-soft:#232830;--ink-mute:#545b69;--ink-faint:#8a91a0;--ink-ghost:#b8bdc7;
+  --line:#e2dfd5;--line-soft:#ece9df;--line-strong:#c9c5b8;
+  --c-prim:#0b5d4e;--c-clin:#1d4570;--c-diag:#5e2f78;--c-tx:#a8481a;--c-emerg:#a31b35;--c-pearl:#7a6014;
+  --ank-hy:#b88e0a;--ank-hy-bg:#fef4c8;--ank-dec:#1d4ea3;--ank-dec-bg:#dde7f8;
+  --ank-dgr:#a31b25;--ank-dgr-bg:#fadcdc;--ank-prl:#3e6a2e;--ank-prl-bg:#d8e6cf;
+  --ank-myt:#6a3a1a;--ank-myt-bg:#f0dec5;--ank-con:#5a4070;--ank-con-bg:#e3d6f0;
+  --ank-evo:#0d6373;--ank-evo-bg:#cde5e9;
+  --sh-sm:0 1px 2px rgba(14,17,22,.04),0 1px 1px rgba(14,17,22,.03);
+  --sh-md:0 6px 16px -8px rgba(14,17,22,.10),0 2px 4px rgba(14,17,22,.04);
+  --sh-lg:0 20px 40px -22px rgba(14,17,22,.18),0 4px 10px -4px rgba(14,17,22,.08);
+  --r:10px;--r-lg:14px;--r-xl:20px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;scroll-padding-top:120px}
+body{font-family:'DM Sans',system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.5;font-size:15px;letter-spacing:-.005em;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:-1;background:radial-gradient(900px 500px at -10% -5%,rgba(11,93,78,.04),transparent 60%),radial-gradient(800px 450px at 110% 10%,rgba(163,27,53,.035),transparent 55%)}
+a{color:inherit;text-decoration:none}
+
+/* FIXED HEADER */
+.header{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(13,17,23,.82);backdrop-filter:saturate(160%) blur(20px);-webkit-backdrop-filter:saturate(160%) blur(20px);border-bottom:1px solid rgba(255,255,255,.06)}
+.header-row{max-width:1080px;margin:0 auto;padding:10px 20px;display:flex;align-items:center;gap:14px;color:#f0eee5}
+.h-mark{width:30px;height:30px;border-radius:7px;background:linear-gradient(135deg,#d4b94a 0%,#a07f1a 100%);display:grid;place-items:center;font:800 13px/1 'DM Sans';color:#1a1500;letter-spacing:-.04em;box-shadow:inset 0 1px 0 rgba(255,255,255,.3),0 1px 2px rgba(0,0,0,.4);flex-shrink:0}
+.h-titles{display:flex;flex-direction:column;line-height:1.15;min-width:0}
+.h-title{font-weight:700;font-size:14px;letter-spacing:-.02em}
+.h-sub{font-size:10.5px;color:#9fa298;font-weight:500;letter-spacing:.08em;text-transform:uppercase}
+.h-edition{margin-left:auto;font:500 10px/1 'DM Mono',monospace;color:#9fa298;letter-spacing:.05em;padding:5px 9px;border:1px solid rgba(255,255,255,.1);border-radius:999px;white-space:nowrap}
+.h-author{font:700 10.5px/1 'DM Mono',monospace;color:#d4b94a;letter-spacing:.04em;padding:6px 10px;border:1px solid rgba(212,185,74,.35);background:rgba(212,185,74,.08);border-radius:999px;white-space:nowrap;display:inline-flex;align-items:center;gap:6px}
+.h-author::before{content:"●";font-size:6px;color:#d4b94a}
+@media(max-width:560px){.h-edition{display:none}.h-author{margin-left:auto}}
+
+/* STICKY TOC */
+.toc{position:sticky;top:50px;z-index:90;background:rgba(241,238,229,.92);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}
+.toc-inner{max-width:1080px;margin:0 auto;padding:10px 16px;display:flex;gap:6px;overflow-x:auto;scrollbar-width:none;-ms-overflow-style:none}
+.toc-inner::-webkit-scrollbar{display:none}
+.toc-chip{flex:none;font:600 11px/1 'DM Sans';letter-spacing:.06em;text-transform:uppercase;padding:7px 12px;background:var(--paper);border:1px solid var(--line);border-radius:999px;color:var(--ink-soft);transition:all .15s;white-space:nowrap;cursor:pointer}
+.toc-chip:hover{background:var(--paper-tint);border-color:var(--ink-faint);color:var(--ink)}
+.toc-chip-num{display:inline-block;font-family:'DM Mono',monospace;color:var(--ink-faint);margin-right:5px;font-weight:500;font-size:10px}
+
+/* LAYOUT */
+.wrap{max-width:1080px;margin:0 auto;padding:24px 20px 80px}
+.section{margin:48px 0 18px;padding-top:8px}
+.section:first-child{margin-top:14px}
+.section-eyebrow{font:700 10.5px/1 'DM Sans';letter-spacing:.18em;text-transform:uppercase;color:var(--c-prim);margin-bottom:8px;display:flex;align-items:center;gap:10px}
+.section-eyebrow::before{content:"";width:24px;height:1.5px;background:var(--c-prim)}
+.section-title{font-size:26px;font-weight:700;letter-spacing:-.03em;line-height:1.1}
+.section-sub{margin-top:6px;font-size:13.5px;color:var(--ink-mute);max-width:680px}
+
+/* HERO */
+.hero{margin:20px 0 28px;padding:26px 28px;background:linear-gradient(180deg,#fdfcf6 0%,#f7f4e8 100%);border:1px solid var(--line);border-radius:var(--r-xl);box-shadow:var(--sh-md);position:relative;overflow:hidden}
+.hero::after{content:"";position:absolute;top:0;right:0;bottom:0;left:0;background:radial-gradient(400px 200px at 100% 0%,rgba(163,27,53,.06),transparent 60%),radial-gradient(360px 200px at 0% 100%,rgba(11,93,78,.05),transparent 60%);pointer-events:none}
+.hero-tag{font:700 10.5px/1 'DM Sans';letter-spacing:.2em;text-transform:uppercase;color:var(--c-emerg);display:inline-flex;align-items:center;gap:8px;margin-bottom:10px}
+.hero-tag::before{content:"";width:18px;height:1.5px;background:currentColor}
+.hero h1{font-size:34px;font-weight:800;letter-spacing:-.035em;line-height:1.02;margin-bottom:8px}
+.hero h1 em{font-style:italic;font-weight:500;color:var(--ink-mute)}
+.hero-lead{font-size:14.5px;color:var(--ink-mute);max-width:660px;line-height:1.55}
+.hero-stamp{position:absolute;top:20px;right:22px;font:700 10.5px/1 'DM Mono',monospace;letter-spacing:.04em;padding:7px 11px 7px 18px;border:1.5px dashed rgba(163,27,53,.45);color:rgba(163,27,53,.9);border-radius:5px;background:rgba(255,255,255,.55);transform:rotate(-3deg);z-index:2;box-shadow:0 2px 6px rgba(163,27,53,.08)}
+.hero-stamp::before{content:"●";position:absolute;left:7px;top:50%;transform:translateY(-50%);color:rgba(163,27,53,.7);font-size:7px}
+.hero-sig{margin-top:14px;display:flex;align-items:center;gap:10px;font:600 11px/1 'DM Sans';color:var(--ink-mute);letter-spacing:.04em}
+.hero-sig::before{content:"";flex:none;width:22px;height:1.5px;background:var(--c-emerg)}
+.hero-sig b{color:var(--c-emerg);font-weight:700;font-family:'DM Mono',monospace;letter-spacing:.02em}
+@media(max-width:560px){.hero{padding:22px 20px}.hero h1{font-size:26px}.section-title{font-size:22px}.hero-stamp{position:static;display:inline-block;transform:none;margin-bottom:14px}}
+
+/* POCKET CARD 0 */
+.pocket{background:#0e1116;color:#f0eee5;border-radius:var(--r-xl);padding:24px 26px 26px;margin:0 0 28px;position:relative;overflow:hidden;box-shadow:var(--sh-lg)}
+.pocket::before{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(600px 300px at 100% 0%,rgba(212,185,74,.07),transparent 60%),radial-gradient(500px 280px at 0% 100%,rgba(163,27,53,.08),transparent 60%)}
+.pocket-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:18px;flex-wrap:wrap;position:relative}
+.pocket-eyebrow{font:700 10.5px/1 'DM Sans';letter-spacing:.2em;text-transform:uppercase;color:#d4b94a;display:flex;align-items:center;gap:9px}
+.pocket-eyebrow::before{content:"●";color:#d4b94a;font-size:9px;animation:pulse 2.4s ease infinite}
+@keyframes pulse{50%{opacity:.4}}
+.pocket-title{font-size:22px;font-weight:700;letter-spacing:-.02em;line-height:1.15;color:#fff}
+.pocket-sub{font-size:12.5px;color:#9aa0a8;margin-top:2px}
+.pocket-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px;position:relative}
+.pocket-card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-left:3px solid var(--accent,#d4b94a);border-radius:var(--r);padding:12px 14px}
+.pocket-card .pc-trig{font:700 10px/1.1 'DM Sans';letter-spacing:.12em;text-transform:uppercase;color:var(--accent,#d4b94a);margin-bottom:6px;display:flex;align-items:center;gap:6px}
+.pocket-card .pc-trig::before{content:"";width:4px;height:4px;background:currentColor;border-radius:50%}
+.pocket-card .pc-act{font-size:13.5px;line-height:1.4;color:#dedfd5}
+.pocket-card .pc-act b{color:#fff;font-weight:600}
+.pocket-card.emerg{--accent:#ff8a96}.pocket-card.dec{--accent:#7cb0ff}.pocket-card.tx{--accent:#ffb085}.pocket-card.clin{--accent:#b0e0d4}
+
+/* LEGEND */
+.legend{background:var(--paper);border:1px solid var(--line);border-radius:var(--r-lg);padding:18px 20px;margin-bottom:28px;box-shadow:var(--sh-sm)}
+.lg-title{font:700 10.5px/1 'DM Sans';letter-spacing:.16em;text-transform:uppercase;color:var(--ink-faint);margin-bottom:12px}
+.lg-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:8px 14px}
+.lg-item{display:flex;align-items:center;gap:9px;font-size:12.5px;color:var(--ink-soft)}
+.dot{width:9px;height:9px;border-radius:50%;flex-shrink:0;box-shadow:0 0 0 2px var(--paper),0 0 0 3px currentColor}
+.dot.c1{color:var(--c-prim);background:var(--c-prim)}.dot.c2{color:var(--c-clin);background:var(--c-clin)}.dot.c3{color:var(--c-diag);background:var(--c-diag)}.dot.c4{color:var(--c-tx);background:var(--c-tx)}.dot.c5{color:var(--c-emerg);background:var(--c-emerg)}.dot.c6{color:var(--c-pearl);background:var(--c-pearl)}
+.lg-divider{height:1px;background:var(--line-soft);margin:14px 0}
+.lg-anchors{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:8px}
+.ank{display:inline-flex;align-items:center;gap:5px;font:700 9.5px/1 'DM Sans';letter-spacing:.12em;text-transform:uppercase;padding:4px 8px 4px 7px;border-radius:999px;border:1px solid;vertical-align:middle;white-space:nowrap}
+.ank::before{content:"";width:4px;height:4px;border-radius:50%;background:currentColor}
+.ank-hy{color:var(--ank-hy);background:var(--ank-hy-bg);border-color:#e5cd72}
+.ank-dec{color:var(--ank-dec);background:var(--ank-dec-bg);border-color:#9fbae6}
+.ank-dgr{color:var(--ank-dgr);background:var(--ank-dgr-bg);border-color:#e29ca0}
+.ank-prl{color:var(--ank-prl);background:var(--ank-prl-bg);border-color:#a8c298}
+.ank-myt{color:var(--ank-myt);background:var(--ank-myt-bg);border-color:#d0b181}
+.ank-con{color:var(--ank-con);background:var(--ank-con-bg);border-color:#bba7d3}
+.ank-evo{color:var(--ank-evo);background:var(--ank-evo-bg);border-color:#8fc1c9}
+.lg-explain{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:6px 14px;font-size:11.5px;color:var(--ink-mute);margin-top:10px}
+.lg-explain b{font-weight:700}
+.lg-explain .ehy b{color:var(--ank-hy)}.lg-explain .edec b{color:var(--ank-dec)}.lg-explain .edgr b{color:var(--ank-dgr)}.lg-explain .eprl b{color:var(--ank-prl)}.lg-explain .emyt b{color:var(--ank-myt)}.lg-explain .econ b{color:var(--ank-con)}.lg-explain .eevo b{color:var(--ank-evo)}
+
+/* EVIDENCE CHIPS */
+.ev{display:inline-flex;align-items:center;font:600 9.5px/1 'DM Mono',monospace;letter-spacing:.04em;padding:3px 6px 2px;border-radius:4px;background:#eeebde;color:var(--ink-soft);border:1px solid var(--line);vertical-align:middle;margin-left:3px}
+.ev-acr{background:#fadcdc;color:#a31b25;border-color:#e29ca0}
+.ev-eular{background:#dde7f8;color:#1d4ea3;border-color:#9fbae6}
+.ev-sbr{background:#e3d6f0;color:#5a4070;border-color:#bba7d3}
+.ev-nice{background:#cde5e9;color:#0d6373;border-color:#8fc1c9}
+.ev-expert{background:#eeebde;color:#7a6014;border-color:#d0b181}
+.ev-cochrane{background:#d8e6cf;color:#3e6a2e;border-color:#a8c298}
+
+/* CARD */
+.card{background:var(--paper);border:1px solid var(--line);border-radius:var(--r-lg);margin-bottom:22px;box-shadow:var(--sh-md);overflow:hidden;break-inside:avoid}
+.card-head{padding:18px 22px 15px;border-bottom:1px solid var(--line-soft);position:relative;background:linear-gradient(180deg,#fcfaf2 0%,#ffffff 100%)}
+.card-head::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--accent,var(--c-prim))}
+.card-eyebrow{font:700 10px/1 'DM Sans';letter-spacing:.16em;text-transform:uppercase;color:var(--accent,var(--c-prim));margin-bottom:5px;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.card-num{font-family:'DM Mono',monospace;font-weight:500;color:var(--ink-faint);font-size:10.5px;letter-spacing:0}
+.card h3{font-size:21px;font-weight:700;letter-spacing:-.025em;color:var(--ink);line-height:1.15;display:flex;align-items:center;gap:9px;flex-wrap:wrap}
+.card-sub{margin-top:6px;font-size:13px;color:var(--ink-mute)}
+.card-body{padding:20px 22px 24px}
+.card.prim{--accent:var(--c-prim)}.card.clin{--accent:var(--c-clin)}.card.diag{--accent:var(--c-diag)}.card.tx{--accent:var(--c-tx)}.card.emerg{--accent:var(--c-emerg)}.card.pearl{--accent:var(--c-pearl)}
+@media(max-width:560px){.card-head{padding:16px 18px 14px}.card-body{padding:18px 18px 20px}.card h3{font-size:18px}}
+
+/* QUICK VIEW */
+.quick{background:var(--paper-tint);border:1px solid var(--line);border-left:3px solid var(--accent,var(--c-prim));border-radius:var(--r);padding:13px 16px;margin:0 0 16px}
+.quick-label{font:700 9.5px/1 'DM Sans';letter-spacing:.16em;text-transform:uppercase;color:var(--accent,var(--c-prim));margin-bottom:6px}
+.quick-body{font-size:13.5px;line-height:1.45;color:var(--ink-soft)}
+.quick-body b{color:var(--ink);font-weight:600}
+
+/* SUB-TITLE */
+.sub-title{font:700 10.5px/1 'DM Sans';letter-spacing:.16em;text-transform:uppercase;color:var(--ink-soft);margin:18px 0 10px;display:flex;align-items:center;gap:9px;border-bottom:1px dashed var(--line);padding-bottom:6px}
+.sub-title::before{content:"";width:4px;height:4px;border-radius:50%;background:var(--accent,var(--ink-soft))}
+.sub-title:first-child{margin-top:0}
+
+/* TEXT */
+p{color:var(--ink-soft);margin-bottom:8px;font-size:14px;line-height:1.5}
+p:last-child{margin-bottom:0}
+strong{color:var(--ink);font-weight:600}
+ul.bullets{list-style:none;padding:0;margin:0 0 10px}
+ul.bullets li{position:relative;padding:5px 0 5px 20px;font-size:13.5px;line-height:1.5;color:var(--ink-soft);border-bottom:1px dashed var(--line-soft)}
+ul.bullets li:last-child{border-bottom:none}
+ul.bullets li::before{content:"";position:absolute;left:5px;top:13px;width:4px;height:4px;border-radius:50%;background:var(--accent,var(--ink-mute))}
+ul.bullets li b{color:var(--ink);font-weight:600}
+
+/* DISEASE BOX */
+.disease{border:1px solid var(--line);border-radius:var(--r);margin:14px 0;overflow:hidden;background:var(--paper)}
+.disease-head{padding:12px 16px;background:linear-gradient(180deg,#faf7eb 0%,#f1eddc 100%);border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap}
+.disease-name{font-weight:700;color:var(--ink);font-size:14.5px;letter-spacing:-.015em}
+.disease-tag{font:600 10px/1 'DM Sans';letter-spacing:.08em;text-transform:uppercase;color:var(--ink-mute)}
+.disease-body{padding:14px 16px}
+.disease-rows{display:grid;gap:0}
+.disease-row{display:grid;grid-template-columns:130px 1fr;gap:12px;padding:8px 0;border-bottom:1px dashed var(--line-soft)}
+.disease-row:last-child{border-bottom:none;padding-bottom:0}
+.disease-row:first-child{padding-top:0}
+.disease-row .k{font:700 10px/1.2 'DM Sans';letter-spacing:.12em;text-transform:uppercase;color:var(--accent,var(--ink-faint));padding-top:2px}
+.disease-row .v{font-size:13.5px;color:var(--ink-soft);line-height:1.5}
+.disease-row .v b{color:var(--ink)}
+@media(max-width:560px){.disease-row{grid-template-columns:1fr;gap:3px;padding:6px 0 8px}.disease-row .k{padding-top:0}}
+
+/* DEEP DIVE */
+.deep{margin:16px 0 6px;border:1px solid var(--line);border-radius:var(--r);background:linear-gradient(180deg,#fdfcf6 0%,#f9f6ea 100%);overflow:hidden}
+.deep>summary{list-style:none;cursor:pointer;padding:11px 16px;display:flex;align-items:center;justify-content:space-between;font:700 11px/1 'DM Sans';letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft);user-select:none;transition:background .15s}
+.deep>summary::-webkit-details-marker{display:none}
+.deep>summary::after{content:"+";font-size:18px;font-weight:600;color:var(--ink-faint);transition:transform .2s;font-family:'DM Mono',monospace}
+.deep[open]>summary::after{transform:rotate(45deg)}
+.deep>summary:hover{background:rgba(0,0,0,.02)}
+.deep-content{padding:14px 16px 16px;border-top:1px dashed var(--line)}
+.deep-content p{font-size:13px;color:var(--ink-mute);line-height:1.55}
+.deep-content p b{color:var(--ink-soft)}
+
+/* MNEMONIC */
+.mnemo{background:var(--paper-tint);border:1px solid var(--line);border-radius:var(--r);padding:14px 16px;margin:14px 0}
+.mnemo-title{font:700 10.5px/1 'DM Sans';letter-spacing:.16em;text-transform:uppercase;color:var(--c-pearl);margin-bottom:10px;display:flex;align-items:center;gap:8px}
+.mnemo-title b{background:var(--ink);color:#fff;padding:3px 7px;border-radius:4px;font-size:10px;letter-spacing:.06em}
+.mnemo-grid{display:grid;gap:5px}
+.mnemo-row{display:grid;grid-template-columns:28px 1fr;gap:10px;align-items:baseline;font-size:13px;color:var(--ink-soft);padding:3px 0}
+.mnemo-letter{display:grid;place-items:center;width:24px;height:24px;background:var(--ink);color:#fff;border-radius:5px;font:800 12px/1 'DM Sans';letter-spacing:-.02em}
+.mnemo-row b{color:var(--ink);font-weight:600}
+.mnemo-row em{font-style:italic;color:var(--ink-mute);font-size:12px}
+
+/* SCORE BOX */
+.score{border:1px solid var(--line);border-radius:var(--r);margin:14px 0;background:var(--paper);overflow:hidden}
+.score-head{padding:11px 14px;background:linear-gradient(180deg,#f5f1e0 0%,#ede9d6 100%);border-bottom:1px solid var(--line)}
+.score-name{font:700 13px/1.2 'DM Sans';color:var(--ink);letter-spacing:-.01em}
+.score-purpose{font:500 10.5px/1.2 'DM Sans';color:var(--ink-mute);letter-spacing:.06em;text-transform:uppercase;margin-top:3px}
+.score-rows{display:grid;gap:0}
+.score-row{display:grid;grid-template-columns:90px 1fr;gap:12px;align-items:start;padding:9px 14px;border-bottom:1px dashed var(--line-soft);font-size:13px}
+.score-row:last-child{border-bottom:none}
+.score-grade{font:800 12px/1.2 'DM Mono',monospace;color:var(--c-emerg);letter-spacing:-.01em}
+.score-desc{color:var(--ink-soft);line-height:1.45}
+.score-desc b{color:var(--ink)}
+
+/* STACKED TABLE */
+.stbl{margin:14px 0;border:1px solid var(--line);border-radius:var(--r);background:var(--paper);overflow:hidden}
+.stbl-head,.stbl-row{display:grid;gap:14px;padding:10px 14px;align-items:start}
+.stbl-head{background:#faf7eb;border-bottom:2px solid var(--line);font:700 10.5px/1 'DM Sans';letter-spacing:.1em;text-transform:uppercase;color:var(--ink)}
+.stbl-row{border-bottom:1px solid var(--line-soft);font-size:13px;color:var(--ink-soft);line-height:1.5}
+.stbl-row:last-child{border-bottom:none}
+.stbl-row:nth-child(even){background:#fcfaf2}
+.stbl-row b{color:var(--ink);font-weight:600}
+.stbl-row .col1{font-weight:600;color:var(--ink)}
+.stbl-2{grid-template-columns:1fr 2fr}
+.stbl-3{grid-template-columns:1fr 1.3fr 1.5fr}
+.stbl-4{grid-template-columns:1.2fr 1fr 1fr 1.2fr}
+@media(max-width:680px){
+  .stbl-head{display:none}
+  .stbl-row{grid-template-columns:1fr !important;gap:12px;padding:14px 16px}
+  .stbl-row .col{display:block;min-width:0;word-wrap:break-word;overflow-wrap:anywhere}
+  .stbl-row .col::before{content:attr(data-l);display:block;font:700 9.5px/1.3 'DM Sans';letter-spacing:.12em;text-transform:uppercase;color:var(--ink-mute);margin-bottom:4px}
+  .stbl-row .col1{font-weight:700;font-size:15px;padding-bottom:8px;margin-bottom:6px;border-bottom:1px dashed var(--line)}
+  .stbl-row .col1::before{display:none}
+}
+
+/* CALLOUT BOXES */
+.box{border-radius:var(--r);padding:14px 16px;margin:14px 0;position:relative;border:1px solid}
+.box-label{position:absolute;top:-9px;left:14px;font:700 9.5px/1 'DM Sans';letter-spacing:.16em;text-transform:uppercase;padding:3px 9px;border-radius:999px;color:#fff}
+.box-title{font-weight:700;color:var(--ink);font-size:14px;margin:2px 0 6px}
+.box-body{font-size:13.5px;line-height:1.5;color:var(--ink-soft)}
+.box-body b{color:var(--ink)}
+.box-body ul{list-style:none;padding:0;margin:4px 0 0}
+.box-body ul li{position:relative;padding:3px 0 3px 20px}
+.box-body ul li::before{content:"→";position:absolute;left:0;top:3px;font-weight:700;color:var(--bx-color)}
+.box.decision{background:#f1f5fc;border-color:#c4d3eb;--bx-color:var(--ank-dec)}.box.decision .box-label{background:var(--ank-dec)}
+.box.danger{background:#fbf0f0;border-color:#e5c2c2;--bx-color:var(--ank-dgr)}.box.danger .box-label{background:var(--ank-dgr)}.box.danger .box-body b{color:var(--ank-dgr)}
+.box.pearl{background:#f1f7ed;border-color:#c1d5b3;--bx-color:var(--ank-prl)}.box.pearl .box-label{background:var(--ank-prl)}
+.box.hy{background:#fcf6dd;border-color:#e3cf78;--bx-color:var(--ank-hy)}.box.hy .box-label{background:var(--ank-hy)}
+.box.myth{background:#f8eed8;border-color:#d0b181;--bx-color:var(--ank-myt)}.box.myth .box-label{background:var(--ank-myt)}
+.box.controversy{background:#f1e9f6;border-color:#bba7d3;--bx-color:var(--ank-con)}.box.controversy .box-label{background:var(--ank-con)}
+.box.evolving{background:#dff0f2;border-color:#8fc1c9;--bx-color:var(--ank-evo)}.box.evolving .box-label{background:var(--ank-evo)}
+
+/* ALGORITHM TREE */
+.algo{background:linear-gradient(180deg,#fcfaf2 0%,#f5f0dc 100%);border:1px solid var(--line-strong);border-radius:var(--r-lg);padding:18px;margin:14px 0;overflow-x:auto}
+.tree{font-size:13px}
+.tree-line{padding:6px 0}
+.tree-node{display:inline-block;padding:8px 12px;background:var(--paper);border:1.5px solid var(--ink-soft);border-radius:7px;font-weight:600;color:var(--ink);font-size:12.5px;box-shadow:var(--sh-sm)}
+.tree-node.start{background:var(--ink);color:#fff;border-color:var(--ink)}
+.tree-node.dec{background:#fff7d6;border-color:#e3cf78;color:#6b520a}
+.tree-node.dx{background:#dde7f8;border-color:#9fbae6;color:#1d4ea3}
+.tree-node.dgr{background:#fadcdc;border-color:#e29ca0;color:#a31b25}
+.tree-node.action{background:#d8e6cf;border-color:#a8c298;color:#3e6a2e}
+.tree-branch{margin-left:14px;border-left:1.5px dashed #b8b094;padding:6px 0 6px 18px;margin-top:6px;margin-bottom:2px;position:relative}
+.tree-branch::before{content:"";position:absolute;left:-1.5px;top:-4px;width:14px;height:14px;border-left:1.5px solid #b8b094;border-bottom:1.5px solid #b8b094;border-radius:0 0 0 6px}
+.tree-label{display:inline-block;font:700 9.5px/1 'DM Sans';letter-spacing:.12em;text-transform:uppercase;padding:3px 7px;border-radius:4px;margin-bottom:5px}
+.tree-label.yes{background:#fadcdc;color:#a31b25}.tree-label.no{background:#d8e6cf;color:#3e6a2e}
+
+/* FOOTER */
+.foot{margin-top:48px;padding-top:22px;border-top:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;font-size:11px;color:var(--ink-faint);letter-spacing:.04em;flex-wrap:wrap;gap:8px}
+.foot-mono{font-family:'DM Mono',monospace}
+.foot-author{font:800 14px/1.1 'DM Mono',monospace;color:var(--ink);letter-spacing:.02em;margin-bottom:3px}
+.foot-meta{font:500 11px/1.3 'DM Sans';color:var(--ink-faint);letter-spacing:.04em}
+
+/* WATERMARK */
+.watermark{position:fixed;bottom:calc(14px + env(safe-area-inset-bottom,0px));right:calc(14px + env(safe-area-inset-right,0px));font:600 10px/1 'DM Mono',monospace;letter-spacing:.04em;color:rgba(14,17,22,.55);background:rgba(255,255,255,.85);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);padding:6px 10px;border-radius:99px;border:1px solid rgba(14,17,22,.1);box-shadow:0 2px 8px rgba(14,17,22,.06);z-index:50;pointer-events:none;user-select:none}
+@media(max-width:560px){.watermark{bottom:calc(10px + env(safe-area-inset-bottom,0px));right:calc(10px + env(safe-area-inset-right,0px));font-size:9px;padding:5px 8px}}
+
+/* PRINT */
+@media print{
+  body{background:#fff;font-size:10.5pt}
+  body::before{display:none}
+  .header,.toc{position:static;background:#0e1116;color:#fff}
+  .wrap{padding:14px;max-width:100%}
+  .card,.hero,.legend,.pocket{box-shadow:none !important;break-inside:avoid}
+  .hero::after,.pocket::before{display:none}
+  .pocket{background:#1a1d24;color:#f0eee5}
+  .ank,.box,.disease,.score,.algo,.stbl,.deep,.mnemo,.quick{box-shadow:none !important;break-inside:avoid}
+  .deep:not([open]) .deep-content{display:block}
+  .deep>summary::after{display:none}
+  .watermark{position:fixed;bottom:8mm;right:8mm;background:none;border:none;color:rgba(0,0,0,.5)}
+  .hero-stamp{transform:none;position:absolute}
+}
+</style>
+</head>
+<body>
+<header class="header"><div class="header-row"><div class="h-mark">D</div><div class="h-titles"><div class="h-title">Diabetes · Pocket Handbook</div><div class="h-sub">Elite edition · Endocrinologia clínica · EN01</div></div><div class="h-author">@dr.lorencato</div><div class="h-edition">v5.2</div></div></header>
+<nav class="toc"><div class="toc-inner"><a href="#pocket" class="toc-chip"><span class="toc-chip-num">0</span>Pocket</a><a href="#redflags" class="toc-chip"><span class="toc-chip-num">A</span>Red Flags</a><a href="#approach" class="toc-chip"><span class="toc-chip-num">B</span>Apresentação</a><a href="#primarias" class="toc-chip"><span class="toc-chip-num">C</span>Entidades</a><a href="#secundarias" class="toc-chip"><span class="toc-chip-num">D</span>Secundárias</a><a href="#algoritmo" class="toc-chip"><span class="toc-chip-num">E</span>Algoritmo</a><a href="#tratamento" class="toc-chip"><span class="toc-chip-num">F</span>Tratamento</a><a href="#pitfalls" class="toc-chip"><span class="toc-chip-num">G</span>Pitfalls</a><a href="#pearls" class="toc-chip"><span class="toc-chip-num">H</span>Pearls</a></div></nav>
+<main>
+<div class="wrap">
+<div class="hero">
+<div class="hero-stamp">@dr.lorencato</div>
+<div class="hero-tag">Endocrinologia · EN01 · Diabetes crônico</div>
+<h1>Diabetes: diagnóstico e tratamento crônico<br><em>da célula beta ao rim, do HbA1c ao desfecho cardiorrenal</em></h1>
+<p class="hero-lead">DM2 com escolha farmacológica guiada por risco cardiorrenal e adiposidade (iSGLT2, agonistas do GLP-1, tirzepatida, metformina), DM1 em basal-bolus com análogos, CGM e alça fechada, pré-diabetes, LADA e MODY, rastreio e proteção de rim, retina e nervo, e a hiperglicemia do internado e do corticoide: critérios ADA 2026 e SBD 2026, KDIGO 2022 (rascunho 2026) e a tradução para o SUS (PCDT DM2 2026, PCDT DM1 2019, Portarias SECTICS 948 e 949/2025).</p>
+<div class="hero-sig">Compilação clínica por <b>@dr.lorencato</b> · Elite Edition v5.2 · status clinical_review</div>
+</div>
+
+<div id="pocket" class="pocket">
+<div class="pocket-head"><div><div class="pocket-eyebrow">Pocket Card 0 · 5 segundos</div><div class="pocket-title">Decisões Críticas — Diabetes crônico</div><div class="pocket-sub">Ambulatório · Enfermaria · PS (as crises agudas estão no EN02)</div></div></div>
+<div class="pocket-grid">
+<div class="pocket-card emerg"><div class="pc-trig">"DM2" magro, perdendo peso, cetonúria</div><div class="pc-act">É insulinopenia até prova em contrário (DM1, LADA, pancreatogênico): <b>insulina hoje</b>, cetonemia e gasometria se mal-estar, anti-GAD e peptídeo C depois. Não escale oral em quem está catabólico.</div></div>
+<div class="pocket-card emerg"><div class="pc-trig">iSGLT2 + vômitos, jejum ou cirurgia</div><div class="pc-act">Cetoacidose <b>euglicêmica</b> com glicemia &lt;250 mg/dL: dosar cetonemia/gasometria, suspender iSGLT2 (3 dias antes de cirurgia eletiva; canagliflozina 3, ertugliflozina 4) e tratar como CAD (EN02).</div></div>
+<div class="pocket-card emerg"><div class="pc-trig">Hipoglicemia nível 2 ou 3 em ambulatório</div><div class="pc-act">Glicose 15–20 g VO se consciente; <b>glucagon 1 mg IM/SC</b> se não; depois revise a causa: sulfonilureia, NPH à noite, TFG em queda, álcool, gastroparesia, insuficiência adrenal. Um nível 3 obriga desintensificar.</div></div>
+<div class="pocket-card dec"><div class="pc-trig">Glicemia jejum ≥126 ou HbA1c ≥6,5% assintomático</div><div class="pc-act">Confirmar: <b>dois exames diferentes na mesma amostra</b> ou repetir o alterado. SBD/PCDT 2026 aceitam TOTG-1h ≥209 mg/dL; a ADA 2026 ainda não. Glicemia capilar não diagnostica.</div></div>
+<div class="pocket-card dec"><div class="pc-trig">DM2 recém-diagnosticado</div><div class="pc-act">Antes de prescrever, estratifique: <b>DCV/IC, TFG + albuminúria, IMC, HbA1c, sintomas</b>. Cardiorrenal → iSGLT2 independente da HbA1c; IMC ≥30 → GLP-1/tirzepatida; HbA1c ≥7,5% → dupla desde o início.</div></div>
+<div class="pocket-card dec"><div class="pc-trig">Albuminúria ≥30 mg/g confirmada</div><div class="pc-act">Quatro pilares: <b>IECA ou BRA em dose máxima + iSGLT2 (TFG ≥20) + finerenona (TFG ≥25, K ≤4,8) + semaglutida se RAC &gt;100</b>. Não suspender IECA/BRA por queda de TFG ≤30%.</div></div>
+<div class="pocket-card tx"><div class="pc-trig">Iniciar insulina basal no DM2</div><div class="pc-act"><b>10 U ou 0,1–0,2 U/kg</b> (NPH ao deitar ou análogo), +2 U a cada 3 dias até jejum 80–130 mg/dL; jejum &lt;70 → reduzir 4 U ou 10%. Basal &gt;0,5 U/kg = overbasalização: adicionar prandial ou GLP-1.</div></div>
+<div class="pocket-card tx"><div class="pc-trig">Iniciar DM1</div><div class="pc-act">Dose total <b>0,4–1,0 U/kg/dia</b> (lua de mel &lt;0,5; puberdade até 2), 40–50% basal e o resto prandial; análogos preferidos; razão insulina:carboidrato ≈ 450–500/DTI, fator de sensibilidade ≈ 1.800/DTI.</div></div>
+<div class="pocket-card tx"><div class="pc-trig">Metformina e rim</div><div class="pc-act">TFG ≥45: dose plena (até 2.550 mg/dia IR); <b>30–44: máximo 1 g/dia</b>; &lt;30: suspender. B12 anual após 4–5 anos ou se neuropatia/anemia. Suspender em sepse, choque e contraste em quem tem TFG baixa.</div></div>
+<div class="pocket-card clin"><div class="pc-trig">SUS em out/2026</div><div class="pc-act">Metformina, glibenclamida, gliclazida, <b>dapagliflozina (critérios)</b>, NPH, regular e, desde 2025, análogos rápidos e prolongados também no DM2 (Portarias 948/949). <b>GLP-1 e tirzepatida não estão no SUS.</b></div></div>
+<div class="pocket-card clin"><div class="pc-trig">Rastreio de complicação</div><div class="pc-act">DM2 <b>ao diagnóstico</b>, DM1 a partir de 5 anos (ou puberdade): RAC + TFG, fundo de olho dilatado ou retinografia, monofilamento + diapasão/térmica, pulsos, anual. Retina sem lesão e bom controle: 1–2 anos (ADA).</div></div>
+<div class="pocket-card clin"><div class="pc-trig">Metas</div><div class="pc-act"><b>HbA1c &lt;7%</b>, TIR &gt;70%, TBR &lt;4% (&lt;54: &lt;1%), CV &lt;36%; idoso saudável &lt;7,5, comprometido &lt;8,0, muito comprometido sem meta de HbA1c (evitar sintomas). PA &lt;130/80. LDL pela estratificação de risco.</div></div>
+</div>
+</div>
+
+<div class="legend">
+<div class="lg-title">Sistema de legendas</div>
+<div class="lg-grid"><div class="lg-item"><span class="dot c1"></span> Fisiopatologia / Classificação</div><div class="lg-item"><span class="dot c2"></span> Clínica / Apresentação</div><div class="lg-item"><span class="dot c3"></span> Diagnóstico / Exames</div><div class="lg-item"><span class="dot c4"></span> Tratamento / Conduta</div><div class="lg-item"><span class="dot c5"></span> Emergências / Red Flags</div><div class="lg-item"><span class="dot c6"></span> Nuances / Pearls</div></div>
+<div class="lg-divider"></div>
+<div class="lg-anchors"><span class="ank ank-hy">HIGH-YIELD</span><span class="ank ank-dec">DECISION</span><span class="ank ank-dgr">DANGER</span><span class="ank ank-prl">PEARL</span><span class="ank ank-myt">MYTH</span><span class="ank ank-con">CONTROVERSY</span><span class="ank ank-evo">EVOLVING</span></div>
+<div class="lg-explain"><div class="ehy"><b>HIGH-YIELD</b> — prova/prática frequente</div><div class="edec"><b>DECISION</b> — muda a conduta</div><div class="edgr"><b>DANGER</b> — erro grave / risco crítico</div><div class="eprl"><b>PEARL</b> — nuance de especialista</div><div class="emyt"><b>MYTH</b> — mito vivo na prática</div><div class="econ"><b>CONTROVERSY</b> — debate sem consenso</div><div class="eevo"><b>EVOLVING</b> — mudança recente</div></div>
+</div>
+
+<section id="redflags">
+<div class="section"><div class="section-eyebrow"><span>A</span> Red Flags</div><h2 class="section-title">Quando o diabetes de ambulatório vira problema de hoje</h2><div class="section-sub">Este HP é de doença crônica; as crises (CAD, EHH, hipoglicemia grave, pé infectado) moram no EN02. Aqui ficam os sinais que, no consultório ou na enfermaria, mudam a conduta no mesmo dia. Cada linha: sinal objetivo → suspeita → conduta imediata.</div></div>
+<div class="card emerg">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">A.1</span> Emergências do tratamento crônico</div><h3>Sinais de alarme no diabetes tratado <span class="ank ank-dgr">DANGER</span></h3></div>
+<div class="card-body">
+<div class="mnemo"><div class="mnemo-title"><b>ALARMES</b> sete motivos para não remarcar o retorno</div><div class="mnemo-grid">
+<div class="mnemo-row"><span class="mnemo-letter">A</span><span><b>Acidose euglicêmica com iSGLT2</b> · náusea, dor abdominal, taquipneia, glicemia "boa" em jejum, cirurgia, dieta cetogênica ou álcool</span></div>
+<div class="mnemo-row"><span class="mnemo-letter">L</span><span><b>Lactato com metformina</b> · choque, sepse, hipoxemia, TFG &lt;30, insuficiência hepática; acidose com ânion gap alto e lactato &gt;5 mmol/L</span></div>
+<div class="mnemo-row"><span class="mnemo-letter">A</span><span><b>Autoimunidade disfarçada de DM2</b> · perda de peso, cetonúria, IMC normal, controle que desaba em meses → insulinopenia (DM1/LADA)</span></div>
+<div class="mnemo-row"><span class="mnemo-letter">R</span><span><b>Retina ameaçada</b> · baixa visual, RDNP grave/proliferativa, edema macular, piora precoce após queda rápida de HbA1c (semaglutida, insulinização agressiva)</span></div>
+<div class="mnemo-row"><span class="mnemo-letter">M</span><span><b>Mínimas recorrentes</b> · hipoglicemia nível 2–3, sem percepção (unawareness), noturna, sob sulfonilureia ou NPH, ou com TFG em queda</span></div>
+<div class="mnemo-row"><span class="mnemo-letter">E</span><span><b>Eletrólitos e rim</b> · K &gt;5,5 sob IECA/BRA/finerenona, queda de TFG &gt;30% após iniciar bloqueio do SRAA, hematúria ou proteinúria nefrótica (pensar em outra nefropatia)</span></div>
+<div class="mnemo-row"><span class="mnemo-letter">S</span><span><b>Sintomas catabólicos</b> · poliúria, polidipsia, perda ponderal, glicemia ≥300 mg/dL ou HbA1c &gt;10% → terapia baseada em insulina já</span></div>
+</div></div>
+<div class="sub-title">Red flag → suspeita → conduta</div>
+<div class="stbl stbl-3">
+<div class="stbl-head stbl-3"><div>Red flag</div><div>Suspeita</div><div>Conduta imediata</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Red flag">Paciente em iSGLT2 com náusea, vômitos, dor abdominal ou dispneia, glicemia 150–250 mg/dL; pós-operatório, jejum, infecção, dieta cetogênica, LADA "escondido"</div><div class="col" data-l="Suspeita">Cetoacidose diabética euglicêmica (glicosúria reduz glicemia e insulina, glucagon sobe, lipólise e cetogênese disparam)</div><div class="col" data-l="Conduta"><b>Cetonemia capilar (β-hidroxibutirato) e gasometria venosa</b>; BHB ≥3 mmol/L ou HCO3 &lt;18 = CAD: suspender iSGLT2, SG 5–10% + insulina IV conforme protocolo do EN02; nunca "esperar a glicemia subir"</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Red flag">DM2 "típico" com IMC &lt;25, perda &gt;5% do peso em semanas, cetonúria, HbA1c &gt;10% apesar de 2–3 orais, história autoimune pessoal ou familiar</div><div class="col" data-l="Suspeita">Insulinopenia: LADA, DM1 de início no adulto, diabetes pancreatogênico (pancreatite crônica, adenocarcinoma de pâncreas em idoso com DM novo e emagrecimento)</div><div class="col" data-l="Conduta"><b>Insulina basal-bolus no mesmo dia</b>, anti-GAD (± IA-2, ZnT8), peptídeo C (não durante glicotoxicidade grave); TC de abdome se &gt;50 anos com DM novo, emagrecimento e sem fenótipo metabólico</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Red flag">Hipoglicemia nível 3 (precisou de terceiros), ou nível 2 sem sintomas adrenérgicos, ou ≥2 episódios/semana</div><div class="col" data-l="Suspeita">Excesso de secretagogo/insulina, TFG em queda (menor depuração de insulina e sulfonilureia), insuficiência adrenal ou celíaca no DM1, gastroparesia, álcool, hipoglicemia sem percepção</div><div class="col" data-l="Conduta"><b>Glucagon prescrito e familiar treinado</b>; suspender glibenclamida, reduzir basal 10–20%, trocar NPH noturna por análogo; CGM com alarme; meta de HbA1c afrouxada por semanas (evitar hipoglicemia restaura a percepção)</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Red flag">Baixa súbita de visão, moscas volantes, retinografia com neovasos, RDNP grave, edema macular envolvendo o centro</div><div class="col" data-l="Suspeita">Retinopatia proliferativa, hemorragia vítrea, edema macular; piora precoce por queda rápida de HbA1c</div><div class="col" data-l="Conduta"><b>Oftalmologia em dias (não meses)</b>: anti-VEGF ou panfotocoagulação (OE02); retinopatia ativa não contraindica GLP-1, mas pede reduzir HbA1c de forma gradual e retina antes e 3–6 meses depois</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Red flag">Creatinina sobe &gt;30% em 2–4 semanas após IECA/BRA, ou K ≥5,5 mEq/L sob bloqueio do SRAA ou finerenona</div><div class="col" data-l="Suspeita">Hipovolemia, estenose de artéria renal bilateral, AINE, hipoaldosteronismo hiporreninêmico (ATR IV), excesso de dose</div><div class="col" data-l="Conduta"><b>Rever volemia, AINE e diurético; K 5,5–6,0: pausar finerenona, dieta, diurético de alça, ciclossilicato de zircônio</b>; não abandonar IECA/BRA por queda ≤30% — é efeito hemodinâmico esperado</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Red flag">Dor abdominal epigástrica em faixa com GLP-1/tirzepatida; vômitos persistentes; colecistite</div><div class="col" data-l="Suspeita">Pancreatite aguda, colelitíase por perda ponderal rápida, gastroparesia com risco de broncoaspiração na sedação</div><div class="col" data-l="Conduta"><b>Lipase, US de abdome</b>; suspender incretinomimético; antes de endoscopia/anestesia, jejum estendido ou dieta líquida 24 h conforme protocolo anestésico (risco de conteúdo gástrico residual)</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Red flag">Mulher em idade fértil com DM e HbA1c &gt;9%, em uso de IECA/BRA, estatina, GLP-1, iSGLT2 ou finerenona, sem contracepção</div><div class="col" data-l="Suspeita">Risco de embriopatia diabética (malformação cardíaca e de tubo neural cresce linearmente com a HbA1c periconcepcional) e de exposição a fármacos não recomendados</div><div class="col" data-l="Conduta"><b>Contracepção eficaz até HbA1c &lt;6,5% (sem hipoglicemia)</b>; ácido fólico; planejar troca para insulina; suspender GLP-1 semanal ≥2 meses antes de tentar engravidar; DMG e gestação → GO13</div></div>
+</div>
+<div class="box danger"><span class="box-label">DANGER</span><div class="box-title">Dias de doença: o diabético crônico descompensa em casa</div><div class="box-body">Febre, vômitos ou diarreia em quem usa insulina, iSGLT2 ou metformina é situação de risco, não de "suspender tudo". <b>Nunca suspender a insulina basal no DM1</b> (pode reduzir 10–20% se não come, mas jamais zerar): a falta dela leva a CAD em horas. Medir glicemia a cada 2–4 h e cetonemia se glicemia &gt;250 mg/dL ou sintomas; cetonemia 0,6–1,4 mmol/L pede insulina rápida extra de 5–10% da dose total diária, 1,5–2,9 mmol/L pede 10–20% e reavaliação em 2 h, ≥3,0 é PS (esquema de dias de doença ISPAD/SBD; confirmar protocolo do serviço). Pausar temporariamente os fármacos do mnemônico <b>SADMANS</b> (seção F) — sulfonilureia, IECA, diurético, metformina, BRA, AINE e iSGLT2 — até voltar a comer e beber; retomar 24–48 h depois.</div></div>
+<div class="box danger"><span class="box-label">DANGER</span><div class="box-title">Glibenclamida em idoso ou com TFG &lt;60: a hipoglicemia que dura dias</div><div class="box-body">Metabólitos ativos de eliminação renal e ligação prolongada ao receptor SUR1 explicam hipoglicemia que recorre por 24–72 h após uma "dose normal". O PCDT DM2 2026 não recomenda glibenclamida a partir de 60 anos; a SBD 2026 a contraindica com TFG &lt;60. Hipoglicemia por sulfonilureia exige <b>internação com glicose contínua e glicemia horária</b>; octreotida 50 mcg SC a cada 6–12 h é a medida que bloqueia a secreção de insulina induzida pela droga quando a glicose isolada não basta (protocolo do EN02).</div></div>
+<div class="box decision"><span class="box-label">DECISION</span><div class="box-title">Quem precisa de insulina hoje, e não de mais um comprimido</div><div class="box-body">Sintomas catabólicos (poliúria, polidipsia, perda de peso) em DM2 virgem de tratamento indicam insulina independentemente da HbA1c (SBD 2026, R14); a ADA 2026 indica insulina com sintomas, HbA1c &gt;10% ou glicemia ≥300 mg/dL. O PCDT 2026 lista HbA1c &gt;9%, glicemia de jejum ≥300 mg/dL, sintomas ou intercorrência/internação. Depois de 4–12 semanas de controle, a glicotoxicidade se desfaz, a célula beta recupera parte da secreção e a insulina pode ser <b>substituída por terapia dupla ou tripla</b> (SBD R15) — a insulinização da descompensação não é sentença perpétua.</div></div>
+</div>
+</div>
+</section>
+
+<section id="approach">
+<div class="section"><div class="section-eyebrow"><span>B</span> Por Apresentação</div><h2 class="section-title">Mapa Sindrômico — como o diabetes chega</h2><div class="section-sub">A maioria dos DM2 chega assintomática pelo rastreio; o DM1 chega catabólico; os demais tipos chegam como "diabetes que não se comporta". Classificar certo no primeiro contato decide se o paciente sai com metformina ou com insulina.</div></div>
+
+<div class="card clin">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">B.1</span> Padrão 1</div><h3>Adulto assintomático com exame alterado <span class="ank ank-hy">HIGH-YIELD</span></h3><div class="card-sub">Rastreio positivo: pré-diabetes ou DM2</div></div>
+<div class="card-body">
+<div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Glicemia de jejum e HbA1c <b>na mesma amostra</b> resolvem a maioria: ambas alteradas confirmam DM; uma só alterada pede repetir ou TOTG. Fora da faixa de DM, a faixa intermediária é <b>pré-diabetes</b> (R73.0) e exige reavaliação anual e intervenção de estilo de vida.</div></div>
+<ul class="bullets">
+<li><b>Quem rastrear:</b> todo adulto ≥35 anos; antes disso se sobrepeso/obesidade (IMC ≥25; ≥23 em asiáticos) com ≥1 fator de risco: parente de 1º grau com DM, HAS, HDL &lt;35 ou TG &gt;250, SOP, DCV, sedentarismo, acantose, MASLD, DMG prévio, HIV, antipsicóticos atípicos ou glicocorticoide crônico (ADA 2026 Tab. 2.5; PCDT 2026).</li>
+<li><b>Periodicidade:</b> normal e baixo risco → 3 anos; normal com risco alto ou pré-diabetes → anual; um único exame em faixa de DM não confirmado → 6 meses.</li>
+<li><b>FINDRISC</b> (SBD): ≥15 pontos (alto/muito alto) com exames normais justifica TOTG.</li>
+<li><b>Interferentes da HbA1c:</b> anemia ferropriva, esplenectomia e DRC elevam falsamente; hemólise, sangramento, transfusão, gestação, eritropoetina, hemoglobinopatias e altas doses de vitamina C/E reduzem. Nesses casos, diagnostique por glicemia/TOTG.</li>
+<li><b>Acantose nigricans</b> no pescoço e axilas é marcador clínico de hiperinsulinemia; extensa, rápida, em palmas (tripe palms) ou mucosa, pense em neoplasia (adenocarcinoma gástrico).</li>
+</ul>
+<div class="box hy"><span class="box-label">HIGH-YIELD</span><div class="box-title">O único critério que dispensa confirmação</div><div class="box-body">Glicemia ao acaso ≥200 mg/dL <b>com sintomas clássicos</b> (ou crise hiperglicêmica) fecha diagnóstico sozinha. Todos os demais exigem dois resultados alterados — dois testes diferentes na mesma amostra ou o mesmo teste em duas ocasiões. Glicemia capilar nunca diagnostica.</div></div>
+</div>
+</div>
+
+<div class="card clin">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">B.2</span> Padrão 2</div><h3>Criança ou adulto jovem com "polis" e emagrecimento <span class="ank ank-dgr">DANGER</span></h3><div class="card-sub">DM1 em estágio 3 até prova em contrário</div></div>
+<div class="card-body">
+<div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Dias a semanas de poliúria, polidipsia, polifagia, perda de peso, enurese secundária ou candidíase genital. <b>Cetonemia/cetonúria antes de qualquer outra coisa</b>: se acidose, é CAD (EN02); se não, insulina basal-bolus no mesmo dia e educação.</div></div>
+<ul class="bullets">
+<li><b>Pico bimodal</b> (4–6 e 10–14 anos), mas até metade dos DM1 surge na vida adulta, muitas vezes rotulados como DM2.</li>
+<li><b>Autoanticorpos:</b> anti-GAD65 (o mais persistente, típico do adulto e do LADA), anti-IA-2, anti-ZnT8 e anti-insulina (só útil antes de iniciar insulina exógena).</li>
+<li><b>Peptídeo C</b> &lt;0,2 nmol/L (≈0,6 ng/mL) após 3–5 anos de doença sustenta DM1; &gt;0,6 nmol/L (≈1,8 ng/mL) sugere DM2 ou monogênico (ADA 2026). Medir fora da glicotoxicidade e com glicemia concomitante &gt;80 mg/dL.</li>
+<li><b>Autoimunidade associada:</b> tireoide (TSH e anti-TPO ao diagnóstico e a cada 1–2 anos), celíaca (antitransglutaminase IgA com IgA total ao diagnóstico e com sintomas), gastrite autoimune/B12, adrenalite.</li>
+</ul>
+</div>
+</div>
+
+<div class="card clin">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">B.3</span> Padrão 3</div><h3>Diabetes que "não se comporta" <span class="ank ank-dec">DECISION</span></h3><div class="card-sub">LADA, MODY, DM2 com tendência à cetose, pancreatogênico, secundário</div></div>
+<div class="card-body">
+<div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Adulto magro que falha a orais em meses = <b>LADA</b>; jovem com hiperglicemia leve estável e três gerações afetadas = <b>MODY</b>; obeso negro ou pardo que abre com CAD e depois controla com orais = <b>DM2 com tendência à cetose (Flatbush)</b>; esteatorreia, pancreatite crônica ou fibrose cística = <b>tipo 3c</b>.</div></div>
+<ul class="bullets">
+<li><b>Sequência diagnóstica (SBD):</b> autoanticorpos primeiro; positivos → DM1/LADA; negativos → peptídeo C; baixo após ≥3–5 anos → DM1 idiopático (1B); preservado + fenótipo atípico → calculadora de MODY (Exeter) e teste genético se probabilidade alta.</li>
+<li><b>MODY-GCK (glucoquinase):</b> jejum 100–145 mg/dL estável desde a infância, HbA1c 5,6–7,6%, sem complicação → geralmente não tratar (fora da gestação).</li>
+<li><b>MODY-HNF1A/HNF4A:</b> sensibilidade extrema a sulfonilureia em dose baixa; glicosúria com glicemia normal no HNF1A (limiar renal baixo).</li>
+<li><b>Fármacos:</b> glicocorticoide, antipsicóticos atípicos (olanzapina, clozapina), inibidores de calcineurina e mTOR (diabetes pós-transplante), inibidores de checkpoint (DM1 fulminante, anti-PD-1), inibidores de PI3Kα (alpelisibe), tiazídico em dose alta, niacina, inibidores de protease.</li>
+</ul>
+<div class="box hy"><span class="box-label">HIGH-YIELD</span><div class="box-title">Inibidor de checkpoint e diabetes fulminante</div><div class="box-body">Anti-PD-1/PD-L1 pode causar destruição autoimune da célula beta em semanas, com CAD na abertura, peptídeo C indetectável e anticorpos frequentemente negativos. É permanente: insulina para sempre, e o oncologista não precisa suspender a imunoterapia por isso. A ADA 2026 recomenda glicemia de jejum basal e seriada durante o tratamento com inibidores de checkpoint.</div></div>
+</div>
+</div>
+
+<div class="card clin">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">B.4</span> Padrão 4</div><h3>DM2 conhecido com HbA1c subindo <span class="ank ank-dec">DECISION</span></h3><div class="card-sub">Inércia terapêutica, adesão, progressão da falência beta</div></div>
+<div class="card-body">
+<div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Fora da meta por 3 meses com adesão adequada = <b>intensificar agora</b> (ADA 9.15; SBD R11–R13). Antes, cheque o que a HbA1c não mostra: técnica de insulina, lipo-hipertrofia, fármaco hiperglicemiante novo, infecção, perda de peso não intencional.</div></div>
+<ul class="bullets">
+<li><b>Inércia</b> — cada ano a mais com HbA1c &gt;7% acumula "memória metabólica" (legacy effect do UKPDS): o benefício microvascular e cardiovascular de controlar cedo persiste por décadas.</li>
+<li><b>Glicemia de jejum na meta, HbA1c alta:</b> escape pós-prandial → GLP-1, prandial na maior refeição ou combinação fixa insulina/GLP-1.</li>
+<li><b>Jejum alto ao acordar com glicemia de madrugada normal ou alta:</b> fenômeno do alvorecer → aumentar ou mover a basal; com hipoglicemia às 3 h, reduzir a NPH noturna.</li>
+<li><b>Peso caindo sem querer + HbA1c subindo:</b> pensar em insulinopenia (LADA), câncer de pâncreas, hipertireoidismo.</li>
+</ul>
+</div>
+</div>
+
+<div class="card clin">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">B.5</span> Padrão 5</div><h3>Internado hiperglicêmico ou em corticoide</h3><div class="card-sub">Hiperglicemia hospitalar, DM não diagnosticado, diabetes induzido por glicocorticoide</div></div>
+<div class="card-body">
+<div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Toda admissão mede glicemia; &gt;180 mg/dL ou DM conhecido pede HbA1c (se não feita em 3 meses): <b>≥6,5% = DM prévio</b>, normal = hiperglicemia de estresse. Corticoide eleva a glicemia da tarde: <b>NPH pela manhã</b> junto com a dose de prednisona.</div></div>
+<ul class="bullets">
+<li><b>Alvo não crítico:</b> 100–180 mg/dL (SBD 2025); crítico 140–180 mg/dL com insulina IV.</li>
+<li><b>Escala isolada (sliding scale)</b> só se ≤1 glicemia &gt;180/dia, nenhuma &gt;250 e sem insulina domiciliar; no resto, basal-plus ou basal-bolus.</li>
+<li><b>Orais no hospital:</b> sulfonilureia não (hipoglicemia); metformina só estável, TFG &gt;30 e sem contraste; iSGLT2 pode ser mantido com vigilância de cetonas (suspender se BHB &gt;1,5 mmol/L); iDPP-4 em hiperglicemia leve.</li>
+</ul>
+</div>
+</div>
+</section>
+
+<section id="primarias">
+<div class="section"><div class="section-eyebrow"><span>C</span> Entidades Primárias</div><h2 class="section-title">DM2, DM1 e o estado pré-diabético</h2><div class="section-sub">As duas doenças que o contrato do EN01 define como primárias, e o pré-diabetes, que é o mesmo continuum fisiopatológico do DM2 visto antes do limiar. Cada box traz CID-10 OMS/DATASUS, fonte de conduta e a linha que muda a decisão.</div></div>
+
+<div class="card prim">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">C.1</span> Entidade primária</div><h3>Diabetes mellitus tipo 2 <span class="ank ank-hy">HIGH-YIELD</span> <span class="ank ank-dec">DECISION</span></h3><div class="card-sub">Resistência à insulina + falência progressiva da célula beta; doença cardiorrenal-metabólica</div></div>
+<div class="card-body">
+<div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">90–95% dos diabéticos; ~12,9% dos adultos brasileiros, um terço sem diagnóstico (IDF 2025). O tratamento de 2026 tem <b>três alvos simultâneos desde o diagnóstico</b>: glicemia, adiposidade e risco cardiorrenal (SBD 2026). A escolha do fármaco segue o órgão a proteger, não só a HbA1c.</div></div>
+<div class="disease">
+<div class="disease-head"><div class="disease-name">Diabetes mellitus tipo 2 (não insulinodependente)</div><div class="disease-tag">CID-10 E11 · E11.9</div></div>
+<div class="disease-body"><div class="disease-rows">
+<div class="disease-row"><div class="k">Epidemiologia</div><div class="v">Prevalência global adulta 14,1% (OMS, 2022). Brasil: 6º país em número absoluto. Fatores: obesidade visceral, idade ≥35 anos, parente de 1º grau, DMG/macrossomia prévios, SOP, MASLD, apneia do sono, privação de sono e cronotipo noturno, antipsicóticos. Concordância em gêmeos monozigóticos próxima de 100% — herança poligênica forte (TCF7L2 é o locus de maior efeito) modulada por ambiente. Incidência crescente em adolescentes, com falência beta mais rápida que no adulto (TODAY).</div></div>
+<div class="disease-row"><div class="k">Fisiopatologia</div><div class="v">Resistência à insulina no músculo (menor translocação de GLUT4), fígado (gliconeogênese não suprimida → hiperglicemia de jejum) e adipócito (lipólise desinibida → ácidos graxos livres → lipotoxicidade). A célula beta compensa com hiperinsulinemia até exaurir: perda da 1ª fase de secreção, depósito de amilina (IAPP) nas ilhotas, estresse de retículo e oxidativo, desdiferenciação. Somam-se defeito incretínico, hiperglucagonemia, aumento da reabsorção tubular de glicose (SGLT2 hiperexpresso) e disfunção hipotalâmica — o "octeto" de DeFronzo, que justifica combinar fármacos de mecanismos diferentes.</div></div>
+<div class="disease-row"><div class="k">Clínica</div><div class="v">Assintomático por anos; ~metade já tem lesão de órgão-alvo ao diagnóstico. Acantose nigricans, obesidade central, HAS, dislipidemia aterogênica (TG alto, HDL baixo, LDL pequena e densa), esteatose. "Polis" e emagrecimento indicam glicotoxicidade e insulinopenia relativa. CAD é rara (exceção: DM2 com tendência à cetose); a crise típica é o estado hiperosmolar (EN02).</div></div>
+<div class="disease-row"><div class="k">Diagnóstico</div><div class="v">Glicemia de jejum ≥126 mg/dL, HbA1c ≥6,5%, glicemia 2 h no TOTG 75 g ≥200, glicemia 1 h no TOTG ≥209 (SBD 2024/PCDT 2026; não adotado pela ADA 2026), ou ao acaso ≥200 com sintomas. Confirmar com segundo exame alterado. Na avaliação inicial: lipídios, creatinina com TFG CKD-EPI, RAC em amostra isolada, EAS, ECG, fundo de olho, exame dos pés, risco CV (HEARTS no SUS; estratificação cardiorrenal SBD). <span class="ev ev-acr">ADA 2026</span> <span class="ev ev-sbr">PCDT DM2 2026</span></div></div>
+<div class="disease-row"><div class="k">Tratamento</div><div class="v">Estilo de vida estruturado (perda ≥5–7% do peso; 150 min/sem de aeróbico + resistido 2–3×/sem; sono 7–9 h; cessação do tabagismo). <b>SBD 2026:</b> metformina ao diagnóstico se TFG ≥30 (R5); HbA1c ≥7,5% → terapia dupla desde o início (R7); risco cardiorrenal aumentado → iSGLT2 independentemente da HbA1c (R8); IMC ≥30 → aGLP-1 ou tirzepatida independentemente da HbA1c e do risco (R9; IMC 27–30, considerar R10); sintomas catabólicos → insulina (R14). <b>ADA 2026:</b> doença aterosclerótica ou alto risco → aGLP-1 e/ou iSGLT2 com benefício comprovado (9.7); IC → iSGLT2 (9.8); IC com FEp e obesidade → tirzepatida ou semaglutida (9.9); DRC → iSGLT2 ou aGLP-1 (9.10), TFG &lt;30 → aGLP-1 preferido (9.11); terapia baseada em GLP-1 preferida à insulina quando não há hiperglicemia grave (9.21). <span class="ev ev-sbr">SBD 2026</span> <span class="ev ev-acr">ADA 2026</span></div></div>
+<div class="disease-row"><div class="k">Prognóstico</div><div class="v">DCV aterosclerótica e IC são a principal causa de morte; DM2 dobra o risco de IAM/AVC e quadruplica o de IC. Remissão (HbA1c &lt;6,5% ≥3 meses sem fármaco) é possível com perda de 10–15 kg nos primeiros 6 anos de doença (DiRECT) e após cirurgia metabólica. Controle precoce traz efeito legado de décadas (UKPDS).</div></div>
+<div class="disease-row"><div class="k">O que muda conduta</div><div class="v"><b>Doença cardiovascular, IC, albuminúria ou TFG &lt;60 mudam a droga (iSGLT2/aGLP-1 independentemente da HbA1c); IMC ≥30 põe GLP-1/tirzepatida na frente; sintomas catabólicos ou HbA1c &gt;10% mudam a via (insulina); no SUS, a idade e a DCV definem acesso à dapagliflozina.</b></div></div>
+</div></div>
+</div>
+<div class="score">
+<div class="score-head"><div class="score-name">Risco cardiorrenal aumentado no DM2 — critérios SBD 2026 (Tabela 1) <span class="ev ev-sbr">SBD 2026</span></div><div class="score-purpose">Qualquer item = iSGLT2 independente da HbA1c; baixo risco só se &lt;10 anos de DM, &lt;35 anos e nenhum estratificador</div></div>
+<div class="score-rows">
+<div class="score-row"><div class="score-grade">Idade/tempo</div><div class="score-desc">Homem ≥50 anos ou mulher ≥56 anos; <b>DM2 há ≥10 anos</b></div></div>
+<div class="score-row"><div class="score-grade">DCV</div><div class="score-desc">SCA prévia, revascularização, AVC/AIT, doença arterial periférica, estenose arterial significativa em imagem</div></div>
+<div class="score-row"><div class="score-grade">Rim</div><div class="score-desc">RAC 30–299 ou ≥300 mg/g; TFG 30–59 com RAC &lt;30; TFG &lt;60 com RAC ≥300; TFG &lt;45 com RAC 30–299; TFG &lt;30 com qualquer RAC</div></div>
+<div class="score-row"><div class="score-grade">IC / risco de IC</div><div class="score-desc">IC estabelecida; IMC ≥40, apneia obstrutiva do sono, fibrilação atrial, cardiopatia estrutural</div></div>
+<div class="score-row"><div class="score-grade">Outros</div><div class="score-desc">Tabagismo, HAS, dislipidemia, doença inflamatória crônica</div></div>
+</div>
+</div>
+<div class="box decision"><span class="box-label">DECISION</span><div class="box-title">Monoterapia, dupla ou insulina: a decisão inicial em três perguntas</div><div class="box-body">1) Tem sintoma catabólico ou HbA1c &gt;10%/glicemia ≥300? → insulina (com ou sem GLP-1), reavaliar em 4–12 semanas. 2) Tem órgão a proteger (DCV, IC, DRC) ou IMC ≥30? → o fármaco com benefício de desfecho entra já, junto com a metformina. 3) HbA1c ≥7,5% sem os anteriores? → dupla de início (metformina + segundo agente); &lt;7,5% → metformina e estilo de vida, reavaliar em 3 meses. A ADA 2026 já não coloca metformina como obrigatória antes dos agentes cardiorrenais (9.5–9.7); a SBD 2026 mantém metformina ao diagnóstico, mas sem atrasar iSGLT2/aGLP-1.</div></div>
+<details class="deep"><summary>Deep dive · Fisiopatologia do DM2 e onde cada classe atua</summary><div class="deep-content">
+<p><b>Resistência à insulina é um defeito pós-receptor.</b> A ligação da insulina ao receptor (tirosina-quinase) fosforila IRS-1/2, que recrutam a PI3K e ativam a Akt; é a Akt que transloca vesículas de GLUT4 para a membrana do miócito e do adipócito, inibe a glicogênio-sintase-quinase-3 e fosforila o FOXO1, desligando a transcrição de PEPCK e glicose-6-fosfatase no hepatócito. No DM2, diacilglicerol e ceramidas derivados do excesso de ácidos graxos ativam isoformas da PKC (PKCθ no músculo, PKCε no fígado) que fosforilam IRS-1 em resíduos de serina, bloqueando o sinal. A via MAPK, que medeia efeitos mitogênicos e pró-aterogênicos da insulina, permanece íntegra — por isso a hiperinsulinemia compensatória é proliferativa no endotélio, na pele (acantose) e no ovário (hiperandrogenismo da SOP).</p>
+<p><b>Resistência hepática seletiva.</b> O fígado resistente continua lipogênico (SREBP-1c segue ativado pela insulina) mas deixa de suprimir a gliconeogênese: daí a combinação esteatose + hipertrigliceridemia + hiperglicemia de jejum. A metformina atua exatamente nessa ponta: inibe o complexo I mitocondrial e a glicerol-fosfato desidrogenase mitocondrial, altera o estado redox citosólico, reduz a conversão de lactato e glicerol em glicose e ativa AMPK; também age no intestino (aumenta utilização de glicose pelo enterócito, secreção de GLP-1 e altera microbiota) — por isso a formulação XR, com exposição intestinal maior e plasmática menor, mantém eficácia com menos efeitos gastrointestinais.</p>
+<p><b>Falência beta.</b> A célula beta do DM2 perde primeiro a secreção de 1ª fase (pool de grânulos prontos), depois a capacidade de responder à glicose pelo eixo glucoquinase–ATP–canal KATP. Glicotoxicidade e lipotoxicidade induzem estresse de retículo endoplasmático, resposta a proteínas mal enoveladas e apoptose; parte das células não morre, mas desdiferencia (perde PDX1 e MafA), o que explica a recuperação parcial da secreção quando a hiperglicemia é corrigida com insulina intensiva precoce. Polipeptídeo amiloide da ilhota (amilina) cossecretado em excesso agrega em fibrilas citotóxicas. Sulfonilureias fecham o canal KATP (subunidade SUR1) e forçam exocitose independente da glicose — eficazes e baratas, mas com hipoglicemia e com o efeito de "exaurir" uma célula que já está falhando (ADOPT: durabilidade menor que metformina e glitazona).</p>
+<p><b>Eixo incretínico.</b> GLP-1 (células L do íleo/cólon) e GIP (células K do duodeno) respondem por 50–70% da secreção de insulina após glicose oral. No DM2, a resposta ao GIP está atenuada e a secreção de GLP-1 reduzida. Os agonistas do receptor de GLP-1 resistem à DPP-4 e produzem concentrações farmacológicas (5–10 vezes as fisiológicas): estimulam secreção de insulina glicose-dependente (sem hipoglicemia isolados), suprimem glucagon, retardam esvaziamento gástrico (efeito que sofre taquifilaxia com os agentes de longa ação) e agem no núcleo arqueado e no tronco cerebral reduzindo apetite. A tirzepatida é agonista desbalanceado: afinidade pelo receptor GIP semelhante ao GIP nativo e menor pelo receptor GLP-1, com viés de sinalização por cAMP sem recrutamento de β-arrestina, o que reduz internalização do receptor — hipótese para a perda ponderal maior (SURPASS-2 vs semaglutida 1 mg). Os iDPP-4 apenas prolongam incretinas endógenas: eficácia modesta, sem efeito no peso, sem benefício de desfecho.</p>
+<p><b>Rim e glicose.</b> O túbulo proximal reabsorve ~180 g/dia de glicose filtrada, 90% via SGLT2 no segmento S1. Na hiperglicemia crônica, o SGLT2 é hiperexpresso e o limiar renal sobe de ~180 para ~240 mg/dL. Os iSGLT2 baixam o limiar para 70–90 mg/dL e produzem glicosúria de 60–80 g/dia (240–320 kcal), natriurese e diurese osmótica. O efeito glicêmico depende da carga filtrada (cai com TFG &lt;45), mas a proteção cardiorrenal não: restauração do feedback tubuloglomerular (mais sódio na mácula densa → vasoconstrição aferente → menor pressão intraglomerular), contração de volume intersticial mais que intravascular, desvio metabólico para corpos cetônicos e ácidos graxos (combustível mais eficiente para o miocárdio insuficiente), aumento da eritropoetina e redução de ácido úrico. A cetogênese induzida é a mesma que, em contexto de insulinopenia, produz a CAD euglicêmica.</p>
+<p><b>Pioglitazona</b> é agonista PPAR-γ: diferenciação de pré-adipócitos em adipócitos subcutâneos pequenos e sensíveis, redistribuição de gordura do fígado e víscera para o subcutâneo, aumento de adiponectina. Reduz esteatohepatite (benefício histológico em MASH) e eventos em pós-AVC/AIT com resistência insulínica (IRIS), mas causa retenção de sódio no ducto coletor (via ENaC), edema, IC, ganho de peso e fraturas por desvio de células mesenquimais para linhagem adipocitária. Doses baixas (15 mg) preservam boa parte da eficácia com menos edema (nota da ADA 2026).</p>
+</div></details>
+</div>
+</div>
+
+<div class="card prim">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">C.2</span> Entidade primária</div><h3>Diabetes mellitus tipo 1 — tratamento crônico com insulina <span class="ank ank-hy">HIGH-YIELD</span> <span class="ank ank-dgr">DANGER</span></h3><div class="card-sub">Destruição autoimune da célula beta; insulinoterapia fisiológica, tecnologia e prevenção de hipoglicemia</div></div>
+<div class="card-body">
+<div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Insulina é obrigatória e para sempre: <b>basal-bolus em múltiplas doses ou bomba</b>, de preferência com análogos e CGM. Meta HbA1c &lt;7% (ou &lt;6,5% se seguro), TIR &gt;70% e TBR &lt;4%. A complicação aguda mais frequente do tratamento é a hipoglicemia; a mais letal da doença, a CAD por omissão de insulina.</div></div>
+<div class="disease">
+<div class="disease-head"><div class="disease-name">Diabetes mellitus tipo 1 (insulinodependente)</div><div class="disease-tag">CID-10 E10 · E10.9</div></div>
+<div class="disease-body"><div class="disease-rows">
+<div class="disease-row"><div class="k">Epidemiologia</div><div class="v">5–10% dos diabéticos; Brasil entre os países com mais casos pediátricos. Incidência crescente (3–4%/ano em menores de 15 anos). 90% autoimune (1A), 10% idiopático (1B, mais comum em afrodescendentes e asiáticos, cetose episódica, sem HLA). HLA-DR3-DQ2 e DR4-DQ8 conferem até 50% do risco genético; DQB1*0602 é protetor. Concordância em gêmeos monozigóticos 30–70%; risco de irmão ~6%, de filho de pai com DM1 ~6–8%, de mãe ~2–4%.</div></div>
+<div class="disease-row"><div class="k">Fisiopatologia</div><div class="v">Insulite por linfócitos T CD8+ autorreativos contra pró-insulina, GAD65, IA-2 e ZnT8, com perda de tolerância periférica (Treg deficientes, falha de AIRE em formas monogênicas como APS-1). Estágio 1: ≥2 autoanticorpos com normoglicemia; estágio 2: autoanticorpos + disglicemia; estágio 3: hiperglicemia sintomática (perda de ~80–90% da massa beta funcional). A destruição de células alfa adjacentes e a perda da resposta de glucagon à hipoglicemia instalam-se em poucos anos — base da hipoglicemia sem defesa.</div></div>
+<div class="disease-row"><div class="k">Clínica</div><div class="v">Início agudo (dias a semanas) de "polis", emagrecimento, astenia, enurese, visão turva; 30–40% das crianças abrem em CAD. Fase de lua de mel (remissão parcial) em semanas a meses: dose &lt;0,5 U/kg/dia com HbA1c &lt;7%. Associação com tireoidite de Hashimoto (15–30%), doença celíaca (5–10%), gastrite autoimune, vitiligo, Addison.</div></div>
+<div class="disease-row"><div class="k">Diagnóstico</div><div class="v">Critérios glicêmicos iguais aos do DM2 com sinais de insulinopenia; anti-GAD, IA-2, ZnT8 (e anti-insulina antes da insulinoterapia). Rastreio de estágios pré-sintomáticos por autoanticorpos em parentes de 1º grau (ADA 2026, 2.6–2.9; SBD 2025): ≥2 anticorpos confirmados = estadiamento metabólico em centro especializado. <span class="ev ev-acr">ADA 2026</span> <span class="ev ev-sbr">SBD 2025</span></div></div>
+<div class="disease-row"><div class="k">Tratamento</div><div class="v">Dose total inicial 0,4–1,0 U/kg/dia (lactentes 0,3–0,5; pré-púberes e adultos 0,7–1,0; puberdade 1,0–2,0). Basal 30–50% (adolescente 50–55%), restante em bolus pré-refeição com contagem de carboidratos e fator de correção. Análogos rápidos e prolongados preferidos à insulina humana para reduzir hipoglicemia (ADA 9.2; SBD R4–R6); SICI quando a meta não é alcançada em MDI (SBD R9); alça fechada híbrida (AID) recomendada para a maioria que consiga usá-la (ADA 9.27). CGM para todos que usam múltiplas doses. Teplizumabe (anti-CD3) no estágio 2 a partir de 8 anos adia o estágio 3 em ~2–3 anos — aprovado pela Anvisa em mar/2026, sem acesso SUS. <span class="ev ev-sbr">SBD 2026 (DM1, Ed. 2022)</span> <span class="ev ev-sbr">PCDT DM1 2019</span></div></div>
+<div class="disease-row"><div class="k">Prognóstico</div><div class="v">DCCT/EDIC: controle intensivo (HbA1c ~7%) reduziu retinopatia em 76% e nefropatia em ~50%, com benefício macrovascular aparecendo 10–20 anos depois. Expectativa de vida ainda 8–12 anos menor que a da população, concentrada em DCV, DRC e hipoglicemia (6–10% das mortes no DM1).</div></div>
+<div class="disease-row"><div class="k">O que muda conduta</div><div class="v"><b>Hipoglicemia grave ou sem percepção (troca para análogos/CGM/AID, critério SUS para análogo), cetose em dia de doença (insulina extra, nunca suspender basal), DRC (dose menor, risco de hipoglicemia), gestação planejada (HbA1c &lt;6,5% pré-concepcional), resistência insulínica sobreposta — "diabetes duplo" (metformina/GLP-1 como adjuvantes, fora de bula).</b></div></div>
+</div></div>
+</div>
+<div class="score">
+<div class="score-head"><div class="score-name">Estágios do DM1 autoimune <span class="ev ev-acr">ADA 2026 Tab. 2.4</span></div><div class="score-purpose">Define rastreio, educação e candidatos a teplizumabe</div></div>
+<div class="score-rows">
+<div class="score-row"><div class="score-grade">Estágio 1</div><div class="score-desc">≥2 autoanticorpos de ilhota, <b>normoglicemia</b>, assintomático. Risco de estágio 3 em 5 anos ~44%, em 15 anos ~80%.</div></div>
+<div class="score-row"><div class="score-grade">Estágio 2</div><div class="score-desc">≥2 autoanticorpos + <b>disglicemia</b> (jejum 100–125, 2 h 140–199, HbA1c 5,7–6,4% ou aumento ≥10%), assintomático. Risco de estágio 3 em 5 anos ~75%. Teplizumabe se ≥8 anos.</div></div>
+<div class="score-row"><div class="score-grade">Estágio 3</div><div class="score-desc">Hiperglicemia que cumpre critério diagnóstico, com ou sem sintomas: <b>insulinoterapia</b>.</div></div>
+</div>
+</div>
+<div class="stbl stbl-4">
+<div class="stbl-head stbl-4"><div>Insulina</div><div>Início</div><div>Pico</div><div>Duração · uso</div></div>
+<div class="stbl-row stbl-4"><div class="col col1" data-l="Insulina">Lispro, asparte, glulisina</div><div class="col" data-l="Início">5–15 min</div><div class="col" data-l="Pico">30–90 min</div><div class="col" data-l="Duração">3–5 h · 0–15 min antes da refeição</div></div>
+<div class="stbl-row stbl-4"><div class="col col1" data-l="Insulina">Fast-asparte (Fiasp) · inalada (Afrezza)</div><div class="col" data-l="Início">2–5 min · imediata</div><div class="col" data-l="Pico">1–2 h · 10–20 min</div><div class="col" data-l="Duração">~5 h · 1–2 h; podem ser aplicadas até 20 min após iniciar a refeição</div></div>
+<div class="stbl-row stbl-4"><div class="col col1" data-l="Insulina">Regular humana</div><div class="col" data-l="Início">30–60 min</div><div class="col" data-l="Pico">2–3 h</div><div class="col" data-l="Duração">5–8 h · 30 min antes; única IV em bomba</div></div>
+<div class="stbl-row stbl-4"><div class="col col1" data-l="Insulina">NPH humana</div><div class="col" data-l="Início">2–4 h</div><div class="col" data-l="Pico">4–10 h</div><div class="col" data-l="Duração">10–18 h · 2–3×/dia; dose noturna ao deitar (22 h)</div></div>
+<div class="stbl-row stbl-4"><div class="col col1" data-l="Insulina">Glargina U100 · detemir</div><div class="col" data-l="Início">2–4 h · 1–3 h</div><div class="col" data-l="Pico">sem pico · 6–8 h</div><div class="col" data-l="Duração">20–24 h · 18–22 h (detemir 1–2×/dia)</div></div>
+<div class="stbl-row stbl-4"><div class="col col1" data-l="Insulina">Glargina U300 · degludeca</div><div class="col" data-l="Início">~6 h · &lt;1 h</div><div class="col" data-l="Pico">sem pico</div><div class="col" data-l="Duração">até 36 h · até 42 h; flexibilidade de ±3 h e ±8 h</div></div>
+<div class="stbl-row stbl-4"><div class="col col1" data-l="Insulina">Icodeca (semanal)</div><div class="col" data-l="Início">platô em 2–4 dias</div><div class="col" data-l="Pico">sem pico</div><div class="col" data-l="Duração">meia-vida ~1 semana · 1×/semana; preferir no DM2</div></div>
+</div>
+<div class="box danger"><span class="box-label">DANGER</span><div class="box-title">Alvorecer ou Somogyi: a glicemia das 3 h decide</div><div class="box-body">Hiperglicemia ao acordar com glicemia de madrugada normal ou alta = <b>fenômeno do alvorecer</b> (pico circadiano de GH e cortisol, NPH aplicada no jantar já sem efeito) → mover a NPH para ao deitar e depois aumentar. Hiperglicemia ao acordar com <b>hipoglicemia às 3 h</b> (pesadelos, sudorese, cefaleia matinal) = efeito Somogyi (rebote contrarregulador; hoje considerado raro e possivelmente superestimado) → reduzir a NPH noturna. Aumentar a NPH num Somogyi aprofunda a hipoglicemia noturna. O CGM substituiu a glicemia capilar das 3 h.</div></div>
+<details class="deep"><summary>Deep dive · Insulinoterapia fisiológica, aritmética do bolus e tecnologia</summary><div class="deep-content">
+<p><b>Por que basal-bolus.</b> A célula beta secreta ~50% da insulina diária de forma basal (pulsos de 5–10 min que suprimem a produção hepática de glicose e a lipólise) e ~50% em resposta prandial bifásica. A insulina exógena subcutânea chega primeiro à circulação periférica, não à porta: o fígado, que fisiologicamente recebe concentrações 2–3 vezes maiores que a periferia, fica relativamente sub-insulinizado enquanto músculo e tecido adiposo ficam super-insulinizados — fonte de ganho de peso e de hipoglicemia. Análogos tentam aproximar a farmacocinética: os rápidos têm substituições (Pro28-Lys29 invertidas na lispro, Asp28 na asparte, Lys3-Glu29 na glulisina) que impedem a formação de hexâmeros; os prolongados usam precipitação em pH neutro (glargina), ligação à albumina por ácido graxo (detemir, degludeca) ou formação de multi-hexâmeros no depósito (degludeca). A icodeca liga-se reversivelmente à albumina com afinidade muito alta e reduz a afinidade pelo receptor, o que dá meia-vida de ~196 h.</p>
+<p><b>Aritmética.</b> Razão insulina:carboidrato (RIC) ≈ 450–500 ÷ dose total diária (DTI) — a SBD usa 400–500, alguns serviços 300 em crianças: com DTI 40 U, 1 U cobre ~12 g de carboidrato. Fator de sensibilidade (FS) ≈ 1.800 ÷ DTI em adultos (2.000 a regra geral da SBD; 2.100 em lactentes): com DTI 40 U, 1 U baixa ~45 mg/dL. Bolus = (carboidrato ÷ RIC) + (glicemia atual − alvo) ÷ FS − insulina ativa. A "insulina ativa" (insulin on board) é o que evita o empilhamento de correções a cada 2 h — erro clássico de quem corrige por escala sem considerar o bolus anterior. Refeições ricas em gordura e proteína atrasam e prolongam a hiperglicemia (esvaziamento gástrico e gliconeogênese a partir de aminoácidos): bolus estendido ou dividido na bomba, ou incremento de 20–30% no MDI.</p>
+<p><b>Trocas de esquema.</b> NPH 1×/dia → glargina U100 1:1; NPH 2 ou mais vezes ao dia → glargina com redução de ~20% da dose basal total (PCDT DM2 2026). Glargina U100 → U300 frequentemente exige 10–18% a mais de dose (menor biodisponibilidade). Basal diária → icodeca: dose diária × 7 por semana, com dose extra de 50% apenas na primeira aplicação no DM2 (bula; ONWARDS), sempre em múltiplos de 10 U; no DM1 a ONWARDS 6 mostrou mais hipoglicemia, por isso a icodeca é preferida no DM2. MDI → bomba: reduzir a DTI em 20–25%, metade como basal, dividir por 24 para a taxa horária e ajustar o perfil por blocos.</p>
+<p><b>CGM e métricas.</b> O sensor mede glicose intersticial com atraso fisiológico de 5–15 min (maior quando a glicemia muda rápido): em hipoglicemia em queda, confirme com capilar antes de tratar agressivamente. Consenso internacional de TIR: tempo 70–180 mg/dL &gt;70% (cada 10% de TIR corresponde a ~0,8% de HbA1c), tempo &lt;70 &lt;4%, &lt;54 &lt;1%, tempo &gt;180 &lt;25%, &gt;250 &lt;5%, coeficiente de variação ≤36%. O GMI (indicador de gestão da glicose) estima a HbA1c pela média do sensor; discordância GMI × HbA1c sugere interferente laboratorial (anemia, hemoglobinopatia, DRC) ou glicação individual diferente.</p>
+<p><b>Alça fechada híbrida.</b> O algoritmo ajusta a basal a cada 5 minutos pelo sensor e oferece bolus de correção automáticos; o usuário ainda anuncia refeições. Aumenta TIR em ~10–15 pontos e reduz hipoglicemia, inclusive em quem já tinha HbA1c boa. Sistemas "faça você mesmo" (Android APS, Loop) existem, mas não são aprovados pela Anvisa. A SICI e os sensores não são fornecidos pelo SUS em nível nacional (o sensor não foi incorporado — Portaria SECTICS nº 2/2025); acesso depende de saúde suplementar ou judicialização.</p>
+<p><b>Terapias além da insulina.</b> Pramlintida (análogo de amilina, suprime glucagon prandial e retarda esvaziamento gástrico; não comercializada no Brasil). Transplante: pâncreas-rim simultâneo no DM1 com DRC dialítica ou pré-dialítica (melhor sobrevida do enxerto); pâncreas após rim; pâncreas isolado ou ilhotas para hipoglicemia grave sem percepção refratária. Terapias celulares derivadas de células-tronco (zimislecel, VX-880) produziram independência insulínica em ensaios de fase 1/2 com imunossupressão — ainda experimentais.</p>
+</div></details>
+</div>
+</div>
+
+<div class="card prim">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">C.3</span> Entidade primária (continuum do DM2)</div><h3>Pré-diabetes e prevenção do DM2 <span class="ank ank-dec">DECISION</span></h3><div class="card-sub">Glicemia de jejum alterada, tolerância diminuída, HbA1c 5,7–6,4%</div></div>
+<div class="card-body">
+<div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Risco de DM2 ~5–10% ao ano (25% em 3–5 anos) e risco cardiovascular já aumentado. A intervenção mais potente é <b>estilo de vida com perda ≥5–7% do peso</b> (−58% de incidência no DPP); metformina para os de maior risco. Não é preciso repetir o exame para rotular pré-diabetes.</div></div>
+<div class="disease">
+<div class="disease-head"><div class="disease-name">Pré-diabetes (hiperglicemia intermediária)</div><div class="disease-tag">CID-10 R73.0</div></div>
+<div class="disease-body"><div class="disease-rows">
+<div class="disease-row"><div class="k">Definição</div><div class="v">Glicemia de jejum 100–125 mg/dL (GJA), TOTG-2h 140–199 (TDG), TOTG-1h 155–208 (SBD/PCDT), HbA1c 5,7–6,4%. A OMS usa 110–125 para GJA e 6,0–6,4% para HbA1c — divergência que muda a prevalência, não a conduta.</div></div>
+<div class="disease-row"><div class="k">Fisiopatologia</div><div class="v">GJA reflete sobretudo resistência hepática e secreção basal deficiente; TDG reflete resistência muscular e perda da 1ª fase de secreção. A glicemia de 1 h no TOTG detecta a falha da 1ª fase mais cedo que a de 2 h — por isso a SBD 2024 a adotou como o teste mais sensível; prediz DM2, DCV e mortalidade melhor que a glicemia de 2 h.</div></div>
+<div class="disease-row"><div class="k">Diagnóstico</div><div class="v">Pré-diabetes por glicemia de jejum ou HbA1c → TOTG-1h para descobrir DM2 oculto (≥209) ou confirmar pré-diabetes (155–208). Avaliar e tratar os demais fatores de risco CV. <span class="ev ev-sbr">SBD 2024</span> <span class="ev ev-sbr">PCDT DM2 2026</span></div></div>
+<div class="disease-row"><div class="k">Tratamento</div><div class="v">Programa estruturado de estilo de vida (dieta hipocalórica de padrão mediterrâneo/DASH, 150 min/sem de atividade, perda ≥7%). <b>Metformina 850 mg 2×/dia</b> considerar em 25–59 anos com IMC ≥35, glicemia de jejum ≥110, HbA1c ≥6,0% ou DMG prévio (ADA 3.7); a SBD acrescenta síndrome metabólica e HAS. Também previnem DM2 (sem custo-efetividade demonstrada): acarbose, pioglitazona, orlistate, liraglutida 3 mg, semaglutida 2,4 mg e tirzepatida (SURMOUNT-1: −94% de progressão em 3 anos). <span class="ev ev-acr">ADA 2026</span></div></div>
+<div class="disease-row"><div class="k">Prognóstico</div><div class="v">DPP/DPPOS: efeito do estilo de vida persiste por 15–20 anos (−27% de incidência); metformina −31% (maior em IMC ≥35 e DMG prévio). Da Qing: intervenção de 6 anos reduziu mortalidade CV em 30 anos de seguimento. Regressão à normoglicemia, mesmo transitória, associa-se a menor risco futuro.</div></div>
+<div class="disease-row"><div class="k">O que muda conduta</div><div class="v"><b>IMC ≥35, idade &lt;60, glicemia ≥110 ou HbA1c ≥6,0%, DMG prévio → metformina; obesidade com comorbidade → farmacoterapia de obesidade (EN07); TOTG-1h ≥209 → já é DM2.</b></div></div>
+</div></div>
+</div>
+<div class="score">
+<div class="score-head"><div class="score-name">Critérios diagnósticos — adulto não gestante <span class="ev ev-sbr">PCDT DM2 2026 Quadro 4</span> <span class="ev ev-acr">ADA 2026 Tab. 2.1–2.2</span></div><div class="score-purpose">Normal · pré-diabetes · diabetes (mg/dL ou %)</div></div>
+<div class="score-rows">
+<div class="score-row"><div class="score-grade">Jejum 8–12 h</div><div class="score-desc">&lt;100 · 100–125 · <b>≥126</b></div></div>
+<div class="score-row"><div class="score-grade">TOTG 1 h (75 g)</div><div class="score-desc">&lt;155 · 155–208 · <b>≥209</b> (SBD/PCDT; não ADA)</div></div>
+<div class="score-row"><div class="score-grade">TOTG 2 h (75 g)</div><div class="score-desc">&lt;140 · 140–199 · <b>≥200</b></div></div>
+<div class="score-row"><div class="score-grade">HbA1c (NGSP)</div><div class="score-desc">&lt;5,7 · 5,7–6,4 · <b>≥6,5</b></div></div>
+<div class="score-row"><div class="score-grade">Ao acaso</div><div class="score-desc">— · — · <b>≥200 com sintomas clássicos</b> (dispensa confirmação)</div></div>
+</div>
+</div>
+<div class="box pearl"><span class="box-label">PEARL</span><div class="box-title">A HbA1c "normal" não descarta TDG</div><div class="box-body">A HbA1c tem especificidade de 98–99% para DM, mas sensibilidade baixa para pré-diabetes e para DM inicial com hiperglicemia predominantemente pós-prandial, em idosos e em afrodescendentes com glicação diferente. Em alto risco (FINDRISC ≥15, ≥3 fatores) com jejum e HbA1c normais, a SBD indica TOTG-1h.</div></div>
+</div>
+</div>
+</section>
+
+<section id="secundarias">
+<div class="section"><div class="section-eyebrow"><span>D</span> Entidades Secundárias</div><h2 class="section-title">Outros tipos, complicações de rastreio e o diabetes do internado</h2><div class="section-sub">LADA e MODY agrupados (contrato EN01); doença renal, retinopatia e neuropatia na fase de rastreio e proteção farmacológica (as formas avançadas e o pé estão no EN02, NU03 e OE02); e a hiperglicemia hospitalar e por glicocorticoide, que nenhum outro ID do catálogo assume.</div></div>
+
+<div class="card diag">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">D.1</span> Box agrupado</div><h3>Outros tipos: LADA, MODY, DM2 com tendência à cetose, pancreatogênico e secundário <span class="ank ank-dec">DECISION</span></h3><div class="card-sub">"Diabetes que não se comporta": classificar muda a droga</div></div>
+<div class="card-body">
+<div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">LADA = DM1 lento do adulto (anti-GAD+) — <b>evite sulfonilureia, insulinize cedo</b>. MODY-HNF1A/4A = sulfonilureia em dose baixa resolve; MODY-GCK = não tratar. Tipo 3c = insulina + reposição enzimática e atenção à hipoglicemia (perda de glucagon). DM por glicocorticoide = hiperglicemia vespertina.</div></div>
+<div class="disease">
+<div class="disease-head"><div class="disease-name">Outros tipos específicos e LADA</div><div class="disease-tag">CID-10 E13.9 · E13.8</div></div>
+<div class="disease-body"><div class="disease-rows">
+<div class="disease-row"><div class="k">LADA</div><div class="v">Adulto (geralmente &gt;30 anos), IMC normal ou pouco elevado, sem necessidade de insulina por ≥6 meses, anti-GAD positivo (título alto prediz insulinodependência mais rápida). 5–10% dos "DM2". Codifica-se como E10 no CID-10 (DM1 de início lento); o PCDT DM1 2019 dá acesso a análogos com peptídeo C + autoanticorpo. Evitar sulfonilureia (acelera falência beta); metformina, iDPP-4 e iSGLT2 são adjuvantes, este último com vigilância de cetose.</div></div>
+<div class="disease-row"><div class="k">MODY</div><div class="v">Autossômico dominante, início &lt;25–35 anos, ≥2 gerações, autoanticorpos negativos, peptídeo C preservado após 3–5 anos. <b>GCK (MODY2):</b> glicemia de jejum 100–145 estável, não progride, sem complicações → sem tratamento fora da gestação. <b>HNF1A (MODY3, o mais comum sintomático):</b> progressivo, glicosúria com limiar renal baixo, PCR-us baixa, sensível a sulfonilureia (gliclazida 20–40 mg). <b>HNF4A (MODY1):</b> macrossomia e hipoglicemia neonatal, sensível a sulfonilureia. <b>HNF1B (MODY5):</b> cistos renais, malformação genital, hipomagnesemia, atrofia pancreática → insulina. Calculadora de Exeter (probabilidade &gt;25–60% → painel genético).</div></div>
+<div class="disease-row"><div class="k">DM2 com tendência à cetose</div><div class="v">"Flatbush": obeso, frequentemente negro ou pardo, abre com CAD, anticorpos negativos, peptídeo C recupera após semanas de insulina e o paciente sai para orais (até 70% em remissão insulínica em 1 ano). Classificação Aβ: A−β+ é o fenótipo típico.</div></div>
+<div class="disease-row"><div class="k">Pancreatogênico (3c) e secundários</div><div class="v">Pancreatite crônica, pancreatectomia, fibrose cística (rastreio anual com TOTG a partir de 10 anos), hemocromatose, adenocarcinoma de pâncreas (DM novo &gt;50 anos com emagrecimento). Endocrinopatias: Cushing, acromegalia, feocromocitoma, glucagonoma, aldosteronismo. Fármacos: glicocorticoide, antipsicóticos atípicos, tacrolimo (diabetes pós-transplante — diagnóstico por TOTG após estabilização), inibidores de checkpoint, alpelisibe, tiazídicos em dose alta, estatina (risco pequeno, benefício muito maior). <span class="ev ev-acr">ADA 2026</span> <span class="ev ev-sbr">SBD classificação 2023</span></div></div>
+<div class="disease-row"><div class="k">Tratamento</div><div class="v">Ditado pelo mecanismo: insulina nos insulinopênicos (LADA avançado, 3c, HNF1B, fulminante por checkpoint); sulfonilureia em dose baixa nos MODY HNF1A/4A; nenhum no GCK; metformina/pioglitazona no Cushing e no induzido por antipsicótico; NPH matinal no glicocorticoide; tratar a endocrinopatia de base. No 3c, prefira metas mais flexíveis e evite hipoglicemia, pois falta glucagon.</div></div>
+<div class="disease-row"><div class="k">O que muda conduta</div><div class="v"><b>Anti-GAD+ → não usar sulfonilureia e programar insulina; mutação HNF1A/4A → trocar insulina por sulfonilureia; GCK → suspender tratamento; DM novo com emagrecimento em idoso → imagem de pâncreas; DMG → GO13.</b></div></div>
+</div></div>
+</div>
+<div class="box hy"><span class="box-label">HIGH-YIELD</span><div class="box-title">Diabetes neonatal e mitocondrial</div><div class="box-body">Diabetes antes dos 6 meses é monogênico até prova em contrário: mutações de KCNJ11 ou ABCC8 (Kir6.2/SUR1) — muitos trocam insulina por glibenclamida em dose alta, com melhora neurológica (síndrome DEND). Diabetes com surdez neurossensorial de herança materna = mutação mitocondrial m.3243A&gt;G (MIDD); evitar metformina (acidose láctica).</div></div>
+</div>
+</div>
+
+<div class="card diag">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">D.2</span> Complicação microvascular</div><h3>Doença renal do diabetes — rastreio e os quatro pilares <span class="ank ank-hy">HIGH-YIELD</span> <span class="ank ank-dec">DECISION</span></h3><div class="card-sub">RAC + TFG; IECA/BRA, iSGLT2, finerenona, semaglutida (diálise e DRC 5 → NU03/EN02)</div></div>
+<div class="card-body">
+<div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Rastreio anual com <b>RAC em amostra isolada + TFG CKD-EPI</b>, ao diagnóstico no DM2 e após 5 anos no DM1. RAC ≥30 confirmado em 2 de 3 amostras em 3–6 meses ou TFG &lt;60 = DRD. Tratamento em camadas que somam proteção: <b>IECA/BRA máximo + iSGLT2 + finerenona + aGLP-1</b>, PA &lt;130/80, estatina.</div></div>
+<div class="disease">
+<div class="disease-head"><div class="disease-name">Doença renal do diabetes (nefropatia diabética)</div><div class="disease-tag">CID-10 E11.2† N08.3* · E10.2†</div></div>
+<div class="disease-body"><div class="disease-rows">
+<div class="disease-row"><div class="k">Epidemiologia</div><div class="v">30–40% dos diabéticos; principal causa de DRC dialítica no mundo, segunda no Brasil (após nefropatia hipertensiva). Fenótipos: clássico albuminúrico; não albuminúrico com TFG em queda (mais em mulheres, idosos, HAS, tabagismo, sem retinopatia); declínio rápido (&gt;4–5 mL/min/ano); regressão da albuminúria com tratamento.</div></div>
+<div class="disease-row"><div class="k">Fisiopatologia</div><div class="v">Hiperfiltração (vasodilatação aferente por reabsorção proximal aumentada de glicose e sódio, que reduz a oferta de NaCl à mácula densa e desliga o feedback tubuloglomerular; vasoconstrição eferente por angiotensina II) → hipertrofia glomerular, espessamento da membrana basal, expansão mesangial e podocitopatia → albuminúria → glomeruloesclerose difusa ou nodular (Kimmelstiel-Wilson), arteriolosclerose hialina aferente e eferente, fibrose tubulointersticial mediada por ativação do receptor mineralocorticoide.</div></div>
+<div class="disease-row"><div class="k">Clínica</div><div class="v">Assintomática até fases avançadas; HAS, edema, síndrome nefrótica tardia. Hipoglicemia por menor depuração de insulina e sulfonilureias. Acidose tubular tipo IV (hipoaldosteronismo hiporreninêmico) com hipercalemia desproporcional à TFG. Albuminúria é também marcador de risco CV independente.</div></div>
+<div class="disease-row"><div class="k">Diagnóstico</div><div class="v">RAC (preferir 1ª urina da manhã) A1 &lt;30, A2 30–299, A3 ≥300 mg/g; TFG por CKD-EPI creatinina, cistatina C quando massa muscular é atípica (amputados, sarcopenia, obesidade grave). Excluir causas transitórias (exercício intenso, febre, ITU, IC descompensada, hiperglicemia grave, menstruação). Sinais de outra nefropatia → investigar e considerar biópsia: DM1 &lt;5 anos, ausência de retinopatia no DM1, proteinúria nefrótica de instalação rápida, hematúria glomerular/cilindros, queda de TFG &gt;30% em 2–3 meses após IECA/BRA, sinais sistêmicos. <span class="ev ev-sbr">SBD DRD 2026</span> <span class="ev ev-nice">KDIGO 2022</span></div></div>
+<div class="disease-row"><div class="k">Tratamento</div><div class="v"><b>IECA ou BRA</b> em dose máxima tolerada com RAC &gt;30 ou TFG &lt;60, independentemente da PA (SBD R5); nunca IECA + BRA (R8); não reduzir por TFG isolada, manejar K com dieta, diurético e ciclossilicato de zircônio (R6–R7). <b>iSGLT2</b> com TFG ≥20 independentemente da HbA1c e da RAC (R9–R10; dapagliflozina ≥25, canagliflozina ≥45 para iniciar), manter até diálise (R11). <b>Finerenona</b> com albuminúria, TFG ≥25 e K ≤4,8 (R12; ADA 11.8), inclusive no DM1 pela SBD 2026 (extrapolação, sem desfecho no DM1 até FINE-ONE). <b>Semaglutida 1 mg/sem</b> com TFG ≥25 e RAC &gt;100 (R15; FLOW: −24% no desfecho renal composto). Metformina ajustada (1 g/dia se TFG 30–44; suspender &lt;30). Insulina se TFG &lt;30 e HbA1c fora da meta (R18). PA &lt;130/80 (&lt;120 sistólica se tolerado, ADA 10.4); estatina de alta intensidade se TFG &lt;60 não dialítico; proteína 0,8 g/kg/dia se TFG &lt;30; sódio &lt;2 g/dia. <span class="ev ev-sbr">SBD DRD 2026</span> <span class="ev ev-acr">ADA 2026 sec. 11</span></div></div>
+<div class="disease-row"><div class="k">Prognóstico</div><div class="v">Cada pilar reduz independentemente 20–40% de progressão (RENAAL/IDNT para BRA; CREDENCE, DAPA-CKD, EMPA-KIDNEY para iSGLT2; FIDELIO/FIGARO para finerenona; FLOW para semaglutida). Combinação plena projeta ganho de anos livres de diálise. A maioria dos pacientes com DRD morre de evento CV antes de chegar à diálise.</div></div>
+<div class="disease-row"><div class="k">O que muda conduta</div><div class="v"><b>RAC ≥30 confirmada → IECA/BRA + iSGLT2 mesmo normotenso e com HbA1c na meta; RAC ≥100 → semaglutida; K ≤4,8 com albuminúria residual → finerenona; TFG &lt;30 → suspender metformina, insulina ou aGLP-1 para glicemia, encaminhar ao nefrologista (NU03); hematúria/nefrótico rápido → biópsia.</b></div></div>
+</div></div>
+</div>
+<div class="score">
+<div class="score-head"><div class="score-name">Categorias KDIGO de DRC (TFG × albuminúria) <span class="ev ev-nice">KDIGO 2022/2024</span></div><div class="score-purpose">Frequência de monitorização: verde 1×/ano · amarelo 1× · laranja 2× · vermelho 3–4×/ano</div></div>
+<div class="score-rows">
+<div class="score-row"><div class="score-grade">G1–G2 (≥60)</div><div class="score-desc">A1: baixo risco (anual) · A2: moderado · A3: alto — já é DRD se albuminúria persistente</div></div>
+<div class="score-row"><div class="score-grade">G3a (45–59)</div><div class="score-desc">A1: moderado · A2: alto · A3: muito alto · eficácia glicêmica do iSGLT2 começa a cair abaixo de 45</div></div>
+<div class="score-row"><div class="score-grade">G3b (30–44)</div><div class="score-desc">Alto a muito alto · <b>metformina máx. 1 g/dia</b>; canagliflozina não iniciar &lt;45</div></div>
+<div class="score-row"><div class="score-grade">G4 (15–29)</div><div class="score-desc">Muito alto · suspender metformina; iSGLT2 iniciar até 20 (empagliflozina) ou 25 (dapagliflozina); finerenona até 25; aGLP-1 preferido para glicemia</div></div>
+<div class="score-row"><div class="score-grade">G5 (&lt;15/diálise)</div><div class="score-desc">Muito alto · insulina em dose reduzida, linagliptina, aGLP-1 com experiência limitada → NU03/EN02</div></div>
+</div>
+</div>
+<details class="deep"><summary>Deep dive · Por que os quatro pilares somam: hemodinâmica, metabolismo e inflamação renal</summary><div class="deep-content">
+<p><b>Quatro mecanismos de lesão, quatro alvos.</b> A DRD é a soma de (1) hipertensão intraglomerular, (2) sobrecarga metabólica tubular, (3) inflamação e fibrose mediadas pelo receptor mineralocorticoide e (4) disfunção endotelial e sistêmica ligada à adiposidade. O IECA/BRA dilata a arteríola eferente; o iSGLT2 contrai a aferente; a finerenona age no núcleo da célula mesangial, do podócito e do fibroblasto; o aGLP-1 atua sobretudo fora do glomérulo (inflamação, peso, PA, lipídios, natriurese). Como os alvos são diferentes, os efeitos se somam sem redundância — em análises de "terapia combinada" estimada a partir de FIDELITY, CREDENCE e FLOW, o tempo projetado livre de doença renal terminal aumenta vários anos em um homem de 50 anos com albuminúria A3.</p>
+<p><b>O "dip" esperado.</b> Iniciar IECA/BRA ou iSGLT2 reduz a TFG em 3–6 mL/min nas primeiras 2–4 semanas: é queda hemodinâmica da pressão intraglomerular, reversível ao suspender, e associa-se a maior proteção em longo prazo (a curva de TFG fica mais plana depois). Só investigar se a queda passa de 30% (estenose de artéria renal, hipovolemia, AINE, diurético excessivo). Na DAPA-CKD e na EMPA-KIDNEY, a proteção foi semelhante com e sem diabetes e em todas as faixas de albuminúria (benefício absoluto maior nas mais altas), o que permitiu baixar o limiar de início para TFG ≥20 (empagliflozina) e ≥25 (dapagliflozina).</p>
+<p><b>Receptor mineralocorticoide e finerenona.</b> Na hiperglicemia e na obesidade, o receptor mineralocorticoide é superativado também por cortisol (quando a 11β-HSD2 está saturada), por Rac1 e por estresse oxidativo, independentemente da aldosterona circulante. Isso induz PAI-1, TGF-β, fibronectina, recrutamento de macrófagos e fibrose. Espironolactona e eplerenona (esteroidais) concentram-se mais no rim, têm metabólitos ativos de meia-vida longa e efeitos antiandrogênicos (espironolactona), causando hipercalemia maior. A finerenona é não esteroidal, distribui-se de forma equilibrada entre coração e rim, é um antagonista "volumoso" que impede o recrutamento de cofatores transcricionais e tem meia-vida curta, sem metabólitos ativos: menos hipercalemia para a mesma proteção. FIDELIO-DKD (RAC 30–300 com retinopatia ou 300–5.000) e FIGARO-DKD (mais precoce) reduziram desfecho renal e CV (sobretudo internação por IC). A combinação simultânea com iSGLT2 desde o início é segura e mais eficaz sobre a albuminúria (CONFIDENCE), o que embasa a recomendação ADA 11.9.</p>
+<p><b>GLP-1 no rim.</b> O receptor de GLP-1 está no músculo liso da arteríola aferente e no túbulo proximal (onde inibe o trocador NHE3, natriurético), mas o efeito renal da semaglutida no FLOW parece vir mais de redução de inflamação, peso, PA e lipotoxicidade do que de hemodinâmica glomerular. O benefício foi consistente em quem já usava iSGLT2 (~16% da amostra) — base para tratar os dois como complementares. Tirzepatida reduziu albuminúria e a perda de TFG em análises secundárias do SURPASS-4 e do SURPASS-CVOT, ainda sem ensaio renal dedicado completo.</p>
+<p><b>Metas glicêmicas e escolha de fármacos na DRC.</b> A HbA1c perde acurácia com TFG &lt;30 (anemia, eritropoetina, transfusão, carbamilação da hemoglobina), e o CGM torna-se o método preferido. A SBD 2026 deixou de estratificar a meta pela TFG (R4: meta individualizada), revertendo a faixa 7–7,9% para TFG &lt;45 da edição 2025. Insulina: necessidade cai 25–50% com TFG &lt;30 porque o rim degrada ~30% da insulina circulante. Sulfonilureias: gliclazida e glipizida (metabólitos inativos) com cautela; glibenclamida contraindicada com TFG &lt;60. iDPP-4: linagliptina e evogliptina sem ajuste; sitagliptina 50 mg com TFG 30–44 e 25 mg abaixo de 30.</p>
+</div></details>
+</div>
+</div>
+
+<div class="card diag">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">D.3</span> Complicação microvascular</div><h3>Retinopatia diabética — rastreio e quando encaminhar <span class="ank ank-hy">HIGH-YIELD</span></h3><div class="card-sub">Tratamento oftalmológico (anti-VEGF, laser, vitrectomia) → OE02</div></div>
+<div class="card-body">
+<div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Principal causa de cegueira em idade produtiva. <b>DM2: exame de retina ao diagnóstico; DM1: após 5 anos</b>; depois anual (a cada 1–2 anos se sem retinopatia e bom controle, ADA). Gestante com DM prévio: antes da gestação, a cada trimestre e até 1 ano pós-parto.</div></div>
+<div class="disease">
+<div class="disease-head"><div class="disease-name">Retinopatia diabética e edema macular</div><div class="disease-tag">CID-10 E11.3† H36.0* · E10.3†</div></div>
+<div class="disease-body"><div class="disease-rows">
+<div class="disease-row"><div class="k">Fisiopatologia</div><div class="v">Hiperglicemia → via dos polióis (aldose redutase, sorbitol), AGEs/RAGE, PKC-β, hexosamina → perda de pericitos, espessamento de membrana basal, microaneurismas (1ª lesão), quebra da barreira hematorretiniana (exsudatos duros, edema macular), oclusão capilar e isquemia (manchas algodonosas, IRMA, rosário venoso) → VEGF → neovascularização, hemorragia vítrea, descolamento tracional, glaucoma neovascular.</div></div>
+<div class="disease-row"><div class="k">Classificação</div><div class="v">RDNP leve (só microaneurismas), moderada, grave (regra 4-2-1: hemorragias nos 4 quadrantes, rosário venoso em ≥2, IRMA em ≥1) e muito grave (≥2 critérios); RD proliferativa (neovasos de disco ou retina, hemorragia vítrea/pré-retiniana). Edema macular em qualquer fase, envolvendo ou não o centro (OCT).</div></div>
+<div class="disease-row"><div class="k">Rastreio</div><div class="v">Fundoscopia sob midríase por oftalmologista ou retinografia com leitura remota (inclusive algoritmos de IA aprovados, ADA 12.6). Fatores de progressão: duração, HbA1c, HAS, DRC, dislipidemia, puberdade, gestação, anemia, cirurgia de catarata e queda rápida da HbA1c. <span class="ev ev-acr">ADA 2026 12.3–12.5</span> <span class="ev ev-sbr">PCDT DM2 2026</span></div></div>
+<div class="disease-row"><div class="k">Tratamento (clínico)</div><div class="v">Controle glicêmico (DCCT −76% de incidência), PA e lipídios; fenofibrato reduz progressão (FIELD, ACCORD-Eye; LENS 2024 em retinografia) — considerar em RDNP com hipertrigliceridemia. Anti-VEGF intravítreo é 1ª linha no edema macular com envolvimento central; panfotocoagulação ou anti-VEGF na RDP (OE02). Retinopatia não contraindica AAS nem anticoagulação. <span class="ev ev-acr">ADA 2026</span></div></div>
+<div class="disease-row"><div class="k">O que muda conduta</div><div class="v"><b>RDNP grave, RDP ou edema macular → oftalmologia em dias; retinopatia ativa ao iniciar semaglutida/insulinização intensa → reduzir HbA1c de forma gradual e reexaminar em 3–6 meses; gestação → exame trimestral.</b></div></div>
+</div></div>
+</div>
+<div class="score">
+<div class="score-head"><div class="score-name">Escala internacional de gravidade da retinopatia (ETDRS simplificada) <span class="ev ev-acr">ADA 2026 / AAO</span></div><div class="score-purpose">Define intervalo de reavaliação e urgência</div></div>
+<div class="score-rows">
+<div class="score-row"><div class="score-grade">Sem RD</div><div class="score-desc">Reavaliar em 1–2 anos se controle adequado</div></div>
+<div class="score-row"><div class="score-grade">RDNP leve/moderada</div><div class="score-desc">Microaneurismas ± hemorragias, exsudatos · reavaliar em 6–12 meses</div></div>
+<div class="score-row"><div class="score-grade">RDNP grave</div><div class="score-desc"><b>Regra 4-2-1</b> · risco de RDP em 1 ano ~50% · oftalmologista em semanas, considerar laser/anti-VEGF</div></div>
+<div class="score-row"><div class="score-grade">RDP</div><div class="score-desc">Neovasos/hemorragia vítrea · <b>tratamento imediato</b> (panfotocoagulação ou anti-VEGF; vitrectomia se hemorragia persistente/tração)</div></div>
+<div class="score-row"><div class="score-grade">Edema macular</div><div class="score-desc">Com envolvimento central: anti-VEGF 1ª linha · sem envolvimento central e boa visão: observar/laser focal</div></div>
+</div>
+</div>
+<div class="box danger"><span class="box-label">DANGER</span><div class="box-title">Piora precoce da retina com controle rápido</div><div class="box-body">No SUSTAIN-6, semaglutida associou-se a mais complicações de retinopatia (3,0% × 1,8%), concentradas em quem já tinha retinopatia e teve queda grande e rápida da HbA1c — o mesmo "early worsening" descrito no DCCT com insulinização intensiva. Não é contraindicação: é indicação de retina antes de iniciar, descida gradual e reavaliação. A neuropatia óptica isquêmica anterior não arterítica (NAION) foi associada a semaglutida em estudos observacionais (EMA, 2025: efeito muito raro) — baixa visual súbita indolor exige suspensão e avaliação.</div></div>
+</div>
+</div>
+
+<div class="card diag">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">D.4</span> Complicação microvascular</div><h3>Neuropatia diabética — rastreio e dor neuropática <span class="ank ank-dec">DECISION</span></h3><div class="card-sub">Polineuropatia distal simétrica e autonômica; pé em risco e úlcera → EN02; diferencial amplo de polineuropatia → NE07</div></div>
+<div class="card-body">
+<div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Complicação crônica mais prevalente (até 50%) e mais subdiagnosticada. Rastreio anual com <b>um teste de fibra fina (dor ou temperatura) + um de fibra grossa (diapasão 128 Hz ou biotesiômetro)</b>; monofilamento de 10 g identifica pé em risco de úlcera, não neuropatia precoce. Dor: pregabalina, duloxetina ou amitriptilina; opioides não.</div></div>
+<div class="disease">
+<div class="disease-head"><div class="disease-name">Polineuropatia diabética e neuropatia autonômica</div><div class="disease-tag">CID-10 E11.4† G63.2* · G99.0*</div></div>
+<div class="disease-body"><div class="disease-rows">
+<div class="disease-row"><div class="k">Fisiopatologia</div><div class="v">Dano axonal comprimento-dependente: via dos polióis e depleção de mioinositol, AGEs, estresse oxidativo mitocondrial, dislipidemia (lipotoxicidade do nervo — no DM2 a dislipidemia e a obesidade pesam tanto quanto a glicemia, por isso o controle glicêmico intensivo protege muito no DM1 e pouco no DM2), microangiopatia dos vasa nervorum. Fibras finas (dor, temperatura, função autonômica e sudomotora) caem primeiro.</div></div>
+<div class="disease-row"><div class="k">Clínica</div><div class="v">Distal, simétrica, em "botas e luvas": parestesias, queimação, alodinia e dor pior à noite; depois hipoestesia, perda de vibração e do reflexo aquileu, fraqueza intrínseca do pé e deformidade (dedos em garra, Charcot). Autonômica: taquicardia de repouso &gt;100 bpm, hipotensão ortostática (queda ≥20/10 mmHg), isquemia silenciosa, gastroparesia (vômitos pós-prandiais, glicemia errática), diarreia noturna, bexiga neurogênica, disfunção erétil, anidrose distal. Formas focais: mononeuropatias (III par poupando pupila), amiotrofia diabética (radiculoplexopatia lombossacral dolorosa com perda de peso), neuropatia caquética por correção rápida (neurite insulínica).</div></div>
+<div class="disease-row"><div class="k">Diagnóstico</div><div class="v">Rastreio anual a partir do diagnóstico do DM2 e do 5º ano do DM1 (SBD 2026 R1–R2; ADA 12.17–12.18). Diagnóstico de exclusão: B12 (sobretudo em uso de metformina), TSH, função renal, eletroforese de proteínas, álcool, HIV/sífilis conforme risco, quimioterápicos (R3). ENMG só em quadro atípico: assimétrico, motor predominante, rápido, proximal. Escore de comprometimento neuropático (ECN/NDS) quantifica. Ortostatismo e FC de repouso para disautonomia. <span class="ev ev-sbr">SBD Neuropatia 2026</span> <span class="ev ev-acr">ADA 2026</span></div></div>
+<div class="disease-row"><div class="k">Tratamento</div><div class="v">Controle glicêmico e de fatores de risco (R6–R7). Dor — 1ª linha (R8–R9): <b>pregabalina 300–600 mg/dia em 2 doses</b>, gabapentina 1.800–3.600 mg/dia em 3 doses (ajuste se TFG &lt;45), <b>duloxetina 30 → 60 mg/dia</b> (máx. 120), <b>amitriptilina 10–25 mg à noite → 75 mg</b>. Combinação se resposta parcial (amitriptilina ou duloxetina + pregabalina; OPTION-DM) (R11). Ácido alfa-lipoico 600 mg/dia VO ou IV para sintomas (R14, IIa). Adesivo de capsaicina 8% em refratário (R13). Opioides, incluindo tramadol e tapentadol, não recomendados (SBD R10; ADA 12.22). Reavaliar em 4 semanas; após 6 meses sem dor, considerar retirada gradual (R12). Gastroparesia: refeições pequenas e pobres em gordura, metoclopramida por curto prazo (risco de discinesia tardia), suspender aGLP-1 se agravar. <span class="ev ev-sbr">SBD Neuropatia 2026</span></div></div>
+<div class="disease-row"><div class="k">O que muda conduta</div><div class="v"><b>Perda de sensibilidade protetora (monofilamento) → pé em risco: calçado, inspeção a cada consulta, podologia (EN02); dor neuropática → fármaco de 1ª linha com titulação, não opioide; disautonomia cardiovascular → cautela com metas estritas e com anti-hipertensivos; gastroparesia → insulina prandial após a refeição e reavaliar GLP-1.</b></div></div>
+</div></div>
+</div>
+<div class="box myth"><span class="box-label">MYTH</span><div class="box-title">"Monofilamento normal exclui neuropatia diabética"</div><div class="box-body">O monofilamento de 10 g avalia fibras grossas e perda da sensibilidade protetora — tem baixa sensibilidade para neuropatia inicial, que é de fibra fina. A SBD 2026 o reserva para triagem do pé em risco e exige, para rastrear neuropatia, um teste de fibra fina e outro de fibra grossa (diapasão ou biotesiômetro). O Ipswich Touch Test substitui o monofilamento quando ele falta.</div></div>
+</div>
+</div>
+
+<div class="card tx">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">D.5</span> Diabetes no hospital</div><h3>Hiperglicemia hospitalar não crítica e diabetes induzido por glicocorticoide <span class="ank ank-dec">DECISION</span></h3><div class="card-sub">Insulina programada em dose fixa, não escala isolada; NPH matinal para o corticoide</div></div>
+<div class="card-body">
+<div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Alvo <b>100–180 mg/dL</b>. Glicemia 180–250 ou insulina domiciliar ≤0,6 U/kg → <b>basal-plus</b> (basal 0,1–0,3 U/kg + correção); &gt;250, DM1, LADA, pancreatectomia ou dose domiciliar &gt;0,6 U/kg → <b>basal-bolus</b> (dose total 0,2–0,6 U/kg, 50% basal). Ajustar a cada 24–48 h em 10–20%. Corticoide → NPH pela manhã.</div></div>
+<div class="disease">
+<div class="disease-head"><div class="disease-name">Hiperglicemia hospitalar e induzida por glicocorticoide</div><div class="disease-tag">CID-10 R73.9 · Y42.0</div></div>
+<div class="disease-body"><div class="disease-rows">
+<div class="disease-row"><div class="k">Fisiopatologia</div><div class="v">Hiperglicemia de estresse: cortisol, catecolaminas, glucagon, GH e citocinas (TNF-α, IL-6) aumentam gliconeogênese e resistência insulínica, somados a dieta enteral/parenteral e fármacos. Glicocorticoide: resistência hepática e muscular, inibição direta da secreção beta; com prednisona matinal, pico glicêmico 4–8 h depois (tarde e noite) com jejum relativamente poupado — por isso a glicemia de jejum subestima o problema.</div></div>
+<div class="disease-row"><div class="k">Diagnóstico</div><div class="v">Glicemia na admissão de todo adulto; HbA1c se &gt;180 ou DM conhecido (sem dosagem em 3 meses): ≥6,5% = DM prévio (R3). Monitorizar antes das refeições e ao deitar se come; a cada 4–6 h em jejum/enteral contínua; antes do almoço e do jantar no corticoide (R6). <span class="ev ev-sbr">SBD hospitalar 2025</span></div></div>
+<div class="disease-row"><div class="k">Tratamento</div><div class="v">Basal-plus ou basal-bolus como acima; escala isolada só com ≤1 glicemia &gt;180/dia, nenhuma &gt;250 e sem insulina domiciliar. Ajuste por um único método: 10–20% da dose total ou 0,05–0,1 U/kg/dia a cada 24–48 h (R10–R12). Sulfonilureia e glinida não (R14); metformina só estável, TFG &gt;30, sem contraste (R15); iDPP-4 na hiperglicemia leve, exceto saxagliptina (R16); iSGLT2 pode ser mantido com cetonas monitoradas, suspender se BHB &gt;1,5 mmol/L (R17–R18). <b>Glicocorticoide:</b> NPH matinal, ~0,1 U/kg para cada 10 mg de prednisona (ou equivalente), até 0,4 U/kg com ≥40 mg, reduzindo junto com o desmame (R9). Crítico: insulina regular IV 1 U/mL, alvo 140–180 (protocolo institucional). <span class="ev ev-sbr">SBD hospitalar 2025</span> <span class="ev ev-acr">ADA 2026 sec. 16</span></div></div>
+<div class="disease-row"><div class="k">Alta</div><div class="v">HbA1c guia o plano (algoritmo de Umpierrez, Diabetes Care 2014, adotado em protocolos nacionais): &lt;7% → retomar esquema prévio; 7–9% → retomar orais e somar basal com ~50% da dose hospitalar; &gt;9% → orais + basal com ~80% da dose hospitalar ou basal-bolus, retorno precoce (confirmar no protocolo local). Educação em insulina, glicosímetro e retorno em 1–2 semanas.</div></div>
+<div class="disease-row"><div class="k">O que muda conduta</div><div class="v"><b>Dose domiciliar &gt;0,6 U/kg ou glicemia &gt;250 → basal-bolus; corticoide em dose decrescente → reduzir NPH no mesmo ritmo (hipoglicemia tardia é o erro); hipoglicemia &lt;70 → reduzir 10–20%; dieta suspensa → manter basal (reduzida), suspender prandial.</b></div></div>
+</div></div>
+</div>
+<div class="box danger"><span class="box-label">DANGER</span><div class="box-title">Escala de correção isolada é o esquema que mais erra</div><div class="box-body">A sliding scale reage à hiperglicemia já instalada, ignora a necessidade basal e produz ciclos de hiperglicemia e hipoglicemia; no RABBIT-2, basal-bolus melhorou controle e, em cirúrgicos, reduziu infecção de ferida, pneumonia e insuficiência renal. No DM1, retirar a basal porque "está em jejum" precipita CAD em horas. Na transição IV → SC: some a insulina IV das últimas 6–8 h, extrapole para 24 h, reduza 20% como basal e aplique o análogo 2–4 h (NPH 1–2 h) antes de desligar a bomba.</div></div>
+</div>
+</div>
+</section>
+
+<section id="algoritmo">
+<div class="section"><div class="section-eyebrow"><span>E</span> Algoritmo</div><h2 class="section-title">Do exame alterado ao esquema terapêutico</h2><div class="section-sub">A árvore começa pela pergunta que separa urgência de ambulatório (há insulinopenia?) e termina em condutas com fármaco e alvo, não em rótulos. O raciocínio narrado vem logo abaixo.</div></div>
+<div class="card prim">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">E.1</span> Algoritmo</div><h3>Diagnóstico, classificação e escolha do tratamento <span class="ank ank-dec">DECISION</span></h3></div>
+<div class="card-body">
+<div class="algo"><div class="tree">
+<div class="tree-line"><span class="tree-node start">Glicemia/HbA1c alterada ou sintomas de hiperglicemia</span></div>
+<div class="tree-branch"><div class="tree-label yes">Sintomas catabólicos, cetonúria, glicemia ≥300 ou HbA1c &gt;10%?</div>
+<div class="tree-line"><span class="tree-node dgr">Cetonemia + gasometria: acidose? → CAD/EHH (EN02). Sem acidose → insulina hoje</span></div>
+<div class="tree-branch"><div class="tree-label yes">Magro, jovem, autoimunidade, perda de peso</div><div class="tree-line"><span class="tree-node action">→ Basal-bolus 0,4–1,0 U/kg/dia; anti-GAD/IA-2/ZnT8; peptídeo C após estabilizar → DM1/LADA (C.2, D.1)</span></div></div>
+<div class="tree-branch"><div class="tree-label no">Fenótipo metabólico (obeso, acantose, HAS)</div><div class="tree-line"><span class="tree-node action">→ Basal 0,1–0,2 U/kg ± prandial, + metformina; reavaliar em 4–12 sem e trocar por dupla/tripla (SBD R15)</span></div></div>
+</div>
+<div class="tree-branch"><div class="tree-label no">Assintomático</div>
+<div class="tree-line"><span class="tree-node dec">Confirmar: 2 testes na mesma amostra ou repetir o alterado (TOTG-1h se discordante)</span></div>
+<div class="tree-branch"><div class="tree-label no">Faixa intermediária</div><div class="tree-line"><span class="tree-node action">→ Pré-diabetes: estilo de vida −7% peso; metformina se IMC ≥35, &lt;60 anos, jejum ≥110, HbA1c ≥6,0, DMG prévio; reavaliar anual</span></div></div>
+<div class="tree-branch"><div class="tree-label yes">DM2 confirmado</div>
+<div class="tree-line"><span class="tree-node dx">Estratificar: DCV · IC · RAC + TFG · IMC · HbA1c · hipoglicemia · acesso (SUS × privado)</span></div>
+<div class="tree-branch"><div class="tree-label yes">DCV, IC ou DRC (risco cardiorrenal SBD)</div><div class="tree-line"><span class="tree-node action">→ iSGLT2 independente da HbA1c (dapagliflozina 10 mg; SUS se critério) + metformina; DCV/obesidade/RAC &gt;100 → somar aGLP-1; DRD → IECA/BRA + finerenona</span></div></div>
+<div class="tree-branch"><div class="tree-label yes">IMC ≥30 (27–30 com comorbidade)</div><div class="tree-line"><span class="tree-node action">→ Semaglutida 0,25 → 1–2 mg/sem ou tirzepatida 2,5 → 5–15 mg/sem + metformina (fora do SUS)</span></div></div>
+<div class="tree-branch"><div class="tree-label no">Sem cardiorrenal, sem obesidade</div><div class="tree-line"><span class="tree-node action">→ Metformina; HbA1c ≥7,5% → dupla já (metformina + iSGLT2/aGLP-1; SUS: + gliclazida MR)</span></div></div>
+<div class="tree-branch"><div class="tree-label yes">Fora da meta em 3 meses</div><div class="tree-line"><span class="tree-node dgr">→ Intensificar sem inércia: tripla → quádrupla → basal (preferir combinação basal + GLP-1); suspender secretagogo ao entrar prandial</span></div></div>
+</div>
+</div>
+</div></div>
+<div class="box decision"><span class="box-label">DECISION</span><div class="box-title">Raciocínio em 6 passos — a sequência mental do consultório</div><div class="box-body"><ol>
+<li><b>Primeiro pergunte se há insulinopenia agora</b> (catabolismo, cetose, glicemia ≥300). Isso separa quem sai com insulina de quem sai com comprimido; na dúvida, insulina, porque ela é segura em qualquer tipo de diabetes e a descompensação não espera.</li>
+<li><b>Confirme e classifique</b>: o diagnóstico exige dois resultados (exceto sintomático com glicemia ≥200); o tipo decide a droga — anti-GAD positivo tira a sulfonilureia do mapa, MODY pode tirar a insulina.</li>
+<li><b>Descubra que órgão você está protegendo</b>: coração (DCV, IC), rim (RAC e TFG) ou fígado/adiposidade (IMC, MASLD). Cada um tem um fármaco com desfecho — iSGLT2 para IC e rim, aGLP-1/tirzepatida para aterosclerose, obesidade e RAC &gt;100, finerenona para albuminúria residual — e entra <b>independente da HbA1c</b>.</li>
+<li><b>Depois ajuste a potência pela HbA1c</b>: &lt;7,5% monoterapia; ≥7,5% dupla desde o início; o que faltar para a meta vem de agentes de alta eficácia (GLP-1, tirzepatida, insulina).</li>
+<li><b>Traduza para o acesso real</b>: no SUS, metformina, gliclazida, dapagliflozina com critério e insulinas (incluindo análogos para prioritários desde 2025); GLP-1 e tirzepatida só fora do SUS. Prescrever o ideal que o paciente não consegue comprar é inércia com outro nome.</li>
+<li><b>Reavalie em 3 meses e corrija o rumo</b>: meta não atingida → intensificar; hipoglicemia → desintensificar a sulfonilureia ou a insulina antes de qualquer outra coisa; meta muito abaixo em idoso frágil → retirar.</li>
+</ol></div></div>
+<div class="box hy"><span class="box-label">HIGH-YIELD</span><div class="box-title">Como intensificar a insulina no DM2 (escada PCDT/SBD)</div><div class="box-body">Basal ao deitar (NPH) ou análogo 10 U/0,1–0,2 U/kg → titular 2 U/3 dias pelo jejum (80–130). Jejum na meta e HbA1c alta → NPH 2×/dia (80% da dose: 2/3 manhã, 1/3 ao deitar) ou somar prandial de 2–4 U na refeição de maior excursão (basal-plus), titulando 1–2 U duas vezes por semana até pós-prandial &lt;180 → basal-bolus (3 prandiais). Sinais de <b>overbasalização</b> (basal &gt;0,5 U/kg, queda deitar–acordar &gt;50 mg/dL, hipoglicemia, jejum na meta com HbA1c alta) mandam parar de subir a basal e tratar o pós-prandial — com GLP-1 ou combinação fixa sempre que possível (ADA 9.22).</div></div>
+</div>
+</div>
+</section>
+
+<section id="tratamento">
+<div class="section"><div class="section-eyebrow"><span>F</span> Tratamento Integrado</div><h2 class="section-title">F1 · Estratégia por entidade · F2 · Doses Operacionais</h2><div class="section-sub">Escadas por entidade (DM2, DM1, pré-diabetes, rim, nervo, hospital, risco CV), acesso no SUS separado da recomendação internacional, a tabela de doses com número, via, frequência e ajuste renal, a técnica de insulina e os cenários em que o erro é previsível.</div></div>
+
+<div class="card tx">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">F.1</span> Estratégia</div><h3>Escadas terapêuticas por entidade <span class="ank ank-dec">DECISION</span></h3></div>
+<div class="card-body">
+<div class="sub-title">F1.1 · DM2 — escolha guiada por órgão e adiposidade</div>
+<ul class="bullets">
+<li><b>Base para todos:</b> educação em autocuidado, plano alimentar com déficit calórico se excesso de peso (perda ≥5% já melhora HbA1c; ≥10–15% pode remitir), fibras 25–30 g/dia, proteína 1–1,5 g/kg/dia sem DRC avançada, 150 min/sem de aeróbico + resistido 2–3×/sem, sono, cessação do tabagismo, vacinas (influenza, pneumocócica, hepatite B, herpes-zóster, VSR ≥60 anos, covid-19).</li>
+<li><b>1ª linha sem doença cardiorrenal e sem obesidade:</b> metformina (titular 500 → 2.000 mg/dia em 4–6 semanas); HbA1c ≥7,5% → dupla de início (SBD R7; ADA 9.6).</li>
+<li><b>Cardiorrenal (DCV, IC, DRC, idade e tempo de DM pela Tabela SBD):</b> iSGLT2 independentemente da HbA1c (SBD R8; ADA 9.7–9.10); se aterosclerose dominante, obesidade ou RAC &gt;100, aGLP-1 com benefício comprovado (liraglutida, dulaglutida, semaglutida SC/oral) ou tirzepatida (SURPASS-CVOT: não inferior à dulaglutida em MACE, com mortalidade total numericamente menor).</li>
+<li><b>Obesidade (IMC ≥30; 27–30 considerar):</b> aGLP-1 ou tirzepatida como fármaco principal para peso (SBD R9–R10), com metformina; MASLD/MASH → semaglutida (ESSENCE), tirzepatida ou pioglitazona (ADA 9.12–9.13); cirurgia metabólica se IMC ≥35 (≥30 com controle inadequado) — EN07.</li>
+<li><b>Intensificação</b> a cada 3 meses: dupla → tripla (iSGLT2 + aGLP-1 + metformina é a tripla de maior valor) → quádrupla (pioglitazona, iDPP-4 se sem GLP-1, sulfonilureia) → terapia baseada em insulina (SBD R11–R13). Nunca associar iDPP-4 a aGLP-1/tirzepatida (ADA 9.18).</li>
+<li><b>Insulina no DM2:</b> com sintomas, HbA1c &gt;10% ou glicemia ≥300; ou após falha das orais/GLP-1. Preferir combinação fixa basal/GLP-1 (iDegLira, iGlarLixi) no excesso de peso (SBD R16). Manter metformina e iSGLT2; suspender sulfonilureia ao iniciar prandial.</li>
+<li><b>Desintensificar</b> no idoso frágil, na hipoglicemia e quando a HbA1c fica abaixo da meta individual com agente hipoglicemiante: primeiro sulfonilureia e prandial, depois basal (ADA 6.6–6.7).</li>
+</ul>
+<div class="box decision"><span class="box-label">DECISION</span><div class="box-title">A divergência de 2026: metformina primeiro ou não?</div><div class="box-body">A <b>ADA 2026</b> trata metformina como um dos agentes de eficácia alta e baixo custo, mas coloca iSGLT2/aGLP-1 com benefício comprovado como decisão independente do uso prévio de metformina e da HbA1c em quem tem DCV, IC, DRC ou múltiplos fatores de risco (Fig. 9.4). A <b>SBD 2026</b> mantém metformina ao diagnóstico em todo assintomático com TFG ≥30 (R5, classe I), somando o agente cardiorrenal ou de peso. O <b>PCDT 2026</b> mantém metformina como estratégia inicial e só libera dapagliflozina na 2ª intensificação com critério de idade/DCV. Na prática, os três convergem para "metformina + o fármaco do órgão" — a diferença é se a metformina é obrigatória antes, e a resposta de 2026 é não.</div></div>
+
+<div class="sub-title">F1.2 · DM1 — insulinoterapia intensiva, tecnologia e adjuvantes</div>
+<ul class="bullets">
+<li><b>Início:</b> dose total 0,4–1,0 U/kg/dia; basal 40–50% em 1 aplicação (glargina/degludeca) ou NPH 2–3×/dia (ao deitar, nunca no jantar); prandial antes das refeições com razão insulina:carboidrato e fator de correção.</li>
+<li><b>Ajuste:</b> basal pela glicemia de jejum e de madrugada; prandial pela glicemia 2 h pós (ou antes da refeição seguinte); trocar uma variável por vez a cada 3 dias. Mapa da NPH/regular de prova: jejum = NPH da noite; pré-almoço = regular da manhã; pré-jantar = NPH da manhã; ao deitar = regular do jantar.</li>
+<li><b>Análogos:</b> preferidos (ADA 9.2; SBD R4–R6). No SUS, análogo rápido e prolongado para DM1 com critério do PCDT 2019 (hipoglicemia grave ou não grave repetida, ou mau controle, após 3 meses de NPH/regular), via CEAF; a Nota Técnica 169/2026 prevê troca NPH → glargina na APS para DM1 de 2 a &lt;18 anos e para ≥70 anos.</li>
+<li><b>Tecnologia:</b> CGM para todos em MDI ou bomba (ADA 9.25); SICI se meta não atingida em MDI (SBD R9); AID para a maioria que possa usar (ADA 9.27). Sensor e bomba não estão incorporados ao SUS nacional.</li>
+<li><b>Adjuvantes fora de bula:</b> metformina no "diabetes duplo" (reduz dose de insulina e LDL, sem melhora sustentada de HbA1c — REMOVAL); aGLP-1 em obesos com DM1 (perda de peso, menos insulina; risco de cetose se reduzir insulina demais); iSGLT2 no DM1 é desaconselhado pelo risco de CAD euglicêmica (sotagliflozina não aprovada no Brasil para DM1).</li>
+<li><b>Prevenção do estágio 3:</b> teplizumabe no estágio 2, ≥8 anos, infusão IV por 14 dias (Anvisa 2026; sem acesso SUS).</li>
+</ul>
+<div class="box danger"><span class="box-label">DANGER</span><div class="box-title">NPH ao jantar é o erro que causa hipoglicemia de madrugada e hiperglicemia ao acordar</div><div class="box-body">A NPH tem pico em 4–10 h: aplicada às 19 h, o pico cai entre 23 h e 5 h (hipoglicemia noturna) e o efeito acaba antes do pico de cortisol e GH do amanhecer (hiperglicemia matinal). <b>NPH noturna sempre ao deitar (~22 h).</b> Esse é o mesmo racional do esquema bedtime no DM2.</div></div>
+
+<div class="sub-title">F1.3 · Pré-diabetes — prevenção</div>
+<ul class="bullets">
+<li><b>Estilo de vida estruturado</b> com meta de −7% do peso e 150 min/sem de atividade: a intervenção de maior efeito (DPP −58%).</li>
+<li><b>Metformina 850 mg 2×/dia</b> nos de maior risco (IMC ≥35, &lt;60 anos, jejum ≥110, HbA1c ≥6,0%, DMG prévio; SBD: + síndrome metabólica ou HAS); prevenção também com metformina em glicocorticoide em dose alta e em inibidor de PI3Kα (ADA 3.8–3.9).</li>
+<li><b>Obesidade associada:</b> semaglutida 2,4 mg ou tirzepatida previnem DM2 de forma marcante, mas a indicação é a obesidade (EN07).</li>
+</ul>
+
+<div class="sub-title">F1.4 · Doença renal do diabetes — empilhar proteção</div>
+<ul class="bullets">
+<li><b>Camada 1:</b> IECA ou BRA titulado até a dose máxima tolerada (ex.: losartana 100 mg/dia, enalapril 20 mg 2×/dia), creatinina e K em 1–2 semanas; aceitar queda de TFG até 30%.</li>
+<li><b>Camada 2:</b> iSGLT2 (dapagliflozina 10 mg ou empagliflozina 10 mg) se TFG ≥20–25, independentemente da HbA1c; manter até diálise.</li>
+<li><b>Camada 3:</b> finerenona se RAC ≥30 persistente, TFG ≥25 e K ≤4,8 (10 mg se TFG 25–59; 20 mg se ≥60; subir para 20 mg em 4 semanas se K ≤4,8; suspender se &gt;5,5). Pode ser iniciada junto com o iSGLT2 se RAC ≥100 e TFG 30–90 (ADA 11.9).</li>
+<li><b>Camada 4:</b> semaglutida 1 mg/sem se RAC &gt;100 e TFG ≥25 (FLOW); outros aGLP-1 para peso e CV com TFG &gt;15.</li>
+<li><b>Transversal:</b> PA &lt;130/80, estatina de alta intensidade com TFG &lt;60, restrição de sódio, evitar AINE, ajustar fármacos à TFG, encaminhar ao nefrologista com TFG &lt;30, RAC &gt;300 refratária ou queda rápida (NU03).</li>
+</ul>
+<div class="box hy"><span class="box-label">HIGH-YIELD</span><div class="box-title">O SUS para o rim do diabético</div><div class="box-body">Dapagliflozina também está incorporada para DRC (PCDT de DRC 2024, TFG 25–75 ou RAC ≥300 mg/g em adulto) e para ICFEr (2022), além dos critérios do PCDT DM2. IECA/BRA e estatinas estão na atenção básica. Finerenona e semaglutida não estão no SUS (out/2026).</div></div>
+
+<div class="sub-title">F1.5 · Neuropatia dolorosa e autonômica</div>
+<ul class="bullets">
+<li><b>Monoterapia de 1ª linha titulada até dose eficaz:</b> pregabalina, gabapentina, duloxetina ou amitriptilina (escolha pelo perfil: insônia → amitriptilina/pregabalina; depressão → duloxetina; cardiopatia, glaucoma, idoso, prostatismo → evitar tricíclico).</li>
+<li><b>Resposta parcial em 4 semanas:</b> combinar mecanismos (amitriptilina + pregabalina ou duloxetina + pregabalina; OPTION-DM). <b>Sem resposta:</b> trocar de classe.</li>
+<li><b>Refratária:</b> capsaicina 8% em adesivo, estimulação medular em serviço especializado; ácido alfa-lipoico 600 mg/dia como adjuvante (SBD IIa).</li>
+<li><b>Não usar:</b> opioides (inclusive tramadol e tapentadol), AINE, topiramato, valproato, vitamina E, canabinoides (SBD 2026).</li>
+</ul>
+
+<div class="sub-title">F1.6 · Hospital e glicocorticoide</div>
+<ul class="bullets">
+<li><b>Não crítico:</b> basal-plus (0,1–0,3 U/kg basal + correção) ou basal-bolus (0,2–0,6 U/kg/dia total; 50/50), escala de correção pela sensibilidade (sensível: idoso, frágil, IMC &lt;19, DRC, hepatopatia, IC; usual; resistente: IMC &gt;33, corticoide, glicemias persistentemente altas).</li>
+<li><b>Crítico:</b> insulina regular IV (100 U em 100 mL SF 0,9% = 1 U/mL), glicemia 1–2/1–2 h, alvo 140–180, protocolo institucional; nunca capilar em choque.</li>
+<li><b>Glicocorticoide:</b> NPH matinal com a prednisona, 0,1 U/kg por 10 mg (máx. ~0,4 U/kg com ≥40 mg); dexametasona e corticoide em 2 doses têm efeito de 24 h → preferir basal-bolus.</li>
+<li><b>Perioperatório:</b> manter 75–80% da basal na noite anterior; suspender iSGLT2 3–4 dias antes; suspender metformina no dia; aGLP-1 semanal — seguir orientação conjunta SBD/SBA 2026 sobre jejum (risco de estase gástrica).</li>
+</ul>
+
+<div class="sub-title">F1.7 · Risco cardiovascular global no diabético</div>
+<ul class="bullets">
+<li><b>PA:</b> alvo &lt;130/80 (sistólica &lt;120 se alto risco e tolerado, ADA 10.4); IECA/BRA se albuminúria; associação com tiazídico ou BCC; espironolactona na HAS resistente.</li>
+<li><b>Lipídios (ADA 2026):</b> 40–75 anos sem DCV → estatina de moderada intensidade; com fatores de risco → alta intensidade com LDL &lt;70 e redução ≥50%; com DCV → alta intensidade com LDL &lt;55 e ezetimiba/iPCSK9 se não atingir. A estratificação brasileira (SBD/SBC) usa metas semelhantes por categoria de risco → CV06.</li>
+<li><b>Antiagregação:</b> AAS 75–162 mg/dia (100 mg no Brasil) em prevenção secundária; em primária, só com risco alto e baixo risco de sangramento, após decisão compartilhada; clopidogrel 75 mg se alergia ao AAS; AAS + rivaroxabana 2,5 mg 2×/dia em DAC/DAP estáveis com baixo risco de sangramento (ADA 10.35).</li>
+<li><b>IC:</b> iSGLT2 para todo diabético com IC (FEr ou FEp); tirzepatida ou semaglutida na IC com FEp e obesidade (SUMMIT, STEP-HFpEF DM); evitar pioglitazona e saxagliptina na IC (CV04).</li>
+</ul>
+
+<div class="mnemo"><div class="mnemo-title"><b>SADMANS</b> fármacos a pausar em dia de doença com vômito, diarreia ou desidratação</div><div class="mnemo-grid">
+<div class="mnemo-row"><span class="mnemo-letter">S</span><span><b>Sulfonilureias</b> · hipoglicemia se não come; risco maior com TFG caindo</span></div>
+<div class="mnemo-row"><span class="mnemo-letter">A</span><span><b>ACE inhibitors (IECA)</b> · LRA pré-renal e hipercalemia na hipovolemia</span></div>
+<div class="mnemo-row"><span class="mnemo-letter">D</span><span><b>Diuréticos</b> · agravam depleção de volume</span></div>
+<div class="mnemo-row"><span class="mnemo-letter">M</span><span><b>Metformina</b> · acidose láctica se LRA, hipóxia ou choque</span></div>
+<div class="mnemo-row"><span class="mnemo-letter">A</span><span><b>ARB (BRA)</b> · mesmo racional do IECA</span></div>
+<div class="mnemo-row"><span class="mnemo-letter">N</span><span><b>NSAIDs (AINE)</b> · LRA por vasoconstrição aferente</span></div>
+<div class="mnemo-row"><span class="mnemo-letter">S</span><span><b>SGLT2i</b> · CAD euglicêmica e depleção de volume; retomar 24–48 h após voltar a comer e beber</span></div>
+</div></div>
+</div>
+</div>
+
+<div class="card tx">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">F.2</span> Doses Operacionais</div><h3>Tabela de doses — antidiabéticos, insulinas e proteção de órgão <span class="ank ank-hy">HIGH-YIELD</span></h3></div>
+<div class="card-body">
+<div class="sub-title">F2.1 · Orais e injetáveis não insulínicos</div>
+<div class="stbl stbl-3">
+<div class="stbl-head stbl-3"><div>Fármaco</div><div>Dose adulto</div><div>Indicação / notas</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Metformina IR (500, 850 mg) <span class="ev ev-sbr">SBD 2026</span></div><div class="col" data-l="Dose">500–850 mg VO 1×/dia com refeição; +500–850 mg a cada 5–7 dias; manutenção 1.000 mg 2×/dia; máx. 2.550 mg/dia (850 mg 3×/dia)</div><div class="col" data-l="Indicação">↓HbA1c 1–2%, sem hipoglicemia, peso neutro/leve perda. TFG 30–44: máx. 1 g/dia; &lt;30: suspender. Pouco ganho acima de 2.000 mg. B12 anual após 4–5 anos. Contraste iodado: suspender se TFG &lt;30, sepse, choque ou IC aguda e reavaliar em 48 h</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Metformina XR (500, 750, 1.000 mg)</div><div class="col" data-l="Dose">500 mg VO no jantar → até 2.000–2.250 mg/dia (1–3 tomadas; SBD máx. 2.250)</div><div class="col" data-l="Indicação">Menos diarreia e náusea (maior exposição intestinal, menor pico). XR 500 mg na Farmácia Popular. Absorção depende de trânsito: não partir</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Dapagliflozina 10 mg <span class="ev ev-sbr">PCDT DM2 2026</span></div><div class="col" data-l="Dose">10 mg VO 1×/dia (dose única para DM, IC e DRC)</div><div class="col" data-l="Indicação">Não iniciar com TFG &lt;25; manter até diálise. SUS: DM2 na 2ª intensificação, ≥40 anos com DCV ou H ≥55 / M ≥60 com HAS, dislipidemia ou tabagismo; Farmácia Popular ≥65 anos com DCV; DRC e ICFEr por PCDT próprio. Suspender 3 dias antes de cirurgia</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Empagliflozina 10/25 mg <span class="ev ev-sbr">SBD 2026</span></div><div class="col" data-l="Dose">10 mg VO 1×/dia; 25 mg para glicemia se TFG ≥45</div><div class="col" data-l="Indicação">Proteção CV/renal com 10 mg (EMPA-REG, EMPA-KIDNEY). Iniciar até TFG ≥20. Infecção genital micótica 5–10%; gangrena de Fournier rara</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Canagliflozina 100/300 mg</div><div class="col" data-l="Dose">100 mg VO 1×/dia antes do café; 300 mg se TFG ≥60</div><div class="col" data-l="Indicação">CREDENCE (renal). Não iniciar com TFG &lt;45 (SBD). Sinal de amputação e fratura no CANVAS (não confirmado no CREDENCE)</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Gliclazida MR 30/60 mg <span class="ev ev-sbr">PCDT DM2 2026</span></div><div class="col" data-l="Dose">30–60 mg VO 1×/dia no café; máx. 120 mg/dia (IR 80 mg: 40–320 mg/dia em 2 tomadas)</div><div class="col" data-l="Indicação">Sulfonilureia preferida (menos hipoglicemia, metabólitos inativos; ADVANCE seguro). Pode ser usada com cautela em TFG &lt;30. Suspender ao iniciar insulina prandial</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Glibenclamida 5 mg</div><div class="col" data-l="Dose">2,5–5 mg VO 1–2×/dia; máx. 20 mg/dia</div><div class="col" data-l="Indicação">Maior risco de hipoglicemia prolongada. Não recomendada ≥60 anos (PCDT) e contraindicada com TFG &lt;60 (SBD). Gestação: insulina é preferida</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Glimepirida 1/2/4 mg</div><div class="col" data-l="Dose">1–4 mg VO 1×/dia; máx. 8 mg</div><div class="col" data-l="Indicação">Segurança CV neutra (CAROLINA vs linagliptina), mais hipoglicemia que iDPP-4. Fora do SUS</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Pioglitazona 15/30/45 mg</div><div class="col" data-l="Dose">15–30 mg VO 1×/dia; máx. 45 mg</div><div class="col" data-l="Indicação">MASH, pós-AVC com resistência insulínica (IRIS), sem hipoglicemia. Edema, IC (contraindicada em NYHA III–IV), fratura, ganho de peso; efeito pleno em 8–12 semanas; dose baixa melhor tolerada</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Sitagliptina 25/50/100 mg</div><div class="col" data-l="Dose">100 mg VO 1×/dia; TFG 30–44: 50 mg; &lt;30: 25 mg</div><div class="col" data-l="Indicação">iDPP-4: ↓HbA1c 0,5–0,8%, peso neutro, CV neutro (TECOS). Opção no idoso frágil. Não associar a aGLP-1</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Linagliptina 5 mg · evogliptina 5 mg</div><div class="col" data-l="Dose">5 mg VO 1×/dia, sem ajuste renal ou hepático</div><div class="col" data-l="Indicação">Escolha na DRC avançada e diálise (eliminação biliar). CARMELINA neutro</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Vildagliptina 50 mg · saxagliptina · alogliptina</div><div class="col" data-l="Dose">Vilda 50 mg 2×/dia (1×/dia se TFG &lt;50); saxa 5 mg (2,5 se TFG ≤45); alo 25 mg (12,5 se 30–59; 6,25 se &lt;30)</div><div class="col" data-l="Indicação">Saxagliptina aumentou internação por IC (SAVOR) — evitar em IC. Vildagliptina: transaminases periódicas</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Liraglutida 6 mg/mL <span class="ev ev-acr">ADA 2026</span></div><div class="col" data-l="Dose">0,6 mg SC 1×/dia por 1 semana → 1,2 mg → 1,8 mg/dia (DM); obesidade até 3 mg</div><div class="col" data-l="Indicação">LEADER (MACE −13%, mortalidade CV −22%). Genéricos/biossimilares disponíveis no Brasil. Contraindicada em CMT/NEM2; pancreatite prévia: evitar</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Dulaglutida</div><div class="col" data-l="Dose">0,75 mg SC 1×/semana → 1,5 mg (até 3 e 4,5 mg onde disponível)</div><div class="col" data-l="Indicação">REWIND (prevenção primária e secundária, MACE −12%). Sem ajuste renal até TFG &gt;15</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Semaglutida SC <span class="ev ev-sbr">SBD 2026</span></div><div class="col" data-l="Dose">0,25 mg/sem × 4 sem → 0,5 mg × ≥4 sem → 1 mg → 2 mg/sem (DM); obesidade 2,4 mg</div><div class="col" data-l="Indicação">SUSTAIN-6 (MACE −26%), FLOW (renal −24%, 1 mg), STEP-HFpEF, ESSENCE (MASH). Escalonar devagar se náusea. Retina antes se retinopatia. Suspender ≥2 meses antes de gestação</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Semaglutida oral</div><div class="col" data-l="Dose">3 mg/dia × 30 dias → 7 mg → 14 mg; em jejum, com ≤120 mL de água, 30 min antes de comer ou outros fármacos</div><div class="col" data-l="Indicação">SOUL 2025: MACE −14% em DM2 com DCV/DRC. Absorção depende de SNAC e jejum: adesão à técnica é a eficácia. Formulações de 1,5/4/9 mg (bioequivalentes) em alguns mercados — confirmar apresentação na bula brasileira</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Tirzepatida <span class="ev ev-acr">ADA 2026</span></div><div class="col" data-l="Dose">2,5 mg SC/sem × 4 sem → 5 mg; +2,5 mg a cada ≥4 sem; manutenção 5, 10 ou 15 mg; máx. 15 mg/sem</div><div class="col" data-l="Indicação">↓HbA1c &gt;2%, peso −15 a −20%; SURPASS-CVOT não inferior à dulaglutida; SUMMIT (IC com FEp e obesidade). Reduz absorção de contraceptivo oral nas 4 semanas após início e cada aumento: método de barreira</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Acarbose 50/100 mg</div><div class="col" data-l="Dose">25–50 mg VO 3×/dia no início das refeições → 100 mg 3×/dia</div><div class="col" data-l="Indicação">↓pós-prandial, flatulência limita; hipoglicemia em associação deve ser tratada com glicose (não sacarose). Contraindicada em DII e TFG &lt;25</div></div>
+</div>
+
+<div class="sub-title">F2.2 · Insulinas e combinações</div>
+<div class="stbl stbl-3">
+<div class="stbl-head stbl-3"><div>Insulina</div><div>Dose</div><div>Notas</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Insulina">NPH humana (DM2) <span class="ev ev-sbr">PCDT DM2 2026</span></div><div class="col" data-l="Dose">10 U ou 0,1–0,2 U/kg SC ao deitar; +2 U a cada 3 dias até jejum 80–130; jejum &lt;70 → −2 a −4 U (ou −10%)</div><div class="col" data-l="Notas">2ª dose de manhã quando jejum na meta e HbA1c alta (80% da dose: 2/3 manhã, 1/3 ao deitar). Basal máx. ~0,5 U/kg (0,75 em obesidade/resistência grave). Homogeneizar 20 vezes</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Insulina">Glargina U100</div><div class="col" data-l="Dose">10 U ou 0,1–0,2 U/kg SC 1×/dia, horário fixo; titular como NPH</div><div class="col" data-l="Notas">NPH 1×/dia → 1:1; NPH ≥2×/dia → reduzir 20%. Menos hipoglicemia noturna. SUS: DM1 por PCDT 2019; DM2 prioritários desde a Portaria 949/2025</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Insulina">Glargina U300 · degludeca U100</div><div class="col" data-l="Dose">Mesmo início; titulação semanal na degludeca (2 U a cada 3–4 dias ou por média de 3 jejuns)</div><div class="col" data-l="Notas">Degludeca: menos hipoglicemia grave (DEVOTE), flexibilidade ±8 h. U300: às vezes 10–18% a mais de dose que U100</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Insulina">Icodeca 700 U/mL (semanal)</div><div class="col" data-l="Dose">DM2 virgem: 70 U SC 1×/semana; troca: dose basal diária × 7 (1ª dose +50%), titular semanalmente em 20 U</div><div class="col" data-l="Notas">Anvisa 2025; preferir no DM2; no DM1 mais hipoglicemia (ONWARDS 6) — só com justificativa. Caneta em passos de 10 U. Hipoglicemia prolongada exige vigilância por dias</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Insulina">Regular humana (bolus)</div><div class="col" data-l="Dose">DM2: 2–4 U 30 min antes da maior refeição, +1 U 2×/sem até pós-prandial &lt;180; correção 1 U/50 mg/dL acima de 130 (ou 1.800/DTI)</div><div class="col" data-l="Notas">Algoritmo PCDT sem cálculo: &lt;70 −1 U; 131–180 +1; 181–230 +2; 231–280 +3; 281–330 +4; &gt;330 +5. Única para infusão IV</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Insulina">Lispro, asparte, glulisina</div><div class="col" data-l="Dose">Mesma dose da regular (1:1), 0–15 min antes da refeição</div><div class="col" data-l="Notas">SUS para DM1 (CEAF) e DM2 prioritários (Portaria 948/2025): hipoglicemia grave/assintomática, idoso, IMC &lt;30, DRC/hepatopatia, gestante, variabilidade</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Insulina">DM1 basal-bolus <span class="ev ev-sbr">SBD DM1</span></div><div class="col" data-l="Dose">DTI 0,4–1,0 U/kg/dia; basal 40–50%; RIC ≈ 450–500/DTI; FS ≈ 1.800–2.000/DTI</div><div class="col" data-l="Notas">Ex.: 70 kg × 0,5 = 35 U → 15 U glargina + bolus; RIC 1 U:14 g; FS 1 U:~55 mg/dL. Bomba: DTI −20–25%, metade basal ÷ 24 h</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Insulina">iDegLira (Xultophy) <span class="ev ev-sbr">SBD 2026 R16</span></div><div class="col" data-l="Dose">Início 10 passos (sem insulina prévia) ou 16 passos (em uso de basal ou GLP-1) SC 1×/dia; titular 2 passos/3 dias; máx. 50 passos (50 U degludeca + 1,8 mg liraglutida)</div><div class="col" data-l="Notas">Combinação fixa: menos ganho de peso e hipoglicemia que basal isolada. Acima de 50 passos → basal-bolus</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Insulina">iGlarLixi (Soliqua)</div><div class="col" data-l="Dose">Início 10–20 U SC 1×/dia antes da 1ª refeição conforme caneta e uso prévio de basal; titular pela glicemia de jejum</div><div class="col" data-l="Notas">Doses por caneta (10–40 ou 30–60) — <b>confirmar bula brasileira</b> antes de prescrever</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Insulina">Hospital não crítico <span class="ev ev-sbr">SBD hospitalar 2025</span></div><div class="col" data-l="Dose">Basal-plus: basal 0,1–0,3 U/kg; basal-bolus: total 0,2–0,6 U/kg/dia (50% basal); ajuste 10–20% a cada 24–48 h</div><div class="col" data-l="Notas">Doses menores em idoso, DRC, baixo peso; transição IV → SC: (soma IV das últimas 6 h × 4) − 20% como basal</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Insulina">NPH para glicocorticoide</div><div class="col" data-l="Dose">0,1 U/kg pela manhã para cada 10 mg de prednisona-equivalente; ≥40 mg → ~0,4 U/kg</div><div class="col" data-l="Notas">Reduzir junto com o desmame; dexametasona/corticoide 2×/dia → basal-bolus</div></div>
+</div>
+
+<div class="sub-title">F2.3 · Proteção de órgão, dor neuropática, hipoglicemia e outros</div>
+<div class="stbl stbl-3">
+<div class="stbl-head stbl-3"><div>Fármaco</div><div>Dose adulto</div><div>Indicação / notas</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Finerenona 10/20 mg <span class="ev ev-sbr">SBD DRD 2026</span></div><div class="col" data-l="Dose">TFG 25–59: 10 mg VO 1×/dia; ≥60: 20 mg; subir para 20 mg em 4 sem se K ≤4,8 e TFG estável</div><div class="col" data-l="Notas">K em 4 semanas e depois periódico; K 4,9–5,5 manter dose; &gt;5,5 suspender e reiniciar 10 mg quando ≤5,0. Interação com inibidores fortes do CYP3A4 (claritromicina, cetoconazol): contraindicada</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Losartana · enalapril</div><div class="col" data-l="Dose">Losartana 50 → 100 mg/dia; enalapril 5 → 20 mg 2×/dia (titular até dose máxima tolerada)</div><div class="col" data-l="Notas">Creatinina e K em 1–2 semanas; nunca IECA + BRA; gestação: suspender</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Atorvastatina · rosuvastatina</div><div class="col" data-l="Dose">Moderada: atorva 10–20 / rosuva 5–10 mg; alta: atorva 40–80 / rosuva 20–40 mg VO à noite ou qualquer horário</div><div class="col" data-l="Notas">Atorvastatina sem ajuste renal; rosuvastatina máx. 10 mg com TFG &lt;30. Não iniciar em diálise sem DAC</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">AAS</div><div class="col" data-l="Dose">75–162 mg/dia VO (100 mg no Brasil)</div><div class="col" data-l="Notas">Prevenção secundária; primária só com risco alto e baixo risco hemorrágico</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Pregabalina <span class="ev ev-sbr">SBD Neuropatia 2026</span></div><div class="col" data-l="Dose">75 mg VO 2×/dia → 150 mg 2×/dia; máx. 300 mg 2×/dia</div><div class="col" data-l="Notas">Ajustar à TFG (ClCr 30–60: metade; 15–30: um quarto). Tontura, edema, ganho de peso; risco de abuso</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Gabapentina</div><div class="col" data-l="Dose">300 mg à noite → 300 mg 3×/dia; dose eficaz 1.800 mg/dia (600 mg 3×/dia); máx. 3.600 mg/dia</div><div class="col" data-l="Notas">Ajustar se TFG &lt;45–60; sedação no idoso</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Duloxetina</div><div class="col" data-l="Dose">30 mg VO à noite com alimento × 1 sem → 60 mg/dia; máx. 120 mg/dia em 2 doses</div><div class="col" data-l="Notas">Evitar se ClCr &lt;30 ou hepatopatia; náusea inicial; ajuda se depressão comórbida</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Amitriptilina</div><div class="col" data-l="Dose">10–25 mg VO à noite → 75 mg (máx. 150 mg)</div><div class="col" data-l="Notas">Anticolinérgico: evitar em idoso, glaucoma de ângulo fechado, prostatismo, DAC/arritmia (ECG se ≥75 mg)</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Ácido alfa-lipoico</div><div class="col" data-l="Dose">600 mg VO 1×/dia (ou IV)</div><div class="col" data-l="Notas">Sintomas sensitivos (SBD IIa); não muda história natural</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Glicose oral <span class="ev ev-acr">ADA 2026 6.15</span></div><div class="col" data-l="Dose">15–20 g (ex.: 1 colher de sopa de açúcar em água ou 150 mL de suco); repetir em 15 min se &lt;70</div><div class="col" data-l="Notas">Depois, lanche com carboidrato complexo. Com acarbose: glicose, não sacarose</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Glucagon</div><div class="col" data-l="Dose">1 mg IM/SC (0,5 mg se &lt;25 kg ou &lt;6 anos)</div><div class="col" data-l="Notas">Prescrever para todo usuário de insulina ou com risco de nível 2–3 (ADA 6.16); ineficaz em depleção de glicogênio (álcool, jejum prolongado). Glucagon nasal 3 mg — disponibilidade no Brasil a confirmar</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Metformina na prevenção</div><div class="col" data-l="Dose">850 mg VO 1×/dia → 850 mg 2×/dia (esquema DPP)</div><div class="col" data-l="Notas">Pré-diabetes de alto risco; glicocorticoide em dose alta; inibidor de PI3Kα</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Teplizumabe <span class="ev ev-acr">ADA 2026 3.17</span></div><div class="col" data-l="Dose">IV 1×/dia por 14 dias: 65 mcg/m² (d1), 125 (d2), 250 (d3), 500 (d4), 1.030 mcg/m² (d5–14)</div><div class="col" data-l="Notas">DM1 estágio 2, ≥8 anos. Linfopenia, rash, síndrome de liberação de citocinas; vacinas vivas ≥8 semanas antes. Esquema da bula FDA — <b>confirmar bula Anvisa</b></div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Vitamina B12</div><div class="col" data-l="Dose">Deficiência: 1.000 mcg IM diário por 1 semana → semanal 1 mês → mensal; ou 1.000–2.000 mcg VO/dia</div><div class="col" data-l="Notas">Uso crônico de metformina com B12 baixa ou neuropatia</div></div>
+</div>
+
+<div class="sub-title">F2.4 · Acesso no SUS × recomendação internacional (out/2026)</div>
+<div class="stbl stbl-3">
+<div class="stbl-head stbl-3"><div>Classe</div><div>SUS</div><div>Recomendação ADA/SBD 2026</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Classe">Metformina · sulfonilureia</div><div class="col" data-l="SUS">Metformina 500/850 (XR 500 na Farmácia Popular); glibenclamida 5 mg; gliclazida 30/60 MR e 80 mg</div><div class="col" data-l="Internacional">Metformina 1ª linha (SBD) ou agente de base (ADA); sulfonilureia como 3ª–4ª opção pelo custo</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Classe">iSGLT2</div><div class="col" data-l="SUS">Dapagliflozina 10 mg com critério (PCDT DM2, DRC, ICFEr)</div><div class="col" data-l="Internacional">Todo cardiorrenal, independente da HbA1c</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Classe">aGLP-1 · tirzepatida</div><div class="col" data-l="SUS">Não incorporados (semaglutida rejeitada para obesidade em 2025; novo pedido em análise em 2026)</div><div class="col" data-l="Internacional">DCV, obesidade, DRC com RAC &gt;100, MASH, IC com FEp; preferidos à insulina como 1º injetável</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Classe">Insulinas</div><div class="col" data-l="SUS">NPH e regular; análogos rápidos e prolongados para DM1 (PCDT 2019) e DM2 prioritários (Portarias 948/949/2025); transição NPH → glargina na APS para ≥70 anos e DM1 de 2 a &lt;18 anos (NT 169/2026)</div><div class="col" data-l="Internacional">Análogos preferidos no DM1; no DM2, NPH aceitável pelo custo, análogos se hipoglicemia</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Classe">Tecnologia</div><div class="col" data-l="SUS">Glicosímetro e fitas para usuários de insulina; CGM não incorporado (Portaria SECTICS nº 2/2025); bomba não</div><div class="col" data-l="Internacional">CGM para todo usuário de insulina; AID para a maioria dos DM1</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Classe">Rim</div><div class="col" data-l="SUS">IECA/BRA, estatina, dapagliflozina; finerenona não</div><div class="col" data-l="Internacional">Quatro pilares (IECA/BRA, iSGLT2, finerenona, semaglutida)</div></div>
+</div>
+
+<div class="sub-title">F2.5 · Técnica de insulina — onde o tratamento falha sem que ninguém perceba</div>
+<div class="stbl stbl-3">
+<div class="stbl-head stbl-3"><div>Ponto</div><div>Técnica certa</div><div>Erro típico</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Ponto">Agulha e prega</div><div class="col" data-l="Técnica">Caneta 4 mm a 90° sem prega na maioria dos adultos; seringa 6 mm com prega; magros e crianças: prega ou 45°</div><div class="col" data-l="Erro">Agulha de 8–12,7 mm → aplicação intramuscular, absorção rápida e hipoglicemia</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Ponto">Rodízio</div><div class="col" data-l="Técnica">Abdome (3 dedos do umbigo, absorção mais rápida), coxa anterolateral (mais lenta, boa para basal), braço posterior, glúteo; rodízio dentro da região, 1–2 cm entre punções</div><div class="col" data-l="Erro">Lipo-hipertrofia: absorção errática, "insulina que não funciona" e hipoglicemia quando muda o local — palpar a cada consulta</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Ponto">Mistura NPH + regular</div><div class="col" data-l="Técnica">Ar nos dois frascos, aspirar <b>primeiro a regular</b> (cristalina), depois a NPH (turva)</div><div class="col" data-l="Erro">Contaminar o frasco de regular com protamina altera sua farmacocinética</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Ponto">Caneta</div><div class="col" data-l="Técnica">Teste de fluxo de 2 U antes de cada aplicação; manter a agulha 10 s na pele; agulha nova a cada uso</div><div class="col" data-l="Erro">Bolha de ar e dose subentregue; reuso de agulha (o MS admite reuso limitado de seringa por até ~8 vezes)</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Ponto">Armazenamento</div><div class="col" data-l="Técnica">Lacradas a 2–8 °C (gaveta de legumes, longe do congelador e da porta); em uso, temperatura ambiente até 30 °C pelo prazo do fabricante (geralmente 4–6 semanas)</div><div class="col" data-l="Erro">Congelamento ou calor do carro inativam a insulina</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Ponto">Massagem e exercício</div><div class="col" data-l="Técnica">Não massagear; evitar aplicar no membro que será exercitado logo depois</div><div class="col" data-l="Erro">Absorção acelerada e hipoglicemia durante o exercício</div></div>
+</div>
+
+<div class="sub-title">F2.6 · Cenários: caso → conduta certa → erro típico</div>
+<div class="stbl stbl-3">
+<div class="stbl-head stbl-3"><div>Caso</div><div>Conduta certa</div><div>Erro típico</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Caso">58 anos, IAM há 2 anos, IMC 31, HbA1c 7,2%, TFG 70, RAC 15, em metformina</div><div class="col" data-l="Conduta">Adicionar aGLP-1 (semaglutida) e/ou iSGLT2 com benefício comprovado <b>apesar da HbA1c perto da meta</b>; no SUS, dapagliflozina pelo critério de DCV ≥40 anos</div><div class="col" data-l="Erro">"HbA1c quase na meta, mantém" — o fármaco é para o coração, não para a HbA1c</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Caso">66 anos, DM2 há 12 anos, TFG 38, RAC 450 mg/g, K 4,6, em metformina 2 g e losartana 50 mg</div><div class="col" data-l="Conduta">Metformina para 1 g/dia; losartana até 100 mg; dapagliflozina 10 mg; finerenona 10 mg; semaglutida se disponível; estatina de alta intensidade; nefrologia</div><div class="col" data-l="Erro">Suspender a losartana porque a creatinina subiu 15% ou manter metformina 2 g com TFG &lt;45</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Caso">34 anos, IMC 22, "DM2" há 8 meses, HbA1c 10,5% em metformina + gliclazida, perdeu 6 kg</div><div class="col" data-l="Conduta">Insulina basal-bolus agora, suspender gliclazida, anti-GAD e peptídeo C → provável LADA</div><div class="col" data-l="Erro">Adicionar terceiro oral e esperar 3 meses enquanto o paciente cetosa</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Caso">DM2 em glargina 60 U (0,75 U/kg), jejum 110, HbA1c 8,6%, hipoglicemias às 4 h</div><div class="col" data-l="Conduta">Overbasalização: reduzir basal 10–20% e tratar o pós-prandial (aGLP-1, combinação fixa ou prandial na maior refeição)</div><div class="col" data-l="Erro">Subir mais a glargina porque "a HbA1c está alta"</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Caso">DM1, glicemia de jejum 220 todo dia, NPH às 19 h</div><div class="col" data-l="Conduta">Mover a NPH para as 22 h e medir a glicemia das 3 h (ou CGM) antes de mexer na dose</div><div class="col" data-l="Erro">Aumentar a NPH do jantar e provocar hipoglicemia de madrugada</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Caso">78 anos, demência moderada, mora só, HbA1c 6,4% com glibenclamida 10 mg 2×/dia</div><div class="col" data-l="Conduta">Meta &lt;8% ou "evitar sintomas": suspender glibenclamida; se precisar, iDPP-4 ou gliclazida MR em dose baixa</div><div class="col" data-l="Erro">Comemorar a HbA1c "ótima" que é, na verdade, hipoglicemia repetida</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Caso">DM2 em dapagliflozina, colecistectomia eletiva amanhã</div><div class="col" data-l="Conduta">Devia ter suspendido 3 dias antes; se não suspendeu, cetonemia pré e pós-operatória e retomar só com dieta plena</div><div class="col" data-l="Erro">Liberar a cirurgia pela glicemia normal e não dosar cetonas no pós-operatório com náusea</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Caso">Internado com pneumonia, prednisona 40 mg, glicemias de jejum 120 e pré-jantar 320</div><div class="col" data-l="Conduta">NPH matinal 0,4 U/kg com a prednisona + correção; reduzir à medida que o corticoide cai</div><div class="col" data-l="Erro">Aumentar a insulina noturna pela glicemia de jejum, que não reflete o efeito do corticoide</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Caso">Mulher 29 anos, DM2, IMC 34, semaglutida e losartana, quer engravidar</div><div class="col" data-l="Conduta">Contracepção até HbA1c &lt;6,5%; suspender semaglutida ≥2 meses antes e losartana ao planejar; ácido fólico; insulina e metformina conforme GO13</div><div class="col" data-l="Erro">Deixar engravidar com HbA1c 8% em uso de BRA</div></div>
+</div>
+</div>
+</div>
+</section>
+
+<section id="pitfalls">
+<div class="section"><div class="section-eyebrow"><span>G</span> Pitfalls · Mitos · Controvérsias</div><h2 class="section-title">Erros Operacionais + Mitos Vivos + Debates Atuais</h2><div class="section-sub">Os erros que se repetem no ambulatório de diabetes são quase todos de omissão: o fármaco cardiorrenal que não entrou, a insulina que atrasou, a sulfonilureia que ninguém tirou.</div></div>
+<div class="card pearl">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">G.1</span> Pegadinhas</div><h3>10 erros operacionais no diabetes crônico <span class="ank ank-dgr">DANGER</span></h3></div>
+<div class="card-body">
+<div class="stbl stbl-2">
+<div class="stbl-head stbl-2"><div>Erro comum</div><div>Correto</div></div>
+<div class="stbl-row stbl-2"><div class="col col1" data-l="Erro">Diagnosticar DM com glicemia capilar ou com um único exame alterado em assintomático</div><div class="col" data-l="Correto">Glicemia plasmática ou HbA1c NGSP, confirmada por segundo resultado (mesma amostra ou repetição); exceção: glicemia ≥200 com sintomas.</div></div>
+<div class="stbl-row stbl-2"><div class="col col1" data-l="Erro">Esperar a HbA1c sair da meta para iniciar iSGLT2 ou aGLP-1 em quem tem DCV, IC ou DRC</div><div class="col" data-l="Correto">O benefício de desfecho é independente da HbA1c (ADA 9.7–9.10; SBD R8); se a glicemia ficar baixa demais, retire a sulfonilureia ou reduza insulina.</div></div>
+<div class="stbl-row stbl-2"><div class="col col1" data-l="Erro">Manter metformina 2 g/dia com TFG 35 ou suspender com TFG 50</div><div class="col" data-l="Correto">TFG ≥45 dose plena; 30–44 máximo 1 g/dia; &lt;30 suspender. Reavaliar a TFG antes de cada aumento.</div></div>
+<div class="stbl-row stbl-2"><div class="col col1" data-l="Erro">Suspender IECA/BRA porque a creatinina subiu 20% após iniciar</div><div class="col" data-l="Correto">Queda de TFG até 30% é hemodinâmica e prediz proteção; só investigar acima disso. Hipercalemia: dieta, diurético, quelante — não retirar de cara.</div></div>
+<div class="stbl-row stbl-2"><div class="col col1" data-l="Erro">Escalar orais em adulto magro que perde peso com HbA1c em ascensão</div><div class="col" data-l="Correto">Pensar em LADA/insulinopenia: anti-GAD, peptídeo C e insulina; sulfonilureia acelera a falência beta no LADA.</div></div>
+<div class="stbl-row stbl-2"><div class="col col1" data-l="Erro">Aplicar NPH noturna no jantar e aumentar a dose quando o jejum sobe</div><div class="col" data-l="Correto">NPH ao deitar; medir glicemia das 3 h para separar alvorecer (aumentar) de hipoglicemia noturna (reduzir).</div></div>
+<div class="stbl-row stbl-2"><div class="col col1" data-l="Erro">Subir a basal indefinidamente porque a HbA1c não cai</div><div class="col" data-l="Correto">Basal &gt;0,5 U/kg com jejum na meta = overbasalização: tratar o pós-prandial com GLP-1, combinação fixa ou prandial.</div></div>
+<div class="stbl-row stbl-2"><div class="col col1" data-l="Erro">Associar iDPP-4 a aGLP-1 ou tirzepatida</div><div class="col" data-l="Correto">Sem ganho glicêmico, só custo e efeitos adversos (ADA 9.18); trocar o iDPP-4 pelo GLP-1.</div></div>
+<div class="stbl-row stbl-2"><div class="col col1" data-l="Erro">Manter glibenclamida em idoso com HbA1c 6,2% "porque está controlado"</div><div class="col" data-l="Correto">Meta individualizada (idoso comprometido &lt;8%); HbA1c abaixo da meta com agente hipoglicemiante exige desintensificar (ADA 6.6).</div></div>
+<div class="stbl-row stbl-2"><div class="col col1" data-l="Erro">Rastrear neuropatia só com monofilamento e retinopatia só "quando o paciente reclamar da vista"</div><div class="col" data-l="Correto">Neuropatia: teste de fibra fina + fibra grossa anual; retina dilatada ou retinografia ao diagnóstico do DM2 e anual — a retinopatia que ameaça visão é assintomática.</div></div>
+</div>
+</div>
+</div>
+<div class="card pearl">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">G.2</span> Mitos · Controvérsias</div><h3>Mitos vivos e debates atuais <span class="ank ank-con">CONTROVERSY</span></h3></div>
+<div class="card-body">
+<div class="box myth"><span class="box-label">MYTH</span><div class="box-title">"Insulina no DM2 é o fim da linha e piora o prognóstico"</div><div class="box-body">A associação observacional entre insulina e mortalidade reflete doença mais longa e mais grave, não dano da insulina: no ORIGIN, glargina precoce foi neutra em eventos CV e reduziu progressão de pré-diabetes para DM. A insulinização de curto prazo na glicotoxicidade recupera parte da secreção beta e pode ser revertida para orais. O que piora prognóstico é a inércia que adia a insulina indicada por anos.</div></div>
+<div class="box myth"><span class="box-label">MYTH</span><div class="box-title">"Metformina causa acidose láctica e é nefrotóxica"</div><div class="box-body">A metformina não lesa o rim; acumula quando a TFG cai. A acidose láctica associada é rara (~3–10 por 100.000 pacientes-ano, semelhante à de diabéticos sem metformina) e quase sempre ocorre em hipoperfusão, hipóxia, sepse ou insuficiência hepática — situações em que o lactato sobe por si. Retirar metformina de quem tem TFG 50 por "proteção renal" tira um fármaco eficaz e barato sem benefício.</div></div>
+<div class="box myth"><span class="box-label">MYTH</span><div class="box-title">"Diabético não pode comer açúcar nem frutas"</div><div class="box-body">A terapia nutricional é quantitativa e qualitativa, não proibitiva: contagem de carboidratos no DM1 permite flexibilidade com a dose prandial; no DM2 o que importa é déficit calórico, padrão alimentar (mediterrâneo, DASH, plant-based), fibra e redução de ultraprocessados e bebidas açucaradas. Sacarose até 5–10% das calorias em um plano equilibrado não piora o controle. Dietas de muito baixo carboidrato funcionam no curto prazo, com adesão e segurança de longo prazo incertas, e exigem redução prévia de insulina e suspensão de iSGLT2 (cetose).</div></div>
+<div class="box controversy"><span class="box-label">CONTROVERSY</span><div class="box-title">Metformina ainda deve ser obrigatoriamente a primeira droga?</div><div class="box-body">A favor: eficácia alta, baixo custo, UKPDS 34 com redução de IAM e mortalidade em obesos, base de quase todos os ensaios de desfecho dos fármacos novos (o benefício de iSGLT2/aGLP-1 foi medido "sobre" metformina). Contra: o UKPDS 34 tinha 342 pacientes, e iSGLT2/aGLP-1 têm benefício de desfecho em ensaios de dezenas de milhares, inclusive sem metformina. ADA 2026: decisão do agente cardiorrenal independe da metformina; SBD 2026: metformina ao diagnóstico, classe I; PCDT 2026: metformina primeiro. Consenso prático: não atrasar o agente cardiorrenal para "dar tempo" à metformina.</div></div>
+<div class="box controversy"><span class="box-label">CONTROVERSY</span><div class="box-title">TOTG de 1 hora como critério diagnóstico</div><div class="box-body">A SBD (2024) e o PCDT DM2 2026 adotaram glicemia 1 h ≥209 mg/dL (DM) e 155–208 (pré-diabetes), com base em coortes que mostram maior sensibilidade e melhor predição de DM, DCV e mortalidade que a de 2 h, e posicionamento da IDF (2024). A ADA 2026 e a OMS ainda não adotaram. Consequências: mais diagnósticos precoces, mais rótulos; menor tempo de teste (1 h em vez de 2 h). Em prova brasileira, o critério de 1 h vale; em diretriz americana, não.</div></div>
+<div class="box controversy"><span class="box-label">CONTROVERSY</span><div class="box-title">Meta de HbA1c &lt;6,5% ou &lt;7%?</div><div class="box-body">ACCORD (alvo &lt;6% com insulina e sulfonilureia) aumentou mortalidade; ADVANCE e VADT foram neutros em eventos macrovasculares — o dano veio da hipoglicemia e da maneira de chegar ao alvo, não do número em si. Com fármacos que não causam hipoglicemia (GLP-1, iSGLT2, metformina), metas &lt;6,5% em jovens com DM recente são aceitas pela ADA (6.4) e SBD; o problema retorna quando o caminho para o alvo usa sulfonilureia e insulina em idoso. A meta é do paciente e do fármaco, não da população.</div></div>
+</div>
+</div>
+</section>
+
+<section id="pearls">
+<div class="section"><div class="section-eyebrow"><span>H</span> Pearls · Evolving</div><h2 class="section-title">H1 · Pearls de Especialista · H2 · Áreas em Evolução</h2><div class="section-sub">Oito ideias que mudam a forma de prescrever e cinco mudanças reais de 2024–2026 — o campo do diabetes é dos que mais se moveram na década.</div></div>
+<div class="card pearl">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">H.1</span> Pearls</div><h3>8 nuances que distinguem o expert <span class="ank ank-prl">PEARL</span></h3></div>
+<div class="card-body">
+<div class="box pearl"><span class="box-label">PEARL</span><div class="box-title">Prescreva pelo órgão, ajuste pela HbA1c</div><div class="box-body">Os ensaios de desfecho dos iSGLT2 e aGLP-1 mostraram benefício semelhante com HbA1c basal de 7% ou de 9% e com redução glicêmica pequena: o efeito em IC, rim e aterosclerose não é mediado pela glicose. Por isso o fármaco entra pela comorbidade e a dose dos demais se ajusta para a meta glicêmica — inversão completa da lógica "degrau por HbA1c" dos anos 2000.</div></div>
+<div class="box pearl"><span class="box-label">PEARL</span><div class="box-title">Anti-GAD positivo muda o fármaco, não só o nome</div><div class="box-body">No LADA, sulfonilureia acelera a perda de peptídeo C, e iSGLT2 aumenta o risco de cetoacidose euglicêmica porque a reserva insulínica é baixa e cai. Título alto de anti-GAD e peptídeo C &lt;0,3 nmol/L indicam insulina precoce; título baixo com peptídeo C preservado admite manejo como DM2 com metformina, iDPP-4 ou GLP-1, sob vigilância semestral do peptídeo C.</div></div>
+<div class="box pearl"><span class="box-label">PEARL</span><div class="box-title">A queda de TFG que você deve aceitar</div><div class="box-body">IECA/BRA e iSGLT2 baixam a TFG em 3–6 mL/min nas primeiras semanas por reduzir a pressão intraglomerular; esse "dip" é sinal de efeito e associa-se a maior proteção em longo prazo. Retirar o fármaco nesse momento troca uma queda reversível por uma perda progressiva. O limiar para investigar é queda &gt;30% ou hipercalemia refratária.</div></div>
+<div class="box pearl"><span class="box-label">PEARL</span><div class="box-title">HbA1c e glicemia não batem: confie no laboratório que explica a discordância</div><div class="box-body">GMI do sensor muito acima ou abaixo da HbA1c aponta interferente: anemia ferropriva e asplenia elevam a HbA1c (hemácias mais velhas); hemólise, sangramento, eritropoetina, gestação, transfusão e hemoglobinopatias a baixam; DRC avançada a torna imprevisível. Nesses pacientes, use CGM, frutosamina (reflete 2–3 semanas) ou glicemias, e nunca intensifique insulina só pela HbA1c.</div></div>
+<div class="box pearl"><span class="box-label">PEARL</span><div class="box-title">Hipoglicemia sem percepção se corrige evitando hipoglicemia</div><div class="box-body">Hipoglicemias repetidas deslocam para baixo o limiar de ativação contrarreguladora (falência autonômica associada à hipoglicemia, mediada por adaptação do hipotálamo e aumento do transporte cerebral de glicose). Duas a três semanas sem nenhum episódio, com meta temporariamente mais alta, CGM com alarme e análogos, restauram parcialmente os sintomas adrenérgicos — o único "tratamento" com evidência para a unawareness.</div></div>
+<div class="box pearl"><span class="box-label">PEARL</span><div class="box-title">Combinação fixa basal/GLP-1 é a melhor primeira insulina do DM2 obeso</div><div class="box-body">iDegLira e iGlarLixi alcançam HbA1c menor que a basal isolada com menos ganho de peso e menos hipoglicemia, porque o componente GLP-1 trata a excursão pós-prandial e reduz a necessidade de basal — exatamente o ponto em que a basal isolada começa a overbasalizar. A ADA 9.22 recomenda combinar GLP-1 com insulina sempre que a insulina for usada; a SBD R16 sugere a formulação fixa no excesso de peso.</div></div>
+<div class="box pearl"><span class="box-label">PEARL</span><div class="box-title">Perda de massa magra é o efeito adverso esquecido dos incretinomiméticos</div><div class="box-body">Em ensaios com DEXA, 25–40% do peso perdido com semaglutida e tirzepatida é massa livre de gordura. Em idoso e no sarcopênico, isso piora funcionalidade e risco de queda: prescreva proteína 1,2–1,5 g/kg/dia e exercício resistido junto, monitore força de preensão e não persiga perda ponderal máxima em frágeis. A interrupção do fármaco recupera dois terços do peso em um ano (STEP-1 extensão), predominantemente como gordura.</div></div>
+<div class="box pearl"><span class="box-label">PEARL</span><div class="box-title">Dapagliflozina no SUS tem três portas, não uma</div><div class="box-body">Além do critério do PCDT DM2 (2ª intensificação + idade/DCV), o paciente diabético pode receber dapagliflozina pelo PCDT de DRC (TFG 25–75 ou RAC ≥300 mg/g) e pelo de IC com FE ≤40%, e o idoso ≥65 anos com DCV pela Farmácia Popular. Conhecer as portas é o que transforma a recomendação cardiorrenal em prescrição que o paciente de fato retira.</div></div>
+</div>
+</div>
+<div class="card pearl">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">H.2</span> Evolving</div><h3>5 paradigmas em mudança — diabetes 2024–2026 <span class="ank ank-evo">EVOLVING</span></h3></div>
+<div class="card-body">
+<div class="box evolving"><span class="box-label">EVOLVING</span><div class="box-title">Incretinas com desfecho renal, cardíaco e hepático</div><div class="box-body">FLOW (2024) trouxe o primeiro desfecho renal positivo de um aGLP-1 (semaglutida 1 mg, −24% no composto renal, −20% em mortalidade total); SOUL (2025) estendeu o benefício CV à semaglutida oral; SURPASS-CVOT (NEJM, dez/2025) mostrou tirzepatida não inferior à dulaglutida em MACE; SUMMIT e STEP-HFpEF levaram tirzepatida e semaglutida à IC com FEp e obesidade; ESSENCE (2025) mostrou resolução de MASH com semaglutida. A ADA 2026 incorporou tudo (9.9–9.13, 11.7b).</div></div>
+<div class="box evolving"><span class="box-label">EVOLVING</span><div class="box-title">Imunoterapia para adiar o DM1</div><div class="box-body">Teplizumabe (anti-CD3) aprovado pela Anvisa em março de 2026 para DM1 estágio 2 a partir de 8 anos, adiando o estágio 3 em mediana de ~2 anos (TN-10). Isso transforma o rastreio de autoanticorpos em parentes (ADA 2.6–2.9; SBD 2025) de curiosidade em decisão terapêutica, ainda limitada por custo e ausência de acesso SUS. Terapias celulares derivadas de células-tronco (zimislecel) mostraram independência insulínica em fase 1/2.</div></div>
+<div class="box evolving"><span class="box-label">EVOLVING</span><div class="box-title">Insulina semanal e incretinas orais não peptídicas</div><div class="box-body">Icodeca (Anvisa 2025) reduz 365 para 52 aplicações por ano, com eficácia semelhante à glargina no DM2 (ONWARDS) e mais hipoglicemia no DM1; efsitora alfa, outra basal semanal, completou fase 3 (QWINT). Orforglipron, agonista oral não peptídico do receptor GLP-1 (sem restrição de jejum), foi aprovado pela FDA para obesidade em abril de 2026 e pelo MHRA para DM2; ainda sem registro Anvisa até out/2026.</div></div>
+<div class="box evolving"><span class="box-label">EVOLVING</span><div class="box-title">Quatro pilares na DRD e a revisão KDIGO 2026</div><div class="box-body">A SBD 2026 consolidou IECA/BRA + iSGLT2 + finerenona + semaglutida, retirou a meta de HbA1c estratificada por TFG e estendeu a finerenona ao DM1 com albuminúria. A KDIGO abriu consulta pública de sua atualização 2026 de diabetes e DRC (fechou em abril de 2026; versão final não publicada até esta revisão) — conferir antes de assumir a KDIGO 2022 como vigente.</div></div>
+<div class="box evolving"><span class="box-label">EVOLVING</span><div class="box-title">O SUS ampliou insulinas, mas ainda não incretinas</div><div class="box-body">PCDT DM2 atualizado em fevereiro de 2026 (Portaria SCTIE nº 13) incorpora análogos rápidos e prolongados para DM2 prioritários (Portarias SECTICS 948 e 949/2025) e a Nota Técnica 169/2026 abre a transição NPH → glargina na APS. Semaglutida foi rejeitada em 2025 (obesidade, custo); novo pedido com desconto tramita em 2026, com o fim da patente da semaglutida no Brasil e acordo de produção nacional. O PCDT DM1 2019 segue em atualização.</div></div>
+</div>
+</div>
+</section>
+
+</div>
+</main>
+
+<footer>
+<div class="wrap">
+<div class="foot">
+<div>
+<div class="foot-author">@dr.lorencato</div>
+<div class="foot-meta">EN01 · Diabetes: diagnóstico e tratamento crônico · Pocket Handbook Elite · v5.2 · Endocrinologia · fontes conferidas em 2026-10-25</div>
+</div>
+<div class="foot-mono">Compilação clínica · status clinical_review até signoff humano · não é orientação clínica individual</div>
+</div>
+<div class="foot-meta"><b>Bibliografia rastreável</b> (fonte · ano · papel no HP · identificador)
+<ol>
+<li id="src-1">American Diabetes Association Professional Practice Committee. Standards of Care in Diabetes—2026. Diabetes Care 2026;49(Suppl 1) · 2026 · diagnóstico (sec. 2), prevenção (3), metas e hipoglicemia (6), farmacologia (9), CV (10), DRC (11), retina e neuropatia (12), hospital (16) · doi:10.2337/dc26-S002, -S003, -S006, -S009, -S010, -S011, -S012, -S016</li>
+<li id="src-2">Sociedade Brasileira de Diabetes. Diretriz SBD Ed. 2026 — Manejo do DM2 (Valente F, Lyra R, et al.; rev. 07/08/2026) · 2026 · algoritmo DM2, risco cardiorrenal, doses · doi:10.29327/5881296.2026-2 · diretriz.diabetes.org.br/manejo-do-diabetes-mellitus-tipo-2</li>
+<li id="src-3">SBD Ed. 2026 — Metas de controle glicêmico (Almeida-Pititto B, et al.) · 2026 · metas HbA1c/CGM por população · doi:10.29327/5881296.2026-1</li>
+<li id="src-4">SBD Ed. 2026 — Doença renal do diabetes · 2026 · rastreio, quatro pilares, cortes de TFG · doi:10.29327/5881296.2026-3</li>
+<li id="src-5">SBD Ed. 2026 — Diagnóstico e tratamento da neuropatia periférica diabética · 2026 · rastreio, dor neuropática, doses · doi:10.29327/5881296.2026-5</li>
+<li id="src-6">SBD — Insulinoterapia no DM1 (Silva Júnior WS, Gabbay MAL, Lamounier RN; 2022, mantido na Ed. 2026) · 2022 · DTI, frações, RIC/FS · doi:10.29327/557753.2022-5; SBD — Hiperglicemia hospitalar não crítica · 2025 · basal-plus/bolus, corticoide · doi:10.29327/5660187.2025-9; SBD — Tratamento do DM2 no SUS · 2026 · acesso, critérios · doi:10.29327/5937204.2026-1</li>
+<li id="src-7">Ministério da Saúde. PCDT Diabete Melito Tipo 2 — Portaria SCTIE/MS nº 13, de 21/02/2026 (Relatório Conitec nº 1074) · 2026 · critérios, metas, medicamentos e esquemas SUS, dapagliflozina, análogos (Portarias SECTICS 948 e 949/2025) · gov.br/conitec</li>
+<li id="src-8">Ministério da Saúde. PCDT Diabete Melito Tipo 1 — Portaria Conjunta SAES/SCTIE nº 17, de 12/11/2019 (em atualização) · 2019 · critérios de análogos, LADA · gov.br/saude/pt-br/assuntos/pcdt</li>
+<li id="src-9">KDIGO 2022 Clinical Practice Guideline for Diabetes Management in CKD. Kidney Int 2022;102(5S):S1–S127 · 2022 (rascunho 2026 em consulta pública) · DRD · doi:10.1016/j.kint.2022.06.008 · PMID 36272764</li>
+<li id="src-10">Perkovic V, et al. FLOW. N Engl J Med 2024;391:109–121 · 2024 · semaglutida na DRD · doi:10.1056/NEJMoa2403347</li>
+<li id="src-11">McGuire DK, et al. SOUL. N Engl J Med 2025;392:2001–2012 · 2025 · semaglutida oral, desfecho CV · doi:10.1056/NEJMoa2501006</li>
+<li id="src-12">Nicholls SJ, et al. SURPASS-CVOT. N Engl J Med 2025;393:2409–2420 · 2025 · tirzepatida × dulaglutida · doi:10.1056/NEJMoa2505928</li>
+<li id="src-13">Rosenstock J, et al. ONWARDS 1. N Engl J Med 2023;389:297–308 · 2023 · insulina icodeca · doi:10.1056/NEJMoa2303208</li>
+<li id="src-14">Herold KC, et al. Teplizumab in relatives at risk for T1D. N Engl J Med 2019;381:603–613 · 2019 · prevenção do estágio 3 · doi:10.1056/NEJMoa1902226; aprovação Anvisa do teplizumabe (mar/2026, imprensa e CFF) · registro a confirmar no portal Anvisa</li>
+<li id="src-15">Apostila MED/Medcurso 2025 — END 2, Diabetes Mellitus · 2025 · piso editorial de cobertura (não fonte de conduta) · vault Who is PubMed</li>
+<li id="src-16">DATASUS CID-10 (OMS, V2008) · códigos E10–E14, R73, N08.3*, H36.0*, G63.2*, G99.0*, Y42.0 · www2.datasus.gov.br/cid10</li>
+</ol>
+</div>
+</div>
+</footer>
+<div class="watermark">@dr.lorencato · EN01 Diabetes v5.2</div>
+</body>
+</html>
