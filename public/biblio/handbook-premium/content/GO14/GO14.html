@@ -1,0 +1,1174 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#0d1117">
+<title>Sofrimento Fetal, Parto Operatório e Puerpério · Pocket Handbook · Elite Edition · GO14</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700;9..40,800&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   MEDICAL HANDBOOK PREMIUM · ELITE EDITION · CSS FRAMEWORK
+   Copy this ENTIRE block verbatim into the <style> tag of the
+   output HTML. Do NOT modify design tokens, colors, or
+   typography — they are calibrated for legibility and print.
+============================================================ */
+:root{
+  --bg:#f1eee5;--bg-tint:#ebe8de;--paper:#ffffff;--paper-tint:#fbf9f3;
+  --ink:#0e1116;--ink-soft:#232830;--ink-mute:#545b69;--ink-faint:#8a91a0;--ink-ghost:#b8bdc7;
+  --line:#e2dfd5;--line-soft:#ece9df;--line-strong:#c9c5b8;
+  --c-prim:#0b5d4e;--c-clin:#1d4570;--c-diag:#5e2f78;--c-tx:#a8481a;--c-emerg:#a31b35;--c-pearl:#7a6014;
+  --ank-hy:#b88e0a;--ank-hy-bg:#fef4c8;--ank-dec:#1d4ea3;--ank-dec-bg:#dde7f8;
+  --ank-dgr:#a31b25;--ank-dgr-bg:#fadcdc;--ank-prl:#3e6a2e;--ank-prl-bg:#d8e6cf;
+  --ank-myt:#6a3a1a;--ank-myt-bg:#f0dec5;--ank-con:#5a4070;--ank-con-bg:#e3d6f0;
+  --ank-evo:#0d6373;--ank-evo-bg:#cde5e9;
+  --sh-sm:0 1px 2px rgba(14,17,22,.04),0 1px 1px rgba(14,17,22,.03);
+  --sh-md:0 6px 16px -8px rgba(14,17,22,.10),0 2px 4px rgba(14,17,22,.04);
+  --sh-lg:0 20px 40px -22px rgba(14,17,22,.18),0 4px 10px -4px rgba(14,17,22,.08);
+  --r:10px;--r-lg:14px;--r-xl:20px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;scroll-padding-top:120px}
+body{font-family:'DM Sans',system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.5;font-size:15px;letter-spacing:-.005em;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:-1;background:radial-gradient(900px 500px at -10% -5%,rgba(11,93,78,.04),transparent 60%),radial-gradient(800px 450px at 110% 10%,rgba(163,27,53,.035),transparent 55%)}
+a{color:inherit;text-decoration:none}
+
+/* FIXED HEADER */
+.header{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(13,17,23,.82);backdrop-filter:saturate(160%) blur(20px);-webkit-backdrop-filter:saturate(160%) blur(20px);border-bottom:1px solid rgba(255,255,255,.06)}
+.header-row{max-width:1080px;margin:0 auto;padding:10px 20px;display:flex;align-items:center;gap:14px;color:#f0eee5}
+.h-mark{width:30px;height:30px;border-radius:7px;background:linear-gradient(135deg,#d4b94a 0%,#a07f1a 100%);display:grid;place-items:center;font:800 13px/1 'DM Sans';color:#1a1500;letter-spacing:-.04em;box-shadow:inset 0 1px 0 rgba(255,255,255,.3),0 1px 2px rgba(0,0,0,.4);flex-shrink:0}
+.h-titles{display:flex;flex-direction:column;line-height:1.15;min-width:0}
+.h-title{font-weight:700;font-size:14px;letter-spacing:-.02em}
+.h-sub{font-size:10.5px;color:#9fa298;font-weight:500;letter-spacing:.08em;text-transform:uppercase}
+.h-edition{margin-left:auto;font:500 10px/1 'DM Mono',monospace;color:#9fa298;letter-spacing:.05em;padding:5px 9px;border:1px solid rgba(255,255,255,.1);border-radius:999px;white-space:nowrap}
+.h-author{font:700 10.5px/1 'DM Mono',monospace;color:#d4b94a;letter-spacing:.04em;padding:6px 10px;border:1px solid rgba(212,185,74,.35);background:rgba(212,185,74,.08);border-radius:999px;white-space:nowrap;display:inline-flex;align-items:center;gap:6px}
+.h-author::before{content:"●";font-size:6px;color:#d4b94a}
+@media(max-width:560px){.h-edition{display:none}.h-author{margin-left:auto}}
+
+/* STICKY TOC */
+.toc{position:sticky;top:50px;z-index:90;background:rgba(241,238,229,.92);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}
+.toc-inner{max-width:1080px;margin:0 auto;padding:10px 16px;display:flex;gap:6px;overflow-x:auto;scrollbar-width:none;-ms-overflow-style:none}
+.toc-inner::-webkit-scrollbar{display:none}
+.toc-chip{flex:none;font:600 11px/1 'DM Sans';letter-spacing:.06em;text-transform:uppercase;padding:7px 12px;background:var(--paper);border:1px solid var(--line);border-radius:999px;color:var(--ink-soft);transition:all .15s;white-space:nowrap;cursor:pointer}
+.toc-chip:hover{background:var(--paper-tint);border-color:var(--ink-faint);color:var(--ink)}
+.toc-chip-num{display:inline-block;font-family:'DM Mono',monospace;color:var(--ink-faint);margin-right:5px;font-weight:500;font-size:10px}
+
+/* LAYOUT */
+.wrap{max-width:1080px;margin:0 auto;padding:24px 20px 80px}
+.section{margin:48px 0 18px;padding-top:8px}
+.section:first-child{margin-top:14px}
+.section-eyebrow{font:700 10.5px/1 'DM Sans';letter-spacing:.18em;text-transform:uppercase;color:var(--c-prim);margin-bottom:8px;display:flex;align-items:center;gap:10px}
+.section-eyebrow::before{content:"";width:24px;height:1.5px;background:var(--c-prim)}
+.section-title{font-size:26px;font-weight:700;letter-spacing:-.03em;line-height:1.1}
+.section-sub{margin-top:6px;font-size:13.5px;color:var(--ink-mute);max-width:680px}
+
+/* HERO */
+.hero{margin:20px 0 28px;padding:26px 28px;background:linear-gradient(180deg,#fdfcf6 0%,#f7f4e8 100%);border:1px solid var(--line);border-radius:var(--r-xl);box-shadow:var(--sh-md);position:relative;overflow:hidden}
+.hero::after{content:"";position:absolute;top:0;right:0;bottom:0;left:0;background:radial-gradient(400px 200px at 100% 0%,rgba(163,27,53,.06),transparent 60%),radial-gradient(360px 200px at 0% 100%,rgba(11,93,78,.05),transparent 60%);pointer-events:none}
+.hero-tag{font:700 10.5px/1 'DM Sans';letter-spacing:.2em;text-transform:uppercase;color:var(--c-emerg);display:inline-flex;align-items:center;gap:8px;margin-bottom:10px}
+.hero-tag::before{content:"";width:18px;height:1.5px;background:currentColor}
+.hero h1{font-size:34px;font-weight:800;letter-spacing:-.035em;line-height:1.02;margin-bottom:8px}
+.hero h1 em{font-style:italic;font-weight:500;color:var(--ink-mute)}
+.hero-lead{font-size:14.5px;color:var(--ink-mute);max-width:660px;line-height:1.55}
+.hero-stamp{position:absolute;top:20px;right:22px;font:700 10.5px/1 'DM Mono',monospace;letter-spacing:.04em;padding:7px 11px 7px 18px;border:1.5px dashed rgba(163,27,53,.45);color:rgba(163,27,53,.9);border-radius:5px;background:rgba(255,255,255,.55);transform:rotate(-3deg);z-index:2;box-shadow:0 2px 6px rgba(163,27,53,.08)}
+.hero-stamp::before{content:"●";position:absolute;left:7px;top:50%;transform:translateY(-50%);color:rgba(163,27,53,.7);font-size:7px}
+.hero-sig{margin-top:14px;display:flex;align-items:center;gap:10px;font:600 11px/1 'DM Sans';color:var(--ink-mute);letter-spacing:.04em}
+.hero-sig::before{content:"";flex:none;width:22px;height:1.5px;background:var(--c-emerg)}
+.hero-sig b{color:var(--c-emerg);font-weight:700;font-family:'DM Mono',monospace;letter-spacing:.02em}
+@media(max-width:560px){.hero{padding:22px 20px}.hero h1{font-size:26px}.section-title{font-size:22px}.hero-stamp{position:static;display:inline-block;transform:none;margin-bottom:14px}}
+
+/* POCKET CARD 0 */
+.pocket{background:#0e1116;color:#f0eee5;border-radius:var(--r-xl);padding:24px 26px 26px;margin:0 0 28px;position:relative;overflow:hidden;box-shadow:var(--sh-lg)}
+.pocket::before{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(600px 300px at 100% 0%,rgba(212,185,74,.07),transparent 60%),radial-gradient(500px 280px at 0% 100%,rgba(163,27,53,.08),transparent 60%)}
+.pocket-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:18px;flex-wrap:wrap;position:relative}
+.pocket-eyebrow{font:700 10.5px/1 'DM Sans';letter-spacing:.2em;text-transform:uppercase;color:#d4b94a;display:flex;align-items:center;gap:9px}
+.pocket-eyebrow::before{content:"●";color:#d4b94a;font-size:9px;animation:pulse 2.4s ease infinite}
+@keyframes pulse{50%{opacity:.4}}
+.pocket-title{font-size:22px;font-weight:700;letter-spacing:-.02em;line-height:1.15;color:#fff}
+.pocket-sub{font-size:12.5px;color:#9aa0a8;margin-top:2px}
+.pocket-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px;position:relative}
+.pocket-card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-left:3px solid var(--accent,#d4b94a);border-radius:var(--r);padding:12px 14px}
+.pocket-card .pc-trig{font:700 10px/1.1 'DM Sans';letter-spacing:.12em;text-transform:uppercase;color:var(--accent,#d4b94a);margin-bottom:6px;display:flex;align-items:center;gap:6px}
+.pocket-card .pc-trig::before{content:"";width:4px;height:4px;background:currentColor;border-radius:50%}
+.pocket-card .pc-act{font-size:13.5px;line-height:1.4;color:#dedfd5}
+.pocket-card .pc-act b{color:#fff;font-weight:600}
+.pocket-card.emerg{--accent:#ff8a96}.pocket-card.dec{--accent:#7cb0ff}.pocket-card.tx{--accent:#ffb085}.pocket-card.clin{--accent:#b0e0d4}
+
+/* LEGEND */
+.legend{background:var(--paper);border:1px solid var(--line);border-radius:var(--r-lg);padding:18px 20px;margin-bottom:28px;box-shadow:var(--sh-sm)}
+.lg-title{font:700 10.5px/1 'DM Sans';letter-spacing:.16em;text-transform:uppercase;color:var(--ink-faint);margin-bottom:12px}
+.lg-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:8px 14px}
+.lg-item{display:flex;align-items:center;gap:9px;font-size:12.5px;color:var(--ink-soft)}
+.dot{width:9px;height:9px;border-radius:50%;flex-shrink:0;box-shadow:0 0 0 2px var(--paper),0 0 0 3px currentColor}
+.dot.c1{color:var(--c-prim);background:var(--c-prim)}.dot.c2{color:var(--c-clin);background:var(--c-clin)}.dot.c3{color:var(--c-diag);background:var(--c-diag)}.dot.c4{color:var(--c-tx);background:var(--c-tx)}.dot.c5{color:var(--c-emerg);background:var(--c-emerg)}.dot.c6{color:var(--c-pearl);background:var(--c-pearl)}
+.lg-divider{height:1px;background:var(--line-soft);margin:14px 0}
+.lg-anchors{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:8px}
+.ank{display:inline-flex;align-items:center;gap:5px;font:700 9.5px/1 'DM Sans';letter-spacing:.12em;text-transform:uppercase;padding:4px 8px 4px 7px;border-radius:999px;border:1px solid;vertical-align:middle;white-space:nowrap}
+.ank::before{content:"";width:4px;height:4px;border-radius:50%;background:currentColor}
+.ank-hy{color:var(--ank-hy);background:var(--ank-hy-bg);border-color:#e5cd72}
+.ank-dec{color:var(--ank-dec);background:var(--ank-dec-bg);border-color:#9fbae6}
+.ank-dgr{color:var(--ank-dgr);background:var(--ank-dgr-bg);border-color:#e29ca0}
+.ank-prl{color:var(--ank-prl);background:var(--ank-prl-bg);border-color:#a8c298}
+.ank-myt{color:var(--ank-myt);background:var(--ank-myt-bg);border-color:#d0b181}
+.ank-con{color:var(--ank-con);background:var(--ank-con-bg);border-color:#bba7d3}
+.ank-evo{color:var(--ank-evo);background:var(--ank-evo-bg);border-color:#8fc1c9}
+.lg-explain{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:6px 14px;font-size:11.5px;color:var(--ink-mute);margin-top:10px}
+.lg-explain b{font-weight:700}
+.lg-explain .ehy b{color:var(--ank-hy)}.lg-explain .edec b{color:var(--ank-dec)}.lg-explain .edgr b{color:var(--ank-dgr)}.lg-explain .eprl b{color:var(--ank-prl)}.lg-explain .emyt b{color:var(--ank-myt)}.lg-explain .econ b{color:var(--ank-con)}.lg-explain .eevo b{color:var(--ank-evo)}
+
+/* EVIDENCE CHIPS */
+.ev{display:inline-flex;align-items:center;font:600 9.5px/1 'DM Mono',monospace;letter-spacing:.04em;padding:3px 6px 2px;border-radius:4px;background:#eeebde;color:var(--ink-soft);border:1px solid var(--line);vertical-align:middle;margin-left:3px}
+.ev-acr{background:#fadcdc;color:#a31b25;border-color:#e29ca0}
+.ev-eular{background:#dde7f8;color:#1d4ea3;border-color:#9fbae6}
+.ev-sbr{background:#e3d6f0;color:#5a4070;border-color:#bba7d3}
+.ev-nice{background:#cde5e9;color:#0d6373;border-color:#8fc1c9}
+.ev-expert{background:#eeebde;color:#7a6014;border-color:#d0b181}
+.ev-cochrane{background:#d8e6cf;color:#3e6a2e;border-color:#a8c298}
+
+/* CARD */
+.card{background:var(--paper);border:1px solid var(--line);border-radius:var(--r-lg);margin-bottom:22px;box-shadow:var(--sh-md);overflow:hidden;break-inside:avoid}
+.card-head{padding:18px 22px 15px;border-bottom:1px solid var(--line-soft);position:relative;background:linear-gradient(180deg,#fcfaf2 0%,#ffffff 100%)}
+.card-head::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--accent,var(--c-prim))}
+.card-eyebrow{font:700 10px/1 'DM Sans';letter-spacing:.16em;text-transform:uppercase;color:var(--accent,var(--c-prim));margin-bottom:5px;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.card-num{font-family:'DM Mono',monospace;font-weight:500;color:var(--ink-faint);font-size:10.5px;letter-spacing:0}
+.card h3{font-size:21px;font-weight:700;letter-spacing:-.025em;color:var(--ink);line-height:1.15;display:flex;align-items:center;gap:9px;flex-wrap:wrap}
+.card-sub{margin-top:6px;font-size:13px;color:var(--ink-mute)}
+.card-body{padding:20px 22px 24px}
+.card.prim{--accent:var(--c-prim)}.card.clin{--accent:var(--c-clin)}.card.diag{--accent:var(--c-diag)}.card.tx{--accent:var(--c-tx)}.card.emerg{--accent:var(--c-emerg)}.card.pearl{--accent:var(--c-pearl)}
+@media(max-width:560px){.card-head{padding:16px 18px 14px}.card-body{padding:18px 18px 20px}.card h3{font-size:18px}}
+
+/* QUICK VIEW */
+.quick{background:var(--paper-tint);border:1px solid var(--line);border-left:3px solid var(--accent,var(--c-prim));border-radius:var(--r);padding:13px 16px;margin:0 0 16px}
+.quick-label{font:700 9.5px/1 'DM Sans';letter-spacing:.16em;text-transform:uppercase;color:var(--accent,var(--c-prim));margin-bottom:6px}
+.quick-body{font-size:13.5px;line-height:1.45;color:var(--ink-soft)}
+.quick-body b{color:var(--ink);font-weight:600}
+
+/* SUB-TITLE */
+.sub-title{font:700 10.5px/1 'DM Sans';letter-spacing:.16em;text-transform:uppercase;color:var(--ink-soft);margin:18px 0 10px;display:flex;align-items:center;gap:9px;border-bottom:1px dashed var(--line);padding-bottom:6px}
+.sub-title::before{content:"";width:4px;height:4px;border-radius:50%;background:var(--accent,var(--ink-soft))}
+.sub-title:first-child{margin-top:0}
+
+/* TEXT */
+p{color:var(--ink-soft);margin-bottom:8px;font-size:14px;line-height:1.5}
+p:last-child{margin-bottom:0}
+strong{color:var(--ink);font-weight:600}
+ul.bullets{list-style:none;padding:0;margin:0 0 10px}
+ul.bullets li{position:relative;padding:5px 0 5px 20px;font-size:13.5px;line-height:1.5;color:var(--ink-soft);border-bottom:1px dashed var(--line-soft)}
+ul.bullets li:last-child{border-bottom:none}
+ul.bullets li::before{content:"";position:absolute;left:5px;top:13px;width:4px;height:4px;border-radius:50%;background:var(--accent,var(--ink-mute))}
+ul.bullets li b{color:var(--ink);font-weight:600}
+
+/* DISEASE BOX */
+.disease{border:1px solid var(--line);border-radius:var(--r);margin:14px 0;overflow:hidden;background:var(--paper)}
+.disease-head{padding:12px 16px;background:linear-gradient(180deg,#faf7eb 0%,#f1eddc 100%);border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap}
+.disease-name{font-weight:700;color:var(--ink);font-size:14.5px;letter-spacing:-.015em}
+.disease-tag{font:600 10px/1 'DM Sans';letter-spacing:.08em;text-transform:uppercase;color:var(--ink-mute)}
+.disease-body{padding:14px 16px}
+.disease-rows{display:grid;gap:0}
+.disease-row{display:grid;grid-template-columns:130px 1fr;gap:12px;padding:8px 0;border-bottom:1px dashed var(--line-soft)}
+.disease-row:last-child{border-bottom:none;padding-bottom:0}
+.disease-row:first-child{padding-top:0}
+.disease-row .k{font:700 10px/1.2 'DM Sans';letter-spacing:.12em;text-transform:uppercase;color:var(--accent,var(--ink-faint));padding-top:2px}
+.disease-row .v{font-size:13.5px;color:var(--ink-soft);line-height:1.5}
+.disease-row .v b{color:var(--ink)}
+@media(max-width:560px){.disease-row{grid-template-columns:1fr;gap:3px;padding:6px 0 8px}.disease-row .k{padding-top:0}}
+
+/* DEEP DIVE */
+.deep{margin:16px 0 6px;border:1px solid var(--line);border-radius:var(--r);background:linear-gradient(180deg,#fdfcf6 0%,#f9f6ea 100%);overflow:hidden}
+.deep>summary{list-style:none;cursor:pointer;padding:11px 16px;display:flex;align-items:center;justify-content:space-between;font:700 11px/1 'DM Sans';letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft);user-select:none;transition:background .15s}
+.deep>summary::-webkit-details-marker{display:none}
+.deep>summary::after{content:"+";font-size:18px;font-weight:600;color:var(--ink-faint);transition:transform .2s;font-family:'DM Mono',monospace}
+.deep[open]>summary::after{transform:rotate(45deg)}
+.deep>summary:hover{background:rgba(0,0,0,.02)}
+.deep-content{padding:14px 16px 16px;border-top:1px dashed var(--line)}
+.deep-content p{font-size:13px;color:var(--ink-mute);line-height:1.55}
+.deep-content p b{color:var(--ink-soft)}
+
+/* MNEMONIC */
+.mnemo{background:var(--paper-tint);border:1px solid var(--line);border-radius:var(--r);padding:14px 16px;margin:14px 0}
+.mnemo-title{font:700 10.5px/1 'DM Sans';letter-spacing:.16em;text-transform:uppercase;color:var(--c-pearl);margin-bottom:10px;display:flex;align-items:center;gap:8px}
+.mnemo-title b{background:var(--ink);color:#fff;padding:3px 7px;border-radius:4px;font-size:10px;letter-spacing:.06em}
+.mnemo-grid{display:grid;gap:5px}
+.mnemo-row{display:grid;grid-template-columns:28px 1fr;gap:10px;align-items:baseline;font-size:13px;color:var(--ink-soft);padding:3px 0}
+.mnemo-letter{display:grid;place-items:center;width:24px;height:24px;background:var(--ink);color:#fff;border-radius:5px;font:800 12px/1 'DM Sans';letter-spacing:-.02em}
+.mnemo-row b{color:var(--ink);font-weight:600}
+.mnemo-row em{font-style:italic;color:var(--ink-mute);font-size:12px}
+
+/* SCORE BOX */
+.score{border:1px solid var(--line);border-radius:var(--r);margin:14px 0;background:var(--paper);overflow:hidden}
+.score-head{padding:11px 14px;background:linear-gradient(180deg,#f5f1e0 0%,#ede9d6 100%);border-bottom:1px solid var(--line)}
+.score-name{font:700 13px/1.2 'DM Sans';color:var(--ink);letter-spacing:-.01em}
+.score-purpose{font:500 10.5px/1.2 'DM Sans';color:var(--ink-mute);letter-spacing:.06em;text-transform:uppercase;margin-top:3px}
+.score-rows{display:grid;gap:0}
+.score-row{display:grid;grid-template-columns:90px 1fr;gap:12px;align-items:start;padding:9px 14px;border-bottom:1px dashed var(--line-soft);font-size:13px}
+.score-row:last-child{border-bottom:none}
+.score-grade{font:800 12px/1.2 'DM Mono',monospace;color:var(--c-emerg);letter-spacing:-.01em}
+.score-desc{color:var(--ink-soft);line-height:1.45}
+.score-desc b{color:var(--ink)}
+
+/* STACKED TABLE */
+.stbl{margin:14px 0;border:1px solid var(--line);border-radius:var(--r);background:var(--paper);overflow:hidden}
+.stbl-head,.stbl-row{display:grid;gap:14px;padding:10px 14px;align-items:start}
+.stbl-head{background:#faf7eb;border-bottom:2px solid var(--line);font:700 10.5px/1 'DM Sans';letter-spacing:.1em;text-transform:uppercase;color:var(--ink)}
+.stbl-row{border-bottom:1px solid var(--line-soft);font-size:13px;color:var(--ink-soft);line-height:1.5}
+.stbl-row:last-child{border-bottom:none}
+.stbl-row:nth-child(even){background:#fcfaf2}
+.stbl-row b{color:var(--ink);font-weight:600}
+.stbl-row .col1{font-weight:600;color:var(--ink)}
+.stbl-2{grid-template-columns:1fr 2fr}
+.stbl-3{grid-template-columns:1fr 1.3fr 1.5fr}
+.stbl-4{grid-template-columns:1.2fr 1fr 1fr 1.2fr}
+@media(max-width:680px){
+  .stbl-head{display:none}
+  .stbl-row{grid-template-columns:1fr !important;gap:12px;padding:14px 16px}
+  .stbl-row .col{display:block;min-width:0;word-wrap:break-word;overflow-wrap:anywhere}
+  .stbl-row .col::before{content:attr(data-l);display:block;font:700 9.5px/1.3 'DM Sans';letter-spacing:.12em;text-transform:uppercase;color:var(--ink-mute);margin-bottom:4px}
+  .stbl-row .col1{font-weight:700;font-size:15px;padding-bottom:8px;margin-bottom:6px;border-bottom:1px dashed var(--line)}
+  .stbl-row .col1::before{display:none}
+}
+
+/* CALLOUT BOXES */
+.box{border-radius:var(--r);padding:14px 16px;margin:14px 0;position:relative;border:1px solid}
+.box-label{position:absolute;top:-9px;left:14px;font:700 9.5px/1 'DM Sans';letter-spacing:.16em;text-transform:uppercase;padding:3px 9px;border-radius:999px;color:#fff}
+.box-title{font-weight:700;color:var(--ink);font-size:14px;margin:2px 0 6px}
+.box-body{font-size:13.5px;line-height:1.5;color:var(--ink-soft)}
+.box-body b{color:var(--ink)}
+.box-body ul{list-style:none;padding:0;margin:4px 0 0}
+.box-body ul li{position:relative;padding:3px 0 3px 20px}
+.box-body ul li::before{content:"→";position:absolute;left:0;top:3px;font-weight:700;color:var(--bx-color)}
+.box.decision{background:#f1f5fc;border-color:#c4d3eb;--bx-color:var(--ank-dec)}.box.decision .box-label{background:var(--ank-dec)}
+.box.danger{background:#fbf0f0;border-color:#e5c2c2;--bx-color:var(--ank-dgr)}.box.danger .box-label{background:var(--ank-dgr)}.box.danger .box-body b{color:var(--ank-dgr)}
+.box.pearl{background:#f1f7ed;border-color:#c1d5b3;--bx-color:var(--ank-prl)}.box.pearl .box-label{background:var(--ank-prl)}
+.box.hy{background:#fcf6dd;border-color:#e3cf78;--bx-color:var(--ank-hy)}.box.hy .box-label{background:var(--ank-hy)}
+.box.myth{background:#f8eed8;border-color:#d0b181;--bx-color:var(--ank-myt)}.box.myth .box-label{background:var(--ank-myt)}
+.box.controversy{background:#f1e9f6;border-color:#bba7d3;--bx-color:var(--ank-con)}.box.controversy .box-label{background:var(--ank-con)}
+.box.evolving{background:#dff0f2;border-color:#8fc1c9;--bx-color:var(--ank-evo)}.box.evolving .box-label{background:var(--ank-evo)}
+
+/* ALGORITHM TREE */
+.algo{background:linear-gradient(180deg,#fcfaf2 0%,#f5f0dc 100%);border:1px solid var(--line-strong);border-radius:var(--r-lg);padding:18px;margin:14px 0;overflow-x:auto}
+.tree{font-size:13px}
+.tree-line{padding:6px 0}
+.tree-node{display:inline-block;padding:8px 12px;background:var(--paper);border:1.5px solid var(--ink-soft);border-radius:7px;font-weight:600;color:var(--ink);font-size:12.5px;box-shadow:var(--sh-sm)}
+.tree-node.start{background:var(--ink);color:#fff;border-color:var(--ink)}
+.tree-node.dec{background:#fff7d6;border-color:#e3cf78;color:#6b520a}
+.tree-node.dx{background:#dde7f8;border-color:#9fbae6;color:#1d4ea3}
+.tree-node.dgr{background:#fadcdc;border-color:#e29ca0;color:#a31b25}
+.tree-node.action{background:#d8e6cf;border-color:#a8c298;color:#3e6a2e}
+.tree-branch{margin-left:14px;border-left:1.5px dashed #b8b094;padding:6px 0 6px 18px;margin-top:6px;margin-bottom:2px;position:relative}
+.tree-branch::before{content:"";position:absolute;left:-1.5px;top:-4px;width:14px;height:14px;border-left:1.5px solid #b8b094;border-bottom:1.5px solid #b8b094;border-radius:0 0 0 6px}
+.tree-label{display:inline-block;font:700 9.5px/1 'DM Sans';letter-spacing:.12em;text-transform:uppercase;padding:3px 7px;border-radius:4px;margin-bottom:5px}
+.tree-label.yes{background:#fadcdc;color:#a31b25}.tree-label.no{background:#d8e6cf;color:#3e6a2e}
+
+/* FOOTER */
+.foot{margin-top:48px;padding-top:22px;border-top:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;font-size:11px;color:var(--ink-faint);letter-spacing:.04em;flex-wrap:wrap;gap:8px}
+.foot-mono{font-family:'DM Mono',monospace}
+.foot-author{font:800 14px/1.1 'DM Mono',monospace;color:var(--ink);letter-spacing:.02em;margin-bottom:3px}
+.foot-meta{font:500 11px/1.3 'DM Sans';color:var(--ink-faint);letter-spacing:.04em}
+
+/* WATERMARK */
+.watermark{position:fixed;bottom:calc(14px + env(safe-area-inset-bottom,0px));right:calc(14px + env(safe-area-inset-right,0px));font:600 10px/1 'DM Mono',monospace;letter-spacing:.04em;color:rgba(14,17,22,.55);background:rgba(255,255,255,.85);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);padding:6px 10px;border-radius:99px;border:1px solid rgba(14,17,22,.1);box-shadow:0 2px 8px rgba(14,17,22,.06);z-index:50;pointer-events:none;user-select:none}
+@media(max-width:560px){.watermark{bottom:calc(10px + env(safe-area-inset-bottom,0px));right:calc(10px + env(safe-area-inset-right,0px));font-size:9px;padding:5px 8px}}
+
+/* PRINT */
+@media print{
+  body{background:#fff;font-size:10.5pt}
+  body::before{display:none}
+  .header,.toc{position:static;background:#0e1116;color:#fff}
+  .wrap{padding:14px;max-width:100%}
+  .card,.hero,.legend,.pocket{box-shadow:none !important;break-inside:avoid}
+  .hero::after,.pocket::before{display:none}
+  .pocket{background:#1a1d24;color:#f0eee5}
+  .ank,.box,.disease,.score,.algo,.stbl,.deep,.mnemo,.quick{box-shadow:none !important;break-inside:avoid}
+  .deep:not([open]) .deep-content{display:block}
+  .deep>summary::after{display:none}
+  .watermark{position:fixed;bottom:8mm;right:8mm;background:none;border:none;color:rgba(0,0,0,.5)}
+  .hero-stamp{transform:none;position:absolute}
+}
+</style>
+</head>
+<body>
+
+<header class="header"><div class="header-row"><div class="h-mark">G</div><div class="h-titles"><div class="h-title">Sofrimento Fetal, Parto Operatório e Puerpério · Pocket Handbook</div><div class="h-sub">Elite edition · Obstetrícia clínica · GO14</div></div><div class="h-author">@dr.lorencato</div><div class="h-edition">v5.2</div></div></header>
+
+<nav class="toc"><div class="toc-inner"><a href="#pocket" class="toc-chip"><span class="toc-chip-num">0</span>Pocket</a><a href="#redflags" class="toc-chip"><span class="toc-chip-num">A</span>Red Flags</a><a href="#approach" class="toc-chip"><span class="toc-chip-num">B</span>Apresentação</a><a href="#primarias" class="toc-chip"><span class="toc-chip-num">C</span>Entidades</a><a href="#secundarias" class="toc-chip"><span class="toc-chip-num">D</span>Secundárias</a><a href="#algoritmo" class="toc-chip"><span class="toc-chip-num">E</span>Algoritmo</a><a href="#tratamento" class="toc-chip"><span class="toc-chip-num">F</span>Tratamento</a><a href="#pitfalls" class="toc-chip"><span class="toc-chip-num">G</span>Pitfalls</a><a href="#pearls" class="toc-chip"><span class="toc-chip-num">H</span>Pearls</a></div></nav>
+
+<main>
+<div class="wrap">
+
+<div class="hero">
+<div class="hero-stamp">@dr.lorencato</div>
+<div class="hero-tag">Obstetrícia · GO14 · Vitalidade fetal, parto vaginal operatório e puerpério</div>
+<h1>Sofrimento Fetal, Parto Operatório e Puerpério<br><em>do traçado que perde a variabilidade à puérpera que sangra sem que ninguém meça</em></h1>
+<p class="hero-lead">Cardiotocografia intraparto e reanimação intrauterina, restrição do crescimento fetal com Doppler e perfil biofísico, oligoâmnio e polidrâmnio, fórcipe e vácuo-extrator, hemorragia pós-parto pelos 4Ts com o pacote MOTIVE e a nova definição WHO/FIGO/ICM 2025, infecção puerperal, mastite complicada, TEV e os transtornos psiquiátricos do pós-parto — com doses brasileiras (OPAS/MS) e disponibilidade conferida na CMED.</p>
+<div class="hero-sig">Compilação clínica por <b>@dr.lorencato</b> · Elite Edition v5.2 · Obstetrícia · status clinical_review</div>
+</div>
+
+<div id="pocket" class="pocket">
+<div class="pocket-head"><div>
+<div class="pocket-eyebrow">Pocket Card 0 · 5 segundos</div>
+<div class="pocket-title">Decisões Críticas — Sala de Parto e Puerpério</div>
+<div class="pocket-sub">Centro obstétrico · Alojamento conjunto · PS obstétrico</div>
+</div></div>
+<div class="pocket-grid">
+<div class="pocket-card emerg"><div class="pc-trig">SANGRAMENTO ≥300 mL + FC &gt;100 OU IC &gt;1 · OU ≥500 mL</div><div class="pc-act">É HPP. <b>Pacote MOTIVE em até 15 min</b>: massagem, ocitocina IV, <b>ácido tranexâmico 1 g IV em 10 min</b>, cristaloide, exame do trajeto e escalonamento. Medir, não estimar.</div></div>
+<div class="pocket-card emerg"><div class="pc-trig">BRADICARDIA FETAL &lt;110 POR ≥3 MIN · CATEGORIA III</div><div class="pc-act"><b>Reanimação intrauterina já</b> (parar ocitocina, decúbito lateral, corrigir hipotensão, tocólise se taquissistolia) e <b>preparar extração</b>: fórcipe se praticável, senão cesárea de urgência.</div></div>
+<div class="pocket-card emerg"><div class="pc-trig">PUÉRPERA CONFUSA, SEM DORMIR, COM IDEIAS SOBRE O BEBÊ</div><div class="pc-act">Psicose puerperal até prova em contrário: <b>não deixar sozinha com o recém-nascido</b>, excluir causa orgânica (infecção, eclâmpsia, tireoide, sódio) e internar com psiquiatria.</div></div>
+<div class="pocket-card dec"><div class="pc-trig">CTG CATEGORIA II</div><div class="pc-act">Variabilidade moderada ou aceleração presente = <b>feto sem acidemia naquele momento</b>. Corrigir a causa e reavaliar em 30 min; persistência sem variabilidade → extração.</div></div>
+<div class="pocket-card dec"><div class="pc-trig">RCF · DOPPLER UMBILICAL</div><div class="pc-act">IP &gt;p95 ou RCP &lt;p5: parto com 37 sem. <b>Diástole zero: cesárea com 34 sem.</b> Diástole reversa ou ducto venoso &gt;p95: parto a partir da viabilidade, com corticoide e magnésio &lt;32 sem.</div></div>
+<div class="pocket-card dec"><div class="pc-trig">FÓRCIPE OU VÁCUO?</div><div class="pc-act">Só com <b>dilatação total, bolsa rota, cabeça insinuada (≥0 de DeLee), variedade de posição conhecida</b> e bexiga vazia. Vácuo não &lt;34 sem nem em face/pélvico; fórcipe alto é proscrito.</div></div>
+<div class="pocket-card tx"><div class="pc-trig">PREVENÇÃO DA HPP · TODOS OS PARTOS</div><div class="pc-act"><b>Ocitocina 10 UI IM logo após o nascimento</b>. Cesárea com acesso: regra dos 3 (3 UI IV em ≥30 s, até 3 doses, depois 3 UI/h por 4 h).</div></div>
+<div class="pocket-card tx"><div class="pc-trig">ATONIA QUE NÃO RESPONDE À OCITOCINA</div><div class="pc-act"><b>Metilergometrina 0,2 mg IM</b> (não na hipertensa) e/ou <b>misoprostol 800 µg retal ou sublingual</b>; falhou → balão intrauterino, TAN, sutura de B-Lynch, histerectomia.</div></div>
+<div class="pocket-card tx"><div class="pc-trig">ENDOMETRITE PUERPERAL</div><div class="pc-act"><b>Clindamicina 900 mg IV 8/8 h + gentamicina 5 mg/kg IV 1×/dia</b> até 24–48 h afebril, sem antibiótico oral depois. Febre que persiste em 72 h: abscesso, restos, tromboflebite pélvica.</div></div>
+<div class="pocket-card clin"><div class="pc-trig">PARTO COM FÓRCIPE OU VÁCUO</div><div class="pc-act"><b>Amoxicilina-clavulanato 1 g/200 mg IV dose única até 6 h após o parto</b> (WHO 2021, ANODE). Revisar colo, vagina e esfíncter anal antes de sair da sala.</div></div>
+<div class="pocket-card clin"><div class="pc-trig">BLUES × DEPRESSÃO × PSICOSE</div><div class="pc-act">Blues começa no 3º dia e some até o 14º, com afeto pelo bebê preservado. <b>&gt;2 semanas ou ideação suicida = depressão</b>; delírio ou desorganização = psicose (emergência).</div></div>
+<div class="pocket-card clin"><div class="pc-trig">ALTA E CONSULTA PUERPERAL</div><div class="pc-act">Rh negativo com RN Rh positivo: <b>imunoglobulina anti-D 300 µg IM até 72 h</b>. Revisão em 7–10 dias e até 42 dias: PA, ferida, mama, humor (EPDS), contracepção, rastreio pós-DMG.</div></div>
+</div>
+</div>
+
+<div class="legend">
+<div class="lg-title">Sistema de legendas</div>
+<div class="lg-grid">
+<div class="lg-item"><span class="dot c1"></span> Fisiopatologia / Classificação</div>
+<div class="lg-item"><span class="dot c2"></span> Clínica / Apresentação</div>
+<div class="lg-item"><span class="dot c3"></span> Diagnóstico / Exames</div>
+<div class="lg-item"><span class="dot c4"></span> Tratamento / Conduta</div>
+<div class="lg-item"><span class="dot c5"></span> Emergências / Red Flags</div>
+<div class="lg-item"><span class="dot c6"></span> Nuances / Pearls</div>
+</div>
+<div class="lg-divider"></div>
+<div class="lg-anchors"><span class="ank ank-hy">HIGH-YIELD</span><span class="ank ank-dec">DECISION</span><span class="ank ank-dgr">DANGER</span><span class="ank ank-prl">PEARL</span><span class="ank ank-myt">MYTH</span><span class="ank ank-con">CONTROVERSY</span><span class="ank ank-evo">EVOLVING</span></div>
+<div class="lg-explain">
+<div class="ehy"><b>HIGH-YIELD</b> — prova/prática frequente</div>
+<div class="edec"><b>DECISION</b> — muda a conduta</div>
+<div class="edgr"><b>DANGER</b> — erro grave / risco crítico</div>
+<div class="eprl"><b>PEARL</b> — nuance de especialista</div>
+<div class="emyt"><b>MYTH</b> — mito vivo na prática</div>
+<div class="econ"><b>CONTROVERSY</b> — debate sem consenso</div>
+<div class="eevo"><b>EVOLVING</b> — mudança recente</div>
+</div>
+</div>
+
+<!-- ============================================================ A -->
+<section id="redflags">
+<div class="section">
+<div class="section-eyebrow"><span>A</span> Red Flags</div>
+<div class="section-title">A mãe morre na primeira hora; o feto, nos minutos em que ninguém olhou o traçado</div>
+<div class="section-sub">No Brasil a hemorragia pós-parto é a segunda causa de morte materna, atrás das síndromes hipertensivas, e quase toda morte por HPP tem um atraso evitável: perda subestimada, uterotônico tardio, ácido tranexâmico esquecido, cirurgia adiada. No feto, o erro é o inverso — agir pelo rótulo "sofrimento" sem ler variabilidade, ou demorar a extrair quando ela some.</div>
+</div>
+
+<div class="card emerg">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">A.1</span> Emergências</div><h3>Sinais de alarme no parto e no puerpério <span class="ank ank-dgr">DANGER</span></h3></div>
+<div class="card-body">
+<div class="mnemo">
+<div class="mnemo-title"><b>ALARME</b> as seis situações em que minutos mudam o desfecho</div>
+<div class="mnemo-grid">
+<div class="mnemo-row"><span class="mnemo-letter">A</span><span><b>Atonia e sangramento medido</b> · ≥300 mL com FC &gt;100, índice de choque &gt;1, PAS &lt;100 ou PAD &lt;60, ou ≥500 mL — HPP pela definição WHO/FIGO/ICM 2025</span></div>
+<div class="mnemo-row"><span class="mnemo-letter">L</span><span><b>Linha de base &lt;110 bpm sustentada</b> · bradicardia prolongada ou desaceleração &gt;3–5 min que não recupera: prolapso de cordão, rotura uterina, DPP, hipotensão materna</span></div>
+<div class="mnemo-row"><span class="mnemo-letter">A</span><span><b>Ausência de variabilidade</b> com desacelerações tardias ou variáveis recorrentes, ou padrão sinusoidal · categoria III: acidemia provável</span></div>
+<div class="mnemo-row"><span class="mnemo-letter">R</span><span><b>Rubor de ferida, febre e útero doloroso</b> · endometrite que vira sepse; dor desproporcional e crepitação = fasciíte necrosante</span></div>
+<div class="mnemo-row"><span class="mnemo-letter">M</span><span><b>Mente</b> · insônia, confusão flutuante, delírio sobre o bebê nos dias 3–10: psicose puerperal; ideação suicida em qualquer quadro</span></div>
+<div class="mnemo-row"><span class="mnemo-letter">E</span><span><b>Embolia ou eclâmpsia</b> · dispneia súbita, hipoxemia, colapso ou convulsão no pós-parto: TEP, embolia de líquido amniótico, eclâmpsia tardia (GO13)</span></div>
+</div>
+</div>
+
+<div class="sub-title">Sinal objetivo → suspeita → conduta imediata</div>
+<div class="stbl stbl-3">
+<div class="stbl-head stbl-3"><div>Red flag</div><div>Suspeita</div><div>Conduta imediata</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Red flag">Perda medida ≥300 mL com FC &gt;100 ou IC &gt;1, ou ≥500 mL nas primeiras 24 h; útero amolecido acima do umbigo</div><div class="col" data-l="Suspeita">HPP por atonia (70% dos casos)</div><div class="col" data-l="Conduta"><b>Chamar ajuda, 2 acessos calibrosos, massagem bimanual, ocitocina 5 UI IV lento (3 min) + 20–40 UI em 500 mL de SF 0,9% a 250 mL/h, depois 125 mL/h por 4 h, ácido tranexâmico 1 g IV em 10 min</b>, sonda vesical, tipagem e reserva; revisar trajeto e placenta. Sem resposta em 15–20 min → 2ª linha e escalonamento.</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Red flag">Índice de choque ≥1,4, PAS &lt;70, sangramento contínuo apesar de uterotônicos</div><div class="col" data-l="Suspeita">Choque hemorrágico moderado a grave; coagulopatia de consumo ou dilucional</div><div class="col" data-l="Conduta"><b>Protocolo de transfusão maciça</b> (hemácias O negativo enquanto não tipa, plasma 1:2, plaquetas se &lt;50 mil, fibrinogênio para ≥2 g/L), TAN, aquecer, cálcio; centro cirúrgico.</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Red flag">Choque desproporcional ao sangramento, dor intensa, fundo uterino não palpável, massa na vagina após tração do cordão</div><div class="col" data-l="Suspeita">Inversão uterina aguda (choque com componente vagal)</div><div class="col" data-l="Conduta"><b>Não retirar a placenta aderida</b>; suspender ocitocina, relaxar o útero, reposição manual imediata (Taxe); falhou → laparotomia (Huntington); depois ocitocina em infusão.</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Red flag">FCF &lt;110 bpm por ≥3 min, desaceleração prolongada, ou ausência de variabilidade + tardias recorrentes</div><div class="col" data-l="Suspeita">Hipóxia aguda; prolapso de cordão, rotura uterina, DPP, taquissistolia, hipotensão pós-analgesia</div><div class="col" data-l="Conduta"><b>Toque vaginal (cordão, dilatação, altura), suspender ocitocina, decúbito lateral, cristaloide, corrigir PA</b>, terbutalina 0,25 mg SC se taquissistolia; sem recuperação → nascimento pela via mais rápida (fórcipe se praticável).</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Red flag">Febre ≥38 °C após 24 h, útero doloroso e amolecido, lóquio fétido, taquicardia, lactato alto</div><div class="col" data-l="Suspeita">Endometrite; sepse puerperal (estreptococo do grupo A evolui em horas)</div><div class="col" data-l="Conduta"><b>Culturas, lactato, clindamicina 900 mg IV 8/8 h + gentamicina 5 mg/kg IV 1×/dia</b>; sepse ou choque → pacote de sepse de 1 h (II03) e ampliar espectro; procurar foco cirúrgico (restos, abscesso, ferida).</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Red flag">Dor de ferida ou períneo desproporcional, pele violácea, bolhas, crepitação, choque</div><div class="col" data-l="Suspeita">Fasciíte necrosante (grupo A, polimicrobiana, Clostridium)</div><div class="col" data-l="Conduta"><b>Desbridamento cirúrgico no mesmo turno</b> + carbapenêmico ou piperacilina-tazobactam + clindamicina (antitoxina) + vancomicina se MRSA possível (II03); não esperar imagem.</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Red flag">Puérpera com insônia total, confusão, delírio ou alucinação, falas sobre o bebê estar trocado ou possuído</div><div class="col" data-l="Suspeita">Psicose puerperal (espectro bipolar) ou delirium orgânico</div><div class="col" data-l="Conduta"><b>Supervisão contínua, RN com outro cuidador, exame clínico e laboratório</b> (hemograma, sódio, cálcio, glicose, TSH e anti-TPO, toxicológico, função renal e hepática), internação com psiquiatria; não liberar para casa.</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Red flag">Dispneia súbita, dor pleurítica, SpO2 &lt;94%, taquicardia, edema assimétrico de perna, sobretudo após cesárea</div><div class="col" data-l="Suspeita">TEP / TVP puerperal (risco máximo na 1ª semana)</div><div class="col" data-l="Conduta"><b>Enoxaparina 1 mg/kg SC 12/12 h</b> se probabilidade alta e sem contraindicação, enquanto confirma (Doppler, angio-TC); instabilidade → fluxo de TEP de alto risco (RP04/HO03).</div></div>
+</div>
+
+<div class="box danger"><span class="box-label">DANGER</span><div class="box-title">A puérpera jovem compensa até não compensar mais</div><div class="box-body">A hipervolemia da gestação permite perder 1.000–1.500 mL com PA normal; a taquicardia e o índice de choque mudam antes da pressão. Hipotensão significa perda de ≥1.500 mL (choque moderado) — o tempo para agir já passou. O WHO 2025 baixou o limiar de diagnóstico justamente por isso: ≥300 mL com qualquer sinal hemodinâmico anormal já aciona o pacote. Estimativa visual subestima de forma sistemática; use bolsa coletora calibrada no parto vaginal e pesagem de compressas (1 g ≈ 1 mL).</div></div>
+<div class="box danger"><span class="box-label">DANGER</span><div class="box-title">Ácido tranexâmico depois de 3 h não ajuda — e não é profilaxia</div><div class="box-body">No WOMAN, o benefício (morte por sangramento 1,2% × 1,7% quando dado em até 3 h) se concentra nas primeiras horas, porque a hiperfibrinólise é precoce. Dar no diagnóstico, junto com o uterotônico, sem esperar falha. O WHO 2025 recomenda <b>contra</b> o uso profilático no parto vaginal e na cesárea (WOMAN-2 sem benefício em anêmicas).</div></div>
+</div>
+</div>
+</section>
+
+<!-- ============================================================ B -->
+<section id="approach">
+<div class="section">
+<div class="section-eyebrow"><span>B</span> Por Apresentação</div>
+<div class="section-title">Mapa sindrômico — seis portas de entrada</div>
+<div class="section-sub">O problema chega como um traçado, uma medida de ultrassom, um período expulsivo que não anda, um sangramento, uma febre ou uma mudança de comportamento. Cada porta tem a pergunta que separa os diagnósticos.</div>
+</div>
+
+<div class="card clin">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">B.1</span> Padrão 1</div><h3>Traçado alterado no trabalho de parto <span class="ank ank-dec">DECISION</span></h3><div class="card-sub">desaceleração, taquicardia, variabilidade reduzida, mecônio</div></div>
+<div class="card-body">
+<div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Leia na ordem: <b>contrações</b> (taquissistolia = &gt;5 em 10 min, média de 30 min), <b>linha de base</b>, <b>variabilidade</b>, acelerações, desacelerações e sua relação com a contração, e a <b>tendência</b> ao longo do tempo. A variabilidade decide: presente, o feto ainda oxigena o tronco cerebral; ausente com desacelerações recorrentes, há acidemia provável.</div></div>
+<ul class="bullets">
+<li><b>Desaceleração precoce (espelho da contração):</b> compressão cefálica, reflexo vagal; benigna.</li>
+<li><b>Variável (em V, abrupta, &lt;30 s até o nadir):</b> compressão de cordão; preocupa se recorrente, profunda, longa, com recuperação lenta ou com perda de variabilidade.</li>
+<li><b>Tardia (gradual, nadir após o pico da contração):</b> insuficiência uteroplacentária via quimiorreceptor; recorrente (&gt;50% das contrações) é o sinal de alarme.</li>
+<li><b>Taquicardia isolada:</b> febre materna, corioamnionite (GO11), β-agonista, hipovolemia, arritmia fetal; com variabilidade normal não é hipóxia.</li>
+<li><b>Mecônio isolado:</b> não indica cesárea (MS 2017); indica vigilância contínua e equipe de reanimação neonatal (PD01).</li>
+</ul>
+</div>
+</div>
+
+<div class="card clin">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">B.2</span> Padrão 2</div><h3>Feto pequeno ou líquido reduzido no 3º trimestre</h3><div class="card-sub">altura uterina baixa, PFE &lt;p10, ILA &lt;5</div></div>
+<div class="card-body">
+<div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Primeiro confirme a <b>idade gestacional</b> (USG precoce). Depois separe pequeno constitucional (PFE p3–p10, Doppler normal, líquido normal) de <b>restrição verdadeira</b> (PFE ou CA &lt;p3, ou &lt;p10 com Doppler alterado, ou queda de percentis). O Doppler da umbilical define insuficiência placentária; o ducto venoso define o tempo que resta ao feto prematuro.</div></div>
+<ul class="bullets">
+<li><b>Simétrico e precoce (&lt;32 sem):</b> pesquisar aneuploidia, malformação e infecção congênita (CMV, toxoplasmose, rubéola, sífilis) antes de rotular placentário.</li>
+<li><b>Oligoâmnio com membranas íntegras:</b> insuficiência placentária ou uropatia; com perda de líquido, RPM (GO11).</li>
+<li><b>Polidrâmnio:</b> diabetes (GO13), obstrução digestiva alta, anencefalia, anemia fetal, gemelar; metade é idiopática.</li>
+</ul>
+</div>
+</div>
+
+<div class="card clin">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">B.3</span> Padrão 3</div><h3>Período expulsivo prolongado ou necessidade de abreviar o parto</h3><div class="card-sub">parada de descida, exaustão, comprometimento fetal, doença materna</div></div>
+<div class="card-body">
+<div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Parada no 2º período (ACOG 2024): <b>&gt;3 h de puxo na nulípara e &gt;2 h na multípara</b>, ou antes se não houver rotação nem descida. O MS 2017 manda chamar quem faz parto operatório após 2 h (nulípara) e 1 h (multípara) de fase ativa sem progresso. Antes de indicar cesárea na parada do 2º período, avalie a praticabilidade do parto vaginal operatório.</div></div>
+<ul class="bullets">
+<li><b>Pergunta 1:</b> a extração é possível? (condições de praticabilidade, altura, variedade de posição)</li>
+<li><b>Pergunta 2:</b> há indicação? (fetal, materna ou profilática)</li>
+<li><b>Pergunta 3:</b> é a melhor via? (tempo até o nascimento, experiência do operador, risco de falha)</li>
+</ul>
+</div>
+</div>
+
+<div class="card clin">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">B.4</span> Padrão 4</div><h3>Sangramento depois do parto <span class="ank ank-dgr">DANGER</span></h3><div class="card-sub">primeiras 24 h · de 24 h a 12 semanas</div></div>
+<div class="card-body">
+<div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">A primeira mão vai no <b>fundo uterino</b>: mole e alto = tônus; contraído e sangrando = trauma do trajeto; placenta incompleta ou útero que não involui = tecido; sangue que não coagula, sangramento em punção, PE grave ou DPP = trombina. Mais de um T coexiste com frequência. Após 24 h, pense em restos, endometrite, subinvolução do leito placentário, DTG e coagulopatia hereditária.</div></div>
+<ul class="bullets">
+<li><b>Útero contraído com sangue vivo contínuo:</b> laceração de colo ou vagina — revisão com boa luz e analgesia.</li>
+<li><b>Dor perineal intensa, abaulamento violáceo, sem sangramento externo:</b> hematoma; choque sem sangue visível sugere hematoma retroperitoneal ou do ligamento largo.</li>
+<li><b>Choque desproporcional e útero ausente no abdome:</b> inversão uterina.</li>
+</ul>
+</div>
+</div>
+
+<div class="card clin">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">B.5</span> Padrão 5</div><h3>Febre no puerpério</h3><div class="card-sub">útero, ferida, mama, urina, pulmão, veia</div></div>
+<div class="card-body">
+<div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Febre nas primeiras 24 h costuma ser resposta inflamatória ao parto; <b>≥38 °C em dois dos dez primeiros dias, excluídas as primeiras 24 h</b>, define morbidade febril puerperal. A apojadura (3º dia) dá febrícula &lt;48 h. Examine na ordem: útero e lóquios, ferida ou períneo, mamas, urina, pulmão (pós-anestesia), pernas e acesso venoso.</div></div>
+<ul class="bullets">
+<li><b>Útero doloroso, amolecido e subinvoluído (tríade de Bumm) + lóquio fétido:</b> endometrite.</li>
+<li><b>Febre que não cede em 48–72 h de antibiótico adequado:</b> abscesso, restos, hematoma infectado, tromboflebite pélvica séptica, resistência.</li>
+<li><b>Mama quente, eritematosa, unilateral, 2ª–3ª semana:</b> mastite (PD03); massa flutuante = abscesso.</li>
+</ul>
+</div>
+</div>
+
+<div class="card clin">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">B.6</span> Padrão 6</div><h3>Mudança de humor ou de comportamento no pós-parto</h3><div class="card-sub">choro, insônia, desinteresse pelo bebê, ideias estranhas</div></div>
+<div class="card-body">
+<div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">O tempo e a gravidade separam: <b>blues</b> (até 60–80%, dias 3–14, labilidade com vínculo preservado), <b>depressão pós-parto</b> (episódio depressivo maior com início na gestação ou até semanas após o parto, &gt;2 semanas, anedonia, culpa, desinteresse pelo bebê) e <b>psicose puerperal</b> (1–2 por 1.000, início abrupto nos dias 3–10, confusão, mania, delírio).</div></div>
+<div class="box hy"><span class="box-label">HIGH-YIELD</span><div class="box-title">Suicídio é causa importante de morte materna tardia</div><div class="box-body">Pergunte diretamente sobre ideação suicida e sobre pensamentos de fazer mal ao bebê em toda puérpera triste. Pensamentos intrusivos egodistônicos (com medo e evitação) são típicos do TOC perinatal e não aumentam o risco de agressão; ideias egossintônicas, delírio ou alucinação de comando são emergência.</div></div>
+</div>
+</div>
+</section>
+
+<!-- ============================================================ C -->
+<section id="primarias">
+<div class="section">
+<div class="section-eyebrow"><span>C</span> Entidades Primárias</div>
+<div class="section-title">Disease boxes — o feto que perde oxigênio, o parto que precisa de ajuda e a puérpera que sangra, infecciona ou adoece da mente</div>
+<div class="section-sub">Três entidades fetais e de parto (sofrimento agudo intraparto, restrição de crescimento com insuficiência placentária, parto vaginal operatório) e três puerperais (HPP por atonia, infecção puerperal, transtornos psiquiátricos). Os outros "Ts" da HPP, o líquido amniótico, a mama complicada, o TEV e o puerpério normal ficam agrupados em D.</div>
+</div>
+
+<!-- C.1 -->
+<div class="card prim">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">C.1</span> Entidade âncora</div><h3>Sofrimento fetal agudo intraparto — a cardiotocografia anormal <span class="ank ank-hy">HIGH-YIELD</span> <span class="ank ank-dec">DECISION</span></h3><div class="card-sub">hipóxia → hipoxemia → acidose metabólica durante o trabalho de parto</div></div>
+<div class="card-body">
+<div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">"Sofrimento fetal" é um rótulo impreciso; o que se busca é <b>acidemia metabólica</b> (pH arterial umbilical &lt;7,0 e déficit de base ≥12 mmol/L) antes que lese o cérebro. A CTG tem alta sensibilidade e baixa especificidade: traçado normal afasta acidemia com segurança; traçado anormal tem falso-positivo &gt;50%. <b>Categoria I</b> = segue; <b>II</b> = reanimação intrauterina e reavaliação; <b>III</b> = reanimação enquanto prepara o nascimento.</div></div>
+<div class="disease">
+<div class="disease-head"><div class="disease-name">Sofrimento fetal agudo (comprometimento fetal intraparto)</div><div class="disease-tag">CID-10 O68.0 TP com anormalidade da FCF · O68.2 FCF + mecônio · O68.3 evidência bioquímica · O68.9</div></div>
+<div class="disease-body"><div class="disease-rows">
+<div class="disease-row"><div class="k">Epidemiologia</div><div class="v">Asfixia perinatal em ~2% das gestações, a maioria no trabalho de parto e sobretudo em fetos já cronicamente comprometidos (RCF, pós-datismo, PE). Apenas ~10% das paralisias cerebrais do termo decorrem de asfixia intraparto; a monitorização contínua de rotina no baixo risco reduz convulsões neonatais, mas aumenta cesárea e parto operatório sem reduzir paralisia cerebral nem mortalidade perinatal.</div></div>
+<div class="disease-row"><div class="k">Fisiopatologia</div><div class="v">O fluxo ao espaço interviloso depende da diferença entre PAM materna e pressão intramiometrial; no pico da contração normal (80–120 mmHg intramiometrial) o fluxo cai a quase zero por segundos. Causas de queda: <b>uteroplacentárias</b> (taquissistolia, hipertonia, hipotensão por analgesia ou decúbito dorsal, hipovolemia, DPP, rotura) e <b>fetoplacentárias</b> (compressão, prolapso ou nó de cordão, favorecidos por oligoâmnio e amniorrexe). A hipóxia leve ativa quimiorreceptores e redistribui o débito para cérebro, coração e adrenais; a acidose progride de respiratória (CO₂ retido pela placenta) para metabólica (lactato do metabolismo anaeróbio).</div></div>
+<div class="disease-row"><div class="k">Clínica</div><div class="v">Sem sintoma materno; o diagnóstico é pela FCF. Sequência típica: perda das acelerações → taquicardia compensatória → desacelerações com as contrações (tardias ou variáveis complicadas) → redução e perda da variabilidade → bradicardia terminal. Padrão sinusoidal (onda regular 3–5 ciclos/min, amplitude 5–15 bpm, sem variabilidade de curto prazo) sugere anemia fetal grave (aloimunização, hemorragia feto-materna, vasa prévia — GO12).</div></div>
+<div class="disease-row"><div class="k">Diagnóstico</div><div class="v">Baixo risco: <b>ausculta intermitente</b> com Pinard ou sonar, durante e após uma contração por ≥1 min, a cada 30 min na fase ativa <span class="ev ev-sbr">MS Parto Normal 2017</span>, a cada 5–15 min no expulsivo conforme o risco (apostila) e de 5 em 5 min por 30 min após iniciar analgesia de neuroeixo (MS 2017). CTG contínua: alto risco, indução ou ocitocina, analgesia de neuroeixo, mecônio, febre, sangramento, alteração na ausculta. Classificação em três categorias (NICHD/ACOG, via apostila) ou normal/suspeita/patológica <span class="ev ev-expert">FIGO 2015 · conferir</span>. Testes de reserva: aceleração após estímulo do polo cefálico ou vibroacústico afasta acidemia; microanálise do escalpe (pH &lt;7,20 ou lactato &gt;4,8 mmol/L) é pouco disponível e caiu em desuso.</div></div>
+<div class="disease-row"><div class="k">Tratamento</div><div class="v"><b>Reanimação intrauterina</b>: suspender ocitocina; decúbito lateral; cristaloide e correção da hipotensão (efedrina ou fenilefrina pela anestesia); toque para excluir prolapso de cordão e avaliar dilatação e altura; tocólise aguda na taquissistolia (terbutalina 0,25 mg SC); oxigênio materno só se a mãe estiver hipoxêmica. Persistindo categoria III ou bradicardia sustentada: <b>nascimento pela via mais rápida</b> — fórcipe ou vácuo se praticável, senão cesárea de urgência. Amnioinfusão no mecônio espesso só onde não houver CTG <span class="ev ev-sbr">MS Parto Normal 2017</span>.</div></div>
+<div class="disease-row"><div class="k">Prognóstico</div><div class="v">Acidemia leve sem disfunção de múltiplos órgãos tem bom prognóstico; encefalopatia neonatal sem envolvimento sistêmico raramente é asfíctica. A síndrome de aspiração meconial (2–4% dos partos com mecônio) tem mortalidade de até 20–35% e muitas vezes reflete hipóxia crônica, não aguda (PD02). Coletar gasometria de artéria umbilical em todo parto por comprometimento fetal documenta o nexo e tem valor médico-legal.</div></div>
+<div class="disease-row"><div class="k">O que muda conduta</div><div class="v"><b>O que muda conduta:</b> variabilidade presente ou aceleração ao estímulo → manter vigilância e corrigir a causa; variabilidade ausente com tardias/variáveis recorrentes, bradicardia sustentada ou sinusoidal → extração; dilatação total com cabeça insinuada → fórcipe/vácuo em minutos; prolapso de cordão → elevar a apresentação e cesárea imediata; taquissistolia por ocitocina → parar a infusão antes de qualquer outra medida.</div></div>
+</div></div>
+</div>
+<div class="score">
+<div class="score-head"><div class="score-name">CTG intraparto — três categorias (NICHD/ACOG)</div><div class="score-purpose">classificação do traçado no momento; reavaliar a cada mudança</div></div>
+<div class="score-rows">
+<div class="score-row"><div class="score-grade">I</div><div class="score-desc">Linha de base 110–160 bpm · variabilidade moderada (6–25 bpm) · sem desacelerações tardias ou variáveis · precoces e acelerações podem estar presentes ou ausentes. <b>Normal: manter vigilância.</b></div></div>
+<div class="score-row"><div class="score-grade">II</div><div class="score-desc">Tudo que não é I nem III: taquicardia; bradicardia com variabilidade presente; variabilidade mínima ou acentuada; ausência de variabilidade sem desacelerações recorrentes; sem aceleração após estímulo; variáveis recorrentes com variabilidade mínima/moderada; desaceleração prolongada (2–10 min); tardias recorrentes com variabilidade moderada. <b>Indeterminado: reanimação intrauterina e reavaliar.</b></div></div>
+<div class="score-row"><div class="score-grade">III</div><div class="score-desc">Ausência de variabilidade com tardias recorrentes, variáveis recorrentes ou bradicardia · ou padrão sinusoidal. <b>Anormal: reanimar e preparar nascimento imediato.</b></div></div>
+</div>
+</div>
+<div class="box hy"><span class="box-label">HIGH-YIELD</span><div class="box-title">Como a prova descreve as desacelerações</div><div class="box-body"><b>Dip I (precoce, cefálico):</b> começa e termina com a contração, nadir coincidente com o pico, reflexo vagal por compressão do polo cefálico. <b>Dip II (tardio, placentário):</b> gradual (≥30 s do início ao nadir), nadir após o pico da contração e retorno depois dela — quimiorreceptor sentindo PO₂ baixa. <b>Dip III (variável, umbilical):</b> abrupto (&lt;30 s), forma de V ou W, sem relação fixa com a contração, frequentemente com "ombros"; desfavorável se &gt;60 s, queda &gt;60 bpm, retorno lento, overshoot ou perda de variabilidade. Recorrente = em &gt;50% das contrações em 20 min.</div></div>
+<details class="deep"><summary>Deep dive · fisiologia da frequência cardíaca fetal e por que a variabilidade é o sinal que importa</summary><div class="deep-content">
+<p><b>Dois sistemas e um marca-passo.</b> A FCF basal resulta do nó sinoatrial modulado pelo simpático (noradrenalina, β1, aumenta frequência e inotropismo) e pelo parassimpático vagal (acetilcolina nos nós sinoatrial e atrioventricular). A influência vagal amadurece com a gestação: a FCF média cai de ~155 bpm com 20 semanas para ~144 com 30 e ~135–140 no termo, e a variabilidade batimento a batimento só se estabelece a partir de ~28 semanas. Antes de 32 semanas as acelerações são menores (≥10 bpm por ≥10 s); depois, ≥15 bpm por ≥15 s. Por isso o prematuro tem traçado "menos reativo" sem estar hipóxico.</p>
+<p><b>Variabilidade como integridade do eixo córtex–tronco–vago–coração.</b> As oscilações de 6–25 bpm traduzem o cabo de guerra contínuo entre os dois ramos autonômicos, comandado por centros bulbares que recebem informação de barorreceptores, quimiorreceptores e do córtex. Enquanto o feto mantém oxigenação cerebral pela centralização, a variabilidade persiste mesmo que haja taquicardia ou desacelerações — daí a regra de que variabilidade moderada exclui acidemia metabólica naquele momento com alto valor preditivo negativo. Quando a hipóxia cerebral se instala, os centros perdem a capacidade de modular e a linha fica "lisa". Mas a variabilidade também cai sem hipóxia: sono fetal (ciclos de até 40 min), opioides, benzodiazepínicos, sulfato de magnésio, anestésicos locais sistêmicos, betabloqueador, prematuridade extrema, anencefalia, bloqueio cardíaco congênito (anti-Ro), infecção. A interpretação exige o contexto e a tendência.</p>
+<p><b>A anatomia das desacelerações.</b> A precoce é reflexa: a compressão da cabeça eleva a pressão intracraniana, estimula o vago e espelha a contração sem significado hipóxico. A variável é mecânica: a compressão inicial oclui a veia umbilical (parede fina), cai o retorno venoso e surge a aceleração de "ombro"; a oclusão das artérias eleva bruscamente a resistência sistêmica e os barorreceptores produzem a queda abrupta; a descompressão inverte a sequência. A tardia tem dois mecanismos: inicialmente, um reflexo quimiorreceptor (a queda de PO₂ no espaço interviloso durante a contração ativa o vago com latência, por isso o nadir vem depois do pico) com variabilidade preservada; depois, depressão miocárdica direta por hipóxia e acidose, quando a variabilidade desaparece. Tardia com variabilidade ausente é, portanto, o fenótipo do miocárdio que já não responde.</p>
+<p><b>Da hipóxia à lesão.</b> O feto tem reservas — hemoglobina fetal com P50 baixa (maior afinidade pelo O₂), débito cardíaco alto por kg, redistribuição de fluxo e glicogênio miocárdico — que toleram hipoxemias transitórias. A lesão cerebral típica do evento agudo grave (bradicardia terminal, rotura, prolapso) atinge núcleos da base e tálamo em minutos; a hipóxia parcial prolongada (desacelerações repetidas por horas) lesa a substância branca parassagital das zonas de fronteira. Critérios de nexo com evento intraparto exigem acidemia metabólica no cordão, encefalopatia de início precoce e disfunção de outros órgãos.</p>
+</div></details>
+</div>
+</div>
+
+<!-- C.2 -->
+<div class="card prim">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">C.2</span> Entidade âncora</div><h3>Restrição do crescimento fetal e insuficiência placentária ("sofrimento fetal crônico") <span class="ank ank-hy">HIGH-YIELD</span> <span class="ank ank-dec">DECISION</span></h3><div class="card-sub">o feto que não atinge o próprio potencial de crescimento</div></div>
+<div class="card-body">
+<div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Pequeno não é sinônimo de doente. <b>RCF precoce (&lt;32 sem)</b>: placentação deficiente, Doppler umbilical alterado, associação com PE, deterioração lenta e previsível pelo ducto venoso. <b>RCF tardia (≥32 sem)</b>: umbilical frequentemente normal, alteração da ACM/RCP, tolerância baixa ao trabalho de parto. Não há tratamento que reverta a insuficiência placentária: a conduta é <b>vigiar e escolher a hora do parto</b>.</div></div>
+<div class="disease">
+<div class="disease-head"><div class="disease-name">Restrição do crescimento fetal por insuficiência placentária</div><div class="disease-tag">CID-10 O36.5 cuidado materno por crescimento fetal insuficiente</div></div>
+<div class="disease-body"><div class="disease-rows">
+<div class="disease-row"><div class="k">Epidemiologia</div><div class="v">5–10% das gestações, segunda causa de mortalidade perinatal; o sofrimento crônico responde por ~50% dos óbitos fetais anteparto e multiplica o risco de sofrimento intraparto (25–50%). Causas: maternas (hipertensão, PE, DM com vasculopatia, nefropatia, LES, SAF, cardiopatia cianótica, tabagismo, álcool, cocaína, desnutrição, anemias hereditárias), placentárias (infartos, inserção velamentosa, artéria umbilical única, DPP crônico) e fetais (aneuploidias, malformações e infecções congênitas — ~20% e ~5–10% dos casos).</div></div>
+<div class="disease-row"><div class="k">Fisiopatologia</div><div class="v">Invasão trofoblástica incompleta das artérias espiraladas mantém leito uteroplacentário de alta resistência. A obliteração progressiva das arteríolas terciárias das vilosidades (≥30–50% do leito para alterar o Doppler umbilical; ≥60–70% para diástole zero) eleva a impedância umbilical. O feto responde com <b>centralização</b>: vasodilatação cerebral (queda do IP da ACM), vasoconstrição renal, esplâncnica e periférica (oligoâmnio por oligúria) e depleção de glicogênio hepático (CA pequena antes da cabeça). Com a sobrecarga do ventrículo direito, a pressão atrial sobe e o ducto venoso mostra aumento do IP e depois onda a ausente ou reversa — o marcador de acidemia e de óbito em curto prazo.</div></div>
+<div class="disease-row"><div class="k">Clínica</div><div class="v">Altura uterina ≥3 cm abaixo da esperada entre 20 e 32 semanas ou &lt;p10 da curva; ganho ponderal materno insuficiente; percepção de movimentos reduzida. Na RCF precoce, PE frequentemente coexiste (GO13).</div></div>
+<div class="disease-row"><div class="k">Diagnóstico</div><div class="v">Consenso Delphi: <b>precoce</b> = CA/PFE &lt;p3 ou diástole zero na umbilical, ou CA/PFE &lt;p10 + IP da uterina &gt;p95 ou IP umbilical &gt;p95; <b>tardia</b> = CA/PFE &lt;p3, ou 2 de 3: CA/PFE &lt;p10, queda &gt;2 quartis, RCP &lt;p5 ou IP umbilical &gt;p95 <span class="ev ev-sbr">MS 2022 · Delphi 2016</span>. CA é a medida isolada mais sensível. Diâmetro transverso do cerebelo preservado ajuda quando a data é incerta. Na precoce: morfológico, cariótipo/microarray se suspeita, sorologias para CMV e toxoplasmose.</div></div>
+<div class="disease-row"><div class="k">Tratamento</div><div class="v"><b>Estadiamento e parto</b> <span class="ev ev-sbr">MS 2022</span>: PIG (p3–p10, Doppler normal) → vigilância quinzenal, parto até 40 sem; <b>estágio 1</b> (&lt;p3 ou uterinas alteradas) → parto com 38 sem (37 se &lt;p1); <b>estágio 2</b> (IP umbilical &gt;p95, ACM &lt;p5 ou RCP &lt;1) → semanal, parto com 37 sem; <b>estágio 3</b> (diástole zero) → vigilância a cada 2 dias ou internação, <b>cesárea com 34 sem</b>; <b>estágio 4</b> (diástole reversa ou DV &gt;p95) → internação, vigilância diária, parto a partir da viabilidade; <b>estágio 5</b> (DV com onda a reversa, STV &lt;3 ms ou desacelerações) → parto imediato. Corticoide 24–34 sem (ideal na semana do parto) e sulfato de magnésio &lt;32 sem para neuroproteção (doses em GO11/GO13). Indução com cautela e sem prostaglandina na RCF grave.</div></div>
+<div class="disease-row"><div class="k">Prognóstico</div><div class="v">Mortalidade perinatal de 30–50% com diástole zero e 50–80% com reversa (apostila 2025; varia com IG e serviço). O PIG constitucional tem desfecho próximo do normal. A RCF placentária tem crescimento compensatório pós-natal e maior risco cardiometabólico na vida adulta (programação fetal).</div></div>
+<div class="disease-row"><div class="k">O que muda conduta</div><div class="v"><b>O que muda conduta:</b> Doppler umbilical normal separa PIG de insuficiência placentária; diástole zero muda a via (cesárea, risco de sofrimento na indução &gt;50%); DV alterado antes de 30–32 sem define a hora do parto no prematuro; PE associada acelera o calendário; anomalia ou infecção muda o aconselhamento e o local de parto.</div></div>
+</div></div>
+</div>
+<div class="score">
+<div class="score-head"><div class="score-name">Perfil biofísico fetal (Manning) · 0 ou 2 pontos cada, em até 30 min</div><div class="score-purpose">variáveis agudas (CTG, movimento respiratório, movimento, tônus) + crônica (líquido)</div></div>
+<div class="score-rows">
+<div class="score-row"><div class="score-grade">CTG</div><div class="score-desc">Reativa: ≥2 acelerações de ≥15 bpm por ≥15 s em 20–40 min</div></div>
+<div class="score-row"><div class="score-grade">MR</div><div class="score-desc">≥1 episódio de movimento respiratório de ≥30 s</div></div>
+<div class="score-row"><div class="score-grade">MF</div><div class="score-desc">≥3 movimentos corporais ou de membros</div></div>
+<div class="score-row"><div class="score-grade">TÔ</div><div class="score-desc">≥1 episódio de extensão com retorno à flexão (ou abrir e fechar a mão)</div></div>
+<div class="score-row"><div class="score-grade">LA</div><div class="score-desc">Maior bolsão vertical ≥2 cm</div></div>
+<div class="score-row"><div class="score-grade">≥8</div><div class="score-desc">10/10 ou 8/10 com líquido normal: baixo risco. 8/10 com oligoâmnio: crônico — parto se ≥37 sem. 6/10: duvidoso, repetir em 24 h ou parto no termo. ≤4/10: alta probabilidade de asfixia — parto</div></div>
+</div>
+</div>
+<div class="mnemo">
+<div class="mnemo-title"><b>CRMT</b> a ordem em que as atividades biofísicas somem na hipóxia (inversa à embriogênese)</div>
+<div class="mnemo-grid">
+<div class="mnemo-row"><span class="mnemo-letter">C</span><span><b>CTG reativa</b> · centro hipotálamo-bulbar, o último a amadurecer (~28–32 sem) e o primeiro a falhar</span></div>
+<div class="mnemo-row"><span class="mnemo-letter">R</span><span><b>Respiração fetal</b> · centro bulbar (~20–21 sem)</span></div>
+<div class="mnemo-row"><span class="mnemo-letter">M</span><span><b>Movimento corporal</b> · córtex e núcleos (~9 sem)</span></div>
+<div class="mnemo-row"><span class="mnemo-letter">T</span><span><b>Tônus</b> · o primeiro a surgir (~7,5–8 sem) e o último a desaparecer — tônus ausente é sinal agônico</span></div>
+</div>
+</div>
+<details class="deep"><summary>Deep dive · a cascata do Doppler na insuficiência placentária e por que precoce e tardia são doenças diferentes</summary><div class="deep-content">
+<p><b>O que o Doppler mede.</b> A dopplervelocimetria estima velocidades, não fluxo; os índices (S/D, IR, IP) expressam a impedância a jusante. A artéria umbilical, vaso fetal periférico que leva sangue à placenta, normalmente tem resistência baixa e decrescente ao longo da gestação; a artéria cerebral média tem resistência alta. Na insuficiência placentária a relação se inverte: IP umbilical sobe, IP cerebral desce, e a relação cerebroplacentária (IP ACM / IP AU) cai abaixo de p5 — a "centralização". A apostila usa a relação umbílico-cerebral ≥1 como equivalente.</p>
+<p><b>A sequência arterial-venosa na RCF precoce.</b> A deterioração segue ordem relativamente previsível: aumento do IP umbilical → centralização → diástole zero → diástole reversa → aumento do IP do ducto venoso → onda a ausente ou reversa → pulsação da veia umbilical → perda da variabilidade de curto prazo na CTG computadorizada (&lt;3 ms) e desacelerações espontâneas → óbito. O ducto venoso conecta a veia umbilical à cava inferior e direciona sangue oxigenado ao átrio esquerdo pelo forame oval; quando a pós-carga placentária sobrecarrega o ventrículo direito e a pressão diastólica final sobe, a contração atrial reflui pelo ducto (onda a reversa) — marcador de acidemia e o melhor preditor isolado de óbito em curto prazo. Entre a centralização e as desacelerações tardias costumam passar semanas (estimativas de 3–4 semanas), o que permite ganhar maturidade com segurança. O estudo TRUFFLE embasou esperar a alteração tardia do DV (ou STV) para indicar o parto entre 26 e 32 semanas, com melhor desfecho neurológico aos 2 anos do que intervir pela simples alteração precoce do DV.</p>
+<p><b>A RCF tardia é outra doença.</b> Depois de 32 semanas o defeito costuma ser de difusão e de perfusão leve, com umbilical normal; a centralização aparece como RCP baixa isolada, e a deterioração não segue a cascata — o feto pode morrer ou sofrer no parto sem Doppler venoso alterado. Por isso o manejo tardio se baseia em PFE, RCP e ACM, com parto programado no termo precoce (37–38 semanas) e vigilância intraparto contínua, e não em esperar o DV. A associação com PE é menor; a hipoglicemia e a encefalopatia neonatais são o risco dominante.</p>
+<p><b>Simétrico × assimétrico (classificação clássica da apostila).</b> O tipo I (simétrico, 5–10%) reflete agressão precoce na fase de hiperplasia (até 16 semanas): infecção, droga, cromossomopatia; o feto é proporcionalmente pequeno. O tipo II (assimétrico, 70–80%) reflete insuficiência placentária na fase de hipertrofia (após 32 semanas): CA pequena, cabeça relativamente preservada (CC/CA acima do esperado), fêmur poupado. O tipo misto associa os dois. O MS 2022 e as diretrizes atuais preferiram a divisão cronológica porque ela se associa à conduta; o assimétrico continua útil como pista etiológica.</p>
+<p><b>Artérias uterinas.</b> A segunda onda de invasão trofoblástica até ~24–26 semanas remove a camada muscular das espiraladas e torna o leito insensível a catecolaminas. Incisura protodiastólica bilateral ou IP &gt;p95 depois desse período indica placentação deficiente — útil para rastreio de PE e RCF (valor preditivo negativo alto), sem papel no seguimento do feto já restrito.</p>
+</div></details>
+</div>
+</div>
+
+<!-- C.3 -->
+<div class="card prim">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">C.3</span> Entidade âncora</div><h3>Parto vaginal operatório — fórcipe e vácuo-extrator <span class="ank ank-hy">HIGH-YIELD</span> <span class="ank ank-dgr">DANGER</span></h3><div class="card-sub">abreviar o período expulsivo com segurança materna e fetal</div></div>
+<div class="card-body">
+<div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Indicações: <b>fetal</b> (comprometimento no expulsivo, DPP com cabeça baixa, distocia de rotação), <b>materna</b> (exaustão, expulsivo prolongado) e <b>profilática</b> (cardiopatia, pneumopatia, doença neurológica ou cerebrovascular que contraindica Valsalva; cabeça derradeira no pélvico — Piper). O fórcipe é mais rápido e mais lesivo para a mãe; o vácuo é mais lento, falha mais e lesa mais o couro cabeludo e o subgaleal do feto.</div></div>
+<div class="disease">
+<div class="disease-head"><div class="disease-name">Parto vaginal operatório (fórcipe e vácuo)</div><div class="disease-tag">CID-10 O81.0 fórcipe baixo · O81.1 fórcipe médio · O81.2 médio com rotação · O81.4 vácuo-extrator · O81.5 combinação</div></div>
+<div class="disease-body"><div class="disease-rows">
+<div class="disease-row"><div class="k">Epidemiologia</div><div class="v">Taxas variam muito entre países (cerca de 3–15% dos partos vaginais); no Brasil, a queda do treinamento em fórcipe empurrou a parada do 2º período para cesárea com cabeça profundamente insinuada — procedimento com mais extensão de histerotomia e hemorragia. O ACOG 2024 sugere avaliar parto vaginal operatório antes da cesárea na parada do 2º período <span class="ev ev-acr">ACOG CPG 8 · 2024</span>.</div></div>
+<div class="disease-row"><div class="k">Fisiopatologia</div><div class="v">O fórcipe apreende (pegada biparietomalomentoniana), roda (se preciso) e traciona no eixo da pelve, que descreve uma curva em J; por isso tração alta é inexequível no eixo e foi abandonada. O vácuo cria pressão negativa no ponto de flexão (sutura sagital, ~3 cm à frente da fontanela anterior, 1–2 cm à frente da posterior), flete e traciona; não reduz diâmetros e depende do puxo materno.</div></div>
+<div class="disease-row"><div class="k">Clínica</div><div class="v"><b>Instrumentos:</b> Simpson-Braun (curvaturas cefálica, pélvica e perineal; ~90% das aplicações; todas as variedades exceto transversas), Kielland (curvatura pélvica mínima, articulação deslizante: variedades transversas, rotações amplas, assinclitismo; rotação "chave na fechadura"), Piper (cabeça derradeira). <b>Classificação ACOG por altura:</b> desprendimento (couro cabeludo visível sem afastar lábios, cabeça no assoalho, rotação ≤45°), baixo (≥+2 de DeLee, fora do assoalho), médio (insinuado, acima de +2), alto (não insinuado — proscrito).</div></div>
+<div class="disease-row"><div class="k">Diagnóstico</div><div class="v"><b>Condições de praticabilidade</b>: dilatação total, membranas rotas, cabeça insinuada (≥0 de DeLee), variedade de posição exata, proporcionalidade, trajeto sem obstáculo, bexiga vazia, feto vivo ou morte recente, operador habilitado, analgesia efetiva (peridural ou bloqueio pudendo) <span class="ev ev-sbr">MS Parto Normal 2017</span>. Escolha da 1ª colher no Simpson: <b>esquerda</b> em OP, OS, OEA e ODP; <b>direita</b> em ODA e OEP (a colher posterior entra primeiro). Verificação da pegada: lambda a um dedo do plano das hastes, sutura sagital perpendicular e equidistante, fenestras inacessíveis.</div></div>
+<div class="disease-row"><div class="k">Tratamento</div><div class="v">Tração só com a contração e o puxo; interromper antes do desprendimento total da cabeça (Ritgen modificado). <b>Vácuo:</b> maior campânula que se adapte, vácuo até ~600 mmHg na contração, ~200 mmHg no intervalo; abandonar após 3 trações sem descida, 2 desacoplamentos ou ~20–30 min. <b>Fórcipe após vácuo falho</b> soma lesões fetais — prefira cesárea, salvo cabeça em desprendimento. Episiotomia não é obrigatória. Revisão sistemática de colo, vagina e esfíncter anal. <b>Profilaxia: amoxicilina-clavulanato 1 g/200 mg IV dose única até 6 h após o parto</b> <span class="ev ev-nice">WHO 2021 · ANODE</span>.</div></div>
+<div class="disease-row"><div class="k">Prognóstico</div><div class="v"><b>Materno</b> (maior com fórcipe): lacerações de 3º/4º grau, extensão de episiotomia, lesão de colo, bexiga e reto, hematomas, HPP, incontinência anal. <b>Fetal</b> (maior com vácuo): céfalo-hematoma, hemorragia subgaleal (a complicação grave do vácuo — choque hipovolêmico neonatal), hemorragia retiniana, escoriações; com fórcipe, marcas faciais, paralisia facial, fratura de crânio, hemorragia intracraniana.</div></div>
+<div class="disease-row"><div class="k">O que muda conduta</div><div class="v"><b>O que muda conduta:</b> cabeça acima de 0 ou variedade de posição incerta → cesárea; prematuro &lt;34 sem, face, bregma, pélvico ou coagulopatia fetal → não usar vácuo; variedade transversa ou rotação &gt;45° → Kielland por operador treinado ou cesárea; vácuo falhou → cesárea; após o parto → antibiótico em dose única e exame retal antes de suturar.</div></div>
+</div></div>
+</div>
+<div class="score">
+<div class="score-head"><div class="score-name">Fórcipe × vácuo-extrator</div><div class="score-purpose">escolha pelo cenário, não pela preferência</div></div>
+<div class="score-rows">
+<div class="score-row"><div class="score-grade">Tempo</div><div class="score-desc">Fórcipe extrai mais rápido — preferido no comprometimento fetal agudo; vácuo exige montagem e contrações</div></div>
+<div class="score-row"><div class="score-grade">Sucesso</div><div class="score-desc">Fórcipe falha menos; vácuo falha mais (desacoplamento), sobretudo em OP e com caput grande</div></div>
+<div class="score-row"><div class="score-grade">Mãe</div><div class="score-desc">Fórcipe: mais lesão perineal e de esfíncter; vácuo: menos trauma materno</div></div>
+<div class="score-row"><div class="score-grade">Feto</div><div class="score-desc">Vácuo: céfalo-hematoma, subgaleal, retiniana; fórcipe: face, nervo facial, crânio</div></div>
+<div class="score-row"><div class="score-grade">CI</div><div class="score-desc">Vácuo: &lt;34 sem, face, bregma, pélvico, suspeita de coagulopatia fetal, desproporção, operador inexperiente</div></div>
+</div>
+</div>
+<details class="deep"><summary>Deep dive · mecânica do fórcipe, por que a altura manda e como a hemorragia subgaleal mata o recém-nascido</summary><div class="deep-content">
+<p><b>Anatomia funcional.</b> Cada ramo tem colher, pedículo, articulação e cabo. A curvatura cefálica abraça o polo; a curvatura pélvica acompanha a concavidade do sacro, e é ela que obriga a rodar o Simpson "em grande arco" pelos cabos, mantendo pequeno o arco das colheres dentro da vagina — rodar o Simpson no próprio eixo varre a parede vaginal com as pontas. O Kielland, quase reto e com articulação deslizante, roda no próprio eixo e corrige assinclitismo ao deslizar um ramo sobre o outro. O nome da colher é o da mão que a segura na aplicação e o do lado materno onde fica; a colher posterior (que fica sobre o períneo) é aplicada primeiro, porque o espaço posterior é maior e ela estabiliza a cabeça.</p>
+<p><b>Por que a altura decide.</b> O canal de parto é um cilindro curvo em J. Acima do plano das espinhas (cabeça não insinuada), a tração no eixo é impossível: força-se a cabeça contra a sínfise, com rotações amplas e trações vigorosas, o que explica lacerações de segmento, bexiga e fraturas fetais — e por que o fórcipe alto foi proscrito em favor da cesárea. A partir de +2, a tração acompanha a curva com o "movimento de Pajot" (uma mão traciona, outra empurra a articulação para baixo), e no desprendimento a direção vira para cima. Rotações &gt;45° elevam a classificação (de desprendimento para baixo) porque multiplicam o risco materno e fetal. A insinuação é diagnosticada quando o ponto mais baixo do vértice atinge o plano 0 de DeLee — com bossa volumosa, a altura é superestimada; palpe o polo pelo abdome (regra dos quintos) antes de aplicar.</p>
+<p><b>Vácuo: física e falha.</b> A força de tração é o produto da pressão negativa pela área da campânula; campânulas maiores aplicadas no ponto de flexão produzem flexão e menor diâmetro de apresentação (suboccipitobregmático). Aplicada fora do ponto de flexão (deflexionante ou paramediana), a tração deflete e assinclita, aumenta o diâmetro e a falha. Reduzir a pressão no intervalo diminui lesão do couro cabeludo; trações oblíquas causam desacoplamento ("pop-off") e escalpelamento.</p>
+<p><b>A complicação que mata.</b> O espaço subgaleal (entre a gálea aponeurótica e o periósteo) não tem limites suturais e pode acomodar ~260 mL no termo — quase todo o volume sanguíneo do RN. A hemorragia subgaleal apresenta-se como edema flutuante que atravessa suturas, cresce nas primeiras horas, desloca as orelhas e evolui para choque hipovolêmico e coagulopatia; distingue-se do céfalo-hematoma (subperiosteal, limitado pela sutura, benigno, pode calcificar) e da bossa (edema de couro cabeludo que atravessa suturas mas não cresce). Todo RN de vácuo deve ter perímetro cefálico e hematócrito observados nas primeiras horas (PD02).</p>
+</div></details>
+</div>
+</div>
+
+<!-- C.4 -->
+<div class="card prim">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">C.4</span> Entidade âncora</div><h3>Hemorragia pós-parto primária por atonia uterina <span class="ank ank-hy">HIGH-YIELD</span> <span class="ank ank-dgr">DANGER</span></h3><div class="card-sub">a principal causa de morte materna evitável no mundo e a segunda no Brasil</div></div>
+<div class="card-body">
+<div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body"><b>Definição nova (WHO/FIGO/ICM 2025):</b> perda medida ≥300 mL com qualquer sinal hemodinâmico anormal (FC &gt;100, índice de choque &gt;1, PAS &lt;100, PAD &lt;60) ou ≥500 mL, o que vier primeiro, em 24 h. Tônus responde por ~70% (Tônus 70 · Trauma 19 · Tecido 10 · Trombina 1 — OPAS). Prevenção universal com uterotônico; tratamento em <b>pacote</b>, não em sequência lenta.</div></div>
+<div class="disease">
+<div class="disease-head"><div class="disease-name">HPP primária por atonia uterina</div><div class="disease-tag">CID-10 O72.1 outras hemorragias do pós-parto imediato (atonia)</div></div>
+<div class="disease-body"><div class="disease-rows">
+<div class="disease-row"><div class="k">Epidemiologia</div><div class="v">Complica 5–10% dos partos; causa principal de morte materna no mundo e segunda no Brasil, depois das síndromes hipertensivas <span class="ev ev-sbr">MS 2022 · OPAS 2018</span>. A maioria das mulheres com HPP não tem fator de risco identificável. Fatores de atonia: sobredistensão (gemelar, polidrâmnio, macrossomia), exaustão (trabalho de parto prolongado ou taquitócico, ocitocina prolongada), infecção (corioamnionite, febre), distorção (miomas, anomalias), relaxantes (halogenados, nitroglicerina, sulfato de magnésio), placenta prévia, anemia, multiparidade.</div></div>
+<div class="disease-row"><div class="k">Fisiopatologia</div><div class="v">O leito placentário recebe ~600–700 mL/min no termo; a hemostasia é <b>mecânica</b>: as fibras miometriais entrelaçadas comprimem os vasos ("ligaduras vivas de Pinard", "globo de segurança"). Coagulação e trombose dos orifícios completam o processo, mas não substituem a contração. A ocitocina age em receptores acoplados a Gq (IP3, cálcio intracelular); a exposição prolongada no trabalho de parto dessensibiliza e internaliza receptores — por isso quem recebeu ocitocina por horas responde menos e não deve ficar presa a uterotônico de 1ª linha.</div></div>
+<div class="disease-row"><div class="k">Clínica</div><div class="v">Sangramento vaginal contínuo, nem sempre volumoso, com útero amolecido, depressível e acima da cicatriz umbilical; coágulos expressos à massagem. Taquicardia e índice de choque precedem a hipotensão. Graus de choque (OPAS): compensado (10–15%, 500–1.000 mL), leve (16–25%, PAS 80–90), moderado (26–35%, PAS 70–79, transfusão usualmente exigida), grave (&gt;35%, PAS &lt;70).</div></div>
+<div class="disease-row"><div class="k">Diagnóstico</div><div class="v"><b>Medida objetiva rotineira</b> (bolsa coletora calibrada, pesagem) e palpação do tônus em todas <span class="ev ev-nice">WHO 2025</span>. Índice de choque (FC/PAS): ≥0,9 risco de transfusão; ≥1,4 abordagem agressiva e transfusão maciça; ≥1,7 alto risco de desfecho adverso <span class="ev ev-sbr">OPAS 2018</span>. Hemograma, coagulograma, <b>fibrinogênio</b> (&lt;2 g/L prediz HPP grave), tipagem; viscoelastometria onde houver. Estratificar risco na admissão (D.2 e F1.4).</div></div>
+<div class="disease-row"><div class="k">Tratamento</div><div class="v"><b>Pacote MOTIVE em até 15 min</b> do diagnóstico <span class="ev ev-nice">WHO 2025 · E-MOTIVE</span>: <b>M</b>assagem uterina (e compressão bimanual de Hamilton como ponte); <b>O</b>citocina — ocitocina 5 UI IV lento (3 min) + 20–40 UI em 500 mL de SF 0,9% a 250 mL/h, depois 125 mL/h por 4 h <span class="ev ev-sbr">OPAS 2018</span>; <b>T</b>ranexâmico — ácido tranexâmico 1 g IV em 10 min (repetir 1 g se sangramento após 30 min), até 3 h do parto; <b>I</b>ntravenoso — cristaloide isotônico aquecido e hemocomponentes por protocolo; e<b>V</b>aluate — exame do trajeto e da placenta; <b>E</b>scalonar. Sem resposta: metilergometrina 0,2 mg IM (repetir em 20 min; máx. 1 mg/24 h; contraindicada na hipertensão) e/ou misoprostol 800 µg retal ou sublingual → balão de tamponamento intrauterino → TAN → B-Lynch, ligaduras, embolização → histerectomia.</div></div>
+<div class="disease-row"><div class="k">Prognóstico</div><div class="v">Mortalidade cai com detecção e tratamento em pacote: no E-MOTIVE o desfecho composto (HPP grave, laparotomia ou morte) foi de 1,6% × 4,3% (RR 0,40). Sequelas: anemia, transfusão maciça, histerectomia (perda de fertilidade), lesão renal aguda, SDRA, síndrome de Sheehan (D.4).</div></div>
+<div class="disease-row"><div class="k">O que muda conduta</div><div class="v"><b>O que muda conduta:</b> útero contraído e sangrando → trauma, não atonia; hipertensa ou cardiopata → sem ergot; ocitocina profilática já feita → ainda é a 1ª linha de tratamento (WHO), mas a 2ª linha não espera; fibrinogênio &lt;2 g/L → reposição; IC ≥1,4 → transfusão maciça; falha de uterotônico + balão → cirurgia sem demora; HPP controlada → leito de observação rigorosa por 24 h, não enfermaria comum.</div></div>
+</div></div>
+</div>
+<div class="mnemo">
+<div class="mnemo-title"><b>4Ts</b> as causas da HPP e a primeira pergunta de cada uma</div>
+<div class="mnemo-grid">
+<div class="mnemo-row"><span class="mnemo-letter">T</span><span><b>Tônus (~70%)</b> · o útero está mole e alto? → massagem, uterotônico, tranexâmico</span></div>
+<div class="mnemo-row"><span class="mnemo-letter">T</span><span><b>Trauma (~19%)</b> · útero firme e sangrando? → revisar colo, vagina, períneo; hematoma; inversão; rotura (D.2)</span></div>
+<div class="mnemo-row"><span class="mnemo-letter">T</span><span><b>Tecido (~10%)</b> · placenta completa? → curagem, curetagem; acretismo (D.3, GO12)</span></div>
+<div class="mnemo-row"><span class="mnemo-letter">T</span><span><b>Trombina (~1%)</b> · sangue não coagula, punções sangram? → fibrinogênio, plasma, plaquetas; ELA, DPP, HELLP (D.4)</span></div>
+</div>
+</div>
+<details class="deep"><summary>Deep dive · hemostasia do leito placentário, o pacote E-MOTIVE e a coagulopatia obstétrica</summary><div class="deep-content">
+<p><b>Por que o útero é um órgão hemostático.</b> As artérias espiraladas, remodeladas pelo trofoblasto em canais largos sem músculo liso, não se contraem por si: perderam a túnica média. A única forma de fechá-las após a dequitação é a compressão extrínseca pelo miométrio, cujas fibras em rede tridimensional estrangulam os vasos que as atravessam. Daí o predomínio da atonia e o fato de que nenhuma correção de coagulação compensa um útero relaxado. O tônus depende da ocitocina endógena e exógena, das prostaglandinas (F2α e E) e da integridade da fibra; o sulfato de magnésio, os halogenados e a nitroglicerina antagonizam o cálcio ou relaxam o músculo liso, e a corioamnionite reduz a contratilidade por citocinas.</p>
+<p><b>Farmacologia dos uterotônicos.</b> A ocitocina tem meia-vida de minutos; em bolus rápido causa vasodilatação, hipotensão, taquicardia e isquemia miocárdica (há colapsos descritos com 10 UI IV rápido na cesárea), por isso as doses IV são lentas e as profiláticas na cesárea seguem a "regra dos 3". A carbetocina é análogo de ação longa (dose única), e sua formulação termoestável não exige cadeia de frio (CHAMPION, não inferior à ocitocina); no Brasil está registrada (Duratocin 100 µg/mL), mas sem comercialização em 2025 na CMED. A metilergometrina age em receptores α-adrenérgicos, serotoninérgicos e dopaminérgicos, produzindo contração tetânica do corpo e do segmento, com vasoconstrição sistêmica — contraindicada em hipertensão, PE, cardiopatia, doença coronariana, Raynaud e uso de inibidores fortes de CYP3A4. O misoprostol (análogo de PGE1) contrai o útero com latência de 7–20 min conforme a via, e causa febre, tremor e diarreia; somá-lo à ocitocina no tratamento não traz benefício adicional (WHO 2025). Carboprosta (15-metil-PGF2α), usada nos EUA, não foi encontrada no mercado brasileiro.</p>
+<p><b>O pacote e a lógica da simultaneidade.</b> O E-MOTIVE randomizou 80 hospitais de 4 países africanos (210 mil partos vaginais): bolsa coletora calibrada com linhas de alerta e o pacote MOTIVE aplicado ao mesmo tempo, com ciclo de melhoria. A HPP passou a ser detectada em 93% dos casos (×51% no grupo controle) e o pacote foi usado em 91% (×19%), com queda de 60% no desfecho composto. O ganho veio de detectar cedo e de fazer tudo junto — não de um fármaco novo. Por isso o WHO 2025 mudou o limiar (≥300 mL com sinal hemodinâmico) e fixou indicadores: uterotônico em até 1 min do nascimento e pacote completo em até 15 min do diagnóstico.</p>
+<p><b>Coagulopatia obstétrica.</b> A gestação é pró-coagulante (fibrinogênio 4–6 g/L no termo); um fibrinogênio "normal" de 2–3 g/L durante a HPP já é baixo e prediz progressão para HPP grave. Na atonia e no trauma a coagulopatia é tardia e dilucional; no DPP, na embolia de líquido amniótico e na sepse é precoce e de consumo, com hiperfibrinólise. O ácido tranexâmico, análogo da lisina, bloqueia a ligação do plasminogênio à fibrina; no WOMAN (20 mil mulheres) reduziu a morte por sangramento (1,5% × 1,9%; 1,2% × 1,7% quando dado em até 3 h), sem aumento de trombose. A reposição deve priorizar fibrinogênio (concentrado ou crioprecipitado, alvo ≥2 g/L), com plasma guiado por exame ou, na hemorragia maciça sem laboratório, na razão empírica de 1 plasma para 2 hemácias; plaquetas se &lt;50 mil com sangramento microvascular. Hipotermia, acidose e hipocalcemia (citrato) completam a tríade letal e são corrigidas em paralelo.</p>
+</div></details>
+</div>
+</div>
+
+<!-- C.5 -->
+<div class="card prim">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">C.5</span> Entidade primária</div><h3>Infecção puerperal — endometrite e suas complicações <span class="ank ank-dec">DECISION</span></h3><div class="card-sub">morbidade febril puerperal de origem genital, ferida e tecidos profundos</div></div>
+<div class="card-body">
+<div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Morbidade febril puerperal: <b>≥38 °C em dois dos dez primeiros dias pós-parto, excluídas as primeiras 24 h</b>. A cesárea é o maior fator de risco isolado (5–30× mais endometrite que o parto vaginal). Endometrite é polimicrobiana ascendente; trate com <b>clindamicina + gentamicina</b> até 24–48 h afebril. Febre que persiste em 72 h = procurar coleção, restos, tromboflebite pélvica séptica ou germe resistente.</div></div>
+<div class="disease">
+<div class="disease-head"><div class="disease-name">Endometrite puerperal e infecção pélvica pós-parto</div><div class="disease-tag">CID-10 O85 infecção puerperal (endometrite, peritonite, sepse) · O86.0 infecção da ferida cirúrgica obstétrica</div></div>
+<div class="disease-body"><div class="disease-rows">
+<div class="disease-row"><div class="k">Epidemiologia</div><div class="v">1–3% após parto vaginal e até 5–10× mais após cesárea, sobretudo intraparto e sem profilaxia. Fatores: cesárea, RPM prolongada, corioamnionite, múltiplos toques, trabalho de parto longo, monitorização interna, remoção manual da placenta, HPP, laceração extensa, obesidade, diabetes, anemia, vaginose bacteriana. Sepse puerperal é causa direta importante de morte materna.</div></div>
+<div class="disease-row"><div class="k">Fisiopatologia</div><div class="v">Ascensão da flora cervicovaginal ao leito placentário desvitalizado (decídua necrótica, coágulo, sutura). Polimicrobiana: estreptococos dos grupos A e B, enterococo, E. coli e outras enterobactérias, anaeróbios (Peptostreptococcus, Bacteroides — inclusive B. fragilis produtor de betalactamase, Prevotella), Mycoplasma; Chlamydia na endometrite tardia (após o 10º dia). Extensão para miométrio, paramétrios, anexos, peritônio e veias pélvicas define as complicações.</div></div>
+<div class="disease-row"><div class="k">Clínica</div><div class="v">Começa entre o 2º e o 5º dia: febre (39 °C), taquicardia, útero subinvoluído, doloroso e amolecido (<b>tríade de Bumm</b>), colo entreaberto e lóquio purulento e fétido (o grupo A pode dar lóquio inodoro e escasso com toxemia precoce). Parametrite: paramétrio espessado e doloroso ao toque. Abscesso pélvico: febre persistente de padrão séptico e massa. Peritonite: defesa, Blumberg, íleo. Tromboflebite pélvica séptica: febre em picos com taquicardia desproporcional e paciente "bem" entre os picos, apesar de antibiótico adequado.</div></div>
+<div class="disease-row"><div class="k">Diagnóstico</div><div class="v">Clínico; hemograma (leucocitose até ~25–30 mil é fisiológica no pós-parto imediato — valorizar desvio e tendência), PCR, lactato, hemoculturas; cultura endometrial tem pouco valor (contaminação). US para restos e coleções; TC ou RM para abscesso e tromboflebite (veia ovariana direita é a mais acometida). Diferencial da febre: ITU, mastite, pneumonia, TEV, flebite de acesso, fármaco <span class="ev ev-nice">WHO 2015</span>.</div></div>
+<div class="disease-row"><div class="k">Tratamento</div><div class="v"><b>Clindamicina 900 mg IV 8/8 h + gentamicina 5 mg/kg IV 1×/dia</b> (classe recomendada pela WHO 2015; nos ensaios, clindamicina 600 mg 6/6–8/8 h e gentamicina 1–1,5 mg/kg 8/8 h — doses variam entre protocolos brasileiros, conferir o local) <span class="ev ev-nice">WHO 2015</span>, até 24–48 h afebril e assintomática, sem continuação oral na endometrite simples. Sem resposta em 48–72 h: <b>ampicilina 2 g IV 6/6 h</b> (enterococo) ou trocar por esquema com cobertura anaeróbia ampla; procurar foco cirúrgico (curetagem de restos, drenagem de abscesso, abertura de ferida). Sepse/choque: pacote de sepse (II03), antibiótico na 1ª hora, fonte controlada; histerectomia na miometrite necrosante.</div></div>
+<div class="disease-row"><div class="k">Prognóstico</div><div class="v">Bom com antibiótico precoce; a mortalidade vem do grupo A (síndrome do choque tóxico estreptocócico), da fasciíte necrosante (até ~25% mesmo tratada) e da miometrite com necrose uterina. Profilaxia na cesárea reduz endometrite e infecção de ferida em cerca de 60–70%.</div></div>
+<div class="disease-row"><div class="k">O que muda conduta</div><div class="v"><b>O que muda conduta:</b> toxemia precoce, choque ou lóquio escasso com dor desproporcional → grupo A: clindamicina + betalactâmico amplo, UTI; febre persistente em 72 h → imagem e busca de coleção, restos ou tromboflebite; ferida com crepitação ou necrose → cirurgia já; endometrite após o 10º dia → cobrir Chlamydia (doxiciclina, suspendendo a amamentação, ou azitromicina se amamenta — conferir).</div></div>
+</div></div>
+</div>
+<div class="box decision"><span class="box-label">DECISION</span><div class="box-title">Profilaxia antibiótica — quando sim e quando não (WHO)</div><div class="box-body"><b>Sim:</b> toda cesárea, eletiva ou de urgência, antes da incisão, com dose única de cefalosporina de 1ª geração (cefazolina 2 g IV dose única 30–60 min antes da incisão — dose conferir protocolo; ≥120 kg, conferir 3 g); remoção manual da placenta ou exploração da cavidade; laceração de 3º ou 4º grau; parto vaginal operatório (amoxicilina-clavulanato 1 g/200 mg IV dose única até 6 h após o parto). <b>Não:</b> parto vaginal não complicado, episiotomia, mecônio, RPM no termo sem outra indicação, e antibiótico de rotina em trabalho de parto (WHO 2025, contra a azitromicina universal).</div></div>
+<details class="deep"><summary>Deep dive · da endometrite à sepse: microbiologia, grupo A e tromboflebite pélvica séptica</summary><div class="deep-content">
+<p><b>Por que clindamicina + gentamicina continuam de pé.</b> O esquema foi o primeiro a mostrar superioridade sobre penicilinas isoladas em ensaios dos anos 1970–90, porque cobre anaeróbios produtores de betalactamase (clindamicina) e enterobactérias (gentamicina); a falha de ~10% concentra-se no enterococo, daí a adição de ampicilina. A clindamicina tem ainda efeito antitoxina (inibe a síntese proteica de exotoxinas do grupo A e do S. aureus), o que justifica mantê-la nos quadros toxêmicos mesmo quando outro betalactâmico é escolhido. Gentamicina em dose diária única aproveita o efeito pós-antibiótico e a morte dependente de pico, com igual eficácia e menos nefrotoxicidade; ajuste à função renal e evite associar a outros nefrotóxicos na puérpera com LRA por PE ou HPP. Ambos são compatíveis com a amamentação (clindamicina pode alterar a flora intestinal do lactente).</p>
+<p><b>Estreptococo do grupo A: a infecção puerperal que mata em horas.</b> O S. pyogenes colonizando orofaringe da mãe, do RN ou de contatos alcança o útero e libera exotoxinas superantígenas (SpeA, SpeC) que ativam linfócitos T de forma policlonal e produzem tempestade de citocinas. Quadro: febre alta precoce (às vezes nas primeiras 24 h), dor abdominal intensa, diarreia, lóquio pouco fétido, hipotensão, lesão renal e coagulopatia. O choque tóxico estreptocócico exige antibiótico em minutos (betalactâmico + clindamicina), controle de foco (às vezes histerectomia) e, em casos selecionados, imunoglobulina IV; contatos próximos podem precisar de profilaxia segundo a vigilância.</p>
+<p><b>Tromboflebite pélvica séptica.</b> Combina a tríade de Virchow puerperal (estase pela dilatação venosa, hipercoagulabilidade, lesão endotelial pela infecção e pela cirurgia) com infecção da parede venosa. A veia ovariana direita é acometida em ~80–90% porque recebe o fluxo dextrorrotado do útero e drena diretamente na cava. Apresenta-se como dor em flanco ou massa em "corda" (forma ovariana) ou apenas febre persistente sem foco (forma difusa). TC ou RM confirmam a trombose; muitas vezes o diagnóstico é de exclusão pela resposta à anticoagulação somada ao antibiótico. A heparinização (enoxaparina 1 mg/kg SC 12/12 h) é prática disseminada, embora o único ensaio randomizado pequeno não tenha mostrado benefício; a duração varia de dias após a defervescência a semanas quando há trombo extenso — conferir com hematologia (HO03).</p>
+<p><b>Fasciíte necrosante do períneo e da ferida.</b> Infecção de fáscia superficial com trombose de vasos perfurantes: a pele parece pouco alterada enquanto a necrose avança por baixo. Sinais tardios — bolhas, pele violácea, anestesia, crepitação — indicam necrose extensa. Fatores: diabetes, obesidade, imunossupressão. O diagnóstico é cirúrgico (fáscia acinzentada, sem sangramento, "água de lavar louça"); a mortalidade cai com desbridamento precoce e repetido.</p>
+</div></details>
+</div>
+</div>
+
+<!-- C.6 -->
+<div class="card prim">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">C.6</span> Entidade primária</div><h3>Transtornos psiquiátricos do puerpério — depressão pós-parto e psicose puerperal <span class="ank ank-dgr">DANGER</span> <span class="ank ank-dec">DECISION</span></h3><div class="card-sub">do blues autolimitado à emergência psiquiátrica do 3º ao 10º dia</div></div>
+<div class="card-body">
+<div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body"><b>Blues</b>: comum, dias 3–14, labilidade com vínculo preservado, só suporte. <b>Depressão pós-parto</b>: episódio depressivo maior com início na gestação ou nas semanas após o parto, subdiagnosticado porque fadiga e insônia "fazem parte" do puerpério; rastrear com EPDS. <b>Psicose puerperal</b>: 1–2 por 1.000 partos, início abrupto em horas a dias (dias 3–10), confusão, oscilação maníaca, delírio sobre o bebê — <b>emergência</b>, espectro bipolar, risco de suicídio e infanticídio.</div></div>
+<div class="disease">
+<div class="disease-head"><div class="disease-name">Depressão pós-parto e psicose puerperal</div><div class="disease-tag">CID-10 F53.0 transtornos mentais leves do puerpério (depressão pós-natal) · F53.1 graves (psicose puerperal) · O99.3</div></div>
+<div class="disease-body"><div class="disease-rows">
+<div class="disease-row"><div class="k">Epidemiologia</div><div class="v">Depressão perinatal em ~10–15% das puérperas. Fatores: depressão ou ansiedade prévia ou na gestação, adolescência, pouco suporte, violência, RN em UTI, evento obstétrico grave, transtorno do humor prévio. Psicose puerperal: risco 23× maior de primeiro episódio psicótico afetivo no pós-parto que em qualquer outro período; risco altíssimo em transtorno bipolar e em quem já teve psicose puerperal <span class="ev ev-expert">Jairaj 2023</span>.</div></div>
+<div class="disease-row"><div class="k">Fisiopatologia</div><div class="v">Queda abrupta de estradiol e progesterona (e da alopregnanolona, neuroesteroide modulador positivo do GABA-A) após a dequitação, privação de sono, ativação imune pós-parto e vulnerabilidade genética de espectro bipolar. Na psicose, ~19% têm tireoidite autoimune concomitante e há evidência de desregulação imune; parte dos casos com início pós-parto é a primeira manifestação de um transtorno bipolar.</div></div>
+<div class="disease-row"><div class="k">Clínica</div><div class="v"><b>Depressão:</b> humor deprimido, anedonia, culpa, sentimento de incapacidade como mãe, desinteresse pelo bebê ou ansiedade excessiva com ele, insônia mesmo quando o bebê dorme, ideação suicida. <b>Psicose:</b> início rápido, insônia total, agitação ou estupor, labilidade extrema, confusão e perplexidade flutuantes (aparência de delirium), delírio de que o bebê está trocado, doente, possuído ou deve ser salvo, alucinações; catatonia em alguns casos.</div></div>
+<div class="disease-row"><div class="k">Diagnóstico</div><div class="v">Rastreio da depressão com EPDS (Edimburgo) na gestação e no puerpério — ponto de corte depende da validação, conferir o protocolo local; pergunta direta sobre suicídio e sobre machucar o bebê. Psicose: excluir causa orgânica antes do rótulo — hemograma, sódio, cálcio, glicose, função renal e hepática, TSH e anti-TPO, B12, folato, toxicológico de urina; neuroimagem e LCR se sinal focal, crise, febre ou cefaleia (eclâmpsia tardia, TVC, encefalite, PRES) <span class="ev ev-expert">Jairaj 2023</span>.</div></div>
+<div class="disease-row"><div class="k">Tratamento</div><div class="v"><b>Depressão:</b> psicoterapia nas leves; ISRS nas moderadas e graves — <b>sertralina 50 mg/dia (até 200 mg/dia)</b>, preferida pela baixa passagem ao leite <span class="ev ev-sbr">MS 2022</span>; manter a amamentação. <b>Psicose:</b> internação (idealmente unidade mãe-bebê), supervisão constante, sono como alvo terapêutico; algoritmo escalonado: benzodiazepínico → antipsicótico (olanzapina ou quetiapina, compatíveis com amamentação) → <b>lítio</b>, que somado aos anteriores levou à remissão em 98,4% numa coorte; ECT precoce na catatonia, risco de suicídio ou infanticídio, ou recusa alimentar <span class="ev ev-expert">Jairaj 2023</span>. Lorazepam IV não existe no Brasil — usar a forma oral ou outro benzodiazepínico conforme PC06.</div></div>
+<div class="disease-row"><div class="k">Prognóstico</div><div class="v">A psicose puerperal tem boa resposta e remissão completa na maioria, mas a recorrência no pós-parto seguinte é alta (conferir a cifra; estimativas de coortes variam) e parte evolui para bipolar fora do puerpério; o primeiro episódio puerperal tem prognóstico melhor que o primeiro episódio afetivo fora do puerpério. O lítio reduz recaída pós-parto (OR 0,16) quando iniciado logo após o parto em mulheres de alto risco, com nível alvo de 0,8–1,0 mmol/L no 1º mês e dosagem 2×/semana nas 2 primeiras semanas.</div></div>
+<div class="disease-row"><div class="k">O que muda conduta</div><div class="v"><b>O que muda conduta:</b> confusão, febre, crise ou sinal focal → delirium orgânico, não psicose primária; delírio sobre o bebê ou ideação suicida → internação e supervisão, nunca alta; lítio necessário → amamentação geralmente desaconselhada (relativa; monitorizar o lactente se mantida) e sono noturno protegido; história de psicose puerperal ou bipolar → plano de profilaxia antes do parto (lítio ou antipsicótico pós-parto imediato).</div></div>
+</div></div>
+</div>
+<div class="box hy"><span class="box-label">HIGH-YIELD</span><div class="box-title">Fronteira registrada: psicose puerperal mora no GO14</div><div class="box-body">Reconhecimento, exclusão orgânica, conduta de emergência, decisão de amamentar e profilaxia no próximo parto ficam aqui. O tratamento longitudinal do transtorno bipolar e a farmacologia completa dos antidepressivos ficam no PC02; agitação e risco de suicídio no PC06.</div></div>
+</div>
+</div>
+</section>
+
+<!-- ============================================================ D -->
+<section id="secundarias">
+<div class="section">
+<div class="section-eyebrow"><span>D</span> Entidades Secundárias</div>
+<div class="section-title">O líquido, os outros três Ts, a HPP tardia, a mama complicada, a veia e o puerpério normal</div>
+<div class="section-sub">Agrupadas pela regra V5.1: cada box reúne entidades que compartilham raciocínio e conduta. O acretismo, o DPP e a rotura uterina como doenças ficam no GO12; a mastite não complicada, no PD03; a anticoagulação, no HO03.</div>
+</div>
+
+<!-- D.1 -->
+<div class="card diag">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">D.1</span> Volume de líquido amniótico</div><h3>Oligoâmnio e polidrâmnio</h3></div>
+<div class="card-body">
+<div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Após 16–20 semanas o líquido é sobretudo <b>urina fetal</b> (até ~1.200 mL/dia no termo) e é removido pela <b>deglutição</b> e pela via intramembranosa. Menos urina (insuficiência placentária, uropatia, IECA, AINE) ou perda (RPM) = oligoâmnio; não engolir (atresia alta, anencefalia, doença neuromuscular) ou urinar demais (diabetes, receptor de STFF, anemia) = polidrâmnio.</div></div>
+<div class="disease">
+<div class="disease-head"><div class="disease-name">Oligoâmnio e polidrâmnio</div><div class="disease-tag">CID-10 O41.0 oligoidrâmnio · O40 polidrâmnio</div></div>
+<div class="disease-body"><div class="disease-rows">
+<div class="disease-row"><div class="k">Definição</div><div class="v"><b>Oligoâmnio:</b> maior bolsão vertical &lt;2 cm ou ILA &lt;5 cm; o maior bolsão é preferido por gerar menos intervenção sem pior desfecho. <b>Polidrâmnio:</b> maior bolsão ≥8 cm ou ILA ≥24–25 cm (pontos variam na literatura). Volume normal ~1.000 mL com 38 semanas, caindo depois de 40.</div></div>
+<div class="disease-row"><div class="k">Causas</div><div class="v">Oligo: <b>RPM (principal)</b>, insuficiência placentária, pós-datismo, agenesia renal bilateral (sequência de Potter), rins policísticos ou multicísticos, válvula de uretra posterior, aneuploidia, IECA/BRA e AINE, doador de STFF. Poli: idiopático (50–60%), diabetes, atresia de esôfago ou duodeno, anencefalia, displasias esqueléticas, anemia fetal (aloimunização, parvovírus), receptor de STFF, corioangioma.</div></div>
+<div class="disease-row"><div class="k">Diagnóstico</div><div class="v">US com morfológico detalhado; no oligo, especular para RPM e Doppler para insuficiência placentária; no poli, TOTG ou perfil glicêmico, sorologias, Coombs indireto e pico sistólico da ACM <span class="ev ev-sbr">MS 2022</span>.</div></div>
+<div class="disease-row"><div class="k">Conduta</div><div class="v">Oligo isolado com membranas íntegras no termo: parto com 36–37+6 semanas conforme o contexto (conferir protocolo); com RCF, seguir o estadiamento de C.2. Hidratação materna aumenta o ILA transitoriamente sem efeito comprovado em desfecho. Poli grave sintomático: amniodrenagem; indometacina só &lt;32 semanas (fechamento do canal arterial após). Polidrâmnio eleva risco de apresentação anômala, prolapso de cordão, DPP na descompressão e <b>atonia</b> (sobredistensão).</div></div>
+<div class="disease-row"><div class="k">O que muda conduta</div><div class="v"><b>O que muda conduta:</b> oligoâmnio no 2º trimestre com rins ausentes → aconselhamento sobre hipoplasia pulmonar letal; oligo + RCF → é estágio de insuficiência placentária, não achado isolado; polidrâmnio → TOTG, morfologia, planejar o parto com ocitocina profilática e vigilância de atonia; amniotomia controlada no poli para evitar prolapso e DPP.</div></div>
+</div></div>
+</div>
+</div>
+</div>
+
+<!-- D.2 -->
+<div class="card diag">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">D.2</span> HPP · Trauma</div><h3>Lacerações do trajeto, hematomas e inversão uterina <span class="ank ank-dgr">DANGER</span></h3></div>
+<div class="card-body">
+<div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Segunda causa de HPP precoce. <b>Útero contraído e sangramento vivo contínuo</b> = laceração até prova em contrário. Hematoma dá dor e choque com pouco sangue externo. Inversão dá choque desproporcional, útero ausente no abdome e massa na vagina.</div></div>
+<div class="disease">
+<div class="disease-head"><div class="disease-name">HPP por trauma do canal de parto</div><div class="disease-tag">CID-10 O71.3 laceração do colo · O71.4 laceração vaginal alta · O71.7 hematoma pélvico · O71.2 inversão uterina · O70.2 / O70.3 laceração perineal de 3º e 4º grau</div></div>
+<div class="disease-body"><div class="disease-rows">
+<div class="disease-row"><div class="k">Lacerações</div><div class="v">Fatores: fórcipe, macrossomia, distocia de ombro, Kristeller, expulsivo rápido, episiotomia extensa. Classificação perineal: 1º grau pele e mucosa; 2º músculos perineais; 3º esfíncter anal (3a &lt;50% do externo, 3b &gt;50%, 3c esfíncter interno); 4º mucosa anorretal <span class="ev ev-sbr">MS Parto Normal 2017</span>. Toque retal após todo parto operatório e antes de suturar; 3º/4º grau: reparo por obstetra experiente, em centro cirúrgico, com antibiótico profilático (WHO 2015) e laxante.</div></div>
+<div class="disease-row"><div class="k">Hematomas</div><div class="v">Vulvoperineais, vaginais (paravaginais), subperitoneais/retroperitoneais. Tumoração violácea, dolorosa, de crescimento rápido; retenção urinária; choque sem sangramento visível nos altos. Pequenos e estáveis: expectante com gelo e analgesia. Volumosos ou em expansão: incisão, drenagem, hemostasia do vaso, tamponamento; retroperitoneais: embolização ou laparotomia.</div></div>
+<div class="disease-row"><div class="k">Inversão</div><div class="v">Rara; tração do cordão com placenta fúndica aderida, útero relaxado, acretismo, multiparidade. Graus: depressão do fundo, incompleta, completa (fundo além do colo) e total (exteriorizada). <b>Conduta:</b> chamar ajuda, 2 acessos, suspender ocitocina, não retirar a placenta, reposição manual imediata (manobra de Taxe), com relaxamento uterino se o anel cervical se contrair (nitroglicerina IV, β-agonista ou anestesia geral com halogenado — dose conferir com a anestesia); falhou → laparotomia (Huntington com pinças de Allis; Haultain se o anel não ceder). Após reposição: ocitocina em infusão, depois retirar a placenta.</div></div>
+<div class="disease-row"><div class="k">O que muda conduta</div><div class="v"><b>O que muda conduta:</b> útero firme sangrando → revisão do trajeto sob analgesia antes de 2º uterotônico; choque sem sangue externo → hematoma oculto ou rotura (US à beira do leito, laparotomia); placenta ainda inserida com inversão → repor antes de descolar; laceração de esfíncter → reparo especializado e seguimento de incontinência.</div></div>
+</div></div>
+</div>
+</div>
+</div>
+
+<!-- D.3 -->
+<div class="card diag">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">D.3</span> HPP · Tecido</div><h3>Retenção placentária e de restos ovulares</h3></div>
+<div class="card-body">
+<div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Terceiro período prolongado: <b>&gt;30 min</b> com conduta ativa. Sem sangramento, não há indicação de mais ocitocina; com sangramento, uterotônico e remoção. Remoção manual sempre com analgesia e <b>antibiótico profilático</b>. Plano de clivagem ausente = acretismo: pare e prepare histerectomia (GO12).</div></div>
+<div class="disease">
+<div class="disease-head"><div class="disease-name">Retenção placentária e de restos</div><div class="disease-tag">CID-10 O72.0 hemorragia do 3º período · O73.0 retenção placentária sem hemorragia · O73.1 retenção de partes da placenta</div></div>
+<div class="disease-body"><div class="disease-rows">
+<div class="disease-row"><div class="k">Mecanismo</div><div class="v">Placenta aprisionada (anel de contração cervical), aderida (falha de contração retroplacentária) ou acreta (ausência de decídua basal; vilosidades no miométrio). Cotilédone avulso ou lobo sucenturiado retido impede a contração do segmento e mantém sangramento — por isso a revisão da placenta é obrigatória.</div></div>
+<div class="disease-row"><div class="k">Conduta</div><div class="v">Sem HPP: aguardar até 30 min, esvaziar bexiga, tração controlada do cordão (só com profissional treinado); uterotônico só se houver HPP (WHO 2025, rec. 30); injeção na veia umbilical só em pesquisa. Remoção manual (curagem) sob anestesia, com mão espalmada no fundo; <b>profilaxia com ampicilina ou cefalosporina de 1ª geração em dose única, ou amoxicilina-clavulanato 1 g/200 mg IV</b> <span class="ev ev-nice">WHO 2025</span>. Manobra de Credé (expressão do fundo antes do descolamento) — no máximo 2–3 tentativas, risco de inversão. Restos: curetagem com cureta romba de grande calibre (Bumm) ou aspiração, sob US.</div></div>
+<div class="disease-row"><div class="k">O que muda conduta</div><div class="v"><b>O que muda conduta:</b> sangramento ativo → remover já, não esperar 30 min; plano de clivagem inexistente ou cesárea prévia com placenta anterior baixa → acretismo, não forçar (GO12); material de curetagem → histopatologia sempre (excluir DTG); antibiótico em dose única em toda exploração da cavidade.</div></div>
+</div></div>
+</div>
+</div>
+</div>
+
+<!-- D.4 -->
+<div class="card diag">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">D.4</span> HPP · Trombina e sequelas</div><h3>Coagulopatia obstétrica, embolia de líquido amniótico e síndrome de Sheehan <span class="ank ank-dgr">DANGER</span></h3></div>
+<div class="card-body">
+<div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Coagulopatia pode ser causa (DPP, ELA, HELLP, sepse, hereditária) ou consequência (consumo e diluição) da HPP. ELA: <b>colapso cardiorrespiratório súbito + hipoxemia + CIVD</b> no parto ou logo após. Sheehan: necrose hipofisária isquêmica após choque — agalactia é o primeiro sinal.</div></div>
+<div class="disease">
+<div class="disease-head"><div class="disease-name">Trombina: coagulopatia, ELA e Sheehan</div><div class="disease-tag">CID-10 O72.3 defeitos de coagulação pós-parto · O88.1 embolia amniótica · E23.0 hipopituitarismo (Sheehan)</div></div>
+<div class="disease-body"><div class="disease-rows">
+<div class="disease-row"><div class="k">Coagulopatia</div><div class="v">Alvos: fibrinogênio ≥2 g/L (3–4 g de concentrado ou 8–10 U de crioprecipitado), TP/TTPa &lt;1,5× e INR ≤1,5, plaquetas &gt;50 mil se sangramento microvascular; na hemorragia maciça sem laboratório, plasma 1 : hemácias 2 <span class="ev ev-nice">WHO 2025</span>. Fator VIIa e CCP com eficácia incerta. Doenças hereditárias (von Willebrand, hemofilia carreadora) → HO03.</div></div>
+<div class="disease-row"><div class="k">Embolia de líquido amniótico</div><div class="v">Rara e devastadora; reação anafilactoide a material fetal na circulação materna (ativação de complemento e mastócitos), com vasoespasmo pulmonar, falência de VD, depois de VE, e CIVD hiperfibrinolítica. Conduta: ACLS com deslocamento uterino, cesárea perimortem em até 4–5 min se gestante ≥20 sem em PCR, suporte de VD, reposição agressiva de fibrinogênio, ácido tranexâmico 1 g IV em 10 min (repetir 1 g se sangramento após 30 min).</div></div>
+<div class="disease-row"><div class="k">Sheehan</div><div class="v">Hipófise aumentada na gestação (hiperplasia lactotrófica) e irrigada por sistema porta de baixa pressão sofre infarto no choque. Agudo: hipoglicemia, hiponatremia, choque refratário (insuficiência adrenal). Subagudo/crônico: <b>agalactia</b>, amenorreia, hipotireoidismo central, insuficiência adrenal, perda de pelos. Tratar primeiro o cortisol, depois a tireoide (risco de crise adrenal).</div></div>
+<div class="disease-row"><div class="k">O que muda conduta</div><div class="v"><b>O que muda conduta:</b> fibrinogênio &lt;2 g/L → reposição dirigida; colapso súbito com hipoxemia e sangramento difuso → ELA, ressuscitação e CIVD juntas; puérpera que não lactou após HPP grave → cortisol, TSH/T4L, prolactina antes de rotular "baixa produção".</div></div>
+</div></div>
+</div>
+</div>
+</div>
+
+<!-- D.5 -->
+<div class="card diag">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">D.5</span> HPP tardia</div><h3>Hemorragia pós-parto secundária</h3></div>
+<div class="card-body">
+<div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Sangramento anormal de <b>24 h até 6–12 semanas</b> (as fontes variam no limite). Causas: subinvolução do leito placentário, restos, endometrite, DTG, pseudoaneurisma ou malformação arteriovenosa pós-cesárea ou curetagem, doença de von Willebrand. Lóquio vermelho além de 2 semanas com útero grande sugere restos.</div></div>
+<div class="disease">
+<div class="disease-head"><div class="disease-name">HPP secundária (tardia)</div><div class="disease-tag">CID-10 O72.2 hemorragia pós-parto tardia e secundária</div></div>
+<div class="disease-body"><div class="disease-rows">
+<div class="disease-row"><div class="k">Avaliação</div><div class="v">Sinais vitais, tônus e altura uterina, febre; hemograma, coagulograma, β-hCG (DTG), US transvaginal com Doppler (restos vascularizados, pseudoaneurisma); triagem para von Willebrand se sangramento menstrual prévio intenso <span class="ev ev-sbr">OPAS 2018</span>.</div></div>
+<div class="disease-row"><div class="k">Conduta</div><div class="v">Uterotônico (ocitocina ou misoprostol), antibiótico se endometrite (C.5), curetagem guiada por US se restos (cuidado: útero puerperal perfura fácil e a curetagem vigorosa causa sinéquias — síndrome de Asherman), embolização no pseudoaneurisma/MAV, histopatologia de todo material. Ferro oral por 6–12 semanas; IV se intolerância ou anemia grave <span class="ev ev-nice">WHO 2025</span>.</div></div>
+<div class="disease-row"><div class="k">O que muda conduta</div><div class="v"><b>O que muda conduta:</b> β-hCG elevado ou em platô → DTG (GO12), não curetar repetidamente; Doppler com fluxo turbulento → embolização, não curetagem; febre e útero doloroso → antibiótico antes de esvaziar.</div></div>
+</div></div>
+</div>
+</div>
+</div>
+
+<!-- D.6 -->
+<div class="card diag">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">D.6</span> Mama</div><h3>Mastite complicada e abscesso mamário</h3></div>
+<div class="card-body">
+<div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">A mastite não complicada é tratada no PD03 (esvaziamento, AINE, manter amamentação; cefalexina se não melhora). Aqui entram <b>massa flutuante (abscesso), toxemia, bilateralidade, origem hospitalar, falha em 48 h de antibiótico</b> e suspeita de MRSA. Massa que persiste após o tratamento em mulher não lactante ou após a resolução → excluir carcinoma inflamatório (GO06).</div></div>
+<div class="disease">
+<div class="disease-head"><div class="disease-name">Abscesso mamário e mastite grave</div><div class="disease-tag">CID-10 O91.1 abscesso da mama associado ao parto</div></div>
+<div class="disease-body"><div class="disease-rows">
+<div class="disease-row"><div class="k">Diagnóstico</div><div class="v">US confirma coleção e guia a punção; cultura do leite ou do pus (S. aureus, inclusive MRSA comunitário; estreptococos; raramente Gram-negativos e anaeróbios nas formas necrosantes).</div></div>
+<div class="disease-row"><div class="k">Tratamento</div><div class="v"><b>Drenagem</b>: aspiração por agulha guiada por US (repetível) é a 1ª opção; incisão radial, longe da aréola, se volumoso, multiloculado ou falha da aspiração. Antibiótico ambulatorial: <b>cefalexina 500 mg VO 6/6 h por 10–14 dias</b> (mesmo esquema do PD03) <span class="ev ev-expert">PD03 · ABM 2022</span>; grave/sistêmico: <b>cefazolina 2 g IV 8/8 h ou oxacilina 2 g IV 4/4 h</b> (MSSA — doses de II03); MRSA: vancomicina com dose por AUC (II03), ajustando pela cultura. Manter a amamentação na mama sadia e, se possível, na afetada; suspender na afetada só com dreno ou incisão junto ao mamilo ou pus saindo pela papila, mantendo o esvaziamento.</div></div>
+<div class="disease-row"><div class="k">O que muda conduta</div><div class="v"><b>O que muda conduta:</b> flutuação ou massa no US → drenar (antibiótico sozinho falha); toxemia, celulite extensa ou necrose → internar, IV e cirurgia; falha sem coleção → cultura e cobertura de MRSA; lesão persistente → biópsia.</div></div>
+</div></div>
+</div>
+</div>
+</div>
+
+<!-- D.7 -->
+<div class="card diag">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">D.7</span> Veia</div><h3>Tromboembolismo venoso puerperal</h3></div>
+<div class="card-body">
+<div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Metade dos TEV do ciclo gravídico-puerperal ocorre no puerpério, que é muito mais curto — <b>risco diário máximo na 1ª semana</b> e após cesárea (MS 2022 cita aumento de ~20× no puerpério). D-dímero perde especificidade no pós-parto. Tratar a suspeita forte enquanto confirma. Anticoagulação, duração e reversão → HO03; TEP → RP04.</div></div>
+<div class="disease">
+<div class="disease-head"><div class="disease-name">TEV no puerpério</div><div class="disease-tag">CID-10 O87.1 trombose venosa profunda no puerpério · O88.2 embolia obstétrica por coágulo</div></div>
+<div class="disease-body"><div class="disease-rows">
+<div class="disease-row"><div class="k">Clínica e diagnóstico</div><div class="v">Dor e edema assimétrico de membro inferior (predomínio esquerdo, compressão da ilíaca), Homans pouco sensível; trombose iliofemoral e pélvica podem dar só dor lombar ou abdominal. Doppler venoso; angio-TC ou cintilografia para TEP (dose de radiação materna sem impacto na amamentação).</div></div>
+<div class="disease-row"><div class="k">Tratamento</div><div class="v"><b>Enoxaparina 1 mg/kg SC 12/12 h</b> (ClCr &lt;30: 1 mg/kg 1×/dia) <span class="ev ev-sbr">MS 2022 · HO03</span>, por pelo menos 6 semanas pós-parto e ≥3 meses no total. Varfarina e heparinas são compatíveis com a amamentação; DOAC não são recomendados na lactação por falta de dados. Profilaxia: <b>enoxaparina 40 mg SC 1×/dia</b> (ClCr &lt;30: 20 mg) por 7–10 dias a 6 semanas conforme o risco (trombofilia, TEV prévio, cesárea com fatores) — estratificação em HO03.</div></div>
+<div class="disease-row"><div class="k">O que muda conduta</div><div class="v"><b>O que muda conduta:</b> suspeita alta → anticoagular antes do exame se não houver sangramento ativo; TEP instável → trombólise/embolectomia (RP04), mesmo no pós-parto recente com cuidado hemorrágico; febre persistente pós-cesárea sem foco → pensar na forma séptica pélvica (C.5).</div></div>
+</div></div>
+</div>
+</div>
+</div>
+
+<!-- D.8 -->
+<div class="card diag">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">D.8</span> Puerpério normal</div><h3>Puerpério fisiológico, alta e consulta puerperal <span class="ank ank-hy">HIGH-YIELD</span></h3></div>
+<div class="card-body">
+<div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Útero na cicatriz umbilical após o parto, ~1 cm/dia, intrapélvico em ~10 dias, tamanho pré-gravídico em ~4–6 semanas. Lóquios rubros (3–4 dias) → serosos (fusca/flava) → alvos (~10º dia). Ovulação pode voltar antes da menstruação — contracepção não espera o sangramento.</div></div>
+<div class="disease">
+<div class="disease-head"><div class="disease-name">Puerpério fisiológico e assistência pós-natal</div><div class="disease-tag">CID-10 Z39.0 cuidado imediato após o parto · Z39.2 seguimento pós-parto de rotina</div></div>
+<div class="disease-body"><div class="disease-rows">
+<div class="disease-row"><div class="k">Fisiologia</div><div class="v">Puerpério imediato (até o 10º dia), tardio (10º–45º) e remoto (após o 45º) na divisão clássica — as fontes divergem. Involução por redução do tamanho (não do número) dos miócitos, mais rápida com amamentação (reflexo uteromamário: sucção → ocitocina → cólica). Regeneração endometrial em ~3 semanas, leito placentário em ~6. Débito cardíaco sobe logo após o parto (autotransfusão ~300 mL, descompressão aortocava) e volta em ~2 semanas. Leucocitose até ~25–30 mil sem desvio é fisiológica. Hipercoagulabilidade persiste ~6 semanas. Diurese abundante nos primeiros dias; retenção urinária por anestesia e trauma.</div></div>
+<div class="disease-row"><div class="k">Assistência</div><div class="v">Primeira hora: vigilância de PA, pulso, tônus e perdas a cada 15 min (4º período, "período de Greenberg"). <b>Sinais para chamar o obstetra</b>: pulso &gt;120 em 2 medidas com 30 min; PAS ≥160 ou PAD ≥110 uma vez; ≥140/90 em 2 medidas; temperatura ≥38 °C uma vez ou ≥37,5 °C em 2 com 1 h; bexiga palpável sem micção em 6 h; placenta incompleta; laceração de 3º/4º grau <span class="ev ev-sbr">MS Parto Normal 2017</span>. Deambulação precoce, gelo no períneo, ferida descoberta e lavada. <b>Imunoglobulina anti-D 300 µg IM até 72 h</b> se mãe Rh negativo não sensibilizada e RN Rh positivo (MS 2022; aloimunização → GO12). Alta ~48 h após parto vaginal e ~72 h após cesárea se sem intercorrência.</div></div>
+<div class="disease-row"><div class="k">Consulta puerperal</div><div class="v">Revisão na 1ª semana (7–10 dias) e até 42 dias: PA (PE pós-parto até 6 semanas — GO13), ferida, períneo, mamas e técnica (PD03), humor e EPDS, sono e suporte, contracepção (métodos e critérios → GO02), TOTG 4–12 semanas após DMG (GO13), vacinas pendentes, retorno sexual e a exercícios quando confortável, sinais de alerta.</div></div>
+<div class="disease-row"><div class="k">O que muda conduta</div><div class="v"><b>O que muda conduta:</b> útero que não involui com lóquio vermelho persistente → restos ou endometrite; PA ≥160/110 no puerpério → tratar como PE grave (GO13); pós-DMG → curva glicêmica; puérpera triste além de 2 semanas → EPDS e avaliação de depressão.</div></div>
+</div></div>
+</div>
+<div class="box pearl"><span class="box-label">PEARL</span><div class="box-title">Fármacos na lactação: o que pesa é a dose relativa do lactente</div><div class="box-body">Compatibilidade depende de lipossolubilidade, ligação proteica, pKa (bases fracas ficam "presas" no leite mais ácido), meia-vida e biodisponibilidade oral do lactente; abaixo de ~10% da dose materna ajustada ao peso (dose relativa do lactente) o risco costuma ser baixo. Prematuro e neonato nas primeiras semanas eliminam menos. Estrogênio reduz a produção de leite; agonistas dopaminérgicos (cabergolina, bromocriptina) a suprimem. Consulte LactMed ou e-lactancia antes de suspender a amamentação por um fármaco.</div></div>
+</div>
+</div>
+</section>
+
+<!-- ============================================================ E -->
+<section id="algoritmo">
+<div class="section">
+<div class="section-eyebrow"><span>E</span> Algoritmo</div>
+<div class="section-title">Duas perguntas mandam: a variabilidade está presente? O útero está contraído?</div>
+<div class="section-sub">No feto, a variabilidade separa o traçado que pede correção do que pede nascimento. Na puérpera que sangra, o tônus separa atonia de trauma e define se a próxima mão vai no fundo uterino ou no espéculo. Duas árvores e um raciocínio narrado.</div>
+</div>
+
+<div class="card prim">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">E.1</span> Algoritmo</div><h3>Traçado anormal no trabalho de parto <span class="ank ank-dec">DECISION</span></h3></div>
+<div class="card-body">
+<div class="algo"><div class="tree">
+<div class="tree-line"><span class="tree-node start">FCF alterada à ausculta ou CTG não tranquilizadora</span></div>
+<div class="tree-branch">
+<div class="tree-label yes">Bradicardia &lt;110 por ≥3 min ou desaceleração prolongada sem recuperação?</div>
+<div class="tree-line"><span class="tree-node dgr">→ Toque (prolapso? dilatação? altura), parar ocitocina, decúbito lateral, cristaloide, corrigir PA; sem recuperação em minutos → nascimento pela via mais rápida (fórcipe se praticável, senão cesárea)</span></div>
+</div>
+<div class="tree-branch">
+<div class="tree-label no">Não</div>
+<div class="tree-line"><span class="tree-node dec">Variabilidade ausente + tardias/variáveis recorrentes, ou sinusoidal (categoria III)?</span></div>
+<div class="tree-branch">
+<div class="tree-label yes">Sim</div>
+<div class="tree-line"><span class="tree-node dgr">→ Reanimação intrauterina enquanto prepara o nascimento imediato; gasometria de cordão; equipe de reanimação neonatal (PD01)</span></div>
+</div>
+<div class="tree-branch">
+<div class="tree-label no">Não — categoria II</div>
+<div class="tree-line"><span class="tree-node dec">Variabilidade moderada ou aceleração ao estímulo do polo cefálico?</span></div>
+<div class="tree-branch">
+<div class="tree-label yes">Sim</div>
+<div class="tree-line"><span class="tree-node action">→ Feto sem acidemia agora: tratar a causa (taquissistolia → parar ocitocina, terbutalina 0,25 mg SC; hipotensão; febre → GO11), reavaliar em 15–30 min, CTG contínua</span></div>
+</div>
+<div class="tree-branch">
+<div class="tree-label no">Não</div>
+<div class="tree-line"><span class="tree-node dx">→ Indeterminado com variabilidade mínima: reanimação intrauterina; se não melhora em ~30 min ou piora, extração pela via mais rápida conforme dilatação e altura</span></div>
+</div>
+</div>
+</div>
+</div></div>
+</div>
+</div>
+
+<div class="card prim">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">E.2</span> Algoritmo</div><h3>Puérpera que sangra — da primeira mão à cirurgia <span class="ank ank-dgr">DANGER</span></h3></div>
+<div class="card-body">
+<div class="algo"><div class="tree">
+<div class="tree-line"><span class="tree-node start">Perda medida ≥300 mL com FC &gt;100, IC &gt;1, PAS &lt;100 ou PAD &lt;60 — ou ≥500 mL</span></div>
+<div class="tree-line"><span class="tree-node dgr">Chamar ajuda · 2 acessos · tipagem, hemograma, fibrinogênio · sonda vesical · iniciar MOTIVE: massagem + ocitocina IV + ácido tranexâmico 1 g IV em 10 min + cristaloide</span></div>
+<div class="tree-branch">
+<div class="tree-label yes">Útero amolecido</div>
+<div class="tree-line"><span class="tree-node action">→ Tônus: compressão bimanual; sem resposta em 15–20 min → metilergometrina 0,2 mg IM (não na hipertensa) e/ou misoprostol 800 µg → balão intrauterino + TAN → B-Lynch, ligaduras, embolização → histerectomia</span></div>
+</div>
+<div class="tree-branch">
+<div class="tree-label no">Útero contraído</div>
+<div class="tree-line"><span class="tree-node dec">Trajeto: laceração, hematoma, inversão? · Placenta completa?</span></div>
+<div class="tree-branch">
+<div class="tree-label yes">Lesão ou restos</div>
+<div class="tree-line"><span class="tree-node dx">→ Sutura, drenagem do hematoma, reposição manual da inversão; curagem/curetagem com antibiótico em dose única; acretismo → histerectomia (GO12)</span></div>
+</div>
+<div class="tree-branch">
+<div class="tree-label no">Sem foco local, sangue não coagula</div>
+<div class="tree-line"><span class="tree-node dgr">→ Trombina: fibrinogênio para ≥2 g/L, plasma 1:2, plaquetas se &lt;50 mil, cálcio, aquecer; pensar em DPP, ELA, HELLP, sepse</span></div>
+</div>
+</div>
+<div class="tree-line"><span class="tree-node dgr">Em qualquer ramo: IC ≥1,4 ou choque → transfusão maciça e centro cirúrgico; após controle → observação rigorosa por 24 h</span></div>
+</div></div>
+</div>
+</div>
+
+<div class="box decision"><span class="box-label">DECISION</span><div class="box-title">Raciocínio em 6 passos — o feto no expulsivo e a mãe no 4º período</div><div class="box-body"><ol class="bullets">
+<li><b>Contrações primeiro.</b> Antes de interpretar a FCF, conte as contrações: taquissistolia por ocitocina é a causa mais comum e mais reversível de traçado ruim. Parar a infusão é a primeira intervenção, não a última.</li>
+<li><b>Variabilidade decide a urgência.</b> Desaceleração com variabilidade moderada é aviso; desaceleração com variabilidade ausente é acidemia provável. A pergunta seguinte é sempre: quanto tempo até o nascimento por cada via?</li>
+<li><b>Altura e posição decidem a via.</b> Com dilatação total e cabeça em +2 ou abaixo, variedade conhecida, o fórcipe tira o feto em poucos minutos; acima de 0, ou com variedade incerta, a resposta é cesárea, e insistir com instrumento é o erro que gera trauma duplo.</li>
+<li><b>No 4º período, meça.</b> A bolsa coletora calibrada transforma "parece normal" em número; com ≥300 mL e qualquer sinal hemodinâmico anormal, o diagnóstico está feito.</li>
+<li><b>A mão no fundo uterino separa os Ts.</b> Mole = tônus (uterotônico e massagem); firme = trauma ou tecido (espéculo, revisão, placenta); sangue que não coagula = trombina (fibrinogênio). Faça tudo do pacote junto, não em sequência.</li>
+<li><b>Escalone pelo relógio, não pela esperança.</b> Sem resposta em 15–20 min, 2ª linha; sem resposta ao 2º uterotônico, balão e TAN; sem resposta ao balão ou com choque, centro cirúrgico. A "hora de ouro" é o prazo para controlar o sítio, não para começar a pensar.</li>
+</ol></div></div>
+</section>
+
+<!-- ============================================================ F -->
+<section id="tratamento">
+<div class="section">
+<div class="section-eyebrow"><span>F</span> Tratamento Integrado</div>
+<div class="section-title">F1 · Estratégia por entidade · F2 · Doses operacionais · F3 · Casos</div>
+<div class="section-sub">HPP pela WHO/FIGO/ICM 2025 com os esquemas brasileiros da OPAS/MS (Estratégia Zero Morte Materna por Hemorragia, 2018); vitalidade pelo MS 2022 e pelas Diretrizes de Parto Normal 2017; infecção pela WHO 2015–2025; disponibilidade conferida na lista CMED de 09/10/2026. Onde SUS e diretriz internacional divergem, os dois aparecem.</div>
+</div>
+
+<div class="card tx">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">F.1</span> Estratégia</div><h3>Escadas terapêuticas por entidade <span class="ank ank-dec">DECISION</span></h3></div>
+<div class="card-body">
+
+<div class="sub-title">F1.1 · Sofrimento fetal agudo intraparto</div>
+<ul class="bullets">
+<li><b>Vigilância pelo risco:</b> baixo risco → ausculta intermitente a cada 30 min na fase ativa e a cada 5–15 min no expulsivo, por 1 min após a contração; após analgesia de neuroeixo, de 5 em 5 min por 30 min; alto risco, ocitocina, analgesia, mecônio, febre ou ausculta alterada → CTG contínua.</li>
+<li><b>Reanimação intrauterina (categoria II/III):</b> suspender ocitocina; decúbito lateral esquerdo; cristaloide 500 mL e vasopressor da anestesia na hipotensão pós-bloqueio; toque para prolapso de cordão; terbutalina 0,25 mg SC na taquissistolia ou hipertonia; oxigênio materno só se hipoxêmica (hiperóxia de rotina não melhora pH fetal).</li>
+<li><b>Prazo:</b> categoria III ou bradicardia sem recuperação → nascimento imediato; categoria II sem melhora com variabilidade mínima → nascimento após 30 min de medidas, avaliando a via.</li>
+<li><b>Via:</b> dilatação total e cabeça ≥+2 → fórcipe (mais rápido) ou vácuo; acima disso → cesárea de urgência. Comunicar a equipe neonatal e coletar gasometria arterial do cordão.</li>
+</ul>
+<div class="box hy"><span class="box-label">HIGH-YIELD</span><div class="box-title">Mecônio muda a vigilância, não a via</div><div class="box-body">Mecônio isolado com FCF normal não indica cesárea (MS 2017). Indica CTG contínua, equipe de reanimação neonatal na sala (PD01) e, onde não houver CTG, amnioinfusão no mecônio espesso. Aspiração rotineira de orofaringe no desprendimento e intubação de rotina do RN vigoroso foram abandonadas.</div></div>
+
+<div class="sub-title">F1.2 · Restrição do crescimento fetal</div>
+<ul class="bullets">
+<li><b>Datação e etiologia:</b> confirmar IG; RCF precoce → morfológico, cariótipo/microarray se malformação ou RCF grave e simétrica, sorologias (CMV, toxoplasmose, sífilis).</li>
+<li><b>Vigilância por estágio (MS 2022):</b> PIG → quinzenal; estágio 1 → quinzenal até 34 sem e depois semanal; estágio 2 → semanal ou 2–3×/semana, internação após 34 sem em alguns serviços; estágio 3 → a cada 2 dias ou diária internada; estágio 4–5 → diária.</li>
+<li><b>Momento do parto:</b> PIG 40 sem · estágio 1 38 sem (37 se &lt;p1) · estágio 2 37 sem · estágio 3 34 sem por cesárea · estágio 4 a partir da viabilidade (≥26 sem ou ≥500 g, conforme UTI neonatal) · estágio 5 imediato.</li>
+<li><b>Preparos:</b> corticoide entre 24 e 34 sem, idealmente na semana do parto (≤2 ciclos); sulfato de magnésio &lt;32 sem para neuroproteção; transferência para centro com UTI neonatal antes do parto (doses em GO11/GO13).</li>
+<li><b>Via:</b> indução possível nos estágios 1–2 com CTG contínua e sem prostaglandina na RCF grave (sonda de Foley); estágio 3 em diante → cesárea.</li>
+</ul>
+<div class="box decision"><span class="box-label">DECISION</span><div class="box-title">AAS não trata RCF instalada</div><div class="box-body">O AAS em dose baixa iniciado antes de 16 semanas reduz PE pré-termo e, por consequência, parte da RCF precoce em mulheres de risco (GO10/GO13). Iniciado depois do diagnóstico de RCF, não muda o desfecho. Sildenafila, heparina, repouso e suplementos não têm benefício comprovado; o STRIDER com sildenafila foi interrompido por dano neonatal.</div></div>
+
+<div class="sub-title">F1.3 · Parto vaginal operatório</div>
+<ul class="bullets">
+<li><b>Antes:</b> indicação documentada, condições de praticabilidade checadas em voz alta, consentimento, analgesia efetiva (peridural ou bloqueio pudendo + local), bexiga vazia, equipe neonatal, plano B (sala de cesárea).</li>
+<li><b>Escolha:</b> Simpson para OP, OS e oblíquas com rotação ≤45°; Kielland para transversas e rotações amplas (operador treinado); Piper na cabeça derradeira; vácuo em variedades anteriores sem urgência extrema, ≥34 sem.</li>
+<li><b>Limites:</b> vácuo — 3 trações sem descida, 2 desacoplamentos ou ~20–30 min → parar; não migrar de vácuo falho para fórcipe exceto cabeça em desprendimento; fórcipe sem descida em 3 trações → cesárea.</li>
+<li><b>Depois:</b> revisão de colo, vagina e esfíncter (toque retal); classificar e reparar lacerações; amoxicilina-clavulanato 1 g/200 mg IV dose única até 6 h após o parto; analgesia e cuidado vesical; avaliação do RN para subgaleal (vácuo) e paralisia facial (fórcipe).</li>
+</ul>
+<div class="box danger"><span class="box-label">DANGER</span><div class="box-title">Instrumento sequencial: o pior dos dois mundos</div><div class="box-body">Vácuo seguido de fórcipe soma as lesões de ambos — hemorragia intracraniana, subgaleal, lesão de plexo e lacerações graves. Se o primeiro instrumento falhou com técnica correta, a desproporção ou a posição foram mal avaliadas: a saída é cesárea, com equipe preparada para cabeça profundamente insinuada (desimpactação pela vagina por assistente ou extração reversa).</div></div>
+
+<div class="sub-title">F1.4 · HPP — prevenção e estratificação</div>
+<ul class="bullets">
+<li><b>Uterotônico universal</b> no 3º período: ocitocina 10 UI IM logo após o nascimento (OPAS/MS 2018; WHO 2025 aceita IM ou IV lento diluído em 1–2 min). Alternativas onde a ocitocina não for garantida: carbetocina 100 µg IM/IV dose única (registrada no Brasil, sem comercialização em 2025 na CMED) ou misoprostol 400–600 µg VO.</li>
+<li><b>Cesárea:</b> ocitocina 10 UI IM, ou IV pela regra dos 3 (3 UI IV em ≥30 s, reavaliar em 3 min, até 3 doses; manutenção 3 UI/h = 15 UI em 500 mL de SF 0,9% a 100 mL/h por 4 h), ou 5 UI IV em 3 min + 20 UI em 500 mL a 125 mL/h por 4–12 h. Nunca bolus rápido de 10 UI.</li>
+<li><b>Não usar na profilaxia:</b> ergometrina/metilergometrina, combinação ocitocina-ergometrina, prostaglandina injetável, ácido tranexâmico (WHO 2025), massagem uterina sustentada após ocitocina.</li>
+<li><b>Clampeamento</b> após 1 min no RN vigoroso; tração controlada do cordão só por profissional treinado; vigilância do tônus a cada 15 min nas primeiras 2 h; medida objetiva da perda em todos os partos.</li>
+<li><b>Estratificação (OPAS/MS):</b> <b>baixo risco</b> — sem cicatriz uterina, feto único, ≤3 partos vaginais, sem coagulopatia nem HPP prévia; <b>médio</b> — cesárea ou cirurgia uterina prévia, PE sem gravidade, sobredistensão (gemelar, polidrâmnio, macrossomia), ≥4 partos, corioamnionite, HPP/atonia prévia, IMC &gt;35; <b>alto</b> — placenta prévia ou baixa, PE grave, Ht &lt;30% + fator, plaquetas &lt;100 mil, sangramento ativo, coagulopatia, anticoagulante, DPP, acretismo, ≥2 fatores de médio risco. Médio/alto: acesso calibroso, tipagem e reserva, leito com vigilância, equipe ciente.</li>
+</ul>
+
+<div class="sub-title">F1.5 · HPP — tratamento escalonado</div>
+<ul class="bullets">
+<li><b>0–15 min (pacote MOTIVE):</b> massagem; ocitocina 5 UI IV lento (3 min) + 20–40 UI em 500 mL de SF 0,9% a 250 mL/h, depois 125 mL/h por 4 h (OPAS 2018; WHO 2025 descreve 10 UI IV lento + 10–20 UI de manutenção por 4 h); ácido tranexâmico 1 g IV em 10 min (repetir 1 g se sangramento após 30 min); cristaloide isotônico aquecido; exame do trajeto e da placenta; escalonamento.</li>
+<li><b>15–30 min (2ª linha):</b> metilergometrina 0,2 mg IM (repetir em 20 min; máx. 1 mg/24 h; contraindicada na hipertensão) e/ou misoprostol 800 µg retal ou sublingual; atonia importante → manter ocitocina até 24 h a 3 UI/h com vigilância de intoxicação hídrica.</li>
+<li><b>Ponte mecânica:</b> compressão bimanual (Hamilton), compressão aórtica externa, balão de tamponamento intrauterino (máximo 24 h; retirar 50 mL por vez em local com retaguarda; antibiótico e uterotônico mantidos), TAN para choque ou transporte.</li>
+<li><b>Cirurgia:</b> suturas compressivas (B-Lynch, Hayman, Cho — esta no segmento e no acretismo), ligadura das uterinas, ligadura das ilíacas internas (sem seccionar), embolização (estável e com radiologia), <b>histerectomia</b> subtotal (mais rápida) ou total (segmento, prévia, acretismo); controle de danos com compressas e reabordagem.</li>
+<li><b>Hemocomponentes:</b> transfusão guiada por risco, clínica e laboratório; fibrinogênio ≥2 g/L; plasma 1:2 na maciça sem laboratório; plaquetas &lt;50 mil; cálcio iônico; normotermia; cell salvage só em pesquisa (WHO 2025).</li>
+</ul>
+<div class="box danger"><span class="box-label">DANGER</span><div class="box-title">Ergot na hipertensa: AVC e eclâmpsia em minutos</div><div class="box-body">A metilergometrina eleva a PA de forma súbita e intensa por vasoconstrição α-adrenérgica e serotoninérgica; na PE, na HAC e na cardiopatia, ela pode precipitar AVC hemorrágico, eclâmpsia ou isquemia miocárdica. Na hipertensa que sangra, use ocitocina, misoprostol, ácido tranexâmico e passe direto ao balão/cirurgia (GO13). A ergometrina também é evitada com inibidores fortes de CYP3A4 (ritonavir, claritromicina) pelo risco de ergotismo.</div></div>
+
+<div class="sub-title">F1.6 · Infecção puerperal e profilaxias</div>
+<ul class="bullets">
+<li><b>Endometrite:</b> clindamicina 900 mg IV 8/8 h + gentamicina 5 mg/kg IV 1×/dia até 24–48 h afebril; sem resposta em 48–72 h → acrescentar ampicilina 2 g IV 6/6 h, imagem e busca de foco; sepse → II03.</li>
+<li><b>Ferida operatória:</b> celulite leve → abrir parcialmente, drenar, antibiótico oral antiestafilocócico (cefalexina 500 mg VO 6/6 h) — duração conforme resposta; abscesso → drenagem; deiscência de aponeurose → reabordagem; fasciíte → desbridamento + esquema de II03.</li>
+<li><b>Episiorrafia infectada:</b> abrir, desbridar, antibiótico VO se local, IV se sistêmico; ressutura só com tecido de granulação limpo.</li>
+<li><b>Profilaxias:</b> cesárea (cefazolina 2 g IV dose única 30–60 min antes da incisão — conferir dose por peso no protocolo local); parto operatório e remoção manual (amoxicilina-clavulanato 1 g/200 mg IV dose única); laceração de 3º/4º grau (mesma lógica, dose única). Não usar antibiótico no parto vaginal não complicado nem na episiotomia.</li>
+</ul>
+
+<div class="sub-title">F1.7 · Mama complicada e TEV</div>
+<ul class="bullets">
+<li><b>Abscesso:</b> aspiração guiada por US (repetir a cada 2–3 dias se necessário) ou incisão radial; cefalexina 500 mg VO 6/6 h por 10–14 dias; sistêmico → cefazolina 2 g IV 8/8 h ou oxacilina 2 g IV 4/4 h; MRSA → vancomicina (II03). Manter a amamentação.</li>
+<li><b>TEV:</b> enoxaparina 1 mg/kg SC 12/12 h por ≥6 semanas pós-parto e ≥3 meses no total; profilaxia com enoxaparina 40 mg SC 1×/dia pelo risco (ClCr &lt;30: 20 mg); transição para varfarina se desejado (compatível com amamentação); DOAC evitados na lactação. Estratificação de risco, ajuste, reversão e duração → HO03.</li>
+</ul>
+
+<div class="sub-title">F1.8 · Transtornos psiquiátricos do puerpério</div>
+<ul class="bullets">
+<li><b>Blues:</b> acolhimento, sono, suporte; reavaliar em 2 semanas.</li>
+<li><b>Depressão leve:</b> psicoterapia (TCC, interpessoal), rede de apoio, CAPS/atenção primária. <b>Moderada a grave:</b> sertralina 50 mg/dia (até 200 mg/dia), titulação a cada 1–2 semanas, mantendo a amamentação; resposta em 4–6 semanas; manter 6–12 meses após remissão.</li>
+<li><b>Psicose puerperal:</b> internação; benzodiazepínico para sono e agitação; antipsicótico (olanzapina ou quetiapina, doses em PC03/PC06); lítio com nível 0,8–1,0 mmol/L no 1º mês, dosado 2×/semana nas 2 primeiras semanas; ECT precoce em catatonia ou risco grave; amamentação geralmente suspensa com lítio ou quando prejudica o sono materno; contato supervisionado com o bebê para preservar o vínculo.</li>
+<li><b>Prevenção:</b> bipolar ou psicose puerperal prévia → plano escrito no pré-natal, profilaxia com lítio ou antipsicótico logo após o parto, sono noturno protegido, alta com retorno em dias.</li>
+</ul>
+<div class="box pearl"><span class="box-label">PEARL</span><div class="box-title">Lítio no pós-parto: a volemia muda em horas</div><div class="box-body">O clearance renal de lítio sobe na gestação e cai abruptamente após o parto com a contração do volume plasmático e a diurese: a mesma dose que era terapêutica no 3º trimestre pode intoxicar no 2º dia. Por isso se reduz ou suspende a dose no início do trabalho de parto, se hidrata, se evita AINE (reduz a excreção de lítio) e se dosa o nível em 24 h e duas vezes por semana nas duas primeiras semanas.</div></div>
+
+<div class="sub-title">F1.9 · SUS × recomendação internacional</div>
+<ul class="bullets">
+<li><b>Ocitocina na HPP:</b> SUS/OPAS 5 UI IV + 20–40 UI/500 mL × WHO 10 UI IV + 10–20 UI de manutenção — ambos aceitos; use o protocolo da maternidade e não acumule os dois.</li>
+<li><b>Carbetocina:</b> recomendada pela WHO como alternativa na profilaxia, mas sem comercialização brasileira em 2025 (CMED) e fora da prática do SUS.</li>
+<li><b>Misoprostol:</b> no Brasil só comprimido vaginal de 25 e 200 µg (Prostokos, uso hospitalar); 800 µg = 4 comprimidos de 200 µg por via retal ou sublingual — uso fora da bula, previsto no protocolo OPAS/MS.</li>
+<li><b>Ácido tranexâmico:</b> ampola de 50 mg/mL × 5 mL (250 mg) — 1 g = 4 ampolas (20 mL) em 10 min.</li>
+<li><b>Carboprosta e sulprostona:</b> não encontradas na CMED; não fazem parte do arsenal brasileiro.</li>
+<li><b>TAN e balão:</b> previstos na Estratégia Zero Morte Materna por Hemorragia; a Rede Alyne (2024) prioriza redução da mortalidade materna com ênfase em mulheres negras e indígenas.</li>
+</ul>
+
+<div class="sub-title">F1.10 · Técnica dos dispositivos e manobras — e o erro típico de cada um</div>
+<div class="stbl stbl-3">
+<div class="stbl-head stbl-3"><div>Dispositivo / manobra</div><div>Técnica que funciona</div><div>Erro típico</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Dispositivo">Bolsa coletora calibrada</div><div class="col" data-l="Técnica">Posicionar sob as nádegas logo após o nascimento, antes da dequitação; ler as marcas de 300 e 500 mL e somar compressas pesadas (1 g ≈ 1 mL)</div><div class="col" data-l="Erro">Colocar só depois que "pareceu sangrar muito", perdendo a contagem da primeira hora</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Dispositivo">Compressão bimanual (Hamilton)</div><div class="col" data-l="Técnica">Bexiga vazia; punho fechado no fórnice anterior, outra mão comprimindo o fundo pelo abdome contra o punho; manter até o uterotônico agir</div><div class="col" data-l="Erro">Massagear o fundo de forma intermitente sem esvaziar a bexiga e sem compressão real do corpo</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Dispositivo">Balão intrauterino</div><div class="col" data-l="Técnica">Excluir trauma e restos; inserir até o fundo, encher com 300–500 mL de soro morno, tracionar levemente e tamponar a vagina; teste de tamponamento: sangramento pelo canal cessa; antibiótico e ocitocina mantidos; retirar em ≤24 h, 50 mL por vez</div><div class="col" data-l="Erro">Usar balão em laceração ou acretismo, ou insistir com ele sangrando pelo dreno em vez de ir para cirurgia</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Dispositivo">Traje antichoque não pneumático</div><div class="col" data-l="Técnica">Fechar do tornozelo (segmento 1) ao abdome (5–6), com força máxima; retirar também do tornozelo para cima, com 20 min entre segmentos, só com perda &lt;50 mL/h por 2 h, pulso ≤100, PAS &gt;90–100 e Hb &gt;7</div><div class="col" data-l="Erro">Retirar de uma vez ou começar pelo abdome; reposicionar se PAS cair ≥20 mmHg ou FC subir ≥20 bpm ("regra dos 20")</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Dispositivo">Manobra de Taxe (inversão)</div><div class="col" data-l="Técnica">Palma no fundo invertido, pressão para cima pelo eixo da vagina repondo primeiro a parte que saiu por último; relaxante uterino se o anel apertar; ocitocina só depois da reposição</div><div class="col" data-l="Erro">Manter ocitocina correndo (o anel se fecha) ou descolar a placenta antes de repor</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Dispositivo">Vácuo-extrator</div><div class="col" data-l="Técnica">Campânula no ponto de flexão, sem tecido materno sob a borda, vácuo só na contração, tração perpendicular ao plano da campânula seguindo a curva da pelve</div><div class="col" data-l="Erro">Tração oblíqua (desacopla e escalpela) e persistir após 3 trações sem descida</div></div>
+</div>
+</div>
+</div>
+
+<div class="card tx">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">F.2</span> Doses</div><h3>Tabela operacional de doses — adulto/puérpera <span class="ank ank-hy">HIGH-YIELD</span></h3></div>
+<div class="card-body">
+<div class="stbl stbl-3">
+<div class="stbl-head stbl-3"><div>Fármaco</div><div>Dose</div><div>Indicação / notas</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Ocitocina (5 UI/mL) — profilaxia</div><div class="col" data-l="Dose"><b>10 UI IM logo após o nascimento</b> (ou IV diluída em 1–2 min se já houver acesso)</div><div class="col" data-l="Notas">Todos os partos <span class="ev ev-sbr">OPAS 2018</span> <span class="ev ev-nice">WHO 2025</span>. Receptor Gq; meia-vida de minutos; efeito antidiurético em altas doses (hiponatremia).</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Ocitocina — regra dos 3 (cesárea)</div><div class="col" data-l="Dose">3 UI IV em ≥30 s; reavaliar em 3 min; até 3 doses; manutenção 3 UI/h (15 UI em 500 mL de SF 0,9% a 100 mL/h) por 4 h</div><div class="col" data-l="Notas">Falha após a 3ª dose → 2ª linha imediatamente <span class="ev ev-sbr">OPAS 2018</span>. Evitar ataque &gt;5 UI e bolus &lt;30 s.</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Ocitocina — tratamento da HPP</div><div class="col" data-l="Dose"><b>5 UI IV lento (3 min) + 20–40 UI em 500 mL de SF 0,9% a 250 mL/h, depois 125 mL/h por 4 h</b></div><div class="col" data-l="Notas">1ª linha mesmo após profilaxia <span class="ev ev-sbr">OPAS 2018</span>; WHO 2025: 10 UI IV lento + 10–20 UI por 4 h. Atonia importante: até 24 h a 3 UI/h.</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Carbetocina (100 µg/mL)</div><div class="col" data-l="Dose">100 µg IM ou IV dose única</div><div class="col" data-l="Notas">Só profilaxia <span class="ev ev-nice">WHO 2025</span>; não repetir no tratamento. Registrada (Duratocin), <b>sem comercialização em 2025 na CMED</b>.</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Metilergometrina (0,2 mg/mL)</div><div class="col" data-l="Dose"><b>0,2 mg IM (repetir em 20 min; máx. 1 mg/24 h; contraindicada na hipertensão)</b>; HPP grave: mais 3 doses de 0,2 mg IM 4/4 h dentro do máximo</div><div class="col" data-l="Notas">2ª linha <span class="ev ev-sbr">OPAS 2018</span>. Se a 1ª dose falha, a 2ª raramente funciona. Contraindicada em PE, HAC, cardiopatia; evitar com inibidor forte de CYP3A4.</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Misoprostol (comprimido de 200 µg)</div><div class="col" data-l="Dose">Tratamento: <b>800 µg retal ou sublingual</b>; profilaxia sem ocitocina: 400–600 µg VO</div><div class="col" data-l="Notas"><span class="ev ev-sbr">OPAS 2018</span> (retal) <span class="ev ev-nice">WHO 2025</span> (sublingual). Latência 7–20 min; febre, tremor, diarreia. Sem benefício somado à ocitocina.</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Ácido tranexâmico (50 mg/mL)</div><div class="col" data-l="Dose"><b>1 g IV em 10 min (repetir 1 g se sangramento após 30 min)</b> ou se recomeçar em 24 h</div><div class="col" data-l="Notas">Iniciar até 3 h do parto, junto com o uterotônico <span class="ev ev-nice">WHO 2025 · WOMAN</span>. Não é profilaxia. 1 g = 4 ampolas de 250 mg.</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Fibrinogênio / crioprecipitado</div><div class="col" data-l="Dose">3–4 g de concentrado ou 8–10 U de crioprecipitado, alvo ≥2 g/L</div><div class="col" data-l="Notas">Prioritário na coagulopatia <span class="ev ev-nice">WHO 2025</span>; concentrado disponível (Haemocomplettan).</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Plasma · plaquetas</div><div class="col" data-l="Dose">Plasma 1 U para 2 U de hemácias na maciça sem exame · plaquetas 5–10 mL/kg se &lt;50 mil</div><div class="col" data-l="Notas">Alvo TP/TTPa &lt;1,5× <span class="ev ev-nice">WHO 2025</span>; plasma guiado por laboratório quando disponível.</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Terbutalina (0,5 mg/mL)</div><div class="col" data-l="Dose">0,25 mg SC dose única</div><div class="col" data-l="Notas">Tocólise aguda na taquissistolia/hipertonia com FCF alterada <span class="ev ev-expert">apostila 2025 · conferir</span>. Taquicardia materna; evitar em cardiopata e no DPP.</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Nitroglicerina IV</div><div class="col" data-l="Dose">50–100 µg IV em bolus (dose da anestesia)</div><div class="col" data-l="Notas">Relaxamento uterino na inversão ou placenta encarcerada <span class="ev ev-expert">conferir</span>; mesma dose do GO13 (versão interna).</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Amoxicilina-clavulanato IV</div><div class="col" data-l="Dose"><b>1 g/200 mg IV dose única até 6 h após o parto</b></div><div class="col" data-l="Notas">Parto vaginal operatório <span class="ev ev-nice">WHO 2021 · ANODE</span>; também aceita na remoção manual (WHO 2025). Infecção 11% × 19% no ANODE.</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Cefazolina — profilaxia na cesárea</div><div class="col" data-l="Dose">2 g IV dose única 30–60 min antes da incisão</div><div class="col" data-l="Notas">1ª geração em dose única <span class="ev ev-nice">WHO 2015</span>; dose: conferir protocolo (peso ≥120 kg). Anafilaxia a betalactâmico: clindamicina ± gentamicina (conferir).</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Clindamicina + gentamicina</div><div class="col" data-l="Dose"><b>Clindamicina 900 mg IV 8/8 h + gentamicina 5 mg/kg IV 1×/dia</b>, até 24–48 h afebril</div><div class="col" data-l="Notas">Endometrite <span class="ev ev-nice">WHO 2015</span>; nos ensaios, clinda 600 mg 6/6–8/8 h e genta 1–1,5 mg/kg 8/8 h — conferir protocolo local. Ajustar genta à função renal.</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Ampicilina</div><div class="col" data-l="Dose">2 g IV 6/6 h</div><div class="col" data-l="Notas">Acrescentar na endometrite sem resposta (enterococo) <span class="ev ev-expert">apostila 2025 · conferir</span>.</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Metronidazol</div><div class="col" data-l="Dose">500 mg IV 8/8 h</div><div class="col" data-l="Notas">Cobertura anaeróbia adicional (abscesso) <span class="ev ev-expert">apostila 2025 · conferir</span>.</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Cefalexina</div><div class="col" data-l="Dose"><b>500 mg VO 6/6 h por 10–14 dias</b></div><div class="col" data-l="Notas">Mastite/abscesso após drenagem, celulite de ferida <span class="ev ev-expert">PD03</span>. Compatível com amamentação.</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Cefazolina ou oxacilina — tratamento</div><div class="col" data-l="Dose"><b>Cefazolina 2 g IV 8/8 h ou oxacilina 2 g IV 4/4 h</b></div><div class="col" data-l="Notas">S. aureus sensível grave (mastite sistêmica, ferida) — mesmas doses do II03/NE07 <span class="ev ev-expert">II03</span>. MRSA: vancomicina por AUC.</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Enoxaparina — tratamento</div><div class="col" data-l="Dose"><b>1 mg/kg SC 12/12 h</b> (ClCr &lt;30: 1 mg/kg 1×/dia)</div><div class="col" data-l="Notas">TEV puerperal e tromboflebite pélvica séptica <span class="ev ev-sbr">MS 2022</span>; duração → HO03.</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Enoxaparina — profilaxia</div><div class="col" data-l="Dose"><b>40 mg SC 1×/dia</b> (ClCr &lt;30: 20 mg)</div><div class="col" data-l="Notas">7–10 dias a 6 semanas pelo risco <span class="ev ev-sbr">MS 2022</span>; padrão renal da bula BR (HO03).</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Imunoglobulina anti-D</div><div class="col" data-l="Dose"><b>300 µg IM até 72 h</b> após o parto</div><div class="col" data-l="Notas">Mãe Rh negativo não sensibilizada, RN Rh positivo <span class="ev ev-sbr">MS 2022</span>; hemorragia feto-materna grande → dose por Kleihauer (GO12).</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Sertralina</div><div class="col" data-l="Dose"><b>50 mg/dia (até 200 mg/dia)</b> VO</div><div class="col" data-l="Notas">Depressão pós-parto moderada/grave <span class="ev ev-sbr">MS 2022</span>; ISRS preferido na lactação.</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Lítio (carbonato)</div><div class="col" data-l="Dose">Titular pelo nível: 0,8–1,0 mmol/L no 1º mês pós-parto</div><div class="col" data-l="Notas">Psicose puerperal e profilaxia em bipolar <span class="ev ev-expert">Jairaj 2023</span>; nível 2×/semana nas 2 primeiras semanas; dose inicial: psiquiatria (PC02).</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Ferro</div><div class="col" data-l="Dose">Oral por 6–12 semanas; IV se intolerância ou anemia grave</div><div class="col" data-l="Notas">Anemia pós-HPP <span class="ev ev-nice">WHO 2025</span>; dose de ferro elementar: conferir protocolo.</div></div>
+</div>
+<div class="box hy"><span class="box-label">HIGH-YIELD</span><div class="box-title">Mesma dose, mesmo texto — e o que vem dos HPs vizinhos</div><div class="box-body">Sulfato de magnésio (neuroproteção &lt;32 sem, PE, relaxamento uterino) e anti-hipertensivos ficam no GO13; corticoide antenatal e tocolíticos de manutenção no GO11; antipsicóticos e benzodiazepínicos no PC03/PC06; anticoagulação plena, reversão e duração no HO03. Este HP só repete o número quando a conduta é sua.</div></div>
+</div>
+</div>
+
+<div class="card tx">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">F.3</span> Casos</div><h3>Caso → conduta certa → erro típico <span class="ank ank-dec">DECISION</span></h3></div>
+<div class="card-body">
+<div class="stbl stbl-3">
+<div class="stbl-head stbl-3"><div>Caso</div><div>Conduta certa</div><div>Erro típico</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Caso">Nulípara sob ocitocina, 6 contrações/10 min, tardias recorrentes, variabilidade 8 bpm, 7 cm</div><div class="col" data-l="Conduta">Parar ocitocina, decúbito lateral, cristaloide, terbutalina 0,25 mg SC; reavaliar em 15–30 min</div><div class="col" data-l="Erro">Indicar cesárea sem desligar a bomba, ou aumentar a ocitocina "para acabar logo"</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Caso">Dilatação total, cabeça em +3 ODA, bradicardia de 80 bpm há 4 min</div><div class="col" data-l="Conduta">Fórcipe de Simpson (1ª colher direita) com analgesia disponível; equipe neonatal</div><div class="col" data-l="Erro">Levar para cesárea com cabeça em +3, gastando 15–20 min e criando extração difícil</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Caso">31 semanas, PFE p2, diástole zero na umbilical, DV normal, CTG normal</div><div class="col" data-l="Conduta">Internar, corticoide, vigilância diária (DV, PBF, CTG); cesárea com 34 sem ou antes se DV alterar; magnésio se parto &lt;32 sem</div><div class="col" data-l="Erro">Interromper já pela diástole zero isolada, ou induzir com prostaglandina</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Caso">37 semanas, PFE p6, Doppler e líquido normais</div><div class="col" data-l="Conduta">PIG constitucional: vigilância quinzenal e parto até 40 sem</div><div class="col" data-l="Erro">Rotular RCF e antecipar o parto com prematuridade tardia iatrogênica</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Caso">Gemelar, 40 min após o parto: 600 mL na bolsa, FC 112, útero mole acima do umbigo</div><div class="col" data-l="Conduta">MOTIVE: massagem, ocitocina 5 UI IV lento + infusão, ácido tranexâmico 1 g IV, cristaloide, exame do trajeto</div><div class="col" data-l="Erro">Esperar "passar dos 1.000 mL" ou dar o tranexâmico só depois de falhar todos os uterotônicos</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Caso">Pré-eclâmpsia grave em magnésio, atonia sem resposta à ocitocina</div><div class="col" data-l="Conduta">Misoprostol 800 µg retal, tranexâmico, balão intrauterino; magnésio mantido</div><div class="col" data-l="Erro">Metilergometrina 0,2 mg IM "porque é a 2ª linha"</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Caso">Útero contraído, sangue vivo contínuo após fórcipe</div><div class="col" data-l="Conduta">Revisão do colo e vagina sob boa luz e analgesia; sutura de laceração cervical</div><div class="col" data-l="Erro">Repetir uterotônico em útero que já está contraído</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Caso">Puxou o cordão, massa vermelha na vagina, PA 70/40 com pouco sangue, fundo não palpável</div><div class="col" data-l="Conduta">Inversão: parar ocitocina, não descolar a placenta, reposição manual imediata, relaxante uterino se necessário, depois ocitocina</div><div class="col" data-l="Erro">Retirar a placenta primeiro ou tratar como "atonia" com mais tração</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Caso">3º dia pós-cesárea, 39 °C, útero doloroso, lóquio fétido</div><div class="col" data-l="Conduta">Clindamicina 900 mg IV 8/8 h + gentamicina 5 mg/kg IV 1×/dia até 24–48 h afebril</div><div class="col" data-l="Erro">Cefalexina oral ou manter antibiótico VO por 7 dias após a alta</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Caso">5º dia de antibiótico adequado, febre em picos, taquicardia, exame pélvico pobre</div><div class="col" data-l="Conduta">TC/RM: abscesso ou tromboflebite pélvica séptica; anticoagular se trombose, drenar se coleção</div><div class="col" data-l="Erro">Trocar o antibiótico sucessivamente sem imagem</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Caso">6º dia pós-parto, insônia, fala acelerada, diz que o bebê "não é o dela"</div><div class="col" data-l="Conduta">Supervisão contínua, bebê com outro cuidador, exames orgânicos (incl. TSH/anti-TPO), internação com psiquiatria</div><div class="col" data-l="Erro">Rotular blues e dar alta com retorno no ambulatório</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Caso">Mastite há 4 dias com cefalexina, área flutuante de 3 cm ao US</div><div class="col" data-l="Conduta">Aspiração guiada por US, cultura, manter amamentação na mama sadia e esvaziamento da afetada</div><div class="col" data-l="Erro">Trocar o antibiótico sem drenar, ou suspender toda a amamentação</div></div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- ============================================================ G -->
+<section id="pitfalls">
+<div class="section">
+<div class="section-eyebrow"><span>G</span> Pitfalls · Mitos · Controvérsias</div>
+<div class="section-title">Erros operacionais + mitos vivos + debates atuais</div>
+<div class="section-sub">Quase todos os erros deste tema são de tempo: agir tarde no sangramento, agir cedo demais no traçado, insistir no instrumento errado.</div>
+</div>
+
+<div class="card pearl">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">G.1</span> Pegadinhas</div><h3>10 erros operacionais no parto e no puerpério <span class="ank ank-dgr">DANGER</span></h3></div>
+<div class="card-body">
+<div class="stbl stbl-2">
+<div class="stbl-head stbl-2"><div>Erro comum</div><div>Correto</div></div>
+<div class="stbl-row stbl-2"><div class="col col1" data-l="Erro">Estimar a perda "a olho" e só chamar HPP acima de 500 mL</div><div class="col" data-l="Correto">Medir com bolsa coletora calibrada; ≥300 mL com qualquer sinal hemodinâmico anormal já é HPP (WHO 2025).</div></div>
+<div class="stbl-row stbl-2"><div class="col col1" data-l="Erro">Guardar o ácido tranexâmico para quando os uterotônicos falharem</div><div class="col" data-l="Correto">Tranexâmico no diagnóstico, junto com o uterotônico, até 3 h do parto; depois disso o benefício some.</div></div>
+<div class="stbl-row stbl-2"><div class="col col1" data-l="Erro">Usar ácido tranexâmico de rotina como profilaxia na cesárea</div><div class="col" data-l="Correto">WHO 2025 recomenda contra a profilaxia no parto vaginal e na cesárea; uterotônico é a profilaxia.</div></div>
+<div class="stbl-row stbl-2"><div class="col col1" data-l="Erro">Bolus rápido de 10 UI de ocitocina IV na cesárea</div><div class="col" data-l="Correto">Regra dos 3 ou 5 UI em 3 min; bolus rápido causa hipotensão grave e colapso.</div></div>
+<div class="stbl-row stbl-2"><div class="col col1" data-l="Erro">Metilergometrina na puérpera hipertensa</div><div class="col" data-l="Correto">Misoprostol, tranexâmico e passos mecânicos; ergot é contraindicado na PE, HAC e cardiopatia.</div></div>
+<div class="stbl-row stbl-2"><div class="col col1" data-l="Erro">Indicar cesárea por mecônio ou por circular de cordão</div><div class="col" data-l="Correto">Nenhum dos dois indica cesárea isoladamente; o que indica é o traçado e a evolução.</div></div>
+<div class="stbl-row stbl-2"><div class="col col1" data-l="Erro">Tratar CTG categoria II como categoria III</div><div class="col" data-l="Correto">Com variabilidade moderada ou aceleração ao estímulo, o feto não está acidêmico; corrigir causa e reavaliar evita cesárea desnecessária.</div></div>
+<div class="stbl-row stbl-2"><div class="col col1" data-l="Erro">Aplicar fórcipe com cabeça acima de 0 ou com variedade de posição incerta</div><div class="col" data-l="Correto">Sem cabeça insinuada e variedade conhecida não há praticabilidade; cesárea.</div></div>
+<div class="stbl-row stbl-2"><div class="col col1" data-l="Erro">Liberar a puérpera "confusa e agitada" como blues</div><div class="col" data-l="Correto">Confusão, insônia total e delírio são psicose puerperal ou delirium orgânico — internar e investigar.</div></div>
+<div class="stbl-row stbl-2"><div class="col col1" data-l="Erro">Manter antibiótico oral por 7 dias após endometrite tratada IV</div><div class="col" data-l="Correto">Suspender após 24–48 h afebril; continuação oral não melhora desfecho na endometrite não complicada.</div></div>
+</div>
+</div>
+</div>
+
+<div class="card pearl">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">G.2</span> Mitos e controvérsias</div><h3>O que ainda se ensina errado e o que ainda se discute <span class="ank ank-myt">MYTH</span> <span class="ank ank-con">CONTROVERSY</span></h3></div>
+<div class="card-body">
+<div class="box myth"><span class="box-label">MYTH</span><div class="box-title">"CTG contínua para todas reduz paralisia cerebral"</div><div class="box-body">Na população de baixo risco, a monitorização contínua em relação à ausculta intermitente bem feita reduz convulsões neonatais, mas não reduz paralisia cerebral nem mortalidade perinatal e aumenta cesárea e parto operatório. A maioria das paralisias cerebrais do termo tem origem anteparto, genética, infecciosa ou vascular; só ~10% são atribuíveis a asfixia intraparto.</div></div>
+<div class="box myth"><span class="box-label">MYTH</span><div class="box-title">"Oxigênio para a mãe melhora o feto em sofrimento"</div><div class="box-body">Na mãe normoxêmica, oxigênio suplementar praticamente não aumenta a PO₂ fetal (a hemoglobina materna já está saturada e o gargalo é o fluxo uteroplacentário) e ensaios randomizados não mostraram melhora do pH de cordão. A reanimação intrauterina que funciona é hemodinâmica: parar ocitocina, posição, volume e pressão.</div></div>
+<div class="box myth"><span class="box-label">MYTH</span><div class="box-title">"Mastite exige suspender a amamentação"</div><div class="box-body">O esvaziamento é o tratamento; parar de amamentar aumenta a estase e o risco de abscesso, e o leite não faz mal ao lactente a termo saudável. Mesmo no abscesso a amamentação continua na mama sadia e, quando possível, na afetada; a exceção é dreno ou incisão junto ao mamilo e pus saindo pela papila.</div></div>
+<div class="box controversy"><span class="box-label">CONTROVERSY</span><div class="box-title">Qual esquema de ocitocina na HPP?</div><div class="box-body">OPAS/MS usa 5 UI IV lento + 20–40 UI em 500 mL; WHO 2025 descreve 10 UI IV lento + 10–20 UI por 4 h e admite que não há comparação direta entre regimes; o esquema reflete o usado no E-MOTIVE. O que tem evidência é não fazer bolus rápido, não deixar de manter infusão após o controle e não atrasar a 2ª linha em quem já recebeu ocitocina por horas no trabalho de parto.</div></div>
+<div class="box controversy"><span class="box-label">CONTROVERSY</span><div class="box-title">Anticoagular a tromboflebite pélvica séptica?</div><div class="box-body">A heparina associada ao antibiótico é prática disseminada e recomendada por livros-texto, mas o único ensaio randomizado (pequeno) não mostrou defervescência mais rápida. Com trombo documentado e extenso, a maioria anticoagula por semanas; sem trombo visível, a anticoagulação "de prova" é decisão individual — alinhar com hematologia.</div></div>
+<div class="box controversy"><span class="box-label">CONTROVERSY</span><div class="box-title">Amamentar em uso de lítio</div><div class="box-body">O lítio passa ao leite em quantidade relevante e o neonato elimina mal; muitas diretrizes desaconselham. Coortes pequenas mostraram níveis infantis baixos sem toxicidade em lactentes monitorados, sobretudo após 2 meses e em monoterapia. A decisão pesa o benefício da amamentação contra o sono materno (gatilho de recaída) e a capacidade de monitorizar o bebê (lítio, creatinina e TSH) com o pediatra.</div></div>
+</div>
+</div>
+</section>
+
+<!-- ============================================================ H -->
+<section id="pearls">
+<div class="section">
+<div class="section-eyebrow"><span>H</span> Pearls + Evolving</div>
+<div class="section-title">Nuances de especialista e o que mudou desde a apostila</div>
+<div class="section-sub">Oito ideias que separam quem decide de quem só classifica, e as mudanças reais de 2021–2025: definição e pacote de HPP, profilaxia antibiótica do parto operatório e o "não" à azitromicina universal.</div>
+</div>
+
+<div class="card pearl">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">H.1</span> Pearls</div><h3>Oito nuances <span class="ank ank-prl">PEARL</span></h3></div>
+<div class="card-body">
+<div class="box pearl"><span class="box-label">PEARL</span><div class="box-title">Variabilidade é o tronco cerebral falando; desaceleração é o coração reagindo</div><div class="box-body">Desacelerações mostram que houve estresse; a variabilidade mostra se o feto ainda compensa. Uma tardia com variabilidade de 10 bpm é um quimiorreflexo de um feto que ainda oxigena o bulbo; a mesma tardia com linha lisa é depressão miocárdica de um feto acidótico. Ler só a desaceleração é o que produz cesárea demais e extração tarde demais ao mesmo tempo.</div></div>
+<div class="box pearl"><span class="box-label">PEARL</span><div class="box-title">Na RCF precoce, o ducto venoso compra semanas; na tardia, o relógio é a idade gestacional</div><div class="box-body">Antes de 32 semanas a deterioração segue a cascata arterial-venosa e permite esperar a alteração tardia do DV para ganhar maturidade com segurança. Depois de 32, o feto restrito pode descompensar com umbilical normal e só RCP baixa; não há cascata para esperar, e o parto no termo precoce é a proteção.</div></div>
+<div class="box pearl"><span class="box-label">PEARL</span><div class="box-title">A bossa engana a altura — palpe o abdome antes do fórcipe</div><div class="box-body">Caput volumoso em expulsivo prolongado pode chegar a +2 enquanto o diâmetro biparietal ainda está acima das espinhas. Se ainda se palpa mais de 1/5 do polo acima da sínfise, a cabeça não está insinuada de verdade: a extração vira fórcipe médio/alto disfarçado. A regra dos quintos e a posição das orelhas evitam o erro mais caro do parto operatório.</div></div>
+<div class="box pearl"><span class="box-label">PEARL</span><div class="box-title">Índice de choque é o sinal vital da puérpera</div><div class="box-body">A gestante compensa volemia com taquicardia e vasoconstrição até perder ~30% do volume; a PA cai tarde. FC/PAS ≥0,9 já prediz transfusão, ≥1,4 indica abordagem agressiva e transfusão maciça. É grátis, vale para qualquer causa de sangramento e por isso entrou no critério diagnóstico de HPP da WHO 2025.</div></div>
+<div class="box pearl"><span class="box-label">PEARL</span><div class="box-title">Fibrinogênio baixo na HPP é preditor, não só consequência</div><div class="box-body">Como o termo eleva o fibrinogênio a 4–6 g/L, um valor de 2 g/L durante a HPP já representa consumo grande e prediz progressão para HPP grave e transfusão maciça. Dosar cedo e repor para ≥2 g/L muda o curso; esperar o TP alargar é esperar tarde.</div></div>
+<div class="box pearl"><span class="box-label">PEARL</span><div class="box-title">Quem recebeu ocitocina por horas responde menos à ocitocina</div><div class="box-body">A exposição prolongada dessensibiliza e internaliza receptores de ocitocina no miométrio; em trabalho de parto induzido ou conduzido longamente, a atonia é mais frequente e mais resistente. Nesses casos, a 2ª linha (misoprostol, metilergometrina se não hipertensa) entra cedo e o balão fica à mão.</div></div>
+<div class="box pearl"><span class="box-label">PEARL</span><div class="box-title">Febre puerperal persistente com paciente "bem" entre os picos é veia, não antibiótico</div><div class="box-body">Antibiótico adequado por 72 h sem defervescência, taquicardia desproporcional e exame pobre apontam para tromboflebite pélvica séptica (veia ovariana direita) ou coleção. Trocar sucessivamente de antibiótico só seleciona resistência; TC ou RM resolvem a dúvida e mudam a conduta para anticoagulação ou drenagem.</div></div>
+<div class="box pearl"><span class="box-label">PEARL</span><div class="box-title">Psicose puerperal parece delirium — e às vezes é</div><div class="box-body">Perplexidade, desorientação flutuante e alucinação visual fazem a psicose puerperal lembrar um delirium, e é obrigatório excluir eclâmpsia tardia, encefalopatia posterior reversível, TVC, sepse, hiponatremia, hipercalcemia, tireoidite e encefalite autoimune antes de iniciar o algoritmo psiquiátrico. Anti-TPO positivo em até um quinto dos casos lembra que tireoide é parte do diagnóstico, não detalhe.</div></div>
+</div>
+</div>
+
+<div class="card pearl">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">H.2</span> Evolving</div><h3>O que mudou de verdade <span class="ank ank-evo">EVOLVING</span></h3></div>
+<div class="card-body">
+<div class="box evolving"><span class="box-label">EVOLVING</span><div class="box-title">HPP redefinida e tratada em pacote (WHO/FIGO/ICM, outubro de 2025)</div><div class="box-body">A diretriz consolidada substituiu "≥500 mL estimados" por medida objetiva com limiar de ≥300 mL e sinal hemodinâmico anormal ou ≥500 mL, e tornou o pacote MOTIVE o tratamento de 1ª resposta, apoiado no E-MOTIVE (RR 0,40 para HPP grave, laparotomia ou morte). Também passou a recomendar <b>contra</b> o ácido tranexâmico profilático e a recomendar ferro IV na anemia pós-parto grave ou com intolerância.</div></div>
+<div class="box evolving"><span class="box-label">EVOLVING</span><div class="box-title">Antibiótico após parto vaginal operatório (WHO 2021)</div><div class="box-body">Depois do ANODE (infecção 11% × 19% com amoxicilina-clavulanato IV em dose única), a WHO inverteu a recomendação de 2015 e passou a recomendar profilaxia de rotina no fórcipe e no vácuo. A apostila ainda descreve o tema como "não consensual".</div></div>
+<div class="box evolving"><span class="box-label">EVOLVING</span><div class="box-title">Azitromicina universal no trabalho de parto: não (WHO 2025)</div><div class="box-body">Ensaios com azitromicina oral em dose única no trabalho de parto (como o A-PLUS) reduziram infecção e sepse materna, sem efeito em mortalidade nem benefício neonatal. A WHO pesou resistência antimicrobiana e NNT de 167 para sepse e recomendou contra o uso de rotina em qualquer cenário, mantendo as indicações específicas já existentes.</div></div>
+<div class="box evolving"><span class="box-label">EVOLVING</span><div class="box-title">Neuroesteroides na depressão pós-parto — fora do Brasil</div><div class="box-body">A zuranolona, modulador oral do receptor GABA-A análogo da alopregnanolona, foi aprovada nos EUA em 2023 para depressão pós-parto em curso curto. Não foi encontrada na lista CMED de outubro de 2026; no SUS e na prova brasileira, o tratamento continua sendo psicoterapia e ISRS. Vale como mecanismo: a queda abrupta da alopregnanolona após o parto é parte da fisiopatologia.</div></div>
+</div>
+</div>
+</section>
+
+</div>
+</main>
+
+<footer>
+<div class="wrap">
+<div class="foot">
+<div>
+<div class="foot-author">@dr.lorencato</div>
+<div class="foot-meta">Sofrimento Fetal, Parto Operatório e Puerpério · Pocket Handbook Elite · v5.2 · Obstetrícia · GO14</div>
+</div>
+<div class="foot-mono">Compilação clínica · status clinical_review até signoff humano · gerado em 2026-11-09</div>
+</div>
+<div class="foot-meta"><b>Bibliografia rastreável</b>
+<ol>
+<li id="src-1">World Health Organization, FIGO, ICM. Consolidated guidelines for the prevention, diagnosis and treatment of postpartum haemorrhage. Genebra: WHO, 2025 · definição, medida objetiva, uterotônicos, MOTIVE, tranexâmico, hemocomponentes, ferro · ISBN 978-92-4-011563-7 (PDF conferido)</li>
+<li id="src-2">Organização Pan-Americana da Saúde / Ministério da Saúde. Recomendações assistenciais para prevenção, diagnóstico e tratamento da hemorragia obstétrica (Estratégia Zero Morte Materna por Hemorragia). Brasília: OPAS, 2018 · estratificação, regra dos 3, doses brasileiras, índice de choque, balão, TAN · ISBN 978-85-7967-124-1 (PDF conferido)</li>
+<li id="src-3">Ministério da Saúde. Manual de Gestação de Alto Risco (versão preliminar). Brasília, 2022 · RCF (estadiamento e parto), HPP, anti-D, sertralina, HBPM (PDF conferido)</li>
+<li id="src-4">Ministério da Saúde/Conitec. Diretrizes Nacionais de Assistência ao Parto Normal — versão resumida. Brasília, 2017 · ausculta intermitente, mecônio, 2º período, parto instrumental, 3º e 4º períodos, lacerações (PDF conferido)</li>
+<li id="src-5">WHO recommendations for prevention and treatment of maternal peripartum infections, 2015 · profilaxias e endometrite · ISBN 978-92-4-154936-3; WHO recommendation on routine antibiotic prophylaxis for women undergoing operative vaginal birth, 2021; WHO recommendation on antibiotic prophylaxis during labour for vaginal birth, 2025 (PDFs conferidos)</li>
+<li id="src-6">ACOG Clinical Practice Guideline No. 8. First and Second Stage Labor Management. Obstet Gynecol 2024;143:144–162 · parada do 2º período e parto operatório (PDF conferido)</li>
+<li id="src-7">Ayres-de-Campos D, Spong CY, Chandraharan E. FIGO consensus guidelines on intrapartum fetal monitoring: Cardiotocography. Int J Gynaecol Obstet 2015;131:13–24 · classificação da CTG · doi:10.1016/j.ijgo.2015.06.020 (só metadados; categorias NICHD/ACOG via apostila)</li>
+<li id="src-8">Gallos I et al. Randomized trial of early detection and treatment of postpartum hemorrhage (E-MOTIVE). N Engl J Med 2023;389:11–21 · doi:10.1056/NEJMoa2303966; WOMAN Trial Collaborators. Lancet 2017;389:2105–2116 · doi:10.1016/S0140-6736(17)30638-4; WOMAN-2. Lancet 2024 · doi:10.1016/S0140-6736(24)01749-5</li>
+<li id="src-9">Knight M et al. ANODE. Lancet 2019;393:2395–2403 · doi:10.1016/S0140-6736(19)30773-1; Widmer M et al. Heat-stable carbetocin versus oxytocin (CHAMPION). N Engl J Med 2018;379:743–752 · doi:10.1056/NEJMoa1805489</li>
+<li id="src-10">Jairaj C et al. Postpartum psychosis: a proposed treatment algorithm. J Psychopharmacol 2023;37:960–970 · doi:10.1177/02698811231181573 (texto integral PMC10612381); Fornaro M et al. Am J Psychiatry 2020;177:76–92 · doi:10.1176/appi.ajp.2019.19030228</li>
+<li id="src-11">Gordijn SJ et al. Consensus definition of fetal growth restriction: a Delphi procedure. Ultrasound Obstet Gynecol 2016;48:333–339 · doi:10.1002/uog.15884 (via MS 2022)</li>
+<li id="src-12">CMED/Anvisa. Lista de preços de medicamentos (PMVG), publicada em 09/10/2026 · disponibilidade de ocitocina, carbetocina, metilergometrina, misoprostol, tranexâmico, antibióticos, fibrinogênio, anti-D, lítio</li>
+<li id="src-13">Apostila MED 2025 OBS 5 — Fórcipe, Sofrimento Fetal e Puerpério (incluindo apêndice de divergências) · piso de cobertura editorial, nunca fonte de conduta · vault (somente leitura)</li>
+</ol>
+</div>
+</div>
+</footer>
+
+<div class="watermark">@dr.lorencato · GO14 Sofrimento Fetal, Parto Operatório e Puerpério v5.2</div>
+
+</body>
+</html>

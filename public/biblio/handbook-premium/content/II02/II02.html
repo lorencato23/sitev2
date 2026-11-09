@@ -1,0 +1,1216 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#0d1117">
+<title>Endocardite Infecciosa · Pocket Handbook · Elite Edition · II02</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700;9..40,800&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   MEDICAL HANDBOOK PREMIUM · ELITE EDITION · CSS FRAMEWORK
+   Copy this ENTIRE block verbatim into the <style> tag of the
+   output HTML. Do NOT modify design tokens, colors, or
+   typography — they are calibrated for legibility and print.
+============================================================ */
+:root{
+  --bg:#f1eee5;--bg-tint:#ebe8de;--paper:#ffffff;--paper-tint:#fbf9f3;
+  --ink:#0e1116;--ink-soft:#232830;--ink-mute:#545b69;--ink-faint:#8a91a0;--ink-ghost:#b8bdc7;
+  --line:#e2dfd5;--line-soft:#ece9df;--line-strong:#c9c5b8;
+  --c-prim:#0b5d4e;--c-clin:#1d4570;--c-diag:#5e2f78;--c-tx:#a8481a;--c-emerg:#a31b35;--c-pearl:#7a6014;
+  --ank-hy:#b88e0a;--ank-hy-bg:#fef4c8;--ank-dec:#1d4ea3;--ank-dec-bg:#dde7f8;
+  --ank-dgr:#a31b25;--ank-dgr-bg:#fadcdc;--ank-prl:#3e6a2e;--ank-prl-bg:#d8e6cf;
+  --ank-myt:#6a3a1a;--ank-myt-bg:#f0dec5;--ank-con:#5a4070;--ank-con-bg:#e3d6f0;
+  --ank-evo:#0d6373;--ank-evo-bg:#cde5e9;
+  --sh-sm:0 1px 2px rgba(14,17,22,.04),0 1px 1px rgba(14,17,22,.03);
+  --sh-md:0 6px 16px -8px rgba(14,17,22,.10),0 2px 4px rgba(14,17,22,.04);
+  --sh-lg:0 20px 40px -22px rgba(14,17,22,.18),0 4px 10px -4px rgba(14,17,22,.08);
+  --r:10px;--r-lg:14px;--r-xl:20px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;scroll-padding-top:120px}
+body{font-family:'DM Sans',system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.5;font-size:15px;letter-spacing:-.005em;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:-1;background:radial-gradient(900px 500px at -10% -5%,rgba(11,93,78,.04),transparent 60%),radial-gradient(800px 450px at 110% 10%,rgba(163,27,53,.035),transparent 55%)}
+a{color:inherit;text-decoration:none}
+
+/* FIXED HEADER */
+.header{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(13,17,23,.82);backdrop-filter:saturate(160%) blur(20px);-webkit-backdrop-filter:saturate(160%) blur(20px);border-bottom:1px solid rgba(255,255,255,.06)}
+.header-row{max-width:1080px;margin:0 auto;padding:10px 20px;display:flex;align-items:center;gap:14px;color:#f0eee5}
+.h-mark{width:30px;height:30px;border-radius:7px;background:linear-gradient(135deg,#d4b94a 0%,#a07f1a 100%);display:grid;place-items:center;font:800 13px/1 'DM Sans';color:#1a1500;letter-spacing:-.04em;box-shadow:inset 0 1px 0 rgba(255,255,255,.3),0 1px 2px rgba(0,0,0,.4);flex-shrink:0}
+.h-titles{display:flex;flex-direction:column;line-height:1.15;min-width:0}
+.h-title{font-weight:700;font-size:14px;letter-spacing:-.02em}
+.h-sub{font-size:10.5px;color:#9fa298;font-weight:500;letter-spacing:.08em;text-transform:uppercase}
+.h-edition{margin-left:auto;font:500 10px/1 'DM Mono',monospace;color:#9fa298;letter-spacing:.05em;padding:5px 9px;border:1px solid rgba(255,255,255,.1);border-radius:999px;white-space:nowrap}
+.h-author{font:700 10.5px/1 'DM Mono',monospace;color:#d4b94a;letter-spacing:.04em;padding:6px 10px;border:1px solid rgba(212,185,74,.35);background:rgba(212,185,74,.08);border-radius:999px;white-space:nowrap;display:inline-flex;align-items:center;gap:6px}
+.h-author::before{content:"●";font-size:6px;color:#d4b94a}
+@media(max-width:560px){.h-edition{display:none}.h-author{margin-left:auto}}
+
+/* STICKY TOC */
+.toc{position:sticky;top:50px;z-index:90;background:rgba(241,238,229,.92);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}
+.toc-inner{max-width:1080px;margin:0 auto;padding:10px 16px;display:flex;gap:6px;overflow-x:auto;scrollbar-width:none;-ms-overflow-style:none}
+.toc-inner::-webkit-scrollbar{display:none}
+.toc-chip{flex:none;font:600 11px/1 'DM Sans';letter-spacing:.06em;text-transform:uppercase;padding:7px 12px;background:var(--paper);border:1px solid var(--line);border-radius:999px;color:var(--ink-soft);transition:all .15s;white-space:nowrap;cursor:pointer}
+.toc-chip:hover{background:var(--paper-tint);border-color:var(--ink-faint);color:var(--ink)}
+.toc-chip-num{display:inline-block;font-family:'DM Mono',monospace;color:var(--ink-faint);margin-right:5px;font-weight:500;font-size:10px}
+
+/* LAYOUT */
+.wrap{max-width:1080px;margin:0 auto;padding:24px 20px 80px}
+.section{margin:48px 0 18px;padding-top:8px}
+.section:first-child{margin-top:14px}
+.section-eyebrow{font:700 10.5px/1 'DM Sans';letter-spacing:.18em;text-transform:uppercase;color:var(--c-prim);margin-bottom:8px;display:flex;align-items:center;gap:10px}
+.section-eyebrow::before{content:"";width:24px;height:1.5px;background:var(--c-prim)}
+.section-title{font-size:26px;font-weight:700;letter-spacing:-.03em;line-height:1.1}
+.section-sub{margin-top:6px;font-size:13.5px;color:var(--ink-mute);max-width:680px}
+
+/* HERO */
+.hero{margin:20px 0 28px;padding:26px 28px;background:linear-gradient(180deg,#fdfcf6 0%,#f7f4e8 100%);border:1px solid var(--line);border-radius:var(--r-xl);box-shadow:var(--sh-md);position:relative;overflow:hidden}
+.hero::after{content:"";position:absolute;top:0;right:0;bottom:0;left:0;background:radial-gradient(400px 200px at 100% 0%,rgba(163,27,53,.06),transparent 60%),radial-gradient(360px 200px at 0% 100%,rgba(11,93,78,.05),transparent 60%);pointer-events:none}
+.hero-tag{font:700 10.5px/1 'DM Sans';letter-spacing:.2em;text-transform:uppercase;color:var(--c-emerg);display:inline-flex;align-items:center;gap:8px;margin-bottom:10px}
+.hero-tag::before{content:"";width:18px;height:1.5px;background:currentColor}
+.hero h1{font-size:34px;font-weight:800;letter-spacing:-.035em;line-height:1.02;margin-bottom:8px}
+.hero h1 em{font-style:italic;font-weight:500;color:var(--ink-mute)}
+.hero-lead{font-size:14.5px;color:var(--ink-mute);max-width:660px;line-height:1.55}
+.hero-stamp{position:absolute;top:20px;right:22px;font:700 10.5px/1 'DM Mono',monospace;letter-spacing:.04em;padding:7px 11px 7px 18px;border:1.5px dashed rgba(163,27,53,.45);color:rgba(163,27,53,.9);border-radius:5px;background:rgba(255,255,255,.55);transform:rotate(-3deg);z-index:2;box-shadow:0 2px 6px rgba(163,27,53,.08)}
+.hero-stamp::before{content:"●";position:absolute;left:7px;top:50%;transform:translateY(-50%);color:rgba(163,27,53,.7);font-size:7px}
+.hero-sig{margin-top:14px;display:flex;align-items:center;gap:10px;font:600 11px/1 'DM Sans';color:var(--ink-mute);letter-spacing:.04em}
+.hero-sig::before{content:"";flex:none;width:22px;height:1.5px;background:var(--c-emerg)}
+.hero-sig b{color:var(--c-emerg);font-weight:700;font-family:'DM Mono',monospace;letter-spacing:.02em}
+@media(max-width:560px){.hero{padding:22px 20px}.hero h1{font-size:26px}.section-title{font-size:22px}.hero-stamp{position:static;display:inline-block;transform:none;margin-bottom:14px}}
+
+/* POCKET CARD 0 */
+.pocket{background:#0e1116;color:#f0eee5;border-radius:var(--r-xl);padding:24px 26px 26px;margin:0 0 28px;position:relative;overflow:hidden;box-shadow:var(--sh-lg)}
+.pocket::before{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(600px 300px at 100% 0%,rgba(212,185,74,.07),transparent 60%),radial-gradient(500px 280px at 0% 100%,rgba(163,27,53,.08),transparent 60%)}
+.pocket-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:18px;flex-wrap:wrap;position:relative}
+.pocket-eyebrow{font:700 10.5px/1 'DM Sans';letter-spacing:.2em;text-transform:uppercase;color:#d4b94a;display:flex;align-items:center;gap:9px}
+.pocket-eyebrow::before{content:"●";color:#d4b94a;font-size:9px;animation:pulse 2.4s ease infinite}
+@keyframes pulse{50%{opacity:.4}}
+.pocket-title{font-size:22px;font-weight:700;letter-spacing:-.02em;line-height:1.15;color:#fff}
+.pocket-sub{font-size:12.5px;color:#9aa0a8;margin-top:2px}
+.pocket-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px;position:relative}
+.pocket-card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-left:3px solid var(--accent,#d4b94a);border-radius:var(--r);padding:12px 14px}
+.pocket-card .pc-trig{font:700 10px/1.1 'DM Sans';letter-spacing:.12em;text-transform:uppercase;color:var(--accent,#d4b94a);margin-bottom:6px;display:flex;align-items:center;gap:6px}
+.pocket-card .pc-trig::before{content:"";width:4px;height:4px;background:currentColor;border-radius:50%}
+.pocket-card .pc-act{font-size:13.5px;line-height:1.4;color:#dedfd5}
+.pocket-card .pc-act b{color:#fff;font-weight:600}
+.pocket-card.emerg{--accent:#ff8a96}.pocket-card.dec{--accent:#7cb0ff}.pocket-card.tx{--accent:#ffb085}.pocket-card.clin{--accent:#b0e0d4}
+
+/* LEGEND */
+.legend{background:var(--paper);border:1px solid var(--line);border-radius:var(--r-lg);padding:18px 20px;margin-bottom:28px;box-shadow:var(--sh-sm)}
+.lg-title{font:700 10.5px/1 'DM Sans';letter-spacing:.16em;text-transform:uppercase;color:var(--ink-faint);margin-bottom:12px}
+.lg-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:8px 14px}
+.lg-item{display:flex;align-items:center;gap:9px;font-size:12.5px;color:var(--ink-soft)}
+.dot{width:9px;height:9px;border-radius:50%;flex-shrink:0;box-shadow:0 0 0 2px var(--paper),0 0 0 3px currentColor}
+.dot.c1{color:var(--c-prim);background:var(--c-prim)}.dot.c2{color:var(--c-clin);background:var(--c-clin)}.dot.c3{color:var(--c-diag);background:var(--c-diag)}.dot.c4{color:var(--c-tx);background:var(--c-tx)}.dot.c5{color:var(--c-emerg);background:var(--c-emerg)}.dot.c6{color:var(--c-pearl);background:var(--c-pearl)}
+.lg-divider{height:1px;background:var(--line-soft);margin:14px 0}
+.lg-anchors{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:8px}
+.ank{display:inline-flex;align-items:center;gap:5px;font:700 9.5px/1 'DM Sans';letter-spacing:.12em;text-transform:uppercase;padding:4px 8px 4px 7px;border-radius:999px;border:1px solid;vertical-align:middle;white-space:nowrap}
+.ank::before{content:"";width:4px;height:4px;border-radius:50%;background:currentColor}
+.ank-hy{color:var(--ank-hy);background:var(--ank-hy-bg);border-color:#e5cd72}
+.ank-dec{color:var(--ank-dec);background:var(--ank-dec-bg);border-color:#9fbae6}
+.ank-dgr{color:var(--ank-dgr);background:var(--ank-dgr-bg);border-color:#e29ca0}
+.ank-prl{color:var(--ank-prl);background:var(--ank-prl-bg);border-color:#a8c298}
+.ank-myt{color:var(--ank-myt);background:var(--ank-myt-bg);border-color:#d0b181}
+.ank-con{color:var(--ank-con);background:var(--ank-con-bg);border-color:#bba7d3}
+.ank-evo{color:var(--ank-evo);background:var(--ank-evo-bg);border-color:#8fc1c9}
+.lg-explain{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:6px 14px;font-size:11.5px;color:var(--ink-mute);margin-top:10px}
+.lg-explain b{font-weight:700}
+.lg-explain .ehy b{color:var(--ank-hy)}.lg-explain .edec b{color:var(--ank-dec)}.lg-explain .edgr b{color:var(--ank-dgr)}.lg-explain .eprl b{color:var(--ank-prl)}.lg-explain .emyt b{color:var(--ank-myt)}.lg-explain .econ b{color:var(--ank-con)}.lg-explain .eevo b{color:var(--ank-evo)}
+
+/* EVIDENCE CHIPS */
+.ev{display:inline-flex;align-items:center;font:600 9.5px/1 'DM Mono',monospace;letter-spacing:.04em;padding:3px 6px 2px;border-radius:4px;background:#eeebde;color:var(--ink-soft);border:1px solid var(--line);vertical-align:middle;margin-left:3px}
+.ev-acr{background:#fadcdc;color:#a31b25;border-color:#e29ca0}
+.ev-eular{background:#dde7f8;color:#1d4ea3;border-color:#9fbae6}
+.ev-sbr{background:#e3d6f0;color:#5a4070;border-color:#bba7d3}
+.ev-nice{background:#cde5e9;color:#0d6373;border-color:#8fc1c9}
+.ev-expert{background:#eeebde;color:#7a6014;border-color:#d0b181}
+.ev-cochrane{background:#d8e6cf;color:#3e6a2e;border-color:#a8c298}
+
+/* CARD */
+.card{background:var(--paper);border:1px solid var(--line);border-radius:var(--r-lg);margin-bottom:22px;box-shadow:var(--sh-md);overflow:hidden;break-inside:avoid}
+.card-head{padding:18px 22px 15px;border-bottom:1px solid var(--line-soft);position:relative;background:linear-gradient(180deg,#fcfaf2 0%,#ffffff 100%)}
+.card-head::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--accent,var(--c-prim))}
+.card-eyebrow{font:700 10px/1 'DM Sans';letter-spacing:.16em;text-transform:uppercase;color:var(--accent,var(--c-prim));margin-bottom:5px;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.card-num{font-family:'DM Mono',monospace;font-weight:500;color:var(--ink-faint);font-size:10.5px;letter-spacing:0}
+.card h3{font-size:21px;font-weight:700;letter-spacing:-.025em;color:var(--ink);line-height:1.15;display:flex;align-items:center;gap:9px;flex-wrap:wrap}
+.card-sub{margin-top:6px;font-size:13px;color:var(--ink-mute)}
+.card-body{padding:20px 22px 24px}
+.card.prim{--accent:var(--c-prim)}.card.clin{--accent:var(--c-clin)}.card.diag{--accent:var(--c-diag)}.card.tx{--accent:var(--c-tx)}.card.emerg{--accent:var(--c-emerg)}.card.pearl{--accent:var(--c-pearl)}
+@media(max-width:560px){.card-head{padding:16px 18px 14px}.card-body{padding:18px 18px 20px}.card h3{font-size:18px}}
+
+/* QUICK VIEW */
+.quick{background:var(--paper-tint);border:1px solid var(--line);border-left:3px solid var(--accent,var(--c-prim));border-radius:var(--r);padding:13px 16px;margin:0 0 16px}
+.quick-label{font:700 9.5px/1 'DM Sans';letter-spacing:.16em;text-transform:uppercase;color:var(--accent,var(--c-prim));margin-bottom:6px}
+.quick-body{font-size:13.5px;line-height:1.45;color:var(--ink-soft)}
+.quick-body b{color:var(--ink);font-weight:600}
+
+/* SUB-TITLE */
+.sub-title{font:700 10.5px/1 'DM Sans';letter-spacing:.16em;text-transform:uppercase;color:var(--ink-soft);margin:18px 0 10px;display:flex;align-items:center;gap:9px;border-bottom:1px dashed var(--line);padding-bottom:6px}
+.sub-title::before{content:"";width:4px;height:4px;border-radius:50%;background:var(--accent,var(--ink-soft))}
+.sub-title:first-child{margin-top:0}
+
+/* TEXT */
+p{color:var(--ink-soft);margin-bottom:8px;font-size:14px;line-height:1.5}
+p:last-child{margin-bottom:0}
+strong{color:var(--ink);font-weight:600}
+ul.bullets{list-style:none;padding:0;margin:0 0 10px}
+ul.bullets li{position:relative;padding:5px 0 5px 20px;font-size:13.5px;line-height:1.5;color:var(--ink-soft);border-bottom:1px dashed var(--line-soft)}
+ul.bullets li:last-child{border-bottom:none}
+ul.bullets li::before{content:"";position:absolute;left:5px;top:13px;width:4px;height:4px;border-radius:50%;background:var(--accent,var(--ink-mute))}
+ul.bullets li b{color:var(--ink);font-weight:600}
+
+/* DISEASE BOX */
+.disease{border:1px solid var(--line);border-radius:var(--r);margin:14px 0;overflow:hidden;background:var(--paper)}
+.disease-head{padding:12px 16px;background:linear-gradient(180deg,#faf7eb 0%,#f1eddc 100%);border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap}
+.disease-name{font-weight:700;color:var(--ink);font-size:14.5px;letter-spacing:-.015em}
+.disease-tag{font:600 10px/1 'DM Sans';letter-spacing:.08em;text-transform:uppercase;color:var(--ink-mute)}
+.disease-body{padding:14px 16px}
+.disease-rows{display:grid;gap:0}
+.disease-row{display:grid;grid-template-columns:130px 1fr;gap:12px;padding:8px 0;border-bottom:1px dashed var(--line-soft)}
+.disease-row:last-child{border-bottom:none;padding-bottom:0}
+.disease-row:first-child{padding-top:0}
+.disease-row .k{font:700 10px/1.2 'DM Sans';letter-spacing:.12em;text-transform:uppercase;color:var(--accent,var(--ink-faint));padding-top:2px}
+.disease-row .v{font-size:13.5px;color:var(--ink-soft);line-height:1.5}
+.disease-row .v b{color:var(--ink)}
+@media(max-width:560px){.disease-row{grid-template-columns:1fr;gap:3px;padding:6px 0 8px}.disease-row .k{padding-top:0}}
+
+/* DEEP DIVE */
+.deep{margin:16px 0 6px;border:1px solid var(--line);border-radius:var(--r);background:linear-gradient(180deg,#fdfcf6 0%,#f9f6ea 100%);overflow:hidden}
+.deep>summary{list-style:none;cursor:pointer;padding:11px 16px;display:flex;align-items:center;justify-content:space-between;font:700 11px/1 'DM Sans';letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft);user-select:none;transition:background .15s}
+.deep>summary::-webkit-details-marker{display:none}
+.deep>summary::after{content:"+";font-size:18px;font-weight:600;color:var(--ink-faint);transition:transform .2s;font-family:'DM Mono',monospace}
+.deep[open]>summary::after{transform:rotate(45deg)}
+.deep>summary:hover{background:rgba(0,0,0,.02)}
+.deep-content{padding:14px 16px 16px;border-top:1px dashed var(--line)}
+.deep-content p{font-size:13px;color:var(--ink-mute);line-height:1.55}
+.deep-content p b{color:var(--ink-soft)}
+
+/* MNEMONIC */
+.mnemo{background:var(--paper-tint);border:1px solid var(--line);border-radius:var(--r);padding:14px 16px;margin:14px 0}
+.mnemo-title{font:700 10.5px/1 'DM Sans';letter-spacing:.16em;text-transform:uppercase;color:var(--c-pearl);margin-bottom:10px;display:flex;align-items:center;gap:8px}
+.mnemo-title b{background:var(--ink);color:#fff;padding:3px 7px;border-radius:4px;font-size:10px;letter-spacing:.06em}
+.mnemo-grid{display:grid;gap:5px}
+.mnemo-row{display:grid;grid-template-columns:28px 1fr;gap:10px;align-items:baseline;font-size:13px;color:var(--ink-soft);padding:3px 0}
+.mnemo-letter{display:grid;place-items:center;width:24px;height:24px;background:var(--ink);color:#fff;border-radius:5px;font:800 12px/1 'DM Sans';letter-spacing:-.02em}
+.mnemo-row b{color:var(--ink);font-weight:600}
+.mnemo-row em{font-style:italic;color:var(--ink-mute);font-size:12px}
+
+/* SCORE BOX */
+.score{border:1px solid var(--line);border-radius:var(--r);margin:14px 0;background:var(--paper);overflow:hidden}
+.score-head{padding:11px 14px;background:linear-gradient(180deg,#f5f1e0 0%,#ede9d6 100%);border-bottom:1px solid var(--line)}
+.score-name{font:700 13px/1.2 'DM Sans';color:var(--ink);letter-spacing:-.01em}
+.score-purpose{font:500 10.5px/1.2 'DM Sans';color:var(--ink-mute);letter-spacing:.06em;text-transform:uppercase;margin-top:3px}
+.score-rows{display:grid;gap:0}
+.score-row{display:grid;grid-template-columns:90px 1fr;gap:12px;align-items:start;padding:9px 14px;border-bottom:1px dashed var(--line-soft);font-size:13px}
+.score-row:last-child{border-bottom:none}
+.score-grade{font:800 12px/1.2 'DM Mono',monospace;color:var(--c-emerg);letter-spacing:-.01em}
+.score-desc{color:var(--ink-soft);line-height:1.45}
+.score-desc b{color:var(--ink)}
+
+/* STACKED TABLE */
+.stbl{margin:14px 0;border:1px solid var(--line);border-radius:var(--r);background:var(--paper);overflow:hidden}
+.stbl-head,.stbl-row{display:grid;gap:14px;padding:10px 14px;align-items:start}
+.stbl-head{background:#faf7eb;border-bottom:2px solid var(--line);font:700 10.5px/1 'DM Sans';letter-spacing:.1em;text-transform:uppercase;color:var(--ink)}
+.stbl-row{border-bottom:1px solid var(--line-soft);font-size:13px;color:var(--ink-soft);line-height:1.5}
+.stbl-row:last-child{border-bottom:none}
+.stbl-row:nth-child(even){background:#fcfaf2}
+.stbl-row b{color:var(--ink);font-weight:600}
+.stbl-row .col1{font-weight:600;color:var(--ink)}
+.stbl-2{grid-template-columns:1fr 2fr}
+.stbl-3{grid-template-columns:1fr 1.3fr 1.5fr}
+.stbl-4{grid-template-columns:1.2fr 1fr 1fr 1.2fr}
+@media(max-width:680px){
+  .stbl-head{display:none}
+  .stbl-row{grid-template-columns:1fr !important;gap:12px;padding:14px 16px}
+  .stbl-row .col{display:block;min-width:0;word-wrap:break-word;overflow-wrap:anywhere}
+  .stbl-row .col::before{content:attr(data-l);display:block;font:700 9.5px/1.3 'DM Sans';letter-spacing:.12em;text-transform:uppercase;color:var(--ink-mute);margin-bottom:4px}
+  .stbl-row .col1{font-weight:700;font-size:15px;padding-bottom:8px;margin-bottom:6px;border-bottom:1px dashed var(--line)}
+  .stbl-row .col1::before{display:none}
+}
+
+/* CALLOUT BOXES */
+.box{border-radius:var(--r);padding:14px 16px;margin:14px 0;position:relative;border:1px solid}
+.box-label{position:absolute;top:-9px;left:14px;font:700 9.5px/1 'DM Sans';letter-spacing:.16em;text-transform:uppercase;padding:3px 9px;border-radius:999px;color:#fff}
+.box-title{font-weight:700;color:var(--ink);font-size:14px;margin:2px 0 6px}
+.box-body{font-size:13.5px;line-height:1.5;color:var(--ink-soft)}
+.box-body b{color:var(--ink)}
+.box-body ul{list-style:none;padding:0;margin:4px 0 0}
+.box-body ul li{position:relative;padding:3px 0 3px 20px}
+.box-body ul li::before{content:"→";position:absolute;left:0;top:3px;font-weight:700;color:var(--bx-color)}
+.box.decision{background:#f1f5fc;border-color:#c4d3eb;--bx-color:var(--ank-dec)}.box.decision .box-label{background:var(--ank-dec)}
+.box.danger{background:#fbf0f0;border-color:#e5c2c2;--bx-color:var(--ank-dgr)}.box.danger .box-label{background:var(--ank-dgr)}.box.danger .box-body b{color:var(--ank-dgr)}
+.box.pearl{background:#f1f7ed;border-color:#c1d5b3;--bx-color:var(--ank-prl)}.box.pearl .box-label{background:var(--ank-prl)}
+.box.hy{background:#fcf6dd;border-color:#e3cf78;--bx-color:var(--ank-hy)}.box.hy .box-label{background:var(--ank-hy)}
+.box.myth{background:#f8eed8;border-color:#d0b181;--bx-color:var(--ank-myt)}.box.myth .box-label{background:var(--ank-myt)}
+.box.controversy{background:#f1e9f6;border-color:#bba7d3;--bx-color:var(--ank-con)}.box.controversy .box-label{background:var(--ank-con)}
+.box.evolving{background:#dff0f2;border-color:#8fc1c9;--bx-color:var(--ank-evo)}.box.evolving .box-label{background:var(--ank-evo)}
+
+/* ALGORITHM TREE */
+.algo{background:linear-gradient(180deg,#fcfaf2 0%,#f5f0dc 100%);border:1px solid var(--line-strong);border-radius:var(--r-lg);padding:18px;margin:14px 0;overflow-x:auto}
+.tree{font-size:13px}
+.tree-line{padding:6px 0}
+.tree-node{display:inline-block;padding:8px 12px;background:var(--paper);border:1.5px solid var(--ink-soft);border-radius:7px;font-weight:600;color:var(--ink);font-size:12.5px;box-shadow:var(--sh-sm)}
+.tree-node.start{background:var(--ink);color:#fff;border-color:var(--ink)}
+.tree-node.dec{background:#fff7d6;border-color:#e3cf78;color:#6b520a}
+.tree-node.dx{background:#dde7f8;border-color:#9fbae6;color:#1d4ea3}
+.tree-node.dgr{background:#fadcdc;border-color:#e29ca0;color:#a31b25}
+.tree-node.action{background:#d8e6cf;border-color:#a8c298;color:#3e6a2e}
+.tree-branch{margin-left:14px;border-left:1.5px dashed #b8b094;padding:6px 0 6px 18px;margin-top:6px;margin-bottom:2px;position:relative}
+.tree-branch::before{content:"";position:absolute;left:-1.5px;top:-4px;width:14px;height:14px;border-left:1.5px solid #b8b094;border-bottom:1.5px solid #b8b094;border-radius:0 0 0 6px}
+.tree-label{display:inline-block;font:700 9.5px/1 'DM Sans';letter-spacing:.12em;text-transform:uppercase;padding:3px 7px;border-radius:4px;margin-bottom:5px}
+.tree-label.yes{background:#fadcdc;color:#a31b25}.tree-label.no{background:#d8e6cf;color:#3e6a2e}
+
+/* FOOTER */
+.foot{margin-top:48px;padding-top:22px;border-top:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;font-size:11px;color:var(--ink-faint);letter-spacing:.04em;flex-wrap:wrap;gap:8px}
+.foot-mono{font-family:'DM Mono',monospace}
+.foot-author{font:800 14px/1.1 'DM Mono',monospace;color:var(--ink);letter-spacing:.02em;margin-bottom:3px}
+.foot-meta{font:500 11px/1.3 'DM Sans';color:var(--ink-faint);letter-spacing:.04em}
+
+/* WATERMARK */
+.watermark{position:fixed;bottom:calc(14px + env(safe-area-inset-bottom,0px));right:calc(14px + env(safe-area-inset-right,0px));font:600 10px/1 'DM Mono',monospace;letter-spacing:.04em;color:rgba(14,17,22,.55);background:rgba(255,255,255,.85);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);padding:6px 10px;border-radius:99px;border:1px solid rgba(14,17,22,.1);box-shadow:0 2px 8px rgba(14,17,22,.06);z-index:50;pointer-events:none;user-select:none}
+@media(max-width:560px){.watermark{bottom:calc(10px + env(safe-area-inset-bottom,0px));right:calc(10px + env(safe-area-inset-right,0px));font-size:9px;padding:5px 8px}}
+
+/* PRINT */
+@media print{
+  body{background:#fff;font-size:10.5pt}
+  body::before{display:none}
+  .header,.toc{position:static;background:#0e1116;color:#fff}
+  .wrap{padding:14px;max-width:100%}
+  .card,.hero,.legend,.pocket{box-shadow:none !important;break-inside:avoid}
+  .hero::after,.pocket::before{display:none}
+  .pocket{background:#1a1d24;color:#f0eee5}
+  .ank,.box,.disease,.score,.algo,.stbl,.deep,.mnemo,.quick{box-shadow:none !important;break-inside:avoid}
+  .deep:not([open]) .deep-content{display:block}
+  .deep>summary::after{display:none}
+  .watermark{position:fixed;bottom:8mm;right:8mm;background:none;border:none;color:rgba(0,0,0,.5)}
+  .hero-stamp{transform:none;position:absolute}
+}
+
+</style>
+</head>
+<body>
+
+<header class="header"><div class="header-row"><div class="h-mark">E</div><div class="h-titles"><div class="h-title">Endocardite Infecciosa · Pocket Handbook</div><div class="h-sub">Elite edition · Infectologia e cardiologia · II02</div></div><div class="h-author">@dr.lorencato</div><div class="h-edition">v5.2</div></div></header>
+
+<nav class="toc"><div class="toc-inner"><a href="#pocket" class="toc-chip"><span class="toc-chip-num">0</span>Pocket</a><a href="#redflags" class="toc-chip"><span class="toc-chip-num">A</span>Red Flags</a><a href="#approach" class="toc-chip"><span class="toc-chip-num">B</span>Apresentação</a><a href="#primarias" class="toc-chip"><span class="toc-chip-num">C</span>Entidades</a><a href="#secundarias" class="toc-chip"><span class="toc-chip-num">D</span>Secundárias</a><a href="#algoritmo" class="toc-chip"><span class="toc-chip-num">E</span>Algoritmo</a><a href="#tratamento" class="toc-chip"><span class="toc-chip-num">F</span>Tratamento</a><a href="#pitfalls" class="toc-chip"><span class="toc-chip-num">G</span>Pitfalls</a><a href="#pearls" class="toc-chip"><span class="toc-chip-num">H</span>Pearls</a></div></nav>
+
+<main>
+<div class="wrap">
+
+<div class="hero">
+<div class="hero-stamp">@dr.lorencato</div>
+<div class="hero-tag">Infectologia · Cardiologia · II02 · Infecção endovascular</div>
+<h1>Endocardite Infecciosa<br><em>três hemoculturas antes do antibiótico, um ecocardiograma que procura abscesso e um cirurgião na sala desde o primeiro dia</em></h1>
+<p class="hero-lead">Endocardite estafilocócica, estreptocócica e enterocócica de valva nativa, endocardite de prótese, endocardite direita do usuário de drogas injetáveis, infecção de marcapasso e CDI, endocardite com hemoculturas negativas (Coxiella, Bartonella, Brucella, Whipple), fúngica e por Gram-negativos, complicações neurológicas e sistêmicas, endocardite não infecciosa como diferencial, a criança com cardiopatia congênita e a gestante. Do critério de Duke-ISCVID 2023 ao momento da cirurgia, da vancomicina por AUC à transição oral do POET, e da profilaxia com amoxicilina 2 g ao que a diretriz brasileira manda diferente. Conduta pela ESC 2023, Duke-ISCVID 2023, AHA 2026 e AHA 2021; Brasil pela SBC 2020 e pela lista CMED de 2026.</p>
+<div class="hero-sig">Compilação clínica por <b>@dr.lorencato</b> · Elite Edition v5.2 · status clinical_review</div>
+</div>
+
+<div id="pocket" class="pocket">
+<div class="pocket-head"><div><div class="pocket-eyebrow">Pocket Card 0 · 5 segundos</div><div class="pocket-title">Decisões Críticas — Endocardite</div><div class="pocket-sub">PS · Enfermaria · UTI · Centro cirúrgico · Ambulatório</div></div></div>
+<div class="pocket-grid">
+<div class="pocket-card emerg"><div class="pc-trig">Febre + sopro novo + edema agudo de pulmão ou choque</div><div class="pc-act">Regurgitação aguda por destruição valvar. <b>Hemoculturas (3 pares) em minutos, antibiótico empírico logo depois, ETE e cirurgião cardíaco hoje</b>: cirurgia de emergência (&lt;24 h) se edema pulmonar refratário ou choque cardiogênico (ESC 2023).</div></div>
+<div class="pocket-card emerg"><div class="pc-trig">Endocardite conhecida + BAV novo ou PR que alonga</div><div class="pc-act">Abscesso perivalvar (aórtico) até prova em contrário. <b>ECG diário, ETE, TC cardíaca se dúvida</b>; infecção localmente não controlada é indicação de cirurgia de urgência (3–5 dias). Marcapasso provisório se BAVT.</div></div>
+<div class="pocket-card emerg"><div class="pc-trig">AVC agudo em paciente febril com sopro</div><div class="pc-act">Embolia séptica. <b>Não trombolisar</b>; trombectomia mecânica pode ser considerada em casos selecionados; hemoculturas, ETE, angiotomografia para aneurisma micótico. AVC isquêmico sem hemorragia e sem coma <b>não adia</b> cirurgia indicada.</div></div>
+<div class="pocket-card dec"><div class="pc-trig">Hemocultura com S. aureus, em qualquer paciente</div><div class="pc-act">Endocardite em 10–20%. <b>Ecocardiograma em todos; ETE se prótese, dispositivo, bacteremia ≥48 h, embolia, foco desconhecido ou droga injetável</b>. Bacteremia por S. aureus sem endocardite → II03.</div></div>
+<div class="pocket-card dec"><div class="pc-trig">ETT normal e suspeita clínica persiste</div><div class="pc-act">ETT tem sensibilidade de ~60–70%. <b>Faça ETE</b>; ETE normal com suspeita alta → repetir em 5–7 dias. Prótese ou dispositivo com ETE inconclusivo → <b>PET-CT com FDG ou TC cardíaca</b> (critérios maiores no Duke-ISCVID 2023).</div></div>
+<div class="pocket-card dec"><div class="pc-trig">Paciente estável, febre há semanas, sem sepse</div><div class="pc-act">Subaguda: <b>3 pares de hemocultura antes de qualquer antibiótico e aguarde 24–48 h</b> se estável. Antibiótico "para ver se a febre passa" esteriliza a hemocultura e cria a endocardite com cultura negativa.</div></div>
+<div class="pocket-card tx"><div class="pc-trig">MSSA confirmado em valva nativa</div><div class="pc-act"><b>Oxacilina 2 g IV 4/4 h ou cefazolina 2 g IV 8/8 h</b>, 4–6 semanas a partir da 1ª hemocultura negativa; sem gentamicina; sem rifampicina. Abscesso cerebral ou meningite associada → oxacilina, não cefazolina.</div></div>
+<div class="pocket-card tx"><div class="pc-trig">Enterococcus faecalis sensível à ampicilina</div><div class="pc-act"><b>Ampicilina 2 g IV 4/4 h + ceftriaxona 2 g IV 12/12 h por 6 semanas</b>: dupla betalactâmica, sem nefrotoxicidade e válida também com resistência de alto nível a aminoglicosídeo (HLAR).</div></div>
+<div class="pocket-card tx"><div class="pc-trig">Profilaxia antes de procedimento dentário de risco</div><div class="pc-act">Só alto risco (prótese, EI prévia, cardiopatia congênita cianótica ou com material protético). <b>Amoxicilina 2 g VO (criança 50 mg/kg, máx. 2 g) 30–60 min antes</b>, dose única. Clindamicina saiu da ESC 2023.</div></div>
+<div class="pocket-card clin"><div class="pc-trig">S. gallolyticus (ex-S. bovis) na hemocultura</div><div class="pc-act">Associação com adenoma e câncer colorretal: <b>colonoscopia obrigatória</b>, mesmo sem sintoma intestinal, durante ou logo após o tratamento.</div></div>
+<div class="pocket-card clin"><div class="pc-trig">Jovem febril com múltiplos nódulos pulmonares cavitados</div><div class="pc-act">Usuário de droga injetável: <b>endocardite tricúspide por S. aureus com êmbolos sépticos</b>, sopro ausente em até 2/3. Trate a infecção e a dependência (PC03) na mesma internação.</div></div>
+<div class="pocket-card clin"><div class="pc-trig">Paciente estável após ≥10 dias IV, ETE sem abscesso</div><div class="pc-act">Candidato a <b>transição oral (POET)</b> com dois fármacos de boa biodisponibilidade, se estreptococo, E. faecalis, S. aureus ou estafilococo coagulase-negativo, afebril e com PCR em queda. Decisão da equipe de endocardite.</div></div>
+</div>
+</div>
+
+<div class="legend">
+<div class="lg-title">Sistema de legendas</div>
+<div class="lg-grid">
+<div class="lg-item"><span class="dot c1"></span> Fisiopatologia / Classificação</div>
+<div class="lg-item"><span class="dot c2"></span> Clínica / Apresentação</div>
+<div class="lg-item"><span class="dot c3"></span> Diagnóstico / Hemocultura / Imagem</div>
+<div class="lg-item"><span class="dot c4"></span> Tratamento / Conduta</div>
+<div class="lg-item"><span class="dot c5"></span> Emergências / Red Flags</div>
+<div class="lg-item"><span class="dot c6"></span> Nuances / Pearls</div>
+</div>
+<div class="lg-divider"></div>
+<div class="lg-anchors">
+<span class="ank ank-hy">HIGH-YIELD</span>
+<span class="ank ank-dec">DECISION</span>
+<span class="ank ank-dgr">DANGER</span>
+<span class="ank ank-prl">PEARL</span>
+<span class="ank ank-myt">MYTH</span>
+<span class="ank ank-con">CONTROVERSY</span>
+<span class="ank ank-evo">EVOLVING</span>
+</div>
+<div class="lg-explain">
+<div class="ehy"><b>HIGH-YIELD</b> — prova/prática frequente</div>
+<div class="edec"><b>DECISION</b> — muda a conduta</div>
+<div class="edgr"><b>DANGER</b> — erro grave / risco crítico</div>
+<div class="eprl"><b>PEARL</b> — nuance de especialista</div>
+<div class="emyt"><b>MYTH</b> — mito vivo na prática</div>
+<div class="econ"><b>CONTROVERSY</b> — debate sem consenso</div>
+<div class="eevo"><b>EVOLVING</b> — mudança recente</div>
+</div>
+<div class="lg-explain"><div><b>Chips "conferir"</b> — dose ou dado cuja fonte primária não foi lida nesta edição (tabela em imagem da ESC 2023, texto integral do AHA 2026 ou suplemento do POET); confirmar antes de prescrever.</div></div>
+</div>
+
+<!-- ============================================================ A -->
+<section id="redflags">
+<div class="section">
+<div class="section-eyebrow"><span>A</span> Red Flags</div>
+<div class="section-title">A endocardite mata pelo coração que falha, pelo cérebro que embolia e pela infecção que não se controla — e os três têm sinal objetivo antes</div>
+<div class="section-sub">Cada linha abaixo é um sinal que se mede à beira do leito ou num exame de rotina, a suspeita que ele levanta e a conduta que não espera o próximo plantão.</div>
+</div>
+
+<div class="card emerg">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">A.1</span> Emergências</div><h3>Sinais de alarme na endocardite <span class="ank ank-dgr">DANGER</span></h3><div class="card-sub">O mnemônico reúne as situações em que a resposta é o centro cirúrgico, não mais um antibiótico</div></div>
+<div class="card-body">
+<div class="mnemo">
+<div class="mnemo-title"><b>CIRURGIA</b> Quando a endocardite pede o cirurgião (ESC 2023; AHA 2026)</div>
+<div class="mnemo-grid">
+<div class="mnemo-row"><span class="mnemo-letter">C</span><span><b>Congestão por disfunção valvar</b> · regurgitação aórtica ou mitral grave, obstrução ou fístula com IC; edema pulmonar refratário ou choque = emergência (&lt;24 h)</span></div>
+<div class="mnemo-row"><span class="mnemo-letter">I</span><span><b>Infecção localmente não controlada</b> · abscesso, pseudoaneurisma, fístula, vegetação que cresce, BAV novo — urgência (3–5 dias)</span></div>
+<div class="mnemo-row"><span class="mnemo-letter">R</span><span><b>Resistentes e difíceis</b> · fungos, Gram-negativos multirresistentes, Pseudomonas, Brucella, Coxiella com valva destruída</span></div>
+<div class="mnemo-row"><span class="mnemo-letter">U</span><span><b>Uma semana de hemocultura positiva</b> · bacteremia persistente apesar de antibiótico adequado e foco extracardíaco controlado</span></div>
+<div class="mnemo-row"><span class="mnemo-letter">R</span><span><b>Recidiva e prótese</b> · prótese com S. aureus ou deiscência, recaída após curso ótimo, EI de prótese precoce</span></div>
+<div class="mnemo-row"><span class="mnemo-letter">G</span><span><b>Grande vegetação</b> · ≥10 mm com embolia prévia ou ≥30 mm, sobretudo mitral e móvel — risco embólico que cai rápido nos primeiros dias</span></div>
+<div class="mnemo-row"><span class="mnemo-letter">I</span><span><b>Isquemia embólica recorrente</b> · novo êmbolo após o início do antibiótico com vegetação persistente</span></div>
+<div class="mnemo-row"><span class="mnemo-letter">A</span><span><b>AVC não fecha a porta</b> · isquêmico sem hemorragia e sem coma: operar sem adiar; hemorrágico: em geral adiar, decisão individual</span></div>
+</div>
+</div>
+
+<div class="sub-title">Red flag → suspeita → conduta imediata</div>
+<div class="stbl stbl-3">
+<div class="stbl-head stbl-3"><div>Red flag (sinal objetivo)</div><div>Suspeita</div><div>Conduta imediata</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Red flag">Dispneia súbita, estertores, SpO2 &lt;90%, sopro diastólico aórtico novo ou sopro sistólico mitral rude; pressão diferencial larga que estreita</div><div class="col" data-l="Suspeita">Regurgitação aórtica ou mitral aguda (perfuração, ruptura de cordoalha, deiscência); o ventrículo não dilatado não acomoda o volume</div><div class="col" data-l="Conduta"><b>ETE e equipe cirúrgica no mesmo dia</b>; diurético e vasodilatador como ponte; evitar betabloqueador e balão intra-aórtico na regurgitação aórtica; cirurgia de emergência se edema refratário ou choque</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Red flag">PR que alonga, BAV de 2º/3º grau ou bloqueio de ramo novo no ECG de controle</div><div class="col" data-l="Suspeita">Extensão perivalvar aórtica (abscesso do anel, pseudoaneurisma, fístula) invadindo o sistema de condução</div><div class="col" data-l="Conduta"><b>ECG diário em EI aórtica</b>; ETE, TC cardíaca se o ETE não esclarece; marcapasso provisório se BAVT; cirurgia de urgência</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Red flag">Déficit focal súbito, rebaixamento, crise ou cefaleia intensa em paciente com EI ou com febre e sopro</div><div class="col" data-l="Suspeita">Embolia cerebral (território da cerebral média), transformação hemorrágica, aneurisma micótico roto, abscesso, meningite</div><div class="col" data-l="Conduta"><b>TC/angio-TC já; sem trombólise</b>; trombectomia considerável se oclusão de grande vaso dentro da janela; suspender anticoagulante e trocar por heparina se hemorragia; neurologia e neurocirurgia (C.6)</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Red flag">Hemocultura ainda positiva após 72 h–7 dias de antibiótico adequado; febre que persiste além de 7–10 dias</div><div class="col" data-l="Suspeita">Abscesso perivalvar, foco metastático (baço, vértebra, psoas, articulação), cateter ainda instalado, dose inadequada, germe com CIM alta</div><div class="col" data-l="Conduta"><b>Rever dose e nível, retirar cateteres, ETE, TC de abdome/coluna ou PET-CT</b>; drenar coleções; bacteremia persistente sem foco extracardíaco = indicação de cirurgia</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Red flag">Dor súbita em hipocôndrio esquerdo irradiada ao ombro; febre que recrudesce</div><div class="col" data-l="Suspeita">Infarto esplênico (comum) ou abscesso esplênico (febre persistente, coleção que cresce)</div><div class="col" data-l="Conduta"><b>TC de abdome</b>; abscesso grande → drenagem percutânea ou esplenectomia, idealmente antes da cirurgia valvar</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Red flag">Creatinina que sobe durante o tratamento; hematúria, cilindros hemáticos, consumo de complemento</div><div class="col" data-l="Suspeita">Nefrotoxicidade (aminoglicosídeo, vancomicina com piperacilina, nefrite intersticial por oxacilina) × glomerulonefrite por imunocomplexos × infarto renal</div><div class="col" data-l="Conduta"><b>Nível de vancomicina e gentamicina, suspender aminoglicosídeo se não indispensável</b>, sedimento urinário, complemento; GN por EI melhora com o controle da infecção</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Red flag">Febre em portador de prótese valvar, marcapasso, CDI ou TAVI, sem foco</div><div class="col" data-l="Suspeita">EI de prótese ou de dispositivo (estafilococos, inclusive coagulase-negativos, que aqui nunca são "contaminantes")</div><div class="col" data-l="Conduta"><b>3 pares de hemocultura antes do antibiótico, ETE em todos</b>; PET-CT se ETE inconclusivo; não prescrever "antibiótico de prova"</div></div>
+</div>
+
+<div class="box danger"><span class="box-label">DANGER</span><div class="box-title">Endocardite com insuficiência cardíaca: o antibiótico não fecha um folheto perfurado</div><div class="box-body">A insuficiência cardíaca é a principal causa de morte na EI e a indicação mais frequente de cirurgia. Na regurgitação aórtica aguda, o ventrículo esquerdo de tamanho normal recebe o volume regurgitante sem complacência: a pressão diastólica final sobe a ponto de fechar a valva mitral antes do fim da diástole, o edema pulmonar é súbito e a taquicardia é o único mecanismo que mantém o débito. Por isso <b>betabloqueador para "controlar a frequência" pode ser fatal</b> e o balão intra-aórtico é contraindicado. Ponte com diurético e vasodilatador (nitroprussiato) e inotrópico se baixo débito, enquanto o centro cirúrgico é preparado. ESC 2023: emergência (&lt;24 h) para edema pulmonar refratário ou choque cardiogênico; urgência para IC sem esses critérios. <span class="ev ev-acr">ESC 2023</span></div></div>
+
+<div class="box danger"><span class="box-label">DANGER</span><div class="box-title">Trombolítico no AVC de um paciente febril com sopro</div><div class="box-body">O êmbolo da endocardite é um fragmento de vegetação com bactéria, fibrina e plaquetas, e a parede arterial onde ele para está inflamada (arterite séptica, aneurisma micótico em formação). O alteplase não dissolve o material infectado e multiplica o risco de hemorragia intracraniana. A ESC 2023 afirma que terapias trombolíticas e antitrombóticas não trazem benefício; a <b>trombectomia mecânica pode ser considerada</b> em casos selecionados dentro da janela. Antes de trombolisar qualquer AVC em paciente com febre, sopro, uso de droga injetável, prótese ou dispositivo, pergunte por endocardite. <span class="ev ev-acr">ESC 2023</span> <span class="ev ev-expert">NE03</span></div></div>
+
+<div class="box decision"><span class="box-label">DECISION</span><div class="box-title">Quando começar o antibiótico antes da cultura crescer</div><div class="box-body">Aguda, séptica, com IC, embolia ou disfunção orgânica: colha 3 pares de hemocultura de punções venosas em sequência rápida (minutos) e <b>inicie o empírico na mesma hora</b>. Subaguda e estável: colha os 3 pares e espere o resultado (habitualmente 24–48 h), porque cada dose prévia reduz a positividade e empurra o caso para a categoria de cultura negativa, de diagnóstico muito mais caro. A apostila e as diretrizes concordam neste ponto; a diferença é o paciente, não o agente.</div></div>
+</div>
+</div>
+</section>
+
+<!-- ============================================================ B -->
+<section id="approach">
+<div class="section">
+<div class="section-eyebrow"><span>B</span> Por Apresentação</div>
+<div class="section-title">A endocardite raramente se apresenta como "endocardite": aparece como sepse, AVC, febre arrastada, pneumonia de repetição ou insuficiência renal</div>
+<div class="section-sub">Cinco padrões de chegada. Cada um tem uma pergunta que conduz à hemocultura e ao ecocardiograma.</div>
+</div>
+
+<div class="card clin">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">B.1</span> Padrão 1</div><h3>Sepse aguda com sopro ou com hemocultura por S. aureus <span class="ank ank-dgr">DANGER</span></h3><div class="card-sub">Endocardite aguda: dias, toxemia, destruição valvar e focos metastáticos</div></div>
+<div class="card-body">
+<div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Febre alta, calafrios, hipotensão, às vezes sem sopro na primeira ausculta. <b>Toda bacteremia por S. aureus é endocardite até o ecocardiograma dizer o contrário</b>; o mesmo vale para S. lugdunensis, E. faecalis comunitário e estreptococos orais.</div></div>
+<ul class="bullets">
+<li><b>Quem:</b> idoso com cateter ou hemodiálise, diabético com infecção de pele, usuário de droga injetável, portador de prótese ou dispositivo.</li>
+<li><b>Sinais periféricos:</b> púrpura com centro purulento, abscessos cutâneos, hemorragias conjuntivais; nódulos de Osler e manchas de Janeway são raros na era do antibiótico precoce.</li>
+<li><b>Exames:</b> 3 pares de hemocultura, ECG (BAV), ETT imediato, ETE se critérios (Pocket), radiografia de tórax (êmbolos sépticos), urina (hematúria).</li>
+<li><b>Escores de probabilidade:</b> na bacteremia por S. aureus, VIRSTA e PREDICT ajudam a decidir o ETE; no enterococo, NOVA/DENOVA; no estreptococo, HANDOC — nenhum substitui o ETE quando a suspeita clínica é alta.</li>
+</ul>
+<div class="box hy"><span class="box-label">HIGH-YIELD</span><div class="box-title">Endocardite aguda × subaguda é uma diferença de virulência</div><div class="box-body">O S. aureus adere ao endotélio íntegro (adesinas MSCRAMM, fator de agregação ClfA, proteína de ligação à fibronectina), é internalizado pela célula endotelial e destrói a valva em dias. O estreptococo oral precisa de endotélio previamente lesado e de uma vegetação estéril para colonizar, e produz a doença arrastada de semanas a meses. A classificação temporal (≤6 semanas × &gt;6 semanas) é histórica; a prática classifica por agente, valva e substrato.</div></div>
+</div>
+</div>
+
+<div class="card clin">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">B.2</span> Padrão 2</div><h3>Febre arrastada, perda de peso e anemia: a febre de origem indeterminada que tinha sopro</h3><div class="card-sub">Subaguda: semanas, fenômenos imunológicos, investigação de colagenose e de neoplasia</div></div>
+<div class="card-body">
+<div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Febre baixa vespertina, sudorese noturna, astenia, artralgia, esplenomegalia, anemia de doença crônica, VHS alta, fator reumatoide positivo e hematúria. <b>Antes de pedir FAN e TC de corpo inteiro, colha 3 hemoculturas e ausculte de novo</b>.</div></div>
+<ul class="bullets">
+<li><b>Substrato:</b> no Brasil, valvopatia reumática ainda pesa; prolapso mitral com regurgitação, valva aórtica bicúspide, degeneração senil, cardiopatia congênita.</li>
+<li><b>Porta de entrada:</b> dente (doença periodontal, extração), cólon (S. gallolyticus), trato urinário (enterococo, homem idoso).</li>
+<li><b>Imunológico:</b> glomerulonefrite por imunocomplexos com complemento baixo, Osler, Roth, fator reumatoide — critérios menores no Duke-ISCVID.</li>
+<li><b>Armadilha:</b> antibiótico prévio "por sinusite" — cultura negativa; pergunte sempre.</li>
+</ul>
+</div>
+</div>
+
+<div class="card clin">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">B.3</span> Padrão 3</div><h3>Evento neurológico agudo em febril ou em jovem sem fator de risco vascular</h3><div class="card-sub">O AVC que abre o diagnóstico de endocardite</div></div>
+<div class="card-body">
+<div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Complicação neurológica sintomática em 20–40% e silenciosa em até 80% na RM. <b>Febre + AVC = hemocultura antes de qualquer decisão de reperfusão</b>; trombólise contraindicada, trombectomia caso a caso.</div></div>
+<ul class="bullets">
+<li><b>Formas:</b> infarto embólico (cerebral média), microinfartos múltiplos, hemorragia (transformação, arterite séptica, aneurisma micótico roto), abscesso, meningite purulenta (S. aureus, pneumococo) ou asséptica, encefalopatia tóxica no idoso.</li>
+<li><b>Imagem:</b> TC/angio-TC na urgência; RM com difusão e suscetibilidade magnética; angiografia digital se hemorragia ou suspeita de aneurisma com angio-TC negativa.</li>
+<li><b>Ponte com outros HPs:</b> AVC como doença → NE03; meningite e abscesso como doenças → II04.</li>
+</ul>
+</div>
+</div>
+
+<div class="card clin">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">B.4</span> Padrão 4</div><h3>"Pneumonia" bilateral de repetição no usuário de droga injetável</h3><div class="card-sub">Endocardite direita: os êmbolos vão para o pulmão, não para o cérebro</div></div>
+<div class="card-body">
+<div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Febre, tosse, dor pleurítica, hemoptise, nódulos periféricos múltiplos que escavam em dias. <b>Sopro tricúspide ausente em até 2/3</b>; manobra de Rivero-Carvallo, onda v jugular e pulso hepático só em 1/3.</div></div>
+<ul class="bullets">
+<li><b>Agente:</b> S. aureus (MSSA e, cada vez mais, MRSA comunitário); valvas esquerdas no usuário mudam o espectro (Gram-negativos, Pseudomonas, Candida, polimicrobiana).</li>
+<li><b>Prognóstico:</b> melhor que a esquerda isolada; mortalidade sobe com vegetação &gt;20 mm, fungo e acometimento esquerdo.</li>
+<li><b>O que não se pode esquecer:</b> HIV, hepatites B e C, sífilis, vacinação, naloxona na alta e tratamento da dependência (PC03).</li>
+</ul>
+</div>
+</div>
+
+<div class="card clin">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">B.5</span> Padrão 5</div><h3>Febre em portador de prótese, TAVI ou dispositivo eletrônico; insuficiência renal com hematúria</h3><div class="card-sub">Os dois cenários em que o ecocardiograma transtorácico mais engana</div></div>
+<div class="card-body">
+<div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Prótese e cabos geram artefato e sombra acústica: <b>ETE em todos, PET-CT com FDG ou TC cardíaca se inconclusivo</b>. Na DRC com hematúria, a glomerulonefrite da endocardite imita vasculite (ANCA pode ser positivo, sobretudo PR3).</div></div>
+<ul class="bullets">
+<li><b>Prótese precoce (até 12 meses):</b> estafilococos coagulase-negativos, S. aureus, Gram-negativos, Candida — infecção nosocomial.</li>
+<li><b>Prótese tardia:</b> perfil da valva nativa comunitária (estreptococos, S. aureus, enterococo, HACEK).</li>
+<li><b>Dispositivo:</b> infecção de loja (dor, eritema, erosão) ou endocardite de cabo; extração completa do sistema (C.7).</li>
+<li><b>Glomerulonefrite:</b> proliferativa focal ou difusa por imunocomplexos, com C3 baixo; ANCA positivo na EI não autoriza imunossupressão sem excluir infecção (RD03).</li>
+</ul>
+<div class="box decision"><span class="box-label">DECISION</span><div class="box-title">Ecocardiograma: quem vai direto ao transesofágico</div><div class="box-body">ETT primeiro para todos (é rápido e mede função e regurgitação), mas o ETE é obrigatório quando o ETT é negativo com suspeita, quando é positivo (para procurar abscesso, perfuração e fístula antes de decidir cirurgia) e em toda prótese ou dispositivo. ETE normal com suspeita mantida: repetir em 5–7 dias; novo ETE se surgir complicação. Ao fim do tratamento, ETT de referência para comparação futura. <span class="ev ev-acr">ESC 2023 · conferir</span></div></div>
+</div>
+</div>
+</section>
+
+<!-- ============================================================ C -->
+<section id="primarias">
+<div class="section">
+<div class="section-eyebrow"><span>C</span> Entidades Primárias</div>
+<div class="section-title">Sete entidades que respondem pela maior parte das decisões em endocardite</div>
+<div class="section-sub">Três por agente (estafilococo, estreptococo, enterococo), duas por substrato (prótese, droga injetável), uma por complicação (neurológica) e uma por dispositivo. Bacteremia sem endocardite → II03; valvopatia como doença → CV07; AVC fora da EI → NE03.</div>
+</div>
+
+<div class="card prim">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">C.1</span> Entidade âncora</div><h3>Endocardite estafilocócica de valva nativa (S. aureus) <span class="ank ank-hy">HIGH-YIELD</span></h3><div class="card-sub">O agente mais frequente nos países de renda média e alta, o mais destrutivo e o que mais embolia</div></div>
+<div class="card-body">
+<div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Aguda, toxêmica, com abscesso perivalvar, embolia e metástase infecciosa. <b>MSSA: oxacilina 2 g IV 4/4 h ou cefazolina 2 g IV 8/8 h; MRSA: vancomicina por AUC ou daptomicina 10 mg/kg IV 1×/dia</b>. Sem gentamicina e sem rifampicina na valva nativa. Mortalidade hospitalar 20–30%.</div></div>
+<div class="disease">
+<div class="disease-head"><div class="disease-name">Endocardite por Staphylococcus aureus em valva nativa</div><div class="disease-tag">CID-10 I33.0 endocardite aguda e subaguda infecciosa · B95.6 S. aureus como causa</div></div>
+<div class="disease-body"><div class="disease-rows">
+<div class="disease-row"><div class="k">Epidemiologia</div><div class="v">Primeiro agente nas séries contemporâneas (25–35%), à frente dos estreptococos orais, impulsionado por cateteres, hemodiálise, dispositivos, diabetes e uso de droga injetável; cerca de um terço é associado a cuidados de saúde. Na bacteremia por S. aureus, a prevalência de EI é de 10–20% (maior com prótese, dispositivo, bacteremia persistente e foco desconhecido). No Brasil, MRSA responde por 30–50% dos isolados de UTI conforme o hospital (II03).</div></div>
+<div class="disease-row"><div class="k">Fisiopatologia</div><div class="v">Adesinas de superfície (MSCRAMM: proteínas de ligação a fibronectina FnBPA/B, fator de agregação ClfA, proteína de ligação ao colágeno) prendem a bactéria à matriz subendotelial exposta e ao próprio endotélio íntegro; a FnBP, via integrina α5β1, induz internalização pela célula endotelial, onde o germe se multiplica, lisa a célula e expõe colágeno — a vegetação nasce infectada. A coagulase e o fator von Willebrand-binding protein ativam protrombina e ancoram o coágulo; a vegetação cresce em camadas de fibrina e plaquetas que escondem colônias metabolicamente quiescentes (tolerância ao antibiótico, inóculo de até 10<sup>9</sup>–10<sup>10</sup> UFC/g). Toxinas (alfa-hemolisina, leucocidinas) e proteases destroem o tecido valvar e o anel: perfuração, abscesso, fístula, BAV.</div></div>
+<div class="disease-row"><div class="k">Clínica</div><div class="v">Febre alta e sepse em dias; sopro de regurgitação novo (aórtico ou mitral) com IC precoce; embolia sistêmica em até 40% (cérebro, baço, rim, membros); focos metastáticos (espondilodiscite, artrite séptica, abscesso de psoas, endoftalmite); púrpura purulenta, abscessos cutâneos. A valva pode ser previamente normal.</div></div>
+<div class="disease-row"><div class="k">Diagnóstico</div><div class="v">S. aureus em ≥2 pares de hemocultura é critério maior por si (agente típico) <span class="ev ev-eular">Duke-ISCVID 2023</span>; ETT em todos e ETE com o critério do Pocket; ECG seriado; imagem do corpo inteiro (TC ou PET-CT) se foco desconhecido ou bacteremia persistente. Hemoculturas de controle a cada 24–48 h até negativar: o dia 1 da contagem do tratamento é o da primeira hemocultura negativa.</div></div>
+<div class="disease-row"><div class="k">Tratamento</div><div class="v"><b>MSSA:</b> oxacilina 2 g IV 4/4 h (12 g/dia) ou cefazolina 2 g IV 8/8 h (6 g/dia) <span class="ev ev-acr">AHA 2026 · conferir</span> <span class="ev ev-nice">SNAP 2026 · CloCeBa 2025</span>; cefazolina não serve se houver abscesso cerebral ou meningite (penetração liquórica ruim) — aí oxacilina. Alergia não anafilática à penicilina: cefazolina; anafilaxia: dessensibilização ou vancomicina/daptomicina. <b>MRSA:</b> vancomicina ataque 20–35 mg/kg (peso real, máx. ~3 g) → 15–20 mg/kg IV 8/8–12/12 h, ajustada para AUC24 400–600 mg·h/L <span class="ev ev-acr">ESC 2023</span> <span class="ev ev-sbr">ASHP/IDSA 2020</span>, ou daptomicina 10 mg/kg IV 1×/dia associada a um segundo agente ativo <span class="ev ev-acr">ESC 2023</span>. Duração 4–6 semanas a partir da negativação (AHA 2026: 4 semanas na nativa não complicada). <b>Gentamicina não</b>: não reduz mortalidade e aumenta LRA. <b>Rifampicina não</b> na nativa (ARREST, sem benefício).</div></div>
+<div class="disease-row"><div class="k">Prognóstico</div><div class="v">Mortalidade hospitalar 20–30% e em 1 ano de até 40%; piores: idade, IC, choque, AVC, abscesso perivalvar, MRSA, bacteremia persistente, hemodiálise. Cirurgia indicada em 40–50% das EI esquerdas por S. aureus.</div></div>
+<div class="disease-row"><div class="k">O que muda conduta</div><div class="v">O que muda conduta: MSSA confirmado (trocar vancomicina por betalactâmico em até 24 h); abscesso perivalvar ou BAV (cirurgia de urgência); bacteremia que persiste &gt;72 h (procurar foco, retirar cateter, rever dose; &gt;7 dias com foco controlado = cirurgia); vegetação ≥10 mm com embolia; envolvimento do SNC (oxacilina, não cefazolina); estabilidade após ≥10 dias IV (candidato a oral).</div></div>
+</div></div>
+</div>
+<details class="deep">
+<summary>Deep dive · Por que o betalactâmico vence a vancomicina no MSSA, por que a gentamicina saiu e o que significa "bacteremia persistente"</summary>
+<div class="deep-content">
+<p>A vancomicina é um glicopeptídeo que se liga ao terminal D-alanil-D-alanina do precursor do peptidoglicano; a molécula é grande, hidrofílica, de difusão lenta pela vegetação e bactericida tempo-dependente lenta. Contra MSSA, as coortes repetem há duas décadas o mesmo achado: quem fica em vancomicina tem mais falha, mais recidiva e maior mortalidade do que quem troca para oxacilina ou cefazolina, mesmo com níveis adequados. A regra prática é absoluta: identificou MSSA, troca no mesmo dia. A única exceção é a anafilaxia verdadeira sem possibilidade de dessensibilização.</p>
+<p>Entre os betalactâmicos antiestafilocócicos, a dúvida sobre a cefazolina era o efeito inóculo: algumas cepas produzem betalactamase do tipo A que hidrolisa a cefazolina quando a carga bacteriana é muito alta, como numa vegetação. Dois ensaios mudaram o peso dessa objeção. O CloCeBa (Lancet 2025; 315 adultos com bacteremia por MSSA sem implante intravascular, endocardite incluída, desfecho microbiológico no dia 5 na EI) mostrou cefazolina não inferior à cloxacilina, com metade dos eventos adversos graves e muito menos lesão renal aguda (1% × 12%). O SNAP (NEJM 2026; 1.287 adultos) confirmou a não inferioridade em mortalidade de 90 dias e menos LRA. No Brasil, onde a oxacilina é a penicilina antiestafilocócica disponível (a dicloxacilina, a cloxacilina e a nafcilina não constam da lista CMED), a cefazolina 2 g a cada 8 horas é mais prática, menos nefrotóxica e não exige seis infusões diárias; a oxacilina continua preferida quando há infecção do SNC.</p>
+<p>A gentamicina por 3–5 dias no início do tratamento do S. aureus em valva nativa foi prática corrente porque acelerava a negativação da bacteremia em cerca de um dia em modelos animais e num ensaio pequeno. Isso nunca se traduziu em menos mortalidade ou recidiva; em contrapartida, mesmo poucos dias de aminoglicosídeo associam-se a queda de filtração glomerular mensurável, sobretudo no idoso e com vancomicina concomitante. A ESC 2023 não recomenda aminoglicosídeo na EI estafilocócica de valva nativa, e o AHA 2026 retirou a gentamicina também da prótese. A apostila de 2025 ainda descreve a associação como "comum no passado" — é a frase certa: passado.</p>
+<p>A rifampicina tem papel quando há material estranho: penetra no biofilme e mata a população estacionária que o betalactâmico não alcança. Na valva nativa, o ARREST (758 pacientes com bacteremia por S. aureus) não mostrou redução de falha, recorrência ou morte, e trouxe interações (anticoagulantes, antirretrovirais, imunossupressores) e hepatotoxicidade. Mesmo na prótese, a regra é começar depois de 3–5 dias de terapia eficaz, com a bacteremia já negativa, para não selecionar mutantes rpoB numa população de alta densidade.</p>
+<p>"Bacteremia persistente" tem definição operacional: hemoculturas positivas após 72 horas de antibiótico adequado sinalizam foco não controlado (abscesso perivalvar, metástase, cateter, tromboflebite séptica) ou exposição inadequada; após 7 dias com foco extracardíaco controlado, a persistência é indicação de cirurgia. No MRSA com CIM de vancomicina de 2 mg/L ou heterorresistência (hVISA), a falha é mais frequente; a daptomicina em dose alta é a alternativa, e combinações com ceftarolina ou fosfomicina são estratégias de resgate de centro de referência, sem ganho de mortalidade demonstrado — e a fosfomicina IV não está disponível no Brasil.</p>
+</div>
+</details>
+</div>
+</div>
+
+<div class="card prim">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">C.2</span> Entidade âncora</div><h3>Endocardite estreptocócica: estreptococos orais, S. gallolyticus e variantes nutricionalmente deficientes <span class="ank ank-hy">HIGH-YIELD</span></h3><div class="card-sub">A endocardite subaguda clássica, a mais curável e a que leva à colonoscopia</div></div>
+<div class="card-body">
+<div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Estreptococos do grupo viridans (S. mitis, S. sanguinis, S. oralis, S. mutans, grupo S. anginosus) sobre valva previamente lesada. <b>A CIM de penicilina define o esquema</b>: sensível (≤0,125 mg/L) → penicilina G ou ceftriaxona 4 semanas; resistente → curso mais longo e aminoglicosídeo por ≥2 semanas.</div></div>
+<div class="disease">
+<div class="disease-head"><div class="disease-name">Endocardite por estreptococos orais e do grupo bovis</div><div class="disease-tag">CID-10 B95.4 outros estreptococos como causa (associar à categoria da endocardite de C.1)</div></div>
+<div class="disease-body"><div class="disease-rows">
+<div class="disease-row"><div class="k">Epidemiologia</div><div class="v">Segundo agente das séries modernas e o primeiro em países de média renda com doença reumática prevalente. S. gallolyticus subsp. gallolyticus (ex-S. bovis biótipo I) predomina no idoso e associa-se a adenoma e adenocarcinoma colorretal em 25–80% das séries; o grupo S. anginosus (S. intermedius, S. constellatus) forma abscessos e se comporta como germe virulento. Granulicatella e Abiotrophia (antes "estreptococos nutricionalmente deficientes") e Gemella exigem suplementação de piridoxal para crescer e têm falha maior.</div></div>
+<div class="disease-row"><div class="k">Fisiopatologia</div><div class="v">Colonizam a ETNB (endocardite trombótica não bacteriana) formada sobre endotélio lesado por jato regurgitante ou turbilhonamento; adesinas de ligação a plaquetas (FimA, glucanos, proteínas ricas em serina) e a fibrina permitem aderir durante bacteremias transitórias de escovação e mastigação. A virulência é baixa: vegetação cresce devagar, fenômenos imunológicos (imunocomplexos circulantes) dominam e a destruição valvar é tardia.</div></div>
+<div class="disease-row"><div class="k">Clínica</div><div class="v">Subaguda: febre baixa, sudorese noturna, emagrecimento, artralgia, esplenomegalia, anemia, VHS alta; Osler, Janeway, Roth e hemorragias em lasca mais frequentes que na estafilocócica. Aneurisma micótico cerebral classicamente associado ao viridans.</div></div>
+<div class="disease-row"><div class="k">Diagnóstico</div><div class="v">Agente típico em ≥2 pares <span class="ev ev-eular">Duke-ISCVID 2023</span>; identificação até espécie (MALDI-TOF) e <b>CIM de penicilina e ceftriaxona</b> obrigatórias; S. gallolyticus → colonoscopia. Negativação esperada em 48 h de terapia eficaz.</div></div>
+<div class="disease-row"><div class="k">Tratamento</div><div class="v"><b>Sensível à penicilina (CIM ≤0,125 mg/L), valva nativa:</b> penicilina G cristalina 12–18 milhões UI/dia IV ÷ 4/4 h ou ceftriaxona 2 g IV 1×/dia, 4 semanas; curso de 2 semanas com gentamicina 3 mg/kg/dia IV 1×/dia (peso ajustado no obeso; vale &lt;1 mg/L) só na nativa não complicada com função renal normal. <b>Relativamente resistente:</b> penicilina G 24 milhões UI/dia IV ÷ 4/4 h ou ceftriaxona 4 semanas + gentamicina por ≥2 semanas <span class="ev ev-acr">ESC 2023</span> <span class="ev ev-expert">doses: conferir tabela ESC</span>. Alergia: vancomicina (AUC) ou teicoplanina. Prótese: 6 semanas. Granulicatella/Abiotrophia/Gemella: tratar como resistente.</div></div>
+<div class="disease-row"><div class="k">Prognóstico</div><div class="v">Mortalidade hospitalar de 4–9%, a menor entre os agentes; é o grupo que mais se beneficia de transição oral (POET) e o mais estudado para encurtamento (POET II).</div></div>
+<div class="disease-row"><div class="k">O que muda conduta</div><div class="v">O que muda conduta: CIM de penicilina (duração e aminoglicosídeo); S. gallolyticus (colonoscopia); grupo anginosus (procurar abscesso, tratar como virulento); prótese (6 semanas); estabilidade após 10 dias (oral com amoxicilina em dose alta e segundo agente).</div></div>
+</div></div>
+</div>
+<details class="deep">
+<summary>Deep dive · CIM, tolerância e o porquê dos esquemas de 2 e de 4 semanas</summary>
+<div class="deep-content">
+<p>A divisão dos estreptococos orais por CIM de penicilina segue o EUCAST e a ESC: até 0,125 mg/L é sensível; acima disso, até 2 mg/L, "relativamente resistente" — um rótulo clínico, não microbiológico, que marca a necessidade de mais exposição. A resistência vem de PBPs em mosaico (recombinação com genes de S. pneumoniae e S. mitis), não de betalactamase, e por isso a ceftriaxona, de afinidade diferente pelas PBP alteradas, muitas vezes mantém atividade; a CIM de ceftriaxona deve ser pedida junto. No Brasil, séries hospitalares mostram proporção crescente de S. mitis/oralis com CIM elevada, o que justifica não presumir sensibilidade.</p>
+<p>Por que quatro semanas: os estreptococos dentro da vegetação estão em fase estacionária, com PBP pouco expressas e baixa taxa de síntese de parede; o betalactâmico só mata bactéria em divisão. O tratamento precisa cobrir sucessivas "janelas" em que subpopulações retomam o crescimento. Estudos dos anos 1980–1990 mostraram cura &gt;95% com quatro semanas de penicilina e taxas semelhantes com duas semanas quando o aminoglicosídeo é associado — a gentamicina, entrando pela parede já danificada pelo betalactâmico, acelera a morte bacteriana (sinergia por aumento de captação). Esse esquema curto exige valva nativa, ausência de abscesso, de embolia extracardíaca e de complicação, e função renal normal; o custo é nefrotoxicidade e ototoxicidade (vestibular, irreversível), e por isso a dose é uma vez ao dia, por peso, com vale indetectável ou &lt;1 mg/L.</p>
+<p>A ceftriaxona 2 g uma vez ao dia é o esquema mais prático e o que viabiliza OPAT (antibioticoterapia parenteral ambulatorial). Com a evidência de transição oral, o desenho moderno para o viridans sensível em valva nativa estável é cerca de 10–14 dias IV seguidos de amoxicilina oral em dose alta com um segundo agente; a endossação holandesa da ESC 2023 chegou a propor a troca oral especificamente no viridans de valva nativa. O POET II (NEJM 2026) foi além e encurtou o curso total para mediana de 26 dias em pacientes estáveis, com segurança não inferior, mas recidiva maior (5,1% × 1,6%), concentrada no enterococo.</p>
+<p>O S. gallolyticus merece raciocínio próprio. A associação com neoplasia colorretal não é apenas de porta de entrada: o microrganismo adere ao colágeno tipo IV de mucosa displásica, prolifera no microambiente tumoral e há dados experimentais de que promove proliferação epitelial via β-catenina. A colonoscopia, portanto, é investigação de neoplasia, não de "foco". A associação com doença hepática crônica (translocação pelo sistema porta) é a segunda pista. Já o S. pneumoniae, embora seja estreptococo, não pertence a este box: produz endocardite aguda, destrutiva e aórtica, e está em D.4 com a tríade de Austrian.</p>
+</div>
+</details>
+</div>
+</div>
+
+<div class="card prim">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">C.3</span> Agente</div><h3>Endocardite enterocócica <span class="ank ank-dec">DECISION</span></h3><div class="card-sub">Idoso, foco urinário ou digestivo, valva degenerada ou prótese — e o tratamento mais longo entre os cocos gram-positivos</div></div>
+<div class="card-body">
+<div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">E. faecalis em ~90%. <b>Ampicilina 2 g IV 4/4 h + ceftriaxona 2 g IV 12/12 h por 6 semanas</b> (dupla betalactâmica) substituiu ampicilina + gentamicina na maioria dos cenários. Cefalosporina sozinha nunca: o enterococo é intrinsecamente resistente (PBP5).</div></div>
+<div class="disease">
+<div class="disease-head"><div class="disease-name">Endocardite por Enterococcus spp.</div><div class="disease-tag">CID-10 B95.2 estreptococo do grupo D (enterococo) como causa</div></div>
+<div class="disease-body"><div class="disease-rows">
+<div class="disease-row"><div class="k">Epidemiologia</div><div class="v">Terceiro agente (10–15%), crescente com envelhecimento, TAVI e procedimentos urológicos e digestivos; homem idoso com manipulação prostática é o perfil clássico. Na bacteremia por E. faecalis comunitária, a EI chega a 25%; o escore NOVA/DENOVA estima o risco e indica ETE (II03).</div></div>
+<div class="disease-row"><div class="k">Fisiopatologia</div><div class="v">Baixa virulência, alta tolerância: adesinas Ace e Ebp ligam colágeno e plaquetas; biofilme robusto; a PBP5 de baixa afinidade explica resistência intrínseca a cefalosporinas e a tolerância (morte lenta) à ampicilina isolada. A ceftriaxona, sem atividade própria, satura PBP2 e PBP3 enquanto a ampicilina inibe PBP4 e PBP5 — saturação complementar que reproduz a sinergia sem aminoglicosídeo.</div></div>
+<div class="disease-row"><div class="k">Clínica</div><div class="v">Subaguda na maioria, em idoso com comorbidade; IC e prótese frequentes; embolia menos comum que no S. aureus. Febre pode ser discreta.</div></div>
+<div class="disease-row"><div class="k">Diagnóstico</div><div class="v">E. faecalis em ≥2 pares é agente típico <span class="ev ev-eular">Duke-ISCVID 2023</span> (E. faecium só como não típico, 3 pares); testar resistência de alto nível a aminoglicosídeo (HLAR, CIM de gentamicina &gt;128 mg/L), ampicilina e vancomicina; procurar foco urinário e colorretal.</div></div>
+<div class="disease-row"><div class="k">Tratamento</div><div class="v"><b>E. faecalis sensível à ampicilina:</b> ampicilina 2 g IV 4/4 h + ceftriaxona 2 g IV 12/12 h, 6 semanas <span class="ev ev-acr">ESC 2023</span> <span class="ev ev-acr">AHA 2026 · conferir</span>; alternativa sem HLAR: ampicilina + gentamicina 3 mg/kg/dia IV 1×/dia (peso ajustado no obeso; vale &lt;1 mg/L), com o aminoglicosídeo encurtado para 2 semanas <span class="ev ev-acr">ESC 2023</span>. HLAR: só dupla betalactâmica. Resistente à ampicilina ou E. faecium: vancomicina (AUC) + gentamicina; VRE: daptomicina em dose alta (10–12 mg/kg) com ampicilina ou ceftarolina, ou linezolida — infectologia e cirurgia.</div></div>
+<div class="disease-row"><div class="k">Prognóstico</div><div class="v">Mortalidade hospitalar 15–20%, puxada pela idade e pelas comorbidades; recidiva mais alta que a dos estreptococos (no POET II, 6,4% no braço encurtado).</div></div>
+<div class="disease-row"><div class="k">O que muda conduta</div><div class="v">O que muda conduta: HLAR (proíbe sinergia com aminoglicosídeo); DRC ou idoso (dupla betalactâmica em vez de gentamicina); resistência à ampicilina ou VRE (resgate de referência); estabilidade após 10 dias IV (oral com amoxicilina + segundo agente, POET); não encurtar abaixo do padrão (recidiva no POET II).</div></div>
+</div></div>
+</div>
+<div class="box pearl"><span class="box-label">PEARL</span><div class="box-title">Por que a dupla betalactâmica ganhou do aminoglicosídeo</div><div class="box-body">Coortes espanholas e francesas compararam ampicilina + ceftriaxona com ampicilina + gentamicina no E. faecalis: eficácia igual, nefrotoxicidade muito menor (a gentamicina por 4–6 semanas produzia LRA em até um terço dos idosos). O ganho não é microbiológico, é de segurança — e no idoso com TFG limítrofe ele decide a sobrevida.</div></div>
+</div>
+</div>
+
+<div class="card prim">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">C.4</span> Substrato</div><h3>Endocardite de prótese valvar (cirúrgica e transcateter) <span class="ank ank-dgr">DANGER</span></h3><div class="card-sub">Biofilme sobre material estranho: o antibiótico sozinho raramente basta</div></div>
+<div class="card-body">
+<div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">10–30% das EI. <b>Precoce (até 12 meses): estafilococos, inclusive coagulase-negativos, Gram-negativos e Candida; tardia: perfil comunitário.</b> Tratamento ≥6 semanas; estafilococo com rifampicina 300 mg VO 8/8 h (900 mg/dia), iniciada após 3–5 dias de terapia eficaz. Cirurgia em até metade.</div></div>
+<div class="disease">
+<div class="disease-head"><div class="disease-name">Endocardite de prótese valvar</div><div class="disease-tag">CID-10 T82.6 infecção e reação inflamatória devidas a prótese valvular cardíaca · Z95.2 presença de prótese valvular</div></div>
+<div class="disease-body"><div class="disease-rows">
+<div class="disease-row"><div class="k">Epidemiologia</div><div class="v">Risco cumulativo de 1–6% por prótese, máximo nos primeiros meses; mecânica e biológica com risco semelhante a longo prazo. TAVI: incidência comparável à cirúrgica, em população mais idosa e frágil, com predomínio de enterococo e S. aureus no primeiro ano.</div></div>
+<div class="disease-row"><div class="k">Fisiopatologia</div><div class="v">Precoce: contaminação intraoperatória ou bacteremia nosocomial; a infecção começa no anel de sutura e se estende ao tecido perivalvar (abscesso, deiscência, pseudoaneurisma, fístula). Tardia: semelhante à nativa, com vegetação nos folhetos da biológica. O biofilme (matriz de polissacarídeo, células persistentes) reduz a ação dos betalactâmicos e glicopeptídeos em ordens de grandeza; a rifampicina é o fármaco com atividade antibiofilme estafilocócico.</div></div>
+<div class="disease-row"><div class="k">Clínica</div><div class="v">Febre sem foco em portador de prótese; IC por deiscência (regurgitação paravalvar), obstrução por vegetação ou trombo, BAV; embolia; hemólise com esquizócitos na deiscência. Sopro pode faltar.</div></div>
+<div class="disease-row"><div class="k">Diagnóstico</div><div class="v">ETE em todos; ETE negativo ou duvidoso → <b>PET-CT com FDG</b> (captação anormal periprotética &gt;3 meses do implante é critério maior) ou TC cardíaca (abscesso, pseudoaneurisma) <span class="ev ev-eular">Duke-ISCVID 2023</span>; estafilococo coagulase-negativo, C. acnes, Corynebacterium, Candida e Pseudomonas passam a agentes típicos na presença de prótese.</div></div>
+<div class="disease-row"><div class="k">Tratamento</div><div class="v"><b>Estafilococo sensível à oxacilina:</b> oxacilina 2 g IV 4/4 h (ou cefazolina 2 g IV 8/8 h) ≥6 semanas + rifampicina 300 mg VO 8/8 h (900 mg/dia) após 3–5 dias de terapia eficaz e hemocultura negativa <span class="ev ev-acr">ESC 2023</span>; gentamicina por 2 semanas: mantida pela ESC 2023 (conferir tabela) e retirada pelo AHA 2026 (G.2). <b>Resistente:</b> vancomicina (AUC 400–600) ou daptomicina 10 mg/kg IV 1×/dia + rifampicina. Estreptococo, enterococo e HACEK: mesmos fármacos da nativa por 6 semanas. Rifampicina no Brasil só oral (cápsula 300 mg, suspensão 20 mg/mL — CMED 2026).</div></div>
+<div class="disease-row"><div class="k">Prognóstico</div><div class="v">Mortalidade hospitalar 20–40%; pior na precoce, com S. aureus, IC, abscesso e AVC. Cirurgia reduz mortalidade quando há complicação.</div></div>
+<div class="disease-row"><div class="k">O que muda conduta</div><div class="v">O que muda conduta: deiscência, abscesso ou IC (cirurgia); S. aureus (cirurgia considerada mesmo sem complicação maior); estafilococo (rifampicina e ≥6 semanas); interação da rifampicina com varfarina (INR despenca; dobrar vigilância); TAVI (reintervenção de alto risco, decisão de equipe).</div></div>
+</div></div>
+</div>
+<details class="deep">
+<summary>Deep dive · Biofilme, rifampicina e o paciente anticoagulado com prótese mecânica</summary>
+<div class="deep-content">
+<p>O biofilme estafilocócico é uma comunidade aderida ao material sintético, embebida em matriz de polissacarídeo de adesão intercelular (PIA, codificada pelo operon ica), DNA extracelular e proteínas. Dentro dele coexistem células em crescimento e células persistentes de metabolismo mínimo, toleradas por betalactâmicos e glicopeptídeos em concentrações 100 a 1.000 vezes acima da CIM. A rifampicina, inibidora da RNA polimerase dependente de DNA, é lipofílica, difunde pela matriz e mata bactérias de crescimento lento — por isso é o eixo do tratamento de infecção estafilocócica em material estranho (próteses articulares, valvas, enxertos). O problema é a barreira genética baixa: uma única mutação em rpoB confere resistência de alto nível, com frequência de 10<sup>−7</sup>–10<sup>−8</sup>. Numa vegetação com 10<sup>9</sup> bactérias, monoterapia ou início precoce, com carga ainda alta, seleciona mutante quase com certeza. Daí as duas regras: sempre associada, e iniciada depois de 3–5 dias de terapia eficaz com bacteremia já negativa (ESC 2023; o AHA 2026, pelo resumo disponível, propõe 5–7 dias).</p>
+<p>A dose usada na EI de prótese é 900 mg/dia em três tomadas (300 mg a cada 8 horas). Isso difere da dose do II04 (600 mg/dia como adjuvante na meningite pneumocócica) e da quimioprofilaxia meningocócica: são indicações diferentes, e a divergência está registrada no NOTAS. No Brasil não há rifampicina injetável na lista CMED; o paciente em jejum pós-operatório recebe a cápsula por sonda ou a suspensão de 20 mg/mL.</p>
+<p>A rifampicina é o indutor mais potente da prática clínica (CYP3A4, CYP2C9, CYP2C19, glicoproteína P, UGT). Na prótese mecânica anticoagulada com varfarina, o INR cai em 5–10 dias e a dose de varfarina pode precisar dobrar ou triplicar; ao suspender a rifampicina, a indução regride em 2 semanas e o INR dispara. Por isso muitos serviços mantêm heparina não fracionada ou de baixo peso durante a fase de rifampicina e cirurgia potencial. A interação também derruba DOAC (contraindicados na prótese mecânica de qualquer modo), antirretrovirais, tacrolimo, ciclosporina, azólicos e linezolida — esta última é a razão pela qual linezolida e rifampicina não se combinam em esquemas orais.</p>
+<p>Anticoagulação e prótese mecânica infectada: a ESC 2023 recomenda manter a anticoagulação de quem já tinha indicação, na ausência de outra contraindicação, e trocar o anticoagulante oral por heparina quando há hemorragia cerebral ou cirurgia iminente. A suspensão indiscriminada "porque é endocardite" expõe a trombose de prótese; a manutenção cega no AVC hemorrágico expõe à expansão do hematoma. A decisão é dia a dia, com neurologia (C.6) e com o HO03 para reversão.</p>
+</div>
+</details>
+</div>
+</div>
+
+<div class="card prim">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">C.5</span> Substrato</div><h3>Endocardite direita no usuário de drogas injetáveis <span class="ank ank-dec">DECISION</span></h3><div class="card-sub">Tricúspide, S. aureus, êmbolos pulmonares sépticos — e uma doença social que volta se só a infecção for tratada</div></div>
+<div class="card-body">
+<div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Adulto jovem, febre, nódulos pulmonares cavitados, sopro muitas vezes ausente. <b>Tricúspide isolada por MSSA sem complicação pode ser tratada por 2 semanas</b>; esquerda ou complicada, como qualquer EI esquerda. Tratar a dependência é parte do tratamento.</div></div>
+<div class="disease">
+<div class="disease-head"><div class="disease-name">Endocardite de valva tricúspide no usuário de drogas injetáveis</div><div class="disease-tag">CID-10 I33.9 endocardite aguda não especificada (tricúspide) · I26.9 embolia pulmonar séptica · F19.2 dependência de múltiplas drogas</div></div>
+<div class="disease-body"><div class="disease-rows">
+<div class="disease-row"><div class="k">Epidemiologia</div><div class="v">Adultos de 20–40 anos, predomínio masculino; incidência crescente com a epidemia de opioides e estimulantes injetáveis; recidiva e reinfecção frequentes. Tricúspide em 60–70%; valvas esquerdas em 20–30%, com espectro mais amplo.</div></div>
+<div class="disease-row"><div class="k">Fisiopatologia</div><div class="v">Partículas (talco, excipientes, adulterantes) lesam o endotélio tricúspide, primeira valva atingida pelo material injetado; vasoespasmo e hipertensão pulmonar induzidos pela droga aumentam o jato. A bactéria vem da pele do próprio usuário (S. aureus), de saliva usada para "limpar" a agulha (estreptococos, Eikenella) ou de material contaminado (Pseudomonas, Candida).</div></div>
+<div class="disease-row"><div class="k">Clínica</div><div class="v">Febre, tosse, dor pleurítica, hemoptise, derrame ou empiema; nódulos periféricos múltiplos que escavam; sopro tricúspide em minoria; manifestações periféricas esquerdas ausentes. Abscessos de pele, flebite séptica, osteomielite.</div></div>
+<div class="disease-row"><div class="k">Diagnóstico</div><div class="v">Uso de droga injetável é condição predisponente (menor) no Duke-ISCVID; infartos pulmonares sépticos são fenômeno vascular <span class="ev ev-eular">Duke-ISCVID 2023</span>. ETT costuma ver bem a tricúspide; ETE para excluir acometimento esquerdo. Sorologias de HIV, HBV, HCV e sífilis.</div></div>
+<div class="disease-row"><div class="k">Tratamento</div><div class="v">MSSA, tricúspide isolada, sem complicação (sem embolia extrapulmonar, empiema, abscesso, prótese, HIV avançado, vegetação &gt;20 mm): oxacilina 2 g IV 4/4 h por 2 semanas <span class="ev ev-acr">ESC 2023 · conferir</span>; qualquer outro cenário, 4–6 semanas. MRSA: vancomicina (AUC) ou daptomicina 10 mg/kg IV 1×/dia. Esquemas orais e OPAT são opções por acesso venoso difícil; aspiração percutânea da vegetação (AngioVac) em centros, para infecção não controlada ou vegetação grande com êmbolos recorrentes <span class="ev ev-acr">AHA 2026 · conferir</span>.</div></div>
+<div class="disease-row"><div class="k">Prognóstico</div><div class="v">Mortalidade hospitalar baixa (&lt;10%) na tricúspide isolada; pior se vegetação &gt;20 mm, fungo, acometimento esquerdo e HIV avançado. Reinfecção em até 25% quando o uso continua.</div></div>
+<div class="disease-row"><div class="k">O que muda conduta</div><div class="v">O que muda conduta: acometimento esquerdo (curso longo, espectro amplo); MRSA (glicopeptídeo ou daptomicina); vegetação &gt;20 mm com êmbolos recorrentes ou IC direita refratária (cirurgia ou aspiração); continuidade do uso (oral, OPAT, tratamento da dependência com buprenorfina ou metadona — PC03).</div></div>
+</div></div>
+</div>
+<div class="box decision"><span class="box-label">DECISION</span><div class="box-title">Operar o usuário de drogas: a pergunta não é "merece", é "vai sobreviver sem"</div><div class="box-body">As indicações cirúrgicas são as mesmas de qualquer EI; recusar cirurgia por uso de droga é estigma, não critério. O que muda é o planejamento: preferir reparo à troca na tricúspide, evitar prótese quando possível, tratar a dependência na internação (o início de opioide agonista reduz readmissão e morte) e montar o seguimento antes da alta. A reinfecção de prótese é o desfecho que mais pesa.</div></div>
+</div>
+</div>
+
+<div class="card prim">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">C.6</span> Complicação âncora</div><h3>Complicações neurológicas da endocardite: embolia, hemorragia, aneurisma micótico e abscesso <span class="ank ank-dgr">DANGER</span></h3><div class="card-sub">A complicação extracardíaca mais grave e a que mais muda o momento da cirurgia</div></div>
+<div class="card-body">
+<div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Sintomáticas em 20–40%, silenciosas na RM em até 80%. <b>Sem trombólise; trombectomia caso a caso; AVC isquêmico sem hemorragia e sem coma não adia a cirurgia indicada; hemorragia em geral adia</b>. Anticoagulante prévio: manter salvo hemorragia ou cirurgia iminente, trocando por heparina.</div></div>
+<div class="disease">
+<div class="disease-head"><div class="disease-name">Complicações neurológicas da endocardite infecciosa</div><div class="disease-tag">CID-10 I63.4 infarto cerebral por embolia de artérias cerebrais · I67.1 aneurisma cerebral não roto (micótico) · I61.9 hemorragia intracerebral</div></div>
+<div class="disease-body"><div class="disease-rows">
+<div class="disease-row"><div class="k">Epidemiologia</div><div class="v">AVC isquêmico em 15–20% das EI; risco embólico máximo antes e nas 2 primeiras semanas do antibiótico, caindo rapidamente depois. Maior com S. aureus, vegetação ≥10 mm, mitral, móvel. Aneurisma micótico intracraniano em 2–4% (1–2% na apostila), mais com viridans.</div></div>
+<div class="disease-row"><div class="k">Fisiopatologia</div><div class="v">O fragmento de vegetação oclui ramos distais da cerebral média; o êmbolo infectado inflama a parede (arterite séptica) e pode romper sem aneurisma (hemorragia precoce) ou formar aneurisma micótico por embolia dos vasa vasorum ou invasão direta da parede, tipicamente distal, em bifurcações corticais. Microabscessos, meningite purulenta (S. aureus) e encefalopatia tóxica completam o espectro.</div></div>
+<div class="disease-row"><div class="k">Clínica</div><div class="v">Déficit focal súbito, crise, cefaleia, confusão; hemorragia subaracnoide de convexidade sugere aneurisma ou arterite. Meningismo com LCR neutrofílico.</div></div>
+<div class="disease-row"><div class="k">Diagnóstico</div><div class="v">TC e angio-TC na urgência; RM com difusão e suscetibilidade (microssangramentos); angiografia digital se hemorragia, sangue subaracnoide ou angio-TC duvidosa. Lesões embólicas cerebrais, abscesso e aneurisma micótico entram como fenômenos vasculares no Duke-ISCVID <span class="ev ev-eular">Duke-ISCVID 2023</span>.</div></div>
+<div class="disease-row"><div class="k">Tratamento</div><div class="v"><b>Trombólise: não</b>; trombectomia mecânica pode ser considerada dentro da janela em casos selecionados <span class="ev ev-acr">ESC 2023</span>. Antiplaquetário e anticoagulação não previnem embolia da vegetação. Anticoagulação prévia (prótese mecânica, FA): manter salvo contraindicação; hemorragia cerebral ou cirurgia iminente → suspender o oral e usar heparina <span class="ev ev-acr">ESC 2023</span>. Cirurgia cardíaca indicada após AVC isquêmico: não adiar se não houver hemorragia nem coma; após hemorragia, decisão individual (dados retrospectivos com benefício de cirurgia em até 2 semanas; AHA 2026 sugere ≥2, preferencialmente 4 semanas) <span class="ev ev-acr">AHA 2026 · conferir</span>. Aneurisma grande ou roto: endovascular ou neurocirurgia; pequeno não roto: antibiótico e angiografia seriada.</div></div>
+<div class="disease-row"><div class="k">Prognóstico</div><div class="v">AVC dobra a mortalidade; hemorragia e coma são os piores marcadores. Aneurisma roto tem letalidade de até 80%.</div></div>
+<div class="disease-row"><div class="k">O que muda conduta</div><div class="v">O que muda conduta: hemorragia na imagem (suspende anticoagulante oral, adia cirurgia, angiografia); coma (contraindica cirurgia na fase aguda); vegetação grande com AVC isquêmico pequeno (cirurgia urgente, sem esperar); aneurisma roto (tratar antes da cirurgia cardíaca).</div></div>
+</div></div>
+</div>
+<details class="deep">
+<summary>Deep dive · O dilema do momento cirúrgico: heparina da circulação extracorpórea × novo êmbolo</summary>
+<div class="deep-content">
+<p>A cirurgia cardíaca exige circulação extracorpórea com anticoagulação plena por heparina (TCA acima de 400–480 segundos), hipotensão relativa e, às vezes, hipotermia. O receio clássico era converter um infarto embólico em hemorragia (transformação hemorrágica favorecida pela quebra da barreira hematoencefálica na área isquêmica) e agravar o edema. Daí a regra antiga, ainda presente na apostila, de esperar 2–3 semanas após AVC isquêmico e cerca de 4 semanas após hemorragia.</p>
+<p>O outro lado da balança é o risco de nova embolia com a vegetação ainda no lugar: nas primeiras duas semanas de antibiótico ele é alto, sobretudo com vegetação ≥10 mm, móvel, mitral e S. aureus; o ensaio coreano EASE (2012), em pacientes com vegetação &gt;10 mm e valvopatia grave, mostrou que operar em 48 horas reduziu o desfecho combinado de morte e embolia, à custa de quase eliminar os novos êmbolos. Coortes posteriores e metanálises observacionais de pacientes com AVC isquêmico mostraram que a cirurgia precoce não aumenta a mortalidade nem a piora neurológica quando não há hemorragia e o paciente não está em coma, com transformação hemorrágica pós-operatória baixa. A ESC 2023 incorporou essa evidência: AVC isquêmico sem hemorragia não justifica adiar cirurgia urgente indicada, e a exceção é o mau estado neurológico.</p>
+<p>A hemorragia intracraniana muda o cálculo porque a heparina pode expandir o hematoma. Aqui a evidência é retrospectiva e heterogênea: algumas séries mostram resultado aceitável com cirurgia em menos de 2 semanas quando o volume é pequeno e a indicação cardíaca é forte (IC refratária); outras sustentam esperar cerca de 4 semanas. A ESC 2023 deixa a decisão caso a caso; o AHA 2026, pelo resumo disponível, sugere aguardar pelo menos 2 e preferencialmente 4 semanas após hemorragia ou AVC isquêmico extenso, com exceção para IC, sepse não controlada ou abscesso. Microssangramentos isolados na RM não são hemorragia para este fim.</p>
+<p>O aneurisma micótico roto tem prioridade sobre a cirurgia valvar: deve ser excluído ou tratado (embolização endovascular, clipagem ou ressecção) antes da heparinização da circulação extracorpórea. Aneurismas pequenos e não rotos podem regredir com o antibiótico e são acompanhados com angiografia. A anticoagulação de quem já tinha indicação segue a mesma lógica de risco: manter na isquemia, suspender e trocar por heparina na hemorragia e no pré-operatório, e reavaliar todo dia com neurologia — a promessa que o NE03 faz a este HP.</p>
+</div>
+</details>
+</div>
+</div>
+
+<div class="card prim">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">C.7</span> Dispositivo</div><h3>Infecção de dispositivo eletrônico cardíaco implantável (marcapasso, CDI, ressincronizador) <span class="ank ank-dec">DECISION</span></h3><div class="card-sub">Sem extração completa, quase toda infecção de cabo volta</div></div>
+<div class="card-body">
+<div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Infecção de loja (dor, eritema, erosão, secreção) ou endocardite de cabo (vegetação, bacteremia). <b>Extração percutânea completa do sistema — gerador e todos os cabos — em ambos</b>, antibiótico por agente e reimplante em outro sítio quando a hemocultura negativa e a indicação persiste.</div></div>
+<div class="disease">
+<div class="disease-head"><div class="disease-name">Infecção de dispositivo cardíaco eletrônico implantável</div><div class="disease-tag">CID-10 T82.7 infecção e reação inflamatória devidas a outros dispositivos, implantes e enxertos cardíacos e vasculares</div></div>
+<div class="disease-body"><div class="disease-rows">
+<div class="disease-row"><div class="k">Epidemiologia</div><div class="v">1–2% dos implantes em 10 anos, maior com troca de gerador, CDI e ressincronizador, hematoma de loja, DRC, diabetes, corticoide e febre nas 24 h antes do implante. Estafilococos em 70–80% (coagulase-negativos e S. aureus).</div></div>
+<div class="disease-row"><div class="k">Fisiopatologia</div><div class="v">Contaminação da loja no implante ou na troca, com progressão ao longo do cabo até o endocárdio; ou semeadura hematogênica do cabo intravascular (S. aureus). Biofilme sobre o cabo e o gerador torna a cura sem remoção improvável.</div></div>
+<div class="disease-row"><div class="k">Clínica</div><div class="v">Loja: inflamação, flutuação, deiscência, exposição do gerador (erosão = infecção, mesmo sem secreção). Endocardite de cabo: febre, bacteremia, êmbolos pulmonares; sinais locais podem faltar.</div></div>
+<div class="disease-row"><div class="k">Diagnóstico</div><div class="v">Hemoculturas antes do antibiótico; ETE (vegetação no cabo e na tricúspide); PET-CT com FDG para loja e cabo duvidosos; cultura de loja e de ponta de cabo após a extração; não puncionar a loja às cegas. Dispositivo endovascular é condição predisponente no Duke-ISCVID <span class="ev ev-eular">Duke-ISCVID 2023</span>.</div></div>
+<div class="disease-row"><div class="k">Tratamento</div><div class="v">Extração completa percutânea (laser ou bainhas mecânicas) em centro com retaguarda cirúrgica; vegetação grande (&gt;20 mm) não contraindica extração percutânea, mas exige discussão de abordagem <span class="ev ev-acr">ESC 2023 · conferir</span>. Empírico: vancomicina (AUC) até identificação; duração após a extração de cerca de 10–14 dias na infecção de loja e 4–6 semanas na endocardite de cabo. Reimplante contralateral ou epicárdico após hemoculturas negativas (72 h na bacteremia, mais tempo com vegetação valvar); considerar dispositivo sem cabo transvenoso ou CDI subcutâneo.</div></div>
+<div class="disease-row"><div class="k">Prognóstico</div><div class="v">Mortalidade em 1 ano de 15–30%; a remoção incompleta multiplica recidiva e morte.</div></div>
+<div class="disease-row"><div class="k">O que muda conduta</div><div class="v">O que muda conduta: qualquer bacteremia por S. aureus em portador de dispositivo (ETE e, se EI, extração); erosão da loja (extração mesmo sem bacteremia); dependência de marcapasso (marcapasso provisório ou de fixação ativa externo até reimplante); vegetação valvar associada (cirurgia valvar com remoção do sistema no mesmo ato).</div></div>
+</div></div>
+</div>
+<div class="score">
+<div class="score-head"><div class="score-name">Microbiologia por cenário — o que cobrir antes da cultura <span class="ev ev-expert">apostila 2025 · conferir ESC 2023</span></div><div class="score-purpose">Orienta o empírico (F1.1) e o nível de suspeita; a cultura manda depois</div></div>
+<div class="score-rows">
+<div class="score-row"><div class="score-grade">Nativa comunitária</div><div class="score-desc">S. aureus, estreptococos orais, S. gallolyticus, E. faecalis; HACEK raro. Subaguda estável: esperar a cultura.</div></div>
+<div class="score-row"><div class="score-grade">Associada a cuidados de saúde</div><div class="score-desc">S. aureus (MRSA conforme ecologia), coagulase-negativos, enterococo, Gram-negativos, Candida (NPT, cateter).</div></div>
+<div class="score-row"><div class="score-grade">Droga injetável</div><div class="score-desc">S. aureus (direita); esquerda: + Pseudomonas, enterobactérias, Candida, polimicrobiana.</div></div>
+<div class="score-row"><div class="score-grade">Prótese &lt;12 meses</div><div class="score-desc">Coagulase-negativos, S. aureus, Gram-negativos, Candida, Corynebacterium, C. acnes; MRSA/MRSE frequentes.</div></div>
+<div class="score-row"><div class="score-grade">Prótese &gt;12 meses</div><div class="score-desc">Como a nativa comunitária; enterococo e S. aureus dominam após TAVI.</div></div>
+<div class="score-row"><div class="score-grade">Dispositivo</div><div class="score-desc">Coagulase-negativos e S. aureus em 70–80%.</div></div>
+<div class="score-row"><div class="score-grade">Hemocultura negativa</div><div class="score-desc">Antibiótico prévio (metade); Coxiella, Bartonella, Brucella, T. whipplei, Granulicatella/Abiotrophia, HACEK, fungos, Legionella, Mycoplasma (D.1).</div></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- ============================================================ D -->
+<section id="secundarias">
+<div class="section">
+<div class="section-eyebrow"><span>D</span> Entidades Secundárias</div>
+<div class="section-title">Os agentes raros, as complicações fora do coração, os falsos positivos e as populações que mudam a conduta</div>
+<div class="section-sub">Agrupados por lógica comum: cultura negativa, fungo, Gram-negativo, gram-positivos de alta virulência, complicações extracardíacas, endocardite não infecciosa e populações especiais.</div>
+</div>
+
+<div class="card diag">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">D.1</span> Diagnóstico difícil</div><h3>Endocardite com hemoculturas negativas: Coxiella, Bartonella, Brucella, Tropheryma whipplei <span class="ank ank-dec">DECISION</span></h3></div>
+<div class="card-body">
+<div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">5–10% das EI (até 30% em séries com antibiótico prévio). <b>Metade é antibiótico antes da coleta; a outra metade é germe que não cresce em frasco</b>. Sorologia de Coxiella e Bartonella, PCR no sangue e, se houver cirurgia, cultura, PCR 16S e histologia da valva.</div></div>
+<div class="disease">
+<div class="disease-head"><div class="disease-name">Endocardite com hemoculturas negativas</div><div class="disease-tag">CID-10 A78 febre Q · A44.8 bartonelose · A23.9 brucelose · K90.8 doença de Whipple</div></div>
+<div class="disease-body"><div class="disease-rows">
+<div class="disease-row"><div class="k">Base</div><div class="v">Coxiella burnetii (febre Q: contato com gado, caprinos, leite cru; valvopatia ou prótese prévia; hepatoesplenomegalia, vegetação pequena ou ausente), Bartonella quintana (pessoas em situação de rua, piolho do corpo, alcoolismo) e B. henselae (gato), Brucella (laticínio não pasteurizado, área rural), T. whipplei (homem de meia-idade, artralgia crônica, pouca febre). Fungos, Legionella, Mycoplasma e estreptococos nutricionalmente deficientes completam a lista.</div></div>
+<div class="disease-row"><div class="k">Diagnóstico</div><div class="v">Coxiella: IgG de fase I ≥1:800, PCR no sangue ou cultura de um frasco são critério maior; Bartonella: PCR no sangue ou IgG ≥1:800; T. whipplei: PCR no sangue <span class="ev ev-eular">Duke-ISCVID 2023</span>. Valva operada: cultura, PCR 16S/18S ou sequenciamento, histologia com PAS (Whipple) e imuno-histoquímica. Excluir ETNB (D.6) e Libman-Sacks.</div></div>
+<div class="disease-row"><div class="k">Tratamento</div><div class="v">Coxiella: doxiciclina 100 mg VO 12/12 h + hidroxicloroquina 200 mg VO 8/8 h por ≥18 meses (nativa) e ≥24 meses (prótese), com nível de doxiciclina e sorologia seriada <span class="ev ev-expert">apostila 2025 · conferir ESC 2023</span>. Bartonella: doxiciclina 100 mg VO 12/12 h por 4–6 semanas + gentamicina 3 mg/kg/dia IV 1×/dia (peso ajustado no obeso; vale &lt;1 mg/L) por 2 semanas (conferir). Brucella: doxiciclina + rifampicina + SMX-TMP por ≥3 meses, cirurgia frequente. Whipple: esquema longo de 12 meses ou mais, com sulfadiazina se SNC <span class="ev ev-acr">ESC 2023</span>. Empírico enquanto se investiga, se estável: aguardar; se instável, cobrir estreptococo, enterococo, estafilococo e HACEK.</div></div>
+<div class="disease-row"><div class="k">O que muda conduta</div><div class="v">O que muda conduta: história epidemiológica (gado, gato, rua, laticínio) define a sorologia; IgG fase I alta define tratamento de 18–24 meses; febre persistente &gt;10 dias com cultura negativa e vegetação é indicação de cirurgia considerada (diagnóstica e terapêutica).</div></div>
+</div></div>
+</div>
+</div>
+</div>
+
+<div class="card diag">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">D.2</span> Agente</div><h3>Endocardite fúngica (Candida, Aspergillus) <span class="ank ank-dgr">DANGER</span></h3></div>
+<div class="card-body">
+<div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Prótese, nutrição parenteral, cateter, droga injetável, imunossupressão. Vegetações grandes, êmbolos para grandes artérias. <b>Cirurgia é a regra</b>, antifúngico por ≥6 semanas e supressão oral prolongada, às vezes por toda a vida.</div></div>
+<div class="disease">
+<div class="disease-head"><div class="disease-name">Endocardite fúngica</div><div class="disease-tag">CID-10 B37.6 endocardite por Candida · B44.8 outras formas de aspergilose</div></div>
+<div class="disease-body"><div class="disease-rows">
+<div class="disease-row"><div class="k">Base</div><div class="v">1–3% das EI e mortalidade de 30–50%. Candida (C. albicans, C. parapsilosis — esta associada a NPT e próteses) predomina; Aspergillus raro, com hemocultura quase sempre negativa e diagnóstico pela peça ou pelo êmbolo. Candidemia em portador de prótese exige ETE.</div></div>
+<div class="disease-row"><div class="k">Diagnóstico</div><div class="v">Hemocultura (Candida cresce); β-D-glucana e galactomanana como apoio; histologia e cultura da valva ou do êmbolo arterial. Candida passa a agente típico com prótese no Duke-ISCVID.</div></div>
+<div class="disease-row"><div class="k">Tratamento</div><div class="v">Candida: equinocandina em dose alta ou anfotericina B lipossomal, com ou sem flucitosina <span class="ev ev-acr">ESC 2023</span> (doses: conferir IDSA candidíase 2016; flucitosina sem registro no Brasil — CMED 2026), cirurgia valvar, depois fluconazol oral supressivo prolongado se sensível. Aspergillus: voriconazol é a droga de escolha <span class="ev ev-acr">ESC 2023</span>, cirurgia e supressão longa. Retirar cateteres.</div></div>
+<div class="disease-row"><div class="k">O que muda conduta</div><div class="v">O que muda conduta: qualquer fungo na valva indica cirurgia (o antifúngico não esteriliza vegetação); prótese impossível de operar → supressão por toda a vida; candidemia em portador de prótese → ETE e fundo de olho (II03).</div></div>
+</div></div>
+</div>
+</div>
+</div>
+
+<div class="card diag">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">D.3</span> Agente</div><h3>Endocardite por Gram-negativos: HACEK, Pseudomonas e enterobactérias</h3></div>
+<div class="card-body">
+<div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">HACEK: subaguda, vegetação grande, embolia, boa resposta à ceftriaxona. Não-HACEK (Pseudomonas, E. coli, Klebsiella, Serratia): associada a cuidados de saúde, droga injetável e prótese; destrutiva, com cirurgia frequente e combinação de dois agentes.</div></div>
+<div class="mnemo">
+<div class="mnemo-title"><b>HACEK</b> Gram-negativos fastidiosos da orofaringe</div>
+<div class="mnemo-grid">
+<div class="mnemo-row"><span class="mnemo-letter">H</span><span><b>Haemophilus</b> parainfluenzae e Aggregatibacter (ex-Haemophilus) aphrophilus</span></div>
+<div class="mnemo-row"><span class="mnemo-letter">A</span><span><b>Aggregatibacter</b> actinomycetemcomitans (ex-Actinobacillus) — periodontite</span></div>
+<div class="mnemo-row"><span class="mnemo-letter">C</span><span><b>Cardiobacterium</b> hominis e C. valvarum</span></div>
+<div class="mnemo-row"><span class="mnemo-letter">E</span><span><b>Eikenella</b> corrodens — mordida humana, saliva na agulha</span></div>
+<div class="mnemo-row"><span class="mnemo-letter">K</span><span><b>Kingella</b> kingae — também artrite séptica na criança pequena</span></div>
+</div>
+</div>
+<div class="disease">
+<div class="disease-head"><div class="disease-name">Endocardite por bacilos gram-negativos</div><div class="disease-tag">CID-10 B96.3 Haemophilus influenzae e afins como causa · B96.5 Pseudomonas como causa</div></div>
+<div class="disease-body"><div class="disease-rows">
+<div class="disease-row"><div class="k">Base</div><div class="v">HACEK: 1–3%, crescem em 3–5 dias nos sistemas automatizados atuais (a incubação prolongada de 14 dias perdeu importância). Não-HACEK: &lt;2%, mortalidade alta; Pseudomonas na valva esquerda do usuário de droga e na prótese; Salmonella com tropismo endovascular (aorta).</div></div>
+<div class="disease-row"><div class="k">Tratamento</div><div class="v">HACEK: ceftriaxona 2 g IV 1×/dia por 4 semanas (nativa) ou 6 (prótese); fluoroquinolona como alternativa <span class="ev ev-acr">AHA 2026 · conferir</span>. Não-HACEK: betalactâmico ativo pelo antibiograma + aminoglicosídeo ou fluoroquinolona por ≥6 semanas, cirurgia precoce frequente <span class="ev ev-acr">ESC 2023 · conferir</span>; carbapenemases (KPC) e Pseudomonas MDR seguem o II03 e a infectologia.</div></div>
+<div class="disease-row"><div class="k">O que muda conduta</div><div class="v">O que muda conduta: não-HACEK em valva esquerda (cirurgia considerada cedo); resistência no antibiograma (combinação dirigida); Salmonella (procurar aortite e aneurisma infectado).</div></div>
+</div></div>
+</div>
+</div>
+</div>
+
+<div class="card diag">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">D.4</span> Agente</div><h3>Gram-positivos incomuns e virulentos: pneumococo (tríade de Austrian), S. lugdunensis e estreptococos beta-hemolíticos</h3></div>
+<div class="card-body">
+<div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Três agentes que parecem "brandos" no laboratório e se comportam como S. aureus no doente: <b>destroem a valva aórtica, formam abscesso e indicam cirurgia cedo</b>.</div></div>
+<div class="disease">
+<div class="disease-head"><div class="disease-name">Endocardite por pneumococo, S. lugdunensis e beta-hemolíticos</div><div class="disease-tag">CID-10 B95.3 S. pneumoniae como causa · B95.7 outros estafilococos como causa · B95.0 estreptococo do grupo A como causa</div></div>
+<div class="disease-body"><div class="disease-rows">
+<div class="disease-row"><div class="k">Base</div><div class="v">Pneumococo: 1–3% das EI, etilista ou asplênico, com pneumonia e meningite concomitantes (tríade de Austrian), valva aórtica, mortalidade de 30–50%. S. lugdunensis: coagulase-negativo com virulência de S. aureus (sensível à oxacilina na maioria), abscessos perivalvares frequentes; é agente típico no Duke-ISCVID mesmo em valva nativa. Beta-hemolíticos (grupos A, B, C, G): idoso, diabético, neoplasia; embolia e abscesso.</div></div>
+<div class="disease-row"><div class="k">Tratamento</div><div class="v">Pneumococo: penicilina G ou ceftriaxona pela CIM, com dose meníngea se houver meningite (II04); S. lugdunensis: como S. aureus (C.1); beta-hemolíticos: penicilina G ou ceftriaxona por 4–6 semanas <span class="ev ev-acr">ESC 2023 · conferir</span>. Cirurgia cedo se abscesso ou destruição aórtica.</div></div>
+<div class="disease-row"><div class="k">O que muda conduta</div><div class="v">O que muda conduta: meningite associada (dose e fármaco com penetração liquórica, dexametasona pelo II04); "coagulase-negativo" identificado como S. lugdunensis (deixa de ser contaminante e vira C.1); abscesso aórtico (cirurgia de urgência).</div></div>
+</div></div>
+</div>
+</div>
+</div>
+
+<div class="card tx">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">D.5</span> Complicações</div><h3>Complicações extracardíacas: rim, baço, coluna e aneurismas periféricos</h3></div>
+<div class="card-body">
+<div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Lesão renal em até 30% (glomerulonefrite, infarto, nefrotoxicidade), infarto esplênico em até 40% (abscesso em 5%), espondilodiscite em 5–15%. <b>Febre persistente após 7–10 dias = procure um destes antes de trocar o antibiótico</b>.</div></div>
+<div class="disease">
+<div class="disease-head"><div class="disease-name">Complicações sistêmicas extracardíacas da endocardite</div><div class="disease-tag">CID-10 N08.0 glomerulopatia em doença infecciosa · D73.3 abscesso do baço · M46.2 osteomielite das vértebras</div></div>
+<div class="disease-body"><div class="disease-rows">
+<div class="disease-row"><div class="k">Base</div><div class="v">Glomerulonefrite proliferativa por imunocomplexos (C3 baixo, fator reumatoide positivo, ANCA às vezes positivo, sobretudo PR3), infarto renal embólico, nefrite intersticial por betalactâmico, nefrotoxicidade de aminoglicosídeo e vancomicina. Baço: infarto (dor no hipocôndrio esquerdo, atrito) e abscesso (febre persistente). Espondilodiscite lombar com dor lombar intensa (estafilococo, estreptococo, enterococo). Aneurismas micóticos de mesentérica, esplênica, femoral e aorta.</div></div>
+<div class="disease-row"><div class="k">Diagnóstico</div><div class="v">Sedimento urinário, proteinúria, complemento; TC de abdome; RM de coluna se dor; PET-CT de corpo inteiro quando a febre não se explica <span class="ev ev-acr">ESC 2023 · conferir</span>. Biópsia renal só se a função piora apesar do controle da infecção.</div></div>
+<div class="disease-row"><div class="k">Tratamento</div><div class="v">A glomerulonefrite melhora com o controle da infecção; corticoide só em casos refratários, decisão com nefrologia. Abscesso esplênico grande: drenagem percutânea ou esplenectomia, idealmente antes da troca valvar (evita reinfecção da prótese nova). Espondilodiscite prolonga o tratamento para 6 semanas ou mais.</div></div>
+<div class="disease-row"><div class="k">O que muda conduta</div><div class="v">O que muda conduta: LRA durante o tratamento (rever nível de vancomicina e gentamicina antes de culpar a GN); abscesso esplênico (drenar antes da cirurgia valvar); espondilodiscite (curso longo, RM de controle); ANCA positivo com EI (não imunossuprimir — RD03).</div></div>
+</div></div>
+</div>
+</div>
+</div>
+
+<div class="card tx">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">D.6</span> Diferencial</div><h3>Endocardite não infecciosa: trombótica não bacteriana (marântica), Libman-Sacks e cardite reumática</h3></div>
+<div class="card-body">
+<div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Vegetação com hemoculturas negativas e sem febre de origem infecciosa: <b>pense em câncer (adenocarcinoma mucinoso de pâncreas, pulmão, ovário), LES/SAF e febre reumática</b>. O tratamento é anticoagulação e a doença de base, não antibiótico.</div></div>
+<div class="disease">
+<div class="disease-head"><div class="disease-name">Endocardite não infecciosa</div><div class="disease-tag">CID-10 I38 endocardite de valva não especificada (ETNB; sem código nominal) · M32.1 LES com acometimento de órgãos (Libman-Sacks) · I01.1 endocardite reumática aguda</div></div>
+<div class="disease-body"><div class="disease-rows">
+<div class="disease-row"><div class="k">Base</div><div class="v">ETNB: vegetações estéreis de fibrina e plaquetas, pequenas, múltiplas, na linha de coaptação, em estados de hipercoagulabilidade (câncer, sepse, CIVD, SAF); embolia frequente, muitas vezes múltipla e cerebral. Libman-Sacks: verrucosas, nas duas faces do folheto mitral, associadas a anticorpos antifosfolípides. Cardite reumática aguda: valvulite mitral e aórtica com nódulos verrucosos, critérios de Jones (RD/PD).</div></div>
+<div class="disease-row"><div class="k">Diagnóstico</div><div class="v">Hemoculturas repetidamente negativas sem antibiótico prévio, sorologias de EI negativas, anticorpos antifosfolípides, FAN, investigação de neoplasia; ETE (vegetações pequenas, sem destruição) <span class="ev ev-acr">ESC 2023 · conferir</span>.</div></div>
+<div class="disease-row"><div class="k">Tratamento</div><div class="v">ETNB do câncer: heparina de baixo peso molecular (NE03 e HO03) e tratamento oncológico; SAF: varfarina (RD02); reumática: profilaxia secundária com penicilina benzatina (SBC 2020).</div></div>
+<div class="disease-row"><div class="k">O que muda conduta</div><div class="v">O que muda conduta: ausência de febre e de cultura com AVC embólico múltiplo e câncer conhecido (ETNB: anticoagular, não dar 6 semanas de antibiótico); SAF (varfarina, não DOAC); qualquer dúvida infecciosa (colher hemocultura antes de anticoagular).</div></div>
+</div></div>
+</div>
+</div>
+</div>
+
+<div class="card tx">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">D.7</span> Populações especiais</div><h3>A criança com cardiopatia congênita e a gestante <span class="ank ank-hy">HIGH-YIELD</span></h3></div>
+<div class="card-body">
+<div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Criança: cardiopatia congênita (sobretudo cianótica, operada com material protético ou com defeito residual) é o principal substrato; profilaxia nas indicações do AHA 2021/ESC 2023 (PD09 remete aqui). Gestante: EI rara, mortalidade materna e fetal altas; profilaxia no parto não é rotina.</div></div>
+<div class="disease">
+<div class="disease-head"><div class="disease-name">Endocardite na criança e na gestante</div><div class="disease-tag">CID-10 Q24.9 malformação não especificada do coração · O99.4 doenças do aparelho circulatório complicando a gravidez</div></div>
+<div class="disease-body"><div class="disease-rows">
+<div class="disease-row"><div class="k">Criança</div><div class="v">Substratos: cardiopatia cianótica não corrigida, shunts e condutos paliativos, correção com material protético (risco máximo nos 6 meses após o implante), defeito residual junto ao material, valvas protéticas e Melody (pulmonar transcateter, alto risco). Agentes: S. aureus e estreptococos orais; Kingella e HACEK em lactentes. Doses pediátricas de tratamento em F2.3 (ver AHA 2015 pediátrica — conferir) <span class="ev ev-acr">AHA 2015 pediátrica · conferir</span>. Profilaxia dentária: amoxicilina 2 g VO (criança 50 mg/kg, máx. 2 g) 30–60 min antes <span class="ev ev-acr">ESC 2023</span>.</div></div>
+<div class="disease-row"><div class="k">Gestante</div><div class="v">Mesma microbiologia; uso de droga injetável e valvopatia reumática são substratos frequentes no Brasil. Tratamento: betalactâmicos e vancomicina são seguros; aminoglicosídeo com cautela (ototoxicidade fetal); evitar tetraciclina. Cirurgia com circulação extracorpórea tem perda fetal alta: decisão conjunta e, perto do termo, parto antes da cirurgia. Profilaxia no parto: SBC 2020 diz que não é rotina e "pode ser considerada" em prótese ou EI prévia (ampicilina 2 g IV + gentamicina 1,5 mg/kg IM 1 h antes) <span class="ev ev-sbr">SBC 2020</span>.</div></div>
+<div class="disease-row"><div class="k">O que muda conduta</div><div class="v">O que muda conduta: criança com prótese de conduto pulmonar (vigilância e profilaxia); gestação (escolha de fármaco e momento do parto × cirurgia); lactente com Kingella (incluir na suspeita, ceftriaxona).</div></div>
+</div></div>
+</div>
+<div class="box controversy"><span class="box-label">CONTROVERSY</span><div class="box-title">Profilaxia no parto de cardiopata de alto risco</div><div class="box-body">ESC e AHA não recomendam profilaxia de rotina em parto vaginal ou cesárea; a SBC 2020 mantém a opção de ampicilina + gentamicina em prótese ou EI prévia. O GO13 remete esta decisão ao II02: a leitura prudente é seguir o protocolo da maternidade e da cardiologia, registrando a escolha. A diretriz europeia de cardiopatia na gestação de 2025 não pôde ser usada aqui por cláusula de proibição de mineração de texto e uso em IA (registrada no NOTAS).</div></div>
+</div>
+</div>
+</section>
+
+<!-- ============================================================ E -->
+<section id="algoritmo">
+<div class="section">
+<div class="section-eyebrow"><span>E</span> Algoritmo</div>
+<div class="section-title">Da suspeita à sala de cirurgia: hemocultura, imagem, critério, antibiótico e a pergunta cirúrgica feita todos os dias</div>
+<div class="section-sub">A árvore começa pela pergunta que separa o paciente que não pode esperar do que deve esperar a cultura; o raciocínio narrado mostra a ordem do pensamento.</div>
+</div>
+
+<div class="card prim">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">E.1</span> Diagnóstico</div><h3>Critérios de Duke-ISCVID 2023 <span class="ank ank-hy">HIGH-YIELD</span></h3></div>
+<div class="card-body">
+<div class="score">
+<div class="score-head"><div class="score-name">Duke-ISCVID 2023 — definitiva, possível, rejeitada <span class="ev ev-eular">Duke-ISCVID 2023</span></div><div class="score-purpose">Substitui o Duke modificado de 2000; a ESC 2023 usa uma versão própria muito semelhante (Duke-ESC 2023) e o AHA 2026 adotou o ISCVID</div></div>
+<div class="score-rows">
+<div class="score-row"><div class="score-grade">Definitiva patológica</div><div class="score-desc">Microrganismo identificado em vegetação, tecido cardíaco, prótese ou dispositivo explantado, ou êmbolo arterial; <b>ou</b> endocardite ativa na histologia.</div></div>
+<div class="score-row"><div class="score-grade">Definitiva clínica</div><div class="score-desc"><b>2 maiores</b>; ou 1 maior + 3 menores; ou 5 menores.</div></div>
+<div class="score-row"><div class="score-grade">Possível</div><div class="score-desc">1 maior + 1 menor; ou 3 menores. Na prática, possível com suspeita alta é tratada como definitiva.</div></div>
+<div class="score-row"><div class="score-grade">Rejeitada</div><div class="score-desc">Diagnóstico alternativo firme; resolução com &lt;4 dias de antibiótico sem recorrência; cirurgia ou necropsia sem evidência após &lt;4 dias de antibiótico; não preenche "possível".</div></div>
+<div class="score-row"><div class="score-grade">Maior microbiológico</div><div class="score-desc">Agente típico em <b>≥2 pares</b> de hemocultura (S. aureus, S. lugdunensis, E. faecalis, estreptococos exceto pneumococo e S. pyogenes, Granulicatella, Abiotrophia, Gemella, HACEK; com prótese, também coagulase-negativos, Corynebacterium, Serratia, Pseudomonas, C. acnes, micobactéria não tuberculosa e Candida); não típico em ≥3 pares; Coxiella (PCR, IgG fase I &gt;1:800 ou cultura); Bartonella (PCR ou IgG ≥1:800); T. whipplei (PCR). <b>Saíram as exigências de intervalo entre coletas e de punções separadas.</b></div></div>
+<div class="score-row"><div class="score-grade">Maior de imagem</div><div class="score-desc">Ecocardiograma ou <b>TC cardíaca</b>: vegetação, perfuração ou aneurisma de folheto, abscesso, pseudoaneurisma, fístula; regurgitação nova significativa (piora de prévia não conta); deiscência nova de prótese; <b>PET-CT com FDG</b> anormal em valva, prótese, enxerto aórtico com valva, cabos ou material.</div></div>
+<div class="score-row"><div class="score-grade">Maior cirúrgico</div><div class="score-desc"><b>Evidência de EI na inspeção direta durante a cirurgia</b>, quando faltam critério de imagem e confirmação histológica ou microbiológica.</div></div>
+<div class="score-row"><div class="score-grade">Menores</div><div class="score-desc">Predisposição (EI prévia, prótese, reparo valvar, cardiopatia congênita, regurgitação ou estenose mais que leve, dispositivo endovascular, cardiomiopatia hipertrófica obstrutiva, droga injetável); febre &gt;38,0 °C; fenômenos vasculares (êmbolo arterial, infarto pulmonar séptico, abscesso cerebral ou esplênico, aneurisma micótico, hemorragia intracraniana, conjuntival, Janeway, púrpura purulenta); imunológicos (fator reumatoide, Osler, Roth, GN por imunocomplexos); microbiologia que não fecha critério maior; PET-CT anormal até 3 meses do implante; sopro regurgitante novo só quando não há ecocardiograma.</div></div>
+</div>
+</div>
+
+<div class="mnemo">
+<div class="mnemo-title"><b>FROM JANE</b> Sinais clínicos clássicos (prova cobra; o ecocardiograma decide)</div>
+<div class="mnemo-grid">
+<div class="mnemo-row"><span class="mnemo-letter">F</span><span><b>Febre</b> · em ~90%; pode faltar no idoso, no renal crônico e após antibiótico</span></div>
+<div class="mnemo-row"><span class="mnemo-letter">R</span><span><b>Roth</b> · hemorragia retiniana de centro pálido; inespecífica (anemia grave, leucemia, colagenose)</span></div>
+<div class="mnemo-row"><span class="mnemo-letter">O</span><span><b>Osler</b> · nódulo doloroso, polpa digital, evanescente (imunológico ou microembólico)</span></div>
+<div class="mnemo-row"><span class="mnemo-letter">M</span><span><b>Murmur</b> · sopro novo ou mudado; ausente na tricúspide e na mural</span></div>
+<div class="mnemo-row"><span class="mnemo-letter">J</span><span><b>Janeway</b> · mácula hemorrágica indolor em palma e planta (embólica, séptica)</span></div>
+<div class="mnemo-row"><span class="mnemo-letter">A</span><span><b>Anemia</b> · de doença crônica na subaguda; esquizócitos na deiscência de prótese</span></div>
+<div class="mnemo-row"><span class="mnemo-letter">N</span><span><b>Nail</b> · hemorragias subungueais em lasca (pouco específicas: trauma)</span></div>
+<div class="mnemo-row"><span class="mnemo-letter">E</span><span><b>Êmbolos</b> · cérebro, baço, rim, membros, pulmão (direita); esplenomegalia</span></div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="card prim">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">E.2</span> Algoritmo</div><h3>Suspeita de endocardite → diagnóstico → antibiótico → cirurgia <span class="ank ank-dec">DECISION</span></h3></div>
+<div class="card-body">
+<div class="algo">
+<div class="tree">
+<div class="tree-line"><span class="tree-node start">Febre + sopro, ou bacteremia por agente típico, ou embolia inexplicada, ou febre em portador de prótese/dispositivo</span></div>
+<div class="tree-branch">
+<div class="tree-label yes">Sepse, choque, IC aguda, AVC ou embolia?</div>
+<div class="tree-line"><span class="tree-node dgr">→ 3 pares de hemocultura em minutos (10 mL por frasco) → empírico por cenário (F1.1) → ETT/ETE no mesmo dia → equipe de endocardite e cirurgião; IC refratária ou choque = cirurgia &lt;24 h; AVC: sem trombólise</span></div>
+</div>
+<div class="tree-branch">
+<div class="tree-label no">Estável, subagudo</div>
+<div class="tree-line"><span class="tree-node dec">3 pares de hemocultura antes de antibiótico · aguardar 24–48 h · ETT</span></div>
+<div class="tree-branch">
+<div class="tree-label yes">Hemocultura positiva com agente típico</div>
+<div class="tree-line"><span class="tree-node dx">→ ETE (abscesso, perfuração, fístula) · identificação e CIM · Duke-ISCVID · antibiótico dirigido (F2)</span></div>
+<div class="tree-branch">
+<div class="tree-label yes">Complicação (abscesso, BAV, IC, vegetação ≥10 mm com embolia, bacteremia &gt;7 dias, fungo)</div>
+<div class="tree-line"><span class="tree-node dgr">→ Cirurgia: emergência &lt;24 h (choque/edema refratário) · urgência 3–5 dias (infecção não controlada, risco embólico)</span></div>
+</div>
+<div class="tree-branch">
+<div class="tree-label no">Sem complicação</div>
+<div class="tree-line"><span class="tree-node action">→ Antibiótico completo · hemocultura de controle até negativar · ECG seriado (aórtica) · ≥10 dias IV estável e ETE sem abscesso → oral (POET) ou OPAT</span></div>
+</div>
+</div>
+<div class="tree-branch">
+<div class="tree-label no">Hemocultura negativa</div>
+<div class="tree-line"><span class="tree-node dx">→ Antibiótico prévio? Sorologia Coxiella/Bartonella, PCR no sangue, Brucella; ETE; PET-CT se prótese; procurar ETNB e Libman-Sacks (D.1, D.6)</span></div>
+</div>
+<div class="tree-branch">
+<div class="tree-label no">ETT/ETE negativos, suspeita persiste</div>
+<div class="tree-line"><span class="tree-node action">→ Repetir ETE em 5–7 dias · prótese ou dispositivo: PET-CT com FDG ou TC cardíaca · procurar fenômenos vasculares (RM de crânio, TC de abdome)</span></div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="box decision"><span class="box-label">DECISION</span><div class="box-title">Raciocínio em 6 passos — a sequência mental diante da suspeita</div><div class="box-body"><ol>
+<li><b>Primeiro pergunte se o paciente pode esperar.</b> Sepse, IC, AVC ou embolia: hemocultura e antibiótico na mesma hora. Estável: hemocultura e paciência — a cultura vale mais que a dose precoce.</li>
+<li><b>Depois pergunte qual é o substrato.</b> Valva nativa comunitária, cuidados de saúde, droga injetável, prótese precoce ou tardia, dispositivo: isso define o empírico e o nível de suspeita para MRSA, coagulase-negativo, Gram-negativo e fungo.</li>
+<li><b>Peça o ecocardiograma certo.</b> ETT para todos, ETE para quem tem prótese, dispositivo, ETT positivo (complicações) ou ETT negativo com suspeita; PET-CT ou TC cardíaca quando a prótese esconde.</li>
+<li><b>Feche o critério e nomeie o agente.</b> Duke-ISCVID; com o agente e a CIM, troque o empírico pelo dirigido em até 24 h (MSSA nunca fica em vancomicina).</li>
+<li><b>Todo dia, faça a pergunta cirúrgica.</b> IC? Infecção não controlada (abscesso, BAV, bacteremia persistente, fungo)? Risco embólico (≥10 mm com êmbolo, ≥30 mm)? Se sim, emergência ou urgência — o AVC isquêmico sem hemorragia não adia.</li>
+<li><b>Planeje o fim.</b> Contagem a partir da hemocultura negativa (ou da cirurgia se a valva cresceu), critério de transição oral, ETT de referência, higiene oral, colonoscopia no S. gallolyticus, tratamento da dependência, profilaxia futura.</li>
+</ol></div></div>
+
+<div class="box danger"><span class="box-label">DANGER</span><div class="box-title">Hemocultura: a técnica é parte do diagnóstico</div><div class="box-body">Três pares (aeróbio + anaeróbio), cada frasco com 8–10 mL no adulto, por punção venosa periférica com antissepsia (clorexidina alcoólica, secagem), <b>antes de qualquer antibiótico</b>. O Duke-ISCVID não exige mais intervalo entre as coletas nem punções separadas, mas o volume continua sendo a principal variável de sensibilidade. Não colher pelo cateter como única amostra. Avisar o laboratório da suspeita de EI (identificação até espécie, CIM de penicilina, vancomicina e daptomicina; guardar a cepa).</div></div>
+</div>
+</div>
+</section>
+
+<!-- ============================================================ F -->
+<section id="tratamento">
+<div class="section">
+<div class="section-eyebrow"><span>F</span> Tratamento Integrado</div>
+<div class="section-title">F1 · Estratégia por entidade · F2 · Doses operacionais · F3 · Cenários · F4 · O que existe no Brasil</div>
+<div class="section-sub">Bactericida, intravenoso no início, longo e contado a partir da hemocultura negativa; a cirurgia é parte do tratamento, não o fracasso dele. Doses com "conferir" vêm de fonte não lida na íntegra nesta edição (ver legenda e NOTAS).</div>
+</div>
+
+<div class="card tx">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">F.1</span> Estratégia</div><h3>Escada terapêutica por entidade <span class="ank ank-dec">DECISION</span></h3></div>
+<div class="card-body">
+
+<div class="sub-title">F1.1 · Empírico — só quando não dá para esperar a cultura</div>
+<ul class="bullets">
+<li><b>Princípio:</b> o empírico cobre o que o substrato torna provável (score de C.7) e é trocado pelo dirigido em até 24–48 h. Subaguda estável não recebe empírico: recebe 3 pares de hemocultura e espera.</li>
+<li><b>Comunitária em valva nativa ou prótese tardia (&gt;12 meses):</b> ampicilina 2 g IV 4/4 h + oxacilina 2 g IV 4/4 h, com ou sem gentamicina 3 mg/kg/dia IV 1×/dia (peso ajustado no obeso; vale &lt;1 mg/L) <span class="ev ev-acr">ESC 2023 · conferir tabela</span> — cobre estreptococos, enterococo e MSSA.</li>
+<li><b>Associada a cuidados de saúde, prótese precoce, hemodiálise ou alto risco de MRSA:</b> vancomicina ataque 20–35 mg/kg (peso real, máx. ~3 g) → 15–20 mg/kg IV 8/8–12/12 h, ajustada para AUC24 400–600 mg·h/L, + gentamicina 3 mg/kg/dia IV 1×/dia; na prótese, rifampicina 300 mg VO 8/8 h (900 mg/dia) só depois de 3–5 dias e com hemocultura negativa <span class="ev ev-acr">ESC 2023 · conferir tabela</span>. Sepse com risco de Gram-negativo: acrescentar antipseudomonas pelo perfil local (II03).</li>
+<li><b>Droga injetável:</b> MSSA é o alvo (oxacilina); MRSA comunitário frequente na região ou colonização → vancomicina ou daptomicina 10 mg/kg IV 1×/dia; valva esquerda → ampliar para Gram-negativo e considerar Candida.</li>
+<li><b>Apostila 2025 (referência de prova):</b> aguda não usuário: oxacilina + gentamicina; usuário ou cuidados de saúde: vancomicina + gentamicina; subaguda grave: vancomicina + ceftriaxona; prótese &lt;1 ano: vancomicina + gentamicina + rifampicina. A gentamicina "1 mg/kg 8/8 h" da apostila passou a dose única diária por peso.</li>
+</ul>
+
+<div class="sub-title">F1.2 · S. aureus em valva nativa (C.1)</div>
+<ul class="bullets">
+<li><b>MSSA:</b> oxacilina 2 g IV 4/4 h ou cefazolina 2 g IV 8/8 h, 4–6 semanas a partir da 1ª hemocultura negativa; oxacilina se SNC.</li>
+<li><b>MRSA:</b> vancomicina por AUC ou daptomicina 10 mg/kg IV 1×/dia com segundo agente ativo; falha, CIM de vancomicina 2 mg/L ou LRA → daptomicina.</li>
+<li><b>Nunca:</b> gentamicina de rotina, rifampicina na nativa, manter vancomicina num MSSA.</li>
+<li><b>Bacteremia persistente:</b> foco (abscesso perivalvar, cateter, metástase), dose e nível; &gt;7 dias com foco controlado → cirurgia.</li>
+</ul>
+
+<div class="sub-title">F1.3 · Estreptococos orais e S. gallolyticus (C.2)</div>
+<ul class="bullets">
+<li><b>CIM ≤0,125 mg/L, nativa:</b> penicilina G cristalina 12–18 milhões UI/dia IV ÷ 4/4 h ou ceftriaxona 2 g IV 1×/dia por 4 semanas; 2 semanas + gentamicina só na nativa não complicada com rim normal.</li>
+<li><b>CIM &gt;0,125 mg/L ou Granulicatella/Abiotrophia/Gemella:</b> penicilina G 24 milhões UI/dia IV ÷ 4/4 h ou ceftriaxona + gentamicina por ≥2 semanas (sem esquema curto) <span class="ev ev-acr">ESC 2023</span>.</li>
+<li><b>Prótese:</b> 6 semanas. <b>Alergia:</b> vancomicina (AUC) ou teicoplanina.</li>
+<li><b>Depois de ~10 dias estável:</b> OPAT com ceftriaxona ou transição oral (F1.9). Colonoscopia no S. gallolyticus.</li>
+</ul>
+
+<div class="sub-title">F1.4 · Enterococo (C.3)</div>
+<ul class="bullets">
+<li><b>E. faecalis sensível à ampicilina:</b> ampicilina 2 g IV 4/4 h + ceftriaxona 2 g IV 12/12 h por 6 semanas — preferida, obrigatória se HLAR, idoso ou DRC.</li>
+<li><b>Sem HLAR e rim normal:</b> ampicilina + gentamicina com aminoglicosídeo limitado a 2 semanas.</li>
+<li><b>Ampicilina-resistente / E. faecium:</b> vancomicina + gentamicina; <b>VRE:</b> daptomicina 10–12 mg/kg com ampicilina ou ceftarolina, ou linezolida; cirurgia e infectologia.</li>
+<li><b>Não encurtar</b> abaixo do padrão: no POET II, a recidiva concentrou-se no enterococo.</li>
+</ul>
+
+<div class="sub-title">F1.5 · Prótese valvar (C.4)</div>
+<ul class="bullets">
+<li><b>Estafilococo:</b> betalactâmico (MSSA) ou vancomicina/daptomicina (MRSA) ≥6 semanas + rifampicina 300 mg VO 8/8 h após 3–5 dias de terapia eficaz; gentamicina 2 semanas é ponto de divergência (G.2).</li>
+<li><b>Outros agentes:</b> mesmos fármacos da nativa, 6 semanas.</li>
+<li><b>Cirurgia:</b> deiscência, abscesso, IC, S. aureus, fungo; ESC 2023 elevou a classe I a cirurgia na prótese precoce (&lt;6 meses), ressalva da endossação holandesa (NVVC 2025) <span class="ev ev-nice">NVVC 2025</span>.</li>
+<li><b>Anticoagulação:</b> manter na mecânica; trocar oral por heparina se hemorragia cerebral ou cirurgia iminente; atenção à rifampicina × varfarina.</li>
+</ul>
+
+<div class="sub-title">F1.6 · Droga injetável, endocardite direita (C.5)</div>
+<ul class="bullets">
+<li><b>MSSA tricúspide isolada sem complicação:</b> oxacilina por 2 semanas (critério estrito); complicada ou esquerda: 4–6 semanas.</li>
+<li><b>Acesso venoso precário:</b> OPAT limitada; esquema oral com dois fármacos após a fase crítica (decisão de equipe).</li>
+<li><b>Dependência:</b> buprenorfina ou metadona iniciada na internação, naloxona na alta, testagem de HIV/HBV/HCV/sífilis e vacinação (PC03).</li>
+</ul>
+
+<div class="sub-title">F1.7 · Dispositivo (C.7)</div>
+<ul class="bullets">
+<li><b>Extração completa</b> + antibiótico por agente; reimplante em outro sítio após hemoculturas negativas e reavaliação da indicação.</li>
+<li><b>Infecção de loja isolada:</b> ~10–14 dias após a extração; <b>endocardite de cabo:</b> 4–6 semanas.</li>
+</ul>
+
+<div class="sub-title">F1.8 · Cirurgia — indicações e momento</div>
+<div class="score">
+<div class="score-head"><div class="score-name">Indicações cirúrgicas e momento <span class="ev ev-acr">ESC 2023</span> <span class="ev ev-acr">AHA 2026 · conferir</span></div><div class="score-purpose">Emergência = &lt;24 h · urgência = 3–5 dias (ESC) ou 48–72 h (AHA 2026) · não urgente = mesma internação. Classes de recomendação: conferir na tabela original (imagem)</div></div>
+<div class="score-rows">
+<div class="score-row"><div class="score-grade">IC — emergência</div><div class="score-desc">Regurgitação aguda grave, obstrução ou fístula com edema pulmonar refratário, NYHA IV ou choque cardiogênico.</div></div>
+<div class="score-row"><div class="score-grade">IC — urgência</div><div class="score-desc">Disfunção valvar grave com sintomas de IC ou sinais ecocardiográficos de má tolerância hemodinâmica.</div></div>
+<div class="score-row"><div class="score-grade">Infecção não controlada — urgência</div><div class="score-desc">Abscesso, pseudoaneurisma, fístula, vegetação que cresce, BAV novo; hemoculturas positivas &gt;1 semana apesar de antibiótico adequado e focos metastáticos controlados; sepse ou choque séptico persistente; fungos ou multirresistentes; prótese precoce.</div></div>
+<div class="score-row"><div class="score-grade">Embolia — urgência</div><div class="score-desc">Vegetação ≥10 mm com evento embólico apesar do antibiótico; vegetação ≥10 mm com estenose ou regurgitação grave e baixo risco cirúrgico; vegetação ≥30 mm (risco neurológico alto).</div></div>
+<div class="score-row"><div class="score-grade">Após AVC</div><div class="score-desc">Isquêmico sem hemorragia e sem coma: não adiar. Hemorragia intracraniana: em geral adiar (AHA 2026: ≥2, preferencialmente 4 semanas), salvo IC refratária ou infecção não controlada.</div></div>
+<div class="score-row"><div class="score-grade">Dispositivo</div><div class="score-desc">Extração completa sempre que há EI de cabo ou infecção de loja; remover no mesmo ato da cirurgia valvar quando esta é indicada.</div></div>
+</div>
+</div>
+<div class="box danger"><span class="box-label">DANGER</span><div class="box-title">"Esfriar a infecção antes de operar" mata</div><div class="box-body">Esperar semanas de antibiótico para operar uma valva destruída ou um abscesso não melhora a esterilidade do campo e expõe o paciente ao edema pulmonar, ao choque e ao êmbolo. Operado o paciente, o antibiótico segue: o AHA 2026 sugere completar o curso planejado com pelo menos 14 dias após a cirurgia, sem reiniciar a contagem mesmo com cultura de valva positiva (consenso do grupo, conferir); a ESC conta a partir da cirurgia quando a cultura da valva é positiva.</div></div>
+
+<div class="sub-title">F1.9 · OPAT e transição oral (POET) · encurtamento (POET II)</div>
+<ul class="bullets">
+<li><b>Fase crítica:</b> as primeiras 2 semanas são IV e hospitalares; OPAT nessa fase só excepcionalmente <span class="ev ev-acr">ESC 2023</span>.</li>
+<li><b>Critérios POET/ESC para oral:</b> ≥10 dias de antibiótico IV adequado (≥7 dias após cirurgia valvar); afebril (≥48–72 h); leucócitos &lt;15 × 10<sup>9</sup>/L; PCR &lt;25% do pico ou &lt;20 mg/L; ETE recente sem abscesso nem indicação cirúrgica; IMC ≤40; sem má absorção; adesão e suporte social <span class="ev ev-nice">POET 2019</span> <span class="ev ev-expert">Roland 2026 (revisão)</span>.</li>
+<li><b>Agentes:</b> estreptococos, E. faecalis, S. aureus e coagulase-negativos, em esquema de dois fármacos de alta biodisponibilidade (F2.4).</li>
+<li><b>POET II (NEJM 2026):</b> em pacientes estáveis após 2–4 semanas, parar guiado pela resposta reduziu o curso total (mediana 26 × 41 dias), foi não inferior em segurança (8,2% × 10,7%) e teve <b>mais recidiva (5,1% × 1,6%)</b>, sobretudo no enterococo. Não é padrão ainda; candidato é o estreptococo de valva nativa estável <span class="ev ev-nice">POET II 2026</span>.</li>
+</ul>
+
+<div class="sub-title">F1.10 · Monitorização</div>
+<ul class="bullets">
+<li><b>Hemoculturas</b> a cada 24–48 h até negativar (estreptococo: 48 h; S. aureus: 3–5 dias, MRSA mais); o dia 1 é o da 1ª negativa.</li>
+<li><b>Vancomicina:</b> AUC24 400–600 mg·h/L, de preferência por software bayesiano; o vale isolado de 15–20 não é mais alvo (mais nefrotoxicidade) <span class="ev ev-sbr">ASHP/IDSA 2020</span>.</li>
+<li><b>Gentamicina:</b> dose por peso (ideal; ajustado se peso real &gt;120% do ideal), uma vez ao dia, <b>vale &lt;1 mg/L</b>; creatinina 2×/semana; audiometria se &gt;1 semana (conferir alvo na tabela ESC).</li>
+<li><b>Daptomicina:</b> CPK semanal, suspender estatina; pneumonite eosinofílica. <b>Betalactâmicos em dose alta:</b> hemograma (neutropenia após 2–3 semanas), função hepática (oxacilina), nefrite intersticial.</li>
+<li><b>ECG</b> diário na EI aórtica; <b>ETT ao fim</b> do tratamento como nova linha de base; hemocultura se a febre voltar.</li>
+</ul>
+
+<div class="sub-title">F1.11 · Profilaxia</div>
+<div class="score">
+<div class="score-head"><div class="score-name">Quem recebe profilaxia antes de procedimento dentário de risco <span class="ev ev-acr">ESC 2023</span> <span class="ev ev-sbr">SBC 2020</span></div><div class="score-purpose">Procedimento de risco: manipulação de gengiva ou região periapical, perfuração de mucosa oral (extração, raspagem, endodontia)</div></div>
+<div class="score-rows">
+<div class="score-row"><div class="score-grade">Alto risco (ESC 2023 · AHA 2021)</div><div class="score-desc">EI prévia; prótese valvar cirúrgica ou transcateter; material de reparo valvar (anel, clipe); cardiopatia congênita cianótica não corrigida, corrigida com material protético (6 meses, ou por toda a vida se defeito residual ou conduto); dispositivo de assistência ventricular como destino. <b>Profilaxia recomendada.</b></div></div>
+<div class="score-row"><div class="score-grade">Risco intermediário (ESC 2023)</div><div class="score-desc">Valvopatia reumática, degenerativa não reumática, bicúspide, dispositivo eletrônico, cardiomiopatia hipertrófica: <b>profilaxia de rotina não recomendada</b>, considerar individualmente; higiene oral e revisão odontológica semestral.</div></div>
+<div class="score-row"><div class="score-grade">SBC 2020 (Brasil)</div><div class="score-desc">Mais ampla: <b>valvopatia moderada ou importante</b> e prótese (I C) antes de procedimento odontológico de risco; IIa C para alto risco em procedimento GI/GU, esofágico ou respiratório com lesão de mucosa; não indicada (III) em prolapso sem regurgitação, pós-revascularização, stent, sopro inocente, marcapasso/CDI, Kawasaki, FR sem disfunção.</div></div>
+<div class="score-row"><div class="score-grade">Não dentários (ESC 2023)</div><div class="score-desc">Alto risco em procedimento respiratório, GI, GU, de pele: classe IIb (pode ser considerada). Infecção ativa no sítio: tratar a infecção, não "profilaxia". Implante de prótese, enxerto ou dispositivo: profilaxia perioperatória recomendada.</div></div>
+</div>
+</div>
+<div class="box hy"><span class="box-label">HIGH-YIELD</span><div class="box-title">A profilaxia mais eficaz é a boca saudável</div><div class="box-body">A maioria das EI por estreptococo oral não segue procedimento: vem das bacteremias diárias de escovar, usar fio e mastigar, proporcionais à inflamação gengival. Higiene oral, tratamento periodontal e revisão odontológica a cada 6 meses (alto risco) ou anual (intermediário) previnem mais que o antibiótico de dose única. Tatuagem e piercing são desaconselhados no alto risco; cateteres, só quando indispensáveis.</div></div>
+</div>
+</div>
+
+<div class="card tx">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">F.2</span> Doses operacionais</div><h3>Tabela de doses — adulto <span class="ank ank-dgr">DANGER</span></h3><div class="card-sub">Função renal normal; ajustar por ClCr. Mesma dose escrita igual no pocket, C, D, E e F</div></div>
+<div class="card-body">
+<div class="sub-title">F2.1 · Antibacterianos IV — adulto</div>
+<div class="stbl stbl-4">
+<div class="stbl-head stbl-4"><div>Fármaco</div><div>Dose adulto</div><div>Indicação · duração</div><div>Notas · fonte</div></div>
+<div class="stbl-row stbl-4"><div class="col col1" data-l="Fármaco">Oxacilina</div><div class="col" data-l="Dose">2 g IV 4/4 h (12 g/dia)</div><div class="col" data-l="Indicação">MSSA nativa 4–6 sem; prótese ≥6 sem; MSSA com SNC; tricúspide não complicada 2 sem</div><div class="col" data-l="Notas">Flebite, nefrite intersticial, hepatite colestática, neutropenia; mais LRA que cefazolina. AHA 2026 (12 g/dia em 6 doses) · conferir; igual ao II03</div></div>
+<div class="stbl-row stbl-4"><div class="col col1" data-l="Fármaco">Cefazolina</div><div class="col" data-l="Dose">2 g IV 8/8 h (6 g/dia)</div><div class="col" data-l="Indicação">MSSA sem SNC; alergia não grave à penicilina</div><div class="col" data-l="Notas">Penetração liquórica ruim. CloCeBa 2025 e SNAP 2026: não inferior, menos LRA; &gt;120 kg: 3 g 8/8 h (II03)</div></div>
+<div class="stbl-row stbl-4"><div class="col col1" data-l="Fármaco">Vancomicina</div><div class="col" data-l="Dose">Ataque 20–35 mg/kg (peso real, máx. ~3 g) → 15–20 mg/kg IV 8/8–12/12 h, ajustada para AUC24 400–600 mg·h/L</div><div class="col" data-l="Indicação">MRSA; alergia grave a betalactâmico; empírico com risco de MRSA; 4–6 sem (nativa), ≥6 (prótese)</div><div class="col" data-l="Notas">Infundir ≤1 g/h; LRA com piperacilina-tazobactam. ESC 2023 · ASHP/IDSA 2020; igual ao II03 (II04 usa ataque 25–30 mg/kg)</div></div>
+<div class="stbl-row stbl-4"><div class="col col1" data-l="Fármaco">Daptomicina</div><div class="col" data-l="Dose">10 mg/kg IV 1×/dia (10–12 mg/kg no VRE e no persistente)</div><div class="col" data-l="Indicação">MRSA, falha ou CIM alta de vancomicina, LRA; VRE; sempre com 2º agente na EI esquerda</div><div class="col" data-l="Notas">CPK semanal, suspender estatina; inativada pelo surfactante (não trata pneumonia). ESC 2023; II03 usa 8–10 mg/kg na bacteremia</div></div>
+<div class="stbl-row stbl-4"><div class="col col1" data-l="Fármaco">Teicoplanina</div><div class="col" data-l="Dose">Ataque 6 mg/kg IV 12/12 h × 3 dias → 6–10 mg/kg/dia</div><div class="col" data-l="Indicação">Estreptococo com alergia a betalactâmico (alternativa à vancomicina)</div><div class="col" data-l="Notas">ESC 2023 (estreptococo). Estafilococo exige dose maior — conferir tabela; nível de vale</div></div>
+<div class="stbl-row stbl-4"><div class="col col1" data-l="Fármaco">Penicilina G cristalina</div><div class="col" data-l="Dose">12–18 milhões UI/dia IV ÷ 4/4 h (sensível) · 24 milhões UI/dia IV ÷ 4/4 h (relativamente resistente)</div><div class="col" data-l="Indicação">Estreptococos orais, S. gallolyticus, beta-hemolíticos; 4 sem (nativa), 6 (prótese)</div><div class="col" data-l="Notas">Potássica: 1,7 mEq de K⁺ por milhão UI (DRC). ESC 2023 · conferir tabela</div></div>
+<div class="stbl-row stbl-4"><div class="col col1" data-l="Fármaco">Ceftriaxona</div><div class="col" data-l="Dose">2 g IV 1×/dia (estreptococo, HACEK) · 2 g IV 12/12 h (com ampicilina no E. faecalis)</div><div class="col" data-l="Indicação">Estreptococo 4 sem; HACEK 4 sem (nativa) / 6 (prótese); E. faecalis 6 sem</div><div class="col" data-l="Notas">Viabiliza OPAT (1×/dia); barro biliar. AHA 2026 · conferir</div></div>
+<div class="stbl-row stbl-4"><div class="col col1" data-l="Fármaco">Ampicilina</div><div class="col" data-l="Dose">2 g IV 4/4 h (12 g/dia)</div><div class="col" data-l="Indicação">Enterococo (com ceftriaxona ou gentamicina) 6 sem; empírico comunitário</div><div class="col" data-l="Notas">Estável ~8 h em solução à temperatura ambiente; igual ao II03 e ao II04</div></div>
+<div class="stbl-row stbl-4"><div class="col col1" data-l="Fármaco">Gentamicina</div><div class="col" data-l="Dose">3 mg/kg/dia IV 1×/dia (peso ajustado no obeso; vale &lt;1 mg/L)</div><div class="col" data-l="Indicação">Estreptococo (curso de 2 sem ou CIM alta), enterococo sem HLAR (2 sem), Bartonella (2 sem); prótese estafilocócica (ESC; retirada pelo AHA 2026)</div><div class="col" data-l="Notas">Nefro e ototoxicidade (vestibular, irreversível); evitar com vancomicina e no idoso. ESC 2023 (1×/dia) · alvo de vale conferir. II03 usa 5–7 mg/kg/dia para tratar Gram-negativo, não sinergia</div></div>
+<div class="stbl-row stbl-4"><div class="col col1" data-l="Fármaco">Rifampicina</div><div class="col" data-l="Dose">300 mg VO 8/8 h (900 mg/dia)</div><div class="col" data-l="Indicação">Estafilococo em prótese ou material estranho, a partir de 3–5 dias de terapia eficaz, ≥6 sem</div><div class="col" data-l="Notas">Só oral no Brasil (CMED 2026). Indutor potente: varfarina, DOAC, antirretrovirais, azólicos, linezolida. ESC 2023 · AHA 2026 (900 mg/dia em 3 doses). II04: 600 mg/dia é outra indicação</div></div>
+<div class="stbl-row stbl-4"><div class="col col1" data-l="Fármaco">Linezolida</div><div class="col" data-l="Dose">600 mg VO/IV 12/12 h</div><div class="col" data-l="Indicação">VRE, resgate de MRSA, oral em gram-positivo</div><div class="col" data-l="Notas">Mielotoxicidade após ~2 semanas, neuropatia, síndrome serotoninérgica; nunca com rifampicina</div></div>
+<div class="stbl-row stbl-4"><div class="col col1" data-l="Fármaco">Dalbavancina</div><div class="col" data-l="Dose">ESC 2023: 1,5 g IV (ataque) → 0,5–1 g semanal · AHA 2026/DOTS: 1.500 mg IV D1 e D8</div><div class="col" data-l="Indicação">Consolidação após clearance (OPAT, acesso difícil)</div><div class="col" data-l="Notas"><b>Sem registro no Brasil</b> (ausente da CMED 2026); DOTS excluiu EI esquerda</div></div>
+<div class="stbl-row stbl-4"><div class="col col1" data-l="Fármaco">Ceftarolina</div><div class="col" data-l="Dose">600 mg IV 8/8 h (resgate, fora de bula) — conferir</div><div class="col" data-l="Indicação">MRSA persistente, em combinação com daptomicina; VRE com daptomicina</div><div class="col" data-l="Notas">Disponível no Brasil (Zinforo); sem ganho de mortalidade demonstrado; decisão de referência</div></div>
+</div>
+
+<div class="sub-title">F2.2 · Atípicos e fungos — adulto</div>
+<div class="stbl stbl-4">
+<div class="stbl-head stbl-4"><div>Fármaco</div><div>Dose adulto</div><div>Indicação · duração</div><div>Notas · fonte</div></div>
+<div class="stbl-row stbl-4"><div class="col col1" data-l="Fármaco">Doxiciclina</div><div class="col" data-l="Dose">100 mg VO 12/12 h</div><div class="col" data-l="Indicação">Coxiella (≥18 meses nativa, ≥24 prótese, com hidroxicloroquina); Bartonella (4–6 sem, com gentamicina 2 sem); Brucella (≥3 meses)</div><div class="col" data-l="Notas">Fotossensibilidade; nível sérico na febre Q. Apostila 2025 · conferir ESC 2023</div></div>
+<div class="stbl-row stbl-4"><div class="col col1" data-l="Fármaco">Hidroxicloroquina</div><div class="col" data-l="Dose">200 mg VO 8/8 h</div><div class="col" data-l="Indicação">Coxiella, com doxiciclina (alcaliniza o fagolisossomo)</div><div class="col" data-l="Notas">Retinopatia: fundo de olho e campo; QT. Conferir</div></div>
+<div class="stbl-row stbl-4"><div class="col col1" data-l="Fármaco">Anfotericina B lipossomal</div><div class="col" data-l="Dose">3–5 mg/kg IV 1×/dia (conferir IDSA 2016)</div><div class="col" data-l="Indicação">Candida (com ou sem flucitosina, que não existe no Brasil); fase de indução</div><div class="col" data-l="Notas">Nefrotoxicidade, hipocalemia, hipomagnesemia; ESC 2023 (agente)</div></div>
+<div class="stbl-row stbl-4"><div class="col col1" data-l="Fármaco">Equinocandina em dose alta</div><div class="col" data-l="Dose">Caspofungina 150 mg/dia ou micafungina 150 mg/dia IV ou anidulafungina 200 mg/dia (conferir IDSA 2016)</div><div class="col" data-l="Indicação">Candida, alternativa à anfotericina</div><div class="col" data-l="Notas">C. parapsilosis: CIM mais alta. ESC 2023 (agente)</div></div>
+<div class="stbl-row stbl-4"><div class="col col1" data-l="Fármaco">Voriconazol</div><div class="col" data-l="Dose">6 mg/kg IV 12/12 h × 2 doses → 4 mg/kg 12/12 h</div><div class="col" data-l="Indicação">Aspergillus (droga de escolha) + cirurgia</div><div class="col" data-l="Notas">Nível sérico; interações (rifampicina contraindicada). Igual ao II04</div></div>
+</div>
+
+<div class="sub-title">F2.3 · Pediatria (mg/kg com teto)</div>
+<div class="stbl stbl-4">
+<div class="stbl-head stbl-4"><div>Fármaco</div><div>Dose pediátrica</div><div>Teto</div><div>Notas · fonte</div></div>
+<div class="stbl-row stbl-4"><div class="col col1" data-l="Fármaco">Penicilina G cristalina</div><div class="col" data-l="Dose">200.000–300.000 UI/kg/dia IV ÷ 4/4 h</div><div class="col" data-l="Teto">24 milhões UI/dia</div><div class="col" data-l="Notas">Estreptococos. AHA 2015 pediátrica · conferir</div></div>
+<div class="stbl-row stbl-4"><div class="col col1" data-l="Fármaco">Ceftriaxona</div><div class="col" data-l="Dose">100 mg/kg/dia IV ÷ 12/12 h</div><div class="col" data-l="Teto">2 g/dose (4 g/dia)</div><div class="col" data-l="Notas">Mesmo texto do II04; HACEK, Kingella, estreptococo. Conferir</div></div>
+<div class="stbl-row stbl-4"><div class="col col1" data-l="Fármaco">Ampicilina</div><div class="col" data-l="Dose">200–300 mg/kg/dia IV ÷ 6/6 h</div><div class="col" data-l="Teto">12 g/dia</div><div class="col" data-l="Notas">Enterococo. Mesmo texto do II04</div></div>
+<div class="stbl-row stbl-4"><div class="col col1" data-l="Fármaco">Oxacilina</div><div class="col" data-l="Dose">200 mg/kg/dia IV ÷ 4/4–6/6 h</div><div class="col" data-l="Teto">12 g/dia</div><div class="col" data-l="Notas">MSSA. AHA 2015 pediátrica · conferir</div></div>
+<div class="stbl-row stbl-4"><div class="col col1" data-l="Fármaco">Cefazolina</div><div class="col" data-l="Dose">100 mg/kg/dia IV ÷ 8/8 h</div><div class="col" data-l="Teto">6 g/dia</div><div class="col" data-l="Notas">MSSA sem SNC. Conferir</div></div>
+<div class="stbl-row stbl-4"><div class="col col1" data-l="Fármaco">Vancomicina</div><div class="col" data-l="Dose">60 mg/kg/dia IV ÷ 6/6 h</div><div class="col" data-l="Teto">4 g/dia (ajustar por nível)</div><div class="col" data-l="Notas">MRSA, alergia. Mesmo texto do II04; AUC na criança: farmácia clínica</div></div>
+<div class="stbl-row stbl-4"><div class="col col1" data-l="Fármaco">Gentamicina</div><div class="col" data-l="Dose">3 mg/kg/dia IV 1×/dia</div><div class="col" data-l="Teto">Pelo nível (vale &lt;1 mg/L)</div><div class="col" data-l="Notas">Sinergia; conferir</div></div>
+<div class="stbl-row stbl-4"><div class="col col1" data-l="Fármaco">Rifampicina</div><div class="col" data-l="Dose">20 mg/kg/dia VO ÷ 8/8 h</div><div class="col" data-l="Teto">900 mg/dia</div><div class="col" data-l="Notas">Prótese estafilocócica; conferir. II04 usa 20 mg/kg/dia ÷ 12/12 h, máx. 600 mg (meningite)</div></div>
+</div>
+
+<div class="sub-title">F2.4 · Esquemas orais (POET) — conferir no suplemento do ensaio</div>
+<div class="stbl stbl-4">
+<div class="stbl-head stbl-4"><div>Agente</div><div>Esquema oral (dois fármacos)</div><div>Disponível no Brasil?</div><div>Notas</div></div>
+<div class="stbl-row stbl-4"><div class="col col1" data-l="Agente">Estreptococo sensível; E. faecalis</div><div class="col" data-l="Esquema">Amoxicilina 1 g VO 6/6 h + moxifloxacino 400 mg VO 1×/dia (ou linezolida 600 mg VO 12/12 h; ou rifampicina)</div><div class="col" data-l="Brasil">Sim</div><div class="col" data-l="Notas">Dose de amoxicilina e combinações: conferir; rifampicina reduz o nível do moxifloxacino</div></div>
+<div class="stbl-row stbl-4"><div class="col col1" data-l="Agente">MSSA</div><div class="col" data-l="Esquema">POET: dicloxacilina + ácido fusídico ou rifampicina</div><div class="col" data-l="Brasil"><b>Não</b> (dicloxacilina e fusídico sistêmico ausentes)</div><div class="col" data-l="Notas">Alternativas sem ensaio: linezolida isolada; moxifloxacino + rifampicina; SMX-TMP em dose alta + clindamicina ou rifampicina — decisão da equipe; aguarda-se o RODEO</div></div>
+<div class="stbl-row stbl-4"><div class="col col1" data-l="Agente">MRSA, coagulase-negativo</div><div class="col" data-l="Esquema">Linezolida 600 mg VO 12/12 h + segundo agente ativo que não seja rifampicina</div><div class="col" data-l="Brasil">Sim</div><div class="col" data-l="Notas">Hemograma semanal; conferir</div></div>
+</div>
+
+<div class="sub-title">F2.5 · Profilaxia — dose única 30–60 min antes</div>
+<div class="stbl stbl-4">
+<div class="stbl-head stbl-4"><div>Situação</div><div>Adulto</div><div>Criança</div><div>Fonte · nota</div></div>
+<div class="stbl-row stbl-4"><div class="col col1" data-l="Situação">Sem alergia, via oral</div><div class="col" data-l="Adulto">Amoxicilina 2 g VO</div><div class="col" data-l="Criança">50 mg/kg VO, máx. 2 g</div><div class="col" data-l="Fonte">ESC 2023 (Tabela 6); SBC 2020 (1 h antes); igual ao PD09</div></div>
+<div class="stbl-row stbl-4"><div class="col col1" data-l="Situação">Sem alergia, parenteral</div><div class="col" data-l="Adulto">Ampicilina 2 g IV/IM · ou cefazolina ou ceftriaxona 1 g IV/IM</div><div class="col" data-l="Criança">Ampicilina 50 mg/kg, máx. 2 g · cefazolina/ceftriaxona 50 mg/kg, máx. 1 g</div><div class="col" data-l="Fonte">ESC 2023; SBC 2020 (mesmas doses)</div></div>
+<div class="stbl-row stbl-4"><div class="col col1" data-l="Situação">Alergia não grave, via oral</div><div class="col" data-l="Adulto">Cefalexina 2 g VO</div><div class="col" data-l="Criança">50 mg/kg VO, máx. 2 g</div><div class="col" data-l="Fonte">ESC 2023; cefalosporina proibida se anafilaxia, angioedema ou urticária com penicilina</div></div>
+<div class="stbl-row stbl-4"><div class="col col1" data-l="Situação">Alergia, via oral</div><div class="col" data-l="Adulto">Azitromicina ou claritromicina 500 mg VO · ou doxiciclina 100 mg VO</div><div class="col" data-l="Criança">Macrolídeo 15 mg/kg, máx. 500 mg · doxiciclina &lt;45 kg 2,2 mg/kg; ≥45 kg 100 mg</div><div class="col" data-l="Fonte">ESC 2023; macrolídeo idêntico na SBC 2020. <b>Clindamicina não recomendada</b> (C. difficile); SBC 2020 ainda lista clindamicina 600 mg (20 mg/kg)</div></div>
+<div class="stbl-row stbl-4"><div class="col col1" data-l="Situação">Alergia, parenteral</div><div class="col" data-l="Adulto">Cefazolina ou ceftriaxona 1 g IV/IM (se alergia não grave)</div><div class="col" data-l="Criança">50 mg/kg, máx. 1 g</div><div class="col" data-l="Fonte">ESC 2023; anafilaxia: apostila cita vancomicina 15–20 mg/kg IV (máx. 2 g) — conferir</div></div>
+<div class="stbl-row stbl-4"><div class="col col1" data-l="Situação">Brasil: GI/GU com lesão de mucosa, alto risco</div><div class="col" data-l="Adulto">Ampicilina 2 g IV + gentamicina 1,5 mg/kg IV · alergia: vancomicina 1 g IV + gentamicina 1,5 mg/kg</div><div class="col" data-l="Criança">Ampicilina 50 mg/kg + gentamicina 1,5 mg/kg · vancomicina 20 mg/kg + gentamicina 1,5 mg/kg</div><div class="col" data-l="Fonte">SBC 2020 (IIa C); ESC 2023 IIb; AHA não recomenda</div></div>
+<div class="stbl-row stbl-4"><div class="col col1" data-l="Situação">Brasil: parto em prótese ou EI prévia</div><div class="col" data-l="Adulto">Ampicilina 2 g IV + gentamicina 1,5 mg/kg IM 1 h antes ("pode ser considerada")</div><div class="col" data-l="Criança">—</div><div class="col" data-l="Fonte">SBC 2020; não é rotina (D.7, GO13)</div></div>
+</div>
+</div>
+</div>
+
+<div class="card tx">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">F.3</span> Cenários</div><h3>Caso → conduta certa → erro típico <span class="ank ank-dec">DECISION</span></h3></div>
+<div class="card-body">
+<div class="stbl stbl-3">
+<div class="stbl-head stbl-3"><div>Caso</div><div>Conduta certa</div><div>Erro típico</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Caso">Homem de 68 anos, hemodiálise por fístula, febre; S. aureus sensível à oxacilina em 2/2 frascos; em vancomicina</div><div class="col" data-l="Conduta">Trocar para cefazolina 2 g após cada hemodiálise conforme protocolo de diálise (ou oxacilina); ETE; hemoculturas até negativar; 4–6 semanas da negativação</div><div class="col" data-l="Erro">Manter vancomicina "porque é mais fácil na diálise"</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Caso">Mulher de 45 anos, febre há 5 semanas, sopro mitral, S. mitis com CIM de penicilina 0,06 mg/L, sem complicação</div><div class="col" data-l="Conduta">Ceftriaxona 2 g IV 1×/dia, 4 semanas; após ~10–14 dias estável, OPAT ou oral com dois fármacos; revisão odontológica</div><div class="col" data-l="Erro">Acrescentar gentamicina por 4 semanas "para garantir"</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Caso">Homem de 78 anos, TFG 40, E. faecalis sem HLAR, valva aórtica biológica</div><div class="col" data-l="Conduta">Ampicilina 2 g IV 4/4 h + ceftriaxona 2 g IV 12/12 h, 6 semanas; ETE; equipe cirúrgica</div><div class="col" data-l="Erro">Ceftriaxona isolada (enterococo é intrinsecamente resistente) ou ampicilina + gentamicina por 6 semanas</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Caso">EI aórtica por S. aureus, dia 4, PR de 180 → 280 ms</div><div class="col" data-l="Conduta">ETE/TC cardíaca para abscesso; cirurgia de urgência; marcapasso provisório disponível</div><div class="col" data-l="Erro">Atribuir o PR ao betabloqueador e esperar</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Caso">EI mitral com vegetação de 14 mm, hemiparesia há 3 h, TC sem sangue, oclusão de M1</div><div class="col" data-l="Conduta">Sem trombólise; trombectomia considerável; cirurgia valvar urgente sem adiar se o quadro neurológico permite</div><div class="col" data-l="Erro">Alteplase pelo protocolo de AVC; ou adiar a cirurgia por 4 semanas por causa do infarto isquêmico</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Caso">Prótese mecânica mitral, S. epidermidis em 3/3, INR 3,0 em varfarina</div><div class="col" data-l="Conduta">Vancomicina (AUC) + rifampicina após 3–5 dias com hemocultura negativa; ETE; cirurgia avaliada; INR diário quando a rifampicina entra (ou heparina)</div><div class="col" data-l="Erro">Chamar de contaminante; ou iniciar rifampicina no dia 1 e ver o INR despencar sem ajuste</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Caso">Usuário de droga, MSSA, vegetação tricúspide de 12 mm, êmbolos pulmonares, sem acometimento esquerdo</div><div class="col" data-l="Conduta">Oxacilina 2 g IV 4/4 h; 2 semanas só se todos os critérios de curso curto; buprenorfina ou metadona, testagens, naloxona</div><div class="col" data-l="Erro">Dar alta "por evasão" sem plano oral ou sem tratar a dependência</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Caso">Febre 2 semanas, sopro, hemoculturas negativas; amoxicilina por "sinusite" há 10 dias</div><div class="col" data-l="Conduta">Suspender antibiótico se estável e recolher culturas; sorologias de Coxiella e Bartonella; ETE</div><div class="col" data-l="Erro">Trocar para outro antibiótico empírico a cada 3 dias</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Caso">Portador de CDI, bacteremia por S. aureus, ETE com vegetação de 15 mm no cabo</div><div class="col" data-l="Conduta">Extração completa do sistema; 4–6 semanas; reimplante contralateral após hemoculturas negativas</div><div class="col" data-l="Erro">Tratar 6 semanas com o dispositivo no lugar</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Caso">Criança de 4 anos com Fallot corrigido com conduto valvado, vai extrair dente</div><div class="col" data-l="Conduta">Amoxicilina 50 mg/kg VO (máx. 2 g) 30–60 min antes</div><div class="col" data-l="Erro">Clindamicina por rotina; ou omitir porque "já foi operado"</div></div>
+</div>
+</div>
+</div>
+
+<div class="card tx">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">F.4</span> Brasil</div><h3>O que existe aqui e o que muda por isso</h3></div>
+<div class="card-body">
+<div class="stbl stbl-3">
+<div class="stbl-head stbl-3"><div>Recomendação internacional</div><div>Situação no Brasil (CMED out/2026)</div><div>Consequência</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Internacional">(Flu)cloxacilina, nafcilina</div><div class="col" data-l="Brasil">Ausentes; oxacilina 500 mg disponível</div><div class="col" data-l="Consequência">Oxacilina 2 g 4/4 h ou cefazolina</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Internacional">Rifampicina IV</div><div class="col" data-l="Brasil">Só cápsula 300 mg e suspensão 20 mg/mL</div><div class="col" data-l="Consequência">Via oral ou sonda; adiar se íleo</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Internacional">Dalbavancina, oritavancina</div><div class="col" data-l="Brasil">Sem registro na lista</div><div class="col" data-l="Consequência">OPAT com ceftriaxona, daptomicina ou teicoplanina</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Internacional">Dicloxacilina, ácido fusídico oral (POET)</div><div class="col" data-l="Brasil">Ausentes (fusidato só pomada)</div><div class="col" data-l="Consequência">Oral no MSSA sem esquema validado no país</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Internacional">Flucitosina, fosfomicina IV</div><div class="col" data-l="Brasil">Ausentes (fosfomicina só trometamol oral)</div><div class="col" data-l="Consequência">Candida sem 5-FC; sem resgate com fosfomicina</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Internacional">Daptomicina, teicoplanina, linezolida, ceftarolina</div><div class="col" data-l="Brasil">Disponíveis (genéricos de daptomicina, teicoplanina e linezolida)</div><div class="col" data-l="Consequência">Acesso hospitalar conforme padronização local</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Internacional">PCDT de endocardite</div><div class="col" data-l="Brasil">Não existe; SBC 2020 cobre profilaxia e parto</div><div class="col" data-l="Consequência">Protocolo institucional + diretriz internacional</div></div>
+</div>
+<div class="box decision"><span class="box-label">DECISION</span><div class="box-title">Populações especiais que mudam a dose</div><div class="box-body"><b>DRC e hemodiálise:</b> cefazolina e vancomicina pós-diálise conforme protocolo; daptomicina a cada 48 h se ClCr &lt;30 (conferir bula); evitar gentamicina. <b>Obeso:</b> vancomicina pelo peso real com AUC; gentamicina pelo peso ajustado; daptomicina pelo peso real. <b>Idoso:</b> dupla betalactâmica no enterococo, sem aminoglicosídeo. <b>Gestante:</b> betalactâmicos e vancomicina; aminoglicosídeo com cautela; sem tetraciclina. <b>Criança:</b> F2.3, com teto.</div></div>
+</div>
+</div>
+</section>
+
+<!-- ============================================================ G -->
+<section id="pitfalls">
+<div class="section">
+<div class="section-eyebrow"><span>G</span> Pitfalls · Mitos · Controvérsias</div>
+<div class="section-title">Erros operacionais, mitos vivos e os debates que as diretrizes de 2023 e 2026 deixaram abertos</div>
+<div class="section-sub">Os dez erros que mais custam na endocardite estão na hemocultura, no antibiótico errado mantido por conveniência e no medo de operar.</div>
+</div>
+
+<div class="card pearl">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">G.1</span> Pegadinhas</div><h3>10 erros operacionais em endocardite <span class="ank ank-dgr">DANGER</span></h3></div>
+<div class="card-body">
+<div class="stbl stbl-2">
+<div class="stbl-head stbl-2"><div>Erro comum</div><div>Correto</div></div>
+<div class="stbl-row stbl-2"><div class="col col1" data-l="Erro">Iniciar antibiótico "de prova" no febril estável com sopro antes de colher hemocultura</div><div class="col" data-l="Correto">Três pares antes de qualquer dose; no subagudo estável, aguardar o resultado. A dose precoce cria a endocardite com cultura negativa.</div></div>
+<div class="stbl-row stbl-2"><div class="col col1" data-l="Erro">Manter vancomicina depois que o antibiograma mostra MSSA</div><div class="col" data-l="Correto">Trocar no mesmo dia para oxacilina 2 g IV 4/4 h ou cefazolina 2 g IV 8/8 h: menos falha e menos mortalidade.</div></div>
+<div class="stbl-row stbl-2"><div class="col col1" data-l="Erro">Associar gentamicina por 3–5 dias no S. aureus de valva nativa</div><div class="col" data-l="Correto">Não recomendada: sem ganho de desfecho e com lesão renal mensurável.</div></div>
+<div class="stbl-row stbl-2"><div class="col col1" data-l="Erro">Rifampicina desde o primeiro dia, ou na valva nativa</div><div class="col" data-l="Correto">Só com prótese ou material estranho, a partir de 3–5 dias de terapia eficaz e hemocultura negativa, sempre associada.</div></div>
+<div class="stbl-row stbl-2"><div class="col col1" data-l="Erro">ETT normal encerra a investigação</div><div class="col" data-l="Correto">ETE se a suspeita persiste; repetir em 5–7 dias; PET-CT ou TC cardíaca na prótese e no dispositivo.</div></div>
+<div class="stbl-row stbl-2"><div class="col col1" data-l="Erro">Estafilococo coagulase-negativo em portador de prótese tratado como contaminante</div><div class="col" data-l="Correto">Com prótese ou dispositivo, é agente típico no Duke-ISCVID; S. lugdunensis é sempre patógeno.</div></div>
+<div class="stbl-row stbl-2"><div class="col col1" data-l="Erro">Trombolisar o AVC de um paciente com febre e sopro</div><div class="col" data-l="Correto">Sem trombólise; trombectomia mecânica considerada em casos selecionados.</div></div>
+<div class="stbl-row stbl-2"><div class="col col1" data-l="Erro">Adiar por 2–4 semanas a cirurgia indicada porque houve AVC isquêmico</div><div class="col" data-l="Correto">Sem hemorragia e sem coma, operar sem adiar; a espera acumula êmbolos e IC.</div></div>
+<div class="stbl-row stbl-2"><div class="col col1" data-l="Erro">Contar a duração a partir do primeiro dia de antibiótico</div><div class="col" data-l="Correto">Contar da primeira hemocultura negativa; após cirurgia com valva de cultura positiva, seguir a regra da diretriz adotada (F1.8).</div></div>
+<div class="stbl-row stbl-2"><div class="col col1" data-l="Erro">Tratar E. faecalis com ceftriaxona isolada, ou com cefalosporina "de amplo espectro"</div><div class="col" data-l="Correto">Enterococo é intrinsecamente resistente a cefalosporinas; ampicilina 2 g IV 4/4 h + ceftriaxona 2 g IV 12/12 h.</div></div>
+</div>
+</div>
+</div>
+
+<div class="card pearl">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">G.2</span> Mitos · Controvérsias</div><h3>Mitos vivos e debates atuais</h3></div>
+<div class="card-body">
+<div class="box myth"><span class="box-label">MYTH</span><div class="box-title">"Todo sopro e todo prolapso mitral precisam de profilaxia antes do dentista"</div><div class="box-body">ESC e AHA restringem a profilaxia ao alto risco (prótese, EI prévia, cardiopatia congênita cianótica ou com material protético). Prolapso sem regurgitação, sopro inocente, marcapasso e revascularização não entram nem na SBC 2020, que é a mais ampla. A carga real de bacteremia vem da gengiva inflamada todos os dias, não do procedimento isolado.</div></div>
+<div class="box myth"><span class="box-label">MYTH</span><div class="box-title">"Vegetação que não diminui no ecocardiograma é falha do tratamento"</div><div class="box-body">Em cerca de metade dos casos curados a vegetação permanece igual por meses e em um quarto pode até parecer maior: é fibrina organizada, não infecção ativa. Falha é clínica e microbiológica (febre, bacteremia, nova embolia, abscesso), não o tamanho isolado no ETT.</div></div>
+<div class="box myth"><span class="box-label">MYTH</span><div class="box-title">"Endocardite se trata por 6 semanas obrigatoriamente intravenosas"</div><div class="box-body">O POET mostrou não inferioridade da transição oral após ≥10 dias IV em pacientes estáveis, com menor mortalidade no seguimento de 5 anos; a ESC 2023 e o AHA 2026 aceitam a troca. A duração também deixou de ser fixa: 2 semanas na tricúspide não complicada, 4 na estreptocócica sensível e na MSSA nativa (AHA 2026), 6 no enterococo e na prótese.</div></div>
+<div class="box controversy"><span class="box-label">CONTROVERSY</span><div class="box-title">Gentamicina na prótese estafilocócica</div><div class="box-body">A ESC 2023 mantém gentamicina por 2 semanas junto ao betalactâmico ou à vancomicina com rifampicina (conferir na tabela original); o AHA 2026, pelo resumo disponível, retirou o aminoglicosídeo, com o argumento de que não há evidência de desfecho e há nefrotoxicidade certa em população idosa. Na prática brasileira, o peso da DRC e da vancomicina concomitante favorece omitir, decidido com infectologia.</div></div>
+<div class="box controversy"><span class="box-label">CONTROVERSY</span><div class="box-title">Quem recebe profilaxia: ESC/AHA, SBC e NICE dizem coisas diferentes</div><div class="box-body">A ESC 2023 elevou a profilaxia no alto risco a recomendação forte e a considera no intermediário caso a caso; o AHA 2021 se alinha ao alto risco; a SBC 2020 inclui valvopatia moderada ou importante e procedimentos GI/GU (IIa); o NICE não recomenda de rotina desde 2008. A evidência é observacional (séries ecológicas e caso-cruzado). Para prova e prática no Brasil, saiba as três posições e registre a escolha.</div></div>
+<div class="box controversy"><span class="box-label">CONTROVERSY</span><div class="box-title">Cirurgia precoce só para prevenir embolia</div><div class="box-body">O EASE (NEJM 2012) operou em 48 h pacientes com vegetação &gt;10 mm e valvopatia grave e reduziu o desfecho de morte e embolia, quase todo à custa de êmbolos. Críticas: amostra pequena, população jovem com estreptococo, centro de excelência cirúrgica. Diretrizes adotaram a urgência para vegetação ≥10 mm com embolia ou com valvopatia grave; para a vegetação grande isolada, sem IC nem embolia, a indicação continua individual.</div></div>
+</div>
+</div>
+</section>
+
+<!-- ============================================================ H -->
+<section id="pearls">
+<div class="section">
+<div class="section-eyebrow"><span>H</span> Pearls · Evolving</div>
+<div class="section-title">H1 · Nuances de especialista · H2 · O que mudou entre 2023 e 2026</div>
+<div class="section-sub">Cada pearl é uma ideia com o argumento que a sustenta. Os evolving são mudanças reais publicadas, não novidade fabricada.</div>
+</div>
+
+<div class="card pearl">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">H.1</span> Pearls</div><h3>8 nuances que distinguem o especialista</h3></div>
+<div class="card-body">
+<div class="box pearl"><span class="box-label">PEARL</span><div class="box-title">O volume de sangue no frasco vale mais que o intervalo entre coletas</div><div class="box-body">A bacteremia da endocardite é contínua e de baixa densidade (frequentemente &lt;10 UFC/mL); a sensibilidade cresce quase linearmente com o volume cultivado. Por isso o Duke-ISCVID abandonou o intervalo de 12 horas e as punções separadas e manteve o número de pares: três pares bem cheios valem mais que seis frascos com 3 mL.</div></div>
+<div class="box pearl"><span class="box-label">PEARL</span><div class="box-title">PR que alonga na endocardite aórtica é abscesso até prova em contrário</div><div class="box-body">O anel aórtico é vizinho do nó atrioventricular e do feixe de His no corpo fibroso central; a extensão perivalvar não-coronariana invade a condução antes de aparecer no ETT. O ECG diário é o exame mais barato e mais sensível para a complicação que mais exige cirurgia.</div></div>
+<div class="box pearl"><span class="box-label">PEARL</span><div class="box-title">Na regurgitação aórtica aguda, taquicardia é compensação, não alvo</div><div class="box-body">Com ventrículo não dilatado, encurtar a diástole reduz o volume regurgitado por batimento; o betabloqueador alonga a diástole, aumenta a regurgitação e precipita edema e choque. O fechamento mitral precoce no ecocardiograma marca a gravidade e a urgência.</div></div>
+<div class="box pearl"><span class="box-label">PEARL</span><div class="box-title">S. gallolyticus pede colonoscopia; S. anginosus pede caça a abscesso</div><div class="box-body">Dois estreptococos, duas investigações: o primeiro marca neoplasia colorretal (e hepatopatia), o segundo é um formador de abscesso (fígado, cérebro, empiema) que não se comporta como viridans. A identificação até espécie muda a investigação, não só o antibiótico.</div></div>
+<div class="box pearl"><span class="box-label">PEARL</span><div class="box-title">Dupla betalactâmica no enterococo é saturação de PBPs, não sinergia mágica</div><div class="box-body">A ceftriaxona sozinha não mata enterococo, mas ocupa PBP2 e PBP3 enquanto a ampicilina inibe PBP4 e PBP5; a parede fica sem transpeptidases de reserva. É por isso que funciona inclusive na resistência de alto nível a aminoglicosídeo, onde a sinergia clássica desaparece.</div></div>
+<div class="box pearl"><span class="box-label">PEARL</span><div class="box-title">Rifampicina tarde, nunca sozinha e sempre com um olho no INR</div><div class="box-body">Mutação única em rpoB, frequência de 10<sup>−7</sup>–10<sup>−8</sup>, inóculo de 10<sup>9</sup>: começar cedo garante a seleção do resistente. E a indução enzimática derruba o INR da prótese mecânica em uma semana e o devolve alto duas semanas depois da suspensão.</div></div>
+<div class="box pearl"><span class="box-label">PEARL</span><div class="box-title">ANCA positivo com glomerulonefrite e febre: descarte endocardite antes de pulsar corticoide</div><div class="box-body">A endocardite subaguda produz ANCA (sobretudo PR3) e glomerulonefrite por imunocomplexos com complemento baixo — o complemento baixo é a pista contra vasculite pauci-imune. Imunossuprimir uma EI não reconhecida é um dos erros mais graves da medicina interna.</div></div>
+<div class="box pearl"><span class="box-label">PEARL</span><div class="box-title">Contaminante só existe sem material protético</div><div class="box-body">Um frasco com coagulase-negativo num paciente sem dispositivo é provavelmente contaminação; o mesmo isolado em portador de prótese, TAVI, marcapasso ou enxerto é agente típico e exige ETE e PET-CT se necessário. O contexto, não o germe, define o significado.</div></div>
+</div>
+</div>
+
+<div class="card pearl">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">H.2</span> Evolving</div><h3>5 mudanças reais — endocardite 2023–2026</h3></div>
+<div class="card-body">
+<div class="box evolving"><span class="box-label">EVOLVING</span><div class="box-title">Duke-ISCVID 2023: PET-CT, TC cardíaca e inspeção cirúrgica viram critério maior</div><div class="box-body">Ampliou os agentes típicos (com prótese, coagulase-negativos, C. acnes, Candida), retirou o intervalo entre hemoculturas, incluiu PCR e sequenciamento e reconheceu TAVI e dispositivos como predisposição. Validações mostram mais sensibilidade, com alguma perda de especificidade em subgrupos (enterococo). O AHA 2026 o adotou; a ESC usa versão própria semelhante.</div></div>
+<div class="box evolving"><span class="box-label">EVOLVING</span><div class="box-title">AHA 2026: o primeiro documento americano desde 2015</div><div class="box-body">Scientific statement de setembro de 2026, sem classes de recomendação, com sugestões de consenso: MSSA nativa por 4 semanas, rifampicina 900 mg/dia na prótese após a negativação, retirada da gentamicina na prótese estafilocócica, cirurgia em 48–72 h, aspiração percutânea de vegetação direita em casos selecionados e critérios POET para a troca oral. Texto integral ainda não conferido nesta edição.</div></div>
+<div class="box evolving"><span class="box-label">EVOLVING</span><div class="box-title">POET II (NEJM 2026): parar guiado pela resposta é possível, mas recidiva mais</div><div class="box-body">508 pacientes estáveis com EI esquerda por estreptococo, E. faecalis ou S. aureus: curso total de 26 × 41 dias, mais dias vivos sem antibiótico, segurança não inferior (8,2% × 10,7%) e recidiva de 5,1% × 1,6%. A mensagem é seleção: estreptococo estável sim, enterococo não.</div></div>
+<div class="box evolving"><span class="box-label">EVOLVING</span><div class="box-title">Cefazolina validada em ensaio para MSSA</div><div class="box-body">CloCeBa (Lancet 2025) e SNAP (NEJM 2026): cefazolina não inferior à cloxacilina/flucloxacilina, com menos lesão renal e menos eventos adversos graves. Para a endocardite sem SNC, a cefazolina 2 g 8/8 h passa a opção de primeira linha também no Brasil.</div></div>
+<div class="box evolving"><span class="box-label">EVOLVING</span><div class="box-title">Dalbavancina: DOTS positivo na bacteremia complicada, mas sem EI esquerda e sem registro no Brasil</div><div class="box-body">O DOTS (JAMA 2025) mostrou dalbavancina 1.500 mg nos dias 1 e 8 não superior em DOOR e não inferior em eficácia clínica ao tratamento IV padrão de 4–8 semanas após o clearance, excluindo EI esquerda. ESC 2023 e AHA 2026 a citam para consolidação; no Brasil, a molécula não consta da lista CMED de 2026.</div></div>
+</div>
+</div>
+</section>
+
+</div>
+</main>
+
+<footer>
+<div class="wrap">
+<div class="foot">
+<div>
+<div class="foot-author">@dr.lorencato</div>
+<div class="foot-meta">Endocardite Infecciosa · Pocket Handbook Elite · v5.2 · Infectologia · II02</div>
+</div>
+<div class="foot-mono">Compilação clínica · status clinical_review até signoff humano · fontes conferidas em 2026-11-09</div>
+</div>
+<div class="foot-meta"><b>Bibliografia rastreável</b> (fonte · ano · papel no HP · identificador)
+<ol>
+<li id="src-1">Delgado V et al. 2023 ESC Guidelines for the management of endocarditis. Eur Heart J 2023;44:3948–4042 · prevenção e doses de profilaxia, equipe de endocardite, princípios de antibioticoterapia (daptomicina 10 mg/kg, vancomicina AUC, rifampicina tardia, gentamicina 1×/dia, ampicilina + ceftriaxona), OPAT/oral, cirurgia, complicações neurológicas, fungos · doi:10.1093/eurheartj/ehad193 · PMID 37622656 (texto HTML lido; tabelas de esquemas em imagem não lidas — doses marcadas "conferir")</li>
+<li id="src-2">Fowler VG et al. The 2023 Duke-International Society for Cardiovascular Infectious Diseases Criteria for Infective Endocarditis. Clin Infect Dis 2023;77:518–526 · critérios diagnósticos · doi:10.1093/cid/ciad271 · PMID 37138445 · PMC10681650</li>
+<li id="src-3">DeSimone DC et al. Infective Endocarditis: Diagnosis, Antibiotic Therapy, and Management. AHA Scientific Statement. Circulation 2026;154:e593–e619 · durações, rifampicina, gentamicina, POET, momento cirúrgico · doi:10.1161/CIR.0000000000001466 · PMID 42708190 (texto integral não lido; resumo e comentário secundário — conferir)</li>
+<li id="src-4">Tarasoutchi F et al. Atualização das Diretrizes Brasileiras de Valvopatias – 2020 (SBC). Arq Bras Cardiol 2020;115:720–775 · profilaxia no Brasil (indicações, esquemas, GI/GU), parto · doi:10.36660/abc.20201047 · PMID 33111877 (itens 18 e 19 lidos na íntegra)</li>
+<li id="src-5">Wilson WR et al. Prevention of Viridans Group Streptococcal Infective Endocarditis. AHA Scientific Statement. Circulation 2021;143:e963–e978 · grupos de alto risco (concordante com PD09) · doi:10.1161/CIR.0000000000000969 · PMID 33853363</li>
+<li id="src-6">Iversen K et al. Partial Oral versus Intravenous Antibiotic Treatment of Endocarditis (POET). N Engl J Med 2019;380:415–424 · PMID 30152252; Pries-Heje MM et al. Five-year outcomes of POET. N Engl J Med 2022;386:601 · PMID 35139280 · transição oral (suplemento com esquemas não lido)</li>
+<li id="src-7">Bundgaard H et al. Response-Tailored or Standard-Duration Antibiotic Treatment for Infective Endocarditis (POET II). N Engl J Med 2026;395:1600–1609 · doi:10.1056/NEJMoa2607887 · PMID 42663314 · encurtamento</li>
+<li id="src-8">Rybak MJ et al. Therapeutic monitoring of vancomycin (ASHP/IDSA/PIDS/SIDP). Am J Health Syst Pharm 2020;77:835–864 · doi:10.1093/ajhp/zxaa036 · PMID 32191793 · AUC 400–600, ataque</li>
+<li id="src-9">Burdet C et al. Cloxacillin versus cefazolin for MSSA bacteraemia (CloCeBa). Lancet 2025;406:2349–2359 · doi:10.1016/S0140-6736(25)01624-1 · PMID 41115439; SNAP Trial Group. Cefazolin for MSSA bacteremia. N Engl J Med 2026 · doi:10.1056/NEJMoa2506905 · PMID 42308484</li>
+<li id="src-10">Turner NA et al. Dalbavancin for Treatment of S. aureus Bacteremia (DOTS). JAMA 2025;334:866–877 · doi:10.1001/jama.2025.12543 · PMID 40802264; Thwaites GE et al. Adjunctive rifampicin for S. aureus bacteraemia (ARREST). Lancet 2018;391:668 · PMID 29249276; Kang DH et al. Early surgery versus conventional treatment for infective endocarditis (EASE). N Engl J Med 2012;366:2466 · PMID 22738096</li>
+<li id="src-11">Roland T et al. Partial Oral Antibiotic Therapy for Infective Endocarditis: a practical review. Pathogens 2026;15:924 · doi:10.3390/pathogens15090924 · critérios de troca oral (ESC, SPILF-AEPEI); Peijster AJL et al. NVVC endorsement of the 2023 ESC endocarditis guidelines. Neth Heart J 2025;34(Suppl 1):1–13 · doi:10.1007/s12471-025-02010-w</li>
+<li id="src-12">Anvisa/CMED. Lista de preços de medicamentos PMVG, 09/10/2026 · disponibilidade no Brasil (oxacilina, cefazolina, daptomicina, teicoplanina, linezolida, rifampicina só oral; ausentes: dalbavancina, dicloxacilina, flucitosina, fosfomicina IV) · gov.br/anvisa (consulta em 2026-11-09)</li>
+<li id="src-13">Apostila MED 2025 INF 2 — Endocardite, Infecções do SNC e Parasitoses (l. 16–1031) · piso de cobertura editorial, nunca fonte de conduta · vault (somente leitura). Doses compartilhadas conferidas com II03 (sepse) e II04 (meningites) publicados.</li>
+</ol>
+</div>
+</div>
+</footer>
+
+<div class="watermark">@dr.lorencato · II02 Endocardite v5.2</div>
+
+</body>
+</html>
