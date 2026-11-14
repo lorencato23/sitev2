@@ -1,0 +1,1253 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#0d1117">
+<title>Sangramento Gestacional, DTG e Aloimunização · Pocket Handbook · Elite Edition · GO12</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700;9..40,800&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   MEDICAL HANDBOOK PREMIUM · ELITE EDITION · CSS FRAMEWORK
+   Copy this ENTIRE block verbatim into the <style> tag of the
+   output HTML. Do NOT modify design tokens, colors, or
+   typography — they are calibrated for legibility and print.
+============================================================ */
+:root{
+  --bg:#f1eee5;--bg-tint:#ebe8de;--paper:#ffffff;--paper-tint:#fbf9f3;
+  --ink:#0e1116;--ink-soft:#232830;--ink-mute:#545b69;--ink-faint:#8a91a0;--ink-ghost:#b8bdc7;
+  --line:#e2dfd5;--line-soft:#ece9df;--line-strong:#c9c5b8;
+  --c-prim:#0b5d4e;--c-clin:#1d4570;--c-diag:#5e2f78;--c-tx:#a8481a;--c-emerg:#a31b35;--c-pearl:#7a6014;
+  --ank-hy:#b88e0a;--ank-hy-bg:#fef4c8;--ank-dec:#1d4ea3;--ank-dec-bg:#dde7f8;
+  --ank-dgr:#a31b25;--ank-dgr-bg:#fadcdc;--ank-prl:#3e6a2e;--ank-prl-bg:#d8e6cf;
+  --ank-myt:#6a3a1a;--ank-myt-bg:#f0dec5;--ank-con:#5a4070;--ank-con-bg:#e3d6f0;
+  --ank-evo:#0d6373;--ank-evo-bg:#cde5e9;
+  --sh-sm:0 1px 2px rgba(14,17,22,.04),0 1px 1px rgba(14,17,22,.03);
+  --sh-md:0 6px 16px -8px rgba(14,17,22,.10),0 2px 4px rgba(14,17,22,.04);
+  --sh-lg:0 20px 40px -22px rgba(14,17,22,.18),0 4px 10px -4px rgba(14,17,22,.08);
+  --r:10px;--r-lg:14px;--r-xl:20px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;scroll-padding-top:120px}
+body{font-family:'DM Sans',system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.5;font-size:15px;letter-spacing:-.005em;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:-1;background:radial-gradient(900px 500px at -10% -5%,rgba(11,93,78,.04),transparent 60%),radial-gradient(800px 450px at 110% 10%,rgba(163,27,53,.035),transparent 55%)}
+a{color:inherit;text-decoration:none}
+
+/* FIXED HEADER */
+.header{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(13,17,23,.82);backdrop-filter:saturate(160%) blur(20px);-webkit-backdrop-filter:saturate(160%) blur(20px);border-bottom:1px solid rgba(255,255,255,.06)}
+.header-row{max-width:1080px;margin:0 auto;padding:10px 20px;display:flex;align-items:center;gap:14px;color:#f0eee5}
+.h-mark{width:30px;height:30px;border-radius:7px;background:linear-gradient(135deg,#d4b94a 0%,#a07f1a 100%);display:grid;place-items:center;font:800 13px/1 'DM Sans';color:#1a1500;letter-spacing:-.04em;box-shadow:inset 0 1px 0 rgba(255,255,255,.3),0 1px 2px rgba(0,0,0,.4);flex-shrink:0}
+.h-titles{display:flex;flex-direction:column;line-height:1.15;min-width:0}
+.h-title{font-weight:700;font-size:14px;letter-spacing:-.02em}
+.h-sub{font-size:10.5px;color:#9fa298;font-weight:500;letter-spacing:.08em;text-transform:uppercase}
+.h-edition{margin-left:auto;font:500 10px/1 'DM Mono',monospace;color:#9fa298;letter-spacing:.05em;padding:5px 9px;border:1px solid rgba(255,255,255,.1);border-radius:999px;white-space:nowrap}
+.h-author{font:700 10.5px/1 'DM Mono',monospace;color:#d4b94a;letter-spacing:.04em;padding:6px 10px;border:1px solid rgba(212,185,74,.35);background:rgba(212,185,74,.08);border-radius:999px;white-space:nowrap;display:inline-flex;align-items:center;gap:6px}
+.h-author::before{content:"●";font-size:6px;color:#d4b94a}
+@media(max-width:560px){.h-edition{display:none}.h-author{margin-left:auto}}
+
+/* STICKY TOC */
+.toc{position:sticky;top:50px;z-index:90;background:rgba(241,238,229,.92);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}
+.toc-inner{max-width:1080px;margin:0 auto;padding:10px 16px;display:flex;gap:6px;overflow-x:auto;scrollbar-width:none;-ms-overflow-style:none}
+.toc-inner::-webkit-scrollbar{display:none}
+.toc-chip{flex:none;font:600 11px/1 'DM Sans';letter-spacing:.06em;text-transform:uppercase;padding:7px 12px;background:var(--paper);border:1px solid var(--line);border-radius:999px;color:var(--ink-soft);transition:all .15s;white-space:nowrap;cursor:pointer}
+.toc-chip:hover{background:var(--paper-tint);border-color:var(--ink-faint);color:var(--ink)}
+.toc-chip-num{display:inline-block;font-family:'DM Mono',monospace;color:var(--ink-faint);margin-right:5px;font-weight:500;font-size:10px}
+
+/* LAYOUT */
+.wrap{max-width:1080px;margin:0 auto;padding:24px 20px 80px}
+.section{margin:48px 0 18px;padding-top:8px}
+.section:first-child{margin-top:14px}
+.section-eyebrow{font:700 10.5px/1 'DM Sans';letter-spacing:.18em;text-transform:uppercase;color:var(--c-prim);margin-bottom:8px;display:flex;align-items:center;gap:10px}
+.section-eyebrow::before{content:"";width:24px;height:1.5px;background:var(--c-prim)}
+.section-title{font-size:26px;font-weight:700;letter-spacing:-.03em;line-height:1.1}
+.section-sub{margin-top:6px;font-size:13.5px;color:var(--ink-mute);max-width:680px}
+
+/* HERO */
+.hero{margin:20px 0 28px;padding:26px 28px;background:linear-gradient(180deg,#fdfcf6 0%,#f7f4e8 100%);border:1px solid var(--line);border-radius:var(--r-xl);box-shadow:var(--sh-md);position:relative;overflow:hidden}
+.hero::after{content:"";position:absolute;top:0;right:0;bottom:0;left:0;background:radial-gradient(400px 200px at 100% 0%,rgba(163,27,53,.06),transparent 60%),radial-gradient(360px 200px at 0% 100%,rgba(11,93,78,.05),transparent 60%);pointer-events:none}
+.hero-tag{font:700 10.5px/1 'DM Sans';letter-spacing:.2em;text-transform:uppercase;color:var(--c-emerg);display:inline-flex;align-items:center;gap:8px;margin-bottom:10px}
+.hero-tag::before{content:"";width:18px;height:1.5px;background:currentColor}
+.hero h1{font-size:34px;font-weight:800;letter-spacing:-.035em;line-height:1.02;margin-bottom:8px}
+.hero h1 em{font-style:italic;font-weight:500;color:var(--ink-mute)}
+.hero-lead{font-size:14.5px;color:var(--ink-mute);max-width:660px;line-height:1.55}
+.hero-stamp{position:absolute;top:20px;right:22px;font:700 10.5px/1 'DM Mono',monospace;letter-spacing:.04em;padding:7px 11px 7px 18px;border:1.5px dashed rgba(163,27,53,.45);color:rgba(163,27,53,.9);border-radius:5px;background:rgba(255,255,255,.55);transform:rotate(-3deg);z-index:2;box-shadow:0 2px 6px rgba(163,27,53,.08)}
+.hero-stamp::before{content:"●";position:absolute;left:7px;top:50%;transform:translateY(-50%);color:rgba(163,27,53,.7);font-size:7px}
+.hero-sig{margin-top:14px;display:flex;align-items:center;gap:10px;font:600 11px/1 'DM Sans';color:var(--ink-mute);letter-spacing:.04em}
+.hero-sig::before{content:"";flex:none;width:22px;height:1.5px;background:var(--c-emerg)}
+.hero-sig b{color:var(--c-emerg);font-weight:700;font-family:'DM Mono',monospace;letter-spacing:.02em}
+@media(max-width:560px){.hero{padding:22px 20px}.hero h1{font-size:26px}.section-title{font-size:22px}.hero-stamp{position:relative;top:auto;right:auto;display:inline-block;transform:none;margin-bottom:14px}}
+
+/* POCKET CARD 0 */
+.pocket{background:#0e1116;color:#f0eee5;border-radius:var(--r-xl);padding:24px 26px 26px;margin:0 0 28px;position:relative;overflow:hidden;box-shadow:var(--sh-lg)}
+.pocket::before{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(600px 300px at 100% 0%,rgba(212,185,74,.07),transparent 60%),radial-gradient(500px 280px at 0% 100%,rgba(163,27,53,.08),transparent 60%)}
+.pocket-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:18px;flex-wrap:wrap;position:relative}
+.pocket-eyebrow{font:700 10.5px/1 'DM Sans';letter-spacing:.2em;text-transform:uppercase;color:#d4b94a;display:flex;align-items:center;gap:9px}
+.pocket-eyebrow::before{content:"●";color:#d4b94a;font-size:9px;animation:pulse 2.4s ease infinite}
+@keyframes pulse{50%{opacity:.4}}
+.pocket-title{font-size:22px;font-weight:700;letter-spacing:-.02em;line-height:1.15;color:#fff}
+.pocket-sub{font-size:12.5px;color:#9aa0a8;margin-top:2px}
+.pocket-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px;position:relative}
+.pocket-card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-left:3px solid var(--accent,#d4b94a);border-radius:var(--r);padding:12px 14px}
+.pocket-card .pc-trig{font:700 10px/1.1 'DM Sans';letter-spacing:.12em;text-transform:uppercase;color:var(--accent,#d4b94a);margin-bottom:6px;display:flex;align-items:center;gap:6px}
+.pocket-card .pc-trig::before{content:"";width:4px;height:4px;background:currentColor;border-radius:50%}
+.pocket-card .pc-act{font-size:13.5px;line-height:1.4;color:#dedfd5}
+.pocket-card .pc-act b{color:#fff;font-weight:600}
+.pocket-card.emerg{--accent:#ff8a96}.pocket-card.dec{--accent:#7cb0ff}.pocket-card.tx{--accent:#ffb085}.pocket-card.clin{--accent:#b0e0d4}
+
+/* LEGEND */
+.legend{background:var(--paper);border:1px solid var(--line);border-radius:var(--r-lg);padding:18px 20px;margin-bottom:28px;box-shadow:var(--sh-sm)}
+.lg-title{font:700 10.5px/1 'DM Sans';letter-spacing:.16em;text-transform:uppercase;color:var(--ink-faint);margin-bottom:12px}
+.lg-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:8px 14px}
+.lg-item{display:flex;align-items:center;gap:9px;font-size:12.5px;color:var(--ink-soft)}
+.dot{width:9px;height:9px;border-radius:50%;flex-shrink:0;box-shadow:0 0 0 2px var(--paper),0 0 0 3px currentColor}
+.dot.c1{color:var(--c-prim);background:var(--c-prim)}.dot.c2{color:var(--c-clin);background:var(--c-clin)}.dot.c3{color:var(--c-diag);background:var(--c-diag)}.dot.c4{color:var(--c-tx);background:var(--c-tx)}.dot.c5{color:var(--c-emerg);background:var(--c-emerg)}.dot.c6{color:var(--c-pearl);background:var(--c-pearl)}
+.lg-divider{height:1px;background:var(--line-soft);margin:14px 0}
+.lg-anchors{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:8px}
+.ank{display:inline-flex;align-items:center;gap:5px;font:700 9.5px/1 'DM Sans';letter-spacing:.12em;text-transform:uppercase;padding:4px 8px 4px 7px;border-radius:999px;border:1px solid;vertical-align:middle;white-space:nowrap}
+.ank::before{content:"";width:4px;height:4px;border-radius:50%;background:currentColor}
+.ank-hy{color:var(--ank-hy);background:var(--ank-hy-bg);border-color:#e5cd72}
+.ank-dec{color:var(--ank-dec);background:var(--ank-dec-bg);border-color:#9fbae6}
+.ank-dgr{color:var(--ank-dgr);background:var(--ank-dgr-bg);border-color:#e29ca0}
+.ank-prl{color:var(--ank-prl);background:var(--ank-prl-bg);border-color:#a8c298}
+.ank-myt{color:var(--ank-myt);background:var(--ank-myt-bg);border-color:#d0b181}
+.ank-con{color:var(--ank-con);background:var(--ank-con-bg);border-color:#bba7d3}
+.ank-evo{color:var(--ank-evo);background:var(--ank-evo-bg);border-color:#8fc1c9}
+.lg-explain{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:6px 14px;font-size:11.5px;color:var(--ink-mute);margin-top:10px}
+.lg-explain b{font-weight:700}
+.lg-explain .ehy b{color:var(--ank-hy)}.lg-explain .edec b{color:var(--ank-dec)}.lg-explain .edgr b{color:var(--ank-dgr)}.lg-explain .eprl b{color:var(--ank-prl)}.lg-explain .emyt b{color:var(--ank-myt)}.lg-explain .econ b{color:var(--ank-con)}.lg-explain .eevo b{color:var(--ank-evo)}
+
+/* EVIDENCE CHIPS */
+.ev{display:inline-flex;align-items:center;font:600 9.5px/1 'DM Mono',monospace;letter-spacing:.04em;padding:3px 6px 2px;border-radius:4px;background:#eeebde;color:var(--ink-soft);border:1px solid var(--line);vertical-align:middle;margin-left:3px}
+.ev-acr{background:#fadcdc;color:#a31b25;border-color:#e29ca0}
+.ev-eular{background:#dde7f8;color:#1d4ea3;border-color:#9fbae6}
+.ev-sbr{background:#e3d6f0;color:#5a4070;border-color:#bba7d3}
+.ev-nice{background:#cde5e9;color:#0d6373;border-color:#8fc1c9}
+.ev-expert{background:#eeebde;color:#7a6014;border-color:#d0b181}
+.ev-cochrane{background:#d8e6cf;color:#3e6a2e;border-color:#a8c298}
+
+/* CARD */
+.card{background:var(--paper);border:1px solid var(--line);border-radius:var(--r-lg);margin-bottom:22px;box-shadow:var(--sh-md);overflow:hidden;break-inside:avoid}
+.card-head{padding:18px 22px 15px;border-bottom:1px solid var(--line-soft);position:relative;background:linear-gradient(180deg,#fcfaf2 0%,#ffffff 100%)}
+.card-head::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--accent,var(--c-prim))}
+.card-eyebrow{font:700 10px/1 'DM Sans';letter-spacing:.16em;text-transform:uppercase;color:var(--accent,var(--c-prim));margin-bottom:5px;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.card-num{font-family:'DM Mono',monospace;font-weight:500;color:var(--ink-faint);font-size:10.5px;letter-spacing:0}
+.card h3{font-size:21px;font-weight:700;letter-spacing:-.025em;color:var(--ink);line-height:1.15;display:flex;align-items:center;gap:9px;flex-wrap:wrap}
+.card-sub{margin-top:6px;font-size:13px;color:var(--ink-mute)}
+.card-body{padding:20px 22px 24px}
+.card.prim{--accent:var(--c-prim)}.card.clin{--accent:var(--c-clin)}.card.diag{--accent:var(--c-diag)}.card.tx{--accent:var(--c-tx)}.card.emerg{--accent:var(--c-emerg)}.card.pearl{--accent:var(--c-pearl)}
+@media(max-width:560px){.card-head{padding:16px 18px 14px}.card-body{padding:18px 18px 20px}.card h3{font-size:18px}}
+
+/* QUICK VIEW */
+.quick{background:var(--paper-tint);border:1px solid var(--line);border-left:3px solid var(--accent,var(--c-prim));border-radius:var(--r);padding:13px 16px;margin:0 0 16px}
+.quick-label{font:700 9.5px/1 'DM Sans';letter-spacing:.16em;text-transform:uppercase;color:var(--accent,var(--c-prim));margin-bottom:6px}
+.quick-body{font-size:13.5px;line-height:1.45;color:var(--ink-soft)}
+.quick-body b{color:var(--ink);font-weight:600}
+
+/* SUB-TITLE */
+.sub-title{font:700 10.5px/1 'DM Sans';letter-spacing:.16em;text-transform:uppercase;color:var(--ink-soft);margin:18px 0 10px;display:flex;align-items:center;gap:9px;border-bottom:1px dashed var(--line);padding-bottom:6px}
+.sub-title::before{content:"";width:4px;height:4px;border-radius:50%;background:var(--accent,var(--ink-soft))}
+.sub-title:first-child{margin-top:0}
+
+/* TEXT */
+p{color:var(--ink-soft);margin-bottom:8px;font-size:14px;line-height:1.5}
+p:last-child{margin-bottom:0}
+strong{color:var(--ink);font-weight:600}
+ul.bullets{list-style:none;padding:0;margin:0 0 10px}
+ul.bullets li{position:relative;padding:5px 0 5px 20px;font-size:13.5px;line-height:1.5;color:var(--ink-soft);border-bottom:1px dashed var(--line-soft)}
+ul.bullets li:last-child{border-bottom:none}
+ul.bullets li::before{content:"";position:absolute;left:5px;top:13px;width:4px;height:4px;border-radius:50%;background:var(--accent,var(--ink-mute))}
+ul.bullets li b{color:var(--ink);font-weight:600}
+
+/* DISEASE BOX */
+.disease{border:1px solid var(--line);border-radius:var(--r);margin:14px 0;overflow:hidden;background:var(--paper)}
+.disease-head{padding:12px 16px;background:linear-gradient(180deg,#faf7eb 0%,#f1eddc 100%);border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap}
+.disease-name{font-weight:700;color:var(--ink);font-size:14.5px;letter-spacing:-.015em}
+.disease-tag{font:600 10px/1 'DM Sans';letter-spacing:.08em;text-transform:uppercase;color:var(--ink-mute)}
+.disease-body{padding:14px 16px}
+.disease-rows{display:grid;gap:0}
+.disease-row{display:grid;grid-template-columns:130px 1fr;gap:12px;padding:8px 0;border-bottom:1px dashed var(--line-soft)}
+.disease-row:last-child{border-bottom:none;padding-bottom:0}
+.disease-row:first-child{padding-top:0}
+.disease-row .k{font:700 10px/1.2 'DM Sans';letter-spacing:.12em;text-transform:uppercase;color:var(--accent,var(--ink-faint));padding-top:2px}
+.disease-row .v{font-size:13.5px;color:var(--ink-soft);line-height:1.5}
+.disease-row .v b{color:var(--ink)}
+@media(max-width:560px){.disease-row{grid-template-columns:1fr;gap:3px;padding:6px 0 8px}.disease-row .k{padding-top:0}}
+
+/* DEEP DIVE */
+.deep{margin:16px 0 6px;border:1px solid var(--line);border-radius:var(--r);background:linear-gradient(180deg,#fdfcf6 0%,#f9f6ea 100%);overflow:hidden}
+.deep>summary{list-style:none;cursor:pointer;padding:11px 16px;display:flex;align-items:center;justify-content:space-between;font:700 11px/1 'DM Sans';letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft);user-select:none;transition:background .15s}
+.deep>summary::-webkit-details-marker{display:none}
+.deep>summary::after{content:"+";font-size:18px;font-weight:600;color:var(--ink-faint);transition:transform .2s;font-family:'DM Mono',monospace}
+.deep[open]>summary::after{transform:rotate(45deg)}
+.deep>summary:hover{background:rgba(0,0,0,.02)}
+.deep-content{padding:14px 16px 16px;border-top:1px dashed var(--line)}
+.deep-content p{font-size:13px;color:var(--ink-mute);line-height:1.55}
+.deep-content p b{color:var(--ink-soft)}
+
+/* MNEMONIC */
+.mnemo{background:var(--paper-tint);border:1px solid var(--line);border-radius:var(--r);padding:14px 16px;margin:14px 0}
+.mnemo-title{font:700 10.5px/1 'DM Sans';letter-spacing:.16em;text-transform:uppercase;color:var(--c-pearl);margin-bottom:10px;display:flex;align-items:center;gap:8px}
+.mnemo-title b{background:var(--ink);color:#fff;padding:3px 7px;border-radius:4px;font-size:10px;letter-spacing:.06em}
+.mnemo-grid{display:grid;gap:5px}
+.mnemo-row{display:grid;grid-template-columns:28px 1fr;gap:10px;align-items:baseline;font-size:13px;color:var(--ink-soft);padding:3px 0}
+.mnemo-letter{display:grid;place-items:center;width:24px;height:24px;background:var(--ink);color:#fff;border-radius:5px;font:800 12px/1 'DM Sans';letter-spacing:-.02em}
+.mnemo-row b{color:var(--ink);font-weight:600}
+.mnemo-row em{font-style:italic;color:var(--ink-mute);font-size:12px}
+
+/* SCORE BOX */
+.score{border:1px solid var(--line);border-radius:var(--r);margin:14px 0;background:var(--paper);overflow:hidden}
+.score-head{padding:11px 14px;background:linear-gradient(180deg,#f5f1e0 0%,#ede9d6 100%);border-bottom:1px solid var(--line)}
+.score-name{font:700 13px/1.2 'DM Sans';color:var(--ink);letter-spacing:-.01em}
+.score-purpose{font:500 10.5px/1.2 'DM Sans';color:var(--ink-mute);letter-spacing:.06em;text-transform:uppercase;margin-top:3px}
+.score-rows{display:grid;gap:0}
+.score-row{display:grid;grid-template-columns:90px 1fr;gap:12px;align-items:start;padding:9px 14px;border-bottom:1px dashed var(--line-soft);font-size:13px}
+.score-row:last-child{border-bottom:none}
+.score-grade{font:800 12px/1.2 'DM Mono',monospace;color:var(--c-emerg);letter-spacing:-.01em}
+.score-desc{color:var(--ink-soft);line-height:1.45}
+.score-desc b{color:var(--ink)}
+
+/* STACKED TABLE */
+.stbl{margin:14px 0;border:1px solid var(--line);border-radius:var(--r);background:var(--paper);overflow:hidden}
+.stbl-head,.stbl-row{display:grid;gap:14px;padding:10px 14px;align-items:start}
+.stbl-head{background:#faf7eb;border-bottom:2px solid var(--line);font:700 10.5px/1 'DM Sans';letter-spacing:.1em;text-transform:uppercase;color:var(--ink)}
+.stbl-row{border-bottom:1px solid var(--line-soft);font-size:13px;color:var(--ink-soft);line-height:1.5}
+.stbl-row:last-child{border-bottom:none}
+.stbl-row:nth-child(even){background:#fcfaf2}
+.stbl-row b{color:var(--ink);font-weight:600}
+.stbl-row .col1{font-weight:600;color:var(--ink)}
+.stbl-2{grid-template-columns:1fr 2fr}
+.stbl-3{grid-template-columns:1fr 1.3fr 1.5fr}
+.stbl-4{grid-template-columns:1.2fr 1fr 1fr 1.2fr}
+@media(max-width:680px){
+  .stbl-head{display:none}
+  .stbl-row{grid-template-columns:1fr !important;gap:12px;padding:14px 16px}
+  .stbl-row .col{display:block;min-width:0;word-wrap:break-word;overflow-wrap:anywhere}
+  .stbl-row .col::before{content:attr(data-l);display:block;font:700 9.5px/1.3 'DM Sans';letter-spacing:.12em;text-transform:uppercase;color:var(--ink-mute);margin-bottom:4px}
+  .stbl-row .col1{font-weight:700;font-size:15px;padding-bottom:8px;margin-bottom:6px;border-bottom:1px dashed var(--line)}
+  .stbl-row .col1::before{display:none}
+}
+
+/* CALLOUT BOXES */
+.box{border-radius:var(--r);padding:14px 16px;margin:14px 0;position:relative;border:1px solid}
+.box-label{position:absolute;top:-9px;left:14px;font:700 9.5px/1 'DM Sans';letter-spacing:.16em;text-transform:uppercase;padding:3px 9px;border-radius:999px;color:#fff}
+.box-title{font-weight:700;color:var(--ink);font-size:14px;margin:2px 0 6px}
+.box-body{font-size:13.5px;line-height:1.5;color:var(--ink-soft)}
+.box-body b{color:var(--ink)}
+.box-body ul{list-style:none;padding:0;margin:4px 0 0}
+.box-body ul li{position:relative;padding:3px 0 3px 20px}
+.box-body ul li::before{content:"→";position:absolute;left:0;top:3px;font-weight:700;color:var(--bx-color)}
+.box.decision{background:#f1f5fc;border-color:#c4d3eb;--bx-color:var(--ank-dec)}.box.decision .box-label{background:var(--ank-dec)}
+.box.danger{background:#fbf0f0;border-color:#e5c2c2;--bx-color:var(--ank-dgr)}.box.danger .box-label{background:var(--ank-dgr)}.box.danger .box-body b{color:var(--ank-dgr)}
+.box.pearl{background:#f1f7ed;border-color:#c1d5b3;--bx-color:var(--ank-prl)}.box.pearl .box-label{background:var(--ank-prl)}
+.box.hy{background:#fcf6dd;border-color:#e3cf78;--bx-color:var(--ank-hy)}.box.hy .box-label{background:var(--ank-hy)}
+.box.myth{background:#f8eed8;border-color:#d0b181;--bx-color:var(--ank-myt)}.box.myth .box-label{background:var(--ank-myt)}
+.box.controversy{background:#f1e9f6;border-color:#bba7d3;--bx-color:var(--ank-con)}.box.controversy .box-label{background:var(--ank-con)}
+.box.evolving{background:#dff0f2;border-color:#8fc1c9;--bx-color:var(--ank-evo)}.box.evolving .box-label{background:var(--ank-evo)}
+
+/* ALGORITHM TREE */
+.algo{background:linear-gradient(180deg,#fcfaf2 0%,#f5f0dc 100%);border:1px solid var(--line-strong);border-radius:var(--r-lg);padding:18px;margin:14px 0;overflow-x:auto}
+.tree{font-size:13px}
+.tree-line{padding:6px 0}
+.tree-node{display:inline-block;padding:8px 12px;background:var(--paper);border:1.5px solid var(--ink-soft);border-radius:7px;font-weight:600;color:var(--ink);font-size:12.5px;box-shadow:var(--sh-sm)}
+.tree-node.start{background:var(--ink);color:#fff;border-color:var(--ink)}
+.tree-node.dec{background:#fff7d6;border-color:#e3cf78;color:#6b520a}
+.tree-node.dx{background:#dde7f8;border-color:#9fbae6;color:#1d4ea3}
+.tree-node.dgr{background:#fadcdc;border-color:#e29ca0;color:#a31b25}
+.tree-node.action{background:#d8e6cf;border-color:#a8c298;color:#3e6a2e}
+.tree-branch{margin-left:14px;border-left:1.5px dashed #b8b094;padding:6px 0 6px 18px;margin-top:6px;margin-bottom:2px;position:relative}
+.tree-branch::before{content:"";position:absolute;left:-1.5px;top:-4px;width:14px;height:14px;border-left:1.5px solid #b8b094;border-bottom:1.5px solid #b8b094;border-radius:0 0 0 6px}
+.tree-label{display:inline-block;font:700 9.5px/1 'DM Sans';letter-spacing:.12em;text-transform:uppercase;padding:3px 7px;border-radius:4px;margin-bottom:5px}
+.tree-label.yes{background:#fadcdc;color:#a31b25}.tree-label.no{background:#d8e6cf;color:#3e6a2e}
+
+/* FOOTER */
+.foot{margin-top:48px;padding-top:22px;border-top:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;font-size:11px;color:var(--ink-faint);letter-spacing:.04em;flex-wrap:wrap;gap:8px}
+.foot-mono{font-family:'DM Mono',monospace}
+.foot-author{font:800 14px/1.1 'DM Mono',monospace;color:var(--ink);letter-spacing:.02em;margin-bottom:3px}
+.foot-meta{font:500 11px/1.3 'DM Sans';color:var(--ink-faint);letter-spacing:.04em}
+
+/* WATERMARK */
+.watermark{position:fixed;bottom:calc(14px + env(safe-area-inset-bottom,0px));right:calc(14px + env(safe-area-inset-right,0px));font:600 10px/1 'DM Mono',monospace;letter-spacing:.04em;color:rgba(14,17,22,.55);background:rgba(255,255,255,.85);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);padding:6px 10px;border-radius:99px;border:1px solid rgba(14,17,22,.1);box-shadow:0 2px 8px rgba(14,17,22,.06);z-index:50;pointer-events:none;user-select:none}
+@media(max-width:560px){.watermark{bottom:calc(10px + env(safe-area-inset-bottom,0px));right:calc(10px + env(safe-area-inset-right,0px));font-size:9px;padding:5px 8px}}
+
+/* PRINT */
+@media print{
+  body{background:#fff;font-size:10.5pt}
+  body::before{display:none}
+  .header,.toc{position:static;background:#0e1116;color:#fff}
+  .wrap{padding:14px;max-width:100%}
+  .card,.hero,.legend,.pocket{box-shadow:none !important;break-inside:avoid}
+  .hero::after,.pocket::before{display:none}
+  .pocket{background:#1a1d24;color:#f0eee5}
+  .ank,.box,.disease,.score,.algo,.stbl,.deep,.mnemo,.quick{box-shadow:none !important;break-inside:avoid}
+  .deep:not([open]) .deep-content{display:block}
+  .deep>summary::after{display:none}
+  .watermark{position:fixed;bottom:8mm;right:8mm;background:none;border:none;color:rgba(0,0,0,.5)}
+  .hero-stamp{transform:none;position:absolute}
+}
+</style>
+</head>
+<body>
+
+<header class="header"><div class="header-row"><div class="h-mark">G</div><div class="h-titles"><div class="h-title">Sangramento Gestacional, DTG e Aloimunização · Pocket Handbook</div><div class="h-sub">Elite edition · Ginecologia e Obstetrícia · GO12</div></div><div class="h-author">@dr.lorencato</div><div class="h-edition">v5.2</div></div></header>
+
+<nav class="toc"><div class="toc-inner"><a href="#pocket" class="toc-chip"><span class="toc-chip-num">0</span>Pocket</a><a href="#redflags" class="toc-chip"><span class="toc-chip-num">A</span>Red Flags</a><a href="#approach" class="toc-chip"><span class="toc-chip-num">B</span>Apresentação</a><a href="#primarias" class="toc-chip"><span class="toc-chip-num">C</span>Entidades</a><a href="#secundarias" class="toc-chip"><span class="toc-chip-num">D</span>Secundárias</a><a href="#algoritmo" class="toc-chip"><span class="toc-chip-num">E</span>Algoritmo</a><a href="#tratamento" class="toc-chip"><span class="toc-chip-num">F</span>Tratamento</a><a href="#pitfalls" class="toc-chip"><span class="toc-chip-num">G</span>Pitfalls</a><a href="#pearls" class="toc-chip"><span class="toc-chip-num">H</span>Pearls</a></div></nav>
+
+<main>
+<div class="wrap">
+
+<div class="hero">
+<div class="hero-stamp">@dr.lorencato</div>
+<div class="hero-tag">Ginecologia e Obstetrícia · GO12 · A gestante que sangra e o feto que o anticorpo materno ataca</div>
+<h1>Sangramento Gestacional, DTG e Aloimunização<br><em>do β-hCG que não sobe ao Doppler da cerebral média</em></h1>
+<p class="hero-lead">Abortamento e seu esvaziamento (AMIU, misoprostol por idade gestacional), abortamento infectado, gestação ectópica com metotrexato e formas raras, mola e neoplasia trofoblástica com seguimento por hCG, placenta prévia, acretismo, descolamento prematuro, rotura uterina, vasa prévia e seio marginal; aloimunização Rh com Coombs indireto, Doppler da ACM, transfusão intrauterina e imunoprofilaxia anti-D; e a gestante traumatizada (DPP traumático, Kleihauer-Betke e anti-D), por decisão registrada com o CT02. Padrão brasileiro: Manual de Gestação de Alto Risco do MS (2022); divergências da apostila, da OMS e das sociedades internacionais entram ao lado, rotuladas. Doses de fontes não lidas hoje levam o chip "conferir".</p>
+<div class="hero-sig">Compilação clínica por <b>@dr.lorencato</b> · Elite Edition v5.2 · Ginecologia e Obstetrícia · status clinical_review até signoff humano</div>
+</div>
+
+<div id="pocket" class="pocket">
+<div class="pocket-head"><div><div class="pocket-eyebrow">Pocket Card 0 · 5 segundos</div><div class="pocket-title">Decisões Críticas — Hemorragia da Gestação e Aloimunização</div><div class="pocket-sub">Pronto-socorro obstétrico · Enfermaria · Pré-natal de alto risco</div></div></div>
+<div class="pocket-grid">
+
+<div class="pocket-card emerg"><div class="pc-trig">β-hCG positivo + dor, síncope ou líquido livre na pelve</div><div class="pc-act">Ectópica rota até prova em contrário: <b>dois acessos calibrosos, tipagem, reserva de sangue e laparotomia</b> se instável; laparoscopia só se estável. Sem saco intrauterino acima da zona discriminatória, não libere a paciente com "ameaça de aborto".</div></div>
+<div class="pocket-card emerg"><div class="pc-trig">Sangramento escuro, dor, útero hipertônico, BCF alterado</div><div class="pc-act">DPP: <b>1.000 mL de cristaloide (500 mL em 10 min)</b>, hemograma, coagulograma e fibrinogênio, amniotomia. Feto vivo ≥24–26 semanas com sofrimento: parto imediato; óbito fetal com mãe estável: parto vaginal com reposição.</div></div>
+<div class="pocket-card emerg"><div class="pc-trig">Sangramento vermelho vivo indolor na 2ª metade</div><div class="pc-act"><b>Nada de toque vaginal</b> antes da USG; especular, acesso, tipagem. Após rotura de membranas com sangramento e bradicardia fetal súbita, pense em <b>vasa prévia</b>: cesariana de urgência, sem clampeamento tardio do cordão.</div></div>
+
+<div class="pocket-card dec"><div class="pc-trig">β-hCG acima da zona discriminatória sem saco intrauterino</div><div class="pc-act">Gestação anormal: ectópica ou abortamento completo. MS: zona de <b>3.500 mUI/mL</b>; apostila: 1.500 (via transvaginal). Abaixo disso, <b>repita β-hCG em 48 h</b> com USG; cinética viável: ≥49% (<1.500), ≥40% (1.500–3.000), ≥33% (&gt;3.000).</div></div>
+<div class="pocket-card dec"><div class="pc-trig">Ectópica estável</div><div class="pc-act"><b>Metotrexato</b> se massa &lt;3,5 cm, β-hCG &lt;5.000 mUI/mL, sem BCE, sem dor intensa e com seguimento garantido; <b>expectante</b> se β-hCG &lt;2.000 e em queda; cirurgia nos demais. Rh negativa: anti-D em qualquer conduta.</div></div>
+<div class="pocket-card dec"><div class="pc-trig">Rh negativa não sensibilizada (Coombs indireto negativo)</div><div class="pc-act"><b>Anti-D 300 µg IM</b> com 28 semanas, em até 72 h do parto de RN Rh positivo e em até 72 h de abortamento, ectópica, mola, sangramento, procedimento invasivo, versão externa ou trauma abdominal.</div></div>
+
+<div class="pocket-card tx"><div class="pc-trig">Abortamento retido ou incompleto &lt;13 semanas</div><div class="pc-act">AMIU de eleição. Medicamentoso (FIGO 2017), retido: <b>misoprostol 800 µg vaginal 3/3 h, 2 doses</b>, ou 600 µg sublingual 3/3 h, 2 doses; incompleto: 600 µg VO, dose única, ou 400 µg sublingual, ou 400–800 µg vaginal, dose única. Hospitalar no Brasil; analgesia; revisão em 7–14 dias.</div></div>
+<div class="pocket-card tx"><div class="pc-trig">Metotrexato na ectópica (dose única)</div><div class="pc-act"><b>50 mg/m² IM</b>; β-hCG nos dias 4 e 7: queda ≥15% mantém a observação; repetir se queda &lt;15% no D7; sem queda dos títulos, cirurgia (MS). Sem folato, AINE ou álcool; contracepção por 3 meses.</div></div>
+<div class="pocket-card tx"><div class="pc-trig">Mola hidatiforme</div><div class="pc-act"><b>Vacuoaspiração ou AMIU</b> com ocitocina IV ao introduzir a cânula (MS 4.5.3.2); nunca misoprostol para expulsar. Histopatologia sempre; β-hCG semanal até 3 valores &lt;5 mUI/mL; contracepção hormonal, sem DIU.</div></div>
+
+<div class="pocket-card clin"><div class="pc-trig">Placenta prévia + cesárea anterior</div><div class="pc-act">Acretismo até prova em contrário: risco de <b>40% com duas cesáreas</b> (MS e apostila). USG com Doppler, RM se posterior; parto em terciário com histerectomia planejada, cesárea entre 35 e 36+6 semanas.</div></div>
+<div class="pocket-card clin"><div class="pc-trig">Gestante Rh negativa com Coombs indireto ≥1:16 ou filho anterior grave</div><div class="pc-act">Rastreio por <b>Doppler da ACM</b>, a partir de 18 semanas (16 se história grave). PVS &gt;1,5 MoM: anemia moderada ou grave, cordocentese e transfusão intrauterina se &lt;34 semanas, parto se maior.</div></div>
+<div class="pocket-card clin"><div class="pc-trig">Gestante traumatizada ≥20 semanas</div><div class="pc-act">Mesmo xABCDE, deslocamento uterino para a esquerda (limite ≥20 semanas, útero na altura da cicatriz umbilical, ATLS; CT02: ~18–20 sem) e <b>cardiotocografia por 6 h</b> (24 h se &gt;6 contrações/h). Contração é o sinal mais sensível de DPP. Rh negativa: anti-D 300 µg, mesmo com Kleihauer negativo.</div></div>
+
+</div>
+</div>
+
+<div class="legend">
+<div class="lg-title">Sistema de legendas</div>
+<div class="lg-grid">
+<div class="lg-item"><span class="dot c1"></span> Fisiopatologia / Classificação</div>
+<div class="lg-item"><span class="dot c2"></span> Clínica / Apresentação</div>
+<div class="lg-item"><span class="dot c3"></span> Diagnóstico / Exames</div>
+<div class="lg-item"><span class="dot c4"></span> Tratamento / Conduta</div>
+<div class="lg-item"><span class="dot c5"></span> Emergências / Red Flags</div>
+<div class="lg-item"><span class="dot c6"></span> Nuances / Pearls</div>
+</div>
+<div class="lg-divider"></div>
+<div class="lg-anchors">
+<span class="ank ank-hy">HIGH-YIELD</span> <span class="ank ank-dec">DECISION</span> <span class="ank ank-dgr">DANGER</span> <span class="ank ank-prl">PEARL</span> <span class="ank ank-myt">MYTH</span> <span class="ank ank-con">CONTROVERSY</span> <span class="ank ank-evo">EVOLVING</span>
+</div>
+<div class="lg-explain">
+<div class="ehy"><b>HIGH-YIELD</b> — prova/prática frequente</div>
+<div class="edec"><b>DECISION</b> — muda a conduta</div>
+<div class="edgr"><b>DANGER</b> — erro grave / risco crítico</div>
+<div class="eprl"><b>PEARL</b> — nuance de especialista</div>
+<div class="emyt"><b>MYTH</b> — mito vivo na prática</div>
+<div class="econ"><b>CONTROVERSY</b> — debate sem consenso</div>
+<div class="eevo"><b>EVOLVING</b> — mudança recente</div>
+</div>
+</div>
+
+<section id="redflags">
+<div class="section"><div class="section-eyebrow"><span>A</span> Red Flags</div><div class="section-title">Na gestante que sangra, dois pacientes e um relógio de minutos</div><div class="section-sub">Sinal objetivo, suspeita e conduta imediata. A mortalidade evitável deste HP concentra-se em ectópica rota, DPP com coagulopatia, acretismo não diagnosticado, vasa prévia e na perda de janelas de prevenção da aloimunização.</div></div>
+
+<div class="card emerg">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">A.1</span> Emergências</div><h3>Sinais de alarme — hemorragia da gestação e doença hemolítica <span class="ank ank-dgr">DANGER</span></h3></div>
+<div class="card-body">
+
+<div class="mnemo">
+<div class="mnemo-title"><b>SANGUE</b> Seis reflexos antes de qualquer exame complementar</div>
+<div class="mnemo-grid">
+<div class="mnemo-row"><span class="mnemo-letter">S</span><span><b>Sinais vitais</b> · a gestante hipervolêmica esconde 1.200–1.500 mL de perda; taquicardia e queda postural já são choque; o pulso normal (sinal de Boero) engana só no início</span></div>
+<div class="mnemo-row"><span class="mnemo-letter">A</span><span><b>Abdome e útero</b> · dor com hipertonia sugere DPP; dor súbita com parada das contrações e subida da apresentação, rotura uterina</span></div>
+<div class="mnemo-row"><span class="mnemo-letter">N</span><span><b>Não toque</b> · toque vaginal só depois de a USG excluir placenta prévia ou vasa prévia; o especular basta no primeiro momento</span></div>
+<div class="mnemo-row"><span class="mnemo-letter">G</span><span><b>Gestação de localização desconhecida</b> · β-hCG positivo sem saco intrauterino é ectópica até se provar o contrário</span></div>
+<div class="mnemo-row"><span class="mnemo-letter">U</span><span><b>Ultrassom e laboratório</b> · tipagem ABO e Rh, hemograma, coagulograma e fibrinogênio, e sangue reservado antes de tudo</span></div>
+<div class="mnemo-row"><span class="mnemo-letter">E</span><span><b>Estado fetal</b> · BCF, cardiotocografia e padrão sinusoidal (anemia fetal ou sangramento de vasa) mandam a conduta</span></div>
+</div>
+</div>
+
+<div class="sub-title">Sinal → suspeita → conduta imediata</div>
+<div class="stbl stbl-3">
+<div class="stbl-head stbl-3"><div>Red flag</div><div>Suspeita</div><div>Conduta imediata</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Red flag">Atraso menstrual, β-hCG positivo, dor pélvica súbita, síncope, abdome com descompressão dolorosa, hipotensão sem sangramento vaginal proporcional</div><div class="col" data-l="Suspeita">Ruptura de gestação ectópica com hemoperitônio (a principal causa de morte materna do 1º trimestre, MS 2022)</div><div class="col" data-l="Conduta"><b>Dois acessos calibrosos, ressuscitação, tipagem, reserva de sangue e laparotomia</b> com salpingectomia, sem esperar imagem completa. Líquido livre no FAST basta com a clínica. Rh negativa: anti-D depois da estabilização.</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Red flag">Dor abdominal ou lombar, sangramento escurecido (ou ausente), taquissistolia ou hipertonia, bolsa tensa, BCF com desacelerações</div><div class="col" data-l="Suspeita">DPP; hipertensão e trauma são as causas mais comuns. Um em cada cinco não exterioriza sangue</div><div class="col" data-l="Conduta"><b>Cristaloide 1.000 mL (500 mL nos primeiros 10 min), hemograma, coagulograma, fibrinogênio, creatinina, reserva de 4 concentrados.</b> Feto vivo com sofrimento e ≥24–26 semanas: parto já. Teste do coágulo à beira do leito: sem coágulo firme em 7 minutos é coagulopatia.</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Red flag">Sangramento vermelho vivo, indolor, sem contração, útero normotenso, segundo ou terceiro trimestre</div><div class="col" data-l="Suspeita">Placenta prévia (com acretismo se houve cesárea)</div><div class="col" data-l="Conduta"><b>Sem toque vaginal.</b> Dois acessos, tipagem, hemograma, coagulograma, USG transvaginal (segura). Internar toda gestante que sangra na 2ª metade; hemorragia grave obriga a cesariana qualquer que seja a idade gestacional.</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Red flag">Rotura de membranas seguida de sangramento e bradicardia fetal súbita e sustentada; padrão sinusoidal</div><div class="col" data-l="Suspeita">Rotura de vasa prévia (sangue fetal; 100 mL levam ao choque fetal)</div><div class="col" data-l="Conduta"><b>Cesariana de emergência</b>, neonatologia na sala, sangue O negativo para o RN. A mortalidade perinatal é &gt;50% se o diagnóstico vem intraparto e cerca de 5% se pré-natal.</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Red flag">Trabalho de parto com contrações exageradas, anel de Bandl, retração dos ligamentos redondos; depois dor lancinante, parada das contrações e subida da apresentação</div><div class="col" data-l="Suspeita">Iminência e consumação de rotura uterina (cicatriz, ocitocina ou misoprostol, parto obstruído)</div><div class="col" data-l="Conduta"><b>Suspender ocitocina, cesariana imediata</b> na iminência; laparotomia com rafia ou histerectomia na rotura. Choque com BCF ausente e feto palpável sob a parede: não adie.</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Red flag">Placenta prévia com ≥1 cesárea; hematúria; placenta que não dequita, sangramento profuso à tentativa de extração</div><div class="col" data-l="Suspeita">Espectro do acretismo (acreta, increta, percreta)</div><div class="col" data-l="Conduta"><b>Não force a dequitação.</b> Plano de clivagem ausente: pare, ative protocolo de transfusão maciça e prepare histerectomia (remissão ao GO14 para o controle da HPP).</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Red flag">Rh negativa com Coombs indireto positivo, título ≥1:16 ou filho anterior com hidropisia, transfusão intrauterina ou exsanguineotransfusão</div><div class="col" data-l="Suspeita">Anemia fetal por aloimunização, com risco de hidropisia e óbito</div><div class="col" data-l="Conduta"><b>Doppler da ACM e referência a medicina fetal.</b> PVS &gt;1,5 MoM antes de 34 semanas: cordocentese e transfusão; após 34 semanas, parto.</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Red flag">Gestante ≥20 semanas após colisão, queda ou agressão, mesmo "leve"; contração, sangramento ou dor</div><div class="col" data-l="Suspeita">DPP traumático (até 40% nos traumas graves) e hemorragia feto-materna</div><div class="col" data-l="Conduta"><b>Cardiotocografia por 6 h</b>, laboratório com fibrinogênio, deslocamento uterino à esquerda e obstetra desde o início (ATLS 11, cap. 13). Rh negativa: anti-D.</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Red flag">Mola com tireotoxicose, útero acima de 16 cm, pré-eclâmpsia antes de 20 semanas ou dispneia</div><div class="col" data-l="Suspeita">Mola completa com hipertireoidismo, embolização trofoblástica e insuficiência respiratória</div><div class="col" data-l="Conduta"><b>Betabloqueador antes do esvaziamento, reserva de 2 concentrados e anestesista avisado.</b> Crise tireotóxica franca: EN03.</div></div>
+</div>
+
+<div class="box danger"><span class="box-label">DANGER</span><div class="box-title">O sangramento externo subestima a perda</div><div class="box-body">No DPP, a perda real costuma ser o dobro da estimada quando a hemorragia é "moderada" e o triplo quando é relatada como intensa; coágulo retroplacentário e infiltração miometrial (útero de Couvelaire) não aparecem na vulva. Na ectópica, o hemoperitônio pode superar 1,5 L com sangramento vaginal discreto. Decida pelo estado hemodinâmico, não pelo absorvente.</div></div>
+
+<div class="box danger"><span class="box-label">DANGER</span><div class="box-title">Misoprostol nas condições erradas rompe o útero ou espalha o trofoblasto</div><div class="box-body">Contraindicações absolutas citadas pela apostila: ectópica suspeita ou confirmada, doença trofoblástica, alto risco de rotura uterina (duas ou mais cesáreas, cicatriz clássica), DIU in situ (retire antes) e alergia a prostaglandina. Na mola, o objetivo é amadurecer o colo por no máximo 3 horas, nunca induzir contrações.</div></div>
+</div>
+</div>
+</section>
+
+<section id="approach">
+<div class="section"><div class="section-eyebrow"><span>B</span> Por Apresentação</div><div class="section-title">Cinco portas de entrada para o mesmo capítulo</div><div class="section-sub">A paciente chega com sangue, dor ou um exame, não com o rótulo. A idade gestacional, a presença de dor e o tipo do sangue separam as causas.</div></div>
+
+<div class="card clin">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">B.1</span> Padrão 1</div><h3>Sangramento no 1º trimestre com β-hCG positivo e hemodinâmica estável <span class="ank ank-hy">HIGH-YIELD</span></h3><div class="card-sub">Viável, perdida, ectópica ou molar: localizar antes de nomear</div></div>
+<div class="card-body">
+<div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Um quarto das gestantes sangra no início; metade das ameaças evolui para abortamento, e a taxa cai a &lt;10% quando há atividade cardíaca. O colo fechado com BCE presente é ameaça; colo aberto sem expulsão é inevitável; material parcial é incompleto; útero vazio é completo ou <b>ectópica</b>. <b>O que muda conduta:</b> localização do saco, BCE e hCG definem observar, esvaziar ou tratar ectópica.</div></div>
+<ul class="bullets">
+<li><b>Ameaça (O20.0):</b> sem tratamento que reduza a perda, nem progesterona; repouso relativo e acolhimento. Hematoma subcoriônico só pesa se &gt;50% do saco.</li>
+<li><b>Inevitável, incompleto, retido:</b> esvaziar (C.1); critérios de inviabilidade da USG-TV decidem o retido sem sangramento.</li>
+<li><b>Útero vazio com β-hCG positivo:</b> abortamento completo (espessura endometrial &lt;15 mm sugere) ou ectópica; repita o β-hCG (C.3).</li>
+<li><b>Útero grande para a idade, hiperêmese, vesículas, β-hCG muito alto:</b> mola (C.4).</li>
+</ul>
+</div>
+</div>
+
+<div class="card clin">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">B.2</span> Padrão 2</div><h3>Dor pélvica com atraso menstrual, estável ou não <span class="ank ank-dgr">DANGER</span></h3><div class="card-sub">A tríade clássica só aparece em 50–60% das ectópicas</div></div>
+<div class="card-body">
+<div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Dor abdominal, amenorreia e sangramento: ao menos um está presente em quase todos os casos. Amenorreia falta em até um terço, e o sangramento é confundido com menstruação. <b>Dor com ombro, síncope e abaulamento posterior</b> é hemoperitônio. A USG-TV com β-hCG decide o estável. Em β-hCG &lt;1.000 mUI/mL, só vesícula, polo ou BCE na massa confirmam a ectópica, porque o corpo lúteo imita massa anexial.</div></div>
+<ul class="bullets">
+<li><b>Diferenciais:</b> corpo lúteo hemorrágico, torção de ovário, DIP, apendicite, litíase renal, endometriose (C.3).</li>
+<li><b>Pseudossaco</b> de ectópica: líquido central ao endométrio sem duplo halo decidual; examinador experiente.</li>
+<li><b>Culdocentese</b> só define hemoperitônio; laparoscopia diagnóstica quando a USG é inconclusiva e a clínica persiste.</li>
+</ul>
+</div>
+</div>
+
+<div class="card clin">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">B.3</span> Padrão 3</div><h3>Sangramento vermelho vivo indolor na 2ª metade <span class="ank ank-dec">DECISION</span></h3><div class="card-sub">Origem materna (prévia, seio marginal) ou fetal (vasa)</div></div>
+<div class="card-body">
+<div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Sangue rutilante, de início e fim súbitos, sem dor e com útero normotenso é <b>placenta prévia</b>; o sangramento exterioriza-se sempre por inteiro e raramente causa coagulopatia. Pequeno, contínuo, com placenta normoposicionada e BCF normais sugere <b>seio marginal</b> (confirmado só na histologia). Sangue que aparece com a rotura das membranas e faz o BCF cair é <b>vasa prévia</b>.</div></div>
+<ul class="bullets">
+<li><b>USG-TV</b> é o método; a via vaginal não aumenta o sangramento, e há mais falso-positivos pela via abdominal.</li>
+<li><b>Sangramento sentinela</b> da prévia total: avisa o grande episódio; internar.</li>
+<li><b>Sem toque:</b> o toque só vale se a USG excluir prévia; o dedo pode romper vasa (C.6, C.10, D.2).</li>
+</ul>
+</div>
+</div>
+
+<div class="card clin">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">B.4</span> Padrão 4</div><h3>Sangramento escuro com dor e hipertonia, ou dor intensa fora do esperado <span class="ank ank-dgr">DANGER</span></h3><div class="card-sub">DPP, rotura uterina e a sombra do acretismo</div></div>
+<div class="card-body">
+<div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Dois achados fecham o <b>DPP: hipertensão e hipertonia</b>; a dor persiste entre as contrações. A USG vê coágulo retroplacentário em só 25–50% (valor preditivo positivo &gt;80% quando vê, mas a ausência não exclui): o diagnóstico é clínico. Dor súbita com cicatriz uterina e perda de BCF sugere rotura.</div></div>
+<ul class="bullets">
+<li><b>Hemoâmnio</b> (líquido vermelho-acastanhado) em até 50% dos DPP com bolsa rota.</li>
+<li><b>Hipertensão grave</b> com DPP: pré-eclâmpsia com complicação (GO13).</li>
+<li><b>Trauma, cocaína, cordão curto, versão externa, rotura de membranas:</b> fatores de risco (C.7, D.4).</li>
+</ul>
+</div>
+</div>
+
+<div class="card clin">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">B.5</span> Padrão 5</div><h3>Rh negativa: qualquer evento obstétrico, ou Coombs indireto positivo <span class="ank ank-hy">HIGH-YIELD</span></h3><div class="card-sub">Prevenir antes, avaliar o feto depois</div></div>
+<div class="card-body">
+<div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Toda gestante tem ABO, Rh e Coombs indireto na primeira consulta. O <b>Coombs negativo</b> indica profilaxia nos momentos de risco; o <b>positivo</b> exige identificar o anticorpo e titular. Anti-D (IgG) cruza a placenta e explica a doença; o primeiro filho é poupado (cerca de 5%), salvo transfusão prévia. D fraco comporta-se como Rh positivo.</div></div>
+<ul class="bullets">
+<li><b>Eventos de risco:</b> sangramento, abortamento, ectópica, mola, procedimento invasivo, óbito fetal, versão externa, trauma abdominal (C.11).</li>
+<li><b>Coombs ≥1:16</b> ou história grave: pule o título e vá ao Doppler da ACM.</li>
+<li><b>Anticorpos irregulares</b> (Kell, Duffy, Kidd) seguem o mesmo roteiro; anti-Kell lesa a eritropoese (D.5).</li>
+</ul>
+</div>
+</div>
+</section>
+<section id="primarias">
+<div class="section"><div class="section-eyebrow"><span>C</span> Entidades Primárias</div><div class="section-title">Onze entidades que cobrem a hemorragia da gestação e a aloimunização</div><div class="section-sub">Primeira metade: abortamento, infectado, ectópica, mola e NTG. Segunda metade: prévia, acretismo, DPP, rotura uterina e vasa prévia. Fecha a aloimunização Rh, com a imunoprofilaxia. Raros e correlatos ficam agrupados no D.</div></div>
+
+<div class="card prim">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">C.1</span> Abortamento</div><h3>Abortamento espontâneo: da ameaça ao retido, e como esvaziar <span class="ank ank-hy">HIGH-YIELD</span></h3></div>
+<div class="card-body">
+<div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Abortamento é a perda gestacional antes de 20–22 semanas ou &lt;500 g (MS 2022); precoce até 12+6 semanas. A conduta é <b>escolha informada entre expectante, misoprostol e esvaziamento cirúrgico</b>, e o cirúrgico é obrigatório com hemorragia, instabilidade, infecção ou comorbidade. Até 12 semanas, <b>AMIU é o método de eleição</b>; acima, expulsão com misoprostol e depois esvaziamento. <b>O que muda conduta:</b> BCE ausente com CCN ≥7 mm, colo aberto, sangramento, febre e Rh negativo.</div></div>
+
+<div class="disease">
+<div class="disease-head"><div class="disease-name">Abortamento espontâneo: ameaça, inevitável, incompleto, completo e retido (inclui ovo anembrionado)</div><div class="disease-tag">CID-10 O03 aborto espontâneo · O02.1 aborto retido · O20.0 ameaça de aborto <span class="ev ev-sbr">MS GAR 2022</span> <span class="ev ev-expert">Apostila 2025</span></div></div>
+<div class="disease-body"><div class="disease-rows">
+<div class="disease-row"><div class="k">Epidemiologia</div><div class="v">A perda clínica atinge 10–15% das gestações diagnosticadas (12–24% em quem tem teste positivo); mais de 80% ocorrem antes de 12 semanas. Idade materna avançada é o principal fator de risco; também tabagismo, álcool, cocaína, obesidade, malformação uterina e perda prévia.</div></div>
+<div class="disease-row"><div class="k">Fisiopatologia</div><div class="v">A morte do embrião ou feto, na maioria por aneuploidia, traz hemorragia na decídua basal, necrose tecidual e contrações que levam à expulsão. A decidualização desfeita explica o sangramento; o colo se abre quando o saco desce; a perda do suporte trofoblástico faz o β-hCG cair e os sintomas gestacionais desaparecerem.</div></div>
+<div class="disease-row"><div class="k">Clínica</div><div class="v"><b>Ameaça:</b> sangramento leve, colo fechado, vitalidade preservada. <b>Inevitável:</b> colo pérvio, sangramento e cólica intensos, saco íntegro porém inviável. <b>Incompleto:</b> restos ovulares, útero menor que o esperado. <b>Completo:</b> cólica e sangramento cessam, colo fechado, útero vazio. <b>Retido:</b> colo fechado, sintomas gestacionais somem, às vezes pequeno sangramento. O ovo anembrionado é um retido: saco ≥25 mm sem embrião.</div></div>
+<div class="disease-row"><div class="k">Diagnóstico</div><div class="v">USG-TV é o padrão. Gestação não evolutiva: saco ≥25 mm sem vesícula ou embrião; embrião ≥7 mm sem BCE; ausência de BCE 11–14 dias após saco sem vesícula (11 dias com vesícula, em algumas fontes). Queda do β-hCG &gt;25% sugere perda; saco intrauterino visível com β-hCG de 3.510 mUI/mL <span class="ev ev-sbr">MS GAR 2022</span>. Sempre excluir ectópica e mola; tipagem ABO/Rh.</div></div>
+<div class="disease-row"><div class="k">Tratamento</div><div class="v"><b>Expectante</b> por ~2 semanas (até 4 sem sem infecção; risco de CIVD ~10% em 4 semanas) · <b>misoprostol</b> (score abaixo) · <b>AMIU</b> até 12 semanas; curetagem se AMIU indisponível ou &gt;12 semanas, depois de expulsão induzida <span class="ev ev-sbr">MS GAR 2022</span>. Perfuração: pare, observe com ocitocina; laparotomia só com peritonismo ou instabilidade. <b>Anti-D 300 µg IM</b> em toda Rh negativa não sensibilizada. Material à histologia; β-hCG ou urina em 30 dias se não houve histologia.</div></div>
+<div class="disease-row"><div class="k">Prognóstico</div><div class="v">A ameaça evolui para perda em ~50%, e em &lt;10% se há BCE. Na perda recorrente (≥3), 70% terão gestação seguinte sem tratamento. Complicações do esvaziamento: hemorragia, perfuração, infecção e sinéquia (Asherman), menos com AMIU que com curetagem.</div></div>
+<div class="disease-row"><div class="k">O que muda conduta</div><div class="v">Sangramento volumoso, febre ou instabilidade → esvaziar já. Misoprostol contraindicado com DIU in situ, ectópica ou mola suspeita; com cesárea prévia, só com monitorização rigorosa. Rh negativa → anti-D. Perda de 12–24 semanas ou perda recorrente → D.1.</div></div>
+</div></div></div>
+
+<div class="score">
+<div class="score-head"><div class="score-name">Misoprostol sozinho — regimes FIGO 2017 reproduzidos no MS 2022 <span class="ev ev-sbr">MS GAR 2022 · Fig. 1</span></div><div class="score-purpose">Via VV = vaginal; VSL = sublingual; VO = oral. Evite VV com hemorragia ou infecção.</div></div>
+<div class="score-rows">
+<div class="score-row"><div class="score-grade">&lt;13 semanas · retido</div><div class="score-desc"><b>800 µg VV de 3/3 h, 2 doses</b> ou 600 µg VSL de 3/3 h, 2 doses.</div></div>
+<div class="score-row"><div class="score-grade">&lt;13 semanas · incompleto</div><div class="score-desc"><b>600 µg VO, dose única</b>; ou 400 µg VSL, dose única; ou 400–800 µg VV, dose única.</div></div>
+<div class="score-row"><div class="score-grade">13–26 semanas</div><div class="score-desc"><b>Morte fetal:</b> 200 µg VV/VSL a cada 4–6 h. <b>Inevitável:</b> 200 µg a cada 6 h. <b>Interrupção:</b> 400 µg a cada 3 h até 24 semanas e 200 µg a cada 4 h em 25–26.</div></div>
+<div class="score-row"><div class="score-grade">Preparo cervical</div><div class="score-desc">Antes de cirurgia: &lt;13 semanas, 400 µg VSL 1 h ou VV 3 h antes; 13–19 semanas, 400 µg VV 3–4 h antes. O MS cita 400 µg VV 4–6 h antes (cirurgia); mantenha o intervalo do serviço.</div></div>
+<div class="score-row"><div class="score-grade">Apostila 2025 (divergente)</div><div class="score-desc">1º trimestre: 800 µg VV de 12/12 h (3 doses) ou 400 µg de 8/8 h; 13–17 semanas, 200 µg de 6/6 h ×4; 18–26 semanas, 100 µg de 6/6 h ×4; repetir após 24 h. <b>Padrão do HP: FIGO via MS</b>; esquemas da apostila só como comparação.</div></div>
+</div>
+</div>
+
+<details class="deep"><summary>Deep dive · Aneuploidia, cinética do β-hCG e o que a USG-TV autoriza dizer</summary>
+<div class="deep-content">
+<p>A causa mais comum de perda isolada é cromossômica: 75% das perdas por anormalidade do cariótipo ocorrem até 8 semanas, e a frequência de aneuploidia cai com a idade gestacional. As trissomias (16, 21, 22), a monossomia do X e a triploidia dominam; a idade materna eleva a não disjunção meiótica da ovogênese, o que explica por que o fator de risco mais forte é a idade e por que a causa mais comum de perda recorrente é a mesma da esporádica. Malformação mülleriana (septo), síndrome antifosfolípide, tireoidopatia e diabetes descompensado respondem pela minoria mais tratável (D.1).</p>
+<p>O β-hCG é produzido pelo sinciciotrofoblasto, tem meia-vida de cerca de 24 h e sustenta o corpo lúteo até a transição lúteo-placentária de 6–7 semanas. Na gestação viável tópica, sobe ao menos 49% em 48 h abaixo de 1.500 mUI/mL, 40% entre 1.500 e 3.000 e 33% acima de 3.000 (MS 2022); a apostila trabalha com 66% como mediana e trata ascensão &lt;50% como quase sempre inviável, e o GO10 usa 35–53% conforme o valor basal. A diferença entre as fontes é a razão de usar o β-hCG sempre com imagem: nunca decida por um valor isolado, e lembre que um aumento normal não exclui ectópica.</p>
+<p>A USG-TV vê o saco com ~4,5 a 5 semanas, a vesícula vitelina com 5, e o embrião com BCE com 6–7. Por isso os critérios de inviabilidade têm margens de segurança: CCN ≥7 mm sem BCE e saco médio ≥25 mm sem embrião são diagnósticos, enquanto o saco menor, o CCN &lt;7 mm e a bradicardia pedem repetição em 7–14 dias. Espessura endometrial &lt;15 mm sustenta abortamento completo, mas o MS lembra que não há consenso nem corte validado para o incompleto (5–25 mm na literatura). O diagnóstico falso-positivo de inviabilidade é a falha mais grave por levar à interrupção de gestação viável.</p>
+</div>
+</details>
+</div>
+</div>
+
+<div class="card prim">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">C.2</span> Abortamento infectado</div><h3>Abortamento infectado ou séptico: antibiótico, volume e esvaziar <span class="ank ank-dgr">DANGER</span></h3></div>
+<div class="card-body">
+<div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Complicação do incompleto, sobretudo de manipulação uterina insegura; polimicrobiana (anaeróbios, enterobactérias, estreptococos, <i>Clostridium</i>). Os pilares do MS são <b>perfusão, antibiótico IV de amplo espectro e evacuação uterina logo após o início do antibiótico</b>, sem "esfriar a infecção". <b>O que muda conduta:</b> choque, gás nas imagens, mionecrose, abscesso, perfuração e falha em 48 h pedem laparotomia e histerectomia.</div></div>
+
+<div class="disease">
+<div class="disease-head"><div class="disease-name">Abortamento complicado por infecção genital e pélvica</div><div class="disease-tag">CID-10 O03.0 aborto incompleto com infecção · O08.0 infecção pélvica após aborto <span class="ev ev-sbr">MS GAR 2022</span> <span class="ev ev-expert">Apostila 2025</span></div></div>
+<div class="disease-body"><div class="disease-rows">
+<div class="disease-row"><div class="k">Epidemiologia</div><div class="v">&lt;0,4% dos abortamentos espontâneos ou médicos; muito mais com procedimentos inseguros, que sustentam a morbimortalidade. A paciente pode omitir a tentativa; pergunte, e tenha o diagnóstico em toda perda de gravidez ou gravidez recente com febre.</div></div>
+<div class="disease-row"><div class="k">Fisiopatologia</div><div class="v">A flora vaginal e intestinal ascende pelo colo aberto e invade decídua, miométrio, paramétrio e peritônio. A endometrite evolui para peritonite, choque, lesão renal, coagulopatia e SDRA; <i>Clostridium perfringens</i> produz toxinas, mionecrose e hemólise, com prognóstico sombrio.</div></div>
+<div class="disease-row"><div class="k">Clínica</div><div class="v">Febre, dor e sensibilidade uterina, colo entreaberto, secreção purulenta ou fétida e sangramento. Pior: febre &gt;39 °C, taquicardia, defesa e útero amolecido; generalizada: hipotensão, distensão, crepitação uterina, icterícia e CIVD.</div></div>
+<div class="disease-row"><div class="k">Diagnóstico</div><div class="v">Clínico. Hemograma, tipagem, creatinina, hemoculturas se febre ou gravidade, pesquisa de IST, EAS e urocultura; se grave, gasometria, TP, TTPa, fibrinogênio e eletrólitos. SIRS, qSOFA (≥2 é alto risco) e NEWS ajudam. USG mostra restos ou coleção, mas exame normal não exclui; TC se dúvida de abdome agudo <span class="ev ev-sbr">MS GAR 2022</span>.</div></div>
+<div class="disease-row"><div class="k">Tratamento</div><div class="v">Cristaloide 30 mL/kg na primeira a terceira hora se sem edema pulmonar. Esquema IV do MS (escolha): <b>gentamicina 5 mg/kg/dia + ampicilina 2 g 4/4 h + metronidazol 500 mg 8/8 h</b>, ou clindamicina 900 mg 8/8 h no lugar do metronidazol; outras opções: levofloxacino 500 mg/dia + metronidazol, imipenem 500 mg 6/6 h, piperacilina-tazobactam 4,5 g 8/8 h. Afebril por 48 h: via oral até 10–14 dias (doxiciclina 100 mg 12/12 h + metronidazol 500 mg 12/12 h). Aspiração ou curetagem urgente, com ocitocina; abscesso, drenagem; tétano se manipulação. Rh negativa: anti-D <span class="ev ev-sbr">MS GAR 2022</span> <span class="ev ev-expert">Apostila 2025 · divergente</span>.</div></div>
+<div class="disease-row"><div class="k">Prognóstico</div><div class="v">Bom se tratado cedo. Sem evacuação, evolui a choque séptico. Histerectomia é necessária em peritonite sem melhora em 48 h, mionecrose, abscesso tubo-ovariano, perfuração ou hemorragia por coagulopatia. Sequelas: sinéquia e infertilidade.</div></div>
+<div class="disease-row"><div class="k">O que muda conduta</div><div class="v">Gás ou crepitação → bactéria produtora de toxina; cirurgia ampla. qSOFA ≥2 → UTI e protocolo de sepse (II03). Febre sem foco uterino → afastar pielonefrite e apendicite. Perfuração ou necrose → laparotomia.</div></div>
+</div></div></div>
+</div>
+</div>
+
+<div class="card prim">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">C.3</span> Gestação ectópica</div><h3>Gestação ectópica: localizar pelo β-hCG e pela USG, escolher entre cirurgia, metotrexato e expectação <span class="ank ank-dgr">DANGER</span></h3></div>
+<div class="card-body">
+<div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Implantação fora da cavidade endometrial, com 1–2% das gestações, 95–98% tubária (70% ampolar). É a principal causa de morte materna do 1º trimestre. <b>Instável: laparotomia com salpingectomia.</b> Estável: <b>metotrexato</b> com critérios, expectação se β-hCG baixo e em queda, ou cirurgia (laparoscopia). <b>O que muda conduta:</b> estabilidade, rotura, tamanho da massa, β-hCG, BCE e desejo de gravidez.</div></div>
+
+<div class="disease">
+<div class="disease-head"><div class="disease-name">Gestação ectópica tubária e formas raras (intersticial, cervical, em cicatriz de cesárea, ovariana, abdominal)</div><div class="disease-tag">CID-10 O00.1 tubária · formas raras O00.0, O00.2, O00.8 sem código nominal para cicatriz <span class="ev ev-sbr">MS GAR 2022</span> <span class="ev ev-expert">Apostila 2025</span></div></div>
+<div class="disease-body"><div class="disease-rows">
+<div class="disease-row"><div class="k">Epidemiologia</div><div class="v">Recorrência de ~15% após uma e ≥25% após duas. Fatores: ectópica prévia, DIP, cirurgia tubária, infertilidade e reprodução assistida, endometriose, DIU, anticoncepção de emergência e tabagismo. A heterotópica (intra e extrauterina) é rara e cresce com reprodução assistida.</div></div>
+<div class="disease-row"><div class="k">Fisiopatologia</div><div class="v">Alteração do transporte do ovo (lesão ciliar e muscular pós-inflamatória) leva à implantação em um segmento sem decídua nem submucosa, que não suporta a invasão trofoblástica. Há produção de hCG e sintomas de gravidez normal; a rotura é mais provável no istmo, e a gestação intersticial, rara (2%), rompe tardiamente com sangramento volumoso.</div></div>
+<div class="disease-row"><div class="k">Clínica</div><div class="v">Aguda (rotura): dor lancinante, síncope, hemoperitônio, dor escapular, abaulamento do fundo de saco posterior, choque. Subaguda: dor em cólica, amenorreia e sangramento irregular; massa anexial palpável em só metade. A tríade ocorre em 50–60%.</div></div>
+<div class="disease-row"><div class="k">Diagnóstico</div><div class="v">β-hCG negativo exclui. A zona discriminatória do saco intrauterino à USG-TV é de <b>3.500 mUI/mL (MS)</b>, 1.500 na apostila e 1.500–3.500 no GO10; abaixo dela repita em 48 h (cinética: C.1). Em β-hCG &lt;1.000 só confirmam vesícula, polo ou BCE. Sinais: anel tubário (~70%), halo, massa complexa, líquido livre; Doppler em "anel de fogo" também ocorre no corpo lúteo. Progesterona &gt;25 ng/mL sugere tópica, &lt;10 anormal. Gravidez de localização desconhecida: β-hCG seriado <span class="ev ev-sbr">MS GAR 2022</span> <span class="ev ev-acr">ACOG PB 193 via GO10 · conferir</span>.</div></div>
+<div class="disease-row"><div class="k">Tratamento</div><div class="v"><b>Instável ou rota:</b> laparotomia, salpingectomia. <b>Estável:</b> laparoscopia preferencial; salpingectomia se prole completa, lesão irreparável, recidiva na mesma tuba, sangramento persistente ou β-hCG alto; salpingostomia se deseja gestar (trofoblasto persistente em 3–20%: seguir β-hCG; se subir, MTX 50 mg/m²). <b>Metotrexato</b> se estável, massa &lt;3,5 cm, β-hCG &lt;5.000, sem BCE nem dor importante: <b>50 mg/m² IM em dose única</b>, β-hCG nos dias 4 e 7 (queda ≥15% = observar, senão repetir); ou <b>1 mg/kg IM nos dias 1, 3, 5 e 7 com folinato de cálcio 0,1 mg/kg IM nos dias 2, 4, 6 e 8</b> (ou 15 mg VO), no máximo 4 doses. <b>Expectante:</b> estável, β-hCG &lt;2.000 e em queda, sem BCE, massa &lt;5 cm. Rh negativa: anti-D 300 µg. Formas raras: individualizar (D.2 e deep dive) <span class="ev ev-sbr">MS GAR 2022</span>.</div></div>
+<div class="disease-row"><div class="k">Prognóstico</div><div class="v">Mortalidade pelo hemoperitônio quando o diagnóstico é tardio. A permeabilidade tubária e a gestação tópica seguinte são semelhantes após MTX e cirurgia conservadora. Dor aguda 2–3 dias após MTX pode ser necrose do sítio e simular rotura: USG e hemoglobina, observação.</div></div>
+<div class="disease-row"><div class="k">O que muda conduta</div><div class="v">Instabilidade ou hemoperitônio importante → cirurgia. β-hCG &gt;5.000, BCE, massa &gt;4 cm, sangue na pelve e subida &gt;50% em 48 h predizem falha do MTX. Contraindicações do MTX: gravidez intrauterina, imunodeficiência, plaquetas &lt;100 mil, leucócitos &lt;2.000, disfunção hepática ou renal, doença pulmonar, amamentação e incapacidade de seguir.</div></div>
+</div></div></div>
+
+<div class="sub-title">Cálculo e vigilância do metotrexato</div>
+<div class="box decision"><span class="box-label">DECISION</span><div class="box-title">Dose por superfície corporal e o que fazer antes e depois</div><div class="box-body"><ul><li><b>Dose única:</b> 50 mg/m² × superfície corporal (Mosteller: √(peso kg × altura cm / 3.600)); com 1,7 m², 85 mg IM. Esquema de duas doses rende mais com β-hCG de 3.600–5.000 mUI/mL: protocolo de dias 1 e 4 (MS); dose por aplicação não especificada no MS (conferir).</li><li><b>Antes:</b> hemograma, TGO/TGP, creatinina e tipagem; termo de consentimento. <b>Durante:</b> sem relação sexual até β-hCG negativo, sem AINE nem aspirina, álcool, ácido fólico (compete com o folinato do esquema) e sol (dermatite).</li><li><b>Depois:</b> β-hCG semanal até o fim; evite gestar por 3 meses e até a ectópica desaparecer à USG-TV; USG seriada só se suspeita de rotura. Local (guiado por USG, 1 mg/kg no saco) para embrião vivo ou localização atípica; a apostila cita 50 mg injetados.</li></ul></div></div>
+
+<details class="deep"><summary>Deep dive · Por que a tuba falha e como as formas raras mudam a conduta</summary>
+<div class="deep-content">
+<p>O ovo fecundado leva 5–6 dias para alcançar a cavidade; a tuba lesada por salpingite (clamídia), cirurgia ou endometriose perde a coordenação entre a motilidade ciliar e o peristaltismo, e o blastocisto implanta quando já é trofoblasticamente invasivo. A parede tubária não tem submucosa nem decídua verdadeira: o trofoblasto penetra a muscular e a vasculatura, e o hematoma fecha a luz ou a rompe. Na ampola (70%) o saco cresce com mais espaço e tende a abortar para o infundíbulo; no istmo (12%), o calibre estreito produz rotura precoce; no interstício (2%), há miométrio ao redor e a rotura vem com 8–16 semanas e sangramento maciço. A reação de Arias-Stella (hipertrofia glandular endometrial por estímulo hormonal) é achado de curetagem, sem especificidade.</p>
+<p>As gestações não tubárias exigem raciocínio próprio. Na <b>cervical</b>, o saco abaixo do orifício interno com BCE e colo em barril; a curetagem é perigosa pelo sangramento incontrolável, e o tratamento é MTX sistêmico ou local, com balão de Foley e embolização como apoio. Na <b>cicatriz de cesárea</b>, o saco no nicho anterior pode evoluir a prévia-acreta e rotura; o MS indica individualizar: MTX sistêmico se não há BCE (dose única se β-hCG &lt;5.000, múltiplas doses se maior), injeção local de 1 mg/kg guiada por USG com embrião vivo, associada ao esquema sistêmico no dia seguinte se β-hCG &gt;5.000. Na <b>intersticial</b>, a ressecção cornual por laparoscopia ou MTX. As <b>ovariana e abdominal</b> são, na maioria, cirúrgicas. Em todas, o seguimento é o β-hCG até negativar, e o anti-D vale para a Rh negativa.</p>
+<p>O β-hCG de apresentação é o preditor de falha do MTX: o sucesso passa de 98% abaixo de 1.000 mUI/mL para 92% entre 1.000 e 4.999 e a 81% acima de 5.000 (dados citados pelo apêndice da apostila). O MS adota 5.000 como limite de indicação, e a apostila lembra que acima não é contraindicação, apenas menor chance. A queda de 15% entre os dias 4 e 7 mede o efeito antes da cura; a elevação transitória do β-hCG entre os dias 1 e 4 é esperada e não significa falha.</p>
+</div>
+</details>
+</div>
+</div>
+
+<div class="card prim">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">C.4</span> Mola hidatiforme</div><h3>Mola hidatiforme: esvaziamento a vácuo, tireoide e seguimento por hCG <span class="ank ank-hy">HIGH-YIELD</span></h3></div>
+<div class="card-body">
+<div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Proliferação trofoblástica com degeneração hidrópica das vilosidades: <b>completa</b> (46,XX ou XY, todo o genoma paterno, sem feto; ~20% evoluem a NTG) e <b>parcial</b> (triploide 69, dois genomas paternos; 0,5–5%). <b>Vacuoaspiração</b> com ocitocina IV ao introduzir a cânula (MS 4.5.3.2), histopatologia obrigatória e β-hCG semanal. <b>O que muda conduta:</b> útero &gt;16 cm, tireotoxicose, pré-eclâmpsia precoce e Rh negativa.</div></div>
+
+<div class="mnemo">
+<div class="mnemo-title"><b>MOLA</b> Quando pensar</div>
+<div class="mnemo-grid">
+<div class="mnemo-row"><span class="mnemo-letter">M</span><span><b>Maior que a idade</b> · útero amolecido, "em sanfona", sem BCF, sangramento intermitente em borra de café</span></div>
+<div class="mnemo-row"><span class="mnemo-letter">O</span><span><b>Ovários</b> · cistos teca-luteínicos bilaterais (não operar; torcem e rompem, regridem com o β-hCG)</span></div>
+<div class="mnemo-row"><span class="mnemo-letter">L</span><span><b>Limiar do β-hCG</b> · &gt;100.000 já alerta e &gt;200.000 sugere completa; hiperêmese (26%), tireotoxicose (~10%), pré-eclâmpsia &lt;20 semanas (~30% das completas)</span></div>
+<div class="mnemo-row"><span class="mnemo-letter">A</span><span><b>Aspecto na USG</b> · "tempestade de neve" ou "cachos de uva"; na parcial, "queijo suíço" com feto; vesículas na vagina são patognomônicas e tardias</span></div>
+</div>
+</div>
+
+<div class="disease">
+<div class="disease-head"><div class="disease-name">Mola hidatiforme completa e parcial</div><div class="disease-tag">CID-10 O01.0 mola completa · O01.1 mola parcial <span class="ev ev-sbr">MS GAR 2022</span> <span class="ev ev-expert">Apostila 2025</span></div></div>
+<div class="disease-body"><div class="disease-rows">
+<div class="disease-row"><div class="k">Epidemiologia</div><div class="v">DTG em ~1:10.000 gestações na apostila e 1:200–400 no MS para a mola no Brasil. Fatores: idade &gt;40 e adolescência, mola prévia (risco 10× em nova gestação), abortos, tabagismo; protege gestação normal anterior. A completa predomina nos extremos da vida reprodutiva; a parcial distribui-se igual. Em 70% das parciais o diagnóstico é retrospectivo, na histologia.</div></div>
+<div class="disease-row"><div class="k">Fisiopatologia</div><div class="v">Mola completa por androgênese (óvulo vazio fertilizado por um espermatozoide que duplica, 46,XX, ou por dois, 46,XY mais agressiva). Parcial por dispermia em óvulo normal (69,XXX/XXY/XYY). O hCG, com subunidade α comum a TSH, LH e FSH, estimula tireoide e ovários (tireotoxicose, cistos teca-luteínicos). A embolização do trofoblasto causa insuficiência respiratória em ~2%.</div></div>
+<div class="disease-row"><div class="k">Clínica</div><div class="v">Sangramento (o mais comum com a hiperêmese), útero maior que o esperado e amolecido, náuseas intensas, pré-eclâmpsia precoce, tireotoxicose e anemia ferropriva. Com o diagnóstico precoce pela USG, o quadro clássico é hoje raro.</div></div>
+<div class="disease-row"><div class="k">Diagnóstico</div><div class="v">USG e β-hCG; confirma a <b>histopatologia</b> do material (formol tamponado a 10%). Antes do esvaziamento: hemograma, β-hCG quantitativo, tipagem, coagulograma, função hepática e renal, RX de tórax; TSH e T4 livre se útero ≥16 cm, ECG se cistos tecaluteínicos. TC e RM só com RX de tórax alterado <span class="ev ev-sbr">MS GAR 2022</span>.</div></div>
+<div class="disease-row"><div class="k">Tratamento</div><div class="v"><b>Aspiração a vácuo</b> (manual ou elétrica equivalentes); ocitocina IV ao introduzir a cânula (MS 4.5.3.2); histerometria indireta; USG guia se útero &gt;20 cm; duas unidades de hemácias se &gt;16 cm. Hipertireoidismo: <b>propranolol 40 mg VO 12/12 h antes do procedimento</b>, até a estabilização; antitireoidiano se risco de crise (propiltiouracil 300 mg de ataque e 100 mg 8/8 h, ou metimazol 5–20 mg 8/8 h) com endocrinologia. Misoprostol só amadurece o colo (≤400 µg, ≤3 h antes); nunca para expelir. Histerectomia com mola in situ se &gt;40 anos e prole completa. <b>Anti-D</b> na Rh negativa <span class="ev ev-sbr">MS GAR 2022</span>.</div></div>
+<div class="disease-row"><div class="k">Prognóstico</div><div class="v">O β-hCG normaliza em 8–10 semanas. Evolução a NTG: ~15–20% das completas, 0,5–5% das parciais; o esvaziamento precoce não elimina o risco, e o seguimento é obrigatório. Nova mola: risco 10× maior; USG e β-hCG precoces nas gestações seguintes.</div></div>
+<div class="disease-row"><div class="k">O que muda conduta</div><div class="v">Útero &gt;16 cm ou cistos → tireoide, ECG e sangue reservado. Rh negativa → anti-D. β-hCG em platô ou subindo → NTG (C.5). DIU contraindicado enquanto houver β-hCG; use contraceptivo hormonal desde o esvaziamento.</div></div>
+</div></div></div>
+
+<div class="box decision"><span class="box-label">DECISION</span><div class="box-title">Seguimento pós-molar: o relógio do β-hCG</div><div class="box-body"><ul><li>Ideal ter o β-hCG pré-esvaziamento (ponto inicial da curva); dose semanal ou quinzenal até <b>três valores &lt;5 mUI/mL</b>, depois mensal. Apostila: mensal até 6 meses após a primeira negativa e 1 ano se a remissão veio de quimioterapia; MS: nova gravidez só após 12 meses de β-hCG normal na NTG.</li><li>Contracepção rigorosa no seguimento, preferencialmente hormonal combinada. Para a gestação seguinte, USG e β-hCG precoces.</li><li>Material de curetagem de abortamento, histologia sempre: a mola parcial passa despercebida na clínica.</li></ul></div></div>
+
+<details class="deep"><summary>Deep dive · Citogenética, p57 e o que a patologia ensina sobre risco</summary>
+<div class="deep-content">
+<p>A mola completa é diploide androgenética: todos os cromossomos são paternos, e a ausência do genoma materno silencia os genes de imprinting de expressão materna, como o <i>CDKN1C</i> (p57<sup>KIP2</sup>). Por isso a imuno-histoquímica do p57 é negativa nas vilosidades da completa e positiva na parcial e no abortamento hidrópico, separando as três entidades de aparência semelhante. A completa homozigótica (46,XX, ~80%) provém de um espermatozoide haploide duplicado, e a heterozigótica (46,XY ou XX, dispérmica) tem a maior tendência à doença persistente, cerca de 20%. A parcial triploide traz vilosidades de duas populações, uma normal e outra hidrópica com invaginações "em fiorde", feto ou hemácias nucleadas, sem trofoblasto atípico confluente.</p>
+<p>O hCG da completa é exuberante porque o trofoblasto é hiperplásico e o estroma, sem vasos, não é perfundido; níveis &gt;200.000 mUI/mL sugerem completa, enquanto a gestação normal atinge pico próximo de 100.000 na 10ª semana. A afinidade da subunidade α e da β com o receptor de TSH explica a tireotoxicose: o limiar prático é um hCG acima de 100.000 por tempo prolongado, e a elevação só regride após o esvaziamento. A insuficiência respiratória da mola tem três vias: pré-eclâmpsia, hiperidratação do manejo do sangramento e embolia pulmonar de tecido trofoblástico.</p>
+<p>A via pulmonar é a mais comum de metástase, por drenagem venosa, e antecede as de fígado e encéfalo, de disseminação arterial; por isso o RX de tórax basta no estadiamento da mola, e a TC e a RM só se ele for alterado. Metástase vaginal violácea não se biopsia, pelo risco de hemorragia grave. A histerectomia só reduz o risco local de invasão, não o de doença à distância, e por isso não dispensa o seguimento do β-hCG.</p>
+</div>
+</details>
+</div>
+</div>
+
+<div class="card prim">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">C.5</span> Neoplasia trofoblástica gestacional</div><h3>NTG: diagnóstico bioquímico, escore FIGO/OMS e escolha da quimioterapia <span class="ank ank-dec">DECISION</span></h3></div>
+<div class="card-body">
+<div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">NTG é a persistência ou malignização do trofoblasto: <b>mola invasora</b> (70–90%), <b>coriocarcinoma</b> (10–30%), e os raros TTSP e TTE. O diagnóstico pós-molar é quase sempre <b>bioquímico</b>, pela curva do β-hCG, sem biópsia nem imagem. A cura é de quase 100% no baixo risco. <b>O que muda conduta:</b> escore ≤6 (monoquimioterapia) ou ≥7 (poliquimioterapia); metástase cerebral ou hepática; tumor de sítio placentário (cirurgia).</div></div>
+
+<div class="disease">
+<div class="disease-head"><div class="disease-name">Neoplasia trofoblástica gestacional: mola invasora, coriocarcinoma, TTSP e TTE</div><div class="disease-tag">CID-10 C58 neoplasia maligna da placenta (coriocarcinoma) · D39.2 neoplasia de comportamento incerto da placenta (mola invasora, TTSP, TTE) <span class="ev ev-sbr">MS GAR 2022</span> <span class="ev ev-expert">Apostila 2025</span></div></div>
+<div class="disease-body"><div class="disease-rows">
+<div class="disease-row"><div class="k">Epidemiologia</div><div class="v">15–40% das molas (completas ~20%; parciais 0,5–5%) evoluem a NTG pós-molar. O coriocarcinoma tem ~50% de antecedente de gestação normal, 25% de mola e 25% de abortamento; no pós-molar a mola invasora é 6–10 vezes mais comum. Metástases presentes em ~4% ao diagnóstico, sobretudo pulmão (80%), vagina (30%), pelve (20%), fígado e cérebro (10%).</div></div>
+<div class="disease-row"><div class="k">Fisiopatologia</div><div class="v">A <b>mola invasora</b> mantém a estrutura vilosa e invade o miométrio e os vasos. O <b>coriocarcinoma</b> é um tumor dimórfico (cito e sinciciotrofoblasto) sem vilosidades, hemorrágico e necrótico. TTSP e TTE derivam do trofoblasto intermediário, secretam pouco hCG (lactogênio placentário no TTSP), são pouco quimiossensíveis e quase restritos ao útero.</div></div>
+<div class="disease-row"><div class="k">Clínica</div><div class="v">Sangramento persistente após esvaziamento, subinvolução uterina, cistos que não regridem, infecção; ou, sem gravidez molar, sangramento pós-parto ou pós-abortamento, e metástase sem primário conhecido em mulher com gestação prévia, mesmo antiga. Dispneia e hemoptise: pulmão; cefaleia e déficit: cérebro; nódulo violáceo na vagina.</div></div>
+<div class="disease-row"><div class="k">Diagnóstico</div><div class="v"><b>Pós-molar, critérios do MS:</b> (a) platô com variação &lt;10% em 4 valores ao longo de &gt;3 semanas (dias 1, 7, 14 e 21); (b) aumento ≥10% em 3 valores consecutivos ao longo de ≥2 semanas (dias 1, 7 e 14); (c) histologia de coriocarcinoma. A apostila acrescenta ausência de negativação em 6 meses e surgimento de metástases. Estadiar com RX de tórax, TC de tórax, abdome e pelve, RM de crânio se pulmonar. Não biopsiar nódulo vaginal <span class="ev ev-sbr">MS GAR 2022</span>. No pós-gestação não molar, o β-hCG e a imagem bastam.</div></div>
+<div class="disease-row"><div class="k">Tratamento</div><div class="v">Em centro de referência, e não repetir curetagem. <b>Baixo risco</b> (escore ≤6, estádios I–III): monoquimioterapia com metotrexato (MS sem dose; esquema internacional: 50 mg IM nos dias 1, 3, 5 e 7, com ácido folínico 15 mg VO nos dias 2, 4, 6 e 8, a cada 2 semanas; IJGO 2025, PMC12411817, Box 3) ou dactinomicina, <b>indisponível no Brasil</b> (MS; ausente da CMED). <b>Alto risco</b> (≥7, ou estádio IV): <b>EMA-CO</b> (etoposídeo, metotrexato, dactinomicina, ciclofosfamida, vincristina). <b>Ultra-alto risco</b> (≥12): indução com etoposídeo e cisplatina, depois EMA-CO. Metástase cerebral ou hepática: radioterapia local com quimioterapia. TTSP e TTE: histerectomia. Cirurgia adjuvante no estádio IV. Contracepção durante e após; gestar só 12 meses após β-hCG normal <span class="ev ev-sbr">MS GAR 2022</span>.</div></div>
+<div class="disease-row"><div class="k">Prognóstico</div><div class="v">Cura próxima de 100% no baixo risco, e altas taxas mesmo no avançado; o coriocarcinoma extensamente metastático é um dos poucos tumores sólidos curáveis. Bom prognóstico: sintomas há &lt;4 meses, sem metástase hepática ou cerebral, sem quimioterapia prévia. A morte é por insuficiência respiratória ou hemorragia pulmonar e cerebral.</div></div>
+<div class="disease-row"><div class="k">O que muda conduta</div><div class="v">Platô ou subida do β-hCG → NTG, não nova curetagem. Escore ≥7 → EMA-CO. Metástase cerebral ou hepática → radioterapia local. β-hCG baixo com massa uterina → TTSP ou TTE (cirurgia).</div></div>
+</div></div></div>
+
+<div class="score">
+<div class="score-head"><div class="score-name">Estadiamento FIGO e escore de risco FIGO/OMS (2002) <span class="ev ev-sbr">MS GAR 2022 · Tabela 2</span></div><div class="score-purpose">Soma ≤6 = baixo risco; ≥7 = alto risco; ≥12 = ultra-alto risco. TTSP e TTE não usam o escore.</div></div>
+<div class="score-rows">
+<div class="score-row"><div class="score-grade">Estádio anatômico</div><div class="score-desc"><b>I</b> restrita ao útero; <b>II</b> pelve, vagina, anexos; <b>III</b> pulmão, com ou sem genital; <b>IV</b> todos os outros sítios.</div></div>
+<div class="score-row"><div class="score-grade">0 ponto</div><div class="score-desc">Idade &lt;40; antecedente mola; intervalo &lt;4 meses; β-hCG &lt;10³ UI/L; tumor &lt;3 cm; metástase em pulmão; sem falha de QT.</div></div>
+<div class="score-row"><div class="score-grade">1 ponto</div><div class="score-desc">Idade ≥40; antecedente aborto; intervalo 4–6; β-hCG 10³–10⁴; tumor 3–4 cm; baço ou rim; 1–4 metástases.</div></div>
+<div class="score-row"><div class="score-grade">2 pontos</div><div class="score-desc">Antecedente termo; intervalo 7–12; β-hCG &gt;10⁴–10⁵; tumor ≥5 cm; TGI; 5–8 metástases; falha de agente único.</div></div>
+<div class="score-row"><div class="score-grade">4 pontos</div><div class="score-desc">Intervalo &gt;12 meses; β-hCG &gt;10⁵; cérebro ou fígado; &gt;8 metástases; falha de ≥2 agentes.</div></div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="card prim">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">C.6</span> Placenta prévia</div><h3>Placenta prévia: USG-TV, nada de toque, conduta pela hemorragia e pela idade gestacional <span class="ank ank-dec">DECISION</span></h3></div>
+<div class="card-body">
+<div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Implantação da placenta sobre o orifício interno ou a menos de 2 cm dele. Incide em 0,5–1% (5,2 por 1.000, MS), e a "migração" faz a maioria dos achados do 2º trimestre desaparecer. <b>Sangue vermelho vivo, indolor, de início e fim súbitos.</b> Sem hemorragia grave e pré-termo: expectante com corticoide; grave: cesariana em qualquer idade; sem sangramento: parto aos 36 semanas. <b>O que muda conduta:</b> tipo da inserção, volume do sangramento, idade gestacional e cesárea prévia (acretismo).</div></div>
+
+<div class="disease">
+<div class="disease-head"><div class="disease-name">Placenta prévia (centro-total, centro-parcial, marginal) e placenta baixa</div><div class="disease-tag">CID-10 O44.0 prévia sem hemorragia · O44.1 com hemorragia <span class="ev ev-sbr">MS GAR 2022</span> <span class="ev ev-expert">Apostila 2025</span></div></div>
+<div class="disease-body"><div class="disease-rows">
+<div class="disease-row"><div class="k">Epidemiologia</div><div class="v">Frequência cresce com a paridade (1:1.500 nas primigestas, 1:20 nas multíparas) e com a idade; hoje também com as cesáreas. Fatores: cesárea e cirurgia uterina prévias, curetagens, endometrite, multiparidade, idade &gt;35, tabagismo e cocaína, gestação múltipla, FIV, prévia em gestação anterior. Risco aumentado de hemorragia anteparto (8×), transfusão (10×) e histerectomia (33×).</div></div>
+<div class="disease-row"><div class="k">Fisiopatologia</div><div class="v">O blastocisto implanta em áreas pouco decidualizadas do segmento inferior (cicatriz, endométrio lesado). Com a formação do segmento inferior no fim do 2º trimestre, o estiramento descola a placenta inelástica, e os seios venosos sangram. O segmento inferior contrai mal, o que explica a HPP. A definição vale a partir de 22 semanas (MS) ou 28 (apostila); em ≥25% das USG antes de 20 semanas há inserção baixa que migra, e o diagnóstico firme é depois de 26 semanas.</div></div>
+<div class="disease-row"><div class="k">Clínica</div><div class="v">Sangramento vermelho vivo, indolor, recorrente e progressivo, na ausência de contração (em 10–20% há contração e dor, que simula DPP). Útero normotenso, BCF preservado, apresentações anômalas frequentes. Raramente causa coagulopatia. Com acretismo, é comum não haver sangramento até o parto.</div></div>
+<div class="disease-row"><div class="k">Diagnóstico</div><div class="v"><b>USG transvaginal</b> (padrão-ouro, inócua: o transdutor fica atrás do colo); transabdominal com bexiga semicheia tem mais falso-positivos. Placenta posterior pode ser difícil; RM não é usada para o diagnóstico, só para extensão e acretismo. Placenta baixa no morfológico: repetir com 28–32 semanas. Doppler e RM investigam acretismo. <b>Sem toque vaginal.</b> Tipagem, hemograma, coagulograma e creatinina <span class="ev ev-sbr">MS GAR 2022</span>.</div></div>
+<div class="disease-row"><div class="k">Tratamento</div><div class="v"><b>Sangramento ativo:</b> dois acessos calibrosos, diurese &gt;30 mL/h, sinais vitais horários, sangue reservado; transfundir se Hb &lt;8 g/dL; internar. <b>Pré-termo e estável:</b> expectante, repouso até 6 h sem sangramento, <b>betametasona 12 mg IM 24/24 h ×2 se &lt;34 semanas</b>; não há evidência para tocólise (MS); a apostila a admite sem comprometimento hemodinâmico; avaliação quinzenal do crescimento; <b>parto aos 36 semanas</b>. <b>Hemorragia grave:</b> cesariana imediata em qualquer idade. <b>Via:</b> total e parcial, cesariana; marginal ou baixa com cefálico insinuado, vaginal com amniotomia precoce (Puzos); a amniotomia não se faz em total ou parcial. Misoprostol contraindicado. Incisão uterina decidida com o abdome aberto <span class="ev ev-sbr">MS GAR 2022</span>.</div></div>
+<div class="disease-row"><div class="k">Prognóstico</div><div class="v">O risco de morte materna é ~3× maior, e maior com acretismo; a mortalidade perinatal é da prematuridade e das malformações. HPP por atonia do segmento inferior pode exigir B-Lynch, ligadura, embolização e histerectomia (GO14).</div></div>
+<div class="disease-row"><div class="k">O que muda conduta</div><div class="v">Sangramento grave → cesariana imediata. Cesárea prévia com prévia anterior → acretismo (C.8). Rh negativa → anti-D se sangramento. Marginal com insinuação → vaginal possível. Sangramento a qualquer momento na vasa prévia associada → internar.</div></div>
+</div></div></div>
+</div>
+</div>
+
+<div class="card prim">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">C.7</span> Descolamento prematuro de placenta</div><h3>DPP: hipertensão e hipertonia, coagulopatia e parto <span class="ank ank-dgr">DANGER</span></h3></div>
+<div class="card-body">
+<div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Separação da placenta normalmente inserida, em gestação ≥20 semanas e antes da expulsão fetal, em 0,3–1% das gestações (dois terços graves). O diagnóstico é clínico: <b>dor, sangramento escuro, hipertonia, BCF alterado</b>. A conduta depende da <b>vitalidade fetal e da estabilidade materna</b>: feto vivo e sofrimento, parto imediato; feto morto, parto vaginal após estabilizar. <b>O que muda conduta:</b> BCE, hipotensão, coagulopatia (fibrinogênio), parto iminente e IG &lt;24 semanas.</div></div>
+
+<div class="disease">
+<div class="disease-head"><div class="disease-name">Descolamento prematuro de placenta (graus 0 a III) e útero de Couvelaire</div><div class="disease-tag">CID-10 O45.8 outro DPP · O45.0 com defeito de coagulação · O45.9 não especificado <span class="ev ev-sbr">MS GAR 2022</span> <span class="ev ev-expert">Apostila 2025</span></div></div>
+<div class="disease-body"><div class="disease-rows">
+<div class="disease-row"><div class="k">Epidemiologia</div><div class="v">Fatores: hipertensão e pré-eclâmpsia (o mais importante), trauma, tabagismo e cocaína, RPM e corioamnionite, idade ≥35 e &lt;20, paridade ≥3, trombofilias, DPP anterior, placenta circunvalada, brevidade do cordão, esvaziamento súbito em polidrâmnio ou gemelar, versão externa. Mortalidade materna ~3%, fetal ~25%, com 40–50% dos nascimentos pré-termo.</div></div>
+<div class="disease-row"><div class="k">Fisiopatologia</div><div class="v">Hemorragia da decídua basal forma o hematoma retroplacentário, que "escava" a placenta e amplia a área descolada (círculo vicioso). O sangue irrita o miométrio e dá taquissistolia e hipertonia, depois infiltra e dissocia as fibras (apoplexia uteroplacentária, útero de Couvelaire), o que causa hipotonia no pós-parto. A tromboplastina passa à circulação materna: coagulopatia de consumo e fibrinólise, com necrose cortical renal e <i>cor pulmonale</i>. Até 20% de hemorragia oculta.</div></div>
+<div class="disease-row"><div class="k">Clínica</div><div class="v">Dor (lombar na placenta posterior) com persistência entre as contrações, sangramento escuro, hipertonia lenhosa, bolsa tensa, dilatação rápida, hemoâmnio. Pulso normal no início (Boero), depois choque. BCF com padrão não tranquilizador ou ausente. Um em cinco sem sangramento vaginal.</div></div>
+<div class="disease-row"><div class="k">Diagnóstico</div><div class="v">Clínico. Hemograma com plaquetas, tipagem, coagulograma e fibrinogênio, ureia e creatinina, exames de hipertensão; teste do coágulo à beira do leito (sem coágulo firme em 7 min = coagulopatia). USG vê hematoma em 25–50% (VPP &gt;80%) e serve para excluir prévia. O diferencial é placenta prévia, rotura uterina, seio marginal e vasa. <span class="ev ev-sbr">MS GAR 2022</span> <span class="ev ev-expert">Apostila 2025</span>.</div></div>
+<div class="disease-row"><div class="k">Tratamento</div><div class="v"><b>Estabilizar primeiro:</b> dois acessos calibrosos, <b>1.000 mL de cristaloide (500 mL nos primeiros 10 min)</b>, sonda vesical (diurese &gt;30 mL/h), reserva de 4 concentrados, reavaliação horária (PA, pulso, diurese, hemograma, coagulograma). <b>Amniotomia</b> sempre que possível (reduz hemorragia, CIVD e embolia amniótica, mesmo na cesariana). <b>Feto vivo, ≥24–26 semanas, com sofrimento:</b> parto imediato; se o tempo previsto for &gt;20 min, cesariana; parto iminente, amniotomia e vigilância. <b>Óbito fetal ou &lt;24 semanas com mãe estável:</b> parto vaginal em 4–6 h, sem retardar a correção da coagulopatia. Coagulopatia: crioprecipitado se fibrinogênio &lt;150 mg/dL (HO03) com meta ≥200 mg/dL no sangramento ativo (GO14), plaquetas &lt;50 mil, plasma se TP/TTPa alargados <span class="ev ev-sbr">MS GAR 2022</span> <span class="ev ev-acr">HO03 e GO14</span>.</div></div>
+<div class="disease-row"><div class="k">Prognóstico</div><div class="v">Pior com atraso do parto, pré-eclâmpsia, CIVD, choque e lesão renal. Complicações: choque, IRA (necrose tubular ou cortical), CIVD, Couvelaire com atonia, síndrome de Sheehan tardia. O dano fetal depende mais da área descolada que do tempo; a coagulopatia, do tempo (óbito fetal &gt;4 h de evolução).</div></div>
+<div class="disease-row"><div class="k">O que muda conduta</div><div class="v">BCF presente e sofrimento → cesárea. BCF ausente e mãe estável → vaginal. Fibrinogênio baixo ou teste do coágulo alterado → hemocomponentes antes de operar. Atonia pós-parto → GO14 (uterotônicos, balão, TAN). Rh negativa → anti-D e dose por Kleihauer se trauma (D.4).</div></div>
+</div></div></div>
+
+<div class="score">
+<div class="score-head"><div class="score-name">Graus do DPP <span class="ev ev-expert">Apostila 2025</span></div><div class="score-purpose">Dividem prognóstico fetal e risco de coagulopatia</div></div>
+<div class="score-rows">
+<div class="score-row"><div class="score-grade">Grau 0</div><div class="score-desc"><b>Assintomático.</b> Diagnóstico retrospectivo pela histologia da placenta.</div></div>
+<div class="score-row"><div class="score-grade">Grau I (leve)</div><div class="score-desc"><b>Sangramento discreto, sem hipertonia nem dor,</b> vitalidade preservada, sem coagulopatia.</div></div>
+<div class="score-row"><div class="score-grade">Grau II</div><div class="score-desc"><b>Sangramento moderado, hipertonia, dor, taquicardia e hipotensão postural;</b> feto vivo com sofrimento.</div></div>
+<div class="score-row"><div class="score-grade">Grau III</div><div class="score-desc"><b>Sangramento importante, hipertonia, hipotensão e óbito fetal.</b> IIIA sem coagulopatia; IIIB com coagulopatia instalada.</div></div>
+</div>
+</div>
+
+<details class="deep"><summary>Deep dive · Do hematoma retroplacentário à incoagulabilidade, e por que o útero de Couvelaire sangra no pós-parto</summary>
+<div class="deep-content">
+<p>O gatilho é a lesão do leito decidual por vasculopatia decidual (na pré-eclâmpsia, aterose aguda e falha de remodelação das artérias espiraladas), trauma de cisalhamento ou esvaziamento súbito do útero distendido. O sangue rompe a decídua basal e cria um hematoma que separa a placenta do miométrio; como o hematoma consome espaço, comprime a placenta adjacente e rompe novas ligações, o círculo se auto-alimenta. O aporte de oxigênio ao feto cai em proporção à área descolada: acima de 50% da placenta, a morte fetal é a regra.</p>
+<p>A coagulopatia tem duas fontes que se somam. O hematoma retroplacentário consome fibrinogênio e plaquetas localmente; além disso, o tecido deciduotrofoblástico é rico em fator tecidual (tromboplastina), que cai na circulação materna e ativa a coagulação difusamente. A ativação consome fatores V, VIII e fibrinogênio e aciona o plasminogênio: a fibrinólise gera produtos de degradação que inibem a polimerização da fibrina e o ciclo de sangramento se perpetua. A coagulopatia relaciona-se ao tempo de evolução, mais que à área descolada, e é grave no óbito fetal com mais de 4 horas. A queda do fibrinogênio, o teste do coágulo em tubo seco (sem coágulo em 7 minutos) e a plaquetopenia dispensam o laboratório completo quando ele atrasa.</p>
+<p>O sangue extravasado infiltra o miométrio até a serosa, dissocia as fibras e imprime ao útero o aspecto roxo e edemaciado de Couvelaire. As sufusões atingem ligamentos, anexos e peritônio; a perda da organização das fibras causa hipotonia após o parto, e as "ligaduras vivas de Pinard" não funcionam. A hipotonia e a coagulopatia explicam a HPP do DPP, que geralmente responde a uterotônicos e hemocomponentes e raramente exige histerectomia. O rim sofre por hipoperfusão e microtrombos: necrose tubular aguda reversível ou necrose cortical bilateral, e o DPP é a causa mais comum desta na gravidez. A hipófise hiperplásica da gestação sofre infarto na hipovolemia: síndrome de Sheehan.</p>
+</div>
+</details>
+</div>
+</div>
+
+<div class="card prim">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">C.8</span> Acretismo placentário</div><h3>Espectro do acretismo: suspeitar no pré-natal, operar planejado, não extrair <span class="ank ank-dgr">DANGER</span></h3></div>
+<div class="card-body">
+<div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Aderência anormal da placenta à parede uterina por ausência parcial ou total da decídua basal. A <b>acreta</b> (80%) adere ao miométrio, a <b>increta</b> (15%) o penetra, a <b>percreta</b> (5%) atinge a serosa e órgãos vizinhos. É a principal indicação de histerectomia periparto. <b>O que muda conduta:</b> prévia com cesárea anterior (risco de 11% com uma, 40% com duas, 61% com três) manda o parto programado em serviço terciário, com cesárea-histerectomia e a placenta in situ.</div></div>
+
+<div class="disease">
+<div class="disease-head"><div class="disease-name">Acretismo placentário (acreta, increta, percreta)</div><div class="disease-tag">CID-10 O43.8 outros transtornos da placenta (DATASUS; O43.2 placenta aderente só na CID-10 OMS 2016) <span class="ev ev-sbr">MS GAR 2022</span> <span class="ev ev-expert">Apostila 2025</span></div></div>
+<div class="disease-body"><div class="disease-rows">
+<div class="disease-row"><div class="k">Epidemiologia</div><div class="v">De 1:2.500 partos nos anos 1980 a ~1:700 hoje na apostila (1:500 a 2.500 no MS), por causa das cesáreas. Risco com prévia: 3% sem cesárea, 11% com uma, 40% com duas, 61% com três, 67% com quatro ou mais. Outros fatores: curetagens, miomectomia, síndrome de Asherman, mioma submucoso, adenomiose, reprodução assistida, idade &gt;35, tabagismo, extração manual prévia.</div></div>
+<div class="disease-row"><div class="k">Fisiopatologia</div><div class="v">A placenta invade a camada esponjosa e deixa de ter plano de clivagem; a decídua basal falha e a camada fibrinoide de Nitabuch é imperfeita, em geral sobre cicatriz de cesárea ou no segmento inferior. A invasão do miométrio, da serosa e da bexiga produz neovascularização uterovesical e lagos placentários venosos.</div></div>
+<div class="disease-row"><div class="k">Clínica</div><div class="v">Em geral silenciosa até o terceiro período. Hemorragia profusa à tentativa de dequitação (parcial) ou nenhuma (total, a placenta fica retida). Hematúria na percreta com invasão vesical; rotura uterina em cicatriz invadida, antes ou durante o parto.</div></div>
+<div class="disease-row"><div class="k">Diagnóstico</div><div class="v"><b>USG com Doppler</b> (sensibilidade de 80–100%, especificidade 40–77% para predizer invasão): perda do espaço hipoecoico retroplacentário, adelgaçamento do miométrio, interface útero-vesical irregular, protrusão para a bexiga, lacunas irregulares, fluxo turbulento e hipervascularização subplacentária. <b>RM</b> se placenta posterior, obesidade ou dúvida: bandas T2, interrupção focal do miométrio. Repetir USG com 28 semanas na prévia ou baixa <span class="ev ev-sbr">MS GAR 2022</span>.</div></div>
+<div class="disease-row"><div class="k">Tratamento</div><div class="v">Serviço terciário com UTI adulto e neonatal, banco de sangue, anestesista, urologia e cirurgia vascular. <b>Cesariana programada entre 35 e 36+6 semanas</b> (MS); apostila 34–37; ACOG 34–35+6: conferir (não lido). Incisão que evite a placenta (corporal ou fúndica), feto extraído, <b>histerorrafia e histerectomia total com a placenta in situ</b>; não tentar a extração. Oclusão temporária das ilíacas internas ou embolização se houver radiologia intervencionista; tamponamento pélvico e retirada em 48 h em sangramento difuso; correção de coagulopatia, hipotermia e acidose; identificação do ureter e cuidado com a bexiga <span class="ev ev-sbr">MS GAR 2022</span>. Conservador (ressecção em cunha, MTX) é experimental.</div></div>
+<div class="disease-row"><div class="k">Prognóstico</div><div class="v">Morbidade: hemorragia maciça, transfusão, histerectomia (~70% no parto), lesão de bexiga e ureter, fístulas, CIVD, SDRA, infecção, UTI. A morte aumenta quando o diagnóstico é intraparto e o serviço é pequeno.</div></div>
+<div class="disease-row"><div class="k">O que muda conduta</div><div class="v">Suspeita pré-natal → parto programado em terciário. Plano de clivagem ausente → não extrair. Hemorragia → protocolo de transfusão maciça (GO14, CT01). Diagnóstico tardio em serviço sem recursos → clampear, tamponar e transferir após estabilizar.</div></div>
+</div></div></div>
+
+<div class="box danger"><span class="box-label">DANGER</span><div class="box-title">Tentar descolar manualmente a placenta é o erro do acretismo não diagnosticado</div><div class="box-body">Na percreta e na increta, a mão não separa tecido que invadiu o miométrio: a tentativa abre vasos sem possibilidade de pinçamento ou sutura (muitas vezes não há miométrio). Se o plano de clivagem não aparece, pare, pince o cordão curto, reponha volume e hemocomponentes, ative a transfusão maciça e prepare a histerectomia.</div></div>
+
+<details class="deep"><summary>Deep dive · Neovascularização, nomenclatura e o que a imagem consegue prever</summary>
+<div class="deep-content">
+<p>O termo "espectro do acretismo" (PAS) reúne a aderência anormal (acreta), a invasão do miométrio (increta) e a invasão da serosa ou de órgãos (percreta); a gravidade se mede pela profundidade e pela extensão, que podem ser total, parcial ou focal, conforme todos, alguns ou parte de um cotilédone. A causa é um defeito do leito de implantação sobre o tecido cicatricial, onde a decídua basal está ausente ou hipoplásica, e o trofoblasto extravilositário invade o miométrio e promove angiogênese anômala. Daí os sinais ao Doppler: vasos que cruzam da placenta à bexiga e lagos placentários com fluxo turbulento de alta velocidade.</p>
+<p>A sensibilidade da USG para a presença de acretismo é maior na placenta anterior, e a RM complementa a posterior e a extensão parametrial; a especificidade é baixa, razão pela qual a conduta se apoia no conjunto (fator de risco, imagem e achados cirúrgicos). A suspeita muda o desfecho porque converte uma hemorragia ao acaso em uma cirurgia com banco de sangue, equipe vascular e urológica e eventual oclusão arterial: o MS lembra que o diagnóstico pré-natal e o cuidado especializado reduzem a morbimortalidade materna e neonatal.</p>
+<p>A cronologia do parto equilibra a prematuridade e o risco de sangramento antes da cesárea programada: em até um terço dos casos o parto acontece de forma não programada. O MS recomenda de 35 a 36+6 semanas; a apostila cita 34 a 37; as sociedades internacionais (ACOG/SMFM) fixam 34+0 a 35+6, com corticoide antenatal (conferir; não lidas). Com sangramento antes da data programada, internar e usar corticoide antenatal.</p>
+</div>
+</details>
+</div>
+</div>
+
+<div class="card prim">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">C.9</span> Rotura uterina</div><h3>Rotura uterina: reconhecer a iminência e operar sem esperar <span class="ank ank-dgr">DANGER</span></h3></div>
+<div class="card-body">
+<div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Solução de continuidade da parede uterina, <b>parcial (deiscência, serosa íntegra) ou completa</b>, durante a gravidez ou, mais comum, no parto. Em útero cicatrizado, a rotura pode ser silenciosa; em útero íntegro, é o fim de um parto obstruído. Os sinais premonitórios (Bandl, Frommel) permitem prevenir. <b>O que muda conduta:</b> iminência ou consumação mandam cesariana ou laparotomia imediatas, com rafia ou histerectomia conforme a extensão, a paridade e o estado materno.</div></div>
+
+<div class="disease">
+<div class="disease-head"><div class="disease-name">Rotura uterina na gravidez e no trabalho de parto</div><div class="disease-tag">CID-10 O71.0 antes do trabalho de parto · O71.1 durante o trabalho de parto <span class="ev ev-expert">Apostila 2025</span> <span class="ev ev-acr">OMS 2025 · indução</span></div></div>
+<div class="disease-body"><div class="disease-rows">
+<div class="disease-row"><div class="k">Epidemiologia</div><div class="v">Hoje rara. Fatores: cicatriz de cesárea ou miomectomia (a cicatriz clássica e as cirurgias com abertura da cavidade pesam mais), correção de útero malformado, salpingectomia intersticial, trauma (queda, acidente, arma), manipulação (curetagem, versão externa), parto obstruído (desproporção, má apresentação, tumores), multiparidade, ocitocina e misoprostol em útero cicatrizado.</div></div>
+<div class="disease-row"><div class="k">Fisiopatologia</div><div class="v">No parto obstruído, o segmento inferior distende-se até o limite enquanto o corpo se contrai e se retrai; a tensão sobre a parede enfraquecida (cicatriz, miométrio doente) rompe-a. A rotura da gravidez é lenta, progressiva e silenciosa, e a extrusão fetal se faz aos poucos rumo à cavidade abdominal.</div></div>
+<div class="disease-row"><div class="k">Clínica</div><div class="v"><b>Iminência (síndrome de Bandl-Frommel):</b> agitação, contrações exageradas e dolorosas, anel de Bandl (sulco em ampulheta infraumbilical), retesamento dos ligamentos redondos, alterações do BCF. <b>Consumada:</b> dor súbita e lancinante, cessação das contrações, <b>sinal de Reasens</b> (apresentação sobe), <b>sinal de Clark</b> (enfisema subcutâneo), partes fetais palpáveis, choque (Laffont: dor escapular; Cullen), BCF ausente na rotura completa. Na gravidez inicial, simula ectópica rota.</div></div>
+<div class="disease-row"><div class="k">Diagnóstico</div><div class="v">Clínico, com a USG apoiando; muitas vezes só confirmado na laparotomia. O diferencial é DPP (dor também), prévia e vasa. Hemograma, tipagem, coagulograma e fibrinogênio, como em toda hemorragia grave <span class="ev ev-expert">Apostila 2025</span>.</div></div>
+<div class="disease-row"><div class="k">Tratamento</div><div class="v">Iminência: suspender ocitocina e <b>cesariana imediata</b> (parto instrumental só se critérios). Consumada: reposição volêmica e hemocomponentes e <b>laparotomia</b>: rafia em dois planos se há desejo de gestar e lesão limpa; histerectomia total ou subtotal, sem anexectomia, na multípara ou lesão extensa. Reparar bexiga e ureter. Antibiótico e anti-D se Rh negativa. A conduta cirúrgica depende de extensão, sede e idade.</div></div>
+<div class="disease-row"><div class="k">Prognóstico</div><div class="v">Materno grave pela hemorragia; fetal, com morte frequente na rotura completa. A rotura incompleta (deiscência de cicatriz) permite BCF imediato e salvar o feto. Prevenção: reconhecer sinais, evitar ocitocina e prostaglandina em úteros cicatrizados.</div></div>
+<div class="disease-row"><div class="k">O que muda conduta</div><div class="v">Cicatriz + dor súbita + perda de BCF → laparotomia. Misoprostol em útero cicatrizado: a OMS 2025 desaconselha para indução do parto com cesárea prévia (recomendação forte contra) e prefere balão; no abortamento retido do 2º trimestre, só doses baixas e monitorização, segundo a apostila.</div></div>
+</div></div></div>
+</div>
+</div>
+
+<div class="card prim">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">C.10</span> Vasa prévia</div><h3>Vasa prévia: diagnóstico ultrassonográfico pré-natal e cesariana eletiva antes da rotura <span class="ank ank-dec">DECISION</span></h3></div>
+<div class="card-body">
+<div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Vasos fetais não protegidos por placenta nem geleia de Wharton, no trajeto das membranas, a ≤2 cm do orifício interno. Incidência de 0,6:1.000. A rotura das membranas rompe o vaso e <b>exsanguina o feto em minutos</b> (volemia de 80–100 mL/kg). <b>O que muda conduta:</b> pré-natal (sobrevida ~95%) → corticoide, vigilância e cesariana de 34 a 37 semanas; intraparto → cesariana de emergência (mortalidade perinatal &gt;50%).</div></div>
+
+<div class="disease">
+<div class="disease-head"><div class="disease-name">Vasa prévia e inserção velamentosa do cordão</div><div class="disease-tag">CID-10 O69.4 parto complicado por vasa prévia · O43.1 malformação da placenta <span class="ev ev-sbr">MS GAR 2022</span> <span class="ev ev-expert">Apostila 2025</span></div></div>
+<div class="disease-body"><div class="disease-rows">
+<div class="disease-row"><div class="k">Epidemiologia</div><div class="v">Fatores: inserção velamentosa do cordão (OR 672; 50% dos casos), placenta bilobada (OR 71), placenta sucenturiada, prévia diagnosticada no 2º trimestre que regride (OR 19), reprodução assistida e gestação múltipla. A inserção velamentosa ocorre em 0,5–1% das gestações únicas e ~10% das gemelares; nem toda velamentosa tem vasa prévia.</div></div>
+<div class="disease-row"><div class="k">Fisiopatologia</div><div class="v">Sem geleia de Wharton, os vasos correm entre âmnio e córion, sujeitos a compressão e rotura espontânea ou artificial; o sangramento é fetal. A rotura da veia mata quase de imediato; a de uma artéria é melhor tolerada, porque a outra mantém a circulação.</div></div>
+<div class="disease-row"><div class="k">Clínica</div><div class="v">Pré-natal: assintomática. Intraparto: cordão pulsátil à palpação das membranas e, após a rotura, sangramento indolor com desaceleração grave e sustentada, bradicardia ou padrão sinusoidal. Apenas 100 mL de sangue fetal bastam para choque.</div></div>
+<div class="disease-row"><div class="k">Diagnóstico</div><div class="v">Rastreio universal não é indicado (MS); descreva sempre no morfológico a placenta, a inserção do cordão e lobos acessórios. Velamentosa, bilobada ou prévia que regrediu: <b>USG transvaginal com Doppler colorido</b> (detecta 93%, especificidade 99%). Confirmar com 32 semanas (pode resolver). Amnioscopia ou toque cuidadoso no parto. Teste de Apt-Downey no sangue vaginal distingue sangue fetal (conferir) <span class="ev ev-sbr">MS GAR 2022</span>.</div></div>
+<div class="disease-row"><div class="k">Tratamento</div><div class="v">Objetivo: cesariana antes do trabalho de parto ou da rotura, sem prematuridade excessiva. Corticoide antenatal entre 28 e 32 semanas. Norma geral do MS: internação com 34 semanas e cesárea com 36 semanas. Faixas alternativas: internação entre 30 e 34 semanas para vigilância, <b>cesariana eletiva entre 34 e 37 semanas</b> (faixas das sociedades de quatro países no MS; apostila igual). Diagnóstico intraparto: cesariana de urgência, <b>sem clampeamento tardio do cordão</b>, neonatologia preparada <span class="ev ev-sbr">MS GAR 2022</span>.</div></div>
+<div class="disease-row"><div class="k">Prognóstico</div><div class="v">Sobrevida de ~95% com diagnóstico pré-natal e mortalidade de 56% se o diagnóstico é intraparto; geral ~36%. O RN com perda aguda precisa de sangue e UTI neonatal (PD01, PD02).</div></div>
+<div class="disease-row"><div class="k">O que muda conduta</div><div class="v">Vasa ao morfológico → Doppler TV e reavaliação com 32 semanas. Contração, sangramento ou rotura de membranas → cesariana imediata. Amniotomia ou toque sem prévia exclusão de vasa em gestação de risco → evitar.</div></div>
+</div></div></div>
+</div>
+</div>
+
+<div class="card prim">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">C.11</span> Aloimunização Rh</div><h3>Aloimunização Rh: Coombs indireto, Doppler da ACM, transfusão intrauterina e prevenção com anti-D <span class="ank ank-hy">HIGH-YIELD</span></h3></div>
+<div class="card-body">
+<div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Anti-D (IgG) materno, produzido após contato do sangue fetal Rh positivo com a mãe Rh negativa, destrói hemácias fetais: anemia, eritroblastose, hidropisia e, ao nascer, icterícia por bilirrubina indireta. Exige <b>dois contatos</b> (IgM não cruza a placenta; IgG cruza). A conduta pré-natal é <b>Coombs indireto → título crítico ≥1:16 → Doppler da ACM → cordocentese e transfusão</b>; a prevenção é o anti-D. <b>O que muda conduta:</b> sensibilização prévia (pular o título e ir ao Doppler), PVS &gt;1,5 MoM, hidropisia e idade gestacional.</div></div>
+
+<div class="mnemo">
+<div class="mnemo-title"><b>ANTI-D</b> Quando dar a imunoglobulina em Rh negativa não sensibilizada</div>
+<div class="mnemo-grid">
+<div class="mnemo-row"><span class="mnemo-letter">A</span><span><b>Antes do parto</b> · 300 µg IM com 28 semanas, com Coombs indireto negativo (MS); a OMS 2025 só a admite em pesquisa</span></div>
+<div class="mnemo-row"><span class="mnemo-letter">N</span><span><b>Nascimento</b> · 300 µg IM em até 72 h do parto de RN Rh positivo ou de Rh desconhecido (até 28 dias tem alguma eficácia, segundo a apostila)</span></div>
+<div class="mnemo-row"><span class="mnemo-letter">T</span><span><b>Trauma abdominal</b> · 300 µg IM em até 72 h, mesmo com Kleihauer negativo (ATLS 11)</span></div>
+<div class="mnemo-row"><span class="mnemo-letter">I</span><span><b>Interrupção e intervenção</b> · abortamento, ectópica, mola, amnio, cordocentese, cirurgia fetal, versão externa: 300 µg IM em até 72 h</span></div>
+<div class="mnemo-row"><span class="mnemo-letter">D</span><span><b>Descolamento e outros sangramentos</b> · DPP, prévia sangrante e óbito fetal: 300 µg IM em até 72 h do evento</span></div>
+</div>
+</div>
+
+<div class="disease">
+<div class="disease-head"><div class="disease-name">Aloimunização Rh (anti-D), anemia fetal e hidropisia imune</div><div class="disease-tag">CID-10 O36.0 isoimunização Rh · O36.2 hidropisia fetal <span class="ev ev-sbr">MS GAR 2022</span> <span class="ev ev-expert">Apostila 2025</span></div></div>
+<div class="disease-body"><div class="disease-rows">
+<div class="disease-row"><div class="k">Epidemiologia</div><div class="v">O antígeno D é o mais imunogênico; Rh negativo em 15–17% da população (ATLS), com mais Rh positivo entre negros (90–95%) e quase 100% entre indígenas. O ABO e o Rh somam 98% dos casos de DHPN, e anticorpos irregulares 2%. Sem profilaxia, o risco de sensibilização é de ~2% ao término da gestação; com 28 semanas, cai a 0,1–0,2%; a falha da profilaxia é ~1,5%.</div></div>
+<div class="disease-row"><div class="k">Fisiopatologia</div><div class="v">Hemorragia feto-materna de ≥0,25 mL sensibiliza; ocorre em ~3% no 1º trimestre, 12% no 2º e 45% no 3º. A primeira exposição dá resposta IgM; a segunda, IgG transplacentário (FcRn) que opsoniza hemácias fetais, removidas no baço. A anemia acarreta eritropoese extramedular, hepatoesplenomegalia, hipoalbuminemia, ascite e hidropisia. A bilirrubina indireta é depurada pela mãe; após o parto ocorre icterícia e risco de kernicterus.</div></div>
+<div class="disease-row"><div class="k">Clínica</div><div class="v">Feto: ecogenicidade e espessura placentária, derrame pericárdico, polidrâmnio, ascite, edema, derrame pleural, "duplo contorno" da bexiga e padrão sinusoidal ao CTG (fase terminal). Mãe: assintomática. História de filhos anteriores ictéricos, hidrópicos ou natimortos sugere o diagnóstico.</div></div>
+<div class="disease-row"><div class="k">Diagnóstico</div><div class="v"><b>Tipagem ABO e Rh e Coombs indireto na 1ª consulta e mensal (MS)</b>; a apostila repete com 28, 32, 36 e 40 semanas se negativo. Coombs positivo: identificar o anticorpo e titular, no mesmo laboratório; <b>título ≥1:16</b> é crítico, e aumento de duas diluições pede repetição em 2 semanas. ≤1:8 dispensa a investigação fetal. Rh fetal por DNA livre no plasma materno a partir de 10 semanas (quando disponível). <b>Doppler da ACM</b> com PVS em MoM: o melhor rastreio; começa em 18 semanas (apostila) ou 16 (história grave, MS). Cordocentese (padrão-ouro: Hb, Ht, tipagem e Coombs direto) só se Doppler alterado <span class="ev ev-sbr">MS GAR 2022</span>.</div></div>
+<div class="disease-row"><div class="k">Tratamento</div><div class="v">PVS &lt;1,5 MoM: seguir com Doppler a cada 1–2 semanas e parto a termo. <b>PVS &gt;1,5 MoM:</b> &gt;34 semanas, parto imediato; &lt;34 semanas, cordocentese; Ht &lt;30% ou hidropisia: <b>transfusão intrauterina (TIU)</b> por veia umbilical, a partir de 20 semanas, com sangue O Rh negativo, irradiado, leucorreduzido, Ht dos hemocomponentes de 65–85% (MS), meta fetal de Ht 40–45% (apostila); repetir em 2–21 dias (o Ht cai ~1%/dia); risco ~2%. Parto entre 34 e 37 semanas, conforme a última TIU (apostila: 36–38). Parto vaginal se acometimento leve a moderado; cesariana se grave. RN: Coombs direto, fototerapia e exsanguineotransfusão (PD02) <span class="ev ev-sbr">MS GAR 2022</span>.</div></div>
+<div class="disease-row"><div class="k">Prognóstico</div><div class="v">Sem tratamento, hidropisia e óbito; com Doppler e TIU, a maioria sobrevive. A gravidade tende a piorar a cada gestação. A apostila destaca que a TIU eleva o risco de hemorragia feto-materna, que reforça a resposta imune, e a cordocentese deve ser reservada ao Doppler alterado.</div></div>
+<div class="disease-row"><div class="k">O que muda conduta</div><div class="v">Coombs ≥1:16 ou história grave → Doppler, sem insistir no título. PVS &gt;1,5 MoM antes de 34 semanas → medicina fetal. Ausência de sensibilização → profilaxia (mnemônico e F1.4). Pós-TIU o Doppler perde sensibilidade; o seguimento é pela cordocentese. Após 35 semanas, o Doppler tem mais falso-positivos: alterado = interromper.</div></div>
+</div></div></div>
+
+<div class="score">
+<div class="score-head"><div class="score-name">Pico de velocidade sistólica da ACM em múltiplos da mediana <span class="ev ev-sbr">MS GAR 2022</span> <span class="ev ev-expert">Apostila 2025</span></div><div class="score-purpose">Rastreio de anemia fetal; sensibilidade de 86% e especificidade de 71% para anemia moderada ou grave (MS)</div></div>
+<div class="score-rows">
+<div class="score-row"><div class="score-grade">&lt;1,0 MoM</div><div class="score-desc"><b>Sem hipercinesia:</b> sem anemia que exija intervenção.</div></div>
+<div class="score-row"><div class="score-grade">1,0–1,5 MoM</div><div class="score-desc"><b>Anemia possível ou leve</b> (a apostila: 1,29–1,50 é leve): repetir a cada 1–2 semanas, sem cordocentese.</div></div>
+<div class="score-row"><div class="score-grade">&gt;1,5 MoM</div><div class="score-desc"><b>Anemia moderada ou grave</b> (Ht &lt;30%; detecta todos os casos, com ~12% de falso-positivos): cordocentese e TIU se &lt;34 semanas; parto se &gt;34.</div></div>
+</div>
+</div>
+
+<details class="deep"><summary>Deep dive · Imunologia da sensibilização, FcRn e por que o Doppler substituiu Liley</summary>
+<div class="deep-content">
+<p>O antígeno D é uma proteína transmembrana de 12 domínios, codificada por <i>RHD</i> no cromossomo 1 e ausente em Rh negativo, geralmente por deleção do gene; a variante D fraca expressa o antígeno em baixa densidade e comporta-se como Rh positivo, de modo que a gestante com D fraco não é candidata à profilaxia. Ao contrário do ABO, o sistema Rh quase não produz anticorpos naturais: a imunização vem de transfusão incompatível ou da passagem de hemácias fetais. O limiar de 0,25 mL de sangue fetal, a hemorragia feto-materna em 3%, 12% e 45% nos três trimestres e o pico no parto explicam por que o risco se concentra no pós-parto e por que a profilaxia no 3º trimestre também pesa.</p>
+<p>A primeira exposição estimula linfócitos B a produzir IgM, de 900 kDa e que não atravessa a placenta; a memória imunológica faz com que o segundo contato, mesmo com volumes mínimos, gere IgG anti-D que cruza o sinciciotrofoblasto pelo receptor FcRn (a partir de ~16 semanas). A IgG liga-se às hemácias D positivas, e os macrófagos do baço as fagocitam. O título no Coombs indireto mede risco, não gravidade: há doença grave com títulos baixos e leve com títulos altos, sobretudo após o primeiro filho acometido, por isso a história prevalece sobre o título.</p>
+<p>A anemia fetal aumenta o débito cardíaco e reduz a viscosidade sanguínea, de modo que a velocidade do pico sistólico na ACM sobe; o encéfalo responde à hipóxia antes de outros leitos, e a ACM é fácil de insonar com ângulo próximo de zero. Por isso o PVS-ACM (corte de 1,5 MoM de Mari, 2000) superou a espectrofotometria do líquido amniótico (ΔDO 450 nm, curva de Liley modificada por Robertson), que exigia amniocentese e não detectava com precisão a anemia grave. Na doença hemolítica não há alteração de placentação: Doppler uterino e umbilical são em geral normais, e a hidropisia não se acompanha de redistribuição ao CTG antes da fase terminal, razão pela qual o padrão sinusoidal é tardio.</p>
+</div>
+</details>
+</div>
+</div>
+</section>
+<section id="secundarias">
+<div class="section"><div class="section-eyebrow"><span>D</span> Entidades Secundárias</div><div class="section-title">Perda recorrente, seio marginal, interrupção legal, trauma e anticorpos atípicos</div><div class="section-sub">Completam o diferencial e fecham os compromissos com GO10, GO14, CT02 e EN03. Cada box traz o essencial e o que muda a conduta.</div></div>
+
+<div class="card diag">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">D.1</span> Perda recorrente</div><h3>Abortamento recorrente e incompetência istmocervical <span class="ank ank-dec">DECISION</span></h3></div>
+<div class="card-body">
+<div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Três ou mais perdas consecutivas (0,5% das gestações); o risco na seguinte é de ~30%, ou seja, 70% terão uma gestação bem-sucedida sem tratamento. A causa mais comum é a mesma do abortamento esporádico, <b>aneuploidia</b>. Perdas tardias, repetidas e com dilatação indolor sugerem <b>incompetência istmocervical</b>. <b>O que muda conduta:</b> idade gestacional das perdas, cariótipo, útero e anticorpos antifosfolípides.</div></div>
+<div class="disease">
+<div class="disease-head"><div class="disease-name">Abortamento habitual e insuficiência do colo (cerclagem)</div><div class="disease-tag">CID-10 N96 abortamento habitual · O34.3 incompetência istmocervical <span class="ev ev-sbr">MS GAR 2022</span> <span class="ev ev-expert">Apostila 2025</span></div></div>
+<div class="disease-body"><div class="disease-rows">
+<div class="disease-row"><div class="k">Epidemiologia e causas</div><div class="v">Aneuploidia, translocação balanceada de um dos pais, útero septado e outras malformações, incompetência do colo (10–20% dos abortos tardios de repetição), tireoidopatia, diabetes, SAF, SOP; trombofilia hereditária e insuficiência lútea são questionáveis. Fatores do colo: conização, amputação, dilatações rudes, partos prolongados, exposição intraútero ao dietilestilbestrol.</div></div>
+<div class="disease-row"><div class="k">Diagnóstico</div><div class="v">Cariótipo do casal e do material de perda, USG 3D ou histeroscopia, TSH, glicemia, anticorpos antifosfolípides repetidos em 12 semanas. Colo: dilatação indolor, herniação do saco, encurtamento à USG-TV; fora da gravidez, histerossalpingografia lútea ou vela de Hegar nº 8 sem resistência.</div></div>
+<div class="disease-row"><div class="k">Tratamento</div><div class="v">Por causa: septo (ressecção histeroscópica), SAF (AAS e heparina; RD02, HO03), tireoide e diabetes controlados. <b>Cerclagem</b> (McDonald, com fio inabsorvível) <b>eletiva entre 12 e 16 semanas</b> (de preferência com &lt;3 cm de dilatação e sem herniação); de urgência até 26 semanas (MS) ou 24 (apostila), com mais risco e sem consenso de uterolíticos. O MS não recomenda antibiótico, uterolítico nem anti-D de rotina, nem repouso absoluto; progesterona é controversa. Remover os pontos com 36–37 semanas, ou antes se trabalho de parto, rotura, infecção ou óbito fetal. Contraindicações: dilatação &gt;4 cm, infecção, RPM, atividade uterina, malformação incompatível com a vida, IG &gt;24 semanas <span class="ev ev-sbr">MS GAR 2022</span>.</div></div>
+<div class="disease-row"><div class="k">O que muda conduta</div><div class="v">Duas ou mais perdas do 2º trimestre com dilatação indolor → cerclagem eletiva na gestação seguinte. Perdas no 1º trimestre com SAF → anticoagulação. Perda isolada → sem investigação, a menos que seja tardia ou haja risco.</div></div>
+</div></div></div>
+</div>
+</div>
+
+<div class="card diag">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">D.2</span> Seio marginal e outras</div><h3>Rotura do seio marginal e causas não placentárias de sangramento anteparto <span class="ank ank-hy">HIGH-YIELD</span></h3></div>
+<div class="card-body">
+<div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Pequenas roturas do seio marginal (bordo do espaço interviloso) dão <b>sangramento periparto, indolor, vermelho vivo, de pequena monta, com placenta normoposicionada, tônus e BCF normais</b>. É diagnóstico de exclusão, confirmado só pela histologia, e uma das principais causas de sangramento na gravidez avançada. <b>O que muda conduta:</b> estável, observar com monitorização; qualquer sinal fetal ou instabilidade, reavaliar para DPP, vasa e prévia.</div></div>
+<div class="disease">
+<div class="disease-head"><div class="disease-name">Seio marginal, pólipo, ectrópio, cervicite e outras hemorragias anteparto</div><div class="disease-tag">CID-10 O46.8 outra hemorragia anteparto · O46.9 hemorragia anteparto não especificada <span class="ev ev-sbr">MS GAR 2022</span> <span class="ev ev-expert">Apostila 2025</span></div></div>
+<div class="disease-body"><div class="disease-rows">
+<div class="disease-row"><div class="k">Epidemiologia e fisiopatologia</div><div class="v">A origem é materna; o seio marginal rompe-se por descolamento da borda placentária com pequeno volume, e a doença cervical (pólipo, ectrópio sangrante, cervicite, neoplasia) sangra após coito ou exame. O sangramento é externo e não compromete a oxigenação fetal.</div></div>
+<div class="disease-row"><div class="k">Diagnóstico</div><div class="v">Exame especular sem toque e USG para descartar prévia; BCF e CTG normais; histologia da placenta confirma o seio marginal. Tipagem e hemograma. A citologia e a colposcopia cabem fora da urgência.</div></div>
+<div class="disease-row"><div class="k">Tratamento</div><div class="v">Monitorização materno-fetal e observação do sangramento; tratar a causa cervical; anti-D se Rh negativa e houve sangramento significativo (MS: em situações indicadas). Sem tratamento específico para o seio marginal.</div></div>
+<div class="disease-row"><div class="k">O que muda conduta</div><div class="v">Dor, hipertonia ou BCF alterado → DPP até prova em contrário. Rotura de membranas com sangramento fetal → vasa. Sangramento repetido com USG normal → colposcopia e investigação cervical.</div></div>
+</div></div></div>
+<div class="sub-title">Diagnóstico diferencial dos sangramentos da 2ª metade</div>
+<div class="stbl stbl-3">
+<div class="stbl-head stbl-3"><div>Entidade</div><div>Sangue, dor e útero</div><div>Feto e coagulação</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Entidade">Placenta prévia</div><div class="col" data-l="Sangue, dor e útero">Vermelho vivo, indolor, útero normotenso, recorrente</div><div class="col" data-l="Feto e coagulação">BCF preservado; coagulopatia rara</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Entidade">DPP</div><div class="col" data-l="Sangue, dor e útero">Escuro (ou oculto), dor, hipertonia, bolsa tensa</div><div class="col" data-l="Feto e coagulação">Sofrimento ou óbito; CIVD</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Entidade">Rotura uterina</div><div class="col" data-l="Sangue, dor e útero">Dor lancinante, parada das contrações, subida da apresentação</div><div class="col" data-l="Feto e coagulação">BCF ausente; choque</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Entidade">Vasa prévia</div><div class="col" data-l="Sangue, dor e útero">Sangue com a rotura de membranas, mãe estável</div><div class="col" data-l="Feto e coagulação">Bradicardia, sinusoidal, exsanguinação</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Entidade">Seio marginal</div><div class="col" data-l="Sangue, dor e útero">Pequeno, vermelho vivo, indolor</div><div class="col" data-l="Feto e coagulação">Normais</div></div>
+</div>
+</div>
+</div>
+
+<div class="card diag">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">D.3</span> Interrupção legal</div><h3>Interrupção voluntária no Brasil: risco de vida, estupro e anencefalia <span class="ank ank-hy">HIGH-YIELD</span></h3></div>
+<div class="card-body">
+<div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">O abortamento é permitido no Brasil em três situações: <b>risco à vida da gestante, gravidez decorrente de violência sexual e anencefalia fetal</b>. Não exige boletim de ocorrência nem autorização judicial; a técnica é a mesma do abortamento espontâneo (C.1). <b>O que muda conduta:</b> consentimento, idade da paciente e objeção de consciência com encaminhamento.</div></div>
+<div class="disease">
+<div class="disease-head"><div class="disease-name">Abortamento previsto em lei (art. 128 do Código Penal e ADPF 54)</div><div class="disease-tag">CID-10 O04 aborto por razões médicas e legais · O04.9 sem complicação <span class="ev ev-expert">Apostila 2025 · conferir norma vigente</span></div></div>
+<div class="disease-body"><div class="disease-rows">
+<div class="disease-row"><div class="k">Situações</div><div class="v"><b>Terapêutico:</b> doença grave com risco de vida, com anuência escrita de dois médicos e notificação à comissão de ética. <b>Violência sexual:</b> a paciente informa a violência e solicita, em formulário, sem exigência de boletim e sem comunicar a polícia sem o seu consentimento. <b>Anencefalia:</b> descriminalizada pelo STF em 2012 (ADPF 54); a Resolução CFM 1.989/2012 pede USG a partir de 12 semanas, duas fotos datadas e laudo de dois médicos; a gestante pode manter ou interromper a qualquer momento.</div></div>
+<div class="disease-row"><div class="k">Consentimento e limite</div><div class="v">≥18 anos consentem sozinhas; 16–18 são assistidas e &lt;16, representadas; exceção: risco iminente de vida sem consciência. O médico pode alegar objeção de consciência se encaminhar a outro serviço. O limite de idade gestacional é controverso (documentos do MS falam em 20–22 semanas; juridicamente, não há limite expresso); na anencefalia, não há limite.</div></div>
+<div class="disease-row"><div class="k">Técnica</div><div class="v">As do abortamento espontâneo: AMIU até 12 semanas, misoprostol por idade gestacional (score do C.1), esvaziamento complementar. Rh negativa: anti-D. Acolhimento, contracepção e profilaxia de IST pós-violência nos serviços de referência, fora do escopo deste HP.</div></div>
+<div class="disease-row"><div class="k">O que muda conduta</div><div class="v">Violência sexual → sem autorização judicial, sem BO, com formulário e consentimento. Anencefalia → diagnóstico conforme a resolução do CFM. Risco de vida → dois médicos e comissão de ética.</div></div>
+</div></div></div>
+</div>
+</div>
+
+<div class="card diag">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">D.4</span> Gestante traumatizada</div><h3>Gestante traumatizada: DPP traumático, Kleihauer-Betke e anti-D <span class="ank ank-dgr">DANGER</span></h3></div>
+<div class="card-body">
+<div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Tratar a mãe é a melhor forma de tratar o feto: o xABCDE é o mesmo, com deslocamento uterino à esquerda e obstetra desde o início (CT02 D.6, ATLS 11 cap. 13). O DPP complica até 40% dos traumas graves e pode vir com mecanismo mínimo. <b>Contração é o sinal mais sensível;</b> ultrassom, Kleihauer e CTG têm papéis diferentes. <b>O que muda conduta:</b> idade gestacional (≥20 semanas, útero na altura da cicatriz umbilical, ATLS; CT02: ~18–20 sem, exige monitorização), contração, sangramento, Rh e instabilidade materna.</div></div>
+<div class="disease">
+<div class="disease-head"><div class="disease-name">Descolamento traumático e hemorragia feto-materna na gestante traumatizada</div><div class="disease-tag">CID-10 O26.8 outras afecções relacionadas à gravidez · T14.9 traumatismo não especificado (sem código nominal) <span class="ev ev-acr">ATLS 11 · p. 216–217</span> <span class="ev ev-sbr">MS GAR 2022</span></div></div>
+<div class="disease-body"><div class="disease-rows">
+<div class="disease-row"><div class="k">Fisiopatologia</div><div class="v">O útero é complacente e a placenta é rígida: forças de aceleração-desaceleração causam falha da interface uteroplacentária por cisalhamento ou por tração (contra-golpe). O DPP apresenta-se em até 6 h na maioria, com relatos de até 24 h, e pode ser oculto. O dano à placenta abre passagem de hemácias fetais à circulação materna: hemorragia feto-materna, que sensibiliza a Rh negativa se o feto é Rh positivo (risco de 3–20% em estudo citado pelo ATLS 11).</div></div>
+<div class="disease-row"><div class="k">Diagnóstico</div><div class="v">Clínico e por monitorização: tríade contração, sangramento e dor; hipotensão sem fonte lembra DPP. <b>Cardiotocografia e tococardiografia por 6 h</b> (4–6 h no mínimo), estendida a 24 h se &gt;6 contrações/h; DPP não foi descrito quando as contrações são menos frequentes que a cada 10 min nas 4 primeiras horas. <b>Ultrassom</b> pouco sensível (24% em um estudo); TC melhor (sensibilidade de 100% e especificidade de 54–56%). <b>Kleihauer-Betke não prediz DPP nem hemorragia feto-materna de modo confiável</b>: serve para quantificar a dose de anti-D. Laboratório: hemograma, fibrinogênio, coagulograma e tipagem (que dá o Rh).</div></div>
+<div class="disease-row"><div class="k">Tratamento</div><div class="v">Ressuscitação e deslocamento uterino à esquerda; sangue precoce, sem vasopressor de rotina (reduz o fluxo uterino). <b>Rh negativa: anti-D 300 µg IM em até 72 h para toda gestante traumatizada, mesmo com Kleihauer negativo ou sem o teste</b> (cobre ≤30 mL de sangue total fetal). Se o teste mostra mais, <b>dose adicional: (% de hemácias fetais × 50) ÷ 30 = frascos de 300 µg</b>, arredondando se a fração for ≥0,5 e somando 1 frasco de margem (volemia materna de 5 L; BJH 2025, PMC12436229); decisão do obstetra e do banco de sangue. No choque hemorrágico, o benefício do sangue total O positivo de baixo título supera o risco de sensibilização. Parada materna: cesariana de reanimação se útero ao nível do umbigo ou acima e sem retorno da circulação em 5 min (CT02).</div></div>
+<div class="disease-row"><div class="k">O que muda conduta</div><div class="v">Contração, sangramento ou dor → DPP até prova em contrário e obstetra. ≥22 semanas viáveis → neonatologia. Rh negativa → anti-D. Observar mesmo trauma mínimo. Coleta do Kleihauer antes do anti-D. Remissão: HPP e CTG → GO14; trauma abdominal e FAST → CT02.</div></div>
+</div></div></div>
+</div>
+</div>
+
+<div class="card diag">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">D.5</span> Anticorpos atípicos e ABO</div><h3>Aloimunização por anticorpos irregulares (Kell, Duffy, Kidd) e incompatibilidade ABO <span class="ank ank-hy">HIGH-YIELD</span></h3></div>
+<div class="card-body">
+<div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Os antígenos fora de ABO e Rh causam ~2% das DHPN, quase sempre após <b>transfusão prévia</b>; Kell, Duffy e Kidd são os mais frequentes, e a gestante com anticorpo irregular significativo é conduzida como a anti-D. A <b>incompatibilidade ABO</b> (mãe O, feto A ou B) é comum já na 1ª gestação (40–50%), em geral branda, com Coombs direto negativo ou fraco. <b>O que muda conduta:</b> pesquisa de anticorpos irregulares e titulação.</div></div>
+<div class="disease">
+<div class="disease-head"><div class="disease-name">Anti-Kell, anti-Duffy, anti-Kidd, anti-M/N, anti-C/c/E/e e doença hemolítica por ABO</div><div class="disease-tag">CID-10 O36.1 assistência por outras isoimunizações <span class="ev ev-sbr">MS GAR 2022</span> <span class="ev ev-expert">Apostila 2025</span></div></div>
+<div class="disease-body"><div class="disease-rows">
+<div class="disease-row"><div class="k">Epidemiologia e fisiopatologia</div><div class="v">Anti-C é a segunda causa clinicamente relevante dentro do sistema Rh. A maioria dos antígenos atípicos não causa doença grave, mas anti-Kell, anti-Duffy, anti-M e anti-N podem. Os anticorpos de ABO são naturais e IgM; a doença é causada pelos IgG anti-A e anti-B da mãe O, e a gravidade não aumenta nas gestações seguintes.</div></div>
+<div class="disease-row"><div class="k">Diagnóstico</div><div class="v">Pesquisa de anticorpos irregulares (Coombs indireto ampliado) em toda gestante com transfusão, abortamento provocado, filhos anteriores ictéricos, natimortos ou hidrópicos sem causa, e, para alguns autores, de rotina. Titular e acompanhar como o anti-D. Na ABO: Coombs direto do RN fraco ou negativo, esferócitos, icterícia precoce.</div></div>
+<div class="disease-row"><div class="k">Tratamento</div><div class="v">Anticorpo irregular significativo: Doppler da ACM e referência a medicina fetal; o título crítico do anti-Kell é mais baixo que o do anti-D (fórmula usual, com volemia materna ~5 L; conferir protocolo do banco de sangue). Não há profilaxia específica. ABO: sem conduta pré-natal; RN com fototerapia, e raramente exsanguineotransfusão (PD02).</div></div>
+<div class="disease-row"><div class="k">O que muda conduta</div><div class="v">Anticorpo irregular com título significativo → seguir o fluxo do C.11. Transfusão em mulher em idade fértil → fenotipagem e sangue compatível em Kell e Rh (HO02, HO06). RN de mãe O com icterícia nas primeiras 24 h → PD02.</div></div>
+</div></div></div>
+</div>
+</div>
+</section>
+<section id="algoritmo">
+<div class="section"><div class="section-eyebrow"><span>E</span> Algoritmo</div><div class="section-title">Do sangramento ao diagnóstico, da segunda metade ao parto, da Rh negativa à profilaxia</div><div class="section-sub">Três árvores e um raciocínio narrado. Cada ponta termina em exame ou conduta com número; as doses são as de C e F.</div></div>
+
+<div class="card prim">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">E.1</span> Algoritmo</div><h3>1º trimestre: gestante com β-hCG positivo e sangramento ou dor <span class="ank ank-dec">DECISION</span></h3></div>
+<div class="card-body">
+<div class="algo"><div class="tree">
+<div class="tree-line"><span class="tree-node start">β-hCG positivo com sangramento ou dor pélvica no 1º trimestre</span></div>
+<div class="tree-branch">
+<div class="tree-label yes">Instável (hipotensão, síncope, peritonismo, líquido livre)</div>
+<div class="tree-line"><span class="tree-node dgr">→ Acessos, sangue, laparotomia com salpingectomia; anti-D se Rh negativa</span></div>
+</div>
+<div class="tree-branch">
+<div class="tree-label no">Estável: USG transvaginal e β-hCG quantitativo</div>
+<div class="tree-line"><span class="tree-node dec">Há saco gestacional intrauterino?</span></div>
+<div class="tree-branch">
+<div class="tree-label yes">Sim, com embrião e BCE</div>
+<div class="tree-line"><span class="tree-node dx">Ameaça de abortamento (colo fechado): repouso relativo, sem tratamento que evite a perda; heterotópica rara</span></div>
+</div>
+<div class="tree-branch">
+<div class="tree-label yes">Sim, inviável (CCN ≥7 mm sem BCE, saco ≥25 mm vazio) ou material parcial</div>
+<div class="tree-line"><span class="tree-node action">→ Retido: AMIU, ou misoprostol 800 µg vaginal 3/3 h por 2 doses, ou 600 µg sublingual 3/3 h por 2 doses; incompleto: AMIU, ou 600 µg VO dose única, ou 400 µg sublingual, ou 400–800 µg vaginal, dose única; expectante informado; anti-D se Rh negativa</span></div>
+</div>
+<div class="tree-branch">
+<div class="tree-label yes">Sim, vesículas ou "tempestade de neve", β-hCG muito alto</div>
+<div class="tree-line"><span class="tree-node action">→ Mola: vacuoaspiração, histologia, β-hCG semanal (C.4)</span></div>
+</div>
+<div class="tree-branch">
+<div class="tree-label no">Não (útero vazio)</div>
+<div class="tree-line"><span class="tree-node dec">β-hCG acima da zona discriminatória (3.500 mUI/mL no MS; 1.500 na apostila)?</span></div>
+<div class="tree-branch"><div class="tree-label yes">Sim, ou massa anexial com anel tubário</div><div class="tree-line"><span class="tree-node dx">Ectópica ou abortamento completo: massa &lt;3,5 cm, β-hCG &lt;5.000, sem BCE → metotrexato 50 mg/m² IM; β-hCG &lt;2.000 em queda → expectante; senão laparoscopia</span></div></div>
+<div class="tree-branch"><div class="tree-label no">Não: gravidez de localização desconhecida</div><div class="tree-line"><span class="tree-node action">→ β-hCG em 48 h com USG; queda ≥25%: abortamento; subida abaixo do esperado (&lt;49%, &lt;40%, &lt;33% conforme o nível): ectópica ou inviável; retorno imediato se dor</span></div></div>
+</div>
+</div>
+</div></div>
+</div>
+</div>
+
+<div class="card prim">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">E.2</span> Algoritmo</div><h3>2ª metade: sangramento vaginal em gestação ≥20 semanas <span class="ank ank-dgr">DANGER</span></h3></div>
+<div class="card-body">
+<div class="algo"><div class="tree">
+<div class="tree-line"><span class="tree-node start">Sangramento vaginal após 20 semanas: acessos, tipagem, hemograma, coagulograma, BCF e sinais vitais</span></div>
+<div class="tree-branch">
+<div class="tree-label yes">Dor, hipertonia, sangue escuro, hipertensão, trauma ou cocaína</div>
+<div class="tree-line"><span class="tree-node dgr">→ DPP: cristaloide 1.000 mL, amniotomia; BCE com sofrimento ≥24–26 sem: cesárea; óbito fetal ou &lt;24 sem estável: vaginal; corrigir fibrinogênio</span></div>
+</div>
+<div class="tree-branch">
+<div class="tree-label yes">Dor lancinante, cicatriz uterina, parada das contrações, subida da apresentação</div>
+<div class="tree-line"><span class="tree-node dgr">→ Rotura uterina: laparotomia (rafia ou histerectomia)</span></div>
+</div>
+<div class="tree-branch">
+<div class="tree-label yes">Rotura de membranas, sangramento, bradicardia fetal</div>
+<div class="tree-line"><span class="tree-node dgr">→ Vasa prévia: cesárea de emergência, sem clampeamento tardio</span></div>
+</div>
+<div class="tree-branch">
+<div class="tree-label no">Indolor, vermelho vivo, útero normotenso: sem toque, USG transvaginal</div>
+<div class="tree-line"><span class="tree-node dec">Placenta cobre ou chega a ≤2 cm do orifício interno?</span></div>
+<div class="tree-branch">
+<div class="tree-label yes">Sim, com cesárea anterior</div>
+<div class="tree-line"><span class="tree-node dx">Acretismo provável: Doppler e RM; parto 35–36+6 semanas em terciário com histerectomia planejada</span></div>
+</div>
+<div class="tree-branch">
+<div class="tree-label yes">Sim, sem acretismo</div>
+<div class="tree-line"><span class="tree-node action">→ Pré-termo estável: expectante, betametasona se &lt;34 semanas, parto aos 36; hemorragia grave: cesárea já; marginal: vaginal possível</span></div>
+</div>
+<div class="tree-branch">
+<div class="tree-label no">Não</div>
+<div class="tree-line"><span class="tree-node action">→ Seio marginal ou lesão cervical: especular, observação e monitorização; anti-D se Rh negativa</span></div>
+</div>
+</div>
+</div></div>
+</div>
+</div>
+
+<div class="card prim">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">E.3</span> Algoritmo</div><h3>Gestante Rh negativa: da tipagem à profilaxia ou ao Doppler da ACM <span class="ank ank-dec">DECISION</span></h3></div>
+<div class="card-body">
+<div class="algo"><div class="tree">
+<div class="tree-line"><span class="tree-node start">Gestante com ABO, Rh e Coombs indireto na 1ª consulta (D fraco conta como Rh positivo)</span></div>
+<div class="tree-branch">
+<div class="tree-label no">Coombs indireto negativo (não sensibilizada)</div>
+<div class="tree-line"><span class="tree-node action">→ Anti-D 300 µg IM com 28 semanas, em até 72 h de cada evento de risco e do parto de RN Rh positivo; repetir o Coombs apenas se o serviço seguir a rotina mensal</span></div>
+</div>
+<div class="tree-branch">
+<div class="tree-label yes">Coombs indireto positivo</div>
+<div class="tree-line"><span class="tree-node dec">Anticorpo identificado e titulado; título ≥1:16 ou filho anterior grave?</span></div>
+<div class="tree-branch">
+<div class="tree-label no">Não (≤1:8, primeira sensibilização)</div>
+<div class="tree-line"><span class="tree-node dx">Repetir mensalmente (2 semanas se subir ≥2 diluições); Doppler se ≥1:16</span></div>
+</div>
+<div class="tree-branch">
+<div class="tree-label yes">Sim</div>
+<div class="tree-line"><span class="tree-node dec">Doppler da ACM a cada 1–2 semanas desde 16–18 semanas: PVS &gt;1,5 MoM?</span></div>
+<div class="tree-branch"><div class="tree-label yes">&gt;34 semanas</div><div class="tree-line"><span class="tree-node action">→ Parto imediato; RN no PD02</span></div></div>
+<div class="tree-branch"><div class="tree-label yes">&lt;34 semanas</div><div class="tree-line"><span class="tree-node dgr">→ Cordocentese; Ht &lt;30% ou hidropisia: transfusão intrauterina (O Rh negativo, irradiado)</span></div></div>
+<div class="tree-branch"><div class="tree-label no">Não</div><div class="tree-line"><span class="tree-node action">→ Seguir até o termo; parto vaginal possível se leve</span></div></div>
+</div>
+</div>
+</div></div>
+</div>
+</div>
+
+<div class="card prim">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">E.4</span> Raciocínio narrado</div><h3>Raciocínio em sete passos diante de uma gestante que sangra <span class="ank ank-dec">DECISION</span></h3></div>
+<div class="card-body">
+<div class="box decision"><span class="box-label">DECISION</span><div class="box-title">Sequência mental, sem etapa pulada</div><div class="box-body"><ol>
+<li><b>Primeiro pergunte pela estabilidade,</b> não pela causa. Hipotensão, síncope ou taquicardia com perda vaginal discreta é hemoperitônio (1º trimestre) ou DPP oculto (2ª metade), e ambos pedem acesso, sangue e sala cirúrgica antes da imagem.</li>
+<li><b>Em seguida, a idade gestacional:</b> antes de 20 semanas, pense em abortamento, ectópica e mola; depois, em placenta, útero e cordão. O limite de 20–22 semanas separa os dois mundos e muda a pergunta sobre o feto.</li>
+<li><b>Peça o Rh e a tipagem em todos os casos.</b> Esse resultado independe do diagnóstico e decide a imunoprofilaxia, que tem prazo de 72 h.</li>
+<li><b>Localize antes de tratar:</b> β-hCG com USG-TV no 1º trimestre; USG-TV (segura) na 2ª metade. O toque vaginal só depois de a placenta e a vasa estarem excluídas.</li>
+<li><b>Dor com hipertonia isola o DPP; sangue vivo sem dor, a prévia.</b> A dor súbita em útero cicatrizado é rotura, e o sangramento fetal após a rotura de bolsa é vasa.</li>
+<li><b>Estime a coagulação</b> com fibrinogênio e plaquetas, ou com o teste do coágulo. Coagulopatia desloca a ordem: repor antes de operar, salvo hemorragia incontrolável.</li>
+<li><b>Por fim, escolha o desfecho pelo feto e pela mãe:</b> vitalidade fetal e IG decidem entre expectação e parto; o escore e a curva do β-hCG decidem no 1º trimestre; e o Doppler da ACM, a transfusão intrauterina na Rh sensibilizada.</li>
+</ol></div></div>
+</div>
+</div>
+</section>
+<section id="tratamento">
+<div class="section"><div class="section-eyebrow"><span>F</span> Tratamento Integrado</div><div class="section-title">F1 · Estratégia por entidade · F2 · Doses · F3 · Casos · F4 · Disponibilidade no Brasil · F5 · Seguimento</div><div class="section-sub">Padrão brasileiro: Manual de Gestação de Alto Risco do MS (2022) e ATLS 11. Divergências da apostila, da OMS e das sociedades internacionais vêm ao lado, rotuladas. Doses de fontes não lidas hoje levam "conferir". Mesma dose, mesmo texto em todo o HP.</div></div>
+
+<div class="card tx">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">F.1</span> Estratégia</div><h3>Escada terapêutica por entidade <span class="ank ank-dec">DECISION</span></h3></div>
+<div class="card-body">
+
+<div class="sub-title">F1.1 · Abortamento, abortamento infectado e perda recorrente (C.1, C.2, D.1)</div>
+<ul class="bullets">
+<li><b>Todas:</b> tipagem ABO e Rh, hemograma, USG-TV; excluir ectópica e mola; acolhimento e escolha informada. Rh negativa não sensibilizada: <b>anti-D 300 µg IM</b> (MS: qualquer idade gestacional; a apostila cita 50 µg &lt;12 semanas em alguns autores, e RCOG/ACOG só na ameaça com sangramento volumoso ou &gt;12 semanas: conferir; o padrão é o do MS).</li>
+<li><b>Expectante</b> (estável, sem infecção): aguardar ~2 semanas, revisar a cada 1–2; mudar se infecção, hemorragia ou nada em 4 semanas (CIVD ~10% com 4 semanas). <b>Medicamentoso:</b> misoprostol, regimes do score do C.1, em hospital; analgesia. <b>Cirúrgico:</b> hemorragia, instabilidade, infecção, comorbidade; AMIU até 12 semanas; curetagem se AMIU indisponível ou &gt;12 semanas, depois de expulsão induzida.</li>
+<li><b>Mais de 12 semanas:</b> expulsão com misoprostol (13–26 semanas: 200 µg VV/VSL a cada 4–6 h na morte fetal, 200 µg a cada 6 h no inevitável) ou ocitocina, depois esvaziamento. Cesárea prévia: doses menores, balão (Krause), ocitocina ou microcesariana; a apostila admite 200 µg VV 6/6 h com monitorização, e a OMS 2025 recomenda fortemente contra misoprostol para indução do parto com cesárea prévia (conferir aplicabilidade ao 2º trimestre).</li>
+<li><b>Infectado:</b> cristaloide 30 mL/kg, antibiótico IV amplo, esvaziar logo depois da 1ª dose, UTI se qSOFA ≥2; histerectomia se mionecrose, perfuração, abscesso, hemorragia ou falha em 48 h.</li>
+<li><b>Recorrente e IIC:</b> tratar a causa; cerclagem eletiva de 12–16 semanas; sem repouso absoluto (D.1).</li>
+</ul>
+<div class="box danger"><span class="box-label">DANGER</span><div class="box-title">Perfuração uterina na curetagem</div><div class="box-body">Pare o procedimento; ocitocina IV e observação. Laparotomia só com peritonismo (alça comprometida) ou instabilidade. Nova curetagem, só com visão laparoscópica ou guia ultrassonográfico.</div></div>
+
+<div class="sub-title">F1.2 · Gestação ectópica (C.3)</div>
+<ul class="bullets">
+<li><b>Instável ou rota:</b> laparotomia, salpingectomia (preservando o interstício). <b>Estável sem rotura:</b> laparoscopia preferencial.</li>
+<li><b>Metotrexato</b> (critérios de C.3): <b>50 mg/m² IM em dose única</b>, com β-hCG nos dias 4 e 7; queda ≥15% acompanha semanal até negativar; repetir se queda &lt;15% no D7; sem queda dos títulos, cirurgia (MS). Alternativa: <b>1 mg/kg IM nos dias 1, 3, 5 e 7 com folinato de cálcio 0,1 mg/kg IM nos dias 2, 4, 6 e 8</b> (ou ácido folínico 15 mg VO), no máximo 4 doses, usada em β-hCG alto e localizações atípicas.</li>
+<li><b>Expectante:</b> β-hCG &lt;2.000 mUI/mL e em queda em 24–48 h, massa &lt;5 cm sem BCE, desejo de gestar e retorno garantido. A apostila usa β-hCG de 1.000–1.500 inicial.</li>
+<li><b>Não tubárias:</b> sistêmico se sem BCE (dose única se β-hCG &lt;5.000; múltiplas doses se maior); local com 1 mg/kg no saco se embrião vivo; ovariana e abdominal, cirurgia (MS). Rh negativa: anti-D.</li>
+</ul>
+<div class="box decision"><span class="box-label">DECISION</span><div class="box-title">Cirurgia conservadora ou salpingectomia</div><div class="box-body">Salpingectomia é a melhor cirurgia com a tuba contralateral sã (menos complicações e a mesma fertilidade futura). Salpingostomia linear quando a contralateral está doente ou a paciente quer gestar com tuba íntegra e massa ampular pequena; ressecção segmentar no istmo. A persistência de trofoblasto (3–20%) obriga ao β-hCG semanal pós-operatório.</div></div>
+
+<div class="sub-title">F1.3 · Mola e neoplasia trofoblástica (C.4, C.5)</div>
+<ul class="bullets">
+<li><b>Pré-esvaziamento:</b> hCG, hemograma, tipagem, coagulograma, função hepática e renal, RX de tórax; TSH e T4 livre e ECG se útero ≥16 cm; reserva de 2 concentrados.</li>
+<li><b>Tireotoxicose:</b> <b>propranolol 40 mg VO 12/12 h</b> antes e depois do esvaziamento; antitireoidiano (propiltiouracil 300 mg de ataque e 100 mg 8/8 h, ou metimazol 5–20 mg 8/8 h) se risco de crise, com endocrinologia (EN03 para a crise).</li>
+<li><b>Esvaziamento:</b> vacuoaspiração ou AMIU (cânula nº 8 geralmente basta), ocitocina IV ao introduzir a cânula (MS 4.5.3.2); histerometria indireta; USG guia se &gt;20 cm. Misoprostol só amadurece o colo (≤400 µg, ≤3 h antes). Sem expulsão medicamentosa. Histerectomia com a mola in situ se &gt;40 anos e prole completa.</li>
+<li><b>Seguimento:</b> β-hCG semanal ou quinzenal até 3 valores &lt;5 mUI/mL, depois mensal; contracepção hormonal combinada, sem DIU.</li>
+<li><b>NTG:</b> escore ≤6, monoquimioterapia (metotrexato: MS sem dose; esquema internacional de 50 mg IM nos dias 1, 3, 5 e 7 com ácido folínico 15 mg VO nos dias 2, 4, 6 e 8, IJGO 2025; dactinomicina indisponível no Brasil); ≥7, EMA-CO; ≥12, indução com etoposídeo e cisplatina. TTSP e TTE, histerectomia. Gestar só 12 meses após β-hCG normal.</li>
+</ul>
+
+<div class="sub-title">F1.4 · Imunoprofilaxia anti-D e aloimunização (C.11, D.4, D.5)</div>
+<ul class="bullets">
+<li><b>Dose:</b> <b>imunoglobulina anti-D 300 µg IM</b> (1.500 UI), neutraliza ~30 mL de sangue total fetal (15 mL de hemácias). Falha de 1,5% e sem consenso sobre a dose ótima; no Brasil, ampolas de 250 e 300 µg (MS).</li>
+<li><b>Quando (Rh negativa, Coombs indireto negativo, feto Rh positivo ou desconhecido):</b> 28 semanas; ≤72 h após parto de RN Rh positivo; ≤72 h após sangramento vaginal, abortamento, ectópica, mola, procedimento invasivo, cirurgia fetal, óbito fetal, versão externa e trauma abdominal (MS). Eficácia relatada até 28 dias depois (apostila).</li>
+<li><b>Divergência rotulada:</b> a OMS 2025 recomenda a profilaxia antenatal de 28 e 34 semanas só no contexto de pesquisa, e mantém a pós-parto; o padrão brasileiro é o do MS (28 semanas, onde há imunoglobulina). A apostila reconhece que a dose de 28 semanas não é oferecida na maioria dos serviços, que mantêm o Coombs mensal.</li>
+<li><b>Após o anti-D, o Coombs indireto fica positivo</b> (títulos ≤1:4, às vezes 1:8, por 8–12 semanas); não é sensibilização, e não impede dose pós-parto. Parto em ≤3 semanas da dose de 28 semanas dispensa outra dose, segundo a apostila.</li>
+<li><b>Dose adicional:</b> ~1% das Rh negativas recebem &gt;30 mL de sangue fetal no parto. Kleihauer ou citometria: frascos = (% de hemácias fetais × 50) ÷ 30, arredondados se a fração for ≥0,5, mais 1 de margem (volemia materna de 5 L; BJH 2025, PMC12436229).</li>
+<li><b>Sensibilizada:</b> não há profilaxia; Doppler da ACM, cordocentese e TIU (C.11).</li>
+</ul>
+
+<div class="sub-title">F1.5 · Segunda metade da gestação (C.6 a C.10)</div>
+<ul class="bullets">
+<li><b>Prévia:</b> sangramento ativo, acessos, diurese e sangue; Hb &lt;8, transfundir; &lt;34 semanas, betametasona 12 mg IM 24/24 h, 2 doses; tocólise não tem evidência (MS); parto aos 36 semanas; hemorragia grave, cesariana. Misoprostol contraindicado.</li>
+<li><b>DPP:</b> cristaloide 1.000 mL (500 mL em 10 min), diurese &gt;30 mL/h, 4 concentrados reservados, amniotomia; feto vivo, parto imediato (cesariana se &gt;20 min); óbito fetal com mãe estável, vaginal em 4–6 h; fibrinogênio, plaquetas e plasma pela coagulopatia (HO03, GO14); atonia: GO14.</li>
+<li><b>Acretismo:</b> parto programado em terciário, 35–36+6 semanas; cesárea-histerectomia com a placenta in situ; oclusão ilíaca ou embolização se houver; tamponamento pélvico por 48 h; protocolo de transfusão maciça (GO14, CT01).</li>
+<li><b>Rotura uterina:</b> cesariana ou laparotomia imediata; rafia em 2 planos ou histerectomia sem anexectomia.</li>
+<li><b>Vasa prévia:</b> corticoide 28–32 semanas; norma geral do MS: internação com 34 semanas e cesárea com 36; faixas alternativas: internação 30–34, cesariana eletiva 34–37; intraparto, cesariana de urgência sem clampeamento tardio.</li>
+</ul>
+<div class="box decision"><span class="box-label">DECISION</span><div class="box-title">Via de parto na placenta prévia</div><div class="box-body"><ul><li><b>Total ou parcial:</b> cesariana (exceção: parcial em multípara com sangramento discreto e parto quase concluído, segundo a apostila). <b>Marginal ou baixa com cefálico insinuado:</b> vaginal possível com amniotomia precoce (Puzos) e vigilância contínua; quase sempre cesariana.</li><li><b>Hemorragia grave em qualquer tipo:</b> cesariana imediata, com sangue disponível; a incisão uterina decide-se com o abdome aberto, vendo o segmento inferior.</li></ul></div></div>
+
+<div class="sub-title">F1.6 · Gestante traumatizada (D.4)</div>
+<ul class="bullets">
+<li><b>Todas ≥20 semanas</b> (útero na altura da cicatriz umbilical, ATLS; CT02: ~18–20 sem): deslocamento uterino à esquerda, monitorização por 6 h (24 h se &gt;6 contrações/h), obstetra precoce, laboratório com fibrinogênio e tipagem; sem vasopressor de rotina; sangue precoce.</li>
+<li><b>Rh negativa:</b> anti-D 300 µg IM em até 72 h, com ou sem Kleihauer; dose adicional pelo teste (F1.4). Coletar a amostra do teste antes da imunoglobulina.</li>
+<li><b>DPP traumático:</b> mesmo tratamento do C.7; parada materna: cesariana de reanimação após 5 min sem circulação se útero ao nível do umbigo (CT02).</li>
+</ul>
+</div>
+</div>
+
+<div class="card tx">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">F.2</span> Doses Operacionais</div><h3>Tabela de doses — sangramento gestacional, DTG e aloimunização</h3></div>
+<div class="card-body">
+<div class="stbl stbl-3">
+<div class="stbl-head stbl-3"><div>Fármaco</div><div>Dose adulto</div><div>Indicação / notas</div></div>
+
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Misoprostol (esvaziamento &lt;13 semanas)</div><div class="col" data-l="Dose"><b>Retido: 800 µg vaginal 3/3 h, 2 doses, ou 600 µg sublingual 3/3 h, 2 doses.</b> Incompleto: 600 µg VO, dose única, ou 400 µg sublingual, ou 400–800 µg vaginal, dose única (FIGO 2017 via MS)</div><div class="col" data-l="Indicação">Abortamento retido ou incompleto. Uso hospitalar no Brasil; analgesia; evitar a via vaginal com hemorragia ou infecção. Apostila: 800 µg VV 12/12 h, 3 doses (divergente). Contra: ectópica, DTG, DIU, risco de rotura.</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Misoprostol (13–26 semanas)</div><div class="col" data-l="Dose"><b>Morte fetal: 200 µg vaginal ou sublingual a cada 4–6 h. Inevitável: 200 µg a cada 6 h. Interrupção: 400 µg a cada 3 h até 24 semanas; 200 µg a cada 4 h aos 25–26.</b> Preparo cervical de 13–19 semanas: 400 µg vaginal 3–4 h antes da cirurgia</div><div class="col" data-l="Indicação">Expulsão antes do esvaziamento. Apostila: 200 µg 6/6 h (13–17 semanas) e 100 µg 6/6 h (18–26), 4 doses, repetir após 24 h. Cesárea prévia: doses baixas ou balão (conferir).</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Misoprostol (preparo cervical)</div><div class="col" data-l="Dose"><b>400 µg sublingual 1 h antes ou 400 µg vaginal 3 h antes</b> (FIGO &lt;13 semanas); MS: 400 µg vaginal 4–6 h antes; na mola, ≤400 µg, ≤3 h antes</div><div class="col" data-l="Indicação">Cirurgia de abortamento ou da mola, reduzindo o trauma cervical. Nunca para expulsar a mola.</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Metotrexato (ectópica, dose única)</div><div class="col" data-l="Dose"><b>50 mg/m² IM em dose única</b>; β-hCG nos dias 4 e 7; repetir se queda &lt;15% no D7; sem queda dos títulos, cirurgia (MS)</div><div class="col" data-l="Indicação">Ectópica estável (massa &lt;3,5 cm, β-hCG &lt;5.000, sem BCE). Hemograma, TGO/TGP, creatinina e tipagem antes. Sem AINE, álcool, ácido fólico; gestar após 3 meses. Duas doses: protocolo de dias 1 e 4 (MS); dose por aplicação não especificada no MS (conferir).</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Metotrexato + folinato (múltiplas doses)</div><div class="col" data-l="Dose"><b>Metotrexato 1 mg/kg IM nos dias 1, 3, 5 e 7; folinato de cálcio 0,1 mg/kg IM (ou ácido folínico 15 mg VO) nos dias 2, 4, 6 e 8.</b> Máximo de 4 doses; dose condicionada ao β-hCG (≥15% de queda dispensa a seguinte)</div><div class="col" data-l="Indicação">β-hCG alto ou localização atípica. Local, guiado por USG: 1 mg/kg no saco (apostila: 50 mg).</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Imunoglobulina anti-D</div><div class="col" data-l="Dose"><b>300 µg IM</b> (1.500 UI), dose única; adicional por Kleihauer: frascos = (% × 50) ÷ 30, arredondar se a fração for ≥0,5 e somar 1 de margem (volemia materna de 5 L; BJH 2025, PMC12436229)</div><div class="col" data-l="Indicação">28 semanas; ≤72 h do parto de RN Rh positivo e de cada evento de risco; trauma. Rh negativa não sensibilizada. Cerclagem não indica (MS).</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Propranolol (mola com tireotoxicose)</div><div class="col" data-l="Dose"><b>40 mg VO 12/12 h</b>, antes do esvaziamento e até estabilizar</div><div class="col" data-l="Indicação">FC &gt;90, tremor, pele quente. Crise tireotóxica: EN03 (propranolol 60–80 mg 4/4 h). Esvaziar com urgência.</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Propiltiouracil ou metimazol (mola)</div><div class="col" data-l="Dose"><b>Propiltiouracil 300 mg de ataque e 100 mg 8/8 h; ou metimazol 5–20 mg 8/8 h</b> (MS)</div><div class="col" data-l="Indicação">Risco de crise tireotóxica, com endocrinologia. A tireotoxicose da mola é transitória e cessa após o esvaziamento.</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Gentamicina + ampicilina + metronidazol (abortamento infectado)</div><div class="col" data-l="Dose"><b>Gentamicina 5 mg/kg/dia IV, ampicilina 2 g IV de 4/4 h, metronidazol 500 mg IV de 8/8 h</b> (MS); clindamicina 900 mg IV de 8/8 h pode substituir o metronidazol</div><div class="col" data-l="Indicação">Esquema do MS; apostila: gentamicina 1,5 mg/kg 8/8 h + clindamicina 600–900 mg 6–8 h (ampicilina só na falha). Doses diárias da gentamicina equivalentes; ajustar à função renal.</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Outras opções IV e transição oral (MS)</div><div class="col" data-l="Dose"><b>Levofloxacino 500 mg/dia + metronidazol 500 mg 8/8 h; imipenem 500 mg 6/6 h; piperacilina-tazobactam 4,5 g 8/8 h.</b> Oral para fechar 10–14 dias: doxiciclina 100 mg 12/12 h + metronidazol 500 mg 12/12 h</div><div class="col" data-l="Indicação">Afebril por 48 h e sem sensibilidade pélvica; adaptar à cultura. Cristaloide 30 mL/kg na 1ª a 3ª hora se sem edema pulmonar.</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Cristaloide (DPP e hemorragia)</div><div class="col" data-l="Dose"><b>1.000 mL (500 mL nos primeiros 10 min) e restante em 2 h</b>, com diurese &gt;30 mL/h (MS)</div><div class="col" data-l="Indicação">DPP com instabilidade; prévia com sangramento ativo. Transfusão por Hb &lt;8 g/dL na prévia; sem reposição excessiva (edema pulmonar).</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Crioprecipitado, plaquetas e plasma</div><div class="col" data-l="Dose"><b>Crioprecipitado se fibrinogênio &lt;150 mg/dL (HO03); meta ≥200 mg/dL no sangramento obstétrico ativo (GO14); plaquetas se &lt;50 mil sangrando; plasma 15–20 mL/kg se TP/TTPa &gt;1,5×</b> (HO03)</div><div class="col" data-l="Indicação">Coagulopatia do DPP; não dependa do laboratório completo (teste do coágulo, 7 min). Doses de hemocomponentes: HO03 e GO14 mandam.</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Betametasona (maturidade pulmonar)</div><div class="col" data-l="Dose"><b>12 mg IM a cada 24 h, 2 doses</b> (padrão do GO13)</div><div class="col" data-l="Indicação">Prévia ou vasa com risco de parto &lt;34 semanas; vasa: 28–32 semanas. Curso único; protocolo completo no GO11.</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Ocitocina (esvaziamento)</div><div class="col" data-l="Dose"><b>Infusão IV ao introduzir a cânula (MS 4.5.3.2)</b>; dose por protocolo do serviço (conferir; MS não especifica dose)</div><div class="col" data-l="Indicação">Mola, abortamento infectado e AMIU; reduz perda e perfuração. Não usar para expulsão da mola.</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Dactinomicina (NTG de baixo risco)</div><div class="col" data-l="Dose"><b>Indisponível no Brasil</b> (MS; não consta na CMED de 09/10/2026)</div><div class="col" data-l="Indicação">Alternativa ao metotrexato; no EMA-CO usa-se pelo centro de referência: conferir registro.</div></div>
+</div>
+</div>
+</div>
+
+<div class="card tx">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">F.3</span> Cenários</div><h3>Caso → conduta certa → erro típico</h3></div>
+<div class="card-body">
+<div class="stbl stbl-3">
+<div class="stbl-head stbl-3"><div>Caso</div><div>Conduta certa</div><div>Erro típico</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Caso">Mulher de 28 anos, 6 semanas por DUM, dor pélvica, β-hCG 2.400 mUI/mL, sem saco intrauterino, estável, massa de 2,5 cm sem BCE</div><div class="col" data-l="Conduta"><b>Ectópica provável: metotrexato 50 mg/m² IM</b>, β-hCG nos dias 4 e 7, anti-D se Rh negativa, retorno imediato se dor.</div><div class="col" data-l="Erro">Chamar de "ameaça de aborto" e liberar sem β-hCG em 48 h, ou prescrever misoprostol.</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Caso">Gestante de 34 semanas, hipertensa, dor abdominal, sangramento escuro, útero lenhoso, BCF 90 bpm</div><div class="col" data-l="Conduta"><b>DPP: cristaloide, coagulograma e fibrinogênio, amniotomia e cesariana imediata.</b> Controlar a PA (GO13); preparar hemocomponentes.</div><div class="col" data-l="Erro">Esperar a USG para "ver o descolamento" ou o coagulograma completo antes de operar.</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Caso">Gestante de 32 semanas, uma cesárea prévia, sangramento vermelho vivo indolor, placenta anterior baixa</div><div class="col" data-l="Conduta"><b>Sem toque, USG-TV com Doppler, internar, betametasona 12 mg IM 24/24 h ×2</b>, sangue disponível; suspeita de acretismo: terciário.</div><div class="col" data-l="Erro">Toque vaginal "para ver a dilatação", ou alta sem reserva de sangue.</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Caso">Gestante Rh negativa, 12 semanas, sangramento e abortamento incompleto, Coombs indireto negativo</div><div class="col" data-l="Conduta"><b>AMIU ou misoprostol e anti-D 300 µg IM em até 72 h.</b></div><div class="col" data-l="Erro">Pular a imunoprofilaxia porque "é só um aborto precoce".</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Caso">Gestante Rh negativa de 24 semanas, Coombs indireto 1:32, filho anterior hidrópico</div><div class="col" data-l="Conduta"><b>Doppler da ACM de 1 em 1 a 2 semanas</b>; PVS &gt;1,5 MoM: cordocentese e TIU (O Rh negativo irradiado); parto aos 34–37 semanas.</div><div class="col" data-l="Erro">Ficar repetindo o título ou indicar amniocentese espectrofotométrica.</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Caso">Mola completa de 14 semanas, útero a 18 cm, FC 110, tremor</div><div class="col" data-l="Conduta"><b>Propranolol 40 mg VO 12/12 h, TSH e T4 livre, ECG, 2 concentrados e vacuoaspiração</b> com ocitocina; histologia; β-hCG semanal.</div><div class="col" data-l="Erro">Induzir com misoprostol, ou operar sem betabloqueio e sem avisar o anestesista.</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Caso">Motorista de 30 semanas, Rh negativa, impacto lateral com cinto, discreta contração, sem sangramento</div><div class="col" data-l="Conduta"><b>Cardiotocografia por 6 h</b>, fibrinogênio e hemograma, obstetra; anti-D 300 µg IM e Kleihauer para a dose adicional.</div><div class="col" data-l="Erro">Liberar por ausência de sangramento ou deixar de dar o anti-D com Kleihauer negativo.</div></div>
+</div>
+</div>
+</div>
+
+<div class="card tx">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">F.4</span> Acesso</div><h3>O que existe no Brasil (CMED de 09/10/2026) e o que fica de fora <span class="ank ank-dec">DECISION</span></h3></div>
+<div class="card-body">
+<ul class="bullets">
+<li><b>Misoprostol:</b> comprimidos vaginais de 25 µg e 200 µg, de uso hospitalar (MS). Não há comprimido de 100 µg: a dose de 100 µg das fontes exige fracionar ou dissolver o de 25 µg (conferir com a farmácia). Pela CMED, o misoprostol só tem comprimido vaginal (25 e 200 µg); VO e SL são uso fora de bula do mesmo comprimido.</li>
+<li><b>Metotrexato</b> injetável (25 mg/mL e 100 mg/mL) e <b>folinato de cálcio</b> injetável (10 mg/mL) constam na lista; folinato de cálcio 15 mg VO também consta (CMED de 09/10/2026).</li>
+<li><b>Imunoglobulina anti-D:</b> constam anti-Rho(D) de 300 µg (Kamrho-D, 300 µg/frasco) e 150 µg/mL em 2 mL (Rhophylac, 300 µg) e a de 750 UI/mL em 2 mL (1.500 UI; Gama anti-D Grifols). Ampolas de 250 µg citadas pelo MS: conferir registro. Disponibilidade na rede pública (28 semanas) varia: conferir.</li>
+<li><b>Ocitocina</b> 5 UI/mL, <b>betametasona</b> injetável, <b>propranolol</b> 10 e 40 mg, <b>propiltiouracila</b> 100 mg, <b>metimazol</b> 5 e 10 mg, gentamicina, ampicilina, metronidazol IV, doxiciclina e piperacilina-tazobactam estão na lista; clindamicina IV (150 mg/mL) também consta.</li>
+<li><b>Mifepristona</b> (esquema preferencial da FIGO com misoprostol) e <b>dactinomicina</b> não constam: conferir registro. Carboprost e carbetocina: ver GO14.</li>
+<li><b>Sulfato de magnésio</b> consta (GO13); <b>etoposídeo, cisplatina, vincristina e ciclofosfamida</b> constam, para o EMA-CO no centro de referência.</li>
+</ul>
+</div>
+</div>
+
+<div class="card tx">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">F.5</span> Seguimento</div><h3>O que pedir, quando e o que fazer com o resultado</h3></div>
+<div class="card-body">
+<div class="stbl stbl-3">
+<div class="stbl-head stbl-3"><div>Situação</div><div>Exame e intervalo</div><div>Decisão</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Situação">Abortamento sem histologia, após expectante ou medicamentoso</div><div class="col" data-l="Exame">β-hCG (urina ou sérico) em 30 dias; retorno em 7–14 dias</div><div class="col" data-l="Decisão">Positivo: USG e descartar retenção, ectópica e mola.</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Situação">Pós-metotrexato</div><div class="col" data-l="Exame">β-hCG nos dias 4 e 7 e semanal até negativar; hemograma e função hepática e renal</div><div class="col" data-l="Decisão">Queda &lt;15% no dia 7: repetir a dose; sem queda dos títulos, cirurgia (MS). Dor súbita: USG e hemoglobina.</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Situação">Pós-molar</div><div class="col" data-l="Exame">β-hCG semanal ou quinzenal até 3 valores &lt;5 mUI/mL, depois mensal</div><div class="col" data-l="Decisão">Platô por 4 valores ou subida em 3: NTG, estadiar. Sem DIU; contracepção hormonal.</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Situação">Rh negativa não sensibilizada</div><div class="col" data-l="Exame">Coombs indireto na 1ª consulta e mensal (MS); a apostila repete com 28, 32, 36 e 40 semanas</div><div class="col" data-l="Decisão">Positivo isolado após anti-D (≤1:4–1:8) não é sensibilização; título crescente sim.</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Situação">Sensibilizada com Coombs ≥1:16</div><div class="col" data-l="Exame">Doppler da ACM de 1 em 1 a 2 semanas; cordocentese se &gt;1,5 MoM</div><div class="col" data-l="Decisão">Hidropisia ou Ht &lt;30%: TIU; &gt;34 semanas, parto.</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Situação">Placenta baixa ou prévia no morfológico</div><div class="col" data-l="Exame">USG-TV com 28–32 semanas (MS: 28 semanas na prévia com risco de acretismo)</div><div class="col" data-l="Decisão">Persistente: prévia; acretismo: terciário. Sangramento: internar.</div></div>
+</div>
+</div>
+</div>
+
+<div class="card tx">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">F.6</span> Internação e alta</div><h3>Quando internar, quando liberar e o que dizer à paciente <span class="ank ank-dec">DECISION</span></h3></div>
+<div class="card-body">
+<div class="stbl stbl-3">
+<div class="stbl-head stbl-3"><div>Situação</div><div>Internar ou encaminhar quando</div><div>Alta e retorno</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Situação">Abortamento (C.1)</div><div class="col" data-l="Internar">Sangramento excessivo, instabilidade, febre, dor intensa, anemia grave, comorbidade cardiovascular ou hematológica, gestação &gt;12 semanas, cesárea prévia com indução, ou misoprostol com analgesia IV.</div><div class="col" data-l="Alta">Após esvaziamento completo e sangramento controlado: analgesia, anti-D se Rh negativa, retorno em 7–14 dias, febre ou sangramento ensopando absorventes como sinais de volta; menstruação em 1–2 meses; relação sexual quando o sangramento cessar; contracepção.</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Situação">Ectópica (C.3)</div><div class="col" data-l="Internar">Instabilidade, dor intensa, líquido livre significativo, rotura, β-hCG alto, massa grande ou localização atípica; qualquer paciente sem acompanhamento garantido.</div><div class="col" data-l="Alta">Após metotrexato ou expectação, só com β-hCG programado, orientação de dor súbita, síncope ou sangramento (retornar já), dieta sem folato extra, sem AINE e sem álcool; evitar gestar por 3 meses após metotrexato.</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Situação">Mola e NTG (C.4, C.5)</div><div class="col" data-l="Internar">Encaminhar ao centro de doença trofoblástica: útero &gt;16 cm, hipertireoidismo, pré-eclâmpsia, insuficiência respiratória, hemorragia, metástase.</div><div class="col" data-l="Alta">Após o esvaziamento sem complicações: β-hCG semanal, contracepção hormonal, sem DIU, e orientação de que o seguimento dura meses; sintomas respiratórios ou neurológicos retornam já.</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Situação">Placenta prévia, DPP, rotura, vasa (C.6 a C.10)</div><div class="col" data-l="Internar">Todo sangramento da 2ª metade deve ser internado para avaliação materno-fetal (MS). Prévia pré-termo: repouso até 6 h sem sangramento; alta domiciliar é exceção selecionada, com acesso rápido ao hospital. Vasa: internação com 34 semanas (norma geral do MS; 30–34 como alternativa). Acretismo: terciário.</div><div class="col" data-l="Alta">Após estabilização, com USG de crescimento quinzenal na prévia; sem relação sexual na prévia; retorno imediato se sangramento, dor, perda de líquido, contração ou redução de movimentos fetais.</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Situação">Aloimunização (C.11)</div><div class="col" data-l="Internar">Referência a medicina fetal com título ≥1:16, história grave, PVS &gt;1,5 MoM, hidropisia ou ascite.</div><div class="col" data-l="Alta">Plano escrito de Doppler e Coombs; avisar a maternidade e o PD02 sobre o RN (Coombs direto, bilirrubina, fototerapia); anti-D registrado na caderneta com data e lote.</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Situação">Trauma na gestação (D.4)</div><div class="col" data-l="Internar">Qualquer lesão grave; ≥20 semanas com contrações, sangramento, dor ou perda de líquido; &gt;6 contrações/h na monitorização.</div><div class="col" data-l="Alta">Só após 4–6 h (idealmente 6 h) de monitorização sem anormalidade, com orientação de retorno por contração, sangramento, redução de movimentos fetais e dor; anti-D antes da saída; rastreio de violência por parceiro íntimo.</div></div>
+</div>
+<div class="sub-title">Populações especiais que mudam conduta</div>
+<ul class="bullets">
+<li><b>Adolescente:</b> na interrupção legal, 16–18 anos são assistidas e &lt;16 representadas; acolhimento e sigilo, com rastreio de violência sexual (D.3).</li>
+<li><b>Rh negativa:</b> a profilaxia é a única parte da lista que se perde se for esquecida; prescreva na alta e registre.</li>
+<li><b>Cicatriz uterina prévia:</b> misoprostol e ocitocina com cautela; prévia com cesárea anterior é acretismo até prova em contrário.</li>
+<li><b>Lactação:</b> amamentar é contraindicação ao metotrexato da ectópica e das doses de NTG.</li>
+<li><b>Hipertensão e pré-eclâmpsia:</b> DPP e mola com pré-eclâmpsia precoce exigem GO13; sulfato de magnésio e anti-hipertensivo seguem o GO13.</li>
+</ul>
+</div>
+</div>
+</section>
+<section id="pitfalls">
+<div class="section"><div class="section-eyebrow"><span>G</span> Pitfalls · Mitos · Controvérsias</div><div class="section-title">Erros operacionais, mitos vivos e debates abertos</div><div class="section-sub">Os erros que repetem: alta por "ameaça" na ectópica, toque na prévia, misoprostol onde não cabe, anti-D esquecido e Kleihauer mal lido.</div></div>
+
+<div class="card pearl">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">G.1</span> Pegadinhas</div><h3>10 erros operacionais em sangramento gestacional, DTG e aloimunização</h3></div>
+<div class="card-body">
+<div class="stbl stbl-2">
+<div class="stbl-head stbl-2"><div>Erro comum</div><div>Correto</div></div>
+<div class="stbl-row stbl-2"><div class="col col1" data-l="Erro">Liberar como "ameaça de aborto" a gestante com β-hCG positivo e útero vazio acima da zona discriminatória.</div><div class="col" data-l="Correto">Sem saco intrauterino acima do limiar, é gestação anormal: ectópica ou abortamento completo. Abaixo, β-hCG em 48 h com USG, e retorno imediato se dor.</div></div>
+<div class="stbl-row stbl-2"><div class="col col1" data-l="Erro">Fazer toque vaginal na gestante que sangra na 2ª metade antes da USG.</div><div class="col" data-l="Correto">Especular e USG transvaginal (segura) primeiro: o toque agrava a prévia e rompe a vasa. Com BCF caindo após o toque, pense em vasa.</div></div>
+<div class="stbl-row stbl-2"><div class="col col1" data-l="Erro">Prescrever misoprostol para esvaziar um abortamento sem excluir ectópica, mola, DIU ou cicatriz uterina de risco.</div><div class="col" data-l="Correto">USG antes: ectópica, mola e DIU in situ contraindicam; cicatriz de cesárea exige dose baixa, balão ou outra via e monitorização.</div></div>
+<div class="stbl-row stbl-2"><div class="col col1" data-l="Erro">Expulsar a mola com misoprostol ou ocitocina "para evitar a curetagem".</div><div class="col" data-l="Correto">Contrações antes do esvaziamento disseminam o trofoblasto (embolização, NTG): vacuoaspiração, com ocitocina IV ao introduzir a cânula (MS 4.5.3.2).</div></div>
+<div class="stbl-row stbl-2"><div class="col col1" data-l="Erro">Omitir o anti-D no abortamento precoce, na ectópica e na mola por "não haver feto".</div><div class="col" data-l="Correto">Rh negativa não sensibilizada recebe 300 µg IM em até 72 h; o Rh está expresso no trofoblasto, e a dúvida sobre o tipo de mola nunca é resolvida na hora.</div></div>
+<div class="stbl-row stbl-2"><div class="col col1" data-l="Erro">Repetir o título do Coombs indireto na gestante com filho anterior hidrópico ou título ≥1:16.</div><div class="col" data-l="Correto">O título mede risco, não gravidade: parta para o Doppler da ACM, sem insistir no título e sem amniocentese.</div></div>
+<div class="stbl-row stbl-2"><div class="col col1" data-l="Erro">Esperar o coagulograma completo ou uma USG "positiva" para tratar um DPP clínico.</div><div class="col" data-l="Correto">O diagnóstico é clínico; o coágulo só aparece em 25–50% das USG. Reponha volume, colha fibrinogênio, e use o teste do coágulo de 7 minutos.</div></div>
+<div class="stbl-row stbl-2"><div class="col col1" data-l="Erro">Tentar a dequitação manual forçada na placenta que não se separa.</div><div class="col" data-l="Correto">Acretismo: parar, ativar transfusão maciça e preparar histerectomia; a mão não separa o que invadiu o miométrio.</div></div>
+<div class="stbl-row stbl-2"><div class="col col1" data-l="Erro">Usar o Kleihauer-Betke negativo para descartar DPP traumático ou dispensar o anti-D.</div><div class="col" data-l="Correto">O ATLS 11 afirma que o teste não prediz hemorragia feto-materna nem DPP de forma confiável; toda Rh negativa traumatizada recebe ao menos 300 µg, e o teste só quantifica a dose adicional.</div></div>
+<div class="stbl-row stbl-2"><div class="col col1" data-l="Erro">Dar ácido fólico, AINE ou aspirina durante o tratamento da ectópica com metotrexato.</div><div class="col" data-l="Correto">O folato compete com o metotrexato; AINE e aspirina aumentam a toxicidade. Evitar também álcool, sol e relação sexual até a negativação.</div></div>
+</div>
+</div>
+</div>
+
+<div class="card pearl">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">G.2</span> Mitos · Controvérsias</div><h3>Mitos vivos e debates atuais</h3></div>
+<div class="card-body">
+<div class="box myth"><span class="box-label">MYTH</span><div class="box-title">"Repouso, antiespasmódico ou progesterona evitam o aborto na ameaça"</div><div class="box-body">Nenhuma medicação comprovadamente reduziu a evolução da ameaça para perda, progesterona incluída; o repouso relativo não tem benefício comprovado e é apenas acolhimento, com abstinência sexual. A ameaça evolui em ~50%, e em &lt;10% depois que há BCE.</div></div>
+<div class="box myth"><span class="box-label">MYTH</span><div class="box-title">"No DPP com feto vivo, a cesariana é sempre obrigatória"</div><div class="box-body">Não há consenso. A apostila lembra que, em parto iminente, amniotomia e vigilância contínua do BCF são aceitas; o MS indica parto imediato com sofrimento fetal acima de 24–26 semanas, preferindo a cesariana se o parto vaginal demorar mais de 20 minutos. O que não se aceita é retardar a conduta.</div></div>
+<div class="box myth"><span class="box-label">MYTH</span><div class="box-title">"Só a mola completa evolui para neoplasia"</div><div class="box-body">A parcial evolui em 0,5–5%, e o diagnóstico da NTG pós-parcial é igualmente bioquímico. Por isso a mola parcial exige o mesmo seguimento semanal do β-hCG e a mesma contracepção.</div></div>
+<div class="box controversy"><span class="box-label">CONTROVERSY</span><div class="box-title">Zona discriminatória do β-hCG: 1.500, 2.000 ou 3.500 mUI/mL</div><div class="box-body">O MS usa 3.500 e as apostilas, 1.500 (via transvaginal) e 6.500 (abdominal); o ACOG recomenda cautela até 3.500 para não interromper uma gestação viável (via GO10; não lido aqui). O limiar baixo diagnostica mais cedo e erra mais por falso-positivo; o alto retarda o diagnóstico. A conduta é clínica: paciente estável, valores abaixo do limiar e imagem ausente, repetir o β-hCG em 48 h.</div></div>
+<div class="box controversy"><span class="box-label">CONTROVERSY</span><div class="box-title">Anti-D antenatal de 28 semanas: rotina ou só em pesquisa</div><div class="box-body">O MS inclui 300 µg aos 28 semanas entre os momentos obrigatórios; a OMS (2025) recomenda a profilaxia antenatal de 28 e 34 semanas somente no contexto de pesquisa rigorosa, mantendo a pós-parto. A apostila reconhece que a dose de 28 semanas não é oferecida na maioria dos serviços. O padrão deste HP é o brasileiro; onde falta imunoglobulina, o Coombs indireto mensal substitui.</div></div>
+<div class="box controversy"><span class="box-label">CONTROVERSY</span><div class="box-title">Tocólise na placenta prévia com sangramento pré-termo</div><div class="box-body">O MS afirma que não há evidência que justifique a tocólise; a apostila a admite se não houver comprometimento hemodinâmico, com monitorização cuidadosa. Quem tocolisa usa o tempo ganho para o corticoide, mas esconde a hipertonia do DPP associado. Sangramento com dor e hipertonia exige reavaliar para DPP antes de qualquer tocolítico.</div></div>
+</div>
+</div>
+</section>
+
+<section id="pearls">
+<div class="section"><div class="section-eyebrow"><span>H</span> Pearls · Evolving</div><div class="section-title">H1 · Nuances de especialista · H2 · O que mudou recentemente</div><div class="section-sub">Oito ideias que o plantão esquece e cinco mudanças reais; onde o tema é estável, diz-se.</div></div>
+
+<div class="card pearl">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">H.1</span> Pearls</div><h3>8 nuances que distinguem o especialista</h3></div>
+<div class="card-body">
+<div class="box pearl"><span class="box-label">PEARL</span><div class="box-title">A gestação de localização desconhecida tem só três destinos</div><div class="box-body">β-hCG positivo sem imagem termina em gestação intrauterina viável (curva ≥49%, 40% ou 33% em 48 h conforme o nível), abortamento (queda ≥25%) ou ectópica (curva anormal). Não se trata como ectópica por um único valor, mas o seguimento é obrigatório: o pior desfecho é a paciente perdida entre as consultas.</div></div>
+<div class="box pearl"><span class="box-label">PEARL</span><div class="box-title">O β-hCG sobe entre o 1º e o 4º dia depois do metotrexato</div><div class="box-body">A necrose do sítio libera hCG e pode causar dor 2–3 dias depois: ambos simulam falha ou rotura. Por isso a referência é a queda de ≥15% entre os dias 4 e 7, e a dor pós-MTX leva a USG e hemoglobina, não a cirurgia automática.</div></div>
+<div class="box pearl"><span class="box-label">PEARL</span><div class="box-title">O pulso normal na hemorragia é a primeira armadilha, e o fibrinogênio, a segunda</div><div class="box-body">A gestante hipervolêmica esconde 1.200–1.500 mL, e a taquicardia (ou o pulso paradoxal de Boero) falha no início. No DPP, o fibrinogênio cai antes das plaquetas; com valor &lt;150 mg/dL, o crioprecipitado vem antes do bisturi, e o teste do coágulo de 7 minutos substitui o laboratório que demora.</div></div>
+<div class="box pearl"><span class="box-label">PEARL</span><div class="box-title">Hematúria na placenta prévia é percreta até prova em contrário</div><div class="box-body">O trofoblasto invade a bexiga; a hematúria na gestação com prévia e cesárea anterior precede a hemorragia do parto. A USG com Doppler vê a hipervascularização uterovesical, e a cistoscopia não é necessária para o diagnóstico: o centro terciário já deve ser acionado.</div></div>
+<div class="box pearl"><span class="box-label">PEARL</span><div class="box-title">Veia ou artéria: o prognóstico da vasa prévia depende do vaso</div><div class="box-body">A rotura da veia umbilical mata o feto em minutos; a da artéria, apesar de grave, permite sobreviver porque a outra mantém o fluxo. A cesariana eletiva antes da rotura (sobrevida de ~95%) transforma uma catástrofe em cirurgia programada, razão pela qual vale descrever a inserção do cordão em todo morfológico.</div></div>
+<div class="box pearl"><span class="box-label">PEARL</span><div class="box-title">O útero de Couvelaire sozinho não é indicação de histerectomia</div><div class="box-body">A infiltração sanguínea do miométrio dá atonia, mas a hipotonia do DPP geralmente responde a uterotônicos, massagem e hemocomponentes. A histerectomia entra quando a coagulopatia e a atonia resistem ao pacote do GO14, não pelo aspecto roxo do útero.</div></div>
+<div class="box pearl"><span class="box-label">PEARL</span><div class="box-title">O Coombs indireto positivo depois do anti-D não é sensibilização</div><div class="box-body">A imunoglobulina passiva deixa anticorpo detectável por 8–12 semanas, em título ≤1:4 (às vezes 1:8). O que denuncia sensibilização é o título que sobe, e o que impede a dose pós-parto é a sensibilização ativa, não a imunoglobulina da profilaxia de 28 semanas. É por isso que o Coombs deve ser interpretado com a data da última dose.</div></div>
+<div class="box pearl"><span class="box-label">PEARL</span><div class="box-title">Doença hemolítica não altera os índices do Doppler uteroplacentário</div><div class="box-body">Ao contrário da restrição de crescimento, o fluxo nas artérias uterinas e umbilicais é normal, e o índice de resistência da ACM não acompanha a anemia: o que sobe é a velocidade do pico sistólico. Quem busca redistribuição ao Doppler perde a janela da transfusão; o CTG sinusoidal é achado terminal.</div></div>
+</div>
+</div>
+
+<div class="card pearl">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">H.2</span> Evolving</div><h3>O que mudou recentemente</h3></div>
+<div class="card-body">
+<div class="box evolving"><span class="box-label">EVOLVING</span><div class="box-title">Zona discriminatória mais alta e cinética por faixa de β-hCG</div><div class="box-body">O MS 2022 usa 3.500 mUI/mL e curvas de ascensão por faixa (49%, 40%, 33%), em substituição à regra de duplicação em 48 h; o ACOG PB 193 (2018) recomenda cautela até 3.500 (via GO10, conferir). A apostila 2025 mantém 1.500 e 66%: o corpo do HP segue o MS.</div></div>
+<div class="box evolving"><span class="box-label">EVOLVING</span><div class="box-title">Anti-D antenatal: o MS mantém os 28 semanas; a OMS 2025 pede pesquisa</div><div class="box-body">A segunda edição das recomendações de saúde materna da OMS (2025) coloca a profilaxia antenatal de 28 e 34 semanas como contextual e de pesquisa, preservando a pós-parto como de alta certeza. Antes, a prática brasileira e a norte-americana adotavam a de 28 semanas como rotina: a diferença é de contexto de serviço, não de erro.</div></div>
+<div class="box evolving"><span class="box-label">EVOLVING</span><div class="box-title">ATLS 11 (2025): cesariana de reanimação e sangue total na gestante</div><div class="box-body">O termo "cesariana perimortem" foi substituído por "cesariana de reanimação", com retorno da circulação em mais de 50% após a evacuação do útero; e no choque hemorrágico da gestante, o benefício do sangue total O positivo de baixo título supera o risco de sensibilização (3–20% em estudo citado), que se trata depois. Padrão do CT02 e deste HP.</div></div>
+<div class="box evolving"><span class="box-label">EVOLVING</span><div class="box-title">Esvaziamento do abortamento: mifepristona na FIGO e a realidade do SUS</div><div class="box-body">O regime preferencial da FIGO (2017) usa mifepristona antes do misoprostol, quando disponível; ela não consta na lista da CMED de 09/10/2026 (conferir registro). No Brasil, o que existe é misoprostol hospitalar, na dose por idade gestacional do score do C.1. A dactinomicina da NTG de baixo risco também está indisponível.</div></div>
+<div class="box evolving"><span class="box-label">EVOLVING</span><div class="box-title">Rh fetal por DNA livre no plasma materno</div><div class="box-body">A determinação do RhD fetal em sangue materno a partir de 10 semanas, com acurácia de até 100% (MS), evita cordocentese e permite poupar imunoglobulina e vigilância quando o feto é Rh negativo. Disponibilidade na rede pública ainda restrita: conferir.</div></div>
+<div class="box hy"><span class="box-label">HIGH-YIELD</span><div class="box-title">Tema estável: o resto do capítulo mudou pouco desde 2022</div><div class="box-body">Mola, prévia, DPP, acretismo, vasa e rotura uterina têm condutas consolidadas; as mudanças acima são pontuais. Onde as fontes divergem, o corpo do HP segue o MS e rotula a divergência.</div></div>
+</div>
+</div>
+</section>
+
+</div>
+</main>
+
+<footer>
+<div class="wrap">
+<div class="foot">
+<div>
+<div class="foot-author">@dr.lorencato</div>
+<div class="foot-meta">Sangramento Gestacional, DTG e Aloimunização · Pocket Handbook Elite · v5.2 · Ginecologia e Obstetrícia · GO12</div>
+</div>
+<div class="foot-mono">Compilação clínica · status clinical_review até signoff humano</div>
+</div>
+<div class="foot-meta"><b>Bibliografia rastreável</b>
+<ol>
+<li id="src-1">Ministério da Saúde. Manual de Gestação de Alto Risco. Brasília: MS, 2022 · 2022 · papel: padrão brasileiro de abortamento, ectópica, DTG, prévia, DPP, acretismo, vasa prévia, DHP e anti-D; figura de misoprostol FIGO 2017 lida na página 42 · caps. 4, 5 e 14 lidos no PDF local (library/sources/Gineco-Obst); rotura uterina e demais capítulos não lidos</li>
+<li id="src-2">Apostila MED/Medcurso 2025. OBS 3 — Sangramentos na Gestação e Doença Hemolítica Perinatal · 2025 · papel: piso de cobertura e divergências da literatura (apêndice), nunca fonte de conduta · lida nas partes de conduta; etiologia e formas raras por varredura</li>
+<li id="src-3">American College of Surgeons. Advanced Trauma Life Support (ATLS), 11ª ed., cap. 13 — Trauma in the Pregnant Patient · 2025 · papel: DPP traumático, monitorização, Kleihauer-Betke, anti-D, cesariana de reanimação · p. 205–217 lidas no PDF local</li>
+<li id="src-4">World Health Organization. WHO recommendations on maternal health: guidelines approved by the WHO Guidelines Review Committee, 2ª ed. Geneva: WHO, 2025 · 2025 · papel: anti-D antenatal de 28 e 34 semanas só em pesquisa; misoprostol e cesárea prévia · CC BY-NC-SA 3.0 IGO; trechos lidos</li>
+<li id="src-5">Morris JL et al. FIGO's updated recommendations for misoprostol used alone in gynecology and obstetrics. Int J Gynecol Obstet 2017 · 2017 · papel: regimes de misoprostol por idade gestacional · lida a figura reproduzida no MS 2022 (p. 42); artigo original não lido</li>
+<li id="src-6">FIGO Oncology Committee. FIGO staging for gestational trophoblastic neoplasia 2000. Int J Gynecol Obstet 2002;77:285–287 · 2002 · papel: estadiamento anatômico e escore de risco da NTG · via MS 2022 (Tabela 2); original não lido</li>
+<li id="src-7">Mari G et al. Noninvasive diagnosis by Doppler ultrasonography of fetal anemia due to maternal red-cell alloimmunization. N Engl J Med 2000;342:9–14 · 2000 · papel: PVS-ACM de 1,5 MoM · via MS 2022 (referência); artigo não lido</li>
+<li id="src-8">ACOG. Practice Bulletins 193 (gravidez ectópica tubária, 2018), 200 (perda gestacional precoce, 2018), 181 (profilaxia de aloimunização Rh), 192 (aloimunização na gravidez, 2018) e Committee Opinion 764 (acretismo) · papel: zona discriminatória, doses de anti-D por Kleihauer, parto do acretismo · NÃO lidos; citados apenas com "conferir" (o PB 193 aparece no GO10)</li>
+<li id="src-9">Código Penal, art. 128; STF, ADPF 54 (2012); Resolução CFM 1.989/2012 · papel: abortamento previsto em lei e anencefalia · via apostila OBS 3; textos originais não lidos; conferir norma vigente</li>
+<li id="src-10">CMED/Anvisa. Lista de preços de medicamentos (PF/PMVG), publicada em 09/10/2026 · 2026 · papel: registro e comercialização de misoprostol, metotrexato, anti-D, folinato, propranolol e demais · consulta por substância (lista lida)</li>
+<li id="src-11">HPs publicados da biblioteca: GO10 (pré-natal, 2026), GO13 (hipertensão e gemelaridade), GO14 (parto operatório e puerpério), CT02 (trauma abdominal e pélvico), HO03 (coagulação), EN03 (tireoide) e PD02 (neonato) · 2026 · papel: coerência de doses, remissões e promessas ao GO12</li>
+<li id="src-12">DATASUS. CID-10, versão 2008, em www2.datasus.gov.br/cid10/V2008/WebHelp/ (acesso 2026-11-14) · papel: descrição dos códigos. Confirmados: O00.0–O00.8, O01.0–O01.1, O02.1, O03.0, O20.0, O26.8, O34.3, O36.0–O36.2, O43.1, O44.0–O44.1, O45.0–O45.9, O46.8–O46.9, O69.4, O71.0–O71.1, N96. Não verificados nesta rodada: O04.9, O08.0 (rótulo), O43.2, C58, D39.2, T14.9</li>
+<li id="src-13">Ngan HYS et al. (FIGO) ou revisão IJGO: Diagnosis and management of gestational trophoblastic disease: 2025 update. Int J Gynecol Obstet, 2025 (doi 10.1002/ijgo.70275; PMC12411817) · papel: esquema MTX 50 mg IM dias 1, 3, 5 e 7 + ácido folínico 15 mg VO dias 2, 4, 6 e 8 (Box 3), NTG de baixo risco · texto integral lido em 2026-11-14 · não é diretriz FIGO oficial: rotular como revisão</li>
+
+<li id="src-15">Laboratory assessment of fetomaternal haemorrhage and Rh immune globulin management: Canadian practice and scoping review. Br J Haematol, 2025 (doi 10.1111/bjh.20246; PMC12436229) · papel: fórmula de frascos de anti-D a partir do Kleihauer (volume de FMH ÷ 30 mL; arredondamento; frasco extra) · texto integral lido em 2026-11-14 · revisão, não diretriz; RCOG GTG 22 (arquivada) e BSH 2014 não localizados em PDF aberto</li>
+</ol>
+</div>
+</div>
+</footer>
+
+<div class="watermark">@dr.lorencato · GO12 Sangramento Gestacional, DTG e Aloimunização v5.2</div>
+
+</body>
+</html>
