@@ -1,0 +1,1160 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#0d1117">
+<title>Emergência Psiquiátrica · Pocket Handbook · Elite Edition · PC06</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700;9..40,800&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   MEDICAL HANDBOOK PREMIUM · ELITE EDITION · CSS FRAMEWORK
+   Copy this ENTIRE block verbatim into the <style> tag of the
+   output HTML. Do NOT modify design tokens, colors, or
+   typography — they are calibrated for legibility and print.
+============================================================ */
+:root{
+  --bg:#f1eee5;--bg-tint:#ebe8de;--paper:#ffffff;--paper-tint:#fbf9f3;
+  --ink:#0e1116;--ink-soft:#232830;--ink-mute:#545b69;--ink-faint:#8a91a0;--ink-ghost:#b8bdc7;
+  --line:#e2dfd5;--line-soft:#ece9df;--line-strong:#c9c5b8;
+  --c-prim:#0b5d4e;--c-clin:#1d4570;--c-diag:#5e2f78;--c-tx:#a8481a;--c-emerg:#a31b35;--c-pearl:#7a6014;
+  --ank-hy:#b88e0a;--ank-hy-bg:#fef4c8;--ank-dec:#1d4ea3;--ank-dec-bg:#dde7f8;
+  --ank-dgr:#a31b25;--ank-dgr-bg:#fadcdc;--ank-prl:#3e6a2e;--ank-prl-bg:#d8e6cf;
+  --ank-myt:#6a3a1a;--ank-myt-bg:#f0dec5;--ank-con:#5a4070;--ank-con-bg:#e3d6f0;
+  --ank-evo:#0d6373;--ank-evo-bg:#cde5e9;
+  --sh-sm:0 1px 2px rgba(14,17,22,.04),0 1px 1px rgba(14,17,22,.03);
+  --sh-md:0 6px 16px -8px rgba(14,17,22,.10),0 2px 4px rgba(14,17,22,.04);
+  --sh-lg:0 20px 40px -22px rgba(14,17,22,.18),0 4px 10px -4px rgba(14,17,22,.08);
+  --r:10px;--r-lg:14px;--r-xl:20px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;scroll-padding-top:120px}
+body{font-family:'DM Sans',system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.5;font-size:15px;letter-spacing:-.005em;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:-1;background:radial-gradient(900px 500px at -10% -5%,rgba(11,93,78,.04),transparent 60%),radial-gradient(800px 450px at 110% 10%,rgba(163,27,53,.035),transparent 55%)}
+a{color:inherit;text-decoration:none}
+
+/* FIXED HEADER */
+.header{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(13,17,23,.82);backdrop-filter:saturate(160%) blur(20px);-webkit-backdrop-filter:saturate(160%) blur(20px);border-bottom:1px solid rgba(255,255,255,.06)}
+.header-row{max-width:1080px;margin:0 auto;padding:10px 20px;display:flex;align-items:center;gap:14px;color:#f0eee5}
+.h-mark{width:30px;height:30px;border-radius:7px;background:linear-gradient(135deg,#d4b94a 0%,#a07f1a 100%);display:grid;place-items:center;font:800 13px/1 'DM Sans';color:#1a1500;letter-spacing:-.04em;box-shadow:inset 0 1px 0 rgba(255,255,255,.3),0 1px 2px rgba(0,0,0,.4);flex-shrink:0}
+.h-titles{display:flex;flex-direction:column;line-height:1.15;min-width:0}
+.h-title{font-weight:700;font-size:14px;letter-spacing:-.02em}
+.h-sub{font-size:10.5px;color:#9fa298;font-weight:500;letter-spacing:.08em;text-transform:uppercase}
+.h-edition{margin-left:auto;font:500 10px/1 'DM Mono',monospace;color:#9fa298;letter-spacing:.05em;padding:5px 9px;border:1px solid rgba(255,255,255,.1);border-radius:999px;white-space:nowrap}
+.h-author{font:700 10.5px/1 'DM Mono',monospace;color:#d4b94a;letter-spacing:.04em;padding:6px 10px;border:1px solid rgba(212,185,74,.35);background:rgba(212,185,74,.08);border-radius:999px;white-space:nowrap;display:inline-flex;align-items:center;gap:6px}
+.h-author::before{content:"●";font-size:6px;color:#d4b94a}
+@media(max-width:560px){.h-edition{display:none}.h-author{margin-left:auto}}
+
+/* STICKY TOC */
+.toc{position:sticky;top:50px;z-index:90;background:rgba(241,238,229,.92);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}
+.toc-inner{max-width:1080px;margin:0 auto;padding:10px 16px;display:flex;gap:6px;overflow-x:auto;scrollbar-width:none;-ms-overflow-style:none}
+.toc-inner::-webkit-scrollbar{display:none}
+.toc-chip{flex:none;font:600 11px/1 'DM Sans';letter-spacing:.06em;text-transform:uppercase;padding:7px 12px;background:var(--paper);border:1px solid var(--line);border-radius:999px;color:var(--ink-soft);transition:all .15s;white-space:nowrap;cursor:pointer}
+.toc-chip:hover{background:var(--paper-tint);border-color:var(--ink-faint);color:var(--ink)}
+.toc-chip-num{display:inline-block;font-family:'DM Mono',monospace;color:var(--ink-faint);margin-right:5px;font-weight:500;font-size:10px}
+
+/* LAYOUT */
+.wrap{max-width:1080px;margin:0 auto;padding:24px 20px 80px}
+.section{margin:48px 0 18px;padding-top:8px}
+.section:first-child{margin-top:14px}
+.section-eyebrow{font:700 10.5px/1 'DM Sans';letter-spacing:.18em;text-transform:uppercase;color:var(--c-prim);margin-bottom:8px;display:flex;align-items:center;gap:10px}
+.section-eyebrow::before{content:"";width:24px;height:1.5px;background:var(--c-prim)}
+.section-title{font-size:26px;font-weight:700;letter-spacing:-.03em;line-height:1.1}
+.section-sub{margin-top:6px;font-size:13.5px;color:var(--ink-mute);max-width:680px}
+
+/* HERO */
+.hero{margin:20px 0 28px;padding:26px 28px;background:linear-gradient(180deg,#fdfcf6 0%,#f7f4e8 100%);border:1px solid var(--line);border-radius:var(--r-xl);box-shadow:var(--sh-md);position:relative;overflow:hidden}
+.hero::after{content:"";position:absolute;top:0;right:0;bottom:0;left:0;background:radial-gradient(400px 200px at 100% 0%,rgba(163,27,53,.06),transparent 60%),radial-gradient(360px 200px at 0% 100%,rgba(11,93,78,.05),transparent 60%);pointer-events:none}
+.hero-tag{font:700 10.5px/1 'DM Sans';letter-spacing:.2em;text-transform:uppercase;color:var(--c-emerg);display:inline-flex;align-items:center;gap:8px;margin-bottom:10px}
+.hero-tag::before{content:"";width:18px;height:1.5px;background:currentColor}
+.hero h1{font-size:34px;font-weight:800;letter-spacing:-.035em;line-height:1.02;margin-bottom:8px}
+.hero h1 em{font-style:italic;font-weight:500;color:var(--ink-mute)}
+.hero-lead{font-size:14.5px;color:var(--ink-mute);max-width:660px;line-height:1.55}
+.hero-stamp{position:absolute;top:20px;right:22px;font:700 10.5px/1 'DM Mono',monospace;letter-spacing:.04em;padding:7px 11px 7px 18px;border:1.5px dashed rgba(163,27,53,.45);color:rgba(163,27,53,.9);border-radius:5px;background:rgba(255,255,255,.55);transform:rotate(-3deg);z-index:2;box-shadow:0 2px 6px rgba(163,27,53,.08)}
+.hero-stamp::before{content:"●";position:absolute;left:7px;top:50%;transform:translateY(-50%);color:rgba(163,27,53,.7);font-size:7px}
+.hero-sig{margin-top:14px;display:flex;align-items:center;gap:10px;font:600 11px/1 'DM Sans';color:var(--ink-mute);letter-spacing:.04em}
+.hero-sig::before{content:"";flex:none;width:22px;height:1.5px;background:var(--c-emerg)}
+.hero-sig b{color:var(--c-emerg);font-weight:700;font-family:'DM Mono',monospace;letter-spacing:.02em}
+@media(max-width:560px){.hero{padding:22px 20px}.hero h1{font-size:26px}.section-title{font-size:22px}.hero-stamp{position:relative;top:auto;right:auto;display:inline-block;transform:none;margin-bottom:14px}}
+
+/* POCKET CARD 0 */
+.pocket{background:#0e1116;color:#f0eee5;border-radius:var(--r-xl);padding:24px 26px 26px;margin:0 0 28px;position:relative;overflow:hidden;box-shadow:var(--sh-lg)}
+.pocket::before{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(600px 300px at 100% 0%,rgba(212,185,74,.07),transparent 60%),radial-gradient(500px 280px at 0% 100%,rgba(163,27,53,.08),transparent 60%)}
+.pocket-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:18px;flex-wrap:wrap;position:relative}
+.pocket-eyebrow{font:700 10.5px/1 'DM Sans';letter-spacing:.2em;text-transform:uppercase;color:#d4b94a;display:flex;align-items:center;gap:9px}
+.pocket-eyebrow::before{content:"●";color:#d4b94a;font-size:9px;animation:pulse 2.4s ease infinite}
+@keyframes pulse{50%{opacity:.4}}
+.pocket-title{font-size:22px;font-weight:700;letter-spacing:-.02em;line-height:1.15;color:#fff}
+.pocket-sub{font-size:12.5px;color:#9aa0a8;margin-top:2px}
+.pocket-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px;position:relative}
+.pocket-card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-left:3px solid var(--accent,#d4b94a);border-radius:var(--r);padding:12px 14px}
+.pocket-card .pc-trig{font:700 10px/1.1 'DM Sans';letter-spacing:.12em;text-transform:uppercase;color:var(--accent,#d4b94a);margin-bottom:6px;display:flex;align-items:center;gap:6px}
+.pocket-card .pc-trig::before{content:"";width:4px;height:4px;background:currentColor;border-radius:50%}
+.pocket-card .pc-act{font-size:13.5px;line-height:1.4;color:#dedfd5}
+.pocket-card .pc-act b{color:#fff;font-weight:600}
+.pocket-card.emerg{--accent:#ff8a96}.pocket-card.dec{--accent:#7cb0ff}.pocket-card.tx{--accent:#ffb085}.pocket-card.clin{--accent:#b0e0d4}
+
+/* LEGEND */
+.legend{background:var(--paper);border:1px solid var(--line);border-radius:var(--r-lg);padding:18px 20px;margin-bottom:28px;box-shadow:var(--sh-sm)}
+.lg-title{font:700 10.5px/1 'DM Sans';letter-spacing:.16em;text-transform:uppercase;color:var(--ink-faint);margin-bottom:12px}
+.lg-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:8px 14px}
+.lg-item{display:flex;align-items:center;gap:9px;font-size:12.5px;color:var(--ink-soft)}
+.dot{width:9px;height:9px;border-radius:50%;flex-shrink:0;box-shadow:0 0 0 2px var(--paper),0 0 0 3px currentColor}
+.dot.c1{color:var(--c-prim);background:var(--c-prim)}.dot.c2{color:var(--c-clin);background:var(--c-clin)}.dot.c3{color:var(--c-diag);background:var(--c-diag)}.dot.c4{color:var(--c-tx);background:var(--c-tx)}.dot.c5{color:var(--c-emerg);background:var(--c-emerg)}.dot.c6{color:var(--c-pearl);background:var(--c-pearl)}
+.lg-divider{height:1px;background:var(--line-soft);margin:14px 0}
+.lg-anchors{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:8px}
+.ank{display:inline-flex;align-items:center;gap:5px;font:700 9.5px/1 'DM Sans';letter-spacing:.12em;text-transform:uppercase;padding:4px 8px 4px 7px;border-radius:999px;border:1px solid;vertical-align:middle;white-space:nowrap}
+.ank::before{content:"";width:4px;height:4px;border-radius:50%;background:currentColor}
+.ank-hy{color:var(--ank-hy);background:var(--ank-hy-bg);border-color:#e5cd72}
+.ank-dec{color:var(--ank-dec);background:var(--ank-dec-bg);border-color:#9fbae6}
+.ank-dgr{color:var(--ank-dgr);background:var(--ank-dgr-bg);border-color:#e29ca0}
+.ank-prl{color:var(--ank-prl);background:var(--ank-prl-bg);border-color:#a8c298}
+.ank-myt{color:var(--ank-myt);background:var(--ank-myt-bg);border-color:#d0b181}
+.ank-con{color:var(--ank-con);background:var(--ank-con-bg);border-color:#bba7d3}
+.ank-evo{color:var(--ank-evo);background:var(--ank-evo-bg);border-color:#8fc1c9}
+.lg-explain{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:6px 14px;font-size:11.5px;color:var(--ink-mute);margin-top:10px}
+.lg-explain b{font-weight:700}
+.lg-explain .ehy b{color:var(--ank-hy)}.lg-explain .edec b{color:var(--ank-dec)}.lg-explain .edgr b{color:var(--ank-dgr)}.lg-explain .eprl b{color:var(--ank-prl)}.lg-explain .emyt b{color:var(--ank-myt)}.lg-explain .econ b{color:var(--ank-con)}.lg-explain .eevo b{color:var(--ank-evo)}
+
+/* EVIDENCE CHIPS */
+.ev{display:inline-flex;align-items:center;font:600 9.5px/1 'DM Mono',monospace;letter-spacing:.04em;padding:3px 6px 2px;border-radius:4px;background:#eeebde;color:var(--ink-soft);border:1px solid var(--line);vertical-align:middle;margin-left:3px}
+.ev-acr{background:#fadcdc;color:#a31b25;border-color:#e29ca0}
+.ev-eular{background:#dde7f8;color:#1d4ea3;border-color:#9fbae6}
+.ev-sbr{background:#e3d6f0;color:#5a4070;border-color:#bba7d3}
+.ev-nice{background:#cde5e9;color:#0d6373;border-color:#8fc1c9}
+.ev-expert{background:#eeebde;color:#7a6014;border-color:#d0b181}
+.ev-cochrane{background:#d8e6cf;color:#3e6a2e;border-color:#a8c298}
+
+/* CARD */
+.card{background:var(--paper);border:1px solid var(--line);border-radius:var(--r-lg);margin-bottom:22px;box-shadow:var(--sh-md);overflow:hidden;break-inside:avoid}
+.card-head{padding:18px 22px 15px;border-bottom:1px solid var(--line-soft);position:relative;background:linear-gradient(180deg,#fcfaf2 0%,#ffffff 100%)}
+.card-head::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--accent,var(--c-prim))}
+.card-eyebrow{font:700 10px/1 'DM Sans';letter-spacing:.16em;text-transform:uppercase;color:var(--accent,var(--c-prim));margin-bottom:5px;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.card-num{font-family:'DM Mono',monospace;font-weight:500;color:var(--ink-faint);font-size:10.5px;letter-spacing:0}
+.card h3{font-size:21px;font-weight:700;letter-spacing:-.025em;color:var(--ink);line-height:1.15;display:flex;align-items:center;gap:9px;flex-wrap:wrap}
+.card-sub{margin-top:6px;font-size:13px;color:var(--ink-mute)}
+.card-body{padding:20px 22px 24px}
+.card.prim{--accent:var(--c-prim)}.card.clin{--accent:var(--c-clin)}.card.diag{--accent:var(--c-diag)}.card.tx{--accent:var(--c-tx)}.card.emerg{--accent:var(--c-emerg)}.card.pearl{--accent:var(--c-pearl)}
+@media(max-width:560px){.card-head{padding:16px 18px 14px}.card-body{padding:18px 18px 20px}.card h3{font-size:18px}}
+
+/* QUICK VIEW */
+.quick{background:var(--paper-tint);border:1px solid var(--line);border-left:3px solid var(--accent,var(--c-prim));border-radius:var(--r);padding:13px 16px;margin:0 0 16px}
+.quick-label{font:700 9.5px/1 'DM Sans';letter-spacing:.16em;text-transform:uppercase;color:var(--accent,var(--c-prim));margin-bottom:6px}
+.quick-body{font-size:13.5px;line-height:1.45;color:var(--ink-soft)}
+.quick-body b{color:var(--ink);font-weight:600}
+
+/* SUB-TITLE */
+.sub-title{font:700 10.5px/1 'DM Sans';letter-spacing:.16em;text-transform:uppercase;color:var(--ink-soft);margin:18px 0 10px;display:flex;align-items:center;gap:9px;border-bottom:1px dashed var(--line);padding-bottom:6px}
+.sub-title::before{content:"";width:4px;height:4px;border-radius:50%;background:var(--accent,var(--ink-soft))}
+.sub-title:first-child{margin-top:0}
+
+/* TEXT */
+p{color:var(--ink-soft);margin-bottom:8px;font-size:14px;line-height:1.5}
+p:last-child{margin-bottom:0}
+strong{color:var(--ink);font-weight:600}
+ul.bullets{list-style:none;padding:0;margin:0 0 10px}
+ul.bullets li{position:relative;padding:5px 0 5px 20px;font-size:13.5px;line-height:1.5;color:var(--ink-soft);border-bottom:1px dashed var(--line-soft)}
+ul.bullets li:last-child{border-bottom:none}
+ul.bullets li::before{content:"";position:absolute;left:5px;top:13px;width:4px;height:4px;border-radius:50%;background:var(--accent,var(--ink-mute))}
+ul.bullets li b{color:var(--ink);font-weight:600}
+
+/* DISEASE BOX */
+.disease{border:1px solid var(--line);border-radius:var(--r);margin:14px 0;overflow:hidden;background:var(--paper)}
+.disease-head{padding:12px 16px;background:linear-gradient(180deg,#faf7eb 0%,#f1eddc 100%);border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap}
+.disease-name{font-weight:700;color:var(--ink);font-size:14.5px;letter-spacing:-.015em}
+.disease-tag{font:600 10px/1 'DM Sans';letter-spacing:.08em;text-transform:uppercase;color:var(--ink-mute)}
+.disease-body{padding:14px 16px}
+.disease-rows{display:grid;gap:0}
+.disease-row{display:grid;grid-template-columns:130px 1fr;gap:12px;padding:8px 0;border-bottom:1px dashed var(--line-soft)}
+.disease-row:last-child{border-bottom:none;padding-bottom:0}
+.disease-row:first-child{padding-top:0}
+.disease-row .k{font:700 10px/1.2 'DM Sans';letter-spacing:.12em;text-transform:uppercase;color:var(--accent,var(--ink-faint));padding-top:2px}
+.disease-row .v{font-size:13.5px;color:var(--ink-soft);line-height:1.5}
+.disease-row .v b{color:var(--ink)}
+@media(max-width:560px){.disease-row{grid-template-columns:1fr;gap:3px;padding:6px 0 8px}.disease-row .k{padding-top:0}}
+
+/* DEEP DIVE */
+.deep{margin:16px 0 6px;border:1px solid var(--line);border-radius:var(--r);background:linear-gradient(180deg,#fdfcf6 0%,#f9f6ea 100%);overflow:hidden}
+.deep>summary{list-style:none;cursor:pointer;padding:11px 16px;display:flex;align-items:center;justify-content:space-between;font:700 11px/1 'DM Sans';letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft);user-select:none;transition:background .15s}
+.deep>summary::-webkit-details-marker{display:none}
+.deep>summary::after{content:"+";font-size:18px;font-weight:600;color:var(--ink-faint);transition:transform .2s;font-family:'DM Mono',monospace}
+.deep[open]>summary::after{transform:rotate(45deg)}
+.deep>summary:hover{background:rgba(0,0,0,.02)}
+.deep-content{padding:14px 16px 16px;border-top:1px dashed var(--line)}
+.deep-content p{font-size:13px;color:var(--ink-mute);line-height:1.55}
+.deep-content p b{color:var(--ink-soft)}
+
+/* MNEMONIC */
+.mnemo{background:var(--paper-tint);border:1px solid var(--line);border-radius:var(--r);padding:14px 16px;margin:14px 0}
+.mnemo-title{font:700 10.5px/1 'DM Sans';letter-spacing:.16em;text-transform:uppercase;color:var(--c-pearl);margin-bottom:10px;display:flex;align-items:center;gap:8px}
+.mnemo-title b{background:var(--ink);color:#fff;padding:3px 7px;border-radius:4px;font-size:10px;letter-spacing:.06em}
+.mnemo-grid{display:grid;gap:5px}
+.mnemo-row{display:grid;grid-template-columns:28px 1fr;gap:10px;align-items:baseline;font-size:13px;color:var(--ink-soft);padding:3px 0}
+.mnemo-letter{display:grid;place-items:center;width:24px;height:24px;background:var(--ink);color:#fff;border-radius:5px;font:800 12px/1 'DM Sans';letter-spacing:-.02em}
+.mnemo-row b{color:var(--ink);font-weight:600}
+.mnemo-row em{font-style:italic;color:var(--ink-mute);font-size:12px}
+
+/* SCORE BOX */
+.score{border:1px solid var(--line);border-radius:var(--r);margin:14px 0;background:var(--paper);overflow:hidden}
+.score-head{padding:11px 14px;background:linear-gradient(180deg,#f5f1e0 0%,#ede9d6 100%);border-bottom:1px solid var(--line)}
+.score-name{font:700 13px/1.2 'DM Sans';color:var(--ink);letter-spacing:-.01em}
+.score-purpose{font:500 10.5px/1.2 'DM Sans';color:var(--ink-mute);letter-spacing:.06em;text-transform:uppercase;margin-top:3px}
+.score-rows{display:grid;gap:0}
+.score-row{display:grid;grid-template-columns:90px 1fr;gap:12px;align-items:start;padding:9px 14px;border-bottom:1px dashed var(--line-soft);font-size:13px}
+.score-row:last-child{border-bottom:none}
+.score-grade{font:800 12px/1.2 'DM Mono',monospace;color:var(--c-emerg);letter-spacing:-.01em}
+.score-desc{color:var(--ink-soft);line-height:1.45}
+.score-desc b{color:var(--ink)}
+
+/* STACKED TABLE */
+.stbl{margin:14px 0;border:1px solid var(--line);border-radius:var(--r);background:var(--paper);overflow:hidden}
+.stbl-head,.stbl-row{display:grid;gap:14px;padding:10px 14px;align-items:start}
+.stbl-head{background:#faf7eb;border-bottom:2px solid var(--line);font:700 10.5px/1 'DM Sans';letter-spacing:.1em;text-transform:uppercase;color:var(--ink)}
+.stbl-row{border-bottom:1px solid var(--line-soft);font-size:13px;color:var(--ink-soft);line-height:1.5}
+.stbl-row:last-child{border-bottom:none}
+.stbl-row:nth-child(even){background:#fcfaf2}
+.stbl-row b{color:var(--ink);font-weight:600}
+.stbl-row .col1{font-weight:600;color:var(--ink)}
+.stbl-2{grid-template-columns:1fr 2fr}
+.stbl-3{grid-template-columns:1fr 1.3fr 1.5fr}
+.stbl-4{grid-template-columns:1.2fr 1fr 1fr 1.2fr}
+@media(max-width:680px){
+  .stbl-head{display:none}
+  .stbl-row{grid-template-columns:1fr !important;gap:12px;padding:14px 16px}
+  .stbl-row .col{display:block;min-width:0;word-wrap:break-word;overflow-wrap:anywhere}
+  .stbl-row .col::before{content:attr(data-l);display:block;font:700 9.5px/1.3 'DM Sans';letter-spacing:.12em;text-transform:uppercase;color:var(--ink-mute);margin-bottom:4px}
+  .stbl-row .col1{font-weight:700;font-size:15px;padding-bottom:8px;margin-bottom:6px;border-bottom:1px dashed var(--line)}
+  .stbl-row .col1::before{display:none}
+}
+
+/* CALLOUT BOXES */
+.box{border-radius:var(--r);padding:14px 16px;margin:14px 0;position:relative;border:1px solid}
+.box-label{position:absolute;top:-9px;left:14px;font:700 9.5px/1 'DM Sans';letter-spacing:.16em;text-transform:uppercase;padding:3px 9px;border-radius:999px;color:#fff}
+.box-title{font-weight:700;color:var(--ink);font-size:14px;margin:2px 0 6px}
+.box-body{font-size:13.5px;line-height:1.5;color:var(--ink-soft)}
+.box-body b{color:var(--ink)}
+.box-body ul{list-style:none;padding:0;margin:4px 0 0}
+.box-body ul li{position:relative;padding:3px 0 3px 20px}
+.box-body ul li::before{content:"→";position:absolute;left:0;top:3px;font-weight:700;color:var(--bx-color)}
+.box.decision{background:#f1f5fc;border-color:#c4d3eb;--bx-color:var(--ank-dec)}.box.decision .box-label{background:var(--ank-dec)}
+.box.danger{background:#fbf0f0;border-color:#e5c2c2;--bx-color:var(--ank-dgr)}.box.danger .box-label{background:var(--ank-dgr)}.box.danger .box-body b{color:var(--ank-dgr)}
+.box.pearl{background:#f1f7ed;border-color:#c1d5b3;--bx-color:var(--ank-prl)}.box.pearl .box-label{background:var(--ank-prl)}
+.box.hy{background:#fcf6dd;border-color:#e3cf78;--bx-color:var(--ank-hy)}.box.hy .box-label{background:var(--ank-hy)}
+.box.myth{background:#f8eed8;border-color:#d0b181;--bx-color:var(--ank-myt)}.box.myth .box-label{background:var(--ank-myt)}
+.box.controversy{background:#f1e9f6;border-color:#bba7d3;--bx-color:var(--ank-con)}.box.controversy .box-label{background:var(--ank-con)}
+.box.evolving{background:#dff0f2;border-color:#8fc1c9;--bx-color:var(--ank-evo)}.box.evolving .box-label{background:var(--ank-evo)}
+
+/* ALGORITHM TREE */
+.algo{background:linear-gradient(180deg,#fcfaf2 0%,#f5f0dc 100%);border:1px solid var(--line-strong);border-radius:var(--r-lg);padding:18px;margin:14px 0;overflow-x:auto}
+.tree{font-size:13px}
+.tree-line{padding:6px 0}
+.tree-node{display:inline-block;padding:8px 12px;background:var(--paper);border:1.5px solid var(--ink-soft);border-radius:7px;font-weight:600;color:var(--ink);font-size:12.5px;box-shadow:var(--sh-sm)}
+.tree-node.start{background:var(--ink);color:#fff;border-color:var(--ink)}
+.tree-node.dec{background:#fff7d6;border-color:#e3cf78;color:#6b520a}
+.tree-node.dx{background:#dde7f8;border-color:#9fbae6;color:#1d4ea3}
+.tree-node.dgr{background:#fadcdc;border-color:#e29ca0;color:#a31b25}
+.tree-node.action{background:#d8e6cf;border-color:#a8c298;color:#3e6a2e}
+.tree-branch{margin-left:14px;border-left:1.5px dashed #b8b094;padding:6px 0 6px 18px;margin-top:6px;margin-bottom:2px;position:relative}
+.tree-branch::before{content:"";position:absolute;left:-1.5px;top:-4px;width:14px;height:14px;border-left:1.5px solid #b8b094;border-bottom:1.5px solid #b8b094;border-radius:0 0 0 6px}
+.tree-label{display:inline-block;font:700 9.5px/1 'DM Sans';letter-spacing:.12em;text-transform:uppercase;padding:3px 7px;border-radius:4px;margin-bottom:5px}
+.tree-label.yes{background:#fadcdc;color:#a31b25}.tree-label.no{background:#d8e6cf;color:#3e6a2e}
+
+/* FOOTER */
+.foot{margin-top:48px;padding-top:22px;border-top:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;font-size:11px;color:var(--ink-faint);letter-spacing:.04em;flex-wrap:wrap;gap:8px}
+.foot-mono{font-family:'DM Mono',monospace}
+.foot-author{font:800 14px/1.1 'DM Mono',monospace;color:var(--ink);letter-spacing:.02em;margin-bottom:3px}
+.foot-meta{font:500 11px/1.3 'DM Sans';color:var(--ink-faint);letter-spacing:.04em}
+
+/* WATERMARK */
+.watermark{position:fixed;bottom:calc(14px + env(safe-area-inset-bottom,0px));right:calc(14px + env(safe-area-inset-right,0px));font:600 10px/1 'DM Mono',monospace;letter-spacing:.04em;color:rgba(14,17,22,.55);background:rgba(255,255,255,.85);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);padding:6px 10px;border-radius:99px;border:1px solid rgba(14,17,22,.1);box-shadow:0 2px 8px rgba(14,17,22,.06);z-index:50;pointer-events:none;user-select:none}
+@media(max-width:560px){.watermark{bottom:calc(10px + env(safe-area-inset-bottom,0px));right:calc(10px + env(safe-area-inset-right,0px));font-size:9px;padding:5px 8px}}
+
+/* PRINT */
+@media print{
+  body{background:#fff;font-size:10.5pt}
+  body::before{display:none}
+  .header,.toc{position:static;background:#0e1116;color:#fff}
+  .wrap{padding:14px;max-width:100%}
+  .card,.hero,.legend,.pocket{box-shadow:none !important;break-inside:avoid}
+  .hero::after,.pocket::before{display:none}
+  .pocket{background:#1a1d24;color:#f0eee5}
+  .ank,.box,.disease,.score,.algo,.stbl,.deep,.mnemo,.quick{box-shadow:none !important;break-inside:avoid}
+  .deep:not([open]) .deep-content{display:block}
+  .deep>summary::after{display:none}
+  .watermark{position:fixed;bottom:8mm;right:8mm;background:none;border:none;color:rgba(0,0,0,.5)}
+  .hero-stamp{transform:none;position:absolute}
+}
+</style>
+</head>
+<body>
+
+<header class="header"><div class="header-row"><div class="h-mark">E</div><div class="h-titles"><div class="h-title">Emergência Psiquiátrica · Pocket Handbook</div><div class="h-sub">Elite edition · Psiquiatria clínica · PC06</div></div><div class="h-author">@dr.lorencato</div><div class="h-edition">v5.2</div></div></header>
+
+<nav class="toc"><div class="toc-inner"><a href="#pocket" class="toc-chip"><span class="toc-chip-num">0</span>Pocket</a><a href="#redflags" class="toc-chip"><span class="toc-chip-num">A</span>Red Flags</a><a href="#approach" class="toc-chip"><span class="toc-chip-num">B</span>Apresentação</a><a href="#primarias" class="toc-chip"><span class="toc-chip-num">C</span>Entidades</a><a href="#secundarias" class="toc-chip"><span class="toc-chip-num">D</span>Secundárias</a><a href="#algoritmo" class="toc-chip"><span class="toc-chip-num">E</span>Algoritmo</a><a href="#tratamento" class="toc-chip"><span class="toc-chip-num">F</span>Tratamento</a><a href="#pitfalls" class="toc-chip"><span class="toc-chip-num">G</span>Pitfalls</a><a href="#pearls" class="toc-chip"><span class="toc-chip-num">H</span>Pearls</a></div></nav>
+
+<main>
+<div class="wrap">
+
+<div class="hero">
+<div class="hero-stamp">@dr.lorencato</div>
+<div class="hero-tag">Psiquiatria · PC06 · Emergência psiquiátrica</div>
+<h1>Emergência Psiquiátrica<br><em>o paciente agitado é um paciente doente: primeiro a causa, depois a palavra, só então a agulha</em></h1>
+<p class="hero-lead">Avaliação do paciente agitado com a causa orgânica à frente, desescalada verbal pelos dez domínios do Project BETA, tranquilização rápida com doses, vias e tetos (haloperidol com prometazina, midazolam, olanzapina e ziprasidona (IM a conferir no Brasil), droperidol e cetamina rotulados), contenção mecânica sob a Resolução CFM 2.057/2013 e a COFEN 746/2024, risco de suicídio (avaliação, plano de segurança, internação pela Lei 10.216/2001, notificação compulsória), a tríade que mata em horas — síndrome neuroléptica maligna, síndrome serotoninérgica e catatonia maligna —, o agitado intoxicado ou em abstinência, e as populações em que a regra muda: idoso, criança e gestante. Sem lorazepam parenteral no Brasil: o HP diz o que usar no lugar. Conduta por Project BETA/AAEP, ensaios TREC, NICE, ABP/CFM e legislação brasileira.</p>
+<div class="hero-sig">Compilação clínica por <b>@dr.lorencato</b> · Elite Edition v5.2 · status clinical_review</div>
+</div>
+
+<div id="pocket" class="pocket">
+<div class="pocket-head"><div><div class="pocket-eyebrow">Pocket Card 0 · 5 segundos</div><div class="pocket-title">Decisões Críticas — Emergência Psiquiátrica</div><div class="pocket-sub">PS · UPA · Enfermaria clínica · CAPS III · SAMU</div></div></div>
+<div class="pocket-grid">
+<div class="pocket-card emerg"><div class="pc-trig">Agitado com febre, rigidez, clônus ou pele seca e quente</div><div class="pc-act">Não é "psiquiátrico": SNM, síndrome serotoninérgica, catatonia maligna, anticolinérgico ou simpaticomimético. <b>Meça temperatura, tônus, pupilas e pele antes de qualquer antipsicótico</b>; suspender o D2 bloqueador, benzodiazepínico, resfriar, CPK, UTI.</div></div>
+<div class="pocket-card emerg"><div class="pc-trig">Contido ou sedado e silencioso demais</div><div class="pc-act">Silêncio após contenção pode ser hipoventilação ou asfixia posicional. <b>Nunca em decúbito ventral; SpO2, FR e nível de consciência contínuos</b>; cianose, FR &lt;10 ou RASS −4: soltar, via aérea, O2.</div></div>
+<div class="pocket-card emerg"><div class="pc-trig">Ideação suicida com plano, meio à mão ou tentativa recente</div><div class="pc-act"><b>Não deixar sozinho, retirar meios, vigilância contínua até a avaliação psiquiátrica</b>; risco alto e suporte frágil = internação (involuntária se recusa, Lei 10.216/2001, MP em 72 h); tentativa é de notificação compulsória.</div></div>
+<div class="pocket-card dec"><div class="pc-trig">Antes de sedar o agitado</div><div class="pc-act"><b>Glicemia capilar, SpO2, temperatura, PA e FC</b>; pergunte por álcool (último gole), droga, TCE, anticoagulante e antipsicótico recente. Hipoglicemia, hipóxia e abstinência aparecem como "agitação psiquiátrica".</div></div>
+<div class="pocket-card dec"><div class="pc-trig">Via oral ou IM?</div><div class="pc-act"><b>Ofereça sempre a via oral primeiro</b> (risperidona, olanzapina ODT, haloperidol ± benzodiazepínico). IM se recusa e há risco imediato. Psicose: haloperidol + prometazina. Causa indefinida, estimulante ou abstinência: midazolam.</div></div>
+<div class="pocket-card dec"><div class="pc-trig">Contenção mecânica</div><div class="pc-act"><b>Só quando é o único meio de evitar dano imediato</b> (CFM 2.057/2013; COFEN 746/2024): prescrição médica, enfermeiro supervisiona, registro, sedação associada, a menor duração possível.</div></div>
+<div class="pocket-card tx"><div class="pc-trig">Psicose agitada, IM</div><div class="pc-act"><b>Haloperidol 5 mg + prometazina 50 mg IM, dose única; reavaliar em 30–60 min.</b> Teto de haloperidol 15 mg/dia (PCDT 2013). Biperideno 2,5–5 mg IM se distonia (máx. 10–20 mg/dia, NE06).</div></div>
+<div class="pocket-card tx"><div class="pc-trig">Causa indefinida, estimulante, abstinência</div><div class="pc-act"><b>Midazolam 5–15 mg IM (conferir)</b> (início em minutos, 89% tranquilos ou dormindo em 20 min no TREC); IV só titulado, 2,5–5 mg lento, com monitorização e via aérea à mão.</div></div>
+<div class="pocket-card tx"><div class="pc-trig">Idoso · criança · gestante</div><div class="pc-act">Idoso: <b>haloperidol 0,5–2 mg VO/IM</b>, sem benzodiazepínico (exceto abstinência). Criança: mg/kg com teto, <b>prometazina proibida &lt;2 anos</b>. Gestante: decúbito lateral esquerdo e haloperidol ou olanzapina.</div></div>
+<div class="pocket-card clin"><div class="pc-trig">Lorazepam IV não existe no Brasil</div><div class="pc-act">Existe só VO/SL. Parenteral: <b>diazepam 5–10 mg IV lento (≤5 mg/min)</b> ou midazolam IM/IV. Diazepam IM tem absorção errática: evite.</div></div>
+<div class="pocket-card clin"><div class="pc-trig">"Delírio excitado"</div><div class="pc-act">Não é diagnóstico. Hipertermia, sudorese e agitação extrema são <b>urgência clínica com causa a achar</b> (estimulante, SNM, anticolinérgico, hipertermia): resfriar, sedar com benzodiazepínico, monitorar.</div></div>
+<div class="pocket-card clin"><div class="pc-trig">Alta após tentativa ou ideação</div><div class="pc-act"><b>Plano de segurança escrito + restrição de meios + contato de seguimento em 24–72 h.</b> "Contrato de não suicídio" não protege e não substitui nada disso.</div></div>
+</div>
+</div>
+
+<div class="legend">
+<div class="lg-title">Sistema de legendas</div>
+<div class="lg-grid">
+<div class="lg-item"><span class="dot c1"></span> Fisiopatologia / Classificação</div>
+<div class="lg-item"><span class="dot c2"></span> Clínica / Apresentação</div>
+<div class="lg-item"><span class="dot c3"></span> Diagnóstico / Exames</div>
+<div class="lg-item"><span class="dot c4"></span> Tratamento / Conduta</div>
+<div class="lg-item"><span class="dot c5"></span> Emergências / Red Flags</div>
+<div class="lg-item"><span class="dot c6"></span> Nuances / Pearls</div>
+</div>
+<div class="lg-divider"></div>
+<div class="lg-anchors"><span class="ank ank-hy">HIGH-YIELD</span><span class="ank ank-dec">DECISION</span><span class="ank ank-dgr">DANGER</span><span class="ank ank-prl">PEARL</span><span class="ank ank-myt">MYTH</span><span class="ank ank-con">CONTROVERSY</span><span class="ank ank-evo">EVOLVING</span></div>
+<div class="lg-explain">
+<div class="ehy"><b>HIGH-YIELD</b> — prova/prática frequente</div>
+<div class="edec"><b>DECISION</b> — muda a conduta</div>
+<div class="edgr"><b>DANGER</b> — erro grave / risco crítico</div>
+<div class="eprl"><b>PEARL</b> — nuance de especialista</div>
+<div class="emyt"><b>MYTH</b> — mito vivo na prática</div>
+<div class="econ"><b>CONTROVERSY</b> — debate sem consenso</div>
+<div class="eevo"><b>EVOLVING</b> — mudança recente</div>
+</div>
+<div class="lg-explain" style="margin-top:8px"><div>Chips de evidência: AAEP/Project BETA, ACEP e APA (vermelho) · CFM, COFEN, ABP, PCDT/MS e legislação brasileira (roxo) · NICE e WHO (verde-azulado) · bula, prática de serviço e doses a conferir (ocre) · ensaios TREC e revisões Cochrane (verde) · periódicos e consensos (azul). Escopo: psicoses, SNM completa, catatonia e abstinência como doença → PC03 · delirium → NE04 · psicose puerperal → GO14 · toxicologia e síndrome serotoninérgica detalhada → CT10 · infância e adolescência como especialidade → PC04 · autolesão e borderline → PC05.</div></div>
+</div>
+
+<section id="redflags">
+<div class="section"><div class="section-eyebrow"><span>A</span> Red Flags</div><div class="section-title">O agitado que morre não morre de psiquiatria</div><div class="section-sub">Hipoglicemia, hipóxia, abstinência, hematoma subdural, toxíndrome e infecção do SNC chegam ao plantão com a mesma etiqueta — "agitação psiquiátrica" — e a mesma tentação: sedar e liberar.</div></div>
+
+<div class="card emerg">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">A.1</span> Emergências</div><h3>Causa orgânica do paciente agitado <span class="ank ank-dgr">DANGER</span></h3></div>
+<div class="card-body">
+<div class="mnemo"><div class="mnemo-title"><b>AGITADO</b> o que se descarta antes de chamar de psiquiátrico</div><div class="mnemo-grid">
+<div class="mnemo-row"><span class="mnemo-letter">A</span><span><b>Álcool e depressores</b> · abstinência 6–72 h após o último gole (tremor, taquicardia, sudorese), Wernicke, abstinência de benzodiazepínico ou GHB</span></div>
+<div class="mnemo-row"><span class="mnemo-letter">G</span><span><b>Glicemia e eletrólitos</b> · hipoglicemia (glicemia capilar, sempre), hiponatremia, hipercalcemia, uremia</span></div>
+<div class="mnemo-row"><span class="mnemo-letter">I</span><span><b>Infecção</b> · sepse, meningoencefalite, ITU e pneumonia no idoso; febre muda o diagnóstico</span></div>
+<div class="mnemo-row"><span class="mnemo-letter">T</span><span><b>Trauma craniano</b> · hematoma subdural no idoso, no etilista e no anticoagulado; queda "que ninguém viu"</span></div>
+<div class="mnemo-row"><span class="mnemo-letter">A</span><span><b>Anticolinérgico, simpaticomimético, serotoninérgico, SNM</b> · pele, pupila, tônus e clônus separam as toxíndromes</span></div>
+<div class="mnemo-row"><span class="mnemo-letter">D</span><span><b>Déficit de oxigênio</b> · hipóxia, hipercapnia, TEP, choque; SpO2 antes do rótulo</span></div>
+<div class="mnemo-row"><span class="mnemo-letter">O</span><span><b>Orgânico cerebral</b> · AVC, estado epiléptico não convulsivo, encefalite (anti-NMDAR), encefalopatia hepática, tireotoxicose</span></div>
+</div></div>
+
+<div class="sub-title">Sinal objetivo → suspeita → conduta imediata</div>
+<div class="stbl stbl-3">
+<div class="stbl-head stbl-3"><div>Red flag</div><div>Suspeita</div><div>Conduta imediata</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Red flag">Glicemia capilar &lt;70 mg/dL</div><div class="col" data-l="Suspeita">Hipoglicemia (insulina, sulfonilureia, etilista em jejum)</div><div class="col" data-l="Conduta"><b>Glicose IV e tiamina IV (200–500 mg 8/8 h se etilismo), em qualquer ordem</b>; só então reavaliar o comportamento</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Red flag">SpO2 &lt;92%, FR &gt;24, cianose</div><div class="col" data-l="Suspeita">Hipóxia, TEP, pneumonia, DPOC descompensada</div><div class="col" data-l="Conduta"><b>O2 e causa antes de qualquer sedativo</b>; benzodiazepínico em hipercapnia pode parar a respiração</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Red flag">T ≥38,5 °C com rigidez, clônus, sudorese ou pele seca e quente</div><div class="col" data-l="Suspeita">SNM, serotoninérgica, anticolinérgica, simpaticomimética, infecção do SNC</div><div class="col" data-l="Conduta"><b>Não dar mais bloqueador D2</b>; benzodiazepínico, resfriamento, CPK, UTI; ver C.6</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Red flag">Último gole há 6–72 h, tremor, taquicardia, sudorese</div><div class="col" data-l="Suspeita">Abstinência alcoólica (delirium tremens em 48–96 h)</div><div class="col" data-l="Conduta"><b>Benzodiazepínico e tiamina, não antipsicótico</b>; CIWA-Ar e doses no PC03</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Red flag">TCE recente, anticoagulante, idoso ou etilista</div><div class="col" data-l="Suspeita">Hematoma subdural ou extradural</div><div class="col" data-l="Conduta"><b>Registre Glasgow, pupilas e déficit focal antes de sedar</b>; TC de crânio; reversão pelo HO03; CT03</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Red flag">Febre, cefaleia, rigidez de nuca, confusão</div><div class="col" data-l="Suspeita">Meningite ou encefalite</div><div class="col" data-l="Conduta"><b>Hemoculturas, antibiótico e aciclovir sem esperar o LCR</b> conforme II04</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Red flag">Jovem, psicose de início abrupto, discinesia orofacial, crise, rebaixamento</div><div class="col" data-l="Suspeita">Encefalite anti-NMDAR</div><div class="col" data-l="Conduta"><b>Evitar antipsicótico em dose alta</b> (intolerância grave); RM, EEG, LCR; NE05</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Red flag">Midríase, hipertensão, taquicardia, hipertermia, bruxismo</div><div class="col" data-l="Suspeita">Simpaticomimético (cocaína, anfetamina, MDMA, catinonas)</div><div class="col" data-l="Conduta"><b>Midazolam ou diazepam, resfriamento, ECG, CPK, K+</b>; D.1 e PC03</div></div>
+</div>
+
+<div class="box danger"><span class="box-label">DANGER</span><div class="box-title">Sedar antes de examinar apaga o único exame neurológico que você terá</div><div class="box-body">Depois do midazolam ou da associação haloperidol-prometazina, pupilas, déficit focal e Glasgow deixam de ser interpretáveis por horas. Em quem tem TCE, anticoagulante, febre ou cefaleia, <b>faça e escreva o exame mínimo (Glasgow, pupilas, força dos quatro membros, nuca) antes da primeira dose</b>; se a violência impede o exame, registre isso e reexamine assim que a sedação permitir. O sedado "que dorme muito" é o hematoma que cresce.</div></div>
+<div class="box danger"><span class="box-label">DANGER</span><div class="box-title">Hipertermia, agitação e contenção formam um círculo que termina em parada</div><div class="box-body">Esforço muscular contínuo em paciente contido produz acidose láctica, rabdomiólise, hipercalemia e hipertermia; a contenção em decúbito ventral soma restrição ventilatória. <b>Se a temperatura passa de 38,5 °C ou o paciente está sudorético, taquipneico e cada vez mais "forte", trate como emergência clínica</b>: benzodiazepínico, resfriamento ativo, K+ e CPK, e retire a contenção assim que a sedação permitir (C.4).</div></div>
+</div>
+</div>
+
+<div class="card emerg">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">A.2</span> Violência iminente</div><h3>Os sinais de que a agressão vem aí <span class="ank ank-dec">DECISION</span></h3></div>
+<div class="card-body">
+<div class="stbl stbl-3">
+<div class="stbl-head stbl-3"><div>Sinal</div><div>Leitura</div><div>Conduta</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Sinal">Punhos cerrados, mandíbula tensa, voz que sobe, passos curtos de aproximação</div><div class="col" data-l="Leitura">Escalada (BARS ≥5)</div><div class="col" data-l="Conduta"><b>Um único interlocutor, distância de um braço e meio, saída livre atrás de você</b>; equipe de apoio posicionada antes de falar em medicação</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Sinal">Arma, objeto de arremesso, história de agressão grave, ameaça nominal</div><div class="col" data-l="Leitura">Risco alto para a equipe e para terceiros</div><div class="col" data-l="Conduta"><b>Não entre sozinho</b>; segurança desarma ou retira o objeto; polícia só para arma de fogo ou faca em mãos; ver D.7</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Sinal">Paranoia dirigida à equipe, alucinação de comando, intoxicação por estimulante</div><div class="col" data-l="Leitura">Violência imprevisível, não responde a negociação longa</div><div class="col" data-l="Conduta"><b>Desescalada breve e oferta de medicação cedo</b>; se recusa e o risco é imediato, tranquilização IM com equipe de 5 (C.3, C.4)</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Sinal">Calma súbita após horas de agitação com ideação de morte</div><div class="col" data-l="Leitura">Decisão tomada: risco suicida alto</div><div class="col" data-l="Conduta"><b>Vigilância contínua e revista de pertences</b> (C.5)</div></div>
+</div>
+<div class="box decision"><span class="box-label">DECISION</span><div class="box-title">Quatro perguntas de segurança antes de entrar na sala</div><div class="box-body">Há arma ou objeto cortante com o paciente? Há saída livre para mim e para ele? Há quatro ou cinco pessoas treinadas por perto, com um líder que fale? Sei o que o paciente usou e se tem anticoagulante, antipsicótico ou doença cardíaca? <b>Quatro "não" são motivo para esperar a equipe</b>, não para improvisar sozinho.</div></div>
+</div>
+</div>
+</section>
+
+<section id="approach">
+<div class="section"><div class="section-eyebrow"><span>B</span> Por Apresentação</div><div class="section-title">Mapa Sindrômico — o que o paciente faz define a primeira conduta</div><div class="section-sub">Cinco retratos de plantão. Cada um tem uma primeira ação diferente: falar, medicar por via oral, medicar por via IM, procurar a causa clínica ou ficar ao lado de quem está quieto.</div></div>
+
+<div class="card clin">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">B.1</span> Padrão 1</div><h3>Inquieto, cooperativo ou quase <span class="ank ank-hy">HIGH-YIELD</span></h3><div class="card-sub">ansiedade, pânico, crise em transtorno de personalidade, luto agudo, abstinência leve</div></div>
+<div class="card-body">
+<div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">BARS 5 (agitado, mas controlável por pedido). <b>A desescalada resolve a maioria em menos de 5 minutos</b> (Project BETA) e a medicação, quando aceita, é por via oral. O erro é pular a fala e ir direto à ampola: a medicação imposta humilha, escalona e piora a adesão futura.</div></div>
+<ul class="bullets">
+<li><b>Sinal-guia:</b> andar contínuo, mãos inquietas, frases repetidas ("preciso sair daqui"), mas atenção a perguntas simples e sem ameaça dirigida.</li>
+<li><b>Oferta oral:</b> olanzapina ODT 5–10 mg, risperidona 1–2 mg ou diazepam 10 mg VO; o paciente escolhe entre as opções (domínio IX do BETA).</li>
+<li><b>Atenção:</b> o pânico de repetição é diagnóstico de exclusão em quem tem palpitação, dispneia ou dor torácica; ECG e SpO2 primeiro.</li>
+<li><b>Seguimento:</b> ansiedade e personalidade como doença seguem para PC02 e PC05; aqui só a crise.</li>
+</ul>
+<div class="box hy"><span class="box-label">HIGH-YIELD</span><div class="box-title">Medicar rápido demais custa mais tempo do que desescalar</div><div class="box-body">Conter e sedar consome pessoal, registro, monitorização e leito. <b>Uma desescalada bem feita gasta 5 a 10 minutos de um profissional</b>; a alternativa gasta cinco profissionais, uma sedação e horas de vigilância.</div></div>
+</div>
+</div>
+
+<div class="card clin">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">B.2</span> Padrão 2</div><h3>Agressivo, psicótico ou maníaco <span class="ank ank-dec">DECISION</span></h3><div class="card-sub">delírio persecutório, alucinação de comando, mania com irritabilidade extrema</div></div>
+<div class="card-body">
+<div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">BARS 6–7. Desescalada curta e <b>oferta de medicação oral logo no início</b>; se recusa e há risco imediato, <b>tranquilização IM</b> com haloperidol 5 mg + prometazina 50 mg (padrão brasileiro, TREC) ou midazolam 5–15 mg IM (conferir). A decisão entre os dois depende de a causa ser psicótica (haloperidol) ou indefinida/estimulante (midazolam).</div></div>
+<ul class="bullets">
+<li><b>Pista de psicose primária:</b> sensório claro, orientação preservada, delírio sistematizado, história psiquiátrica, abandono de antipsicótico.</li>
+<li><b>Pista de mania:</b> logorreia, grandiosidade, insônia por dias, gastos; antipsicótico atípico oral ou IM.</li>
+<li><b>Armadilha:</b> paciente "psicótico" com alucinação visual, desorientação ou febre é delirium até prova em contrário (B.4).</li>
+<li><b>Depois da sedação:</b> reavaliar causa orgânica, exame toxicológico clínico, antipsicótico de manutenção (PC03) e internação.</li>
+</ul>
+</div>
+</div>
+
+<div class="card clin">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">B.3</span> Padrão 3</div><h3>Sudorético, taquicárdico, midriático <span class="ank ank-dgr">DANGER</span></h3><div class="card-sub">intoxicação por estimulante, abstinência alcoólica ou de benzodiazepínico, toxíndromes</div></div>
+<div class="card-body">
+<div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">O sistema nervoso autonômico acusa a causa: <b>pele úmida com ruídos hidroaéreos presentes sugere simpaticomimético ou abstinência; pele seca, quente e íleo sugerem anticolinérgico</b>. A primeira escolha é o benzodiazepínico; antipsicótico de alta dose piora a abstinência e baixa o limiar convulsivo.</div></div>
+<ul class="bullets">
+<li><b>Estimulante:</b> hipertermia, bruxismo, midríase, hipertensão; midazolam ou diazepam, resfriamento, ECG, CPK, K+.</li>
+<li><b>Abstinência alcoólica:</b> CIWA-Ar e benzodiazepínico (PC03); tiamina antes ou junto da glicose.</li>
+<li><b>Anticolinérgico:</b> delirium com rubor, retenção urinária e "catar" objetos no ar; evite prometazina e biperideno (CT10).</li>
+<li><b>Canabinoides sintéticos:</b> agitação, convulsão, psicose e taquicardia; suporte e benzodiazepínico (PC03).</li>
+</ul>
+</div>
+</div>
+
+<div class="card clin">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">B.4</span> Padrão 4</div><h3>Confuso e agitado de início agudo <span class="ank ank-hy">HIGH-YIELD</span></h3><div class="card-sub">delirium hiperativo no idoso e no internado</div></div>
+<div class="card-body">
+<div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Flutuação, desatenção (meses do ano de trás para a frente), desorientação e alucinação visual. <b>A agitação do delirium trata-se pela causa</b>; fármaco só se há risco, em dose mínima (haloperidol 0,5–2 mg VO/IM) e sem benzodiazepínico, salvo abstinência. O diagnóstico etiológico e a prevenção moram no NE04.</div></div>
+<ul class="bullets">
+<li><b>Primeiro:</b> glicemia, SpO2, temperatura, retenção urinária, fecaloma, dor, medicamentos novos (anticolinérgicos, opioides, corticoide, benzodiazepínico).</li>
+<li><b>Ambiente:</b> luz, relógio, óculos, aparelho auditivo, família presente; contenção só se lesão iminente (C.4).</li>
+<li><b>Demência com corpos de Lewy ou Parkinson:</b> haloperidol, risperidona e olanzapina pioram gravemente; quetiapina em dose baixa (NE04, NE06).</li>
+</ul>
+</div>
+</div>
+
+<div class="card clin">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">B.5</span> Padrão 5</div><h3>Quieto e perigoso <span class="ank ank-dgr">DANGER</span></h3><div class="card-sub">ideação suicida, catatonia, estupor, recusa alimentar</div></div>
+<div class="card-body">
+<div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">O paciente que não incomoda ninguém no corredor é o que mais morre. <b>Pergunte sobre suicídio diretamente</b> (a pergunta não induz), avalie plano e meios, e examine tônus, mutismo e postura: estupor com rigidez e febre é catatonia maligna ou SNM, não "depressão".</div></div>
+<ul class="bullets">
+<li><b>Suicídio:</b> triagem com ASQ ou C-SSRS; ABP/CFM 2014 estratifica em risco baixo, médio, alto e urgência (C.5).</li>
+<li><b>Catatonia:</b> mutismo, negativismo, catalepsia, flexibilidade cérea; teste com benzodiazepínico (PC03).</li>
+<li><b>Recusa alimentar e hídrica:</b> desidratação, rabdomiólise e TEV em imobilidade; hidratação, profilaxia e avaliação para ECT.</li>
+</ul>
+<div class="box pearl"><span class="box-label">PEARL</span><div class="box-title">A melhora súbita de quem estava muito mal é sinal de alarme, não de alívio</div><div class="box-body">A calma repentina após dias de desespero pode significar que a decisão foi tomada. <b>Pergunte o que mudou e mantenha a vigilância</b> até a reavaliação psiquiátrica.</div></div>
+</div>
+</div>
+</section>
+
+<section id="primarias">
+<div class="section"><div class="section-eyebrow"><span>C</span> Entidades Primárias</div><div class="section-title">Do olhar ao fármaco, passando pela palavra</div><div class="section-sub">Seis entidades âncora: a avaliação do agitado, a desescalada, a tranquilização, a contenção, o risco de suicídio e a tríade hipertérmica. Psicoses, catatonia e abstinência como doença ficam no PC03; aqui está o que se faz nos primeiros 60 minutos.</div></div>
+
+<div class="card prim">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">C.1</span> Entidade âncora</div><h3>Agitação aguda: avaliação e causa orgânica primeiro <span class="ank ank-hy">HIGH-YIELD</span></h3><div class="card-sub">síndrome comportamental com atividade motora sem propósito, irritabilidade e hiper-reatividade</div></div>
+<div class="card-body">
+<div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Agitação é uma síndrome, não um diagnóstico: <b>segurança, via aérea, sinais vitais e glicemia capilar vêm antes da história psiquiátrica</b>. Gradue pela BARS, pergunte por álcool, drogas, trauma, anticoagulante e antipsicótico recente, examine o paciente enquanto conversa e só então escolha entre palavra, via oral e IM. Exames de rotina em todos não têm rendimento comprovado; o que decide a investigação é o achado clínico.</div></div>
+<div class="disease">
+<div class="disease-head"><div class="disease-name">Agitação psicomotora aguda no pronto-socorro</div><div class="disease-tag">CID-10 R45.1 (inquietação e agitação) · causas em F05, F10–F19, F20–F31 e nas doenças clínicas listadas em A.1</div></div>
+<div class="disease-body"><div class="disease-rows">
+<div class="disease-row"><div class="k">Epidemiologia</div><div class="v">Motivo frequente de acionamento de segurança e de contenção em PS e UPA; a distribuição das causas varia com o serviço (psiquiátricas, intoxicação, delirium e abstinência dividem a maioria). O ponto operacional é que uma fração relevante tem causa clínica tratável, sobretudo no idoso, no etilista e no usuário de estimulantes, e que a primeira avaliação costuma ser feita por quem não é psiquiatra <span class="ev ev-acr">AAEP/BETA 2012</span>.</div></div>
+<div class="disease-row"><div class="k">Fisiopatologia</div><div class="v">Via final comum de hiperativação noradrenérgica e dopaminérgica com perda do controle pré-frontal sobre a amígdala: a ameaça percebida (delírio persecutório, intoxicação, dor, hipóxia, abstinência) dispara resposta simpática e motora não dirigida. Contínuo de ansiedade → agitação → agressão: quanto mais à direita, menos a palavra funciona e maior a chance de violência.</div></div>
+<div class="disease-row"><div class="k">Clínica</div><div class="v">Atividade repetitiva e sem objetivo (andar, bater o pé, torcer as mãos), vocalização repetida, irritabilidade, hiper-reatividade a estímulos, tensão muscular. Pistas orgânicas: flutuação do nível de consciência, desatenção, desorientação, alucinação visual ou tátil, febre, tremor fino, pupilas anormais, instabilidade autonômica, início agudo após os 40 anos.</div></div>
+<div class="disease-row"><div class="k">Diagnóstico</div><div class="v">Grade na <b>BARS</b> (1–7) ao chegar e a cada reavaliação. Mínimo obrigatório: SpO2, temperatura, PA, FC, FR e <b>glicemia capilar</b>; ECG se haverá haloperidol, droperidol ou ziprasidona em dose repetida ou há cardiopatia; CPK se hipertermia, rigidez ou contenção prolongada; gasometria se dispneia; TC se TCE, anticoagulante ou déficit focal; LCR se febre com sinais meníngeos. Toxicológico urinário só quando o resultado muda a conduta <span class="ev ev-acr">AAEP/BETA 2012</span> <span class="ev ev-expert">prática de serviço · conferir</span>.</div></div>
+<div class="disease-row"><div class="k">Tratamento</div><div class="v">1) Segurança do ambiente e da equipe. 2) Corrigir o que mata (glicose, O2, temperatura). 3) Desescalada verbal (C.2). 4) Medicação oral oferecida com escolha. 5) IM só se recusa e há risco imediato (C.3). 6) Contenção como último recurso (C.4). Em todo o percurso: o paciente participa das escolhas e é reavaliado com BARS <span class="ev ev-acr">AAEP/BETA 2012</span>.</div></div>
+<div class="disease-row"><div class="k">Prognóstico</div><div class="v">A maioria resolve em horas com desescalada e ou uma dose. Pior prognóstico quando contenção e sedação profunda são o primeiro recurso: mais internação, internação mais longa e mais agressões futuras. Mortalidade relaciona-se à causa clínica não reconhecida e à contenção.</div></div>
+<div class="disease-row"><div class="k">O que muda conduta</div><div class="v">Glicemia &lt;70 mg/dL, SpO2 &lt;92% ou T ≥38,5 °C → tratar antes de qualquer psicotrópico; desorientação ou alucinação visual → delirium (NE04) e não psicose; TCE ou anticoagulante → TC antes de sedação profunda; cooperativo → via oral e sem agulha; recusa com violência iminente → IM com equipe presente.</div></div>
+</div></div></div>
+<div class="score"><div class="score-head"><div class="score-name">BARS — Behavioural Activity Rating Scale <span class="ev ev-acr">Swift 2002 · AAEP/BETA 2012</span></div><div class="score-purpose">Gradua a atividade; qualquer valor diferente de 4 pede avaliação clínica</div></div><div class="score-rows">
+<div class="score-row"><div class="score-grade">1 · 2 · 3</div><div class="score-desc">1 difícil ou impossível de despertar · 2 dormindo, responde normalmente a estímulo verbal ou físico · 3 sonolento, parece sedado.</div></div>
+<div class="score-row"><div class="score-grade">4</div><div class="score-desc"><b>Calmo e acordado</b>: nível normal de atividade. É o alvo da tranquilização, não o sono profundo.</div></div>
+<div class="score-row"><div class="score-grade">5</div><div class="score-desc">Sinais evidentes de atividade, verbal ou física, que se acalma com orientação: <b>desescalada e via oral</b>.</div></div>
+<div class="score-row"><div class="score-grade">6 · 7</div><div class="score-desc">6 extremamente ou continuamente ativo, sem necessidade de contenção · 7 violento, <b>exige contenção</b>: tranquilização IM e equipe.</div></div>
+</div></div>
+<details class="deep"><summary>Deep dive · Por que o agitado não é um problema psiquiátrico até prova em contrário</summary><div class="deep-content">
+<p>O comportamento agitado é a assinatura comum de circuitos diferentes. No <b>delirium</b>, o déficit colinérgico relativo e o excesso dopaminérgico e noradrenérgico desorganizam atenção e sono; no <b>simpaticomimético</b>, o bloqueio de recaptação de catecolaminas produz hiperatividade autonômica com hipertermia; na <b>abstinência de GABA-érgicos</b> (álcool, benzodiazepínico, GHB), a perda da inibição tônica deixa o glutamato NMDA sem oposição; na <b>hipoglicemia</b>, a resposta contrarreguladora adrenérgica é o próprio quadro. Em todos, o resultado visível é o mesmo e a conduta é oposta: glicose, benzodiazepínico, suspensão do agente, tratamento da infecção.</p>
+<p>Esse é o raciocínio por trás da frase "causa primeiro". A frase não prega investigação exaustiva (a literatura de avaliação médica no PS psiquiátrico não sustenta bateria laboratorial em todos), e sim <b>um exame dirigido em dois minutos</b>: sinais vitais completos, glicemia, nível de consciência, atenção, pupilas, pele, tônus e sinais de trauma. Paciente com história psiquiátrica conhecida, sensório claro, sinais vitais normais e queixa coerente com a doença de base raramente precisa de mais que isso; paciente sem história, com mais de 40 anos, com sensório alterado ou com sinal vital alterado, sim.</p>
+<p>A <b>BARS</b> importa por duas razões. Primeiro, transforma "muito agitado" em número, o que reduz a tendência da equipe a minimizar sinais precoces ou a reagir tarde. Segundo, define o alvo: a escala termina em sono (1) e sonolência (3) como estados de excesso de sedação; o objetivo da tranquilização é o 4, acordado e calmo, em que o paciente pode ser examinado, interrogado e envolvido nas decisões. Sedação profunda esconde a causa orgânica, aumenta aspiração e hipoventilação e impede a avaliação psiquiátrica que decide internação.</p>
+<p>Por fim, a ordem importa porque as intervenções se contaminam: a medicação rápida antes da desescalada tende a ser percebida como punição; a contenção antes da medicação oferecida aumenta a agitação e o risco de lesão; a sedação antes do exame neurológico apaga o sinal que indicaria a TC. A sequência do HP (segurança, correção do que mata, palavra, via oral, IM, contenção) é a que menos vezes obriga a voltar atrás.</p>
+</div></details>
+</div>
+</div>
+
+<div class="card prim">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">C.2</span> Entidade</div><h3>Desescalada verbal e prevenção da agressão <span class="ank ank-dec">DECISION</span></h3><div class="card-sub">a primeira intervenção terapêutica, com dez domínios e um interlocutor</div></div>
+<div class="card-body">
+<div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body"><b>Um interlocutor, voz baixa, frases curtas, repetidas</b>; ouvir, validar e só então pedir (sentar, aceitar o comprimido). O consenso do Project BETA estima que a desescalada funciona em geral em menos de 5 minutos e deve ser tentada na grande maioria das situações, mesmo em PS cheio. Falha quando há delirium, intoxicação grave ou psicose que bloqueia o contato: nesses casos, medicação oferecida cedo.</div></div>
+<div class="disease">
+<div class="disease-head"><div class="disease-name">Desescalada verbal do paciente agitado</div><div class="disease-tag">CID-10 R45.5 (hostilidade) · sem código nominal para o procedimento</div></div>
+<div class="disease-body"><div class="disease-rows">
+<div class="disease-row"><div class="k">Epidemiologia</div><div class="v">A agressão contra a equipe de saúde é frequente no PS e subnotificada; os fatores de risco mais consistentes são história de violência, psicose, intoxicação, delirium, espera prolongada e ambiente superlotado. Treinamento anual em manejo de emergências comportamentais é recomendado <span class="ev ev-acr">AAEP/BETA 2012</span>.</div></div>
+<div class="disease-row"><div class="k">Fisiopatologia</div><div class="v">A escalada é uma espiral entre ameaça percebida e resposta defensiva: a desescalada reduz a ameaça (espaço, tom, previsibilidade) e devolve controle ao paciente, o que reduz a ativação simpática e libera o córtex pré-frontal para a negociação. Objetivo contemporâneo: ajudar o paciente a se acalmar, não "acalmar o paciente".</div></div>
+<div class="disease-row"><div class="k">Clínica</div><div class="v">Preditores imediatos de violência (Broset Violence Checklist: confusão, irritabilidade, estardalhaço, ameaças verbais, ameaças físicas, ataque a objetos) e história prévia. Sinais corporais: tensão, punhos cerrados, mandíbula travada, aproximação, olhar fixo.</div></div>
+<div class="disease-row"><div class="k">Diagnóstico</div><div class="v">BARS repetida a cada reavaliação; o escore sobe ou desce com a intervenção e orienta o passo seguinte <span class="ev ev-acr">AAEP/BETA 2012</span>. O Broset é ferramenta de unidade de internação e de PS com tempo de observação (<span class="ev ev-expert">conferir validação no PS</span>).</div></div>
+<div class="disease-row"><div class="k">Tratamento</div><div class="v">Ver os dez domínios abaixo. Tempo: uma desescalada bem conduzida dura de 5 a 10 minutos. Equipe de 4 a 5 pessoas treinadas por perto, mesmo que só uma fale. Ofereça medicação oral como escolha, nunca como ameaça. Depois: <b>debrief</b> com o paciente e com a equipe <span class="ev ev-acr">AAEP/BETA 2012</span>.</div></div>
+<div class="disease-row"><div class="k">Prognóstico</div><div class="v">Desescalada eficaz evita contenção, reduz internação e preserva a aliança terapêutica; paciente contido tem mais probabilidade de internação e permanência mais longa.</div></div>
+<div class="disease-row"><div class="k">O que muda conduta</div><div class="v">BARS que cai para 4 → sem medicação; BARS 5 estável e paciente aceita → via oral; BARS 6–7, arma ou ameaça específica → equipe completa e IM sem negociação prolongada; delirium ou intoxicação grave que impede contato → tratar a causa e sedar precocemente.</div></div>
+</div></div></div>
+<div class="score"><div class="score-head"><div class="score-name">Os dez domínios da desescalada <span class="ev ev-acr">Project BETA · Richmond 2012</span></div><div class="score-purpose">Lista de verificação de bolso</div></div><div class="score-rows">
+<div class="score-row"><div class="score-grade">I–II</div><div class="score-desc"><b>Respeite o espaço pessoal</b> (distância de um braço e meio, saída livre para os dois) e <b>não provoque</b> (corpo de lado, mãos visíveis, sem encarar, sem tom de comando).</div></div>
+<div class="score-row"><div class="score-grade">III–IV</div><div class="score-desc"><b>Estabeleça contato verbal</b> com uma só voz; <b>seja conciso</b>: frases curtas, vocabulário simples, repetição quantas vezes for preciso.</div></div>
+<div class="score-row"><div class="score-grade">V–VI</div><div class="score-desc"><b>Identifique desejos e sentimentos</b> ("o que você quer que aconteça agora?") e <b>escute com atenção</b>, resumindo o que ouviu.</div></div>
+<div class="score-row"><div class="score-grade">VII</div><div class="score-desc"><b>Concorde ou concorde em discordar</b>: valide o direito de sentir, sem confirmar o delírio.</div></div>
+<div class="score-row"><div class="score-grade">VIII</div><div class="score-desc"><b>Estabeleça limites claros</b>, com poucas regras e consequências previsíveis, em tom respeitoso.</div></div>
+<div class="score-row"><div class="score-grade">IX–X</div><div class="score-desc"><b>Ofereça escolhas e otimismo</b> (comprimido ou líquido, sentar aqui ou ali); depois, <b>debrief</b> com paciente e equipe.</div></div>
+</div></div>
+<div class="box pearl"><span class="box-label">PEARL</span><div class="box-title">A pergunta que desarma é "o que você precisa agora?"</div><div class="box-body">A maior parte das agressões de PS tem uma demanda concreta por trás (dor, medo, fome, ser ouvido, cigarro). <b>Identificar e atender a demanda razoável custa menos que qualquer ampola</b>; a reposição de nicotina é citada pelo consenso do BETA como medida inicial útil no paciente tabagista agitado.</div></div>
+</div>
+</div>
+
+<div class="card prim">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">C.3</span> Entidade âncora</div><h3>Tranquilização rápida: fármaco, via, dose e teto <span class="ank ank-hy">HIGH-YIELD</span> <span class="ank ank-dec">DECISION</span></h3><div class="card-sub">o objetivo é o paciente calmo e acordável, não adormecido</div></div>
+<div class="card-body">
+<div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body"><b>Via oral primeiro, sempre que o paciente coopera.</b> IM quando recusa e o risco é imediato: <b>haloperidol 5 mg + prometazina 50 mg</b> (psicose; padrão brasileiro, ensaios TREC) ou <b>midazolam 5–15 mg</b> (conferir; causa indefinida, estimulante, abstinência; mais rápido). Olanzapina IM e ziprasidona IM sem apresentação injetável na CMED (09/10/2026), conferir registro; droperidol é off-label para agitação no Brasil, com alerta de QTc; cetamina é off-label. <b>Lorazepam parenteral não existe no Brasil</b>: diazepam IV lento ou midazolam. Reavalie em 30–60 min; o alvo é BARS 4.</div></div>
+<div class="disease">
+<div class="disease-head"><div class="disease-name">Tranquilização rápida (sedação farmacológica do agitado)</div><div class="disease-tag">CID-10 F29 · F23 (agitação psicótica) · sem código nominal para o procedimento</div></div>
+<div class="disease-body"><div class="disease-rows">
+<div class="disease-row"><div class="k">Indicação</div><div class="v">Agitação que não cede à desescalada e que coloca o paciente ou os outros em risco, ou que impede avaliação e tratamento necessários. O paciente deve ser envolvido na escolha de fármaco e via sempre que possível; via oral é preferida à IM quando há cooperação <span class="ev ev-acr">AAEP/BETA 2012</span>.</div></div>
+<div class="disease-row"><div class="k">Farmacologia</div><div class="v">Haloperidol (butirofenona, antagonista D2 potente) tem pouco efeito hemodinâmico e anticolinérgico, mas risco de distonia aguda e de prolongamento de QTc. Prometazina (fenotiazínico) adiciona sedação por antagonismo H1 e reduz a distonia (anticolinérgica) à custa de hipotensão e de depressão respiratória em associação. Midazolam, benzodiazepínico de início rápido e curta duração, potencializa o GABA-A: sedativo-ansiolítico sem tratar psicose. Olanzapina e ziprasidona são antagonistas 5-HT2A/D2 com menos distonia.</div></div>
+<div class="disease-row"><div class="k">Escolha por cenário</div><div class="v"><b>Psicose ou mania com sensório claro:</b> haloperidol + prometazina IM; olanzapina IM sem apresentação injetável na CMED (09/10/2026), conferir registro. <b>Causa indefinida, intoxicação por estimulante, abstinência de álcool ou benzodiazepínico:</b> midazolam (ou diazepam IV titulado). <b>Delirium:</b> tratar a causa; haloperidol em dose mínima se risco (D.2). <b>Parkinson ou demência com corpos de Lewy:</b> evitar haloperidol e olanzapina; quetiapina em dose baixa (NE06). <b>Intoxicação alcoólica:</b> evitar medicar quando possível; se necessário, haloperidol tem menos efeito respiratório que o benzodiazepínico <span class="ev ev-acr">AAEP/BETA 2012</span>.</div></div>
+<div class="disease-row"><div class="k">Doses (adulto)</div><div class="v">Ver tabela F.2. Resumo: haloperidol 5 mg + prometazina 50 mg IM, dose única; midazolam 5–15 mg IM (conferir; bula lida cita total geralmente ≤10 mg); olanzapina IM e ziprasidona IM sem apresentação injetável na CMED (09/10/2026), conferir registro; diazepam 5–10 mg IV lento; teto de haloperidol 15 mg/dia (PCDT 2013). Doses de idoso, criança e gestante em D.2, D.3 e D.4 <span class="ev ev-sbr">PCDT Esquizofrenia 2013</span> <span class="ev ev-expert">bula · conferir CMED</span>.</div></div>
+<div class="disease-row"><div class="k">Diagnóstico</div><div class="v">O "diagnóstico" é a resposta: BARS aos 15, 30 e 60 minutos; sinais vitais, SpO2 e nível de consciência (RASS) em intervalos curtos na primeira hora; ECG se haloperidol, droperidol, ziprasidona ou prometazina em dose repetida, cardiopatia, uso de outros fármacos que prolongam QT ou síncope. QTc &gt;500 ms = evitar o grupo.</div></div>
+<div class="disease-row"><div class="k">Tratamento</div><div class="v">Segunda dose só depois de 30–60 min e de reexaminar o paciente; <b>se o antipsicótico não bastou, acrescentar benzodiazepínico em vez de repetir ou trocar de antipsicótico</b> <span class="ev ev-acr">AAEP/BETA 2012</span>. Haloperidol associado a benzodiazepínico reduz extrapiramidais (20% × 6% em um ensaio citado pelo consenso). <b>Olanzapina IM não se combina com benzodiazepínico parenteral</b> (risco cardiorrespiratório; bula e BETA). Distonia: biperideno 2,5–5 mg IM (máx. 10–20 mg/dia, NE06).</div></div>
+<div class="disease-row"><div class="k">Prognóstico</div><div class="v">Midazolam IM no TREC: 89% tranquilos ou dormindo aos 20 minutos contra 67% com haloperidol + prometazina; a vantagem desaparece em cerca de 1 hora, quando ~90% dos dois grupos estão controlados <span class="ev ev-cochrane">TREC 2003 · BMJ</span>. No TREC-Rio, haloperidol isolado teve mais distonia (10 casos, todos no grupo isolado) e controle mais lento aos 20 minutos que com prometazina (RR 1,30) <span class="ev ev-cochrane">Huf 2007 · BMJ</span>.</div></div>
+<div class="disease-row"><div class="k">O que muda conduta</div><div class="v">Sensório alterado ou causa indefinida → midazolam, não antipsicótico; psicose com ECG normal → haloperidol + prometazina; QTc &gt;500 ms, cardiopatia ou ECG impossível → midazolam; Parkinson/Lewy → sem haloperidol nem olanzapina; hipercapnia, álcool e idoso → menor dose de benzodiazepínico com monitorização; recusa de via oral e risco imediato → IM; dose repetida sem resposta → reexaminar (causa orgânica) em vez de escalonar.</div></div>
+</div></div></div>
+<div class="box danger"><span class="box-label">DANGER</span><div class="box-title">Haloperidol e prometazina são bloqueadores D2: erro grave em SNM, anticolinérgico e abstinência</div><div class="box-body">A prometazina é fenotiazínico: bloqueia D2, é anticolinérgica e pode precipitar ou agravar SNM, síndrome anticolinérgica e convulsão na abstinência. <b>Antes da IM, afaste febre com rigidez, pele seca e quente, abstinência alcoólica e uso de estimulante</b>; nesses cenários o sedativo é o benzodiazepínico (C.6, D.1).</div></div>
+<div class="box decision"><span class="box-label">DECISION</span><div class="box-title">Cetamina para agitação: rótulo off-label, sem diretriz brasileira</div><div class="box-body">Cetamina (4–5 mg/kg IM; conferir apresentação racêmica disponível no hospital) sedou mais depressa que haloperidol em estudos pré-hospitalares (5 × 17 min), com intubação em 39% contra 4% e laringoespasmo em 5%, em estudo não randomizado <span class="ev ev-expert">Cole 2016 · conferir</span>; no PS, ensaio randomizado mostrou controle mais rápido contra haloperidol + lorazepam, com mais hipertensão e taquicardia <span class="ev ev-expert">Lin 2021 · resumo</span>. <b>Só com via aérea avançada à mão, monitorização contínua e equipe treinada</b>; não é primeira linha fora de protocolo institucional.</div></div>
+<details class="deep"><summary>Deep dive · Haloperidol com prometazina, midazolam e os ensaios que sustentam a prática brasileira</summary><div class="deep-content">
+<p>A prática brasileira de haloperidol com prometazina não é folclore: nasceu de ensaios pragmáticos conduzidos em emergências psiquiátricas do Rio de Janeiro, em que o grupo TREC (Tranquilização Rápida, Ensaio Clínico) mediu, em pacientes reais, agitados ou agressivos, a proporção tranquila ou dormindo em 20 minutos. No primeiro (301 pacientes), o <b>midazolam IM</b> venceu a combinação aos 20 minutos (89% contra 67%) e ainda tinha vantagem relativa de 13% aos 40; em 1 hora, cerca de 90% dos dois grupos estavam controlados.</p>
+<p>No segundo ensaio (316 pacientes, 77% com doença psicótica), <b>haloperidol 5–10 mg com prometazina até 50 mg</b> superou o haloperidol isolado aos 20 minutos (RR 1,30; NNT 6) e, sobretudo, <b>aboliu a distonia aguda: dez casos, todos no grupo sem prometazina</b>. O mecanismo é duplo: a prometazina contribui com sedação H1 e com ação anticolinérgica que previne a distonia induzida pelo bloqueio estriatal D2. A revisão Cochrane de 2016 reuniu essa evidência. Um ensaio indiano (TREC-India II) comparou olanzapina IM com a mesma combinação; o resultado não foi lido nesta sessão e deve ser conferido antes de tratar a olanzapina IM como equivalente.</p>
+<p>Duas ressalvas vêm da farmacologia. A primeira é o <b>QTc</b>: haloperidol (principalmente IV) e droperidol prolongam o intervalo, e a prometazina também; o risco absoluto de torsades nessas doses é pequeno, e a recomendação prática é ECG quando possível, evitar a combinação com outros prolongadores e preferir midazolam se QTc &gt;500 ms. A segunda é a <b>depressão respiratória e hipotensiva</b> na associação de sedativos (álcool, benzodiazepínico, opioide), mais relevante em idosos e em pneumopatas.</p>
+<p>O consenso do Project BETA acrescenta o argumento de classe: os antipsicóticos de segunda geração com apoio de ensaios (olanzapina, risperidona oral, ziprasidona) são preferidos ao haloperidol isolado, o benzodiazepínico é a escolha quando a causa é indefinida, e a adição de um benzodiazepínico é preferível a repetir o antipsicótico. A tradução brasileira, com o que existe na farmácia do PS (haloperidol, prometazina e midazolam injetáveis; olanzapina e ziprasidona injetáveis nem sempre), é a árvore do capítulo E. Falta diretriz nacional de agitação aguda: a Associação Brasileira de Psiquiatria não publicou uma, e este HP usa os ensaios brasileiros e o consenso do BETA como base.</p>
+</div></details>
+</div>
+</div>
+
+<div class="card prim">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">C.4</span> Entidade âncora</div><h3>Contenção mecânica: indicação, norma, técnica e retirada <span class="ank ank-dgr">DANGER</span> <span class="ank ank-hy">HIGH-YIELD</span></h3><div class="card-sub">último recurso, com prescrição, supervisão e registro</div></div>
+<div class="card-body">
+<div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">A contenção mecânica é admissível <b>quando é o único meio de prevenir dano imediato ou iminente</b> ao paciente ou a terceiros. A <b>CFM 2.057/2013</b> (art. 16 §§ 2–5) exige prescrição médica, registro no prontuário, supervisão imediata e regular, a menor duração possível e comunicação à família; a <b>COFEN 746/2024</b> exige supervisão direta do enfermeiro, monitorização e registro de razões, duração, avaliações e eventos adversos. <b>Nunca em decúbito ventral</b>; sedar junto para encurtar o tempo.</div></div>
+<div class="disease">
+<div class="disease-head"><div class="disease-name">Contenção mecânica e física</div><div class="disease-tag">CID-10 R45.6 (violência física) · sem código nominal para a contenção</div></div>
+<div class="disease-body"><div class="disease-rows">
+<div class="disease-row"><div class="k">Base normativa</div><div class="v"><b>CFM 2.057/2013, art. 16:</b> §2 todo tratamento deve ser justificado pela observação clínica e registrado no prontuário, inclusive a contenção física; §3 admissível, à semelhança da contenção em leitos de UTI, desde que prescrita por médico, registrada e quando for o meio mais adequado para prevenir dano imediato ou iminente; §4 paciente contido permanece sob cuidado e supervisão imediata e regular de um membro da equipe, sem prolongar além do necessário; §5 informar o representante legal ou a família tão logo possível <span class="ev ev-sbr">CFM 2.057/2013 · texto lido</span>. <b>COFEN 746/2024</b> (revoga a 427/2012): arts. 1º–3º <span class="ev ev-sbr">COFEN 746/2024 · texto lido</span>.</div></div>
+<div class="disease-row"><div class="k">Indicação</div><div class="v">Risco imediato de lesão grave a si ou a terceiros que a desescalada e a medicação oferecida não controlaram. Nunca como punição, conveniência da equipe, substituto de vigilância ou de tratamento. Em SAMU, a COFEN admite contenção por equipe de no mínimo cinco pessoas, na excepcionalidade.</div></div>
+<div class="disease-row"><div class="k">Técnica</div><div class="v">Equipe de 5 (um para a cabeça, que comanda e fala; um para cada membro), em decúbito dorsal ou lateral, <b>jamais ventral</b>, sem peso sobre tórax, dorso ou pescoço; cabeceira elevada se sedado, para reduzir aspiração; faixas almofadadas em punhos e tornozelos, folga de um dedo, extremidades visíveis; fixação à estrutura do leito, nunca às grades; objetos cortantes retirados; privacidade e explicação em voz calma. A norma não descreve o gesto: estes são os padrões de protocolo hospitalar <span class="ev ev-expert">prática de serviço · conferir protocolo local</span>.</div></div>
+<div class="disease-row"><div class="k">Monitorização</div><div class="v">Observação direta contínua por profissional designado; sinais vitais, SpO2, perfusão e integridade da pele em intervalos curtos definidos em protocolo; hidratação, diurese e necessidades; reavaliação médica para retirada o mais cedo possível, com retirada gradual de pontos. A CFM e a COFEN não fixam horas: <b>o tempo máximo e o intervalo de renovação da prescrição são definidos no protocolo da instituição</b>.</div></div>
+<div class="disease-row"><div class="k">Complicações</div><div class="v">Asfixia posicional e restritiva (decúbito ventral, peso sobre o tórax), aspiração, hipoventilação associada a sedativos, rabdomiólise com hipercalemia e lesão renal, hipertermia, trombose venosa e TEP em imobilização prolongada, lesão de nervo periférico e de pele, trauma e morte súbita; trauma psicológico e recusa de cuidado futuro.</div></div>
+<div class="disease-row"><div class="k">Tratamento</div><div class="v">Associar tranquilização rápida (C.3) para encurtar a contenção; tratar a causa (hipertermia, hipoglicemia); registrar indicação, início, médico que prescreveu, fármacos, avaliações, retirada e eventos adversos; informar a família; <b>debrief</b> do paciente e da equipe. Profilaxia de TEV se imobilização prolongada.</div></div>
+<div class="disease-row"><div class="k">Prognóstico</div><div class="v">Risco de morte pequeno, mas concentrado em casos de intoxicação por estimulante, obesidade, esforço prolongado e decúbito ventral. Contenção prolongada associa-se a pior evolução; o evento é fator de recusa de tratamento futuro.</div></div>
+<div class="disease-row"><div class="k">O que muda conduta</div><div class="v">Agitação sem risco imediato → sem contenção; contenção necessária → prescrição + enfermeiro + registro + sedação associada; sinal de hipoventilação, cianose ou perda de resposta → soltar e manejar via aérea; T ≥38,5 °C ou CPK em ascensão → resfriar e tratar como emergência clínica; paciente acordado e calmo → retirar de imediato.</div></div>
+</div></div></div>
+<div class="box decision"><span class="box-label">DECISION</span><div class="box-title">Contenção química é um termo a abandonar</div><div class="box-body">O que se faz é <b>tranquilização rápida</b>, um tratamento com indicação, dose e alvo, e não um modo de imobilizar. Chamá-la de "contenção química" empurra a equipe para sedação profunda e para a lógica de controle. O alvo é BARS 4: acordado, calmo, capaz de conversar.</div></div>
+<details class="deep"><summary>Deep dive · Como se morre em contenção</summary><div class="deep-content">
+<p>As mortes em contenção reúnem poucas vias fisiopatológicas, quase sempre combinadas. A primeira é a <b>restrição ventilatória</b>: o decúbito ventral, o peso de pessoas sobre o dorso e a flexão forçada do tronco reduzem a excursão do diafragma e da caixa torácica em um paciente que, após esforço, tem demanda ventilatória muito alta. A segunda é a <b>acidose metabólica e respiratória progressiva</b>: a luta contra a contenção produz lactato e CO2; a hipoventilação agrava a acidose; a acidose e a hipercalemia da rabdomiólise sensibilizam o miocárdio a arritmias, sobretudo na presença de catecolaminas altas e de estimulantes.</p>
+<p>Fatores de risco repetidos em revisões de casos: intoxicação por cocaína, anfetamina ou outros estimulantes; obesidade; doença cardíaca; uso concomitante de sedativos e antipsicóticos que prolongam o QT; contenção por muitas pessoas por tempo prolongado; e ausência de observação direta, a que mais pesa porque a morte é silenciosa. A literatura é composta de séries e revisões, não de ensaios; por isso as medidas de proteção são de consenso e as conferências internacionais convergem nelas (posição supina ou lateral, monitorização, menor duração).</p>
+<p>No plano ético e jurídico, o desenho brasileiro é estrito. A CFM 2.057/2013 exclui a contenção como medida terapêutica de rotina, a subordina à prescrição médica e ao prejuízo iminente e impõe supervisão regular; a COFEN 746/2024 repete a exigência de único meio disponível e transfere ao enfermeiro a supervisão direta e o registro, o que na prática distribui a responsabilidade: o médico responde pela indicação e a enfermagem pelo procedimento e pela vigilância. Muitos protocolos hospitalares ainda citam a Resolução COFEN 427/2012, revogada: vale atualizá-los.</p>
+<p>Por fim, a contenção é um evento que mede a qualidade do serviço. Um serviço em que a contenção é frequente quase sempre apresenta falhas a montante (espera, ambiente, falta de treinamento em desescalada, ausência de via oral) e a jusante (sem debrief). Auditar cada episódio, com perguntas de "o que teria evitado?", é a medida de segurança com melhor relação custo-benefício <span class="ev ev-acr">AAEP/BETA 2012</span>.</p>
+</div></details>
+</div>
+</div>
+
+<div class="card prim">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">C.5</span> Entidade âncora</div><h3>Risco de suicídio: avaliação, internação e alta <span class="ank ank-dgr">DANGER</span> <span class="ank ank-hy">HIGH-YIELD</span></h3><div class="card-sub">perguntar diretamente, estratificar, proteger e planejar o seguimento</div></div>
+<div class="card-body">
+<div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body"><b>Pergunte diretamente</b> sobre ideação, plano, meios, tentativa prévia e intenção hoje (ASQ ou C-SSRS). Estratifique em baixo, médio, alto risco e urgência (ABP/CFM 2014). Risco alto: <b>nunca sozinho, retirar meios, vigilância 24 h, avaliação psiquiátrica, internação</b>; sem consentimento, internação involuntária pela Lei 10.216/2001. Tentativa e automutilação são de notificação compulsória e sigilosa. Alta só com <b>plano de segurança escrito, restrição de meios e contato em 24–72 h</b>.</div></div>
+<div class="disease">
+<div class="disease-head"><div class="disease-name">Ideação, tentativa e risco de suicídio na emergência</div><div class="disease-tag">CID-10 R45.8 (ideação suicida) · X60–X84 (lesões autoprovocadas intencionalmente)</div></div>
+<div class="disease-body"><div class="disease-rows">
+<div class="disease-row"><div class="k">Epidemiologia</div><div class="v">Mais de 700 mil mortes por suicídio por ano no mundo (OMS, 2019) e mais de 14 mil no Brasil por ano (SIM/MS; conferir o ano). Tentativas são mais frequentes em mulheres e jovens; mortes consumadas, mais em homens e idosos (métodos mais letais). A tentativa prévia é o mais forte preditor isolado; o risco é máximo nas semanas após a alta psiquiátrica <span class="ev ev-sbr">ABP/CFM 2014</span> <span class="ev ev-expert">dados de mortalidade · conferir</span>.</div></div>
+<div class="disease-row"><div class="k">Fisiopatologia</div><div class="v">Modelo de diátese-estresse: vulnerabilidade biológica (serotonina, eixo HPA, impulsividade e agressividade) mais estressor agudo, desesperança e acesso a meios. A ambivalência é a regra: o desejo de morrer convive com o de aliviar a dor, e a restrição de meios funciona porque o impulso agudo passa.</div></div>
+<div class="disease-row"><div class="k">Clínica</div><div class="v">Fatores de risco: tentativa prévia; depressão, bipolar, esquizofrenia, abuso de álcool e drogas, transtorno de personalidade (risco aumentado em até 12 vezes nos homens e 20 nas mulheres); desesperança, impulsividade, perdas recentes, dor e doença crônica, isolamento, violência, acesso a arma ou pesticida. Sinais agudos: plano definido, meios disponíveis, despedidas, carta, doação de bens, calma súbita, intoxicação concomitante <span class="ev ev-sbr">ABP/CFM 2014</span>.</div></div>
+<div class="disease-row"><div class="k">Diagnóstico</div><div class="v">Entrevista direta e sem constrangimento (a pergunta não induz ao ato). <b>ASQ</b>: quatro perguntas (desejou estar morto; achou que sua família estaria melhor sem você; pensou em se matar; já tentou) e, se positivo, "está pensando em se matar agora?"; <b>C-SSRS</b> de triagem para ideação, plano e comportamento <span class="ev ev-expert">Posner 2011 · Horowitz 2012 · conferir adaptação adulta do ASQ</span>. <b>Escalas não predizem suicídio</b>: o NICE (NG225, 2022) recomenda não usá-las para prever recorrência e sim avaliação psicossocial individual <span class="ev ev-nice">NICE NG225 · não aberta, conferir</span>.</div></div>
+<div class="disease-row"><div class="k">Tratamento</div><div class="v">Em todos: ambiente seguro; objetos cortantes, cintos, cordas e medicamentos fora do alcance; revista da bolsa; portas, inclusive do banheiro, sem tranca; <b>vigilância contínua por profissional ou cuidador capacitado até a reavaliação médica</b>; transferência por ambulância, não por familiares <span class="ev ev-sbr">ABP/CFM 2014</span>. Tratar a intoxicação e a lesão antes (paracetamol, GH09; toxicologia, CT10); a avaliação psiquiátrica é obrigatória mesmo que o paciente diga estar arrependido. Tratar o transtorno de base (PC02, PC03). Mais detalhes de internação e alta nos quadros abaixo.</div></div>
+<div class="disease-row"><div class="k">Prognóstico</div><div class="v">A maioria dos que tentam não morre por suicídio depois, desde que a crise seja atravessada com proteção e tratamento; o seguimento pós-alta com plano de segurança e contato reduziu comportamento suicida em coorte de PS <span class="ev ev-expert">Stanley 2018 · JAMA Psychiatry · magnitude conferir</span>.</div></div>
+<div class="disease-row"><div class="k">O que muda conduta</div><div class="v">Plano definido + meios + intenção imediata, tentativa recente com rigidez ou várias em pouco tempo → risco alto: vigilância contínua e internação; ideação sem plano → risco baixo: escuta, vínculo e encaminhamento; recusa de internação com risco alto → internação involuntária (Lei 10.216/2001); criança ou adolescente → comunicar ao conselho tutelar; psicose, mania ou depressão grave com desesperança → internação; incapaz de pactuar plano de segurança → não dar alta.</div></div>
+</div></div></div>
+<div class="score"><div class="score-head"><div class="score-name">Estratificação do risco de suicídio <span class="ev ev-sbr">ABP/CFM 2014 · item 7.3</span></div><div class="score-purpose">Do baixo risco à urgência</div></div><div class="score-rows">
+<div class="score-row"><div class="score-grade">Baixo</div><div class="score-desc">Alguns pensamentos suicidas, <b>sem plano</b>. Escuta acolhedora, vínculo com suporte, tratar o transtorno; encaminhar se não melhorar e confirmar o atendimento.</div></div>
+<div class="score-row"><div class="score-grade">Médio</div><div class="score-desc">Pensamentos e planos, <b>sem pretender cometer o ato imediatamente</b>. Retirar meios do ambiente, envolver família, orientar restrição de meios (armas, facas, cordas, medicamentos), psiquiatria em prazo breve.</div></div>
+<div class="score-row"><div class="score-grade">Alto</div><div class="score-desc">Plano definido, meios disponíveis, intenção imediata; tentativa recente com rigidez; várias tentativas em curto espaço. <b>Nunca sozinho</b>; psiquiatria e, se necessário, internação; ambulância ao pronto-socorro psiquiátrico.</div></div>
+<div class="score-row"><div class="score-grade">Urgência</div><div class="score-desc">Reduzir o risco imediato, tratar fatores predisponentes e garantir seguimento; vigilância 24 h; alto risco com suporte frágil exige internação especializada; ECT pode ser opção nos casos graves.</div></div>
+</div></div>
+<div class="box decision"><span class="box-label">DECISION</span><div class="box-title">Internação: voluntária, involuntária e compulsória (Lei 10.216/2001)</div><div class="box-body">A internação exige <b>laudo médico circunstanciado</b> e só se indica quando os recursos extra-hospitalares são insuficientes (art. 4º). Tipos (art. 6º): <b>voluntária</b> (consentimento, com declaração assinada na admissão, art. 7º), <b>involuntária</b> (sem consentimento do usuário, a pedido de terceiro) e <b>compulsória</b> (determinada pela Justiça). Médico com CRM do estado onde fica o serviço autoriza as duas primeiras (art. 8º); a involuntária é <b>comunicada ao Ministério Público estadual em até 72 horas</b>, bem como a alta, e termina por pedido escrito do familiar ou responsável ou por determinação do especialista (art. 8º §§ 1–2) <span class="ev ev-sbr">Lei 10.216/2001 · texto lido</span>. Em emergência com risco iminente de morte, a intervenção necessária não aguarda consentimento (CEM art. 22; conferir).</div></div>
+<div class="box danger"><span class="box-label">DANGER</span><div class="box-title">Notificação compulsória e sigilo da tentativa de suicídio</div><div class="box-body">A Lei 13.819/2019 (art. 6º) torna de notificação compulsória, pelos estabelecimentos de saúde públicos e privados às autoridades sanitárias, os casos suspeitos ou confirmados de violência autoprovocada, de caráter <b>sigiloso</b>; o prazo de 24 horas vem do Decreto 10.225/2020 e da Portaria MS 1.271/2014 (<b>conferir a lista nacional vigente</b>). Em criança ou adolescente, o conselho tutelar também recebe a notificação <span class="ev ev-sbr">Lei 13.819/2019 · texto lido</span>. A notificação não substitui a avaliação psiquiátrica nem o seguimento.</div></div>
+<details class="deep"><summary>Deep dive · Avaliar sem prever: o que a literatura de risco sustenta e o plano de segurança</summary><div class="deep-content">
+<p>O erro conceitual mais comum na emergência é supor que o risco de suicídio possa ser calculado: os escores de risco têm sensibilidade moderada e valor preditivo positivo muito baixo para um evento raro, de modo que a maioria dos classificados "de alto risco" não se mata e uma parcela dos classificados "de baixo risco" sim. Por isso o NICE desaconselha usar escalas para predição, e a ABP/CFM adota a estratificação como apoio de conduta (o que fazer hoje), não de prognóstico. A avaliação útil responde a quatro perguntas: há intenção hoje? Há plano e meios? Há fatores que reduzem o controle (intoxicação, psicose, agitação, desesperança)? Há suporte e capacidade de pactuar segurança até a consulta?</p>
+<p>A triagem por instrumentos breves (ASQ, C-SSRS) cumpre outro papel: encontrar o paciente que não veio por isso, o que acontece em boa parte dos atendimentos de PS por queixa clínica. O ASQ foi validado em PS pediátrico e a prática o estende ao adulto; o C-SSRS tem mais de uma versão, e a de triagem cabe no tempo do PS. O ponto operacional é rotina: perguntar a todo paciente com queixa psiquiátrica ou autolesão e a quem tem fatores de risco, com registro.</p>
+<p>O <b>plano de segurança</b> (Stanley e Brown) é uma intervenção estruturada, escrita com o paciente, em seis passos: sinais de alerta; estratégias internas de enfrentamento; pessoas e lugares que distraem; pessoas a quem pedir ajuda; profissionais e telefones de crise (CVV 188, SAMU 192, CAPS 24 h); e <b>restrição de meios</b>. Em coorte de PS, a intervenção com telefonemas de seguimento associou-se a menos comportamento suicida; a magnitude exata deve ser conferida na fonte. O "contrato de não suicídio", recomendado no texto da ABP de 2014, não tem evidência de proteção, pode dar falsa segurança e não substitui o plano; as práticas atuais o substituem por plano e seguimento.</p>
+<p>A <b>restrição de meios</b> é a medida com melhor evidência populacional, porque o impulso agudo passa: retirar arma de fogo, pesticidas e medicamentos estocados do ambiente doméstico reduz a letalidade. Na alta, prescreva quantidades limitadas de fármacos de alta letalidade em overdose (antidepressivos tricíclicos, lítio, benzodiazepínicos, antipsicóticos), com dispensação fracionada e acompanhamento. O seguimento em 24–72 horas, por telefone ou consulta, e o acolhimento na rede de atenção psicossocial (CAPS, UBS) fecham o ciclo; a janela das primeiras semanas após a alta tem risco de suicídio muito mais alto que o basal.</p>
+</div></details>
+</div>
+</div>
+
+<div class="card prim">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">C.6</span> Entidade âncora</div><h3>Hipertermia, rigidez e agitação: SNM, serotoninérgica e catatonia maligna <span class="ank ank-dgr">DANGER</span> <span class="ank ank-dec">DECISION</span></h3><div class="card-sub">a tríade que mata em horas e que piora com mais bloqueio D2</div></div>
+<div class="card-body">
+<div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Febre, alteração mental, instabilidade autonômica e alteração do tônus após fármaco: <b>suspenda tudo o que bloqueia D2 ou aumenta serotonina, resfrie, hidrate, dê benzodiazepínico (diazepam 5–10 mg IV lento ou midazolam), dose CPK, potássio e creatinina, e interne em UTI</b> se T ≥40 °C, rigidez intensa ou instabilidade. A diferença está no início e no tônus: SNM em dias, rigidez em "cano de chumbo", bradirreflexia; serotoninérgica em horas, clônus e hiper-reflexia. Detalhes da SNM e da catatonia: PC03; serotoninérgica e anticolinérgica: CT10.</div></div>
+<div class="disease">
+<div class="disease-head"><div class="disease-name">Síndrome neuroléptica maligna, serotoninérgica e catatonia maligna: reconhecimento e primeiros 60 minutos</div><div class="disease-tag">CID-10 G21.0 (SNM) · F06.1 (catatonia) · T43.2 (intoxicação por antidepressivos, serotoninérgica)</div></div>
+<div class="disease-body"><div class="disease-rows">
+<div class="disease-row"><div class="k">Fisiopatologia</div><div class="v">SNM: queda abrupta da transmissão dopaminérgica hipotalâmica (termorregulação) e nigroestriatal (rigidez e calor), com hiperatividade simpática por desinibição, por bloqueio D2 ou retirada de agonista. Serotoninérgica: estimulação excessiva de 5-HT2A e 5-HT1A por fármacos ou associação (ISRS, IMAO, tramadol, linezolida, ondansetrona, MDMA). Catatonia maligna: hipofunção GABA-A e desequilíbrio dopaminérgico; fenocópia da SNM.</div></div>
+<div class="disease-row"><div class="k">Clínica</div><div class="v">SNM em 1–3 dias após iniciar, subir ou injetar antipsicótico (ou antiemético D2: metoclopramida, prometazina): alteração mental precoce, rigidez em cano de chumbo, febre, taquicardia, PA lábil, sudorese, CPK alta. Serotoninérgica em horas: clônus, hiper-reflexia, tremor, diarreia, midríase, agitação. Catatonia maligna: estupor ou excitação, mutismo, negativismo, febre e disautonomia.</div></div>
+<div class="disease-row"><div class="k">Diagnóstico</div><div class="v">Clínico. <b>Hunter</b> na serotoninérgica (quadro abaixo); <b>Gurrera 2011</b> na SNM (exposição a bloqueador D2 nas últimas 72 h, T &gt;38 °C em duas ocasiões, rigidez, alteração mental, CPK ≥4× LSN, labilidade autonômica, taquicardia com taquipneia, exclusão de outras causas) <span class="ev ev-expert">Gurrera 2011 · via PC03</span>. Exames: CPK, potássio, creatinina, gasometria, hemograma, hemoculturas, TC e LCR se infecção do SNC possível, ECG, mioglobinúria <span class="ev ev-acr">Dunkley 2003 · Boyer 2005</span>.</div></div>
+<div class="disease-row"><div class="k">Tratamento</div><div class="v">Primeiros 60 minutos, comuns às três: suspender todos os agentes suspeitos; resfriamento externo; cristaloide para diurese alta; benzodiazepínico para rigidez e agitação; sem antipsicótico; sem contenção física; monitorização contínua; UTI se T ≥40 °C ou instabilidade. <b>SNM grave</b>: dantroleno e amantadina (PC03). <b>Serotoninérgica moderada a grave</b>: ciproeptadina 12 mg VO/SNG e depois 2 mg a cada 2 h enquanto persistir, manutenção 8 mg a cada 6 h (disponibilidade restrita no Brasil; <b>conferir</b>); sedação com benzodiazepínico; hipertermia com paralisia e intubação (evitar succinilcolina). <b>Catatonia</b>: lorazepam 1–2 mg VO/SL ou diazepam 10 mg IV como teste e tratamento; ECT na forma maligna (PC03) <span class="ev ev-expert">Boyer 2005 · Rogers 2023 · conferir</span>.</div></div>
+<div class="disease-row"><div class="k">Prognóstico</div><div class="v">SNM com mortalidade de 5–10% hoje (insuficiência renal, aspiração, arritmia, TEV); recuperação em 7–10 dias, mais longa após LAI. Serotoninérgica leve a moderada resolve em 24 h após suspender o agente; a grave tem alta mortalidade se hipertermia persistente. Catatonia maligna sem tratamento é fatal.</div></div>
+<div class="disease-row"><div class="k">O que muda conduta</div><div class="v">Febre com rigidez em quem usa D2 → suspender, nunca "acalmar com haloperidol"; clônus e hiper-reflexia em horas → serotoninérgica: suspender e ciproeptadina se moderada; mutismo, catalepsia, flexibilidade cérea → teste com benzodiazepínico; T ≥40 °C, CPK crescente ou instabilidade → UTI; sem diagnóstico claro → tratar como emergência clínica e investigar infecção do SNC.</div></div>
+</div></div></div>
+<div class="score"><div class="score-head"><div class="score-name">Critérios de Hunter para toxicidade serotoninérgica <span class="ev ev-acr">Dunkley 2003 · QJM</span></div><div class="score-purpose">Em quem recebeu agente serotoninérgico, basta um dos critérios</div></div><div class="score-rows">
+<div class="score-row"><div class="score-grade">1</div><div class="score-desc"><b>Clônus espontâneo.</b></div></div>
+<div class="score-row"><div class="score-grade">2</div><div class="score-desc"><b>Clônus induzível</b> + agitação ou diaforese.</div></div>
+<div class="score-row"><div class="score-grade">3</div><div class="score-desc"><b>Clônus ocular</b> + agitação ou diaforese.</div></div>
+<div class="score-row"><div class="score-grade">4</div><div class="score-desc"><b>Tremor</b> + hiper-reflexia.</div></div>
+<div class="score-row"><div class="score-grade">5</div><div class="score-desc"><b>Hipertonia</b> + temperatura &gt;38 °C + clônus ocular ou induzível.</div></div>
+</div></div>
+<div class="stbl stbl-3">
+<div class="stbl-head stbl-3"><div>Síndrome</div><div>Início, exposição e tônus</div><div>Separa e conduta própria</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Síndrome">SNM</div><div class="col" data-l="Início">Dias; bloqueador D2 ou retirada de dopaminérgico; rigidez em cano de chumbo, bradirreflexia</div><div class="col" data-l="Separa"><b>CPK muito alta</b>, evolução lenta; dantroleno e amantadina no grave (PC03)</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Síndrome">Serotoninérgica</div><div class="col" data-l="Início">Horas; ISRS, IMAO, tramadol, linezolida; hiper-reflexia, clônus, diarreia</div><div class="col" data-l="Separa"><b>Clônus</b> e hiperatividade neuromuscular; ciproeptadina (CT10)</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Síndrome">Catatonia maligna</div><div class="col" data-l="Início">Dias; mutismo, negativismo, postura, estupor ou excitação, febre</div><div class="col" data-l="Separa"><b>Teste com benzodiazepínico</b>; ECT; suspender antipsicótico (PC03)</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Síndrome">Anticolinérgica</div><div class="col" data-l="Início">Horas; prometazina, biperideno, tricíclicos; pele seca, midríase, retenção, íleo</div><div class="col" data-l="Separa"><b>Pele seca e quente</b>; suporte, benzodiazepínico; fisostigmina, de disponibilidade a conferir no Brasil (CT10)</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Síndrome">Simpaticomimética</div><div class="col" data-l="Início">Minutos a horas; cocaína, anfetamina, MDMA; pele úmida, midríase, hipertensão</div><div class="col" data-l="Separa"><b>Pele úmida</b>; benzodiazepínico, resfriamento (D.1)</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Síndrome">Hipertermia maligna</div><div class="col" data-l="Início">Minutos; anestésico halogenado ou succinilcolina; rigidez, hipercapnia</div><div class="col" data-l="Separa"><b>Contexto cirúrgico</b>; dantroleno imediato</div></div>
+</div>
+<details class="deep"><summary>Deep dive · As quatro fisiologias da hipertermia com rigidez</summary><div class="deep-content">
+<p>Os quatro quadros acima compartilham febre, rigidez e alteração mental porque convergem na hipotalamia e no músculo, mas partem de circuitos diferentes. Na <b>SNM</b>, o antagonismo D2 no hipotálamo anterior eleva o ponto de ajuste térmico e abole a vasodilatação cutânea dissipadora de calor, enquanto o bloqueio nigroestriatal produz rigidez que gera calor; a hiperatividade simpática reflete desinibição e justifica taquicardia, labilidade e sudorese. Por isso o quadro também ocorre na retirada de levodopa (hiperpirexia-parkinsonismo), fato que prova que o problema é a queda da dopamina, não a toxicidade do fármaco.</p>
+<p>Na <b>síndrome serotoninérgica</b>, a estimulação do receptor 5-HT2A na medula e no tronco produz clônus, hiper-reflexia e tremor; o calor vem da atividade muscular e não de rigidez central. É um espectro com resposta à retirada do agente e à ciproeptadina, antagonista 5-HT2A, com início em horas após dose nova ou associação. O tratamento de suporte é o mesmo; a diferença operacional é o <b>tônus</b> (hipertonia em ambas, mas bradirreflexia na SNM e hiper-reflexia com clônus na serotoninérgica).</p>
+<p>A <b>catatonia maligna</b> é uma síndrome motora e autonômica de hipofunção GABA-A e dopaminérgica, e é tratada com benzodiazepínico e ECT; o bloqueio D2 a piora e pode convertê-la em SNM, razão pela qual o antipsicótico é suspenso. Antes de aceitar o rótulo psiquiátrico, é obrigatório excluir <b>infecção do SNC</b> e outras causas de hipertermia e rigidez, porque a catatonia também é a apresentação inicial da encefalite anti-NMDAR e do LES.</p>
+<p>O ponto comum, e a razão de este quadro estar no HP de emergência, é a armadilha terapêutica: o paciente chega agitado, e o reflexo de sedar com haloperidol (ou prometazina) alimenta o mecanismo da SNM e da catatonia maligna e é inócuo ou nocivo na serotoninérgica. A regra do capítulo é <b>medir temperatura e examinar o tônus antes do antipsicótico IM</b>. O manejo completo dos mecanismos de SNM (reintrodução do antipsicótico após 2 semanas, dantroleno) está no PC03; a serotoninérgica e a anticolinérgica no CT10.</p>
+</div></details>
+</div>
+</div>
+</section>
+
+<section id="secundarias">
+<div class="section"><div class="section-eyebrow"><span>D</span> Entidades Secundárias</div><div class="section-title">O mesmo agitado, em outro contexto</div><div class="section-sub">Intoxicação e abstinência, idoso, criança, gestante, causas psiquiátricas primárias, aspectos legais e a segurança da equipe. Cada box muda a escolha do fármaco ou a conduta; a doença de base fica no HP dono (PC03, NE04, GO14, PC04, PC05).</div></div>
+
+<div class="card diag">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">D.1</span> Secundária</div><h3>Intoxicação e abstinência no paciente agitado <span class="ank ank-dec">DECISION</span></h3><div class="card-sub">a causa muda o sedativo: álcool, benzodiazepínico, estimulantes, canabinoides sintéticos, anticolinérgico</div></div>
+<div class="card-body">
+<div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Estimulante, abstinência e causa indefinida pedem <b>benzodiazepínico</b>; intoxicação alcoólica pura pede o mínimo de medicação (haloperidol tem menos efeito respiratório); anticolinérgico exige evitar prometazina e biperideno. O antipsicótico de baixa potência (clorpromazina) reduz o limiar convulsivo e é evitado no estimulante. Doença de base, CIWA-Ar, naloxona e desmame: PC03; toxicologia: CT10.</div></div>
+<div class="disease">
+<div class="disease-head"><div class="disease-name">Agitação por intoxicação ou abstinência</div><div class="disease-tag">CID-10 F10.0 · F10.3 · F13.3 · F14.0 · F15.0</div></div>
+<div class="disease-body"><div class="disease-rows">
+<div class="disease-row"><div class="k">Escolha do sedativo</div><div class="v"><b>Álcool, intoxicação:</b> evitar medicar; se necessário haloperidol, porque o benzodiazepínico soma depressão respiratória. <b>Álcool e benzodiazepínico, abstinência:</b> benzodiazepínico e tiamina, nunca antipsicótico isolado. <b>Cocaína, anfetamina, MDMA, catinonas:</b> midazolam ou diazepam, resfriamento, ECG e CPK. <b>Canabinoides sintéticos:</b> benzodiazepínico e suporte; risco de convulsão. <b>Anticolinérgico:</b> benzodiazepínico, resfriamento, sem prometazina <span class="ev ev-acr">AAEP/BETA 2012</span>.</div></div>
+<div class="disease-row"><div class="k">Doses de crise</div><div class="v">Midazolam 5–15 mg IM (conferir; bula lida cita total geralmente ≤10 mg) ou 2,5–5 mg IV lento titulado; diazepam 5–10 mg IV lento (≤5 mg/min). Esquemas de abstinência alcoólica (CIWA-Ar, diazepam sintoma-dirigido), fenobarbital e naloxona estão no PC03 <span class="ev ev-expert">prática · via PC03</span>.</div></div>
+<div class="disease-row"><div class="k">Diagnóstico</div><div class="v">Cronologia do último uso, sinais autonômicos (pele úmida × seca, pupila), temperatura, glicemia, ECG; toxicológico urinário só se muda a conduta; ressalva: o imunoensaio urinário falha para parte dos benzodiazepínicos.</div></div>
+<div class="disease-row"><div class="k">Tratamento</div><div class="v">Hipertermia: resfriamento ativo; hipertensão que persiste após sedação: fentolamina ou nitroprussiato (CT10); isquemia miocárdica por cocaína: AAS, nitrato e benzodiazepínico; evitar betabloqueador isolado. Tiamina IV com a glicose se o paciente é etilista <span class="ev ev-acr">AAEP/BETA 2012</span>.</div></div>
+<div class="disease-row"><div class="k">O que muda conduta</div><div class="v">Último gole há 6–72 h com tremor e sudorese → abstinência: benzodiazepínico e internação se CIWA-Ar ≥19; pele seca e quente com íleo → anticolinérgica: sem prometazina; hipertermia ou rabdomiólise → UTI; sonolência com FR baixa → não é agitação: via aérea e antídoto (PC03).</div></div>
+</div></div></div>
+</div>
+</div>
+
+<div class="card diag">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">D.2</span> Secundária</div><h3>Agitação no idoso e no delirium <span class="ank ank-dgr">DANGER</span></h3><div class="card-sub">dose baixa, sem benzodiazepínico, causa primeiro</div></div>
+<div class="card-body">
+<div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">No idoso o diagnóstico mais provável da agitação é <b>delirium</b>; trate dor, retenção urinária, fecaloma, infecção, hipoxemia e fármacos (anticolinérgicos, opioides, benzodiazepínicos). Fármaco só se há risco: <b>haloperidol 0,5–2 mg VO/IM</b>, menor dose no frágil. Sem benzodiazepínico, exceto abstinência. Antipsicóticos aumentam mortalidade na demência e prolongam QT. Diagnóstico e prevenção do delirium: NE04.</div></div>
+<div class="disease">
+<div class="disease-head"><div class="disease-name">Agitação do idoso, demência e delirium hiperativo</div><div class="disease-tag">CID-10 F05.9 · F03</div></div>
+<div class="disease-body"><div class="disease-rows">
+<div class="disease-row"><div class="k">Tratamento</div><div class="v">Desescalada com acompanhante, luz, óculos e aparelho auditivo; contenção só para lesão iminente. Se risco e falha das medidas: haloperidol 0,5–2 mg VO/IM (idoso frágil, a menor dose); quetiapina 12,5–25 mg VO se Parkinson ou demência com corpos de Lewy; ECG basal e QTc se dose repetida ou via IV; reavaliar em 24 h e retirar com a resolução. Para delirium não alcoólico, antipsicóticos de segunda geração são preferidos e haloperidol em baixa dose é aceitável; benzodiazepínico tende a piorar <span class="ev ev-acr">AAEP/BETA 2012</span> <span class="ev ev-expert">NE04 · conferir</span>.</div></div>
+<div class="disease-row"><div class="k">Diagnóstico</div><div class="v">CAM e atenção (meses do ano de trás para a frente); glicemia, SpO2, temperatura, urina, ECG, bexiga palpável, toque retal; revisão da lista de fármacos (critérios de Beers).</div></div>
+<div class="disease-row"><div class="k">Prognóstico</div><div class="v">Delirium aumenta mortalidade, tempo de internação e declínio cognitivo; antipsicótico em demência tem aviso de aumento de mortalidade e de AVC.</div></div>
+<div class="disease-row"><div class="k">O que muda conduta</div><div class="v">Parkinson ou Lewy → sem haloperidol, risperidona nem olanzapina; abstinência alcoólica → benzodiazepínico e tiamina; QTc &gt;500 ms → evitar o grupo; risco sem desescalada possível → dose mínima e reavaliação; febre, rigidez e piora após D2 → SNM (C.6).</div></div>
+</div></div></div>
+</div>
+</div>
+
+<div class="card diag">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">D.3</span> Secundária</div><h3>Agitação na criança e no adolescente <span class="ank ank-hy">HIGH-YIELD</span></h3><div class="card-sub">parágrafo próprio: mg/kg, tetos e a prometazina proibida abaixo de 2 anos</div></div>
+<div class="card-body">
+<div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Na criança, <b>causa orgânica (hipoglicemia, ingestão, infecção, trauma, convulsão) e abuso são a primeira lista</b>; a agitação do transtorno do espectro autista, do TDAH e do transtorno de conduta responde a ambiente previsível, família presente e redução de estímulos. Medicação oral antes de IM; contenção só para lesão iminente, com a família informada. <b>Todas as doses pediátricas deste HP são para conferir</b> em protocolo institucional e bula; o uso de antipsicótico IM em criança é off-label. Doença psiquiátrica da infância: PC04; emergências pediátricas: PD10.</div></div>
+<div class="disease">
+<div class="disease-head"><div class="disease-name">Agitação aguda pediátrica</div><div class="disease-tag">CID-10 F91.9 · F84.0</div></div>
+<div class="disease-body"><div class="disease-rows">
+<div class="disease-row"><div class="k">Avaliação</div><div class="v">Sinais vitais e glicemia; ingestão de substância, medicamento ou plantas; trauma (inclusive não acidental), infecção, convulsão pós-ictal, dor; transtorno do neurodesenvolvimento e gatilhos sensoriais; suicídio e autolesão no adolescente (C.5; notificação ao conselho tutelar, Lei 13.819/2019). Em quem tem deficiência intelectual ou TEA, a agitação costuma ter gatilho ambiental ou dor não verbalizada.</div></div>
+<div class="disease-row"><div class="k">Tratamento</div><div class="v">Ambiente calmo, um adulto de referência, frases curtas, escolhas simples, família ao lado quando acalma. Fármaco: via oral ou intranasal antes da IM. <b>Midazolam 0,1–0,15 mg/kg IM (máx. 10 mg)</b> ou <b>0,2–0,3 mg/kg intranasal (máx. 10 mg)</b>; <b>haloperidol 0,05 mg/kg IM (máx. 5 mg)</b>, em serviço com protocolo pediátrico; olanzapina em adolescente com protocolo. <b>Prometazina é contraindicada abaixo de 2 anos</b> (depressão respiratória) e evitada em crianças em geral nesta indicação <span class="ev ev-expert">bula · protocolos pediátricos · conferir tudo</span>.</div></div>
+<div class="disease-row"><div class="k">Contenção</div><div class="v">Último recurso, com os mesmos requisitos do adulto e com maior cuidado com a via aérea e o tórax; manter o responsável informado e, quando possível, presente; registro detalhado. Não existe norma brasileira específica de contenção pediátrica localizada nesta captura (conferir ECA e protocolos).</div></div>
+<div class="disease-row"><div class="k">O que muda conduta</div><div class="v">Hipoglicemia, ingestão ou trauma → tratar primeiro; abaixo de 2 anos → sem prometazina; adolescente com ideação ou tentativa → avaliação do risco, notificação e conselho tutelar; sem resposta à desescalada e risco imediato → midazolam em dose por kg e monitorização contínua.</div></div>
+</div></div></div>
+</div>
+</div>
+
+<div class="card diag">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">D.4</span> Secundária</div><h3>Gestante e puérpera agitada <span class="ank ank-dec">DECISION</span></h3><div class="card-sub">decúbito lateral esquerdo e causas obstétricas primeiro; psicose puerperal no GO14</div></div>
+<div class="card-body">
+<div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Na gestante, agitação e confusão sugerem <b>eclâmpsia ou PRES, hipoglicemia, tireotoxicose, infecção, intoxicação e hemorragia</b>. Posicione em <b>decúbito lateral esquerdo</b> após 20 semanas (evita compressão aortocava). Desescalada igual; se medicar, haloperidol ou olanzapina têm mais experiência em gestação; benzodiazepínico em dose única, sem proibição absoluta. Contenção em decúbito dorsal é contraindicada. Psicose puerperal (dias 3–10) é emergência: GO14.</div></div>
+<div class="disease">
+<div class="disease-head"><div class="disease-name">Agitação na gravidez e no puerpério</div><div class="disease-tag">CID-10 O99.3 · F53.1</div></div>
+<div class="disease-body"><div class="disease-rows">
+<div class="disease-row"><div class="k">Tratamento</div><div class="v">Pressão arterial, proteinúria, glicemia e TSH; sulfato de magnésio se eclâmpsia (GO13); monitorização fetal conforme a idade gestacional; antipsicótico em dose mínima eficaz (haloperidol 5 mg IM; olanzapina IM sem apresentação injetável na CMED (09/10/2026), conferir registro); midazolam 5 mg IM se causa indefinida ou abstinência, com monitorização respiratória; sem valproato. Puerpério com psicose ou risco de infanticídio: internação com unidade que permita o vínculo supervisionado (GO14) <span class="ev ev-expert">GO14 · prática · conferir</span>.</div></div>
+<div class="disease-row"><div class="k">Prognóstico</div><div class="v">A agitação por causa obstétrica ou clínica resolve com a causa; a psicose puerperal tem boa resposta, com recorrência alta em partos seguintes (GO14).</div></div>
+<div class="disease-row"><div class="k">O que muda conduta</div><div class="v">PA elevada com cefaleia ou crise → eclâmpsia e não psiquiatria; gestação ≥20 semanas → decúbito lateral esquerdo; puérpera com delírio, insônia e alucinação → psicose puerperal, internação e avaliação de risco ao bebê; amamentação: decisão com o fármaco usado (GO14).</div></div>
+</div></div></div>
+</div>
+</div>
+
+<div class="card diag">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">D.5</span> Secundária</div><h3>Causas psiquiátricas primárias do agitado <span class="ank ank-hy">HIGH-YIELD</span></h3><div class="card-sub">mania, psicose, pânico, desregulação emocional e neurodesenvolvimento</div></div>
+<div class="card-body">
+<div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Só depois de afastar a causa orgânica a agitação se atribui à doença psiquiátrica. <b>Mania</b> e <b>psicose</b> (haloperidol + prometazina ou olanzapina; manutenção PC03/PC02), <b>pânico</b> (diazepam 10 mg VO ou benzodiazepínico oral; ECG se dor torácica), <b>crise de desregulação emocional</b> (desescalada, via oral, evitar sedações repetidas; PC05), <b>TEA e deficiência intelectual</b> (ambiente, gatilho sensorial; PC04).</div></div>
+<div class="disease">
+<div class="disease-head"><div class="disease-name">Agitação em mania, psicose, pânico, transtorno de personalidade e neurodesenvolvimento</div><div class="disease-tag">CID-10 F30.2 · F41.0 · F60.3</div></div>
+<div class="disease-body"><div class="disease-rows">
+<div class="disease-row"><div class="k">Tratamento</div><div class="v">Mania agitada: antipsicótico de segunda geração oral, ou IM (haloperidol 5 mg com prometazina 50 mg; olanzapina IM sem apresentação injetável na CMED (09/10/2026), conferir registro), mais benzodiazepínico para insônia e agitação; lítio e estabilizadores no PC02. Pânico: segurança, respiração, benzodiazepínico oral em dose única. Transtorno de personalidade borderline: validação, escolhas, curta duração, doses mínimas e evitar internação prolongada rotineira; o risco de suicídio persiste (C.5) <span class="ev ev-acr">AAEP/BETA 2012</span> <span class="ev ev-expert">PC02/PC03/PC05 · conferir</span>.</div></div>
+<div class="disease-row"><div class="k">O que muda conduta</div><div class="v">Insônia por dias, grandiosidade e logorreia → mania e internação se perda de crítica; delírio persecutório com sensório claro → antipsicótico e avaliação de risco; dor torácica com pânico → ECG e troponina antes do rótulo; crise recorrente em personalidade borderline → plano de crise combinado, não sedação repetida.</div></div>
+</div></div></div>
+</div>
+</div>
+
+<div class="card diag">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">D.6</span> Secundária</div><h3>Internação involuntária, consentimento e aspectos legais <span class="ank ank-dec">DECISION</span></h3><div class="card-sub">Lei 10.216/2001, Lei 13.840/2019, consentimento, sigilo e documentação</div></div>
+<div class="card-body">
+<div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Decisão clínica, com <b>laudo circunstanciado</b>, médico com CRM do estado e <b>comunicação ao Ministério Público em 72 h</b>. Em risco iminente de morte, o tratamento necessário não aguarda consentimento (estado de necessidade). A capacidade decisória e o exame mental: PC01. Dependente químico: internação involuntária com limite de 90 dias na Lei 13.840/2019 (conferir o texto) e vínculo com a rede (RAPS: CAPS, UPA, SAMU 192).</div></div>
+<div class="disease">
+<div class="disease-head"><div class="disease-name">Internação psiquiátrica involuntária e consentimento na emergência</div><div class="disease-tag">CID-10 Z04.6</div></div>
+<div class="disease-body"><div class="disease-rows">
+<div class="disease-row"><div class="k">Lei 10.216/2001</div><div class="v">Art. 4º: internação só quando os recursos extra-hospitalares são insuficientes; art. 6º: exige laudo médico circunstanciado; voluntária, involuntária (a pedido de terceiro, sem consentimento) e compulsória (judicial); art. 7º: declaração do paciente na voluntária, término por pedido escrito ou decisão do médico; art. 8º: autorização por médico do CRM do estado, comunicação ao MP estadual em 72 h da internação involuntária e da alta; término por pedido escrito de familiar ou responsável ou decisão do especialista <span class="ev ev-sbr">Lei 10.216/2001 · texto lido</span>.</div></div>
+<div class="disease-row"><div class="k">Consentimento e sigilo</div><div class="v">O Código de Ética Médica veda tratar sem consentimento, salvo risco iminente de morte (art. 22; conferir texto). A ameaça específica a terceiros é justa causa para revelar o mínimo necessário (CEM, sigilo; conferir). Registrar no prontuário a avaliação, a indicação, as alternativas tentadas e a comunicação à família.</div></div>
+<div class="disease-row"><div class="k">Tratamento</div><div class="v">Preencher laudo, informar paciente e responsável, transferir por ambulância, comunicar ao MP, definir equipe responsável e plano; pacientes usuários de drogas podem requerer a aplicação da Lei 13.840/2019 (ver PC03) <span class="ev ev-sbr">Lei 13.840/2019 · conferir</span>.</div></div>
+<div class="disease-row"><div class="k">O que muda conduta</div><div class="v">Paciente consente → internação voluntária com declaração; recusa com risco → involuntária com laudo e MP em 72 h; ordem judicial → compulsória; criança ou adolescente → responsável legal e conselho tutelar; sem leito psiquiátrico → manter em observação segura no PS até a vaga, não liberar.</div></div>
+</div></div></div>
+</div>
+</div>
+
+<div class="card diag">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">D.7</span> Secundária</div><h3>Violência e segurança da equipe <span class="ank ank-dgr">DANGER</span></h3><div class="card-sub">ambiente, equipe treinada, registro e debrief</div></div>
+<div class="card-body">
+<div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">A segurança do clínico é o primeiro passo da segurança do paciente. <b>Sala com saída livre, mobiliário removível, equipe de 4 a 5 pessoas treinadas, segurança que entende de desescalada</b> e protocolo de acionamento claro. Arma de fogo ou faca em mãos: polícia, fora do alcance do paciente. Agressão à equipe: registro, apoio e debrief.</div></div>
+<div class="disease">
+<div class="disease-head"><div class="disease-name">Prevenção da violência e proteção da equipe no serviço de emergência</div><div class="disease-tag">CID-10 Z56.6 · sem código nominal</div></div>
+<div class="disease-body"><div class="disease-rows">
+<div class="disease-row"><div class="k">Estrutura</div><div class="v">Espaço projetado para segurança, com saídas e mobiliário flexível; equipe com perfil e treinamento anual em emergências comportamentais; time de desescalada de 4 a 5 pessoas; escalas objetivas (BARS) para evitar negligenciar sinais precoces; relação com a segurança hospitalar e a polícia (modelo CIT) <span class="ev ev-acr">AAEP/BETA 2012</span>.</div></div>
+<div class="disease-row"><div class="k">Prática</div><div class="v">Líder único, fala um só; os outros ocupam posição estável e silenciosa; retirada de objetos perigosos do paciente e da sala; revista de pertences segundo protocolo, com o consentimento do paciente quando possível; tempo de espera reduzido e informações ao paciente e à família; reconhecer sentimentos próprios (medo, raiva) antes de entrar.</div></div>
+<div class="disease-row"><div class="k">Depois do evento</div><div class="v">Debrief com a equipe e com o paciente; registro do incidente e das medidas; apoio ao profissional agredido; comunicação à gestão; acidente de trabalho conforme norma institucional (conferir) <span class="ev ev-expert">prática de serviço · conferir</span>.</div></div>
+<div class="disease-row"><div class="k">O que muda conduta</div><div class="v">Arma presente → segurança e polícia; paciente conhecido por violência → equipe completa antes do contato; sem equipe treinada disponível → não entrar sozinho, aguardar e manter o paciente sob observação à distância; agressão consumada → registro e apoio imediato.</div></div>
+</div></div></div>
+</div>
+</div>
+<div class="card diag">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">D.8</span> Secundária</div><h3>Acatisia e distonia aguda: o antipsicótico que agita <span class="ank ank-dgr">DANGER</span></h3><div class="card-sub">o paciente medicado que piora da agitação depois da dose</div></div>
+<div class="card-body">
+<div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body"><b>Acatisia</b> (inquietação interna, impossibilidade de ficar sentado, andar e balançar as pernas) e <b>distonia aguda</b> (torcicolo, crise oculógira, trismo, protrusão de língua, laringoespasmo) aparecem horas a dias depois de haloperidol, risperidona, metoclopramida ou bromoprida. A acatisia é confundida com piora da agitação psicótica e tratada com <b>mais</b> antipsicótico: o erro que perpetua o quadro. Fenomenologia completa e VMAT2: NE06.</div></div>
+<div class="disease">
+<div class="disease-head"><div class="disease-name">Acatisia e distonia aguda induzidas por antipsicótico ou antiemético</div><div class="disease-tag">CID-10 G24.0 · G21.1 · acatisia sem código nominal</div></div>
+<div class="disease-body"><div class="disease-rows">
+<div class="disease-row"><div class="k">Reconhecimento</div><div class="v">Acatisia: queixa subjetiva de desconforto, necessidade urgente de se mover, mais em jovens e após aumento de dose; sem delírio novo nem hostilidade dirigida. Distonia: espasmo doloroso e assustador, mais em homens jovens e com antipsicótico de alta potência IM; o diferencial é com catatonia e convulsão. A dúvida entre acatisia e agitação psicótica resolve-se perguntando o que o paciente sente e se piorou depois da última dose <span class="ev ev-expert">PC03 · NE06 · apostila PSI 01 (piso)</span>.</div></div>
+<div class="disease-row"><div class="k">Tratamento</div><div class="v"><b>Distonia aguda:</b> biperideno 2,5–5 mg IM/IV, resposta em minutos; repetir a mesma dose em 30 min se necessário; máximo 10–20 mg/dia (NE06); manter anticolinérgico por via oral nos dias seguintes se o antipsicótico continuar; laringoespasmo é emergência de via aérea. <b>Acatisia:</b> reduzir a dose ou trocar o antipsicótico; propranolol 10–20 mg VO 2–3 vezes ao dia ou benzodiazepínico; anticolinérgico tem resposta menor. <b>Nunca aumentar o antipsicótico para tratar a acatisia</b> <span class="ev ev-expert">PC03 · NE06</span>.</div></div>
+<div class="disease-row"><div class="k">O que muda conduta</div><div class="v">Piora da agitação após antipsicótico com sensação interna de inquietação → acatisia: reduzir, não aumentar; espasmo de pescoço, língua ou olhos → distonia: biperideno; rigidez com febre e CPK alta → SNM, não distonia (C.6); prometazina na combinação reduz a distonia (TREC) e é por isso que a associação é preferida ao haloperidol isolado.</div></div>
+</div></div></div>
+</div>
+</div>
+</section>
+
+<section id="algoritmo">
+<div class="section"><div class="section-eyebrow"><span>E</span> Algoritmo</div><div class="section-title">Duas árvores: o paciente agitado e o paciente com risco de suicídio</div><div class="section-sub">Cada árvore começa pela pergunta que muda a primeira ação e termina em conduta com dose ou alvo, não em rótulo.</div></div>
+
+<div class="card prim">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">E.1</span> Algoritmo</div><h3>Paciente agitado no pronto-socorro <span class="ank ank-dec">DECISION</span></h3></div>
+<div class="card-body">
+<div class="algo"><div class="tree">
+<div class="tree-line"><span class="tree-node start">Paciente agitado (BARS ≠ 4)</span></div>
+<div class="tree-branch"><div class="tree-label yes">Risco imediato de violência ou arma?</div>
+<div class="tree-line"><span class="tree-node dgr">→ Equipe de 4–5 e segurança antes de falar; arma: polícia; não entre sozinho</span></div>
+<div class="tree-branch"><div class="tree-label no">Segurança garantida</div>
+<div class="tree-line"><span class="tree-node dec">Sinais vitais, SpO2 e glicemia capilar alterados?</span></div>
+<div class="tree-branch"><div class="tree-label yes">Sim</div>
+<div class="tree-line"><span class="tree-node action">→ Tratar primeiro: glicose + tiamina IV, O2, resfriar; causa (A.1)</span></div></div>
+<div class="tree-branch"><div class="tree-label no">Não</div>
+<div class="tree-line"><span class="tree-node dec">T ≥38,5 °C com rigidez, clônus ou pele seca e quente?</span></div>
+<div class="tree-branch"><div class="tree-label yes">Sim</div>
+<div class="tree-line"><span class="tree-node dgr">→ Tríade (C.6): suspender D2/serotoninérgicos, benzodiazepínico, resfriar, CPK, UTI; sem haloperidol</span></div></div>
+<div class="tree-branch"><div class="tree-label no">Não</div>
+<div class="tree-line"><span class="tree-node dx">Desescalada verbal (C.2) em até 5–10 min: acalmou (BARS 4)?</span></div>
+<div class="tree-branch"><div class="tree-label yes">Sim</div>
+<div class="tree-line"><span class="tree-node action">→ Sem medicação; investigar a causa e o risco de suicídio (E.2)</span></div></div>
+<div class="tree-branch"><div class="tree-label no">Não</div>
+<div class="tree-line"><span class="tree-node dec">Aceita via oral?</span></div>
+<div class="tree-branch"><div class="tree-label yes">Sim</div>
+<div class="tree-line"><span class="tree-node action">→ Olanzapina ODT 5–10 mg, risperidona 1–2 mg ou haloperidol 5 mg VO; ± diazepam 10 mg VO</span></div></div>
+<div class="tree-branch"><div class="tree-label no">Recusa e risco imediato</div>
+<div class="tree-line"><span class="tree-node dec">Sensório claro, psicose ou mania, ECG sem QTc &gt;500 ms?</span></div>
+<div class="tree-branch"><div class="tree-label yes">Sim</div>
+<div class="tree-line"><span class="tree-node action">→ Haloperidol 5 mg + prometazina 50 mg IM, dose única; reavaliar em 30–60 min</span></div></div>
+<div class="tree-branch"><div class="tree-label no">Causa indefinida, estimulante, abstinência, QTc alto, idade avançada</div>
+<div class="tree-line"><span class="tree-node action">→ Midazolam 5–15 mg IM (conferir) (ou 2,5–5 mg IV lento); idoso: dose menor</span></div></div>
+</div>
+</div></div></div></div></div></div></div>
+<div class="box decision"><span class="box-label">DECISION</span><div class="box-title">Sem resposta em 30–60 minutos: reexamine antes de repetir</div><div class="box-body">Dose repetida sem efeito é sinal de causa orgânica não reconhecida (hipoglicemia, hipóxia, abstinência grave, toxíndrome, infecção, TCE) ou de erro de fármaco. <b>Reexamine, repita glicemia e temperatura, e acrescente benzodiazepínico em vez de repetir ou trocar o antipsicótico</b>; considere internação em unidade monitorizada.</div></div>
+
+<div class="mnemo"><div class="mnemo-title"><b>SEDAR</b> checklist antes da primeira dose IM</div><div class="mnemo-grid">
+<div class="mnemo-row"><span class="mnemo-letter">S</span><span><b>Sinais vitais e glicemia</b> feitos e registrados</span></div>
+<div class="mnemo-row"><span class="mnemo-letter">E</span><span><b>Exame neurológico mínimo</b> escrito: Glasgow, pupilas, déficit focal, tônus</span></div>
+<div class="mnemo-row"><span class="mnemo-letter">D</span><span><b>Drogas e fármacos</b>: o que usou, antipsicótico recente, anticoagulante, IMAO</span></div>
+<div class="mnemo-row"><span class="mnemo-letter">A</span><span><b>Alerta de segurança</b>: ECG/QTc, Parkinson ou Lewy, gestação, alergia, hipercapnia</span></div>
+<div class="mnemo-row"><span class="mnemo-letter">R</span><span><b>Reavaliar</b> BARS e SpO2 aos 15, 30 e 60 min; alvo BARS 4</span></div>
+</div></div>
+
+<div class="box decision"><span class="box-label">DECISION</span><div class="box-title">Raciocínio em 6 passos — o agitado de plantão</div><div class="box-body">
+<ol>
+<li><b>Segurança antes de diagnóstico.</b> Pergunte se há risco imediato para a equipe; isso decide se o próximo passo é falar ou esperar reforço.</li>
+<li><b>O que mata primeiro.</b> Glicemia, SpO2, temperatura: se algum estiver alterado, a próxima conduta é a correção e não a sedação.</li>
+<li><b>Tônus e pele.</b> Rigidez, clônus, pele seca e quente separam a tríade e a anticolinérgica da psicose; isso proíbe o haloperidol e a prometazina.</li>
+<li><b>Palavra primeiro.</b> Se a desescalada funciona em minutos, a medicação não entra; o paciente participa das escolhas.</li>
+<li><b>Via oral antes da IM.</b> A recusa com risco imediato justifica a IM, e a causa (psicose × indefinida) escolhe o fármaco.</li>
+<li><b>Alvo e reavaliação.</b> O alvo é BARS 4, não sono; sem resposta em 30–60 min, reexamine a causa; contenção só se for o único meio e com sedação associada.</li>
+</ol></div></div>
+</div>
+</div>
+
+<div class="card prim">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">E.2</span> Algoritmo</div><h3>Paciente com ideação ou tentativa de suicídio <span class="ank ank-dgr">DANGER</span></h3></div>
+<div class="card-body">
+<div class="algo"><div class="tree">
+<div class="tree-line"><span class="tree-node start">Ideação, tentativa ou queixa psiquiátrica com fator de risco</span></div>
+<div class="tree-branch"><div class="tree-label yes">Tentativa com intoxicação ou lesão?</div>
+<div class="tree-line"><span class="tree-node dgr">→ Estabilizar e tratar (paracetamol GH09, toxicologia CT10); vigilância contínua; psiquiatria depois</span></div></div>
+<div class="tree-branch"><div class="tree-label no">Sem lesão ativa</div>
+<div class="tree-line"><span class="tree-node dx">Pergunta direta (ASQ/C-SSRS): plano, meios e intenção agora?</span></div>
+<div class="tree-branch"><div class="tree-label yes">Plano definido, meios, intenção, tentativa recente ou psicose/mania/depressão grave</div>
+<div class="tree-line"><span class="tree-node dgr">→ Risco alto: nunca sozinho, retirar meios, revistar, psiquiatria; internação (involuntária se recusa; MP em 72 h)</span></div></div>
+<div class="tree-branch"><div class="tree-label no">Ideação com planos, sem intenção imediata (risco médio) ou sem plano (baixo)</div>
+<div class="tree-line"><span class="tree-node dec">Consegue pactuar plano de segurança, tem suporte e rede?</span></div>
+<div class="tree-branch"><div class="tree-label yes">Sim</div>
+<div class="tree-line"><span class="tree-node action">→ Alta com plano de segurança escrito, restrição de meios, contato em 24–72 h, consulta ≤7 dias; notificar</span></div></div>
+<div class="tree-branch"><div class="tree-label no">Não</div>
+<div class="tree-line"><span class="tree-node dgr">→ Observação e reavaliação psiquiátrica; internação se suporte frágil</span></div></div>
+</div></div></div>
+</div>
+<div class="box decision"><span class="box-label">DECISION</span><div class="box-title">Raciocínio em 5 passos — o paciente com risco de suicídio</div><div class="box-body">
+<ol>
+<li><b>Há lesão ou intoxicação ativa?</b> Estabilize e proteja antes de avaliar; vigilância contínua desde a chegada.</li>
+<li><b>Pergunte diretamente.</b> A pergunta não induz; plano, meios e intenção hoje definem o nível.</li>
+<li><b>Estratifique para decidir hoje</b> (baixo, médio, alto, urgência), sem fingir previsão: o escore apoia, não calcula.</li>
+<li><b>Proteja.</b> Meios fora do alcance, família ao lado, sem trancas; internação quando alto risco ou suporte frágil.</li>
+<li><b>Planeje a saída.</b> Plano de segurança, restrição de meios, contato precoce, notificação; a alta é parte do tratamento.</li>
+</ol></div></div>
+</div>
+</div>
+</section>
+
+<section id="tratamento">
+<div class="section"><div class="section-eyebrow"><span>F</span> Tratamento Integrado</div><div class="section-title">F1 · Estratégia por entidade · F2 · Doses · F3 · Monitorização · F4 · Casos</div><div class="section-sub">A ordem é sempre a mesma: segurança, correção do que mata, palavra, via oral, IM, contenção. Doses de crise com via, frequência e teto; o que é off-label ou de disponibilidade incerta vem marcado "conferir".</div></div>
+
+<div class="card tx">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">F.1</span> Estratégia</div><h3>Escada terapêutica por situação <span class="ank ank-dec">DECISION</span></h3></div>
+<div class="card-body">
+
+<div class="sub-title">F1.1 · Avaliação e desescalada (C.1, C.2)</div>
+<ul class="bullets">
+<li><b>Primeiro:</b> segurança; sinais vitais, SpO2, glicemia capilar; exame neurológico mínimo registrado; BARS.</li>
+<li><b>Escalada de intervenção:</b> ambiente e equipe → desescalada verbal (5–10 min, um interlocutor) → oferta de medicação oral com escolha → IM se recusa e risco imediato → contenção como último recurso.</li>
+<li><b>Meta:</b> BARS 4 (calmo e acordado), com o paciente participando das decisões; debrief ao final <span class="ev ev-acr">AAEP/BETA 2012</span>.</li>
+</ul>
+
+<div class="sub-title">F1.2 · Tranquilização rápida por cenário (C.3)</div>
+<ul class="bullets">
+<li><b>Cooperativo:</b> olanzapina ODT 5–10 mg, risperidona 1–2 mg ou haloperidol 5 mg VO; adicione diazepam 10 mg VO se necessário. Via oral é preferida à IM <span class="ev ev-acr">AAEP/BETA 2012</span>.</li>
+<li><b>Psicose ou mania, recusa, risco imediato, ECG aceitável:</b> haloperidol 5 mg + prometazina 50 mg IM, dose única; reavaliar em 30–60 min <span class="ev ev-cochrane">TREC 2007</span>. Alternativa onde existir: olanzapina 10 mg IM (sem benzodiazepínico parenteral); sem apresentação injetável na CMED (09/10/2026), conferir registro.</li>
+<li><b>Causa indefinida, estimulante, abstinência, QTc &gt;500 ms, Parkinson ou Lewy:</b> midazolam 5–15 mg IM (conferir), ou 2,5–5 mg IV lento titulado, com monitorização; diazepam 5–10 mg IV lento se acesso venoso <span class="ev ev-cochrane">TREC 2003</span>.</li>
+<li><b>Sem resposta em 30–60 min:</b> reexaminar a causa; acrescentar benzodiazepínico ao antipsicótico em vez de repetir ou trocar o antipsicótico; considerar monitorização intensiva.</li>
+</ul>
+<div class="box danger"><span class="box-label">DANGER</span><div class="box-title">Teto, intervalo e combinações que matam</div><div class="box-body"><b>Haloperidol: teto de 15 mg/dia no agudo (PCDT 2013).</b> Não combine haloperidol com droperidol, ziprasidona ou outros prolongadores de QT sem ECG. Não combine olanzapina IM com benzodiazepínico parenteral. Não repita midazolam IV em paciente alcoolizado ou pneumopata sem monitorização contínua e via aérea à mão. <b>Duas drogas sedativas simultâneas exigem observação de 15 em 15 minutos.</b></div></div>
+
+<div class="sub-title">F1.3 · Contenção mecânica (C.4)</div>
+<ul class="bullets">
+<li><b>Antes:</b> desescalada e oferta de medicação falharam; risco imediato; equipe de 5; prescrição médica; enfermeiro designado para a supervisão; família informada.</li>
+<li><b>Durante:</b> decúbito dorsal ou lateral, nunca ventral; vigilância direta contínua; SpO2, FR, perfil de perfusão; tranquilização associada para encurtar o tempo.</li>
+<li><b>Retirada:</b> assim que BARS 4 ou risco desaparecer; retirada gradual de pontos; registro completo; debrief; auditoria do episódio <span class="ev ev-sbr">CFM 2.057/2013 · COFEN 746/2024</span>.</li>
+</ul>
+<div class="box hy"><span class="box-label">HIGH-YIELD</span><div class="box-title">O que o registro da contenção precisa conter</div><div class="box-body">Razão clínica e risco imediato; alternativas tentadas; médico que prescreveu e enfermeiro que supervisiona; horário de início e de término; fármacos associados; sinais vitais e avaliações; eventos adversos; informação à família; debrief. Os arts. 2º e 3º da COFEN 746/2024 pedem monitorização e registro de razões, duração, avaliações e eventos adversos.</div></div>
+
+<div class="sub-title">F1.4 · Risco de suicídio (C.5, E.2)</div>
+<ul class="bullets">
+<li><b>Imediato:</b> não deixar sozinho; retirar meios e revistar a bolsa; porta sem tranca; vigilância contínua até a avaliação psiquiátrica; tratar a intoxicação ou lesão.</li>
+<li><b>Estratificação (ABP/CFM):</b> baixo (sem plano): escuta e encaminhamento; médio (planos sem intenção imediata): meios fora do alcance, família, psiquiatria breve; alto (plano, meios, intenção): internação; urgência: vigilância 24 h <span class="ev ev-sbr">ABP/CFM 2014</span>.</li>
+<li><b>Internação:</b> voluntária com declaração; involuntária com laudo e comunicação ao MP em 72 h; compulsória judicial <span class="ev ev-sbr">Lei 10.216/2001</span>.</li>
+<li><b>Alta:</b> plano de segurança escrito, restrição de meios, medicação em quantidade limitada, contato em 24–72 h, consulta em até 7 dias; notificação compulsória <span class="ev ev-expert">Stanley 2018 · conferir</span>.</li>
+</ul>
+
+<div class="sub-title">F1.5 · Tríade hipertérmica: SNM, serotoninérgica, catatonia maligna (C.6)</div>
+<ul class="bullets">
+<li><b>0–15 min:</b> suspender tudo o que bloqueia D2 ou eleva serotonina; temperatura, tônus, clônus; acesso venoso; CPK, K+, creatinina, gasometria, hemoculturas.</li>
+<li><b>15–60 min:</b> resfriamento externo, cristaloide para diurese alta, diazepam 5–10 mg IV lento ou midazolam; monitorização contínua; UTI se T ≥40 °C, rigidez intensa, instabilidade ou CPK em ascensão.</li>
+<li><b>Específico:</b> SNM grave: dantroleno e amantadina (PC03); serotoninérgica moderada a grave: ciproeptadina (conferir); catatonia: lorazepam VO/SL como teste e ECT na forma maligna (PC03).</li>
+</ul>
+<div class="box decision"><span class="box-label">DECISION</span><div class="box-title">Quando o agitado vira UTI</div><div class="box-body">T ≥40 °C, rigidez generalizada, rebaixamento, CPK em ascensão com lesão renal, instabilidade autonômica, QTc &gt;500 ms com arritmia, depressão respiratória, convulsão refratária ou necessidade de sedação profunda: <b>vaga de UTI, não observação na sala de agitados</b>.</div></div>
+
+<div class="sub-title">F1.6 · Populações especiais (D.2–D.4)</div>
+<ul class="bullets">
+<li><b>Idoso e delirium:</b> haloperidol 0,5–2 mg VO/IM só com risco; quetiapina 12,5–25 mg VO se Parkinson ou Lewy; sem benzodiazepínico exceto abstinência.</li>
+<li><b>Criança e adolescente:</b> ambiente e família; midazolam 0,1–0,15 mg/kg IM (máx. 10 mg) ou 0,2–0,3 mg/kg intranasal (máx. 10 mg); haloperidol 0,05 mg/kg IM (máx. 5 mg); prometazina proibida abaixo de 2 anos; tudo a conferir.</li>
+<li><b>Gestante:</b> decúbito lateral esquerdo após 20 semanas; haloperidol 5 mg IM; olanzapina IM sem apresentação injetável na CMED (09/10/2026), conferir registro; midazolam 5 mg IM se causa indefinida; psicose puerperal em GO14.</li>
+</ul>
+
+<div class="sub-title">F1.7 · Depois do evento</div>
+<ul class="bullets">
+<li><b>Reavaliar</b> a causa orgânica, o risco de suicídio e de violência; decidir internação ou alta com a rede (CAPS, UBS, RAPS).</li>
+<li><b>Registrar</b> sedação, contenção, intercorrências, notificações; <b>debrief</b> com paciente e equipe.</li>
+<li><b>Ligar</b> o paciente ao tratamento da doença de base (PC02, PC03, PC05) antes da alta; telefonema de seguimento.</li>
+</ul>
+<div class="box pearl"><span class="box-label">PEARL</span><div class="box-title">A dose certa é a que deixa o paciente examinável</div><div class="box-body">Sedação profunda esconde o exame, bloqueia a entrevista psiquiátrica e aumenta aspiração; o paciente deve poder ser acordado, examinado e ouvido. <b>Prefira doses menores reavaliadas a uma dose grande</b>, exceto quando o risco imediato exige controle rápido.</div></div>
+</div>
+</div>
+
+<div class="card tx">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">F.2</span> Doses Operacionais</div><h3>Tabela de doses de crise — emergência psiquiátrica</h3></div>
+<div class="card-body">
+<div class="stbl stbl-3">
+<div class="stbl-head stbl-3"><div>Fármaco</div><div>Dose adulto</div><div>Indicação / notas</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Haloperidol (ampola 5 mg/mL)</div><div class="col" data-l="Dose">5 mg IM ou VO por dose; repetir após 30–60 min se necessário; <b>teto 15 mg/dia no agudo (PCDT 2013)</b></div><div class="col" data-l="Indicação">Psicose, mania, agitação sem contraindicação. QTc e distonia; evitar em Parkinson/Lewy, SNM, anticolinérgica, abstinência. IV é off-label e exige ECG. <span class="ev ev-sbr">PCDT 2013</span></div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Haloperidol + prometazina (IM)</div><div class="col" data-l="Dose"><b>Haloperidol 5 mg + prometazina 50 mg IM, dose única; reavaliar em 30–60 min</b></div><div class="col" data-l="Indicação">Padrão brasileiro para psicose agitada, com menos distonia que haloperidol isolado (TREC). Evitar se suspeita de SNM, anticolinérgica, abstinência, estimulante ou QTc &gt;500 ms. <span class="ev ev-cochrane">Huf 2007</span></div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Prometazina (ampola 25 mg/mL, 2 mL)</div><div class="col" data-l="Dose">25–50 mg IM profunda; teto diário de 100 mg/dia (bula Prometazol); <b>proibida &lt;2 anos</b></div><div class="col" data-l="Indicação">Adjuvante do haloperidol: sedação e prevenção de distonia. Hipotensão, anticolinérgica e depressão respiratória em associação; evitar IV (necrose). <span class="ev ev-expert">bula · conferir</span></div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Midazolam IM (5 mg/mL)</div><div class="col" data-l="Dose">5–15 mg IM (conferir; bula lida cita total geralmente ≤10 mg); idoso ou debilitado 2,5–5 mg IM</div><div class="col" data-l="Indicação">Causa indefinida, estimulante, abstinência; 89% tranquilos ou dormindo aos 20 min no TREC. Depressão respiratória; monitorizar. <span class="ev ev-cochrane">TREC 2003</span></div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Midazolam IV</div><div class="col" data-l="Dose">2,5–5 mg IV lento; repetir a cada 5 min até o alvo; só com monitorização contínua e via aérea disponível</div><div class="col" data-l="Indicação">Titulação cuidadosa em álcool, idoso, pneumopata. Duração curta; renova-se a dose. <span class="ev ev-expert">prática · conferir</span></div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Diazepam IV (ampola 5 mg/mL)</div><div class="col" data-l="Dose">5–10 mg IV lento (≤5 mg/min); repetir a cada 5–10 min até RASS 0 a −1; <b>não IM</b></div><div class="col" data-l="Indicação">Substitui o lorazepam parenteral, que não existe no Brasil. Metabólito ativo e meia-vida longa (autodesmame). <span class="ev ev-expert">via PC03</span></div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Diazepam VO</div><div class="col" data-l="Dose">10 mg VO por dose</div><div class="col" data-l="Indicação">Ansiedade, pânico, adjuvante de antipsicótico oral; abstinência (esquemas no PC03).</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Lorazepam VO/SL</div><div class="col" data-l="Dose">1–2 mg VO ou SL; <b>não há apresentação IV ou IM no Brasil</b></div><div class="col" data-l="Indicação">Catatonia (teste), cirrose, idoso. Quando a GO14 diz "lorazepam IV não existe": é esta linha. <span class="ev ev-expert">PC03 · GO14</span></div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Olanzapina VO/ODT</div><div class="col" data-l="Dose">5–10 mg VO ou ODT; máx. 20 mg/dia</div><div class="col" data-l="Indicação">Alternativa oral para o agitado cooperativo; menos distonia. <span class="ev ev-acr">AAEP/BETA 2012</span></div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Olanzapina IM</div><div class="col" data-l="Dose">10 mg IM (idoso 2,5–5 mg); máx. 30 mg/dia (bula); <b>sem benzodiazepínico parenteral</b></div><div class="col" data-l="Indicação">Risco cardiorrespiratório na associação. Sem apresentação injetável na CMED (09/10/2026); conferir registro. Evitar em Parkinson e Lewy (NE06). <span class="ev ev-expert">bula · BETA</span></div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Ziprasidona IM</div><div class="col" data-l="Dose">10–20 mg IM; máx. 40 mg/dia</div><div class="col" data-l="Indicação">Prolonga QTc; evitar com outros prolongadores. Sem apresentação injetável na CMED (09/10/2026); conferir registro. <span class="ev ev-expert">bula · conferir</span></div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Risperidona VO</div><div class="col" data-l="Dose">1–2 mg VO (solução oral); ± diazepam 10 mg VO</div><div class="col" data-l="Indicação">Evidência oral mais forte no BETA; hipotensão ortostática; evitar em Parkinson e Lewy (NE06). <span class="ev ev-acr">AAEP/BETA 2012</span></div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Quetiapina VO</div><div class="col" data-l="Dose">12,5–25 mg VO</div><div class="col" data-l="Indicação">Idoso, Parkinson, demência com corpos de Lewy. Sedação e hipotensão. <span class="ev ev-expert">NE04</span></div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Haloperidol no idoso</div><div class="col" data-l="Dose">0,5–2 mg VO/IM; menor dose no frágil; ECG se dose repetida</div><div class="col" data-l="Indicação">Delirium com risco e agitação do idoso. Aviso de mortalidade na demência. <span class="ev ev-expert">NE04 · conferir</span></div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Droperidol</div><div class="col" data-l="Dose">2,5–5 mg IM ou IV, com ECG</div><div class="col" data-l="Indicação">Off-label para agitação no Brasil; Droperdal injetável consta na CMED; alternativa ao haloperidol com aviso de QTc; posologia: <b>conferir bula</b>. <span class="ev ev-expert">DORM · conferir</span></div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Cetamina (rótulo off-label)</div><div class="col" data-l="Dose">4–5 mg/kg IM; ou 1–2 mg/kg IV, com via aérea disponível e monitorização</div><div class="col" data-l="Indicação">Sedação rápida, mais hipertensão e taquicardia; intubação e laringoespasmo em estudos pré-hospitalares. Só por protocolo institucional; conferir apresentação racêmica disponível no hospital. <span class="ev ev-expert">Cole 2016 · Lin 2021 · conferir</span></div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Clorpromazina</div><div class="col" data-l="Dose">Evitar na agitação aguda</div><div class="col" data-l="Indicação">Hipotensão e redução do limiar convulsivo; evitar no estimulante e na abstinência. <span class="ev ev-acr">AAEP/BETA 2012</span></div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Biperideno (ampola 5 mg/mL)</div><div class="col" data-l="Dose">2,5–5 mg IM/IV; repetir a mesma dose em 30 min se necessário; máximo 10–20 mg/dia (NE06)</div><div class="col" data-l="Indicação">Distonia aguda após haloperidol. Contraindicado se anticolinérgica; reavaliar em 20–30 min. <span class="ev ev-expert">NE06 · PC03</span></div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Tiamina + glicose</div><div class="col" data-l="Dose">Tiamina 200–500 mg IV 8/8 h (Wernicke); profilaxia 100 mg/dia; glicose junto, em qualquer ordem</div><div class="col" data-l="Indicação">Etilista agitado ou desnutrido; não retarde a tiamina para dar glicose. <span class="ev ev-expert">NE04</span></div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Glicose</div><div class="col" data-l="Dose">Glicemia capilar &lt;70 mg/dL: 25 g IV (glicose 50% 50 mL); repetir se persistir</div><div class="col" data-l="Indicação">Hipoglicemia simula agitação. Reavaliar a glicemia em 15 min.</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Dantroleno (SNM grave)</div><div class="col" data-l="Dose">1–2,5 mg/kg IV, repetir até 10 mg/kg/dia</div><div class="col" data-l="Indicação">T ≥40 °C, rigidez intensa; hepatotoxicidade. <span class="ev ev-expert">PC03 · NE06</span></div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Amantadina (SNM)</div><div class="col" data-l="Dose">100 mg VO ou por SNG 8/8–12/12 h</div><div class="col" data-l="Indicação">Agonista dopaminérgico disponível; bromocriptina sem registro no Brasil (PC03). <span class="ev ev-expert">PC03</span></div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Ciproeptadina (serotoninérgica)</div><div class="col" data-l="Dose">12 mg VO/SNG e depois 2 mg a cada 2 h enquanto persistir; manutenção 8 mg a cada 6 h</div><div class="col" data-l="Indicação">Antagonista 5-HT2A; disponibilidade restrita no Brasil: <b>conferir</b>. <span class="ev ev-expert">Boyer 2005 · conferir</span></div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Lorazepam ou diazepam (catatonia)</div><div class="col" data-l="Dose">Lorazepam 1–2 mg VO/SL; diazepam 10 mg IV lento</div><div class="col" data-l="Indicação">Teste e tratamento; resposta parcial em 1–3 h; ECT na forma maligna. <span class="ev ev-expert">PC03 · Rogers 2023</span></div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Midazolam em criança</div><div class="col" data-l="Dose">0,1–0,15 mg/kg IM (máx. 10 mg); intranasal 0,2–0,3 mg/kg (máx. 10 mg)</div><div class="col" data-l="Indicação">Off-label na agitação pediátrica; protocolo pediátrico. <span class="ev ev-expert">conferir</span></div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Haloperidol em criança</div><div class="col" data-l="Dose">0,05 mg/kg IM (máx. 5 mg)</div><div class="col" data-l="Indicação">Off-label; serviço com protocolo pediátrico; distonia. <span class="ev ev-expert">conferir</span></div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Gestante</div><div class="col" data-l="Dose">Haloperidol 5 mg IM; olanzapina IM (sem apresentação injetável na CMED; conferir registro); midazolam 5 mg IM se causa indefinida</div><div class="col" data-l="Indicação">Decúbito lateral esquerdo após 20 semanas; sem valproato. <span class="ev ev-expert">GO14 · conferir</span></div></div>
+</div>
+<div class="box decision"><span class="box-label">DECISION</span><div class="box-title">Disponibilidade no Brasil: o que a farmácia do PS costuma ter</div><div class="box-body">Haloperidol, prometazina, midazolam, diazepam, biperideno, tiamina e glicose injetáveis são de uso corrente no SUS. <b>Lorazepam injetável não existe</b>; olanzapina IM e ziprasidona IM sem apresentação injetável na CMED (09/10/2026); Droperdal injetável consta na CMED; cetamina (restrita) e ciproeptadina têm disponibilidade variável. A lista CMED de 09/10/2026 foi consultada; registro vigente no Bulário e presença na RENAME não foram conferidos: <b>conferir o Bulário e a lista do serviço</b> antes de planejar o protocolo local.</div></div>
+</div>
+</div>
+
+<div class="card tx">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">F.3</span> Monitorização</div><h3>Depois da sedação e durante a contenção <span class="ank ank-dgr">DANGER</span></h3></div>
+<div class="card-body">
+<div class="stbl stbl-3">
+<div class="stbl-head stbl-3"><div>Parâmetro</div><div>Como</div><div>Sinal para agir</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Parâmetro">Nível de consciência e agitação</div><div class="col" data-l="Como">BARS e RASS aos 15, 30 e 60 min; depois conforme o serviço</div><div class="col" data-l="Sinal"><b>RASS −3 a −5</b>, BARS 1–3: sedação excessiva; reduzir doses futuras e vigiar a via aérea</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Parâmetro">Ventilação</div><div class="col" data-l="Como">SpO2 contínua e FR; capnografia se disponível</div><div class="col" data-l="Sinal">SpO2 &lt;92%, FR &lt;10, cianose, roncos: posição, O2, via aérea; soltar a contenção</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Parâmetro">Hemodinâmica</div><div class="col" data-l="Como">PA e FC em intervalos curtos na 1ª hora</div><div class="col" data-l="Sinal">Hipotensão (haloperidol + prometazina, midazolam): decúbito, volume; taquicardia persistente: causa</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Parâmetro">Temperatura</div><div class="col" data-l="Como">Ao início e na reavaliação</div><div class="col" data-l="Sinal"><b>≥38,5 °C</b> com rigidez ou sudorese: C.6; resfriar e CPK</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Parâmetro">QTc</div><div class="col" data-l="Como">ECG se haloperidol, droperidol, ziprasidona ou prometazina repetidos, ou cardiopata</div><div class="col" data-l="Sinal">QTc &gt;500 ms: evitar o grupo e corrigir K+, Mg2+; arritmia: monitor</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Parâmetro">Efeitos extrapiramidais</div><div class="col" data-l="Como">Exame de pescoço, mandíbula, olhos, língua</div><div class="col" data-l="Sinal">Distonia: biperideno 2,5–5 mg IM/IV (máx. 10–20 mg/dia, NE06); laringoespasmo é emergência</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Parâmetro">Contenção</div><div class="col" data-l="Como">Observação direta contínua; perfusão e pele; decúbito</div><div class="col" data-l="Sinal">Ventral, dedo azul, dor, perda de resposta: reposicionar ou soltar</div></div>
+</div>
+<p style="font-size:12.5px;color:var(--ink-soft);margin:10px 2px">Intervalos exatos de monitorização não são fixados pela CFM, pela COFEN nem pelo consenso do BETA: valem os do protocolo institucional <span class="ev ev-expert">prática de serviço · conferir</span>.</p>
+</div>
+</div>
+
+<div class="card tx">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">F.4</span> Casos</div><h3>Caso → conduta certa → erro típico <span class="ank ank-dec">DECISION</span></h3></div>
+<div class="card-body">
+<div class="stbl stbl-3">
+<div class="stbl-head stbl-3"><div>Caso</div><div>Conduta certa</div><div>Erro típico</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Caso">Homem de 28 anos, esquizofrenia, parou o antipsicótico, persecutório, recusa, ECG normal, T 36,8 °C</div><div class="col" data-l="Conduta">Desescalada; oferta oral; se recusa e risco imediato: <b>haloperidol 5 mg + prometazina 50 mg IM</b>; reavaliar em 30–60 min; PC03 para a manutenção</div><div class="col" data-l="Erro">Ir direto à contenção, ou repetir haloperidol sem reexaminar</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Caso">Homem de 35 anos, sudorético, midriático, hipertenso, "usou algo", T 39 °C</div><div class="col" data-l="Conduta"><b>Midazolam 5–15 mg IM (conferir)</b> (ou diazepam IV), resfriamento, ECG, CPK, K+; sem antipsicótico de alta dose</div><div class="col" data-l="Erro">Haloperidol + prometazina e contenção ventral: hipertermia e rabdomiólise</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Caso">Idoso de 82 anos, noites confusas, agitação em enfermaria, na pós-operatória</div><div class="col" data-l="Conduta">Causa: dor, retenção, fecaloma, infecção, fármacos; ambiente; <b>haloperidol 0,5–2 mg VO/IM só se risco</b></div><div class="col" data-l="Erro">Benzodiazepínico noturno de rotina; contenção</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Caso">Em uso de haloperidol há 3 dias: T 39,2 °C, rigidez, CPK 8.000, rebaixado</div><div class="col" data-l="Conduta"><b>SNM</b>: suspender, benzodiazepínico, resfriar, cristaloide, UTI; dantroleno e amantadina (PC03)</div><div class="col" data-l="Erro">Mais haloperidol para "agitação"</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Caso">Paciente em uso de ISRS, tomou tramadol: clônus, diarreia, agitação, T 38,5 °C, início em horas</div><div class="col" data-l="Conduta"><b>Serotoninérgica</b>: suspender, benzodiazepínico, resfriar; ciproeptadina se moderada a grave (conferir)</div><div class="col" data-l="Erro">Antipsicótico IM e contenção</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Caso">Etilista, último gole há 2 dias, tremor, sudorese, desorientado</div><div class="col" data-l="Conduta">Benzodiazepínico (PC03) <b>e tiamina IV</b> com glicose; CIWA-Ar</div><div class="col" data-l="Erro">Haloperidol isolado: baixa o limiar de convulsão</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Caso">Mulher de 24 anos, tomou 30 comprimidos de paracetamol, "arrependida" e quer ir embora</div><div class="col" data-l="Conduta">Tratar a intoxicação (GH09), <b>vigilância contínua e avaliação psiquiátrica</b>; nunca liberar por arrependimento</div><div class="col" data-l="Erro">Liberar após lavagem ou antídoto sem avaliação do risco</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Caso">Homem de 50 anos, divórcio, plano de se enforcar hoje, recusa internação</div><div class="col" data-l="Conduta">Risco alto: <b>internação involuntária</b> (Lei 10.216/2001, laudo, MP em 72 h), vigilância contínua, família</div><div class="col" data-l="Erro">"Contrato de não suicídio" e alta</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Caso">Adolescente de 15 anos, agitado após briga, glicemia 42 mg/dL</div><div class="col" data-l="Conduta"><b>Glicose</b> e reavaliar; só depois comportamento</div><div class="col" data-l="Erro">Midazolam IM antes da glicemia</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Caso">Gestante de 34 semanas, confusa, cefaleia, PA 170/110 mmHg</div><div class="col" data-l="Conduta">Eclâmpsia ou PRES até prova em contrário: decúbito lateral esquerdo, GO13, sulfato de magnésio</div><div class="col" data-l="Erro">Tratar como psiquiátrica</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Caso">Paciente contido e sedado, calado, SpO2 88%</div><div class="col" data-l="Conduta"><b>Soltar, via aérea, O2</b>, reposicionar, monitorizar</div><div class="col" data-l="Erro">"Está dormindo, deixa"</div></div>
+</div>
+<div class="box hy"><span class="box-label">HIGH-YIELD</span><div class="box-title">Mesma dose, mesmo texto: as remissões que os outros HPs fazem ao PC06</div><div class="box-body">GO14: "lorazepam IV não existe" → F.2; PC03: haloperidol 5 mg + prometazina 50 mg IM, dose única; midazolam 5–15 mg IM → F.2; NE04: haloperidol 0,5–2 mg VO/IM no delirium → D.2; GH09: autolesão após paracetamol, avaliação de risco e seguimento → C.5; PD04: risco de suicídio no adolescente → D.3 e C.5; NE05: catatonia e psicose → C.6 e PC03.</div></div>
+</div>
+</div>
+<div class="card tx">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">F.5</span> Segurança</div><h3>Quando evitar cada fármaco de crise <span class="ank ank-dgr">DANGER</span></h3></div>
+<div class="card-body">
+<div class="stbl stbl-3">
+<div class="stbl-head stbl-3"><div>Fármaco</div><div>Evitar ou reduzir quando</div><div>Razão e alternativa</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Haloperidol</div><div class="col" data-l="Evitar">Parkinson, demência com corpos de Lewy, SNM suspeita, QTc &gt;500 ms, abstinência alcoólica ou de benzodiazepínico, hipocalemia ou hipomagnesemia não corrigida</div><div class="col" data-l="Razão"><b>Bloqueio D2 forte</b>, prolongamento de QT e queda do limiar convulsivo; usar midazolam ou quetiapina em dose baixa</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Prometazina</div><div class="col" data-l="Evitar">Menores de 2 anos, anticolinérgica, SNM, abstinência, epilepsia mal controlada, hipotensão, associação com outros depressores</div><div class="col" data-l="Razão">Anticolinérgica, bloqueio D2 e H1; depressão respiratória e hipotensão; sedação sem prometazina com midazolam</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Midazolam e outros benzodiazepínicos</div><div class="col" data-l="Evitar">Hipercapnia, DPOC grave, intoxicação por álcool ou opioide com depressão respiratória, delirium não alcoólico no idoso, miastenia</div><div class="col" data-l="Razão">Depressão respiratória e piora cognitiva; menor dose com monitorização, ou antipsicótico em dose baixa (D.2)</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Olanzapina IM</div><div class="col" data-l="Evitar">Benzodiazepínico parenteral nas horas seguintes, hipotensão, idade avançada em dose cheia, intoxicação alcoólica, Parkinson ou Lewy</div><div class="col" data-l="Razão">Colapso cardiorrespiratório descrito com a associação; usar um único agente e reavaliar</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Ziprasidona e droperidol</div><div class="col" data-l="Evitar">QTc &gt;500 ms, cardiopatia, uso de outros prolongadores, distúrbio eletrolítico, ECG impossível</div><div class="col" data-l="Razão">Torsades de pointes; midazolam como alternativa</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Clorpromazina</div><div class="col" data-l="Evitar">Estimulante, abstinência, hipotensão, epilepsia</div><div class="col" data-l="Razão">Hipotensão e redução do limiar convulsivo; preferir haloperidol ou benzodiazepínico</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Cetamina</div><div class="col" data-l="Evitar">Sem via aérea avançada à mão, hipertensão grave, psicose florida por estimulante, doença coronariana instável</div><div class="col" data-l="Razão">Hipertensão, taquicardia, laringoespasmo e dissociação; só por protocolo institucional</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Biperideno</div><div class="col" data-l="Evitar">Intoxicação anticolinérgica, glaucoma de ângulo fechado, retenção urinária, íleo, idoso com delirium</div><div class="col" data-l="Razão">Soma efeito anticolinérgico e pode piorar o delirium; benzodiazepínico no lugar na distonia leve</div></div>
+</div>
+</div>
+</div>
+
+<div class="card tx">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">F.6</span> Saída do PS</div><h3>Depois da sedação: internar, observar ou liberar <span class="ank ank-dec">DECISION</span></h3></div>
+<div class="card-body">
+<ul class="bullets">
+<li><b>Liberar</b> só com BARS 4 mantido, sinais vitais normais, causa orgânica afastada, risco de suicídio e de violência avaliados, acompanhante responsável, plano de seguimento e orientação por escrito. Paciente que recebeu midazolam ou associação IM permanece em observação até o efeito acabar; não dirige e não fica sozinho.</li>
+<li><b>Observar</b> no PS quando há sedação recente, QTc limítrofe, abstinência em evolução, ingestão de substância sem desfecho claro ou ausência de vaga e de acompanhante. Observação não é abandono: mantém reavaliação e registro.</li>
+<li><b>Internar</b> em enfermaria clínica quando a agitação tem causa orgânica a tratar (abstinência CIWA-Ar ≥19, hipoglicemia grave, infecção, TCE, SNM, serotoninérgica), e em leito psiquiátrico quando há psicose, mania ou depressão grave, risco alto de suicídio ou de violência, incapacidade de autocuidado ou ausência de rede (Lei 10.216/2001).</li>
+<li><b>Transferir</b> por ambulância, com laudo e comunicação à família; paciente com ideação de alto risco nunca vai com familiares.</li>
+<li><b>Registrar e notificar</b>: indicação e doses; contenção e duração; eventos adversos; tentativa de suicídio e automutilação (notificação compulsória e sigilosa); violência contra criança ou adolescente (conselho tutelar).</li>
+</ul>
+<div class="box hy"><span class="box-label">HIGH-YIELD</span><div class="box-title">A reavaliação aos 30 e 60 minutos é parte do tratamento</div><div class="box-body">O tempo entre dose e reexame é o período de maior risco de depressão respiratória e de hematoma que cresce sob sedação. <b>Quem prescreve a IM prescreve também quem vai olhar o paciente e a que horas</b>.</div></div>
+</div>
+</div>
+<div class="card tx">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">F.7</span> Prescrição</div><h3>A prescrição de tranquilização, linha por linha</h3></div>
+<div class="card-body">
+<ul class="bullets">
+<li><b>Indicação escrita:</b> "agitação psicomotora com risco imediato (BARS 6), após falha de desescalada", e não "se agitar". O "se necessário" sem critério, sem teto e sem intervalo é a origem de doses acumuladas.</li>
+<li><b>Fármaco, dose, via e intervalo mínimo:</b> haloperidol 5 mg + prometazina 50 mg IM, dose única; segunda dose só após reavaliação médica presencial. Para o midazolam, dose por vez e número máximo de repetições, e ordem de monitorização contínua.</li>
+<li><b>Teto diário e cumulativo:</b> haloperidol 15 mg/dia (PCDT 2013), somando as doses orais e IM; olanzapina IM 30 mg/dia e ziprasidona 40 mg/dia (bula); sem apresentação injetável dessas duas na CMED (09/10/2026), conferir registro.</li>
+<li><b>Quem executa e quem observa:</b> o enfermeiro que supervisiona a observação e o horário das reavaliações aos 15, 30 e 60 minutos; critério de chamada do médico (SpO2 &lt;92%, FR &lt;10, PA sistólica &lt;90 mmHg, T ≥38,5 °C, rigidez, distonia).</li>
+<li><b>Alergias, gestação, idade e peso:</b> a dose de idoso e de criança é por kg ou reduzida; em gestante, registrar a idade gestacional.</li>
+<li><b>Prescrição de biperideno de resgate</b> (2,5–5 mg IM/IV; máx. 10–20 mg/dia, NE06) se o haloperidol foi usado sem prometazina, em homem jovem, porque a distonia aguda é mais frequente nesse grupo.</li>
+</ul>
+</div>
+</div>
+<div class="card tx">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">F.8</span> Comparação</div><h3>Escolha do sedativo: o que cada um dá e o que cobra <span class="ank ank-dec">DECISION</span></h3></div>
+<div class="card-body">
+<div class="stbl stbl-3">
+<div class="stbl-head stbl-3"><div>Esquema</div><div>O que oferece</div><div>O que cobra</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Esquema">Midazolam IM</div><div class="col" data-l="Oferece"><b>Controle mais rápido</b> (89% tranquilos ou dormindo aos 20 min no TREC); serve para causa indefinida, estimulante e abstinência</div><div class="col" data-l="Cobra">Depressão respiratória e hipotensão; sedação profunda; tratamento que não age sobre a psicose</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Esquema">Haloperidol + prometazina IM</div><div class="col" data-l="Oferece">Eficaz na psicose; 67% aos 20 min e controle semelhante em 1 h; menos distonia que haloperidol isolado; esquema nacional e barato</div><div class="col" data-l="Cobra">Mais lento que o midazolam; QTc; D2 e anticolinérgica; não serve na abstinência, na SNM e na anticolinérgica</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Esquema">Haloperidol isolado</div><div class="col" data-l="Oferece">Pouco efeito hemodinâmico e respiratório; útil na intoxicação alcoólica</div><div class="col" data-l="Cobra">Distonia aguda frequente; menos rápido que a associação; QTc</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Esquema">Olanzapina VO/ODT ou IM</div><div class="col" data-l="Oferece">Antipsicótico de segunda geração preferido pelo BETA, menos distonia</div><div class="col" data-l="Cobra">Não combinar com benzodiazepínico parenteral; hipotensão; IM sem apresentação injetável na CMED (09/10/2026); evitar em Parkinson e Lewy</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Esquema">Ziprasidona IM</div><div class="col" data-l="Oferece">Antipsicótico de segunda geração; sem apresentação injetável na CMED (09/10/2026), conferir registro</div><div class="col" data-l="Cobra">QTc; custo e disponibilidade; não usar com outros prolongadores</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Esquema">Droperidol</div><div class="col" data-l="Oferece">Butirofenona de início rápido, comparada ao midazolam no ensaio DORM</div><div class="col" data-l="Cobra">Alerta de QTc; off-label para agitação no Brasil; Droperdal injetável consta na CMED</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Esquema">Diazepam IV</div><div class="col" data-l="Oferece">Titulável, longa duração, equivalente ao lorazepam parenteral inexistente</div><div class="col" data-l="Cobra">IV lento (≤5 mg/min); IM errático; acumulação no idoso e na hepatopatia</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Esquema">Cetamina IM/IV</div><div class="col" data-l="Oferece">Sedação em minutos, mesmo em casos refratários</div><div class="col" data-l="Cobra">Intubação e laringoespasmo, hipertensão, dissociação; off-label; conferir apresentação racêmica disponível no hospital; só por protocolo</div></div>
+<div class="stbl-row stbl-3"><div class="col col1" data-l="Esquema">Via oral (risperidona, olanzapina, haloperidol ± diazepam)</div><div class="col" data-l="Oferece"><b>Preferida quando há cooperação</b>; preserva a aliança; evidência oral mais forte para risperidona</div><div class="col" data-l="Cobra">Exige cooperação e tempo; começa mais devagar</div></div>
+</div>
+</div>
+</div>
+</section>
+
+<section id="pitfalls">
+<div class="section"><div class="section-eyebrow"><span>G</span> Pitfalls · Mitos · Controvérsias</div><div class="section-title">Erros Operacionais + Mitos Vivos + Debates Atuais</div><div class="section-sub">Onde o raciocínio costuma falhar no plantão de emergência psiquiátrica: sedar sem medir, repetir sem reexaminar, conter de bruços, liberar quem "se arrependeu".</div></div>
+
+<div class="card pearl">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">G.1</span> Pegadinhas</div><h3>10 Erros Operacionais em Emergência Psiquiátrica</h3></div>
+<div class="card-body">
+<div class="stbl stbl-2">
+<div class="stbl-head stbl-2"><div>Erro Comum</div><div>Correto</div></div>
+<div class="stbl-row stbl-2"><div class="col col1" data-l="Erro">Sedar o agitado sem glicemia capilar, SpO2 e temperatura.</div><div class="col" data-l="Correto">Medir primeiro: hipoglicemia, hipóxia e hipertermia simulam agitação psiquiátrica e se tratam sem sedativo.</div></div>
+<div class="stbl-row stbl-2"><div class="col col1" data-l="Erro">Ir à ampola antes da palavra.</div><div class="col" data-l="Correto">Desescalada de 5–10 min com um interlocutor e oferta oral; a medicação imposta escalona e piora a adesão.</div></div>
+<div class="stbl-row stbl-2"><div class="col col1" data-l="Erro">Repetir haloperidol quando não houve resposta.</div><div class="col" data-l="Correto">Reexaminar a causa e acrescentar benzodiazepínico; teto de 15 mg/dia de haloperidol.</div></div>
+<div class="stbl-row stbl-2"><div class="col col1" data-l="Erro">Dar haloperidol ou prometazina a quem tem febre, rigidez e agitação.</div><div class="col" data-l="Correto">Pensar em SNM, serotoninérgica e catatonia maligna: suspender o D2 bloqueador, benzodiazepínico, resfriar, UTI.</div></div>
+<div class="stbl-row stbl-2"><div class="col col1" data-l="Erro">Copiar protocolo estrangeiro com lorazepam IV.</div><div class="col" data-l="Correto">No Brasil o lorazepam é só VO/SL; diazepam 5–10 mg IV lento ou midazolam 5–15 mg IM (conferir).</div></div>
+<div class="stbl-row stbl-2"><div class="col col1" data-l="Erro">Benzodiazepínico para delirium do idoso não alcoólico.</div><div class="col" data-l="Correto">Tratar a causa; haloperidol 0,5–2 mg só com risco; benzodiazepínico piora o delirium.</div></div>
+<div class="stbl-row stbl-2"><div class="col col1" data-l="Erro">Conter em decúbito ventral ou com peso sobre o dorso.</div><div class="col" data-l="Correto">Decúbito dorsal ou lateral, observação direta e sinais vitais; ventral é risco de asfixia posicional.</div></div>
+<div class="stbl-row stbl-2"><div class="col col1" data-l="Erro">Liberar a tentativa de suicídio porque "se arrependeu", ou com "contrato de não suicídio".</div><div class="col" data-l="Correto">Avaliação psiquiátrica obrigatória; plano de segurança, restrição de meios e contato em 24–72 h.</div></div>
+<div class="stbl-row stbl-2"><div class="col col1" data-l="Erro">Sedar profundamente o paciente com TCE, anticoagulante ou febre sem exame neurológico.</div><div class="col" data-l="Correto">Registrar Glasgow, pupilas e déficit focal antes; TC; o "paciente que dorme" é o hematoma que cresce.</div></div>
+<div class="stbl-row stbl-2"><div class="col col1" data-l="Erro">Citar a Resolução COFEN 427/2012 e esquecer a notificação.</div><div class="col" data-l="Correto">A COFEN 746/2024 revogou a 427; tentativa de suicídio é de notificação compulsória e sigilosa (Lei 13.819/2019).</div></div>
+</div>
+</div>
+</div>
+
+<div class="card pearl">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">G.2</span> Mitos · Controvérsias</div><h3>Mitos Vivos e Debates Atuais</h3></div>
+<div class="card-body">
+<div class="box myth"><span class="box-label">MYTH</span><div class="box-title">"Perguntar sobre suicídio põe a ideia na cabeça do paciente"</div><div class="box-body">A pergunta direta não induz ao ato e costuma aliviar. <b>Pergunte a todo paciente com sofrimento psíquico</b>; ASQ e C-SSRS existem para isso. O silêncio da equipe é que deixa o risco sem avaliação.</div></div>
+<div class="box myth"><span class="box-label">MYTH</span><div class="box-title">"Quem ameaça se matar só quer chamar atenção"</div><div class="box-body">A ameaça é fator de risco, não prova de manipulação; parte relevante dos que se matam tentou antes. <b>Toda ameaça se avalia como risco</b>, mesmo no transtorno de personalidade, que aumenta o risco de suicídio em até 12 a 20 vezes segundo o texto da ABP/CFM.</div></div>
+<div class="box myth"><span class="box-label">MYTH</span><div class="box-title">"O 'delírio excitado' é uma doença e o paciente tem força sobre-humana"</div><div class="box-body">Não é diagnóstico reconhecido; a ACEP retirou, em 2023, o endosso ao documento que o descrevia (conferir). O quadro (agitação extrema, hipertermia, sudorese) é <b>urgência clínica com causa</b>: estimulante, SNM, anticolinérgico, hipertermia. Trate com benzodiazepínico, resfriamento e monitorização, e tire o paciente da contenção.</div></div>
+<div class="box controversy"><span class="box-label">CONTROVERSY</span><div class="box-title">Cetamina como primeira linha da agitação</div><div class="box-body">Sedação mais rápida em estudos pré-hospitalares e de PS, mas com mais intubação, laringoespasmo e hipertensão. Sem diretriz brasileira e off-label; <b>protocolo institucional, via aérea à mão e monitorização contínua</b>; o HP não a recomenda como primeira linha.</div></div>
+<div class="box controversy"><span class="box-label">CONTROVERSY</span><div class="box-title">Haloperidol com prometazina × antipsicótico de 2ª geração × benzodiazepínico</div><div class="box-body">O Project BETA prefere antipsicóticos de segunda geração e adição de benzodiazepínico; no Brasil, os ensaios TREC e a disponibilidade sustentam haloperidol com prometazina e midazolam. <b>Onde olanzapina e ziprasidona IM existirem, são alternativas razoáveis</b>; onde não, o padrão nacional é seguro e comprovado.</div></div>
+<div class="box controversy"><span class="box-label">CONTROVERSY</span><div class="box-title">Escalas de risco de suicídio: apoiar a decisão ou predizer?</div><div class="box-body">Escalas têm valor para triagem e para estruturar a conversa, mas baixo valor preditivo para um evento raro. O NICE desaconselha usá-las para prever; a ABP/CFM estratifica em níveis para orientar a conduta do dia. <b>Use para decidir hoje, nunca para tranquilizar o plantão</b>.</div></div>
+</div>
+</div>
+</section>
+
+<section id="pearls">
+<div class="section"><div class="section-eyebrow"><span>H</span> Pearls · Evolving</div><div class="section-title">H1 · Pearls de Especialista · H2 · Áreas em Evolução</div><div class="section-sub">Oito nuances que separam o plantão seguro do arriscado, e os poucos pontos em que a evidência ou a norma mudaram recentemente.</div></div>
+
+<div class="card pearl">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">H.1</span> Pearls</div><h3>8 Nuances que Distinguem o Expert</h3></div>
+<div class="card-body">
+<div class="box pearl"><span class="box-label">PEARL</span><div class="box-title">Tranquilizar é levar à BARS 4, não ao sono</div><div class="box-body">O paciente acordado e calmo pode ser examinado, interrogado e envolvido nas decisões; o dormindo profundo esconde a causa orgânica, aspira e hipoventila. <b>Dose pequena reavaliada vale mais que dose grande única</b>, salvo risco imediato.</div></div>
+<div class="box pearl"><span class="box-label">PEARL</span><div class="box-title">A prometazina não é adjuvante inocente</div><div class="box-body">Ela previne a distonia do haloperidol (TREC-Rio: dez distonias, todas no grupo sem prometazina), mas é bloqueadora D2, anticolinérgica e depressora respiratória. <b>O que protege o psicótico pode matar o anticolinérgico, o abstinente e o que tem SNM</b>.</div></div>
+<div class="box pearl"><span class="box-label">PEARL</span><div class="box-title">Pele e pupila separam a toxíndrome em segundos</div><div class="box-body">Pele úmida e ruídos hidroaéreos aumentados: simpaticomimética ou abstinência. Pele seca, quente e íleo: anticolinérgica. Clônus: serotoninérgica. Rigidez em cano de chumbo e dias de evolução: SNM. <b>O exame físico escolhe o fármaco antes do exame de sangue</b>.</div></div>
+<div class="box pearl"><span class="box-label">PEARL</span><div class="box-title">O silêncio após a contenção é o dado mais perigoso</div><div class="box-body">Esforço intenso mais restrição ventilatória levam a acidose e arritmia; o paciente que "finalmente sossegou" pode estar parando. <b>Sempre um profissional com os olhos nele, SpO2 contínua e nunca de bruços</b>.</div></div>
+<div class="box pearl"><span class="box-label">PEARL</span><div class="box-title">A restrição de meios salva mais vidas que a predição</div><div class="box-body">O impulso suicida agudo passa; o que o torna letal é o meio à mão. <b>Retirar arma, pesticida e medicamento estocado, limitar quantidades na alta e pactuar um plano de segurança</b> têm mais efeito que qualquer escala de risco.</div></div>
+<div class="box pearl"><span class="box-label">PEARL</span><div class="box-title">A alta é parte do tratamento do suicida</div><div class="box-body">As primeiras semanas depois da alta concentram o risco. Um telefonema em 24–72 h, um plano escrito e uma consulta em até 7 dias <b>mudam o desfecho mais que a internação isolada</b>; a rede (CAPS, UBS) precisa saber do paciente antes dele sair.</div></div>
+<div class="box pearl"><span class="box-label">PEARL</span><div class="box-title">O idoso agitado raramente é psiquiátrico</div><div class="box-body">Dor, retenção urinária, fecaloma, infecção e fármacos explicam a maioria dos casos; um benzodiazepínico ou um antipsicótico em dose cheia somam sedação, quedas e mortalidade. <b>Procure a causa, use a menor dose por pouco tempo e reavalie em 24 h</b>.</div></div>
+<div class="box pearl"><span class="box-label">PEARL</span><div class="box-title">O que a norma exige e o que ela cala</div><div class="box-body">A CFM exige prescrição médica, registro, supervisão e menor duração; a COFEN exige enfermeiro, monitorização e registro. <b>Nenhuma fixa horas ou intervalos</b>: o protocolo do serviço precisa fazê-lo, e o plantonista precisa conhecê-lo antes de precisar dele.</div></div>
+</div>
+</div>
+
+<div class="card pearl">
+<div class="card-head"><div class="card-eyebrow"><span class="card-num">H.2</span> Evolving</div><h3>5 Pontos em Mudança — Emergência Psiquiátrica 2022–2026</h3></div>
+<div class="card-body">
+<div class="box evolving"><span class="box-label">EVOLVING</span><div class="box-title">COFEN 746/2024 substitui a 427/2012 na contenção mecânica</div><div class="box-body">A nova resolução (DOU 03/04/2024) mantém a ideia de único meio disponível, atribui a supervisão direta ao enfermeiro e exige registro de razões, duração, avaliações e eventos adversos. <b>Protocolos antigos ainda citam a 427</b>.</div></div>
+<div class="box evolving"><span class="box-label">EVOLVING</span><div class="box-title">Notificação de violência autoprovocada: Lei 13.819/2019 e Decreto 10.225/2020</div><div class="box-body">A tentativa de suicídio e a automutilação são de notificação compulsória e sigilosa por serviços públicos e privados, e a regulamentação fixou o prazo de 24 h. <b>Conferir a lista nacional vigente do MS</b>; o prazo vem do decreto e de portarias, não do texto da lei.</div></div>
+<div class="box evolving"><span class="box-label">EVOLVING</span><div class="box-title">NICE NG10: atualização completa em curso</div><div class="box-body">O NICE encomendou a revisão integral da diretriz de violência e agressão (2015), de modo que as recomendações de tranquilização rápida (lorazepam ou haloperidol com prometazina) e de restrição podem mudar. <b>Conferir a versão vigente</b>; o HP não leu o texto integral (acesso bloqueado).</div></div>
+<div class="box evolving"><span class="box-label">EVOLVING</span><div class="box-title">"Delírio excitado" abandonado como diagnóstico</div><div class="box-body">Entidades médicas retiraram o endosso ao termo; a terminologia atual é <b>"hiperatividade com agitação grave"</b>, com abordagem clínica da causa e foco na segurança da sedação e da contenção. A ACEP retirou o aval em 2023 (conferir).</div></div>
+<div class="box evolving"><span class="box-label">EVOLVING</span><div class="box-title">Plano de segurança e contato de seguimento como padrão de alta</div><div class="box-body">A intervenção estruturada com telefonemas de seguimento reduziu comportamento suicida em coorte de PS (JAMA Psychiatry 2018) e passou a ser prática recomendada nas redes de cuidado; <b>a ABP de 2014 ainda cita o "contrato de não suicídio"</b>, hoje abandonado.</div></div>
+</div>
+</div>
+</section>
+
+</div>
+</main>
+
+<footer>
+<div class="wrap">
+<div class="foot"><div><div class="foot-author">@dr.lorencato</div><div class="foot-meta">Emergência Psiquiátrica · Pocket Handbook Elite · v5.2 · Psiquiatria</div></div><div class="foot-mono">Compilação clínica · status clinical_review até signoff humano</div></div>
+<div class="foot-meta"><b>Bibliografia rastreável</b>
+<ol>
+<li id="src-1">Richmond JS et al. Verbal de-escalation of the agitated patient: consensus statement of the AAEP Project BETA De-escalation Workgroup. West J Emerg Med 2012;13:17–25 · desescalada, BARS, equipe · doi:10.5811/westjem.2011.9.6864 (texto integral lido)</li>
+<li id="src-2">Wilson MP et al. The psychopharmacology of agitation: consensus statement of the AAEP Project BETA Psychopharmacology Workgroup. West J Emerg Med 2012;13:26–34 · escolha de fármaco, via oral, benzodiazepínico, delirium · doi:10.5811/westjem.2011.9.6866 (texto integral lido)</li>
+<li id="src-3">TREC Collaborative Group. Rapid tranquillisation for agitated patients in emergency psychiatric rooms: a randomised trial of midazolam versus haloperidol plus promethazine. BMJ 2003;327:708–713 · midazolam × haloperidol + prometazina · doi:10.1136/bmj.327.7417.708 (resumo)</li>
+<li id="src-4">Huf G, Coutinho ES, Adams CE; TREC Collaborative Group. Rapid tranquillisation in psychiatric emergency settings in Brazil: haloperidol versus haloperidol plus promethazine. BMJ 2007;335:869 · haloperidol + prometazina · doi:10.1136/bmj.39339.448819.AE (resumo); Cochrane Database Syst Rev 2016 (PMID 27885664, metadados)</li>
+<li id="src-5">Isbister GK et al. Droperidol versus midazolam (DORM). Ann Emerg Med 2010 · droperidol · doi:10.1016/j.annemergmed.2010.05.037 (metadados); Raveendran NS et al. TREC-India II. BMJ 2007;335:865–873 · olanzapina IM × haloperidol + prometazina (não lido)</li>
+<li id="src-6">Cole JB et al. A prospective study of ketamine versus haloperidol for severe prehospital agitation. Clin Toxicol 2016 · doi:10.1080/15563650.2016.1177652; Lin J et al. Ketamine for initial control of acute agitation in the emergency department. Am J Emerg Med 2021 · doi:10.1016/j.ajem.2020.04.013 (números por resumo de busca; conferir)</li>
+<li id="src-7">Conselho Federal de Medicina. Resolução CFM nº 2.057/2013 (mod. 2.153/2016 e 2.165/2017), art. 16 §§ 2–5 · contenção física · sistemas.cfm.org.br (texto lido)</li>
+<li id="src-8">Conselho Federal de Enfermagem. Resolução COFEN nº 746, de 20/03/2024 (DOU 03/04/2024), arts. 1º–4º · contenção mecânica; revoga a 427/2012 · cópia ABMES (texto lido)</li>
+<li id="src-9">Brasil. Lei nº 10.216, de 06/04/2001, arts. 4º, 6º, 7º e 8º · internação voluntária, involuntária e compulsória; comunicação ao MP em 72 h · planalto.gov.br (texto lido)</li>
+<li id="src-10">Brasil. Lei nº 13.819, de 26/04/2019, art. 6º · notificação compulsória e sigilosa de violência autoprovocada (texto lido); Decreto nº 10.225/2020 e Portaria MS nº 1.271/2014 · prazo de 24 h (por busca; conferir lista vigente)</li>
+<li id="src-11">Associação Brasileira de Psiquiatria / Conselho Federal de Medicina. Suicídio: informando para prevenir. Brasília, 2014 · estratificação de risco (item 7.3), vigilância e internação (excerto lido)</li>
+<li id="src-12">Posner K et al. The Columbia-Suicide Severity Rating Scale. Am J Psychiatry 2011 · doi:10.1176/appi.ajp.2011.10111704; Horowitz LM et al. ASQ. Arch Pediatr Adolesc Med 2012 · doi:10.1001/archpediatrics.2012.1276 (metadados)</li>
+<li id="src-13">Stanley B et al. Comparison of the Safety Planning Intervention with follow-up vs usual care of suicidal patients treated in the emergency department. JAMA Psychiatry 2018 · doi:10.1001/jamapsychiatry.2018.1776 (metadados; magnitude do efeito a conferir)</li>
+<li id="src-14">NICE. NG225 Self-harm: assessment, management and preventing recurrence (2022) e NG10 Violence and aggression: short-term management (2015; atualização encomendada) · nice.org.uk (páginas não abertas: bloqueio 403; conteúdo citado de forma geral)</li>
+<li id="src-15">Dunkley EJ et al. The Hunter Serotonin Toxicity Criteria. QJM 2003 · PMID 12925718 (metadados); Boyer EW, Shannon M. The serotonin syndrome. N Engl J Med 2005 · PMID 15784664 (doses de ciproeptadina a conferir)</li>
+<li id="src-16">Gurrera RJ et al. International consensus study of neuroleptic malignant syndrome diagnostic criteria. J Clin Psychiatry 2011;72:1222–1228 · doi:10.4088/JCP.10m06438; Rogers JP et al. BAP catatonia guidelines. J Psychopharmacol 2023 · doi:10.1177/02698811231158232 (via PC03)</li>
+<li id="src-17">Ministério da Saúde. PCDT Esquizofrenia, Portaria SAS/MS nº 364/2013 · teto de haloperidol 15 mg/dia no agudo · gov.br/saude (via PC03)</li>
+<li id="src-18">Lista CMED de preços (PMVG, publicada em 09/10/2026; consultada em 14/11/2026): Droperdal injetável consta; olanzapina IM, ziprasidona IM e cetamina racêmica não constam (ausência na lista não prova ausência de registro). Bulas de prometazina, midazolam e Droperdal lidas por resumo; registro vigente e doses a conferir no Bulário</li>
+<li id="src-19">HPs vizinhos: NE04 (delirium), PC03 (psicoses, SNM, catatonia, abstinência), GO14 (psicose puerperal), GH09 (paracetamol), NE06 (distonia) · doses de remissão idênticas</li>
+<li id="src-20">Apostila MED 2025 PSI 01 — Psiquiatria (blocos de delirium, extrapiramidais, hospitalização por risco de suicídio, cocaína) · piso de cobertura editorial, nunca fonte de conduta · vault (somente leitura)</li>
+</ol>
+</div>
+</div>
+</footer>
+
+<div class="watermark">@dr.lorencato · PC06 Emergência Psiquiátrica v5.2</div>
+
+</body>
+</html>
