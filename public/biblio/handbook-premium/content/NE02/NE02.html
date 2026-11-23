@@ -345,6 +345,25 @@ ul.bullets li b{color:var(--ink);font-weight:600}
   .pocket .pocket-card.tx{--accent:#a8481a}
   .pocket .pocket-card.clin{--accent:#0b5d4e}
 }
+
+/* === v5.2.2 · fase 2 (navegação) === */
+.hp-tools{display:flex;gap:6px;align-items:center;flex:none;order:1;margin-left:auto;padding-left:6px;position:sticky;right:0;background:#f1eee5;box-shadow:-10px 0 10px -4px #f1eee5,16px 0 0 #f1eee5}
+@media(min-width:900px){html{scroll-padding-top:150px}.toc-inner{flex-wrap:wrap;overflow:visible}.card[id],.sub-title[id]{scroll-margin-top:150px}}
+@media(max-width:899px){.hp-b,.hp-n{display:none}.hp-q{width:104px}}
+.hp-q{width:128px;font:500 12px/1 'DM Sans',system-ui,sans-serif;padding:7px 11px;border:1px solid var(--line-strong);border-radius:999px;background:var(--paper);color:var(--ink)}
+.hp-b{font:600 11px/1 'DM Sans',system-ui,sans-serif;letter-spacing:.05em;text-transform:uppercase;padding:7px 10px;border-radius:999px;border:1px solid var(--line-strong);background:var(--paper);color:var(--ink-soft);cursor:pointer;white-space:nowrap}
+.hp-b[aria-pressed=true]{background:var(--ink);color:#fff;border-color:var(--ink)}
+.hp-n{font:600 11px/1 'DM Mono',monospace;color:var(--ink-mute);white-space:nowrap}
+.sec-idx{display:flex;flex-wrap:wrap;gap:6px;margin:12px 0 20px}
+.sec-idx a{font:500 12px/1.25 'DM Sans',system-ui,sans-serif;padding:6px 10px;border-radius:999px;background:var(--paper);border:1px solid var(--line);color:var(--ink-soft);text-decoration:none}
+.sec-idx a:hover{border-color:var(--line-strong);color:var(--ink)}
+.sec-idx b{color:var(--c-prim);margin-right:5px;font-weight:700}
+a.xr{color:inherit;text-decoration:underline dotted;text-underline-offset:2px}
+a.xr:hover{color:var(--c-prim)}
+.card[id],.sub-title[id]{scroll-margin-top:110px}
+.q-off{display:none!important}
+body.dz main section:not(#tratamento){display:none}
+@media print{.hp-tools,.sec-idx,.toc-doses{display:none!important}}
 </style>
 </head>
 <body>
@@ -364,14 +383,14 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 
 <!-- STICKY TOC -->
 <nav class="toc">
-<div class="toc-inner">
+<div class="toc-inner"><!--hp-f2--><span class="hp-tools"><input class="hp-q" type="search" placeholder="Buscar no HP" aria-label="Buscar no HP"><button class="hp-b hp-dz" type="button" aria-pressed="false">Só doses</button><button class="hp-b hp-op" type="button" aria-pressed="false">Abrir tudo</button><span class="hp-n" aria-live="polite"></span></span><!--/hp-f2-->
 <a href="#pocket"      class="toc-chip"><span class="toc-chip-num">0</span>Pocket</a>
 <a href="#redflags"    class="toc-chip"><span class="toc-chip-num">A</span>Red Flags</a>
 <a href="#approach"    class="toc-chip"><span class="toc-chip-num">B</span>Apresentação</a>
 <a href="#primarias"   class="toc-chip"><span class="toc-chip-num">C</span>Entidades</a>
 <a href="#secundarias" class="toc-chip"><span class="toc-chip-num">D</span>Secundárias</a>
 <a href="#algoritmo"   class="toc-chip"><span class="toc-chip-num">E</span>Algoritmo</a>
-<a href="#tratamento"  class="toc-chip"><span class="toc-chip-num">F</span>Tratamento</a>
+<a href="#tratamento"  class="toc-chip"><span class="toc-chip-num">F</span>Tratamento</a><!--hp-f2--><a href="#f2" class="toc-chip toc-doses"><span class="toc-chip-num">Rx</span>Doses</a><!--/hp-f2-->
 <a href="#pitfalls"    class="toc-chip"><span class="toc-chip-num">G</span>Pitfalls</a>
 <a href="#pearls"      class="toc-chip"><span class="toc-chip-num">H</span>Pearls</a>
 </div>
@@ -496,7 +515,7 @@ SECTION A · RED FLAGS
 <div class="section-sub">Duas perguntas governam o PS: a atividade ictal ainda está acontecendo (clínica ou eletrográfica)? E existe uma causa aguda que mata mais que a própria crise — hipoglicemia, meningoencefalite, HSA, eclâmpsia, intoxicação?</div>
 </div>
 
-<div class="card emerg">
+<div class="card emerg" id="a1">
 <div class="card-head">
 <div class="card-eyebrow"><span class="card-num">A.1</span> Emergências</div>
 <h3>Sinais de alarme — crise e estado de mal <span class="ank ank-dgr">DANGER</span></h3>
@@ -579,7 +598,7 @@ SECTION A · RED FLAGS
 </div>
 </div>
 
-<div class="card emerg">
+<div class="card emerg" id="a2">
 <div class="card-head">
 <div class="card-eyebrow"><span class="card-num">A.2</span> Diferencial de plantão</div>
 <h3>O que se esconde atrás de um "convulsionou" <span class="ank ank-dgr">DANGER</span></h3>
@@ -637,7 +656,7 @@ SECTION B · POR APRESENTAÇÃO
 <div class="section-sub">A apresentação define a primeira pergunta: é crise epiléptica? É provocada? É a primeira? Ainda está acontecendo? Cada padrão abaixo leva a um ramo diferente da árvore da seção E.</div>
 </div>
 
-<div class="card clin">
+<div class="card clin" id="b1">
 <div class="card-head">
 <div class="card-eyebrow"><span class="card-num">B.1</span> Padrão 1</div>
 <h3>Perda transitória de consciência com abalos</h3>
@@ -662,7 +681,7 @@ SECTION B · POR APRESENTAÇÃO
 </div>
 </div>
 
-<div class="card clin">
+<div class="card clin" id="b2">
 <div class="card-head">
 <div class="card-eyebrow"><span class="card-num">B.2</span> Padrão 2</div>
 <h3>Primeira crise no adulto, já acordado no PS</h3>
@@ -682,7 +701,7 @@ SECTION B · POR APRESENTAÇÃO
 </div>
 </div>
 
-<div class="card clin">
+<div class="card clin" id="b3">
 <div class="card-head">
 <div class="card-eyebrow"><span class="card-num">B.3</span> Padrão 3</div>
 <h3>"Não acordou depois da crise" ou confusão que flutua</h3>
@@ -701,7 +720,7 @@ SECTION B · POR APRESENTAÇÃO
 </div>
 </div>
 
-<div class="card clin">
+<div class="card clin" id="b4">
 <div class="card-head">
 <div class="card-eyebrow"><span class="card-num">B.4</span> Padrão 4</div>
 <h3>Epiléptico conhecido que voltou a convulsionar</h3>
@@ -725,7 +744,7 @@ SECTION B · POR APRESENTAÇÃO
 </div>
 </div>
 
-<div class="card clin">
+<div class="card clin" id="b5">
 <div class="card-head">
 <div class="card-eyebrow"><span class="card-num">B.5</span> Padrão 5</div>
 <h3>Adolescente com "sustos" matinais, lapsos ou queda do rendimento escolar</h3>
@@ -744,7 +763,7 @@ SECTION B · POR APRESENTAÇÃO
 </div>
 </div>
 
-<div class="card clin">
+<div class="card clin" id="b6">
 <div class="card-head">
 <div class="card-eyebrow"><span class="card-num">B.6</span> Padrão 6</div>
 <h3>Crise na mulher em idade fértil, gestante ou puérpera</h3>
@@ -771,9 +790,9 @@ SECTION C · ENTIDADES PRIMÁRIAS
 <div class="section-eyebrow"><span>C</span> Entidades Primárias</div>
 <div class="section-title">Disease Boxes — da crise isolada ao estado de mal</div>
 <div class="section-sub">Sete entidades que carregam o raciocínio do tema: primeira crise, crise sintomática aguda, EME convulsivo e não convulsivo, epilepsia focal, epilepsias generalizadas idiopáticas e a epilepsia na mulher em idade fértil/gestação. A linguagem é a da ILAE 2025 para crises e da ILAE 2017 para epilepsias.</div>
-</div>
+</div><!--hp-f2--><nav class="sec-idx" aria-label="Neste capítulo"><a href="#c0"><b>C.0</b>Classificar antes de tratar…</a><a href="#c1"><b>C.1</b>Primeira crise não provocada</a><a href="#c2"><b>C.2</b>Crise sintomática aguda (prov…</a><a href="#c3"><b>C.3</b>Estado de mal epiléptico conv…</a><a href="#c4"><b>C.4</b>Estado de mal epiléptico não…</a><a href="#c5"><b>C.5</b>Epilepsia focal estrutural…</a><a href="#c6"><b>C.6</b>EMJ (Janz), ausência infantil…</a><a href="#c7"><b>C.7</b>Epilepsia na mulher em idade…</a></nav><!--/hp-f2-->
 
-<div class="card diag">
+<div class="card diag" id="c0">
 <div class="card-head">
 <div class="card-eyebrow"><span class="card-num">C.0</span> Linguagem comum</div>
 <h3>Classificar antes de tratar — ILAE 2025 e ILAE 2017 <span class="ank ank-hy">HIGH-YIELD</span></h3>
@@ -806,7 +825,7 @@ SECTION C · ENTIDADES PRIMÁRIAS
 </div>
 
 <!-- C.1 PRIMEIRA CRISE -->
-<div class="card prim">
+<div class="card prim" id="c1">
 <div class="card-head">
 <div class="card-eyebrow"><span class="card-num">C.1</span> Primeira crise</div>
 <h3>Primeira crise não provocada <span class="ank ank-dec">DECISION</span></h3>
@@ -861,7 +880,7 @@ SECTION C · ENTIDADES PRIMÁRIAS
 </div>
 
 <!-- C.2 CRISE SINTOMÁTICA AGUDA -->
-<div class="card prim">
+<div class="card prim" id="c2">
 <div class="card-head">
 <div class="card-eyebrow"><span class="card-num">C.2</span> Crise provocada</div>
 <h3>Crise sintomática aguda (provocada) <span class="ank ank-hy">HIGH-YIELD</span></h3>
@@ -898,7 +917,7 @@ SECTION C · ENTIDADES PRIMÁRIAS
 </div>
 
 <!-- C.3 EME CONVULSIVO -->
-<div class="card emerg">
+<div class="card emerg" id="c3">
 <div class="card-head">
 <div class="card-eyebrow"><span class="card-num">C.3</span> Emergência neurológica</div>
 <h3>Estado de mal epiléptico convulsivo · refratário · super-refratário <span class="ank ank-dgr">DANGER</span></h3>
@@ -965,7 +984,7 @@ SECTION C · ENTIDADES PRIMÁRIAS
 </div>
 
 <!-- C.4 SENC -->
-<div class="card prim">
+<div class="card prim" id="c4">
 <div class="card-head">
 <div class="card-eyebrow"><span class="card-num">C.4</span> EME sem convulsão</div>
 <h3>Estado de mal epiléptico não convulsivo <span class="ank ank-dgr">DANGER</span></h3>
@@ -1019,7 +1038,7 @@ SECTION C · ENTIDADES PRIMÁRIAS
 </div>
 
 <!-- C.5 EPILEPSIA FOCAL -->
-<div class="card prim">
+<div class="card prim" id="c5">
 <div class="card-head">
 <div class="card-eyebrow"><span class="card-num">C.5</span> Epilepsia focal</div>
 <h3>Epilepsia focal estrutural · lobo temporal mesial com esclerose hipocampal <span class="ank ank-hy">HIGH-YIELD</span></h3>
@@ -1074,7 +1093,7 @@ SECTION C · ENTIDADES PRIMÁRIAS
 </div>
 
 <!-- C.6 EGI -->
-<div class="card prim">
+<div class="card prim" id="c6">
 <div class="card-head">
 <div class="card-eyebrow"><span class="card-num">C.6</span> Epilepsias generalizadas idiopáticas</div>
 <h3>EMJ (Janz), ausência infantil e juvenil, TCG isoladas <span class="ank ank-dec">DECISION</span></h3>
@@ -1128,7 +1147,7 @@ SECTION C · ENTIDADES PRIMÁRIAS
 </div>
 
 <!-- C.7 GESTAÇÃO -->
-<div class="card prim">
+<div class="card prim" id="c7">
 <div class="card-head">
 <div class="card-eyebrow"><span class="card-num">C.7</span> Saúde reprodutiva</div>
 <h3>Epilepsia na mulher em idade fértil, gestação e puerpério <span class="ank ank-dec">DECISION</span></h3>
@@ -1191,10 +1210,10 @@ SECTION D · ENTIDADES SECUNDÁRIAS
 <div class="section-eyebrow"><span>D</span> Entidades Secundárias</div>
 <div class="section-title">O que completa o diferencial — encefalopatias, mímicos e o EME sem causa</div>
 <div class="section-sub">Encefalopatias epilépticas da infância que chegam ao adulto, crises funcionais (o maior mímico do EME), síncope convulsiva e NORSE/FIRES; no fim, o mapa do que pertence a outros HPs.</div>
-</div>
+</div><!--hp-f2--><nav class="sec-idx" aria-label="Neste capítulo"><a href="#d1"><b>D.1</b>West, Lennox-Gastaut e Dravet…</a><a href="#d2"><b>D.2</b>Crises funcionais (dissociati…</a><a href="#d3"><b>D.3</b>Síncope convulsiva e outros m…</a><a href="#d4"><b>D.4</b>NORSE, FIRES e EME de etiolog…</a><a href="#d5"><b>D.5</b>Fora deste HP — para onde vai…</a></nav><!--/hp-f2-->
 
 <!-- D.1 -->
-<div class="card diag">
+<div class="card diag" id="d1">
 <div class="card-head">
 <div class="card-eyebrow"><span class="card-num">D.1</span> Encefalopatias epilépticas</div>
 <h3>West, Lennox-Gastaut e Dravet — encefalopatias epilépticas e do desenvolvimento</h3>
@@ -1224,7 +1243,7 @@ SECTION D · ENTIDADES SECUNDÁRIAS
 </div>
 
 <!-- D.2 -->
-<div class="card diag">
+<div class="card diag" id="d2">
 <div class="card-head">
 <div class="card-eyebrow"><span class="card-num">D.2</span> Mímico principal</div>
 <h3>Crises funcionais (dissociativas, "psicogênicas não epilépticas") <span class="ank ank-dgr">DANGER</span></h3>
@@ -1264,7 +1283,7 @@ SECTION D · ENTIDADES SECUNDÁRIAS
 </div>
 
 <!-- D.3 -->
-<div class="card diag">
+<div class="card diag" id="d3">
 <div class="card-head">
 <div class="card-eyebrow"><span class="card-num">D.3</span> Mímicos paroxísticos</div>
 <h3>Síncope convulsiva e outros mímicos</h3>
@@ -1297,7 +1316,7 @@ SECTION D · ENTIDADES SECUNDÁRIAS
 </div>
 
 <!-- D.4 -->
-<div class="card diag">
+<div class="card diag" id="d4">
 <div class="card-head">
 <div class="card-eyebrow"><span class="card-num">D.4</span> EME sem causa evidente</div>
 <h3>NORSE, FIRES e EME de etiologia autoimune <span class="ank ank-dec">DECISION</span></h3>
@@ -1323,7 +1342,7 @@ SECTION D · ENTIDADES SECUNDÁRIAS
 </div>
 
 <!-- D.5 -->
-<div class="card pearl">
+<div class="card pearl" id="d5">
 <div class="card-head">
 <div class="card-eyebrow"><span class="card-num">D.5</span> Fronteiras</div>
 <h3>Fora deste HP — para onde vai cada tema</h3>
@@ -1355,7 +1374,7 @@ SECTION E · ALGORITMO
 <div class="section-sub">Se sim, o algoritmo é de tempo (EME). Se não, é de diagnóstico (foi crise? provocada? primeira?). Dois formatos complementares: árvore visual e sequência mental narrada; uma segunda árvore escolhe o fármaco crônico.</div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="e1">
 <div class="card-head">
 <div class="card-eyebrow"><span class="card-num">E.1</span> Árvore do PS</div>
 <h3>Evento convulsivo no pronto-socorro <span class="ank ank-dec">DECISION</span></h3>
@@ -1449,7 +1468,7 @@ SECTION E · ALGORITMO
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="e2">
 <div class="card-head">
 <div class="card-eyebrow"><span class="card-num">E.2</span> Árvore ambulatorial</div>
 <h3>Qual fármaco anticrise iniciar <span class="ank ank-dec">DECISION</span></h3>
@@ -1496,15 +1515,15 @@ SECTION F · TRATAMENTO
 <div class="section-eyebrow"><span>F</span> Tratamento Integrado</div>
 <div class="section-title">F1 · Estratégia por entidade · F2 · Doses operacionais</div>
 <div class="section-sub">F1 organizado por entidade, do EME ao ambulatório; cenários "caso → conduta certa → erro típico"; segurança e interações; SUS × diretriz internacional. F2 com dose, via, frequência e titulação — fonte em cada linha, "confirmar" só onde a dose realmente varia.</div>
-</div>
+</div><!--hp-f2--><nav class="sec-idx" aria-label="Neste capítulo"><a href="#f1"><b>F.1</b>Escadas terapêuticas por enti…</a><a href="#f1b"><b>F.1b</b>Caso → conduta certa → erro t…</a><a href="#f1c"><b>F.1c</b>Efeitos adversos e interações…</a><a href="#f2"><b>F.2</b>Tabela de doses — EME e manut…</a></nav><!--/hp-f2-->
 
-<div class="card tx">
+<div class="card tx" id="f1">
 <div class="card-head">
 <div class="card-eyebrow"><span class="card-num">F.1</span> Estratégia</div>
 <h3>Escadas terapêuticas por entidade <span class="ank ank-dec">DECISION</span></h3>
 </div>
 <div class="card-body">
-<div class="sub-title">F1.1 · Estado de mal convulsivo — a escada cronometrada</div>
+<div class="sub-title" id="f1-1">F1.1 · Estado de mal convulsivo — a escada cronometrada</div>
 <ul class="bullets">
 <li><b>0–5 min · estabilização:</b> decúbito lateral, aspiração, O2, monitor cardíaco e oximetria, dois acessos, glicemia capilar. Glicemia &lt;60 mg/dL → <b>glicose 50% 50 mL IV e tiamina 100 mg IV, juntas, em qualquer ordem (nunca atrasar a glicose)</b> <span class="ev ev-acr">AES 2016</span> <span class="ev ev-acr">ASAM 2020</span>. Coletar eletrólitos com Ca/Mg, função renal/hepática, CK, gasometria, nível de FAC, toxicologia e β-hCG.</li>
 <li><b>5–20 min · BZD em dose plena:</b> sem acesso venoso, <b>midazolam 10 mg IM</b> (&gt;40 kg; 5 mg se 13–40 kg) — não inferior ao lorazepam IV no pré-hospitalar <span class="ev ev-cochrane">RAMPART 2012</span>; com acesso, <b>diazepam 0,15–0,2 mg/kg IV</b> (máx 10 mg/dose, a ~5 mg/min) <span class="ev ev-sbr">PCDT 2018</span>. Repetir uma vez após 5 min se persistir. Lorazepam IV 0,1 mg/kg (máx 4 mg) é a 1ª escolha internacional, mas não há apresentação venosa no Brasil.</li>
@@ -1518,7 +1537,7 @@ SECTION F · TRATAMENTO
 <div class="box-body">Infundir a <b>≤50 mg/min</b>; <b>≤25 mg/min</b> (e, se preciso, 5–10 mg/min) na hipotensão ou insuficiência miocárdica grave, e no idoso cardiopata 50 mg a cada 2–3 min <span class="ev ev-expert">SmPC UK 2026</span>; em veia calibrosa, com monitor de ECG e PA: o veículo (propilenoglicol) e o bloqueio de canais de sódio cardíacos causam hipotensão, bradicardia e BAV. Diluir apenas em <b>SF 0,9%</b> — precipita em soro glicosado <span class="ev ev-acr">NCS 2012</span> <span class="ev ev-expert">FDA</span>. Extravasamento → síndrome da luva púrpura. Não usar IM. Não usar em crises por intoxicação com bloqueadores de sódio (tricíclicos, por exemplo).</div>
 </div>
 
-<div class="sub-title">F1.2 · EME refratário e super-refratário</div>
+<div class="sub-title" id="f1-2">F1.2 · EME refratário e super-refratário</div>
 <ul class="bullets">
 <li><b>Midazolam contínuo</b> (preferido por hemodinâmica): bolus e infusão crescente; taquifilaxia em 24–48 h exige escalada.</li>
 <li><b>Propofol</b>: início e término rápidos; vigiar síndrome de infusão do propofol (acidose, rabdomiólise, hipertrigliceridemia, falência miocárdica) com doses altas e prolongadas; evitar em criança.</li>
@@ -1532,7 +1551,7 @@ SECTION F · TRATAMENTO
 <div class="box-body">No SENC focal do paciente desperto, encadeie FAC não sedativos antes de intubar. A anestesia contínua carrega pneumonia, instabilidade e ventilação prolongada; o benefício só supera o risco quando a atividade ictal é generalizada, convulsiva ou associada a coma.</div>
 </div>
 
-<div class="sub-title">F1.3 · EME não convulsivo</div>
+<div class="sub-title" id="f1-3">F1.3 · EME não convulsivo</div>
 <ul class="bullets">
 <li><b>Ausência (generalizada):</b> BZD IV resolve; valproato ou levetiracetam se recorrer; suspender fármacos precipitantes; reintroduzir BZD de uso crônico retirado abruptamente.</li>
 <li><b>Focal com consciência comprometida:</b> BZD + 2ª linha não sedativa; encadear (levetiracetam → valproato → lacosamida) antes da anestesia.</li>
@@ -1540,7 +1559,7 @@ SECTION F · TRATAMENTO
 <li><b>Continuum ictal-interictal:</b> teste terapêutico com FAC não sedativo sob EEG; tratar a causa (suspender cefepima, corrigir uremia).</li>
 </ul>
 
-<div class="sub-title">F1.4 · Crise sintomática aguda</div>
+<div class="sub-title" id="f1-4">F1.4 · Crise sintomática aguda</div>
 <ul class="bullets">
 <li>Corrigir a causa: glicose, <b>salina 3% na hiponatremia grave sintomática</b> (NU04), cálcio e magnésio IV, tiamina no etilista, piridoxina IV na intoxicação por isoniazida (CT10), suspender o fármaco epileptogênico, ATB/aciclovir na infecção do SNC.</li>
 <li>BZD se crise prolongada ou em salvas; <b>sem FAC crônico</b> quando a causa foi corrigida.</li>
@@ -1548,14 +1567,14 @@ SECTION F · TRATAMENTO
 <li><b>Lesão aguda do SNC</b> (AVC, TCE, neurocirurgia): se FAC for iniciado por crise precoce, planejar reavaliação e retirada; não há profilaxia primária no AVC isquêmico.</li>
 </ul>
 
-<div class="sub-title">F1.5 · Primeira crise não provocada</div>
+<div class="sub-title" id="f1-5">F1.5 · Primeira crise não provocada</div>
 <ul class="bullets">
 <li>Investigar (RM protocolo epilepsia, EEG precoce) e <b>estimar o risco</b>: lesão remota, EEG epileptiforme, lesão causal, crise noturna <span class="ev ev-acr">AAN/AES 2015</span>.</li>
 <li>Com fator de risco: diagnóstico de epilepsia (ILAE 2014) e monoterapia pelo tipo de crise. Sem fator: decisão compartilhada; observar é aceitável.</li>
 <li>Orientar <b>direção</b> (regulamentação do CONTRAN citada no PCDT: período livre de crises e relatório médico padronizado), trabalho em altura, natação acompanhada, banho de chuveiro, sono regular e álcool.</li>
 </ul>
 
-<div class="sub-title">F1.6 · Epilepsia focal</div>
+<div class="sub-title" id="f1-6">F1.6 · Epilepsia focal</div>
 <ul class="bullets">
 <li><b>1ª linha:</b> lamotrigina (titulação lenta obrigatória) ou levetiracetam <span class="ev ev-cochrane">SANAD II 2021</span> <span class="ev ev-nice">NICE NG217</span>; carbamazepina e oxcarbazepina como alternativas; no SUS, carbamazepina, fenitoína e valproato estão listados para adultos com epilepsia focal no PCDT, com lamotrigina e gabapentina para o idoso <span class="ev ev-sbr">PCDT 2018</span>.</li>
 <li><b>Titular até controle ou efeito adverso</b>; reavaliar a cada 3 meses com diário de crises.</li>
@@ -1563,7 +1582,7 @@ SECTION F · TRATAMENTO
 <li><b>Farmacorresistência (2 esquemas):</b> confirmar diagnóstico e encaminhar para centro de epilepsia (cirurgia, VNS).</li>
 </ul>
 
-<div class="sub-title">F1.7 · Epilepsias generalizadas idiopáticas</div>
+<div class="sub-title" id="f1-7">F1.7 · Epilepsias generalizadas idiopáticas</div>
 <ul class="bullets">
 <li><b>Homem ou mulher sem potencial de gestação:</b> valproato (mais eficaz que levetiracetam em 12 meses de remissão) <span class="ev ev-cochrane">SANAD II 2021</span>.</li>
 <li><b>Mulher/menina que pode engravidar:</b> levetiracetam (sobretudo EMJ) ou lamotrigina; topiramato também evitado.</li>
@@ -1577,7 +1596,7 @@ SECTION F · TRATAMENTO
 <div class="box-body">Os dois fatos convivem. A pergunta que decide não é "qual o melhor fármaco para EMJ?", e sim "<b>esta pessoa pode engravidar nos próximos anos?</b>". No Brasil, PCDT e bula orientam evitar em idade fértil, e a carta Anvisa/Sanofi de nov/2018 tornou o valproato contraindicado na gravidez e em mulheres férteis salvo programa de prevenção de gravidez (teste, contracepção eficaz, revisão anual por especialista, termo anual de riscos) <span class="ev ev-expert">Anvisa 2018</span>; no Reino Unido, desde 2024, início em &lt;55 anos (ambos os sexos) exige dois especialistas <span class="ev ev-expert">MHRA 2024</span>.</div>
 </div>
 
-<div class="sub-title">F1.8 · Mulher em idade fértil, gestação e puerpério</div>
+<div class="sub-title" id="f1-8">F1.8 · Mulher em idade fértil, gestação e puerpério</div>
 <ul class="bullets">
 <li><b>Pré-concepção (6–12 meses antes):</b> trocar valproato/topiramato quando houver alternativa eficaz; monoterapia na menor dose eficaz; nível sérico basal; <b>ácido fólico ≥0,4 mg/d</b> <span class="ev ev-acr">AAN/AES/SMFM 2024</span>.</li>
 <li><b>Gestante controlada:</b> não trocar o fármaco eficaz; dosar lamotrigina mensalmente e ajustar ao nível pré-concepção; idem levetiracetam/oxcarbazepina quando possível <span class="ev ev-acr">AAN 2009</span>.</li>
@@ -1592,7 +1611,7 @@ SECTION F · TRATAMENTO
 <div class="box-body">É o cenário mais perigoso: a organogênese já começou e a TCG resultante expõe mãe e feto a hipóxia, trauma e SUDEP. <b>Oriente antes</b> (toda mulher em idade fértil em uso de FAC deve saber que não deve suspender sem falar com o médico) e <b>atenda rápido</b> quem descobre a gestação.</div>
 </div>
 
-<div class="sub-title">F1.9 · Idoso, doença renal, hepatopatia, HIV</div>
+<div class="sub-title" id="f1-9">F1.9 · Idoso, doença renal, hepatopatia, HIV</div>
 <ul class="bullets">
 <li><b>Idoso:</b> evitar indutores (carbamazepina, fenitoína, fenobarbital) — interações e osteoporose; lamotrigina e levetiracetam são as escolhas; escalonamento mais lento e dose máxima menor <span class="ev ev-sbr">PCDT 2018</span>.</li>
 <li><b>DRC:</b> levetiracetam, gabapentina e topiramato têm excreção renal — ajustar por ClCr (topiramato: metade da dose na insuficiência renal; levetiracetam e gabapentina: conforme bula); levetiracetam é dialisável (dose suplementar pós-hemodiálise).</li>
@@ -1600,7 +1619,7 @@ SECTION F · TRATAMENTO
 <li><b>HIV em TARV:</b> indutores reduzem antirretrovirais; ritonavir/atazanavir reduzem lamotrigina (~50% de aumento de dose pode ser necessário); valproato aumenta zidovudina <span class="ev ev-sbr">PCDT 2018</span>. Preferir levetiracetam.</li>
 </ul>
 
-<div class="sub-title">F1.10 · Retirada do FAC, SUDEP e seguimento</div>
+<div class="sub-title" id="f1-10">F1.10 · Retirada do FAC, SUDEP e seguimento</div>
 <ul class="bullets">
 <li><b>Livre de crises:</b> ausência de crises por 3× o maior intervalo prévio ou ≥1 ano; retirada considerada após ≥2 anos sem crises, de forma gradual, sobretudo se exame, EEG e RM normais e síndrome favorável <span class="ev ev-sbr">PCDT 2018</span>. Recidivas concentram-se nos primeiros meses; restrição de direção durante e após o desmame.</li>
 <li><b>Não retirar</b> na EMJ (recorrência &gt;90%), com lesão estrutural persistente ou EEG com lentificação de base.</li>
@@ -1608,7 +1627,7 @@ SECTION F · TRATAMENTO
 <li><b>Monitorização anual</b> sugerida pelo PCDT: hemograma, plaquetas, ALT/AST, Na/K, lipídios, vitamina D, TSH/T4L; rastrear depressão/ansiedade (NDDI-E, GAD-7).</li>
 </ul>
 
-<div class="sub-title">F1.11 · Crises funcionais</div>
+<div class="sub-title" id="f1-11">F1.11 · Crises funcionais</div>
 <ul class="bullets">
 <li>Comunicar o diagnóstico com rótulo específico e explicação; plano para o evento agudo (sem BZD de resgate nem ida automática ao PS) <span class="ev ev-acr">AAN 2025</span>.</li>
 <li>Encaminhar a psicoterapia específica (TCC, terapia neurocomportamental); tratar depressão/ansiedade/TEPT.</li>
@@ -1617,7 +1636,7 @@ SECTION F · TRATAMENTO
 </div>
 </div>
 
-<div class="card clin">
+<div class="card clin" id="f1b">
 <div class="card-head">
 <div class="card-eyebrow"><span class="card-num">F.1b</span> Cenários</div>
 <h3>Caso → conduta certa → erro típico <span class="ank ank-dec">DECISION</span></h3>
@@ -1646,7 +1665,7 @@ SECTION F · TRATAMENTO
 </div>
 </div>
 
-<div class="card tx">
+<div class="card tx" id="f1c">
 <div class="card-head">
 <div class="card-eyebrow"><span class="card-num">F.1c</span> Segurança</div>
 <h3>Efeitos adversos e interações que mudam a conduta <span class="ank ank-dgr">DANGER</span></h3>
@@ -1696,13 +1715,13 @@ SECTION F · TRATAMENTO
 </div>
 </div>
 
-<div class="card tx">
+<div class="card tx" id="f2">
 <div class="card-head">
 <div class="card-eyebrow"><span class="card-num">F.2</span> Doses operacionais</div>
 <h3>Tabela de doses — EME e manutenção (adulto) <span class="ank ank-dec">DECISION</span></h3>
 </div>
 <div class="card-body">
-<div class="sub-title">F2.1 · Estado de mal — 1ª e 2ª linha</div>
+<div class="sub-title" id="f2-1">F2.1 · Estado de mal — 1ª e 2ª linha</div>
 <div class="stbl stbl-3">
 <div class="stbl-head stbl-3"><div>Fármaco</div><div>Dose adulto · via · ritmo</div><div>Indicação / notas</div></div>
 <div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Tiamina + glicose</div><div class="col" data-l="Dose">Tiamina 100 mg IV + glicose 50% 50 mL IV, juntas, em qualquer ordem</div><div class="col" data-l="Notas">Se glicemia &lt;60 mg/dL; a tiamina protege do Wernicke no etilista/desnutrido, mas nunca atrasa a glicose <span class="ev ev-acr">AES 2016</span> <span class="ev ev-acr">ASAM 2020</span></div></div>
@@ -1718,7 +1737,7 @@ SECTION F · TRATAMENTO
 <div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Fenobarbital IV</div><div class="col" data-l="Dose"><b>15 mg/kg IV</b>, dose única; PCDT cita infusão a até 100 mg/min</div><div class="col" data-l="Notas">Quando os outros não estão disponíveis; depressão respiratória e hipotensão (sobretudo após BZD) — preparar via aérea <span class="ev ev-acr">AES 2016</span> <span class="ev ev-sbr">PCDT 2018</span></div></div>
 </div>
 
-<div class="sub-title">F2.2 · EME refratário — infusão contínua (UTI, IOT, EEG contínuo)</div>
+<div class="sub-title" id="f2-2">F2.2 · EME refratário — infusão contínua (UTI, IOT, EEG contínuo)</div>
 <div class="stbl stbl-3">
 <div class="stbl-head stbl-3"><div>Fármaco</div><div>Ataque · manutenção</div><div>Notas</div></div>
 <div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Midazolam</div><div class="col" data-l="Dose">Ataque 0,2 mg/kg IV a 2 mg/min (ENLS: repetir 0,2 mg/kg a cada 5 min até ataque máx 2 mg/kg); infusão 0,05–2 mg/kg/h titulada pelo EEG; escape: bolus 0,1–0,2 mg/kg e +0,05–0,1 mg/kg/h a cada 3–4 h (PCDT: 0,05–0,20 mg/kg/h)</div><div class="col" data-l="Notas">Menos hipotensão; taquifilaxia; acúmulo em obesos e DRC; sem propilenoglicol. Faixas conferidas na Tab. 8 da NCS <span class="ev ev-acr">NCS 2012</span> <span class="ev ev-acr">ENLS 2022</span> <span class="ev ev-sbr">PCDT 2018</span></div></div>
@@ -1727,7 +1746,7 @@ SECTION F · TRATAMENTO
 <div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Cetamina</div><div class="col" data-l="Dose">Faixas publicadas de bolus 0,5–4,5 mg/kg e infusão até ~5 mg/kg/h — confirmar protocolo</div><div class="col" data-l="Notas">Super-refratário; racional NMDA; menos hipotensão; dados observacionais. A NCS 2012 lista a cetamina só como terapia alternativa, <b>sem dose</b> (Tab. 9); as faixas vêm de revisões de EME super-refratário e não foram conferidas em fonte primária <span class="ev ev-acr">NCS 2012</span></div></div>
 </div>
 
-<div class="sub-title">F2.3 · Manutenção oral (adulto) — esquemas do PCDT e dos ensaios</div>
+<div class="sub-title" id="f2-3">F2.3 · Manutenção oral (adulto) — esquemas do PCDT e dos ensaios</div>
 <div class="stbl stbl-3">
 <div class="stbl-head stbl-3"><div>Fármaco</div><div>Início → escalonamento → máximo</div><div>Indicação / notas</div></div>
 <div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Lamotrigina (monoterapia)</div><div class="col" data-l="Dose">25 mg/d por 2 sem → 50 mg/d por 2 sem → +50–100 mg a cada 1–2 sem; máx 500 mg/d, em 2–3 tomadas</div><div class="col" data-l="Notas">Focal e generalizada (exceto mioclonias); dose inicial de manutenção do SANAD II: 50 mg manhã + 100 mg noite <span class="ev ev-sbr">PCDT 2018</span> <span class="ev ev-cochrane">SANAD II 2021</span></div></div>
@@ -1748,7 +1767,7 @@ SECTION F · TRATAMENTO
 <div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Vigabatrina</div><div class="col" data-l="Dose">500 mg/d → +500 mg/semana; máx 3.000 mg/d, 1–2 tomadas</div><div class="col" data-l="Notas">West/esclerose tuberosa e focais refratárias; campimetria seriada <span class="ev ev-sbr">PCDT 2018</span></div></div>
 </div>
 
-<div class="sub-title">F2.4 · Adjuvantes da gestação e do recém-nascido</div>
+<div class="sub-title" id="f2-4">F2.4 · Adjuvantes da gestação e do recém-nascido</div>
 <div class="stbl stbl-3">
 <div class="stbl-head stbl-3"><div>Item</div><div>Dose</div><div>Notas</div></div>
 <div class="stbl-row stbl-3"><div class="col col1" data-l="Item">Ácido fólico</div><div class="col" data-l="Dose"><b>≥0,4 mg VO 1×/dia</b>, pré-concepção e durante a gestação</div><div class="col" data-l="Notas">Diretriz não sustenta dose maior; ≥1 mg/d periconcepcional teve sinal de câncer infantil em um estudo (evidência limitada); a apostila sugere 1 mg/d e a prática brasileira frequentemente usa 5 mg/d — divergência registrada <span class="ev ev-acr">AAN/AES/SMFM 2024</span></div></div>
@@ -1773,7 +1792,7 @@ SECTION G · PITFALLS · MITOS · CONTROVÉRSIAS
 <div class="section-sub">Os erros que prolongam o EME, que pioram a epilepsia generalizada e que expõem o feto sem necessidade — e três debates em que a diretriz ainda não fechou a questão.</div>
 </div>
 
-<div class="card pearl">
+<div class="card pearl" id="g1">
 <div class="card-head">
 <div class="card-eyebrow"><span class="card-num">G.1</span> Pegadinhas</div>
 <h3>10 Erros Operacionais em Epilepsia e Estado de Mal</h3>
@@ -1795,7 +1814,7 @@ SECTION G · PITFALLS · MITOS · CONTROVÉRSIAS
 </div>
 </div>
 
-<div class="card pearl">
+<div class="card pearl" id="g2">
 <div class="card-head">
 <div class="card-eyebrow"><span class="card-num">G.2</span> Mitos · Controvérsias</div>
 <h3>Mitos Vivos e Debates Atuais</h3>
@@ -1845,7 +1864,7 @@ SECTION H · PEARLS + EVOLVING
 <div class="section-sub">Oito ideias que separam o especialista do protocolo, seis mudanças reais de 2023–2026 e um mapa das divergências entre a apostila de 2025 e as fontes vigentes.</div>
 </div>
 
-<div class="card pearl">
+<div class="card pearl" id="h1">
 <div class="card-head">
 <div class="card-eyebrow"><span class="card-num">H.1</span> Pearls</div>
 <h3>8 Nuances que Distinguem o Expert</h3>
@@ -1886,7 +1905,7 @@ SECTION H · PEARLS + EVOLVING
 </div>
 </div>
 
-<div class="card pearl">
+<div class="card pearl" id="h2">
 <div class="card-head">
 <div class="card-eyebrow"><span class="card-num">H.2</span> Evolving</div>
 <h3>O que realmente mudou — 2023 a 2026</h3>
@@ -1919,7 +1938,7 @@ SECTION H · PEARLS + EVOLVING
 </div>
 </div>
 
-<div class="card pearl">
+<div class="card pearl" id="h3">
 <div class="card-head">
 <div class="card-eyebrow"><span class="card-num">H.3</span> Apostila × vigente</div>
 <h3>Onde a apostila 2025 e as fontes atuais divergem <span class="ank ank-dec">DECISION</span></h3>
@@ -2004,5 +2023,36 @@ SECTION H · PEARLS + EVOLVING
 <a class="to-top" href="#" aria-label="Voltar ao topo">↑</a>
 <div class="watermark">@dr.lorencato · NE02 Epilepsia v5.2</div>
 
-</body>
+<!--hp-f2--><script>(function(){var d=document,M=d.querySelector('main');if(!M)return;
+var SELF='NE02',HP=' CT01 CT02 CT03 CT04 CT05 CT06 CT08 CT10 CV01 CV03 CV04 CV05 CV06 CV07 CV08 EN01 EN02 EN03 EN04 EN06 EN07 GH01 GH02 GH03 GH05 GH06 GH07 GH08 GH09 GH10 GO01 GO02 GO03 GO04 GO09 GO10 GO11 GO12 GO13 GO14 HO01 HO02 HO03 HO04 HO05 HO06 II01 II02 II03 II04 II07 II08 NE01 NE02 NE03 NE04 NE05 NE06 NE07 NE08 NU01 NU02 NU03 NU04 NU05 OE01 OE02 PC01 PC02 PC03 PC04 PC05 PC06 PD01 PD02 PD03 PD04 PD05 PD06 PD07 PD08 PD09 PD10 RD01 RD02 RD03 RD04 RD05 RD07 RP01 RP02 RP03 RP04 ';
+var SK='A,H1,H2,H3,SCRIPT,STYLE,NAV,.card-num,.card-eyebrow,.sub-title,.disease-tag,.toc';
+var R=/\b(?:([A-H])(\d)?\.(\d{1,2}[a-c]?)|(CV|RP|GH|NE|EN|NU|HO|II|RD|GO|PD|PC|CT|OE)(\d\d))\b/g;
+function skip(n){for(var e=n.parentNode;e&&e!==M;e=e.parentNode)if(e.matches&&e.matches(SK))return 1;return 0}
+var w=d.createTreeWalker(M,4),t,L=[];while(t=w.nextNode())if(R.test(t.data)&&!skip(t))L.push(t);
+L.forEach(function(t){var s=t.data,f=d.createDocumentFragment(),i=0,m;R.lastIndex=0;
+while(m=R.exec(s)){var h=null;
+if(m[1]){var id=m[1].toLowerCase()+(m[2]?m[2]+'-':'')+m[3];if(d.getElementById(id))h='#'+id}
+else{var x=m[4]+m[5];if(x!==SELF&&HP.indexOf(' '+x+' ')>=0)h='../'+x+'/'+x+'.html'}
+if(!h)continue;f.appendChild(d.createTextNode(s.slice(i,m.index)));
+var a=d.createElement('a');a.href=h;a.className='xr';a.textContent=m[0];f.appendChild(a);i=R.lastIndex}
+if(i){f.appendChild(d.createTextNode(s.slice(i)));t.parentNode.replaceChild(f,t)}});
+function nz(s){return s.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'')}
+var q=d.querySelector('.hp-q'),n=d.querySelector('.hp-n'),it=M.querySelectorAll('.card,.pocket-card'),T;
+function clr(){M.querySelectorAll('.q-off').forEach(function(e){e.classList.remove('q-off')})}
+function run(){var v=nz(q.value.trim());clr();n.textContent='';if(v.length<2)return;var k=0;
+it.forEach(function(c){if(nz(c.textContent).indexOf(v)<0){c.classList.add('q-off');return}k++;
+var r=c.querySelectorAll('.stbl-row,.disease-row,.score-row'),h=[];r.forEach(function(x){if(nz(x.textContent).indexOf(v)>=0)h.push(x)});
+if(h.length)r.forEach(function(x){if(h.indexOf(x)<0)x.classList.add('q-off')});
+c.querySelectorAll('details').forEach(function(x){if(nz(x.textContent).indexOf(v)>=0)x.open=true})});
+M.querySelectorAll('section').forEach(function(s){if(!s.querySelector('.card:not(.q-off),.pocket-card:not(.q-off)'))s.classList.add('q-off')});
+n.textContent=k?k+' achado'+(k>1?'s':''):'nada'}
+if(q){q.addEventListener('input',function(){clearTimeout(T);T=setTimeout(run,180)});
+q.addEventListener('keydown',function(e){if(e.key==='Escape'){q.value='';run()}})}
+function tg(b,f){b.addEventListener('click',function(){var on=b.getAttribute('aria-pressed')!=='true';b.setAttribute('aria-pressed',on);f(on)})}
+var bd=d.querySelector('.hp-dz'),bo=d.querySelector('.hp-op');
+if(bd)tg(bd,function(on){d.body.classList.toggle('dz',on);if(on)d.getElementById('tratamento').scrollIntoView()});
+if(bo)tg(bo,function(on){M.querySelectorAll('details').forEach(function(x){x.open=on})});
+var P=[];addEventListener('beforeprint',function(){P=[];M.querySelectorAll('details:not([open])').forEach(function(x){P.push(x);x.open=true})});
+addEventListener('afterprint',function(){P.forEach(function(x){x.open=false})});
+})();</script><!--/hp-f2--></body>
 </html>

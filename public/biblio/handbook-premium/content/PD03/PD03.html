@@ -345,11 +345,30 @@ ul.bullets li b{color:var(--ink);font-weight:600}
   .pocket .pocket-card.tx{--accent:#a8481a}
   .pocket .pocket-card.clin{--accent:#0b5d4e}
 }
+
+/* === v5.2.2 · fase 2 (navegação) === */
+.hp-tools{display:flex;gap:6px;align-items:center;flex:none;order:1;margin-left:auto;padding-left:6px;position:sticky;right:0;background:#f1eee5;box-shadow:-10px 0 10px -4px #f1eee5,16px 0 0 #f1eee5}
+@media(min-width:900px){html{scroll-padding-top:150px}.toc-inner{flex-wrap:wrap;overflow:visible}.card[id],.sub-title[id]{scroll-margin-top:150px}}
+@media(max-width:899px){.hp-b,.hp-n{display:none}.hp-q{width:104px}}
+.hp-q{width:128px;font:500 12px/1 'DM Sans',system-ui,sans-serif;padding:7px 11px;border:1px solid var(--line-strong);border-radius:999px;background:var(--paper);color:var(--ink)}
+.hp-b{font:600 11px/1 'DM Sans',system-ui,sans-serif;letter-spacing:.05em;text-transform:uppercase;padding:7px 10px;border-radius:999px;border:1px solid var(--line-strong);background:var(--paper);color:var(--ink-soft);cursor:pointer;white-space:nowrap}
+.hp-b[aria-pressed=true]{background:var(--ink);color:#fff;border-color:var(--ink)}
+.hp-n{font:600 11px/1 'DM Mono',monospace;color:var(--ink-mute);white-space:nowrap}
+.sec-idx{display:flex;flex-wrap:wrap;gap:6px;margin:12px 0 20px}
+.sec-idx a{font:500 12px/1.25 'DM Sans',system-ui,sans-serif;padding:6px 10px;border-radius:999px;background:var(--paper);border:1px solid var(--line);color:var(--ink-soft);text-decoration:none}
+.sec-idx a:hover{border-color:var(--line-strong);color:var(--ink)}
+.sec-idx b{color:var(--c-prim);margin-right:5px;font-weight:700}
+a.xr{color:inherit;text-decoration:underline dotted;text-underline-offset:2px}
+a.xr:hover{color:var(--c-prim)}
+.card[id],.sub-title[id]{scroll-margin-top:110px}
+.q-off{display:none!important}
+body.dz main section:not(#tratamento){display:none}
+@media print{.hp-tools,.sec-idx,.toc-doses{display:none!important}}
 </style>
 </head>
 <body>
 <header class="header"><div class="header-row"><div class="h-mark">N</div><div class="h-titles"><div class="h-title">Nutrição, Crescimento e Obesidade · Pocket Handbook</div><div class="h-sub">Elite edition · Pediatria · PD03</div></div><div class="h-author">@dr.lorencato</div><div class="h-edition">v5.2</div></div></header>
-<nav class="toc"><div class="toc-inner"><a href="#pocket" class="toc-chip"><span class="toc-chip-num">0</span>Pocket</a><a href="#redflags" class="toc-chip"><span class="toc-chip-num">A</span>Red Flags</a><a href="#approach" class="toc-chip"><span class="toc-chip-num">B</span>Apresentação</a><a href="#primarias" class="toc-chip"><span class="toc-chip-num">C</span>Entidades</a><a href="#secundarias" class="toc-chip"><span class="toc-chip-num">D</span>Secundárias</a><a href="#algoritmo" class="toc-chip"><span class="toc-chip-num">E</span>Algoritmo</a><a href="#tratamento" class="toc-chip"><span class="toc-chip-num">F</span>Tratamento</a><a href="#pitfalls" class="toc-chip"><span class="toc-chip-num">G</span>Pitfalls</a><a href="#pearls" class="toc-chip"><span class="toc-chip-num">H</span>Pearls</a></div></nav>
+<nav class="toc"><div class="toc-inner"><!--hp-f2--><span class="hp-tools"><input class="hp-q" type="search" placeholder="Buscar no HP" aria-label="Buscar no HP"><button class="hp-b hp-dz" type="button" aria-pressed="false">Só doses</button><button class="hp-b hp-op" type="button" aria-pressed="false">Abrir tudo</button><span class="hp-n" aria-live="polite"></span></span><!--/hp-f2--><a href="#pocket" class="toc-chip"><span class="toc-chip-num">0</span>Pocket</a><a href="#redflags" class="toc-chip"><span class="toc-chip-num">A</span>Red Flags</a><a href="#approach" class="toc-chip"><span class="toc-chip-num">B</span>Apresentação</a><a href="#primarias" class="toc-chip"><span class="toc-chip-num">C</span>Entidades</a><a href="#secundarias" class="toc-chip"><span class="toc-chip-num">D</span>Secundárias</a><a href="#algoritmo" class="toc-chip"><span class="toc-chip-num">E</span>Algoritmo</a><a href="#tratamento" class="toc-chip"><span class="toc-chip-num">F</span>Tratamento</a><!--hp-f2--><a href="#f2" class="toc-chip toc-doses"><span class="toc-chip-num">Rx</span>Doses</a><!--/hp-f2--><a href="#pitfalls" class="toc-chip"><span class="toc-chip-num">G</span>Pitfalls</a><a href="#pearls" class="toc-chip"><span class="toc-chip-num">H</span>Pearls</a></div></nav>
 <main>
 <div class="wrap">
 
@@ -421,7 +440,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <div class="section-sub">Em nutrição pediátrica a emergência raramente é "nutricional": é a descompensação metabólica e infecciosa do desnutrido grave, a realimentação mal conduzida, o lactente que desidrata no peito e a obesidade que já chegou com hipertensão intracraniana, epifisiólise ou hiperglicemia.</div>
 </div>
 
-<div class="card emerg">
+<div class="card emerg" id="a1">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">A.1</span> Emergências</div><h3>Sinais de alarme no desnutrido e no lactente que não ganha peso <span class="ank ank-dgr">DANGER</span></h3></div>
 <div class="card-body">
 <div class="mnemo">
@@ -464,7 +483,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <div class="section-sub">A família raramente diz "desnutrição" ou "obesidade". Diz que a criança não come, que o leite é fraco, que está pálida, que engordou demais ou que o peito dói. Cada queixa abre um diferencial diferente.</div>
 </div>
 
-<div class="card clin">
+<div class="card clin" id="b1">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">B.1</span> Padrão 1</div><h3>"O leite é fraco" — lactente amamentado que chora muito</h3><div class="card-sub">Fome verdadeira, pega ineficaz ou choro fisiológico</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Leite fraco não existe; existe <b>transferência insuficiente</b>. O critério objetivo é o <b>ganho de peso</b> (recuperar o peso de nascimento até o 10º–14º dia e ganhar ~25–30 g/dia no 1º trimestre) e a diurese (≥6 fraldas molhadas/dia após o 5º dia). Choro com ganho adequado é cólica ou choro normal, não indicação de fórmula.</div></div>
@@ -477,7 +496,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card clin">
+<div class="card clin" id="b2">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">B.2</span> Padrão 2</div><h3>"Não come nada" — pré-escolar que a família acha magro</h3><div class="card-sub">Percepção familiar × curva × verdadeira dificuldade alimentar</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Plote antes de opinar. A maioria das crianças "que não comem" está na curva: a <b>velocidade de ganho cai fisiologicamente</b> depois do 1º ano e o apetite acompanha. O problema real aparece como <b>queda de escore-Z</b>, sinais de alerta (engasgo, dor, vômitos, recusa de texturas) ou seletividade com poucos alimentos aceitos.</div></div>
@@ -489,7 +508,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card clin">
+<div class="card clin" id="b3">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">B.3</span> Padrão 3</div><h3>Edema, cabelo ralo e apatia — ou pele e osso</h3><div class="card-sub">Desnutrição grave edematosa × não edematosa</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Edema bilateral de pés que deixa cacifo, cabelo despigmentado com <b>sinal da bandeira</b>, dermatose em "tinta descascada", hepatomegalia e apatia = <b>kwashiorkor</b> (2º–3º ano, instalação rápida). Emagrecimento extremo, pele enrugada nas nádegas, perda da bola de Bichat, apetite preservado = <b>marasmo</b> (&lt;1 ano, insidioso).</div></div>
@@ -501,7 +520,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card clin">
+<div class="card clin" id="b4">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">B.4</span> Padrão 4</div><h3>Criança pálida que come bem e toma muito leite</h3><div class="card-sub">O "bebê gordinho e anêmico"</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Lactente ou pré-escolar com <b>&gt;500–700 mL/dia de leite de vaca</b>, pouca carne, palidez, irritabilidade e às vezes pica ou geofagia. O leite de vaca é pobre em ferro, inibe a absorção (cálcio, caseína) e, antes de 1 ano, causa micro-hemorragia intestinal. Peso normal ou alto não exclui carência.</div></div>
@@ -513,7 +532,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card clin">
+<div class="card clin" id="b5">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">B.5</span> Padrão 5</div><h3>"Engordou demais" — escolar ou adolescente com IMC alto</h3><div class="card-sub">Obesidade exógena × endógena e a caça às comorbidades</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">A pergunta que separa: <b>como está a estatura?</b> Obesidade exógena acelera a estatura e a idade óssea; a criança obesa e <b>baixa</b> ou com velocidade de crescimento caindo tem causa endócrina (hipotireoidismo, Cushing, deficiência de GH) até prova em contrário. Atraso de desenvolvimento, dismorfia ou hiperfagia precoce grave sugerem causa sindrômica ou monogênica.</div></div>
@@ -533,9 +552,9 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <div class="section-eyebrow"><span>C</span> Entidades Primárias</div>
 <div class="section-title">Disease Boxes — da mamada à síndrome metabólica</div>
 <div class="section-sub">Onze entidades: três sobre aleitamento, uma sobre alimentação complementar, a leitura das curvas, três estados nutricionais (desnutrição grave, desnutrição moderada/faltering weight, obesidade), as comorbidades da obesidade e as duas carências que mais caem (ferro e vitamina D).</div>
-</div>
+</div><!--hp-f2--><nav class="sec-idx" aria-label="Neste capítulo"><a href="#c1"><b>C.1</b>Aleitamento materno — fisiolo…</a><a href="#c2"><b>C.2</b>Contraindicações ao aleitamen…</a><a href="#c3"><b>C.3</b>Intercorrências mamárias da l…</a><a href="#c4"><b>C.4</b>Alimentação complementar e al…</a><a href="#c5"><b>C.5</b>Avaliação nutricional e curva…</a><a href="#c6"><b>C.6</b>Desnutrição energético-protei…</a><a href="#c7"><b>C.7</b>Desnutrição moderada e baixo…</a><a href="#c8"><b>C.8</b>Obesidade infantil primária</a><a href="#c9"><b>C.9</b>Comorbidades cardiometabólica…</a><a href="#c10"><b>C.10</b>Deficiência de ferro e anemia…</a><a href="#c11"><b>C.11</b>Hipovitaminose D e raquitismo…</a></nav><!--/hp-f2-->
 
-<div class="card prim">
+<div class="card prim" id="c1">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.1</span> Aleitamento</div><h3>Aleitamento materno — fisiologia, composição e técnica <span class="ank ank-hy">HIGH-YIELD</span></h3><div class="card-sub">Exclusivo até 6 meses, complementado até 2 anos ou mais</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body"><b>AME até 6 meses</b> (sem água, chá ou suco; vitaminas, SRO e medicamentos permitidos), depois <b>aleitamento complementado até 2 anos ou mais</b>. Livre demanda, 8–12 mamadas/dia, esvaziar uma mama antes de oferecer a outra. Avaliação da adequação = ganho de peso, não choro nem duração da mamada. ENANI-2019: AME em &lt;6 meses de 45,8%, mediana do AME de 3 meses.</div></div>
@@ -560,7 +579,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="c2">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.2</span> Aleitamento</div><h3>Contraindicações ao aleitamento e situações especiais <span class="ank ank-dec">DECISION</span></h3><div class="card-sub">Poucas absolutas, muitas falsas</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">No Brasil contraindicam: <b>HIV</b>, <b>HTLV-1/2</b>, psicose puerperal grave com risco ao bebê, drogas de abuso em uso regular, quimioterápicos e radiofármacos (temporário), e, no bebê, <b>galactosemia clássica</b>. Fenilcetonúria e leucinose permitem leite materno em volume controlado. Infecções maternas comuns raramente contraindicam.</div></div>
@@ -579,7 +598,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="c3">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.3</span> Aleitamento</div><h3>Intercorrências mamárias da lactação <span class="ank ank-dec">DECISION</span></h3><div class="card-sub">Quase todas têm a mesma raiz: drenagem ineficaz</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Fissura → pega. Ingurgitamento → livre demanda e ordenha de alívio. Mastite → <b>esvaziamento + manter amamentação + AINE</b>; antibiótico antiestafilocócico se não melhora em 12–24 h, quadro sistêmico ou fissura infectada. Abscesso → drenagem (punção guiada por US ou incisão) + antibiótico, mantendo a mama sadia e, se possível, a afetada.</div></div>
@@ -598,7 +617,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="c4">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.4</span> Alimentação</div><h3>Alimentação complementar e alimentação saudável <span class="ank ank-hy">HIGH-YIELD</span></h3><div class="card-sub">Comida de verdade, amassada, aos 6 meses — e sem açúcar até 2 anos</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Início aos <b>6 meses</b> (sustenta tronco, perdeu o reflexo de protrusão, interesse pela comida). Comida da família, sem sal em excesso, <b>amassada com garfo</b> (nunca liquidificada nem peneirada), evoluindo para pedaços até os 12 meses. Água oferecida desde o início; <b>sem suco antes de 1 ano</b>, <b>sem açúcar antes de 2 anos</b>, sem ultraprocessados. Mel proibido &lt;1 ano (botulismo).</div></div>
@@ -618,7 +637,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="c5">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.5</span> Avaliação</div><h3>Avaliação nutricional e curvas da OMS <span class="ank ank-hy">HIGH-YIELD</span></h3><div class="card-sub">Escore-Z, índice certo para cada idade, e a lógica aguda × crônica</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">MS/SBP usam as curvas <b>OMS 2006 (0–5 anos)</b> e <b>OMS 2007 (5–19 anos)</b>. Índices: <b>0–5 anos</b> P/I, E/I, P/E e IMC/I; <b>5–10 anos</b> P/I, E/I, IMC/I; <b>10–19 anos</b> E/I e IMC/I. Peso reflete o agudo; estatura, o crônico. P/E baixo = emagrecimento (wasting); E/I baixo = baixa estatura (stunting).</div></div>
@@ -657,7 +676,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="c6">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.6</span> Desnutrição</div><h3>Desnutrição energético-proteica grave — marasmo, kwashiorkor e forma mista <span class="ank ank-dgr">DANGER</span></h3><div class="card-sub">Três fases, dez passos, e a pressa que mata</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Diagnóstico OMS: <b>P/E &lt;−3, PB &lt;115 mm ou edema bilateral</b>. Sem complicação e com apetite: ambulatório com RUTF e amoxicilina. Com complicação: internar e seguir os <b>10 passos</b> — hipoglicemia, hipotermia, desidratação (ReSoMal), eletrólitos (K e Mg, nunca sódio), infecção, micronutrientes (<b>sem ferro</b> na 1ª semana), F-75 cauteloso, F-100 para recuperar, estímulo, seguimento.</div></div>
@@ -692,7 +711,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="c7">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.7</span> Desnutrição</div><h3>Desnutrição moderada e baixo ganho ponderal (faltering weight) <span class="ank ank-evo">EVOLVING</span></h3><div class="card-sub">AAP/NASPGHAN 2026 aposenta "failure to thrive"</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Faltering weight = <b>P/C ou IMC/I &lt;−1,65 escore-Z</b>, ou <b>velocidade de ganho &lt;−2 escore-Z</b> (&lt;2 anos), ou <b>queda ≥1 escore-Z</b>. Avaliação = história alimentar, observação da refeição, exame e desenvolvimento; <b>sem exames de rotina e sem endoscopia inicial</b>. Tratamento = aumentar calorias, suplemento oral se ganho insuficiente, terapia de alimentação se há dificuldade documentada.</div></div>
@@ -709,7 +728,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="c8">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.8</span> Obesidade</div><h3>Obesidade infantil primária <span class="ank ank-hy">HIGH-YIELD</span></h3><div class="card-sub">Doença crônica, tratada cedo e com intensidade</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">MS/OMS: obesidade = <b>IMC/I &gt;+2 escore-Z</b> (5–19 anos) ou <b>&gt;+3</b> (0–5 anos). AAP/CDC (≥2 anos): sobrepeso p85–&lt;p95, obesidade ≥p95, obesidade grave ≥120% do p95. Tratamento: intervenção comportamental intensiva centrada na família (≥26 h em 3–12 meses), sem "espera vigilante"; farmacoterapia ≥12 anos; bariátrica no adolescente com obesidade grave.</div></div>
@@ -741,7 +760,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="c9">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.9</span> Obesidade</div><h3>Comorbidades cardiometabólicas da obesidade <span class="ank ank-dec">DECISION</span></h3><div class="card-sub">Síndrome metabólica, MASLD, pré-diabetes/DM2, dislipidemia, hipertensão</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">≥10 anos com obesidade: <b>perfil lipídico, glicemia de jejum/HbA1c (ou TOTG) e ALT</b>; com sobrepeso: lipídios e, se fatores de risco, glicose e ALT. 2–9 anos com obesidade: pode-se pedir lipídios. <b>PA em toda consulta a partir de 3 anos</b>. Síndrome metabólica só se diagnostica a partir dos 10 anos (IDF).</div></div>
@@ -760,7 +779,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="c10">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.10</span> Carências</div><h3>Deficiência de ferro e anemia ferropriva <span class="ank ank-evo">EVOLVING</span></h3><div class="card-sub">SBP 2026: profilaxia em ciclos do PNSF e fim da triagem universal aos 12 meses</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Carência mais comum da infância (anemia em 19–35% das crianças de 6–24 meses no Brasil). Anemia OMS 2024: <b>Hb &lt;10,5 g/dL (6–23 meses)</b>, &lt;11,0 (24–59 meses), &lt;11,5 (5–11 anos). Ferropenia: <b>ferritina &lt;12 µg/L</b> (&lt;30 com PCR alta) em &lt;5 anos. Tratar com <b>3–6 mg/kg/dia de ferro elementar por 3–6 meses</b>.</div></div>
@@ -784,7 +803,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="c11">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.11</span> Carências</div><h3>Hipovitaminose D e raquitismo nutricional <span class="ank ank-hy">HIGH-YIELD</span></h3><div class="card-sub">Prevenir é barato; tratar exige dose, cálcio e controle</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Profilaxia SBP 2024: <b>400 UI/dia &lt;1 ano, 600 UI/dia 1–18 anos</b>, 1.200–1.800 UI/dia nos grupos de risco; não indicada em lactente com ≥1.000 mL/dia de fórmula fortificada. Sem dosagem de rotina. Raquitismo: fosfatase alcalina e PTH altos, P baixo, Ca normal ou baixo, metáfises alargadas "em taça".</div></div>
@@ -813,9 +832,9 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <div class="section-eyebrow"><span>D</span> Entidades Secundárias</div>
 <div class="section-title">O que completa o diferencial — e as complicações do próprio tratamento</div>
 <div class="section-sub">Seis boxes agrupados: obesidade secundária, vitamina A, outras carências, as síndromes de realimentação e de recuperação, a nutrição do prematuro após a alta e as dificuldades alimentares.</div>
-</div>
+</div><!--hp-f2--><nav class="sec-idx" aria-label="Neste capítulo"><a href="#d1"><b>D.1</b>Obesidade secundária — endócr…</a><a href="#d2"><b>D.2</b>Hipovitaminose A, xeroftalmia…</a><a href="#d3"><b>D.3</b>Outras carências — zinco, fol…</a><a href="#d4"><b>D.4</b>Síndrome de realimentação e s…</a><a href="#d5"><b>D.5</b>Nutrição do prematuro e do RN…</a><a href="#d6"><b>D.6</b>Dificuldades alimentares — tr…</a></nav><!--/hp-f2-->
 
-<div class="card diag">
+<div class="card diag" id="d1">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">D.1</span> Obesidade</div><h3>Obesidade secundária — endócrina, monogênica, sindrômica e hipotalâmica <span class="ank ank-dec">DECISION</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">&lt;5–10% dos casos. Suspeitar se <b>baixa estatura ou velocidade de crescimento caindo</b>, obesidade grave antes dos 5 anos com hiperfagia intensa, atraso do desenvolvimento, dismorfias, alterações visuais ou auditivas, hipogonadismo, ou ganho explosivo após lesão ou cirurgia hipotalâmica.</div></div>
@@ -843,7 +862,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card diag">
+<div class="card diag" id="d2">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">D.2</span> Carências</div><h3>Hipovitaminose A, xeroftalmia e o PNSVA</h3></div>
 <div class="card-body">
 <div class="disease">
@@ -859,7 +878,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card diag">
+<div class="card diag" id="d3">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">D.3</span> Carências</div><h3>Outras carências — zinco, folato, B12, vitamina C, tiamina, iodo, vitamina K</h3></div>
 <div class="card-body">
 <div class="disease">
@@ -876,7 +895,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card tx">
+<div class="card tx" id="d4">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">D.4</span> Complicações</div><h3>Síndrome de realimentação e síndrome de recuperação nutricional <span class="ank ank-dgr">DANGER</span></h3></div>
 <div class="card-body">
 <div class="disease">
@@ -891,7 +910,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card tx">
+<div class="card tx" id="d5">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">D.5</span> Prematuro</div><h3>Nutrição do prematuro e do RN de baixo peso após a alta</h3></div>
 <div class="card-body">
 <div class="disease">
@@ -906,7 +925,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card diag">
+<div class="card diag" id="d6">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">D.6</span> Comportamento</div><h3>Dificuldades alimentares — transtorno alimentar pediátrico, seletividade e ARFID</h3></div>
 <div class="card-body">
 <div class="disease">
@@ -929,7 +948,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <div class="section-sub">Uma árvore só, que começa pela pergunta que separa os caminhos: a criança está em perigo agora? Depois: magra, baixa ou com excesso de peso?</div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="e1">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">E.1</span> Algoritmo</div><h3>Criança com peso fora do esperado <span class="ank ank-dec">DECISION</span></h3></div>
 <div class="card-body">
 <div class="algo"><div class="tree">
@@ -984,13 +1003,13 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <div class="section-eyebrow"><span>F</span> Tratamento Integrado</div>
 <div class="section-title">F1 · Estratégia por entidade · F2 · Doses operacionais</div>
 <div class="section-sub">Doses pediátricas sempre em mg/kg (ou UI por faixa etária) com teto quando ele existe. Onde a SBP 2026, a AAP 2023 ou a OMS 2023 mudaram a conduta da apostila, a dose vigente está aqui e a divergência está no NOTAS.</div>
-</div>
+</div><!--hp-f2--><nav class="sec-idx" aria-label="Neste capítulo"><a href="#f1"><b>F.1</b>Escadas terapêuticas por enti…</a><a href="#f2"><b>F.2</b>Tabela de doses — nutrição pe…</a></nav><!--/hp-f2-->
 
-<div class="card tx">
+<div class="card tx" id="f1">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">F.1</span> Estratégia</div><h3>Escadas terapêuticas por entidade <span class="ank ank-dec">DECISION</span></h3></div>
 <div class="card-body">
 
-<div class="sub-title">F1.1 · Aleitamento e intercorrências mamárias</div>
+<div class="sub-title" id="f1-1">F1.1 · Aleitamento e intercorrências mamárias</div>
 <ul class="bullets">
 <li><b>Primeira linha sempre:</b> observar a mamada, corrigir posição e pega, livre demanda 8–12 vezes/dia, sem horário rígido, sem chupeta e mamadeira nas primeiras semanas, esvaziar uma mama antes de oferecer a outra.</li>
 <li><b>Perda ponderal excessiva no RN (&gt;10%) ou sem recuperação no 14º dia:</b> mamadas a cada 2–3 h (acordar se preciso), ordenha após mamadas com oferta do leite ordenhado em copo; fórmula como complemento só se o leite ordenhado não basta; retorno em 48–72 h com peso.</li>
@@ -1002,7 +1021,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </ul>
 <div class="box decision"><span class="box-label">DECISION</span><div class="box-title">Fórmula como complemento não é derrota, mas tem custo</div><div class="box-body">Cada mamadeira de fórmula substitui uma mamada e reduz o estímulo de esvaziamento, o que retroalimenta a queda de produção. Quando o complemento é necessário (perda &gt;10%, hipoglicemia, desidratação), prefira leite ordenhado, ofereça em copo ou sonda na mama (relactação) e programe a retirada assim que o ganho de peso normalizar.</div></div>
 
-<div class="sub-title">F1.2 · Alimentação complementar e alimentação sem leite materno</div>
+<div class="sub-title" id="f1-2">F1.2 · Alimentação complementar e alimentação sem leite materno</div>
 <ul class="bullets">
 <li><b>Amamentado:</b> leite materno sob livre demanda + complementar aos 6 meses (1 papa + 2 frutas → 2 papas + 2 frutas aos 7–8 meses → comida da família aos 12 meses), água desde o início.</li>
 <li><b>Não amamentado &lt;12 meses:</b> fórmula infantil de partida até 6 meses e de seguimento de 6 a 12 meses, preparada exatamente como o rótulo (diluição errada é causa de hipernatremia e de desnutrição).</li>
@@ -1018,7 +1037,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <div class="stbl-row stbl-3"><div class="col col1" data-l="Idade">&gt;4–6 meses</div><div class="col" data-l="Volume">180–200 mL</div><div class="col" data-l="Refeições">2 a 3 + alimentação complementar quando iniciada</div></div>
 </div>
 
-<div class="sub-title">F1.3 · Desnutrição grave</div>
+<div class="sub-title" id="f1-3">F1.3 · Desnutrição grave</div>
 <ul class="bullets">
 <li><b>Sem complicação, com apetite (&gt;6 meses):</b> ambulatório — RUTF 150–200 kcal/kg/dia, amoxicilina VO por 5–7 dias, vacinas em dia, retorno semanal com peso, PB e edema; alta do programa com P/E ≥−2 ou PB ≥125 mm sem edema por 2 semanas.</li>
 <li><b>Complicada (dias 1–7):</b> 10 passos — glicose, aquecimento, ReSoMal (IV só no choque), K e Mg, antibiótico IV, micronutrientes sem ferro, F-75 130 mL/kg/dia em 12 → 8 → 6 refeições.</li>
@@ -1028,7 +1047,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </ul>
 <div class="box danger"><span class="box-label">DANGER</span><div class="box-title">Choque no desnutrido: o algoritmo do PALS não se aplica</div><div class="box-body">15 mL/kg em 1 hora de Ringer lactato com glicose 5% (ou SF 0,45% com glicose 5%), FC e FR a cada 5–10 min. Melhorou → repetir 15 mL/kg em 1 h e passar a ReSoMal VO/SNG 10 mL/kg/h. Não melhorou → é choque séptico: sangue total 10 mL/kg em 3 h (ou CH), antibiótico de amplo espectro, manutenção 4 mL/kg/h, vasopressor em ambiente de UTI. Piora respiratória ou hepatomegalia crescente → parar fluido.</div></div>
 
-<div class="sub-title">F1.4 · Desnutrição moderada e faltering weight</div>
+<div class="sub-title" id="f1-4">F1.4 · Desnutrição moderada e faltering weight</div>
 <ul class="bullets">
 <li><b>Calorias primeiro:</b> recomendação forte da AAP 2026 em perda instável — aumentar energia, não manter. Meta prática: (necessidade calórica para a idade × peso ideal para a estatura) / peso atual.</li>
 <li><b>Lactente em fórmula:</b> concentração gradual (ex.: de 0,67 para 0,8–1 kcal/mL) sob orientação, monitorando osmolaridade e diurese; lactente amamentado: técnica, frequência, leite posterior, ordenha.</li>
@@ -1037,7 +1056,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <li><b>Moderada OMS em contexto de risco:</b> alimentos especialmente formulados (RUSF, farinhas fortificadas) e apoio social.</li>
 </ul>
 
-<div class="sub-title">F1.5 · Obesidade — tratamento escalonado</div>
+<div class="sub-title" id="f1-5">F1.5 · Obesidade — tratamento escalonado</div>
 <ul class="bullets">
 <li><b>Todos:</b> abordagem familiar, sem estigma, entrevista motivacional; metas simples e mensuráveis: zerar bebidas açucaradas e sucos, ≥5 porções de frutas e hortaliças/dia, refeições à mesa sem tela, sono 9–12 h (6–12 anos) e 8–10 h (adolescentes), ≥60 min/dia de atividade física.</li>
 <li><b>Intensidade:</b> programa comportamental intensivo centrado na família, ≥26 horas de contato em 3–12 meses (AAP 2023, recomendação forte); no SUS, equipe multiprofissional da APS e linha de cuidado de sobrepeso e obesidade.</li>
@@ -1045,14 +1064,14 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <li><b>Comorbidade presente:</b> tratar ao mesmo tempo (metformina na pré-diabetes/DM2, abordagem da MASLD, PA, apneia).</li>
 </ul>
 
-<div class="sub-title">F1.6 · Obesidade — farmacoterapia e cirurgia no adolescente</div>
+<div class="sub-title" id="f1-6">F1.6 · Obesidade — farmacoterapia e cirurgia no adolescente</div>
 <ul class="bullets">
 <li><b>Farmacoterapia (≥12 anos com IMC ≥p95):</b> oferecer como adjuvante do tratamento comportamental, não como substituto (AAP 2023, KAS 12). Primeira escolha prática: agonista de GLP-1 com indicação em bula para adolescentes (semaglutida 2,4 mg semanal; liraglutida 3,0 mg diária). Orlistate é pouco tolerado. Metformina não é antiobesidade, mas ajuda na resistência insulínica. Setmelanotida só nas obesidades monogênicas específicas e Bardet-Biedl.</li>
 <li><b>Bariátrica (AAP 2023, KAS 13):</b> encaminhar para avaliação adolescentes ≥13 anos com obesidade classe 2 com comorbidade ou classe 3, a centros pediátricos multiprofissionais. <b>Brasil (CFM 2.429/2025):</b> 16–18 anos com os critérios do adulto; 14–16 anos só em casos excepcionais com IMC &gt;40 kg/m² e complicações com risco de vida, maturidade, consentimento dos responsáveis. Gastrectomia vertical é a técnica mais usada; exigir suplementação vitamínica por toda a vida.</li>
 </ul>
 <div class="box hy"><span class="box-label">HIGH-YIELD</span><div class="box-title">AAP 2023 acabou com a "espera vigilante"</div><div class="box-body">Até 2023, a orientação era observar e aconselhar e só intensificar se falhasse. A diretriz atual diz o contrário: obesidade é doença crônica com tratamento precoce e intensivo; atrasar não protege a criança, só deixa a doença progredir. Em prova: "tratar desde o diagnóstico, com intensidade proporcional à gravidade".</div></div>
 
-<div class="sub-title">F1.7 · Ferro — profilaxia e tratamento</div>
+<div class="sub-title" id="f1-7">F1.7 · Ferro — profilaxia e tratamento</div>
 <ul class="bullets">
 <li><b>Termo AIG (SBP 2026 = PNSF 2022):</b> ferro elementar 10–12,5 mg/dia, dose fixa, em 2 ciclos de 3 meses com pausa de 3 meses, iniciados preferencialmente aos 6 e aos 12 meses.</li>
 <li><b>Prematuro e/ou BPN:</b> 2–4 mg/kg/dia a partir de 30 dias até 1 ano (conforme faixa de peso), depois 1 mg/kg/dia contínuo de 12 a 24 meses pelo peso atual.</li>
@@ -1061,7 +1080,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <li><b>Efeitos adversos:</b> fezes escuras (esperado), dor epigástrica, constipação, manchas dentárias (escovar ou dar com seringa no fundo da boca); intoxicação acidental por ferro é emergência (&gt;20 mg/kg de ferro elementar → avaliação).</li>
 </ul>
 
-<div class="sub-title">F1.8 · Vitamina D, vitamina A e outras carências</div>
+<div class="sub-title" id="f1-8">F1.8 · Vitamina D, vitamina A e outras carências</div>
 <ul class="bullets">
 <li><b>Vitamina D profilática:</b> 400 UI/dia desde a 1ª semana até 1 ano, 600 UI/dia de 1 a 18 anos; grupos de risco 1.200–1.800 UI/dia; prematuro a partir de 1.500 g com dieta plena; dispensável com ≥1.000 mL/dia de fórmula.</li>
 <li><b>Raquitismo:</b> D3 diário em dose terapêutica por 6–12 semanas + cálcio elementar 500 mg/dia por 2–4 semanas; manutenção 400–600 UI/dia; controle trimestral.</li>
@@ -1070,7 +1089,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <li><b>Zinco, B12, vitamina C:</b> F2; corrigir também a causa (dieta, mãe vegana, má absorção).</li>
 </ul>
 
-<div class="sub-title">F1.9 · Monitoramento da resposta e populações especiais</div>
+<div class="sub-title" id="f1-9">F1.9 · Monitoramento da resposta e populações especiais</div>
 <ul class="bullets">
 <li><b>Desnutrição grave internada:</b> peso diário (ganho &gt;10 g/kg/dia = bom; 5–10 = moderado, revisar oferta; &lt;5 = ruim, procurar infecção oculta, TB, HIV, erro de preparo da dieta), FR e FC a cada 4 h na transição, edema e glicemia diários na primeira semana, P, K e Mg nos dias 1–5.</li>
 <li><b>Faltering weight:</b> peso a cada 1–2 semanas no lactente e a cada 4 semanas no pré-escolar; meta mínima de recuperar a velocidade de ganho para a idade e não perder escore-Z; sem resposta em 4–8 semanas de aporte comprovado, reavaliar diagnóstico.</li>
@@ -1083,7 +1102,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card tx">
+<div class="card tx" id="f2">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">F.2</span> Doses Operacionais</div><h3>Tabela de doses — nutrição pediátrica <span class="ank ank-dgr">DANGER</span></h3></div>
 <div class="card-body">
 <div class="stbl stbl-4">
@@ -1127,7 +1146,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <div class="stbl-row stbl-4"><div class="col col1" data-l="Fármaco">Cabergolina (inibição da lactação)</div><div class="col" data-l="Dose">1 mg VO dose única (primária) · 0,25 mg 12/12 h por 2 dias (estabelecida)</div><div class="col" data-l="Teto · duração">—</div><div class="col" data-l="Notas">HIV, HTLV, óbito neonatal; evitar em pré-eclâmpsia grave/HAS não controlada</div></div>
 </div>
 
-<div class="sub-title">F2.1 · Cenários — caso → conduta certa → erro típico</div>
+<div class="sub-title" id="f2-1">F2.1 · Cenários — caso → conduta certa → erro típico</div>
 <div class="stbl stbl-3">
 <div class="stbl-head stbl-3"><div>Caso</div><div>Conduta certa</div><div>Erro típico</div></div>
 <div class="stbl-row stbl-3"><div class="col col1" data-l="Caso">Lactente de 9 meses com kwashiorkor, Na 128 mEq/L, K 2,8 mEq/L, sem choque</div><div class="col" data-l="Conduta certa">ReSoMal VO/SNG, K e Mg orais, F-75 100 mL/kg/dia (edema), antibiótico, sem ferro</div><div class="col" data-l="Erro típico">Corrigir sódio com SF 0,9% ou NaCl 3% e dar albumina para o edema</div></div>
@@ -1153,7 +1172,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <div class="section-sub">Os erros de nutrição pediátrica raramente são dramáticos no dia; aparecem como anemia aos 18 meses, desmame aos 2 meses e uma criança desnutrida que piora no hospital.</div>
 </div>
 
-<div class="card pearl">
+<div class="card pearl" id="g1">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">G.1</span> Pegadinhas</div><h3>10 erros operacionais em nutrição pediátrica <span class="ank ank-dgr">DANGER</span></h3></div>
 <div class="card-body">
 <div class="stbl stbl-2">
@@ -1172,7 +1191,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card pearl">
+<div class="card pearl" id="g2">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">G.2</span> Mitos · Controvérsias</div><h3>Mitos vivos e debates atuais</h3></div>
 <div class="card-body">
 <div class="box myth"><span class="box-label">MYTH</span><div class="box-title">"Leite fraco" e "pouco leite" são frequentes</div><div class="box-body">A hipogalactia primária é rara; a mãe em AME produz em média ~800 mL/dia, o bastante para gêmeos. A queixa quase sempre traduz pega ineficaz, mamadas pouco frequentes, complemento que reduz o estímulo ou interpretação errada do choro. O único juiz é o ganho de peso.</div></div>
@@ -1192,7 +1211,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <div class="section-sub">O que distingue o pediatra que lê a curva do que só plota pontos.</div>
 </div>
 
-<div class="card pearl">
+<div class="card pearl" id="h1">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">H.1</span> Pearls</div><h3>8 nuances que distinguem o expert</h3></div>
 <div class="card-body">
 <div class="box pearl"><span class="box-label">PEARL</span><div class="box-title">A sonolência é o único sinal de hipoglicemia no desnutrido</div><div class="box-body">Sem reserva adrenérgica e com resposta contrarreguladora embotada, o desnutrido grave não sua nem treme; fica quieto e frio. Por isso a glicemia capilar é feita na chegada, e a alimentação de 2/2 h começa antes de qualquer exame — incluindo a madrugada, quando a maioria das mortes evitáveis acontece.</div></div>
@@ -1206,7 +1225,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card pearl">
+<div class="card pearl" id="h2">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">H.2</span> Evolving</div><h3>5 paradigmas em mudança — nutrição pediátrica 2023–2026</h3></div>
 <div class="card-body">
 <div class="box evolving"><span class="box-label">EVOLVING</span><div class="box-title">SBP 2026 reescreve a profilaxia de ferro</div><div class="box-body">A Diretriz nº 32 (17/03/2026) adotou o esquema do PNSF para o termo AIG (10–12,5 mg/dia em ciclos aos 6 e 12 meses), manteve 2–4 mg/kg/dia no prematuro/BPN com 1 mg/kg/dia de 12 a 24 meses, retirou a triagem universal aos 12 meses, incorporou os pontos de corte OMS 2024 de hemoglobina e ferritina ajustada pela PCR e reduziu a duração mínima do tratamento para 3 meses.</div></div>
@@ -1253,5 +1272,36 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <a class="to-top" href="#" aria-label="Voltar ao topo">↑</a>
 <div class="watermark">@dr.lorencato · PD03 Nutrição v5.2</div>
 
-</body>
+<!--hp-f2--><script>(function(){var d=document,M=d.querySelector('main');if(!M)return;
+var SELF='PD03',HP=' CT01 CT02 CT03 CT04 CT05 CT06 CT08 CT10 CV01 CV03 CV04 CV05 CV06 CV07 CV08 EN01 EN02 EN03 EN04 EN06 EN07 GH01 GH02 GH03 GH05 GH06 GH07 GH08 GH09 GH10 GO01 GO02 GO03 GO04 GO09 GO10 GO11 GO12 GO13 GO14 HO01 HO02 HO03 HO04 HO05 HO06 II01 II02 II03 II04 II07 II08 NE01 NE02 NE03 NE04 NE05 NE06 NE07 NE08 NU01 NU02 NU03 NU04 NU05 OE01 OE02 PC01 PC02 PC03 PC04 PC05 PC06 PD01 PD02 PD03 PD04 PD05 PD06 PD07 PD08 PD09 PD10 RD01 RD02 RD03 RD04 RD05 RD07 RP01 RP02 RP03 RP04 ';
+var SK='A,H1,H2,H3,SCRIPT,STYLE,NAV,.card-num,.card-eyebrow,.sub-title,.disease-tag,.toc';
+var R=/\b(?:([A-H])(\d)?\.(\d{1,2}[a-c]?)|(CV|RP|GH|NE|EN|NU|HO|II|RD|GO|PD|PC|CT|OE)(\d\d))\b/g;
+function skip(n){for(var e=n.parentNode;e&&e!==M;e=e.parentNode)if(e.matches&&e.matches(SK))return 1;return 0}
+var w=d.createTreeWalker(M,4),t,L=[];while(t=w.nextNode())if(R.test(t.data)&&!skip(t))L.push(t);
+L.forEach(function(t){var s=t.data,f=d.createDocumentFragment(),i=0,m;R.lastIndex=0;
+while(m=R.exec(s)){var h=null;
+if(m[1]){var id=m[1].toLowerCase()+(m[2]?m[2]+'-':'')+m[3];if(d.getElementById(id))h='#'+id}
+else{var x=m[4]+m[5];if(x!==SELF&&HP.indexOf(' '+x+' ')>=0)h='../'+x+'/'+x+'.html'}
+if(!h)continue;f.appendChild(d.createTextNode(s.slice(i,m.index)));
+var a=d.createElement('a');a.href=h;a.className='xr';a.textContent=m[0];f.appendChild(a);i=R.lastIndex}
+if(i){f.appendChild(d.createTextNode(s.slice(i)));t.parentNode.replaceChild(f,t)}});
+function nz(s){return s.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'')}
+var q=d.querySelector('.hp-q'),n=d.querySelector('.hp-n'),it=M.querySelectorAll('.card,.pocket-card'),T;
+function clr(){M.querySelectorAll('.q-off').forEach(function(e){e.classList.remove('q-off')})}
+function run(){var v=nz(q.value.trim());clr();n.textContent='';if(v.length<2)return;var k=0;
+it.forEach(function(c){if(nz(c.textContent).indexOf(v)<0){c.classList.add('q-off');return}k++;
+var r=c.querySelectorAll('.stbl-row,.disease-row,.score-row'),h=[];r.forEach(function(x){if(nz(x.textContent).indexOf(v)>=0)h.push(x)});
+if(h.length)r.forEach(function(x){if(h.indexOf(x)<0)x.classList.add('q-off')});
+c.querySelectorAll('details').forEach(function(x){if(nz(x.textContent).indexOf(v)>=0)x.open=true})});
+M.querySelectorAll('section').forEach(function(s){if(!s.querySelector('.card:not(.q-off),.pocket-card:not(.q-off)'))s.classList.add('q-off')});
+n.textContent=k?k+' achado'+(k>1?'s':''):'nada'}
+if(q){q.addEventListener('input',function(){clearTimeout(T);T=setTimeout(run,180)});
+q.addEventListener('keydown',function(e){if(e.key==='Escape'){q.value='';run()}})}
+function tg(b,f){b.addEventListener('click',function(){var on=b.getAttribute('aria-pressed')!=='true';b.setAttribute('aria-pressed',on);f(on)})}
+var bd=d.querySelector('.hp-dz'),bo=d.querySelector('.hp-op');
+if(bd)tg(bd,function(on){d.body.classList.toggle('dz',on);if(on)d.getElementById('tratamento').scrollIntoView()});
+if(bo)tg(bo,function(on){M.querySelectorAll('details').forEach(function(x){x.open=on})});
+var P=[];addEventListener('beforeprint',function(){P=[];M.querySelectorAll('details:not([open])').forEach(function(x){P.push(x);x.open=true})});
+addEventListener('afterprint',function(){P.forEach(function(x){x.open=false})});
+})();</script><!--/hp-f2--></body>
 </html>

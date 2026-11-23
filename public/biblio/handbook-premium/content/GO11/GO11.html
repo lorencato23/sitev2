@@ -345,13 +345,32 @@ ul.bullets li b{color:var(--ink);font-weight:600}
   .pocket .pocket-card.tx{--accent:#a8481a}
   .pocket .pocket-card.clin{--accent:#0b5d4e}
 }
+
+/* === v5.2.2 · fase 2 (navegação) === */
+.hp-tools{display:flex;gap:6px;align-items:center;flex:none;order:1;margin-left:auto;padding-left:6px;position:sticky;right:0;background:#f1eee5;box-shadow:-10px 0 10px -4px #f1eee5,16px 0 0 #f1eee5}
+@media(min-width:900px){html{scroll-padding-top:150px}.toc-inner{flex-wrap:wrap;overflow:visible}.card[id],.sub-title[id]{scroll-margin-top:150px}}
+@media(max-width:899px){.hp-b,.hp-n{display:none}.hp-q{width:104px}}
+.hp-q{width:128px;font:500 12px/1 'DM Sans',system-ui,sans-serif;padding:7px 11px;border:1px solid var(--line-strong);border-radius:999px;background:var(--paper);color:var(--ink)}
+.hp-b{font:600 11px/1 'DM Sans',system-ui,sans-serif;letter-spacing:.05em;text-transform:uppercase;padding:7px 10px;border-radius:999px;border:1px solid var(--line-strong);background:var(--paper);color:var(--ink-soft);cursor:pointer;white-space:nowrap}
+.hp-b[aria-pressed=true]{background:var(--ink);color:#fff;border-color:var(--ink)}
+.hp-n{font:600 11px/1 'DM Mono',monospace;color:var(--ink-mute);white-space:nowrap}
+.sec-idx{display:flex;flex-wrap:wrap;gap:6px;margin:12px 0 20px}
+.sec-idx a{font:500 12px/1.25 'DM Sans',system-ui,sans-serif;padding:6px 10px;border-radius:999px;background:var(--paper);border:1px solid var(--line);color:var(--ink-soft);text-decoration:none}
+.sec-idx a:hover{border-color:var(--line-strong);color:var(--ink)}
+.sec-idx b{color:var(--c-prim);margin-right:5px;font-weight:700}
+a.xr{color:inherit;text-decoration:underline dotted;text-underline-offset:2px}
+a.xr:hover{color:var(--c-prim)}
+.card[id],.sub-title[id]{scroll-margin-top:110px}
+.q-off{display:none!important}
+body.dz main section:not(#tratamento){display:none}
+@media print{.hp-tools,.sec-idx,.toc-doses{display:none!important}}
 </style>
 </head>
 <body>
 
 <header class="header"><div class="header-row"><div class="h-mark">P</div><div class="h-titles"><div class="h-title">Parto, Prematuridade e RPM · Pocket Handbook</div><div class="h-sub">Elite edition · Obstetrícia clínica · GO11</div></div><div class="h-author">@dr.lorencato</div><div class="h-edition">v5.2</div></div></header>
 
-<nav class="toc"><div class="toc-inner"><a href="#pocket" class="toc-chip"><span class="toc-chip-num">0</span>Pocket</a><a href="#redflags" class="toc-chip"><span class="toc-chip-num">A</span>Red Flags</a><a href="#approach" class="toc-chip"><span class="toc-chip-num">B</span>Apresentação</a><a href="#primarias" class="toc-chip"><span class="toc-chip-num">C</span>Entidades</a><a href="#secundarias" class="toc-chip"><span class="toc-chip-num">D</span>Secundárias</a><a href="#algoritmo" class="toc-chip"><span class="toc-chip-num">E</span>Algoritmo</a><a href="#tratamento" class="toc-chip"><span class="toc-chip-num">F</span>Tratamento</a><a href="#pitfalls" class="toc-chip"><span class="toc-chip-num">G</span>Pitfalls</a><a href="#pearls" class="toc-chip"><span class="toc-chip-num">H</span>Pearls</a></div></nav>
+<nav class="toc"><div class="toc-inner"><!--hp-f2--><span class="hp-tools"><input class="hp-q" type="search" placeholder="Buscar no HP" aria-label="Buscar no HP"><button class="hp-b hp-dz" type="button" aria-pressed="false">Só doses</button><button class="hp-b hp-op" type="button" aria-pressed="false">Abrir tudo</button><span class="hp-n" aria-live="polite"></span></span><!--/hp-f2--><a href="#pocket" class="toc-chip"><span class="toc-chip-num">0</span>Pocket</a><a href="#redflags" class="toc-chip"><span class="toc-chip-num">A</span>Red Flags</a><a href="#approach" class="toc-chip"><span class="toc-chip-num">B</span>Apresentação</a><a href="#primarias" class="toc-chip"><span class="toc-chip-num">C</span>Entidades</a><a href="#secundarias" class="toc-chip"><span class="toc-chip-num">D</span>Secundárias</a><a href="#algoritmo" class="toc-chip"><span class="toc-chip-num">E</span>Algoritmo</a><a href="#tratamento" class="toc-chip"><span class="toc-chip-num">F</span>Tratamento</a><!--hp-f2--><a href="#f2" class="toc-chip toc-doses"><span class="toc-chip-num">Rx</span>Doses</a><!--/hp-f2--><a href="#pitfalls" class="toc-chip"><span class="toc-chip-num">G</span>Pitfalls</a><a href="#pearls" class="toc-chip"><span class="toc-chip-num">H</span>Pearls</a></div></nav>
 
 <main>
 <div class="wrap">
@@ -415,7 +434,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <section id="redflags">
 <div class="section"><div class="section-eyebrow"><span>A</span> Red Flags</div><div class="section-title">Seis situações em que o parto deixa de ser espera e vira decisão em minutos</div><div class="section-sub">A assistência ao parto é feita de observação paciente, mas existem sinais que não toleram expectante: cada linha abaixo é sinal objetivo, suspeita e conduta imediata. A conduta definitiva de sofrimento fetal, HPP e sangramento vive nos HPs vizinhos (GO14, GO12).</div></div>
 
-<div class="card emerg">
+<div class="card emerg" id="a1">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">A.1</span> Emergências</div><h3>Sinais de alarme na sala de parto <span class="ank ank-dgr">DANGER</span></h3></div>
 <div class="card-body">
 <div class="mnemo">
@@ -452,7 +471,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <section id="approach">
 <div class="section"><div class="section-eyebrow"><span>B</span> Por Apresentação</div><div class="section-title">Mapa sindrômico: cinco queixas que chegam à maternidade</div><div class="section-sub">A porta de entrada é a queixa, não o diagnóstico. Cada padrão leva a um ramo do HP: a idade gestacional e o estado das membranas organizam quase todas as decisões.</div></div>
 
-<div class="card clin">
+<div class="card clin" id="b1">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">B.1</span> Padrão 1</div><h3>Contrações regulares com colo que muda <span class="ank ank-hy">HIGH-YIELD</span></h3><div class="card-sub">Parto, falso trabalho ou parto pré-termo?</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Primeiro a <b>idade gestacional</b> (datada por USG do 1º trimestre), depois <b>contrações com modificação cervical</b>. Menos de 37 semanas: trabalho de parto pré-termo (C.6), o que muda tudo (corticoide, magnésio, GBS, transferência). Contrações sem modificação cervical numa observação de 2 horas: falso trabalho (CID O47) e alta orientada, sem tocólise.</div></div>
@@ -463,7 +482,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card clin">
+<div class="card clin" id="b2">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">B.2</span> Padrão 2</div><h3>Perda de líquido pela vagina</h3><div class="card-sub">Rotura de membranas, urina ou corrimento?</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">A história típica de líquido claro que escorre acerta em cerca de 80% dos casos; o <b>especular estéril</b> confirma (líquido no fundo de saco ou saindo pelo colo, com Valsalva ou compressão do fundo). Dúvida: pH vaginal &gt;6,5 (nitrazina), cristalização em "folha de samambaia" ou imunoensaio (PAMG-1, IGFBP-1). A ultrassonografia com oligoâmnio reforça, mas um exame normal não exclui.</div></div>
@@ -474,7 +493,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card clin">
+<div class="card clin" id="b3">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">B.3</span> Padrão 3</div><h3>O trabalho de parto que não anda <span class="ank ank-dec">DECISION</span></h3><div class="card-sub">Lento, parado ou precipitado: os 5 Ps</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Antes de falar em cesárea, <b>definir a fase</b> (latente não é distocia), plotar o <b>partograma</b> e perguntar: é falta de força (<b>Poder</b>), é feto grande, defletido ou posterior (<b>Passageiro</b>), é bacia (<b>Passagem</b>), é posição materna ou o parto na cama (<b>Posição</b>), é medo, dor ou isolamento (<b>Psique</b>)? Falha de progresso é sinal, não diagnóstico.</div></div>
@@ -491,7 +510,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card clin">
+<div class="card clin" id="b4">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">B.4</span> Padrão 4</div><h3>Febre, taquicardia fetal ou líquido alterado durante o parto</h3><div class="card-sub">Infecção intra-amniótica, febre da peridural ou outra causa</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Febre materna é o indicador mais confiável de infecção na RPM; leucocitose isolada é fraca (corticoide e trabalho de parto elevam os leucócitos). <b>Dois critérios entre taquicardia materna, taquicardia fetal, útero doloroso, líquido fétido e leucocitose</b> sustentam o diagnóstico na ausência de febre. Peridural pode causar febre sem infecção; conduta é tratar quando o contexto sugere infecção, não esperar a cultura.</div></div>
@@ -502,7 +521,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card clin">
+<div class="card clin" id="b5">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">B.5</span> Padrão 5</div><h3>Apresentação que não é cefálica fletida, e cicatriz uterina</h3><div class="card-sub">Quando o parto vaginal exige condição, e quando exige cesárea</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Pélvica: <b>não há indicação absoluta de cesárea</b>, mas há risco quatro vezes maior de morbimortalidade perinatal no parto vaginal pélvico planejado (apostila); versão cefálica externa a partir de 36–37 semanas é opção (D.3). Transversa: cesárea. <b>Cicatriz segmentar única</b>, gestação a termo e cefálica: prova de trabalho de parto possível (C.5); cicatriz corporal: cesárea.</div></div>
@@ -515,9 +534,9 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </section>
 
 <section id="primarias">
-<div class="section"><div class="section-eyebrow"><span>C</span> Entidades Primárias</div><div class="section-title">Dez entidades que ocupam do primeiro período do parto à bolsa rota</div><div class="section-sub">O parto normal e a assistência abrem o capítulo; seguem o partograma e as distocias, a indução, a distocia de ombro e a cesárea; a prematuridade vem com a tocólise e depois com o corticoide e o magnésio; a RPM, a corioamnionite e o GBS fecham a lista. As frases de MS, OMS e ACOG aparecem com rótulo quando divergem.</div></div>
+<div class="section"><div class="section-eyebrow"><span>C</span> Entidades Primárias</div><div class="section-title">Dez entidades que ocupam do primeiro período do parto à bolsa rota</div><div class="section-sub">O parto normal e a assistência abrem o capítulo; seguem o partograma e as distocias, a indução, a distocia de ombro e a cesárea; a prematuridade vem com a tocólise e depois com o corticoide e o magnésio; a RPM, a corioamnionite e o GBS fecham a lista. As frases de MS, OMS e ACOG aparecem com rótulo quando divergem.</div></div><!--hp-f2--><nav class="sec-idx" aria-label="Neste capítulo"><a href="#c1"><b>C.1</b>Parto normal: períodos, assis…</a><a href="#c2"><b>C.2</b>Partograma e distocias de dil…</a><a href="#c3"><b>C.3</b>Indução do parto: Bishop, mis…</a><a href="#c4"><b>C.4</b>Distocia de ombro: relógio, s…</a><a href="#c5"><b>C.5</b>Cesárea: indicações, Robson e…</a><a href="#c6"><b>C.6</b>Trabalho de parto prematuro e…</a><a href="#c7"><b>C.7</b>Corticoide antenatal e sulfat…</a><a href="#c8"><b>C.8</b>Rotura prematura de membranas…</a><a href="#c9"><b>C.9</b>Corioamnionite (infecção intr…</a><a href="#c10"><b>C.10</b>Estreptococo do grupo B no pa…</a></nav><!--/hp-f2-->
 
-<div class="card prim">
+<div class="card prim" id="c1">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.1</span> Parto normal</div><h3>Parto normal: períodos, assistência e conduta ativa do terceiro período <span class="ank ank-hy">HIGH-YIELD</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">O parto tem <b>quatro períodos clínicos</b>: dilatação (latente e ativa), expulsão, secundamento (dequitação) e quarto período (primeira hora). A boa assistência é <b>vigilância com pouca intervenção</b>: acompanhante de livre escolha, líquidos claros, liberdade de posição, ausculta intermitente, partograma, sem enema, tricotomia, Kristeller, puxo dirigido nem episiotomia de rotina. No terceiro período, <b>ocitocina 10 UI IM</b> logo após o desprendimento, cordão clampeado só após 1 minuto e tração controlada. <b>O que muda conduta:</b> fator de risco muda o local e a vigilância (CTG contínua); sinal de falha de progresso muda para C.2; hemorragia no 3º ou 4º período muda para o GO14.</div></div>
@@ -553,7 +572,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="c2">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.2</span> Partograma e distocias</div><h3>Partograma e distocias de dilatação e de descida <span class="ank ank-dec">DECISION</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">O partograma é o gráfico que torna o parto <b>visível no tempo</b>. O MS (2017) adota o modelo da OMS com <b>linha de ação 4 horas à direita da linha de alerta</b>; a OMS (2018, mantida em 2025) <b>abandonou o limiar de 1 cm/h</b> e a linha de alerta como classificador e propõe o Labour Care Guide (LCG, 2020); o ACOG (2024) só diagnostica parada com ≥6 cm. Distocia não é diagnóstico final: é o convite para avaliar poder, passageiro, passagem e posição. <b>O que muda conduta:</b> fase latente prolongada não opera; fase ativa lenta com contração fraca recebe amniotomia e ocitocina; parada com desproporção recebe cesárea; parada da descida com cabeça baixa recebe fórcipe (GO14).</div></div>
@@ -589,7 +608,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="c3">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.3</span> Indução do parto</div><h3>Indução do parto: Bishop, misoprostol, Foley e ocitocina <span class="ank ank-dgr">DANGER</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Induzir é <b>antecipar o parto porque continuar a gravidez é pior</b>. Passos: confirmar a indicação e a IG, afastar contraindicação, avaliar o colo pelo <b>Bishop</b>, escolher o método (colo desfavorável pede <b>misoprostol ou Foley</b>; colo favorável aceita <b>ocitocina</b>), monitorar contração e BCF. Misoprostol e ocitocina nunca juntos (intervalo de 6 h pelo MS; 4 h pela apostila). Cicatriz uterina: Foley e ocitocina, sem misoprostol. <b>O que muda conduta:</b> Bishop &lt;6 exige maturação; taquissistolia ou categoria II/III exige parar o uterotônico; 48 h de misoprostol mais 12 h de ocitocina sem parto vaginal é falha de indução (MS 2022).</div></div>
@@ -626,7 +645,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="c4">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.4</span> Distocia de ombro</div><h3>Distocia de ombro: relógio, sequência e prevenção do dano <span class="ank ank-dgr">DANGER</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">É a impactação do <b>ombro anterior atrás da sínfise</b> depois do desprendimento da cabeça, sem que o corpo saia com a tração habitual. É imprevisível: a macrossomia, o diabetes e a obesidade aumentam o risco, mas a maioria dos casos ocorre sem fator. A primeira manobra é <b>McRoberts com pressão suprapúbica</b>, resolve a maior parte; depois rotações internas (Rubin II, Woods), remoção do braço posterior (Jacquemier) e posição de quatro apoios (Gaskin); Zavanelli, fratura de clavícula e sinfisiotomia são resgate. <b>O que muda conduta:</b> sem tração do pescoço, sem Kristeller; episiotomia só se ajudar o acesso para a manobra interna.</div></div>
@@ -662,7 +681,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="c5">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.5</span> Cesárea</div><h3>Cesárea: indicações, Robson e parto vaginal após cesárea <span class="ank ank-hy">HIGH-YIELD</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">A cesárea é o recurso mais eficiente para complicações do parto, mas tem <b>morbimortalidade materna maior</b> que o parto vaginal: a indicação precisa ser do caso. <b>Absolutas:</b> desproporção cefalopélvica, cicatriz uterina corporal, placenta prévia total, DPP com feto viável, situação transversa, herpes genital ativo, prolapso de cordão com feto viável fora do expulsivo. Quatro causas respondem por ~80%: falha de progressão (30%), cicatriz prévia (30%), apresentação anômala (11%) e sofrimento fetal (10%). A OMS desaconselha cesárea eletiva antes de 39 semanas. <b>O que muda conduta:</b> uma cicatriz segmentar única, feto cefálico e termo permitem tentar o parto vaginal; duas ou mais cicatrizes, cicatriz corporal ou rotura prévia mudam para cesárea.</div></div>
@@ -698,7 +717,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="c6">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.6</span> Trabalho de parto prematuro</div><h3>Trabalho de parto prematuro e tocólise <span class="ank ank-dec">DECISION</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Parto pré-termo é o que ocorre <b>antes de 37 semanas</b> (e depois do limite do abortamento, 20–22 semanas), em torno de 11% dos nascimentos no Brasil. Diagnóstico: <b>contrações com modificação do colo</b>, com observação para repetir o exame. O que melhora o desfecho neonatal é <b>corticoide, magnésio (&lt;32 semanas), antibiótico para GBS e transferência para UTI neonatal</b>; a tocólise, sozinha, não reduz a prematuridade: só compra 48 horas. <b>O que muda conduta:</b> membranas íntegras, até 4–5 cm e 24–34 semanas são elegíveis; corioamnionite, DPP, anomalia letal, vitalidade alterada, hemorragia instável, cardiopatia grave e pré-eclâmpsia grave contraindicam.</div></div>
@@ -735,7 +754,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="c7">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.7</span> Corticoide e neuroproteção</div><h3>Corticoide antenatal e sulfato de magnésio para neuroproteção <span class="ank ank-dec">DECISION</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">São as duas intervenções antenatais que <b>mudam o desfecho do prematuro</b>. Corticoide (betametasona 12 mg IM 24/24 h ×2, ou dexametasona 6 mg IM 12/12 h ×4) em <b>24–34 semanas</b> com parto previsto em até 7 dias; reduz mortalidade neonatal, síndrome de angústia respiratória, hemorragia intraventricular e enterocolite. Sulfato de magnésio em <b>≤31+6 semanas</b>, com parto provável nas próximas 24 h: <b>4 g IV em 20–30 min + 1 g/h</b>, no máximo 24 h; reduz paralisia cerebral. <b>O que muda conduta:</b> corioamnionite exclui o corticoide e não deve atrasar o parto; miastenia gravis exclui o magnésio; dilatação ≥4 cm (apostila) ou parto eletivo antes de 32 semanas indica o magnésio.</div></div>
@@ -772,7 +791,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="c8">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.8</span> Rotura prematura de membranas</div><h3>Rotura prematura de membranas: conduta por idade gestacional <span class="ank ank-dec">DECISION</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">RPM é a perda espontânea de líquido amniótico <b>antes do início do trabalho de parto</b>; é pré-termo (RPPM) se &lt;37 semanas. O diagnóstico é clínico (especular). A decisão se organiza pela <b>IG e pela infecção</b>: com infecção, parto em qualquer IG; ≥37 semanas, induzir; 34–36+6, parto como no termo (MS); 24–33+6, conduta expectante internada com corticoide e antibiótico de latência; &lt;24 semanas, decisão compartilhada. <b>O que muda conduta:</b> febre, taquicardia materna ou fetal, leucócitos &gt;20.000, ausência de movimentos respiratórios no perfil biofísico ou comprometimento da vitalidade encerram o expectante; toque vaginal só com decisão de parto.</div></div>
@@ -809,7 +828,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="c9">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.9</span> Corioamnionite</div><h3>Corioamnionite (infecção intra-amniótica) <span class="ank ank-dgr">DANGER</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Infecção do conteúdo uterino (membranas, líquido, feto), geralmente <b>ascendente</b>, na RPM, no trabalho de parto prolongado e no pré-termo. O diagnóstico é clínico: <b>febre materna ≥37,8 °C (apostila) ou dois entre taquicardia materna &gt;100, taquicardia fetal &gt;160, leucocitose &gt;15.000, útero doloroso, líquido fétido, PCR elevada</b>. A conduta tem dois pilares: <b>antibiótico imediato</b> (ampicilina + gentamicina) e <b>parto sem demora</b>, qualquer que seja a IG, preferindo a via vaginal. <b>O que muda conduta:</b> sem tocólise e sem corticoide antenatal; cesárea só por indicação obstétrica; vigiar endometrite e sepse no puerpério (GO14); avisar a pediatria.</div></div>
@@ -846,7 +865,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="c10">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.10</span> Estreptococo do grupo B</div><h3>Estreptococo do grupo B no parto: quem recebe antibiótico e qual <span class="ank ank-dec">DECISION</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Colonização retovaginal de 14–28% no Brasil. A prevenção da sepse neonatal precoce é pela <b>profilaxia intraparto</b>, não pelo tratamento da colonização na gravidez. Rastreio universal por cultura vaginal e anorretal a <b>36+0 a 37+6 semanas</b> (MS 2022; ACOG), válida por 5 semanas. <b>Indicam profilaxia:</b> cultura positiva, <b>GBS na urina em qualquer contagem</b> nesta gestação, RN anterior com doença por GBS e, sem cultura, <b>IG &lt;37 semanas, bolsa rota ≥18 h ou febre ≥38 °C</b>. <b>Penicilina G 5 milhões UI IV, depois 2,5 milhões UI a cada 4 h</b> até o nascimento. <b>O que muda conduta:</b> cesárea eletiva sem trabalho de parto e com membranas íntegras não recebe profilaxia de GBS (mantém a perioperatória); alergia define o plano B.</div></div>
@@ -884,9 +903,9 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </section>
 
 <section id="secundarias">
-<div class="section"><div class="section-eyebrow"><span>D</span> Entidades Secundárias</div><div class="section-title">Sete entidades que completam o parto, o períneo, a pelve e a prematuridade</div><div class="section-sub">Prevenção da prematuridade com colo curto, episiotomia e lacerações, apresentação pélvica, analgesia, trajeto e estática, prolapso de cordão e assistência ao parto pré-termo. Cada uma tem sua própria decisão; nenhuma foi fundida apenas por brevidade.</div></div>
+<div class="section"><div class="section-eyebrow"><span>D</span> Entidades Secundárias</div><div class="section-title">Sete entidades que completam o parto, o períneo, a pelve e a prematuridade</div><div class="section-sub">Prevenção da prematuridade com colo curto, episiotomia e lacerações, apresentação pélvica, analgesia, trajeto e estática, prolapso de cordão e assistência ao parto pré-termo. Cada uma tem sua própria decisão; nenhuma foi fundida apenas por brevidade.</div></div><!--hp-f2--><nav class="sec-idx" aria-label="Neste capítulo"><a href="#d1"><b>D.1</b>Colo curto, progesterona, cer…</a><a href="#d2"><b>D.2</b>Episiotomia seletiva e lacera…</a><a href="#d3"><b>D.3</b>Apresentação pélvica e versão…</a><a href="#d4"><b>D.4</b>Analgesia de parto: não farma…</a><a href="#d5"><b>D.5</b>Pelve, apresentação, variedad…</a><a href="#d6"><b>D.6</b>Prolapso e procidência do cor…</a><a href="#d7"><b>D.7</b>Assistência ao parto pré-term…</a></nav><!--/hp-f2-->
 
-<div class="card diag">
+<div class="card diag" id="d1">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">D.1</span> Prevenção da prematuridade</div><h3>Colo curto, progesterona, cerclagem e pessário <span class="ank ank-dec">DECISION</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">O rastreio com intervenção de eficácia mais bem estabelecida é a <b>medida do colo por USG transvaginal</b> (nunca transabdominal): comprimento ≤25 mm entre 18 e 24 semanas marca risco. A resposta é <b>progesterona natural micronizada vaginal 200 mg à noite</b> até 36+6 (MS 2022). Cerclagem é para quem tem <b>história típica de insuficiência istmocervical</b> ou colo curto com parto pré-termo anterior; colo curto sem esse antecedente é divergência entre o MS e a apostila. Repouso, tocólise profilática e antibiótico em assintomática não funcionam. <b>O que muda conduta:</b> colo ≤25 mm → progesterona; parto pré-termo espontâneo anterior → progesterona a partir de 16 semanas e colo seriado de 16 a 24; dilatação ao exame ou protrusão → cerclagem de urgência (GO12).</div></div>
@@ -903,7 +922,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card diag">
+<div class="card diag" id="d2">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">D.2</span> Períneo</div><h3>Episiotomia seletiva e lacerações perineais</h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body"><b>Não se faz episiotomia de rotina</b> (MS 2017; OMS 2025: o uso rotineiro ou liberal não é recomendado). Quando indicada (parto operatório, sofrimento fetal agudo, distocia de ombro, período expulsivo prolongado com períneo rígido, variedade posterior, exaustão materna), é <b>médio-lateral direita, a partir da fúrcula, com ângulo de 45 a 60° do eixo vertical</b>, sempre com <b>analgesia efetiva</b>. A mediana corta menos músculo mas estende-se ao reto com mais frequência. <b>O que muda conduta:</b> laceração de 3º ou 4º grau pede reparo em centro cirúrgico por equipe treinada e <b>antibiótico profilático em dose única</b> (OMS); episiotomia isolada não.</div></div>
@@ -929,7 +948,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card diag">
+<div class="card diag" id="d3">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">D.3</span> Apresentação pélvica</div><h3>Apresentação pélvica e versão cefálica externa</h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Cerca de 4% dos partos não são cefálicos (a apostila dá 96% de cefálicos) e a pélvica eleva as complicações do parto vaginal (cabeça derradeira, prolapso de cordão). Não há indicação obrigatória de cesárea, mas a apostila a indica em <b>peso estimado de 750 a 2.000 g, IG &lt;34 semanas, feto &gt;4.000 g, vício pélvico, cicatriz prévia, RPM, malformação, cabeça hiperestendida, parada de progressão, gemelar com o primeiro pélvico, obstetra inexperiente e procidência de membros</b>. A <b>versão cefálica externa</b> converte a pélvica em cefálica por manobra abdominal (apostila: 34–36 semanas; sucesso ~65%). <b>O que muda conduta:</b> multípara em trabalho de parto avançado com feto adequado pode parir; primípara e qualquer fator desfavorável: cesárea.</div></div>
@@ -944,7 +963,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card tx">
+<div class="card tx" id="d4">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">D.4</span> Analgesia</div><h3>Analgesia de parto: não farmacológica, óxido nitroso, opioide e neuroeixo</h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">O <b>pedido materno é indicação suficiente</b> de analgesia em qualquer fase (MS 2017, rec. 47). A escada começa pelo não farmacológico (banho, massagem, acompanhante), passa pelo <b>óxido nitroso a 50%</b> e pela <b>analgesia de neuroeixo</b> (peridural ou raquiperidural combinada), que é a mais eficaz; o <b>opioide sistêmico não é rotina</b> (alívio limitado, sedação materna e depressão respiratória neonatal). <b>O que muda conduta:</b> peridural não é contraindicação ao parto vaginal; com ela, o 2º período prolonga em cerca de 1 h e o puxo pode ser adiado; ocitocina só com falha de progresso confirmada.</div></div>
@@ -961,7 +980,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card diag">
+<div class="card diag" id="d5">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">D.5</span> Trajeto e estática fetal</div><h3>Pelve, apresentação, variedade de posição e altura</h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">É a base da leitura do toque. A <b>conjugata vera obstétrica (10,5 cm)</b> é a menor passagem do estreito superior e se estima pela <b>diagonalis (12 cm) menos 1,5 cm</b>; o <b>diâmetro biespinhoso (10 cm)</b> é o menor da pelve; o estreito inferior tem 9,5 cm de AP (até 11 pela retropulsão do cóccix) e 11 cm de bituberoso. A apresentação é cefálica em 96% dos partos, e a <b>apresentação</b> (cefálica fletida, defletida de 1º, 2º e 3º graus, pélvica, córmica) e a <b>variedade de posição</b> (OEA, OEP, ODA, ODP, OET, ODT, OP, OS) são lidas pelo toque. <b>O que muda conduta:</b> bacia androide e antropoide predispõem a variedades posteriores; desproporção absoluta é cesárea; transversa persistente exige rotação manual ou fórcipe.</div></div>
@@ -978,7 +997,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card emerg">
+<div class="card emerg" id="d6">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">D.6</span> Prolapso de cordão</div><h3>Prolapso e procidência do cordão <span class="ank ank-dgr">DANGER</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Cordão que desce na frente da apresentação, com bolsa rota (<b>prolapso</b>) ou à frente da bolsa íntegra (<b>procidência</b>). A compressão causa bradicardia fetal. <b>Feto viável fora do expulsivo:</b> cesárea de urgência absoluta; <b>no expulsivo:</b> fórcipe é opção (se for cesárea, urgência absoluta); <b>feto morto ou inviável:</b> sem cesárea (apostila). Enquanto não se opera: <b>mão que eleva a apresentação</b>, posição genupeitoral ou Trendelenburg, evitar manipular o cordão. <b>O que muda conduta:</b> toda amniotomia com apresentação alta é risco; apresentação anômala, polidrâmnio e prematuridade são os fatores.</div></div>
@@ -993,7 +1012,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card diag">
+<div class="card diag" id="d7">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">D.7</span> Parto pré-termo</div><h3>Assistência ao parto pré-termo, via de parto e periviabilidade</h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Quando a inibição falha ou não é indicada, o prematuro precisa de <b>parto pouco traumático e de equipe neonatal presente</b>. Cefálica fletida: parto vaginal; cesárea não melhora o desfecho, salvo <b>apresentação pélvica com peso &gt;750 g</b>. Vitalidade com <b>CTG contínua</b> (prematuro tem variabilidade menor, linha de base mais alta e acelerações de ~10 bpm), sem episiotomia de rotina, <b>fórcipe só após 34 semanas e vácuo contraindicado</b>, membranas íntegras o maior tempo possível, <b>cordão clampeado após 1 a 3 minutos</b> se o RN estiver bem e sala de parto entre 23 e 26 °C. <b>O que muda conduta:</b> periviabilidade exige decisão compartilhada e equipe neonatal de acordo com a IG.</div></div>
@@ -1013,7 +1032,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <section id="algoritmo">
 <div class="section"><div class="section-eyebrow"><span>E</span> Algoritmo</div><div class="section-title">Da porta da maternidade ao parto: três árvores e uma sequência mental</div><div class="section-sub">A primeira árvore organiza quem chega com contrações ou perda de líquido; a segunda, o trabalho de parto que não anda; a terceira, a indução. Cada ponta termina em ação com número, não em rótulo.</div></div>
 
-<div class="card prim">
+<div class="card prim" id="e1">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">E.1</span> Algoritmo</div><h3>Contrações ou perda de líquido: o que fazer pela IG e pelas membranas <span class="ank ank-dec">DECISION</span></h3></div>
 <div class="card-body">
 <div class="algo"><div class="tree">
@@ -1044,7 +1063,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="e2">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">E.2</span> Algoritmo</div><h3>O trabalho de parto que não anda: fase, 5 Ps e resposta <span class="ank ank-hy">HIGH-YIELD</span></h3></div>
 <div class="card-body">
 <div class="algo"><div class="tree">
@@ -1068,7 +1087,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="e3">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">E.3</span> Algoritmo</div><h3>Indução do parto: da indicação à falha <span class="ank ank-dec">DECISION</span></h3></div>
 <div class="card-body">
 <div class="algo"><div class="tree">
@@ -1089,7 +1108,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="e4">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">E.4</span> Sequência mental</div><h3>Raciocínio em 6 passos: como pensar um parto</h3></div>
 <div class="card-body">
 <div class="box decision"><span class="box-label">DECISION</span><div class="box-title">Seis perguntas, sempre na mesma ordem</div><div class="box-body">
@@ -1099,13 +1118,13 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </section>
 
 <section id="tratamento">
-<div class="section"><div class="section-eyebrow"><span>F</span> Tratamento Integrado</div><div class="section-title">F1 · Estratégia por entidade · F2 · Doses · F3 · Casos · F4 · Acesso no SUS</div><div class="section-sub">A estratégia vem organizada pela entidade e termina em dose. Onde as fontes divergem, o padrão é o brasileiro (MS) e a divergência aparece ao lado, com rótulo. O que é de outro HP traz a remissão: anti-hipertensivos e magnésio da PE no GO13, CTG, HPP e fórcipe no GO14, sangramento no GO12.</div></div>
+<div class="section"><div class="section-eyebrow"><span>F</span> Tratamento Integrado</div><div class="section-title">F1 · Estratégia por entidade · F2 · Doses · F3 · Casos · F4 · Acesso no SUS</div><div class="section-sub">A estratégia vem organizada pela entidade e termina em dose. Onde as fontes divergem, o padrão é o brasileiro (MS) e a divergência aparece ao lado, com rótulo. O que é de outro HP traz a remissão: anti-hipertensivos e magnésio da PE no GO13, CTG, HPP e fórcipe no GO14, sangramento no GO12.</div></div><!--hp-f2--><nav class="sec-idx" aria-label="Neste capítulo"><a href="#f1"><b>F.1</b>Escada terapêutica por entida…</a><a href="#f2"><b>F.2</b>Tabela de doses — parto, prem…</a><a href="#f3"><b>F.3</b>Caso → conduta certa → erro t…</a><a href="#f4"><b>F.4</b>Acesso no SUS e no mercado: C…</a><a href="#f5"><b>F.5</b>Teto, vigilância e critério d…</a></nav><!--/hp-f2-->
 
-<div class="card tx">
+<div class="card tx" id="f1">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">F.1</span> Estratégia</div><h3>Escada terapêutica por entidade <span class="ank ank-dec">DECISION</span></h3></div>
 <div class="card-body">
 
-<div class="sub-title">F1.1 · Parto normal e terceiro período</div>
+<div class="sub-title" id="f1-1">F1.1 · Parto normal e terceiro período</div>
 <ul class="bullets">
 <li><b>Fazer:</b> acompanhante de livre escolha, líquidos claros, posições verticais, ausculta intermitente, partograma, puxo espontâneo, compressas mornas, clampeamento do cordão após ≥1 minuto, <b>ocitocina 10 UI IM</b> logo após o nascimento e tração controlada (MS 2017).</li>
 <li><b>Não fazer:</b> enema, tricotomia, Kristeller, puxo dirigido, amniotomia de rotina, opioide de rotina, episiotomia de rotina.</li>
@@ -1113,7 +1132,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </ul>
 <div class="box hy"><span class="box-label">HIGH-YIELD</span><div class="box-title">Fase ativa: três cortes, um HP</div><div class="box-body">O MS usa 4 cm, a OMS 5 cm e o ACOG 6 cm. O mesmo parto pode ser "fase ativa" em um serviço e "latente" em outro. A regra prática é dizer qual referência o serviço adota, plotar o partograma e não operar por tempo isolado.</div></div>
 
-<div class="sub-title">F1.2 · Distocias</div>
+<div class="sub-title" id="f1-2">F1.2 · Distocias</div>
 <ul class="bullets">
 <li><b>Hipoatividade ou fase ativa lenta, sem desproporção:</b> amniotomia (se bolsa íntegra) e <b>ocitocina em baixa dose</b>; reavaliar o toque em 2 h após amniotomia e em 4 h de ocitocina; &lt;2 cm em 4 h de ocitocina: avaliação obstétrica para cesárea (MS 2017).</li>
 <li><b>Hipertonia e taquissistolia:</b> parar o uterotônico, decúbito lateral esquerdo, hidratação; tocolítico agudo (terbutalina 0,25 mg SC: conferir); a apostila inclui meperidina para incoordenação, o MS 2017 desencoraja opioide de rotina.</li>
@@ -1122,7 +1141,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </ul>
 <div class="box danger"><span class="box-label">DANGER</span><div class="box-title">Ocitocina com cicatriz uterina ou desproporção</div><div class="box-body">O aumento do risco relativo de rotura uterina é pequeno em termos absolutos para cicatriz segmentar única (MS 2022), mas é real e grave. A infusão de ocitocina sem relaxamento entre contrações, a dor nova ou a bradicardia fetal exigem suspender e reavaliar; em desproporção, mais ocitocina é erro e não conduta.</div></div>
 
-<div class="sub-title">F1.3 · Indução</div>
+<div class="sub-title" id="f1-3">F1.3 · Indução</div>
 <ul class="bullets">
 <li><b>Colo desfavorável sem cicatriz:</b> misoprostol vaginal 25 µg 4/4 h por até 24 h (6 comprimidos) ou Foley nº 16–18 com balão de 60 mL por 12–24 h, ou combinados; retirar o Foley se rotura de membranas.</li>
 <li><b>Colo favorável:</b> ocitocina em baixa dose (5 UI/500 mL, 2 mUI/min, incremento 1–2 mUI/min a cada 30–40 min, teto 20–30 mUI/min), por até 24 h; <b>amniotomia</b> quando dose máxima.</li>
@@ -1130,7 +1149,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <li><b>Monitorização:</b> CTG 20 min antes, 30 min após e por 60 min depois de qualquer taquissistolia; PA, pulso e temperatura; diurese e volume total (≤3 L em 12 h).</li>
 </ul>
 
-<div class="sub-title">F1.4 · Prematuridade: prevenção e trabalho de parto prematuro</div>
+<div class="sub-title" id="f1-4">F1.4 · Prematuridade: prevenção e trabalho de parto prematuro</div>
 <ul class="bullets">
 <li><b>Prevenção:</b> colo ≤25 mm entre 18 e 24 semanas → progesterona vaginal 200 mg à noite até 36+6; antecedente de parto pré-termo → progesterona desde 16 semanas e colo seriado; cerclagem pelo antecedente ou pela divergência MS × apostila (D.1).</li>
 <li><b>TPP:</b> internar, CTG, hemograma, urina, GBS; <b>corticoide e magnésio</b> conforme a IG; <b>tocólise por até 48 h</b> só com membranas íntegras, 24–34 semanas e colo até 4–5 cm: nifedipino primeiro, atosibana se risco cardiovascular e disponível, indometacina só &lt;32 semanas e ≤48 h.</li>
@@ -1138,14 +1157,14 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </ul>
 <div class="box decision"><span class="box-label">DECISION</span><div class="box-title">Tocólise só quando muda o que vem depois</div><div class="box-body">A tocólise é uma ponte: para o corticoide fazer efeito (≥24 h), para a transferência a um serviço com UTI neonatal ou para magnésio. Se o parto é inevitável, a ponte não leva a lugar nenhum: não gaste tempo inibindo, trate o RN (corticoide, magnésio, equipe neonatal).</div></div>
 
-<div class="sub-title">F1.5 · Corticoide e magnésio</div>
+<div class="sub-title" id="f1-5">F1.5 · Corticoide e magnésio</div>
 <ul class="bullets">
 <li><b>24–34 semanas com parto em até 7 dias:</b> betametasona 12 mg IM 24/24 h ×2 (ou dexametasona 6 mg IM 12/12 h ×4); <b>um</b> ciclo de resgate se &lt;34 semanas, &gt;7 dias do primeiro e risco novo.</li>
 <li><b>≤31+6 semanas e parto provável em 24 h:</b> sulfato de magnésio 4 g IV em 20–30 min + 1 g/h até o nascimento ou 24 h; no parto eletivo, por ≥4 h (MS; OMS: até 24 h antes); gluconato de cálcio 10% (1 g IV) à mão.</li>
 <li><b>Diabética:</b> glicemia seriada e ajuste de insulina (GO13). <b>Corioamnionite:</b> sem corticoide, parto. <b>34–36+6:</b> individualizar (MS: particularizar; apostila: ACOG permite um ciclo; OMS: contra em cesárea eletiva).</li>
 </ul>
 
-<div class="sub-title">F1.6 · RPM</div>
+<div class="sub-title" id="f1-6">F1.6 · RPM</div>
 <ul class="bullets">
 <li><b>≥37 semanas:</b> indução (OMS: iniciar em até 24 h; ocitocina é a primeira opção); GBS conforme F1.7.</li>
 <li><b>34–36+6:</b> como no termo (MS); expectante até 36 semanas só em serviço sem estrutura neonatal e com boa quantidade de líquido.</li>
@@ -1153,14 +1172,14 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <li><b>&lt;24 semanas:</b> aconselhamento por escrito; se induzir por risco materno, anuência do casal e de dois especialistas (MS).</li>
 </ul>
 
-<div class="sub-title">F1.7 · Corioamnionite e GBS</div>
+<div class="sub-title" id="f1-7">F1.7 · Corioamnionite e GBS</div>
 <ul class="bullets">
 <li><b>Corioamnionite:</b> ampicilina 2 g IV 6/6 h + gentamicina 5 mg/kg IV 1×/dia até o parto; depois do parto vaginal, suspender, ou manter até 24 h afebril (OMS 2015, rec. 19); clindamicina 900 mg 8/8 h ou metronidazol 500 mg 8/8 h se cesárea; parto em qualquer IG, de preferência vaginal; sem corticoide e sem tocólise.</li>
 <li><b>GBS:</b> penicilina G cristalina 5 milhões UI IV + 2,5 milhões UI IV 4/4 h; ampicilina 2 g + 1 g 4/4 h; cefazolina 2 g + 1 g 8/8 h (alergia de baixo risco); clindamicina 900 mg 8/8 h (alto risco e sensível); vancomicina 20 mg/kg 8/8 h (máx. 2 g/dose).</li>
 </ul>
 <div class="box danger"><span class="box-label">DANGER</span><div class="box-title">Febre no parto com bolsa rota é infecção até prova em contrário</div><div class="box-body">Atribuir a febre à peridural, esperar o hemograma ou aguardar o "momento do parto" para começar o antibiótico aumenta a sepse neonatal e a materna. Comece o antibiótico, avise o neonatologista e abrevie o parto; a decisão da via é obstétrica e não infecciosa.</div></div>
 
-<div class="sub-title">F1.8 · Cesárea</div>
+<div class="sub-title" id="f1-8">F1.8 · Cesárea</div>
 <ul class="bullets">
 <li><b>Indicar:</b> pelas absolutas (desproporção, cicatriz corporal, placenta prévia total, DPP com feto viável, transversa, herpes ativo, prolapso) ou por falha de progressão depois do tempo adequado.</li>
 <li><b>Profilaxia:</b> cefazolina 2 g IV (3 g se &gt;120 kg), dose única, antes da incisão (WHO 2015); a EBSERH obstétrica não prevê reforço (cita doses adicionais com perda &gt;1,5 L, sem valor: conferir) (GO14). <b>Eletiva só com ≥39 semanas</b> e IG confirmada (OMS).</li>
@@ -1169,7 +1188,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card tx">
+<div class="card tx" id="f2">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">F.2</span> Doses Operacionais</div><h3>Tabela de doses — parto, prematuridade e RPM</h3></div>
 <div class="card-body">
 <div class="stbl stbl-3">
@@ -1199,7 +1218,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card tx">
+<div class="card tx" id="f3">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">F.3</span> Casos</div><h3>Caso → conduta certa → erro típico <span class="ank ank-hy">HIGH-YIELD</span></h3></div>
 <div class="card-body">
 <div class="stbl stbl-3">
@@ -1218,7 +1237,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card tx">
+<div class="card tx" id="f4">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">F.4</span> Acesso</div><h3>Acesso no SUS e no mercado: CMED PMVG de 09/10/2026</h3></div>
 <div class="card-body">
 <div class="stbl stbl-3">
@@ -1231,7 +1250,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 </div>
-<div class="card tx">
+<div class="card tx" id="f5">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">F.5</span> Segurança</div><h3>Teto, vigilância e critério de parada dos fármacos titulados <span class="ank ank-dgr">DANGER</span></h3></div>
 <div class="card-body">
 <div class="stbl stbl-3">
@@ -1248,7 +1267,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <section id="pitfalls">
 <div class="section"><div class="section-eyebrow"><span>G</span> Pitfalls · Mitos · Controvérsias</div><div class="section-title">Erros operacionais, mitos vivos e debates abertos em parto e prematuridade</div><div class="section-sub">Dez erros que se repetem na sala de parto e na prova, três mitos e três controvérsias em que as fontes divergem e o HP mostra o lado de cada uma.</div></div>
 
-<div class="card pearl">
+<div class="card pearl" id="g1">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">G.1</span> Pegadinhas</div><h3>10 erros operacionais em parto, prematuridade e RPM <span class="ank ank-dgr">DANGER</span></h3></div>
 <div class="card-body">
 <div class="stbl stbl-2">
@@ -1267,7 +1286,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card pearl">
+<div class="card pearl" id="g2">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">G.2</span> Mitos · Controvérsias</div><h3>Mitos vivos e debates abertos</h3></div>
 <div class="card-body">
 <div class="box myth"><span class="box-label">MYTH</span><div class="box-title">"Uma cesárea, sempre cesárea"</div><div class="box-body">A cicatriz segmentar única, em gestação única, cefálica e a termo, permite tentar o parto vaginal, com sucesso próximo de 75% e risco absoluto baixo de rotura. Ficam fora: incisão corporal, rotura prévia e mais de duas cicatrizes sem centro habilitado. A indução usa Foley e ocitocina, nunca misoprostol.</div></div>
@@ -1283,7 +1302,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <section id="pearls">
 <div class="section"><div class="section-eyebrow"><span>H</span> Pearls · Evolving</div><div class="section-title">H1 · Pearls de Especialista · H2 · Áreas em Evolução</div><div class="section-sub">Oito ideias que separam quem decide de quem só aplica protocolo, e quatro mudanças reais de 2018–2025: o corte da fase ativa, o Labour Care Guide, a misoprostol oral e a saída da 17-OHPC.</div></div>
 
-<div class="card pearl">
+<div class="card pearl" id="h1">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">H.1</span> Pearls</div><h3>8 nuances que distinguem o expert</h3></div>
 <div class="card-body">
 <div class="box pearl"><span class="box-label">PEARL</span><div class="box-title">Fase latente não opera: o que falta não é intervenção, é tempo</div><div class="box-body">A curva de Friedman (1955) foi construída numa população com pouca indução e analgesia; o Consortium on Safe Labor mostrou que entre 4 e 6 cm o ritmo é mais lento que o clássico. Operar por "falta de progressão" abaixo de 6 cm é medicar a curva antiga. Pergunte primeiro se há contrações adequadas e se o tempo foi cumprido.</div></div>
@@ -1297,7 +1316,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card pearl">
+<div class="card pearl" id="h2">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">H.2</span> Evolving</div><h3>O que mudou: quatro itens reais; o resto é estável</h3></div>
 <div class="card-body">
 <div class="box evolving"><span class="box-label">EVOLVING</span><div class="box-title">Fase ativa de 4 para 5 e 6 cm, e fim da linha de alerta de 1 cm/h</div><div class="box-body">O ACOG definiu a fase ativa a partir de 6 cm em 2014 (mantida na diretriz nº 8, de 2024); a OMS, a partir de 5 cm, e abandonou a linha de alerta de 1 cm/h em 2018, mantida em 2025. O MS 2017 e as provas ainda usam 4 cm e o partograma com linha de ação de 4 h.</div></div>
@@ -1346,5 +1365,36 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <a class="to-top" href="#" aria-label="Voltar ao topo">↑</a>
 <div class="watermark">@dr.lorencato · GO11 Parto, Prematuridade e RPM v5.2</div>
 
-</body>
+<!--hp-f2--><script>(function(){var d=document,M=d.querySelector('main');if(!M)return;
+var SELF='GO11',HP=' CT01 CT02 CT03 CT04 CT05 CT06 CT08 CT10 CV01 CV03 CV04 CV05 CV06 CV07 CV08 EN01 EN02 EN03 EN04 EN06 EN07 GH01 GH02 GH03 GH05 GH06 GH07 GH08 GH09 GH10 GO01 GO02 GO03 GO04 GO09 GO10 GO11 GO12 GO13 GO14 HO01 HO02 HO03 HO04 HO05 HO06 II01 II02 II03 II04 II07 II08 NE01 NE02 NE03 NE04 NE05 NE06 NE07 NE08 NU01 NU02 NU03 NU04 NU05 OE01 OE02 PC01 PC02 PC03 PC04 PC05 PC06 PD01 PD02 PD03 PD04 PD05 PD06 PD07 PD08 PD09 PD10 RD01 RD02 RD03 RD04 RD05 RD07 RP01 RP02 RP03 RP04 ';
+var SK='A,H1,H2,H3,SCRIPT,STYLE,NAV,.card-num,.card-eyebrow,.sub-title,.disease-tag,.toc';
+var R=/\b(?:([A-H])(\d)?\.(\d{1,2}[a-c]?)|(CV|RP|GH|NE|EN|NU|HO|II|RD|GO|PD|PC|CT|OE)(\d\d))\b/g;
+function skip(n){for(var e=n.parentNode;e&&e!==M;e=e.parentNode)if(e.matches&&e.matches(SK))return 1;return 0}
+var w=d.createTreeWalker(M,4),t,L=[];while(t=w.nextNode())if(R.test(t.data)&&!skip(t))L.push(t);
+L.forEach(function(t){var s=t.data,f=d.createDocumentFragment(),i=0,m;R.lastIndex=0;
+while(m=R.exec(s)){var h=null;
+if(m[1]){var id=m[1].toLowerCase()+(m[2]?m[2]+'-':'')+m[3];if(d.getElementById(id))h='#'+id}
+else{var x=m[4]+m[5];if(x!==SELF&&HP.indexOf(' '+x+' ')>=0)h='../'+x+'/'+x+'.html'}
+if(!h)continue;f.appendChild(d.createTextNode(s.slice(i,m.index)));
+var a=d.createElement('a');a.href=h;a.className='xr';a.textContent=m[0];f.appendChild(a);i=R.lastIndex}
+if(i){f.appendChild(d.createTextNode(s.slice(i)));t.parentNode.replaceChild(f,t)}});
+function nz(s){return s.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'')}
+var q=d.querySelector('.hp-q'),n=d.querySelector('.hp-n'),it=M.querySelectorAll('.card,.pocket-card'),T;
+function clr(){M.querySelectorAll('.q-off').forEach(function(e){e.classList.remove('q-off')})}
+function run(){var v=nz(q.value.trim());clr();n.textContent='';if(v.length<2)return;var k=0;
+it.forEach(function(c){if(nz(c.textContent).indexOf(v)<0){c.classList.add('q-off');return}k++;
+var r=c.querySelectorAll('.stbl-row,.disease-row,.score-row'),h=[];r.forEach(function(x){if(nz(x.textContent).indexOf(v)>=0)h.push(x)});
+if(h.length)r.forEach(function(x){if(h.indexOf(x)<0)x.classList.add('q-off')});
+c.querySelectorAll('details').forEach(function(x){if(nz(x.textContent).indexOf(v)>=0)x.open=true})});
+M.querySelectorAll('section').forEach(function(s){if(!s.querySelector('.card:not(.q-off),.pocket-card:not(.q-off)'))s.classList.add('q-off')});
+n.textContent=k?k+' achado'+(k>1?'s':''):'nada'}
+if(q){q.addEventListener('input',function(){clearTimeout(T);T=setTimeout(run,180)});
+q.addEventListener('keydown',function(e){if(e.key==='Escape'){q.value='';run()}})}
+function tg(b,f){b.addEventListener('click',function(){var on=b.getAttribute('aria-pressed')!=='true';b.setAttribute('aria-pressed',on);f(on)})}
+var bd=d.querySelector('.hp-dz'),bo=d.querySelector('.hp-op');
+if(bd)tg(bd,function(on){d.body.classList.toggle('dz',on);if(on)d.getElementById('tratamento').scrollIntoView()});
+if(bo)tg(bo,function(on){M.querySelectorAll('details').forEach(function(x){x.open=on})});
+var P=[];addEventListener('beforeprint',function(){P=[];M.querySelectorAll('details:not([open])').forEach(function(x){P.push(x);x.open=true})});
+addEventListener('afterprint',function(){P.forEach(function(x){x.open=false})});
+})();</script><!--/hp-f2--></body>
 </html>

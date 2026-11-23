@@ -345,13 +345,32 @@ ul.bullets li b{color:var(--ink);font-weight:600}
   .pocket .pocket-card.tx{--accent:#a8481a}
   .pocket .pocket-card.clin{--accent:#0b5d4e}
 }
+
+/* === v5.2.2 · fase 2 (navegação) === */
+.hp-tools{display:flex;gap:6px;align-items:center;flex:none;order:1;margin-left:auto;padding-left:6px;position:sticky;right:0;background:#f1eee5;box-shadow:-10px 0 10px -4px #f1eee5,16px 0 0 #f1eee5}
+@media(min-width:900px){html{scroll-padding-top:150px}.toc-inner{flex-wrap:wrap;overflow:visible}.card[id],.sub-title[id]{scroll-margin-top:150px}}
+@media(max-width:899px){.hp-b,.hp-n{display:none}.hp-q{width:104px}}
+.hp-q{width:128px;font:500 12px/1 'DM Sans',system-ui,sans-serif;padding:7px 11px;border:1px solid var(--line-strong);border-radius:999px;background:var(--paper);color:var(--ink)}
+.hp-b{font:600 11px/1 'DM Sans',system-ui,sans-serif;letter-spacing:.05em;text-transform:uppercase;padding:7px 10px;border-radius:999px;border:1px solid var(--line-strong);background:var(--paper);color:var(--ink-soft);cursor:pointer;white-space:nowrap}
+.hp-b[aria-pressed=true]{background:var(--ink);color:#fff;border-color:var(--ink)}
+.hp-n{font:600 11px/1 'DM Mono',monospace;color:var(--ink-mute);white-space:nowrap}
+.sec-idx{display:flex;flex-wrap:wrap;gap:6px;margin:12px 0 20px}
+.sec-idx a{font:500 12px/1.25 'DM Sans',system-ui,sans-serif;padding:6px 10px;border-radius:999px;background:var(--paper);border:1px solid var(--line);color:var(--ink-soft);text-decoration:none}
+.sec-idx a:hover{border-color:var(--line-strong);color:var(--ink)}
+.sec-idx b{color:var(--c-prim);margin-right:5px;font-weight:700}
+a.xr{color:inherit;text-decoration:underline dotted;text-underline-offset:2px}
+a.xr:hover{color:var(--c-prim)}
+.card[id],.sub-title[id]{scroll-margin-top:110px}
+.q-off{display:none!important}
+body.dz main section:not(#tratamento){display:none}
+@media print{.hp-tools,.sec-idx,.toc-doses{display:none!important}}
 </style>
 </head>
 <body>
 
 <header class="header"><div class="header-row"><div class="h-mark">G</div><div class="h-titles"><div class="h-title">Fisiologia Menstrual, Amenorreia e SOP · Pocket Handbook</div><div class="h-sub">Elite edition · Ginecologia endócrina · GO01</div></div><div class="h-author">@dr.lorencato</div><div class="h-edition">v5.2</div></div></header>
 
-<nav class="toc"><div class="toc-inner"><a href="#pocket" class="toc-chip"><span class="toc-chip-num">0</span>Pocket</a><a href="#redflags" class="toc-chip"><span class="toc-chip-num">A</span>Red Flags</a><a href="#approach" class="toc-chip"><span class="toc-chip-num">B</span>Apresentação</a><a href="#primarias" class="toc-chip"><span class="toc-chip-num">C</span>Entidades</a><a href="#secundarias" class="toc-chip"><span class="toc-chip-num">D</span>Secundárias</a><a href="#algoritmo" class="toc-chip"><span class="toc-chip-num">E</span>Algoritmo</a><a href="#tratamento" class="toc-chip"><span class="toc-chip-num">F</span>Tratamento</a><a href="#pitfalls" class="toc-chip"><span class="toc-chip-num">G</span>Pitfalls</a><a href="#pearls" class="toc-chip"><span class="toc-chip-num">H</span>Pearls</a></div></nav>
+<nav class="toc"><div class="toc-inner"><!--hp-f2--><span class="hp-tools"><input class="hp-q" type="search" placeholder="Buscar no HP" aria-label="Buscar no HP"><button class="hp-b hp-dz" type="button" aria-pressed="false">Só doses</button><button class="hp-b hp-op" type="button" aria-pressed="false">Abrir tudo</button><span class="hp-n" aria-live="polite"></span></span><!--/hp-f2--><a href="#pocket" class="toc-chip"><span class="toc-chip-num">0</span>Pocket</a><a href="#redflags" class="toc-chip"><span class="toc-chip-num">A</span>Red Flags</a><a href="#approach" class="toc-chip"><span class="toc-chip-num">B</span>Apresentação</a><a href="#primarias" class="toc-chip"><span class="toc-chip-num">C</span>Entidades</a><a href="#secundarias" class="toc-chip"><span class="toc-chip-num">D</span>Secundárias</a><a href="#algoritmo" class="toc-chip"><span class="toc-chip-num">E</span>Algoritmo</a><a href="#tratamento" class="toc-chip"><span class="toc-chip-num">F</span>Tratamento</a><!--hp-f2--><a href="#f2" class="toc-chip toc-doses"><span class="toc-chip-num">Rx</span>Doses</a><!--/hp-f2--><a href="#pitfalls" class="toc-chip"><span class="toc-chip-num">G</span>Pitfalls</a><a href="#pearls" class="toc-chip"><span class="toc-chip-num">H</span>Pearls</a></div></nav>
 
 <main>
 <div class="wrap">
@@ -415,7 +434,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <section id="redflags">
 <div class="section"><div class="section-eyebrow"><span>A</span> Red Flags</div><div class="section-title">A amenorreia raramente é urgência; o que ela às vezes anuncia, sim</div><div class="section-sub">Sinal objetivo, suspeita e conduta imediata. Os eventos evitáveis deste HP são a apoplexia ou a síndrome de Sheehan tratada com levotiroxina antes do corticoide, o tumor virilizante rotulado como SOP, o hematocolpo puncionado, a gonadectomia esquecida no cariótipo com Y, o macroprolactinoma operado por engano por causa do efeito gancho e a paciente com anorexia que sai do consultório só com anticoncepcional.</div></div>
 
-<div class="card emerg">
+<div class="card emerg" id="a1">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">A.1</span> Emergências</div><h3>Sinais de alarme — amenorreia, hiperandrogenismo e SOP <span class="ank ank-dgr">DANGER</span></h3></div>
 <div class="card-body">
 
@@ -454,7 +473,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <section id="approach">
 <div class="section"><div class="section-eyebrow"><span>B</span> Por Apresentação</div><div class="section-title">Cinco padrões que organizam a conversa antes dos exames</div><div class="section-sub">A queixa define a árvore: idade da menarca, caracteres sexuais, útero, androgênios, galactorreia. O padrão leva ao compartimento e o compartimento aos três ou quatro exames que realmente discriminam.</div></div>
 
-<div class="card clin">
+<div class="card clin" id="b1">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">B.1</span> Padrão 1</div><h3>Amenorreia primária sem caracteres sexuais secundários</h3><div class="card-sub">Hipoestrogenismo desde a puberdade: FSH separa a gônada do eixo</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Sem telarca aos 13 anos, o estrogênio nunca agiu. <b>FSH alto</b> (hipogonadismo hipergonadotrófico) aponta para a gônada: <b>Turner é a causa mais comum</b>, seguida de disgenesias 46,XX e 46,XY e insuficiência ovariana de início pré-puberal. <b>FSH baixo ou normal</b> (hipogonadotrófico) aponta para o eixo: atraso constitucional, hipogonadismo hipogonadotrófico idiopático com ou sem anosmia (Kallmann), lesão hipotálamo-hipofisária, amenorreia funcional e doença sistêmica.</div></div>
@@ -468,7 +487,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card clin">
+<div class="card clin" id="b2">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">B.2</span> Padrão 2</div><h3>Amenorreia primária com mamas desenvolvidas</h3><div class="card-sub">Estrogênio presente: pergunte pelo útero e pelo trajeto de saída</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Telarca normal significa ovário funcionante. A pergunta é <b>se há útero e se o sangue tem por onde sair</b>. Útero ausente e vagina curta: Rokitansky (46,XX) ou insensibilidade androgênica completa (46,XY, testosterona de homem, pelos escassos). Útero presente e dor cíclica: criptomenorreia. Útero presente e sem dor: investigar como amenorreia secundária, depois de excluir gravidez.</div></div>
@@ -481,7 +500,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card clin">
+<div class="card clin" id="b3">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">B.3</span> Padrão 3</div><h3>Amenorreia secundária <span class="ank ank-hy">HIGH-YIELD</span></h3><div class="card-sub">Três ciclos ou seis meses depois de ciclos que existiram</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Primeiro exclui-se gravidez. Depois <b>TSH e prolactina</b>. Os testes dinâmicos entram a seguir: a progesterona mede o estrogênio endógeno e a patência do trajeto; o estrogênio mais progestagênio revela o endométrio; o FSH separa o ovário do eixo central. As causas mais comuns são <b>gravidez, anovulação (SOP), hiperprolactinemia, hipotalâmica funcional, IOP, sinéquia uterina (Asherman) e tireoidopatia.</b></div></div>
@@ -495,7 +514,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card clin">
+<div class="card clin" id="b4">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">B.4</span> Padrão 4</div><h3>Irregularidade menstrual com hiperandrogenismo</h3><div class="card-sub">SOP é a regra; o diagnóstico é de exclusão</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Ciclos &lt;21 ou &gt;35 dias, ou menos de 8 por ano, mais hirsutismo, acne ou alopecia: <b>SOP é a causa em 50% a 80% das mulheres com hiperandrogenismo,</b> a HAC não clássica em 1% a 10%. Exclui-se gravidez, TSH, prolactina, 17-hidroxiprogesterona (&lt;200 ng/dL descarta HAC) e, se a clínica sugerir, Cushing ou tumor. A progressão rápida e a virilização mudam a hipótese.</div></div>
@@ -507,7 +526,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card clin">
+<div class="card clin" id="b5">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">B.5</span> Padrão 5</div><h3>Ciclos irregulares na adolescente</h3><div class="card-sub">O primeiro ano pós-menarca é fisiologia; depois, o diagnóstico é cuidadoso</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Primeiro ano: irregularidade é normal. De 1 a 3 anos: preocupam ciclos &lt;21 ou &gt;45 dias. A partir de 3 anos: &lt;21 ou &gt;35 dias, ou menos de 8 por ano. Qualquer ciclo &gt;90 dias depois do primeiro ano merece avaliação. <b>Na adolescente, SOP exige hiperandrogenismo e disfunção ovulatória;</b> USG e AMH não se usam. Quem tem características, mas não critérios, é "em risco", com reavaliação até 8 anos depois da menarca <span class="ev ev-eular">PCOS 2023 CR 1.1.1 e PP 1.1.4</span>.</div></div>
@@ -522,9 +541,9 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </section>
 
 <section id="primarias">
-<div class="section"><div class="section-eyebrow"><span>C</span> Entidades Primárias</div><div class="section-title">Onze entidades: o eixo, a lógica dos compartimentos e as causas que a prova e o ambulatório mais cobram</div><div class="section-sub">O capítulo abre pela fisiologia, porque cada amenorreia é a quebra de um elo dessa cadeia; segue a investigação por compartimentos e as causas gonadais (Turner, insuficiência ovariana), uterovaginais (Rokitansky, insensibilidade androgênica, Asherman), hipofisária e hipotalâmica (hiperprolactinemia, amenorreia funcional) e fecha com o hiperandrogenismo (SOP e hirsutismo). HAC não clássica, tumores androgênicos, comorbidades da SOP, indução da ovulação, hipopituitarismo, SPM e causas sistêmicas ficam agrupados em D. Anticoncepção: GO02.</div></div>
+<div class="section"><div class="section-eyebrow"><span>C</span> Entidades Primárias</div><div class="section-title">Onze entidades: o eixo, a lógica dos compartimentos e as causas que a prova e o ambulatório mais cobram</div><div class="section-sub">O capítulo abre pela fisiologia, porque cada amenorreia é a quebra de um elo dessa cadeia; segue a investigação por compartimentos e as causas gonadais (Turner, insuficiência ovariana), uterovaginais (Rokitansky, insensibilidade androgênica, Asherman), hipofisária e hipotalâmica (hiperprolactinemia, amenorreia funcional) e fecha com o hiperandrogenismo (SOP e hirsutismo). HAC não clássica, tumores androgênicos, comorbidades da SOP, indução da ovulação, hipopituitarismo, SPM e causas sistêmicas ficam agrupados em D. Anticoncepção: GO02.</div></div><!--hp-f2--><nav class="sec-idx" aria-label="Neste capítulo"><a href="#c1"><b>C.1</b>Eixo hipotálamo-hipófise-ovár…</a><a href="#c2"><b>C.2</b>Amenorreia: definição e inves…</a><a href="#c3"><b>C.3</b>Síndrome de Turner e disgenes…</a><a href="#c4"><b>C.4</b>Insuficiência ovariana premat…</a><a href="#c5"><b>C.5</b>Rokitansky (MRKH) e anomalias…</a><a href="#c6"><b>C.6</b>Insensibilidade androgênica c…</a><a href="#c7"><b>C.7</b>Síndrome de Asherman e causas…</a><a href="#c8"><b>C.8</b>Hiperprolactinemia e prolacti…</a><a href="#c9"><b>C.9</b>Amenorreia hipotalâmica funci…</a><a href="#c10"><b>C.10</b>Síndrome dos ovários policíst…</a><a href="#c11"><b>C.11</b>Hirsutismo e hiperandrogenism…</a></nav><!--/hp-f2-->
 
-<div class="card prim">
+<div class="card prim" id="c1">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.1</span> Fisiologia</div><h3>Eixo hipotálamo-hipófise-ovário e ciclo menstrual <span class="ank ank-hy">HIGH-YIELD</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">O ciclo é o desfecho de três pré-requisitos: <b>eixo hipotálamo-hipófise-ovário normofuncionante, endométrio responsivo e trato de saída pérvio.</b> O pulso de GnRH (a cada 60 a 90 minutos na fase folicular) comanda FSH e LH; o FSH recruta folículos, o LH estimula androgênios na teca e o estradiol da granulosa fecha a alça: baixo, freia; alto e sustentado por cerca de dois dias, dispara o pico de LH. A ovulação ocorre 34 a 36 horas depois do início do pico; a fase lútea dura 14 dias e termina com a queda da progesterona.</div></div>
@@ -561,7 +580,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="c2">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.2</span> Amenorreia</div><h3>Amenorreia: definição e investigação por compartimentos <span class="ank ank-dec">DECISION</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">A amenorreia é sintoma. <b>Primária:</b> sem menarca aos 15 anos, ou aos 13 sem caracteres sexuais secundários. <b>Secundária:</b> três ciclos, ou seis meses se os ciclos eram irregulares, sem menstruar. Os compartimentos: <b>I uterovaginal, II ovariano, III hipofisário, IV hipotalâmico.</b> Em amenorreia secundária, β-hCG, TSH e prolactina vêm primeiro; o FSH separa o ovário do eixo, e os testes da progesterona e do estrogênio com progestagênio só refinam.</div></div>
@@ -610,7 +629,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="c3">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.3</span> Gonadal</div><h3>Síndrome de Turner e disgenesias gonadais <span class="ank ank-hy">HIGH-YIELD</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">A causa mais comum de amenorreia primária com FSH alto é a disgenesia gonadal, e dentro dela a <b>síndrome de Turner (45,X)</b>: baixa estatura, pescoço alado, tórax em escudo, cúbito valgo, linfedema, cardiopatia esquerda e ovários em fita. O diagnóstico é cromossômico, com no mínimo 30 metáfases. <b>Tratamento: GH na infância (PD04), indução puberal com estradiol de baixa dose a partir de 11 a 12 anos e reposição até cerca de 50 a 55 anos;</b> vigilância cardiológica, renal, tireoidiana e audiológica por toda a vida.</div></div>
@@ -647,7 +666,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="c4">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.4</span> Gonadal</div><h3>Insuficiência ovariana prematura <span class="ank ank-hy">HIGH-YIELD</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Perda da atividade ovariana antes dos 40 anos: <b>ciclos irregulares ou amenorreia por 4 meses ou mais e FSH &gt;25 UI/L,</b> repetido em 4 a 6 semanas se houver dúvida (ESHRE 2024). O estradiol baixo confirma, mas não diagnostica. <b>Sem reposição, há mortalidade cardiovascular, osteoporose e risco cognitivo;</b> a terapia hormonal vai até a idade usual da menopausa, com ou sem sintomas. A atividade ovariana pode retornar de modo intermitente e a gravidez espontânea é rara, mas possível.</div></div>
@@ -684,7 +703,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="c5">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.5</span> Uterovaginal</div><h3>Rokitansky (MRKH) e anomalias müllerianas obstrutivas <span class="ank ank-hy">HIGH-YIELD</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Amenorreia primária com <b>mamas e pelos normais, vagina curta ou em "covinha" e cariótipo 46,XX:</b> ausência ou hipoplasia de útero e dos dois terços superiores da vagina, ovários normais e ciclo hormonal ovulatório, sem sangramento. Cerca de 1 em 5.000 mulheres. Investigar rim e esqueleto. <b>Primeira linha: dilatação vaginal</b> (sucesso de 90% a 96%); cirurgia só se falhar ou por preferência. Diferencial com a insensibilidade androgênica (C.6) e com as obstruções, que doem.</div></div>
@@ -703,7 +722,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="c6">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.6</span> 46,XY</div><h3>Insensibilidade androgênica completa e disgenesia gonadal 46,XY (Swyer)</h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Dois fenótipos femininos com cariótipo 46,XY. <b>Insensibilidade androgênica completa (Morris):</b> receptor de androgênio não funcionante; testículos produzem testosterona normal ou alta e AMH, de modo que <b>não há útero</b>; mamas por aromatização, vagina cega, poucos pelos. <b>Swyer:</b> gônadas em fita, útero presente, hipoestrogenismo e infantilismo. Ambas exigem gonadectomia pelo risco de gonadoblastoma e de tumores germinativos: tardia na Morris (depois da puberdade), precoce na Swyer.</div></div>
@@ -722,7 +741,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="c7">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.7</span> Uterino</div><h3>Síndrome de Asherman e causas uterinas adquiridas</h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Sinéquias intrauterinas que destroem a camada basal do endométrio, quase sempre depois de <b>curetagem (sobretudo pós-parto ou pós-aborto), infecção ou cirurgia uterina.</b> A paciente tem amenorreia ou hipomenorreia com ciclo hormonal normal; o <b>teste do estrogênio com progestagênio não produz sangramento.</b> Diagnóstico por histeroscopia (padrão-ouro), histerossalpingografia ou ultrassonografia com infusão salina; tratamento por lise histeroscópica.</div></div>
@@ -741,7 +760,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="c8">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.8</span> Hipofisário</div><h3>Hiperprolactinemia e prolactinoma <span class="ank ank-hy">HIGH-YIELD</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">A prolactina é o único hormônio hipofisário sob inibição tônica pela dopamina. Elevada, inibe o pulso de GnRH: <b>galactorreia, amenorreia ou oligomenorreia, infertilidade e perda óssea.</b> Excluir gravidez, hipotireoidismo, insuficiência renal e <b>fármacos (antipsicóticos, metoclopramida)</b> antes da RM; confirmar valores leves; pesquisar macroprolactina e efeito gancho. Prolactinoma: <b>cabergolina com ecocardiograma antes e a cada 6 a 12 meses.</b></div></div>
@@ -778,7 +797,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="c9">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.9</span> Hipotalâmico</div><h3>Amenorreia hipotalâmica funcional</h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Supressão reversível do pulso de GnRH por <b>déficit de energia, exercício excessivo ou estresse,</b> em mulher sem causa orgânica. É diagnóstico de exclusão: β-hCG, TSH e prolactina normais, FSH e LH baixos ou normais, estradiol baixo, teste da progesterona sem sangramento. <b>O tratamento é restaurar a energia disponível,</b> não repor hormônio como substituto do peso; o risco real é ósseo e cardiovascular.</div></div>
@@ -797,7 +816,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="c10">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.10</span> Hiperandrogenismo</div><h3>Síndrome dos ovários policísticos <span class="ank ank-hy">HIGH-YIELD</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">A endocrinopatia mais comum da mulher em idade reprodutiva (10% a 13%). Diagnóstico por <b>dois de três critérios: disfunção ovulatória, hiperandrogenismo clínico ou bioquímico, ovários policísticos à USG ou AMH elevado (só em adultas), com exclusão de outras causas.</b> É doença metabólica e reprodutiva: <b>TOTG em todas, proteção endometrial, anticoncepcional combinado para ciclo e hirsutismo, metformina para o metabolismo, letrozol para a ovulação.</b> Fenótipos A a D mudam o risco.</div></div>
@@ -844,7 +863,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="c11">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.11</span> Hiperandrogenismo</div><h3>Hirsutismo e hiperandrogenismo clínico <span class="ank ank-dec">DECISION</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Pelos terminais, pigmentados e com mais de 5 mm, em áreas dependentes de androgênio. Quantifica-se pelo <b>Ferriman-Gallwey modificado (nove áreas, 0 a 4 pontos cada).</b> A diretriz 2023 usa corte de 4 a 6 conforme a etnia; o clássico é ≥8. <b>Hirsutismo isolado já prediz hiperandrogenismo bioquímico e SOP.</b> Começa por anticoncepcional combinado e cosmético; antiandrogênio entra depois de 6 meses, com contracepção eficaz.</div></div>
@@ -875,9 +894,9 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </section>
 
 <section id="secundarias">
-<div class="section"><div class="section-eyebrow"><span>D</span> Entidades Secundárias</div><div class="section-title">O diferencial do hiperandrogenismo, as comorbidades da SOP e as causas centrais e sistêmicas da amenorreia</div><div class="section-sub">Sete boxes agrupados: HAC não clássica (diferencial e remissão ao EN04), tumores androgênicos e outras causas de hiperandrogenismo, rastreio metabólico e comorbidades da SOP, indução da ovulação (só o escalonamento), hipopituitarismo e Kallmann, síndrome pré-menstrual e amenorreia por doenças sistêmicas, fármacos e contraceptivos.</div></div>
+<div class="section"><div class="section-eyebrow"><span>D</span> Entidades Secundárias</div><div class="section-title">O diferencial do hiperandrogenismo, as comorbidades da SOP e as causas centrais e sistêmicas da amenorreia</div><div class="section-sub">Sete boxes agrupados: HAC não clássica (diferencial e remissão ao EN04), tumores androgênicos e outras causas de hiperandrogenismo, rastreio metabólico e comorbidades da SOP, indução da ovulação (só o escalonamento), hipopituitarismo e Kallmann, síndrome pré-menstrual e amenorreia por doenças sistêmicas, fármacos e contraceptivos.</div></div><!--hp-f2--><nav class="sec-idx" aria-label="Neste capítulo"><a href="#d1"><b>D.1</b>HAC não clássica por deficiên…</a><a href="#d2"><b>D.2</b>Hiperandrogenismo tumoral e o…</a><a href="#d3"><b>D.3</b>Rastreio metabólico e comorbi…</a><a href="#d4"><b>D.4</b>Indução da ovulação na SOP</a><a href="#d5"><b>D.5</b>Hipopituitarismo, Sheehan, Ka…</a><a href="#d6"><b>D.6</b>Síndrome pré-menstrual e tran…</a><a href="#d7"><b>D.7</b>Amenorreia por doenças sistêm…</a></nav><!--/hp-f2-->
 
-<div class="card diag">
+<div class="card diag" id="d1">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">D.1</span> Diferencial da SOP</div><h3>HAC não clássica por deficiência de 21-hidroxilase <span class="ank ank-dec">DECISION</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Forma tardia, com 20% a 50% da atividade enzimática; imita a SOP: hirsutismo, acne, oligomenorreia, infertilidade e, às vezes, pubarca precoce na infância. <b>17-OHP matinal basal &lt;200 ng/dL (2 ng/mL) exclui; entre 200 e 1.000 ng/dL pede teste com 250 µg de ACTH; &gt;1.000 ng/dL (mais frequentemente &gt;1.500) confirma.</b> Decisão de fronteira: o adulto é do EN04 (D.1 de lá), a forma clássica e a criança, do PD04; aqui ficam o diferencial e as doses ginecológicas.</div></div>
@@ -893,7 +912,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card diag">
+<div class="card diag" id="d2">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">D.2</span> Diferencial da SOP</div><h3>Hiperandrogenismo tumoral e outras causas</h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Sinais de alarme de neoplasia: <b>início súbito, progressão rápida, virilização.</b> Testosterona total &gt;200 ng/dL sugere tumor ovariano; SDHEA &gt;700 µg/dL, tumor suprarrenal (apostila; conferir os cortes, pois a diretriz 2023 lembra que alguns tumores elevam pouco o androgênio). Outras causas: Cushing, hipertecose, resistência insulínica grave, androgênio exógeno e fármacos.</div></div>
@@ -908,7 +927,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card diag">
+<div class="card diag" id="d3">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">D.3</span> Comorbidades</div><h3>Rastreio metabólico e comorbidades da SOP</h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">A SOP aumenta o risco de intolerância à glicose e diabetes, dislipidemia, hipertensão, apneia do sono, hiperplasia endometrial, depressão e ansiedade, transtorno alimentar e complicações na gestação, <b>independentemente do IMC.</b> Cada achado tem seu rastreio e sua periodicidade; nenhum depende de a paciente ser obesa.</div></div>
@@ -924,7 +943,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card diag">
+<div class="card diag" id="d4">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">D.4</span> Infertilidade na SOP</div><h3>Indução da ovulação na SOP <span class="ank ank-dec">DECISION</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body"><b>Letrozol é a primeira linha</b> na mulher anovulatória sem outro fator de infertilidade (recomendação forte, evidência alta), com preferência sobre o clomifeno. Clomifeno com ou sem metformina, gonadotrofinas e drilling ovariano entram em segunda linha; FIV se falharem. <b>Letrozol e clomifeno são fora da bula na indução da ovulação</b>; a diretriz 2023 não encontra diferença de anomalias fetais entre letrozol, clomifeno e concepção natural (PP 5.4.5.2), embora não se deva dar letrozol com gravidez possível. A investigação do casal e a FIV são do GO04.</div></div>
@@ -940,7 +959,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card diag">
+<div class="card diag" id="d5">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">D.5</span> Hipofisário</div><h3>Hipopituitarismo, Sheehan, Kallmann e lesões hipotálamo-hipofisárias</h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Os gonadotrofos são os mais sensíveis: amenorreia com FSH e LH baixos e déficit de outros eixos é <b>hipopituitarismo até prova em contrário.</b> <b>Sheehan:</b> necrose pós-parto após hemorragia, com agalactia e amenorreia semanas a meses depois. <b>Kallmann:</b> hipogonadismo hipogonadotrófico com anosmia ou hiposmia por falha da migração do neurônio de GnRH; com amenorreia primária e infantilismo. Craniofaringioma é o tumor hipotalâmico mais comum. A hiperprolactinemia tumoral é C.8; o restante do eixo, EN05 (lacuna).</div></div>
@@ -955,7 +974,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card diag">
+<div class="card diag" id="d6">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">D.6</span> Ciclo e humor</div><h3>Síndrome pré-menstrual e transtorno disfórico pré-menstrual</h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Sintomas físicos e emocionais restritos à fase lútea, que melhoram com a menstruação e <b>comprometem a vida diária;</b> o transtorno disfórico exige sintomas afetivos intensos. O diagnóstico é prospectivo, por diário de sintomas em pelo menos 2 ciclos. Sem dono no catálogo: decisão registrada de manter um box curto aqui; depressão e farmacologia psiquiátrica remetem ao PC02.</div></div>
@@ -969,7 +988,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card diag">
+<div class="card diag" id="d7">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">D.7</span> Sistêmicas</div><h3>Amenorreia por doenças sistêmicas, fármacos e contraceptivos</h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Antes de acusar o eixo, revisar tireoide, rins, fígado, glicemia, cortisol e a lista de medicamentos. <b>Hipotireoidismo eleva a prolactina</b> (TRH) e desliga a ovulação; hipertireoidismo aumenta a SHBG e a conversão periférica de estrogênio. DMPA e SIU de levonorgestrel causam amenorreia esperada, e a pílula pode mascarar a insuficiência ovariana.</div></div>
@@ -988,7 +1007,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <section id="algoritmo">
 <div class="section"><div class="section-eyebrow"><span>E</span> Algoritmo</div><div class="section-title">Amenorreia primária, amenorreia secundária e hiperandrogenismo em três árvores</div><div class="section-sub">Cada ponta termina em exame, em compartimento ou em conduta com dose. A primeira árvore parte do desenvolvimento mamário; a segunda, do β-hCG; a terceira, da queixa de pelo ou de ciclo irregular. O raciocínio narrado, no fim, amarra as três.</div></div>
 
-<div class="card prim">
+<div class="card prim" id="e1">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">E.1</span> Algoritmo</div><h3>Amenorreia primária: mamas, útero e FSH <span class="ank ank-dec">DECISION</span></h3></div>
 <div class="card-body">
 <div class="algo"><div class="tree">
@@ -1012,7 +1031,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="e2">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">E.2</span> Algoritmo</div><h3>Amenorreia secundária: GTP · PEF <span class="ank ank-hy">HIGH-YIELD</span></h3></div>
 <div class="card-body">
 <div class="algo"><div class="tree">
@@ -1039,7 +1058,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="e3">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">E.3</span> Algoritmo</div><h3>Hiperandrogenismo e SOP: do pelo ao diagnóstico <span class="ank ank-dec">DECISION</span></h3></div>
 <div class="card-body">
 <div class="algo"><div class="tree">
@@ -1076,34 +1095,34 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </section>
 
 <section id="tratamento">
-<div class="section"><div class="section-eyebrow"><span>F</span> Tratamento</div><div class="section-title">Do degrau por entidade à dose por fonte, com o que está na CMED e o que é só rótulo internacional</div><div class="section-sub">F.1 organiza a conduta por entidade, em degraus; F.2 é a tabela operacional de doses do adulto, cada uma com a sua fonte; F.3 é o treino de casos, com o erro típico; F.4 separa o que existe no mercado brasileiro do que é rótulo internacional e F.5 registra as coerências com os HPs vizinhos. Padrão brasileiro (Febrasgo, SBEM) primeiro; as diretrizes internacionais entram rotuladas. A contracepção como método e a elegibilidade ficam no GO02.</div></div>
+<div class="section"><div class="section-eyebrow"><span>F</span> Tratamento</div><div class="section-title">Do degrau por entidade à dose por fonte, com o que está na CMED e o que é só rótulo internacional</div><div class="section-sub">F.1 organiza a conduta por entidade, em degraus; F.2 é a tabela operacional de doses do adulto, cada uma com a sua fonte; F.3 é o treino de casos, com o erro típico; F.4 separa o que existe no mercado brasileiro do que é rótulo internacional e F.5 registra as coerências com os HPs vizinhos. Padrão brasileiro (Febrasgo, SBEM) primeiro; as diretrizes internacionais entram rotuladas. A contracepção como método e a elegibilidade ficam no GO02.</div></div><!--hp-f2--><nav class="sec-idx" aria-label="Neste capítulo"><a href="#f1"><b>F.1</b>Degraus de tratamento por ent…</a><a href="#f2"><b>F.2</b>Tabela de doses: da investiga…</a><a href="#f3"><b>F.3</b>Do caso à conduta certa, com…</a><a href="#f4"><b>F.4</b>Disponibilidade no Brasil e r…</a><a href="#f5"><b>F.5</b>O que este HP combina com os…</a></nav><!--/hp-f2-->
 
-<div class="card tx">
+<div class="card tx" id="f1">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">F.1</span> Estratégia</div><h3>Degraus de tratamento por entidade <span class="ank ank-dec">DECISION</span></h3></div>
 <div class="card-body">
 
-<div class="sub-title">F1.1 · Amenorreia hipotalâmica funcional</div>
+<div class="sub-title" id="f1-1">F1.1 · Amenorreia hipotalâmica funcional</div>
 <ul class="bullets">
 <li><b>Primeiro degrau:</b> restaurar a energia disponível (mais calorias, menos treino), recuperar o peso, terapia cognitivo-comportamental e suporte psiquiátrico se houver transtorno alimentar (PC05). Excluir causa orgânica por TSH, prolactina e, se sinais de alarme, RM de sela.</li>
 <li><b>Osso e coração:</b> DXA se 6 meses ou mais de amenorreia; cálcio e vitamina D adequados; reposição transdérmica de estradiol com progestagênio cíclico em adolescente com mais de 6 meses de amenorreia (Endocrine Society 2017, não lida: conferir). Bisfosfonato não, em quem pode engravidar.</li>
 <li><b>Não prescrever</b> anticoncepcional para "regularizar" e dar alta: mascara o quadro e não recupera osso. Fertilidade: recuperar o peso antes; indução no GO04.</li>
 </ul>
 
-<div class="sub-title">F1.2 · Hiperprolactinemia e prolactinoma</div>
+<div class="sub-title" id="f1-2">F1.2 · Hiperprolactinemia e prolactinoma</div>
 <ul class="bullets">
 <li><b>Antes de tratar:</b> confirmar a prolactina, excluir macroprolactina, gravidez, hipotireoidismo, fármaco e insuficiência renal; RM de sela depois de excluir causas secundárias.</li>
 <li><b>Cabergolina</b> 0,25 mg 2×/semana, com aumentos de 0,25 mg 2×/semana a cada 4 semanas ou mais, máximo 1 mg 2×/semana; <b>ecocardiograma antes e a cada 6 a 12 meses;</b> suspender se nova valvopatia ou pericardite (bula FDA 2026). Macroadenoma também começa pelo agonista; cirurgia na resistência.</li>
 <li><b>Fármaco causador:</b> trocar por um antipsicótico de efeito neutro (aripiprazol, clozapina) com o psiquiatra; se impossível, estrogênio com progestagênio para o hipoestrogenismo. Gestação: conferir (microadenoma costuma suspender o agonista; macroadenoma e desejo de engravidar com o endocrinologista).</li>
 </ul>
 
-<div class="sub-title">F1.3 · Turner e insuficiência ovariana prematura</div>
+<div class="sub-title" id="f1-3">F1.3 · Turner e insuficiência ovariana prematura</div>
 <ul class="bullets">
 <li><b>Turner na pré-puberdade:</b> GH (PD04); medir FSH, LH e AMH aos 8 a 9 anos; <b>indução com 17β-estradiol a partir de 11 a 12 anos</b> com FSH alto, dose inicial mínima e escalonamento em 2 a 4 anos até a dose adulta; progesterona micronizada com sangramento espontâneo e mais de 2 anos de estradiol, ou, com menos de 2 anos, endométrio &gt;4 a 8 mm (Turner 2024, tabela 4, nota c). Não adiar a indução para ganhar altura.</li>
 <li><b>IOP na adulta:</b> estradiol (transdérmico preferido em enxaqueca com aura, hipertensão, obesidade e risco de TEV) e progestagênio se houver útero, até a idade usual da menopausa; <b>terapia hormonal não é contracepção</b> e o anticoncepcional combinado não serve à indução puberal. Sem fertilidade garantida: doação de oócitos; preservação antes de tratamento gonadotóxico.</li>
 <li><b>Vigilância:</b> DXA no diagnóstico, lipídeos, glicemia, PA anual, TSH a cada 5 anos; cardiologista no Turner. Vaginal estrogênio se secura persistir.</li>
 </ul>
 
-<div class="sub-title">F1.4 · Rokitansky, insensibilidade androgênica, Swyer e Asherman</div>
+<div class="sub-title" id="f1-4">F1.4 · Rokitansky, insensibilidade androgênica, Swyer e Asherman</div>
 <ul class="bullets">
 <li><b>MRKH:</b> orientação e dilatação vaginal (20 minutos por dia, retornos de 1 a 2 semanas no primeiro mês, depois mensais até 6 a 8 cm); neovagina cirúrgica se falhar; apoio psicológico.</li>
 <li><b>Insensibilidade androgênica completa:</b> gonadectomia depois da puberdade, reposição estrogênica (esquema: conferir; sem progestagênio) e dilatação ou neovagina. <b>Swyer:</b> gonadectomia ao diagnóstico, indução puberal com estradiol e progestagênio.</li>
@@ -1112,7 +1131,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 
 <div class="box danger"><span class="box-label">DANGER</span><div class="box-title">Cromossomo Y em gônada disgenética: o tumor espera</div><div class="box-body">Disgenesia 46,XY (Swyer) tem risco alto de gonadoblastoma e disgerminoma desde cedo: gonadectomia ao diagnóstico. Na insensibilidade androgênica completa, o risco antes da puberdade é pequeno e a testosterona aromatizada garante a puberdade; opera-se depois. No Turner com Y, a decisão é individual, pesando tumor, função residual e autonomia da paciente <span class="ev ev-nice">Turner 2024 R 7.40</span>.</div></div>
 
-<div class="sub-title">F1.5 · SOP: ciclo, pele e metabolismo</div>
+<div class="sub-title" id="f1-5">F1.5 · SOP: ciclo, pele e metabolismo</div>
 <ul class="bullets">
 <li><b>Todas:</b> estilo de vida (perda de 5% a 10% do peso, exercício), rastreio metabólico (TOTG 75 g, lipídeos, PA), proteção endometrial (menstruar ou usar progestagênio ao menos a cada 3 meses) e rastreio de saúde mental.</li>
 <li><b>Ciclo e hirsutismo:</b> <b>anticoncepcional combinado com 20 a 30 µg de etinilestradiol,</b> sem vantagem de dose alta (primeira linha em adultas e considerar em adolescentes de risco); associação com ciproterona e 35 µg é segunda linha por risco de TEV. Sem condição de usar o combinado: progestagênio cíclico, SIU de levonorgestrel ou metformina para o ciclo.</li>
@@ -1120,20 +1139,20 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <li><b>Antiandrogênios:</b> espironolactona 25 a 100 mg/dia, só com contracepção eficaz e depois de 6 meses de combinado ou cosmético sem resposta; <b>nunca como tratamento isolado de mulher que pode engravidar.</b></li>
 </ul>
 
-<div class="sub-title">F1.6 · SOP com desejo de gestar</div>
+<div class="sub-title" id="f1-6">F1.6 · SOP com desejo de gestar</div>
 <ul class="bullets">
 <li><b>Preparo:</b> peso, PA, TOTG, folato (maior se IMC &gt;30), tabagismo e álcool; espermograma e permeabilidade tubária individualizada.</li>
 <li><b>Primeira linha: letrozol</b> 2,5 mg por 5 dias (dias 3 a 7), subindo 2,5 mg por ciclo até 7,5 mg (apostila); ensaio de 5 ciclos. Se não funcionar: clomifeno com metformina, gonadotrofinas em baixa dose ou drilling ovariano; FIV se persistir.</li>
 <li><b>Segurança:</b> gravidez excluída antes de cada ciclo; USG para o número de folículos; cancelar o ciclo com mais de 2 folículos &gt;14 mm; gestação de alto risco (GO10).</li>
 </ul>
 
-<div class="sub-title">F1.7 · Hirsutismo e HAC não clássica</div>
+<div class="sub-title" id="f1-7">F1.7 · Hirsutismo e HAC não clássica</div>
 <ul class="bullets">
 <li><b>Hirsutismo:</b> medir pelo Ferriman-Gallwey; combinado e cosmético (laser, eletrólise) por 6 a 12 meses; antiandrogênio depois, com contracepção; combinação de laser com hormônio dá resultado melhor.</li>
 <li><b>HAC não clássica:</b> combinado com ou sem antiandrogênio sem desejo de gestar; glicocorticoide (hidrocortisona ou prednisona, nunca dexametasona na gestação) se o hirsutismo resiste, se o cortisol pós-ACTH é &lt;18 µg/dL ou se há anovulação com desejo de gestar; manter na gestação (Febrasgo 2024; dono no adulto: EN04).</li>
 </ul>
 
-<div class="sub-title">F1.8 · Síndrome pré-menstrual</div>
+<div class="sub-title" id="f1-8">F1.8 · Síndrome pré-menstrual</div>
 <ul class="bullets">
 <li>Estilo de vida e terapia cognitivo-comportamental; ISRS (fluoxetina 20 mg/dia, contínua ou na fase lútea) ou combinado com drospirenona nos refratários e no TDPM; GnRH com reposição em casos graves; ooforectomia só em último caso. Depressão associada: PC02.</li>
 </ul>
@@ -1143,7 +1162,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card tx">
+<div class="card tx" id="f2">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">F.2</span> Doses Operacionais</div><h3>Tabela de doses: da investigação à indução, com a fonte de cada número</h3></div>
 <div class="card-body">
 <div class="stbl stbl-3">
@@ -1171,7 +1190,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card tx">
+<div class="card tx" id="f3">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">F.3</span> Casos</div><h3>Do caso à conduta certa, com o erro típico</h3></div>
 <div class="card-body">
 <div class="stbl stbl-3">
@@ -1189,7 +1208,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card tx">
+<div class="card tx" id="f4">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">F.4</span> Brasil</div><h3>Disponibilidade no Brasil e rótulo internacional <span class="ank ank-hy">HIGH-YIELD</span></h3></div>
 <div class="card-body">
 <div class="stbl stbl-3">
@@ -1207,7 +1226,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card tx">
+<div class="card tx" id="f5">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">F.5</span> Coerência</div><h3>O que este HP combina com os vizinhos</h3></div>
 <div class="card-body">
 <ul class="bullets">
@@ -1224,7 +1243,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <section id="pitfalls">
 <div class="section"><div class="section-eyebrow"><span>G</span> Pitfalls · Mitos · Controvérsias</div><div class="section-title">Erros Operacionais + Mitos Vivos + Debates Atuais</div><div class="section-sub">A amenorreia e a SOP têm exames baratos que resolvem a maioria dos casos e armadilhas caras que levam a RM, USG e hormônios sem necessidade. Os erros abaixo estão na prova e no ambulatório.</div></div>
 
-<div class="card pearl">
+<div class="card pearl" id="g1">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">G.1</span> Pegadinhas</div><h3>10 Erros Operacionais em Amenorreia, Hiperandrogenismo e SOP</h3></div>
 <div class="card-body">
 <div class="stbl stbl-2">
@@ -1243,7 +1262,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card pearl">
+<div class="card pearl" id="g2">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">G.2</span> Mitos · Controvérsias</div><h3>Mitos Vivos e Debates Atuais</h3></div>
 <div class="card-body">
 <div class="box myth"><span class="box-label">MYTH</span><div class="box-title">"A atleta que não menstrua está em ótima forma"</div><div class="box-body">A amenorreia da atleta é sinal de déficit de energia e de hipoestrogenismo, com perda óssea e risco de fratura por estresse. Treino de alto nível e ciclos regulares coexistem quando a ingestão é adequada. A conduta é restaurar a energia, não aceitar a amenorreia como adaptação.</div></div>
@@ -1259,7 +1278,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <section id="pearls">
 <div class="section"><div class="section-eyebrow"><span>H</span> Pearls · Evolving</div><div class="section-title">H1 · Pearls de Especialista · H2 · Áreas em Evolução</div><div class="section-sub">Oito nuances que decidem o caso e cinco mudanças recentes das diretrizes. O capítulo é estável na fisiologia e dinâmico no diagnóstico da SOP, na reposição da IOP e no monitoramento do agonista dopaminérgico.</div></div>
 
-<div class="card pearl">
+<div class="card pearl" id="h1">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">H.1</span> Pearls</div><h3>8 Nuances que Distinguem o Expert</h3></div>
 <div class="card-body">
 <div class="box pearl"><span class="box-label">PEARL</span><div class="box-title">O efeito gancho opera o tumor errado</div><div class="box-body">Em macroadenoma com prolactina de 30 a 120 ng/mL, o excesso de prolactina satura os dois anticorpos do ensaio e produz um valor falsamente baixo. Quem lê esse número como "não funcionante" opera o que responderia à cabergolina. A diluição seriada do soro desfaz o equívoco; cerca de 17% dos microadenomas operados como prolactinoma não o eram à imuno-histoquímica.</div></div>
@@ -1273,7 +1292,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card pearl">
+<div class="card pearl" id="h2">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">H.2</span> Evolving</div><h3>O que mudou <span class="ank ank-evo">EVOLVING</span></h3></div>
 <div class="card-body">
 <div class="box evolving"><span class="box-label">EVOLVING</span><div class="box-title">Diretriz internacional de SOP 2023: AMH, adolescentes e LC-MS/MS</div><div class="box-body">Atualização da diretriz de 2018: AMH como alternativa à USG em adultas; diagnóstico simplificado quando há irregularidade e hiperandrogenismo; critérios mais rígidos e sem imagem na adolescente; testosterona por LC-MS/MS; ênfase na saúde mental e em modelos de cuidado; e metformina, inositol e análogos de GLP-1 colocados no contexto de evidência baixa a moderada.</div></div>
@@ -1320,5 +1339,36 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <a class="to-top" href="#" aria-label="Voltar ao topo">↑</a>
 <div class="watermark">@dr.lorencato · GO01 Fisiologia Menstrual, Amenorreia e SOP v5.2</div>
 
-</body>
+<!--hp-f2--><script>(function(){var d=document,M=d.querySelector('main');if(!M)return;
+var SELF='GO01',HP=' CT01 CT02 CT03 CT04 CT05 CT06 CT08 CT10 CV01 CV03 CV04 CV05 CV06 CV07 CV08 EN01 EN02 EN03 EN04 EN06 EN07 GH01 GH02 GH03 GH05 GH06 GH07 GH08 GH09 GH10 GO01 GO02 GO03 GO04 GO09 GO10 GO11 GO12 GO13 GO14 HO01 HO02 HO03 HO04 HO05 HO06 II01 II02 II03 II04 II07 II08 NE01 NE02 NE03 NE04 NE05 NE06 NE07 NE08 NU01 NU02 NU03 NU04 NU05 OE01 OE02 PC01 PC02 PC03 PC04 PC05 PC06 PD01 PD02 PD03 PD04 PD05 PD06 PD07 PD08 PD09 PD10 RD01 RD02 RD03 RD04 RD05 RD07 RP01 RP02 RP03 RP04 ';
+var SK='A,H1,H2,H3,SCRIPT,STYLE,NAV,.card-num,.card-eyebrow,.sub-title,.disease-tag,.toc';
+var R=/\b(?:([A-H])(\d)?\.(\d{1,2}[a-c]?)|(CV|RP|GH|NE|EN|NU|HO|II|RD|GO|PD|PC|CT|OE)(\d\d))\b/g;
+function skip(n){for(var e=n.parentNode;e&&e!==M;e=e.parentNode)if(e.matches&&e.matches(SK))return 1;return 0}
+var w=d.createTreeWalker(M,4),t,L=[];while(t=w.nextNode())if(R.test(t.data)&&!skip(t))L.push(t);
+L.forEach(function(t){var s=t.data,f=d.createDocumentFragment(),i=0,m;R.lastIndex=0;
+while(m=R.exec(s)){var h=null;
+if(m[1]){var id=m[1].toLowerCase()+(m[2]?m[2]+'-':'')+m[3];if(d.getElementById(id))h='#'+id}
+else{var x=m[4]+m[5];if(x!==SELF&&HP.indexOf(' '+x+' ')>=0)h='../'+x+'/'+x+'.html'}
+if(!h)continue;f.appendChild(d.createTextNode(s.slice(i,m.index)));
+var a=d.createElement('a');a.href=h;a.className='xr';a.textContent=m[0];f.appendChild(a);i=R.lastIndex}
+if(i){f.appendChild(d.createTextNode(s.slice(i)));t.parentNode.replaceChild(f,t)}});
+function nz(s){return s.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'')}
+var q=d.querySelector('.hp-q'),n=d.querySelector('.hp-n'),it=M.querySelectorAll('.card,.pocket-card'),T;
+function clr(){M.querySelectorAll('.q-off').forEach(function(e){e.classList.remove('q-off')})}
+function run(){var v=nz(q.value.trim());clr();n.textContent='';if(v.length<2)return;var k=0;
+it.forEach(function(c){if(nz(c.textContent).indexOf(v)<0){c.classList.add('q-off');return}k++;
+var r=c.querySelectorAll('.stbl-row,.disease-row,.score-row'),h=[];r.forEach(function(x){if(nz(x.textContent).indexOf(v)>=0)h.push(x)});
+if(h.length)r.forEach(function(x){if(h.indexOf(x)<0)x.classList.add('q-off')});
+c.querySelectorAll('details').forEach(function(x){if(nz(x.textContent).indexOf(v)>=0)x.open=true})});
+M.querySelectorAll('section').forEach(function(s){if(!s.querySelector('.card:not(.q-off),.pocket-card:not(.q-off)'))s.classList.add('q-off')});
+n.textContent=k?k+' achado'+(k>1?'s':''):'nada'}
+if(q){q.addEventListener('input',function(){clearTimeout(T);T=setTimeout(run,180)});
+q.addEventListener('keydown',function(e){if(e.key==='Escape'){q.value='';run()}})}
+function tg(b,f){b.addEventListener('click',function(){var on=b.getAttribute('aria-pressed')!=='true';b.setAttribute('aria-pressed',on);f(on)})}
+var bd=d.querySelector('.hp-dz'),bo=d.querySelector('.hp-op');
+if(bd)tg(bd,function(on){d.body.classList.toggle('dz',on);if(on)d.getElementById('tratamento').scrollIntoView()});
+if(bo)tg(bo,function(on){M.querySelectorAll('details').forEach(function(x){x.open=on})});
+var P=[];addEventListener('beforeprint',function(){P=[];M.querySelectorAll('details:not([open])').forEach(function(x){P.push(x);x.open=true})});
+addEventListener('afterprint',function(){P.forEach(function(x){x.open=false})});
+})();</script><!--/hp-f2--></body>
 </html>

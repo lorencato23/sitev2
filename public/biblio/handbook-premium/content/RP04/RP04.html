@@ -345,13 +345,32 @@ ul.bullets li b{color:var(--ink);font-weight:600}
   .pocket .pocket-card.tx{--accent:#a8481a}
   .pocket .pocket-card.clin{--accent:#0b5d4e}
 }
+
+/* === v5.2.2 · fase 2 (navegação) === */
+.hp-tools{display:flex;gap:6px;align-items:center;flex:none;order:1;margin-left:auto;padding-left:6px;position:sticky;right:0;background:#f1eee5;box-shadow:-10px 0 10px -4px #f1eee5,16px 0 0 #f1eee5}
+@media(min-width:900px){html{scroll-padding-top:150px}.toc-inner{flex-wrap:wrap;overflow:visible}.card[id],.sub-title[id]{scroll-margin-top:150px}}
+@media(max-width:899px){.hp-b,.hp-n{display:none}.hp-q{width:104px}}
+.hp-q{width:128px;font:500 12px/1 'DM Sans',system-ui,sans-serif;padding:7px 11px;border:1px solid var(--line-strong);border-radius:999px;background:var(--paper);color:var(--ink)}
+.hp-b{font:600 11px/1 'DM Sans',system-ui,sans-serif;letter-spacing:.05em;text-transform:uppercase;padding:7px 10px;border-radius:999px;border:1px solid var(--line-strong);background:var(--paper);color:var(--ink-soft);cursor:pointer;white-space:nowrap}
+.hp-b[aria-pressed=true]{background:var(--ink);color:#fff;border-color:var(--ink)}
+.hp-n{font:600 11px/1 'DM Mono',monospace;color:var(--ink-mute);white-space:nowrap}
+.sec-idx{display:flex;flex-wrap:wrap;gap:6px;margin:12px 0 20px}
+.sec-idx a{font:500 12px/1.25 'DM Sans',system-ui,sans-serif;padding:6px 10px;border-radius:999px;background:var(--paper);border:1px solid var(--line);color:var(--ink-soft);text-decoration:none}
+.sec-idx a:hover{border-color:var(--line-strong);color:var(--ink)}
+.sec-idx b{color:var(--c-prim);margin-right:5px;font-weight:700}
+a.xr{color:inherit;text-decoration:underline dotted;text-underline-offset:2px}
+a.xr:hover{color:var(--c-prim)}
+.card[id],.sub-title[id]{scroll-margin-top:110px}
+.q-off{display:none!important}
+body.dz main section:not(#tratamento){display:none}
+@media print{.hp-tools,.sec-idx,.toc-doses{display:none!important}}
 </style>
 </head>
 <body>
 
 <header class="header"><div class="header-row"><div class="h-mark">T</div><div class="h-titles"><div class="h-title">TEP, Hipertensão Pulmonar e Pleura · Pocket Handbook</div><div class="h-sub">Elite edition · Pneumologia clínica · RP04</div></div><div class="h-author">@dr.lorencato</div><div class="h-edition">v5.2</div></div></header>
 
-<nav class="toc"><div class="toc-inner"><a href="#pocket" class="toc-chip"><span class="toc-chip-num">0</span>Pocket</a><a href="#redflags" class="toc-chip"><span class="toc-chip-num">A</span>Red Flags</a><a href="#approach" class="toc-chip"><span class="toc-chip-num">B</span>Apresentação</a><a href="#primarias" class="toc-chip"><span class="toc-chip-num">C</span>Entidades</a><a href="#secundarias" class="toc-chip"><span class="toc-chip-num">D</span>Secundárias</a><a href="#algoritmo" class="toc-chip"><span class="toc-chip-num">E</span>Algoritmo</a><a href="#tratamento" class="toc-chip"><span class="toc-chip-num">F</span>Tratamento</a><a href="#pitfalls" class="toc-chip"><span class="toc-chip-num">G</span>Pitfalls</a><a href="#pearls" class="toc-chip"><span class="toc-chip-num">H</span>Pearls</a></div></nav>
+<nav class="toc"><div class="toc-inner"><!--hp-f2--><span class="hp-tools"><input class="hp-q" type="search" placeholder="Buscar no HP" aria-label="Buscar no HP"><button class="hp-b hp-dz" type="button" aria-pressed="false">Só doses</button><button class="hp-b hp-op" type="button" aria-pressed="false">Abrir tudo</button><span class="hp-n" aria-live="polite"></span></span><!--/hp-f2--><a href="#pocket" class="toc-chip"><span class="toc-chip-num">0</span>Pocket</a><a href="#redflags" class="toc-chip"><span class="toc-chip-num">A</span>Red Flags</a><a href="#approach" class="toc-chip"><span class="toc-chip-num">B</span>Apresentação</a><a href="#primarias" class="toc-chip"><span class="toc-chip-num">C</span>Entidades</a><a href="#secundarias" class="toc-chip"><span class="toc-chip-num">D</span>Secundárias</a><a href="#algoritmo" class="toc-chip"><span class="toc-chip-num">E</span>Algoritmo</a><a href="#tratamento" class="toc-chip"><span class="toc-chip-num">F</span>Tratamento</a><!--hp-f2--><a href="#f2" class="toc-chip toc-doses"><span class="toc-chip-num">Rx</span>Doses</a><!--/hp-f2--><a href="#pitfalls" class="toc-chip"><span class="toc-chip-num">G</span>Pitfalls</a><a href="#pearls" class="toc-chip"><span class="toc-chip-num">H</span>Pearls</a></div></nav>
 
 <main>
 <div class="wrap">
@@ -421,7 +440,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <div class="section-sub">Quase toda morte nesta área é morte do VD: dilatado contra uma pós-carga súbita no TEP, esgotado contra uma pós-carga crônica na HP, comprimido pelo ar no pneumotórax hipertensivo. O pleural mata por outro caminho, mais lento: o empiema que ninguém drenou e o pulmão que encarcera. Cada sinal abaixo tem uma ação que não espera o especialista.</div>
 </div>
 
-<div class="card emerg">
+<div class="card emerg" id="a1">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">A.1</span> Emergências</div><h3>Sinais de alarme na circulação pulmonar e na pleura <span class="ank ank-dgr">DANGER</span></h3></div>
 <div class="card-body">
 <div class="mnemo">
@@ -467,7 +486,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <div class="section-sub">O TEP é o grande mascarado: não há sinal clínico que o confirme ou exclua, e por isso a pergunta inicial é de probabilidade. A HP aparece como dispneia "desproporcional" anos antes do diagnóstico. A pleura chega como imagem: o raciocínio começa na toracocentese.</div>
 </div>
 
-<div class="card clin">
+<div class="card clin" id="b1">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">B.1</span> Padrão 1</div><h3>Dispneia súbita com pulmão "limpo" na radiografia</h3><div class="card-sub">dissociação clínico-radiológica — o padrão clássico do TEP</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Dispneia, taquipneia e hipoxemia com radiografia normal ou pouco alterada é TEP até que a probabilidade pré-teste diga o contrário. A dispneia vem de mediadores (serotonina, tromboxano) e de espaço morto, não só da hipoxemia: <b>PaO₂ normal não exclui</b>. Pense também em shunt intracardíaco, pneumotórax pequeno (perfil e USG), asma e ansiedade — esta só depois de excluir as outras.</div></div>
@@ -482,7 +501,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card clin">
+<div class="card clin" id="b2">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">B.2</span> Padrão 2</div><h3>Dor torácica pleurítica</h3><div class="card-sub">a pleura parietal inervada pelos intercostais e pelo frênico</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Dor que piora na inspiração e na tosse é pleural. A lista que mata: <b>TEP (infarto pulmonar)</b>, <b>pneumotórax</b>, pneumonia com pleurite, pericardite (piora deitado, melhora sentado), ruptura esofágica (vômitos, enfisema subcutâneo, derrame à esquerda com amilase alta). Dor que some quando o derrame cresce é pleurite que separou os folhetos.</div></div>
@@ -494,7 +513,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card clin">
+<div class="card clin" id="b3">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">B.3</span> Padrão 3</div><h3>Dispneia progressiva aos esforços, fadiga e síncope ao esforço</h3><div class="card-sub">a HP é diagnosticada em média 2 anos depois do primeiro sintoma</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Dispneia de esforço sem explicação após espirometria, radiografia e eco do VE normais pede <b>ecocardiograma com atenção ao VD</b> (velocidade de regurgitação tricúspide, tamanho de VD/AD, septo, artéria pulmonar). <b>Síncope ao esforço</b> e sinais de falência de VD (edema, ascite, turgência) indicam doença avançada e encaminhamento rápido.</div></div>
@@ -507,7 +526,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card clin">
+<div class="card clin" id="b4">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">B.4</span> Padrão 4</div><h3>Derrame pleural na imagem</h3><div class="card-sub">primeiro decide se precisa puncionar; depois transudato × exsudato</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Derrame bilateral e simétrico em IC descompensada pode ser só observado sob diurético; <b>puncione</b> se for unilateral, assimétrico, febril, com dor pleurítica ou se não responder em 2–3 dias. Todo derrame novo sem causa aparente é puncionado, <b>sempre guiado por USG</b> (BTS 2023, recomendação forte).</div></div>
@@ -520,7 +539,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card clin">
+<div class="card clin" id="b5">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">B.5</span> Padrão 5</div><h3>TEP achado na tomografia de quem não tinha suspeita</h3><div class="card-sub">estadiamento oncológico, TC de abdome, TC de tórax por outro motivo</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">TEP incidental (categoria A da AHA/ACC 2026) tem prognóstico de recorrência e mortalidade semelhante ao sintomático no paciente oncológico: <b>trata-se igual</b>, inclusive o segmentar ou mais proximal. Subsegmentar isolado sem câncer, sem TVP e com reserva boa pode ser observado com duplex seriado — decisão individual.</div></div>
@@ -539,10 +558,10 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <div class="section-eyebrow"><span>C</span> Entidades Primárias</div>
 <div class="section-title">Disease boxes — dois TEP (o que se diagnostica e o que se reperfunde), duas hipertensões pulmonares (a arterial e a tromboembólica crônica) e três problemas da pleura</div>
 <div class="section-sub">O TEP aparece em dois boxes porque o raciocínio se divide: no estável, a pergunta é "tem TEP e onde trato?"; no instável, "como desobstruo agora?". A HAP e a HPTEC são as HP com tratamento específico. Na pleura, a abordagem do derrame, a infecção pleural e o pneumotórax espontâneo concentram as decisões de plantão.</div>
-</div>
+</div><!--hp-f2--><nav class="sec-idx" aria-label="Neste capítulo"><a href="#c1"><b>C.1</b>Tromboembolismo pulmonar agud…</a><a href="#c2"><b>C.2</b>TEP de alto risco e intermedi…</a><a href="#c3"><b>C.3</b>Hipertensão arterial pulmonar…</a><a href="#c4"><b>C.4</b>HP tromboembólica crônica e d…</a><a href="#c5"><b>C.5</b>Derrame pleural — da imagem a…</a><a href="#c6"><b>C.6</b>Derrame parapneumônico compli…</a><a href="#c7"><b>C.7</b>Pneumotórax espontâneo primár…</a></nav><!--/hp-f2-->
 
 <!-- C.1 TEP agudo -->
-<div class="card prim">
+<div class="card prim" id="c1">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.1</span> Entidade âncora</div><h3>Tromboembolismo pulmonar agudo — probabilidade, diagnóstico e estratificação <span class="ank ank-hy">HIGH-YIELD</span> <span class="ank ank-dec">DECISION</span></h3><div class="card-sub">a doença que não se confirma nem se exclui pela clínica</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Três passos fixos: <b>(1) probabilidade pré-teste</b> (Wells ou Genebra; PERC na baixa; YEARS como alternativa); <b>(2) D-dímero só na probabilidade não alta</b>, com corte ajustado à idade; <b>(3) angio-TC</b> (V/Q se contraste proibido ou gestante com radiografia normal). Confirmado o TEP, estratifique: <b>instabilidade → alto risco</b>; senão PESI/sPESI → VD (eco/TC) + troponina → intermediário-alto, intermediário-baixo ou baixo. Anticoagulação empírica enquanto a imagem não sai se a probabilidade é alta ou intermediária.</div></div>
@@ -581,7 +600,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 
 <!-- C.2 TEP com repercussão hemodinâmica -->
-<div class="card prim">
+<div class="card prim" id="c2">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.2</span> Entidade âncora</div><h3>TEP de alto risco e intermediário-alto — reperfusão e suporte do VD <span class="ank ank-dgr">DANGER</span> <span class="ank ank-dec">DECISION</span></h3><div class="card-sub">o antigo "maciço" e "submaciço"; categorias C3, D e E da AHA/ACC 2026</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body"><b>Alto risco (choque, hipotensão persistente ou parada):</b> heparina + <b>reperfusão imediata</b> — trombólise sistêmica sem contraindicação; senão embolectomia cirúrgica ou terapia por cateter; ECMO como ponte. <b>Intermediário-alto (normotenso, VD + troponina):</b> anticoagular e monitorar; trombólise sistêmica de rotina <b>não</b> (sangramento anula o ganho); trombólise de resgate se deteriorar; terapia por cateter em centro com PERT para quem tem sinais de descompensação iminente.</div></div>
@@ -620,7 +639,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 
 <!-- C.3 HAP -->
-<div class="card prim">
+<div class="card prim" id="c3">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.3</span> Entidade âncora</div><h3>Hipertensão arterial pulmonar (grupo 1) <span class="ank ank-hy">HIGH-YIELD</span> <span class="ank ank-dec">DECISION</span></h3><div class="card-sub">vasculopatia proliferativa das arteríolas pré-capilares; diagnóstico de exclusão confirmado no cateterismo direito</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">HP pré-capilar = <b>PAPm &gt;20 mmHg, POAP ≤15 mmHg e RVP &gt;2 UW</b> no cateterismo direito. HAP é o grupo 1 (idiopática, hereditária, drogas, DTC, HIV, portal, cardiopatia congênita, esquistossomose), depois de excluir os grupos 2, 3 e 4 — o eco e a cintilografia V/Q fazem essa triagem. Vasorreativo (queda ≥10 mmHg para PAPm ≤40 com débito mantido) → bloqueador de canal de cálcio em dose alta. Os demais: <b>combinação inicial ERA + iPDE5</b> se não alto risco; prostanoide parenteral no alto risco; reavaliar o risco a cada 3–6 meses e escalonar até o baixo risco.</div></div>
@@ -658,7 +677,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 
 <!-- C.4 HPTEC -->
-<div class="card prim">
+<div class="card prim" id="c4">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.4</span> Entidade primária</div><h3>HP tromboembólica crônica e doença tromboembólica crônica sem HP (grupo 4) <span class="ank ank-dec">DECISION</span></h3><div class="card-sub">a única HP potencialmente curável — por cirurgia</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Dispneia persistente ou recorrente ≥3 meses após TEP tratado (ou HP sem TEP conhecido: ~25% não têm história). <b>Cintilografia V/Q é o exame de triagem</b> (normal exclui); angio-TC e angiografia definem a anatomia. Confirmada no cateterismo depois de ≥3 meses de anticoagulação eficaz: <b>anticoagulação por toda a vida</b> e avaliação num centro com endarterectomia pulmonar (EAP); inoperável ou residual → angioplastia por balão (BPA) e/ou riociguate.</div></div>
@@ -677,7 +696,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 
 <!-- C.5 Derrame pleural -->
-<div class="card prim">
+<div class="card prim" id="c5">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.5</span> Entidade primária</div><h3>Derrame pleural — da imagem ao diagnóstico etiológico <span class="ank ank-hy">HIGH-YIELD</span></h3><div class="card-sub">transudato é doença de fora da pleura; exsudato é doença da pleura</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Puncione guiado por USG. <b>Light</b>: exsudato se qualquer um — proteína pleural/sérica &gt;0,5; LDH pleural/sérica &gt;0,6; LDH pleural &gt;2/3 do LSN sérico. Transudato provável clinicamente (IC sob diurético) com Light de exsudato: <b>gradiente soro − pleura de proteína &gt;3,1 g/dL ou de albumina &gt;1,2 g/dL</b> reclassifica como transudato. Em todo exsudato: pH, glicose, celularidade, Gram e cultura, citologia, ADA. IC, cirrose e síndrome nefrótica são as grandes causas de transudato; pneumonia, câncer e TB, de exsudato.</div></div>
@@ -707,7 +726,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 
 <!-- C.6 Empiema -->
-<div class="card prim">
+<div class="card prim" id="c6">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.6</span> Entidade âncora</div><h3>Derrame parapneumônico complicado e empiema <span class="ank ank-dgr">DANGER</span> <span class="ank ank-dec">DECISION</span></h3><div class="card-sub">a janela entre o líquido livre e o pulmão encarcerado é de dias</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Pneumonia com derrame: puncione. <b>Pus, Gram/cultura positivos ou pH ≤7,2 → dreno</b> (pigtail ≤14F guiado por USG basta na maioria). Antibiótico com <b>cobertura de anaeróbio</b> por 2–6 semanas. Coleção residual septada após o dreno → <b>alteplase 10 mg + dornase 5 mg intrapleural 12/12 h × 3 dias</b>; falha, sepse persistente ou pulmão encarcerado → <b>VATS</b>. Estreptoquinase intrapleural não.</div></div>
@@ -734,7 +753,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 
 <!-- C.7 Pneumotórax -->
-<div class="card prim">
+<div class="card prim" id="c7">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.7</span> Entidade primária</div><h3>Pneumotórax espontâneo primário e secundário <span class="ank ank-dec">DECISION</span></h3><div class="card-sub">a BTS 2023 trocou o tamanho pelos sintomas como critério principal</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body"><b>Primário</b> (sem doença pulmonar conhecida; jovem longilíneo, tabagista): estável e pouco sintomático → <b>conservador, qualquer tamanho</b>; sintomático → aspiração com agulha, dispositivo ambulatorial ou dreno fino. <b>Secundário</b> (DPOC, TB, fibrose, FC, pneumocistose, linfangioleiomiomatose): internar e drenar quase sempre; pleurodese química pode ser feita já no 1º episódio se houve descompensação. Hipertensivo: descompressão imediata. Recorrência → cirurgia (VATS com pleurodese/bulectomia).</div></div>
@@ -759,10 +778,10 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <div class="section-eyebrow"><span>D</span> Entidades Secundárias</div>
 <div class="section-title">TEP em populações que mudam a decisão, HP fora do grupo 1 e os derrames com assinatura própria</div>
 <div class="section-sub">Gestante e paciente oncológico mudam o exame e o anticoagulante, não a lógica. A maior parte da HP do mundo real é dos grupos 2 e 3, em que vasodilatador pulmonar costuma fazer mal. Na pleura, quatro derrames têm laboratório característico: tuberculoso, maligno, quiloso e hemorrágico.</div>
-</div>
+</div><!--hp-f2--><nav class="sec-idx" aria-label="Neste capítulo"><a href="#d1"><b>D.1</b>TEP na gestação e no puerpério</a><a href="#d2"><b>D.2</b>TEP no câncer, TEP incidental…</a><a href="#d3"><b>D.3</b>Embolias não trombóticas — am…</a><a href="#d4"><b>D.4</b>HP associada a doença cardíac…</a><a href="#d5"><b>D.5</b>HAP associada no contexto bra…</a><a href="#d6"><b>D.6</b>Derrame pleural tuberculoso</a><a href="#d7"><b>D.7</b>Derrame pleural maligno e mes…</a><a href="#d8"><b>D.8</b>Quilotórax, hemotórax não tra…</a></nav><!--/hp-f2-->
 
 <!-- D.1 Gestação -->
-<div class="card diag">
+<div class="card diag" id="d1">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">D.1</span> Populações especiais</div><h3>TEP na gestação e no puerpério <span class="ank ank-dec">DECISION</span></h3><div class="card-sub">principal causa de morte materna direta em países de alta renda</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Risco de TEV ~5 vezes maior na gestação e ~20 vezes no puerpério (pico nas 6 semanas pós-parto, maior após cesárea). D-dímero sobe fisiologicamente, mas o <b>YEARS adaptado à gestação (Artemis)</b> ainda dispensa imagem em parte das gestantes. <b>Nunca deixar de fazer imagem por medo da radiação</b>: a dose fetal da angio-TC e da cintilografia é muito inferior ao limiar de dano. Trate com <b>HBPM por peso</b>; DOAC e varfarina não.</div></div>
@@ -777,7 +796,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 
 <!-- D.2 Câncer -->
-<div class="card diag">
+<div class="card diag" id="d2">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">D.2</span> Populações especiais</div><h3>TEP no câncer, TEP incidental e subsegmentar <span class="ank ank-dec">DECISION</span></h3><div class="card-sub">a decisão é sobre sangramento, interação e duração — a dose está no HO03</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Câncer ativo eleva o TEV 4–7 vezes (pâncreas, estômago, pulmão, cérebro, ovário, linfoma, mieloma; quimioterapia, antiangiogênicos, IMiDs, cateter). TEP incidental no estadiamento <b>se trata como o sintomático</b>. DOAC é a escolha na maioria; <b>HBPM ou apixabana</b> quando há tumor luminal gastrointestinal ou urotelial com risco de sangramento, plaquetas baixas ou interação relevante. Tratar ≥6 meses e enquanto o câncer estiver ativo.</div></div>
@@ -792,7 +811,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 
 <!-- D.3 Embolias não trombóticas -->
-<div class="card diag">
+<div class="card diag" id="d3">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">D.3</span> Agrupadas</div><h3>Embolias não trombóticas — amniótica, séptica, tumoral, gasosa iatrogênica e por cimento</h3><div class="card-sub">a embolia gordurosa e a gasosa do trauma estão no CT01</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Não anticoagule por reflexo: na maioria a anticoagulação não trata. <b>Amniótica</b>: colapso no parto com hipoxemia, choque e CIVD — suporte, transfusão guiada, ECMO. <b>Séptica</b>: endocardite tricúspide em usuário de droga IV, tromboflebite séptica (Lemierre, pélvica) — antibiótico e controle do foco. <b>Gasosa venosa</b> (cateter central, cirurgia em posição sentada): decúbito lateral esquerdo e Trendelenburg, O₂ a 100%, aspirar pelo cateter, câmara hiperbárica na arterial.</div></div>
@@ -807,7 +826,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 
 <!-- D.4 HP grupos 2/3/5 -->
-<div class="card diag">
+<div class="card diag" id="d4">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">D.4</span> Agrupadas</div><h3>HP associada a doença cardíaca esquerda, pneumopatia e mecanismos multifatoriais; cor pulmonale crônico <span class="ank ank-dgr">DANGER</span></h3><div class="card-sub">grupos 2, 3 e 5 — trata-se a doença de base; vasodilatador pulmonar é exceção</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body"><b>Grupo 2</b> (o mais comum: IC com FE preservada ou reduzida, valvopatia mitral/aórtica, Chagas, cardiomiopatias): POAP &gt;15; pós-capilar isolada (RVP ≤2) ou combinada (RVP &gt;2). <b>Grupo 3</b> (DPOC, fibrose, hipoventilação, apneia do sono, altitude): HP grave (RVP &gt;5 UW) é desproporcional e merece centro. <b>Grupo 5</b>: sarcoidose, anemias hemolíticas crônicas (falciforme), mieloproliferativas, DRC em diálise, mediastinite fibrosante. Drogas de HAP no grupo 2 e na DPOC pioram oxigenação ou causam edema.</div></div>
@@ -822,7 +841,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 
 <!-- D.5 HAP associada no Brasil -->
-<div class="card diag">
+<div class="card diag" id="d5">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">D.5</span> Agrupadas</div><h3>HAP associada no contexto brasileiro — esquistossomose, HIV, drogas, hipertensão portal, cardiopatia congênita e colagenoses</h3><div class="card-sub">a causa muda o rastreio e algumas escolhas; o algoritmo de risco é o mesmo</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body"><b>Esquistossomose hepatoesplênica</b> (Nordeste, norte de MG): HAP por embolização de ovos através de colaterais portossistêmicas e hiperfluxo — tratar o parasita (praziquantel) não reverte a vasculopatia; usar drogas de HAP como no grupo 1. <b>HIV</b>: HAP independe do CD4; TARV + drogas de HAP. <b>Drogas e toxinas</b>: anfetaminas, metanfetamina, benfluorex/fenfluramina, dasatinibe, interferon, mitomicina C e carfilzomibe. <b>Portopulmonar</b> → GH10. <b>Colagenoses</b> (rastreio anual na ES) → RD02. <b>Eisenmenger e HP pediátrica</b> → PD09.</div></div>
@@ -837,7 +856,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 
 <!-- D.6 TB pleural -->
-<div class="card diag">
+<div class="card diag" id="d6">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">D.6</span> Pleura</div><h3>Derrame pleural tuberculoso <span class="ank ank-hy">HIGH-YIELD</span></h3><div class="card-sub">a forma extrapulmonar mais comum no adulto sem HIV</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Adulto jovem, febre, tosse seca, dor pleurítica, derrame unilateral moderado. Líquido: <b>exsudato linfocítico</b>, proteína alta, glicose moderadamente baixa, <b>&lt;5% de células mesoteliais</b>, sem eosinófilos; <b>ADA ≥40 U/L</b>. Baciloscopia do líquido quase sempre negativa; cultura positiva em ~20–40%; <b>biópsia pleural</b> (granuloma + cultura do fragmento) eleva o rendimento a &gt;80%. Tratamento padrão de TB → RP03.</div></div>
@@ -852,7 +871,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 
 <!-- D.7 Derrame maligno -->
-<div class="card diag">
+<div class="card diag" id="d7">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">D.7</span> Pleura</div><h3>Derrame pleural maligno e mesotelioma <span class="ank ank-dec">DECISION</span></h3><div class="card-sub">objetivo: controle de sintoma com o menor número de procedimentos</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Pulmão, mama e linfoma são ~75%; mesotelioma (exposição a asbesto 20–40 anos antes). Citologia 25–50 mL; negativa e suspeita alta → biópsia por imagem ou toracoscopia. Sintomático e com pulmão expansível: <b>pleurodese com talco ou cateter pleural de longa permanência</b>, por escolha informada; pulmão não expansível (&gt;25%) → cateter. Não adiar a intervenção pleural esperando a quimioterapia.</div></div>
@@ -867,7 +886,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 
 <!-- D.8 Quilotórax e outros -->
-<div class="card diag">
+<div class="card diag" id="d8">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">D.8</span> Agrupadas</div><h3>Quilotórax, hemotórax não traumático, pulmão encarcerado e derrames com causa específica</h3><div class="card-sub">colagenoses, pancreatite, Meigs, fármacos, pós-injúria cardíaca, urinotórax, hidrotórax hepático</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body"><b>Quilotórax</b>: TG &gt;110 mg/dL (quilomícrons), por lesão do ducto torácico (cirurgia, linfoma, linfangioleiomiomatose) — dieta com triglicerídeos de cadeia média, NPT, octreotida, ligadura/embolização. <b>Hemotórax espontâneo</b>: Ht pleural/sérico &gt;0,5; anticoagulante, ruptura de bolha vascularizada, endometriose, malformação — dreno e cirurgia se sangramento &gt;1.500 mL inicial ou contínuo. <b>Pulmão encarcerado</b>: derrame que volta com pressão pleural muito negativa após drenagem.</div></div>
@@ -889,7 +908,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <div class="section-sub">No TEP, a primeira pergunta é hemodinâmica, a segunda é de probabilidade. Na HP, é qual grupo. No derrame, é se precisa puncionar e, puncionado, se é transudato, infecção, câncer ou TB.</div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="e1">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">E.1</span> Algoritmo</div><h3>Suspeita de TEP <span class="ank ank-dec">DECISION</span></h3></div>
 <div class="card-body">
 <div class="algo">
@@ -920,7 +939,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="e2">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">E.2</span> Algoritmo</div><h3>Suspeita de hipertensão pulmonar <span class="ank ank-dec">DECISION</span></h3></div>
 <div class="card-body">
 <div class="algo">
@@ -936,7 +955,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="e3">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">E.3</span> Algoritmo</div><h3>Derrame pleural unilateral <span class="ank ank-dec">DECISION</span></h3></div>
 <div class="card-body">
 <div class="algo">
@@ -963,13 +982,13 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <div class="section-eyebrow"><span>F</span> Tratamento Integrado</div>
 <div class="section-title">F1 · Estratégia por entidade · F2 · Doses operacionais · F3 · Cenários de plantão</div>
 <div class="section-sub">As doses de anticoagulantes repetem literalmente o F2 do HO03 (fonte única da biblioteca para heparinas, DOAC, varfarina, reversão e ajuste renal). Aqui ficam a decisão por cenário, a reperfusão, a terapia específica da HP e os procedimentos pleurais. SUS e recomendação internacional aparecem separados quando divergem.</div>
-</div>
+</div><!--hp-f2--><nav class="sec-idx" aria-label="Neste capítulo"><a href="#f1"><b>F.1</b>Escadas terapêuticas por enti…</a><a href="#f2"><b>F.2</b>Tabela de doses — anticoagula…</a><a href="#f3"><b>F.3</b>Caso → conduta certa → erro t…</a></nav><!--/hp-f2-->
 
-<div class="card tx">
+<div class="card tx" id="f1">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">F.1</span> Estratégia</div><h3>Escadas terapêuticas por entidade</h3></div>
 <div class="card-body">
 
-<div class="sub-title">F1.1 · TEP estável — onde tratar, com o quê e por quanto tempo</div>
+<div class="sub-title" id="f1-1">F1.1 · TEP estável — onde tratar, com o quê e por quanto tempo</div>
 <ul class="bullets">
 <li><b>Antes da imagem:</b> probabilidade alta ou intermediária com imagem atrasada → anticoagulação parenteral ou DOAC empírico, se não houver sangramento ativo.</li>
 <li><b>Onde:</b> baixo risco (sPESI 0, PESI I–II ou Hestia negativo), sem VD/troponina alterados, com acesso garantido ao medicamento e retorno → <b>domicílio</b> ou alta em 24–48 h (SBPT 2025, condicional; AHA/ACC 2026 categoria B). Intermediário → enfermaria; intermediário-alto → leito monitorado.</li>
@@ -981,7 +1000,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <div class="box decision"><span class="box-label">DECISION</span><div class="box-title">O critério de alta precoce é a soma de três seguranças, não só o escore</div><div class="box-body">Escore baixo (sPESI 0 ou Hestia sem nenhum critério), coração sem sobrecarga e um sistema que garante remédio, retorno e readmissão. No SUS, os DOAC não estão nas listas oficiais (não avaliados pela Conitec para TEV); a alta com varfarina exige HBPM sobreposta e controle de INR acessível — sem isso, a "alta precoce" vira subtratamento.</div></div>
 
 <div class="box danger"><span class="box-label">DANGER</span><div class="box-title">Não espere a imagem para anticoagular quem tem probabilidade alta</div><div class="box-body">Na probabilidade alta, ou intermediária com imagem que vai demorar, o risco de recorrência fatal nas horas de espera supera o de sangramento na maioria dos pacientes: inicie HBPM (ou DOAC com ataque) assim que a suspeita for registrada, salvo sangramento ativo ou procedimento invasivo iminente. Se a TC excluir TEP, suspenda; uma ou duas doses têm risco mínimo. O inverso — esperar a imagem "para não anticoagular à toa" — é a origem de boa parte das mortes por TEP diagnosticado tarde. Na probabilidade baixa, não anticoagule: complete o algoritmo.</div></div>
-<div class="sub-title">F1.2 · TEP alto risco e intermediário-alto — reperfusão e suporte</div>
+<div class="sub-title" id="f1-2">F1.2 · TEP alto risco e intermediário-alto — reperfusão e suporte</div>
 <ul class="bullets">
 <li><b>Alto risco (choque, hipotensão persistente):</b> HNF IV → <b>trombólise sistêmica</b> (alteplase 100 mg em 2 h; &lt;65 kg: máx. 1,5 mg/kg) se não houver contraindicação absoluta (SBPT 2025, sugerida; AHA/ACC 2026, 2A na categoria E junto com cateter e trombectomia).</li>
 <li><b>Contraindicação ou falha da trombólise:</b> embolectomia cirúrgica (centro com CEC) ou terapia por cateter (fibrinólise local ou aspiração/fragmentação); <b>ECMO venoarterial</b> como ponte no choque refratário ou na parada.</li>
@@ -991,7 +1010,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </ul>
 <div class="box danger"><span class="box-label">DANGER</span><div class="box-title">Heparina e trombolítico: a sequência importa</div><div class="box-body">A alteplase não se mistura com heparina na mesma linha. Pela bula, a HNF é <b>iniciada ou reiniciada após a infusão</b>, quando o TTPa estiver &lt;2× o limite superior normal, com alvo de 50–70 s (SmPC Actilyse); reiniciar sem bólus e repetir o TTPa em 4 h se ainda alto é prática (conferir). Com estreptoquinase ou uroquinase (sem apresentação na CMED de 10/2026), a HNF era suspensa durante a infusão. Se o paciente estava em HBPM ou DOAC, a última dose define o risco: espere 12 h após enoxaparina 12/12 h (24 h se 1×/dia) para iniciar HNF, salvo emergência (esquema do PEITHO-3); a alternativa é manter a HBPM nos intervalos habituais durante a trombólise (CMAJ 2026).</div></div>
 
-<div class="sub-title">F1.3 · Filtro de cava e situações especiais</div>
+<div class="sub-title" id="f1-3">F1.3 · Filtro de cava e situações especiais</div>
 <ul class="bullets">
 <li><b>Filtro de cava inferior (recuperável):</b> TEP/TVP proximal aguda com <b>contraindicação absoluta à anticoagulação</b> (sangramento ativo, neurocirurgia recente); recorrência apesar de anticoagulação terapêutica comprovada é indicação controversa. Não usar de rotina no TEP grave anticoagulável (PREPIC-2 sem benefício). Retirar quando a anticoagulação for possível; o filtro aumenta TVP a longo prazo.</li>
 <li><b>Gestação:</b> HBPM por peso, toda a gestação e ≥6 semanas pós-parto (≥3 meses no total); planejar anestesia (D.1).</li>
@@ -1001,7 +1020,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <li><b>Trombofilia:</b> não testar após TEV não provocado ou pós-cirúrgico; SAF muda o fármaco (varfarina); pesquisar anticorpos antifosfolípides antes da estendida em &lt;50 anos, trombose em sítio incomum ou recorrente (SBPT 2025; HO03).</li>
 </ul>
 
-<div class="sub-title">F1.4 · HAP — escada guiada por risco</div>
+<div class="sub-title" id="f1-4">F1.4 · HAP — escada guiada por risco</div>
 <ul class="bullets">
 <li><b>Todos:</b> centro de referência; medidas gerais (exercício supervisionado, vacinas, O₂ se PaO₂ ≤60 mmHg ou SaO₂ ≤90% em repouso, diurético, ferro, contracepção eficaz).</li>
 <li><b>Vasorreativo (idiopática, hereditária, drogas):</b> nifedipino ou anlodipino na maior dose tolerada; reavaliar em 3–6 meses — manter só se CF I–II e baixo risco; senão, terapia de HAP.</li>
@@ -1018,19 +1037,19 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 
 <div class="box decision"><span class="box-label">DECISION</span><div class="box-title">Monitorização das drogas de HAP e acesso pelo Componente Especializado</div><div class="box-body">No SUS, as drogas do PCDT são dispensadas pelo Componente Especializado da Assistência Farmacêutica mediante laudo com cateterismo direito, classe funcional e estratificação de risco, renovado periodicamente. Monitorar: <b>ERA</b> — transaminases mensais com bosentana, hemoglobina, edema, teste de gravidez mensal e contracepção dupla (a bosentana reduz o ACO); <b>sildenafila</b> — hipotensão com nitratos (contraindicação absoluta), alterações visuais, epistaxe; <b>iloprosta</b> — tosse, cefaleia, rubor, síncope se doses forem omitidas; <b>selexipague</b> — cefaleia, diarreia, dor mandibular na titulação (manter a titulação); <b>sotatercepte</b> — hemoglobina e plaquetas antes das primeiras cinco doses (não usar com plaquetas &lt;50 mil/µL), telangiectasias, sangramento. Reestratificar o risco a cada 3–6 meses decide escalonar, não a tolerância.</div></div>
-<div class="sub-title">F1.5 · HPTEC — a cirurgia vem antes da droga</div>
+<div class="sub-title" id="f1-5">F1.5 · HPTEC — a cirurgia vem antes da droga</div>
 <ul class="bullets">
 <li>Anticoagulação contínua (varfarina INR 2–3 como padrão; DOAC aceitos fora da SAF em centros, com dados observacionais de mais recorrência).</li>
 <li>Avaliação em centro multidisciplinar (cirurgião de EAP, radiologia, hemodinâmica, especialista em HP): operável → endarterectomia; inoperável ou residual → BPA e/ou riociguate; terapia de HAP como ponte em casos graves.</li>
 <li>Reabilitação e O₂ conforme a gasometria; não implantar filtro de rotina.</li>
 </ul>
 
-<div class="sub-title">F1.6 · HP dos grupos 2 e 3</div>
+<div class="sub-title" id="f1-6">F1.6 · HP dos grupos 2 e 3</div>
 <ul class="bullets">
 <li>Grupo 2: tratar IC e valvopatia; drogas de HAP não recomendadas (risco de edema pulmonar). Grupo 3: tratar a pneumopatia, O₂ domiciliar, reabilitação, VNI na hipoventilação; HP grave desproporcional → centro.</li>
 </ul>
 
-<div class="sub-title">F1.7 · Derrame parapneumônico e empiema</div>
+<div class="sub-title" id="f1-7">F1.7 · Derrame parapneumônico e empiema</div>
 <ul class="bullets">
 <li><b>Simples (pH ≥7,4, líquido claro):</b> antibiótico da pneumonia; nova punção se febre ou crescimento.</li>
 <li><b>Complicado (pH ≤7,2) ou empiema:</b> dreno ≤14F guiado por USG + antibiótico com anaeróbio; flush do dreno com SF conforme protocolo.</li>
@@ -1050,14 +1069,14 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 <div class="box hy"><span class="box-label">HIGH-YIELD</span><div class="box-title">Dreno fino funciona — o que falha é a loja</div><div class="box-body">Drenos ≤14F guiados por USG têm resultado semelhante aos calibrosos no empiema, com menos dor. Quando "o dreno parou de drenar e a imagem continua cheia", a causa é septação, não calibre: TC, fibrinolítico + dornase ou VATS — não trocar por dreno mais grosso às cegas.</div></div>
 
-<div class="sub-title">F1.8 · Derrame pleural maligno</div>
+<div class="sub-title" id="f1-8">F1.8 · Derrame pleural maligno</div>
 <ul class="bullets">
 <li>Assintomático: observar. Sintomático, pulmão expansível: <b>talco</b> (slurry ou poudrage) ou <b>cateter pleural de longa permanência</b>, por escolha informada; talco pelo cateter se o objetivo é pleurodese e retirada.</li>
 <li>Pulmão não expansível (&gt;25%): cateter. Expectativa de vida muito curta: toracocentese de alívio.</li>
 <li>Não adiar a intervenção pleural esperando a resposta à terapia sistêmica (BTS 2023).</li>
 </ul>
 
-<div class="sub-title">F1.9 · Pneumotórax espontâneo</div>
+<div class="sub-title" id="f1-9">F1.9 · Pneumotórax espontâneo</div>
 <ul class="bullets">
 <li><b>Primário, pouco sintomático, estável:</b> conservador (com ou sem O₂), retorno em 2–4 semanas com radiografia.</li>
 <li><b>Primário sintomático:</b> aspiração com agulha (16–18G) ou dispositivo ambulatorial com válvula; falha → dreno fino.</li>
@@ -1069,7 +1088,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card tx">
+<div class="card tx" id="f2">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">F.2</span> Doses Operacionais</div><h3>Tabela de doses — anticoagulantes (texto do HO03), reperfusão, suporte do VD, terapia de HAP e pleura</h3></div>
 <div class="card-body">
 <div class="stbl stbl-3">
@@ -1107,7 +1126,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card tx">
+<div class="card tx" id="f3">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">F.3</span> Cenários</div><h3>Caso → conduta certa → erro típico</h3></div>
 <div class="card-body">
 <div class="stbl stbl-3">
@@ -1139,7 +1158,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <div class="section-sub">Os erros se concentram em três lugares: o D-dímero pedido no paciente errado, a trombólise dada (ou negada) pela imagem e não pela hemodinâmica, e o derrame infectado tratado só com antibiótico.</div>
 </div>
 
-<div class="card pearl">
+<div class="card pearl" id="g1">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">G.1</span> Pitfalls</div><h3>Erro comum → correto</h3></div>
 <div class="card-body">
 <div class="stbl stbl-2">
@@ -1158,7 +1177,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card pearl">
+<div class="card pearl" id="g2">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">G.2</span> Mitos e controvérsias</div><h3>O que ainda se ensina errado e o que ainda se discute</h3></div>
 <div class="card-body">
 <div class="box myth"><span class="box-label">MYTH</span><div class="box-title">"S1Q3T3 é o achado eletrocardiográfico do TEP"</div><div class="box-body">É raro e inespecífico; aparece no cor pulmonale agudo de TEP extenso, mas também em pneumotórax e broncoespasmo. O achado mais comum é a taquicardia sinusal; T negativa de V1 a V4 e BRD novo têm mais valor prognóstico.</div></div>
@@ -1179,7 +1198,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <div class="section-sub">Nuances que separam quem conhece o algoritmo de quem entende o ventrículo direito e a pleura.</div>
 </div>
 
-<div class="card pearl">
+<div class="card pearl" id="h1">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">H.1</span> Pearls</div><h3>Oito ideias que mudam a prática</h3></div>
 <div class="card-body">
 <div class="box pearl"><span class="box-label">PEARL</span><div class="box-title">A probabilidade decide o valor do exame, não o contrário</div><div class="box-body">O mesmo D-dímero negativo exclui TEP com probabilidade de 10% e deixa 1 em cada 20 TEP sem tratamento com probabilidade de 50%. Por isso o escore precisa ser registrado antes do exame: sem ele, não há como interpretar o resultado, e a TC passa a ser pedida "por segurança" a todos.</div></div>
@@ -1193,7 +1212,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card pearl">
+<div class="card pearl" id="h2">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">H.2</span> Evolving</div><h3>O que mudou entre 2023 e 2026</h3></div>
 <div class="card-body">
 <div class="box evolving"><span class="box-label">EVOLVING</span><div class="box-title">Categorias AHA/ACC 2026 para o TEP agudo</div><div class="box-body">Primeira diretriz norte-americana dedicada ao TEP: categorias A–E com subdivisões e modificador respiratório; HBPM preferida à HNF; PERT classe 1 em C–E; reperfusão 2A na categoria E (sistêmica, cateter e trombectomia equivalentes) e 2B em C3/D; seguimento estruturado para doença tromboembólica crônica. A ESC ainda usa a diretriz de 2019.</div></div>
@@ -1241,5 +1260,36 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <a class="to-top" href="#" aria-label="Voltar ao topo">↑</a>
 <div class="watermark">@dr.lorencato · RP04 TEP, HP e Pleura v5.2</div>
 
-</body>
+<!--hp-f2--><script>(function(){var d=document,M=d.querySelector('main');if(!M)return;
+var SELF='RP04',HP=' CT01 CT02 CT03 CT04 CT05 CT06 CT08 CT10 CV01 CV03 CV04 CV05 CV06 CV07 CV08 EN01 EN02 EN03 EN04 EN06 EN07 GH01 GH02 GH03 GH05 GH06 GH07 GH08 GH09 GH10 GO01 GO02 GO03 GO04 GO09 GO10 GO11 GO12 GO13 GO14 HO01 HO02 HO03 HO04 HO05 HO06 II01 II02 II03 II04 II07 II08 NE01 NE02 NE03 NE04 NE05 NE06 NE07 NE08 NU01 NU02 NU03 NU04 NU05 OE01 OE02 PC01 PC02 PC03 PC04 PC05 PC06 PD01 PD02 PD03 PD04 PD05 PD06 PD07 PD08 PD09 PD10 RD01 RD02 RD03 RD04 RD05 RD07 RP01 RP02 RP03 RP04 ';
+var SK='A,H1,H2,H3,SCRIPT,STYLE,NAV,.card-num,.card-eyebrow,.sub-title,.disease-tag,.toc';
+var R=/\b(?:([A-H])(\d)?\.(\d{1,2}[a-c]?)|(CV|RP|GH|NE|EN|NU|HO|II|RD|GO|PD|PC|CT|OE)(\d\d))\b/g;
+function skip(n){for(var e=n.parentNode;e&&e!==M;e=e.parentNode)if(e.matches&&e.matches(SK))return 1;return 0}
+var w=d.createTreeWalker(M,4),t,L=[];while(t=w.nextNode())if(R.test(t.data)&&!skip(t))L.push(t);
+L.forEach(function(t){var s=t.data,f=d.createDocumentFragment(),i=0,m;R.lastIndex=0;
+while(m=R.exec(s)){var h=null;
+if(m[1]){var id=m[1].toLowerCase()+(m[2]?m[2]+'-':'')+m[3];if(d.getElementById(id))h='#'+id}
+else{var x=m[4]+m[5];if(x!==SELF&&HP.indexOf(' '+x+' ')>=0)h='../'+x+'/'+x+'.html'}
+if(!h)continue;f.appendChild(d.createTextNode(s.slice(i,m.index)));
+var a=d.createElement('a');a.href=h;a.className='xr';a.textContent=m[0];f.appendChild(a);i=R.lastIndex}
+if(i){f.appendChild(d.createTextNode(s.slice(i)));t.parentNode.replaceChild(f,t)}});
+function nz(s){return s.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'')}
+var q=d.querySelector('.hp-q'),n=d.querySelector('.hp-n'),it=M.querySelectorAll('.card,.pocket-card'),T;
+function clr(){M.querySelectorAll('.q-off').forEach(function(e){e.classList.remove('q-off')})}
+function run(){var v=nz(q.value.trim());clr();n.textContent='';if(v.length<2)return;var k=0;
+it.forEach(function(c){if(nz(c.textContent).indexOf(v)<0){c.classList.add('q-off');return}k++;
+var r=c.querySelectorAll('.stbl-row,.disease-row,.score-row'),h=[];r.forEach(function(x){if(nz(x.textContent).indexOf(v)>=0)h.push(x)});
+if(h.length)r.forEach(function(x){if(h.indexOf(x)<0)x.classList.add('q-off')});
+c.querySelectorAll('details').forEach(function(x){if(nz(x.textContent).indexOf(v)>=0)x.open=true})});
+M.querySelectorAll('section').forEach(function(s){if(!s.querySelector('.card:not(.q-off),.pocket-card:not(.q-off)'))s.classList.add('q-off')});
+n.textContent=k?k+' achado'+(k>1?'s':''):'nada'}
+if(q){q.addEventListener('input',function(){clearTimeout(T);T=setTimeout(run,180)});
+q.addEventListener('keydown',function(e){if(e.key==='Escape'){q.value='';run()}})}
+function tg(b,f){b.addEventListener('click',function(){var on=b.getAttribute('aria-pressed')!=='true';b.setAttribute('aria-pressed',on);f(on)})}
+var bd=d.querySelector('.hp-dz'),bo=d.querySelector('.hp-op');
+if(bd)tg(bd,function(on){d.body.classList.toggle('dz',on);if(on)d.getElementById('tratamento').scrollIntoView()});
+if(bo)tg(bo,function(on){M.querySelectorAll('details').forEach(function(x){x.open=on})});
+var P=[];addEventListener('beforeprint',function(){P=[];M.querySelectorAll('details:not([open])').forEach(function(x){P.push(x);x.open=true})});
+addEventListener('afterprint',function(){P.forEach(function(x){x.open=false})});
+})();</script><!--/hp-f2--></body>
 </html>

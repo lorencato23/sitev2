@@ -346,13 +346,31 @@ ul.bullets li b{color:var(--ink);font-weight:600}
   .pocket .pocket-card.clin{--accent:#0b5d4e}
 }
 
+/* === v5.2.2 · fase 2 (navegação) === */
+.hp-tools{display:flex;gap:6px;align-items:center;flex:none;order:1;margin-left:auto;padding-left:6px;position:sticky;right:0;background:#f1eee5;box-shadow:-10px 0 10px -4px #f1eee5,16px 0 0 #f1eee5}
+@media(min-width:900px){html{scroll-padding-top:150px}.toc-inner{flex-wrap:wrap;overflow:visible}.card[id],.sub-title[id]{scroll-margin-top:150px}}
+@media(max-width:899px){.hp-b,.hp-n{display:none}.hp-q{width:104px}}
+.hp-q{width:128px;font:500 12px/1 'DM Sans',system-ui,sans-serif;padding:7px 11px;border:1px solid var(--line-strong);border-radius:999px;background:var(--paper);color:var(--ink)}
+.hp-b{font:600 11px/1 'DM Sans',system-ui,sans-serif;letter-spacing:.05em;text-transform:uppercase;padding:7px 10px;border-radius:999px;border:1px solid var(--line-strong);background:var(--paper);color:var(--ink-soft);cursor:pointer;white-space:nowrap}
+.hp-b[aria-pressed=true]{background:var(--ink);color:#fff;border-color:var(--ink)}
+.hp-n{font:600 11px/1 'DM Mono',monospace;color:var(--ink-mute);white-space:nowrap}
+.sec-idx{display:flex;flex-wrap:wrap;gap:6px;margin:12px 0 20px}
+.sec-idx a{font:500 12px/1.25 'DM Sans',system-ui,sans-serif;padding:6px 10px;border-radius:999px;background:var(--paper);border:1px solid var(--line);color:var(--ink-soft);text-decoration:none}
+.sec-idx a:hover{border-color:var(--line-strong);color:var(--ink)}
+.sec-idx b{color:var(--c-prim);margin-right:5px;font-weight:700}
+a.xr{color:inherit;text-decoration:underline dotted;text-underline-offset:2px}
+a.xr:hover{color:var(--c-prim)}
+.card[id],.sub-title[id]{scroll-margin-top:110px}
+.q-off{display:none!important}
+body.dz main section:not(#tratamento){display:none}
+@media print{.hp-tools,.sec-idx,.toc-doses{display:none!important}}
 </style>
 </head>
 <body>
 
 <header class="header"><div class="header-row"><div class="h-mark">T</div><div class="h-titles"><div class="h-title">Toxicologia Clínica · Pocket Handbook</div><div class="h-sub">Elite edition · Cirurgia/Trauma · CT10</div></div><div class="h-author">@dr.lorencato</div><div class="h-edition">v5.2</div></div></header>
 
-<nav class="toc"><div class="toc-inner"><a href="#pocket" class="toc-chip"><span class="toc-chip-num">0</span>Pocket</a><a href="#redflags" class="toc-chip"><span class="toc-chip-num">A</span>Red Flags</a><a href="#approach" class="toc-chip"><span class="toc-chip-num">B</span>Apresentação</a><a href="#primarias" class="toc-chip"><span class="toc-chip-num">C</span>Entidades</a><a href="#secundarias" class="toc-chip"><span class="toc-chip-num">D</span>Secundárias</a><a href="#algoritmo" class="toc-chip"><span class="toc-chip-num">E</span>Algoritmo</a><a href="#tratamento" class="toc-chip"><span class="toc-chip-num">F</span>Tratamento</a><a href="#pitfalls" class="toc-chip"><span class="toc-chip-num">G</span>Pitfalls</a><a href="#pearls" class="toc-chip"><span class="toc-chip-num">H</span>Pearls</a></div></nav>
+<nav class="toc"><div class="toc-inner"><!--hp-f2--><span class="hp-tools"><input class="hp-q" type="search" placeholder="Buscar no HP" aria-label="Buscar no HP"><button class="hp-b hp-dz" type="button" aria-pressed="false">Só doses</button><button class="hp-b hp-op" type="button" aria-pressed="false">Abrir tudo</button><span class="hp-n" aria-live="polite"></span></span><!--/hp-f2--><a href="#pocket" class="toc-chip"><span class="toc-chip-num">0</span>Pocket</a><a href="#redflags" class="toc-chip"><span class="toc-chip-num">A</span>Red Flags</a><a href="#approach" class="toc-chip"><span class="toc-chip-num">B</span>Apresentação</a><a href="#primarias" class="toc-chip"><span class="toc-chip-num">C</span>Entidades</a><a href="#secundarias" class="toc-chip"><span class="toc-chip-num">D</span>Secundárias</a><a href="#algoritmo" class="toc-chip"><span class="toc-chip-num">E</span>Algoritmo</a><a href="#tratamento" class="toc-chip"><span class="toc-chip-num">F</span>Tratamento</a><!--hp-f2--><a href="#f2" class="toc-chip toc-doses"><span class="toc-chip-num">Rx</span>Doses</a><!--/hp-f2--><a href="#pitfalls" class="toc-chip"><span class="toc-chip-num">G</span>Pitfalls</a><a href="#pearls" class="toc-chip"><span class="toc-chip-num">H</span>Pearls</a></div></nav>
 
 <main>
 <div class="wrap">
@@ -415,7 +433,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <section id="redflags">
 <div class="section"><div class="section-eyebrow"><span>A</span> Red Flags</div><div class="section-title">O intoxicado que parece bem é o que mais engana</div><div class="section-sub">Sinal objetivo, suspeita e conduta imediata. Os eventos evitáveis deste HP são a atropina dada devagar demais no chumbinho, a NAC adiada à espera do nível, o QRS largo sem bicarbonato, o flumazenil no tricíclico, o álcool tóxico confundido com embriaguez e o soro antiveneno dado em picada seca ou negado a quem precisa.</div></div>
 
-<div class="card emerg">
+<div class="card emerg" id="a1">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">A.1</span> Emergências</div><h3>Sinais de alarme — intoxicação exógena <span class="ank ank-dgr">DANGER</span></h3></div>
 <div class="card-body">
 
@@ -454,7 +472,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <section id="approach">
 <div class="section"><div class="section-eyebrow"><span>B</span> Por Apresentação</div><div class="section-title">Seis portas de entrada: pupila, pele, pulso, pH, picada e fumaça</div><div class="section-sub">O paciente raramente traz o nome do tóxico. Traz um nível de consciência, uma pupila, uma pele, um ECG, um gás e, no campo, uma picada.</div></div>
 
-<div class="card clin">
+<div class="card clin" id="b1">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">B.1</span> Padrão 1</div><h3>Rebaixado com pupila puntiforme ou midriática <span class="ank ank-hy">HIGH-YIELD</span></h3><div class="card-sub">A pupila separa opioide e colinérgico de anticolinérgico e simpaticomimético</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body"><b>Miose com bradipneia e pele seca: opioide (naloxona). Miose com sudorese, sialorreia e broncorreia: colinérgico (atropina).</b> Midríase com pele úmida e taquicardia: simpaticomimético; midríase com pele seca e retenção urinária: anticolinérgico. Sedativo-hipnótico tem pupila variável, hipotermia e reflexos deprimidos; flumazenil só no benzodiazepínico puro (C.6).</div></div>
@@ -477,7 +495,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card clin">
+<div class="card clin" id="b2">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">B.2</span> Padrão 2</div><h3>Agitado, quente e com alteração mental: quatro toxíndromes <span class="ank ank-dec">DECISION</span></h3><div class="card-sub">Pele e tônus decidem entre simpaticomimética, anticolinérgica, serotoninérgica e SNM</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body"><b>Pele úmida e midríase: simpaticomimético (cocaína, anfetamina, MDMA) ou serotoninérgica. Pele seca e quente: anticolinérgico.</b> Clônus e hiper-reflexia em horas: serotoninérgica; rigidez em cano de chumbo, bradirreflexia e evolução em dias: SNM (PC03). <b>O que muda conduta:</b> todas pedem benzodiazepínico e resfriamento; só a serotoninérgica tem antídoto sintomático (ciproeptadina) e só a anticolinérgica pura tem fisostigmina.</div></div>
@@ -494,7 +512,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card clin">
+<div class="card clin" id="b3">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">B.3</span> Padrão 3</div><h3>Acidose metabólica com anion gap alto sem lactato nem cetona <span class="ank ank-dgr">DANGER</span></h3><div class="card-sub">O diagnóstico é do gap osmolar, do pH e do que a visão diz</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Pense em <b>metanol, etilenoglicol e salicilato</b> quando o gap osmolar sobe, o paciente parece embriagado sem hálito alcoólico, a visão borra ou a pCO₂ está abaixo da prevista por Winter. Cianeto e CO dão lactato muito alto com saturação normal; metformina em IRA dá lactato sem outra causa. Ângulo ácido-básico no NU04; antídoto e diálise aqui.</div></div>
@@ -505,21 +523,21 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card clin">
+<div class="card clin" id="b4">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">B.4</span> Padrão 4</div><h3>Bradicardia, hipotensão ou QRS largo <span class="ank ank-dec">DECISION</span></h3><div class="card-sub">Cardiotóxicos, bloqueadores de sódio e potássio alto</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body"><b>Bradicardia com hipotensão e hipoglicemia: betabloqueador. Com hiperglicemia: bloqueador de canal de cálcio. Bradiarritmia com hipercalemia e náusea: digoxina.</b> QRS largo: bloqueio de sódio. ECG seriado, glicemia, potássio e cálcio ionizado; cálcio, insulina em alta dose e vasopressor entram juntos (C.8). Hipercalemia como causa: NU04.</div></div>
 </div>
 </div>
 
-<div class="card clin">
+<div class="card clin" id="b5">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">B.5</span> Padrão 5</div><h3>Picada: ofídico, escorpião, aranha, lagarta <span class="ank ank-hy">HIGH-YIELD</span></h3><div class="card-sub">O soro é específico; a gravidade decide as ampolas</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body"><b>Dor, edema progressivo e sangramento: botrópico ou laquético. Ptose e fraqueza sem dor: elapídico ou crotálico (com urina escura, só o crotálico). Dor com sudorese, vômitos e agitação: escorpião ou Phoneutria. Necrose seca com febre: Loxosceles. Sangramento sem edema após lagarta: Lonomia.</b> Fosseta loreal indica serpente peçonhenta, exceto Micrurus. Observação mínima de 6 h; quem recebe soro fica ≥24 h; picada seca não recebe soro (Guia 2024).</div></div>
 </div>
 </div>
 
-<div class="card clin">
+<div class="card clin" id="b6">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">B.6</span> Padrão 6</div><h3>Fumaça, aquecedor e confusão coletiva <span class="ank ank-dgr">DANGER</span></h3><div class="card-sub">CO, cianeto e metemoglobinemia: o paciente cianótico com saturação 85% que não melhora com oxigênio</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body"><b>Vários doentes, cefaleia, náusea e sazonalidade: CO.</b> Fumaça de incêndio fechado com coma, hipotensão e lactato &gt;8 mmol/L: soma cianeto. Cianose com sangue "achocolatado" e saturação fixa em ~85%, sem melhora com oxigênio: metemoglobinemia (dapsona, nitrito, benzocaína, nitratos). <b>O que muda conduta:</b> cooximetria na gasometria; hidroxocobalamina no cianeto; azul de metileno na metemoglobinemia (D.3, D.4).</div></div>
@@ -527,9 +545,9 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </section>
 <section id="primarias">
-<div class="section"><div class="section-eyebrow"><span>C</span> Entidades Primárias</div><div class="section-title">Onze entidades: da abordagem do intoxicado à picada de serpente</div><div class="section-sub">A abordagem abre o capítulo (toxíndromes, descontaminação, quando ligar ao CIATox); paracetamol, álcoois tóxicos, salicilato, organofosforados, depressores do SNC, bloqueadores de sódio, cardiotóxicos e serotoninérgica/anticolinérgica seguem pelo peso da mortalidade evitável; ofidismo e escorpionismo fecham com o número de ampolas do PCDT do MS.</div></div>
+<div class="section"><div class="section-eyebrow"><span>C</span> Entidades Primárias</div><div class="section-title">Onze entidades: da abordagem do intoxicado à picada de serpente</div><div class="section-sub">A abordagem abre o capítulo (toxíndromes, descontaminação, quando ligar ao CIATox); paracetamol, álcoois tóxicos, salicilato, organofosforados, depressores do SNC, bloqueadores de sódio, cardiotóxicos e serotoninérgica/anticolinérgica seguem pelo peso da mortalidade evitável; ofidismo e escorpionismo fecham com o número de ampolas do PCDT do MS.</div></div><!--hp-f2--><nav class="sec-idx" aria-label="Neste capítulo"><a href="#c1"><b>C.1</b>Intoxicado: ABCDE, toxíndrome…</a><a href="#c2"><b>C.2</b>Paracetamol: nomograma, N-ace…</a><a href="#c3"><b>C.3</b>Metanol e etilenoglicol: bloq…</a><a href="#c4"><b>C.4</b>Salicilato: alcalinizar, repo…</a><a href="#c5"><b>C.5</b>Organofosforados, carbamatos…</a><a href="#c6"><b>C.6</b>Opioides e benzodiazepínicos…</a><a href="#c7"><b>C.7</b>Tricíclicos e cocaína: QRS, b…</a><a href="#c8"><b>C.8</b>Betabloqueador, bloqueador de…</a><a href="#c9"><b>C.9</b>Síndromes serotoninérgica e a…</a><a href="#c10"><b>C.10</b>Acidente ofídico: classificar…</a><a href="#c11"><b>C.11</b>Escorpionismo: analgesia, sor…</a></nav><!--/hp-f2-->
 
-<div class="card prim">
+<div class="card prim" id="c1">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.1</span> Abordagem</div><h3>Intoxicado: ABCDE, toxíndrome, descontaminação e eliminação <span class="ank ank-hy">HIGH-YIELD</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Estabilize antes de identificar o tóxico: <b>via aérea, ventilação, perfusão, glicemia capilar e ECG</b>. Depois a história (o quê, quanto, quando, por qual via, intenção, coingestão, peso) e a toxíndrome. Descontamine pela via de exposição e pelo tempo: pele e olhos sempre; <b>carvão ativado 1 g/kg (máx. 50 g) em até 1 h</b>; lavagem gástrica só em exceção. <b>O que muda conduta:</b> tóxico ingerido há mais de 1 h sem liberação prolongada não leva carvão por rotina; via aérea desprotegida, íleo, obstrução ou perfuração contraindicam o carvão; lítio, ferro, metais e álcoois não o adsorvem.</div></div>
@@ -556,7 +574,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="c2">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.2</span> Paracetamol</div><h3>Paracetamol: nomograma, N-acetilcisteína e o tempo <span class="ank ank-dec">DECISION</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Dose potencialmente tóxica: <b>≥150 mg/kg ou ≥7,5 g</b> (apostila PSI: 140 mg/kg em criança pequena). Nível a partir de 4 h; a <b>linha de tratamento do nomograma de Rumack-Matthew é 150 µg/mL às 4 h</b>, com queda a cada 4 h (bula FDA). <b>O que muda conduta:</b> hora desconhecida, apresentação após 8 h ou nível indisponível → iniciar a NAC sem esperar; liberação prolongada → segunda dosagem 8–10 h após; alcoolista, desnutrido ou em uso de indutor (isoniazida) → tratar mesmo abaixo da linha; ingestão repetida supraterapêutica → o nomograma não vale.</div></div>
@@ -593,7 +611,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="c3">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.3</span> Álcoois tóxicos</div><h3>Metanol e etilenoglicol: bloquear a álcool desidrogenase e dialisar <span class="ank ank-dgr">DANGER</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Embriaguez sem hálito alcoólico, acidose com anion gap alto, gap osmolar alto, visão borrada (metanol) ou LRA com hipocalcemia e cristais (etilenoglicol). <b>Fomepizol 15 mg/kg IV em 30 min, depois 10 mg/kg a cada 12 h por 4 doses, depois 15 mg/kg a cada 12 h</b> (bula FDA; não consta na CMED) ou etanol; ácido folínico no metanol; bicarbonato; <b>hemodiálise</b> pelos critérios EXTRIP. <b>O que muda conduta:</b> pH ≤7,15, AG &gt;24 (metanol) ou &gt;27 (etilenoglicol), coma, convulsão ou déficit visual → diálise já; antídoto antes do nível sérico quando o gap osmolar e a clínica forem compatíveis.</div></div>
@@ -629,7 +647,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="c4">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.4</span> Salicilatos</div><h3>Salicilato: alcalinizar, repor potássio, dialisar cedo <span class="ank ank-dgr">DANGER</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Zumbido, vômitos, hiperpneia, febre, confusão; <b>alcalose respiratória mais acidose metabólica de AG alto</b> no adulto. Salicilemia seriada de 2/2 h. <b>Bicarbonato de sódio 1–2 mEq/kg IV em bolus</b>, depois infusão para urina com pH 7,5–8 e potássio sérico normal; carvão em dose única (e uma segunda) se atendido cedo. <b>O que muda conduta:</b> salicilemia ≥100 mg/dL (≥90 com rim ruim), alteração mental ou SDRA com oxigênio → hemodiálise (EXTRIP; pH ≤7,20 é sugerida); intubação só com a mesma ventilação-minuto pré-intubação e bicarbonato em bolus.</div></div>
@@ -656,7 +674,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 
 </div>
 </div>
-<div class="card prim">
+<div class="card prim" id="c5">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.5</span> Colinérgico</div><h3>Organofosforados, carbamatos e "chumbinho": atropina até atropinizar <span class="ank ank-dgr">DANGER</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Miose, sialorreia, broncorreia, vômitos, diarreia, bradicardia, fasciculações e fraqueza. <b>Atropina IV 0,6–3 mg em bolus, dobrando a dose a cada 5 min até FC &gt;80, PAS &gt;80 e pulmão limpo; depois infusão de 10–20% da dose total por hora</b> (MS 2020; criança 0,02 mg/kg (mín. 0,1 mg; faixa 0,01–0,06), dobrando até atropinizar; sem teto fixo por ser titulada pelo alvo clínico (MS 2020), com CIATox a cada 5–15 min). Descontaminação da pele com EPI; sem succinilcolina, morfina, teofilina, fenotiazina e reserpina. <b>O que muda conduta:</b> a oxima não é recomendada pelo MS 2020 (condicional contra, evidência muito baixa) e a bula FDA a traz; use só com o CIATox. Observação mínima de 48–72 h pelo risco de síndrome intermediária e de reabsorção intestinal.</div></div>
@@ -692,7 +710,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="c6">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.6</span> Depressores do SNC</div><h3>Opioides e benzodiazepínicos: naloxona titulada, flumazenil com cautela <span class="ank ank-dec">DECISION</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Rebaixamento, bradipneia e miose: opioide. <b>Ventilar primeiro; naloxona 0,4–2 mg IV, repetida a cada 2–3 min</b>, e questionar o diagnóstico se não houver resposta após 10 mg (bula FDA). Criança: 0,01 mg/kg IV e, se preciso, 0,1 mg/kg. <b>Flumazenil só em intoxicação pura por benzodiazepínico</b>, 0,2 mg em 30 s, depois 0,3 mg e 0,5 mg a cada minuto até 3 mg no total (bula FDA); proibido se houver tricíclico, convulsão ou uso crônico. <b>O que muda conduta:</b> a naloxona dura menos que muitos opioides; o paciente fica em observação prolongada.</div></div>
@@ -710,7 +728,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="c7">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.7</span> Bloqueadores de sódio</div><h3>Tricíclicos e cocaína: QRS, bicarbonato e benzodiazepínico <span class="ank ank-dgr">DANGER</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body"><b>QRS &gt;100 ms, taquicardia, midríase e convulsão em quem tomou antidepressivo tricíclico (ou cocaína, bupropiona, difenidramina)</b> pede bicarbonato de sódio 8,4% 1–2 mEq/kg em bolus, repetido até QRS &lt;120 ms, pH 7,45–7,55 (igual a PC03 e CV01). Convulsão e agitação: benzodiazepínico; hipotensão: noradrenalina; torsades: sulfato de magnésio. <b>O que muda conduta:</b> sem flumazenil, sem fisostigmina, sem antiarrítmico IA ou IC e sem betabloqueador isolado na cocaína; ECG e observação por 6 h, pois a deterioração é rápida.</div></div>
@@ -728,7 +746,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="c8">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.8</span> Cardiotóxicos</div><h3>Betabloqueador, bloqueador de canal de cálcio e digoxina <span class="ank ank-dgr">DANGER</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Bradicardia, hipotensão e bloqueio AV. <b>Cálcio-antagonista: cálcio, insulina em alta dose e noradrenalina juntos; betabloqueador: glucagon mais o mesmo conjunto; digoxina: Fab pela bula.</b> Insulina regular 1 U/kg em bolus e 1 U/kg/h, com glicose e potássio monitorados (consenso 2017); emulsão lipídica e ECMO na refratariedade. <b>O que muda conduta:</b> choque refratário ou peri-parada → insulina em alta dose, lipídio e ECMO precoces; digoxina com arritmia ventricular ou bradiarritmia refratária → Fab, não atropina repetida.</div></div>
@@ -766,7 +784,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 
 </div>
 </div>
-<div class="card prim">
+<div class="card prim" id="c9">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.9</span> Serotoninérgica e anticolinérgica</div><h3>Síndromes serotoninérgica e anticolinérgica: o tratamento mora aqui <span class="ank ank-dec">DECISION</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">O PC06, o PC02 e o PC03 reconhecem; o tratamento é deste HP. <b>Serotoninérgica:</b> suspender todos os agentes, benzodiazepínico, resfriamento e <b>ciproeptadina 12 mg VO ou por sonda de ataque, 2 mg a cada 2 h enquanto houver sintomas e manutenção de 8 mg a cada 6 h (máx. 32 mg/dia)</b>, igual ao NE06. <b>Anticolinérgica:</b> benzodiazepínico, resfriamento, cateter vesical; fisostigmina 2 mg IV lenta só em anticolinérgico puro e sem QRS largo (não consta na CMED). <b>O que muda conduta:</b> T &gt;41 °C na serotoninérgica = sedação, paralisia não despolarizante e IOT; QRS largo ou tricíclico = bicarbonato (C.7), nunca fisostigmina.</div></div>
@@ -802,7 +820,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="c10">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.10</span> Peçonhas</div><h3>Acidente ofídico: classificar, soro específico IV, observar ≥24 h <span class="ank ank-hy">HIGH-YIELD</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body"><b>Botrópico (jararaca): dor, edema por segmentos e sangramento — 3, 6 ou 12 ampolas de soro antibotrópico pentavalente. Laquético: 10 ou 20 (SABL). Crotálico (cascavel): ptose, mialgia e urina escura — 5, 10 ou 20 (SAC). Elapídico (coral): ptose e fraqueza — 5 (moderado) ou 10 (grave), com observação mínima de 24 h dos leves.</b> Via IV, diluído, 8–12 mL/min, sem fracionar, sem teste e sem pré-medicação. <b>O que muda conduta:</b> coagulação não normalizada em 24 h no botrópico → mais 2 ampolas; garrote, incisão, AINE e injeção IM são contraindicados.</div></div>
@@ -839,7 +857,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="c11">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.11</span> Peçonhas</div><h3>Escorpionismo: analgesia, soro nos moderados e graves, vigiar a criança <span class="ank ank-dec">DECISION</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Leve: dor, eritema, parestesia, sudorese — analgesia e <b>observação por 6 a 12 h</b>, sem soro. Moderado: manifestações sistêmicas leves e persistentes (sudorese, náusea, vômitos, taquicardia ou bradicardia, agitação) — <b>soro antiescorpiônico ou antiaracnídico, 3 ampolas</b>. Grave: vômitos repetidos, sudorese profusa, sialorreia, agitação alternada com sonolência, taquidispneia, priapismo, convulsão, IC ou EAP — <b>6 ampolas</b>, máximo de 6. <b>O que muda conduta:</b> criança ≤10 anos (sobretudo &lt;7) é mais vulnerável; soro dispensa ajuste por peso ou idade; quem recebe soro fica internado ≥24 h; grave vai para UTI.</div></div>
@@ -867,9 +885,9 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </section>
 <section id="secundarias">
-<div class="section"><div class="section-eyebrow"><span>D</span> Entidades Secundárias</div><div class="section-title">Lítio, paraquat, asfixiantes, oxidantes, raticidas, aracnídeos, lagartas e o ambiente</div><div class="section-sub">Casos que completam o diferencial e cumprem as promessas dos outros HPs: o lítio e a diálise (PC02, NU03), o CO (NE01), o chumbo (HO01, NU02), o raticida (HO03), o soro antiloxoscélico (HO02) e o ambiente sem dono no catálogo.</div></div>
+<div class="section"><div class="section-eyebrow"><span>D</span> Entidades Secundárias</div><div class="section-title">Lítio, paraquat, asfixiantes, oxidantes, raticidas, aracnídeos, lagartas e o ambiente</div><div class="section-sub">Casos que completam o diferencial e cumprem as promessas dos outros HPs: o lítio e a diálise (PC02, NU03), o CO (NE01), o chumbo (HO01, NU02), o raticida (HO03), o soro antiloxoscélico (HO02) e o ambiente sem dono no catálogo.</div></div><!--hp-f2--><nav class="sec-idx" aria-label="Neste capítulo"><a href="#d1"><b>D.1</b>Intoxicação por lítio: hidrat…</a><a href="#d2"><b>D.2</b>Paraquat: descontaminar na pr…</a><a href="#d3"><b>D.3</b>Monóxido de carbono e cianeto…</a><a href="#d4"><b>D.4</b>Metemoglobinemia adquirida: a…</a><a href="#d5"><b>D.5</b>Raticida anticoagulante e chu…</a><a href="#d6"><b>D.6</b>Araneísmo: loxoscelismo, fone…</a><a href="#d7"><b>D.7</b>Lonomia e himenópteros: soro…</a><a href="#d8"><b>D.8</b>Hipotermia e hipertermia ambi…</a><a href="#d9"><b>D.9</b>Afogamento e choque elétrico…</a></nav><!--/hp-f2-->
 
-<div class="card diag">
+<div class="card diag" id="d1">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">D.1</span> Lítio</div><h3>Intoxicação por lítio: hidratar, suspender, dialisar por EXTRIP <span class="ank ank-dec">DECISION</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Tremor grosso, ataxia, disartria, confusão, mioclonia e, no extremo, convulsão e arritmia; a litemia e a creatinina decidem. <b>Hemodiálise recomendada: litemia &gt;4,0 mEq/L com função renal comprometida (TFG &lt;45), ou rebaixamento, convulsão ou arritmia com qualquer litemia; sugerida: &gt;5,0 mEq/L, confusão significativa ou previsão de &gt;36 h para chegar a 1,0 mEq/L.</b> Mesmos cortes do PC02 e do NU03. <b>O que muda conduta:</b> carvão não adsorve lítio; parar a diálise com litemia &lt;1,0 mEq/L ou melhora clínica (mínimo de 6 h se não houver nível), e repetir a litemia por 12 h pelo risco de rebote.</div></div>
@@ -887,7 +905,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card diag">
+<div class="card diag" id="d2">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">D.2</span> Herbicida</div><h3>Paraquat: descontaminar na primeira hora e poupar a hiperóxia <span class="ank ank-dgr">DANGER</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Ulceração oral, vômitos, depois LRA, hepatite e, em dias, fibrose pulmonar progressiva. <b>Carvão ativado em dose única (e adicional) o mais cedo possível</b> (CTRC 2026: apropriado no paraquat); sem lavagem de rotina (cáustico, risco de perfuração, MS 2020); oxigênio suplementar apenas se hipoxemia (conferir). <b>O que muda conduta:</b> toda ingestão intencional tem prognóstico reservado; CIATox e UTI desde o início; trate também como cáustico (endoscopia e cirurgia por indicação).</div></div>
@@ -905,7 +923,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card diag">
+<div class="card diag" id="d3">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">D.3</span> Asfixiantes</div><h3>Monóxido de carbono e cianeto: oxigênio, hiperbárica e hidroxocobalamina <span class="ank ank-dgr">DANGER</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">CO: cefaleia, tontura, náusea, síncope; vários doentes no mesmo ambiente. <b>Oxigênio 100% imediato</b>; a oximetria de pulso falha. <b>Hiperbárica nos sinais graves (consciência alterada, acidose metabólica, insuficiência respiratória, isquemia cardíaca) e na gestação, em até 6 h</b> (S2k 2021; dois colegiados discordaram). Cianeto na fumaça: <b>hidroxocobalamina 5 g IV em 15 min</b>, até 10 g (bula FDA). <b>O que muda conduta:</b> COHb por cooximetria; lactato muito alto em vítima de incêndio sugere cianeto.</div></div>
@@ -924,7 +942,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card diag">
+<div class="card diag" id="d4">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">D.4</span> Oxidantes</div><h3>Metemoglobinemia adquirida: azul de metileno 1 mg/kg <span class="ank ank-dec">DECISION</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Cianose com sangue marrom-achocolatado, saturação fixa em ~85% sem resposta ao oxigênio e PaO₂ normal. <b>Azul de metileno 1 mg/kg IV em 5–30 min; repetir até 1 mg/kg 1 h depois se a metemoglobina ficar &gt;30% ou persistirem sintomas</b> (bula FDA; criança igual). <b>O que muda conduta:</b> contraindicado na deficiência de G6PD (hemólise) e na hipersensibilidade a tiazínicos; alerta em caixa: evitar com ISRS, IRSN, IMAO e opioides; no rim moderado a grave, dose única.</div></div>
@@ -942,7 +960,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card diag">
+<div class="card diag" id="d5">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">D.5</span> Raticida e chumbo</div><h3>Raticida anticoagulante e chumbo: vitamina K por semanas e quelação <span class="ank ank-dec">DECISION</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Sangramento com TP e INR incoagulável sem anticoagulante prescrito, em contato com raticida superwarfarínico. Reversão aguda no HO03 (CCP 4F e vitamina K 10 mg IV lenta); <b>depois vitamina K oral por semanas</b> (conferir dose) até INR normal, porque o brodifacum dura meses. Chumbo: anemia microcítica com pontilhado basófilo, dor abdominal, neuropatia, encefalopatia; <b>remover a fonte e quelar nos graves</b> (conferir esquemas). <b>O que muda conduta:</b> vitamina K isolada não repõe fatores; INR de seguimento a cada 48 h por semanas.</div></div>
@@ -960,7 +978,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card diag">
+<div class="card diag" id="d6">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">D.6</span> Aranhas</div><h3>Araneísmo: loxoscelismo, foneutrismo e latrodectismo <span class="ank ank-hy">HIGH-YIELD</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body"><b>Loxosceles (aranha-marrom):</b> lesão com placa marmórea e necrose seca, hemólise e IRA em minoria; soro antiloxoscélico (SALox) ou antiaracnídico (SAA) <b>5 ampolas no moderado e 10 no grave</b>, com prednisona. <b>Phoneutria (armadeira):</b> dor intensa com sudorese e vômitos; SAA 3 (moderado) ou 6 (grave), por extrapolação do PCDT escorpiônico; o Guia 2024 dá 2–4 e 5–10 (divergência). <b>Latrodectus:</b> dor, contraturas e fácies latrodectística; sem soro de rotina. <b>O que muda conduta:</b> a eficácia do soro cai após 24–36 h (apostila); hemólise é o sinal de gravidade (HO02).</div></div>
@@ -978,7 +996,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card diag">
+<div class="card diag" id="d7">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">D.7</span> Lagartas e insetos</div><h3>Lonomia e himenópteros: soro antilonômico e anafilaxia <span class="ank ank-dec">DECISION</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body"><b>Lonomia:</b> coagulopatia de consumo horas depois, mesmo com a dor local resolvida; <b>soro antilonômico 5 ampolas no moderado (TC alterado, sangramento só em pele ou mucosa) e 10 no grave (vísceras)</b>; sem IM nem punção desnecessária. <b>Abelhas, vespas e formigas:</b> não há soro; o perigo é a anafilaxia (adrenalina) e, em centenas de picadas, rabdomiólise, hemólise e IRA. <b>O que muda conduta:</b> contato com lagarta sem sangramento → observar e dosar coagulação nas primeiras 24 h.</div></div>
@@ -996,7 +1014,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card diag">
+<div class="card diag" id="d8">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">D.8</span> Ambiente</div><h3>Hipotermia e hipertermia ambientais: reaquecer com cuidado, resfriar rápido <span class="ank ank-dgr">DANGER</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body"><b>Hipotermia:</b> temperatura central &lt;35 °C; manipular com delicadeza (risco de FV), remover roupas molhadas, isolar, reaquecer por meios externos e, nas graves, centrais (fluidos IV aquecidos a 40–42 °C, ar aquecido e umidificado; ECMO ou circulação extracorpórea se instável). <b>Intermação:</b> temperatura central &gt;40 °C com alteração do SNC; <b>resfriamento imediato</b> (imersão em água fria ou evaporação com gelo), sem antipirético. <b>O que muda conduta:</b> em parada por hipotermia, não declare o óbito antes de reaquecer; em intermação, o resfriamento precede qualquer exame.</div></div>
@@ -1015,7 +1033,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card diag">
+<div class="card diag" id="d9">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">D.9</span> Ambiente</div><h3>Afogamento e choque elétrico: ventilar primeiro, monitorar o coração <span class="ank ank-dec">DECISION</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body"><b>Afogamento:</b> a hipóxia é o mecanismo; <b>ventilação e oxigênio primeiro</b>, com 5 ventilações iniciais na parada (conferir), depois suporte avançado; segunda causa de morte de 1 a 14 anos no Brasil (apostila PED 5); em adolescente, etanol associa-se a 25–50% dos casos. <b>Choque elétrico:</b> ECG, CK e monitorização; alto risco: alta voltagem, raio, perda de consciência, arritmia ou queimadura (CT04). <b>O que muda conduta:</b> sintomático, hipoxêmico ou com ECG alterado fica internado; assintomático com ECG normal e baixa voltagem tem observação mais curta (conferir).</div></div>
@@ -1036,7 +1054,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <section id="algoritmo">
 <div class="section"><div class="section-eyebrow"><span>E</span> Algoritmo</div><div class="section-title">Do intoxicado ao antídoto, da hemodiálise ao soro: três árvores e seis passos</div><div class="section-sub">Cada ponta termina em conduta com número. A primeira árvore leva o intoxicado da estabilização à toxíndrome e ao antídoto; a segunda decide a diálise; a terceira resolve a picada. A sequência mental narra o raciocínio que as árvores comprimem.</div></div>
 
-<div class="card prim">
+<div class="card prim" id="e1">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">E.1</span> Algoritmo</div><h3>Intoxicado no PS: estabilizar, ler a toxíndrome, escolher o antídoto <span class="ank ank-dec">DECISION</span></h3></div>
 <div class="card-body">
 <div class="algo"><div class="tree">
@@ -1065,7 +1083,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="e2">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">E.2</span> Algoritmo</div><h3>Quando dialisar o intoxicado <span class="ank ank-hy">HIGH-YIELD</span></h3></div>
 <div class="card-body">
 <div class="algo"><div class="tree">
@@ -1090,7 +1108,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="e3">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">E.3</span> Algoritmo</div><h3>Picada: qual animal, qual gravidade, quantas ampolas <span class="ank ank-dec">DECISION</span></h3></div>
 <div class="card-body">
 <div class="algo"><div class="tree">
@@ -1124,7 +1142,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="e4">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">E.4</span> Sequência mental</div><h3>Raciocínio em 6 passos: do plantão ao antídoto <span class="ank ank-dec">DECISION</span></h3></div>
 <div class="card-body">
 <div class="box decision"><span class="box-label">DECISION</span><div class="box-title">Seis perguntas, nesta ordem</div><div class="box-body"><ul>
@@ -1139,13 +1157,13 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </section>
 <section id="tratamento">
-<div class="section"><div class="section-eyebrow"><span>F</span> Tratamento Integrado</div><div class="section-title">F1 · Estratégia por entidade · F2 · Doses · F3 · Casos · F4 · Acesso no Brasil</div><div class="section-sub">Doses lidas nos PCDT e no Guia do MS, nas Diretrizes de 2020, nas bulas FDA e nos consensos de PMC levam a sigla da fonte; as de fonte não relida hoje levam "conferir". Mesma dose, mesmo texto em todo o HP. Dose em mg/kg tem teto e critério de parada.</div></div>
+<div class="section"><div class="section-eyebrow"><span>F</span> Tratamento Integrado</div><div class="section-title">F1 · Estratégia por entidade · F2 · Doses · F3 · Casos · F4 · Acesso no Brasil</div><div class="section-sub">Doses lidas nos PCDT e no Guia do MS, nas Diretrizes de 2020, nas bulas FDA e nos consensos de PMC levam a sigla da fonte; as de fonte não relida hoje levam "conferir". Mesma dose, mesmo texto em todo o HP. Dose em mg/kg tem teto e critério de parada.</div></div><!--hp-f2--><nav class="sec-idx" aria-label="Neste capítulo"><a href="#f1"><b>F.1</b>Escada terapêutica por entida…</a><a href="#f2"><b>F.2</b>Tabela de doses — antídotos e…</a><a href="#f3"><b>F.3</b>Caso → conduta certa → erro t…</a><a href="#f4"><b>F.4</b>O que o SUS e a CMED trazem e…</a></nav><!--/hp-f2-->
 
-<div class="card tx">
+<div class="card tx" id="f1">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">F.1</span> Estratégia</div><h3>Escada terapêutica por entidade <span class="ank ank-dec">DECISION</span></h3></div>
 <div class="card-body">
 
-<div class="sub-title">F1.1 · Abordagem e descontaminação (C.1)</div>
+<div class="sub-title" id="f1-1">F1.1 · Abordagem e descontaminação (C.1)</div>
 <ul class="bullets">
 <li><b>Sempre:</b> via aérea, ventilação, perfusão, glicemia capilar, ECG, temperatura e o CIATox. Tiamina IV no etilista antes ou junto da glicose (200–500 mg IV de 8/8 h na suspeita de Wernicke, como no PC03 e no NE04). Benzodiazepínico para convulsão e agitação.</li>
 <li><b>Pele e olhos:</b> retirar a roupa, lavar com água e sabão neutro, inclusive cabelo, axila, umbigo e genitais, com EPI; olhos com irrigação contínua por ≥20 min (MS 2020). Evite hipotermia durante a lavagem.</li>
@@ -1154,7 +1172,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </ul>
 <div class="box danger"><span class="box-label">DANGER</span><div class="box-title">Carvão forçado em sonolento é erro, não prudência</div><div class="box-body">A pneumonia aspirativa, o empiema e a SDRA por carvão são complicações descritas. O paciente com rebaixamento só recebe carvão depois de intubado, e o posicionamento da sonda é confirmado antes da infusão (apostila PSI; MS 2020).</div></div>
 
-<div class="sub-title">F1.2 · Paracetamol (C.2)</div>
+<div class="sub-title" id="f1-2">F1.2 · Paracetamol (C.2)</div>
 <ul class="bullets">
 <li><b>Nível a partir de 4 h</b> e leitura no nomograma só para ingestão aguda única, de liberação imediata e com hora conhecida; linha de 150 µg/mL às 4 h.</li>
 <li><b>NAC sem esperar o nível</b> se hora desconhecida, apresentação após 8 h ou nível indisponível em 8 h. Esquema de 21 h (150 mg/kg em 1 h, 50 mg/kg em 4 h, 100 mg/kg em 16 h) ou de 20 h (200 mg/kg em 4 h, 100 mg/kg em 16 h, ≥41 kg); SNAP de 12 h segundo o protocolo do serviço.</li>
@@ -1162,7 +1180,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <li><b>Reação anafilactoide à NAC:</b> pausar, anti-histamínico, reiniciar mais lento. A bula é contraindicada se houver reação prévia de hipersensibilidade; a advertência 5.1 permite reiniciar com cautela após tratar a reação (registrar a decisão com o CIATox).</li>
 </ul>
 
-<div class="sub-title">F1.3 · Álcoois tóxicos e salicilato (C.3, C.4)</div>
+<div class="sub-title" id="f1-3">F1.3 · Álcoois tóxicos e salicilato (C.3, C.4)</div>
 <ul class="bullets">
 <li><b>Álcool tóxico:</b> fomepizol (onde existir) ou etanol, ácido folínico no metanol, bicarbonato para o pH e <b>hemodiálise</b> por EXTRIP (metanol: pH ≤7,15, AG &gt;24, coma, convulsão, déficit visual; etilenoglicol: AG &gt;27, glicolato &gt;12 mmol/L, LRA).</li>
 <li><b>Salicilato:</b> carvão, bicarbonato 1–2 mEq/kg e infusão para urina pH 7,5–8,0, potássio normal, glicose, hemodiálise por EXTRIP (≥100 mg/dL; ≥90 com rim ruim; alteração mental; SDRA; pH ≤7,20 sugerida).</li>
@@ -1170,21 +1188,21 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </ul>
 <div class="box decision"><span class="box-label">DECISION</span><div class="box-title">Sem fomepizol: etanol e transferência para hospital com diálise</div><div class="box-body">O fomepizol não consta na CMED (PMVG); o registro na Anvisa não foi verificado (conferir no Bulário), e o NU04 usa a mesma frase. Se o paciente chega a serviço sem diálise, o etanol é ponte, a transferência é a conduta, e o CIATox ajuda a localizar o recurso. Dose do etanol: conferir.</div></div>
 
-<div class="sub-title">F1.4 · Organofosforados, carbamatos e chumbinho (C.5)</div>
+<div class="sub-title" id="f1-4">F1.4 · Organofosforados, carbamatos e chumbinho (C.5)</div>
 <ul class="bullets">
 <li><b>Atropina incremental:</b> 0,6–3 mg IV, dobrar a cada 5 min até FC &gt;80, PAS &gt;80 e pulmão limpo; infusão de 10–20% da dose total por hora; criança 0,02 mg/kg (mín. 0,1 mg; faixa 0,01–0,06), dobrando até atropinizar; sem teto fixo por ser titulada pelo alvo clínico (MS 2020), com CIATox por dose, a cada 5–15 min. Parar a infusão com 3 sinais de toxicidade; reiniciar com 80%.</li>
 <li><b>Oxima:</b> padrão brasileiro é não usar (MS 2020); decisão em caso grave com o CIATox, com a dose da bula FDA (20–50 mg/kg, máx. 2.000 mg por dose, depois 10–20 mg/kg/h, máx. 500 mg/h); nunca no carbamato.</li>
 <li><b>Contraindicados:</b> morfina, succinilcolina, teofilina, fenotiazinas, reserpina. Benzodiazepínico para convulsão; observar 48–72 h; síndrome intermediária pede ventilação.</li>
 </ul>
 
-<div class="sub-title">F1.5 · Opioides e benzodiazepínicos (C.6)</div>
+<div class="sub-title" id="f1-5">F1.5 · Opioides e benzodiazepínicos (C.6)</div>
 <ul class="bullets">
 <li><b>Opioide:</b> ventilar antes; naloxona 0,4–2 mg IV a cada 2–3 min até 10 mg; criança 0,01 mg/kg e, se preciso, 0,1 mg/kg; em dependente, titular em doses menores. Observar até o fim do efeito do opioide.</li>
 <li><b>Benzodiazepínico:</b> suporte; flumazenil 0,2 mg em 30 s, 0,3 mg e 0,5 mg a cada minuto até 3 mg (bula FDA), só em intoxicação pura e sem fator de risco para convulsão. Sem flumazenil se houver tricíclico, status ou dependência.</li>
 </ul>
 <div class="box danger"><span class="box-label">DANGER</span><div class="box-title">Flumazenil no coma "para ver se acorda" precipita convulsão</div><div class="box-body">A bula contraindica o flumazenil quando o benzodiazepínico controla condição grave (status, HIC) e em sinais de intoxicação cíclica grave. Seis convulsões em 446 pacientes tratados nos estudos da bula, quatro deles com tricíclico em dose alta.</div></div>
 
-<div class="sub-title">F1.6 · Bloqueadores de sódio e cardiotóxicos (C.7, C.8)</div>
+<div class="sub-title" id="f1-6">F1.6 · Bloqueadores de sódio e cardiotóxicos (C.7, C.8)</div>
 <ul class="bullets">
 <li><b>QRS &gt;100 ms:</b> bicarbonato 1–2 mEq/kg IV em bolus, repetir até QRS &lt;120 ms, pH 7,45–7,55 e sem passar de 7,55; benzodiazepínico; sem fenitoína nem flumazenil; torsades com magnésio.</li>
 <li><b>Cálcio-antagonista e betabloqueador:</b> cálcio IV (CaCl₂ 10% 10–20 mL ou gluconato 10% 30–60 mL a cada 10–20 min), insulina regular 1 U/kg + 1 U/kg/h com glicose e potássio monitorados, noradrenalina e/ou adrenalina; glucagon no betabloqueador (conferir); lipídio 1,5 mL/kg e 0,25 mL/kg/min (teto de 12,5 mL/kg em 24 h) e ECMO no refratário.</li>
@@ -1192,19 +1210,19 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <li><b>Convulsão refratária:</b> tricíclico, bupropiona e tramadol (benzodiazepínico) e <b>isoniazida</b> (piridoxina IV, F2, mais benzodiazepínico) como no NE02; sem fenitoína no tricíclico.</li>
 </ul>
 
-<div class="sub-title">F1.7 · Serotoninérgica e anticolinérgica (C.9)</div>
+<div class="sub-title" id="f1-7">F1.7 · Serotoninérgica e anticolinérgica (C.9)</div>
 <ul class="bullets">
 <li><b>Serotoninérgica:</b> suspender os agentes, benzodiazepínico, resfriamento, ciproeptadina 12 mg VO ou por sonda, 2 mg a cada 2 h enquanto sintomas, manutenção 8 mg a cada 6 h, máx. 32 mg/dia. T &gt;41 °C: sedação, paralisia com não despolarizante e IOT.</li>
 <li><b>Anticolinérgica:</b> benzodiazepínico, resfriamento, sondagem; fisostigmina 0,04 mg/kg (2 mg) IV lenta e 1–4 mg a cada 20 min só se puro, sem QRS largo e disponível (não consta na CMED).</li>
 </ul>
 
-<div class="sub-title">F1.8 · Lítio, CO, cianeto e metemoglobinemia (D.1–D.4)</div>
+<div class="sub-title" id="f1-8">F1.8 · Lítio, CO, cianeto e metemoglobinemia (D.1–D.4)</div>
 <ul class="bullets">
 <li><b>Lítio:</b> suspender, salina isotônica, sem carvão, diálise por EXTRIP (&gt;4,0 mEq/L com TFG &lt;45; consciência alterada, convulsão ou arritmia; sugerida &gt;5,0, confusão ou &gt;36 h para 1,0).</li>
 <li><b>CO:</b> oxigênio 100% já; hiperbárica nos graves e na gestação em até 6 h. <b>Cianeto:</b> hidroxocobalamina 5 g IV em 15 min, até 10 g. <b>Metemoglobinemia:</b> azul de metileno 1 mg/kg IV em 5–30 min, repetir 1 mg/kg após 1 h; G6PD deficiente: não.</li>
 </ul>
 
-<div class="sub-title">F1.9 · Animais peçonhentos (C.10, C.11, D.6, D.7)</div>
+<div class="sub-title" id="f1-9">F1.9 · Animais peçonhentos (C.10, C.11, D.6, D.7)</div>
 <ul class="bullets">
 <li><b>Ofidismo:</b> SABR 3, 6 ou 12 (botrópico); SABL 10 ou 20 (laquético); SAC 5, 10 ou 20 (crotálico); Saela 5 ou 10 (elapídico). IV, diluído, 8–12 mL/min, não fracionar, sem teste, sem pré-medicação; observar ≥24 h; +2 ampolas se a coagulação não normalizar em 24 h no botrópico.</li>
 <li><b>Escorpionismo:</b> 3 (moderado) ou 6 (grave) ampolas de SAEsc ou SAA, máx. 6; analgesia (dipirona, lidocaína 2% sem vasoconstritor); dobutamina e furosemida na falência cardíaca; observação de 6–12 h nos leves.</li>
@@ -1212,7 +1230,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </ul>
 <div class="box hy"><span class="box-label">HIGH-YIELD</span><div class="box-title">Soro: três proibições e uma obrigação</div><div class="box-body">Sem garrote ou incisão, sem AINE ou injeção IM, sem teste de sensibilidade ou pré-medicação. Obrigação: classificar, reclassificar e observar por ≥24 h quem recebeu soro. Prescrever o soro com respaldo do CIATox é recomendação do Guia 2024.</div></div>
 
-<div class="sub-title">F1.10 · Ambiente (D.8, D.9)</div>
+<div class="sub-title" id="f1-10">F1.10 · Ambiente (D.8, D.9)</div>
 <ul class="bullets">
 <li><b>Hipotermia:</b> remover roupas molhadas, isolar, manipular com delicadeza, fluidos IV aquecidos (40–42 °C), ar aquecido e umidificado, ECMO no grave instável; reanimar até reaquecer.</li>
 <li><b>Intermação:</b> resfriamento ativo imediato (imersão ou evaporação), benzodiazepínico, hidratação, sem antipirético.</li>
@@ -1222,7 +1240,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card tx">
+<div class="card tx" id="f2">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">F.2</span> Doses Operacionais</div><h3>Tabela de doses — antídotos e soros <span class="ank ank-dgr">DANGER</span></h3></div>
 <div class="card-body">
 <div class="stbl stbl-3">
@@ -1257,7 +1275,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card tx">
+<div class="card tx" id="f3">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">F.3</span> Cenários</div><h3>Caso → conduta certa → erro típico</h3></div>
 <div class="card-body">
 <div class="stbl stbl-3">
@@ -1274,7 +1292,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card tx">
+<div class="card tx" id="f4">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">F.4</span> Acesso</div><h3>O que o SUS e a CMED trazem e o que fica a conferir <span class="ank ank-dec">DECISION</span></h3></div>
 <div class="card-body">
 <div class="stbl stbl-3">
@@ -1292,7 +1310,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <section id="pitfalls">
 <div class="section"><div class="section-eyebrow"><span>G</span> Pitfalls · Mitos · Controvérsias</div><div class="section-title">Erros operacionais, mitos vivos e debates abertos</div><div class="section-sub">Os erros que se repetem: tratar a pupila e esquecer o ECG, esperar o nível para dar o antídoto, usar o antídoto errado no tóxico errado e fazer com a picada o que o MS proíbe.</div></div>
 
-<div class="card pearl">
+<div class="card pearl" id="g1">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">G.1</span> Pegadinhas</div><h3>10 erros operacionais em toxicologia clínica</h3></div>
 <div class="card-body">
 <div class="stbl stbl-2">
@@ -1311,7 +1329,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card pearl">
+<div class="card pearl" id="g2">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">G.2</span> Mitos</div><h3>Três mitos vivos</h3></div>
 <div class="card-body">
 <div class="box myth"><span class="box-label">MYTH</span><div class="box-title">"Lavagem gástrica é padrão em toda ingestão de comprimidos"</div><div class="box-body">Não há benefício demonstrado e a aspiração é real. O MS 2020 a reserva para grande quantidade de agrotóxico altamente tóxico, não corrosivo e não diluído em solvente orgânico, em até 1 h, por executor treinado. A maioria das ingestões é mais bem servida por observação, carvão em dose única quando indicado e antídoto específico.</div></div>
@@ -1320,7 +1338,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card pearl">
+<div class="card pearl" id="g3">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">G.3</span> Controvérsias</div><h3>Três debates abertos</h3></div>
 <div class="card-body">
 <div class="box controversy"><span class="box-label">CONTROVERSY</span><div class="box-title">Oximas nos organofosforados: o MS contra, a bula a favor</div><div class="box-body">O MS 2020 revisou cinco ensaios e não encontrou redução de mortalidade, de ventilação mecânica nem de síndrome intermediária (evidência muito baixa), e desaconselha as oximas; a bula FDA da pralidoxima e a apostila a mantêm como antídoto, com 20–50 mg/kg e infusão contínua. A pralidoxima não consta na PMVG. Padrão deste HP: atropina; oxima só discutida com o CIATox em caso grave.</div></div>
@@ -1333,7 +1351,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <section id="pearls">
 <div class="section"><div class="section-eyebrow"><span>H</span> Pearls · Evolving</div><div class="section-title">H1 · Nuances de especialista · H2 · O que mudou entre 2020 e 2026</div><div class="section-sub">Oito ideias que o plantão esquece e cinco mudanças reais; onde o tema é estável (toxíndromes, mecanismo dos antídotos clássicos), diz-se.</div></div>
 
-<div class="card pearl">
+<div class="card pearl" id="h1">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">H.1</span> Pearls</div><h3>8 nuances que distinguem o especialista</h3></div>
 <div class="card-body">
 <div class="box pearl"><span class="box-label">PEARL</span><div class="box-title">A pupila e a pele decidem a toxíndrome antes do primeiro exame de sangue</div><div class="box-body">Miose com pele úmida é colinérgico; miose com pele seca, opioide; midríase com pele úmida, simpaticomimético ou serotoninérgico; midríase com pele seca, anticolinérgico. Temperatura e tônus completam. Quando a história é muda, essa leitura escolhe o antídoto.</div></div>
@@ -1347,7 +1365,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card pearl">
+<div class="card pearl" id="h2">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">H.2</span> Evolving</div><h3>Cinco mudanças reais (2020–2026) e o que ficou estável</h3></div>
 <div class="card-body">
 <div class="box evolving"><span class="box-label">EVOLVING</span><div class="box-title">Carvão ativado: recomendações do CTRC 2026 por tóxico</div><div class="box-body">O grupo de três sociedades internacionais publicou em 2026 recomendações para 43 tóxicos: sem papel no arsênio, césio, cobre, etanol, metanol, etilenoglicol, ferro, chumbo, lítio e metformina; apropriado na maioria dos fármacos cardiotóxicos e neurotóxicos; doses repetidas só em oito deles; janela de até 6 h conforme risco. Só o resumo foi lido; o MS 2020 ainda restringe o carvão nos agrotóxicos à primeira hora.</div></div>
@@ -1401,5 +1419,36 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <a class="to-top" href="#" aria-label="Voltar ao topo">↑</a>
 <div class="watermark">@dr.lorencato · CT10 Toxicologia Clínica v5.2</div>
 
-</body>
+<!--hp-f2--><script>(function(){var d=document,M=d.querySelector('main');if(!M)return;
+var SELF='CT10',HP=' CT01 CT02 CT03 CT04 CT05 CT06 CT08 CT10 CV01 CV03 CV04 CV05 CV06 CV07 CV08 EN01 EN02 EN03 EN04 EN06 EN07 GH01 GH02 GH03 GH05 GH06 GH07 GH08 GH09 GH10 GO01 GO02 GO03 GO04 GO09 GO10 GO11 GO12 GO13 GO14 HO01 HO02 HO03 HO04 HO05 HO06 II01 II02 II03 II04 II07 II08 NE01 NE02 NE03 NE04 NE05 NE06 NE07 NE08 NU01 NU02 NU03 NU04 NU05 OE01 OE02 PC01 PC02 PC03 PC04 PC05 PC06 PD01 PD02 PD03 PD04 PD05 PD06 PD07 PD08 PD09 PD10 RD01 RD02 RD03 RD04 RD05 RD07 RP01 RP02 RP03 RP04 ';
+var SK='A,H1,H2,H3,SCRIPT,STYLE,NAV,.card-num,.card-eyebrow,.sub-title,.disease-tag,.toc';
+var R=/\b(?:([A-H])(\d)?\.(\d{1,2}[a-c]?)|(CV|RP|GH|NE|EN|NU|HO|II|RD|GO|PD|PC|CT|OE)(\d\d))\b/g;
+function skip(n){for(var e=n.parentNode;e&&e!==M;e=e.parentNode)if(e.matches&&e.matches(SK))return 1;return 0}
+var w=d.createTreeWalker(M,4),t,L=[];while(t=w.nextNode())if(R.test(t.data)&&!skip(t))L.push(t);
+L.forEach(function(t){var s=t.data,f=d.createDocumentFragment(),i=0,m;R.lastIndex=0;
+while(m=R.exec(s)){var h=null;
+if(m[1]){var id=m[1].toLowerCase()+(m[2]?m[2]+'-':'')+m[3];if(d.getElementById(id))h='#'+id}
+else{var x=m[4]+m[5];if(x!==SELF&&HP.indexOf(' '+x+' ')>=0)h='../'+x+'/'+x+'.html'}
+if(!h)continue;f.appendChild(d.createTextNode(s.slice(i,m.index)));
+var a=d.createElement('a');a.href=h;a.className='xr';a.textContent=m[0];f.appendChild(a);i=R.lastIndex}
+if(i){f.appendChild(d.createTextNode(s.slice(i)));t.parentNode.replaceChild(f,t)}});
+function nz(s){return s.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'')}
+var q=d.querySelector('.hp-q'),n=d.querySelector('.hp-n'),it=M.querySelectorAll('.card,.pocket-card'),T;
+function clr(){M.querySelectorAll('.q-off').forEach(function(e){e.classList.remove('q-off')})}
+function run(){var v=nz(q.value.trim());clr();n.textContent='';if(v.length<2)return;var k=0;
+it.forEach(function(c){if(nz(c.textContent).indexOf(v)<0){c.classList.add('q-off');return}k++;
+var r=c.querySelectorAll('.stbl-row,.disease-row,.score-row'),h=[];r.forEach(function(x){if(nz(x.textContent).indexOf(v)>=0)h.push(x)});
+if(h.length)r.forEach(function(x){if(h.indexOf(x)<0)x.classList.add('q-off')});
+c.querySelectorAll('details').forEach(function(x){if(nz(x.textContent).indexOf(v)>=0)x.open=true})});
+M.querySelectorAll('section').forEach(function(s){if(!s.querySelector('.card:not(.q-off),.pocket-card:not(.q-off)'))s.classList.add('q-off')});
+n.textContent=k?k+' achado'+(k>1?'s':''):'nada'}
+if(q){q.addEventListener('input',function(){clearTimeout(T);T=setTimeout(run,180)});
+q.addEventListener('keydown',function(e){if(e.key==='Escape'){q.value='';run()}})}
+function tg(b,f){b.addEventListener('click',function(){var on=b.getAttribute('aria-pressed')!=='true';b.setAttribute('aria-pressed',on);f(on)})}
+var bd=d.querySelector('.hp-dz'),bo=d.querySelector('.hp-op');
+if(bd)tg(bd,function(on){d.body.classList.toggle('dz',on);if(on)d.getElementById('tratamento').scrollIntoView()});
+if(bo)tg(bo,function(on){M.querySelectorAll('details').forEach(function(x){x.open=on})});
+var P=[];addEventListener('beforeprint',function(){P=[];M.querySelectorAll('details:not([open])').forEach(function(x){P.push(x);x.open=true})});
+addEventListener('afterprint',function(){P.forEach(function(x){x.open=false})});
+})();</script><!--/hp-f2--></body>
 </html>

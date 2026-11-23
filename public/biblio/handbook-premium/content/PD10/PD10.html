@@ -345,11 +345,30 @@ ul.bullets li b{color:var(--ink);font-weight:600}
   .pocket .pocket-card.tx{--accent:#a8481a}
   .pocket .pocket-card.clin{--accent:#0b5d4e}
 }
+
+/* === v5.2.2 · fase 2 (navegação) === */
+.hp-tools{display:flex;gap:6px;align-items:center;flex:none;order:1;margin-left:auto;padding-left:6px;position:sticky;right:0;background:#f1eee5;box-shadow:-10px 0 10px -4px #f1eee5,16px 0 0 #f1eee5}
+@media(min-width:900px){html{scroll-padding-top:150px}.toc-inner{flex-wrap:wrap;overflow:visible}.card[id],.sub-title[id]{scroll-margin-top:150px}}
+@media(max-width:899px){.hp-b,.hp-n{display:none}.hp-q{width:104px}}
+.hp-q{width:128px;font:500 12px/1 'DM Sans',system-ui,sans-serif;padding:7px 11px;border:1px solid var(--line-strong);border-radius:999px;background:var(--paper);color:var(--ink)}
+.hp-b{font:600 11px/1 'DM Sans',system-ui,sans-serif;letter-spacing:.05em;text-transform:uppercase;padding:7px 10px;border-radius:999px;border:1px solid var(--line-strong);background:var(--paper);color:var(--ink-soft);cursor:pointer;white-space:nowrap}
+.hp-b[aria-pressed=true]{background:var(--ink);color:#fff;border-color:var(--ink)}
+.hp-n{font:600 11px/1 'DM Mono',monospace;color:var(--ink-mute);white-space:nowrap}
+.sec-idx{display:flex;flex-wrap:wrap;gap:6px;margin:12px 0 20px}
+.sec-idx a{font:500 12px/1.25 'DM Sans',system-ui,sans-serif;padding:6px 10px;border-radius:999px;background:var(--paper);border:1px solid var(--line);color:var(--ink-soft);text-decoration:none}
+.sec-idx a:hover{border-color:var(--line-strong);color:var(--ink)}
+.sec-idx b{color:var(--c-prim);margin-right:5px;font-weight:700}
+a.xr{color:inherit;text-decoration:underline dotted;text-underline-offset:2px}
+a.xr:hover{color:var(--c-prim)}
+.card[id],.sub-title[id]{scroll-margin-top:110px}
+.q-off{display:none!important}
+body.dz main section:not(#tratamento){display:none}
+@media print{.hp-tools,.sec-idx,.toc-doses{display:none!important}}
 </style>
 </head>
 <body>
 <header class="header"><div class="header-row"><div class="h-mark">P</div><div class="h-titles"><div class="h-title">Infectologia e Emergências Pediátricas · Pocket Handbook</div><div class="h-sub">Elite edition · Pediatria · PD10</div></div><div class="h-author">@dr.lorencato</div><div class="h-edition">v5.2</div></div></header>
-<nav class="toc"><div class="toc-inner"><a href="#pocket" class="toc-chip"><span class="toc-chip-num">0</span>Pocket</a><a href="#redflags" class="toc-chip"><span class="toc-chip-num">A</span>Red Flags</a><a href="#approach" class="toc-chip"><span class="toc-chip-num">B</span>Apresentação</a><a href="#primarias" class="toc-chip"><span class="toc-chip-num">C</span>Entidades</a><a href="#secundarias" class="toc-chip"><span class="toc-chip-num">D</span>Secundárias</a><a href="#algoritmo" class="toc-chip"><span class="toc-chip-num">E</span>Algoritmo</a><a href="#tratamento" class="toc-chip"><span class="toc-chip-num">F</span>Tratamento</a><a href="#pitfalls" class="toc-chip"><span class="toc-chip-num">G</span>Pitfalls</a><a href="#pearls" class="toc-chip"><span class="toc-chip-num">H</span>Pearls</a></div></nav>
+<nav class="toc"><div class="toc-inner"><!--hp-f2--><span class="hp-tools"><input class="hp-q" type="search" placeholder="Buscar no HP" aria-label="Buscar no HP"><button class="hp-b hp-dz" type="button" aria-pressed="false">Só doses</button><button class="hp-b hp-op" type="button" aria-pressed="false">Abrir tudo</button><span class="hp-n" aria-live="polite"></span></span><!--/hp-f2--><a href="#pocket" class="toc-chip"><span class="toc-chip-num">0</span>Pocket</a><a href="#redflags" class="toc-chip"><span class="toc-chip-num">A</span>Red Flags</a><a href="#approach" class="toc-chip"><span class="toc-chip-num">B</span>Apresentação</a><a href="#primarias" class="toc-chip"><span class="toc-chip-num">C</span>Entidades</a><a href="#secundarias" class="toc-chip"><span class="toc-chip-num">D</span>Secundárias</a><a href="#algoritmo" class="toc-chip"><span class="toc-chip-num">E</span>Algoritmo</a><a href="#tratamento" class="toc-chip"><span class="toc-chip-num">F</span>Tratamento</a><!--hp-f2--><a href="#f2" class="toc-chip toc-doses"><span class="toc-chip-num">Rx</span>Doses</a><!--/hp-f2--><a href="#pitfalls" class="toc-chip"><span class="toc-chip-num">G</span>Pitfalls</a><a href="#pearls" class="toc-chip"><span class="toc-chip-num">H</span>Pearls</a></div></nav>
 <main>
 <div class="wrap">
 <div class="hero">
@@ -393,7 +412,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <div class="section-sub">A criança mantém a pressão arterial à custa de taquicardia e vasoconstrição até perder 25–30% da volemia efetiva; a hipotensão é pré-terminal. Na infectologia pediátrica, o alarme quase nunca é o agente: é a perfusão, o sensório, a pele que muda de padrão e a idade do paciente.</div>
 </div>
 
-<div class="card emerg">
+<div class="card emerg" id="a1">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">A.1</span> Emergências</div><h3>Sinais de alarme da criança febril e da criança grave <span class="ank ank-dgr">DANGER</span></h3></div>
 <div class="card-body">
 <div class="mnemo">
@@ -435,7 +454,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <div class="section-sub">Cinco portas de entrada concentram quase todo o PD10: o exantema febril, o lactente febril sem foco, a criança em choque (inclusive anafilático), a convulsão com febre e a febre com linfonodo. A idade é a primeira variável de cada uma; a segunda é a relação temporal entre febre e sinal.</div>
 </div>
 
-<div class="card clin">
+<div class="card clin" id="b1">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">B.1</span> Padrão 1</div><h3>Febre com exantema <span class="ank ank-hy">HIGH-YIELD</span></h3><div class="card-sub">Morfologia, progressão e o momento em relação à febre</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Pergunte três coisas: <b>que lesão</b> (maculopapular morbiliforme, micropapular áspero, vesicular, petequial, bolhoso, eritrodérmico), <b>como progrediu</b> (craniocaudal, centrípeta, flexuras, extremidades) e <b>quando surgiu em relação à febre</b>. Exantema que aparece quando a febre some é exantema súbito; febre que piora com o exantema é sarampo; febre ≥5 dias com mucosite e alteração de extremidades é Kawasaki (→ PD09).</div></div>
@@ -460,7 +479,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card clin">
+<div class="card clin" id="b2">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">B.2</span> Padrão 2</div><h3>Lactente febril sem foco <span class="ank ank-dec">DECISION</span></h3><div class="card-sub">A idade em dias decide mais que a temperatura</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Febre &lt;7 dias, sem foco após anamnese e exame completos, em criança &lt;36 meses. SBP 2025: <b>axilar ≥37,5 °C</b> (≈38 °C retal). Toxêmico em qualquer idade = sepse. Sem toxemia, três faixas: <b>0–28 dias</b> (IBG ~7–13%, tudo e internação), <b>29–60/90 dias</b> (estratificação com urina e marcadores inflamatórios), <b>3–36 meses</b> (vacinação define; a ITU é a principal IBG).</div></div>
@@ -473,7 +492,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card clin">
+<div class="card clin" id="b3">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">B.3</span> Padrão 3</div><h3>Criança em choque</h3><div class="card-sub">Classificar o mecanismo muda a droga</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">O choque pediátrico mais comum é <b>hipovolêmico</b> (diarreia, hemorragia), seguido do <b>distributivo/séptico</b> e do <b>anafilático</b>. A pergunta que mais salva vidas é se o coração aguenta volume: hepatomegalia, crepitações, galope, sopro novo e cardiomegalia apontam choque cardiogênico ou obstrutivo, em que o bolus agrava.</div></div>
@@ -487,7 +506,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card clin">
+<div class="card clin" id="b5">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">B.5</span> Padrão 5</div><h3>Febre com linfonodo aumentado</h3><div class="card-sub">Localizado e doloroso é infecção; generalizado, duro ou supraclavicular é investigação</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Linfonodo aumentado = <b>&gt;1 cm cervical/axilar, &gt;1,5 cm inguinal</b> (epitroclear &gt;0,5 cm). Doloroso, quente, eritematoso e unilateral sugere linfadenite bacteriana (S. aureus, SGA); bilateral pequeno com faringite sugere vírus; cervical posterior com esplenomegalia sugere EBV; indolor, isolado, em criança que convive com gato sugere arranhadura do gato ou toxoplasmose.</div></div>
@@ -503,9 +522,9 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <div class="section-eyebrow"><span>C</span> Entidades Primárias</div>
 <div class="section-title">Nove entidades que decidem o plantão pediátrico</div>
 <div class="section-sub">Quatro infecções com conduta própria e consequência coletiva (sarampo, varicela, escarlatina, mononucleose), a estratificação do lactente febril e quatro emergências com relógio (anafilaxia, sepse, crise febril, estado de mal). Cada box traz o CID-10 OMS, a fonte da conduta e o que muda a decisão.</div>
-</div>
+</div><!--hp-f2--><nav class="sec-idx" aria-label="Neste capítulo"><a href="#c1"><b>C.1</b>Sarampo</a><a href="#c2"><b>C.2</b>Varicela e herpes-zóster na c…</a><a href="#c3"><b>C.3</b>Escarlatina</a><a href="#c4"><b>C.4</b>Mononucleose infecciosa por E…</a><a href="#c5"><b>C.5</b>Febre sem sinais localizatóri…</a><a href="#c6"><b>C.6</b>Anafilaxia pediátrica</a><a href="#c7"><b>C.7</b>Sepse e choque séptico pediát…</a><a href="#c8"><b>C.8</b>Crise febril</a><a href="#c9"><b>C.9</b>Estado de mal epiléptico pedi…</a></nav><!--/hp-f2-->
 
-<div class="card prim">
+<div class="card prim" id="c1">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.1</span> Exantemática · notificação imediata</div><h3>Sarampo <span class="ank ank-dgr">DANGER</span></h3><div class="card-sub">O vírus mais contagioso conhecido e a amnésia imunológica que deixa</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Caso suspeito (MS): <b>febre + exantema maculopapular morbiliforme de direção cefalocaudal + tosse e/ou coriza e/ou conjuntivite</b>, independentemente de idade e situação vacinal. Pródromo de 3–4 dias com os "3 C" e manchas de Koplik; exantema que começa retroauricular e na linha do cabelo e desce, com febre no pico. Conduta: <b>notificar em 24 h, investigar em 48 h, precaução aérea até 4 dias após o início do exantema, IgM + RT-PCR no 1º atendimento, vitamina A, bloqueio dos contatos em 72 h</b>.</div></div>
@@ -533,7 +552,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="c2">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.2</span> Exantemática · herpesvírus</div><h3>Varicela e herpes-zóster na criança <span class="ank ank-hy">HIGH-YIELD</span></h3><div class="card-sub">Benigna no escolar saudável, grave no adolescente, no RN e no imunossuprimido</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Exantema <b>pruriginoso, centrípeto, em surtos, com lesões em vários estágios ao mesmo tempo</b> (mácula → pápula → vesícula "em gota de orvalho" → pústula umbilicada → crosta), acometendo couro cabeludo e mucosas. Transmissível de 1–2 dias antes até todas as lesões virarem crosta. A complicação mais frequente é a <b>infecção bacteriana de pele por SGA e S. aureus</b>; a mais temida, o choque tóxico e a fasciíte. Nunca AAS (Reye), evitar AINE.</div></div>
@@ -561,7 +580,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="c3">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.3</span> Exantemática · estreptococo do grupo A</div><h3>Escarlatina <span class="ank ank-hy">HIGH-YIELD</span></h3><div class="card-sub">Faringite com exantema de toxina; tratar previne febre reumática</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">5–15 anos; febre e faringoamigdalite seguidas, em 12–48 h, de <b>exantema micropapular áspero ("lixa") do pescoço para o tronco, mais intenso em dobras (sinal de Pastia), palidez perioral (Filatov) e língua em morango</b> branco → vermelho; descamação laminar de mãos e pés na 2ª–3ª semana. Teste rápido ou cultura de orofaringe; <b>amoxicilina 10 dias ou penicilina benzatina dose única</b>. A faringite sem exantema é IVAS do PD07.</div></div>
@@ -580,7 +599,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="c4">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.4</span> Síndrome mononucleose · herpesvírus</div><h3>Mononucleose infecciosa por EBV <span class="ank ank-hy">HIGH-YIELD</span></h3><div class="card-sub">Faringite exsudativa que não é estreptococo e um baço que pode romper</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Adolescente com <b>febre + faringoamigdalite exsudativa + linfonodos cervicais posteriores + esplenomegalia + linfocitose atípica (&gt;10%)</b>, fadiga intensa e edema palpebral. Na criança pequena a infecção é quase sempre assintomática ou inespecífica. O heterófilo falha em &lt;4 anos e na 1ª semana: pedir <b>VCA-IgM com EBNA negativo</b>. Suporte; <b>sem amoxicilina, sem esporte de contato por ≥3–4 semanas</b>.</div></div>
@@ -599,7 +618,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="c5">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.5</span> Infecto · triagem</div><h3>Febre sem sinais localizatórios e lactente febril (0–36 meses) <span class="ank ank-dec">DECISION</span></h3><div class="card-sub">Uma regra por faixa etária, porque o risco cai a cada semana de vida</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Febre &lt;7 dias sem foco após anamnese e exame completos. SBP 2025: <b>axilar ≥37,5 °C</b> (≈38 °C retal/oral). Toxêmico em qualquer idade = internar, culturas e antibiótico (C.7). Bem-aparente: <b>&lt;28 dias, tudo e internação</b>; <b>29–60 dias, urina + hemocultura + marcadores inflamatórios</b> e LP só se alterados (AAP 2021); <b>3–36 meses, a vacinação decide</b> e a urina é o exame mais rentável.</div></div>
@@ -635,7 +654,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="c6">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.6</span> Emergência · alergia</div><h3>Anafilaxia pediátrica <span class="ank ank-dgr">DANGER</span></h3><div class="card-sub">O diagnóstico é clínico e a droga é uma só, no músculo</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">WAO 2020: (1) início agudo de pele/mucosa <b>e</b> pelo menos um de respiratório, hipotensão/disfunção de órgão-alvo ou sintomas GI graves; <b>ou</b> (2) após alérgeno conhecido ou muito provável, <b>hipotensão, broncoespasmo ou envolvimento laríngeo, mesmo sem pele</b>. A pele falta em 10–20%. Tratamento: <b>adrenalina 0,01 mg/kg IM na face anterolateral da coxa</b>, repetida a cada 5–15 min. Anti-histamínico e corticoide são adjuvantes que nunca atrasam a adrenalina.</div></div>
@@ -662,7 +681,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="c7">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.7</span> Emergência · choque</div><h3>Sepse e choque séptico pediátrico — Phoenix 2024 e SSC Children 2026 <span class="ank ank-dec">DECISION</span></h3><div class="card-sub">Sepse é infecção com disfunção orgânica; SIRS e "sepse grave" saíram de cena</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body"><b>Sepse = infecção suspeita + Phoenix Sepsis Score ≥2</b> (respiratório, cardiovascular, coagulação, neurológico). <b>Choque séptico = sepse com ≥1 ponto cardiovascular</b> (hipotensão para a idade, lactato ≥5 mmol/L ou vasoativo). Na primeira hora: reconhecer, acesso IV/IO, culturas, <b>antimicrobiano ≤1 h no choque</b> (≤3 h na sepse provável sem choque), lactato, bolus de 10–20 mL/kg com reavaliação conforme o recurso, vasoativo periférico se persistir.</div></div>
@@ -698,7 +717,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="c8">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.8</span> Emergência · neurologia</div><h3>Crise febril <span class="ank ank-dec">DECISION</span></h3><div class="card-sub">A crise mais comum da infância, benigna quando simples</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">2–5% das crianças de 6 meses a 5 anos. Simples: generalizada, &lt;15 min, uma em 24 h, recuperação completa. A simples <b>não pede EEG, neuroimagem nem eletrólitos</b>; LP só com sinais meníngeos/toxemia ou a considerar em 6–12 meses mal vacinados ou com antibiótico prévio. <b>Antitérmico não previne recorrência</b>; profilaxia contínua não é indicada; a família recebe orientação e, se crises prolongadas, BZD de resgate.</div></div>
@@ -726,7 +745,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="c9">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.9</span> Emergência · neurologia</div><h3>Estado de mal epiléptico pediátrico <span class="ank ank-dgr">DANGER</span></h3><div class="card-sub">A emergência neurológica mais comum da pediatria tem relógio de minutos</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Qualquer crise convulsiva <b>≥5 min</b>, ou crises repetidas sem recuperação, é estado de mal. Relógio: 0–5 min estabilizar, O2, glicemia capilar; <b>5–20 min BZD em dose plena (até 2 doses)</b>; <b>20–40 min fármaco de 2ª linha em dose única cheia</b> (levetiracetam, fenitoína/fosfenitoína, valproato ou fenobarbital); &gt;40 min refratário com intubação, infusão contínua e EEG.</div></div>
@@ -759,9 +778,9 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <div class="section-eyebrow"><span>D</span> Entidades Secundárias</div>
 <div class="section-title">Os exantemas benignos, as enteroviroses, a pele bacteriana, as toxinas e os linfonodos</div>
 <div class="section-sub">Doze entidades que completam o diferencial. Cada uma tem box próprio porque tem agente, risco ou conduta próprios; só se agrupam as que compartilham mecanismo e tratamento (enterovírus mucocutâneo, choques tóxicos, infecções de partes moles por profundidade).</div>
-</div>
+</div><!--hp-f2--><nav class="sec-idx" aria-label="Neste capítulo"><a href="#d1"><b>D.1</b>Rubéola pós-natal</a><a href="#d2"><b>D.2</b>Exantema súbito (roséola infa…</a><a href="#d3"><b>D.3</b>Eritema infeccioso e outras d…</a><a href="#d4"><b>D.4</b>Doença mão-pé-boca e herpangi…</a><a href="#d5"><b>D.5</b>Meningite asséptica, miocardi…</a><a href="#d6"><b>D.6</b>Impetigo não bolhoso e bolhoso</a><a href="#d7"><b>D.7</b>Erisipela, celulite e fasciít…</a><a href="#d8"><b>D.8</b>Síndromes do choque tóxico es…</a><a href="#d9"><b>D.9</b>Síndrome da pele escaldada es…</a><a href="#d10"><b>D.10</b>Citomegalovírus adquirido na…</a><a href="#d11"><b>D.11</b>Toxoplasmose adquirida e ocul…</a><a href="#d12"><b>D.12</b>Linfadenomegalia febril e lin…</a></nav><!--/hp-f2-->
 
-<div class="card diag">
+<div class="card diag" id="d1">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">D.1</span> Exantemática · notificação imediata</div><h3>Rubéola pós-natal</h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Doença leve na criança cujo perigo é a gestante suscetível (síndrome da rubéola congênita → PD02). <b>Febre baixa, linfonodos retroauriculares, occipitais e cervicais posteriores, exantema róseo craniocaudal de 3 dias que não descama</b>; artralgia na adolescente. Caso suspeito = notificação imediata, como o sarampo.</div></div>
@@ -777,7 +796,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card diag">
+<div class="card diag" id="d2">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">D.2</span> Exantemática · herpesvírus</div><h3>Exantema súbito (roséola infantum)</h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Lactente de 6 meses a 2 anos com <b>3–5 dias de febre alta (≥39,5 °C) e bom estado geral; o exantema maculopapular róseo em tronco e pescoço aparece quando a febre cai</b> e dura 1–2 dias. Principal causa de crise febril no lactente.</div></div>
@@ -793,7 +812,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card diag">
+<div class="card diag" id="d3">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">D.3</span> Exantemática · parvovírus B19</div><h3>Eritema infeccioso e outras doenças pelo parvovírus B19</h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Escolar com <b>face esbofeteada → exantema rendilhado em extensoras que recrudesce com calor e sol por semanas</b>; quando o exantema aparece, a criança já não transmite. O perigo está em três terceiros: <b>anemia hemolítica crônica</b> (crise aplásica), <b>imunossuprimido</b> (aplasia pura de série vermelha) e <b>feto</b> (hidropsia).</div></div>
@@ -809,7 +828,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card diag">
+<div class="card diag" id="d4">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">D.4</span> Enteroviroses · mucocutâneas</div><h3>Doença mão-pé-boca e herpangina</h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Picornavírus (coxsackie A e B, echovírus, EV-A71), fecal-oral e respiratória, verão-outono, creche; excreção fecal por semanas. <b>Mão-pé-boca:</b> úlceras orais + vesículas ovais em palmas, plantas e nádegas. <b>Herpangina:</b> febre alta, odinofagia, vesículas e úlceras em pilares, palato mole e úvula. O risco imediato é a desidratação pela odinofagia; o raro, a encefalite de tronco por EV-A71.</div></div>
@@ -825,7 +844,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card diag">
+<div class="card diag" id="d5">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">D.5</span> Enteroviroses · invasivas</div><h3>Meningite asséptica, miocardite e sepse neonatal por enterovírus <span class="ank ank-dgr">DANGER</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Enterovírus causam ~90% das meningites virais em populações vacinadas contra caxumba, a maioria das miocardites virais agudas da criança (coxsackie B) e uma sepse neonatal fulminante com hepatite e coagulopatia. A <b>PCR enteroviral</b> no liquor ou sangue encurta internação e antibiótico.</div></div>
@@ -842,7 +861,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card diag">
+<div class="card diag" id="d6">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">D.6</span> Pele bacteriana · superficial</div><h3>Impetigo não bolhoso e bolhoso</h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">A infecção bacteriana de pele mais comum da criança de 2–5 anos. <b>Crostas melicéricas</b> peribucais e perinasais (não bolhoso: S. aureus e/ou SGA); <b>bolhas flácidas</b> que deixam colarete (bolhoso: toxina esfoliativa local do S. aureus, lactente). Poucas lesões: tópico; extenso ou surto: oral.</div></div>
@@ -857,7 +876,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card diag">
+<div class="card diag" id="d7">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">D.7</span> Pele bacteriana · profunda</div><h3>Erisipela, celulite e fasciíte necrosante <span class="ank ank-dgr">DANGER</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Três profundidades, uma escada de gravidade. <b>Erisipela</b>: derme e linfáticos superficiais, borda elevada e nítida, quase sempre SGA. <b>Celulite</b>: derme profunda e subcutâneo, borda imprecisa, SGA ou S. aureus. <b>Fasciíte necrosante</b>: fáscia, com <b>dor desproporcional ao achado</b>, edema tenso além do eritema, bolhas hemorrágicas, anestesia cutânea, crepitação e toxemia — é cirúrgica.</div></div>
@@ -873,7 +892,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card diag">
+<div class="card diag" id="d8">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">D.8</span> Toxinas · superantígenos</div><h3>Síndromes do choque tóxico estafilocócica e estreptocócica <span class="ank ank-dgr">DANGER</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Superantígenos (TSST-1, enterotoxinas estafilocócicas; SpeA, SpeC, SSA estreptocócicas) ligam MHC-II ao TCR fora do sulco e ativam até 20% dos linfócitos T: <b>febre alta, eritrodermia, hipotensão e falência multiorgânica</b> em horas. Mesma ressuscitação da sepse, mais <b>clindamicina</b>, controle do foco e, no estreptocócico refratário, <b>IgIV</b>.</div></div>
@@ -889,7 +908,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card diag">
+<div class="card diag" id="d9">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">D.9</span> Toxinas · esfoliativas</div><h3>Síndrome da pele escaldada estafilocócica</h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Toxinas esfoliativas (ETA/ETB) clivam a <b>desmogleína-1</b> na camada granulosa: <b>pele dolorosa ao toque, eritema periorificial e em dobras, bolhas flácidas e descolamento com Nikolsky +, sem mucosa</b>, quase sempre em &lt;5 anos (clearance renal imaturo da toxina e ausência de anticorpos antitoxina).</div></div>
@@ -905,7 +924,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card diag">
+<div class="card diag" id="d10">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">D.10</span> Síndrome mononucleose · β-herpesvírus</div><h3>Citomegalovírus adquirido na criança</h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">CMV pós-natal se transmite por saliva e urina na creche (excreção por meses a anos), leite materno e transfusão. No imunocompetente: assintomático ou <b>mononucleose heterófilo-negativa</b> com febre prolongada, hepatite e pouca faringite. Doença grave no prematuro de muito baixo peso (via leite) e no imunossuprimido. Congênito → PD02.</div></div>
@@ -921,7 +940,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card diag">
+<div class="card diag" id="d11">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">D.11</span> Síndrome mononucleose · protozoário</div><h3>Toxoplasmose adquirida e ocular</h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Infecção por oocisto (solo, água, verdura, areia com fezes de gato) ou cisto tecidual (carne crua ou malcozida). No imunocompetente, <b>linfonodomegalia cervical indolor, isolada ou com febre baixa e astenia</b>, regride sozinha. A forma que trata sempre é a <b>retinocoroidite ativa</b>. Congênita → PD02.</div></div>
@@ -938,7 +957,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card diag">
+<div class="card diag" id="d12">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">D.12</span> Linfonodo · síndrome</div><h3>Linfadenomegalia febril e linfadenite cervical <span class="ank ank-dec">DECISION</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Cinco perguntas: <b>é linfonodo? está aumentado (&gt;1 cm cervical/axilar, &gt;1,5 cm inguinal)? doloroso ou endurecido e aderido? localizado ou generalizado? há sinal de alarme?</b> Linfadenite aguda unilateral dolorosa = S. aureus/SGA; subaguda indolor que flutua sem febre = micobactéria não tuberculosa; com pápula de arranhadura = <i>Bartonella</i>; supraclavicular ou generalizada com citopenias = investigar neoplasia.</div></div>
@@ -962,7 +981,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <div class="section-sub">A primeira árvore separa, em minutos, a parada, a anafilaxia, o choque e a crise que não para — situações que pedem drogas diferentes no primeiro minuto. A segunda estratifica o lactente febril pela idade. A terceira organiza o exantema febril pelo que exige ação coletiva. O raciocínio narrado é a ordem das perguntas que fazemos de cabeça.</div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="e1">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">E.1</span> Algoritmo · sala de emergência</div><h3>Criança grave: parada, anafilaxia, choque, convulsão <span class="ank ank-dgr">DANGER</span></h3></div>
 <div class="card-body">
 <div class="algo">
@@ -1006,7 +1025,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="e2">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">E.2</span> Algoritmo · AAP 2021 · SBP 2025</div><h3>Lactente e pré-escolar febril sem foco <span class="ank ank-dec">DECISION</span></h3></div>
 <div class="card-body">
 <div class="algo">
@@ -1053,7 +1072,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="e3">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">E.3</span> Algoritmo · vigilância</div><h3>Exantema febril: o que exige ação hoje <span class="ank ank-dec">DECISION</span></h3></div>
 <div class="card-body">
 <div class="algo">
@@ -1115,20 +1134,20 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <div class="section-eyebrow"><span>F</span> Tratamento Integrado</div>
 <div class="section-title">F1 · Estratégia por entidade · F2 · Doses em mg/kg com máximo · F3 · Caso → conduta → erro típico</div>
 <div class="section-sub">Toda dose é por peso real (no obeso, peso ideal para fármacos hidrofílicos, sempre com teto do adulto). Onde o Ministério da Saúde e a diretriz internacional divergem, as duas condutas aparecem; doses que dependem de protocolo do serviço estão marcadas para conferir.</div>
-</div>
+</div><!--hp-f2--><nav class="sec-idx" aria-label="Neste capítulo"><a href="#f1"><b>F.1</b>Escadas de conduta por entida…</a><a href="#f2"><b>F.2</b>Tabela de doses pediátricas…</a><a href="#f3"><b>F.3</b>Caso → conduta certa → erro t…</a></nav><!--/hp-f2-->
 
-<div class="card tx">
+<div class="card tx" id="f1">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">F.1</span> Estratégia</div><h3>Escadas de conduta por entidade <span class="ank ank-dec">DECISION</span></h3></div>
 <div class="card-body">
 
-<div class="sub-title">F1.1 · Sarampo e rubéola — o caso e os contatos</div>
+<div class="sub-title" id="f1-1">F1.1 · Sarampo e rubéola — o caso e os contatos</div>
 <ul class="bullets">
 <li><b>Caso:</b> notificação em 24 h, investigação em 48 h, precaução aérea até 4 dias após o início do exantema (rubéola: gotículas até 7 dias), sorologia + RT-PCR (swab e urina) no 1º contato, vitamina A em 2 doses, suporte e antibiótico só para complicação bacteriana.</li>
 <li><b>Contatos:</b> bloqueio vacinal em 72 h ou imunoglobulina em 6 dias conforme F1.13; acompanhar 30 dias.</li>
 <li><b>Internação:</b> pneumonia com hipoxemia, desidratação, encefalite, desnutrição grave, lactente pequeno; quarto privativo e equipe imune.</li>
 </ul>
 
-<div class="sub-title">F1.2 · Varicela e zóster — tratar quem tem risco, proteger quem foi exposto</div>
+<div class="sub-title" id="f1-2">F1.2 · Varicela e zóster — tratar quem tem risco, proteger quem foi exposto</div>
 <ul class="bullets">
 <li><b>Criança saudável &lt;12 anos:</b> sintomáticos (paracetamol/dipirona, anti-H1, higiene, unhas curtas), sem AAS e sem AINE; afastar da escola até todas as lesões em crosta.</li>
 <li><b>Risco de forma moderada</b> (&gt;12 anos, dermatopatia ou pneumopatia crônica, corticoide inalatório/oral não imunossupressor, AAS crônico, caso secundário domiciliar): aciclovir VO em ≤24 h (até 72 h), 5 dias; valaciclovir 20 mg/kg/dose 8/8 h (máx 1 g/dose) é alternativa a partir de 2 anos.</li>
@@ -1137,13 +1156,13 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <li><b>Complicação:</b> febre que volta, celulite ou dor desproporcional = beta-lactâmico antiestafilocócico + clindamicina IV; ataxia cerebelar = observação (benigna).</li>
 </ul>
 
-<div class="sub-title">F1.3 · Exantemas benignos e enteroviroses</div>
+<div class="sub-title" id="f1-3">F1.3 · Exantemas benignos e enteroviroses</div>
 <ul class="bullets">
 <li><b>Roséola, eritema infeccioso, mão-pé-boca, herpangina:</b> suporte, hidratação e analgesia; B19 em hemolítico = transfusão e gotículas 7 dias; aplasia no imunossuprimido = IgIV.</li>
 <li><b>Enterovírus invasivo:</b> meningite = antibiótico até PCR enteroviral positiva com culturas negativas (alta em 24–48 h); miocardite e sepse neonatal = UTI, inotrópico sem volume agressivo.</li>
 </ul>
 
-<div class="sub-title">F1.4 · Escarlatina e faringite por SGA com exantema</div>
+<div class="sub-title" id="f1-4">F1.4 · Escarlatina e faringite por SGA com exantema</div>
 <ul class="bullets">
 <li><b>Primeira linha:</b> amoxicilina 10 dias (1×/dia aumenta adesão) ou penicilina G benzatina dose única IM — <b>corte de peso: &lt;27 kg = 600.000 U pela IDSA/AHA; ≤20 kg = 600.000 U pelos protocolos brasileiros de febre reumática</b>; acima do corte, 1.200.000 U. Entre 20 e 27 kg as fontes divergem: siga o protocolo local e registre.</li>
 <li><b>Alergia não anafilática:</b> cefalosporina de 1ª geração 10 dias; <b>anafilática:</b> azitromicina 5 dias ou clindamicina 10 dias.</li>
@@ -1151,7 +1170,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <li><b>Complicação supurativa:</b> abscesso periamigdaliano/retrofaríngeo = drenagem + ampicilina-sulbactam ou clindamicina IV.</li>
 </ul>
 
-<div class="sub-title">F1.5 · Pele e partes moles</div>
+<div class="sub-title" id="f1-5">F1.5 · Pele e partes moles</div>
 <ul class="bullets">
 <li><b>Impetigo:</b> poucas lesões = mupirocina/retapamulina 5 dias; extenso ou surto = cefalexina 7 dias; recorrência = descolonização e tratar dermatose de base.</li>
 <li><b>Celulite:</b> leve = cefalexina VO 5 dias (prolongar se sem melhora); moderada/grave, face, toxemia = cefazolina ou oxacilina IV; purulenta = drenagem ± clindamicina/SMX-TMP; marcar a borda e reavaliar em 48–72 h.</li>
@@ -1159,13 +1178,13 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </ul>
 <div class="box decision"><span class="box-label">DECISION</span><div class="box-title">Quando a celulite deixa de ser ambulatorial</div><div class="box-body">Internar e usar via IV se: toxemia ou SIRS franca, celulite de face/órbita, mão ou períneo, área que cresce apesar de 48 h de antibiótico oral, imunossupressão, &lt;3 meses, linfangite rapidamente ascendente, dor desproporcional (fasciíte até prova contrária) ou impossibilidade de ingerir o antibiótico oral.</div></div>
 
-<div class="sub-title">F1.6 · Choque tóxico e pele escaldada</div>
+<div class="sub-title" id="f1-6">F1.6 · Choque tóxico e pele escaldada</div>
 <ul class="bullets">
 <li><b>Choque tóxico:</b> pacote de sepse + clindamicina + beta-lactâmico (vancomicina empírica até a cultura) + remoção do tampão/corpo estranho e desbridamento; IgIV no estreptocócico refratário; clindamicina por pelo menos 48–72 h de estabilidade, total 10–14 dias.</li>
 <li><b>Pele escaldada:</b> oxacilina IV (vancomicina se MRSA) + clindamicina; fluidos e analgesia de queimado; sem corticoide; transição oral com cefalexina.</li>
 </ul>
 
-<div class="sub-title">F1.7 · Mononucleose, CMV, toxoplasmose e linfadenomegalia</div>
+<div class="sub-title" id="f1-7">F1.7 · Mononucleose, CMV, toxoplasmose e linfadenomegalia</div>
 <ul class="bullets">
 <li><b>EBV:</b> suporte; não prescrever amoxicilina para faringite exsudativa com adenopatia posterior até descartar EBV; corticoide só para via aérea, hemólise, plaquetopenia grave ou complicação neurológica; sem esporte de contato por 3–4 semanas.</li>
 <li><b>CMV no imunocompetente:</b> sem antiviral; ganciclovir IV no imunossuprimido com doença de órgão (congênito → PD02).</li>
@@ -1173,7 +1192,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <li><b>Linfadenite:</b> cefalexina ou amoxicilina-clavulanato 10 dias; abscesso = drenagem; MNT = excisão; arranhadura do gato volumosa = azitromicina 5 dias; sinais de alarme = biópsia sem corticoide prévio.</li>
 </ul>
 
-<div class="sub-title">F1.8 · Anafilaxia — do PS à alta, e a realidade do autoinjetor no Brasil</div>
+<div class="sub-title" id="f1-8">F1.8 · Anafilaxia — do PS à alta, e a realidade do autoinjetor no Brasil</div>
 <ul class="bullets">
 <li><b>Primeiro minuto:</b> adrenalina IM no vasto lateral, decúbito com pernas elevadas (vômito: lateral; dispneia: semissentado), O2, acesso, volume se hipotensão. Repetir a IM a cada 5–15 min; após 2–3 doses, infusão contínua com monitor.</li>
 <li><b>Adjuvantes:</b> salbutamol para broncoespasmo residual; anti-H1 só para prurido e urticária; corticoide não previne bifásica e não substitui nada; betabloqueado refratário: glucagon.</li>
@@ -1182,7 +1201,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </ul>
 <div class="box danger"><span class="box-label">DANGER</span><div class="box-title">Não existe autoinjetor de adrenalina registrado na Anvisa</div><div class="box-body">Em abril de 2026 a Anvisa determinou a apreensão do EpiPen vendido sem registro (DOU 02/04/2026) e a Asbai reafirmou que não há dispositivo autoinjetável aprovado no país. A prescrição continua sendo de duas doses (0,15 mg para 7,5–25 kg; 0,3 mg ≥25 kg): a família obtém o autoinjetor por importação para uso pessoal ou via judicial, e, enquanto não o tem, recebe um kit com ampola de adrenalina 1 mg/mL e seringa de 1 mL com a dose em mL marcada (0,01 mL/kg), com treinamento presencial. É adaptação de serviço, não diretriz: conferir a situação regulatória antes de cada publicação deste HP.</div></div>
 
-<div class="sub-title">F1.9 · Sepse e choque séptico — SSC Children 2026</div>
+<div class="sub-title" id="f1-9">F1.9 · Sepse e choque séptico — SSC Children 2026</div>
 <ul class="bullets">
 <li><b>Reconhecimento:</b> triagem sistemática + Phoenix (≥2 pontos = sepse; ≥1 ponto cardiovascular = choque séptico); lactato na avaliação inicial.</li>
 <li><b>Hora 1:</b> duas vias (IO se falhar em 5 min), hemocultura sem atrasar, antimicrobiano ≤1 h no choque e ≤3 h na sepse provável sem choque, bolus de 10–20 mL/kg de balanceado com reavaliação de fígado, estertores e perfusão após cada um.</li>
@@ -1192,7 +1211,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <li><b>Suporte:</b> glicose ≥60 mg/dL (sem controle estrito), cálcio iônico normal, Hb ≥7 g/dL no estável, nutrição enteral precoce, desescalonar em 48–72 h, seguimento pós-UTI.</li>
 </ul>
 
-<div class="sub-title">F1.10 · Parada cardiorrespiratória pediátrica — PALS 2025 (competência)</div>
+<div class="sub-title" id="f1-10">F1.10 · Parada cardiorrespiratória pediátrica — PALS 2025 (competência)</div>
 <ul class="bullets">
 <li><b>Compressões:</b> 100–120/min, profundidade ≥1/3 do diâmetro AP (≈4 cm no lactente, ≈5 cm na criança, 5–6 cm no adolescente), retorno completo, pausas &lt;10 s; lactente com dois polegares envolvendo o tórax ou, se não for possível envolver, com a base de uma mão (dois dedos saiu da recomendação preferida).</li>
 <li><b>Ventilação:</b> 30:2 com um socorrista e 15:2 com dois; com via aérea avançada, 1 ventilação a cada 2–3 s (20–30/min) sem pausar as compressões; cânula com cuff.</li>
@@ -1200,14 +1219,14 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <li><b>Causas e pós-RCE:</b> hipóxia, hipovolemia, H⁺, hipo/hipercalemia, hipotermia, hipoglicemia; tensão no tórax, tamponamento, toxinas, trombose. Pós-RCE: SpO2 94–99%, PaCO2 normal, PAS acima do p10 para a idade, evitar febre, EEG se comatoso (texto integral do PALS 2025 não lido: conferir).</li>
 </ul>
 
-<div class="sub-title">F1.11 · Crise febril</div>
+<div class="sub-title" id="f1-11">F1.11 · Crise febril</div>
 <ul class="bullets">
 <li><b>Na crise:</b> proteger, lateralizar, não introduzir nada na boca, cronometrar; ≥5 min = BZD (estado de mal).</li>
 <li><b>Depois da simples:</b> procurar a causa da febre; sem EEG, imagem, eletrólitos ou punção de rotina; LP só nas indicações da AAP 2011.</li>
 <li><b>Orientação:</b> recorrência ~30% (50% se primeira crise &lt;1 ano); antitérmico não previne; profilaxia contínua não indicada; BZD de resgate domiciliar (midazolam bucal/intranasal) para crises prolongadas ou famílias distantes do serviço.</li>
 </ul>
 
-<div class="sub-title">F1.12 · Estado de mal epiléptico</div>
+<div class="sub-title" id="f1-12">F1.12 · Estado de mal epiléptico</div>
 <ul class="bullets">
 <li><b>0–5 min:</b> ABC, O2, monitor, glicemia capilar (SG10% 2–5 mL/kg se &lt;60 mg/dL), acesso ou via não venosa.</li>
 <li><b>5–20 min:</b> BZD em dose plena, no máximo duas doses (contando as do pré-hospitalar).</li>
@@ -1215,7 +1234,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <li><b>&gt;40 min:</b> IOT (cetamina ou midazolam como indutor), infusão contínua de midazolam, cetamina ou barbitúrico, EEG contínuo, UTI. Investigar sódio, cálcio, magnésio, nível sérico, intoxicação, SNC; &lt;2 anos sem causa = piridoxina.</li>
 </ul>
 
-<div class="sub-title">F1.13 · Profilaxia pós-exposição — quadro operacional</div>
+<div class="sub-title" id="f1-13">F1.13 · Profilaxia pós-exposição — quadro operacional</div>
 <div class="stbl stbl-3">
 <div class="stbl-head stbl-3"><div>Exposição</div><div>Quem</div><div>O quê e até quando</div></div>
 <div class="stbl-row stbl-3"><div class="col col1" data-l="Exposição">Sarampo</div><div class="col" data-l="Quem">Suscetível ≥6 meses, não gestante, imunocompetente</div><div class="col" data-l="O quê">Tríplice viral até 72 h <span class="ev ev-nice">MS GVS 2024</span></div></div>
@@ -1230,7 +1249,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card tx">
+<div class="card tx" id="f2">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">F.2</span> Doses Operacionais</div><h3>Tabela de doses pediátricas — mg/kg com dose máxima <span class="ank ank-dec">DECISION</span></h3></div>
 <div class="card-body">
 <div class="stbl stbl-3">
@@ -1284,7 +1303,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card tx">
+<div class="card tx" id="f3">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">F.3</span> Cenários</div><h3>Caso → conduta certa → erro típico <span class="ank ank-dgr">DANGER</span></h3></div>
 <div class="card-body">
 <div class="stbl stbl-3">
@@ -1311,7 +1330,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <div class="section-title">Erros Operacionais + Mitos Vivos + Debates Atuais</div>
 <div class="section-sub">Os erros que pesam na infectologia e na emergência pediátrica são de tempo (adrenalina, antibiótico, BZD tardios), de categoria (volume para o choque errado) e de omissão coletiva (o contato que não recebeu profilaxia).</div>
 </div>
-<div class="card pearl">
+<div class="card pearl" id="g1">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">G.1</span> Pegadinhas</div><h3>10 Erros Operacionais — Infecto e Emergência Pediátrica</h3></div>
 <div class="card-body">
 <div class="stbl stbl-2">
@@ -1329,7 +1348,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 </div>
-<div class="card pearl">
+<div class="card pearl" id="g2">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">G.2</span> Mitos · Controvérsias</div><h3>Mitos Vivos e Debates Atuais</h3></div>
 <div class="card-body">
 <div class="box myth"><span class="box-label">MYTH</span><div class="box-title">"Corticoide previne a reação bifásica"</div><div class="box-body">Coortes e metanálises não mostram redução da reação bifásica com corticoide nem com anti-H1 (AAAAI/ACAAI 2023). O que prevê bifásica é gravidade inicial e necessidade de mais de uma dose de adrenalina; o que a trata é nova adrenalina. Corticoide fica para a asma associada.</div></div>
@@ -1348,7 +1367,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <div class="section-title">Nuances de Especialista + O Que Mudou</div>
 <div class="section-sub">Oito ideias que separam quem decora a doença de quem a reconhece no lactente que não fala, e seis mudanças reais de 2024–2026.</div>
 </div>
-<div class="card pearl">
+<div class="card pearl" id="h1">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">H.1</span> Pearls</div><h3>8 Pearls de Especialista</h3></div>
 <div class="card-body">
 <div class="box pearl"><span class="box-label">PEARL</span><div class="box-title">Varicela com febre que volta é estreptococo até prova contrária</div><div class="box-body">A febre da varicela cai em 3–4 dias. Retorno da febre, eritema que se espalha ao redor de uma lesão ou dor desproporcional apontam para SGA invasivo; o AINE é cofator, e a clindamicina é dada antes da cultura pelo componente de toxina, que o beta-lactâmico sozinho não bloqueia quando a carga bacteriana é alta.</div></div>
@@ -1361,7 +1380,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <div class="box pearl"><span class="box-label">PEARL</span><div class="box-title">Radiografia de tórax antes de sedar a criança com linfonodo cervical suspeito</div><div class="box-body">Linfoma de Hodgkin e linfoblástico T podem ter massa mediastinal anterior silenciosa; a indução anestésica relaxa a musculatura que mantinha a via aérea e o retorno venoso, e o colapso é catastrófico. Radiografia antes da biópsia sob sedação é regra de segurança, não de diagnóstico.</div></div>
 </div>
 </div>
-<div class="card pearl">
+<div class="card pearl" id="h2">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">H.2</span> Evolving</div><h3>6 Mudanças Reais — 2024–2026</h3></div>
 <div class="card-body">
 <div class="box evolving"><span class="box-label">EVOLVING</span><div class="box-title">SSC Children 2026 substitui a SSC 2020</div><div class="box-body">Antimicrobiano ≤1 h no choque e ≤3 h sem choque; até 40–60 mL/kg com UTI; até 40 mL/kg sem UTI só com hipotensão; recomendação forte contra bolus na sepse sem hipotensão onde não há UTI; balanceado preferido; adrenalina ou noradrenalina sem preferência, já periféricas; lactato na avaliação inicial; corticoide contra no choque responsivo e indefinido no refratário.</div></div>
@@ -1416,5 +1435,36 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </footer>
 <a class="to-top" href="#" aria-label="Voltar ao topo">↑</a>
 <div class="watermark">@dr.lorencato · PD10 Infecto e Emergências Pediátricas v5.2</div>
-</body>
+<!--hp-f2--><script>(function(){var d=document,M=d.querySelector('main');if(!M)return;
+var SELF='PD10',HP=' CT01 CT02 CT03 CT04 CT05 CT06 CT08 CT10 CV01 CV03 CV04 CV05 CV06 CV07 CV08 EN01 EN02 EN03 EN04 EN06 EN07 GH01 GH02 GH03 GH05 GH06 GH07 GH08 GH09 GH10 GO01 GO02 GO03 GO04 GO09 GO10 GO11 GO12 GO13 GO14 HO01 HO02 HO03 HO04 HO05 HO06 II01 II02 II03 II04 II07 II08 NE01 NE02 NE03 NE04 NE05 NE06 NE07 NE08 NU01 NU02 NU03 NU04 NU05 OE01 OE02 PC01 PC02 PC03 PC04 PC05 PC06 PD01 PD02 PD03 PD04 PD05 PD06 PD07 PD08 PD09 PD10 RD01 RD02 RD03 RD04 RD05 RD07 RP01 RP02 RP03 RP04 ';
+var SK='A,H1,H2,H3,SCRIPT,STYLE,NAV,.card-num,.card-eyebrow,.sub-title,.disease-tag,.toc';
+var R=/\b(?:([A-H])(\d)?\.(\d{1,2}[a-c]?)|(CV|RP|GH|NE|EN|NU|HO|II|RD|GO|PD|PC|CT|OE)(\d\d))\b/g;
+function skip(n){for(var e=n.parentNode;e&&e!==M;e=e.parentNode)if(e.matches&&e.matches(SK))return 1;return 0}
+var w=d.createTreeWalker(M,4),t,L=[];while(t=w.nextNode())if(R.test(t.data)&&!skip(t))L.push(t);
+L.forEach(function(t){var s=t.data,f=d.createDocumentFragment(),i=0,m;R.lastIndex=0;
+while(m=R.exec(s)){var h=null;
+if(m[1]){var id=m[1].toLowerCase()+(m[2]?m[2]+'-':'')+m[3];if(d.getElementById(id))h='#'+id}
+else{var x=m[4]+m[5];if(x!==SELF&&HP.indexOf(' '+x+' ')>=0)h='../'+x+'/'+x+'.html'}
+if(!h)continue;f.appendChild(d.createTextNode(s.slice(i,m.index)));
+var a=d.createElement('a');a.href=h;a.className='xr';a.textContent=m[0];f.appendChild(a);i=R.lastIndex}
+if(i){f.appendChild(d.createTextNode(s.slice(i)));t.parentNode.replaceChild(f,t)}});
+function nz(s){return s.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'')}
+var q=d.querySelector('.hp-q'),n=d.querySelector('.hp-n'),it=M.querySelectorAll('.card,.pocket-card'),T;
+function clr(){M.querySelectorAll('.q-off').forEach(function(e){e.classList.remove('q-off')})}
+function run(){var v=nz(q.value.trim());clr();n.textContent='';if(v.length<2)return;var k=0;
+it.forEach(function(c){if(nz(c.textContent).indexOf(v)<0){c.classList.add('q-off');return}k++;
+var r=c.querySelectorAll('.stbl-row,.disease-row,.score-row'),h=[];r.forEach(function(x){if(nz(x.textContent).indexOf(v)>=0)h.push(x)});
+if(h.length)r.forEach(function(x){if(h.indexOf(x)<0)x.classList.add('q-off')});
+c.querySelectorAll('details').forEach(function(x){if(nz(x.textContent).indexOf(v)>=0)x.open=true})});
+M.querySelectorAll('section').forEach(function(s){if(!s.querySelector('.card:not(.q-off),.pocket-card:not(.q-off)'))s.classList.add('q-off')});
+n.textContent=k?k+' achado'+(k>1?'s':''):'nada'}
+if(q){q.addEventListener('input',function(){clearTimeout(T);T=setTimeout(run,180)});
+q.addEventListener('keydown',function(e){if(e.key==='Escape'){q.value='';run()}})}
+function tg(b,f){b.addEventListener('click',function(){var on=b.getAttribute('aria-pressed')!=='true';b.setAttribute('aria-pressed',on);f(on)})}
+var bd=d.querySelector('.hp-dz'),bo=d.querySelector('.hp-op');
+if(bd)tg(bd,function(on){d.body.classList.toggle('dz',on);if(on)d.getElementById('tratamento').scrollIntoView()});
+if(bo)tg(bo,function(on){M.querySelectorAll('details').forEach(function(x){x.open=on})});
+var P=[];addEventListener('beforeprint',function(){P=[];M.querySelectorAll('details:not([open])').forEach(function(x){P.push(x);x.open=true})});
+addEventListener('afterprint',function(){P.forEach(function(x){x.open=false})});
+})();</script><!--/hp-f2--></body>
 </html>

@@ -345,13 +345,32 @@ ul.bullets li b{color:var(--ink);font-weight:600}
   .pocket .pocket-card.tx{--accent:#a8481a}
   .pocket .pocket-card.clin{--accent:#0b5d4e}
 }
+
+/* === v5.2.2 · fase 2 (navegação) === */
+.hp-tools{display:flex;gap:6px;align-items:center;flex:none;order:1;margin-left:auto;padding-left:6px;position:sticky;right:0;background:#f1eee5;box-shadow:-10px 0 10px -4px #f1eee5,16px 0 0 #f1eee5}
+@media(min-width:900px){html{scroll-padding-top:150px}.toc-inner{flex-wrap:wrap;overflow:visible}.card[id],.sub-title[id]{scroll-margin-top:150px}}
+@media(max-width:899px){.hp-b,.hp-n{display:none}.hp-q{width:104px}}
+.hp-q{width:128px;font:500 12px/1 'DM Sans',system-ui,sans-serif;padding:7px 11px;border:1px solid var(--line-strong);border-radius:999px;background:var(--paper);color:var(--ink)}
+.hp-b{font:600 11px/1 'DM Sans',system-ui,sans-serif;letter-spacing:.05em;text-transform:uppercase;padding:7px 10px;border-radius:999px;border:1px solid var(--line-strong);background:var(--paper);color:var(--ink-soft);cursor:pointer;white-space:nowrap}
+.hp-b[aria-pressed=true]{background:var(--ink);color:#fff;border-color:var(--ink)}
+.hp-n{font:600 11px/1 'DM Mono',monospace;color:var(--ink-mute);white-space:nowrap}
+.sec-idx{display:flex;flex-wrap:wrap;gap:6px;margin:12px 0 20px}
+.sec-idx a{font:500 12px/1.25 'DM Sans',system-ui,sans-serif;padding:6px 10px;border-radius:999px;background:var(--paper);border:1px solid var(--line);color:var(--ink-soft);text-decoration:none}
+.sec-idx a:hover{border-color:var(--line-strong);color:var(--ink)}
+.sec-idx b{color:var(--c-prim);margin-right:5px;font-weight:700}
+a.xr{color:inherit;text-decoration:underline dotted;text-underline-offset:2px}
+a.xr:hover{color:var(--c-prim)}
+.card[id],.sub-title[id]{scroll-margin-top:110px}
+.q-off{display:none!important}
+body.dz main section:not(#tratamento){display:none}
+@media print{.hp-tools,.sec-idx,.toc-doses{display:none!important}}
 </style>
 </head>
 <body>
 
 <header class="header"><div class="header-row"><div class="h-mark">M</div><div class="h-titles"><div class="h-title">Meningites, Encefalites e Abscesso Cerebral · Pocket Handbook</div><div class="h-sub">Elite edition · Infectologia e neuroinfecção · II04</div></div><div class="h-author">@dr.lorencato</div><div class="h-edition">v5.2</div></div></header>
 
-<nav class="toc"><div class="toc-inner"><a href="#pocket" class="toc-chip"><span class="toc-chip-num">0</span>Pocket</a><a href="#redflags" class="toc-chip"><span class="toc-chip-num">A</span>Red Flags</a><a href="#approach" class="toc-chip"><span class="toc-chip-num">B</span>Apresentação</a><a href="#primarias" class="toc-chip"><span class="toc-chip-num">C</span>Entidades</a><a href="#secundarias" class="toc-chip"><span class="toc-chip-num">D</span>Secundárias</a><a href="#algoritmo" class="toc-chip"><span class="toc-chip-num">E</span>Algoritmo</a><a href="#tratamento" class="toc-chip"><span class="toc-chip-num">F</span>Tratamento</a><a href="#pitfalls" class="toc-chip"><span class="toc-chip-num">G</span>Pitfalls</a><a href="#pearls" class="toc-chip"><span class="toc-chip-num">H</span>Pearls</a></div></nav>
+<nav class="toc"><div class="toc-inner"><!--hp-f2--><span class="hp-tools"><input class="hp-q" type="search" placeholder="Buscar no HP" aria-label="Buscar no HP"><button class="hp-b hp-dz" type="button" aria-pressed="false">Só doses</button><button class="hp-b hp-op" type="button" aria-pressed="false">Abrir tudo</button><span class="hp-n" aria-live="polite"></span></span><!--/hp-f2--><a href="#pocket" class="toc-chip"><span class="toc-chip-num">0</span>Pocket</a><a href="#redflags" class="toc-chip"><span class="toc-chip-num">A</span>Red Flags</a><a href="#approach" class="toc-chip"><span class="toc-chip-num">B</span>Apresentação</a><a href="#primarias" class="toc-chip"><span class="toc-chip-num">C</span>Entidades</a><a href="#secundarias" class="toc-chip"><span class="toc-chip-num">D</span>Secundárias</a><a href="#algoritmo" class="toc-chip"><span class="toc-chip-num">E</span>Algoritmo</a><a href="#tratamento" class="toc-chip"><span class="toc-chip-num">F</span>Tratamento</a><!--hp-f2--><a href="#f2" class="toc-chip toc-doses"><span class="toc-chip-num">Rx</span>Doses</a><!--/hp-f2--><a href="#pitfalls" class="toc-chip"><span class="toc-chip-num">G</span>Pitfalls</a><a href="#pearls" class="toc-chip"><span class="toc-chip-num">H</span>Pearls</a></div></nav>
 
 <main>
 <div class="wrap">
@@ -421,7 +440,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <div class="section-sub">Sinal objetivo → o que ele sugere → o que fazer agora. A ordem das ações importa mais que a ordem dos exames.</div>
 </div>
 
-<div class="card emerg">
+<div class="card emerg" id="a1">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">A.1</span> Reconhecimento</div><h3>Sinais que não podem passar no plantão <span class="ank ank-dgr">DANGER</span></h3><div class="card-sub">Febre com qualquer um destes eleva a neuroinfecção de hipótese a emergência</div></div>
 <div class="card-body">
 <div class="mnemo">
@@ -488,7 +507,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <div class="section-sub">A pergunta inicial não é "qual micróbio", é "qual compartimento": meninges, parênquima, coleção focal, ou sangue com o SNC de carona.</div>
 </div>
 
-<div class="card clin">
+<div class="card clin" id="b1">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">B.1</span> Síndrome meníngea aguda</div><h3>Febre, cefaleia e rigidez de nuca em horas <span class="ank ank-hy">HIGH-YIELD</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Instalação em horas, sensório preservado ou pouco alterado, irritação meníngea. O LCR separa <b>bacteriana</b> (neutrófilos, glicose baixa) de <b>viral</b> (linfócitos, glicose normal). Na dúvida clínica antes do LCR, trate como bacteriana.</div></div>
@@ -507,7 +526,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card clin">
+<div class="card clin" id="b2">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">B.2</span> Encefalopatia febril</div><h3>Febre + alteração do conteúdo da consciência, crise ou foco <span class="ank ank-dec">DECISION</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Encefalopatia por ≥24 h sem outra causa + febre, crise, foco, pleocitose ≥5, alteração de RM ou de EEG = encefalite possível. <b>Aciclovir imediato</b>, investigação paralela de causa infecciosa e autoimune.</div></div>
@@ -525,7 +544,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card clin">
+<div class="card clin" id="b3">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">B.3</span> Lesão expansiva febril</div><h3>Cefaleia que piora em dias + déficit focal ± febre <span class="ank ank-dgr">DANGER</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Febre está ausente em até metade dos abscessos. Cefaleia progressiva (o sintoma mais comum), crise e déficit focal em portador de foco contíguo ou de fonte hematogênica = <b>imagem antes de qualquer punção</b>.</div></div>
@@ -538,7 +557,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card clin">
+<div class="card clin" id="b4">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">B.4</span> Meningite subaguda ou crônica</div><h3>Semanas de cefaleia, febre baixa, pares cranianos e hiponatremia <span class="ank ank-hy">HIGH-YIELD</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Sintomas por &gt;5–7 dias (subaguda) ou &gt;4 semanas (crônica), <b>LCR linfocítico com glicose baixa e proteína alta</b>: tuberculose, criptococo, sífilis, Listeria tardia, carcinomatose, sarcoidose. Imagem com realce leptomeníngeo basal e hidrocefalia sugere TB.</div></div>
@@ -551,7 +570,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card clin">
+<div class="card clin" id="b5">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">B.5</span> Criança e lactente</div><h3>A meningite pediátrica não se parece com a do adulto <span class="ank ank-dec">DECISION</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">No RN e no lactente pequeno: hipotermia, apneia, recusa alimentar, icterícia, crises, fontanela tensa tardia. Do lactente ao pré-escolar: febre, vômitos, irritabilidade paradoxal (piora no colo), grito meníngeo. <b>Sepse sem foco no lactente = punção lombar</b> quando estável.</div></div>
@@ -576,9 +595,9 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <div class="section-eyebrow"><span>C</span> Entidades Primárias</div>
 <div class="section-title">Sete entidades que respondem pela maior parte das decisões em neuroinfecção</div>
 <div class="section-sub">Meningite bacteriana do adulto, doença meningocócica, meningite bacteriana pediátrica, meningites virais, encefalite herpética, abscesso cerebral e meningite tuberculosa. Neonatal → PD02; criptococose e toxoplasmose no HIV → D.5/D.6 e II01; encefalite autoimune → NE05.</div>
-</div>
+</div><!--hp-f2--><nav class="sec-idx" aria-label="Neste capítulo"><a href="#c1"><b>C.1</b>Meningite bacteriana aguda co…</a><a href="#c2"><b>C.2</b>Doença meningocócica: meningi…</a><a href="#c3"><b>C.3</b>Meningite bacteriana na crian…</a><a href="#c4"><b>C.4</b>Meningites virais (assépticas)</a><a href="#c5"><b>C.5</b>Encefalite herpética (HSV-1)</a><a href="#c6"><b>C.6</b>Abscesso cerebral</a><a href="#c7"><b>C.7</b>Meningite tuberculosa</a></nav><!--/hp-f2-->
 
-<div class="card prim">
+<div class="card prim" id="c1">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.1</span> Entidade âncora</div><h3>Meningite bacteriana aguda comunitária do adulto <span class="ank ank-hy">HIGH-YIELD</span></h3><div class="card-sub">Pneumococo como modelo: a doença em que a inflamação do hospedeiro mata mais que a bactéria</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Pneumococo (~50–70% no adulto) e meningococo dominam; Listeria cresce depois dos 50–60 anos e no imunossuprimido. <b>Ceftriaxona + dexametasona na 1ª hora</b>, ampicilina por fator de risco, vancomicina até o antibiograma. Letalidade pneumocócica 15–30%, sequela em até metade dos sobreviventes.</div></div>
@@ -619,7 +638,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="c2">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.2</span> Entidade âncora</div><h3>Doença meningocócica: meningite, meningococcemia e Waterhouse-Friderichsen <span class="ank ank-dgr">DANGER</span></h3><div class="card-sub">A única meningite em que o óbito costuma vir do choque, e não do cérebro</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Diplococo gram-negativo; forma meníngea (letalidade ~10%) e septicêmica (até 40% ou mais, óbitos nas primeiras 48 h). <b>Ceftriaxona imediata, ressuscitação de sepse, gotículas por 24 h, notificação em 24 h e quimioprofilaxia dos contatos próximos.</b></div></div>
@@ -661,7 +680,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="c3">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.3</span> Entidade âncora · seção pediátrica</div><h3>Meningite bacteriana na criança e no lactente <span class="ank ank-hy">HIGH-YIELD</span></h3><div class="card-sub">Doses em mg/kg com teto, dexametasona por idade e a fronteira com o neonato (PD02)</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">&gt;1–3 meses: pneumococo, meningococo e Hib → <b>ceftriaxona 100 mg/kg/dia ÷12/12 h (máx 2 g/dose) ± vancomicina 60 mg/kg/dia ÷6/6 h</b>. 1–3 meses: acrescentar ampicilina (Listeria, GBS, enterococo). <b>Dexametasona 0,15 mg/kg 6/6 h × 2–4 dias</b> a partir de 6 semanas de vida (não entre 28 dias e 6 semanas), antes ou com o antibiótico. Neonato: ampicilina + cefotaxima, sem dexametasona.</div></div>
@@ -699,7 +718,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="c4">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.4</span> Entidade</div><h3>Meningites virais (assépticas) <span class="ank ank-hy">HIGH-YIELD</span></h3><div class="card-sub">A meningite mais frequente, e quase sempre autolimitada — desde que você tenha certeza de que não é bacteriana</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Enterovírus (&gt;80% dos casos com agente), depois HSV-2, VZV, HIV agudo, caxumba e arbovírus. LCR linfocítico com glicose normal; PCR no LCR fecha. <b>Suporte</b>; aciclovir se HSV/VZV em imunossuprimido ou com componente encefalítico.</div></div>
@@ -718,7 +737,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="c5">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.5</span> Entidade âncora</div><h3>Encefalite herpética (HSV-1) <span class="ank ank-dgr">DANGER</span></h3><div class="card-sub">A encefalite esporádica mais comum do mundo e a única com tratamento que muda a mortalidade de 70% para 20%</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Febre + alteração de comportamento, afasia, crises focais, temporal mesial assimétrico na RM. <b>Aciclovir 10 mg/kg IV 8/8 h por 14–21 dias</b>, iniciado na suspeita. PCR de HSV no LCR: sensibilidade &gt;95% após 72 h; negativa precoce não exclui.</div></div>
@@ -771,7 +790,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="c6">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.6</span> Entidade âncora</div><h3>Abscesso cerebral <span class="ank ank-dec">DECISION</span></h3><div class="card-sub">Coleção supurativa no parênquima: o diagnóstico é de imagem e o tratamento é neurocirúrgico mais antibiótico longo</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Cefaleia progressiva + déficit focal + crise, febre em metade. <b>RM com difusão</b>, sem punção lombar. <b>Aspiração ou excisão sempre que viável</b> (diagnóstico e tratamento), <b>ceftriaxona ou cefotaxima + metronidazol</b>, 6–8 semanas <span class="ev ev-nice">ESCMID 2024</span>.</div></div>
@@ -810,7 +829,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="c7">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.7</span> Entidade</div><h3>Meningite tuberculosa <span class="ank ank-dgr">DANGER</span></h3><div class="card-sub">A forma mais grave de tuberculose: metade morre ou fica com sequela, e o atraso é a regra</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Subaguda, com pares cranianos, hiponatremia, hidrocefalia e infartos de núcleos da base; LCR linfocítico com glicose baixa e proteína alta. <b>Tratar com base na suspeita</b>: RHZE 2 meses + RH 10 meses <b>+ corticoide</b> (MS); Xpert Ultra em ≥6 mL de LCR.</div></div>
@@ -845,9 +864,9 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <div class="section-eyebrow"><span>D</span> Entidades Secundárias</div>
 <div class="section-title">As que completam o diferencial e mudam o antibiótico</div>
 <div class="section-sub">Listeria, infecção associada a derivações e neurocirurgia, outras encefalites, supurações parameníngeas, meningites crônicas não tuberculosas, oportunistas do SNC, lesões com realce anelar e meningites assépticas não infecciosas.</div>
-</div>
+</div><!--hp-f2--><nav class="sec-idx" aria-label="Neste capítulo"><a href="#d1"><b>D.1</b>Listeriose do SNC: meningite…</a><a href="#d2"><b>D.2</b>Meningite e ventriculite asso…</a><a href="#d3"><b>D.3</b>Outras encefalites infecciosa…</a><a href="#d4"><b>D.4</b>Supurações parameníngeas: emp…</a><a href="#d5"><b>D.5</b>Meningites crônicas não tuber…</a><a href="#d6"><b>D.6</b>Infecções oportunistas do SNC…</a><a href="#d7"><b>D.7</b>Lesões focais com realce anel…</a><a href="#d8"><b>D.8</b>Meningites assépticas não inf…</a></nav><!--/hp-f2-->
 
-<div class="card diag">
+<div class="card diag" id="d1">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">D.1</span> Secundária</div><h3>Listeriose do SNC: meningite e rombencefalite <span class="ank ank-dec">DECISION</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Bacilo gram-positivo intracelular, <b>intrinsecamente resistente a todas as cefalosporinas</b>. Idoso, gestante, imunossupressão celular, neonato. <b>Ampicilina 2 g IV 4/4 h ≥21 dias</b> (+ gentamicina nos graves); SMX-TMP na alergia. O motivo de toda ampicilina empírica.</div></div>
@@ -863,7 +882,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card diag">
+<div class="card diag" id="d2">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">D.2</span> Secundária</div><h3>Meningite e ventriculite associadas a cuidados de saúde <span class="ank ank-dec">DECISION</span></h3><div class="card-sub">DVE, DVP, pós-craniotomia, pós-TCE com fístula, pós-punção ou raquianestesia</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Estafilococos coagulase-negativos, S. aureus, Cutibacterium acnes e BGN (Pseudomonas, Acinetobacter, Klebsiella). <b>Vancomicina + betalactâmico antipseudomonas</b>; <b>remover o dispositivo infectado</b> e externalizar; antibiótico intraventricular se falha ou germe multirresistente <span class="ev ev-acr">IDSA 2017</span>.</div></div>
@@ -879,7 +898,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card diag">
+<div class="card diag" id="d3">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">D.3</span> Secundária · comparativo</div><h3>Outras encefalites infecciosas: VZV, enterovírus, arbovírus, raiva, CMV e herpesvírus <span class="ank ank-hy">HIGH-YIELD</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Metade das encefalites fica sem agente. A exposição (região, estação, animal, vetor) e a imunidade escolhem os testes. Aciclovir cobre HSV e VZV; <b>ganciclovir ± foscarnet</b> para CMV; raiva e arbovírus são suporte e notificação.</div></div>
@@ -898,7 +917,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card diag">
+<div class="card diag" id="d4">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">D.4</span> Secundária</div><h3>Supurações parameníngeas: empiema subdural, abscesso epidural e tromboflebite séptica <span class="ank ank-dgr">DANGER</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Empiema subdural é emergência neurocirúrgica: sinusite frontal em adolescente do sexo masculino + febre + cefaleia + crise ou déficit. Abscesso epidural espinhal: <b>dor + febre + déficit = RM de toda a coluna e cirurgia</b>. LCR "reativo" e punção perigosa.</div></div>
@@ -915,7 +934,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card diag">
+<div class="card diag" id="d5">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">D.5</span> Secundária · remissão II01</div><h3>Meningites crônicas não tuberculosas: criptococose e neurossífilis <span class="ank ank-dec">DECISION</span></h3><div class="card-sub">Box secundário mantido aqui; criptococose e neurotoxoplasmose no HIV: remissões a II01 C.7 e C.8</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Criptococo: <b>meça sempre a pressão de abertura</b>; HIC não controlada mata nas 2 primeiras semanas — punção de alívio diária, nunca manitol, acetazolamida ou corticoide. Neurossífilis: <b>penicilina G cristalina 18–24 milhões UI/dia × 14 dias</b>.</div></div>
@@ -932,7 +951,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card diag">
+<div class="card diag" id="d6">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">D.6</span> Secundária · remissão II01</div><h3>Infecções oportunistas do SNC no HIV e no imunossuprimido <span class="ank ank-hy">HIGH-YIELD</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">PVHIV com CD4 &lt;100 e lesões com realce anelar em núcleos da base e junção córtico-subcortical = <b>neurotoxoplasmose: tratar empiricamente e reavaliar em 10–14 dias</b>; sem resposta → biópsia (linfoma). Substância branca sem realce nem efeito de massa = LEMP.</div></div>
@@ -949,7 +968,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card diag">
+<div class="card diag" id="d7">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">D.7</span> Secundária · diferencial</div><h3>Lesões focais com realce anelar: abscesso ou não? <span class="ank ank-prl">PEARL</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">No Brasil, a lista começa por <b>neurocisticercose</b>, toxoplasmose, tuberculoma, abscesso piogênico, glioma de alto grau, metástase, linfoma e desmielinizante tumefativa. Difusão, espectroscopia, perfusão, número e local separam a maioria.</div></div>
@@ -965,7 +984,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card diag">
+<div class="card diag" id="d8">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">D.8</span> Secundária</div><h3>Meningites assépticas não infecciosas e recorrentes <span class="ank ank-prl">PEARL</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">LCR inflamatório com culturas e PCR negativas, sobretudo se recorrente: <b>fármaco</b> (AINE, IgIV, SMX-TMP, lamotrigina, anticorpos monoclonais), <b>HSV-2 (Mollaret)</b>, cisto epidermoide roto, carcinomatose, sarcoidose, Behçet, LES, Vogt-Koyanagi-Harada.</div></div>
@@ -991,7 +1010,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <div class="section-sub">A árvore separa choque, critério de TC, padrão do LCR e compartimento. O raciocínio narrado vem em seguida.</div>
 </div>
 
-<div class="card emerg">
+<div class="card emerg" id="e1">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">E.1</span> Árvore</div><h3>Suspeita de infecção do SNC <span class="ank ank-dec">DECISION</span></h3></div>
 <div class="card-body">
 <div class="algo">
@@ -1089,13 +1108,13 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <div class="section-eyebrow"><span>F</span> Tratamento</div>
 <div class="section-title">Escadas por entidade, doses de adulto, criança e neonato, quimioprofilaxia e o que o SUS oferece</div>
 <div class="section-sub">F1 organiza a estratégia por doença; F2 dá a dose concreta (via, intervalo, duração, teto pediátrico); F3 traz os cenários que mais ensinam; F4 separa o Ministério da Saúde da diretriz internacional.</div>
-</div>
+</div><!--hp-f2--><nav class="sec-idx" aria-label="Neste capítulo"><a href="#f1"><b>F.1</b>Escadas terapêuticas por enti…</a><a href="#f2"><b>F.2</b>Adulto, criança, neonato, int…</a><a href="#f3"><b>F.3</b>Caso → conduta certa → erro t…</a><a href="#f4"><b>F.4</b>O que o Ministério da Saúde d…</a></nav><!--/hp-f2-->
 
-<div class="card tx">
+<div class="card tx" id="f1">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">F.1</span> Estratégia</div><h3>Escadas terapêuticas por entidade <span class="ank ank-dec">DECISION</span></h3></div>
 <div class="card-body">
 
-<div class="sub-title">F1.1 · Meningite bacteriana comunitária do adulto</div>
+<div class="sub-title" id="f1-1">F1.1 · Meningite bacteriana comunitária do adulto</div>
 <ul class="bullets">
 <li><b>Hora zero:</b> hemoculturas (2 pares), punção se sem critério de TC, dexametasona 10 mg IV, ceftriaxona 2 g IV. Meta de antibiótico em até 1 h da chegada; na suspeita forte com transferência demorada, antibiótico parenteral antes da transferência (WHO 2025, condicional) — IM se não houver acesso.</li>
 <li><b>Acrescentar ampicilina 2 g IV 4/4 h</b> com qualquer fator de risco de Listeria: &gt;60 anos, gestação, imunossupressão (corticoide, quimioterapia, transplante, neoplasia, HIV avançado), diabetes, DRC terminal, cirrose, etilismo.</li>
@@ -1110,7 +1129,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <div class="box-body">Penetração liquórica de 1–5% na meninge íntegra e um pouco mais na inflamada; com dexametasona, cai. Ela só existe no esquema como parceira do betalactâmico enquanto não se conhece a CIM. Se o pneumococo for resistente à ceftriaxona (CIM ≥2), use ceftriaxona em dose meníngea + vancomicina com alvo de AUC, e associe rifampicina 600 mg/dia (IDSA 2017) se houver piora em 24–48 h, falha de esterilização do LCR ou CIM de ceftriaxona ≥4 <span class="ev ev-sbr">MS GVS 2024</span>.</div>
 </div>
 
-<div class="sub-title">F1.2 · Doença meningocócica</div>
+<div class="sub-title" id="f1-2">F1.2 · Doença meningocócica</div>
 <ul class="bullets">
 <li><b>Ceftriaxona imediata</b> (adulto 2 g IV 12/12 h × 7 dias; criança 100 mg/kg/dia ÷12/12 h, máx 2 g/dose, × 5–7 dias); penicilina G cristalina ou ampicilina servem se sensível, mas exigem quimioprofilaxia do caso-índice na alta.</li>
 <li><b>Choque:</b> cristaloide 10–20 mL/kg em bolus com reavaliação (criança) ou 30 mL/kg orientado por resposta (adulto), noradrenalina (adulto) ou adrenalina (criança), hidrocortisona se dependente de vasopressor, correção de hipoglicemia, hipocalcemia e coagulopatia sangrante → II03/PD10.</li>
@@ -1118,7 +1137,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <li><b>Gotículas por 24 h</b> de antibiótico eficaz; <b>notificação em 24 h</b>; quimioprofilaxia dos contatos (F2.4) o mais cedo possível, até 10 dias.</li>
 </ul>
 
-<div class="sub-title">F1.3 · Criança e lactente (seção pediátrica)</div>
+<div class="sub-title" id="f1-3">F1.3 · Criança e lactente (seção pediátrica)</div>
 <ul class="bullets">
 <li><b>&lt;28 dias:</b> ampicilina + cefotaxima (ou cefepima) em dose meníngea neonatal por peso e idade pós-natal (F2.3); aciclovir se vesículas, crise, hepatite ou LCR linfocítico; sem dexametasona → detalhe no PD02.</li>
 <li><b>1–3 meses:</b> ampicilina + ceftriaxona ou cefotaxima ± vancomicina; dexametasona a partir de 6 semanas de vida se bacteriana provável; não entre 28 dias e 6 semanas.</li>
@@ -1133,14 +1152,14 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <div class="box-body">Ceftriaxona tem meia-vida longa (6–9 h no adulto, ~5–7 h na criança) e pode ser dada 1×/dia em infecções sistêmicas, mas na meningite o alvo é manter a concentração liquórica acima da CIM por todo o intervalo, e a penetração cai à medida que a inflamação regride. O Guia de Vigilância (MS) usa 100 mg/kg/dia ÷12/12 h; alguns protocolos internacionais aceitam 80–100 mg/kg 1×/dia. Dose máxima diária 4 g em qualquer esquema.</div>
 </div>
 
-<div class="sub-title">F1.4 · Meningite viral</div>
+<div class="sub-title" id="f1-4">F1.4 · Meningite viral</div>
 <ul class="bullets">
 <li>Suporte; suspender antibiótico empírico quando LCR claramente viral com PCR positiva, ou glicose normal e paciente bem após 48 h de culturas negativas.</li>
 <li>Aciclovir IV para VZV com comprometimento meníngeo no imunossuprimido e para HSV com qualquer sinal de encefalite; HSV-2 meníngeo no imunocompetente: tratamento opcional, curto (aciclovir IV → valaciclovir 1 g VO 8/8 h, total 10–14 dias).</li>
 <li>Teste de HIV no adulto; sorologia de arbovírus por epidemiologia; notificação (A87) no Sinan.</li>
 </ul>
 
-<div class="sub-title">F1.5 · Encefalite herpética e encefalite de causa indeterminada</div>
+<div class="sub-title" id="f1-5">F1.5 · Encefalite herpética e encefalite de causa indeterminada</div>
 <ul class="bullets">
 <li><b>Aciclovir 10 mg/kg IV 8/8 h</b> na suspeita (EAN-ESCMID 2026, recomendação); peso ideal no obeso; hidratação de 1,5–2 L/dia, infusão em 1 h, creatinina diária; ajuste: ClCr 25–50 → 10 mg/kg 12/12 h; 10–25 → 24/24 h; &lt;10 → 5 mg/kg 24/24 h.</li>
 <li>Duração: <b>14–21 dias</b> (21 no imunossuprimido e no neonato).</li>
@@ -1149,7 +1168,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <li>Piora após 2–16 semanas: anticorpos anti-NMDAR no LCR → imunoterapia (NE05).</li>
 </ul>
 
-<div class="sub-title">F1.6 · Abscesso cerebral e supurações parameníngeas</div>
+<div class="sub-title" id="f1-6">F1.6 · Abscesso cerebral e supurações parameníngeas</div>
 <ul class="bullets">
 <li><b>Estável e neurocirurgia em ≤24 h:</b> colher o pus antes do antibiótico (ESCMID 2024). Instável, sepse, meningite ou ruptura: antibiótico já.</li>
 <li><b>Comunitário:</b> ceftriaxona 2 g IV 12/12 h (ou cefotaxima 2 g IV 4/4–6/6 h) + metronidazol 500 mg IV 8/8 h. Alternativa clássica (apostila): penicilina G cristalina 20–24 milhões UI/dia + metronidazol — inferior para enterobactérias.</li>
@@ -1160,7 +1179,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <li><b>Empiema subdural:</b> drenagem cirúrgica urgente, mesmo espectro, 3–6 semanas; abscesso epidural espinhal com déficit: descompressão + cobertura anti-MRSA, 6–8 semanas.</li>
 </ul>
 
-<div class="sub-title">F1.7 · Meningite tuberculosa</div>
+<div class="sub-title" id="f1-7">F1.7 · Meningite tuberculosa</div>
 <ul class="bullets">
 <li><b>2RHZE/10RH</b> (≥10 anos; &lt;10 anos: 2RHZ/10RH por mg/kg → RP03) (comprimido em dose fixa 150/75/400/275 mg: 2 cp 20–35 kg, 3 cp 36–50 kg, 4 cp 51–70 kg, 5 cp &gt;70 kg); manutenção RH por peso, total 12 meses (MS 2019; WHO).</li>
 <li><b>Corticoide:</b> prednisona 1–2 mg/kg/dia (máx usual 60 mg) × 4 semanas, ou dexametasona 0,3–0,4 mg/kg/dia IV × 4–8 semanas nos graves, com retirada em 4 semanas. No HIV, caso a caso.</li>
@@ -1168,14 +1187,14 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <li>TARV na PVHIV: criptococo 4–6 semanas; TB meníngea preferencialmente 4–6 semanas (PCDT 2024); OMS 2025 4–8; esquemas, resistência e TB como doença → RP03.</li>
 </ul>
 
-<div class="sub-title">F1.8 · Infecções associadas a cuidados de saúde (derivações, DVE, neurocirurgia)</div>
+<div class="sub-title" id="f1-8">F1.8 · Infecções associadas a cuidados de saúde (derivações, DVE, neurocirurgia)</div>
 <ul class="bullets">
 <li>Vancomicina + cefepima, ceftazidima ou meropeném, conforme ecologia; ajuste pela cultura.</li>
 <li>Remover todo o hardware infectado, DVE temporária, antibiótico intraventricular se falha clínica/microbiológica ou germe MDR (polimixina B, colistina, amicacina, gentamicina, vancomicina).</li>
 <li>Duração contada da primeira cultura negativa; reimplante 10 dias após cultura negativa (S. aureus, BGN), 7 dias (SCN com LCR alterado) ou a partir do 3º dia da retirada (SCN sem alteração do LCR) <span class="ev ev-acr">IDSA 2017</span>.</li>
 </ul>
 
-<div class="sub-title">F1.9 · Suporte neurointensivo comum a todas</div>
+<div class="sub-title" id="f1-9">F1.9 · Suporte neurointensivo comum a todas</div>
 <ul class="bullets">
 <li><b>HIC:</b> cabeceira 30°, normotermia, normocapnia (PaCO2 35–40), sódio 140–145, PAM para PPC ≥60; manitol 0,5–1 g/kg IV ou salina hipertônica (NaCl 3% 2–5 mL/kg; 7,5% ou 23,4% via central) <b>como ponte</b> na herniação (WHO 2025); <b>glicerol não</b>. Hidrocefalia aguda: DVE. Craniectomia descompressiva em casos selecionados.</li>
 <li><b>Fluidos:</b> não restringir de rotina; isotônicos; restrição moderada só na SIADH sem choque (WHO 2025).</li>
@@ -1185,11 +1204,11 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card tx">
+<div class="card tx" id="f2">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">F.2</span> Doses operacionais</div><h3>Adulto, criança, neonato, intraventricular e quimioprofilaxia <span class="ank ank-hy">HIGH-YIELD</span></h3><div class="card-sub">Doses meníngeas são mais altas que as sistêmicas. Função renal normal salvo indicação; doses pediátricas com teto adulto.</div></div>
 <div class="card-body">
 
-<div class="sub-title">F2.1 · Adulto</div>
+<div class="sub-title" id="f2-1">F2.1 · Adulto</div>
 <div class="stbl stbl-4">
 <div class="stbl-head stbl-4"><div>Fármaco</div><div>Dose adulto</div><div>Indicação</div><div>Notas</div></div>
 <div class="stbl-row stbl-4"><div class="col col1" data-l="Fármaco">Ceftriaxona</div><div class="col" data-l="Dose"><b>2 g IV 12/12 h</b> (4 g/dia)</div><div class="col" data-l="Indicação">Empírico e dirigido (pneumococo CIM ≤0,5, meningococo, Hib, BGN sensível)</div><div class="col" data-l="Notas">Sem ajuste renal; quimioprofilaxia do caso-índice dispensada <span class="ev ev-sbr">MS GVS 2024</span> <span class="ev ev-nice">ESCMID 2016</span></div></div>
@@ -1212,7 +1231,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <div class="stbl-row stbl-4"><div class="col col1" data-l="Fármaco">Manitol · salina hipertônica</div><div class="col" data-l="Dose">0,5–1 g/kg IV em 15–20 min · NaCl 3% 2–5 mL/kg (ou 23,4% 30 mL via central)</div><div class="col" data-l="Indicação">Ponte na herniação iminente</div><div class="col" data-l="Notas">Não de rotina; glicerol não (WHO 2025); manitol proibido na HIC criptocócica</div></div>
 </div>
 
-<div class="sub-title">F2.2 · Criança (&gt;1 mês) — mg/kg com dose máxima</div>
+<div class="sub-title" id="f2-2">F2.2 · Criança (&gt;1 mês) — mg/kg com dose máxima</div>
 <div class="stbl stbl-4">
 <div class="stbl-head stbl-4"><div>Fármaco</div><div>Dose pediátrica</div><div>Máximo</div><div>Notas</div></div>
 <div class="stbl-row stbl-4"><div class="col col1" data-l="Fármaco">Ceftriaxona</div><div class="col" data-l="Dose"><b>100 mg/kg/dia IV ÷12/12 h</b></div><div class="col" data-l="Máximo">4 g/dia (2 g/dose)</div><div class="col" data-l="Notas">Meningococo 5–7 d, Hib 7–10 d, pneumococo 10–14 d <span class="ev ev-sbr">MS GVS 2024</span></div></div>
@@ -1229,7 +1248,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <div class="stbl-row stbl-4"><div class="col col1" data-l="Fármaco">Levetiracetam</div><div class="col" data-l="Dose">60 mg/kg IV em 10–15 min</div><div class="col" data-l="Máximo">4,5 g</div><div class="col" data-l="Notas">2ª linha da crise prolongada, após benzodiazepínico (PD10/NE02)</div></div>
 </div>
 
-<div class="sub-title">F2.3 · Neonato (&lt;28 dias; detalhe no PD02) — Guia de Vigilância, Quadro 2 (tabela de sepse em &lt;2 meses); ampicilina na meningite pela AAP</div>
+<div class="sub-title" id="f2-3">F2.3 · Neonato (&lt;28 dias; detalhe no PD02) — Guia de Vigilância, Quadro 2 (tabela de sepse em &lt;2 meses); ampicilina na meningite pela AAP</div>
 <div class="stbl stbl-4">
 <div class="stbl-head stbl-4"><div>Fármaco</div><div>≤7 dias de vida</div><div>&gt;7 dias de vida</div><div>Notas</div></div>
 <div class="stbl-row stbl-4"><div class="col col1" data-l="Fármaco">Ampicilina</div><div class="col" data-l="≤7 dias"><b>Meningite: 300 mg/kg/dia ÷8/8 h</b> · sepse (GVS): &lt;2.000 g 100 ÷12/12 h, &gt;2.000 g 150 ÷8/8 h</div><div class="col" data-l="&gt;7 dias"><b>Meningite: 300 mg/kg/dia ÷6/6 h</b> · sepse (GVS): &lt;2.000 g 150–200 ÷8/8 h, &gt;2.000 g 200–300 ÷6/6 h</div><div class="col" data-l="Notas">Com cefotaxima; dose meníngea igual à do PD02 <span class="ev ev-acr">AAP Red Book</span> <span class="ev ev-sbr">MS GVS 2024</span></div></div>
@@ -1240,7 +1259,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <div class="stbl-row stbl-4"><div class="col col1" data-l="Fármaco">Aciclovir</div><div class="col" data-l="≤7 dias">20 mg/kg IV 8/8 h</div><div class="col" data-l="&gt;7 dias">20 mg/kg IV 8/8 h</div><div class="col" data-l="Notas">HSV neonatal com SNC: 21 dias, PCR do LCR negativa ao fim</div></div>
 </div>
 
-<div class="sub-title">F2.4 · Quimioprofilaxia de contatos (Brasil)</div>
+<div class="sub-title" id="f2-4">F2.4 · Quimioprofilaxia de contatos (Brasil)</div>
 <div class="stbl stbl-4">
 <div class="stbl-head stbl-4"><div>Situação</div><div>Esquema</div><div>Quem</div><div>Notas</div></div>
 <div class="stbl-row stbl-4"><div class="col col1" data-l="Situação">Meningococo — 1ª escolha</div><div class="col" data-l="Esquema"><b>Rifampicina 600 mg VO 12/12 h × 2 dias</b>; ≥1 mês: 10 mg/kg/dose (máx 600 mg) 12/12 h × 2 d; &lt;1 mês: 5 mg/kg/dose 12/12 h × 2 d</div><div class="col" data-l="Quem">Contatos próximos (mnemônico CONTATO) e caso-índice na alta se não tratado com cefalosporina de 3ª geração (ceftriaxona ou cefotaxima)</div><div class="col" data-l="Notas">O mais cedo possível, idealmente &lt;24 h, até 10 dias; lactante pode usar <span class="ev ev-sbr">MS GVS 2024</span> <span class="ev ev-sbr">NT 154/2024</span></div></div>
@@ -1250,7 +1269,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <div class="stbl-row stbl-4"><div class="col col1" data-l="Situação">Pneumococo, Listeria, TB, viral</div><div class="col" data-l="Esquema">Sem quimioprofilaxia</div><div class="col" data-l="Quem">—</div><div class="col" data-l="Notas">Vacinação de risco pelo CRIE (fístula, implante coclear, asplenia) → PD05</div></div>
 </div>
 
-<div class="sub-title">F2.5 · Antibióticos intraventriculares (via DVE, clampear 15–60 min) <span class="ev ev-acr">IDSA 2017</span></div>
+<div class="sub-title" id="f2-5">F2.5 · Antibióticos intraventriculares (via DVE, clampear 15–60 min) <span class="ev ev-acr">IDSA 2017</span></div>
 <div class="stbl stbl-3">
 <div class="stbl-head stbl-3"><div>Fármaco</div><div>Dose diária</div><div>Notas</div></div>
 <div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Vancomicina</div><div class="col" data-l="Dose">5–20 mg</div><div class="col" data-l="Notas">MRSA/SCN refratários; início pelo ventrículo: fenda 5 mg, normal 10 mg, dilatado 15–20 mg; intervalo pelo débito da DVE (&lt;50 mL/dia a cada 3 dias; 50–100 a cada 2; 100–150 1×/dia)</div></div>
@@ -1263,7 +1282,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card tx">
+<div class="card tx" id="f3">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">F.3</span> Cenários</div><h3>Caso → conduta certa → erro típico <span class="ank ank-dec">DECISION</span></h3></div>
 <div class="card-body">
 <div class="stbl stbl-3">
@@ -1284,7 +1303,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card tx">
+<div class="card tx" id="f4">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">F.4</span> SUS × diretriz internacional</div><h3>O que o Ministério da Saúde define e onde ele difere <span class="ank ank-hy">HIGH-YIELD</span></h3></div>
 <div class="card-body">
 <div class="stbl stbl-3">
@@ -1314,7 +1333,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <div class="section-sub">Dez trocas de conduta, três mitos e três debates em aberto.</div>
 </div>
 
-<div class="card pearl">
+<div class="card pearl" id="g1">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">G.1</span> Erro comum → correto</div><h3>Dez erros de conduta <span class="ank ank-dgr">DANGER</span></h3></div>
 <div class="card-body">
 <div class="stbl stbl-2">
@@ -1495,5 +1514,36 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <a class="to-top" href="#" aria-label="Voltar ao topo">↑</a>
 <div class="watermark">@dr.lorencato · II04 Meningites e Encefalites v5.2</div>
 
-</body>
+<!--hp-f2--><script>(function(){var d=document,M=d.querySelector('main');if(!M)return;
+var SELF='II04',HP=' CT01 CT02 CT03 CT04 CT05 CT06 CT08 CT10 CV01 CV03 CV04 CV05 CV06 CV07 CV08 EN01 EN02 EN03 EN04 EN06 EN07 GH01 GH02 GH03 GH05 GH06 GH07 GH08 GH09 GH10 GO01 GO02 GO03 GO04 GO09 GO10 GO11 GO12 GO13 GO14 HO01 HO02 HO03 HO04 HO05 HO06 II01 II02 II03 II04 II07 II08 NE01 NE02 NE03 NE04 NE05 NE06 NE07 NE08 NU01 NU02 NU03 NU04 NU05 OE01 OE02 PC01 PC02 PC03 PC04 PC05 PC06 PD01 PD02 PD03 PD04 PD05 PD06 PD07 PD08 PD09 PD10 RD01 RD02 RD03 RD04 RD05 RD07 RP01 RP02 RP03 RP04 ';
+var SK='A,H1,H2,H3,SCRIPT,STYLE,NAV,.card-num,.card-eyebrow,.sub-title,.disease-tag,.toc';
+var R=/\b(?:([A-H])(\d)?\.(\d{1,2}[a-c]?)|(CV|RP|GH|NE|EN|NU|HO|II|RD|GO|PD|PC|CT|OE)(\d\d))\b/g;
+function skip(n){for(var e=n.parentNode;e&&e!==M;e=e.parentNode)if(e.matches&&e.matches(SK))return 1;return 0}
+var w=d.createTreeWalker(M,4),t,L=[];while(t=w.nextNode())if(R.test(t.data)&&!skip(t))L.push(t);
+L.forEach(function(t){var s=t.data,f=d.createDocumentFragment(),i=0,m;R.lastIndex=0;
+while(m=R.exec(s)){var h=null;
+if(m[1]){var id=m[1].toLowerCase()+(m[2]?m[2]+'-':'')+m[3];if(d.getElementById(id))h='#'+id}
+else{var x=m[4]+m[5];if(x!==SELF&&HP.indexOf(' '+x+' ')>=0)h='../'+x+'/'+x+'.html'}
+if(!h)continue;f.appendChild(d.createTextNode(s.slice(i,m.index)));
+var a=d.createElement('a');a.href=h;a.className='xr';a.textContent=m[0];f.appendChild(a);i=R.lastIndex}
+if(i){f.appendChild(d.createTextNode(s.slice(i)));t.parentNode.replaceChild(f,t)}});
+function nz(s){return s.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'')}
+var q=d.querySelector('.hp-q'),n=d.querySelector('.hp-n'),it=M.querySelectorAll('.card,.pocket-card'),T;
+function clr(){M.querySelectorAll('.q-off').forEach(function(e){e.classList.remove('q-off')})}
+function run(){var v=nz(q.value.trim());clr();n.textContent='';if(v.length<2)return;var k=0;
+it.forEach(function(c){if(nz(c.textContent).indexOf(v)<0){c.classList.add('q-off');return}k++;
+var r=c.querySelectorAll('.stbl-row,.disease-row,.score-row'),h=[];r.forEach(function(x){if(nz(x.textContent).indexOf(v)>=0)h.push(x)});
+if(h.length)r.forEach(function(x){if(h.indexOf(x)<0)x.classList.add('q-off')});
+c.querySelectorAll('details').forEach(function(x){if(nz(x.textContent).indexOf(v)>=0)x.open=true})});
+M.querySelectorAll('section').forEach(function(s){if(!s.querySelector('.card:not(.q-off),.pocket-card:not(.q-off)'))s.classList.add('q-off')});
+n.textContent=k?k+' achado'+(k>1?'s':''):'nada'}
+if(q){q.addEventListener('input',function(){clearTimeout(T);T=setTimeout(run,180)});
+q.addEventListener('keydown',function(e){if(e.key==='Escape'){q.value='';run()}})}
+function tg(b,f){b.addEventListener('click',function(){var on=b.getAttribute('aria-pressed')!=='true';b.setAttribute('aria-pressed',on);f(on)})}
+var bd=d.querySelector('.hp-dz'),bo=d.querySelector('.hp-op');
+if(bd)tg(bd,function(on){d.body.classList.toggle('dz',on);if(on)d.getElementById('tratamento').scrollIntoView()});
+if(bo)tg(bo,function(on){M.querySelectorAll('details').forEach(function(x){x.open=on})});
+var P=[];addEventListener('beforeprint',function(){P=[];M.querySelectorAll('details:not([open])').forEach(function(x){P.push(x);x.open=true})});
+addEventListener('afterprint',function(){P.forEach(function(x){x.open=false})});
+})();</script><!--/hp-f2--></body>
 </html>

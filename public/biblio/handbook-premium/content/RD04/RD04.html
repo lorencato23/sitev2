@@ -345,13 +345,32 @@ ul.bullets li b{color:var(--ink);font-weight:600}
   .pocket .pocket-card.tx{--accent:#a8481a}
   .pocket .pocket-card.clin{--accent:#0b5d4e}
 }
+
+/* === v5.2.2 · fase 2 (navegação) === */
+.hp-tools{display:flex;gap:6px;align-items:center;flex:none;order:1;margin-left:auto;padding-left:6px;position:sticky;right:0;background:#f1eee5;box-shadow:-10px 0 10px -4px #f1eee5,16px 0 0 #f1eee5}
+@media(min-width:900px){html{scroll-padding-top:150px}.toc-inner{flex-wrap:wrap;overflow:visible}.card[id],.sub-title[id]{scroll-margin-top:150px}}
+@media(max-width:899px){.hp-b,.hp-n{display:none}.hp-q{width:104px}}
+.hp-q{width:128px;font:500 12px/1 'DM Sans',system-ui,sans-serif;padding:7px 11px;border:1px solid var(--line-strong);border-radius:999px;background:var(--paper);color:var(--ink)}
+.hp-b{font:600 11px/1 'DM Sans',system-ui,sans-serif;letter-spacing:.05em;text-transform:uppercase;padding:7px 10px;border-radius:999px;border:1px solid var(--line-strong);background:var(--paper);color:var(--ink-soft);cursor:pointer;white-space:nowrap}
+.hp-b[aria-pressed=true]{background:var(--ink);color:#fff;border-color:var(--ink)}
+.hp-n{font:600 11px/1 'DM Mono',monospace;color:var(--ink-mute);white-space:nowrap}
+.sec-idx{display:flex;flex-wrap:wrap;gap:6px;margin:12px 0 20px}
+.sec-idx a{font:500 12px/1.25 'DM Sans',system-ui,sans-serif;padding:6px 10px;border-radius:999px;background:var(--paper);border:1px solid var(--line);color:var(--ink-soft);text-decoration:none}
+.sec-idx a:hover{border-color:var(--line-strong);color:var(--ink)}
+.sec-idx b{color:var(--c-prim);margin-right:5px;font-weight:700}
+a.xr{color:inherit;text-decoration:underline dotted;text-underline-offset:2px}
+a.xr:hover{color:var(--c-prim)}
+.card[id],.sub-title[id]{scroll-margin-top:110px}
+.q-off{display:none!important}
+body.dz main section:not(#tratamento){display:none}
+@media print{.hp-tools,.sec-idx,.toc-doses{display:none!important}}
 </style>
 </head>
 <body>
 
 <header class="header"><div class="header-row"><div class="h-mark">R</div><div class="h-titles"><div class="h-title">Gota, CPPD, Artrite Séptica, OA e Fibromialgia · Pocket Handbook</div><div class="h-sub">Elite edition · Reumatologia clínica · RD04</div></div><div class="h-author">@dr.lorencato</div><div class="h-edition">v5.2</div></div></header>
 
-<nav class="toc"><div class="toc-inner"><a href="#pocket" class="toc-chip"><span class="toc-chip-num">0</span>Pocket</a><a href="#redflags" class="toc-chip"><span class="toc-chip-num">A</span>Red Flags</a><a href="#approach" class="toc-chip"><span class="toc-chip-num">B</span>Apresentação</a><a href="#primarias" class="toc-chip"><span class="toc-chip-num">C</span>Entidades</a><a href="#secundarias" class="toc-chip"><span class="toc-chip-num">D</span>Secundárias</a><a href="#algoritmo" class="toc-chip"><span class="toc-chip-num">E</span>Algoritmo</a><a href="#tratamento" class="toc-chip"><span class="toc-chip-num">F</span>Tratamento</a><a href="#pitfalls" class="toc-chip"><span class="toc-chip-num">G</span>Pitfalls</a><a href="#pearls" class="toc-chip"><span class="toc-chip-num">H</span>Pearls</a></div></nav>
+<nav class="toc"><div class="toc-inner"><!--hp-f2--><span class="hp-tools"><input class="hp-q" type="search" placeholder="Buscar no HP" aria-label="Buscar no HP"><button class="hp-b hp-dz" type="button" aria-pressed="false">Só doses</button><button class="hp-b hp-op" type="button" aria-pressed="false">Abrir tudo</button><span class="hp-n" aria-live="polite"></span></span><!--/hp-f2--><a href="#pocket" class="toc-chip"><span class="toc-chip-num">0</span>Pocket</a><a href="#redflags" class="toc-chip"><span class="toc-chip-num">A</span>Red Flags</a><a href="#approach" class="toc-chip"><span class="toc-chip-num">B</span>Apresentação</a><a href="#primarias" class="toc-chip"><span class="toc-chip-num">C</span>Entidades</a><a href="#secundarias" class="toc-chip"><span class="toc-chip-num">D</span>Secundárias</a><a href="#algoritmo" class="toc-chip"><span class="toc-chip-num">E</span>Algoritmo</a><a href="#tratamento" class="toc-chip"><span class="toc-chip-num">F</span>Tratamento</a><!--hp-f2--><a href="#f2" class="toc-chip toc-doses"><span class="toc-chip-num">Rx</span>Doses</a><!--/hp-f2--><a href="#pitfalls" class="toc-chip"><span class="toc-chip-num">G</span>Pitfalls</a><a href="#pearls" class="toc-chip"><span class="toc-chip-num">H</span>Pearls</a></div></nav>
 
 <main>
 <div class="wrap">
@@ -421,7 +440,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <section id="redflags">
 <div class="section"><div class="section-eyebrow"><span>A</span> Red Flags</div><div class="section-title">A monoartrite que não pode esperar: o que destrói a articulação em dois dias e o que mata em quatro</div><div class="section-sub">Sinal objetivo, suspeita e conduta imediata. Os eventos evitáveis deste HP são a artrite séptica tratada como gota porque "achou cristal", o corticoide infiltrado em articulação não puncionada, o quadril da criança que espera a radiografia, o alopurinol em dose de manutenção no primeiro dia e a colchicina somada a um inibidor de CYP3A4.</div></div>
 
-<div class="card emerg">
+<div class="card emerg" id="a1">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">A.1</span> Emergências</div><h3>Sinais de alarme — monoartrite aguda <span class="ank ank-dgr">DANGER</span></h3></div>
 <div class="card-body">
 
@@ -455,7 +474,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card emerg">
+<div class="card emerg" id="a2">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">A.2</span> Emergências</div><h3>Quando o tratamento é o perigo: AINE, colchicina e alopurinol <span class="ank ank-dgr">DANGER</span></h3></div>
 <div class="card-body">
 <div class="sub-title">Evento adverso grave → mecanismo → o que fazer</div>
@@ -473,7 +492,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <section id="approach">
 <div class="section"><div class="section-eyebrow"><span>B</span> Por Apresentação</div><div class="section-title">Mapa Sindrômico — a articulação quente, a mão que deforma, o joelho que range, o corpo que dói</div><div class="section-sub">Cinco padrões que levam, nesta ordem, ao líquido sinovial, ao cristal, à bactéria, ao desgaste e à dor sem inflamação. O padrão decide qual exame vem primeiro e qual remissão vale (RD01 para AR e espondiloartrites, RD03 para vasculites).</div></div>
 
-<div class="card clin">
+<div class="card clin" id="b1">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">B.1</span> Padrão 1</div><h3>Monoartrite aguda: cristal, bactéria, trauma ou hemartrose <span class="ank ank-hy">HIGH-YIELD</span></h3><div class="card-sub">Uma articulação, início em horas ou dias, calor, derrame e dor desproporcional</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Toda monoartrite aguda é <b>artrocentese no mesmo dia</b>: o exame físico não separa gota de infecção. O líquido decide: <b>pouco celular e sem cristal</b> é mecânico, traumático ou osteoartrose; <b>inflamatório com cristal</b> é gota ou pseudogota; <b>turvo, com mais de 50.000 células, neutrófilos acima de 90% e Gram positivo</b> é séptico; <b>hemorrágico</b> é trauma, coagulopatia, anticoagulante ou tumor. <b>O que muda conduta:</b> febre, prótese, imunossupressão e líquido muito celular desviam para o antibiótico, e o cristal só fecha o diagnóstico quando a cultura é negativa.</div></div>
@@ -488,7 +507,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card clin">
+<div class="card clin" id="b2">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">B.2</span> Padrão 2</div><h3>Poliartrite aguda ou migratória: infecção disseminada, reativa ou gota poliarticular</h3><div class="card-sub">Várias articulações, febre, pele e tendões no quadro</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Poliartrite febril em adulto jovem sexualmente ativo é <b>gonococcemia</b> até prova em contrário; em criança ou adulto jovem com faringite e migração, <b>febre reumática</b> (Jones no CV07); hepatite B, parvovírus e arboviroses entram no diferencial. A <b>gota poliarticular</b> aparece depois de anos de doença, em idoso com diurético e DRC. <b>O que muda conduta:</b> pústulas e tenossinovite pedem ceftriaxona sem esperar cultura; febre alta com cristais no líquido ainda pede Gram e cultura.</div></div>
@@ -501,7 +520,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card clin">
+<div class="card clin" id="b3">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">B.3</span> Padrão 3</div><h3>Artrite crônica nodular ou destrutiva no idoso: gota tofosa, CPPD "pseudo-AR" ou AR</h3><div class="card-sub">Nódulos, erosões, deformidade e surtos sobre o fundo</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body"><b>O tofo é um depósito branco-giz de urato:</b> a aspiração mostra agulhas birrefringentes e resolve o diagnóstico. A radiografia da gota crônica traz erosões "em saca-bocado" com borda esclerótica e projetada (sinal de Martel), espaço articular preservado e ausência de osteopenia justarticular, o oposto da AR. A <b>CPPD crônica</b> acomete punhos, metacarpofalangianas, cotovelos e ombros, que a osteoartrose poupa. <b>O que muda conduta:</b> cristais no líquido ou no tofo desfazem a suspeita de AR nodular, e o fator reumatoide positivo em idoso não prova AR.</div></div>
@@ -514,7 +533,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card clin">
+<div class="card clin" id="b4">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">B.4</span> Padrão 4</div><h3>Dor mecânica crônica: osteoartrite, CPPD e a mão que engrossa</h3><div class="card-sub">Pior com uso, melhor com repouso; rigidez de minutos; sem febre</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Joelho, quadril, interfalangianas distais (nódulos de Heberden), proximais (Bouchard) e primeira carpometacarpiana são o território da <b>osteoartrite</b>. Rigidez matinal menor que 30 minutos, crepitação e osteófitos fazem o diagnóstico sem exame de sangue, e a radiografia confirma, mas não explica a dor. <b>O que muda conduta:</b> derrame inflamatório ou calor num joelho com OA pensa em CPPD ou infecção; sintoma noturno, perda de peso ou dor que não alivia com repouso desvia para tumor ou osteonecrose; ombro e punho com OA grave sem trauma pensam em CPPD.</div></div>
@@ -526,7 +545,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card clin">
+<div class="card clin" id="b5">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">B.5</span> Padrão 5</div><h3>Dor difusa sem sinovite: fibromialgia, polimialgia, hipotireoidismo, miopatia e dor miofascial</h3><div class="card-sub">Fadiga, sono não reparador, cefaleia, intestino irritável e exame articular normal</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">A <b>fibromialgia</b> é uma síndrome de dor por sensibilização central, diagnosticada por critérios clínicos e coexistente com outras doenças, e não diagnóstico de exclusão. Exame articular sem sinovite, força e reflexos normais e dor à pressão em múltiplas regiões. <b>O que muda conduta:</b> rigidez de cinturas em maior de 50 anos com VHS alta é polimialgia reumática (RD03); fraqueza e CK alta são miopatia (NE08); TSH alto é hipotireoidismo; sinovite ou autoanticorpo específico levam à doença autoimune, e a fibromialgia pode coexistir e inflar o escore de atividade da AR.</div></div>
@@ -540,9 +559,9 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </section>
 
 <section id="primarias">
-<div class="section"><div class="section-eyebrow"><span>C</span> Entidades Primárias</div><div class="section-title">Dez entidades: o líquido que decide, os cristais, as infecções articulares, o desgaste e a dor sem inflamação</div><div class="section-sub">A abordagem da monoartrite abre o capítulo; a gota ocupa dois boxes (crise e hipouricemiante) por ter duas lógicas de dose e de risco; CPPD, as três formas de infecção do adulto (não gonocócica, gonocócica e de prótese), a osteomielite do adulto, a osteoartrose e a fibromialgia fecham a lista. Pediatria, partes moles e entidades raras ficam na seção D.</div></div>
+<div class="section"><div class="section-eyebrow"><span>C</span> Entidades Primárias</div><div class="section-title">Dez entidades: o líquido que decide, os cristais, as infecções articulares, o desgaste e a dor sem inflamação</div><div class="section-sub">A abordagem da monoartrite abre o capítulo; a gota ocupa dois boxes (crise e hipouricemiante) por ter duas lógicas de dose e de risco; CPPD, as três formas de infecção do adulto (não gonocócica, gonocócica e de prótese), a osteomielite do adulto, a osteoartrose e a fibromialgia fecham a lista. Pediatria, partes moles e entidades raras ficam na seção D.</div></div><!--hp-f2--><nav class="sec-idx" aria-label="Neste capítulo"><a href="#c1"><b>C.1</b>Monoartrite aguda e líquido s…</a><a href="#c2"><b>C.2</b>Gota: a crise aguda e o seu t…</a><a href="#c3"><b>C.3</b>Gota crônica, hipouricemiante…</a><a href="#c4"><b>C.4</b>Doença por depósito de pirofo…</a><a href="#c5"><b>C.5</b>Artrite séptica não gonocócic…</a><a href="#c6"><b>C.6</b>Infecção gonocócica dissemina…</a><a href="#c7"><b>C.7</b>Infecção de prótese articular…</a><a href="#c8"><b>C.8</b>Osteomielite do adulto: hemat…</a><a href="#c9"><b>C.9</b>Osteoartrite: o que se faz pr…</a><a href="#c10"><b>C.10</b>Fibromialgia: critérios ACR 2…</a></nav><!--/hp-f2-->
 
-<div class="card prim">
+<div class="card prim" id="c1">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.1</span> Síndrome</div><h3>Monoartrite aguda e líquido sinovial: puncionar, classificar, nomear <span class="ank ank-hy">HIGH-YIELD</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">A artrocentese é o exame que mais muda a conduta em reumatologia: define se a articulação é infectada, inflamada por cristal, inflamada por doença sistêmica, mecânica ou hemorrágica. Peça <b>leucometria com diferencial, cristais em luz polarizada, Gram e cultura</b> (e glicose e proteína quando disponíveis), mais hemoculturas se há febre. Nenhum número isolado separa gota de infecção: o <b>contexto, o Gram e a cultura</b> fecham. <b>O que muda conduta:</b> prótese, febre alta, imunossupressão, droga injetável ou líquido turvo com mais de 50.000 células/µL levam a antibiótico imediato depois da coleta; líquido pouco celular com cristal e paciente sem risco leva ao tratamento da crise.</div></div>
@@ -580,7 +599,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="c2">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.2</span> Gota</div><h3>Gota: a crise aguda e o seu tratamento <span class="ank ank-hy">HIGH-YIELD</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Monoartrite aguda de início noturno, com pico em 12–24 horas, mais comum na <b>primeira metatarsofalangiana</b>, em homem de meia-idade ou mulher na pós-menopausa em uso de diurético. A crise trata-se <b>o mais cedo possível, de preferência nas primeiras 24–48 horas</b>, com <b>colchicina em baixa dose, AINE ou corticoide</b>; a escolha depende de rim, estômago, coração, anticoagulação e interações, e nenhum é superior aos demais. <b>O que muda conduta:</b> DRC, doença ulcerosa, ICC e anticoagulação tiram o AINE; insuficiência renal ou hepática com inibidor de CYP3A4 tira a colchicina; infecção possível tira o corticoide intra-articular; falha de duas classes pede IL-1.</div></div>
@@ -619,7 +638,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="c3">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.3</span> Gota</div><h3>Gota crônica, hipouricemiante, DRC e hiperuricemia assintomática <span class="ank ank-hy">HIGH-YIELD</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">O hipouricemiante dissolve os cristais e previne as crises. Indica-se com <b>≥2 crises por ano, tofo ou dano radiográfico</b> (forte, ACR 2020) e, de forma condicional, na gota com crises menos frequentes e na primeira crise com DRC G3 ou pior, urato &gt;9 mg/dL ou litíase. A primeira escolha é o <b>alopurinol, iniciado em ≤100 mg/dia (50 mg/dia na DRC) e titulado até urato &lt;6 mg/dL</b>, com profilaxia anti-inflamatória por 3–6 meses. <b>O que muda conduta:</b> HLA-B*5801 positivo veta o alopurinol; DCV estabelecida veta o febuxostate; litíase ou DRC G3+ vetam o uricosúrico; falha de tudo com crises frequentes ou tofos é indicação de pegloticase.</div></div>
@@ -668,7 +687,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="c4">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.4</span> CPPD</div><h3>Doença por depósito de pirofosfato de cálcio: a pseudogota e suas máscaras <span class="ank ank-hy">HIGH-YIELD</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Depósito de cristais de <b>pirofosfato de cálcio di-hidratado (CPP)</b> na cartilagem, com condrocalcinose radiográfica e cinco apresentações: crise aguda (pseudogota), crônica degenerativa (pseudo-OA), pseudorreumatoide, tendinoligamentar e assintomática. A crise é <b>monoarticular, de joelho ou punho, em mulher acima de 60 anos</b>, com cristais romboides de birrefringência fracamente positiva. <b>O que muda conduta:</b> antes dos 60 anos ou com acometimento múltiplo, investigue <b>hemocromatose, hiperparatireoidismo, hipomagnesemia e hipofosfatasia</b>; na crise, punção para esvaziar e infiltração de corticoide ou AINE, sem alopurinol.</div></div>
@@ -695,7 +714,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="c5">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.5</span> Artrite séptica</div><h3>Artrite séptica não gonocócica do adulto: Gram, cobertura por risco, drenagem <span class="ank ank-dgr">DANGER</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Urgência reumatológica e ortopédica. <b>Staphylococcus aureus</b> causa a maioria das artrites bacterianas do adulto, seguido de estreptococos e, no idoso e no imunossuprimido, bacilos Gram-negativos. A <b>punção antes do antibiótico</b>, a cobertura empírica guiada pelo Gram e pelo risco e a <b>drenagem da articulação</b> (punções repetidas ou cirurgia) são as três metas do mesmo dia. <b>O que muda conduta:</b> Gram com cocos Gram-positivos e risco de MRSA → vancomicina; sem risco → oxacilina ou cefazolina; Gram-negativo ou idoso frágil → ceftriaxona; usuário de droga ou imunossupressão grave → cobertura antipseudomonas; quadril e ombro → drenagem cirúrgica.</div></div>
@@ -736,7 +755,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="c6">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.6</span> Artrite gonocócica</div><h3>Infecção gonocócica disseminada: artrite-dermatite e artrite supurativa <span class="ank ank-dec">DECISION</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Complicação rara (0,5–3%) da infecção gonocócica mucosa, mais comum em mulheres, ligada à menstruação, à gestação e ao pós-parto. Dois estágios podem se suceder: <b>síndrome artrite-dermatite</b> (febre, tenossinovite, pústulas, poliartralgia migratória, hemoculturas positivas, líquido estéril) e <b>artrite supurativa monoarticular</b> (grandes articulações, líquido de 10.000–100.000 células/µL, culturas de líquido positivas em ~30%). <b>O que muda conduta:</b> pústulas, tenossinovite e jovem sexualmente ativo justificam <b>ceftriaxona 1 g IM ou IV 1×/dia por pelo menos 7 dias + azitromicina 1 g VO</b> (PCDT IST 2022); a articulação supurada precisa de drenagem.</div></div>
@@ -756,7 +775,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="c7">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.7</span> Prótese</div><h3>Infecção de prótese articular: biofilme, DAIR e troca <span class="ank ank-dgr">DANGER</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Complica 1–2% das artroplastias; é infecção de <b>implante com biofilme</b>, e o antibiótico sozinho não cura sem remover ou desbridar o implante. Dor, derrame, fístula ou febre em prótese pedem punção em ambiente ortopédico, com contagem diferencial, cultura prolongada e PCR e VHS. O <b>prazo da cirurgia e a estabilidade do implante</b> definem a cirurgia: desbridamento com retenção (DAIR), troca em um tempo ou em dois. <b>O que muda conduta:</b> até ~30 dias da implantação ou 3 semanas de sintomas, com implante estável e agente sensível, DAIR com antibiótico; fora disso, troca do implante.</div></div>
@@ -783,7 +802,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="c8">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.8</span> Osteomielite do adulto</div><h3>Osteomielite do adulto: hematogênica vertebral, por contiguidade e crônica <span class="ank ank-dec">DECISION</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Decisão registrada: o RD04 assume a osteomielite do adulto; a fratura exposta e a osteomielite pediátrica ficam com o RD05, o pé diabético com o EN02 e a TB óssea (Pott) com o RP03. No adulto, a forma <b>hematogênica é vertebral</b> e a <b>por contiguidade</b> (pós-fratura, pós-cirurgia, úlcera de pressão, pé diabético) é polimicrobiana e a mais frequente. O padrão-ouro é a <b>cultura e a histologia do osso</b>, e o tratamento é <b>antibiótico dirigido por cerca de 6 semanas</b> mais cirurgia do sequestro e do implante. <b>O que muda conduta:</b> déficit neurológico ou dor lombar febril com abscesso epidural pede cirurgia de urgência (NE07); implante metálico infectado pede troca ou retirada; o paciente estável espera a biópsia antes do antibiótico.</div></div>
@@ -810,7 +829,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="c9">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.9</span> Osteoartrite</div><h3>Osteoartrite: o que se faz primeiro, o que se faz depois e o que não se faz <span class="ank ank-hy">HIGH-YIELD</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Doença degenerativa mais prevalente das articulações sinoviais, com dor mecânica, rigidez matinal curta e limitação funcional. O diagnóstico é <b>clínico e radiográfico</b>; não há exame de sangue. O tratamento é sintomático e em degraus: <b>exercício, perda de peso e autogestão</b> primeiro (forte); <b>AINE tópico</b> no joelho (forte); AINE oral, infiltração de corticoide e duloxetina quando necessário; <b>artroplastia</b> na dor refratária e incapacitante. <b>O que muda conduta:</b> insuficiência renal, ICC, doença ulcerosa e anticoagulação vetam o AINE oral; derrame inflamatório pensa em CPPD ou infecção; opioide e suplementos não entram.</div></div>
@@ -851,7 +870,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="c10">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.10</span> Fibromialgia</div><h3>Fibromialgia: critérios ACR 2016, exercício e o fármaco certo para o sintoma dominante <span class="ank ank-hy">HIGH-YIELD</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Síndrome de <b>dor crônica generalizada por sensibilização central</b>, com fadiga, sono não reparador e sintomas cognitivos, em geral mulher de 35–55 anos. O exame não mostra sinovite, a força e os reflexos são normais, e os exames de sangue estão normais. O diagnóstico é <b>clínico pelo ACR 2016</b> e não exclui outras doenças. O tratamento é <b>educação, exercício aeróbico e TCC</b>; os fármacos são adjuvantes: <b>duloxetina, amitriptilina ou pregabalina</b>, escolhidos pelo sintoma dominante. <b>O que muda conduta:</b> dor + depressão ou ansiedade → duloxetina; dor + insônia → amitriptilina ou pregabalina; opioide forte, corticoide e AINE de rotina não ajudam e podem fazer mal.</div></div>
@@ -891,9 +910,9 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </section>
 
 <section id="secundarias">
-<div class="section"><div class="section-eyebrow"><span>D</span> Entidades Secundárias</div><div class="section-title">O que completa o diferencial: cristais invisíveis, partes moles, a criança, as infecções raras e as síndromes funcionais</div><div class="section-sub">Entidades que mudam o diagnóstico da articulação dolorosa ou fecham a apostila, agrupadas por afinidade: hidroxiapatita e oxalato; tendinites e bursites (lacuna registrada); artrite séptica e quadril doloroso da criança; artrites infecciosas atípicas; fadiga crônica e dor miofascial; e o cartão de remissões para os outros HPs.</div></div>
+<div class="section"><div class="section-eyebrow"><span>D</span> Entidades Secundárias</div><div class="section-title">O que completa o diferencial: cristais invisíveis, partes moles, a criança, as infecções raras e as síndromes funcionais</div><div class="section-sub">Entidades que mudam o diagnóstico da articulação dolorosa ou fecham a apostila, agrupadas por afinidade: hidroxiapatita e oxalato; tendinites e bursites (lacuna registrada); artrite séptica e quadril doloroso da criança; artrites infecciosas atípicas; fadiga crônica e dor miofascial; e o cartão de remissões para os outros HPs.</div></div><!--hp-f2--><nav class="sec-idx" aria-label="Neste capítulo"><a href="#d1"><b>D.1</b>Hidroxiapatita e oxalato de c…</a><a href="#d2"><b>D.2</b>Tendinites, bursites e enteso…</a><a href="#d3"><b>D.3</b>Artrite séptica e quadril dol…</a><a href="#d4"><b>D.4</b>Artrites infecciosas atípicas…</a><a href="#d5"><b>D.5</b>Síndrome da fadiga crônica e…</a><a href="#d6"><b>D.6</b>Cartão de remissões: o que ap…</a></nav><!--/hp-f2-->
 
-<div class="card diag">
+<div class="card diag" id="d1">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">D.1</span> Cristais</div><h3>Hidroxiapatita e oxalato de cálcio: os cristais que o microscópio de luz polarizada não vê</h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Cristais de <b>fosfato básico de cálcio (hidroxiapatita)</b> provêm do osso e se depositam em tendões e bolsas: a <b>periartrite calcífica aguda do ombro</b> (tendão supraespinhal) é o quadro típico, com dor intensa e calcificação na radiografia. O <b>oxalato de cálcio</b> deposita-se na DRC avançada e na hiperoxalúria primária. <b>O que muda conduta:</b> ombro agudo, vermelho e dolorosíssimo com calcificação no supraespinhal não é infecção; trata-se com AINE, gelo e infiltração subacromial, e lavagem guiada por imagem na refratária.</div></div>
@@ -909,7 +928,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card diag">
+<div class="card diag" id="d2">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">D.2</span> Partes moles</div><h3>Tendinites, bursites e entesopatias comuns: lacuna registrada, box curto <span class="ank ank-prl">PEARL</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Lacuna registrada no catálogo (apostila em apêndice de partes moles, ainda sem HP próprio). Dor localizada à <b>palpação do tendão, da bolsa ou da êntese</b> e ao movimento ativo contra resistência, <b>sem derrame articular nem perda da amplitude passiva</b>, separa as síndromes periarticulares das artrites. A conduta é repouso relativo, AINE tópico, exercício excêntrico e, em casos escolhidos, infiltração. <b>O que muda conduta:</b> bursite olecraniana ou pré-patelar com calor, febre ou porta de entrada é <b>bursite séptica</b> (S. aureus): aspirar e cobrir; tendão de Aquiles em quem usa fluoroquinolona ou corticoide sistêmico: suspender o agente.</div></div>
@@ -925,7 +944,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card diag">
+<div class="card diag" id="d3">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">D.3</span> Criança</div><h3>Artrite séptica e quadril doloroso da criança: Kocher, doses em mg/kg com teto <span class="ank ank-dgr">DANGER</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Na criança, a artrite séptica é urgência cirúrgica quando é do quadril, e o diagnóstico diferencial é com <b>sinovite transitória, osteomielite, Perthes, epifisiólise, AIJ e febre reumática</b>. A pergunta é o <b>Kocher</b>: febre &gt;38,5 °C, recusa de apoio, VHS &gt;40 mm/h e leucócitos &gt;12.000/µL. Agentes por idade: neonato (S. aureus, estreptococo do grupo B, Gram-negativos); 1 mês a 5 anos (S. aureus, <i>Kingella kingae</i> em menores de 4 anos, H. influenzae em não vacinados); maiores de 5 anos, S. aureus. <b>O que muda conduta:</b> 3–4 critérios de Kocher → punção ou artrotomia de urgência; coleta antes do antibiótico; MRSA provável → vancomicina.</div></div>
@@ -941,7 +960,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card diag">
+<div class="card diag" id="d4">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">D.4</span> Infecção articular rara</div><h3>Artrites infecciosas atípicas: tuberculosa, hansênica, fúngica, viral e por Mycoplasma</h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Causas de <b>monoartrite crônica ou indolente</b> com cultura bacteriana estéril. A <b>TB osteoarticular</b> é a mais importante: coluna (Pott), quadril e joelho, líquido com 10.000–20.000 células/µL e predomínio linfocitário, diagnosticada por biópsia sinovial ou óssea. A artrite viral (parvovírus B19, rubéola, hepatites B e C, HIV, arboviroses) é autolimitada. <b>O que muda conduta:</b> monoartrite crônica com cultura estéril e fator de risco → biópsia com histologia e cultura para micobactérias e fungos; esquema da TB pelo Manual do MS.</div></div>
@@ -956,7 +975,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card diag">
+<div class="card diag" id="d5">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">D.5</span> Síndromes funcionais</div><h3>Síndrome da fadiga crônica e dor miofascial: as duas primas da fibromialgia</h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">A <b>síndrome da fadiga crônica</b> exige fadiga incapacitante por mais de 6 meses, sem melhora com repouso e sem causa orgânica ou psiquiátrica (exceto depressão), mais 4 ou mais sintomas menores. A <b>dor miofascial</b> é dor muscular localizada com <i>trigger points</i> e dor referida; a fibromialgia seria sua forma generalizada (apostila). <b>O que muda conduta:</b> na fadiga crônica o tratamento é exercício gradual e estímulo cognitivo, e não fármaco; na dor miofascial é local (alongamento, frio e calor, infiltração com lidocaína ou agulhamento seco).</div></div>
@@ -971,7 +990,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card tx">
+<div class="card tx" id="d6">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">D.6</span> Remissões</div><h3>Cartão de remissões: o que apareceu na apostila REU 1 e mora em outro HP <span class="ank ank-dec">DECISION</span></h3></div>
 <div class="card-body">
 <div class="stbl stbl-3">
@@ -991,7 +1010,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <section id="algoritmo">
 <div class="section"><div class="section-eyebrow"><span>E</span> Algoritmo</div><div class="section-title">Da articulação quente ao tratamento: três árvores e o raciocínio em passos</div><div class="section-sub">A primeira árvore decide se punciona, o que fazer com o líquido e quando o antibiótico não espera; a segunda conduz a gota da crise ao alvo de urato; a terceira escolhe o antibiótico da artrite séptica pelo Gram, pelo risco e pelo rim. Cada ponta termina em ação com número.</div></div>
 
-<div class="card prim">
+<div class="card prim" id="e1">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">E.1</span> Algoritmo</div><h3>Monoartrite aguda: puncionar, ler o líquido, decidir o antibiótico <span class="ank ank-dec">DECISION</span></h3></div>
 <div class="card-body">
 <div class="algo"><div class="tree">
@@ -1023,7 +1042,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="e2">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">E.2</span> Algoritmo</div><h3>Gota: da crise ao alvo de urato <span class="ank ank-hy">HIGH-YIELD</span></h3></div>
 <div class="card-body">
 <div class="algo"><div class="tree">
@@ -1058,7 +1077,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="e3">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">E.3</span> Algoritmo</div><h3>Artrite séptica do adulto: o antibiótico pelo Gram, pelo risco e pelo rim <span class="ank ank-dgr">DANGER</span></h3></div>
 <div class="card-body">
 <div class="algo"><div class="tree">
@@ -1096,13 +1115,13 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </section>
 
 <section id="tratamento">
-<div class="section"><div class="section-eyebrow"><span>F</span> Tratamento Integrado</div><div class="section-title">F1 · Estratégia por entidade · F2 · Doses · F3 · Casos · F4 · SUS e CMED</div><div class="section-sub">Doses lidas no ACR 2020, no ACR/AF 2019, no PCDT de IST 2022 e no Manual de TB 2019 levam a sigla da fonte; as de bula FDA, EULAR, IDSA e as da apostila não relidas hoje levam "conferir". Antibióticos e ajuste renal seguem o II03; analgesia usa as mesmas frases do GH08 e do NU05; doses pediátricas seguem o PD10 e o RD05.</div></div>
+<div class="section"><div class="section-eyebrow"><span>F</span> Tratamento Integrado</div><div class="section-title">F1 · Estratégia por entidade · F2 · Doses · F3 · Casos · F4 · SUS e CMED</div><div class="section-sub">Doses lidas no ACR 2020, no ACR/AF 2019, no PCDT de IST 2022 e no Manual de TB 2019 levam a sigla da fonte; as de bula FDA, EULAR, IDSA e as da apostila não relidas hoje levam "conferir". Antibióticos e ajuste renal seguem o II03; analgesia usa as mesmas frases do GH08 e do NU05; doses pediátricas seguem o PD10 e o RD05.</div></div><!--hp-f2--><nav class="sec-idx" aria-label="Neste capítulo"><a href="#f1"><b>F.1</b>Escada terapêutica por entida…</a><a href="#f2"><b>F.2</b>Tabela de doses — gota, CPPD…</a><a href="#f3"><b>F.3</b>Caso → conduta certa → erro t…</a><a href="#f4"><b>F.4</b>O que o SUS e a CMED trazem e…</a></nav><!--/hp-f2-->
 
-<div class="card tx">
+<div class="card tx" id="f1">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">F.1</span> Estratégia</div><h3>Escada terapêutica por entidade <span class="ank ank-dec">DECISION</span></h3></div>
 <div class="card-body">
 
-<div class="sub-title">F1.1 · Crise de gota: uma classe, escolhida pela comorbidade (C.2)</div>
+<div class="sub-title" id="f1-1">F1.1 · Crise de gota: uma classe, escolhida pela comorbidade (C.2)</div>
 <ul class="bullets">
 <li><b>Princípio:</b> começar cedo, de preferência nas primeiras 24–48 horas, e usar uma classe por vez; colchicina, AINE e corticoide têm eficácia semelhante (ACR 2020), e a escolha vem do rim, do estômago, do coração, da anticoagulação e das interações. Analgesia simples e gelo local somam.</li>
 <li><b>Colchicina:</b> padrão brasileiro (comprimido de 0,5 mg) 1 mg e 0,5 mg 1 h depois; ACR 2020 e bula FDA 1,2 mg e 0,6 mg 1 h depois, sem repetir o curso em 3 dias; a manutenção de 0,5–0,6 mg 1–2×/dia até a resolução vem da apostila e não consta na bula (conferir). A dose alta antiga, com doses repetidas de hora em hora até a diarreia, está abandonada. Sem repetição do curso em menos de 2 semanas em ClCr &lt;30 e em diálise; com inibidor de CYP3A4 e de P-gp, a dose cai (F.2).</li>
@@ -1113,7 +1132,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 
 <div class="box danger"><span class="box-label">DANGER</span><div class="box-title">Colchicina com claritromicina e o rim que não filtra</div><div class="box-body">A colchicina é substrato de CYP3A4 e de P-gp; claritromicina, ritonavir, azóis e ciclosporina elevam o nível a tal ponto que há casos fatais de pancitopenia e rabdomiólise, sobretudo com insuficiência renal ou hepática. Na dúvida, escolha corticoide. A dose da crise nunca se repete a cada hora nem se soma ao uso diário prévio sem ajuste, e a primeira linha de toxicidade é a diarreia, que manda parar.</div></div>
 
-<div class="sub-title">F1.2 · Gota crônica: urato abaixo de 6 mg/dL, com profilaxia (C.3)</div>
+<div class="sub-title" id="f1-2">F1.2 · Gota crônica: urato abaixo de 6 mg/dL, com profilaxia (C.3)</div>
 <ul class="bullets">
 <li><b>Indicar:</b> ≥2 crises/ano, tofo ou erosão (forte); crises menos frequentes e primeira crise com DRC G3+, urato &gt;9 mg/dL ou litíase (condicional); não tratar a hiperuricemia assintomática (ACR 2020).</li>
 <li><b>Alopurinol:</b> 100 mg/dia (50 mg/dia na DRC G3+), +50–100 mg a cada 2–5 semanas, urato 2–4 semanas depois de cada ajuste, até &lt;6 mg/dL; a dose eficaz costuma ser maior que 300 mg/dia, com teto de 800 mg/dia (FDA). HLA-B*5801 em ascendência asiática ou negra; suspender no primeiro rash.</li>
@@ -1125,14 +1144,14 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 
 <div class="box hy"><span class="box-label">HIGH-YIELD</span><div class="box-title">Alvo, não dose fixa</div><div class="box-body">A titulação guiada pelo urato sérico (treat-to-target) supera a dose fixa de 300 mg, com menos crises e menos tofos em estudos de enfermagem e de farmácia clínica (ACR 2020). Mantenha o fármaco indefinidamente: dos que suspendem em remissão, só 13% ficam sem crise em 5 anos (sem fonte lida; conferir).</div></div>
 
-<div class="sub-title">F1.3 · CPPD e hidroxiapatita (C.4, D.1)</div>
+<div class="sub-title" id="f1-3">F1.3 · CPPD e hidroxiapatita (C.4, D.1)</div>
 <ul class="bullets">
 <li><b>Crise de CPPD:</b> aspirar o líquido e infiltrar corticoide depois de excluir infecção; AINE (a apostila cita indometacina 75–150 mg/dia por 1–2 semanas) e colchicina em baixa dose, com os mesmos ajustes do C.2; curso curto de prednisona em poliarticular.</li>
 <li><b>Prevenção:</b> colchicina 0,5–0,6 mg 1–2×/dia na recidiva frequente; tratar a causa (hemocromatose, hiperparatireoidismo, hipomagnesemia). Alopurinol não trata CPPD.</li>
 <li><b>Periartrite calcífica do ombro:</b> gelo, AINE por poucos dias, infiltração subacromial guiada e, na refratária, lavagem ou onda de choque; cirurgia só em falha prolongada.</li>
 </ul>
 
-<div class="sub-title">F1.4 · Artrite séptica do adulto: coletar, cobrir, drenar (C.5 a C.7)</div>
+<div class="sub-title" id="f1-4">F1.4 · Artrite séptica do adulto: coletar, cobrir, drenar (C.5 a C.7)</div>
 <ul class="bullets">
 <li><b>Sequência fixa:</b> hemoculturas e punção articular antes da primeira dose, antibiótico IV em seguida, drenagem por punção diária ou cirurgia, e internação com imagem do quadril e do ombro. Sepse: pacote do II03.</li>
 <li><b>Empírico por Gram e risco:</b> sem MRSA, oxacilina 2 g IV 4/4 h ou cefazolina 2 g IV 8/8 h (3 g se &gt;120 kg); com risco de MRSA, vancomicina (ataque 25 mg/kg, máx. 3 g; manutenção por AUC 400–600 ou nível); Gram-negativo ou idoso frágil, ceftriaxona 2 g IV 24/24 h; droga injetável, neutropenia ou hospitalização, cefepima 2 g IV 8/8 h.</li>
@@ -1144,14 +1163,14 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 
 <div class="box danger"><span class="box-label">DANGER</span><div class="box-title">Corticoide na articulação antes do líquido, ou antibiótico antes da coleta</div><div class="box-body">A primeira inversão destrói a cartilagem; a segunda negativa a cultura e impede a escolha racional. Em instabilidade hemodinâmica, a coleta rápida do líquido e das hemoculturas não deve atrasar o antibiótico além de minutos, mas nunca o dispensa.</div></div>
 
-<div class="sub-title">F1.5 · Osteomielite do adulto (C.8)</div>
+<div class="sub-title" id="f1-5">F1.5 · Osteomielite do adulto (C.8)</div>
 <ul class="bullets">
 <li><b>Biópsia antes do antibiótico</b> se o paciente está estável; empírico só na sepse, na vertebral com déficit e no implante instável.</li>
 <li><b>Dirigido:</b> MSSA com oxacilina ou cefazolina; MRSA com vancomicina; Gram-negativo com ceftriaxona e passagem a fluoroquinolona; <i>Pseudomonas</i> com cefepima. Duração de cerca de 6 semanas (vertebral 6–8), igual ao RD05; oral precoce com fármaco de alta biodisponibilidade (OVIVA; conferir).</li>
 <li><b>Cirurgia:</b> sequestro, abscesso, coluna instável, implante infectado. Pé diabético: EN02. Pediatria e fratura exposta: RD05.</li>
 </ul>
 
-<div class="sub-title">F1.6 · Osteoartrite: o degrau antes da droga (C.9)</div>
+<div class="sub-title" id="f1-6">F1.6 · Osteoartrite: o degrau antes da droga (C.9)</div>
 <ul class="bullets">
 <li><b>Degrau 1:</b> exercício, perda de peso, autogestão, tai chi e dispositivo de apoio (bengala, órtese), todos fortemente recomendados (ACR/AF 2019).</li>
 <li><b>Degrau 2:</b> AINE tópico no joelho (diclofenaco gel); depois AINE oral em dose mínima e curta com IBP, paracetamol de efeito pequeno, duloxetina se o AINE é vetado, e corticoide intra-articular (guiado por ultrassom no quadril).</li>
@@ -1160,14 +1179,14 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 
 <div class="box controversy"><span class="box-label">CONTROVERSY</span><div class="box-title">Opioide e hialuronato na osteoartrite</div><div class="box-body">Este HP não usa opioide na OA. O ACR/AF 2019 recomenda tramadol condicionalmente e opioides não tramadol condicionalmente contra, para quando todas as alternativas falharam; o tramadol, nesse caso, segue o teto de 400 mg/dia e o aviso de serotonina com duloxetina. O hialuronato é recomendado contra no joelho e na CMC (condicional) e no quadril (forte) pelo ACR/AF 2019 e listado pela apostila como opção no joelho grave.</div></div>
 
-<div class="sub-title">F1.7 · Fibromialgia (C.10)</div>
+<div class="sub-title" id="f1-7">F1.7 · Fibromialgia (C.10)</div>
 <ul class="bullets">
 <li><b>Base:</b> educação, exercício aeróbico regular e gradual, TCC e higiene do sono; sem fármaco isolado.</li>
 <li><b>Fármaco por sintoma dominante:</b> dor com depressão ou ansiedade, duloxetina 30 mg/dia por 1 semana e 60 mg/dia; dor com insônia, amitriptilina 10 mg à noite, titulada até 25–50 mg, ou pregabalina 75 mg à noite, até 150–300 mg/dia. Um de cada vez, com avaliação em 4–6 semanas e retirada se não houver benefício.</li>
 <li><b>Evitar:</b> AINE de rotina, corticoide, opioide forte e benzodiazepínico; o tramadol só em casos escolhidos.</li>
 </ul>
 
-<div class="sub-title">F1.8 · Partes moles e infiltração (D.2)</div>
+<div class="sub-title" id="f1-8">F1.8 · Partes moles e infiltração (D.2)</div>
 <ul class="bullets">
 <li><b>Primeiro:</b> modificação da atividade, gelo, AINE tópico, órtese e exercício excêntrico. A infiltração de corticoide fica para De Quervain, dedo em gatilho e bursite trocantérica, no máximo 2–3 vezes por sítio; evitar em Aquiles, tendão patelar e epicôndilo.</li>
 <li><b>Bursite séptica:</b> aspirar, Gram e cultura; antiestafilocócico (oxacilina ou cefazolina) em dose do II03.</li>
@@ -1176,7 +1195,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card tx">
+<div class="card tx" id="f2">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">F.2</span> Doses Operacionais</div><h3>Tabela de doses — gota, CPPD, infecção articular, OA e fibromialgia</h3></div>
 <div class="card-body">
 <div class="stbl stbl-3">
@@ -1212,7 +1231,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card tx">
+<div class="card tx" id="f3">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">F.3</span> Cenários</div><h3>Caso → conduta certa → erro típico</h3></div>
 <div class="card-body">
 <div class="stbl stbl-3">
@@ -1231,7 +1250,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card tx">
+<div class="card tx" id="f4">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">F.4</span> Acesso</div><h3>O que o SUS e a CMED trazem e o que fica a conferir <span class="ank ank-dec">DECISION</span></h3></div>
 <div class="card-body">
 <div class="stbl stbl-3">
@@ -1249,7 +1268,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <section id="pitfalls">
 <div class="section"><div class="section-eyebrow"><span>G</span> Pitfalls · Mitos · Controvérsias</div><div class="section-title">Erros operacionais, mitos vivos e debates abertos</div><div class="section-sub">Os erros que se repetem: o cristal que encerra a investigação, o corticoide injetado às cegas, a colchicina da época antiga, o alopurinol iniciado em 300 mg, o AINE no rim que não filtra e a fibromialgia tratada com o que não funciona.</div></div>
 
-<div class="card pearl">
+<div class="card pearl" id="g1">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">G.1</span> Pegadinhas</div><h3>10 erros operacionais em gota, infecção articular, OA e fibromialgia</h3></div>
 <div class="card-body">
 <div class="stbl stbl-2">
@@ -1268,7 +1287,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card pearl">
+<div class="card pearl" id="g2">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">G.2</span> Mitos</div><h3>Três mitos vivos</h3></div>
 <div class="card-body">
 <div class="box myth"><span class="box-label">MYTH</span><div class="box-title">"Ácido úrico alto é gota e precisa de alopurinol"</div><div class="box-body">A hiperuricemia é bem mais comum que a gota, e a assintomática não se trata com fármaco (ACR 2020, condicional): é preciso tratar 24 pacientes por 3 anos para prevenir uma crise. Trate o paciente com crises, tofo, erosão, DRC G3+ ou litíase, e use o urato para titular o fármaco, não para decidir o diagnóstico.</div></div>
@@ -1277,7 +1296,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card pearl">
+<div class="card pearl" id="g3">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">G.3</span> Controvérsias</div><h3>Três debates sem consenso</h3></div>
 <div class="card-body">
 <div class="box controversy"><span class="box-label">CONTROVERSY</span><div class="box-title">Iniciar o hipouricemiante durante a crise ou depois dela</div><div class="box-body">O ACR 2020 recomenda condicionalmente iniciar o fármaco durante a crise, com base em dois ensaios pequenos e em um estudo observacional que não mostraram prolongamento da crise, e pela adesão. A apostila e a tradição das provas pedem esperar 1–2 semanas, com o paciente assintomático e já em colchicina. Conduta prática: em crise de tratamento seguro e paciente com risco de não voltar, iniciar com cobertura; em caso de dúvida e prova, a tradição.</div></div>
@@ -1290,7 +1309,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <section id="pearls">
 <div class="section"><div class="section-eyebrow"><span>H</span> Pearls · Evolving</div><div class="section-title">H1 · Nuances de especialista · H2 · O que mudou entre 2015 e 2025</div><div class="section-sub">Oito ideias que o plantão esquece e cinco mudanças reais; onde o tema é estável (fisiopatologia dos cristais, regra da punção antes do corticoide), diz-se.</div></div>
 
-<div class="card pearl">
+<div class="card pearl" id="h1">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">H.1</span> Pearls</div><h3>8 nuances que distinguem o especialista</h3></div>
 <div class="card-body">
 <div class="box pearl"><span class="box-label">PEARL</span><div class="box-title">O urato sérico cai na crise: dose de novo 2–4 semanas depois</div><div class="box-body">Durante a crise, a uricosúria aumenta e parte do urato é sequestrado em tecidos inflamados, de modo que a dosagem pode ser normal ou baixa em uma fração importante dos pacientes (conferir a proporção). Pela mesma lógica, o valor de decisão para titular o alopurinol é o do intervalo sem crise, e a regra do alvo de 6 mg/dL só vale em estado estável.</div></div>
@@ -1304,7 +1323,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card pearl">
+<div class="card pearl" id="h2">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">H.2</span> Evolving</div><h3>O que mudou: cinco mudanças reais</h3></div>
 <div class="card-body">
 <div class="box evolving"><span class="box-label">EVOLVING</span><div class="box-title">ACR 2020: alopurinol de primeira linha, dose baixa, alvo e início durante a crise</div><div class="box-body">O ACR 2020 substituiu a recomendação de 2012 por: alopurinol preferido a todo outro agente, inclusive na DRC; início em ≤100 mg, menor na DRC; treat-to-target com urato &lt;6 mg/dL; profilaxia por 3–6 meses; e início possível durante a crise (condicional). Troca-se febuxostate em quem tem DCV.</div></div>
@@ -1353,5 +1372,36 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <a class="to-top" href="#" aria-label="Voltar ao topo">↑</a>
 <div class="watermark">@dr.lorencato · RD04 Gota, CPPD, Artrite Séptica, OA e Fibromialgia v5.2</div>
 
-</body>
+<!--hp-f2--><script>(function(){var d=document,M=d.querySelector('main');if(!M)return;
+var SELF='RD04',HP=' CT01 CT02 CT03 CT04 CT05 CT06 CT08 CT10 CV01 CV03 CV04 CV05 CV06 CV07 CV08 EN01 EN02 EN03 EN04 EN06 EN07 GH01 GH02 GH03 GH05 GH06 GH07 GH08 GH09 GH10 GO01 GO02 GO03 GO04 GO09 GO10 GO11 GO12 GO13 GO14 HO01 HO02 HO03 HO04 HO05 HO06 II01 II02 II03 II04 II07 II08 NE01 NE02 NE03 NE04 NE05 NE06 NE07 NE08 NU01 NU02 NU03 NU04 NU05 OE01 OE02 PC01 PC02 PC03 PC04 PC05 PC06 PD01 PD02 PD03 PD04 PD05 PD06 PD07 PD08 PD09 PD10 RD01 RD02 RD03 RD04 RD05 RD07 RP01 RP02 RP03 RP04 ';
+var SK='A,H1,H2,H3,SCRIPT,STYLE,NAV,.card-num,.card-eyebrow,.sub-title,.disease-tag,.toc';
+var R=/\b(?:([A-H])(\d)?\.(\d{1,2}[a-c]?)|(CV|RP|GH|NE|EN|NU|HO|II|RD|GO|PD|PC|CT|OE)(\d\d))\b/g;
+function skip(n){for(var e=n.parentNode;e&&e!==M;e=e.parentNode)if(e.matches&&e.matches(SK))return 1;return 0}
+var w=d.createTreeWalker(M,4),t,L=[];while(t=w.nextNode())if(R.test(t.data)&&!skip(t))L.push(t);
+L.forEach(function(t){var s=t.data,f=d.createDocumentFragment(),i=0,m;R.lastIndex=0;
+while(m=R.exec(s)){var h=null;
+if(m[1]){var id=m[1].toLowerCase()+(m[2]?m[2]+'-':'')+m[3];if(d.getElementById(id))h='#'+id}
+else{var x=m[4]+m[5];if(x!==SELF&&HP.indexOf(' '+x+' ')>=0)h='../'+x+'/'+x+'.html'}
+if(!h)continue;f.appendChild(d.createTextNode(s.slice(i,m.index)));
+var a=d.createElement('a');a.href=h;a.className='xr';a.textContent=m[0];f.appendChild(a);i=R.lastIndex}
+if(i){f.appendChild(d.createTextNode(s.slice(i)));t.parentNode.replaceChild(f,t)}});
+function nz(s){return s.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'')}
+var q=d.querySelector('.hp-q'),n=d.querySelector('.hp-n'),it=M.querySelectorAll('.card,.pocket-card'),T;
+function clr(){M.querySelectorAll('.q-off').forEach(function(e){e.classList.remove('q-off')})}
+function run(){var v=nz(q.value.trim());clr();n.textContent='';if(v.length<2)return;var k=0;
+it.forEach(function(c){if(nz(c.textContent).indexOf(v)<0){c.classList.add('q-off');return}k++;
+var r=c.querySelectorAll('.stbl-row,.disease-row,.score-row'),h=[];r.forEach(function(x){if(nz(x.textContent).indexOf(v)>=0)h.push(x)});
+if(h.length)r.forEach(function(x){if(h.indexOf(x)<0)x.classList.add('q-off')});
+c.querySelectorAll('details').forEach(function(x){if(nz(x.textContent).indexOf(v)>=0)x.open=true})});
+M.querySelectorAll('section').forEach(function(s){if(!s.querySelector('.card:not(.q-off),.pocket-card:not(.q-off)'))s.classList.add('q-off')});
+n.textContent=k?k+' achado'+(k>1?'s':''):'nada'}
+if(q){q.addEventListener('input',function(){clearTimeout(T);T=setTimeout(run,180)});
+q.addEventListener('keydown',function(e){if(e.key==='Escape'){q.value='';run()}})}
+function tg(b,f){b.addEventListener('click',function(){var on=b.getAttribute('aria-pressed')!=='true';b.setAttribute('aria-pressed',on);f(on)})}
+var bd=d.querySelector('.hp-dz'),bo=d.querySelector('.hp-op');
+if(bd)tg(bd,function(on){d.body.classList.toggle('dz',on);if(on)d.getElementById('tratamento').scrollIntoView()});
+if(bo)tg(bo,function(on){M.querySelectorAll('details').forEach(function(x){x.open=on})});
+var P=[];addEventListener('beforeprint',function(){P=[];M.querySelectorAll('details:not([open])').forEach(function(x){P.push(x);x.open=true})});
+addEventListener('afterprint',function(){P.forEach(function(x){x.open=false})});
+})();</script><!--/hp-f2--></body>
 </html>

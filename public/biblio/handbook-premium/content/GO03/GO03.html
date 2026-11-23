@@ -346,13 +346,31 @@ ul.bullets li b{color:var(--ink);font-weight:600}
   .pocket .pocket-card.clin{--accent:#0b5d4e}
 }
 
+/* === v5.2.2 · fase 2 (navegação) === */
+.hp-tools{display:flex;gap:6px;align-items:center;flex:none;order:1;margin-left:auto;padding-left:6px;position:sticky;right:0;background:#f1eee5;box-shadow:-10px 0 10px -4px #f1eee5,16px 0 0 #f1eee5}
+@media(min-width:900px){html{scroll-padding-top:150px}.toc-inner{flex-wrap:wrap;overflow:visible}.card[id],.sub-title[id]{scroll-margin-top:150px}}
+@media(max-width:899px){.hp-b,.hp-n{display:none}.hp-q{width:104px}}
+.hp-q{width:128px;font:500 12px/1 'DM Sans',system-ui,sans-serif;padding:7px 11px;border:1px solid var(--line-strong);border-radius:999px;background:var(--paper);color:var(--ink)}
+.hp-b{font:600 11px/1 'DM Sans',system-ui,sans-serif;letter-spacing:.05em;text-transform:uppercase;padding:7px 10px;border-radius:999px;border:1px solid var(--line-strong);background:var(--paper);color:var(--ink-soft);cursor:pointer;white-space:nowrap}
+.hp-b[aria-pressed=true]{background:var(--ink);color:#fff;border-color:var(--ink)}
+.hp-n{font:600 11px/1 'DM Mono',monospace;color:var(--ink-mute);white-space:nowrap}
+.sec-idx{display:flex;flex-wrap:wrap;gap:6px;margin:12px 0 20px}
+.sec-idx a{font:500 12px/1.25 'DM Sans',system-ui,sans-serif;padding:6px 10px;border-radius:999px;background:var(--paper);border:1px solid var(--line);color:var(--ink-soft);text-decoration:none}
+.sec-idx a:hover{border-color:var(--line-strong);color:var(--ink)}
+.sec-idx b{color:var(--c-prim);margin-right:5px;font-weight:700}
+a.xr{color:inherit;text-decoration:underline dotted;text-underline-offset:2px}
+a.xr:hover{color:var(--c-prim)}
+.card[id],.sub-title[id]{scroll-margin-top:110px}
+.q-off{display:none!important}
+body.dz main section:not(#tratamento){display:none}
+@media print{.hp-tools,.sec-idx,.toc-doses{display:none!important}}
 </style>
 </head>
 <body>
 
 <header class="header"><div class="header-row"><div class="h-mark">G</div><div class="h-titles"><div class="h-title">SUA, Miomas e Adenomiose · Pocket Handbook</div><div class="h-sub">Elite edition · Ginecologia · GO03</div></div><div class="h-author">@dr.lorencato</div><div class="h-edition">v5.2</div></div></header>
 
-<nav class="toc"><div class="toc-inner"><a href="#pocket" class="toc-chip"><span class="toc-chip-num">0</span>Pocket</a><a href="#redflags" class="toc-chip"><span class="toc-chip-num">A</span>Red Flags</a><a href="#approach" class="toc-chip"><span class="toc-chip-num">B</span>Apresentação</a><a href="#primarias" class="toc-chip"><span class="toc-chip-num">C</span>Entidades</a><a href="#secundarias" class="toc-chip"><span class="toc-chip-num">D</span>Secundárias</a><a href="#algoritmo" class="toc-chip"><span class="toc-chip-num">E</span>Algoritmo</a><a href="#tratamento" class="toc-chip"><span class="toc-chip-num">F</span>Tratamento</a><a href="#pitfalls" class="toc-chip"><span class="toc-chip-num">G</span>Pitfalls</a><a href="#pearls" class="toc-chip"><span class="toc-chip-num">H</span>Pearls</a></div></nav>
+<nav class="toc"><div class="toc-inner"><!--hp-f2--><span class="hp-tools"><input class="hp-q" type="search" placeholder="Buscar no HP" aria-label="Buscar no HP"><button class="hp-b hp-dz" type="button" aria-pressed="false">Só doses</button><button class="hp-b hp-op" type="button" aria-pressed="false">Abrir tudo</button><span class="hp-n" aria-live="polite"></span></span><!--/hp-f2--><a href="#pocket" class="toc-chip"><span class="toc-chip-num">0</span>Pocket</a><a href="#redflags" class="toc-chip"><span class="toc-chip-num">A</span>Red Flags</a><a href="#approach" class="toc-chip"><span class="toc-chip-num">B</span>Apresentação</a><a href="#primarias" class="toc-chip"><span class="toc-chip-num">C</span>Entidades</a><a href="#secundarias" class="toc-chip"><span class="toc-chip-num">D</span>Secundárias</a><a href="#algoritmo" class="toc-chip"><span class="toc-chip-num">E</span>Algoritmo</a><a href="#tratamento" class="toc-chip"><span class="toc-chip-num">F</span>Tratamento</a><!--hp-f2--><a href="#f2" class="toc-chip toc-doses"><span class="toc-chip-num">Rx</span>Doses</a><!--/hp-f2--><a href="#pitfalls" class="toc-chip"><span class="toc-chip-num">G</span>Pitfalls</a><a href="#pearls" class="toc-chip"><span class="toc-chip-num">H</span>Pearls</a></div></nav>
 
 <main>
 <div class="wrap">
@@ -416,7 +434,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <section id="redflags">
 <div class="section"><div class="section-eyebrow"><span>A</span> Red Flags</div><div class="section-title">No útero que sangra o perigo é o que o sangramento esconde: gravidez, câncer, coagulopatia e a própria hemorragia</div><div class="section-sub">Sinal objetivo, suspeita e conduta imediata. Os eventos evitáveis deste HP são a gestação ectópica rotulada de "disfunção hormonal", o carcinoma de endométrio tratado por anos com anticoncepcional, a von Willebrand que nunca foi pesquisada, o ácido tranexâmico dado a quem tem trombose e a sobrecarga hídrica na histeroscopia.</div></div>
 
-<div class="card emerg">
+<div class="card emerg" id="a1">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">A.1</span> Emergências</div><h3>Sinais de alarme no sangramento uterino <span class="ank ank-dgr">DANGER</span></h3></div>
 <div class="card-body">
 
@@ -456,7 +474,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <section id="approach">
 <div class="section"><div class="section-eyebrow"><span>B</span> Por Apresentação</div><div class="section-title">Seis padrões que levam ao diagnóstico diferencial, não à doença</div><div class="section-sub">Queixa → causa provável → primeiro exame. O padrão do sangramento (FIGO System 1) é a porta de entrada do System 2; a idade e o estado reprodutivo reordenam a lista.</div></div>
 
-<div class="card clin">
+<div class="card clin" id="b1">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">B.1</span> Fluxo intenso em ciclos regulares</div><h3>Menstruação muito volumosa, de duração normal ou prolongada <span class="ank ank-hy">HIGH-YIELD</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Ciclos previsíveis sugerem <b>ovulação preservada</b> e empurram a lista para as causas estruturais (leiomioma submucoso, pólipo, adenomiose), a coagulopatia, o endométrio (endometrite) e o DIU. <b>O que muda conduta:</b> triagem positiva de coagulopatia (menorragia desde a menarca, hemorragia pós-parto ou cirúrgica, hematomas e epistaxe mensais) → hematologia antes de cirurgia; USG com lesão cavitária → histeroscopia; USG normal → tratamento clínico dirigido ao endométrio.</div></div>
@@ -468,7 +486,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card clin">
+<div class="card clin" id="b2">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">B.2</span> Sangramento irregular, intermenstrual ou pós-coito</div><h3>O sangramento que escapa do ciclo e do período menstrual</h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">O sangramento intermenstrual pode ser cíclico ou aleatório. Primeiro pergunte <b>de onde sangra</b>: útero, colo, vagina, vulva, uretra ou reto. Contraceptivo hormonal, pólipo endometrial ou cervical, cervicite e câncer de colo respondem pela maioria. <b>O que muda conduta:</b> especular com lesão de colo → colpocitologia, colposcopia e biópsia, fora do escopo deste HP; sangramento com contraceptivo nos primeiros três meses → orientação e AINE, sem investigar; sangramento persistente com método bem usado → imagem e biópsia.</div></div>
@@ -480,7 +498,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card clin">
+<div class="card clin" id="b3">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">B.3</span> Adolescente</div><h3>Sangramento prolongado ou intenso nos primeiros anos após a menarca <span class="ank ank-dec">DECISION</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">A imaturidade do eixo hipotálamo-hipófise-ovário gera <b>anovulação</b>, a causa mais comum; mas é nessa idade que se acha a coagulopatia (von Willebrand ou trombocitopenia imune primária, conforme a fonte). <b>O que muda conduta:</b> instável ou Hb &lt;7 g/dL → internação; estável com Hb ≥10 g/dL → tratamento ambulatorial (limiares de prática; conferir o protocolo local); fluxo intenso desde a menarca ou que não responde ao convencional → coagulopatia até prova em contrário (D.1, D.2).</div></div>
@@ -492,7 +510,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card clin">
+<div class="card clin" id="b4">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">B.4</span> Perimenopausa</div><h3>Ciclos irregulares, fluxo que piora, "menopausa que não chega"</h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Menos folículos e folículos refratários à gonadotrofina aumentam os ciclos anovulatórios, mas é a faixa em que <b>pólipo, mioma, adenomiose, hiperplasia e câncer</b> mais aparecem. <b>O que muda conduta:</b> a idade já justifica avaliar endométrio; imagem anormal, obesidade ou diabetes → biópsia antes do hormônio; contracepção continua necessária até a menopausa (GO02); a terapia hormonal é do dono do climatério.</div></div>
@@ -503,14 +521,14 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card clin">
+<div class="card clin" id="b5">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">B.5</span> Pós-menopausa</div><h3>Sangramento depois de 12 meses de amenorreia <span class="ank ank-dgr">DANGER</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Em ordem de frequência, segundo a série de Berek &amp; Novak citada na apostila: estrogênio exógeno (30%), atrofia (30%), câncer de endométrio (15%), pólipos (10%), hiperplasia (5%) e outras causas (10%). A atrofia é a causa mais provável, mas o diagnóstico é de exclusão. <b>O que muda conduta:</b> endométrio fino sem fator de risco e sangramento único → observação; endométrio acima do corte, sangramento recorrente ou fator de risco → tecido (C.7).</div></div>
 </div>
 </div>
 
-<div class="card clin">
+<div class="card clin" id="b6">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">B.6</span> Útero aumentado, dor e pressão</div><h3>Sintomas de massa, dor cíclica e infertilidade sem sangramento relevante</h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Cerca de metade das mulheres com mioma é assintomática. Os subserosos grandes comprimem bexiga e reto; os intramurais dão sangramento e dismenorreia; os submucosos, sangramento e infertilidade. Dismenorreia progressiva que começa até uma semana antes do fluxo com útero globoso sugere adenomiose. <b>O que muda conduta:</b> assintomática → observação com exame e USG semestral ou anual; compressão ureteral com hidronefrose → intervenção; desejo reprodutivo → ver endometriose e infertilidade: GO04.</div></div>
@@ -520,9 +538,9 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </section>
 
 <section id="primarias">
-<div class="section"><div class="section-eyebrow"><span>C</span> Entidades Primárias</div><div class="section-title">Sete entidades: o sangramento em dois tempos, o útero com tumor e o endométrio que espessa</div><div class="section-sub">SUA crônico e agudo abrem o capítulo, porque o diagnóstico começa na classificação; o leiomioma ocupa o box mais longo por ser a lesão estrutural mais frequente e a de maior variedade de condutas; adenomiose, pólipo, hiperplasia e o sangramento pós-menopausa fecham a lista. Endometriose e infertilidade: GO04.</div></div>
+<div class="section"><div class="section-eyebrow"><span>C</span> Entidades Primárias</div><div class="section-title">Sete entidades: o sangramento em dois tempos, o útero com tumor e o endométrio que espessa</div><div class="section-sub">SUA crônico e agudo abrem o capítulo, porque o diagnóstico começa na classificação; o leiomioma ocupa o box mais longo por ser a lesão estrutural mais frequente e a de maior variedade de condutas; adenomiose, pólipo, hiperplasia e o sangramento pós-menopausa fecham a lista. Endometriose e infertilidade: GO04.</div></div><!--hp-f2--><nav class="sec-idx" aria-label="Neste capítulo"><a href="#c1"><b>C.1</b>SUA: FIGO System 1, PALM-COEI…</a><a href="#c2"><b>C.2</b>SUA agudo intenso: estabiliza…</a><a href="#c3"><b>C.3</b>Mioma: classificação FIGO de…</a><a href="#c4"><b>C.4</b>Adenomiose: o útero globoso…</a><a href="#c5"><b>C.5</b>Pólipo endometrial e endocerv…</a><a href="#c6"><b>C.6</b>Hiperplasia: sem atipia ou at…</a><a href="#c7"><b>C.7</b>Sangramento pós-menopausa: es…</a></nav><!--/hp-f2-->
 
-<div class="card prim">
+<div class="card prim" id="c1">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.1</span> Sangramento uterino anormal crônico</div><h3>SUA: FIGO System 1, PALM-COEIN e investigação por idade <span class="ank ank-hy">HIGH-YIELD</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">SUA é um ou mais parâmetros do sangramento (volume, duração, frequência, regularidade) fora do normal; crônico se presente na maioria dos últimos seis meses. É <b>sintoma, não diagnóstico</b>: o System 1 descreve o padrão e o System 2 (PALM-COEIN) nomeia a causa, que pode ser mais de uma. <b>O que muda conduta:</b> β-hCG positivo → GO12; lesão estrutural na imagem → tratamento dirigido (cirurgia no submucoso e no pólipo); coagulopatia na triagem → HO03; idade ≥45, obesidade ou falha do clínico → biópsia; nada disso → tratamento clínico empírico por categoria.</div></div>
@@ -585,7 +603,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="c2">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.2</span> Sangramento uterino anormal agudo</div><h3>SUA agudo intenso: estabilizar, parar o sangramento, corrigir a causa <span class="ank ank-dgr">DANGER</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">O FIGO define o episódio como sangramento intenso o bastante, na opinião do médico, para exigir intervenção imediata que evite mais perda. A ordem é: <b>estabilizar, excluir gravidez, parar o sangramento, prevenir a recorrência</b>. A escolha entre oral, intravenoso e cirurgia depende de estabilidade, hemoglobina, causa suspeita, comorbidades e desejo reprodutivo. <b>O que muda conduta:</b> instável sem resposta em horas → balão, curetagem, histeroscopia ou EAU; contraindicação a estrogênio → progestagênio em dose alta; trombose ou risco de trombose → antifibrinolítico só com decisão compartilhada; sem controle em 24–48 h → causa orgânica.</div></div>
@@ -612,7 +630,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="c3">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.3</span> Leiomioma uterino</div><h3>Mioma: classificação FIGO de 0 a 8, clínica, tratamento clínico e cirúrgico <span class="ank ank-hy">HIGH-YIELD</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Tumor benigno monoclonal de músculo liso, hormônio-dependente: cresce na menacme sob estradiol e progesterona e regride na menopausa. Cerca de metade é assintomática. <b>A posição na parede decide o sintoma e a via:</b> os submucosos (FIGO 0 a 2) sangram e atrapalham a gestação; os intramurais dão volume e dismenorreia; os subserosos comprimem. <b>O que muda conduta:</b> assintomático → observar; sangramento com mioma cavitário → histeroscopia; desejo de gestar → miomectomia, e não embolização; prole constituída e sintoma importante → histerectomia; crescimento rápido ou após a menopausa → suspeitar de sarcoma antes de operar com preservação.</div></div>
@@ -675,7 +693,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="c4">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.4</span> Adenomiose</div><h3>Adenomiose: o útero globoso, a dismenorreia que antecede o fluxo e a zona juncional <span class="ank ank-hy">HIGH-YIELD</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Invasão benigna de glândulas e estroma endometriais no miométrio, cercada por hipertrofia e hiperplasia do músculo liso; foi chamada de endometriose interna. Causa <b>sangramento intenso e dismenorreia progressiva</b>, em 65% dos casos juntos, num útero globoso até o equivalente a 12 semanas. O diagnóstico é de imagem (presuntivo); o definitivo é histológico, após histerectomia. <b>O que muda conduta:</b> prole definida, sintoma intenso e falha do clínico → histerectomia; deseja gestar → SIU-LNG, progestagênio ou ACO contínuo, e análogo de GnRH por 3 a 6 meses antes de ressecção de foco localizado; adenomioma focal → RM para planejar. Adenomiose e infertilidade: endometriose e infertilidade: GO04.</div></div>
@@ -714,7 +732,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="c5">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.5</span> Pólipos</div><h3>Pólipo endometrial e endocervical: um achado quase sempre benigno que merece histologia <span class="ank ank-dec">DECISION</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Projeções de glândulas e estroma, sésseis ou pediculadas. Os endometriais aparecem em ~8% das mulheres e em 10–30% das que têm SUA; a maioria é assintomática, e na pós-menopausa de 70 a 75% não sangram. A malignização é de ~1% (0,5–3%), mais nos pós-menopausais com sangramento e nos maiores que 1 cm. <b>O que muda conduta:</b> sintoma, desejo de gestar ou necessidade de histologia → polipectomia histeroscópica; assintomático &lt;15 mm na menacme e sem fator de risco → observação por um ano é aceitável (regressão de ~25% ao ano); pós-menopausa com sangramento → ressecção e histologia.</div></div>
@@ -733,7 +751,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="c6">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.6</span> Hiperplasia endometrial</div><h3>Hiperplasia: sem atipia ou atípica, a classificação que decide entre progestagênio e histerectomia <span class="ank ank-dgr">DANGER</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Proliferação glandular com relação glândula-estroma aumentada, por estrogênio sem oposição. A OMS (2014) reduziu a classificação a dois níveis: <b>hiperplasia sem atipia</b> (benigna, risco baixo) e <b>hiperplasia atípica ou neoplasia intraepitelial endometrioide</b> (precursor do carcinoma). <b>O que muda conduta:</b> sem atipia → remover o estímulo estrogênico e dar progestagênio (SIU-LNG de 52 mg como primeira linha), com biópsia de controle; com atipia → histerectomia total em quem não deseja gestar, pela alta frequência de carcinoma coexistente; deseja gestar → progestagênio em alta dose com seguimento rigoroso. O câncer de endométrio é do dono do catálogo.</div></div>
@@ -761,7 +779,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="c7">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.7</span> Sangramento pós-menopausa</div><h3>Sangramento pós-menopausa: espessura endometrial, biópsia e o corte que muda de fonte <span class="ank ank-dgr">DANGER</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Qualquer sangramento depois de 12 meses de amenorreia é pós-menopausa e exige investigação, mesmo escasso ou único. A atrofia é a causa mais provável, mas o carcinoma está em ~15% e não se diagnostica sem tecido. <b>USG transvaginal</b> mede o endométrio; o <b>Manual de Atenção à Mulher no Climatério do MS</b> considera normal até 5 mm (não usuária de terapia hormonal) e até 8 mm (usuária), e parte da literatura usa 4 mm. <b>O que muda conduta:</b> acima do corte → histeroscopia e biópsia; abaixo do corte, mas com sangramento recorrente ou persistente, ou fator de risco → biópsia mesmo assim; terapia hormonal → rever o esquema (o climatério é do dono do catálogo).</div></div>
@@ -791,9 +809,9 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </section>
 
 <section id="secundarias">
-<div class="section"><div class="section-eyebrow"><span>D</span> Entidades Secundárias</div><div class="section-title">Adolescente, coagulopatia, iatrogenia, mioma na gestação e perimenopausa</div><div class="section-sub">Situações que completam o PALM-COEIN e as que mudam o método. A coagulopatia é a promessa do HO03, o ferro é do HO01, o letrozol e a SOP são do GO01 e a infertilidade é do GO04: aqui ficam o sangramento e a decisão de tratamento.</div></div>
+<div class="section"><div class="section-eyebrow"><span>D</span> Entidades Secundárias</div><div class="section-title">Adolescente, coagulopatia, iatrogenia, mioma na gestação e perimenopausa</div><div class="section-sub">Situações que completam o PALM-COEIN e as que mudam o método. A coagulopatia é a promessa do HO03, o ferro é do HO01, o letrozol e a SOP são do GO01 e a infertilidade é do GO04: aqui ficam o sangramento e a decisão de tratamento.</div></div><!--hp-f2--><nav class="sec-idx" aria-label="Neste capítulo"><a href="#d1"><b>D.1</b>SUA ovulatório e anovulatório…</a><a href="#d2"><b>D.2</b>SUA e distúrbios da hemostasi…</a><a href="#d3"><b>D.3</b>SUA com contraceptivo, DIU, a…</a><a href="#d4"><b>D.4</b>Mioma e gestação, leiomiossar…</a><a href="#d5"><b>D.5</b>SUA na perimenopausa: anovula…</a></nav><!--/hp-f2-->
 
-<div class="card diag">
+<div class="card diag" id="d1">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">D.1</span> Adolescente e anovulação</div><h3>SUA ovulatório e anovulatório (AUB-O): da imaturidade do eixo à SOP <span class="ank ank-dec">DECISION</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Nos primeiros anos após a menarca o eixo hipotálamo-hipófise-ovário é imaturo, e o ciclo anovulatório é a causa mais comum de sangramento intenso ou prolongado, sobretudo depois de amenorreia longa. Fora da adolescência, a anovulação vem da SOP, da tireoidopatia, da hiperprolactinemia e dos extremos da vida reprodutiva. <b>O que muda conduta:</b> exame sem causa estrutural e hemodinâmica estável → hormônio; resposta ruim ao hormônio → revisar (coagulopatia, estrutura); SOP → GO01; desejo de gestar → GO01 e GO04.</div></div>
@@ -812,7 +830,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card diag">
+<div class="card diag" id="d2">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">D.2</span> Coagulopatia</div><h3>SUA e distúrbios da hemostasia: von Willebrand, plaquetas e o limite com o HO03 <span class="ank ank-dgr">DANGER</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">A doença de von Willebrand é, para a FEBRASGO e o FIGO, a coagulopatia mais frequente em mulheres com HMB; algumas fontes de pediatria colocam a trombocitopenia imune primária à frente. Pense nela em jovem com HMB desde a menarca e em toda mulher que sangra demais depois de parto, cirurgia ou extração dentária. <b>O que muda conduta:</b> triagem positiva → hemograma, TAP, TTPa e hematologia antes de cirurgia, de AINE e de anticoagulação; tratamento hormonal e ácido tranexâmico são a base; desmopressina, fatores e a doença em si ficam no HO03.</div></div>
@@ -840,7 +858,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card diag">
+<div class="card diag" id="d3">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">D.3</span> Iatrogênica, endometrial e não classificada</div><h3>SUA com contraceptivo, DIU, anticoagulante, endometrite, istmocele e malformação arteriovenosa</h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Três categorias do PALM-COEIN agrupadas por compartilharem a abordagem: reconhecer o fármaco ou o dispositivo, excluir gravidez e infecção, e só então tratar o sangramento. O escape no início de um contraceptivo hormonal é esperado e não exige exame. <b>O que muda conduta:</b> escape nos três primeiros meses de método bem usado → orientação e conduta expectante; persistente depois disso ou com dor, febre e corrimento → exame, clamídia e imagem; sangramento súbito e volumoso após gestação ou procedimento → pense em malformação arteriovenosa antes de curetar.</div></div>
@@ -859,7 +877,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card diag">
+<div class="card diag" id="d4">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">D.4</span> Mioma na gestação, sarcoma e morcelamento</div><h3>Mioma e gestação, leiomiossarcoma e o saco do morcelador <span class="ank ank-dgr">DANGER</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Miomas acompanham ~2% das gestações; em 2/3 o volume não aumenta ou diminui. Na gestação, <b>não se trata o mioma</b> com fármaco nem cirurgia, exceto na degeneração rubra refratária e na torção com abdome agudo. O leiomiossarcoma é raro, mas é o motivo do cuidado com o morcelamento: risco de ~0,3% em cirurgia por mioma. <b>O que muda conduta:</b> dor de degeneração rubra → analgesia e observação; torção com abdome agudo → cirurgia; suspeita de sarcoma ou útero grande → sem morcelamento aberto; morcelamento só dentro de saco protetor, ou colpotomia.</div></div>
@@ -887,7 +905,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card diag">
+<div class="card diag" id="d5">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">D.5</span> Perimenopausa</div><h3>SUA na perimenopausa: anovulação, lesão estrutural e a idade que pede endométrio</h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">A reserva folicular cai e os folículos ficam refratários à gonadotrofina, e os ciclos anovulatórios se multiplicam; é também a faixa em que pólipo, mioma, adenomiose, hiperplasia e câncer ganham peso. <b>O que muda conduta:</b> a idade ≥45 anos, obesidade, diabetes ou falha do clínico trazem a biópsia de endométrio antes de tratar; SIU-LNG de 52 mg protege o endométrio e controla o fluxo; contracepção segue necessária até a menopausa (GO02); a terapia hormonal é do dono do catálogo.</div></div>
@@ -910,7 +928,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <section id="algoritmo">
 <div class="section"><div class="section-eyebrow"><span>E</span> Algoritmo</div><div class="section-title">Do sangramento ao tratamento: quatro árvores e a sequência mental</div><div class="section-sub">A primeira árvore resolve o agudo; a segunda classifica e investiga o crônico por idade; a terceira conduz o mioma; a quarta fecha a pós-menopausa. Cada ponta termina em exame, procedimento ou dose.</div></div>
 
-<div class="card prim">
+<div class="card prim" id="e1">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">E.1</span> Algoritmo</div><h3>SUA agudo: estabilizar, descartar gravidez, parar e manter <span class="ank ank-dec">DECISION</span></h3></div>
 <div class="card-body">
 <div class="algo"><div class="tree">
@@ -935,7 +953,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="e2">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">E.2</span> Algoritmo</div><h3>SUA crônico: FIGO System 1, PALM-COEIN e investigação por idade <span class="ank ank-hy">HIGH-YIELD</span></h3></div>
 <div class="card-body">
 <div class="algo"><div class="tree">
@@ -960,7 +978,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="e3">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">E.3</span> Algoritmo</div><h3>Mioma e adenomiose sintomáticos: via pelo tipo, pelo desejo e pelo risco <span class="ank ank-dec">DECISION</span></h3></div>
 <div class="card-body">
 <div class="algo"><div class="tree">
@@ -986,7 +1004,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="e4">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">E.4</span> Algoritmo</div><h3>Sangramento pós-menopausa e endométrio espessado <span class="ank ank-dgr">DANGER</span></h3></div>
 <div class="card-body">
 <div class="algo"><div class="tree">
@@ -1011,7 +1029,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="e5">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">E.5</span> Raciocínio em 6 passos</div><h3>A sequência mental, na ordem em que o plantão deve pensar <span class="ank ank-hy">HIGH-YIELD</span></h3></div>
 <div class="card-body">
 <div class="box decision"><span class="box-label">DECISION</span><div class="box-title">Seis perguntas que separam o sangramento perigoso do benigno</div><div class="box-body"><ol>
@@ -1027,13 +1045,13 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </section>
 
 <section id="tratamento">
-<div class="section"><div class="section-eyebrow"><span>F</span> Tratamento Integrado</div><div class="section-title">F1 · Estratégia por entidade · F2 · Doses · F3 · Casos · F4 · SUS e CMED</div><div class="section-sub">Doses de bula FDA lidas pelo openFDA, da FEBRASGO 2025, do FIGO 2025 e da apostila levam a sigla da fonte; as que vêm só da apostila ou de conhecimento prévio levam "conferir". Mesma dose, mesmo texto em todo o HP. Ferro e anemia: HO01.</div></div>
+<div class="section"><div class="section-eyebrow"><span>F</span> Tratamento Integrado</div><div class="section-title">F1 · Estratégia por entidade · F2 · Doses · F3 · Casos · F4 · SUS e CMED</div><div class="section-sub">Doses de bula FDA lidas pelo openFDA, da FEBRASGO 2025, do FIGO 2025 e da apostila levam a sigla da fonte; as que vêm só da apostila ou de conhecimento prévio levam "conferir". Mesma dose, mesmo texto em todo o HP. Ferro e anemia: HO01.</div></div><!--hp-f2--><nav class="sec-idx" aria-label="Neste capítulo"><a href="#f1"><b>F.1</b>Escada terapêutica por entida…</a><a href="#f2"><b>F.2</b>Tabela operacional: fármaco…</a><a href="#f3"><b>F.3</b>Caso → conduta certa → erro t…</a><a href="#f4"><b>F.4</b>O que existe no Brasil: lista…</a></nav><!--/hp-f2-->
 
-<div class="card tx">
+<div class="card tx" id="f1">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">F.1</span> Estratégia</div><h3>Escada terapêutica por entidade <span class="ank ank-dec">DECISION</span></h3></div>
 <div class="card-body">
 
-<div class="sub-title">F1.1 · SUA agudo intenso: ressuscitar, parar, manter (C.2)</div>
+<div class="sub-title" id="f1-1">F1.1 · SUA agudo intenso: ressuscitar, parar, manter (C.2)</div>
 <ul class="bullets">
 <li><b>Primeiro:</b> acessos, cristaloide, β-hCG quantitativo, hemograma, plaquetas, TAP, TTPa, fibrinogênio e tipagem; transfusão pelo quadro (HO06). Instável ou com Hb em queda: internação, e o procedimento não espera o hormônio fazer efeito.</li>
 <li><b>Estável, sem contraindicação a estrogênio:</b> ACO de 30–35 µg de etinilestradiol 1 comprimido a cada 8 h até parar (em geral 48 h), no máximo 7 dias nessa dose, e depois 1 comprimido por dia por 3 a 6 semanas; ou estrogênio equino conjugado 1,25 mg VO a cada 6 h até o controle (em geral ~10 h), mantido depois por 21–25 dias e seguido de progestagênio (uso fora de bula, literatura não lida nesta revisão; F2). Antiemético se náusea.</li>
@@ -1044,7 +1062,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 
 <div class="box danger"><span class="box-label">DANGER</span><div class="box-title">Estrogênio em dose alta tem teto de tempo, e o progestagênio não pode faltar depois</div><div class="box-body">Estrogênio isolado em dose alta deve ser seguido por progestagênio, para estabilizar o endométrio proliferado e evitar novo sangramento ao suspender. ACO a cada 8 h expõe a ~105 µg de etinilestradiol por dia: não ultrapasse 7 dias nessa dose, e não use em enxaqueca com aura, tabagismo ≥35 anos, trombofilia, TEV ativo ou prévio, doença arterial ou AVC/IAM, hipertensão não controlada, câncer dependente de estrogênio (mama, endométrio, ovário), sangramento genital não diagnosticado ou hepatopatia grave (OMS MEC; GO02). A causa do sangramento deve estar definida (A.1) antes do ACO em dose alta. Sem resposta em 48 h, não aumente a dose: mude a hipótese.</div></div>
 
-<div class="sub-title">F1.2 · SUA crônico: do SIU-LNG à histerectomia (C.1, D.1, D.5)</div>
+<div class="sub-title" id="f1-2">F1.2 · SUA crônico: do SIU-LNG à histerectomia (C.1, D.1, D.5)</div>
 <ul class="bullets">
 <li><b>Primeira linha sem desejo de gestar:</b> SIU-LNG de 52 mg (reduz 71–96% do fluxo; bula FDA para o sangramento intenso por até 5 anos). A Cochrane citada pela FEBRASGO coloca o SIU-LNG em primeiro, os antifibrinolíticos em segundo e o progestagênio de ciclo longo em terceiro.</li>
 <li><b>ACO:</b> redução de 35–72%; formulações de 30 µg de EE com levonorgestrel são as mais estudadas, e o valerato de estradiol com dienogeste também serve; os regimes contínuos superam os cíclicos. Limitação: desejo de gestar imediato e critérios de elegibilidade.</li>
@@ -1055,7 +1073,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 
 <div class="box decision"><span class="box-label">DECISION</span><div class="box-title">Hormônio que não corrige não é "disfuncional"</div><div class="box-body">O sangramento por disfunção ovulatória é um diagnóstico de exclusão e se corrige com hormônio. Se persiste depois de um tratamento bem conduzido, a causa é orgânica e a propedêutica precisa ser refeita: histeroscopia, imagem de segunda linha, coagulopatia, biópsia. Prorrogar o ACO por anos sem amostra do endométrio, em mulher de 45 anos ou obesa, é o erro mais caro desta área.</div></div>
 
-<div class="sub-title">F1.3 · Ácido tranexâmico: dose, contraindicações, teto e critério de parada</div>
+<div class="sub-title" id="f1-3">F1.3 · Ácido tranexâmico: dose, contraindicações, teto e critério de parada</div>
 <ul class="bullets">
 <li><b>Oral:</b> 1.000–1.300 mg VO a cada 8 h, apenas nos dias de menstruação, por no máximo 5 dias a cada ciclo (bula FDA: 1.300 mg 8/8 h, 3.900 mg/dia; o HO03 usa 1–1,3 g). No Brasil há comprimidos de 250 e 500 mg: use o número de comprimidos que se aproxime da dose (por exemplo, 2 de 500 mg ou 4 de 250 mg, 1.000 mg a cada 8 h; o 1.300 mg da bula FDA não se obtém com 500 mg; conferir bula Anvisa). Age em 2 a 3 horas.</li>
 <li><b>Intravenoso, no SUA agudo grave:</b> 10 mg/kg a cada 8 h, teto de 1 g por dose (decisão de protocolo; a bula não traz teto), infusão de no máximo 1 mL/min (100 mg/min pela bula FDA; a apostila cita 50 mg/min); <b>somente IV: contraindicado por via neuroaxial</b>; <b>no máximo 3 dias, depois passar ao oral</b>. Uso no HMB fora da indicação do rótulo odontológico. Ampola brasileira de 50 mg/mL.</li>
@@ -1064,7 +1082,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <li><b>Efeitos:</b> náusea, vômito e dor abdominal em ~20% (melhoram com alimento), cefaleia, mialgia, alteração visual (suspender) e convulsão rara, associada a dose alta e a hepatopatia.</li>
 </ul>
 
-<div class="sub-title">F1.4 · Leiomioma: observar, clínico, cirurgia, embolização (C.3)</div>
+<div class="sub-title" id="f1-4">F1.4 · Leiomioma: observar, clínico, cirurgia, embolização (C.3)</div>
 <ul class="bullets">
 <li><b>Assintomático ou pouco sintomático, perimenopausa, pós-menopausa estável:</b> observar, com USG semestral ou anual; o crescimento rápido muda a conduta.</li>
 <li><b>Sangramento sem distorção da cavidade:</b> ácido tranexâmico, AINE, SIU-LNG, ACO ou progestagênio; nenhum reduz o mioma. A apostila contraindica o SIU com cavidade deformada, e o FIGO 2025 avisa que miomas &gt;3 cm aumentam a expulsão.</li>
@@ -1073,7 +1091,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <li><b>Mioma e infertilidade ou gestação:</b> endometriose e infertilidade: GO04; na gestação, sem tratamento específico (D.4).</li>
 </ul>
 
-<div class="sub-title">F1.5 · Adenomiose, pólipo, hiperplasia e pós-menopausa (C.4 a C.7)</div>
+<div class="sub-title" id="f1-5">F1.5 · Adenomiose, pólipo, hiperplasia e pós-menopausa (C.4 a C.7)</div>
 <ul class="bullets">
 <li><b>Adenomiose:</b> SIU-LNG, ACO contínuo, dienogeste 2 mg/dia (conferir na adenomiose) e AINE para a dismenorreia; agonista de GnRH por 3 a 6 meses antes da ressecção focal; histerectomia total quando a prole é constituída e o sintoma é intenso; os sintomas voltam após a supressão.</li>
 <li><b>Pólipo:</b> polipectomia histeroscópica com histologia; observação por um ano é aceitável no assintomático &lt;15 mm na menacme sem fator de risco; desejo de gestar e sangramento pós-menopausa: remover.</li>
@@ -1088,11 +1106,11 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card tx">
+<div class="card tx" id="f2">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">F.2</span> Doses</div><h3>Tabela operacional: fármaco, dose, indicação e teto <span class="ank ank-hy">HIGH-YIELD</span></h3></div>
 <div class="card-body">
 
-<div class="sub-title">F2.1 · SUA agudo e crônico</div>
+<div class="sub-title" id="f2-1">F2.1 · SUA agudo e crônico</div>
 <div class="stbl stbl-3">
 <div class="stbl-head stbl-3"><div>Fármaco</div><div>Dose adulto</div><div>Indicação / notas</div></div>
 <div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Ácido tranexâmico VO</div><div class="col" data-l="Dose"><b>1.000–1.300 mg VO 8/8 h, no máximo 5 dias por menstruação</b>; teto de 3.900 mg/dia (bula FDA); FEBRASGO 2025: 1.300 mg 3×/dia por 5 dias, com efeito em 2–3 h; comprimidos de 250 e 500 mg no Brasil (conferir bula Anvisa)</div><div class="col" data-l="Indicação">SUA crônico e agudo estável, mioma, coagulopatia, quando o hormônio é contraindicado. Creatinina &gt;1,4 mg/dL: reduzir. Oral: contraindicado em TEV ativo ou prévio, risco de trombose e hipersensibilidade (F1.3).</div></div>
@@ -1110,7 +1128,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Naproxeno e ibuprofeno</div><div class="col" data-l="Dose"><b>Ibuprofeno 400 mg VO a cada 8 h (6/6 h se preciso), teto de 1.200 mg/dia sem prescrição e 2.400 mg/dia com prescrição; naproxeno 500 mg de ataque e depois 250 mg a cada 6–8 h, teto de 1.250 mg no 1º dia e 1.000 mg/dia depois</b> (alinhado ao GO04; naproxeno: bula FDA; conferir bula Anvisa)</div><div class="col" data-l="Indicação">Alternativas ao mefenâmico. Reduzem ~30%; não superiores entre si. Efeitos gastrointestinais.</div></div>
 </div>
 
-<div class="sub-title">F2.2 · Analgesia (degeneração rubra, pós-embolização, pós-operatório)</div>
+<div class="sub-title" id="f2-2">F2.2 · Analgesia (degeneração rubra, pós-embolização, pós-operatório)</div>
 <div class="stbl stbl-3">
 <div class="stbl-head stbl-3"><div>Fármaco</div><div>Dose adulto</div><div>Indicação / notas</div></div>
 <div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Dipirona</div><div class="col" data-l="Dose"><b>1 g IV de 6/6 h, máximo de 4 g/dia, ou até 5 g/dia pela bula de injetável</b></div><div class="col" data-l="Indicação">Dor da degeneração rubra e do pós-procedimento. Contraindicação: hipersensibilidade; agranulocitose rara; restrição relativa na gestação (EMA 2018 desaconselha no 3º trimestre e na amamentação; divergência rotulada, como no NU05).</div></div>
@@ -1119,7 +1137,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Paracetamol</div><div class="col" data-l="Dose"><b>750 mg VO a cada 6–8 h, teto de 4 g/dia</b> (conferir bula)</div><div class="col" data-l="Indicação">Primeira escolha na dor da gestante com mioma; AINE sistêmico é evitado na gestação (contraindicado no 3º trimestre, como no NU05).</div></div>
 </div>
 
-<div class="sub-title">F2.3 · Mioma, adenomiose e hiperplasia</div>
+<div class="sub-title" id="f2-3">F2.3 · Mioma, adenomiose e hiperplasia</div>
 <div class="stbl stbl-3">
 <div class="stbl-head stbl-3"><div>Fármaco</div><div>Dose adulto</div><div>Indicação / notas</div></div>
 <div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Leuprorrelina 3,75 mg, goserelina 3,6 mg e triptorrelina 3,75 mg</div><div class="col" data-l="Dose"><b>Leuprorrelina 3,75 mg IM a cada 4 semanas por até 3 meses, com ferro</b> (bula FDA); goserelina 3,6 mg SC a cada 28 dias e triptorrelina 3,75 mg IM a cada 28 dias (conferir bula Anvisa); leuprorrelina 11,25 mg trimestral (CMED)</div><div class="col" data-l="Indicação">Preparo da cirurgia por mioma e anemia. Máximo 3 meses; efeito some ao parar. Hipoestrogenismo e perda óssea; add-back de estrogênio conjugado ≈0,625 mg (apostila), que a bula da leuprorrelina 3,75 não indica no mioma. Contraindicado: gestação, sangramento uterino não diagnosticado, hipersensibilidade (bula FDA).</div></div>
@@ -1139,7 +1157,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card tx">
+<div class="card tx" id="f3">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">F.3</span> Casos</div><h3>Caso → conduta certa → erro típico <span class="ank ank-dec">DECISION</span></h3></div>
 <div class="card-body">
 <div class="stbl stbl-3">
@@ -1155,7 +1173,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card tx">
+<div class="card tx" id="f4">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">F.4</span> SUS e CMED</div><h3>O que existe no Brasil: lista de 09/10/2026 e o que exige conferir <span class="ank ank-hy">HIGH-YIELD</span></h3></div>
 <div class="card-body">
 <div class="stbl stbl-3">
@@ -1174,7 +1192,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <section id="pitfalls">
 <div class="section"><div class="section-eyebrow"><span>G</span> Pitfalls · Mitos · Controvérsias</div><div class="section-title">Erros operacionais, mitos vivos e debates abertos</div><div class="section-sub">Os erros que se repetem: hormônio sem tecido em mulher de risco, gravidez não excluída, ácido tranexâmico sem pergunta sobre trombose, mioma como explicação de tudo e morcelamento sem contenção.</div></div>
 
-<div class="card pearl">
+<div class="card pearl" id="g1">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">G.1</span> Pegadinhas</div><h3>10 erros operacionais em SUA, miomas e adenomiose</h3></div>
 <div class="card-body">
 <div class="stbl stbl-2">
@@ -1193,7 +1211,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card pearl">
+<div class="card pearl" id="g2">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">G.2</span> Mitos</div><h3>Três mitos vivos</h3></div>
 <div class="card-body">
 <div class="box myth"><span class="box-label">MYTH</span><div class="box-title">"Sangramento disfuncional é o que sobra quando o ultrassom vem normal"</div><div class="box-body">O ultrassom normal não é o critério: o diagnóstico de disfunção ovulatória exige excluir gravidez, doença pélvica, coagulopatia, iatrogenia e neoplasia, inclusive lesão focal que a imagem perde. O critério prático é terapêutico: o que é hormonal se corrige com hormônio, e o que não se corrige é orgânico e pede nova propedêutica.</div></div>
@@ -1202,7 +1220,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card pearl">
+<div class="card pearl" id="g3">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">G.3</span> Controvérsias</div><h3>Três debates sem consenso</h3></div>
 <div class="card-body">
 <div class="box controversy"><span class="box-label">CONTROVERSY</span><div class="box-title">Qual é o corte do endométrio na pós-menopausa: 4 mm ou 5 mm?</div><div class="box-body">O Manual de Atenção à Mulher no Climatério do MS (2008) adota 5 mm para não usuárias de terapia hormonal e 8 mm para usuárias; várias fontes internacionais usam 4 mm. A apostila avisa que o corte varia entre referências e que, na menacme, não há consenso (o limiar de 12 mm na fase proliferativa é o usual). A divergência pesa menos que o contexto: com fator de risco, sangramento recorrente ou lesão focal, a imagem isolada não dispensa tecido. Padrão deste HP: o do MS, com a de 4 mm ao lado, rotulada.</div></div>
@@ -1215,7 +1233,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <section id="pearls">
 <div class="section"><div class="section-eyebrow"><span>H</span> Pearls · Evolving</div><div class="section-title">H1 · Nuances de especialista · H2 · O que mudou entre 2018 e 2026</div><div class="section-sub">Oito ideias que o plantão esquece e seis mudanças reais; onde o tema é estável (fisiologia da menstruação, classificação dos miomas, técnica da histeroscopia), diz-se.</div></div>
 
-<div class="card pearl">
+<div class="card pearl" id="h1">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">H.1</span> Pearls</div><h3>8 nuances que distinguem o especialista</h3></div>
 <div class="card-body">
 <div class="box pearl"><span class="box-label">PEARL</span><div class="box-title">O volume menstrual é o que a paciente sente, não o que o absorvente mede</div><div class="box-body">O FIGO definiu o sangramento intenso pelo impacto na qualidade de vida física, social, emocional ou material, e o PBAC (sensibilidade de 86%, especificidade de 89%) entra como auxiliar: pontuação ≥100 sugere perda acima de 80 mL. Mulheres com perda "normal" por mililitro, mas incapacitante, têm indicação de tratamento; e a que perde 90 mL e não se incomoda tem indicação de ferritina, e não necessariamente de tratamento.</div></div>
@@ -1229,7 +1247,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card pearl">
+<div class="card pearl" id="h2">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">H.2</span> Evolving</div><h3>O que mudou: seis itens reais; o resto do tema é estável</h3></div>
 <div class="card-body">
 <div class="box evolving"><span class="box-label">EVOLVING</span><div class="box-title">FIGO 2018: regularidade por idade, anticoagulante em AUB-I, mioma tipo 3 como submucoso</div><div class="box-body">A revisão de 2018 trocou o intervalo de 20 dias para variação de 9, 7 e 9 dias conforme a faixa etária, deixou duas categorias de duração, incluiu o sangramento intermenstrual, moveu o anticoagulante de AUB-C para AUB-I e passou o mioma tipo 3 para o grupo submucoso. A estrutura PALM-COEIN permanece. Muitos livros ainda trazem os termos antigos (menorragia, metrorragia).</div></div>
@@ -1278,5 +1296,36 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <a class="to-top" href="#" aria-label="Voltar ao topo">↑</a>
 <div class="watermark">@dr.lorencato · GO03 SUA, Miomas e Adenomiose v5.2</div>
 
-</body>
+<!--hp-f2--><script>(function(){var d=document,M=d.querySelector('main');if(!M)return;
+var SELF='GO03',HP=' CT01 CT02 CT03 CT04 CT05 CT06 CT08 CT10 CV01 CV03 CV04 CV05 CV06 CV07 CV08 EN01 EN02 EN03 EN04 EN06 EN07 GH01 GH02 GH03 GH05 GH06 GH07 GH08 GH09 GH10 GO01 GO02 GO03 GO04 GO09 GO10 GO11 GO12 GO13 GO14 HO01 HO02 HO03 HO04 HO05 HO06 II01 II02 II03 II04 II07 II08 NE01 NE02 NE03 NE04 NE05 NE06 NE07 NE08 NU01 NU02 NU03 NU04 NU05 OE01 OE02 PC01 PC02 PC03 PC04 PC05 PC06 PD01 PD02 PD03 PD04 PD05 PD06 PD07 PD08 PD09 PD10 RD01 RD02 RD03 RD04 RD05 RD07 RP01 RP02 RP03 RP04 ';
+var SK='A,H1,H2,H3,SCRIPT,STYLE,NAV,.card-num,.card-eyebrow,.sub-title,.disease-tag,.toc';
+var R=/\b(?:([A-H])(\d)?\.(\d{1,2}[a-c]?)|(CV|RP|GH|NE|EN|NU|HO|II|RD|GO|PD|PC|CT|OE)(\d\d))\b/g;
+function skip(n){for(var e=n.parentNode;e&&e!==M;e=e.parentNode)if(e.matches&&e.matches(SK))return 1;return 0}
+var w=d.createTreeWalker(M,4),t,L=[];while(t=w.nextNode())if(R.test(t.data)&&!skip(t))L.push(t);
+L.forEach(function(t){var s=t.data,f=d.createDocumentFragment(),i=0,m;R.lastIndex=0;
+while(m=R.exec(s)){var h=null;
+if(m[1]){var id=m[1].toLowerCase()+(m[2]?m[2]+'-':'')+m[3];if(d.getElementById(id))h='#'+id}
+else{var x=m[4]+m[5];if(x!==SELF&&HP.indexOf(' '+x+' ')>=0)h='../'+x+'/'+x+'.html'}
+if(!h)continue;f.appendChild(d.createTextNode(s.slice(i,m.index)));
+var a=d.createElement('a');a.href=h;a.className='xr';a.textContent=m[0];f.appendChild(a);i=R.lastIndex}
+if(i){f.appendChild(d.createTextNode(s.slice(i)));t.parentNode.replaceChild(f,t)}});
+function nz(s){return s.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'')}
+var q=d.querySelector('.hp-q'),n=d.querySelector('.hp-n'),it=M.querySelectorAll('.card,.pocket-card'),T;
+function clr(){M.querySelectorAll('.q-off').forEach(function(e){e.classList.remove('q-off')})}
+function run(){var v=nz(q.value.trim());clr();n.textContent='';if(v.length<2)return;var k=0;
+it.forEach(function(c){if(nz(c.textContent).indexOf(v)<0){c.classList.add('q-off');return}k++;
+var r=c.querySelectorAll('.stbl-row,.disease-row,.score-row'),h=[];r.forEach(function(x){if(nz(x.textContent).indexOf(v)>=0)h.push(x)});
+if(h.length)r.forEach(function(x){if(h.indexOf(x)<0)x.classList.add('q-off')});
+c.querySelectorAll('details').forEach(function(x){if(nz(x.textContent).indexOf(v)>=0)x.open=true})});
+M.querySelectorAll('section').forEach(function(s){if(!s.querySelector('.card:not(.q-off),.pocket-card:not(.q-off)'))s.classList.add('q-off')});
+n.textContent=k?k+' achado'+(k>1?'s':''):'nada'}
+if(q){q.addEventListener('input',function(){clearTimeout(T);T=setTimeout(run,180)});
+q.addEventListener('keydown',function(e){if(e.key==='Escape'){q.value='';run()}})}
+function tg(b,f){b.addEventListener('click',function(){var on=b.getAttribute('aria-pressed')!=='true';b.setAttribute('aria-pressed',on);f(on)})}
+var bd=d.querySelector('.hp-dz'),bo=d.querySelector('.hp-op');
+if(bd)tg(bd,function(on){d.body.classList.toggle('dz',on);if(on)d.getElementById('tratamento').scrollIntoView()});
+if(bo)tg(bo,function(on){M.querySelectorAll('details').forEach(function(x){x.open=on})});
+var P=[];addEventListener('beforeprint',function(){P=[];M.querySelectorAll('details:not([open])').forEach(function(x){P.push(x);x.open=true})});
+addEventListener('afterprint',function(){P.forEach(function(x){x.open=false})});
+})();</script><!--/hp-f2--></body>
 </html>

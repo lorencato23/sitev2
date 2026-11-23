@@ -345,11 +345,30 @@ ul.bullets li b{color:var(--ink);font-weight:600}
   .pocket .pocket-card.tx{--accent:#a8481a}
   .pocket .pocket-card.clin{--accent:#0b5d4e}
 }
+
+/* === v5.2.2 · fase 2 (navegação) === */
+.hp-tools{display:flex;gap:6px;align-items:center;flex:none;order:1;margin-left:auto;padding-left:6px;position:sticky;right:0;background:#f1eee5;box-shadow:-10px 0 10px -4px #f1eee5,16px 0 0 #f1eee5}
+@media(min-width:900px){html{scroll-padding-top:150px}.toc-inner{flex-wrap:wrap;overflow:visible}.card[id],.sub-title[id]{scroll-margin-top:150px}}
+@media(max-width:899px){.hp-b,.hp-n{display:none}.hp-q{width:104px}}
+.hp-q{width:128px;font:500 12px/1 'DM Sans',system-ui,sans-serif;padding:7px 11px;border:1px solid var(--line-strong);border-radius:999px;background:var(--paper);color:var(--ink)}
+.hp-b{font:600 11px/1 'DM Sans',system-ui,sans-serif;letter-spacing:.05em;text-transform:uppercase;padding:7px 10px;border-radius:999px;border:1px solid var(--line-strong);background:var(--paper);color:var(--ink-soft);cursor:pointer;white-space:nowrap}
+.hp-b[aria-pressed=true]{background:var(--ink);color:#fff;border-color:var(--ink)}
+.hp-n{font:600 11px/1 'DM Mono',monospace;color:var(--ink-mute);white-space:nowrap}
+.sec-idx{display:flex;flex-wrap:wrap;gap:6px;margin:12px 0 20px}
+.sec-idx a{font:500 12px/1.25 'DM Sans',system-ui,sans-serif;padding:6px 10px;border-radius:999px;background:var(--paper);border:1px solid var(--line);color:var(--ink-soft);text-decoration:none}
+.sec-idx a:hover{border-color:var(--line-strong);color:var(--ink)}
+.sec-idx b{color:var(--c-prim);margin-right:5px;font-weight:700}
+a.xr{color:inherit;text-decoration:underline dotted;text-underline-offset:2px}
+a.xr:hover{color:var(--c-prim)}
+.card[id],.sub-title[id]{scroll-margin-top:110px}
+.q-off{display:none!important}
+body.dz main section:not(#tratamento){display:none}
+@media print{.hp-tools,.sec-idx,.toc-doses{display:none!important}}
 </style>
 </head>
 <body>
 <header class="header"><div class="header-row"><div class="h-mark">C</div><div class="h-titles"><div class="h-title">Colagenoses · Pocket Handbook</div><div class="h-sub">Elite edition · Reumatologia clínica · RD02</div></div><div class="h-author">@dr.lorencato</div><div class="h-edition">v5.2</div></div></header>
-<nav class="toc"><div class="toc-inner"><a href="#pocket" class="toc-chip"><span class="toc-chip-num">0</span>Pocket</a><a href="#redflags" class="toc-chip"><span class="toc-chip-num">A</span>Red Flags</a><a href="#approach" class="toc-chip"><span class="toc-chip-num">B</span>Apresentação</a><a href="#primarias" class="toc-chip"><span class="toc-chip-num">C</span>Entidades</a><a href="#secundarias" class="toc-chip"><span class="toc-chip-num">D</span>Secundárias</a><a href="#algoritmo" class="toc-chip"><span class="toc-chip-num">E</span>Algoritmo</a><a href="#tratamento" class="toc-chip"><span class="toc-chip-num">F</span>Tratamento</a><a href="#pitfalls" class="toc-chip"><span class="toc-chip-num">G</span>Pitfalls</a><a href="#pearls" class="toc-chip"><span class="toc-chip-num">H</span>Pearls</a></div></nav>
+<nav class="toc"><div class="toc-inner"><!--hp-f2--><span class="hp-tools"><input class="hp-q" type="search" placeholder="Buscar no HP" aria-label="Buscar no HP"><button class="hp-b hp-dz" type="button" aria-pressed="false">Só doses</button><button class="hp-b hp-op" type="button" aria-pressed="false">Abrir tudo</button><span class="hp-n" aria-live="polite"></span></span><!--/hp-f2--><a href="#pocket" class="toc-chip"><span class="toc-chip-num">0</span>Pocket</a><a href="#redflags" class="toc-chip"><span class="toc-chip-num">A</span>Red Flags</a><a href="#approach" class="toc-chip"><span class="toc-chip-num">B</span>Apresentação</a><a href="#primarias" class="toc-chip"><span class="toc-chip-num">C</span>Entidades</a><a href="#secundarias" class="toc-chip"><span class="toc-chip-num">D</span>Secundárias</a><a href="#algoritmo" class="toc-chip"><span class="toc-chip-num">E</span>Algoritmo</a><a href="#tratamento" class="toc-chip"><span class="toc-chip-num">F</span>Tratamento</a><!--hp-f2--><a href="#f2" class="toc-chip toc-doses"><span class="toc-chip-num">Rx</span>Doses</a><!--/hp-f2--><a href="#pitfalls" class="toc-chip"><span class="toc-chip-num">G</span>Pitfalls</a><a href="#pearls" class="toc-chip"><span class="toc-chip-num">H</span>Pearls</a></div></nav>
 <main>
 <div class="wrap">
 <div class="hero">
@@ -387,7 +406,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 <section id="redflags">
 <div class="section"><div class="section-eyebrow"><span>A</span> Red Flags</div><h2 class="section-title">Quando a colagenose vira emergência</h2><div class="section-sub">Rim que perde função em dias, trombose em cascata, cérebro lúpico, pulmão que sangra, e a infecção que se veste de atividade. Cada linha: sinal objetivo → suspeita → conduta imediata.</div></div>
-<div class="card emerg">
+<div class="card emerg" id="a1">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">A.1</span> Emergências</div><h3>Sinais de alarme nas colagenoses <span class="ank ank-dgr">DANGER</span></h3></div>
 <div class="card-body">
 <div class="mnemo"><div class="mnemo-title"><b>COLAGENO</b> oito portas de entrada na UTI</div><div class="mnemo-grid">
@@ -420,7 +439,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <section id="approach">
 <div class="section"><div class="section-eyebrow"><span>B</span> Por Apresentação</div><h2 class="section-title">Mapa sindrômico — da queixa ao autoanticorpo certo</h2><div class="section-sub">Colagenose se reconhece por constelação, não por exame isolado. A pergunta inicial é qual território domina (pele-articulação, vaso, glândula, rim, coagulação) e qual autoanticorpo tem probabilidade pré-teste suficiente para ser pedido.</div></div>
 
-<div class="card clin"><div class="card-head"><div class="card-eyebrow"><span class="card-num">B.1</span> Padrão 1</div><h3>Mulher jovem com artrite, rash fotossensível, úlcera oral e citopenia</h3><div class="card-sub">Perfil de LES — o FAN é a porta, anti-dsDNA/anti-Sm o selo, complemento o termômetro</div></div><div class="card-body">
+<div class="card clin" id="b1"><div class="card-head"><div class="card-eyebrow"><span class="card-num">B.1</span> Padrão 1</div><h3>Mulher jovem com artrite, rash fotossensível, úlcera oral e citopenia</h3><div class="card-sub">Perfil de LES — o FAN é a porta, anti-dsDNA/anti-Sm o selo, complemento o termômetro</div></div><div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Poliartrite simétrica não erosiva de pequenas articulações + eritema malar que <b>poupa o sulco nasolabial</b> + úlcera oral indolor + leucopenia/linfopenia ou plaquetopenia + serosite. Peça <b>FAN em HEp-2</b>; se ≥1:80 com clínica, <b>anti-dsDNA, anti-Sm, anti-Ro/La, anti-RNP, C3/C4, aPL, urina tipo 1 e relação proteína/creatinina</b>.</div></div>
 <ul class="bullets">
 <li><b>Febre sem foco</b> pontua 2 nos critérios EULAR/ACR 2019, mas só conta se nenhuma explicação for mais provável — infecção é a primeira hipótese a afastar.</li>
@@ -440,7 +459,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <div class="box hy"><span class="box-label">HIGH-YIELD</span><div class="box-title">Padrão do FAN que tranquiliza</div><div class="box-body">O <b>nuclear pontilhado fino denso</b> (anti-DFS70/LEDGF) aparece em indivíduos saudáveis e em doenças não autoimunes; isolado, praticamente afasta doença reumática sistêmica. Já o homogêneo (anti-dsDNA, histonas, nucleossomo), o pontilhado grosso (Sm, RNP), o centromérico e o nucleolar em títulos moderados ou altos associam-se a autoimunidade sistêmica.</div></div>
 </div></div>
 
-<div class="card clin"><div class="card-head"><div class="card-eyebrow"><span class="card-num">B.2</span> Padrão 2</div><h3>Raynaud, dedos edemaciados e pele que endurece</h3><div class="card-sub">Esclerose sistêmica, DMTC ou Raynaud primário — a capilaroscopia separa</div></div><div class="card-body">
+<div class="card clin" id="b2"><div class="card-head"><div class="card-eyebrow"><span class="card-num">B.2</span> Padrão 2</div><h3>Raynaud, dedos edemaciados e pele que endurece</h3><div class="card-sub">Esclerose sistêmica, DMTC ou Raynaud primário — a capilaroscopia separa</div></div><div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Raynaud é <b>primário</b> quando começa cedo, é simétrico, sem úlcera/necrose, com FAN negativo e capilaroscopia normal. Raynaud + <b>puffy fingers</b> + capilaroscopia com megacapilares/áreas avasculares + anticentrômero, anti-topoisomerase I ou anti-RNA polimerase III = ES muito provável, mesmo antes da esclerodactilia.</div></div>
 <ul class="bullets">
 <li><b>Espessamento proximal às MCF</b> nos dedos das duas mãos é critério suficiente (9 pontos) para classificar ES (ACR/EULAR 2013).</li>
@@ -451,7 +470,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </ul>
 </div></div>
 
-<div class="card clin"><div class="card-head"><div class="card-eyebrow"><span class="card-num">B.3</span> Padrão 3</div><h3>Olho e boca secos, parótida aumentada</h3><div class="card-sub">Sjögren primário — ou um mimetizador que muda tudo</div></div><div class="card-body">
+<div class="card clin" id="b3"><div class="card-head"><div class="card-eyebrow"><span class="card-num">B.3</span> Padrão 3</div><h3>Olho e boca secos, parótida aumentada</h3><div class="card-sub">Sjögren primário — ou um mimetizador que muda tudo</div></div><div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Secura é sintoma comum na população (fármacos anticolinérgicos, idade, ansiedade). Sjögren exige <b>prova objetiva de disfunção glandular</b> (Schirmer, coloração ocular, fluxo salivar) mais <b>anti-Ro/SSA ou biópsia de glândula salivar menor com focus score ≥1</b>. Parótida endurecida, assimétrica ou persistente pede imagem e afastamento de linfoma.</div></div>
 <ul class="bullets">
 <li><b>Exclusões dos critérios 2016</b>: radioterapia de cabeça e pescoço, HCV ativa, AIDS, sarcoidose, amiloidose, DECH, doença relacionada a IgG4 (→ RD03).</li>
@@ -460,7 +479,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </ul>
 </div></div>
 
-<div class="card clin"><div class="card-head"><div class="card-eyebrow"><span class="card-num">B.4</span> Padrão 4</div><h3>Trombose em jovem, livedo, perda gestacional</h3><div class="card-sub">Síndrome antifosfolípide — o laboratório repetido em 12 semanas é parte do diagnóstico</div></div><div class="card-body">
+<div class="card clin" id="b4"><div class="card-head"><div class="card-eyebrow"><span class="card-num">B.4</span> Padrão 4</div><h3>Trombose em jovem, livedo, perda gestacional</h3><div class="card-sub">Síndrome antifosfolípide — o laboratório repetido em 12 semanas é parte do diagnóstico</div></div><div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">TEV não provocado ou trombose arterial antes dos 50 anos, trombose em sítio incomum (veias hepáticas, mesentéricas, cerebrais), <b>morte fetal ≥10 semanas</b>, pré-eclâmpsia grave antes de 34 semanas, livedo racemoso, plaquetopenia leve e TTPa prolongado sem sangramento. Pedir <b>anticoagulante lúpico, anticardiolipina IgG/IgM e anti-β2GPI IgG/IgM</b>, repetir em ≥12 semanas.</div></div>
 <ul class="bullets">
 <li><b>Anticoagulante lúpico</b> é o marcador mais associado a trombose; dosagem sob varfarina ou DOAC gera falso-positivo e falso-negativo.</li>
@@ -470,7 +489,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </ul>
 </div></div>
 
-<div class="card clin"><div class="card-head"><div class="card-eyebrow"><span class="card-num">B.5</span> Padrão 5</div><h3>Proteinúria, hematúria ou síndrome pulmão-rim em jovem</h3><div class="card-sub">Nefrite lúpica, vasculite ANCA, anti-MBG, MAT — o complemento orienta</div></div><div class="card-body">
+<div class="card clin" id="b5"><div class="card-head"><div class="card-eyebrow"><span class="card-num">B.5</span> Padrão 5</div><h3>Proteinúria, hematúria ou síndrome pulmão-rim em jovem</h3><div class="card-sub">Nefrite lúpica, vasculite ANCA, anti-MBG, MAT — o complemento orienta</div></div><div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body"><b>C3 e C4 baixos</b> + anti-dsDNA alto + FAN positivo apontam para nefrite lúpica (imunocomplexo). Complemento normal com ANCA positivo aponta para vasculite pauci-imune (→ RD03); anti-MBG para Goodpasture; esquizócitos + plaquetopenia para MAT (SAF, PTT, crise renal esclerodérmica).</div></div>
 <ul class="bullets">
 <li><b>Hemorragia alveolar + GN</b> no lúpus existe, mas pede ANCA e anti-MBG: sobreposição LES-ANCA ocorre.</li>
@@ -481,9 +500,9 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div></div>
 </section>
 <section id="primarias">
-<div class="section"><div class="section-eyebrow"><span>C</span> Entidades Primárias</div><h2 class="section-title">Disease boxes — LES, nefrite, gestação, SAF, esclerose sistêmica, Sjögren</h2><div class="section-sub">Nove entidades com conduta própria. Manifestações graves extrarrenais do LES (neuropsiquiátricas, hematológicas, serosas, cardíacas, vasculíticas) ficam em tabela dentro do C.1 porque compartilham código e lógica terapêutica; a nefrite tem box próprio porque muda biópsia, regime e duração.</div></div>
+<div class="section"><div class="section-eyebrow"><span>C</span> Entidades Primárias</div><h2 class="section-title">Disease boxes — LES, nefrite, gestação, SAF, esclerose sistêmica, Sjögren</h2><div class="section-sub">Nove entidades com conduta própria. Manifestações graves extrarrenais do LES (neuropsiquiátricas, hematológicas, serosas, cardíacas, vasculíticas) ficam em tabela dentro do C.1 porque compartilham código e lógica terapêutica; a nefrite tem box próprio porque muda biópsia, regime e duração.</div></div><!--hp-f2--><nav class="sec-idx" aria-label="Neste capítulo"><a href="#c1"><b>C.1</b>Lúpus eritematoso sistêmico</a><a href="#c2"><b>C.2</b>Nefrite lúpica</a><a href="#c3"><b>C.3</b>LES na gestação e lúpus neona…</a><a href="#c4"><b>C.4</b>Síndrome antifosfolípide — tr…</a><a href="#c5"><b>C.5</b>SAF catastrófica</a><a href="#c6"><b>C.6</b>Esclerose sistêmica</a><a href="#c7"><b>C.7</b>Crise renal esclerodérmica</a><a href="#c8"><b>C.8</b>DPI e HAP nas colagenoses — r…</a><a href="#c9"><b>C.9</b>Doença (síndrome) de Sjögren</a></nav><!--/hp-f2-->
 
-<div class="card prim"><div class="card-head"><div class="card-eyebrow"><span class="card-num">C.1</span> Entidade âncora</div><h3>Lúpus eritematoso sistêmico <span class="ank ank-hy">HIGH-YIELD</span></h3><div class="card-sub">Doença de imunocomplexos e interferon tipo I — tratar para remissão com HCQ universal e corticoide mínimo</div></div><div class="card-body">
+<div class="card prim" id="c1"><div class="card-head"><div class="card-eyebrow"><span class="card-num">C.1</span> Entidade âncora</div><h3>Lúpus eritematoso sistêmico <span class="ank ank-hy">HIGH-YIELD</span></h3><div class="card-sub">Doença de imunocomplexos e interferon tipo I — tratar para remissão com HCQ universal e corticoide mínimo</div></div><div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Mulher em idade fértil, multissistêmica, com FAN positivo em quase 100%, anti-dsDNA/anti-Sm específicos e consumo de complemento na atividade. Tratamento = <b>HCQ para todos + GC como ponte + imunossupressor ou biológico precoce</b> para atingir remissão (DORIS) ou baixa atividade (LLDAS) com prednisona ≤5 mg/dia.</div></div>
 <div class="disease"><div class="disease-head"><div class="disease-name">Lúpus eritematoso sistêmico</div><div class="disease-tag">CID-10 M32.8 · M32.9 (comprometimento renal codificado no C.2)</div></div><div class="disease-body"><div class="disease-rows">
 <div class="disease-row"><div class="k">Epidemiologia</div><div class="v">9–10 mulheres para 1 homem na idade reprodutiva; incidência mundial de 1–22/100 mil/ano e estimativa nordestina de 8,7/100 mil/ano (PCDT 2022). Mortalidade 3–5 vezes a da população geral, com curva bimodal: atividade (rim, SNC) e infecção cedo, aterosclerose e dano tardiamente. Maior gravidade em negros, hispânicos e asiáticos.</div></div>
@@ -527,7 +546,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div></details>
 </div></div>
 
-<div class="card prim"><div class="card-head"><div class="card-eyebrow"><span class="card-num">C.2</span> Rim</div><h3>Nefrite lúpica <span class="ank ank-dec">DECISION</span></h3><div class="card-sub">Biópsia define a classe; terapia combinada desde o início; mínimo de 3 anos após resposta</div></div><div class="card-body">
+<div class="card prim" id="c2"><div class="card-head"><div class="card-eyebrow"><span class="card-num">C.2</span> Rim</div><h3>Nefrite lúpica <span class="ank ank-dec">DECISION</span></h3><div class="card-sub">Biópsia define a classe; terapia combinada desde o início; mínimo de 3 anos após resposta</div></div><div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">20–60% dos LES desenvolvem nefrite conforme a etnia, mais precoce e grave em jovens, homens e afrodescendentes. Proteinúria ≥0,5 g/24 h, hematúria glomerular ou queda de TFG → <b>biópsia</b>. Classe III/IV ± V: <b>pulso de MP + MMF ou CYC baixa dose combinados com belimumabe, inibidor de calcineurina ou obinutuzumabe</b>, mais bloqueio do SRAA e iSGLT2 quando estável.</div></div>
 <div class="disease"><div class="disease-head"><div class="disease-name">Nefrite lúpica</div><div class="disease-tag">CID-10 M32.1† + N08.5*</div></div><div class="disease-body"><div class="disease-rows">
 <div class="disease-row"><div class="k">Epidemiologia</div><div class="v">Acomete 20–60% dos LES conforme a etnia; até 15% chegam à falência renal apesar do tratamento e 40–60% das nefrites evoluem com DRC (EULAR 2025). Cada surto renal acrescenta dano. Maior risco com início antes dos 30 anos, sexo masculino, ascendência africana/hispânica e sorologia persistentemente ativa.</div></div>
@@ -555,7 +574,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div></details>
 </div></div>
 
-<div class="card prim"><div class="card-head"><div class="card-eyebrow"><span class="card-num">C.3</span> Gestação</div><h3>LES na gestação e lúpus neonatal <span class="ank ank-dgr">DANGER</span></h3><div class="card-sub">Planejar com doença quieta, manter HCQ, AAS antes de 16 semanas, vigiar o feto anti-Ro+</div></div><div class="card-body">
+<div class="card prim" id="c3"><div class="card-head"><div class="card-eyebrow"><span class="card-num">C.3</span> Gestação</div><h3>LES na gestação e lúpus neonatal <span class="ank ank-dgr">DANGER</span></h3><div class="card-sub">Planejar com doença quieta, manter HCQ, AAS antes de 16 semanas, vigiar o feto anti-Ro+</div></div><div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Gestação em LES é de alto risco: pré-eclâmpsia, prematuridade, RCIU, perda fetal e surto. Engravidar com <b>doença inativa por ≥6 meses</b> e fármacos compatíveis (HCQ, AZA, GC, tacrolimo, ciclosporina); <b>suspender MMF, MTX, leflunomida e CYC antes</b>. AAS em dose baixa antes de 16 semanas. Anti-Ro/SSA: risco de BAV congênito, rastreio fetal entre 16 e 26 semanas.</div></div>
 <div class="disease"><div class="disease-head"><div class="disease-name">Gestação em LES · lúpus neonatal</div><div class="disease-tag">CID-10 O99.8 · P00.8 (feto afetado por afecção materna)</div></div><div class="disease-body"><div class="disease-rows">
 <div class="disease-row"><div class="k">Epidemiologia</div><div class="v">Lúpus não reduz fertilidade intrínseca (CYC e doença ativa sim). Fatores de mau desfecho: atividade nos 6–12 meses prévios, nefrite ativa ou prévia, HAS, aPL (especialmente AL e tripla positividade), hipocomplementemia, anti-Ro/La. BAV congênito em 1–2% dos recém-nascidos de mães anti-Ro+ com doença do tecido conjuntivo, com recorrência de ~18–19% após um filho acometido (revisão Rev Med Interne 2015; PATCH).</div></div>
@@ -574,7 +593,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <p><b>Puerpério e amamentação.</b> O pós-parto concentra surtos e trombose; reavaliar em 6 semanas. HCQ, AZA, prednisona, tacrolimo e heparina são compatíveis com amamentação; a recomendação da apostila de "não amamentar" sob tratamento está desatualizada para esses fármacos.</p>
 </div></details>
 </div></div>
-<div class="card prim"><div class="card-head"><div class="card-eyebrow"><span class="card-num">C.4</span> Coagulação autoimune</div><h3>Síndrome antifosfolípide — trombótica e obstétrica <span class="ank ank-hy">HIGH-YIELD</span></h3><div class="card-sub">Anticorpo persistente + evento clínico; varfarina, não DOAC, no perfil de alto risco</div></div><div class="card-body">
+<div class="card prim" id="c4"><div class="card-head"><div class="card-eyebrow"><span class="card-num">C.4</span> Coagulação autoimune</div><h3>Síndrome antifosfolípide — trombótica e obstétrica <span class="ank ank-hy">HIGH-YIELD</span></h3><div class="card-sub">Anticorpo persistente + evento clínico; varfarina, não DOAC, no perfil de alto risco</div></div><div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Trombose venosa, arterial ou microvascular e/ou morbidade gestacional com <b>anticoagulante lúpico, anticardiolipina ou anti-β2GPI persistentes (≥12 semanas)</b>. Primária ou associada (sobretudo LES). TEV: <b>varfarina INR 2–3 por tempo indeterminado</b>; arterial: INR 2–3 ou 3–4 ou 2–3 + AAS; obstétrica: AAS + heparina profilática.</div></div>
 <div class="disease"><div class="disease-head"><div class="disease-name">Síndrome antifosfolípide</div><div class="disease-tag">CID-10 D68.8 · sem código nominal para SAF no CID-10 DATASUS</div></div><div class="disease-body"><div class="disease-rows">
 <div class="disease-row"><div class="k">Epidemiologia</div><div class="v">aPL estão presentes em cerca de metade dos LES e em fração relevante de AVC, IAM e TEV em jovens e de perdas gestacionais recorrentes. Primária tem distribuição semelhante entre sexos; associada predomina em mulheres. Gatilhos de trombose: cirurgia, imobilização, estrogênio, puerpério, infecção, suspensão de anticoagulação.</div></div>
@@ -605,7 +624,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div></details>
 </div></div>
 
-<div class="card emerg"><div class="card-head"><div class="card-eyebrow"><span class="card-num">C.5</span> Emergência</div><h3>SAF catastrófica <span class="ank ank-dgr">DANGER</span></h3><div class="card-sub">Microangiopatia trombótica em tempestade — tripla terapia já, sem esperar o segundo exame</div></div><div class="card-body">
+<div class="card emerg" id="c5"><div class="card-head"><div class="card-eyebrow"><span class="card-num">C.5</span> Emergência</div><h3>SAF catastrófica <span class="ank ank-dgr">DANGER</span></h3><div class="card-sub">Microangiopatia trombótica em tempestade — tripla terapia já, sem esperar o segundo exame</div></div><div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Menos de 1% das SAF (EULAR 2019), mortalidade em torno de 50% segundo a apostila 2025. <b>≥3 órgãos em menos de 1 semana + oclusão de pequeno vaso + aPL</b>. Rim, pulmão (SDRA, hemorragia), SNC, pele, coração e adrenal. Tratar: <b>anticoagulação + GC + PLEX e/ou IVIG + tratamento do gatilho</b>.</div></div>
 <div class="disease"><div class="disease-head"><div class="disease-name">SAF catastrófica (síndrome de Asherson)</div><div class="disease-tag">CID-10 M31.1 (microangiopatia trombótica) · sem código nominal; registrar também o código da SAF</div></div><div class="disease-body"><div class="disease-rows">
 <div class="disease-row"><div class="k">Epidemiologia</div><div class="v">Primeira manifestação da SAF em parte dos casos; gatilhos em mais da metade: infecção, cirurgia, suspensão ou INR subterapêutico, gestação/puerpério, neoplasia, surto lúpico.</div></div>
@@ -618,7 +637,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div></div></div>
 </div></div>
 
-<div class="card prim"><div class="card-head"><div class="card-eyebrow"><span class="card-num">C.6</span> Fibrose e vasculopatia</div><h3>Esclerose sistêmica <span class="ank ank-hy">HIGH-YIELD</span></h3><div class="card-sub">Raynaud, autoanticorpo e capilaroscopia antecipam a pele; pulmão é a principal causa de morte</div></div><div class="card-body">
+<div class="card prim" id="c6"><div class="card-head"><div class="card-eyebrow"><span class="card-num">C.6</span> Fibrose e vasculopatia</div><h3>Esclerose sistêmica <span class="ank ank-hy">HIGH-YIELD</span></h3><div class="card-sub">Raynaud, autoanticorpo e capilaroscopia antecipam a pele; pulmão é a principal causa de morte</div></div><div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Tríade <b>vasculopatia microvascular + autoimunidade + fibrose</b>. Limitada (anticentrômero, HAP tardia, calcinose, telangiectasias) × difusa (anti-topo I → DPI; anti-RNA pol III → crise renal e pele rapidamente progressiva). Rastrear no diagnóstico e anualmente: <b>PFP com DLCO, TCAR basal, eco + NT-proBNP, PA e creatinina</b>.</div></div>
 <div class="mnemo"><div class="mnemo-title"><b>CREST</b> a forma limitada e seus riscos</div><div class="mnemo-grid"><div class="mnemo-row"><span class="mnemo-letter">C</span><span><b>Calcinose</b> · depósitos subcutâneos em dedos e cotovelos, podem fistulizar</span></div><div class="mnemo-row"><span class="mnemo-letter">R</span><span><b>Raynaud</b> · precede a pele por anos; capilaroscopia já alterada</span></div><div class="mnemo-row"><span class="mnemo-letter">E</span><span><b>Esôfago</b> · hipotonia do EEI e aperistalse dos 2/3 distais: DRGE, Barrett, estenose, microaspiração</span></div><div class="mnemo-row"><span class="mnemo-letter">S</span><span><b>Esclerodactilia</b> · pele distal a cotovelos e joelhos, face incluída</span></div><div class="mnemo-row"><span class="mnemo-letter">T</span><span><b>Telangiectasias</b> · face, palmas, mucosas; marcador da vasculopatia microvascular</span></div></div></div>
 <div class="disease"><div class="disease-head"><div class="disease-name">Esclerose sistêmica</div><div class="disease-tag">CID-10 M34.0 · M34.1 (CR(E)ST)</div></div><div class="disease-body"><div class="disease-rows">
@@ -647,7 +666,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div></details>
 </div></div>
 
-<div class="card emerg"><div class="card-head"><div class="card-eyebrow"><span class="card-num">C.7</span> Emergência renal</div><h3>Crise renal esclerodérmica <span class="ank ank-dgr">DANGER</span></h3><div class="card-sub">Hipertensão acelerada hiperreninêmica com LRA — a única emergência hipertensiva em que o IECA é obrigatório e mantido</div></div><div class="card-body">
+<div class="card emerg" id="c7"><div class="card-head"><div class="card-eyebrow"><span class="card-num">C.7</span> Emergência renal</div><h3>Crise renal esclerodérmica <span class="ank ank-dgr">DANGER</span></h3><div class="card-sub">Hipertensão acelerada hiperreninêmica com LRA — a única emergência hipertensiva em que o IECA é obrigatório e mantido</div></div><div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">5–10% das ES, quase sempre difusa precoce. HAS de início abrupto, cefaleia, retinopatia, encefalopatia, EAP, <b>creatinina subindo dia a dia</b>, anemia hemolítica microangiopática e plaquetopenia em parte dos casos; uma minoria é normotensa. <b>Captopril titulado em horas</b>, PA basal em 72 h, IECA mantido indefinidamente.</div></div>
 <div class="disease"><div class="disease-head"><div class="disease-name">Crise renal esclerodérmica</div><div class="disease-tag">CID-10 I15.8 · sem código nominal; associar o código da ES</div></div><div class="disease-body"><div class="disease-rows">
 <div class="disease-row"><div class="k">Epidemiologia</div><div class="v">5–10% dos pacientes (SBR 2023), concentrada nos primeiros anos da forma difusa; fatores de risco: pele rapidamente progressiva, anti-RNA polimerase III, uso de glicocorticoide, derrame pericárdico/IC, anemia recente.</div></div>
@@ -660,7 +679,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div></div></div>
 </div></div>
 
-<div class="card prim"><div class="card-head"><div class="card-eyebrow"><span class="card-num">C.8</span> Pulmão</div><h3>DPI e HAP nas colagenoses — reconhecer e encaminhar certo <span class="ank ank-dec">DECISION</span></h3><div class="card-sub">DPI-ES (PINE) e HAP-DTC (grupo 1) no nível de rastreio e conduta inicial; terapia avançada em RP04/RP05</div></div><div class="card-body">
+<div class="card prim" id="c8"><div class="card-head"><div class="card-eyebrow"><span class="card-num">C.8</span> Pulmão</div><h3>DPI e HAP nas colagenoses — reconhecer e encaminhar certo <span class="ank ank-dec">DECISION</span></h3><div class="card-sub">DPI-ES (PINE) e HAP-DTC (grupo 1) no nível de rastreio e conduta inicial; terapia avançada em RP04/RP05</div></div><div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Na ES, <b>DPI está presente em 50–65%</b> e é a principal causa de morte (SBR 2023); HAP ocorre em 5–19%, com incidência anual de 0,7–1,5% (ESC/ERS 2022). Rastreio: <b>TCAR + PFP com DLCO no diagnóstico</b>; <b>eco, DLCO e NT-proBNP anuais</b> (DETECT ou algoritmo multimodal). Confirmação de HAP só com cateterismo direito.</div></div>
 <div class="disease"><div class="disease-head"><div class="disease-name">DPI-ES e HAP associada a doença do tecido conjuntivo</div><div class="disease-tag">CID-10 J99.1* · I27.2</div></div><div class="disease-body"><div class="disease-rows">
 <div class="disease-row"><div class="k">Epidemiologia</div><div class="v">DPI: ES difusa com anti-topo I, afrodescendência e primeiros 5 anos; também em DMTC, Sjögren (PIL, PINE), miosites antissintetase (→ NE08) e AR (→ RD01). HAP: ES limitada de longa duração com anticentrômero, DMTC (principal causa de morte na DMTC), LES (menos frequente, às vezes responsiva à imunossupressão).</div></div>
@@ -673,7 +692,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div></div></div>
 </div></div>
 
-<div class="card prim"><div class="card-head"><div class="card-eyebrow"><span class="card-num">C.9</span> Glândulas exócrinas</div><h3>Doença (síndrome) de Sjögren <span class="ank ank-hy">HIGH-YIELD</span></h3><div class="card-sub">Epitelite autoimune com secura, fadiga e dor — e o risco de linfoma que define o seguimento</div></div><div class="card-body">
+<div class="card prim" id="c9"><div class="card-head"><div class="card-eyebrow"><span class="card-num">C.9</span> Glândulas exócrinas</div><h3>Doença (síndrome) de Sjögren <span class="ank ank-hy">HIGH-YIELD</span></h3><div class="card-sub">Epitelite autoimune com secura, fadiga e dor — e o risco de linfoma que define o seguimento</div></div><div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Mulher na 4ª–5ª década, xeroftalmia e xerostomia objetivas, anti-Ro/SSA, FR e hipergamaglobulinemia. Primária ou associada (AR, LES, ES). Tratamento <b>sintomático para a secura</b> (lágrimas, saliva, pilocarpina) e <b>sistêmico guiado pelo ESSDAI</b> para o extraglandular; vigiar marcadores de linfoma.</div></div>
 <div class="disease"><div class="disease-head"><div class="disease-name">Doença de Sjögren</div><div class="disease-tag">CID-10 M35.0</div></div><div class="disease-body"><div class="disease-rows">
 <div class="disease-row"><div class="k">Epidemiologia</div><div class="v">Uma das doenças autoimunes sistêmicas mais prevalentes; ~9 mulheres por homem. Secundária em parcela importante de AR e LES. Risco de linfoma não Hodgkin muito acima da população geral, sobretudo MALT de glândula salivar.</div></div>
@@ -694,9 +713,9 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div></div>
 </section>
 <section id="secundarias">
-<div class="section"><div class="section-eyebrow"><span>D</span> Entidades Secundárias</div><h2 class="section-title">O resto do espectro — Raynaud, sobreposições, lúpus cutâneo e induzido, esclerodermia localizada, policondrite</h2><div class="section-sub">Entidades que completam o diferencial e têm conduta própria, agrupadas quando compartilham raciocínio. Miosites ficam no NE08; IgG4 e vasculites (inclusive crioglobulinêmica) no RD03.</div></div>
+<div class="section"><div class="section-eyebrow"><span>D</span> Entidades Secundárias</div><h2 class="section-title">O resto do espectro — Raynaud, sobreposições, lúpus cutâneo e induzido, esclerodermia localizada, policondrite</h2><div class="section-sub">Entidades que completam o diferencial e têm conduta própria, agrupadas quando compartilham raciocínio. Miosites ficam no NE08; IgG4 e vasculites (inclusive crioglobulinêmica) no RD03.</div></div><!--hp-f2--><nav class="sec-idx" aria-label="Neste capítulo"><a href="#d1"><b>D.1</b>Fenômeno de Raynaud — primári…</a><a href="#d2"><b>D.2</b>Doença mista do tecido conjun…</a><a href="#d3"><b>D.3</b>Doença indiferenciada do teci…</a><a href="#d4"><b>D.4</b>Lúpus induzido por fármacos</a><a href="#d5"><b>D.5</b>Lúpus cutâneo — agudo, subagu…</a><a href="#d6"><b>D.6</b>Esclerodermia localizada e ps…</a><a href="#d7"><b>D.7</b>Policondrite recidivante</a></nav><!--/hp-f2-->
 
-<div class="card diag"><div class="card-head"><div class="card-eyebrow"><span class="card-num">D.1</span> Vasoespasmo</div><h3>Fenômeno de Raynaud — primário × secundário <span class="ank ank-dec">DECISION</span></h3></div><div class="card-body">
+<div class="card diag" id="d1"><div class="card-head"><div class="card-eyebrow"><span class="card-num">D.1</span> Vasoespasmo</div><h3>Fenômeno de Raynaud — primário × secundário <span class="ank ank-dec">DECISION</span></h3></div><div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Palidez (isquemia) → cianose (dessaturação) → rubor (hiperemia reativa), desencadeada por frio ou emoção; a forma trifásica completa não é obrigatória. <b>Primário</b>: jovem, simétrico, sem lesão tecidual, FAN negativo, capilaroscopia normal. <b>Secundário</b>: ES (&gt;90%), LES, DMTC, Sjögren, miosites, além de fármacos (betabloqueador, ergotamínicos, simpaticomiméticos), vibração e síndrome do desfiladeiro.</div></div>
 <div class="disease"><div class="disease-head"><div class="disease-name">Fenômeno de Raynaud</div><div class="disease-tag">CID-10 I73.0</div></div><div class="disease-body"><div class="disease-rows">
 <div class="disease-row"><div class="k">Fisiopatologia</div><div class="v">No primário, hiper-reatividade α2-adrenérgica funcional sem lesão estrutural; no secundário à ES, vasculopatia obliterativa com endotelina alta, NO baixo e perda capilar — a isquemia vira úlcera e necrose.</div></div>
@@ -706,7 +725,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div></div></div>
 </div></div>
 
-<div class="card diag"><div class="card-head"><div class="card-eyebrow"><span class="card-num">D.2</span> Sobreposição</div><h3>Doença mista do tecido conjuntivo e síndromes de sobreposição</h3></div><div class="card-body">
+<div class="card diag" id="d2"><div class="card-head"><div class="card-eyebrow"><span class="card-num">D.2</span> Sobreposição</div><h3>Doença mista do tecido conjuntivo e síndromes de sobreposição</h3></div><div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Traços de LES + ES + polimiosite (± AR) com <b>anti-U1-RNP em título alto</b> e FAN pontilhado muito alto. Raynaud com mãos edemaciadas, artrite mais agressiva que a lúpica, miosite branda, esôfago esclerodérmico, <b>HAP como principal causa de morte</b>; rim e SNC graves são raros (neuralgia do trigêmeo é a manifestação neurológica típica).</div></div>
 <div class="disease"><div class="disease-head"><div class="disease-name">DMTC e sobreposições (LES/ES, ES/miosite anti-PM/Scl, "rhupus")</div><div class="disease-tag">CID-10 M35.1</div></div><div class="disease-body"><div class="disease-rows">
 <div class="disease-row"><div class="k">Fisiopatologia</div><div class="v">Resposta imune dirigida à ribonucleoproteína U1-snRNP do spliceossomo, com associação a HLA-DR4; o anti-U1-RNP alto parece associar-se a menos glomerulonefrite proliferativa.</div></div>
@@ -716,7 +735,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div></div></div>
 </div></div>
 
-<div class="card diag"><div class="card-head"><div class="card-eyebrow"><span class="card-num">D.3</span> Fase incompleta</div><h3>Doença indiferenciada do tecido conjuntivo (UCTD)</h3></div><div class="card-body">
+<div class="card diag" id="d3"><div class="card-head"><div class="card-eyebrow"><span class="card-num">D.3</span> Fase incompleta</div><h3>Doença indiferenciada do tecido conjuntivo (UCTD)</h3></div><div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Sinais e sintomas de colagenose (Raynaud, artralgia/artrite, sicca, rash, citopenia leve) com autoanticorpo, sem preencher critérios de doença definida. A maioria permanece estável e branda; uma fração evolui para LES, ES, Sjögren ou DMTC, geralmente nos primeiros anos.</div></div>
 <div class="disease"><div class="disease-head"><div class="disease-name">Doença indiferenciada do tecido conjuntivo</div><div class="disease-tag">CID-10 M35.9 · sem código nominal</div></div><div class="disease-body"><div class="disease-rows">
 <div class="disease-row"><div class="k">Diagnóstico</div><div class="v">Exclusão de doença definida e de mimetizadores (viroses, fármacos, tireoidite, fibromialgia com FAN incidental). Anti-dsDNA, anti-Sm, anticentrômero, hipocomplementemia e capilaroscopia alterada aumentam a chance de evolução. Os critérios de classificação (EULAR/ACR 2019, ACR/EULAR 2013) servem de régua <span class="ev ev-eular">EULAR/ACR 2019</span>.</div></div>
@@ -725,7 +744,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div></div></div>
 </div></div>
 
-<div class="card diag"><div class="card-head"><div class="card-eyebrow"><span class="card-num">D.4</span> Iatrogenia</div><h3>Lúpus induzido por fármacos</h3></div><div class="card-body">
+<div class="card diag" id="d4"><div class="card-head"><div class="card-eyebrow"><span class="card-num">D.4</span> Iatrogenia</div><h3>Lúpus induzido por fármacos</h3></div><div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Exposição por semanas a anos a <b>procainamida, hidralazina, isoniazida, minociclina, quinidina, metildopa, clorpromazina, D-penicilamina, anti-TNF e interferon</b>, com artralgia, febre, serosite e rash; anti-histona em &gt;95%; rim e SNC poupados; resolve semanas a meses após suspender.</div></div>
 <div class="disease"><div class="disease-head"><div class="disease-name">Lúpus eritematoso induzido por drogas</div><div class="disease-tag">CID-10 M32.0</div></div><div class="disease-body"><div class="disease-rows">
 <div class="disease-row"><div class="k">Fisiopatologia</div><div class="v">Acetiladores lentos (hidralazina, procainamida); hipometilação de DNA de linfócitos T com expressão de genes normalmente silenciados; metabólitos reativos gerados por neutrófilos; nos anti-TNF, desvio para interferon tipo I e liberação de antígenos nucleares por apoptose.</div></div>
@@ -735,7 +754,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div></div></div>
 </div></div>
 
-<div class="card diag"><div class="card-head"><div class="card-eyebrow"><span class="card-num">D.5</span> Pele</div><h3>Lúpus cutâneo — agudo, subagudo, discoide e variantes</h3></div><div class="card-body">
+<div class="card diag" id="d5"><div class="card-head"><div class="card-eyebrow"><span class="card-num">D.5</span> Pele</div><h3>Lúpus cutâneo — agudo, subagudo, discoide e variantes</h3></div><div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Dermatite de interface na biópsia. <b>Agudo</b> (malar, poupando sulco nasolabial; quase sempre com LES ativo), <b>subagudo</b> (anular ou psoriasiforme, áreas fotoexpostas, anti-Ro, sem cicatriz), <b>discoide</b> (placas com tampão folicular, cicatriz atrófica e alopecia definitiva; só 5–10% evoluem para LES). Variantes: profundo (paniculite), túmido, pérnio, bolhoso.</div></div>
 <div class="disease"><div class="disease-head"><div class="disease-name">Lúpus eritematoso cutâneo</div><div class="disease-tag">CID-10 L93.0 · L93.1 · L93.2</div></div><div class="disease-body"><div class="disease-rows">
 <div class="disease-row"><div class="k">Diagnóstico</div><div class="v">Clínico ± biópsia (dermatopatologista); imunofluorescência direta com banda lúpica; investigar LES sistêmico (hemograma, urina, complemento, anti-dsDNA). Fumar reduz resposta a antimaláricos <span class="ev ev-eular">EULAR LES 2023</span>.</div></div>
@@ -744,7 +763,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div></div></div>
 </div></div>
 
-<div class="card diag"><div class="card-head"><div class="card-eyebrow"><span class="card-num">D.6</span> Esclerose de pele sem doença sistêmica</div><h3>Esclerodermia localizada e pseudoesclerodermias</h3></div><div class="card-body">
+<div class="card diag" id="d6"><div class="card-head"><div class="card-eyebrow"><span class="card-num">D.6</span> Esclerose de pele sem doença sistêmica</div><h3>Esclerodermia localizada e pseudoesclerodermias</h3></div><div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body"><b>Morfeia</b> (placas com halo violáceo), <b>linear</b> (faixa em membro, mais comum na infância, pode encurtar o membro) e <b>golpe de sabre</b> (fronto-parietal, com atrofia hemifacial e às vezes epilepsia). Sem Raynaud, sem esclerodactilia, sem órgão interno. Pseudoesclerodermias poupam dedos ou têm contexto próprio.</div></div>
 <div class="disease"><div class="disease-head"><div class="disease-name">Esclerodermia localizada (morfeia) · formas lineares</div><div class="disease-tag">CID-10 L94.0 · L94.1</div></div><div class="disease-body"><div class="disease-rows">
 <div class="disease-row"><div class="k">Diagnóstico</div><div class="v">Clínico, biópsia profunda na dúvida; FAN e anti-histona podem ser positivos sem significar ES. Espessamento que poupa os dedos exclui a aplicação dos critérios de ES <span class="ev ev-eular">ACR/EULAR 2013</span>. Diferenciais: fasciite eosinofílica (eosinofilia, sinal do sulco, fáscia na RM), escleredema (diabetes, pós-estreptocócico), escleromixedema (gamopatia), fibrose sistêmica nefrogênica (gadolínio + DRC), DECH crônica, porfiria.</div></div>
@@ -753,7 +772,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div></div></div>
 </div></div>
 
-<div class="card diag"><div class="card-head"><div class="card-eyebrow"><span class="card-num">D.7</span> Cartilagem</div><h3>Policondrite recidivante</h3></div><div class="card-body">
+<div class="card diag" id="d7"><div class="card-head"><div class="card-eyebrow"><span class="card-num">D.7</span> Cartilagem</div><h3>Policondrite recidivante</h3></div><div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Inflamação recorrente de cartilagem: <b>condrite auricular poupando o lóbulo</b> (que não tem cartilagem), nasal (nariz em sela), laringotraqueal (estridor, traqueomalácia), costocondral; ocular e audiovestibular. Pode associar-se a vasculites, mielodisplasia e à síndrome VEXAS (mutação somática de <i>UBA1</i> em homens adultos).</div></div>
 <div class="disease"><div class="disease-head"><div class="disease-name">Policondrite recidivante</div><div class="disease-tag">CID-10 M94.1</div></div><div class="disease-body"><div class="disease-rows">
 <div class="disease-row"><div class="k">Diagnóstico</div><div class="v">Clínico (critérios de McAdam e Damiani são históricos); biópsia de cartilagem raramente necessária; TC de tórax, broncoscopia e espirometria para via aérea; em homem adulto com febre, macrocitose e citopenia, pesquisar mutação somática de <i>UBA1</i> (VEXAS) <span class="ev ev-expert">NEJM 2020 · VEXAS</span>.</div></div>
@@ -765,7 +784,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </section>
 <section id="algoritmo">
 <div class="section"><div class="section-eyebrow"><span>E</span> Algoritmo</div><h2 class="section-title">Da suspeita ao órgão — uma árvore para as colagenoses</h2><div class="section-sub">Primeiro a pergunta que mata (há órgão ou vida em risco?), depois a que classifica (qual fenótipo e qual autoanticorpo?), e só então a que trata (qual órgão manda na intensidade?). Os dois formatos: árvore visual e sequência mental.</div></div>
-<div class="card prim"><div class="card-head"><div class="card-eyebrow"><span class="card-num">E.1</span> Árvore</div><h3>Suspeita de doença autoimune sistêmica <span class="ank ank-dec">DECISION</span></h3></div><div class="card-body">
+<div class="card prim" id="e1"><div class="card-head"><div class="card-eyebrow"><span class="card-num">E.1</span> Árvore</div><h3>Suspeita de doença autoimune sistêmica <span class="ank ank-dec">DECISION</span></h3></div><div class="card-body">
 <div class="algo"><div class="tree">
 <div class="tree-line"><span class="tree-node start">Multissistêmico, Raynaud, sicca, citopenia, proteinúria ou trombose em jovem</span></div>
 <div class="tree-branch"><div class="tree-label yes">Ameaça a órgão ou vida?</div>
@@ -797,7 +816,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <div class="box hy"><span class="box-label">HIGH-YIELD</span><div class="box-title">Sequência mental do plantão</div><div class="box-body">Ameaça → infecção afastada ou coberta → pulso de corticoide quando o órgão exige → imunossupressor de indução do órgão (CYC, MPAA, anti-CD20) → exceções que mudam tudo: <b>crise renal = IECA e nada de pulso</b>; <b>SAF catastrófica = heparina + PLEX/IVIG</b>; <b>NPSLE trombótico = anticoagular, não só imunossuprimir</b>.</div></div>
 </div></div>
 
-<div class="card prim"><div class="card-head"><div class="card-eyebrow"><span class="card-num">E.2</span> Nefrite lúpica</div><h3>Da proteinúria à manutenção <span class="ank ank-dec">DECISION</span></h3></div><div class="card-body">
+<div class="card prim" id="e2"><div class="card-head"><div class="card-eyebrow"><span class="card-num">E.2</span> Nefrite lúpica</div><h3>Da proteinúria à manutenção <span class="ank ank-dec">DECISION</span></h3></div><div class="card-body">
 <div class="algo"><div class="tree">
 <div class="tree-line"><span class="tree-node start">LES com RPC ≥0,5 g/g, hematúria glomerular ou queda de TFG</span></div>
 <div class="tree-branch"><div class="tree-label yes">Biópsia (ISN/RPS + índices NIH)</div>
@@ -814,11 +833,11 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div></div>
 </section>
 <section id="tratamento">
-<div class="section"><div class="section-eyebrow"><span>F</span> Tratamento Integrado</div><h2 class="section-title">F1 · Estratégia por entidade · F2 · Doses operacionais</h2><div class="section-sub">Escadas organizadas por doença e por órgão, com o que é recomendação internacional e o que é acesso SUS separados. As doses de F2 são adultas de referência, com unidade, via, frequência e duração quando a fonte fornece; "confirmar" aparece só onde a dose depende de protocolo, bula ou disponibilidade.</div></div>
+<div class="section"><div class="section-eyebrow"><span>F</span> Tratamento Integrado</div><h2 class="section-title">F1 · Estratégia por entidade · F2 · Doses operacionais</h2><div class="section-sub">Escadas organizadas por doença e por órgão, com o que é recomendação internacional e o que é acesso SUS separados. As doses de F2 são adultas de referência, com unidade, via, frequência e duração quando a fonte fornece; "confirmar" aparece só onde a dose depende de protocolo, bula ou disponibilidade.</div></div><!--hp-f2--><nav class="sec-idx" aria-label="Neste capítulo"><a href="#f1"><b>F.1</b>Escadas terapêuticas por enti…</a><a href="#f2"><b>F.2</b>Tabela de doses — colagenoses…</a><a href="#f3"><b>F.3</b>Caso → conduta certa → erro t…</a><a href="#f4"><b>F.4</b>Diretriz internacional × SUS…</a></nav><!--/hp-f2-->
 
-<div class="card tx"><div class="card-head"><div class="card-eyebrow"><span class="card-num">F.1</span> Estratégia</div><h3>Escadas terapêuticas por entidade <span class="ank ank-dec">DECISION</span></h3></div><div class="card-body">
+<div class="card tx" id="f1"><div class="card-head"><div class="card-eyebrow"><span class="card-num">F.1</span> Estratégia</div><h3>Escadas terapêuticas por entidade <span class="ank ank-dec">DECISION</span></h3></div><div class="card-body">
 
-<div class="sub-title">F1.1 · LES — base, ponte e escalonamento</div>
+<div class="sub-title" id="f1-1">F1.1 · LES — base, ponte e escalonamento</div>
 <ul class="bullets">
 <li><b>Base universal:</b> HCQ ≤5 mg/kg de peso real/dia, máximo 400 mg, iniciada no diagnóstico e mantida por toda a vida, inclusive em remissão e na gestação; cursos curtos de 5–6,5 mg/kg/d aceitáveis no início ou em atividade (ACR 2025). Retina basal e anual (PCDT; ACR admite anual a partir do 5º ano sem fatores de risco). Fotoproteção, cessar tabagismo, vacinação (influenza, pneumococo, zóster recombinante, HPV, COVID-19), osso e risco cardiovascular.</li>
 <li><b>Ponte com corticoide:</b> dose pelo órgão; pulso de metilprednisolona 250–1000 mg/d por 1–3 dias no órgão- ou vida-ameaçador, seguido de redução oral, é preferível a dose oral alta sem pulso (ACR 2025). Meta forte: <b>prednisona ≤5 mg/d em até 6 meses</b>, e retirada lenta em 1 mg quando em remissão sustentada.</li>
@@ -829,7 +848,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </ul>
 <div class="box decision"><span class="box-label">DECISION</span><div class="box-title">Metas operacionais de tratamento</div><div class="box-body"><b>Remissão (DORIS):</b> SLEDAI-2K clínico 0, PGA &lt;0,5, prednisona ≤5 mg/d, antimalárico/imunossupressor/biológico estáveis. <b>LLDAS:</b> SLEDAI-2K ≤4 sem atividade de órgão maior, PGA ≤1, prednisona ≤7,5 mg/d. Ambas associam-se a menos dano (ACR 2025, Tabela 2); não conseguir reduzir a prednisona a ≤5 mg/d é, por recomendação condicional do ACR 2025, indicação de iniciar ou escalar imunossupressão.</div></div>
 
-<div class="sub-title">F1.2 · Nefrite lúpica — indução combinada, nefroproteção e duração</div>
+<div class="sub-title" id="f1-2">F1.2 · Nefrite lúpica — indução combinada, nefroproteção e duração</div>
 <ul class="bullets">
 <li><b>Classe III/IV ± V ativa:</b> pulso de MP (KDIGO: 0,25–0,5 g/d por até 3 dias; EULAR: 500–2500 mg cumulativos) e prednisona 0,3–0,7 mg/kg/d por até 4 semanas, com queda a ≤5 mg/d em 4–6 meses e retirada em 12–24 meses (EULAR 2025). Um esquema de corticoide reduzido (KDIGO, Figura 7) é aceitável quando rim e extrarrenal melhoram.</li>
 <li><b>Escolha do parceiro (EULAR 2025):</b> (a) MMF ou CYC EuroLupus + <b>belimumabe</b> — surtos renais repetidos, alto risco de progressão; (b) MMF + <b>voclosporina ou tacrolimo</b> — proteinúria nefrótica com TFG preservada (&gt;45 mL/min), podocitopatia; (c) MMF + <b>obinutuzumabe</b> — ciclo estudado de 52 semanas, experiência real limitada. Monoterapia com MMF ou CYC baixa dose permanece alternativa sem fatores de mau prognóstico e onde não há acesso.</li>
@@ -841,7 +860,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </ul>
 <div class="box danger"><span class="box-label">DANGER</span><div class="box-title">Nefrotoxicidade do inibidor de calcineurina e falsa "falha"</div><div class="box-body">Queda aguda de TFG sob voclosporina/tacrolimo pode ser hemodinâmica (vasoconstrição aferente), não atividade: reduzir dose e reavaliar antes de rotular falha. Em contrapartida, proteinúria que cai com CNI pode mascarar atividade histológica persistente — <b>rebiopsiar antes de retirar</b>. Evite CNI com TFG muito reduzida e verifique interações com azólicos e macrolídeos.</div></div>
 
-<div class="sub-title">F1.3 · Gestação, contracepção e lactação no LES/SAF</div>
+<div class="sub-title" id="f1-3">F1.3 · Gestação, contracepção e lactação no LES/SAF</div>
 <ul class="bullets">
 <li><b>Pré-concepção:</b> doença inativa por ≥6 meses (KDIGO para nefrite), troca de MMF/MTX/leflunomida por AZA (máximo 2 mg/kg/d na gestação, PCDT), retirada de IECA/BRA e de varfarina no planejamento, avaliação de aPL e anti-Ro/La.</li>
 <li><b>Durante:</b> HCQ mantida; AAS em dose baixa iniciado antes de 16 semanas (KDIGO; EULAR 2017); GC na menor dose; tacrolimo ou CsA se necessário; CYC só no 2º–3º trimestres em doença grave refratária.</li>
@@ -850,7 +869,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <li><b>Contracepção:</b> sem estrogênio se aPL+ ou doença ativa; DIU e implante de progestagênio preferidos (ACR 2025, Tabela 4; CDC MEC 2024: implante categoria 3 no aPL, DIU de cobre categoria 1; GO02); com MPAA, DIU ou dois métodos.</li>
 </ul>
 
-<div class="sub-title">F1.4 · SAF — profilaxia primária, secundária e falha</div>
+<div class="sub-title" id="f1-4">F1.4 · SAF — profilaxia primária, secundária e falha</div>
 <ul class="bullets">
 <li><b>Primária:</b> portador assintomático de alto risco e LES com alto risco → AAS 75–100 mg/d; LES com baixo risco → considerar AAS; mulher com SAF obstétrica pura fora da gestação → AAS após avaliar risco/benefício. HCQ no LES aPL+ (EULAR 2023).</li>
 <li><b>TEV:</b> heparina (HBPM preferida; o AL alarga o TTPa e dificulta titular HNF) sobreposta à varfarina até INR 2–3 em duas medidas; indefinida se não provocado; provocado com perfil de baixo risco → duração habitual de TEV.</li>
@@ -860,7 +879,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </ul>
 <div class="box danger"><span class="box-label">DANGER</span><div class="box-title">DOAC na SAF de alto risco</div><div class="box-body">Rivaroxabana na tripla positividade aumentou eventos (sobretudo arteriais) no TRAPS. <b>Não troque varfarina por DOAC por conveniência</b>; a EULAR só tolera DOAC em TEV quando o INR não é atingido apesar de adesão ou há contraindicação à varfarina, e nunca no evento arterial.</div></div>
 
-<div class="sub-title">F1.5 · Esclerose sistêmica — tratamento por órgão</div>
+<div class="sub-title" id="f1-5">F1.5 · Esclerose sistêmica — tratamento por órgão</div>
 <ul class="bullets">
 <li><b>Raynaud:</b> nifedipino (1ª linha) → iPDE5 → iloprosta IV no grave (no Brasil, alprostadil IV como prostanoide disponível) (EULAR 2023; SBR 2023).</li>
 <li><b>Úlcera digital:</b> iPDE5 e/ou prostanoide IV para cicatrizar; bosentana para reduzir novas úlceras; enxerto de gordura em casos refratários (SBR condicional); cuidado local e analgesia; infecção óssea pede imagem.</li>
@@ -873,7 +892,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </ul>
 <div class="box hy"><span class="box-label">HIGH-YIELD</span><div class="box-title">A tríade das exceções na esclerose</div><div class="box-body"><b>IECA</b>: obrigatório na crise renal, inútil no Raynaud e não indicado como profilaxia. <b>Corticoide</b>: evitar dose alta (gatilho de crise renal). <b>Anticoagulação</b>: não recomendada na HAP-ES (possível dano), ao contrário de algumas outras HAP.</div></div>
 
-<div class="sub-title">F1.6 · Sjögren — secura, dor/fadiga e doença sistêmica</div>
+<div class="sub-title" id="f1-6">F1.6 · Sjögren — secura, dor/fadiga e doença sistêmica</div>
 <ul class="bullets">
 <li><b>Oral:</b> estímulo não farmacológico na disfunção leve; agonista muscarínico (pilocarpina) na moderada, titulando a dose para reduzir sudorese; saliva artificial na grave; higiene dental intensiva (cárie). Mucolíticos/secretagogos como resgate.</li>
 <li><b>Ocular:</b> lágrimas artificiais e gel/pomada noturna; refratária: colírio de ciclosporina, corticoide tópico por curto período (o uso prolongado afina a córnea), soro autólogo; tratar blefarite.</li>
@@ -881,14 +900,14 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <li><b>Sistêmico (ESSDAI):</b> GC na menor dose e menor tempo; imunossupressor poupador (MTX, LEF, AZA, MMF conforme órgão); rituximabe no grave/refratário (vasculite crioglobulinêmica, PIL grave, neuropatia, citopenia); CYC no SNC/GN graves; IVIG em neuropatia/citopenia (EULAR SjS 2020).</li>
 </ul>
 
-<div class="sub-title">F1.7 · Lúpus cutâneo, Raynaud primário e casos especiais</div>
+<div class="sub-title" id="f1-7">F1.7 · Lúpus cutâneo, Raynaud primário e casos especiais</div>
 <ul class="bullets">
 <li><b>Cutâneo:</b> fotoproteção + tópico (corticoide pela localização, CNI tópico) + HCQ; leve persistente → somar quinacrina ou trocar para cloroquina; moderado-grave → MTX, MPAA, anifrolumabe ou belimumabe; refratário → lenalidomida (programa de risco) (ACR 2025); talidomida no SUS (PCDT).</li>
 <li><b>Lúpus induzido:</b> suspender o fármaco; curso curto de AINE, HCQ ou GC baixo.</li>
 <li><b>Policondrite:</b> GC e imunossupressor; via aérea com avaliação intervencionista.</li>
 </ul>
 
-<div class="sub-title">F1.8 · Prevenção de toxicidade em quem vai imunossuprimir</div>
+<div class="sub-title" id="f1-8">F1.8 · Prevenção de toxicidade em quem vai imunossuprimir</div>
 <ul class="bullets">
 <li><b>Antes de imunossuprimir:</b> HBsAg, anti-HBc e anti-HBs; HCV; HIV antes de biológico; TB latente antes de biológico (e considerar antes de convencional e GC conforme dose); <i>Strongyloides</i> empírico ou sorologia em área endêmica; vacinas inativadas antes de iniciar (ACR 2025, Tabela 4).</li>
 <li><b>HBV:</b> profilaxia antiviral se terapia de alto risco de reativação (depleção B, prednisona &gt;20 mg/d por &gt;4 semanas) em HBsAg+ ou anti-HBc+; monitorar nas de risco baixo.</li>
@@ -897,7 +916,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <li><b>CYC:</b> hidratação; mesna (PCDT a recomenda; ACR não a exige em dose IV padrão); análogo de GnRH; citologia urinária se cumulativa &gt;36 g.</li>
 </ul>
 </div></div>
-<div class="card tx"><div class="card-head"><div class="card-eyebrow"><span class="card-num">F.2</span> Doses operacionais</div><h3>Tabela de doses — colagenoses (adulto) <span class="ank ank-dgr">DANGER</span></h3><div class="card-sub">Fonte em cada linha. Ajuste renal/hepático, gestação, interação e acesso SUS mudam o esquema; isso não autoriza omitir a dose de referência.</div></div><div class="card-body">
+<div class="card tx" id="f2"><div class="card-head"><div class="card-eyebrow"><span class="card-num">F.2</span> Doses operacionais</div><h3>Tabela de doses — colagenoses (adulto) <span class="ank ank-dgr">DANGER</span></h3><div class="card-sub">Fonte em cada linha. Ajuste renal/hepático, gestação, interação e acesso SUS mudam o esquema; isso não autoriza omitir a dose de referência.</div></div><div class="card-body">
 <div class="sub-title">Antimaláricos e corticoides</div>
 <div class="stbl stbl-3"><div class="stbl-head stbl-3"><div>Fármaco</div><div>Dose adulto</div><div>Indicação / notas</div></div>
 <div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Hidroxicloroquina</div><div class="col" data-l="Dose"><b>≤5 mg/kg de peso real/dia VO</b>, habitualmente 200–400 mg/d, máximo 400 mg/d, contínua</div><div class="col" data-l="Notas">Todo LES; Sjögren com artralgia 200 mg/d. No Brasil só há comprimido de 400 mg (CMED 2026): dosar pela soma semanal (ex.: 60 kg → até 2.100 mg/sem ≈ 400 mg em 5 dias da semana). Retina basal e periódica; ECG se risco de QT longo. <span class="ev ev-acr">ACR 2025</span> <span class="ev ev-sbr">PCDT LES 2022</span></div></div>
@@ -962,7 +981,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <div class="box decision"><span class="box-label">DECISION</span><div class="box-title">Individualizar sem omitir a referência</div><div class="box-body">CYC exige ajuste em TFG baixa e leucopenia (PCDT ES considera não usar com leucócitos ≤3.000); MTX contraindicado com ClCr &lt;30; CNI exige TFG adequada e vigilância de interação; MMF, MTX, leflunomida, talidomida e bosentana exigem contracepção eficaz. Onde a dose depende de formulação ou protocolo (enoxaparina na gestação, profilaxia de PJP, cálcio/vitamina D), siga bula e protocolo institucional.</div></div>
 </div></div>
 
-<div class="card tx"><div class="card-head"><div class="card-eyebrow"><span class="card-num">F.3</span> Cenários</div><h3>Caso → conduta certa → erro típico <span class="ank ank-dec">DECISION</span></h3></div><div class="card-body">
+<div class="card tx" id="f3"><div class="card-head"><div class="card-eyebrow"><span class="card-num">F.3</span> Cenários</div><h3>Caso → conduta certa → erro típico <span class="ank ank-dec">DECISION</span></h3></div><div class="card-body">
 <div class="stbl stbl-3"><div class="stbl-head stbl-3"><div>Caso</div><div>Conduta certa</div><div>Erro típico</div></div>
 <div class="stbl-row stbl-3"><div class="col col1" data-l="Caso">Mulher 24 a, LES, RPC 1,8 g/g, hematúria dismórfica, C3 baixo, creatinina normal</div><div class="col" data-l="Conduta certa">Biópsia; se IV: pulso de MP + MMF 1–1,5 g 2×/d + belimumabe ou CNI; SRAA; HCQ</div><div class="col" data-l="Erro típico">Tratar "pela clínica" com prednisona 1 mg/kg isolada, sem biópsia e sem imunossupressor</div></div>
 <div class="stbl-row stbl-3"><div class="col col1" data-l="Caso">ES difusa 2 anos, PA 180/110, creatinina 1,1 → 2,0 em 4 dias, esquizócitos</div><div class="col" data-l="Conduta certa">Captopril 6,25–12,5 mg e titulação a cada 4–8 h; meta PA basal em 72 h; manter IECA</div><div class="col" data-l="Erro típico">Pulso de corticoide por "vasculite" ou suspender IECA quando a creatinina sobe</div></div>
@@ -977,7 +996,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div></div>
 
-<div class="card tx"><div class="card-head"><div class="card-eyebrow"><span class="card-num">F.4</span> Comparador</div><h3>Diretriz internacional × SUS — o que vai para a receita</h3></div><div class="card-body">
+<div class="card tx" id="f4"><div class="card-head"><div class="card-eyebrow"><span class="card-num">F.4</span> Comparador</div><h3>Diretriz internacional × SUS — o que vai para a receita</h3></div><div class="card-body">
 <div class="stbl stbl-3"><div class="stbl-head stbl-3"><div>Tema</div><div>Internacional vigente</div><div>SUS vigente</div></div>
 <div class="stbl-row stbl-3"><div class="col col1" data-l="Tema">GC de manutenção no LES</div><div class="col" data-l="Intl">≤5 mg/d em até 6 meses (ACR 2025; EULAR 2023)</div><div class="col" data-l="SUS">&lt;7,5 mg/d (PCDT 2022)</div></div>
 <div class="stbl-row stbl-3"><div class="col col1" data-l="Tema">Biológico no LES</div><div class="col" data-l="Intl">Belimumabe, anifrolumabe, RTX no refratário</div><div class="col" data-l="SUS">Não preconizados (belimumabe não incorporado; RTX fora do PCDT)</div></div>
@@ -990,7 +1009,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </section>
 <section id="pitfalls">
 <div class="section"><div class="section-eyebrow"><span>G</span> Pitfalls · Mitos · Controvérsias</div><h2 class="section-title">Erros operacionais, mitos vivos e debates atuais</h2><div class="section-sub">Os erros que mais custam rim, vida e gestação nas colagenoses — e onde as diretrizes ainda discordam.</div></div>
-<div class="card pearl"><div class="card-head"><div class="card-eyebrow"><span class="card-num">G.1</span> Pegadinhas</div><h3>10 erros operacionais em colagenoses</h3></div><div class="card-body">
+<div class="card pearl" id="g1"><div class="card-head"><div class="card-eyebrow"><span class="card-num">G.1</span> Pegadinhas</div><h3>10 erros operacionais em colagenoses</h3></div><div class="card-body">
 <div class="stbl stbl-2"><div class="stbl-head stbl-2"><div>Erro comum</div><div>Correto</div></div>
 <div class="stbl-row stbl-2"><div class="col col1" data-l="Erro">Tratar FAN positivo em título baixo sem clínica</div><div class="col" data-l="Correto">FAN é entrada de classificação, não diagnóstico; sem fenótipo, nem painel nem tratamento. Até 10% da população tem FAN em título baixo (apostila).</div></div>
 <div class="stbl-row stbl-2"><div class="col col1" data-l="Erro">Manter prednisona 7,5–10 mg/d "de segurança" no LES controlado</div><div class="col" data-l="Correto">Meta ≤5 mg/d (idealmente zero) em até 6 meses; não conseguir é indicação de imunossupressor ou biológico (ACR 2025; EULAR 2023).</div></div>
@@ -1004,7 +1023,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <div class="stbl-row stbl-2"><div class="col col1" data-l="Erro">Chamar de Sjögren toda boca seca com FAN positivo</div><div class="col" data-l="Correto">Exigir prova objetiva (Schirmer, fluxo, coloração ocular) + anti-Ro ou focus score ≥1; excluir fármacos anticolinérgicos, HCV, HIV, IgG4, sarcoidose, radioterapia.</div></div>
 </div>
 </div></div>
-<div class="card pearl"><div class="card-head"><div class="card-eyebrow"><span class="card-num">G.2</span> Mitos · Controvérsias</div><h3>Mitos vivos e debates atuais</h3></div><div class="card-body">
+<div class="card pearl" id="g2"><div class="card-head"><div class="card-eyebrow"><span class="card-num">G.2</span> Mitos · Controvérsias</div><h3>Mitos vivos e debates atuais</h3></div><div class="card-body">
 <div class="box myth"><span class="box-label">MYTH</span><div class="box-title">"Lúpica não pode tomar vacina"</div><div class="box-body">Vacinas inativadas (influenza, pneumocócica, HPV, COVID-19) e zóster recombinante são recomendadas e seguras; o problema é a resposta menor sob imunossupressão, o que pede vacinar antes de iniciar rituximabe ou dose alta de GC (ACR 2025, Tabela 4; EULAR 2023). Vacinas vivas é que se evitam sob imunossupressão.</div></div>
 <div class="box myth"><span class="box-label">MYTH</span><div class="box-title">"Fármacos que induzem lúpus estão proibidos no LES"</div><div class="box-body">A hidralazina, a metildopa e a fenitoína não pioram de forma relevante o LES estabelecido e podem ser usadas quando indicadas (apostila). O lúpus induzido é outra entidade, com anti-histona e sem nefrite.</div></div>
 <div class="box myth"><span class="box-label">MYTH</span><div class="box-title">"Anti-dsDNA alto sem clínica exige imunossupressão"</div><div class="box-body">Sorologia ativa isolada (anti-dsDNA alto, complemento baixo) prediz surto, sobretudo renal, e pede vigilância mais frequente de urina e creatinina — não imunossupressão preventiva. Linfopenia/neutropenia isoladas também não são indicação (ACR 2025).</div></div>
@@ -1016,7 +1035,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 
 <section id="pearls">
 <div class="section"><div class="section-eyebrow"><span>H</span> Pearls · Evolving</div><h2 class="section-title">Nuances de especialista e o que realmente mudou</h2><div class="section-sub">Oito nuances que mudam o raciocínio e sete mudanças reais entre 2022 e 2026, separando recomendação internacional de acesso no SUS.</div></div>
-<div class="card pearl"><div class="card-head"><div class="card-eyebrow"><span class="card-num">H.1</span> Pearls</div><h3>8 nuances que distinguem o expert</h3></div><div class="card-body">
+<div class="card pearl" id="h1"><div class="card-head"><div class="card-eyebrow"><span class="card-num">H.1</span> Pearls</div><h3>8 nuances que distinguem o expert</h3></div><div class="card-body">
 <div class="box pearl"><span class="box-label">PEARL</span><div class="box-title">PCR alta no lúpico é bactéria até prova em contrário</div><div class="box-body">O surto lúpico costuma elevar pouco a PCR; serosite e artrite são as exceções clássicas, e PCR &gt;10 mg/dL sugere infecção bacteriana (apostila). PCR muito alta com febre desloca a probabilidade para infecção e justifica antimicrobiano antes de mexer no corticoide.</div></div>
 <div class="box pearl"><span class="box-label">PEARL</span><div class="box-title">O autoanticorpo da esclerose prevê o órgão melhor que a pele</div><div class="box-body">Anti-topo I antecipa DPI, anti-RNA pol III antecipa crise renal (e câncer próximo ao início), anticentrômero antecipa HAP tardia. Em ES recente, o anticorpo dita o rastreio que você agenda — não a extensão cutânea do primeiro exame.</div></div>
 <div class="box pearl"><span class="box-label">PEARL</span><div class="box-title">Na crise renal, piorar a creatinina sob IECA não é falha</div><div class="box-body">A vasculopatia obliterativa precede o tratamento; a TFG pode cair por dias com PA controlada. A recuperação demora meses e depende de manter o IECA — inclusive em diálise. A meta é tempo: PA basal em 72 horas.</div></div>
@@ -1026,7 +1045,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <div class="box pearl"><span class="box-label">PEARL</span><div class="box-title">No Sjögren, púrpura e C4 baixo são marcadores oncológicos</div><div class="box-body">Indicam um clone B com atividade de fator reumatoide já selecionado — a mesma biologia da crioglobulina tipo II e do linfoma MALT. Esses pacientes merecem seguimento hematológico e imagem parotídea; o Sjögren só glandular, sem marcadores, tem prognóstico próximo ao da população.</div></div>
 <div class="box pearl"><span class="box-label">PEARL</span><div class="box-title">Neurolúpus trombótico pede anticoagulação, não só imunossupressão</div><div class="box-body">AVC em lúpico tem quatro vias: SAF, embolia de Libman-Sacks, vasculite e aterosclerose. Separar o mecanismo muda a terapia: antiagregante/anticoagulante para o aterotrombótico e aPL (EULAR 2023), imunossupressão para o inflamatório; e lembre NMOSD (anti-AQP4) na mielite e na neurite óptica do lúpico.</div></div>
 </div></div>
-<div class="card pearl"><div class="card-head"><div class="card-eyebrow"><span class="card-num">H.2</span> Evolving</div><h3>O que mudou de verdade — 2022 a 2026</h3></div><div class="card-body">
+<div class="card pearl" id="h2"><div class="card-head"><div class="card-eyebrow"><span class="card-num">H.2</span> Evolving</div><h3>O que mudou de verdade — 2022 a 2026</h3></div><div class="card-body">
 <div class="box evolving"><span class="box-label">EVOLVING</span><div class="box-title">EULAR 2025: terapia combinada como padrão na nefrite lúpica</div><div class="box-body">MPAA ou CYC baixa dose + belimumabe, MPAA + voclosporina/tacrolimo, ou MPAA + obinutuzumabe passaram a ser a recomendação principal, sobretudo com mau prognóstico; iSGLT2 entrou na nefroproteção; metas de proteinúria mantidas (UPCR &lt;700 mg/g em 12 meses). <span class="ev ev-eular">EULAR 2025</span></div></div>
 <div class="box evolving"><span class="box-label">EVOLVING</span><div class="box-title">ACR 2025: primeira diretriz ACR de LES não renal desde 1999</div><div class="box-body">Recomendação forte de prednisona ≤5 mg/d em até 6 meses, pulso de MP preferido à dose oral alta isolada, imunossupressão precoce, abordagem por órgão (NPSLE, citopenias, pele, serosite, miocardite) e retirada de imunossupressor após 3–5 anos de remissão. <span class="ev ev-acr">ACR 2025</span></div></div>
 <div class="box evolving"><span class="box-label">EVOLVING</span><div class="box-title">ACR/EULAR 2023: critérios de SAF por pontos</div><div class="box-body">Substituem Sydney para pesquisa: entrada com aPL em até 3 anos, domínios ponderados (incluindo microvascular, valvar e plaquetopenia), IgM com peso baixo; especificidade 99% e sensibilidade 84%. Não devem negar tratamento a quem tem SAF clínica sem pontuar. <span class="ev ev-eular">ACR/EULAR 2023</span></div></div>
@@ -1075,5 +1094,36 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </footer>
 <a class="to-top" href="#" aria-label="Voltar ao topo">↑</a>
 <div class="watermark">@dr.lorencato · Colagenoses RD02 v5.2</div>
-</body>
+<!--hp-f2--><script>(function(){var d=document,M=d.querySelector('main');if(!M)return;
+var SELF='RD02',HP=' CT01 CT02 CT03 CT04 CT05 CT06 CT08 CT10 CV01 CV03 CV04 CV05 CV06 CV07 CV08 EN01 EN02 EN03 EN04 EN06 EN07 GH01 GH02 GH03 GH05 GH06 GH07 GH08 GH09 GH10 GO01 GO02 GO03 GO04 GO09 GO10 GO11 GO12 GO13 GO14 HO01 HO02 HO03 HO04 HO05 HO06 II01 II02 II03 II04 II07 II08 NE01 NE02 NE03 NE04 NE05 NE06 NE07 NE08 NU01 NU02 NU03 NU04 NU05 OE01 OE02 PC01 PC02 PC03 PC04 PC05 PC06 PD01 PD02 PD03 PD04 PD05 PD06 PD07 PD08 PD09 PD10 RD01 RD02 RD03 RD04 RD05 RD07 RP01 RP02 RP03 RP04 ';
+var SK='A,H1,H2,H3,SCRIPT,STYLE,NAV,.card-num,.card-eyebrow,.sub-title,.disease-tag,.toc';
+var R=/\b(?:([A-H])(\d)?\.(\d{1,2}[a-c]?)|(CV|RP|GH|NE|EN|NU|HO|II|RD|GO|PD|PC|CT|OE)(\d\d))\b/g;
+function skip(n){for(var e=n.parentNode;e&&e!==M;e=e.parentNode)if(e.matches&&e.matches(SK))return 1;return 0}
+var w=d.createTreeWalker(M,4),t,L=[];while(t=w.nextNode())if(R.test(t.data)&&!skip(t))L.push(t);
+L.forEach(function(t){var s=t.data,f=d.createDocumentFragment(),i=0,m;R.lastIndex=0;
+while(m=R.exec(s)){var h=null;
+if(m[1]){var id=m[1].toLowerCase()+(m[2]?m[2]+'-':'')+m[3];if(d.getElementById(id))h='#'+id}
+else{var x=m[4]+m[5];if(x!==SELF&&HP.indexOf(' '+x+' ')>=0)h='../'+x+'/'+x+'.html'}
+if(!h)continue;f.appendChild(d.createTextNode(s.slice(i,m.index)));
+var a=d.createElement('a');a.href=h;a.className='xr';a.textContent=m[0];f.appendChild(a);i=R.lastIndex}
+if(i){f.appendChild(d.createTextNode(s.slice(i)));t.parentNode.replaceChild(f,t)}});
+function nz(s){return s.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'')}
+var q=d.querySelector('.hp-q'),n=d.querySelector('.hp-n'),it=M.querySelectorAll('.card,.pocket-card'),T;
+function clr(){M.querySelectorAll('.q-off').forEach(function(e){e.classList.remove('q-off')})}
+function run(){var v=nz(q.value.trim());clr();n.textContent='';if(v.length<2)return;var k=0;
+it.forEach(function(c){if(nz(c.textContent).indexOf(v)<0){c.classList.add('q-off');return}k++;
+var r=c.querySelectorAll('.stbl-row,.disease-row,.score-row'),h=[];r.forEach(function(x){if(nz(x.textContent).indexOf(v)>=0)h.push(x)});
+if(h.length)r.forEach(function(x){if(h.indexOf(x)<0)x.classList.add('q-off')});
+c.querySelectorAll('details').forEach(function(x){if(nz(x.textContent).indexOf(v)>=0)x.open=true})});
+M.querySelectorAll('section').forEach(function(s){if(!s.querySelector('.card:not(.q-off),.pocket-card:not(.q-off)'))s.classList.add('q-off')});
+n.textContent=k?k+' achado'+(k>1?'s':''):'nada'}
+if(q){q.addEventListener('input',function(){clearTimeout(T);T=setTimeout(run,180)});
+q.addEventListener('keydown',function(e){if(e.key==='Escape'){q.value='';run()}})}
+function tg(b,f){b.addEventListener('click',function(){var on=b.getAttribute('aria-pressed')!=='true';b.setAttribute('aria-pressed',on);f(on)})}
+var bd=d.querySelector('.hp-dz'),bo=d.querySelector('.hp-op');
+if(bd)tg(bd,function(on){d.body.classList.toggle('dz',on);if(on)d.getElementById('tratamento').scrollIntoView()});
+if(bo)tg(bo,function(on){M.querySelectorAll('details').forEach(function(x){x.open=on})});
+var P=[];addEventListener('beforeprint',function(){P=[];M.querySelectorAll('details:not([open])').forEach(function(x){P.push(x);x.open=true})});
+addEventListener('afterprint',function(){P.forEach(function(x){x.open=false})});
+})();</script><!--/hp-f2--></body>
 </html>

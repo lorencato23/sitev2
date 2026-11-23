@@ -345,6 +345,25 @@ ul.bullets li b{color:var(--ink);font-weight:600}
   .pocket .pocket-card.tx{--accent:#a8481a}
   .pocket .pocket-card.clin{--accent:#0b5d4e}
 }
+
+/* === v5.2.2 · fase 2 (navegação) === */
+.hp-tools{display:flex;gap:6px;align-items:center;flex:none;order:1;margin-left:auto;padding-left:6px;position:sticky;right:0;background:#f1eee5;box-shadow:-10px 0 10px -4px #f1eee5,16px 0 0 #f1eee5}
+@media(min-width:900px){html{scroll-padding-top:150px}.toc-inner{flex-wrap:wrap;overflow:visible}.card[id],.sub-title[id]{scroll-margin-top:150px}}
+@media(max-width:899px){.hp-b,.hp-n{display:none}.hp-q{width:104px}}
+.hp-q{width:128px;font:500 12px/1 'DM Sans',system-ui,sans-serif;padding:7px 11px;border:1px solid var(--line-strong);border-radius:999px;background:var(--paper);color:var(--ink)}
+.hp-b{font:600 11px/1 'DM Sans',system-ui,sans-serif;letter-spacing:.05em;text-transform:uppercase;padding:7px 10px;border-radius:999px;border:1px solid var(--line-strong);background:var(--paper);color:var(--ink-soft);cursor:pointer;white-space:nowrap}
+.hp-b[aria-pressed=true]{background:var(--ink);color:#fff;border-color:var(--ink)}
+.hp-n{font:600 11px/1 'DM Mono',monospace;color:var(--ink-mute);white-space:nowrap}
+.sec-idx{display:flex;flex-wrap:wrap;gap:6px;margin:12px 0 20px}
+.sec-idx a{font:500 12px/1.25 'DM Sans',system-ui,sans-serif;padding:6px 10px;border-radius:999px;background:var(--paper);border:1px solid var(--line);color:var(--ink-soft);text-decoration:none}
+.sec-idx a:hover{border-color:var(--line-strong);color:var(--ink)}
+.sec-idx b{color:var(--c-prim);margin-right:5px;font-weight:700}
+a.xr{color:inherit;text-decoration:underline dotted;text-underline-offset:2px}
+a.xr:hover{color:var(--c-prim)}
+.card[id],.sub-title[id]{scroll-margin-top:110px}
+.q-off{display:none!important}
+body.dz main section:not(#tratamento){display:none}
+@media print{.hp-tools,.sec-idx,.toc-doses{display:none!important}}
 </style>
 </head>
 <body>
@@ -362,14 +381,14 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </header>
 
 <nav class="toc">
-  <div class="toc-inner">
+  <div class="toc-inner"><!--hp-f2--><span class="hp-tools"><input class="hp-q" type="search" placeholder="Buscar no HP" aria-label="Buscar no HP"><button class="hp-b hp-dz" type="button" aria-pressed="false">Só doses</button><button class="hp-b hp-op" type="button" aria-pressed="false">Abrir tudo</button><span class="hp-n" aria-live="polite"></span></span><!--/hp-f2-->
     <a href="#pocket"      class="toc-chip"><span class="toc-chip-num">0</span>Pocket</a>
     <a href="#redflags"    class="toc-chip"><span class="toc-chip-num">A</span>Red Flags</a>
     <a href="#approach"    class="toc-chip"><span class="toc-chip-num">B</span>Apresentação</a>
     <a href="#primarias"   class="toc-chip"><span class="toc-chip-num">C</span>Entidades</a>
     <a href="#secundarias" class="toc-chip"><span class="toc-chip-num">D</span>Secundárias</a>
     <a href="#algoritmo"   class="toc-chip"><span class="toc-chip-num">E</span>Algoritmo</a>
-    <a href="#tratamento"  class="toc-chip"><span class="toc-chip-num">F</span>Tratamento</a>
+    <a href="#tratamento"  class="toc-chip"><span class="toc-chip-num">F</span>Tratamento</a><!--hp-f2--><a href="#f2" class="toc-chip toc-doses"><span class="toc-chip-num">Rx</span>Doses</a><!--/hp-f2-->
     <a href="#pitfalls"    class="toc-chip"><span class="toc-chip-num">G</span>Pitfalls</a>
     <a href="#pearls"      class="toc-chip"><span class="toc-chip-num">H</span>Pearls</a>
   </div>
@@ -488,7 +507,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
     <div class="section-sub">Na infância, o risco imediato quase nunca vem anunciado como psiquiátrico: chega como queda de rendimento, lesão sem história, irritabilidade ou "birra" que mudou de natureza. Cada linha abaixo liga um sinal objetivo a uma suspeita e a uma ação concreta.</div>
   </div>
 
-  <div class="card emerg">
+  <div class="card emerg" id="a1">
     <div class="card-head">
       <div class="card-eyebrow"><span class="card-num">A.1</span> Emergências</div>
       <h3>Sinais de alarme na criança e no adolescente <span class="ank ank-dgr">DANGER</span></h3>
@@ -573,7 +592,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
     <div class="section-sub">Pais e escola descrevem comportamento, não diagnóstico. A entrevista começa pela queixa, separa a criança da família em algum momento da consulta e só depois escolhe a hipótese.</div>
   </div>
 
-  <div class="card clin">
+  <div class="card clin" id="b1">
     <div class="card-head">
       <div class="card-eyebrow"><span class="card-num">B.1</span> Como entrevistar</div>
       <h3>Criança, família e escola: três narrativas que raramente coincidem <span class="ank ank-hy">HIGH-YIELD</span></h3>
@@ -599,7 +618,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
     </div>
   </div>
 
-  <div class="card clin">
+  <div class="card clin" id="b2">
     <div class="card-head">
       <div class="card-eyebrow"><span class="card-num">B.2</span> Padrão 2</div>
       <h3>Não fala, não responde ao nome, não aponta</h3>
@@ -619,7 +638,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
     </div>
   </div>
 
-  <div class="card clin">
+  <div class="card clin" id="b3">
     <div class="card-head">
       <div class="card-eyebrow"><span class="card-num">B.3</span> Padrão 3</div>
       <h3>"Não para quieto", "vive no mundo da lua", "não rende na escola"</h3>
@@ -638,7 +657,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
     </div>
   </div>
 
-  <div class="card clin">
+  <div class="card clin" id="b4">
     <div class="card-head">
       <div class="card-eyebrow"><span class="card-num">B.4</span> Padrão 4</div>
       <h3>Irritado, desafiador, agressivo</h3>
@@ -657,7 +676,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
     </div>
   </div>
 
-  <div class="card clin">
+  <div class="card clin" id="b5">
     <div class="card-head">
       <div class="card-eyebrow"><span class="card-num">B.5</span> Padrão 5</div>
       <h3>Triste, isolado, com queixa somática ou recusa escolar</h3>
@@ -676,7 +695,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
     </div>
   </div>
 
-  <div class="card clin">
+  <div class="card clin" id="b6">
     <div class="card-head">
       <div class="card-eyebrow"><span class="card-num">B.6</span> Padrão 6</div>
       <h3>Movimentos, sons repetidos e rituais</h3>
@@ -700,9 +719,9 @@ ul.bullets li b{color:var(--ink);font-weight:600}
     <div class="section-eyebrow"><span>C</span> Entidades Primárias</div>
     <div class="section-title">Oito quadros com raciocínio próprio: TDAH, TEA, agressividade no TEA, depressão, ansiedade, suicídio e autolesão, TOD e conduta, tiques</div>
     <div class="section-sub">Cada box traz CID-10 (OMS/DATASUS), a fonte ao lado da conduta e a linha que muda o manejo. A teoria que não muda a conduta de hoje, mas explica o porquê, fica nos aprofundamentos.</div>
-  </div>
+  </div><!--hp-f2--><nav class="sec-idx" aria-label="Neste capítulo"><a href="#c1"><b>C.1</b>Transtorno do déficit de aten…</a><a href="#c2"><b>C.2</b>Transtorno do espectro do aut…</a><a href="#c3"><b>C.3</b>Comportamento agressivo no TE…</a><a href="#c4"><b>C.4</b>Depressão na infância e na ad…</a><a href="#c5"><b>C.5</b>Transtornos de ansiedade e TO…</a><a href="#c6"><b>C.6</b>Comportamento suicida e autol…</a><a href="#c7"><b>C.7</b>Transtorno desafiador de opos…</a><a href="#c8"><b>C.8</b>Transtornos de tique e síndro…</a></nav><!--/hp-f2-->
 
-  <div class="card prim">
+  <div class="card prim" id="c1">
     <div class="card-head">
       <div class="card-eyebrow"><span class="card-num">C.1</span> TDAH</div>
       <h3>Transtorno do déficit de atenção com hiperatividade <span class="ank ank-hy">HIGH-YIELD</span> <span class="ank ank-dec">DECISION</span></h3>
@@ -776,7 +795,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
     </div>
   </div>
 
-  <div class="card prim">
+  <div class="card prim" id="c2">
     <div class="card-head">
       <div class="card-eyebrow"><span class="card-num">C.2</span> TEA</div>
       <h3>Transtorno do espectro do autismo <span class="ank ank-hy">HIGH-YIELD</span> <span class="ank ank-dec">DECISION</span></h3>
@@ -837,7 +856,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
     </div>
   </div>
 
-  <div class="card prim">
+  <div class="card prim" id="c3">
     <div class="card-head">
       <div class="card-eyebrow"><span class="card-num">C.3</span> Agressividade no TEA</div>
       <h3>Comportamento agressivo no TEA e risperidona pelo PCDT do MS <span class="ank ank-dec">DECISION</span> <span class="ank ank-dgr">DANGER</span></h3>
@@ -888,7 +907,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
     </div>
   </div>
 
-  <div class="card prim">
+  <div class="card prim" id="c4">
     <div class="card-head">
       <div class="card-eyebrow"><span class="card-num">C.4</span> Depressão</div>
       <h3>Depressão na infância e na adolescência <span class="ank ank-hy">HIGH-YIELD</span> <span class="ank ank-dgr">DANGER</span></h3>
@@ -930,7 +949,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
     </div>
   </div>
 
-  <div class="card prim">
+  <div class="card prim" id="c5">
     <div class="card-head">
       <div class="card-eyebrow"><span class="card-num">C.5</span> Ansiedade e TOC</div>
       <h3>Transtornos de ansiedade e TOC na infância e na adolescência <span class="ank ank-hy">HIGH-YIELD</span> <span class="ank ank-con">CONTROVERSY</span></h3>
@@ -968,7 +987,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
     </div>
   </div>
 
-  <div class="card prim">
+  <div class="card prim" id="c6">
     <div class="card-head">
       <div class="card-eyebrow"><span class="card-num">C.6</span> Suicídio e autolesão</div>
       <h3>Comportamento suicida e autolesão no adolescente: reconhecer, estratificar e proteger <span class="ank ank-dgr">DANGER</span> <span class="ank ank-dec">DECISION</span></h3>
@@ -1016,7 +1035,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
     </div>
   </div>
 
-  <div class="card prim">
+  <div class="card prim" id="c7">
     <div class="card-head">
       <div class="card-eyebrow"><span class="card-num">C.7</span> TOD e conduta</div>
       <h3>Transtorno desafiador de oposição e transtorno de conduta <span class="ank ank-hy">HIGH-YIELD</span></h3>
@@ -1067,7 +1086,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
     </div>
   </div>
 
-  <div class="card prim">
+  <div class="card prim" id="c8">
     <div class="card-head">
       <div class="card-eyebrow"><span class="card-num">C.8</span> Tiques e Tourette</div>
       <h3>Transtornos de tique e síndrome de Tourette <span class="ank ank-hy">HIGH-YIELD</span></h3>
@@ -1114,9 +1133,9 @@ ul.bullets li b{color:var(--ink);font-weight:600}
     <div class="section-eyebrow"><span>D</span> Entidades Secundárias</div>
     <div class="section-title">Reconhecer, encaminhar e não deixar sem dono: deficiência intelectual, aprendizagem, substâncias, maus-tratos, bipolar e psicose, trauma e luto</div>
     <div class="section-sub">Quadros que completam o diferencial e carregam promessas de outros HPs. Cada box muda uma conduta (o exame, a notificação, a remissão ou o fármaco) e aponta o HP dono do aprofundamento.</div>
-  </div>
+  </div><!--hp-f2--><nav class="sec-idx" aria-label="Neste capítulo"><a href="#d1"><b>D.1</b>Deficiência intelectual e atr…</a><a href="#d2"><b>D.2</b>Transtornos específicos de ap…</a><a href="#d3"><b>D.3</b>Uso de álcool, tabaco, cannab…</a><a href="#d4"><b>D.4</b>Maus-tratos, negligência e vi…</a><a href="#d5"><b>D.5</b>Transtorno bipolar e psicose…</a><a href="#d6"><b>D.6</b>Trauma, TEPT, adaptação e lut…</a></nav><!--/hp-f2-->
 
-  <div class="card diag">
+  <div class="card diag" id="d1">
     <div class="card-head">
       <div class="card-eyebrow"><span class="card-num">D.1</span> Deficiência intelectual</div>
       <h3>Deficiência intelectual e atraso global do desenvolvimento <span class="ank ank-hy">HIGH-YIELD</span></h3>
@@ -1144,7 +1163,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
     </div>
   </div>
 
-  <div class="card diag">
+  <div class="card diag" id="d2">
     <div class="card-head">
       <div class="card-eyebrow"><span class="card-num">D.2</span> Aprendizagem e linguagem</div>
       <h3>Transtornos específicos de aprendizagem, de linguagem e da coordenação</h3>
@@ -1172,7 +1191,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
     </div>
   </div>
 
-  <div class="card diag">
+  <div class="card diag" id="d3">
     <div class="card-head">
       <div class="card-eyebrow"><span class="card-num">D.3</span> Substâncias no adolescente</div>
       <h3>Uso de álcool, tabaco, cannabis e outras substâncias: reconhecimento e remissão ao PC03 <span class="ank ank-dec">DECISION</span></h3>
@@ -1201,7 +1220,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
     </div>
   </div>
 
-  <div class="card diag">
+  <div class="card diag" id="d4">
     <div class="card-head">
       <div class="card-eyebrow"><span class="card-num">D.4</span> Maus-tratos e ECA</div>
       <h3>Maus-tratos, negligência e violência sexual: suspeitar, proteger e notificar <span class="ank ank-dgr">DANGER</span> <span class="ank ank-dec">DECISION</span></h3>
@@ -1238,7 +1257,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
     </div>
   </div>
 
-  <div class="card diag">
+  <div class="card diag" id="d5">
     <div class="card-head">
       <div class="card-eyebrow"><span class="card-num">D.5</span> Bipolar e psicose precoces</div>
       <h3>Transtorno bipolar e psicose de início precoce: reconhecimento e remissão (promessa de PC02 e PC03) <span class="ank ank-dec">DECISION</span></h3>
@@ -1266,7 +1285,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
     </div>
   </div>
 
-  <div class="card diag">
+  <div class="card diag" id="d6">
     <div class="card-head">
       <div class="card-eyebrow"><span class="card-num">D.6</span> Trauma e luto</div>
       <h3>Trauma, TEPT, adaptação e luto na criança (promessa de PC02)</h3>
@@ -1301,7 +1320,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
     <div class="section-sub">A árvore começa pela pergunta que separa o urgente do crônico e só depois pergunta pelo domínio; a segunda árvore escolhe o tratamento do TDAH pela idade.</div>
   </div>
 
-  <div class="card prim">
+  <div class="card prim" id="e1">
     <div class="card-head">
       <div class="card-eyebrow"><span class="card-num">E.1</span> Algoritmo</div>
       <h3>Criança ou adolescente com queixa de comportamento, atenção, humor ou aprendizagem <span class="ank ank-dec">DECISION</span></h3>
@@ -1374,7 +1393,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
     </div>
   </div>
 
-  <div class="card prim">
+  <div class="card prim" id="e2">
     <div class="card-head">
       <div class="card-eyebrow"><span class="card-num">E.2</span> Algoritmo</div>
       <h3>TDAH confirmado: escolher o tratamento pela idade <span class="ank ank-dec">DECISION</span></h3>
@@ -1423,16 +1442,16 @@ ul.bullets li b{color:var(--ink);font-weight:600}
     <div class="section-eyebrow"><span>F</span> Tratamento Integrado</div>
     <div class="section-title">F1 · Estratégia por entidade · F2 · Doses com teto · F3 · Casos, erros e SUS</div>
     <div class="section-sub">Em psiquiatria infantil, o fármaco é o último degrau de quase todas as escadas e o primeiro erro de quase todos os plantões. A ordem é: segurança, ambiente e família, psicoterapia ou treinamento, e então o fármaco, com especialista quando a recomendação o exige. Doses de bula levam o rótulo "bula FDA · conferir bula Anvisa"; as do SUS vêm do PCDT.</div>
-  </div>
+  </div><!--hp-f2--><nav class="sec-idx" aria-label="Neste capítulo"><a href="#f1"><b>F.1</b>Escada terapêutica por entida…</a><a href="#f2"><b>F.2</b>Tabela de doses pediátricas…</a><a href="#f3"><b>F.3</b>Caso → conduta certa → erro t…</a></nav><!--/hp-f2-->
 
-  <div class="card tx">
+  <div class="card tx" id="f1">
     <div class="card-head">
       <div class="card-eyebrow"><span class="card-num">F.1</span> Estratégia</div>
       <h3>Escada terapêutica por entidade <span class="ank ank-dec">DECISION</span></h3>
     </div>
     <div class="card-body">
 
-      <div class="sub-title">F1.1 · TDAH</div>
+      <div class="sub-title" id="f1-1">F1.1 · TDAH</div>
       <ul class="bullets">
         <li><b>Base em qualquer idade:</b> psicoeducação, treino de pais, plano com a escola (rotina, tarefas fragmentadas, lugar na sala, tempo extra), sono e atividade física. É a primeira linha abaixo de 6 anos e permanece associada ao fármaco depois <span class="ev ev-eular">AAP 2019 · KAS 5</span>.</li>
         <li><b>Degrau 1 (6 anos ou mais):</b> metilfenidato, ou lisdexanfetamina, titulando por semanas até o melhor equilíbrio entre benefício e efeito adverso; em torno de 70% respondem ao metilfenidato com titulação completa e outros respondem à anfetamina quando falha o primeiro.</li>
@@ -1446,7 +1465,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
         <div class="box-body">Prescrever sem perguntar sobre sintomas cardíacos, morte súbita e tiques; ultrapassar o teto de bula porque a resposta ainda é parcial (a bula não recomenda mais que 60 mg/dia de metilfenidato imediato, e a lisdexanfetamina não passa de 70 mg/dia); e manter o fármaco sem medir peso e altura. A advertência de caixa da bula é de abuso, mau uso e dependência: guarda pelos pais, quantidade limitada por receita e descarte do que sobra <span class="ev ev-acr">bulas FDA Ritalin, Concerta e Vyvanse</span>.</div>
       </div>
 
-      <div class="sub-title">F1.2 · TEA e comportamento agressivo</div>
+      <div class="sub-title" id="f1-2">F1.2 · TEA e comportamento agressivo</div>
       <ul class="bullets">
         <li><b>Intervenção precoce já na triagem positiva:</b> fonoaudiologia, terapia ocupacional e programa mediado pelos pais, antes e durante a espera do laudo; escola inclusiva.</li>
         <li><b>Agressão:</b> identificar o gatilho (dor, sono, constipação, demanda, ambiente sensorial), análise funcional e treino dos pais; só então risperidona pelo PCDT (mais de 5 anos, agressão grave, falha das medidas não medicamentosas), com dose por peso e teto.</li>
@@ -1459,7 +1478,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
         <div class="box-body">Defina o alvo antes de prescrever (agressão, autoagressão, irritabilidade, insônia, hiperatividade), meça-o com escala (ABC, BPI-S ou CGI) e reavalie contra esse alvo. Sem alvo mensurável, a prescrição vira sedação, e o ganho ponderal e metabólico da risperidona é custo certo para um benefício incerto.</div>
       </div>
 
-      <div class="sub-title">F1.3 · Depressão na infância e na adolescência</div>
+      <div class="sub-title" id="f1-3">F1.3 · Depressão na infância e na adolescência</div>
       <ul class="bullets">
         <li><b>Leve:</b> monitorização ativa, psicoeducação, apoio escolar e familiar, sono e atividade física, reavaliação em poucas semanas.</li>
         <li><b>Moderada a grave:</b> TCC, terapia interpessoal ou terapia familiar; antidepressivo não em menores de 13 anos.</li>
@@ -1467,14 +1486,14 @@ ul.bullets li b{color:var(--ink);font-weight:600}
         <li><b>Sem resposta:</b> rever diagnóstico, adesão, bipolaridade, trauma e uso de substâncias; trocar por sertralina com especialista; internação se risco ou desesperança graves.</li>
       </ul>
 
-      <div class="sub-title">F1.4 · Ansiedade e TOC</div>
+      <div class="sub-title" id="f1-4">F1.4 · Ansiedade e TOC</div>
       <ul class="bullets">
         <li><b>Ansiedade:</b> TCC com exposição gradual, orientação dos pais para não reforçar o evitamento, plano de volta à escola; sem fármaco como primeira escolha (OMS).</li>
         <li><b>TOC:</b> TCC com exposição e prevenção de resposta; ISRS no moderado a grave ou sem resposta: fluoxetina 10 mg e 20 mg após 2 semanas, ou sertralina 25 mg (6–12 anos) ou 50 mg (13–17), subindo de modo escalonado. Contraindicações absolutas dos ISRS: IMAO (fluoxetina: não usar até 5 semanas após suspendê-la; sertralina: 14 dias), pimozida e tioridazina; dissulfiram com a solução de sertralina.</li>
         <li><b>Mutismo seletivo e ansiedade social grave:</b> exposição gradual em parceria com a escola; ISRS apenas com especialista.</li>
       </ul>
 
-      <div class="sub-title">F1.5 · Suicídio e autolesão</div>
+      <div class="sub-title" id="f1-5">F1.5 · Suicídio e autolesão</div>
       <ul class="bullets">
         <li><b>Risco alto:</b> PC06; não deixar sozinho, retirar meios, vigilância contínua, avaliação psiquiátrica e internação se indicada.</li>
         <li><b>Risco baixo ou médio:</b> plano de segurança escrito, restrição de meios, família participante, contato em 24–72 h, psicoterapia e tratamento da depressão, da ansiedade ou do trauma de base.</li>
@@ -1486,21 +1505,21 @@ ul.bullets li b{color:var(--ink);font-weight:600}
         <div class="box-body">Nas primeiras semanas e a cada mudança de dose, o jovem pode ficar mais ativado antes de melhorar. Consulte-o por telefone ou presencialmente cedo, oriente os pais sobre sinais (agitação nova, insônia, impulsividade, falas de morte) e limite a quantidade dispensada se houver risco. Em ideação com plano ou meios, o tratamento é a avaliação de emergência e não a prescrição.</div>
       </div>
 
-      <div class="sub-title">F1.6 · TOD e transtorno de conduta</div>
+      <div class="sub-title" id="f1-6">F1.6 · TOD e transtorno de conduta</div>
       <ul class="bullets">
         <li><b>Treino de pais</b> estruturado em todas as idades, com meta de reforço positivo e consequências coerentes; intervenção na escola; terapia multissistêmica no adolescente grave.</li>
         <li><b>Comorbidades:</b> tratar o TDAH, a depressão e o trauma; o tratamento do TDAH pode reduzir agressão e oposição.</li>
         <li><b>Fármaco:</b> antipsicótico em baixa dose só em agressão grave refratária, por tempo limitado, com especialista e com a monitorização metabólica do C.3.</li>
       </ul>
 
-      <div class="sub-title">F1.7 · Tiques e Tourette</div>
+      <div class="sub-title" id="f1-7">F1.7 · Tiques e Tourette</div>
       <ul class="bullets">
         <li><b>Leve:</b> psicoeducação à criança, à família e à escola, sem tratar o tique.</li>
         <li><b>Com prejuízo:</b> CBIT; se houver TDAH, α2-agonista (clonidina) ou estimulante com monitorização de tiques; no grave, aripiprazol ou risperidona; haloperidol por último; toxina para tique focal.</li>
         <li><b>TOC associado:</b> TCC com exposição e ISRS conforme C.5.</li>
       </ul>
 
-      <div class="sub-title">F1.8 · Deficiência intelectual, aprendizagem, substâncias, trauma e maus-tratos</div>
+      <div class="sub-title" id="f1-8">F1.8 · Deficiência intelectual, aprendizagem, substâncias, trauma e maus-tratos</div>
       <ul class="bullets">
         <li><b>DI e aprendizagem:</b> estimulação, fonoaudiologia, psicopedagogia, adaptação escolar e direitos; fármaco só para comorbidade.</li>
         <li><b>Substâncias:</b> CRAFFT, intervenção breve motivacional e família; CAPS infantojuvenil ou CAPS-AD nos casos moderados a graves; psicose e abstinência no PC03.</li>
@@ -1509,7 +1528,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
     </div>
   </div>
 
-  <div class="card tx">
+  <div class="card tx" id="f2">
     <div class="card-head">
       <div class="card-eyebrow"><span class="card-num">F.2</span> Doses Operacionais</div>
       <h3>Tabela de doses pediátricas, com via, titulação, teto e o que muda a prescrição</h3>
@@ -1643,13 +1662,13 @@ ul.bullets li b{color:var(--ink);font-weight:600}
     </div>
   </div>
 
-  <div class="card tx">
+  <div class="card tx" id="f3">
     <div class="card-head">
       <div class="card-eyebrow"><span class="card-num">F.3</span> Casos e SUS</div>
       <h3>Caso → conduta certa → erro típico, e o que existe no SUS <span class="ank ank-hy">HIGH-YIELD</span></h3>
     </div>
     <div class="card-body">
-      <div class="sub-title">F3.1 · Cenários de plantão e de ambulatório</div>
+      <div class="sub-title" id="f3-1">F3.1 · Cenários de plantão e de ambulatório</div>
       <div class="stbl stbl-3">
         <div class="stbl-head stbl-3"><div>Caso</div><div>Conduta certa</div><div>Erro típico</div></div>
         <div class="stbl-row stbl-3">
@@ -1704,7 +1723,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
         </div>
       </div>
 
-      <div class="sub-title">F3.2 · O que existe no SUS e no mercado</div>
+      <div class="sub-title" id="f3-2">F3.2 · O que existe no SUS e no mercado</div>
       <div class="stbl stbl-3">
         <div class="stbl-head stbl-3"><div>Item</div><div>Situação</div><div>Observação</div></div>
         <div class="stbl-row stbl-3">
@@ -1733,7 +1752,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
           <div class="col" data-l="Obs.">Sem registro na CMED de 09/10/2026 (conferir Bulário Anvisa); melatonina sem registro como medicamento, entra como suplemento ou manipulado (conferir Anvisa)</div>
         </div>
       </div>
-      <div class="sub-title">F3.3 · Monitorização por fármaco: o que medir e quando</div>
+      <div class="sub-title" id="f3-3">F3.3 · Monitorização por fármaco: o que medir e quando</div>
       <div class="stbl stbl-3">
         <div class="stbl-head stbl-3"><div>Fármaco</div><div>Antes de iniciar</div><div>Durante o uso</div></div>
         <div class="stbl-row stbl-3">
@@ -1773,7 +1792,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
     <div class="section-sub">Os erros da psiquiatria infantil repetem dois padrões: rotular cedo demais com uma única fonte de informação e medicar antes de proteger, medir e acompanhar.</div>
   </div>
 
-  <div class="card pearl">
+  <div class="card pearl" id="g1">
     <div class="card-head">
       <div class="card-eyebrow"><span class="card-num">G.1</span> Pegadinhas</div>
       <h3>10 erros operacionais em psiquiatria da infância e adolescência</h3>
@@ -1825,7 +1844,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
     </div>
   </div>
 
-  <div class="card pearl">
+  <div class="card pearl" id="g2">
     <div class="card-head">
       <div class="card-eyebrow"><span class="card-num">G.2</span> Mitos · Controvérsias</div>
       <h3>Mitos vivos e debates atuais</h3>
@@ -1872,7 +1891,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
     <div class="section-sub">Oito nuances que separam quem trata o rótulo de quem trata a criança, e quatro mudanças recentes verificadas nas fontes lidas. O tema é, em boa parte, estável: não há novidade fabricada para completar a contagem.</div>
   </div>
 
-  <div class="card pearl">
+  <div class="card pearl" id="h1">
     <div class="card-head">
       <div class="card-eyebrow"><span class="card-num">H.1</span> Pearls</div>
       <h3>8 nuances que distinguem o especialista</h3>
@@ -1921,7 +1940,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
     </div>
   </div>
 
-  <div class="card pearl">
+  <div class="card pearl" id="h2">
     <div class="card-head">
       <div class="card-eyebrow"><span class="card-num">H.2</span> Evolving</div>
       <h3>4 mudanças recentes na psiquiatria da infância e adolescência</h3>
@@ -1989,5 +2008,36 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <a class="to-top" href="#" aria-label="Voltar ao topo">↑</a>
 <div class="watermark">@dr.lorencato · Psiquiatria Infância e Adolescência v5.2</div>
 
-</body>
+<!--hp-f2--><script>(function(){var d=document,M=d.querySelector('main');if(!M)return;
+var SELF='PC04',HP=' CT01 CT02 CT03 CT04 CT05 CT06 CT08 CT10 CV01 CV03 CV04 CV05 CV06 CV07 CV08 EN01 EN02 EN03 EN04 EN06 EN07 GH01 GH02 GH03 GH05 GH06 GH07 GH08 GH09 GH10 GO01 GO02 GO03 GO04 GO09 GO10 GO11 GO12 GO13 GO14 HO01 HO02 HO03 HO04 HO05 HO06 II01 II02 II03 II04 II07 II08 NE01 NE02 NE03 NE04 NE05 NE06 NE07 NE08 NU01 NU02 NU03 NU04 NU05 OE01 OE02 PC01 PC02 PC03 PC04 PC05 PC06 PD01 PD02 PD03 PD04 PD05 PD06 PD07 PD08 PD09 PD10 RD01 RD02 RD03 RD04 RD05 RD07 RP01 RP02 RP03 RP04 ';
+var SK='A,H1,H2,H3,SCRIPT,STYLE,NAV,.card-num,.card-eyebrow,.sub-title,.disease-tag,.toc';
+var R=/\b(?:([A-H])(\d)?\.(\d{1,2}[a-c]?)|(CV|RP|GH|NE|EN|NU|HO|II|RD|GO|PD|PC|CT|OE)(\d\d))\b/g;
+function skip(n){for(var e=n.parentNode;e&&e!==M;e=e.parentNode)if(e.matches&&e.matches(SK))return 1;return 0}
+var w=d.createTreeWalker(M,4),t,L=[];while(t=w.nextNode())if(R.test(t.data)&&!skip(t))L.push(t);
+L.forEach(function(t){var s=t.data,f=d.createDocumentFragment(),i=0,m;R.lastIndex=0;
+while(m=R.exec(s)){var h=null;
+if(m[1]){var id=m[1].toLowerCase()+(m[2]?m[2]+'-':'')+m[3];if(d.getElementById(id))h='#'+id}
+else{var x=m[4]+m[5];if(x!==SELF&&HP.indexOf(' '+x+' ')>=0)h='../'+x+'/'+x+'.html'}
+if(!h)continue;f.appendChild(d.createTextNode(s.slice(i,m.index)));
+var a=d.createElement('a');a.href=h;a.className='xr';a.textContent=m[0];f.appendChild(a);i=R.lastIndex}
+if(i){f.appendChild(d.createTextNode(s.slice(i)));t.parentNode.replaceChild(f,t)}});
+function nz(s){return s.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'')}
+var q=d.querySelector('.hp-q'),n=d.querySelector('.hp-n'),it=M.querySelectorAll('.card,.pocket-card'),T;
+function clr(){M.querySelectorAll('.q-off').forEach(function(e){e.classList.remove('q-off')})}
+function run(){var v=nz(q.value.trim());clr();n.textContent='';if(v.length<2)return;var k=0;
+it.forEach(function(c){if(nz(c.textContent).indexOf(v)<0){c.classList.add('q-off');return}k++;
+var r=c.querySelectorAll('.stbl-row,.disease-row,.score-row'),h=[];r.forEach(function(x){if(nz(x.textContent).indexOf(v)>=0)h.push(x)});
+if(h.length)r.forEach(function(x){if(h.indexOf(x)<0)x.classList.add('q-off')});
+c.querySelectorAll('details').forEach(function(x){if(nz(x.textContent).indexOf(v)>=0)x.open=true})});
+M.querySelectorAll('section').forEach(function(s){if(!s.querySelector('.card:not(.q-off),.pocket-card:not(.q-off)'))s.classList.add('q-off')});
+n.textContent=k?k+' achado'+(k>1?'s':''):'nada'}
+if(q){q.addEventListener('input',function(){clearTimeout(T);T=setTimeout(run,180)});
+q.addEventListener('keydown',function(e){if(e.key==='Escape'){q.value='';run()}})}
+function tg(b,f){b.addEventListener('click',function(){var on=b.getAttribute('aria-pressed')!=='true';b.setAttribute('aria-pressed',on);f(on)})}
+var bd=d.querySelector('.hp-dz'),bo=d.querySelector('.hp-op');
+if(bd)tg(bd,function(on){d.body.classList.toggle('dz',on);if(on)d.getElementById('tratamento').scrollIntoView()});
+if(bo)tg(bo,function(on){M.querySelectorAll('details').forEach(function(x){x.open=on})});
+var P=[];addEventListener('beforeprint',function(){P=[];M.querySelectorAll('details:not([open])').forEach(function(x){P.push(x);x.open=true})});
+addEventListener('afterprint',function(){P.forEach(function(x){x.open=false})});
+})();</script><!--/hp-f2--></body>
 </html>

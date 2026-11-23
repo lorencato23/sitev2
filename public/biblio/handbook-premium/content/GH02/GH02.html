@@ -345,13 +345,32 @@ ul.bullets li b{color:var(--ink);font-weight:600}
   .pocket .pocket-card.tx{--accent:#a8481a}
   .pocket .pocket-card.clin{--accent:#0b5d4e}
 }
+
+/* === v5.2.2 · fase 2 (navegação) === */
+.hp-tools{display:flex;gap:6px;align-items:center;flex:none;order:1;margin-left:auto;padding-left:6px;position:sticky;right:0;background:#f1eee5;box-shadow:-10px 0 10px -4px #f1eee5,16px 0 0 #f1eee5}
+@media(min-width:900px){html{scroll-padding-top:150px}.toc-inner{flex-wrap:wrap;overflow:visible}.card[id],.sub-title[id]{scroll-margin-top:150px}}
+@media(max-width:899px){.hp-b,.hp-n{display:none}.hp-q{width:104px}}
+.hp-q{width:128px;font:500 12px/1 'DM Sans',system-ui,sans-serif;padding:7px 11px;border:1px solid var(--line-strong);border-radius:999px;background:var(--paper);color:var(--ink)}
+.hp-b{font:600 11px/1 'DM Sans',system-ui,sans-serif;letter-spacing:.05em;text-transform:uppercase;padding:7px 10px;border-radius:999px;border:1px solid var(--line-strong);background:var(--paper);color:var(--ink-soft);cursor:pointer;white-space:nowrap}
+.hp-b[aria-pressed=true]{background:var(--ink);color:#fff;border-color:var(--ink)}
+.hp-n{font:600 11px/1 'DM Mono',monospace;color:var(--ink-mute);white-space:nowrap}
+.sec-idx{display:flex;flex-wrap:wrap;gap:6px;margin:12px 0 20px}
+.sec-idx a{font:500 12px/1.25 'DM Sans',system-ui,sans-serif;padding:6px 10px;border-radius:999px;background:var(--paper);border:1px solid var(--line);color:var(--ink-soft);text-decoration:none}
+.sec-idx a:hover{border-color:var(--line-strong);color:var(--ink)}
+.sec-idx b{color:var(--c-prim);margin-right:5px;font-weight:700}
+a.xr{color:inherit;text-decoration:underline dotted;text-underline-offset:2px}
+a.xr:hover{color:var(--c-prim)}
+.card[id],.sub-title[id]{scroll-margin-top:110px}
+.q-off{display:none!important}
+body.dz main section:not(#tratamento){display:none}
+@media print{.hp-tools,.sec-idx,.toc-doses{display:none!important}}
 </style>
 </head>
 <body>
 
 <header class="header"><div class="header-row"><div class="h-mark">H</div><div class="h-titles"><div class="h-title">Estômago, Duodeno e HDA · Pocket Handbook</div><div class="h-sub">Elite edition · Gastroenterologia · GH02</div></div><div class="h-author">@dr.lorencato</div><div class="h-edition">v5.2</div></div></header>
 
-<nav class="toc"><div class="toc-inner"><a href="#pocket" class="toc-chip"><span class="toc-chip-num">0</span>Pocket</a><a href="#redflags" class="toc-chip"><span class="toc-chip-num">A</span>Red Flags</a><a href="#approach" class="toc-chip"><span class="toc-chip-num">B</span>Apresentação</a><a href="#primarias" class="toc-chip"><span class="toc-chip-num">C</span>Entidades</a><a href="#secundarias" class="toc-chip"><span class="toc-chip-num">D</span>Secundárias</a><a href="#algoritmo" class="toc-chip"><span class="toc-chip-num">E</span>Algoritmo</a><a href="#tratamento" class="toc-chip"><span class="toc-chip-num">F</span>Tratamento</a><a href="#pitfalls" class="toc-chip"><span class="toc-chip-num">G</span>Pitfalls</a><a href="#pearls" class="toc-chip"><span class="toc-chip-num">H</span>Pearls</a></div></nav>
+<nav class="toc"><div class="toc-inner"><!--hp-f2--><span class="hp-tools"><input class="hp-q" type="search" placeholder="Buscar no HP" aria-label="Buscar no HP"><button class="hp-b hp-dz" type="button" aria-pressed="false">Só doses</button><button class="hp-b hp-op" type="button" aria-pressed="false">Abrir tudo</button><span class="hp-n" aria-live="polite"></span></span><!--/hp-f2--><a href="#pocket" class="toc-chip"><span class="toc-chip-num">0</span>Pocket</a><a href="#redflags" class="toc-chip"><span class="toc-chip-num">A</span>Red Flags</a><a href="#approach" class="toc-chip"><span class="toc-chip-num">B</span>Apresentação</a><a href="#primarias" class="toc-chip"><span class="toc-chip-num">C</span>Entidades</a><a href="#secundarias" class="toc-chip"><span class="toc-chip-num">D</span>Secundárias</a><a href="#algoritmo" class="toc-chip"><span class="toc-chip-num">E</span>Algoritmo</a><a href="#tratamento" class="toc-chip"><span class="toc-chip-num">F</span>Tratamento</a><!--hp-f2--><a href="#f2" class="toc-chip toc-doses"><span class="toc-chip-num">Rx</span>Doses</a><!--/hp-f2--><a href="#pitfalls" class="toc-chip"><span class="toc-chip-num">G</span>Pitfalls</a><a href="#pearls" class="toc-chip"><span class="toc-chip-num">H</span>Pearls</a></div></nav>
 
 <main>
 <div class="wrap">
@@ -415,7 +434,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <section id="redflags">
 <div class="section"><div class="section-eyebrow"><span>A</span> Red Flags</div><div class="section-title">No estômago, o perigo costuma ser o que se rotula de dispepsia</div><div class="section-sub">Sinal objetivo, suspeita e conduta imediata. Os eventos evitáveis deste HP são a hemorragia tratada sem ressuscitação nem endoscopia a tempo, a perfuração observada com antibiótico, o câncer gástrico tratado como úlcera benigna por anos, o infarto inferior chamado de gastrite e o anticoagulante suspenso para sempre depois de um sangramento controlado.</div></div>
 
-<div class="card emerg">
+<div class="card emerg" id="a1">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">A.1</span> Emergências</div><h3>Sinais de alarme — estômago, duodeno e hemorragia digestiva alta <span class="ank ank-dgr">DANGER</span></h3></div>
 <div class="card-body">
 
@@ -456,7 +475,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <section id="approach">
 <div class="section"><div class="section-eyebrow"><span>B</span> Por Apresentação</div><div class="section-title">Cinco portas de entrada: a dor, o sangue, o abdome em tábua, o vômito e a cicatriz</div><div class="section-sub">O paciente não chega com o rótulo de úlcera duodenal ou de câncer. Chega com epigastralgia, melena, uma barriga dura, vômitos depois de comer ou uma gastrectomia de 15 anos.</div></div>
 
-<div class="card clin">
+<div class="card clin" id="b1">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">B.1</span> Padrão 1</div><h3>Dor ou desconforto epigástrico <span class="ank ank-hy">HIGH-YIELD</span></h3><div class="card-sub">Úlcera, dispepsia funcional ou neoplasia? A idade e o alarme decidem</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body"><b>Sem alarme e até 45 anos: pesquisa não invasiva do H. pylori e erradicação se positivo</b> (V Consenso 2026; ACG 2024 aceita até 60). <b>Com alarme, a partir de 40–45 anos ou em parente de câncer gástrico: EDA com biópsias.</b> A dor da úlcera duodenal vem 2–3 h depois da refeição, acorda de madrugada e alivia com alimento ou antiácido; a da gástrica piora com a refeição. Só 20–30% dos dispépticos têm úlcera (apostila).</div></div>
@@ -470,7 +489,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card clin">
+<div class="card clin" id="b2">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">B.2</span> Padrão 2</div><h3>Hematêmese, melena ou anemia ferropriva <span class="ank ank-dec">DECISION</span></h3><div class="card-sub">Da ressuscitação à causa, em duas etapas</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Primeiro o volume, depois a lesão. <b>Glasgow-Blatchford ≤1</b> libera para endoscopia ambulatorial; ≥2 interna. <b>Úlcera é ~40% das HDA</b>, com a duodenal de parede posterior do bulbo (artéria gastroduodenal) como a que mais sangra. Hb lenta e ferropenia sem hematêmese podem ser úlcera, câncer, angiodisplasia ou gastropatia portal; a EDA responde, e o HO01 pede também colonoscopia no adulto com ferropenia.</div></div>
@@ -485,7 +504,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card clin">
+<div class="card clin" id="b3">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">B.3</span> Padrão 3</div><h3>Dor abdominal súbita, imobilidade e rigidez <span class="ank ank-dgr">DANGER</span></h3><div class="card-sub">O abdome em tábua tem uma lista curta e a úlcera lidera</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Pródromo de horas de epigastralgia, depois agudização com hipotensão, taquicardia e peritonite. <b>Ar livre no raio X em ~70%; a TC é o exame de maior sensibilidade</b> (apostila; WSES 2020). A perfuração é a primeira manifestação da úlcera em parte dos casos. Úlcera perfurada que drena pela goteira parietocólica pode simular apendicite (GH06). <b>O que muda conduta:</b> instável ou peritonite: cirurgia; selamento comprovado por contraste hidrossolúvel em paciente estável e selecionado: observação em UTI.</div></div>
@@ -497,7 +516,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card clin">
+<div class="card clin" id="b4">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">B.4</span> Padrão 4</div><h3>Vômitos depois de comer, saciedade precoce, perda de peso <span class="ank ank-dec">DECISION</span></h3><div class="card-sub">Obstrução de saída, câncer, gastroparesia ou dispepsia?</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">A pergunta é <b>mecânica ou funcional?</b> A EDA exclui obstrução; só então o esvaziamento gástrico por cintilografia de refeição sólida por ≥3 h (ACG 2022) diagnostica gastroparesia. Vômito de alimento retido de horas ou dias, "chapinhar" gástrico, alcalose hipoclorêmica e hipocalêmica: estenose pilórica por úlcera crônica ou por tumor. <b>O que muda conduta:</b> biópsia da estenose antes de cirurgia por "úlcera"; diabético, opioide, agonista de GLP-1 e pós-vagotomia causam retardo do esvaziamento (C.6, C.8).</div></div>
@@ -509,7 +528,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card clin">
+<div class="card clin" id="b5">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">B.5</span> Padrão 5</div><h3>Sintomas depois de cirurgia gástrica <span class="ank ank-hy">HIGH-YIELD</span></h3><div class="card-sub">O intervalo desde a operação nomeia a síndrome</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Dias: deiscência de coto ou anastomose. Semanas: gastroparesia, <b>dumping precoce (15–30 min depois da refeição)</b>, diarreia pós-vagotomia. Meses a anos: <b>dumping tardio (1–3 h, hipoglicemia reativa)</b>, refluxo biliar com vômito bilioso sem relação com a refeição, <b>alça aferente</b> (dor pós-prandial aliviada pelo vômito bilioso, hiperamilasemia que simula pancreatite), antro retido (recidiva de úlcera com gastrina alta), anemia ferropriva, megaloblástica e osteomalácia. Câncer no coto depois de 15 anos. <b>O que muda conduta:</b> recidiva de úlcera depois de cirurgia pede gastrina e antro retido antes de nova cirurgia (D.2).</div></div>
@@ -522,9 +541,9 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </section>
 
 <section id="primarias">
-<div class="section"><div class="section-eyebrow"><span>C</span> Entidades Primárias</div><div class="section-title">Nove entidades do estômago e do duodeno, da dispepsia ao coto gástrico</div><div class="section-sub">A dispepsia e o H. pylori abrem o capítulo porque decidem quem faz endoscopia e quem recebe antibiótico; a úlcera, a hemorragia e a perfuração formam o núcleo de plantão; a estenose pilórica, o câncer, a gastroparesia e a gastrectomia fecham a lista. A hemorragia varicosa e o esôfago têm outros donos.</div></div>
+<div class="section"><div class="section-eyebrow"><span>C</span> Entidades Primárias</div><div class="section-title">Nove entidades do estômago e do duodeno, da dispepsia ao coto gástrico</div><div class="section-sub">A dispepsia e o H. pylori abrem o capítulo porque decidem quem faz endoscopia e quem recebe antibiótico; a úlcera, a hemorragia e a perfuração formam o núcleo de plantão; a estenose pilórica, o câncer, a gastroparesia e a gastrectomia fecham a lista. A hemorragia varicosa e o esôfago têm outros donos.</div></div><!--hp-f2--><nav class="sec-idx" aria-label="Neste capítulo"><a href="#c1"><b>C.1</b>Dispepsia não investigada e f…</a><a href="#c2"><b>C.2</b>H. pylori: quando testar, com…</a><a href="#c3"><b>C.3</b>Doença ulcerosa péptica não c…</a><a href="#c4"><b>C.4</b>Hemorragia digestiva alta não…</a><a href="#c5"><b>C.5</b>Úlcera péptica perfurada: o a…</a><a href="#c6"><b>C.6</b>Estenose pilórica do adulto…</a><a href="#c7"><b>C.7</b>Câncer gástrico: rastreio, es…</a><a href="#c8"><b>C.8</b>Gastroparesia: excluir obstru…</a><a href="#c9"><b>C.9</b>Gastrectomia e vagotomia: dum…</a></nav><!--/hp-f2-->
 
-<div class="card prim">
+<div class="card prim" id="c1">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.1</span> Dispepsia</div><h3>Dispepsia não investigada e funcional: quem merece endoscopia <span class="ank ank-hy">HIGH-YIELD</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Dispepsia é <b>dor ou desconforto epigástrico, queimação, plenitude pós-prandial, saciedade precoce, náusea</b>. Em 20–40% da população; <b>a minoria tem úlcera (20–30%) ou câncer</b>, e a maioria tem dispepsia funcional. A ordem: alarme? idade? Se não há alarme e a idade é baixa, <b>pesquisa de H. pylori e tratamento se positivo</b>; se há alarme, EDA. <b>O que muda conduta:</b> alarme ou idade ≥40–45 anos leva à endoscopia; persistência depois da cura da bactéria define funcional.</div></div>
@@ -554,7 +573,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="c2">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.2</span> Infecção</div><h3>H. pylori: quando testar, como erradicar e como provar a cura <span class="ank ank-hy">HIGH-YIELD</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Teste só quem vai tratar. <b>Erradicação por 14 dias</b> em úlcera, MALT, gastrite crônica, lesão pré-neoplásica, pós-ressecção de câncer, parente de 1º grau de câncer gástrico, uso crônico de AINE ou AAS, ferropenia ou PTI sem causa. O <b>V Consenso Brasileiro (2026)</b> prefere a <b>quádrupla com bismuto</b> ou a tríplice com claritromicina otimizada por bismuto ou por P-CAB, e põe o dual com amoxicilina em alta dose onde não há bismuto. <b>No Brasil o bismuto só chega por manipulação.</b> <b>O que muda conduta:</b> alergia à penicilina, uso prévio de claritromicina ou levofloxacino e QT longo mudam o esquema; toda erradicação exige teste de cura.</div></div>
@@ -596,7 +615,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="c3">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.3</span> Úlcera</div><h3>Doença ulcerosa péptica não complicada: H. pylori, AINE e a úlcera gástrica que pode ser câncer <span class="ank ank-hy">HIGH-YIELD</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Solução de continuidade ≥0,5 cm que ultrapassa a muscular da mucosa (menores são erosões). <b>H. pylori e AINE são as duas causas;</b> a duodenal é mais frequente (6–15%, 20–50 anos) e a gástrica predomina depois dos 60. Diagnóstico por EDA; <b>úlcera gástrica leva ≥7 biópsias e nova EDA em 8–12 semanas.</b> Tratamento: IBP em dose padrão 1×/dia em jejum, 4 semanas na duodenal e 8 na gástrica, mais <b>erradicação do H. pylori com teste de cura</b> e suspensão do AINE. <b>O que muda conduta:</b> refratariedade (&gt;8–12 semanas) pede checar bactéria, AINE, biópsia e gastrina antes de operar; complicação (sangramento, perfuração, obstrução) segue C.4–C.6.</div></div>
@@ -637,7 +656,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="c4">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.4</span> Hemorragia</div><h3>Hemorragia digestiva alta não varicosa: do Glasgow-Blatchford ao Forrest <span class="ank ank-dgr">DANGER</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Ressuscite, estratifique, aplique IBP, <b>faça endoscopia em até 24 h</b> e trate a lesão pelo Forrest. <b>Transfusão restritiva:</b> limiar de Hb 7 g/dL (alvo 7–9, do HP, sem fonte primária; 9–10 g/dL na coronariopatia aguda, HO06; o International Consensus 2019 sugere &lt;8 sem doença cardiovascular). <b>IBP:</b> após hemostasia de úlcera de alto risco, 80 mg IV em bólus e 8 mg/h por 72 h; a intermitente não é o esquema do ICG 2019 (conferir). Sem antibiótico profilático (só no cirrótico, GH10) e <b>sem ácido tranexâmico</b> (HALT-IT; HO03). <b>O que muda conduta:</b> Glasgow-Blatchford ≤1 libera; instabilidade ou ressangramento leva à segunda EDA, à embolização ou à cirurgia; antitrombótico tem plano de retomada.</div></div>
@@ -701,7 +720,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="c5">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.5</span> Perfuração</div><h3>Úlcera péptica perfurada: o abdome em tábua tem dono neste HP <span class="ank ank-dgr">DANGER</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">A segunda complicação mais frequente da úlcera (2–10%) e a de maior mortalidade (~30% na apostila). <b>Ressuscite (PAM ≥65 mmHg, diurese ≥0,5 mL/kg/h, lactato em queda), dê antibiótico precoce e opere;</b> laparoscopia no estável, laparotomia no instável. Reparo primário se &lt;2 cm; &gt;2 cm: individualizar (gástrica grande: ressecar com congelação; duodenal grande: reparo mais exclusão ou drenagem biliar). <b>O que muda conduta:</b> instabilidade ou choque séptico leva à cirurgia de controle de danos; selamento confirmado por contraste hidrossolúvel em paciente estável e selecionado permite observação em UTI.</div></div>
@@ -721,7 +740,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="c6">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.6</span> Obstrução</div><h3>Estenose pilórica do adulto: a cicatriz da úlcera ou o tumor que a imita <span class="ank ank-dec">DECISION</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">A obstrução da via de saída gástrica é a complicação <b>menos frequente</b> da úlcera; vem da cicatriz crônica do piloro ou do edema de uma nova úlcera. Vômitos de alimento retido, saciedade precoce, perda de peso e <b>alcalose metabólica hipoclorêmica e hipocalêmica</b>. Tratamento: sonda, volume, potássio, IBP, erradicação do H. pylori e <b>dilatação endoscópica</b> (em média ~5 sessões). <b>O que muda conduta:</b> toda estenose é biopsiada para excluir neoplasia antes de se aceitar a causa péptica; refratária à dilatação, cirurgia.</div></div>
@@ -741,7 +760,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="c7">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.7</span> Neoplasia</div><h3>Câncer gástrico: rastreio, estadiamento, cirurgia e o câncer precoce <span class="ank ank-hy">HIGH-YIELD</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">95% são adenocarcinomas; o diagnóstico costuma ser tardio. <b>Sem rastreio populacional no Brasil;</b> o V Consenso orienta testar e tratar parentes de 1º grau, tratar H. pylori em precursoras e vigiar atrofia grave ou metaplasia incompleta com EDA a cada 3 anos (1–2 anos se há história familiar). Diagnóstico: <b>EDA com biópsias múltiplas</b>; estadiamento: TC, ecoendoscopia e <b>laparoscopia estadiadora</b>. A única chance de cura é a <b>ressecção R0 com linfadenectomia D2</b>, com tratamento perioperatório. <b>O que muda conduta:</b> câncer precoce restrito à mucosa e sem fator de risco vai à ressecção endoscópica; implante peritoneal contraindica a cirurgia curativa; JEG Siewert I e II segue o esôfago, III segue o estômago (D.4).</div></div>
@@ -781,7 +800,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="c8">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.8</span> Motilidade</div><h3>Gastroparesia: excluir obstrução, medir o esvaziamento, escolher o procinético <span class="ank ank-dec">DECISION</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Retardo do esvaziamento gástrico <b>sem obstrução mecânica</b>. Causas: diabetes, pós-cirúrgica (vago), idiopática, fármacos (opioide, agonista de GLP-1, anticolinérgico). <b>Primeiro a EDA; depois a cintilografia de refeição sólida por ≥3 h</b> (ideal 4 h; forte; ACG 2022), com 48 h sem fármacos que alteram o resultado. Tratamento: controle glicêmico, dieta, <b>metoclopramida</b>, domperidona onde aprovada, e piloromiotomia ou G-POEM no refratário. <b>O que muda conduta:</b> medicamento causal suspenso, controle do diabetes, e limite de tempo e QT nos procinéticos.</div></div>
@@ -810,7 +829,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="c9">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.9</span> Pós-operatório</div><h3>Gastrectomia e vagotomia: dumping, refluxo biliar, alça aferente, B12 e ferro <span class="ank ank-hy">HIGH-YIELD</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">As cirurgias da úlcera hoje são raras (complicação ou intratabilidade); as de câncer são comuns. Cada técnica deixa uma assinatura: <b>perda do piloro</b> (dumping e refluxo biliar, mais no Billroth II), <b>vagotomia troncular</b> (diarreia, colelitíase, esvaziamento alterado), <b>alça aferente</b> (só no Billroth II), <b>antro retido</b> (recidiva com gastrina alta) e <b>falta de ácido e de fator intrínseco</b> (ferro, B12). <b>O que muda conduta:</b> o intervalo desde a cirurgia e o tipo de reconstrução nomeiam a síndrome; recidiva de úlcera depois de vagotomia com antrectomia pede gastrinoma e antro retido (D.2).</div></div>
@@ -852,9 +871,9 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </section>
 
 <section id="secundarias">
-<div class="section"><div class="section-eyebrow"><span>D</span> Entidades Secundárias</div><div class="section-title">Gastrites, gastrinoma, MALT, GIST e a gastroproteção do paciente que usa antitrombótico</div><div class="section-sub">Cinco boxes que completam o capítulo sem repetir as primárias. Os raros que compartilham abordagem (gastrites e gastropatias especiais; GIST e tumores da junção) ficam agrupados; o linfoma tem dono (HO05) e entra só no que o H. pylori muda.</div></div>
+<div class="section"><div class="section-eyebrow"><span>D</span> Entidades Secundárias</div><div class="section-title">Gastrites, gastrinoma, MALT, GIST e a gastroproteção do paciente que usa antitrombótico</div><div class="section-sub">Cinco boxes que completam o capítulo sem repetir as primárias. Os raros que compartilham abordagem (gastrites e gastropatias especiais; GIST e tumores da junção) ficam agrupados; o linfoma tem dono (HO05) e entra só no que o H. pylori muda.</div></div><!--hp-f2--><nav class="sec-idx" aria-label="Neste capítulo"><a href="#d1"><b>D.1</b>Gastrites e gastropatias: H.…</a><a href="#d2"><b>D.2</b>Síndrome de Zollinger-Ellison…</a><a href="#d3"><b>D.3</b>Linfoma MALT gástrico: o H. p…</a><a href="#d4"><b>D.4</b>GIST e tumores da junção esof…</a><a href="#d5"><b>D.5</b>Gastroproteção: AINE, AAS, an…</a></nav><!--/hp-f2-->
 
-<div class="card diag">
+<div class="card diag" id="d1">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">D.1</span> Mucosa</div><h3>Gastrites e gastropatias: H. pylori, autoimune, AINE, lesão aguda e formas raras <span class="ank ank-hy">HIGH-YIELD</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">"Gastrite" é inflamação histológica; eritema endoscópico não faz diagnóstico, e a maioria das gastrites é assintomática. Classificam-se por tempo, histologia e causa: <b>H. pylori</b> (antral ou pangastrite), <b>autoimune</b> (corpo e fundo, anemia perniciosa), <b>gastropatias químicas</b> (AINE, álcool, refluxo biliar) e <b>lesão aguda da mucosa gástrica (LAMG)</b> do doente grave. <b>O que muda conduta:</b> UTI com coagulopatia ou ventilação &gt;48 h recebe IBP profilático; atrofia ou metaplasia incompleta entra em vigilância endoscópica; anti-célula parietal positivo pede B12 e vigilância de tumor neuroendócrino e câncer.</div></div>
@@ -874,7 +893,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card diag">
+<div class="card diag" id="d2">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">D.2</span> Hipersecreção</div><h3>Síndrome de Zollinger-Ellison e a úlcera que não se comporta como úlcera <span class="ank ank-dec">DECISION</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Gastrinoma (duodenal em ~70%, pancreático nos demais) causa hipersecreção ácida e úlceras graves, múltiplas, <b>distais ao bulbo</b>, refratárias ou recidivadas, com diarreia e refluxo; 25% são parte da <b>NEM-1</b>. Suspeite, dose a <b>gastrina em jejum</b> e meça o pH; confirme com <b>secretina</b> nos duvidosos; localize por TC e cintilografia de receptor de somatostatina. <b>O que muda conduta:</b> recidiva depois de cirurgia da úlcera ou com H. pylori negativo pede gastrina antes de reoperar; IBP em dose elevada controla o ácido; a NEM-1 é investigada e a paratireoide, tratada (EN04).</div></div>
@@ -903,7 +922,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card diag">
+<div class="card diag" id="d3">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">D.3</span> Linfoma</div><h3>Linfoma MALT gástrico: o H. pylori como tratamento (o resto é do HO05) <span class="ank ank-dec">DECISION</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Linfoma de zona marginal extranodal de baixo grau, associado ao H. pylori em até 90% dos casos. <b>Erradicação em todo caso positivo, qualquer estádio</b> (V Consenso 2026, S9, forte, evidência alta), com resposta em cerca de metade (apostila). O linfoma difuso de grandes células B é a forma agressiva e segue o HO05. <b>O que muda conduta:</b> t(11;18), invasão profunda e linfonodo predizem falha dos antibióticos; H. pylori negativo pode receber teste terapêutico, mas o tratamento oncológico não espera se há progressão.</div></div>
@@ -923,7 +942,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card diag">
+<div class="card diag" id="d4">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">D.4</span> Mesenquimal</div><h3>GIST e tumores da junção esofagogástrica: Siewert define o capítulo <span class="ank ank-hy">HIGH-YIELD</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body"><b>GIST:</b> tumor mesenquimal mais comum do trato digestivo, de origem nas células de Cajal, positivo para CD117 (KIT); no estômago em 40–60%. <b>Cirurgia com margem livre, sem linfadenectomia;</b> imatinibe no irressecável, metastático ou de risco alto. <b>Junção esofagogástrica:</b> Siewert I e II tratam-se como esôfago; III, como gástrico (AJCC 8). <b>O que muda conduta:</b> mitoses (≥5/50 campos), tamanho &gt;5 cm e mutação de KIT definem agressividade e adjuvância.</div></div>
@@ -943,7 +962,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card diag">
+<div class="card diag" id="d5">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">D.5</span> Prevenção</div><h3>Gastroproteção: AINE, AAS, antiagregante e anticoagulante <span class="ank ank-dec">DECISION</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Antes de iniciar AINE, AAS ou antiplaquetário de uso crônico, <b>testar e erradicar o H. pylori</b> (V Consenso 2026, S12). Risco alto: &gt;60 anos, úlcera prévia, corticoide, AAS associado, dose alta, comorbidade. Proteção: <b>IBP contínuo</b>; coxibe + IBP em quem sangrou e precisa de AINE (International Consensus 2019, E2). <b>Com clopidogrel, preferir pantoprazol</b> (omeprazol e esomeprazol reduzem a ativação, CV03). <b>O que muda conduta:</b> ulcerado que usa AINE e precisa continuar → IBP; sangrou com AAS de prevenção secundária → manter ou reiniciar no dia da hemostasia.</div></div>
@@ -967,7 +986,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <section id="algoritmo">
 <div class="section"><div class="section-eyebrow"><span>E</span> Algoritmo</div><div class="section-title">Da queixa epigástrica ao tratamento: dispepsia, hemorragia e H. pylori em três árvores</div><div class="section-sub">A primeira árvore separa quem faz endoscopia de quem testa e trata; a segunda conduz a hemorragia digestiva alta da ressuscitação ao Forrest e ao ressangramento; a terceira organiza a erradicação, a cura e o resgate. Cada ponta termina em exame ou conduta com número.</div></div>
 
-<div class="card prim">
+<div class="card prim" id="e1">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">E.1</span> Algoritmo</div><h3>Epigastralgia ou dispepsia: ECG, alarme, idade e H. pylori <span class="ank ank-dec">DECISION</span></h3></div>
 <div class="card-body">
 <div class="algo"><div class="tree">
@@ -995,7 +1014,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="e2">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">E.2</span> Algoritmo</div><h3>Hemorragia digestiva alta: ressuscitar, estratificar, endoscopia em 24 h <span class="ank ank-dgr">DANGER</span></h3></div>
 <div class="card-body">
 <div class="algo"><div class="tree">
@@ -1025,7 +1044,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="e3">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">E.3</span> Algoritmo</div><h3>H. pylori: escolher o esquema, provar a cura, resgatar <span class="ank ank-hy">HIGH-YIELD</span></h3></div>
 <div class="card-body">
 <div class="algo"><div class="tree">
@@ -1053,7 +1072,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="e4">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">E.4</span> Raciocínio</div><h3>Raciocínio em 6 passos: do epigástrio à conduta <span class="ank ank-dec">DECISION</span></h3></div>
 <div class="card-body">
 <div class="box decision"><span class="box-label">DECISION</span><div class="box-title">Sequência mental, na ordem em que as decisões se fecham</div><div class="box-body"><ol class="bullets">
@@ -1069,13 +1088,13 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </section>
 
 <section id="tratamento">
-<div class="section"><div class="section-eyebrow"><span>F</span> Tratamento Integrado</div><div class="section-title">F1 · Estratégia por entidade · F2 · Doses · F3 · Casos · F4 · SUS e CMED · F5 · Populações especiais</div><div class="section-sub">Doses lidas no V Consenso, no ACG 2024, no International Consensus 2019 e no WSES 2020 levam a sigla da fonte; as de bula, de ACG 2021, ESGE 2021, ESMO e de procinéticos e octreotida levam "conferir". A mesma dose tem o mesmo texto em todo o HP. Analgesia e antibiótico seguem GH08, NU05, GH06 e II03.</div></div>
+<div class="section"><div class="section-eyebrow"><span>F</span> Tratamento Integrado</div><div class="section-title">F1 · Estratégia por entidade · F2 · Doses · F3 · Casos · F4 · SUS e CMED · F5 · Populações especiais</div><div class="section-sub">Doses lidas no V Consenso, no ACG 2024, no International Consensus 2019 e no WSES 2020 levam a sigla da fonte; as de bula, de ACG 2021, ESGE 2021, ESMO e de procinéticos e octreotida levam "conferir". A mesma dose tem o mesmo texto em todo o HP. Analgesia e antibiótico seguem GH08, NU05, GH06 e II03.</div></div><!--hp-f2--><nav class="sec-idx" aria-label="Neste capítulo"><a href="#f1"><b>F.1</b>Escada terapêutica por entida…</a><a href="#f2"><b>F.2</b>Tabela de doses — estômago, d…</a><a href="#f3"><b>F.3</b>Caso → conduta certa → erro t…</a><a href="#f4"><b>F.4</b>O que o SUS e a CMED trazem e…</a><a href="#f5"><b>F.5</b>Populações especiais que muda…</a><a href="#f6"><b>F.6</b>Internação, alta e seguimento</a><a href="#f7"><b>F.7</b>Interações e alertas que muda…</a></nav><!--/hp-f2-->
 
-<div class="card tx">
+<div class="card tx" id="f1">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">F.1</span> Estratégia</div><h3>Escada terapêutica por entidade <span class="ank ank-dec">DECISION</span></h3></div>
 <div class="card-body">
 
-<div class="sub-title">F1.1 · H. pylori: escolher pelo que se tem e pelo que se usou (C.2)</div>
+<div class="sub-title" id="f1-1">F1.1 · H. pylori: escolher pelo que se tem e pelo que se usou (C.2)</div>
 <ul class="bullets">
 <li><b>Antes de prescrever:</b> antibiótico já usado (evitar repetir claritromicina e levofloxacino), alergia à penicilina (esclarecer, porque a maioria é falsa), QT longo, escolha do antissecretor, tabagismo e adesão (V Consenso 2026, S26).</li>
 <li><b>1ª linha padrão-brasileiro:</b> quádrupla com bismuto (manipulado) 10–14 dias; tríplice com claritromicina e amoxicilina por 14 dias, otimizada com bismuto ou P-CAB; dual com amoxicilina em alta dose e vonoprazana ou IBP em dose alta onde não há bismuto; concomitante como opção. <b>ACG 2024:</b> quádrupla otimizada é a 1ª linha; rifabutina tripla e dual com P-CAB são alternativas (rifabutina não é vendida no Brasil).</li>
@@ -1083,14 +1102,14 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </ul>
 <div class="box danger"><span class="box-label">DANGER</span><div class="box-title">Furazolidona, claritromicina repetida e doxiciclina no lugar da tetraciclina</div><div class="box-body">A apostila traz a furazolidona 200 mg 12/12 h na alergia à penicilina, mas ela não consta na CMED nem no V Consenso. Repetir claritromicina em 2ª linha repete a falha, e a doxiciclina não substitui a tetraciclina (ACG 2024 e V Consenso). Tetraciclina é contraindicada na gestação e em crianças pequenas (bula).</div></div>
 
-<div class="sub-title">F1.2 · Úlcera não complicada e AINE (C.3, D.5)</div>
+<div class="sub-title" id="f1-2">F1.2 · Úlcera não complicada e AINE (C.3, D.5)</div>
 <ul class="bullets">
 <li>IBP em dose padrão 1×/dia em jejum, <b>4 semanas na duodenal e 8 na gástrica</b>, junto com a erradicação; suspender AINE e fumo. Gástrica: biópsias (≥7) e EDA de controle em 8–12 semanas.</li>
 <li>Refratária (&gt;8–12 semanas): bactéria erradicada? AINE parado? biópsia repetida? gastrina? Idiopática: omeprazol 40 mg/dia ou lansoprazol 30–60 mg por 8 semanas e manutenção com IBP.</li>
 <li>Cirurgia só por complicação ou intratabilidade verdadeira (C.9). AINE indispensável: IBP contínuo, coxibe + IBP se já sangrou.</li>
 </ul>
 
-<div class="sub-title">F1.3 · Hemorragia digestiva alta não varicosa (C.4)</div>
+<div class="sub-title" id="f1-3">F1.3 · Hemorragia digestiva alta não varicosa (C.4)</div>
 <ul class="bullets">
 <li><b>Hora 0:</b> dois acessos, cristaloide, tipagem, Hb 7 como limiar (alvo 7–9, do HP, conferir), IBP IV, controle de via aérea; cirrose: GH10. <b>Hora ≤24:</b> EDA; Glasgow-Blatchford ≤1 libera.</li>
 <li><b>Endoscopia:</b> Forrest Ia–IIb com clipe ou térmica; adrenalina só combinada; pó hemostático como ponte. <b>Depois:</b> IBP alta dose por 72 h (80 mg + 8 mg/h; intermitente 40 mg IV 12/12 h só conferido), oral 2×/dia até o 14º dia, 1×/dia até 6–8 semanas.</li>
@@ -1098,21 +1117,21 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </ul>
 <div class="box hy"><span class="box-label">HIGH-YIELD</span><div class="box-title">Sem antibiótico, sem H2, sem octreotida, sem ácido tranexâmico</div><div class="box-body">Na úlcera sangrante sem cirrose não há indicação de antibiótico profilático, de bloqueador H2 nem de octreotida (International Consensus 2019, C1 e C2); o ácido tranexâmico não trouxe benefício (HALT-IT; HO03). O vasoativo e o antibiótico são do cirrótico (GH10).</div></div>
 
-<div class="sub-title">F1.4 · Úlcera perfurada (C.5)</div>
+<div class="sub-title" id="f1-4">F1.4 · Úlcera perfurada (C.5)</div>
 <ul class="bullets">
 <li><b>Ressuscitação e antibiótico no mesmo ato:</b> PAM ≥65, diurese ≥0,5 mL/kg/h, lactato; ceftriaxona 2 g IV 24/24 h + metronidazol 500 mg IV 8/8 h (WSES 2020 cita 6/6 h), ou piperacilina-tazobactam 4,5 g IV 6/6 h no grave; primeira dose cheia, ajuste renal depois pela ClCr (como no II03); 3–5 dias.</li>
 <li><b>Cirurgia:</b> laparoscopia no estável, laparotomia no instável; &lt;2 cm reparo primário (patch de omento no instável); &gt;2 cm individualizar; choque séptico: controle de danos. Sem endoscopia terapêutica.</li>
 <li>Pós-operatório: IBP IV, sonda conforme o caso, erradicação do H. pylori, biópsia da gástrica, suspender o AINE. Analgesia sem AINE.</li>
 </ul>
 
-<div class="sub-title">F1.5 · Estenose pilórica, dispepsia funcional e gastroparesia (C.1, C.6, C.8)</div>
+<div class="sub-title" id="f1-5">F1.5 · Estenose pilórica, dispepsia funcional e gastroparesia (C.1, C.6, C.8)</div>
 <ul class="bullets">
 <li><b>Estenose:</b> sonda e lavagem 2×/dia, salina isotônica e potássio (NU04), tiamina, IBP IV, erradicação e dilatação (~5 sessões); cirurgia se refratária; biópsia sempre.</li>
 <li><b>Dispepsia funcional:</b> explicar, fracionar a dieta, IBP por 1–2 meses no tipo úlcera, procinético no tipo dismotilidade, antidepressivo em baixa dose no refratário (dose: conferir).</li>
 <li><b>Gastroparesia:</b> EDA, cintilografia sólida ≥3 h, glicemia, suspender causais, metoclopramida ou domperidona com limite de tempo e QT, e piloromiotomia no refratário.</li>
 </ul>
 
-<div class="sub-title">F1.6 · Câncer gástrico e pós-gastrectomia (C.7, C.9)</div>
+<div class="sub-title" id="f1-6">F1.6 · Câncer gástrico e pós-gastrectomia (C.7, C.9)</div>
 <ul class="bullets">
 <li><b>Estratégia (sem doses):</b> estadiar (TC, ecoendoscopia, laparoscopia), ressecção endoscópica no precoce que cumpre os critérios, gastrectomia com D2 e margem de ≥5–6 cm, terapia perioperatória (FLOT na apostila; JGCA 2021 traz S-1 e esquemas combinados), biomarcadores (HER2, MSI), paliação com stent e cirurgia.</li>
 <li><b>Gastrectomizado:</b> dieta fracionada pobre em carboidrato refinado; B12 vitalícia na gastrectomia total (HO01); ferro, cálcio e vitamina D; EDA a partir de 15 anos; dumping refratário com acarbose (conferir).</li>
@@ -1122,7 +1141,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card tx">
+<div class="card tx" id="f2">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">F.2</span> Doses Operacionais</div><h3>Tabela de doses — estômago, duodeno e HDA</h3></div>
 <div class="card-body">
 <div class="stbl stbl-3">
@@ -1158,7 +1177,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card tx">
+<div class="card tx" id="f3">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">F.3</span> Cenários</div><h3>Caso → conduta certa → erro típico</h3></div>
 <div class="card-body">
 <div class="stbl stbl-3">
@@ -1175,7 +1194,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card tx">
+<div class="card tx" id="f4">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">F.4</span> Acesso</div><h3>O que o SUS e a CMED trazem e o que fica a conferir <span class="ank ank-dec">DECISION</span></h3></div>
 <div class="card-body">
 <div class="stbl stbl-3">
@@ -1191,7 +1210,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card tx">
+<div class="card tx" id="f5">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">F.5</span> Populações</div><h3>Populações especiais que mudam o esquema <span class="ank ank-dec">DECISION</span></h3></div>
 <div class="card-body">
 <ul class="bullets">
@@ -1204,7 +1223,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </ul>
 </div>
 </div>
-<div class="card tx">
+<div class="card tx" id="f6">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">F.6</span> Destino</div><h3>Internação, alta e seguimento <span class="ank ank-dec">DECISION</span></h3></div>
 <div class="card-body">
 <div class="stbl stbl-3">
@@ -1221,7 +1240,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 </div>
-<div class="card tx">
+<div class="card tx" id="f7">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">F.7</span> Segurança</div><h3>Interações e alertas que mudam a prescrição <span class="ank ank-dgr">DANGER</span></h3></div>
 <div class="card-body">
 <ul class="bullets">
@@ -1241,7 +1260,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <section id="pitfalls">
 <div class="section"><div class="section-eyebrow"><span>G</span> Pitfalls · Mitos · Controvérsias</div><div class="section-title">Erros operacionais, mitos vivos e debates abertos</div><div class="section-sub">Os erros que se repetem: IBP empírico em quem tem alarme, sorologia para H. pylori, esquema repetido depois da falha, úlcera gástrica sem biópsia, transfusão por número e perfuração observada.</div></div>
 
-<div class="card pearl">
+<div class="card pearl" id="g1">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">G.1</span> Pegadinhas</div><h3>10 erros operacionais em estômago, duodeno e HDA</h3></div>
 <div class="card-body">
 <div class="stbl stbl-2">
@@ -1260,7 +1279,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card pearl">
+<div class="card pearl" id="g2">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">G.2</span> Mitos</div><h3>Três mitos vivos</h3></div>
 <div class="card-body">
 <div class="box myth"><span class="box-label">MYTH</span><div class="box-title">"Úlcera é estresse, comida condimentada e leite"</div><div class="box-body">As duas causas são o H. pylori e o AINE, com o fumo como cofator; não existe dieta específica, e a antiga dieta fracionada foi abandonada por ser desnecessária e até deletéria. O álcool não cria úlcera, mas aumenta o risco de sangramento em quem já a tem. A exceção do "estresse" é a lesão aguda da mucosa do doente grave, que é isquemia, não nervosismo.</div></div>
@@ -1269,7 +1288,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card pearl">
+<div class="card pearl" id="g3">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">G.3</span> Controvérsias</div><h3>Três debates sem consenso</h3></div>
 <div class="card-body">
 <div class="box controversy"><span class="box-label">CONTROVERSY</span><div class="box-title">Até que idade fazer test-and-treat: 45, 50 ou 60 anos?</div><div class="box-body">O V Consenso 2026 recomenda o test-and-treat até 45 anos sem alarme (S6) e indica EDA com dispepsia a partir de 40 anos (S18), faixas que se sobrepõem entre 40 e 45; a apostila usa EDA depois de 45 anos; o ACG 2024 aceita até 60 anos, com limite de 45–50 em populações de alto risco para câncer. O HP usa 45 anos como teto prático, com EDA diante de alarme, de parente de 1º grau ou de idade a partir de 40–45 anos, e registra a tensão.</div></div>
@@ -1282,7 +1301,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <section id="pearls">
 <div class="section"><div class="section-eyebrow"><span>H</span> Pearls · Evolving</div><div class="section-title">H1 · Nuances de especialista · H2 · O que mudou entre 2018 e 2026</div><div class="section-sub">Oito ideias que o plantão esquece e seis mudanças reais; onde o tema é estável (fisiopatologia da úlcera, Forrest, cirurgias), diz-se.</div></div>
 
-<div class="card pearl">
+<div class="card pearl" id="h1">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">H.1</span> Pearls</div><h3>8 nuances que distinguem o especialista</h3></div>
 <div class="card-body">
 <div class="box pearl"><span class="box-label">PEARL</span><div class="box-title">Parede posterior sangra, parede anterior perfura: a anatomia vasculariza o destino</div><div class="box-body">A artéria gastroduodenal e a pancreaticoduodenal passam atrás do bulbo, de modo que a úlcera posterior erode vaso calibroso e sangra; a anterior, sem artéria, rompe a parede e perfura. Uma úlcera "em espelho" (anterior e posterior) pode dar os dois, e uma perfuração anterior não exclui sangramento posterior no mesmo bulbo.</div></div>
@@ -1296,7 +1315,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card pearl">
+<div class="card pearl" id="h2">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">H.2</span> Evolving</div><h3>O que mudou: seis itens reais; o resto do tema é estável</h3></div>
 <div class="card-body">
 <div class="box evolving"><span class="box-label">EVOLVING</span><div class="box-title">V Consenso Brasileiro (2026) substitui o IV (2018) e a apostila</div><div class="box-body">O novo consenso põe a quádrupla com bismuto, a tríplice otimizada e o dual com P-CAB ou amoxicilina em alta dose na 1ª linha, define IBP em dose padrão como 40 mg de omeprazol-equivalente 12/12 h, fixa 14 dias e inclui o P-CAB. A apostila de 2025 ainda traz omeprazol 20 mg, tríplice e furazolidona; este HP segue o consenso.</div></div>
@@ -1348,5 +1367,36 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <a class="to-top" href="#" aria-label="Voltar ao topo">↑</a>
 <div class="watermark">@dr.lorencato · GH02 Estômago, Duodeno e HDA v5.2</div>
 
-</body>
+<!--hp-f2--><script>(function(){var d=document,M=d.querySelector('main');if(!M)return;
+var SELF='GH02',HP=' CT01 CT02 CT03 CT04 CT05 CT06 CT08 CT10 CV01 CV03 CV04 CV05 CV06 CV07 CV08 EN01 EN02 EN03 EN04 EN06 EN07 GH01 GH02 GH03 GH05 GH06 GH07 GH08 GH09 GH10 GO01 GO02 GO03 GO04 GO09 GO10 GO11 GO12 GO13 GO14 HO01 HO02 HO03 HO04 HO05 HO06 II01 II02 II03 II04 II07 II08 NE01 NE02 NE03 NE04 NE05 NE06 NE07 NE08 NU01 NU02 NU03 NU04 NU05 OE01 OE02 PC01 PC02 PC03 PC04 PC05 PC06 PD01 PD02 PD03 PD04 PD05 PD06 PD07 PD08 PD09 PD10 RD01 RD02 RD03 RD04 RD05 RD07 RP01 RP02 RP03 RP04 ';
+var SK='A,H1,H2,H3,SCRIPT,STYLE,NAV,.card-num,.card-eyebrow,.sub-title,.disease-tag,.toc';
+var R=/\b(?:([A-H])(\d)?\.(\d{1,2}[a-c]?)|(CV|RP|GH|NE|EN|NU|HO|II|RD|GO|PD|PC|CT|OE)(\d\d))\b/g;
+function skip(n){for(var e=n.parentNode;e&&e!==M;e=e.parentNode)if(e.matches&&e.matches(SK))return 1;return 0}
+var w=d.createTreeWalker(M,4),t,L=[];while(t=w.nextNode())if(R.test(t.data)&&!skip(t))L.push(t);
+L.forEach(function(t){var s=t.data,f=d.createDocumentFragment(),i=0,m;R.lastIndex=0;
+while(m=R.exec(s)){var h=null;
+if(m[1]){var id=m[1].toLowerCase()+(m[2]?m[2]+'-':'')+m[3];if(d.getElementById(id))h='#'+id}
+else{var x=m[4]+m[5];if(x!==SELF&&HP.indexOf(' '+x+' ')>=0)h='../'+x+'/'+x+'.html'}
+if(!h)continue;f.appendChild(d.createTextNode(s.slice(i,m.index)));
+var a=d.createElement('a');a.href=h;a.className='xr';a.textContent=m[0];f.appendChild(a);i=R.lastIndex}
+if(i){f.appendChild(d.createTextNode(s.slice(i)));t.parentNode.replaceChild(f,t)}});
+function nz(s){return s.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'')}
+var q=d.querySelector('.hp-q'),n=d.querySelector('.hp-n'),it=M.querySelectorAll('.card,.pocket-card'),T;
+function clr(){M.querySelectorAll('.q-off').forEach(function(e){e.classList.remove('q-off')})}
+function run(){var v=nz(q.value.trim());clr();n.textContent='';if(v.length<2)return;var k=0;
+it.forEach(function(c){if(nz(c.textContent).indexOf(v)<0){c.classList.add('q-off');return}k++;
+var r=c.querySelectorAll('.stbl-row,.disease-row,.score-row'),h=[];r.forEach(function(x){if(nz(x.textContent).indexOf(v)>=0)h.push(x)});
+if(h.length)r.forEach(function(x){if(h.indexOf(x)<0)x.classList.add('q-off')});
+c.querySelectorAll('details').forEach(function(x){if(nz(x.textContent).indexOf(v)>=0)x.open=true})});
+M.querySelectorAll('section').forEach(function(s){if(!s.querySelector('.card:not(.q-off),.pocket-card:not(.q-off)'))s.classList.add('q-off')});
+n.textContent=k?k+' achado'+(k>1?'s':''):'nada'}
+if(q){q.addEventListener('input',function(){clearTimeout(T);T=setTimeout(run,180)});
+q.addEventListener('keydown',function(e){if(e.key==='Escape'){q.value='';run()}})}
+function tg(b,f){b.addEventListener('click',function(){var on=b.getAttribute('aria-pressed')!=='true';b.setAttribute('aria-pressed',on);f(on)})}
+var bd=d.querySelector('.hp-dz'),bo=d.querySelector('.hp-op');
+if(bd)tg(bd,function(on){d.body.classList.toggle('dz',on);if(on)d.getElementById('tratamento').scrollIntoView()});
+if(bo)tg(bo,function(on){M.querySelectorAll('details').forEach(function(x){x.open=on})});
+var P=[];addEventListener('beforeprint',function(){P=[];M.querySelectorAll('details:not([open])').forEach(function(x){P.push(x);x.open=true})});
+addEventListener('afterprint',function(){P.forEach(function(x){x.open=false})});
+})();</script><!--/hp-f2--></body>
 </html>

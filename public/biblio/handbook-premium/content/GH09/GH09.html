@@ -345,11 +345,30 @@ ul.bullets li b{color:var(--ink);font-weight:600}
   .pocket .pocket-card.tx{--accent:#a8481a}
   .pocket .pocket-card.clin{--accent:#0b5d4e}
 }
+
+/* === v5.2.2 · fase 2 (navegação) === */
+.hp-tools{display:flex;gap:6px;align-items:center;flex:none;order:1;margin-left:auto;padding-left:6px;position:sticky;right:0;background:#f1eee5;box-shadow:-10px 0 10px -4px #f1eee5,16px 0 0 #f1eee5}
+@media(min-width:900px){html{scroll-padding-top:150px}.toc-inner{flex-wrap:wrap;overflow:visible}.card[id],.sub-title[id]{scroll-margin-top:150px}}
+@media(max-width:899px){.hp-b,.hp-n{display:none}.hp-q{width:104px}}
+.hp-q{width:128px;font:500 12px/1 'DM Sans',system-ui,sans-serif;padding:7px 11px;border:1px solid var(--line-strong);border-radius:999px;background:var(--paper);color:var(--ink)}
+.hp-b{font:600 11px/1 'DM Sans',system-ui,sans-serif;letter-spacing:.05em;text-transform:uppercase;padding:7px 10px;border-radius:999px;border:1px solid var(--line-strong);background:var(--paper);color:var(--ink-soft);cursor:pointer;white-space:nowrap}
+.hp-b[aria-pressed=true]{background:var(--ink);color:#fff;border-color:var(--ink)}
+.hp-n{font:600 11px/1 'DM Mono',monospace;color:var(--ink-mute);white-space:nowrap}
+.sec-idx{display:flex;flex-wrap:wrap;gap:6px;margin:12px 0 20px}
+.sec-idx a{font:500 12px/1.25 'DM Sans',system-ui,sans-serif;padding:6px 10px;border-radius:999px;background:var(--paper);border:1px solid var(--line);color:var(--ink-soft);text-decoration:none}
+.sec-idx a:hover{border-color:var(--line-strong);color:var(--ink)}
+.sec-idx b{color:var(--c-prim);margin-right:5px;font-weight:700}
+a.xr{color:inherit;text-decoration:underline dotted;text-underline-offset:2px}
+a.xr:hover{color:var(--c-prim)}
+.card[id],.sub-title[id]{scroll-margin-top:110px}
+.q-off{display:none!important}
+body.dz main section:not(#tratamento){display:none}
+@media print{.hp-tools,.sec-idx,.toc-doses{display:none!important}}
 </style>
 </head>
 <body>
 <header class="header"><div class="header-row"><div class="h-mark">H</div><div class="h-titles"><div class="h-title">Hepatites e IHA · Pocket Handbook</div><div class="h-sub">Elite edition · Hepatologia clínica · GH09</div></div><div class="h-author">@dr.lorencato</div><div class="h-edition">v5.2</div></div></header>
-<nav class="toc"><div class="toc-inner"><a href="#pocket" class="toc-chip"><span class="toc-chip-num">0</span>Pocket</a><a href="#redflags" class="toc-chip"><span class="toc-chip-num">A</span>Red Flags</a><a href="#approach" class="toc-chip"><span class="toc-chip-num">B</span>Apresentação</a><a href="#primarias" class="toc-chip"><span class="toc-chip-num">C</span>Entidades</a><a href="#secundarias" class="toc-chip"><span class="toc-chip-num">D</span>Secundárias</a><a href="#algoritmo" class="toc-chip"><span class="toc-chip-num">E</span>Algoritmo</a><a href="#tratamento" class="toc-chip"><span class="toc-chip-num">F</span>Tratamento</a><a href="#pitfalls" class="toc-chip"><span class="toc-chip-num">G</span>Pitfalls</a><a href="#pearls" class="toc-chip"><span class="toc-chip-num">H</span>Pearls</a></div></nav>
+<nav class="toc"><div class="toc-inner"><!--hp-f2--><span class="hp-tools"><input class="hp-q" type="search" placeholder="Buscar no HP" aria-label="Buscar no HP"><button class="hp-b hp-dz" type="button" aria-pressed="false">Só doses</button><button class="hp-b hp-op" type="button" aria-pressed="false">Abrir tudo</button><span class="hp-n" aria-live="polite"></span></span><!--/hp-f2--><a href="#pocket" class="toc-chip"><span class="toc-chip-num">0</span>Pocket</a><a href="#redflags" class="toc-chip"><span class="toc-chip-num">A</span>Red Flags</a><a href="#approach" class="toc-chip"><span class="toc-chip-num">B</span>Apresentação</a><a href="#primarias" class="toc-chip"><span class="toc-chip-num">C</span>Entidades</a><a href="#secundarias" class="toc-chip"><span class="toc-chip-num">D</span>Secundárias</a><a href="#algoritmo" class="toc-chip"><span class="toc-chip-num">E</span>Algoritmo</a><a href="#tratamento" class="toc-chip"><span class="toc-chip-num">F</span>Tratamento</a><!--hp-f2--><a href="#f2" class="toc-chip toc-doses"><span class="toc-chip-num">Rx</span>Doses</a><!--/hp-f2--><a href="#pitfalls" class="toc-chip"><span class="toc-chip-num">G</span>Pitfalls</a><a href="#pearls" class="toc-chip"><span class="toc-chip-num">H</span>Pearls</a></div></nav>
 <main>
 <div class="wrap">
 <div class="hero">
@@ -414,7 +433,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <div class="section-title">A hepatite que mata não é a de transaminase mais alta — é a de INR que sobe e fígado que encolhe</div>
 <div class="section-sub">Magnitude da ALT mede necrose, não prognóstico. O que separa a hepatite aguda que vai para casa da que vai para a lista de transplante é função de síntese, sensório, glicemia, pH e rim.</div>
 </div>
-<div class="card emerg">
+<div class="card emerg" id="a1">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">A.1</span> Emergências</div><h3>Sinais de que a hepatite aguda virou falência <span class="ank ank-dgr">DANGER</span></h3></div>
 <div class="card-body">
 <div class="mnemo">
@@ -462,7 +481,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <div class="section-title">Mapa sindrômico — o padrão do hepatograma decide a próxima pergunta</div>
 <div class="section-sub">Cinco portas de entrada: hepatite aguda ictérica, sorologia reagente num exame de rotina, fármaco suspeito, bilirrubina indireta isolada e hepatite aguda grave. Cada uma leva a um conjunto diferente de diagnósticos.</div>
 </div>
-<div class="card clin">
+<div class="card clin" id="b1">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">B.1</span> Síndrome hepatocelular aguda</div><h3>Icterícia com ALT acima de 10× o limite superior <span class="ank ank-hy">HIGH-YIELD</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">ALT &gt;1.000 U/L tem lista curta: <b>vírus, isquemia, toxina, autoimune, litíase no primeiro dia e Wilson</b>. ALT &gt;5.000 com LDH alto e queda rápida em 72 h é isquêmica ou paracetamol; vírus sobe e desce em semanas.</div></div>
@@ -485,7 +504,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </ul>
 </div>
 </div>
-<div class="card clin">
+<div class="card clin" id="b2">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">B.2</span> Achado de rastreio</div><h3>HBsAg ou anti-HCV reagente num paciente assintomático <span class="ank ank-dec">DECISION</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Teste rápido reagente <b>vai direto ao teste molecular</b> (HBV-DNA ou HCV-RNA), sem repetir a sorologia (fluxo do MS). O objetivo da primeira consulta é responder três perguntas: <b>há replicação? há fibrose? há indicação de tratar?</b></div></div>
@@ -498,7 +517,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <div class="box hy"><span class="box-label">HIGH-YIELD</span><div class="box-title">Fluxo do MS: rastreio universal, testagem simplificada</div><div class="box-body">Teste rápido para HBV e HCV ao menos uma vez na vida em adultos, em toda gestação e periodicamente em populações vulneráveis (HSH, pessoas que usam drogas, privadas de liberdade, profissionais do sexo, pessoas vivendo com HIV, diálise). O PCDT de hepatite C de 2026 dispensa a genotipagem e permite o início do tratamento com APRI &lt;1 na atenção primária <span class="ev ev-sbr">PCDT HCV 2026</span>.</div></div>
 </div>
 </div>
-<div class="card clin">
+<div class="card clin" id="b3">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">B.3</span> Exposição a fármaco</div><h3>Hepatite aguda em uso de medicamento, fitoterápico ou suplemento</h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">DILI é <b>diagnóstico de exclusão com cronologia compatível</b> (5–90 dias na maioria) e melhora após a retirada. O padrão pela razão R orienta o diferencial: hepatocelular parece vírus; colestático parece obstrução biliar.</div></div>
@@ -510,7 +529,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </ul>
 </div>
 </div>
-<div class="card clin">
+<div class="card clin" id="b4">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">B.4</span> Hiperbilirrubinemia isolada</div><h3>Icterícia com enzimas normais</h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Primeiro, <b>qual fração predomina</b>. Indireta: hemólise, Gilbert, Crigler-Najjar, reabsorção de hematoma. Direta com enzimas normais: Dubin-Johnson e Rotor — benignas, sem tratamento.</div></div>
@@ -522,7 +541,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </ul>
 </div>
 </div>
-<div class="card clin">
+<div class="card clin" id="b5">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">B.5</span> Hepatite aguda grave</div><h3>INR alargado com ou sem confusão mental num fígado previamente são <span class="ank ank-dgr">DANGER</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Pergunta zero: <b>havia hepatopatia crônica?</b> Sem cirrose prévia é IHA (ou lesão aguda grave sem encefalopatia); com cirrose é ACLF ou descompensação aguda (GH10). Wilson, HBV vertical/reativado e HAI entram como IHA mesmo com doença de base silenciosa.</div></div>
@@ -540,9 +559,9 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <div class="section-eyebrow"><span>C</span> Entidades Primárias</div>
 <div class="section-title">Disease boxes — quatro vírus, uma doença imune, duas toxicidades e a falência</div>
 <div class="section-sub">Oito entidades que respondem por quase toda hepatite aguda e crônica não alcoólica e não metabólica do adulto, e pela imensa maioria das indicações de transplante de urgência.</div>
-</div>
+</div><!--hp-f2--><nav class="sec-idx" aria-label="Neste capítulo"><a href="#c1"><b>C.1</b>Hepatite A</a><a href="#c2"><b>C.2</b>Hepatite B aguda e a leitura…</a><a href="#c3"><b>C.3</b>Hepatite B crônica</a><a href="#c4"><b>C.4</b>Hepatite C — aguda e crônica</a><a href="#c5"><b>C.5</b>Hepatite autoimune</a><a href="#c6"><b>C.6</b>Lesão hepática induzida por f…</a><a href="#c7"><b>C.7</b>Hepatotoxicidade pelo paracet…</a><a href="#c8"><b>C.8</b>Insuficiência hepática aguda</a></nav><!--/hp-f2-->
 <!-- C.1 HAV -->
-<div class="card prim">
+<div class="card prim" id="c1">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.1</span> Transmissão fecal-oral</div><h3>Hepatite A <span class="ank ank-hy">HIGH-YIELD</span></h3><div class="card-sub">Picornavírus de RNA · não cronifica · vacina no calendário</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Doença da criança (oligossintomática) que fica grave no adulto e no hepatopata. <b>Só o anti-HAV IgM faz o diagnóstico</b>; IgG isolado é infecção passada ou vacina. Não cronifica; o risco é a forma fulminante (0,1–0,5%) em idosos e portadores de hepatopatia crônica.</div></div>
@@ -560,7 +579,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 <!-- C.2 HBV aguda -->
-<div class="card prim">
+<div class="card prim" id="c2">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.2</span> DNA vírus · transmissão sexual, vertical e parenteral</div><h3>Hepatite B aguda e a leitura dos marcadores <span class="ank ank-hy">HIGH-YIELD</span></h3><div class="card-sub">Cronifica em 90% dos RN e em &lt;5% dos adultos imunocompetentes</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body"><b>HBsAg + anti-HBc IgM = hepatite B aguda.</b> No adulto, 95% curam espontaneamente e só se trata a forma grave. O HBV é a principal causa viral de IHA no mundo; no fulminante, o HBsAg pode já ter negativado e o anti-HBc IgM é o único marcador.</div></div>
@@ -590,7 +609,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 <!-- C.3 HBV crônica -->
-<div class="card prim">
+<div class="card prim" id="c3">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.3</span> Infecção persistente · cccDNA</div><h3>Hepatite B crônica <span class="ank ank-dec">DECISION</span></h3><div class="card-sub">Decidir quem trata, com qual análogo, e quem precisa de profilaxia</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">O tratamento <b>suprime, não erradica</b>: o cccDNA no núcleo do hepatócito sobrevive ao análogo. A decisão gira em <b>HBV-DNA, ALT e fibrose</b>; a escolha, em rim, osso, exposição prévia à lamivudina e gestação. Cirrose com DNA detectável trata sempre.</div></div>
@@ -615,7 +634,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 <!-- C.4 HCV -->
-<div class="card prim">
+<div class="card prim" id="c4">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.4</span> RNA vírus · parenteral e sexual</div><h3>Hepatite C — aguda e crônica <span class="ank ank-hy">HIGH-YIELD</span></h3><div class="card-sub">Curável em &gt;95% com 8–12 semanas de antiviral oral</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">80% cronificam e quase todos são assintomáticos. <b>Anti-HCV reagente exige HCV-RNA</b>; RNA detectável = tratar (aguda ou crônica), sem genotipagem. No SUS, o <b>APRI</b> escolhe o esquema; a <b>RVS12</b> (RNA indetectável 12 semanas após o fim) é cura.</div></div>
@@ -638,7 +657,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div></details>
 </div>
 </div><!-- C.5 HAI -->
-<div class="card prim">
+<div class="card prim" id="c5">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.5</span> Hepatite imunomediada</div><h3>Hepatite autoimune <span class="ank ank-dec">DECISION</span></h3><div class="card-sub">Hepatite de interface + IgG alta + autoanticorpos + resposta a imunossupressão</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Mulher jovem ou de meia-idade, ALT flutuante, <b>IgG alta, FAN/antimúsculo liso ou anti-LKM1</b>, histologia com hepatite de interface e plasmócitos. Sem tratamento, a mortalidade das formas ativas chega a 40% em 6 meses; com tratamento, a sobrevida se aproxima da população geral. <b>A biópsia faz parte do diagnóstico</b>.</div></div>
@@ -673,7 +692,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 <!-- C.6 DILI -->
-<div class="card prim">
+<div class="card prim" id="c6">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.6</span> Hepatotoxicidade idiossincrásica</div><h3>Lesão hepática induzida por fármacos (DILI) <span class="ank ank-dec">DECISION</span></h3><div class="card-sub">Diagnóstico de exclusão, cronologia, padrão R e suspensão precoce</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Imprevisível e praticamente independente da dose acima de um limiar, aparece entre 5 e 90 dias. A <b>razão R</b> define o padrão; a <b>lei de Hy</b> (ALT acima de 3× LSN com bilirrubina acima de 2× LSN sem colestase) prediz cerca de 10% de óbito ou transplante. <b>Retirar o fármaco suspeito</b> é o único tratamento comprovado.</div></div>
@@ -692,7 +711,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 <!-- C.7 Paracetamol -->
-<div class="card prim">
+<div class="card prim" id="c7">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.7</span> Hepatotoxina intrínseca</div><h3>Hepatotoxicidade pelo paracetamol <span class="ank ank-dgr">DANGER</span></h3><div class="card-sub">Lesão previsível, com antídoto eficaz e janela de tempo curta</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">É a hepatotoxicidade medicamentosa previsível por excelência, com necrose centrolobular e ALT que frequentemente passa de 3.500 U/L, com pico entre 72 e 96 horas. <b>A N-acetilcisteína é o antídoto e deve ser iniciada o quanto antes</b>, sem aguardar o nível sérico quando o tempo é incerto ou já há ALT elevada. Tratada em tempo, recupera sem fibrose residual; com acidose e lesão renal no terceiro dia, é indicação de transplante.</div></div>
@@ -711,7 +730,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 <!-- C.8 IHA -->
-<div class="card prim">
+<div class="card prim" id="c8">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.8</span> Síndrome final comum</div><h3>Insuficiência hepática aguda <span class="ank ank-dgr">DANGER</span></h3><div class="card-sub">INR ≥1,5 + encefalopatia, sem cirrose prévia, em menos de 26 semanas</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Três decisões em paralelo: <b>etiologia</b> (porque muda o tratamento específico), <b>suporte de UTI</b> (cérebro, hemodinâmica, rim, metabolismo, infecção) e <b>transplante</b> (King's College ou MELD, com transferência precoce). O edema cerebral com herniação é a principal causa de morte na forma hiperaguda; a sepse e a falência multiorgânica, nas demais.</div></div>
@@ -750,9 +769,9 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <div class="section-eyebrow"><span>D</span> Entidades Secundárias</div>
 <div class="section-title">O que completa o diferencial da hepatite aguda e da falência</div>
 <div class="section-sub">Vírus que dependem de outro vírus, vírus que só adoecem o imunossuprimido e a gestante, metais, toxinas, isquemia, defeitos hereditários da bilirrubina e o enxerto. Cirrose, álcool, MASLD, hemocromatose e Wilson crônico ficam no GH10; Wilson neurológico, no NE06.</div>
-</div>
+</div><!--hp-f2--><nav class="sec-idx" aria-label="Neste capítulo"><a href="#d1"><b>D.1</b>Hepatite delta</a><a href="#d2"><b>D.2</b>Hepatite E</a><a href="#d3"><b>D.3</b>Hepatite por HSV, CMV, EBV e…</a><a href="#d4"><b>D.4</b>Doença de Wilson fulminante</a><a href="#d5"><b>D.5</b>Sobreposições da hepatite aut…</a><a href="#d6"><b>D.6</b>Cogumelos, fitoterápicos, sup…</a><a href="#d7"><b>D.7</b>Hepatite isquêmica (fígado de…</a><a href="#d8"><b>D.8</b>Hiperbilirrubinemias hereditá…</a><a href="#d9"><b>D.9</b>Transplante hepático na insuf…</a></nav><!--/hp-f2-->
 <!-- D.1 HDV -->
-<div class="card diag">
+<div class="card diag" id="d1">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">D.1</span> Vírus defectivo</div><h3>Hepatite delta <span class="ank ank-dgr">DANGER</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Só existe sobre o HBsAg. <b>Coinfecção</b> (HBV e HDV juntos) eleva o risco de forma fulminante de 1% para cerca de 5% e costuma curar junto; <b>superinfecção</b> (HDV sobre hepatite B crônica) cronifica em mais de 90% e leva à cirrose em até 70% em poucos anos. É a hepatite viral mais grave, e a Amazônia Ocidental é área endêmica. <b>Todo HBsAg reagente deve ser testado</b>.</div></div>
@@ -767,7 +786,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 <!-- D.2 HEV -->
-<div class="card diag">
+<div class="card diag" id="d2">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">D.2</span> Zoonose e epidemia</div><h3>Hepatite E <span class="ank ank-hy">HIGH-YIELD</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Duas doenças com o mesmo vírus. <b>Genótipos 1 e 2</b>: epidêmica, fecal-oral, adulto jovem, letalidade de cerca de 5% e até 20% a 25% <b>na gestante do terceiro trimestre</b>. <b>Genótipos 3 e 4</b>: zoonose de suínos por carne malcozida, idoso, oligossintomática, com manifestações neurológicas e <b>forma crônica no imunossuprimido</b>.</div></div>
@@ -782,7 +801,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 <!-- D.3 virus nao hepatotropicos -->
-<div class="card diag">
+<div class="card diag" id="d3">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">D.3</span> Vírus não hepatotrópicos e mímicos</div><h3>Hepatite por HSV, CMV, EBV e febre amarela <span class="ank ank-dgr">DANGER</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Pensar neles quando a sorologia das hepatites A a E vem negativa, sobretudo com <b>febre alta</b> — achado atípico nas hepatites virais clássicas. A hepatite por herpes simples é a emergência do grupo: ALT muito alta, pouca icterícia, leucopenia, imunossuprimido ou gestante, e mortalidade acima de 70% sem aciclovir precoce.</div></div>
@@ -797,7 +816,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 <!-- D.4 Wilson fulminante -->
-<div class="card diag">
+<div class="card diag" id="d4">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">D.4</span> Metal e falência</div><h3>Doença de Wilson fulminante <span class="ank ank-dec">DECISION</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Jovem com insuficiência hepática aguda, <b>anemia hemolítica Coombs negativa</b>, fosfatase alcalina baixa e AST maior que ALT. <b>Quelação não resgata a forma fulminante: o tratamento é transplante</b>, com plasmaférese de alto volume como ponte. Wilson hepático crônico e seus quelantes ficam no GH10; a forma neurológica, no NE06.</div></div>
@@ -812,7 +831,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 <!-- D.5 variantes HAI -->
-<div class="card diag">
+<div class="card diag" id="d5">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">D.5</span> Variantes imunomediadas</div><h3>Sobreposições da hepatite autoimune e HAI induzida por fármaco</h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Fosfatase alcalina alta numa HAI obriga a olhar a via biliar: <b>sobreposição com colangite biliar primária</b> (antimitocôndria, ductopenia florida) ou <b>com colangite esclerosante</b> (colangio-RM com estenoses, sobretudo em jovem com retocolite). E todo fenótipo autoimune medicamentoso remite ao retirar o fármaco.</div></div>
@@ -827,7 +846,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 <!-- D.6 toxinas nao medicamentosas -->
-<div class="card diag">
+<div class="card diag" id="d6">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">D.6</span> Toxinas não medicamentosas</div><h3>Cogumelos, fitoterápicos, suplementos e solventes <span class="ank ank-dgr">DANGER</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Pergunte ativamente por chás, emagrecedores, "pré-treino", anabolizantes e cogumelos silvestres: o paciente não considera nada disso medicamento. A intoxicação por <b>Amanita phalloides</b> tem padrão temporal próprio — gastroenterite coleriforme em 6 a 24 horas, intervalo de melhora enganosa e falência hepática no segundo ou terceiro dia.</div></div>
@@ -842,7 +861,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 <!-- D.7 isquemica -->
-<div class="card diag">
+<div class="card diag" id="d7">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">D.7</span> Causa hemodinâmica</div><h3>Hepatite isquêmica (fígado de choque)</h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">ALT e AST de milhares com <b>LDH muito alto</b> e queda rápida em 72 horas, num paciente que teve hipotensão, parada cardíaca, insuficiência cardíaca direita aguda ou hipoxemia grave. O tratamento é hemodinâmico: não há antídoto nem antiviral a procurar.</div></div>
@@ -857,7 +876,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 <!-- D.8 hiperbilirrubinemias -->
-<div class="card tx">
+<div class="card tx" id="d8">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">D.8</span> Defeitos hereditários</div><h3>Hiperbilirrubinemias hereditárias <span class="ank ank-prl">PEARL</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Icterícia com <b>enzimas e função hepática normais</b>. Indireta leve que piora com jejum é Gilbert, presente em cerca de 7% da população e sem necessidade de tratamento. Direta com fosfatase alcalina normal é Dubin-Johnson ou Rotor, igualmente benignas. Crigler-Najjar tipo I é a exceção grave, neonatal.</div></div>
@@ -872,7 +891,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 <!-- D.9 transplante -->
-<div class="card tx">
+<div class="card tx" id="d9">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">D.9</span> Enxerto</div><h3>Transplante hepático na insuficiência hepática aguda <span class="ank ank-dec">DECISION</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">É o único tratamento que comprovadamente aumenta a sobrevida na insuficiência hepática aguda, e no Brasil a <b>situação de priorização</b> coloca esses pacientes à frente da fila por MELD. O que mais custa vida não é a técnica: é a transferência tardia para o centro transplantador.</div></div>
@@ -894,7 +913,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <div class="section-title">Da transaminase alta à decisão de listar — duas perguntas antes de qualquer sorologia</div>
 <div class="section-sub">Primeiro: a função de síntese está preservada? Segundo: há fígado crônico por baixo? A primeira separa quem pode ir para casa de quem vai para a UTI; a segunda separa insuficiência hepática aguda de descompensação de cirrose.</div>
 </div>
-<div class="card prim">
+<div class="card prim" id="e1">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">E.1</span> Algoritmo</div><h3>Árvore de decisão — hepatite aguda, hepatite crônica e falência <span class="ank ank-dec">DECISION</span></h3></div>
 <div class="card-body">
 <div class="algo"><div class="tree">
@@ -955,11 +974,11 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <div class="section-eyebrow"><span>F</span> Tratamento Integrado</div>
 <div class="section-title">F1 · Escadas por entidade · F2 · Doses operacionais</div>
 <div class="section-sub">O que o SUS entrega, o que só existe na diretriz internacional, e os números que se prescrevem à beira do leito — com a diferença entre tratar o vírus, tratar a imunidade e sustentar o fígado que falhou.</div>
-</div>
-<div class="card tx">
+</div><!--hp-f2--><nav class="sec-idx" aria-label="Neste capítulo"><a href="#f1"><b>F.1</b>Escadas terapêuticas por enti…</a><a href="#f2"><b>F.2</b>Tabela de doses — adulto, com…</a></nav><!--/hp-f2-->
+<div class="card tx" id="f1">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">F.1</span> Estratégia</div><h3>Escadas terapêuticas por entidade <span class="ank ank-dec">DECISION</span></h3></div>
 <div class="card-body">
-<div class="sub-title">F1.1 · Hepatite A e hepatite E agudas — suporte e prevenção</div>
+<div class="sub-title" id="f1-1">F1.1 · Hepatite A e hepatite E agudas — suporte e prevenção</div>
 <ul class="bullets">
 <li><b>Primeira linha:</b> hidratação, antiemético, dieta conforme tolerância, repouso relativo. Abstinência de álcool por pelo menos 6 meses e revisão de todos os hepatotóxicos em uso. Paracetamol até 2 g/dia é aceitável para sintomas; não há "hepatoprotetor" com evidência.</li>
 <li><b>Vitamina K 10 mg SC ou IV por 1 a 3 dias</b> quando o tempo de protrombina está alargado: boa parte do alargamento na fase colestática é má absorção, e a resposta à vitamina K diferencia colestase de falência de síntese.</li>
@@ -967,14 +986,14 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <li><b>Hepatite E no imunossuprimido:</b> reduzir a imunossupressão é o primeiro passo; RNA que persiste além de 3 meses recebe ribavirina por 12 semanas, com extensão guiada pela viremia. Contraindicada na gestação.</li>
 </ul>
 <div class="box hy"><span class="box-label">HIGH-YIELD</span><div class="box-title">Quem morre de hepatite A é quem já tinha fígado doente</div><div class="box-body">A letalidade geral é menor que 1 por 1.000 infectados, mas a forma fulminante concentra-se em maiores de 50 anos e em portadores de hepatopatia crônica — exatamente a população em que a vacina está indicada pelo CRIE e é frequentemente esquecida. Vacinar o paciente com hepatite B ou C crônica contra hepatite A é uma das intervenções de melhor custo-efetividade do ambulatório de hepatologia <span class="ev ev-sbr">PCDT HCV 2026</span>.</div></div>
-<div class="sub-title">F1.2 · Hepatite B aguda — tratar só a forma grave</div>
+<div class="sub-title" id="f1-2">F1.2 · Hepatite B aguda — tratar só a forma grave</div>
 <ul class="bullets">
 <li><b>Primeira linha:</b> suporte. Mais de 95% dos adultos imunocompetentes curam espontaneamente, com soroconversão para anti-HBs, e o antiviral não altera esse desfecho.</li>
 <li><b>Indicação de antiviral (hepatite B aguda grave):</b> INR acima de 1,5, <b>ou</b> icterícia protraída com bilirrubina total acima de 3 mg/dL ou direta acima de 1,5 mg/dL por mais de 4 semanas, <b>ou</b> encefalopatia, <b>ou</b> ascite. Use tenofovir 300 mg/dia ou entecavir 0,5 mg/dia, mantidos até a perda do HBsAg <span class="ev ev-sbr">PCDT HBV 2023</span>.</li>
 <li><b>Nunca:</b> interferon na forma aguda (piora a necrose inflamatória).</li>
 <li><b>Escalonamento:</b> encefalopatia é insuficiência hepática aguda — o antiviral não resgata o fígado, mas reduz a recidiva no enxerto, por isso inicie antes do transplante.</li>
 </ul>
-<div class="sub-title">F1.3 · Hepatite B crônica — quem trata, com o quê, e por quanto tempo</div>
+<div class="sub-title" id="f1-3">F1.3 · Hepatite B crônica — quem trata, com o quê, e por quanto tempo</div>
 <ul class="bullets">
 <li><b>Primeira linha no SUS:</b> <b>tenofovir desoproxila 300 mg VO ao dia</b>, por tempo indeterminado, com creatinina, fósforo sérico, relação proteína/creatinina urinária e densitometria no seguimento.</li>
 <li><b>Alternativas do PCDT, por motivo clínico:</b> <b>entecavir 0,5 mg/dia em jejum</b> (<b>cirrose</b>, com 1 mg/dia na descompensada; doença renal crônica, osteoporose, em quem vai receber imunossupressor ou quimioterápico, e nos usuários de inibidor de calcineurina ou micofenolato); <b>tenofovir alafenamida 25 mg/dia</b> só nessas situações com exposição prévia à lamivudina (a proposta em consulta pública o estende à cirrose descompensada, gestação e amamentação).</li>
@@ -986,14 +1005,14 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <li><b>Vigilância perene:</b> ultrassonografia com ou sem alfafetoproteína a cada 6 meses na cirrose e nos não cirróticos de alto risco; vacinas de hepatite A, pneumococo e influenza; abstinência de álcool.</li>
 </ul>
 <div class="box danger"><span class="box-label">DANGER</span><div class="box-title">Reativação do HBV: o erro é não ter pedido o anti-HBc</div><div class="box-body">Rastreie <b>HBsAg, anti-HBc total e anti-HBs</b> em todos antes de quimioterapia, rituximabe ou outro anti-CD20, corticoide em dose alta e prolongada, anti-TNF, inibidor de JAK, transplante de órgão sólido ou de medula. HBsAg reagente sem critério de tratamento, com risco moderado ou alto, recebe <b>profilaxia</b>; anti-HBc reagente com HBsAg negativo e carga viral indetectável recebe profilaxia se o risco for alto, e pode ser monitorado com terapia preemptiva se for moderado. Inicie 2 a 4 semanas antes, ou no máximo junto com a imunossupressão, e mantenha por <b>12 meses após o término — 18 a 24 meses se houve anti-CD20</b>. Monitorize ALT e HBV-DNA a cada 3 a 6 meses durante e por pelo menos 12 meses após a suspensão. A dificuldade de iniciar o antiviral nunca deve atrasar o tratamento oncológico <span class="ev ev-sbr">PCDT HBV 2023</span>.</div></div>
-<div class="sub-title">F1.4 · Hepatite delta — o único cenário em que o interferon ainda é primeira linha</div>
+<div class="sub-title" id="f1-4">F1.4 · Hepatite delta — o único cenário em que o interferon ainda é primeira linha</div>
 <ul class="bullets">
 <li><b>Esquema do SUS:</b> alfapeginterferona 2a 180 µg SC por semana durante 48 semanas, associada a análogo de nucleos(t)ídeo (tenofovir, entecavir ou TAF) mantido indefinidamente; repetir outras 48 semanas se persistir dano hepático, totalizando até 96 semanas de interferon.</li>
 <li><b>Monitorização:</b> HDV-RNA ao final das 48 semanas, critério proposto na consulta pública de 2026 para manter ou suspender, com hemograma, função tireoidiana e avaliação psiquiátrica durante o interferon.</li>
 <li><b>Fora do SUS:</b> bulevirtida 2 mg SC ao dia, inibidor de entrada via NTCP, aprovada na Europa, isolada ou com interferon.</li>
 <li><b>Escalonamento:</b> cirrose descompensada contraindica interferon — mantenha o análogo e avalie transplante.</li>
 </ul>
-<div class="sub-title">F1.5 · Hepatite C — cura em 12 semanas, decidida pelo APRI</div>
+<div class="sub-title" id="f1-5">F1.5 · Hepatite C — cura em 12 semanas, decidida pelo APRI</div>
 <ul class="bullets">
 <li><b>Todos tratam:</b> qualquer pessoa com HCV-RNA detectável, aguda ou crônica, sem esperar a cronificação e sem genotipagem.</li>
 <li><b>Primeira linha no SUS, de 12 anos ou 30 kg em diante:</b> APRI menor que 1 e sem cirrose → <b>sofosbuvir 400 mg + daclatasvir 60 mg VO ao dia por 12 semanas</b> (comprimidos separados, tomados juntos); APRI maior ou igual a 1 ou cirrose compensada Child A → <b>sofosbuvir/velpatasvir 400/100 mg VO ao dia por 12 semanas</b>; cirrose descompensada Child B ou C → <b>sofosbuvir/velpatasvir por 24 semanas</b>, em centro de referência.</li>
@@ -1004,7 +1023,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <li><b>Depois:</b> HCV-RNA 12 semanas após o fim para confirmar a resposta virológica sustentada. Cirrótico curado mantém vigilância semestral de carcinoma hepatocelular para sempre; não cirrótico curado está liberado do seguimento hepatológico, mas segue suscetível à reinfecção.</li>
 </ul>
 <div class="box decision"><span class="box-label">DECISION</span><div class="box-title">APRI: a conta que define o esquema no SUS</div><div class="box-body">APRI = [(AST ÷ limite superior da normalidade da AST) ÷ contagem de plaquetas em 10⁹/L] × 100. Valor <b>menor que 1 exclui doença hepática avançada</b> para fins de escolha terapêutica e permite iniciar o tratamento na atenção primária; valor <b>maior ou igual a 1</b> obriga a calcular Child-Pugh, prosseguir a investigação com elastografia quando disponível e usar o esquema coformulado. É uma conta de hemograma e bioquímica — não há desculpa para atrasar o tratamento esperando elastografia <span class="ev ev-sbr">PCDT HCV 2026</span>.</div></div>
-<div class="sub-title">F1.6 · Hepatite autoimune — induzir, confirmar resposta, manter</div>
+<div class="sub-title" id="f1-6">F1.6 · Hepatite autoimune — induzir, confirmar resposta, manter</div>
 <ul class="bullets">
 <li><b>Indução:</b> prednisona ou prednisolona 0,5–1 mg/kg/dia (máximo 60 mg/dia), ou budesonida 3 mg VO de 8/8 h no paciente não cirrótico e sem forma aguda grave. No SUS, redução semanal: prednisona 30→20→15 mg com azatioprina 50–150 mg/dia, mantendo 5–15 mg/dia; ou 60→40→30 mg isolada, mantendo 20 mg/dia.</li>
 <li><b>Poupador de corticoide, junto com a prednisona:</b> azatioprina 50–150 mg/dia desde a indução (PCDT, Tabela 4), subindo até 1–2 mg/kg/dia, com TPMT antes (NUDT15 sem fonte no PCDT); hemograma semanal no 1º mês, quinzenal no 2º e 3º meses, depois mensal; transaminases na mesma frequência até 6 meses, depois trimestrais (PCDT, p. 13) <span class="ev ev-sbr">PCDT HAI 2018</span>; ou micofenolato de mofetila 1,5–2 g/dia, alternativa de primeira linha na diretriz europeia de 2025.</li>
@@ -1014,7 +1033,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <li><b>Sempre, junto:</b> cálcio e vitamina D (bisfosfonato conforme o risco) acima de 5 mg/dia de prednisona, rastreio de tuberculose latente e sorologias antes de imunossuprimir, vacinas, e vigilância de carcinoma se houver cirrose.</li>
 <li><b>Retirada:</b> só após 2 anos ou mais de remissão bioquímica, idealmente com biópsia sem atividade; ALT a cada 1 a 3 meses no primeiro ano. Após a segunda recaída, manutenção indefinida.</li>
 </ul>
-<div class="sub-title">F1.7 · Lesão hepática por fármacos — a retirada é o tratamento</div>
+<div class="sub-title" id="f1-7">F1.7 · Lesão hepática por fármacos — a retirada é o tratamento</div>
 <ul class="bullets">
 <li><b>Primeira e única medida com evidência:</b> suspender o fármaco suspeito ao primeiro sinal consistente — não espere confirmar outras hipóteses, porque a suspensão precoce evita a progressão em grande parte dos casos.</li>
 <li><b>Limiares de suspensão:</b> ALT ≥5× LSN (ou ≥8× para fármaco essencial, sob monitoração estreita), ALT ≥3× LSN com bilirrubina ≥2× LSN ou INR acima de 1,5, ou surgimento de sintomas.</li>
@@ -1022,7 +1041,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <li><b>Esquema RIPE:</b> elevação de aminotransferases até cerca de 3 vezes o limite, estável ou em queda, não justifica suspender. Com icterícia ou elevação maior, suspenda todo o esquema e reintroduza fármaco a fármaco, com intervalo de alguns dias, conforme o manual de tuberculose do Ministério da Saúde, considerando esquema alternativo sem a droga responsável.</li>
 <li><b>Nunca reexpor</b> após lesão grave; registre a reação em prontuário e oriente o paciente sobre o nome do fármaco e dos congêneres.</li>
 </ul>
-<div class="sub-title">F1.8 · Hepatotoxicidade pelo paracetamol — antídoto cedo, transplante a tempo</div>
+<div class="sub-title" id="f1-8">F1.8 · Hepatotoxicidade pelo paracetamol — antídoto cedo, transplante a tempo</div>
 <ul class="bullets">
 <li><b>Antídoto:</b> N-acetilcisteína intravenosa, 150 mg/kg em 1 hora, seguidos de 50 mg/kg em 4 horas e de 100 mg/kg em 16 horas (peso considerado até 100 kg); esquemas de duas bolsas em 12 horas são alternativa validada; via oral 140 mg/kg seguida de 70 mg/kg de 4/4 h por 17 doses quando não há acesso venoso.</li>
 <li><b>Quando não esperar o laboratório:</b> tempo de exposição desconhecido ou superior a 8 horas, exposição repetida, ou ALT já elevada — inicie o antídoto e reavalie depois.</li>
@@ -1031,7 +1050,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <li><b>Suporte:</b> glicose contínua, correção de fosfato e potássio, atenção à lesão renal e contato precoce com o CIATox e com o centro transplantador.</li>
 <li><b>Transplante:</b> pH abaixo de 7,30 após volume, ou a tríade INR acima de 6,5, creatinina acima de 3,4 mg/dL e encefalopatia de graus III–IV.</li>
 </ul>
-<div class="sub-title">F1.9 · Insuficiência hepática aguda — cinco frentes simultâneas</div>
+<div class="sub-title" id="f1-9">F1.9 · Insuficiência hepática aguda — cinco frentes simultâneas</div>
 <ul class="bullets">
 <li><b>Etiológica:</b> N-acetilcisteína intravenosa (todas as etiologias com encefalopatia de graus I–II), antiviral de alta barreira na hepatite B, aciclovir no herpes simples, corticoide na hepatite autoimune, interrupção da gestação na esteatose aguda da gravidez e na HELLP, silibinina + NAC na intoxicação por amatoxina (penicilina G só 2ª linha), plasmaférese de alto volume na doença de Wilson e como ponte em geral.</li>
 <li><b>Neurológica:</b> graus I–II com vigilância horária e sem sedativo; graus III–IV com intubação, cabeceira a 30°, sódio entre 145 e 155 mmol/L, normocapnia, propofol para sedação, manitol 0,5–1 g/kg nos picos de pressão intracraniana e terapia renal substitutiva contínua se amônia acima de 150 µmol/L. Tratar febre e convulsão de forma agressiva.</li>
@@ -1041,7 +1060,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <li><b>Transplante:</b> critérios do King's College, Clichy ou MELD reavaliados a cada 12 horas; transferência precoce; priorização na fila brasileira.</li>
 </ul>
 <div class="box danger"><span class="box-label">DANGER</span><div class="box-title">O que não fazer na insuficiência hepática aguda</div><div class="box-body">Não corrija o INR com plasma sem sangramento ativo ou procedimento de risco: apaga o marcador prognóstico, sobrecarrega volume e piora a pressão intracraniana. Não prescreva benzodiazepínico para agitação — mascara a progressão neurológica e precipita rebaixamento. Não use lactulose como se fosse encefalopatia de cirrótico: não altera desfecho, distende o cólon e complica a cirurgia. Não restrinja proteína. Não indique biópsia hepática de rotina. Não aguarde a reunião da manhã seguinte para falar com o centro transplantador <span class="ev ev-acr">ACG ALF 2023</span> <span class="ev ev-eular">EASL ALF 2017</span>.</div></div>
-<div class="sub-title">F1.10 · Prevenção e profilaxia — o que vacina, o que imuniza passivamente</div>
+<div class="sub-title" id="f1-10">F1.10 · Prevenção e profilaxia — o que vacina, o que imuniza passivamente</div>
 <ul class="bullets">
 <li><b>Hepatite B, pré-exposição:</b> vacina universal; recém-nascido com monovalente nas primeiras 12 horas seguida de pentavalente aos 2, 4 e 6 meses; adulto suscetível em esquema 0-1-6 meses; <b>imunossuprimido, candidato a transplante e doença renal crônica dialítica com o dobro da dose em 4 aplicações</b> (0, 1, 2 e 6 meses), com anti-HBs 1 a 2 meses após. Dose de desafio única em quem perdeu o anti-HBs tardiamente; dois esquemas completos sem resposta definem não respondedor, que depende de imunoglobulina em caso de exposição.</li>
 <li><b>Hepatite B, pós-exposição:</b> imunoglobulina humana anti-hepatite B em suscetível, idealmente nas primeiras 24 horas e no máximo em 7 dias para exposição percutânea e 14 dias para exposição sexual, sempre com início ou completamento do esquema vacinal. Situações contempladas: acidente com material biológico de fonte reagente ou de alto risco, prevenção da transmissão vertical, parceria sexual de caso agudo, violência sexual e imunossuprimido exposto mesmo se previamente vacinado.</li>
@@ -1050,7 +1069,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <li><b>Hepatite C:</b> não há vacina nem imunoprofilaxia. Prevenção é redução de danos (insumos estéreis), biossegurança, triagem de hemocomponentes e tratamento como prevenção.</li>
 <li><b>Em todo hepatopata crônico:</b> vacinas de hepatite A e B, pneumococo, influenza anual, COVID-19 e as do calendário do adulto; evitar álcool; revisar fitoterápicos e suplementos a cada consulta.</li>
 </ul>
-<div class="sub-title">F1.11 · Cenário a cenário — caso, conduta certa, erro típico</div>
+<div class="sub-title" id="f1-11">F1.11 · Cenário a cenário — caso, conduta certa, erro típico</div>
 <div class="stbl stbl-3">
 <div class="stbl-head stbl-3"><div>Caso</div><div>Conduta certa</div><div>Erro típico</div></div>
 <div class="stbl-row stbl-3"><div class="col col1" data-l="Caso">Homem de 30 anos, ALT 2.800 U/L, bilirrubina 8 mg/dL, INR 1,1, anti-HAV IgM reagente, lúcido</div><div class="col" data-l="Conduta">Suporte ambulatorial com retorno em 48–72 h, reavaliando INR e sensório; afastamento do trabalho; sem corticoide</div><div class="col" data-l="Erro">Internar pelo valor da ALT e prescrever "hepatoprotetor", ignorando que o INR normal é o que define a segurança</div></div>
@@ -1068,7 +1087,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 </div>
-<div class="card tx">
+<div class="card tx" id="f2">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">F.2</span> Doses operacionais</div><h3>Tabela de doses — adulto, com pediatria onde muda conduta <span class="ank ank-hy">HIGH-YIELD</span></h3></div>
 <div class="card-body">
 <div class="stbl stbl-3">
@@ -1120,7 +1139,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <div class="section-title">Erros operacionais, mitos vivos e debates abertos</div>
 <div class="section-sub">Em hepatologia aguda, os erros que custam vidas são de interpretação — confundir magnitude de enzima com gravidade — e de omissão: não pedir o anti-HBc antes de imunossuprimir, não dar o antídoto, não telefonar para o centro transplantador.</div>
 </div>
-<div class="card pearl">
+<div class="card pearl" id="g1">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">G.1</span> Pegadinhas</div><h3>10 erros operacionais em hepatites e insuficiência hepática aguda <span class="ank ank-dgr">DANGER</span></h3></div>
 <div class="card-body">
 <div class="stbl stbl-2">
@@ -1138,7 +1157,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 </div>
-<div class="card pearl">
+<div class="card pearl" id="g2">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">G.2</span> Mitos · Controvérsias</div><h3>Mitos vivos e debates atuais</h3></div>
 <div class="card-body">
 <div class="box myth"><span class="box-label">MYTH</span><div class="box-title">"Paciente com hepatite viral aguda deve ficar em isolamento de contato"</div><div class="box-body">Na hepatite A, a eliminação fecal de vírus é máxima nas duas semanas <i>anteriores</i> à icterícia e cai quando o paciente procura o serviço; isolar quem já está ictérico tem efeito epidemiológico mínimo. Precaução padrão basta no hospital. O que muda transmissão é o afastamento de creches e escolas nas primeiras duas semanas de doença, o cuidado com fraldas em instituições e a vacinação dos contatos em até 14 dias. Para hepatites B e C, o relevante é a precaução com sangue e fluidos, não o isolamento.</div></div>
@@ -1157,7 +1176,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <div class="section-title">H1 · Pearls de especialista · H2 · Áreas em evolução</div>
 <div class="section-sub">Oito nuances que separam quem decide rápido de quem pede exames, e as mudanças reais em curso no diagnóstico, no acesso e na terapêutica.</div>
 </div>
-<div class="card pearl">
+<div class="card pearl" id="h1">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">H.1</span> Pearls</div><h3>Nuances que mudam a condução <span class="ank ank-prl">PEARL</span></h3></div>
 <div class="card-body">
 <div class="box pearl"><span class="box-label">PEARL</span><div class="box-title">O fator V é o melhor termômetro da síntese, porque não depende de vitamina K</div><div class="box-body">O fator VII tem a meia-vida mais curta (4 a 6 horas) e cai primeiro, mas é dependente de vitamina K, de modo que parte de sua queda reflete má absorção na colestase e desnutrição, não falência hepatocitária. O fator V, com meia-vida de 12 a 36 horas, é sintetizado sem vitamina K: sua queda abaixo de 50% isola o déficit de síntese verdadeiro. É por isso que os critérios franceses de Clichy usam fator V, e é por isso que uma dose de vitamina K antes de interpretar o INR não é formalidade, mas parte do raciocínio.</div></div>
@@ -1170,7 +1189,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <div class="box pearl"><span class="box-label">PEARL</span><div class="box-title">Febre alta em "hepatite viral" deve reorientar o diagnóstico, não o antitérmico</div><div class="box-body">As hepatites A a E cursam com febre baixa, de 38 a 38,5 °C, que cede ao começar a icterícia. Febre alta persistente aponta para outra coisa: hepatite por herpes simples (ALT de milhares com bilirrubina modesta, leucopenia, gestante ou imunossuprimido, mortalidade acima de 70% sem aciclovir precoce), leptospirose (leucocitose, creatinofosfoquinase alta, lesão renal não oligúrica, icterícia rubínica), febre amarela (AST maior que ALT, bradicardia relativa, hemorragia), colangite bacteriana (dor, FA alta, dilatação biliar) ou dengue grave. Em insuficiência hepática aguda febril sem etiologia, aciclovir empírico é decisão de baixo custo e alto retorno.</div></div>
 </div>
 </div>
-<div class="card pearl">
+<div class="card pearl" id="h2">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">H.2</span> Evolving</div><h3>O que mudou e o que está mudando <span class="ank ank-evo">EVOLVING</span></h3></div>
 <div class="card-body">
 <div class="box evolving"><span class="box-label">EVOLVING</span><div class="box-title">PCDT de hepatite C de 2026: fim do interferon, fim da genotipagem, APRI no comando</div><div class="box-body">A Portaria SCTIE/MS nº 39, de 20 de julho de 2026, atualizou o protocolo e revogou o de 2018. Saíram os esquemas com alfapeginterferona e ribavirina e a genotipagem de rotina; entraram o APRI como critério de escolha, a tripla sofosbuvir/velpatasvir/voxilaprevir no retratamento, os grânulos pediátricos e regras para transplante com órgãos de doadores anti-HCV reagentes. Na prática, o tratamento inicial passou a caber na atenção primária com dois exames de rotina.</div></div>
@@ -1221,5 +1240,36 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </footer>
 <a class="to-top" href="#" aria-label="Voltar ao topo">↑</a>
 <div class="watermark">@dr.lorencato · Hepatites e IHA v5.2</div>
-</body>
+<!--hp-f2--><script>(function(){var d=document,M=d.querySelector('main');if(!M)return;
+var SELF='GH09',HP=' CT01 CT02 CT03 CT04 CT05 CT06 CT08 CT10 CV01 CV03 CV04 CV05 CV06 CV07 CV08 EN01 EN02 EN03 EN04 EN06 EN07 GH01 GH02 GH03 GH05 GH06 GH07 GH08 GH09 GH10 GO01 GO02 GO03 GO04 GO09 GO10 GO11 GO12 GO13 GO14 HO01 HO02 HO03 HO04 HO05 HO06 II01 II02 II03 II04 II07 II08 NE01 NE02 NE03 NE04 NE05 NE06 NE07 NE08 NU01 NU02 NU03 NU04 NU05 OE01 OE02 PC01 PC02 PC03 PC04 PC05 PC06 PD01 PD02 PD03 PD04 PD05 PD06 PD07 PD08 PD09 PD10 RD01 RD02 RD03 RD04 RD05 RD07 RP01 RP02 RP03 RP04 ';
+var SK='A,H1,H2,H3,SCRIPT,STYLE,NAV,.card-num,.card-eyebrow,.sub-title,.disease-tag,.toc';
+var R=/\b(?:([A-H])(\d)?\.(\d{1,2}[a-c]?)|(CV|RP|GH|NE|EN|NU|HO|II|RD|GO|PD|PC|CT|OE)(\d\d))\b/g;
+function skip(n){for(var e=n.parentNode;e&&e!==M;e=e.parentNode)if(e.matches&&e.matches(SK))return 1;return 0}
+var w=d.createTreeWalker(M,4),t,L=[];while(t=w.nextNode())if(R.test(t.data)&&!skip(t))L.push(t);
+L.forEach(function(t){var s=t.data,f=d.createDocumentFragment(),i=0,m;R.lastIndex=0;
+while(m=R.exec(s)){var h=null;
+if(m[1]){var id=m[1].toLowerCase()+(m[2]?m[2]+'-':'')+m[3];if(d.getElementById(id))h='#'+id}
+else{var x=m[4]+m[5];if(x!==SELF&&HP.indexOf(' '+x+' ')>=0)h='../'+x+'/'+x+'.html'}
+if(!h)continue;f.appendChild(d.createTextNode(s.slice(i,m.index)));
+var a=d.createElement('a');a.href=h;a.className='xr';a.textContent=m[0];f.appendChild(a);i=R.lastIndex}
+if(i){f.appendChild(d.createTextNode(s.slice(i)));t.parentNode.replaceChild(f,t)}});
+function nz(s){return s.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'')}
+var q=d.querySelector('.hp-q'),n=d.querySelector('.hp-n'),it=M.querySelectorAll('.card,.pocket-card'),T;
+function clr(){M.querySelectorAll('.q-off').forEach(function(e){e.classList.remove('q-off')})}
+function run(){var v=nz(q.value.trim());clr();n.textContent='';if(v.length<2)return;var k=0;
+it.forEach(function(c){if(nz(c.textContent).indexOf(v)<0){c.classList.add('q-off');return}k++;
+var r=c.querySelectorAll('.stbl-row,.disease-row,.score-row'),h=[];r.forEach(function(x){if(nz(x.textContent).indexOf(v)>=0)h.push(x)});
+if(h.length)r.forEach(function(x){if(h.indexOf(x)<0)x.classList.add('q-off')});
+c.querySelectorAll('details').forEach(function(x){if(nz(x.textContent).indexOf(v)>=0)x.open=true})});
+M.querySelectorAll('section').forEach(function(s){if(!s.querySelector('.card:not(.q-off),.pocket-card:not(.q-off)'))s.classList.add('q-off')});
+n.textContent=k?k+' achado'+(k>1?'s':''):'nada'}
+if(q){q.addEventListener('input',function(){clearTimeout(T);T=setTimeout(run,180)});
+q.addEventListener('keydown',function(e){if(e.key==='Escape'){q.value='';run()}})}
+function tg(b,f){b.addEventListener('click',function(){var on=b.getAttribute('aria-pressed')!=='true';b.setAttribute('aria-pressed',on);f(on)})}
+var bd=d.querySelector('.hp-dz'),bo=d.querySelector('.hp-op');
+if(bd)tg(bd,function(on){d.body.classList.toggle('dz',on);if(on)d.getElementById('tratamento').scrollIntoView()});
+if(bo)tg(bo,function(on){M.querySelectorAll('details').forEach(function(x){x.open=on})});
+var P=[];addEventListener('beforeprint',function(){P=[];M.querySelectorAll('details:not([open])').forEach(function(x){P.push(x);x.open=true})});
+addEventListener('afterprint',function(){P.forEach(function(x){x.open=false})});
+})();</script><!--/hp-f2--></body>
 </html>

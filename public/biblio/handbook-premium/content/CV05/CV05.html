@@ -346,11 +346,30 @@ ul.bullets li b{color:var(--ink);font-weight:600}
   .pocket .pocket-card.tx{--accent:#a8481a}
   .pocket .pocket-card.clin{--accent:#0b5d4e}
 }
+
+/* === v5.2.2 · fase 2 (navegação) === */
+.hp-tools{display:flex;gap:6px;align-items:center;flex:none;order:1;margin-left:auto;padding-left:6px;position:sticky;right:0;background:#f1eee5;box-shadow:-10px 0 10px -4px #f1eee5,16px 0 0 #f1eee5}
+@media(min-width:900px){html{scroll-padding-top:150px}.toc-inner{flex-wrap:wrap;overflow:visible}.card[id],.sub-title[id]{scroll-margin-top:150px}}
+@media(max-width:899px){.hp-b,.hp-n{display:none}.hp-q{width:104px}}
+.hp-q{width:128px;font:500 12px/1 'DM Sans',system-ui,sans-serif;padding:7px 11px;border:1px solid var(--line-strong);border-radius:999px;background:var(--paper);color:var(--ink)}
+.hp-b{font:600 11px/1 'DM Sans',system-ui,sans-serif;letter-spacing:.05em;text-transform:uppercase;padding:7px 10px;border-radius:999px;border:1px solid var(--line-strong);background:var(--paper);color:var(--ink-soft);cursor:pointer;white-space:nowrap}
+.hp-b[aria-pressed=true]{background:var(--ink);color:#fff;border-color:var(--ink)}
+.hp-n{font:600 11px/1 'DM Mono',monospace;color:var(--ink-mute);white-space:nowrap}
+.sec-idx{display:flex;flex-wrap:wrap;gap:6px;margin:12px 0 20px}
+.sec-idx a{font:500 12px/1.25 'DM Sans',system-ui,sans-serif;padding:6px 10px;border-radius:999px;background:var(--paper);border:1px solid var(--line);color:var(--ink-soft);text-decoration:none}
+.sec-idx a:hover{border-color:var(--line-strong);color:var(--ink)}
+.sec-idx b{color:var(--c-prim);margin-right:5px;font-weight:700}
+a.xr{color:inherit;text-decoration:underline dotted;text-underline-offset:2px}
+a.xr:hover{color:var(--c-prim)}
+.card[id],.sub-title[id]{scroll-margin-top:110px}
+.q-off{display:none!important}
+body.dz main section:not(#tratamento){display:none}
+@media print{.hp-tools,.sec-idx,.toc-doses{display:none!important}}
 </style>
 </head>
 <body>
 <header class="header"><div class="header-row"><div class="h-mark">H</div><div class="h-titles"><div class="h-title">Hipertensão Arterial · Pocket Handbook</div><div class="h-sub">Elite edition · Cardiologia clínica · CV05</div></div><div class="h-author">@dr.lorencato</div><div class="h-edition">v5.2</div></div></header>
-<nav class="toc"><div class="toc-inner"><a href="#pocket" class="toc-chip"><span class="toc-chip-num">0</span>Pocket</a><a href="#redflags" class="toc-chip"><span class="toc-chip-num">A</span>Red Flags</a><a href="#approach" class="toc-chip"><span class="toc-chip-num">B</span>Apresentação</a><a href="#primarias" class="toc-chip"><span class="toc-chip-num">C</span>Entidades</a><a href="#secundarias" class="toc-chip"><span class="toc-chip-num">D</span>Secundárias</a><a href="#algoritmo" class="toc-chip"><span class="toc-chip-num">E</span>Algoritmo</a><a href="#tratamento" class="toc-chip"><span class="toc-chip-num">F</span>Tratamento</a><a href="#pitfalls" class="toc-chip"><span class="toc-chip-num">G</span>Pitfalls</a><a href="#pearls" class="toc-chip"><span class="toc-chip-num">H</span>Pearls</a></div></nav>
+<nav class="toc"><div class="toc-inner"><!--hp-f2--><span class="hp-tools"><input class="hp-q" type="search" placeholder="Buscar no HP" aria-label="Buscar no HP"><button class="hp-b hp-dz" type="button" aria-pressed="false">Só doses</button><button class="hp-b hp-op" type="button" aria-pressed="false">Abrir tudo</button><span class="hp-n" aria-live="polite"></span></span><!--/hp-f2--><a href="#pocket" class="toc-chip"><span class="toc-chip-num">0</span>Pocket</a><a href="#redflags" class="toc-chip"><span class="toc-chip-num">A</span>Red Flags</a><a href="#approach" class="toc-chip"><span class="toc-chip-num">B</span>Apresentação</a><a href="#primarias" class="toc-chip"><span class="toc-chip-num">C</span>Entidades</a><a href="#secundarias" class="toc-chip"><span class="toc-chip-num">D</span>Secundárias</a><a href="#algoritmo" class="toc-chip"><span class="toc-chip-num">E</span>Algoritmo</a><a href="#tratamento" class="toc-chip"><span class="toc-chip-num">F</span>Tratamento</a><!--hp-f2--><a href="#f2" class="toc-chip toc-doses"><span class="toc-chip-num">Rx</span>Doses</a><!--/hp-f2--><a href="#pitfalls" class="toc-chip"><span class="toc-chip-num">G</span>Pitfalls</a><a href="#pearls" class="toc-chip"><span class="toc-chip-num">H</span>Pearls</a></div></nav>
 <main>
 <div class="wrap">
 <div class="hero">
@@ -410,7 +429,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <div class="section-sub">A PA de 200/120 num hipertenso crônico assintomático costuma ser um problema de ambulatório; a PA de 170/105 numa jovem com convulsão e cegueira cortical é uma emergência. A autorregulação deslocada para a direita explica as duas coisas e explica também por que baixar rápido demais mata tanto quanto não baixar. Cada linha abaixo é sinal objetivo → suspeita → conduta imediata.</div>
 </div>
 
-<div class="card emerg">
+<div class="card emerg" id="a1">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">A.1</span> Emergências hipertensivas</div><h3>Sinais de lesão aguda de órgão-alvo <span class="ank ank-dgr">DANGER</span></h3></div>
 <div class="card-body">
 <div class="mnemo">
@@ -458,7 +477,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <div class="section-sub">A HAS é assintomática na imensa maioria; quem traz o paciente é a medida casual, a complicação, o PS com PA alta, o tratamento que "não funciona" ou o jovem cuja pressão não combina com a idade. Cada cenário abre um ramo diferente do raciocínio.</div>
 </div>
 
-<div class="card clin">
+<div class="card clin" id="b1">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">B.1</span> Padrão 1</div><h3>PA elevada num exame de rotina, sem sintomas</h3><div class="card-sub">Rastreio → confirmação → estratificação</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Uma medida isolada não diagnostica HAS. <b>Confirme com MAPA ou MRPA</b> (ou consultório em ≥2 ocasiões), estime o risco cardiovascular, procure lesão de órgão-alvo e pistas de causa secundária. A decisão de tratar depende do nível de PA e do risco.</div></div>
@@ -472,7 +491,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card clin">
+<div class="card clin" id="b2">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">B.2</span> Padrão 2</div><h3>PA muito alta no PS</h3><div class="card-sub">Emergência × elevação acentuada sem LOA × pseudocrise</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">PAS ≥180 e/ou PAD ≥110 (PCDT: ≥120) define a crise. <b>Com lesão aguda e progressiva de órgão-alvo = emergência</b> (UTI, IV). Sem lesão = elevação acentuada (antiga urgência), tratada por via oral com retorno precoce. Sem lesão e com gatilho (dor, ansiedade, enxaqueca, vertigem) = pseudocrise.</div></div>
@@ -485,7 +504,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card clin">
+<div class="card clin" id="b3">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">B.3</span> Padrão 3</div><h3>Hipertenso tratado que não chega à meta</h3><div class="card-sub">Pseudorresistência × resistência verdadeira × refratária</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Metade dos "resistentes" não é: técnica errada, avental branco, inércia médica e falta de adesão explicam a maioria. <b>MAPA é obrigatória</b> para confirmar HAR; confirmada, a HAR é predominantemente dependente de volume e aldosterona, e responde à espironolactona.</div></div>
@@ -498,7 +517,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card clin">
+<div class="card clin" id="b4">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">B.4</span> Padrão 4</div><h3>HAS que "não combina" com o paciente</h3><div class="card-sub">Pistas de HAS secundária</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Jovem sem história familiar, idoso com piora súbita de PA antes controlada, hipocalemia espontânea, paroxismos adrenérgicos, sopro abdominal, pulsos femorais fracos, ronco com sonolência, fácies cushingoide. <b>A pista escolhe o exame</b>; investigar todos às cegas é caro e cheio de falso-positivos.</div></div>
@@ -511,7 +530,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card clin">
+<div class="card clin" id="b5">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">B.5</span> Padrão 5</div><h3>A complicação chega antes do diagnóstico</h3><div class="card-sub">AVC, IC, DRC, FA, demência</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">A HAS é o principal fator de risco atribuível para AVC (sobretudo hemorrágico), IC, FA, DRC e comprometimento cognitivo vascular. <b>Cada 10 mmHg de PAS a menos reduz cerca de 20% os eventos cardiovasculares maiores, 35% o AVC e 40% a IC</b>, independentemente da PA basal.</div></div>
@@ -532,10 +551,10 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <div class="section-eyebrow"><span>C</span> Entidades Primárias</div>
 <div class="section-title">A doença crônica, o órgão que ela lesa, a crise e a causa que se cura</div>
 <div class="section-sub">Quatro boxes estruturam o HP: a HAS primária (90–95% dos casos), as lesões de órgão-alvo mediadas pela hipertensão (cardíacas aqui; renal no D.5), a crise hipertensiva com suas formas graves (encefalopatia, HA acelerada-maligna, retinopatia) e a abordagem inicial da HAS secundária, cujas causas específicas ficam em D.</div>
-</div>
+</div><!--hp-f2--><nav class="sec-idx" aria-label="Neste capítulo"><a href="#c1"><b>C.1</b>Hipertensão arterial primária…</a><a href="#c2"><b>C.2</b>Cardiopatia hipertensiva e le…</a><a href="#c3"><b>C.3</b>Crise hipertensiva: emergênci…</a><a href="#c4"><b>C.4</b>Hipertensão secundária — abor…</a></nav><!--/hp-f2-->
 
 <!-- C.1 HAS PRIMÁRIA -->
-<div class="card prim">
+<div class="card prim" id="c1">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.1</span> Doença crônica</div><h3>Hipertensão arterial primária (essencial) <span class="ank ank-hy">HIGH-YIELD</span> <span class="ank ank-dec">DECISION</span></h3><div class="card-sub">Diagnóstico em duas ocasiões · risco global · meta &lt;130/80</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Elevação sustentada da PA (≥140/90 no consultório; MAPA 24 h ≥130/80; MRPA ≥130/80, DBH) sem causa identificável, resultado de natriurese pressórica deslocada, ativação simpática e do SRAA e remodelamento arterial. <b>Trate com estilo de vida para todos e fármaco para quem tem ≥140/90 ou 130–139/80–89 com alto risco</b>; comece com dupla e mire &lt;130/80.</div></div>
@@ -568,7 +587,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 
 <!-- C.2 CARDIOPATIA HIPERTENSIVA / LOA -->
-<div class="card prim">
+<div class="card prim" id="c2">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.2</span> Lesão de órgão-alvo</div><h3>Cardiopatia hipertensiva e lesão de órgão-alvo mediada pela HAS <span class="ank ank-hy">HIGH-YIELD</span></h3><div class="card-sub">HVE · disfunção diastólica · rigidez arterial · cérebro · retina crônica</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">LOA é a evidência de que a PA já lesou o órgão: HVE ao ECG/eco, albuminúria ≥30 mg/g, TFGe &lt;60, VOP ≥10 m/s, placa carotídea, ITB &lt;0,9, retinopatia. <b>A presença de LOA põe o paciente em alto risco, dispensa a segunda medida para o diagnóstico e torna obrigatórias a meta estrita e a reavaliação periódica.</b></div></div>
@@ -597,7 +616,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 
 <!-- C.3 CRISE HIPERTENSIVA -->
-<div class="card prim">
+<div class="card prim" id="c3">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.3</span> Crise</div><h3>Crise hipertensiva: emergência × elevação acentuada sem LOA <span class="ank ank-dgr">DANGER</span> <span class="ank ank-dec">DECISION</span></h3><div class="card-sub">Inclui encefalopatia hipertensiva, HA acelerada-maligna e retinopatia hipertensiva aguda</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">PAS ≥180 e/ou PAD ≥110 (ESC, DBH; PCDT e AHA usam ≥120 de PAD). <b>Emergência = lesão aguda e progressiva de órgão-alvo</b>: UTI, droga IV de meia-vida curta, ritmo de redução definido pelo órgão. <b>Sem LOA aguda = ajuste oral e retorno em 1–7 dias.</b> O nível absoluto da PA não separa uma da outra; a velocidade de subida e o estado prévio importam mais.</div></div>
@@ -628,7 +647,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 
 <!-- C.4 HAS SECUNDÁRIA -->
-<div class="card prim">
+<div class="card prim" id="c4">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.4</span> Causa identificável</div><h3>Hipertensão secundária — abordagem inicial <span class="ank ank-hy">HIGH-YIELD</span> <span class="ank ank-dec">DECISION</span></h3><div class="card-sub">Quem investigar, com que exame e para onde mandar</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">5–10% de todos os hipertensos (até 30–50% na HAR e nos jovens). <b>Investigue quem tem pista clínica ou laboratorial, não todos às cegas</b> — exceto o aldosteronismo primário, que a ESC 2024 recomenda rastrear em toda HAS confirmada (IIa) e a AHA/ACC 2025 em toda HAR e no estágio 2. Causas mais frequentes: doença renal parenquimatosa, apneia do sono, aldosteronismo, estenose de artéria renal.</div></div>
@@ -684,10 +703,10 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <div class="section-eyebrow"><span>D</span> Entidades Secundárias</div>
 <div class="section-title">As causas que se curam, a hipertensão que resiste e os fenótipos que enganam</div>
 <div class="section-sub">As causas secundárias ficam aqui no nível de rastreio e de primeira conduta; a doença de base tem dono em outro HP (EN04 para suprarrenal, NU02 para a artéria renal como doença renal, NU03 para DRC). Hipertensão resistente, fenótipos de medida e idoso fecham o diferencial do ambulatório.</div>
-</div>
+</div><!--hp-f2--><nav class="sec-idx" aria-label="Neste capítulo"><a href="#d1"><b>D.1</b>Hipertensão renovascular: ate…</a><a href="#d2"><b>D.2</b>Aldosteronismo primário — ras…</a><a href="#d3"><b>D.3</b>Feocromocitoma/paraganglioma…</a><a href="#d4"><b>D.4</b>Apneia obstrutiva do sono e c…</a><a href="#d5"><b>D.5</b>Doença renal parenquimatosa e…</a><a href="#d6"><b>D.6</b>Hipertensão resistente e refr…</a><a href="#d7"><b>D.7</b>Pré-hipertensão, avental bran…</a><a href="#d8"><b>D.8</b>Hipertensão no idoso: sistóli…</a></nav><!--/hp-f2-->
 
 <!-- D.1 RENOVASCULAR -->
-<div class="card diag">
+<div class="card diag" id="d1">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">D.1</span> Secundária renal-vascular</div><h3>Hipertensão renovascular: aterosclerótica e displasia fibromuscular <span class="ank ank-hy">HIGH-YIELD</span> <span class="ank ank-dec">DECISION</span></h3><div class="card-sub">Isquemia renal → renina → HAS · nefropatia isquêmica quando bilateral</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Dois perfis: <b>idoso aterosclerótico</b> (óstio, bilateral em até metade, tratamento clínico na maioria) e <b>mulher jovem com displasia fibromuscular</b> (terço médio-distal, "colar de contas", angioplastia com balão sem stent e chance real de cura). Doppler é o rastreio; arteriografia só se for revascularizar.</div></div>
@@ -711,7 +730,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 
 <!-- D.2 ALDOSTERONISMO -->
-<div class="card diag">
+<div class="card diag" id="d2">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">D.2</span> Secundária endócrina</div><h3>Aldosteronismo primário — rastreio e primeira decisão <span class="ank ank-hy">HIGH-YIELD</span> <span class="ank ank-evo">EVOLVING</span></h3><div class="card-sub">A causa endócrina mais comum e a mais subdiagnosticada · doença no EN04</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Aldosterona autônoma com renina suprimida: HAS, hipocalemia em uma minoria, alcalose, mais FA, AVC e HVE que a HAS primária com a mesma PA. <b>Rastreio = relação aldosterona/renina</b>, hoje ampliado (ESC: toda HAS confirmada; AHA: toda HAR e estágio 2). Unilateral (adenoma de Conn) → adrenalectomia; bilateral → ARM.</div></div>
@@ -735,7 +754,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 
 <!-- D.3 FEOCROMOCITOMA -->
-<div class="card diag">
+<div class="card diag" id="d3">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">D.3</span> Secundária adrenérgica</div><h3>Feocromocitoma/paraganglioma e crises adrenérgicas tóxicas <span class="ank ank-dgr">DANGER</span></h3><div class="card-sub">Paroxismos · metanefrinas · α antes de β · cocaína, anfetamina e rebote de clonidina</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Tumor de células cromafins (medula adrenal = feocromocitoma; paragânglios = paraganglioma) que secreta catecolaminas. <b>Tríade cefaleia + sudorese + palpitação</b> em paroxismos, HAS sustentada em ~60%. <b>Metanefrinas livres plasmáticas ou fracionadas urinárias</b> no rastreio; PAAF proibida; α-bloqueio 7–14 dias antes da cirurgia; betabloqueador nunca antes do α.</div></div>
@@ -752,7 +771,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 
 <!-- D.4 AOS, COARCTAÇÃO -->
-<div class="card diag">
+<div class="card diag" id="d4">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">D.4</span> Secundárias não endócrinas</div><h3>Apneia obstrutiva do sono e coarctação da aorta <span class="ank ank-hy">HIGH-YIELD</span></h3><div class="card-sub">A causa mais comum na HAR e a causa clássica no jovem</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body"><b>AOS:</b> presente em 30–50% dos hipertensos e em até 60–80% dos resistentes; padrão non-dipper na MAPA; CPAP baixa a PA modestamente (2–3 mmHg, mais com boa adesão). <b>Coarctação:</b> PA alta nos braços, baixa nas pernas, pulsos femorais fracos e atrasados; correção cedo diminui HAS residual.</div></div>
@@ -770,7 +789,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 
 <!-- D.5 DRC / NEFROPATIA -->
-<div class="card diag">
+<div class="card diag" id="d5">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">D.5</span> Rim: causa e consequência</div><h3>Doença renal parenquimatosa e nefropatia hipertensiva <span class="ank ank-dec">DECISION</span></h3><div class="card-sub">A causa secundária mais comum · bloqueio do SRAA, iSGLT2 e meta estrita · DRC avançada no NU03</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">O rim é ao mesmo tempo causa (glomerulopatias, rins policísticos, nefropatia diabética) e vítima (nefrosclerose) da HAS. <b>Albuminúria ≥30 mg/g pede IECA ou BRA em dose máxima tolerada</b>; iSGLT2 se TFGe &gt;20; finerenona no diabético com albuminúria; tiazídico perde eficácia com TFGe &lt;30 (troque por alça ou use clortalidona).</div></div>
@@ -787,7 +806,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 
 <!-- D.6 HAR -->
-<div class="card diag">
+<div class="card diag" id="d6">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">D.6</span> Fenótipo de difícil controle</div><h3>Hipertensão resistente e refratária <span class="ank ank-dec">DECISION</span> <span class="ank ank-hy">HIGH-YIELD</span></h3><div class="card-sub">Pseudorresistência primeiro · espironolactona como 4º · simpatolítico como 5º · denervação renal seletiva</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">HAR = PA acima da meta com três classes sinérgicas (IECA/BRA + BCC de longa ação + tiazídico) em dose máxima tolerada por 30–60 dias, ou controle à custa de ≥4. <b>Confirmar com MAPA e adesão</b>; tratar como doença de volume e aldosterona (espironolactona 25–50 mg). Refratária (≥5 fármacos com ARM): simpatolíticos e centro de referência.</div></div>
@@ -804,7 +823,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 
 <!-- D.7 FENÓTIPOS -->
-<div class="card diag">
+<div class="card diag" id="d7">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">D.7</span> Fenótipos de medida</div><h3>Pré-hipertensão, avental branco, mascarada e HAS sistólica espúria do jovem <span class="ank ank-prl">PEARL</span></h3><div class="card-sub">Consultório × fora do consultório: quem tratar e quem só vigiar</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">O consultório erra para os dois lados. <b>Avental branco</b> (consultório ≥140/90, MAPA/MRPA &lt;130/80) tem risco intermediário e, se de baixo risco sem LOA, não recebe fármaco. <b>Mascarada</b> (consultório normal, fora alto) tem risco de HAS sustentada e deve ser tratada como tal.</div></div>
@@ -821,7 +840,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 
 <!-- D.8 IDOSO -->
-<div class="card diag">
+<div class="card diag" id="d8">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">D.8</span> População especial</div><h3>Hipertensão no idoso: sistólica isolada, fragilidade, hipotensão ortostática e pseudo-hipertensão <span class="ank ank-dec">DECISION</span></h3><div class="card-sub">Tratar até depois dos 85, mas com régua de tolerabilidade</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">A idade não tira o benefício (HYVET ≥80 anos, SPRINT ≥75, STEP 60–80). <b>Meta &lt;130/80 no idoso robusto; no frágil, muito idoso ou com hipotensão ortostática, o menor valor tolerado</b> (em geral &lt;140/90), começando com monoterapia de BCC ou bloqueador do SRAA. Meça a PA em pé antes de escalar.</div></div>
@@ -853,7 +872,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <div class="section-sub">Duas árvores resolvem quase tudo: a do PS (há lesão aguda de órgão-alvo?) e a do ambulatório (a HAS é real, qual o risco, há pista de causa secundária, qual o esquema). Os nós finais trazem alvo e fármaco, não rótulos.</div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="e1">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">E.1</span> Algoritmo</div><h3>PA elevada: do PS ao ambulatório <span class="ank ank-dec">DECISION</span></h3></div>
 <div class="card-body">
 <div class="algo"><div class="tree">
@@ -950,13 +969,13 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <div class="section-eyebrow"><span>F</span> Tratamento Integrado</div>
 <div class="section-title">F1 · Estratégia por entidade · F2 · Doses operacionais</div>
 <div class="section-sub">Conduta pela DBH 2025, ESC 2024 e AHA/ACC 2025; o acesso no SUS (PCDT 2025, RENAME, Farmácia Popular) vem separado da recomendação. Doses de adulto com função renal normal, salvo indicação; "confirmar" só onde a dose varia de verdade.</div>
-</div>
+</div><!--hp-f2--><nav class="sec-idx" aria-label="Neste capítulo"><a href="#f1"><b>F.1</b>Escadas terapêuticas por enti…</a><a href="#f2"><b>F.2</b>Tabela de doses — hipertensão…</a></nav><!--/hp-f2-->
 
-<div class="card tx">
+<div class="card tx" id="f1">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">F.1</span> Estratégia</div><h3>Escadas terapêuticas por entidade <span class="ank ank-dec">DECISION</span></h3></div>
 <div class="card-body">
 
-<div class="sub-title">F1.1 · HAS primária — quem tratar, com o quê e até onde</div>
+<div class="sub-title" id="f1-1">F1.1 · HAS primária — quem tratar, com o quê e até onde</div>
 <ul class="bullets">
 <li><b>Medidas não medicamentosas para todos com PA ≥120/80</b> e mantidas após o fármaco: sódio ≤2 g/dia (−5 a −6 mmHg na PAS de hipertensos com restrição efetiva; substituto de sal com KCl reduz PA e eventos, exceto em DRC e uso de poupador de K); potássio dietético 3,5–5 g/dia (0,5–1 g/dia a mais pela ESC); padrão DASH (−11 mmHg nos hipertensos do ensaio original); perda de peso (~1 mmHg/kg); 150 min/semana de aeróbico moderado (−5 a −8 mmHg) mais resistido dinâmico 2–3×/semana e isométrico de preensão; álcool: o PCDT 2025 diz que não há dose segura, a DBH limita; cessar tabagismo; sono de 7–8 h <span class="ev ev-sbr">SBC 2025</span>.</li>
 <li><b>Limiar de fármaco:</b> ≥140/90 trata ao diagnóstico, qualquer risco (DBH, ESC, PCDT); 130–139/80–89 trata após 3 meses de MNM se alto risco (DCV, DM, DRC, LOA, HF, PREVENT ≥20% pela DBH; SCORE2 ≥10% pela ESC; PREVENT ≥7,5% pela AHA/ACC 2025) <span class="ev ev-eular">ESC 2024</span> <span class="ev ev-acr">AHA/ACC 2025</span>.</li>
@@ -970,7 +989,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <div class="box decision"><span class="box-label">DECISION</span><div class="box-title">Dupla desde o início: por que a monoterapia virou exceção</div><div class="box-body">Duas classes em meia dose baixam mais a PA que uma em dose dobrada (efeito aditivo com menos efeito adverso dose-dependente: o edema do BCC cai com IECA/BRA pela venodilatação, a hipocalemia do tiazídico é atenuada pelo bloqueio do SRAA). A combinação precoce encurta o tempo até o controle, e esse tempo na faixa-alvo prediz eventos; o comprimido único reduz inércia e não adesão. No SUS não há combinações fixas no componente básico: monte a dupla com losartana ou enalapril + anlodipino ou hidroclorotiazida, todos na RENAME e no Farmácia Popular <span class="ev ev-nice">MS PCDT 2025</span>.</div></div>
 <div class="box danger"><span class="box-label">DANGER</span><div class="box-title">Combinações proibidas ou perigosas</div><div class="box-body"><b>IECA + BRA</b> (ONTARGET, VA NEPHRON-D: mais hipercalemia, LRA e hipotensão sem benefício); <b>IECA ou BRA + alisquireno</b> no diabético ou DRC (ALTITUDE); <b>IECA + sacubitril-valsartana</b> (angioedema; intervalo de 36 h); <b>betabloqueador + verapamil ou diltiazem</b> (bradicardia, BAV, depressão contrátil); <b>betabloqueador isolado no feocromocitoma ou na intoxicação por cocaína</b>; <b>espironolactona + IECA/BRA na DRC sem vigilância de potássio</b>; <b>IECA, BRA, ARM e inibidor de renina na gestação</b>.</div></div>
 
-<div class="sub-title">F1.2 · Crise hipertensiva — emergência e elevação sem LOA</div>
+<div class="sub-title" id="f1-2">F1.2 · Crise hipertensiva — emergência e elevação sem LOA</div>
 <ul class="bullets">
 <li><b>Emergência:</b> UTI, monitorização, droga IV de meia-vida curta; ritmo geral PAM ≤25% na 1ª hora, 160/100–110 em 2–6 h, normal em 24–48 h; regras por órgão em F2.4 <span class="ev ev-sbr">SBC 2025</span>. Nitroprussiato é o vasodilatador universal disponível no Brasil; nitroglicerina quando há isquemia ou EAP; betabloqueador IV na dissecção e na SCA; labetalol, nicardipina, clevidipina, fentolamina, enalaprilato e fenoldopam não estão disponíveis no país.</li>
 <li><b>Transição para oral</b> após 8–24 h de estabilidade no alvo: IECA/BRA + BCC (HA maligna: começar IECA em dose baixa pela hipovolemia e renina alta); buscar causa secundária; consulta em 7 dias.</li>
@@ -979,7 +998,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </ul>
 <div class="box danger"><span class="box-label">DANGER</span><div class="box-title">Nitroprussiato: cianeto, tiocianato e o paciente que piora "sem motivo"</div><div class="box-body">Cada molécula libera cinco íons cianeto, convertidos em tiocianato pela rodanase hepática com tiossulfato como doador de enxofre; o tiocianato sai pelo rim. Doses &gt;2 µg/kg/min, infusão &gt;48–72 h, insuficiência hepática ou renal e desnutrição favorecem toxicidade: acidose lática inexplicada, confusão, convulsão, saturação venosa alta (cianeto bloqueia a citocromo-oxidase) indicam suspender e dar hidroxocobalamina e tiossulfato. Proteger da luz, usar a menor dose eficaz, não ultrapassar 10 µg/kg/min por mais de 10 min, e preferir nitroglicerina na isquemia coronária (o nitroprussiato pode causar roubo coronário). Na gestante, só como exceção de curta duração.</div></div>
 
-<div class="sub-title">F1.3 · HAS secundária — tratamento dirigido</div>
+<div class="sub-title" id="f1-3">F1.3 · HAS secundária — tratamento dirigido</div>
 <ul class="bullets">
 <li><b>Aldosteronismo primário:</b> unilateral (cateterismo) → adrenalectomia laparoscópica; bilateral → espironolactona 12,5–25 mg titulada até 100 mg ou eplerenona 50 mg/dia, até 100 mg/dia (bula FDA); meta inclui "desbloquear" a renina (EN04).</li>
 <li><b>Renovascular:</b> DFM → angioplastia com balão sem stent; aterosclerótica → AAS, estatina de alta intensidade, IECA/BRA vigiados, BCC, diurético, cessar tabagismo; stent só nos fenótipos de alto risco (D.1; NU02).</li>
@@ -990,7 +1009,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <li><b>Cushing, tireoide, hiperparatireoidismo, acromegalia:</b> tratar a doença de base; BCC, IECA/BRA e ARM (Cushing) enquanto isso.</li>
 </ul>
 
-<div class="sub-title">F1.4 · Hipertensão resistente e refratária</div>
+<div class="sub-title" id="f1-4">F1.4 · Hipertensão resistente e refratária</div>
 <ul class="bullets">
 <li><b>Antes de acrescentar:</b> MAPA, adesão, técnica, sal (sódio urinário de 24 h), álcool, AINE, AOS, causas secundárias; simplificar o esquema.</li>
 <li><b>Otimizar a tripla:</b> doses plenas toleradas; trocar HCTZ por clortalidona 12,5–25 mg ou indapamida 1,5 mg SR (fora do SUS); TFGe ≤30 → furosemida (2–3 tomadas) ± clortalidona.</li>
@@ -1000,7 +1019,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </ul>
 <div class="box hy"><span class="box-label">HIGH-YIELD</span><div class="box-title">PATHWAY-2 e ReHOT: a resposta brasileira e a britânica convergem</div><div class="box-body">No PATHWAY-2 (crossover, 335 pacientes com HAR por MRPA), espironolactona 25–50 mg reduziu a PAS domiciliar 8,7 mmHg a mais que placebo, 4,0 a mais que doxazosina e 4,5 a mais que bisoprolol, e o efeito foi maior quanto mais baixa a renina — evidência de que a HAR é, na maioria, hiperaldosteronismo relativo. O ReHOT, multicêntrico brasileiro, randomizou espironolactona × clonidina como 4º fármaco: controle semelhante na PA de consultório, mas espironolactona melhor na MAPA e melhor tolerada. Daí espironolactona como 4º em todas as diretrizes.</div></div>
 
-<div class="sub-title">F1.5 · Comorbidades que mudam a escolha</div>
+<div class="sub-title" id="f1-5">F1.5 · Comorbidades que mudam a escolha</div>
 <div class="stbl stbl-3">
 <div class="stbl-head stbl-3"><div>Condição</div><div>Preferir</div><div>Evitar / cuidado</div></div>
 <div class="stbl-row stbl-3"><div class="col col1" data-l="Condição">DM ou DRC com albuminúria</div><div class="col" data-l="Preferir">IECA ou BRA em dose máxima + BCC ou diurético; iSGLT2; finerenona (DM2 + RAC ≥30); aGLP1 se obeso</div><div class="col" data-l="Evitar">Duplo bloqueio do SRAA; ARM sem vigiar K</div></div>
@@ -1016,7 +1035,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <div class="stbl-row stbl-3"><div class="col col1" data-l="Condição">Hipocalemia / hipomagnesemia</div><div class="col" data-l="Preferir">IECA/BRA, espironolactona, amilorida (associada ao tiazídico)</div><div class="col" data-l="Evitar">Tiazídico em dose alta, clortalidona sem reposição</div></div>
 </div>
 
-<div class="sub-title">F1.6 · Realidade SUS (separada da recomendação)</div>
+<div class="sub-title" id="f1-6">F1.6 · Realidade SUS (separada da recomendação)</div>
 <div class="stbl stbl-3">
 <div class="stbl-head stbl-3"><div>Componente</div><div>Recomendação vigente</div><div>SUS (confirmar protocolo local)</div></div>
 <div class="stbl-row stbl-3"><div class="col col1" data-l="Componente">Protocolo</div><div class="col" data-l="Recomendação">DBH 2025, ESC 2024, AHA/ACC 2025</div><div class="col" data-l="SUS"><b>PCDT de HAS — Portaria SECTICS/MS nº 49, de 23/07/2025</b> (primeiro PCDT de HAS); usa a classificação de 2020 e a calculadora HEARTS/OPAS</div></div>
@@ -1028,7 +1047,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <div class="stbl-row stbl-3"><div class="col col1" data-l="Componente">Emergência</div><div class="col" data-l="Recomendação">Nicardipina, clevidipina, labetalol, esmolol</div><div class="col" data-l="SUS">Medicamentos hospitalares definidos localmente; nitroprussiato, nitroglicerina, metoprolol, esmolol e hidralazina IV são os disponíveis no país</div></div>
 </div>
 
-<div class="sub-title">F1.7 · Cenários: caso → conduta certa → erro típico</div>
+<div class="sub-title" id="f1-7">F1.7 · Cenários: caso → conduta certa → erro típico</div>
 <div class="stbl stbl-3">
 <div class="stbl-head stbl-3"><div>Caso</div><div>Conduta certa</div><div>Erro típico</div></div>
 <div class="stbl-row stbl-3"><div class="col col1" data-l="Caso">Homem 48 a, PA 152/96 em duas consultas, sem LOA, tabagista, LDL 160</div><div class="col" data-l="Conduta">MNM + losartana 50 mg + anlodipino 5 mg; MRPA; estatina pelo risco; reavaliar em 4 semanas; meta &lt;130/80</div><div class="col" data-l="Erro">"Três meses de dieta antes" com PA ≥140/90; monoterapia em dose máxima</div></div>
@@ -1045,10 +1064,10 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card tx">
+<div class="card tx" id="f2">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">F.2</span> Doses operacionais</div><h3>Tabela de doses — hipertensão arterial <span class="ank ank-dgr">DANGER</span></h3><div class="card-sub">Adulto · VO salvo indicação · faixas da DBH 2025 (Quadros 7.2–7.7) e PCDT 2025 (Quadro 18)</div></div>
 <div class="card-body">
-<div class="sub-title">F2.1 · Classes preferenciais (VO)</div>
+<div class="sub-title" id="f2-1">F2.1 · Classes preferenciais (VO)</div>
 <div class="stbl stbl-3">
 <div class="stbl-head stbl-3"><div>Fármaco</div><div>Dose adulto</div><div>Indicação / notas</div></div>
 <div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Hidroclorotiazida</div><div class="col" data-l="Dose">12,5–25 mg 1×/dia (máx. 50) <span class="ev ev-sbr">SBC 2025</span></div><div class="col" data-l="Notas">Ação no túbulo contorcido distal (NCC); doses &gt;25 mg somam efeitos metabólicos (hipoK, hipoNa, hiperuricemia, hiperglicemia) sem ganho pressórico proporcional; perde eficácia com TFGe &lt;30; evitar em gota ativa</div></div>
@@ -1066,7 +1085,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Propranolol</div><div class="col" data-l="Dose">40–160 mg/dia em 2–3 tomadas (DBH até 320)</div><div class="col" data-l="Notas">Não seletivo, lipofílico; enxaqueca, tremor, tireotoxicose, varizes esofágicas; evitar na asma</div></div>
 </div>
 
-<div class="sub-title">F2.2 · Quarto fármaco em diante e outras classes (VO)</div>
+<div class="sub-title" id="f2-2">F2.2 · Quarto fármaco em diante e outras classes (VO)</div>
 <div class="stbl stbl-3">
 <div class="stbl-head stbl-3"><div>Fármaco</div><div>Dose adulto</div><div>Indicação / notas</div></div>
 <div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Espironolactona</div><div class="col" data-l="Dose">HAR: 25–50 mg 1×/dia <span class="ev ev-sbr">SBC 2025</span> · faixa 25–100 mg em 1–2 tomadas · aldosteronismo bilateral: 12,5–25 → até 100 mg</div><div class="col" data-l="Notas">Antagonista não seletivo (ginecomastia, mastalgia, disfunção erétil, irregularidade menstrual); K e creatinina em 1–2 semanas e a cada 3–6 meses; cautela com TFGe &lt;45 ou K⁺ ≥4,5; não iniciar com K⁺ &gt;5,0 e reduzir ou suspender se &gt;5,5. Pelo <span class="ev ev-nice">PCDT DRC 2024</span>, permitida até o estágio 4, com K⁺ monitorado; pela <span class="ev ev-eular">ESC 2024</span>, só com TFGe ≥30 e K⁺ ≤4,5. Conduta padrão: evitar com TFGe &lt;30 fora de acompanhamento nefrológico</div></div>
@@ -1082,7 +1101,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Verapamil · diltiazem</div><div class="col" data-l="Dose">Verapamil 120–360 mg/dia (1–2 tomadas, formulação prolongada) · diltiazem 80–240 mg/dia (DBH; até 360 mg/dia em formulações prolongadas)</div><div class="col" data-l="Notas">FA ou angina sem BB; constipação (verapamil); inibem CYP3A4; não com BB; não na ICFEr</div></div>
 </div>
 
-<div class="sub-title">F2.3 · Emergência — fármacos IV</div>
+<div class="sub-title" id="f2-3">F2.3 · Emergência — fármacos IV</div>
 <div class="stbl stbl-4">
 <div class="stbl-head stbl-4"><div>Fármaco</div><div>Dose</div><div>Início · duração</div><div>Indicação / cuidado</div></div>
 <div class="stbl-row stbl-4"><div class="col col1" data-l="Fármaco">Nitroprussiato de sódio</div><div class="col" data-l="Dose">0,25–0,5 µg/kg/min, titular a cada 3–5 min até 10 µg/kg/min (máx. por ≤10 min) <span class="ev ev-sbr">SBC 2025</span></div><div class="col" data-l="Início">Imediato · 1–2 min</div><div class="col" data-l="Indicação">Maioria das emergências; proteger da luz; cianeto/tiocianato (DRC, hepatopatia, &gt;48–72 h); roubo coronário; aumenta PIC</div></div>
@@ -1097,7 +1116,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <div class="stbl-row stbl-4"><div class="col col1" data-l="Fármaco">Benzodiazepínico</div><div class="col" data-l="Dose">Diazepam 5–10 mg IV a cada 5–10 min ou midazolam 2–5 mg IV, titulado</div><div class="col" data-l="Início">1–5 min</div><div class="col" data-l="Indicação">Crise adrenérgica por cocaína/anfetamina (primeira linha) e pseudocrise ansiosa</div></div>
 </div>
 
-<div class="sub-title">F2.4 · Emergências: alvo, ritmo e fármaco por órgão</div>
+<div class="sub-title" id="f2-4">F2.4 · Emergências: alvo, ritmo e fármaco por órgão</div>
 <div class="stbl stbl-3">
 <div class="stbl-head stbl-3"><div>Emergência</div><div>Alvo e ritmo</div><div>Fármaco de escolha (Brasil)</div></div>
 <div class="stbl-row stbl-3"><div class="col col1" data-l="Emergência">Encefalopatia hipertensiva / HA acelerada-maligna</div><div class="col" data-l="Alvo">PAM −20–25% na 1ª h; PAD não abaixo de 100–110 na 1ª h; ~160/100 em 2–6 h a 48 h <span class="ev ev-nice">MS PCDT 2025</span></div><div class="col" data-l="Fármaco">Nitroprussiato; depois IECA/BRA + BCC VO</div></div>
@@ -1125,7 +1144,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <div class="section-sub">Os erros abaixo produzem hipertensos falsos, emergências iatrogênicas e resistências que não existem; os mitos sobrevivem em prescrições de PS; as controvérsias são as divergências reais entre DBH 2025, ESC 2024, AHA/ACC 2025 e PCDT 2025.</div>
 </div>
 
-<div class="card pearl">
+<div class="card pearl" id="g1">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">G.1</span> Pegadinhas</div><h3>10 erros operacionais em hipertensão <span class="ank ank-dgr">DANGER</span></h3></div>
 <div class="card-body">
 <div class="stbl stbl-2">
@@ -1144,7 +1163,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card pearl">
+<div class="card pearl" id="g2">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">G.2</span> Mitos · Controvérsias</div><h3>Mitos vivos e debates atuais <span class="ank ank-con">CONTROVERSY</span></h3></div>
 <div class="card-body">
 <div class="box myth"><span class="box-label">MYTH</span><div class="box-title">"Cefaleia e epistaxe são sintomas típicos de pressão alta"</div><div class="box-body">Estudos com MAPA não mostram associação consistente entre cefaleia e o nível de PA; a cefaleia e a dor da epistaxe elevam a PA, e não o contrário. A exceção é a cefaleia da encefalopatia hipertensiva, que vem com náusea, alteração de consciência e fundo de olho anormal. Tratar o "sintoma" com anti-hipertensivo de ação rápida é a origem da maioria das pseudocrises iatrogênicas.</div></div>
@@ -1165,7 +1184,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <div class="section-sub">Cada pearl é uma ideia com o argumento que a sustenta; os itens em evolução são mudanças reais de diretriz, de protocolo nacional ou de ensaio de fase 3, não novidades de vitrine.</div>
 </div>
 
-<div class="card pearl">
+<div class="card pearl" id="h1">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">H.1</span> Pearls</div><h3>8 nuances que distinguem o especialista</h3></div>
 <div class="card-body">
 <div class="box pearl"><span class="box-label">PEARL</span><div class="box-title">Renina normal num hipertenso já é renina inapropriadamente alta</div><div class="box-body">Se o sistema funcionasse como feedback puro, PA alta e volume expandido suprimiriam a renina. Encontrar renina "normal" num hipertenso indica que algo (simpático, isquemia renal focal, menor número de néfrons) mantém o SRAA ativo — e explica por que IECA e BRA baixam a PA mesmo sem renina alta. O raciocínio inverso também vale: renina suprimida num hipertenso em uso de IECA, BRA ou diurético é quase patognomônica de excesso mineralocorticoide.</div></div>
@@ -1179,7 +1198,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card pearl">
+<div class="card pearl" id="h2">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">H.2</span> Evolving</div><h3>6 mudanças reais — hipertensão 2024–2026 <span class="ank ank-evo">EVOLVING</span></h3></div>
 <div class="card-body">
 <div class="box evolving"><span class="box-label">EVOLVING</span><div class="box-title">Primeiro PCDT de HAS do SUS (julho de 2025)</div><div class="box-body">A Portaria SECTICS/MS nº 49/2025 aprovou o primeiro Protocolo Clínico e Diretrizes Terapêuticas de HAS: rastreio anual de adultos, calculadora HEARTS/OPAS para risco, MRPA incorporada ao diagnóstico, algoritmos com dupla para grau 1 de risco moderado/alto e graus 2–3, lista de medicamentos do SUS e condutas na crise. Ele convive com a DBH 2025 com diferenças de classificação (2020) e de meta (início &lt;140/90).</div></div>
@@ -1215,5 +1234,36 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </footer>
 <a class="to-top" href="#" aria-label="Voltar ao topo">↑</a>
 <div class="watermark">@dr.lorencato · Hipertensão Arterial CV05 v5.2</div>
-</body>
+<!--hp-f2--><script>(function(){var d=document,M=d.querySelector('main');if(!M)return;
+var SELF='CV05',HP=' CT01 CT02 CT03 CT04 CT05 CT06 CT08 CT10 CV01 CV03 CV04 CV05 CV06 CV07 CV08 EN01 EN02 EN03 EN04 EN06 EN07 GH01 GH02 GH03 GH05 GH06 GH07 GH08 GH09 GH10 GO01 GO02 GO03 GO04 GO09 GO10 GO11 GO12 GO13 GO14 HO01 HO02 HO03 HO04 HO05 HO06 II01 II02 II03 II04 II07 II08 NE01 NE02 NE03 NE04 NE05 NE06 NE07 NE08 NU01 NU02 NU03 NU04 NU05 OE01 OE02 PC01 PC02 PC03 PC04 PC05 PC06 PD01 PD02 PD03 PD04 PD05 PD06 PD07 PD08 PD09 PD10 RD01 RD02 RD03 RD04 RD05 RD07 RP01 RP02 RP03 RP04 ';
+var SK='A,H1,H2,H3,SCRIPT,STYLE,NAV,.card-num,.card-eyebrow,.sub-title,.disease-tag,.toc';
+var R=/\b(?:([A-H])(\d)?\.(\d{1,2}[a-c]?)|(CV|RP|GH|NE|EN|NU|HO|II|RD|GO|PD|PC|CT|OE)(\d\d))\b/g;
+function skip(n){for(var e=n.parentNode;e&&e!==M;e=e.parentNode)if(e.matches&&e.matches(SK))return 1;return 0}
+var w=d.createTreeWalker(M,4),t,L=[];while(t=w.nextNode())if(R.test(t.data)&&!skip(t))L.push(t);
+L.forEach(function(t){var s=t.data,f=d.createDocumentFragment(),i=0,m;R.lastIndex=0;
+while(m=R.exec(s)){var h=null;
+if(m[1]){var id=m[1].toLowerCase()+(m[2]?m[2]+'-':'')+m[3];if(d.getElementById(id))h='#'+id}
+else{var x=m[4]+m[5];if(x!==SELF&&HP.indexOf(' '+x+' ')>=0)h='../'+x+'/'+x+'.html'}
+if(!h)continue;f.appendChild(d.createTextNode(s.slice(i,m.index)));
+var a=d.createElement('a');a.href=h;a.className='xr';a.textContent=m[0];f.appendChild(a);i=R.lastIndex}
+if(i){f.appendChild(d.createTextNode(s.slice(i)));t.parentNode.replaceChild(f,t)}});
+function nz(s){return s.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'')}
+var q=d.querySelector('.hp-q'),n=d.querySelector('.hp-n'),it=M.querySelectorAll('.card,.pocket-card'),T;
+function clr(){M.querySelectorAll('.q-off').forEach(function(e){e.classList.remove('q-off')})}
+function run(){var v=nz(q.value.trim());clr();n.textContent='';if(v.length<2)return;var k=0;
+it.forEach(function(c){if(nz(c.textContent).indexOf(v)<0){c.classList.add('q-off');return}k++;
+var r=c.querySelectorAll('.stbl-row,.disease-row,.score-row'),h=[];r.forEach(function(x){if(nz(x.textContent).indexOf(v)>=0)h.push(x)});
+if(h.length)r.forEach(function(x){if(h.indexOf(x)<0)x.classList.add('q-off')});
+c.querySelectorAll('details').forEach(function(x){if(nz(x.textContent).indexOf(v)>=0)x.open=true})});
+M.querySelectorAll('section').forEach(function(s){if(!s.querySelector('.card:not(.q-off),.pocket-card:not(.q-off)'))s.classList.add('q-off')});
+n.textContent=k?k+' achado'+(k>1?'s':''):'nada'}
+if(q){q.addEventListener('input',function(){clearTimeout(T);T=setTimeout(run,180)});
+q.addEventListener('keydown',function(e){if(e.key==='Escape'){q.value='';run()}})}
+function tg(b,f){b.addEventListener('click',function(){var on=b.getAttribute('aria-pressed')!=='true';b.setAttribute('aria-pressed',on);f(on)})}
+var bd=d.querySelector('.hp-dz'),bo=d.querySelector('.hp-op');
+if(bd)tg(bd,function(on){d.body.classList.toggle('dz',on);if(on)d.getElementById('tratamento').scrollIntoView()});
+if(bo)tg(bo,function(on){M.querySelectorAll('details').forEach(function(x){x.open=on})});
+var P=[];addEventListener('beforeprint',function(){P=[];M.querySelectorAll('details:not([open])').forEach(function(x){P.push(x);x.open=true})});
+addEventListener('afterprint',function(){P.forEach(function(x){x.open=false})});
+})();</script><!--/hp-f2--></body>
 </html>

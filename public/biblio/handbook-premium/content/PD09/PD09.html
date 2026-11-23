@@ -345,11 +345,30 @@ ul.bullets li b{color:var(--ink);font-weight:600}
   .pocket .pocket-card.tx{--accent:#a8481a}
   .pocket .pocket-card.clin{--accent:#0b5d4e}
 }
+
+/* === v5.2.2 · fase 2 (navegação) === */
+.hp-tools{display:flex;gap:6px;align-items:center;flex:none;order:1;margin-left:auto;padding-left:6px;position:sticky;right:0;background:#f1eee5;box-shadow:-10px 0 10px -4px #f1eee5,16px 0 0 #f1eee5}
+@media(min-width:900px){html{scroll-padding-top:150px}.toc-inner{flex-wrap:wrap;overflow:visible}.card[id],.sub-title[id]{scroll-margin-top:150px}}
+@media(max-width:899px){.hp-b,.hp-n{display:none}.hp-q{width:104px}}
+.hp-q{width:128px;font:500 12px/1 'DM Sans',system-ui,sans-serif;padding:7px 11px;border:1px solid var(--line-strong);border-radius:999px;background:var(--paper);color:var(--ink)}
+.hp-b{font:600 11px/1 'DM Sans',system-ui,sans-serif;letter-spacing:.05em;text-transform:uppercase;padding:7px 10px;border-radius:999px;border:1px solid var(--line-strong);background:var(--paper);color:var(--ink-soft);cursor:pointer;white-space:nowrap}
+.hp-b[aria-pressed=true]{background:var(--ink);color:#fff;border-color:var(--ink)}
+.hp-n{font:600 11px/1 'DM Mono',monospace;color:var(--ink-mute);white-space:nowrap}
+.sec-idx{display:flex;flex-wrap:wrap;gap:6px;margin:12px 0 20px}
+.sec-idx a{font:500 12px/1.25 'DM Sans',system-ui,sans-serif;padding:6px 10px;border-radius:999px;background:var(--paper);border:1px solid var(--line);color:var(--ink-soft);text-decoration:none}
+.sec-idx a:hover{border-color:var(--line-strong);color:var(--ink)}
+.sec-idx b{color:var(--c-prim);margin-right:5px;font-weight:700}
+a.xr{color:inherit;text-decoration:underline dotted;text-underline-offset:2px}
+a.xr:hover{color:var(--c-prim)}
+.card[id],.sub-title[id]{scroll-margin-top:110px}
+.q-off{display:none!important}
+body.dz main section:not(#tratamento){display:none}
+@media print{.hp-tools,.sec-idx,.toc-doses{display:none!important}}
 </style>
 </head>
 <body>
 <header class="header"><div class="header-row"><div class="h-mark">P</div><div class="h-titles"><div class="h-title">Cardiopatias Congênitas e Genética Pediátrica · Pocket Handbook</div><div class="h-sub">Elite edition · Pediatria · PD09</div></div><div class="h-author">@dr.lorencato</div><div class="h-edition">v5.2</div></div></header>
-<nav class="toc"><div class="toc-inner"><a href="#pocket" class="toc-chip"><span class="toc-chip-num">0</span>Pocket</a><a href="#redflags" class="toc-chip"><span class="toc-chip-num">A</span>Red Flags</a><a href="#approach" class="toc-chip"><span class="toc-chip-num">B</span>Apresentação</a><a href="#primarias" class="toc-chip"><span class="toc-chip-num">C</span>Entidades</a><a href="#secundarias" class="toc-chip"><span class="toc-chip-num">D</span>Secundárias</a><a href="#algoritmo" class="toc-chip"><span class="toc-chip-num">E</span>Algoritmo</a><a href="#tratamento" class="toc-chip"><span class="toc-chip-num">F</span>Tratamento</a><a href="#pitfalls" class="toc-chip"><span class="toc-chip-num">G</span>Pitfalls</a><a href="#pearls" class="toc-chip"><span class="toc-chip-num">H</span>Pearls</a></div></nav>
+<nav class="toc"><div class="toc-inner"><!--hp-f2--><span class="hp-tools"><input class="hp-q" type="search" placeholder="Buscar no HP" aria-label="Buscar no HP"><button class="hp-b hp-dz" type="button" aria-pressed="false">Só doses</button><button class="hp-b hp-op" type="button" aria-pressed="false">Abrir tudo</button><span class="hp-n" aria-live="polite"></span></span><!--/hp-f2--><a href="#pocket" class="toc-chip"><span class="toc-chip-num">0</span>Pocket</a><a href="#redflags" class="toc-chip"><span class="toc-chip-num">A</span>Red Flags</a><a href="#approach" class="toc-chip"><span class="toc-chip-num">B</span>Apresentação</a><a href="#primarias" class="toc-chip"><span class="toc-chip-num">C</span>Entidades</a><a href="#secundarias" class="toc-chip"><span class="toc-chip-num">D</span>Secundárias</a><a href="#algoritmo" class="toc-chip"><span class="toc-chip-num">E</span>Algoritmo</a><a href="#tratamento" class="toc-chip"><span class="toc-chip-num">F</span>Tratamento</a><!--hp-f2--><a href="#f2" class="toc-chip toc-doses"><span class="toc-chip-num">Rx</span>Doses</a><!--/hp-f2--><a href="#pitfalls" class="toc-chip"><span class="toc-chip-num">G</span>Pitfalls</a><a href="#pearls" class="toc-chip"><span class="toc-chip-num">H</span>Pearls</a></div></nav>
 <main>
 <div class="wrap">
 <div class="hero">
@@ -393,7 +412,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <div class="section-sub">Quase toda catástrofe deste HP tem um relógio previsível: o canal arterial fecha entre o 2º e o 14º dia, a resistência vascular pulmonar termina de cair entre 4 e 8 semanas, a coronária do Kawasaki se forma até o 10º dia e a amônia lesa o cérebro a cada hora acima de 200 µmol/L. Os sinais abaixo valem antes do exame que confirma.</div>
 </div>
 
-<div class="card emerg">
+<div class="card emerg" id="a1">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">A.1</span> Emergências cardiometabólicas</div><h3>Sinais que não podem esperar o ecocardiograma ou o resultado da triagem <span class="ank ank-dgr">DANGER</span></h3></div>
 <div class="card-body">
 <div class="mnemo">
@@ -435,7 +454,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <div class="section-sub">Seis portas de entrada: o RN cianótico, o lactente que não ganha peso e cansa mamando, o sopro, a palpitação ou síncope, a febre prolongada com inflamação e a criança dismórfica ou metabolicamente instável. A idade de início é a primeira variável de todas.</div>
 </div>
 
-<div class="card clin">
+<div class="card clin" id="b1">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">B.1</span> Padrão 1</div><h3>RN ou lactente cianótico</h3><div class="card-sub">Coração, pulmão, SNC ou hemoglobina?</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Cianose central aparece com <b>≥3–5 g/dL de hemoglobina desoxigenada</b>: o policitêmico fica azul com SpO2 mais alta e o anêmico pode não ficar azul mesmo hipoxêmico. Cianose com <b>pouco desconforto respiratório</b> aponta coração; com retração, gemência e taquipneia, pulmão; com respiração irregular e hipotonia, SNC. A hora de início lê a anatomia: horas (TGA com septo íntegro), dias (fechamento do canal na atresia pulmonar e no Fallot grave), semanas a meses (Fallot clássico, conforme o infundíbulo hipertrofia).</div></div>
@@ -449,7 +468,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card clin">
+<div class="card clin" id="b2">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">B.2</span> Padrão 2</div><h3>Lactente que cansa mamando, sua e não ganha peso</h3><div class="card-sub">IC: a idade de início sugere a causa</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">No lactente, IC é <b>taquipneia, sudorese e interrupção das mamadas, taquicardia, precórdio hiperdinâmico, hepatomegalia e déficit ponderal</b>; edema periférico aparece no couro cabeludo e no dorso, porque o bebê vive em decúbito; sibilos e crepitações imitam bronquiolite. <b>1ª semana</b> = obstrução esquerda, DATVP, malformação AV cerebral, arritmia, asfixia; <b>4–12 semanas</b> = shunts pós-tricuspídeos quando a RVP cai; <b>qualquer idade</b> = miocardite, cardiomiopatia, ALCAPA, TSV incessante.</div></div>
@@ -461,7 +480,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card clin">
+<div class="card clin" id="b3">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">B.3</span> Padrão 3</div><h3>Sopro ao exame de rotina</h3><div class="card-sub">70–80% das crianças terão um; poucas terão doença</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">O sopro inocente é <b>sistólico (ou contínuo, no zumbido venoso), curto, de baixa intensidade, em área pequena, sem frêmito, clique ou alteração de bulhas</b>, e muda com a posição ou a respiração; aumenta na febre, anemia e ansiedade. Os sinais de doença são qualitativos, não só de intensidade.</div></div>
@@ -473,7 +492,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card clin">
+<div class="card clin" id="b4">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">B.4</span> Padrão 4</div><h3>Palpitação, FC fora da faixa ou síncope</h3><div class="card-sub">Ritmo, gatilho e contexto separam o benigno do letal</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Taquicardia sinusal varia com choro, febre e dor e raramente passa de 220 no lactente e 180 na criança. <b>FC fixa, início e fim súbitos, sem P visível</b> = TSV. A síncope pediátrica é vasovagal em ~75%, mas a minoria letal tem pistas: <b>esforço (não após), decúbito, palpitação antes, lesão por queda sem pródromo, natação, susto, história familiar de morte súbita</b>.</div></div>
@@ -484,7 +503,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card clin">
+<div class="card clin" id="b5">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">B.5</span> Padrão 5</div><h3>Febre prolongada com inflamação sistêmica</h3><div class="card-sub">Kawasaki, MIS-C — e o resto vai para o PD10</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Febre ≥5 dias com <b>conjuntivite bulbar sem exsudato, lábios fissurados, língua em framboesa, exantema polimorfo, edema endurado de mãos e pés e linfonodo cervical ≥1,5 cm</b> é Kawasaki até prova contrária, com o relógio do 10º dia correndo. Febre com <b>choque, dor abdominal, disfunção ventricular, linfopenia e ferritina alta</b> em escolar, semanas após covid, é MIS-C. As duas são diagnóstico de exclusão de infecção: escarlatina, adenovírus, sarampo, choque tóxico e farmacodermia ficam no PD10.</div></div>
@@ -496,7 +515,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card clin">
+<div class="card clin" id="b6">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">B.6</span> Padrão 6</div><h3>Criança dismórfica, com atraso ou hipotonia — ou o lactente metabolicamente instável</h3><div class="card-sub">Quando pensar em síndrome genética e em erro inato</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Pense em síndrome quando houver <b>≥2 malformações maiores, ≥3 menores, dismorfismo, genitália atípica, atraso do DNPM ou do crescimento, deficiência intelectual</b>, ou cardiopatia com anomalia extracardíaca. Pense em erro inato quando a criança <b>descompensa com jejum, infecção banal ou mudança de dieta</b>, tem odor peculiar, hepatomegalia, hipoglicemia sem cetose, acidose com ânion gap alto sem causa, consanguinidade dos pais ou irmão morto "por sepse" no período neonatal.</div></div>
@@ -515,9 +534,9 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <div class="section-eyebrow"><span>C</span> Entidades Primárias</div>
 <div class="section-title">Disease Boxes — da fisiologia do shunt ao erro inato</div>
 <div class="section-sub">Oito entidades carregam o raciocínio do HP: quatro grupos de cardiopatia congênita lidos pela fisiologia, a insuficiência cardíaca do lactente, o Kawasaki, a trissomia 21 e o erro inato que se apresenta como emergência.</div>
-</div>
+</div><!--hp-f2--><nav class="sec-idx" aria-label="Neste capítulo"><a href="#c1"><b>C.1</b>Shunts esquerda→direita: CIV…</a><a href="#c2"><b>C.2</b>Tetralogia de Fallot e crise…</a><a href="#c3"><b>C.3</b>Transposição das grandes arté…</a><a href="#c4"><b>C.4</b>Lesões obstrutivas: coarctaçã…</a><a href="#c5"><b>C.5</b>Insuficiência cardíaca do lac…</a><a href="#c6"><b>C.6</b>Doença de Kawasaki</a><a href="#c7"><b>C.7</b>Síndrome de Down (trissomia 2…</a><a href="#c8"><b>C.8</b>Erros inatos do metabolismo d…</a></nav><!--/hp-f2-->
 
-<div class="card prim">
+<div class="card prim" id="c1">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.1</span> Acianóticas · sobrecarga de volume</div><h3>Shunts esquerda→direita: CIV, CIA, PCA e DSAV <span class="ank ank-hy">HIGH-YIELD</span></h3><div class="card-sub">A mesma fisiologia em quatro endereços anatômicos — e a janela antes de Eisenmenger</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">O volume do shunt depende do <b>tamanho do defeito e da razão RVP/RVS</b>. Ao nascer, a RVP ainda alta contém o shunt; quando ela cai (4–8 semanas), os shunts <b>pós-tricuspídeos</b> grandes (CIV, PCA, DSAV) inundam o pulmão e dão IC. A CIA é <b>pré-tricuspídea</b>: o shunt depende da complacência relativa dos ventrículos, aparece tarde e se denuncia pelo <b>desdobramento amplo e fixo de B2</b>. Hiperfluxo com pressão alta não corrigido remodela a arteríola pulmonar e inverte o shunt (Eisenmenger).</div></div>
@@ -544,7 +563,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="c2">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.2</span> Cianóticas · hipofluxo</div><h3>Tetralogia de Fallot e crise hipercianótica <span class="ank ank-dgr">DANGER</span></h3><div class="card-sub">Um desvio do septo infundibular que produz quatro achados</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Desvio anterossuperior do septo infundibular → <b>estenose pulmonar infundíbulo-valvar, CIV perimembranosa não restritiva, aorta cavalgando o septo e hipertrofia de VD</b>. O grau da obstrução decide tudo: leve = "Fallot rosa" com sopro alto; grave = cianose neonatal canal-dependente; extrema = atresia pulmonar com CIV. O sopro é da estenose, não da CIV: <b>quanto mais cianótico, mais fraco o sopro</b>.</div></div>
@@ -563,7 +582,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="c3">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.3</span> Cianóticas · mistura e canal-dependência</div><h3>Transposição das grandes artérias e o RN cianótico canal-dependente <span class="ank ank-dgr">DANGER</span></h3><div class="card-sub">Duas circulações em paralelo que só se misturam por forame, canal ou CIV</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Na TGA a aorta sai do VD e a pulmonar do VE (<b>concordância atrioventricular com discordância ventrículo-arterial</b>): o sangue sistêmico volta ao corpo sem passar pelo pulmão e a vida depende da mistura. Com septo íntegro, a cianose é intensa nas <b>primeiras horas</b>, sem sopro, com B2 única e alta e RX quase normal, e não melhora com O2. Conduta: <b>PGE1 + atriosseptostomia de Rashkind se a mistura for insuficiente + cirurgia de Jatene nas 2–3 primeiras semanas</b>.</div></div>
@@ -598,7 +617,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="c4">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.4</span> Acianóticas · sobrecarga de pressão</div><h3>Lesões obstrutivas: coarctação, estenose aórtica, SHCE e estenose pulmonar valvar <span class="ank ank-dgr">DANGER</span></h3><div class="card-sub">Quando a circulação sistêmica depende do canal, o RN fica bem até ele fechar</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Obstrução crítica esquerda (coarctação grave, estenose aórtica crítica, arco interrompido, SHCE) = <b>perfusão sistêmica pelo canal</b>: o RN entra em choque com acidose e pulsos femorais fracos entre o 2º e o 14º dia e imita sepse. A coarctação leve chega no escolar ou adolescente com <b>HAS em membros superiores, pulsos femorais fracos e atrasados</b> e gradiente braço–perna &gt;20 mmHg. A estenose pulmonar valvar é o contraponto direito: sopro ejetivo com clique, geralmente benigna, crítica só no RN.</div></div>
@@ -616,7 +635,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 </div>
-<div class="card prim">
+<div class="card prim" id="c5">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.5</span> Síndrome · insuficiência cardíaca</div><h3>Insuficiência cardíaca do lactente e da criança <span class="ank ank-dec">DECISION</span></h3><div class="card-sub">Uma síndrome com causas que mudam com a idade e com o mecanismo — volume, pressão, músculo ou ritmo</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Classifique por <b>mecanismo</b> antes de tratar: sobrecarga de volume (shunts, regurgitações), de pressão (obstruções esquerdas), falência de músculo (miocardite, cardiomiopatia, ALCAPA, asfixia), de ritmo (TSV incessante, BAVT) ou alto débito (anemia, fístula AV, tireotoxicose). O diurético alivia a congestão em todos; a correção definitiva é diferente em cada um. <b>Curva de peso achatada</b> é o sintoma que mais pesa na indicação cirúrgica do lactente.</div></div>
@@ -644,7 +663,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="c6">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.6</span> Vasculite · protocolo pediátrico completo</div><h3>Doença de Kawasaki <span class="ank ank-dec">DECISION</span></h3><div class="card-sub">Febre que não cede e um relógio de 10 dias para as coronárias</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Vasculite de médios vasos, &lt;5 anos (pico 1–2 anos). <b>Clássica: febre ≥5 dias + ≥4 de 5 critérios</b> — conjuntivite bulbar bilateral sem exsudato, alterações de lábios e cavidade oral, exantema polimorfo, alterações de extremidades (eritema/edema e depois descamação periungueal), linfonodo cervical ≥1,5 cm geralmente unilateral. Com ≥4 critérios, especialmente alteração de mãos e pés, o diagnóstico pode ser feito no 4º dia. Sem tratamento, ~25% fazem aneurisma; com <b>IgIV 2 g/kg até o 10º dia</b>, ~4–5%.</div></div>
@@ -681,7 +700,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="c7">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.7</span> Genética · aneuploidia</div><h3>Síndrome de Down (trissomia 21) <span class="ank ank-hy">HIGH-YIELD</span></h3><div class="card-sub">A aneuploidia viável mais comum e o seu calendário de rastreios</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Incidência ~1:600–800 nascidos vivos. <b>Trissomia livre (~94%)</b> por não disjunção na meiose I materna (risco cresce com a idade materna); <b>translocação robertsoniana (~3–4%)</b>, geralmente t(14;21), que exige cariótipo dos pais; <b>mosaico (~2%)</b>, fenótipo mais leve. O fenótipo dá a suspeita; o <b>cariótipo</b> confirma e diferencia o mecanismo, que é o que muda o aconselhamento.</div></div>
@@ -708,7 +727,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="c8">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.8</span> Metabolismo · emergência</div><h3>Erros inatos do metabolismo de apresentação aguda <span class="ank ank-dgr">DANGER</span></h3><div class="card-sub">Intoxicação, deficiência energética ou carboidrato: a amostra crítica antes da glicose</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Pense em EIM no RN que <b>nasce bem e piora após 24–72 h de dieta</b>, no lactente que descompensa com jejum, febre ou vacina, em vômitos com letargia, odor peculiar, hipoglicemia sem cetose, acidose com ânion gap alto sem causa, hiperamonemia, consanguinidade e irmão morto "por sepse". Três perguntas resolvem a primeira hora: <b>qual a amônia, qual o pH/ânion gap e há cetose?</b> Triagem neonatal normal não exclui: muitos descompensam antes do resultado.</div></div>
@@ -740,9 +759,9 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <div class="section-eyebrow"><span>D</span> Entidades Secundárias</div>
 <div class="section-title">Entidades agrupadas — ausculta, ritmo, músculo, genes e metabolismo crônico</div>
 <div class="section-sub">Nove boxes e um cartão de competência completam o diferencial cardiológico, genético e metabólico.</div>
-</div>
+</div><!--hp-f2--><nav class="sec-idx" aria-label="Neste capítulo"><a href="#d1"><b>D.1</b>Sopro inocente</a><a href="#d2"><b>D.2</b>Taquicardia supraventricular…</a><a href="#d3"><b>D.3</b>Bradiarritmias, BAV congênito…</a><a href="#d4"><b>D.4</b>Miocardite e cardiomiopatias…</a><a href="#d5"><b>D.5</b>MIS-C — síndrome inflamatória…</a><a href="#d6"><b>D.6</b>Edwards, Patau, Turner e Klin…</a><a href="#d7"><b>D.7</b>22q11.2, Williams, Prader-Wil…</a><a href="#d8"><b>D.8</b>Marfan, Noonan e RASopatias…</a><a href="#d9"><b>D.9</b>Fenilcetonúria, galactosemia…</a><a href="#d10"><b>D.10</b>Padrões de herança, escolha d…</a></nav><!--/hp-f2-->
 
-<div class="card diag">
+<div class="card diag" id="d1">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">D.1</span> Ausculta</div><h3>Sopro inocente <span class="ank ank-prl">PEARL</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">70–80% das crianças têm sopro em algum momento, mais entre 3 e 6 anos e nos estados hipercinéticos (febre, anemia, ansiedade). Inocente: <b>sistólico (ou contínuo, no zumbido venoso), curto, ≤2/6, área pequena, sem frêmito nem clique, bulhas normais, varia com posição</b>, em criança assintomática e sem síndrome.</div></div>
@@ -758,7 +777,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card diag">
+<div class="card diag" id="d2">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">D.2</span> Arritmia · taquicardia de QRS estreito</div><h3>Taquicardia supraventricular e Wolff-Parkinson-White <span class="ank ank-dec">DECISION</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">A TSV é a taquiarritmia sintomática mais comum da criança. No lactente: <b>FC 220–300 fixa, QRS estreito, P ausente ou retrógrada</b>, irritabilidade, palidez, recusa alimentar; tolera horas e depois entra em IC. Na criança maior: palpitação de início e fim súbitos, FC &gt;180. Sinusal tem variabilidade, P normal antes de cada QRS e causa evidente (febre, dor, hipovolemia).</div></div>
@@ -775,7 +794,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card diag">
+<div class="card diag" id="d3">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">D.3</span> Arritmia · bradicardia, canalopatia e morte súbita</div><h3>Bradiarritmias, BAV congênito, QT longo, canalopatias e síncope <span class="ank ank-dgr">DANGER</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Bradicardia na criança é, na maioria, <b>hipóxia</b> (ventilar antes de qualquer droga) ou causa extrínseca (hipotermia, hipotireoidismo, HIC, drogas). As primárias são o <b>BAV total congênito</b> (anticorpos maternos anti-Ro/SSA) e o pós-operatório. A morte súbita do jovem com coração aparentemente normal vem de <b>canalopatias</b> (QT longo, Brugada, TVPC), <b>CMH</b>, coronária anômala e miocardite.</div></div>
@@ -802,7 +821,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card diag">
+<div class="card diag" id="d4">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">D.4</span> Músculo cardíaco</div><h3>Miocardite e cardiomiopatias pediátricas <span class="ank ank-dgr">DANGER</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">A miocardite pediátrica <b>se disfarça</b>: no lactente, de bronquiolite ou sepse (taquipneia, gemência, hepatomegalia, taquicardia desproporcional à febre); no escolar, de gastroenterite (dor abdominal e vômitos pela congestão). <b>Taquicardia em repouso que não acompanha a febre, ritmo de galope, hepatomegalia e baixa voltagem no ECG</b> = troponina e eco. Cardiomiopatia dilatada no lactente pede exclusão de ALCAPA, TSV incessante e erro inato.</div></div>
@@ -819,7 +838,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card diag">
+<div class="card diag" id="d5">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">D.5</span> Hiperinflamação pós-infecciosa</div><h3>MIS-C — síndrome inflamatória multissistêmica pediátrica <span class="ank ank-dec">DECISION</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Escolar (mediana 8–9 anos), <b>2–6 semanas após infecção por SARS-CoV-2</b>, com febre, <b>sintomas gastrointestinais intensos, choque, disfunção ventricular</b>, exantema e conjuntivite, linfopenia, plaquetopenia, PCR, ferritina, D-dímero, troponina e BNP muito altos. Sobrepõe-se ao Kawasaki, mas é mais velho, mais chocado, mais miocárdico e menos coronariano.</div></div>
@@ -834,7 +853,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 </div>
-<div class="card diag">
+<div class="card diag" id="d6">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">D.6</span> Genética · aneuploidias</div><h3>Edwards, Patau, Turner e Klinefelter <span class="ank ank-hy">HIGH-YIELD</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">As trissomias 18 e 13 crescem com a idade materna e matam a maioria no 1º ano; a monossomia X (Turner) e o 47,XXY (Klinefelter) não dependem da idade materna e são diagnosticados tarde, pela estatura e pela puberdade. Neste HP, Turner entra pela cardiologia e pelo cariótipo; GH e indução puberal estão no PD04.</div></div>
@@ -851,7 +870,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card diag">
+<div class="card diag" id="d7">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">D.7</span> Genética · microdeleções e imprinting</div><h3>22q11.2, Williams, Prader-Willi/Angelman e cri-du-chat <span class="ank ank-hy">HIGH-YIELD</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">O cariótipo vê alterações de ~5–10 Mb; microdeleções de 1,5–3 Mb exigem <b>FISH dirigido ou microarray</b>. Na região 15q11-q13 o que importa não é só a deleção, mas <b>de qual genitor ela veio</b> (imprinting): o exame de primeira linha é o estudo de metilação.</div></div>
@@ -868,7 +887,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card diag">
+<div class="card diag" id="d8">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">D.8</span> Genética · monogênicas de prova</div><h3>Marfan, Noonan e RASopatias, X frágil, Holt-Oram e Alagille <span class="ank ank-hy">HIGH-YIELD</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">As monogênicas cardiológicas de prova têm uma lesão-assinatura: <b>raiz da aorta</b> (Marfan), <b>estenose pulmonar displásica e CMH</b> (Noonan), <b>CIA com malformação do polegar</b> (Holt-Oram), <b>estenose de ramos pulmonares com colestase</b> (Alagille). X frágil é a causa hereditária mais comum de deficiência intelectual.</div></div>
@@ -885,7 +904,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card diag">
+<div class="card diag" id="d9">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">D.9</span> Metabolismo · triagem e curso crônico</div><h3>Fenilcetonúria, galactosemia, deficiência de biotinidase e doenças lisossomais</h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">São as doenças em que a <b>triagem neonatal muda o desfecho</b> (PKU, biotinidase, galactosemia) ou em que existe terapia específica que funciona melhor cedo (reposição enzimática nas lisossomais). O programa de triagem está no PD05; aqui está o que fazer com o diagnóstico.</div></div>
@@ -902,7 +921,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card diag">
+<div class="card diag" id="d10">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">D.10</span> Competência · genética médica</div><h3>Padrões de herança, escolha do teste genético e aconselhamento <span class="ank ank-dec">DECISION</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Escolha o exame pelo <b>mecanismo suspeito</b>: número de cromossomos → cariótipo (ou FISH/QF-PCR se urgente); microdeleção ou duplicação → <b>microarray</b> (1º exame na deficiência intelectual, autismo e malformações múltiplas); expansão de repetição → PCR específica; imprinting → <b>metilação</b>; gene ou grupo de genes → painel; quadro sem hipótese clara → <b>exoma ou genoma</b>, hoje aceitos como 1º ou 2º exame.</div></div>
@@ -936,7 +955,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <div class="section-sub">Quem recebe prostaglandina sem eco, quando tratar o Kawasaki incompleto e como amônia, pH e cetose separam os erros inatos; depois, a ordem das perguntas que se faz de cabeça.</div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="e1">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">E.1</span> Algoritmo · RN e lactente jovem</div><h3>Cianose ou choque nas primeiras semanas: é canal? <span class="ank ank-dgr">DANGER</span></h3></div>
 <div class="card-body">
 <div class="algo">
@@ -976,7 +995,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="e2">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">E.2</span> Algoritmo · AHA 2017/2024</div><h3>Kawasaki incompleto: febre prolongada com poucos critérios <span class="ank ank-dec">DECISION</span></h3></div>
 <div class="card-body">
 <div class="algo">
@@ -1011,7 +1030,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="e3">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">E.3</span> Algoritmo · erro inato</div><h3>Lactente com encefalopatia, vômitos ou hipoglicemia: amônia, pH e cetose <span class="ank ank-dgr">DANGER</span></h3></div>
 <div class="card-body">
 <div class="algo">
@@ -1077,13 +1096,13 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <div class="section-eyebrow"><span>F</span> Tratamento Integrado</div>
 <div class="section-title">F1 · Estratégia por entidade · F2 · Doses em mg/kg com máximo · F3 · Caso → conduta → erro típico</div>
 <div class="section-sub">Toda dose é por peso real (no obeso, peso ideal para fármacos hidrofílicos, com teto do adulto). Drogas de cardiologia pediátrica intensiva e de erros inatos seguem protocolo de centro: as doses abaixo são as de referência das diretrizes citadas, e as que variam entre serviços estão marcadas para conferir.</div>
-</div>
+</div><!--hp-f2--><nav class="sec-idx" aria-label="Neste capítulo"><a href="#f1"><b>F.1</b>Escadas de conduta por entida…</a><a href="#f2"><b>F.2</b>Tabela de doses pediátricas…</a><a href="#f3"><b>F.3</b>Caso → conduta certa → erro t…</a></nav><!--/hp-f2-->
 
-<div class="card tx">
+<div class="card tx" id="f1">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">F.1</span> Estratégia</div><h3>Escadas de conduta por entidade <span class="ank ank-dec">DECISION</span></h3></div>
 <div class="card-body">
 
-<div class="sub-title">F1.1 · Shunts esquerda→direita e insuficiência cardíaca do lactente</div>
+<div class="sub-title" id="f1-1">F1.1 · Shunts esquerda→direita e insuficiência cardíaca do lactente</div>
 <ul class="bullets">
 <li><b>Primeira linha:</b> furosemida 1 mg/kg/dose 12/12 h (até 8/8 h), espironolactona 1–2 mg/kg/dia para poupar potássio, e densidade calórica: leite materno fortificado ou fórmula concentrada a 0,8–1 kcal/mL, 120–150 kcal/kg/dia, sonda se a mamada leva mais de 30 minutos ou o ganho é &lt;10–20 g/dia.</li>
 <li><b>Redução de pós-carga:</b> captopril ou enalapril reduzem a RVS e desviam parte do shunt para a aorta; inicie em dose baixa com creatinina e potássio em 1 semana (mais cautela com espironolactona associada). Digoxina ficou opcional: pode aliviar sintoma, mas não muda o curso do shunt com função preservada.</li>
@@ -1092,7 +1111,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </ul>
 <div class="box danger"><span class="box-label">DANGER</span><div class="box-title">Hipocalemia + digoxina, IECA + espironolactona: os dois extremos do potássio</div><div class="box-body">A furosemida em dose alta espolia potássio e, com digoxina, precipita arritmia por intoxicação digitálica (bradicardia, BAV, taquicardia atrial com bloqueio, vômitos). No outro extremo, IECA com espironolactona num lactente desidratado por gastroenterite dá hipercalemia grave. Potássio e creatinina na introdução e em toda intercorrência com vômito ou diarreia; suspenda temporariamente IECA e diurético na desidratação.</div></div>
 
-<div class="sub-title">F1.2 · Cianose, canal-dependência e crise hipercianótica</div>
+<div class="sub-title" id="f1-2">F1.2 · Cianose, canal-dependência e crise hipercianótica</div>
 <ul class="bullets">
 <li><b>RN cianótico ou em choque com suspeita de canal:</b> PGE1 0,05–0,1 mcg/kg/min em acesso exclusivo (periférico serve); resposta (SpO2 ou pulsos femorais) em 15–30 min; desça para 0,01–0,05 mcg/kg/min, a menor dose que mantém o canal. Efeitos: apneia, febre, rubor, hipotensão, bradicardia; uso prolongado causa hiperostose cortical, hiperplasia antral (vômitos) e edema.</li>
 <li><b>TGA:</b> PGE1 + Rashkind se SpO2 &lt;70–75% ou acidose; Jatene nas primeiras 2–3 semanas; após 3–4 semanas, discutir preparo do VE.</li>
@@ -1110,13 +1129,13 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="sub-title">F1.3 · Lesões obstrutivas</div>
+<div class="sub-title" id="f1-3">F1.3 · Lesões obstrutivas</div>
 <ul class="bullets">
 <li><b>RN crítico:</b> PGE1, inotrópico (adrenalina 0,05–0,3 mcg/kg/min ou milrinona se PA permite), correção de acidose e cálcio, ventilação; no SHCE, evitar hiperóxia e hiperventilação (ambas derrubam a RVP e roubam a aorta) — às vezes se tolera FiO2 de 21% com SpO2 de 75–85%.</li>
 <li><b>Intervenção:</b> coarctação neonatal = cirurgia (anastomose término-terminal estendida); recoarctação e criança maior = angioplastia com stent; EAo crítica = valvoplastia por balão; estenose pulmonar com gradiente &gt;40 mmHg = valvoplastia por balão (pior na valva displásica da Noonan); SHCE = Norwood/híbrido ou transplante, decisão compartilhada com a família.</li>
 </ul>
 
-<div class="sub-title">F1.4 · Arritmias</div>
+<div class="sub-title" id="f1-4">F1.4 · Arritmias</div>
 <ul class="bullets">
 <li><b>TSV estável:</b> manobra vagal (gelo na face no lactente; Valsalva modificada no maior) → adenosina 0,1 → 0,2 mg/kg com flush e ECG gravando → se recorrer imediatamente, repetir adenosina e iniciar profilaxia; refratária = amiodarona ou procainamida com cardiologista.</li>
 <li><b>TSV instável:</b> cardioversão sincronizada 0,5–1 J/kg → 2 J/kg, com sedação se não atrasar; adenosina só se o acesso já está pronto.</li>
@@ -1125,14 +1144,14 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </ul>
 <div class="box decision"><span class="box-label">DECISION</span><div class="box-title">Adenosina na veia certa, do jeito certo</div><div class="box-body">Meia-vida &lt;10 segundos: use acesso o mais proximal possível (antecubital no lactente), torneira de 3 vias com seringa de adenosina e seringa de 5–10 mL de SF, empurre as duas em sequência imediata e grave o ECG durante a infusão. Falha com dose correta e técnica certa = taquicardia que não depende do nó AV (<i>flutter</i>, atrial ectópica, TV) — o traçado gravado faz o diagnóstico. No transplantado cardíaco e com dipiridamol, reduza a dose; teofilina e cafeína antagonizam.</div></div>
 
-<div class="sub-title">F1.5 · Miocardite e cardiomiopatias</div>
+<div class="sub-title" id="f1-5">F1.5 · Miocardite e cardiomiopatias</div>
 <ul class="bullets">
 <li><b>Miocardite:</b> UTI com monitor contínuo nas primeiras 48–72 h (arritmia e BAV aparecem sem aviso), diurético, milrinona no baixo débito, adrenalina se hipotenso, ventilação com cautela na indução (cetamina ou etomidato em dose baixa; propofol e benzodiazepínico em bolus derrubam a PA), ECMO/VAD precoces na fulminante.</li>
 <li><b>Dilatada crônica:</b> IECA, diurético, espironolactona, betabloqueador (carvedilol) quando estável; anticoagulação se FE &lt;20–25%, trombo ou arritmia atrial; transplante quando refratária.</li>
 <li><b>Hipertrófica:</b> betabloqueador (ou verapamil acima de 1 ano), evitar desidratação, vasodilatadores e inotrópicos; estratificar risco de morte súbita para CDI; Pompe = reposição enzimática; filho de diabética = observação e betabloqueador só se obstrução.</li>
 </ul>
 
-<div class="sub-title">F1.6 · Kawasaki — fase aguda, resistência e longo prazo</div>
+<div class="sub-title" id="f1-6">F1.6 · Kawasaki — fase aguda, resistência e longo prazo</div>
 <ul class="bullets">
 <li><b>Fase aguda, alto risco e resistência:</b> esquema e critérios em C.6 e doses em F2; o ponto operacional é reavaliar a febre 36 h após o fim da IgIV e ter o 2º passo (2ª IgIV, infliximabe ou corticoide) definido antes disso.</li>
 <li><b>Antitrombótico pelo maior escore Z:</b> pela tabela de C.6; trombose aguda em aneurisma = trombólise ou cateterismo com hemodinamicista.</li>
@@ -1141,14 +1160,14 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </ul>
 <div class="box decision"><span class="box-label">DECISION</span><div class="box-title">Não espere o 5º dia nem todos os critérios no lactente</div><div class="box-body">Com ≥4 critérios clássicos e febre, o diagnóstico pode ser feito no 4º dia por quem tem experiência. Lactente ≤6 meses tem a maior taxa de aneurisma e o quadro mais incompleto: febre ≥7 dias sem foco + PCR alta já é indicação de eco. Depois do 10º dia, trate se ainda houver febre ou PCR/VHS altas; IgIV tardia ainda reduz inflamação, embora não desfaça aneurisma formado.</div></div>
 
-<div class="sub-title">F1.7 · MIS-C</div>
+<div class="sub-title" id="f1-7">F1.7 · MIS-C</div>
 <ul class="bullets">
 <li><b>Todo caso internado:</b> IgIV 2 g/kg (máx 100 g; em choque com disfunção ventricular, infundir em 24–48 h ou fracionar 1 g/kg em 2 dias pela sobrecarga de volume) + metilprednisolona 1–2 mg/kg/dia IV, com antibiótico empírico até excluir sepse e choque tóxico (→ PD10).</li>
 <li><b>Escalonamento em 24 h:</b> choque com vasoativo, disfunção ventricular grave ou febre persistente = pulso de metilprednisolona 10–30 mg/kg/dia (máx 1 g) por 1–3 dias ou anakinra 5–10 mg/kg/dia; infliximabe como alternativa.</li>
 <li><b>Antitrombótico:</b> AAS 3–5 mg/kg/dia (máx 81 mg) até normalização de plaquetas e coronárias; enoxaparina 1 mg/kg 12/12 h se Z ≥10, FE &lt;35% ou trombose documentada.</li>
 </ul>
 
-<div class="sub-title">F1.8 · Genética: o que se trata, o que se rastreia, quem aconselha</div>
+<div class="sub-title" id="f1-8">F1.8 · Genética: o que se trata, o que se rastreia, quem aconselha</div>
 <ul class="bullets">
 <li><b>22q11.2:</b> cálcio iônico, PTH, linfócitos T (CD3/CD4/CD8) antes de qualquer cirurgia cardíaca; hemocomponentes irradiados e sem vacina viva até confirmar imunidade celular adequada (CD4 acima do limiar do protocolo); palato, fala, audição e rastreio psiquiátrico na adolescência.</li>
 <li><b>Marfan:</b> betabloqueador ou losartana para retardar a dilatação da raiz; eco anual (semestral se crescimento rápido); restrição a esporte isométrico e de contato; cirurgia profilática da raiz pelo diâmetro e pela taxa de crescimento; oftalmologia anual.</li>
@@ -1156,7 +1175,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </ul>
 <div class="box hy"><span class="box-label">HIGH-YIELD</span><div class="box-title">O diagnóstico genético é tratamento quando muda rastreio, cirurgia ou família</div><div class="box-body">Saber que a cardiopatia é sindrômica muda o hemocomponente (22q11.2), a anestesia (Williams), a vigilância de tumor (Beckwith-Wiedemann, Noonan), a imagem de aorta (Turner, Marfan, Loeys-Dietz), o rastreio oncológico (Down) e o risco de recorrência para os pais. Por isso a AHA 2018 recomenda microarray em toda cardiopatia com anomalia extracardíaca, dismorfismo ou atraso, e teste dirigido nas lesões de alta associação (conotruncal → 22q11.2; estenose supravalvar → Williams).</div></div>
 
-<div class="sub-title">F1.9 · Erros inatos do metabolismo na descompensação aguda</div>
+<div class="sub-title" id="f1-9">F1.9 · Erros inatos do metabolismo na descompensação aguda</div>
 <ul class="bullets">
 <li><b>Primeiros 30 minutos:</b> amostra crítica (soro, plasma em heparina, urina e papel-filtro congelados) antes da glicose; suspender proteína e galactose; SG10% com eletrólitos para GIR 8–10 mg/kg/min (insulina se glicemia &gt;180 mg/dL, para manter anabolismo); lipídio IV 1–2 g/kg/dia quando a β-oxidação estiver excluída; ondansetrona para vômitos.</li>
 <li><b>Hiperamonemia:</b> benzoato de sódio (± fenilacetato), arginina e carglumato conforme o defeito, com o centro de referência; hemodiálise se amônia &gt;250 µmol/L com encefalopatia, &gt;500 em qualquer situação, ou sem queda em 4–6 h; dosar amônia a cada 3–4 h. Cada hora de amônia alta é QI perdido.</li>
@@ -1169,7 +1188,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card tx">
+<div class="card tx" id="f2">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">F.2</span> Doses Operacionais</div><h3>Tabela de doses pediátricas — mg/kg com dose máxima <span class="ank ank-dec">DECISION</span></h3></div>
 <div class="card-body">
 <div class="stbl stbl-3">
@@ -1208,7 +1227,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card tx">
+<div class="card tx" id="f3">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">F.3</span> Cenários</div><h3>Caso → conduta certa → erro típico <span class="ank ank-dgr">DANGER</span></h3></div>
 <div class="card-body">
 <div class="stbl stbl-3">
@@ -1233,7 +1252,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <div class="section-title">Erros Operacionais + Mitos Vivos + Debates Atuais</div>
 <div class="section-sub">Em cardiologia pediátrica e genética, o erro grave quase nunca é de desconhecimento da doença: é aplicar a fisiologia do adulto (oxigênio, volume, inotrópico, um exame genético "para tudo") a quem funciona de outro jeito.</div>
 </div>
-<div class="card pearl">
+<div class="card pearl" id="g1">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">G.1</span> Pegadinhas</div><h3>10 Erros Operacionais — Cardiopatias, Ritmo, Genética e Metabolismo</h3></div>
 <div class="card-body">
 <div class="stbl stbl-2">
@@ -1251,7 +1270,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 </div>
-<div class="card pearl">
+<div class="card pearl" id="g2">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">G.2</span> Mitos · Controvérsias</div><h3>Mitos Vivos e Debates Atuais</h3></div>
 <div class="card-body">
 <div class="box myth"><span class="box-label">MYTH</span><div class="box-title">"Sopro alto é sopro grave"</div><div class="box-body">A intensidade mede turbulência, não gravidade. A CIV pequena e restritiva tem o sopro mais alto, com frêmito, e frequentemente fecha sozinha; a CIV grande, com pressões iguais, pode ter sopro discreto; no Fallot o sopro some justamente na crise; no Eisenmenger e na TGA com septo íntegro quase não há sopro. Os sinais de gravidade são clínicos — curva de peso, taquipneia, cianose, pulsos, B2 — e o eco define.</div></div>
@@ -1270,7 +1289,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <div class="section-title">Nuances de Especialista + O Que Mudou</div>
 <div class="section-sub">Oito ideias que separam quem decora a cardiopatia ou a síndrome de quem a reconhece no lactente que não fala, e cinco mudanças reais de 2020–2026.</div>
 </div>
-<div class="card pearl">
+<div class="card pearl" id="h1">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">H.1</span> Pearls</div><h3>8 Pearls de Especialista</h3></div>
 <div class="card-body">
 <div class="box pearl"><span class="box-label">PEARL</span><div class="box-title">A TGA engana porque o ECG e a radiografia podem ser normais</div><div class="box-body">Nas primeiras horas, o ECG da TGA é o de qualquer RN (dominância direita) e o "ovo deitado" só aparece quando o timo involui. Cianose intensa com pouco desconforto respiratório e hiperóxia com PaO2 &lt;50 mmHg é o que denuncia a circulação em paralelo — e a PGE1 precisa de forame aberto para funcionar.</div></div>
@@ -1283,7 +1302,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <div class="box pearl"><span class="box-label">PEARL</span><div class="box-title">Na Down, a leucemia transitória do RN é um aviso de quatro anos</div><div class="box-body">A mielopoese anormal transitória (mutação somática de <i>GATA1</i> sobre a trissomia) regride em semanas na maioria, mas 20–30% desenvolvem LMA megacarioblástica até os 4 anos. Blastos no hemograma do RN, hepatomegalia e fibrose hepática são o motivo de seguir de perto — e a LMA da Down responde a quimioterapia menos intensa.</div></div>
 </div>
 </div>
-<div class="card pearl">
+<div class="card pearl" id="h2">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">H.2</span> Evolving</div><h3>5 Mudanças Reais — 2020–2026</h3></div>
 <div class="card-body">
 <div class="box evolving"><span class="box-label">EVOLVING</span><div class="box-title">AHA 2024: Kawasaki de alto risco recebe terapia primária intensificada</div><div class="box-body">Critérios universais de alto risco (≤6 meses, Z ≥2,5 em DA/CD, choque, ativação macrofágica) indicam IgIV + corticoide ou infliximabe já no diagnóstico; DOAC entra como opção nos aneurismas grandes; TC/RM no seguimento. O documento recebeu duas correções em 2025 — conferir doses e tabelas no texto corrigido.</div></div>
@@ -1340,5 +1359,36 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </footer>
 <a class="to-top" href="#" aria-label="Voltar ao topo">↑</a>
 <div class="watermark">@dr.lorencato · PD09 Cardiopatias Congênitas e Genética v5.2</div>
-</body>
+<!--hp-f2--><script>(function(){var d=document,M=d.querySelector('main');if(!M)return;
+var SELF='PD09',HP=' CT01 CT02 CT03 CT04 CT05 CT06 CT08 CT10 CV01 CV03 CV04 CV05 CV06 CV07 CV08 EN01 EN02 EN03 EN04 EN06 EN07 GH01 GH02 GH03 GH05 GH06 GH07 GH08 GH09 GH10 GO01 GO02 GO03 GO04 GO09 GO10 GO11 GO12 GO13 GO14 HO01 HO02 HO03 HO04 HO05 HO06 II01 II02 II03 II04 II07 II08 NE01 NE02 NE03 NE04 NE05 NE06 NE07 NE08 NU01 NU02 NU03 NU04 NU05 OE01 OE02 PC01 PC02 PC03 PC04 PC05 PC06 PD01 PD02 PD03 PD04 PD05 PD06 PD07 PD08 PD09 PD10 RD01 RD02 RD03 RD04 RD05 RD07 RP01 RP02 RP03 RP04 ';
+var SK='A,H1,H2,H3,SCRIPT,STYLE,NAV,.card-num,.card-eyebrow,.sub-title,.disease-tag,.toc';
+var R=/\b(?:([A-H])(\d)?\.(\d{1,2}[a-c]?)|(CV|RP|GH|NE|EN|NU|HO|II|RD|GO|PD|PC|CT|OE)(\d\d))\b/g;
+function skip(n){for(var e=n.parentNode;e&&e!==M;e=e.parentNode)if(e.matches&&e.matches(SK))return 1;return 0}
+var w=d.createTreeWalker(M,4),t,L=[];while(t=w.nextNode())if(R.test(t.data)&&!skip(t))L.push(t);
+L.forEach(function(t){var s=t.data,f=d.createDocumentFragment(),i=0,m;R.lastIndex=0;
+while(m=R.exec(s)){var h=null;
+if(m[1]){var id=m[1].toLowerCase()+(m[2]?m[2]+'-':'')+m[3];if(d.getElementById(id))h='#'+id}
+else{var x=m[4]+m[5];if(x!==SELF&&HP.indexOf(' '+x+' ')>=0)h='../'+x+'/'+x+'.html'}
+if(!h)continue;f.appendChild(d.createTextNode(s.slice(i,m.index)));
+var a=d.createElement('a');a.href=h;a.className='xr';a.textContent=m[0];f.appendChild(a);i=R.lastIndex}
+if(i){f.appendChild(d.createTextNode(s.slice(i)));t.parentNode.replaceChild(f,t)}});
+function nz(s){return s.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'')}
+var q=d.querySelector('.hp-q'),n=d.querySelector('.hp-n'),it=M.querySelectorAll('.card,.pocket-card'),T;
+function clr(){M.querySelectorAll('.q-off').forEach(function(e){e.classList.remove('q-off')})}
+function run(){var v=nz(q.value.trim());clr();n.textContent='';if(v.length<2)return;var k=0;
+it.forEach(function(c){if(nz(c.textContent).indexOf(v)<0){c.classList.add('q-off');return}k++;
+var r=c.querySelectorAll('.stbl-row,.disease-row,.score-row'),h=[];r.forEach(function(x){if(nz(x.textContent).indexOf(v)>=0)h.push(x)});
+if(h.length)r.forEach(function(x){if(h.indexOf(x)<0)x.classList.add('q-off')});
+c.querySelectorAll('details').forEach(function(x){if(nz(x.textContent).indexOf(v)>=0)x.open=true})});
+M.querySelectorAll('section').forEach(function(s){if(!s.querySelector('.card:not(.q-off),.pocket-card:not(.q-off)'))s.classList.add('q-off')});
+n.textContent=k?k+' achado'+(k>1?'s':''):'nada'}
+if(q){q.addEventListener('input',function(){clearTimeout(T);T=setTimeout(run,180)});
+q.addEventListener('keydown',function(e){if(e.key==='Escape'){q.value='';run()}})}
+function tg(b,f){b.addEventListener('click',function(){var on=b.getAttribute('aria-pressed')!=='true';b.setAttribute('aria-pressed',on);f(on)})}
+var bd=d.querySelector('.hp-dz'),bo=d.querySelector('.hp-op');
+if(bd)tg(bd,function(on){d.body.classList.toggle('dz',on);if(on)d.getElementById('tratamento').scrollIntoView()});
+if(bo)tg(bo,function(on){M.querySelectorAll('details').forEach(function(x){x.open=on})});
+var P=[];addEventListener('beforeprint',function(){P=[];M.querySelectorAll('details:not([open])').forEach(function(x){P.push(x);x.open=true})});
+addEventListener('afterprint',function(){P.forEach(function(x){x.open=false})});
+})();</script><!--/hp-f2--></body>
 </html>

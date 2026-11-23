@@ -345,6 +345,25 @@ ul.bullets li b{color:var(--ink);font-weight:600}
   .pocket .pocket-card.tx{--accent:#a8481a}
   .pocket .pocket-card.clin{--accent:#0b5d4e}
 }
+
+/* === v5.2.2 · fase 2 (navegação) === */
+.hp-tools{display:flex;gap:6px;align-items:center;flex:none;order:1;margin-left:auto;padding-left:6px;position:sticky;right:0;background:#f1eee5;box-shadow:-10px 0 10px -4px #f1eee5,16px 0 0 #f1eee5}
+@media(min-width:900px){html{scroll-padding-top:150px}.toc-inner{flex-wrap:wrap;overflow:visible}.card[id],.sub-title[id]{scroll-margin-top:150px}}
+@media(max-width:899px){.hp-b,.hp-n{display:none}.hp-q{width:104px}}
+.hp-q{width:128px;font:500 12px/1 'DM Sans',system-ui,sans-serif;padding:7px 11px;border:1px solid var(--line-strong);border-radius:999px;background:var(--paper);color:var(--ink)}
+.hp-b{font:600 11px/1 'DM Sans',system-ui,sans-serif;letter-spacing:.05em;text-transform:uppercase;padding:7px 10px;border-radius:999px;border:1px solid var(--line-strong);background:var(--paper);color:var(--ink-soft);cursor:pointer;white-space:nowrap}
+.hp-b[aria-pressed=true]{background:var(--ink);color:#fff;border-color:var(--ink)}
+.hp-n{font:600 11px/1 'DM Mono',monospace;color:var(--ink-mute);white-space:nowrap}
+.sec-idx{display:flex;flex-wrap:wrap;gap:6px;margin:12px 0 20px}
+.sec-idx a{font:500 12px/1.25 'DM Sans',system-ui,sans-serif;padding:6px 10px;border-radius:999px;background:var(--paper);border:1px solid var(--line);color:var(--ink-soft);text-decoration:none}
+.sec-idx a:hover{border-color:var(--line-strong);color:var(--ink)}
+.sec-idx b{color:var(--c-prim);margin-right:5px;font-weight:700}
+a.xr{color:inherit;text-decoration:underline dotted;text-underline-offset:2px}
+a.xr:hover{color:var(--c-prim)}
+.card[id],.sub-title[id]{scroll-margin-top:110px}
+.q-off{display:none!important}
+body.dz main section:not(#tratamento){display:none}
+@media print{.hp-tools,.sec-idx,.toc-doses{display:none!important}}
 </style>
 </head>
 <body>
@@ -362,14 +381,14 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </header>
 
 <nav class="toc">
-  <div class="toc-inner">
+  <div class="toc-inner"><!--hp-f2--><span class="hp-tools"><input class="hp-q" type="search" placeholder="Buscar no HP" aria-label="Buscar no HP"><button class="hp-b hp-dz" type="button" aria-pressed="false">Só doses</button><button class="hp-b hp-op" type="button" aria-pressed="false">Abrir tudo</button><span class="hp-n" aria-live="polite"></span></span><!--/hp-f2-->
     <a href="#pocket"      class="toc-chip"><span class="toc-chip-num">0</span>Pocket</a>
     <a href="#redflags"    class="toc-chip"><span class="toc-chip-num">A</span>Red Flags</a>
     <a href="#approach"    class="toc-chip"><span class="toc-chip-num">B</span>Apresentação</a>
     <a href="#primarias"   class="toc-chip"><span class="toc-chip-num">C</span>Entidades</a>
     <a href="#secundarias" class="toc-chip"><span class="toc-chip-num">D</span>Secundárias</a>
     <a href="#algoritmo"   class="toc-chip"><span class="toc-chip-num">E</span>Algoritmo</a>
-    <a href="#tratamento"  class="toc-chip"><span class="toc-chip-num">F</span>Tratamento</a>
+    <a href="#tratamento"  class="toc-chip"><span class="toc-chip-num">F</span>Tratamento</a><!--hp-f2--><a href="#f2" class="toc-chip toc-doses"><span class="toc-chip-num">Rx</span>Doses</a><!--/hp-f2-->
     <a href="#pitfalls"    class="toc-chip"><span class="toc-chip-num">G</span>Pitfalls</a>
     <a href="#pearls"      class="toc-chip"><span class="toc-chip-num">H</span>Pearls</a>
   </div>
@@ -484,7 +503,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
     <div class="section-sub">Hipóxia, hipotensão, herniação e deslocamento de uma coluna instável são os eventos secundários evitáveis. Cada linha abaixo é sinal objetivo, suspeita e conduta imediata.</div>
   </div>
 
-  <div class="card emerg">
+  <div class="card emerg" id="a1">
     <div class="card-head">
       <div class="card-eyebrow"><span class="card-num">A.1</span> Emergências neurológicas</div>
       <h3>Neuroworsening: o sinal que muda a próxima hora <span class="ank ank-dgr">DANGER</span></h3>
@@ -524,7 +543,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
     </div>
   </div>
 
-  <div class="card emerg">
+  <div class="card emerg" id="a2">
     <div class="card-head">
       <div class="card-eyebrow"><span class="card-num">A.2</span> Coluna e medula</div>
       <h3>Quem não pode ser liberado clinicamente <span class="ank ank-dec">DECISION</span></h3>
@@ -556,7 +575,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
     <div class="section-sub">Cinco perguntas na porta da sala vermelha: está rebaixado, tem massa, o que a pupila diz, a medula está em risco, é criança ou idoso.</div>
   </div>
 
-  <div class="card clin">
+  <div class="card clin" id="b1">
     <div class="card-head">
       <div class="card-eyebrow"><span class="card-num">B.1</span> Padrão 1</div>
       <h3>Rebaixamento após trauma: é o cérebro, ou só parece?</h3>
@@ -575,7 +594,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
     </div>
   </div>
 
-  <div class="card clin">
+  <div class="card clin" id="b2">
     <div class="card-head">
       <div class="card-eyebrow"><span class="card-num">B.2</span> Padrão 2</div>
       <h3>TCE leve: observar, tomografar ou dar alta</h3>
@@ -591,7 +610,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
     </div>
   </div>
 
-  <div class="card clin">
+  <div class="card clin" id="b3">
     <div class="card-head">
       <div class="card-eyebrow"><span class="card-num">B.3</span> Padrão 3</div>
       <h3>Pupila, hemiparesia e Cushing: as síndromes de herniação</h3>
@@ -609,7 +628,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
     </div>
   </div>
 
-  <div class="card clin">
+  <div class="card clin" id="b4">
     <div class="card-head">
       <div class="card-eyebrow"><span class="card-num">B.4</span> Padrão 4</div>
       <h3>Dor cervical, déficit ou mecanismo perigoso: coluna e medula</h3>
@@ -626,7 +645,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
     </div>
   </div>
 
-  <div class="card clin">
+  <div class="card clin" id="b5">
     <div class="card-head">
       <div class="card-eyebrow"><span class="card-num">B.5</span> Padrão 5</div>
       <h3>Criança e idoso: a mesma lesão com regras diferentes</h3>
@@ -649,9 +668,9 @@ ul.bullets li b{color:var(--ink);font-weight:600}
     <div class="section-eyebrow"><span>C</span> Entidades Primárias</div>
     <div class="section-title">Cérebro e medula: doze entidades que decidem a conduta</div>
     <div class="section-sub">Classificar, tomografar, operar quem tem massa, controlar a pressão e proteger a coluna. Cada box termina na linha que muda a conduta.</div>
-  </div>
+  </div><!--hp-f2--><nav class="sec-idx" aria-label="Neste capítulo"><a href="#c1"><b>C.1</b>TCE: Glasgow, pupila e lesão…</a><a href="#c2"><b>C.2</b>TCE leve e concussão: quem fa…</a><a href="#c3"><b>C.3</b>Hematoma extradural (epidural…</a><a href="#c4"><b>C.4</b>Hematoma subdural agudo e crô…</a><a href="#c5"><b>C.5</b>Contusão, hemorragia intrapar…</a><a href="#c6"><b>C.6</b>Lesão axonal difusa e edema c…</a><a href="#c7"><b>C.7</b>Hipertensão intracraniana: PI…</a><a href="#c8"><b>C.8</b>Fraturas de crânio, base do c…</a><a href="#c9"><b>C.9</b>Coluna vertebral: restrição d…</a><a href="#c10"><b>C.10</b>Lesão medular traumática: ISN…</a><a href="#c11"><b>C.11</b>Choque neurogênico × choque m…</a><a href="#c12"><b>C.12</b>Síndromes centromedular, de B…</a></nav><!--/hp-f2-->
 
-  <div class="card prim">
+  <div class="card prim" id="c1">
     <div class="card-head">
       <div class="card-eyebrow"><span class="card-num">C.1</span> TCE · avaliação e classificação</div>
       <h3>TCE: Glasgow, pupila e lesão secundária <span class="ank ank-hy">HIGH-YIELD</span></h3>
@@ -692,7 +711,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
     </div>
   </div>
 
-  <div class="card prim">
+  <div class="card prim" id="c2">
     <div class="card-head">
       <div class="card-eyebrow"><span class="card-num">C.2</span> TCE leve · concussão</div>
       <h3>TCE leve e concussão: quem faz TC <span class="ank ank-dec">DECISION</span></h3>
@@ -723,7 +742,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
     </div>
   </div>
 
-  <div class="card prim">
+  <div class="card prim" id="c3">
     <div class="card-head">
       <div class="card-eyebrow"><span class="card-num">C.3</span> Hematoma extradural</div>
       <h3>Hematoma extradural (epidural): a lesão que se cura se for operada a tempo <span class="ank ank-dgr">DANGER</span></h3>
@@ -755,7 +774,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
     </div>
   </div>
 
-  <div class="card prim">
+  <div class="card prim" id="c4">
     <div class="card-head">
       <div class="card-eyebrow"><span class="card-num">C.4</span> Hematoma subdural</div>
       <h3>Hematoma subdural agudo e crônico <span class="ank ank-hy">HIGH-YIELD</span></h3>
@@ -787,7 +806,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
     </div>
   </div>
 
-  <div class="card prim">
+  <div class="card prim" id="c5">
     <div class="card-head">
       <div class="card-eyebrow"><span class="card-num">C.5</span> Lesões focais do parênquima</div>
       <h3>Contusão, hemorragia intraparenquimatosa e HSA traumática</h3>
@@ -809,7 +828,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
     </div>
   </div>
 
-  <div class="card prim">
+  <div class="card prim" id="c6">
     <div class="card-head">
       <div class="card-eyebrow"><span class="card-num">C.6</span> Lesões difusas</div>
       <h3>Lesão axonal difusa e edema cerebral difuso</h3>
@@ -831,7 +850,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
     </div>
   </div>
 
-  <div class="card prim">
+  <div class="card prim" id="c7">
     <div class="card-head">
       <div class="card-eyebrow"><span class="card-num">C.7</span> HIC no TCE grave</div>
       <h3>Hipertensão intracraniana: PIC, PPC, osmoterapia e craniectomia <span class="ank ank-dgr">DANGER</span></h3>
@@ -872,7 +891,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
     </div>
   </div>
 
-  <div class="card prim">
+  <div class="card prim" id="c8">
     <div class="card-head">
       <div class="card-eyebrow"><span class="card-num">C.8</span> Crânio e base do crânio</div>
       <h3>Fraturas de crânio, base do crânio, fístula liquórica, pares cranianos e TCE penetrante</h3>
@@ -894,7 +913,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
     </div>
   </div>
 
-  <div class="card prim">
+  <div class="card prim" id="c9">
     <div class="card-head">
       <div class="card-eyebrow"><span class="card-num">C.9</span> Coluna</div>
       <h3>Coluna vertebral: restrição de movimento, regras de decisão, imagem e estabilidade <span class="ank ank-hy">HIGH-YIELD</span></h3>
@@ -935,7 +954,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
     </div>
   </div>
 
-  <div class="card prim">
+  <div class="card prim" id="c10">
     <div class="card-head">
       <div class="card-eyebrow"><span class="card-num">C.10</span> Lesão medular</div>
       <h3>Lesão medular traumática: ISNCSCI/ASIA e conduta inicial <span class="ank ank-hy">HIGH-YIELD</span></h3>
@@ -977,7 +996,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
     </div>
   </div>
 
-  <div class="card prim">
+  <div class="card prim" id="c11">
     <div class="card-head">
       <div class="card-eyebrow"><span class="card-num">C.11</span> Choque</div>
       <h3>Choque neurogênico × choque medular × choque hemorrágico <span class="ank ank-dgr">DANGER</span></h3>
@@ -1014,7 +1033,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
     </div>
   </div>
 
-  <div class="card prim">
+  <div class="card prim" id="c12">
     <div class="card-head">
       <div class="card-eyebrow"><span class="card-num">C.12</span> Síndromes medulares incompletas</div>
       <h3>Síndromes centromedular, de Brown-Séquard e medular anterior</h3>
@@ -1048,9 +1067,9 @@ ul.bullets li b{color:var(--ink);font-weight:600}
     <div class="section-eyebrow"><span>D</span> Entidades Secundárias</div>
     <div class="section-title">Populações e complicações que mudam o limiar e o prazo</div>
     <div class="section-sub">Criança, anticoagulado, crise, complicações sistêmicas, lesão vascular, coluna toracolombar, medula pediátrica e geriátrica, complicações crônicas da medula e morte encefálica.</div>
-  </div>
+  </div><!--hp-f2--><nav class="sec-idx" aria-label="Neste capítulo"><a href="#d1"><b>D.1</b>TCE na criança: PECARN, Glasg…</a><a href="#d2"><b>D.2</b>Anticoagulado, antiagregado e…</a><a href="#d3"><b>D.3</b>Crise e epilepsia pós-traumát…</a><a href="#d4"><b>D.4</b>Complicações sistêmicas do TC…</a><a href="#d5"><b>D.5</b>Lesão cerebrovascular contusa…</a><a href="#d6"><b>D.6</b>Fraturas toracolombares, cone…</a><a href="#d7"><b>D.7</b>SCIWORA e coluna na criança e…</a><a href="#d8"><b>D.8</b>Complicações da lesão medular…</a><a href="#d9"><b>D.9</b>Morte encefálica: Resolução C…</a></nav><!--/hp-f2-->
 
-  <div class="card diag">
+  <div class="card diag" id="d1">
     <div class="card-head">
       <div class="card-eyebrow"><span class="card-num">D.1</span> Criança</div>
       <h3>TCE na criança: PECARN, Glasgow verbal modificado e abuso</h3>
@@ -1070,7 +1089,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
     </div>
   </div>
 
-  <div class="card diag">
+  <div class="card diag" id="d2">
     <div class="card-head">
       <div class="card-eyebrow"><span class="card-num">D.2</span> Anticoagulado e idoso</div>
       <h3>Anticoagulado, antiagregado e idoso com TCE <span class="ank ank-dec">DECISION</span></h3>
@@ -1089,7 +1108,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
     </div>
   </div>
 
-  <div class="card diag">
+  <div class="card diag" id="d3">
     <div class="card-head">
       <div class="card-eyebrow"><span class="card-num">D.3</span> Crise pós-traumática</div>
       <h3>Crise e epilepsia pós-traumáticas: profilaxia por 7 dias <span class="ank ank-hy">HIGH-YIELD</span></h3>
@@ -1108,7 +1127,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
     </div>
   </div>
 
-  <div class="card diag">
+  <div class="card diag" id="d4">
     <div class="card-head">
       <div class="card-eyebrow"><span class="card-num">D.4</span> Complicações do TCE grave</div>
       <h3>Complicações sistêmicas do TCE grave: sódio, estômago, trombose e nutrição</h3>
@@ -1128,7 +1147,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
     </div>
   </div>
 
-  <div class="card diag">
+  <div class="card diag" id="d5">
     <div class="card-head">
       <div class="card-eyebrow"><span class="card-num">D.5</span> Vascular</div>
       <h3>Lesão cerebrovascular contusa (BCVI): carótida e vertebral</h3>
@@ -1147,7 +1166,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
     </div>
   </div>
 
-  <div class="card tx">
+  <div class="card tx" id="d6">
     <div class="card-head">
       <div class="card-eyebrow"><span class="card-num">D.6</span> Toracolombar</div>
       <h3>Fraturas toracolombares, cone medular e cauda equina</h3>
@@ -1166,7 +1185,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
     </div>
   </div>
 
-  <div class="card tx">
+  <div class="card tx" id="d7">
     <div class="card-head">
       <div class="card-eyebrow"><span class="card-num">D.7</span> Criança e idoso</div>
       <h3>SCIWORA e coluna na criança e no idoso</h3>
@@ -1184,7 +1203,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
     </div>
   </div>
 
-  <div class="card tx">
+  <div class="card tx" id="d8">
     <div class="card-head">
       <div class="card-eyebrow"><span class="card-num">D.8</span> Complicações da medula</div>
       <h3>Complicações da lesão medular: disreflexia autonômica, bexiga, TEV, pele e respiração <span class="ank ank-dgr">DANGER</span></h3>
@@ -1203,7 +1222,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
     </div>
   </div>
 
-  <div class="card diag">
+  <div class="card diag" id="d9">
     <div class="card-head">
       <div class="card-eyebrow"><span class="card-num">D.9</span> Morte encefálica</div>
       <h3>Morte encefálica: Resolução CFM 2.173/2017 <span class="ank ank-hy">HIGH-YIELD</span></h3>
@@ -1240,7 +1259,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
     <div class="section-sub">A árvore começa pela pergunta que separa o que mata em minutos (hipóxia e hipotensão) do que se decide pela GCS, pela pupila e pelo nível medular.</div>
   </div>
 
-  <div class="card prim">
+  <div class="card prim" id="e1">
     <div class="card-head">
       <div class="card-eyebrow"><span class="card-num">E.1</span> Algoritmo</div>
       <h3>TCE, coluna e medula: decisão em sequência</h3>
@@ -1334,15 +1353,15 @@ ul.bullets li b{color:var(--ink);font-weight:600}
     <div class="section-eyebrow"><span>F</span> Tratamento Integrado</div>
     <div class="section-title">F1 · Estratégia por entidade · F2 · Doses · F3 · Casos · F4 · Brasil</div>
     <div class="section-sub">O tratamento do neurotrauma é, antes de tudo, evitar hipóxia e hipotensão; depois vêm a cirurgia da massa, o controle da PIC e a proteção da medula. Cada degrau tem dose, via e limite.</div>
-  </div>
+  </div><!--hp-f2--><nav class="sec-idx" aria-label="Neste capítulo"><a href="#f1"><b>F.1</b>Escada terapêutica por entida…</a><a href="#f2"><b>F.2</b>Tabela de doses — neurotrauma</a><a href="#f3"><b>F.3</b>Caso → conduta certa → erro t…</a><a href="#f4"><b>F.4</b>Acesso no Brasil: o que exist…</a><a href="#f5"><b>F.5</b>Morte encefálica passo a pass…</a><a href="#f6"><b>F.6</b>Bundle do neurotrauma grave e…</a></nav><!--/hp-f2-->
 
-  <div class="card tx">
+  <div class="card tx" id="f1">
     <div class="card-head">
       <div class="card-eyebrow"><span class="card-num">F.1</span> Estratégia</div>
       <h3>Escada terapêutica por entidade <span class="ank ank-dec">DECISION</span></h3>
     </div>
     <div class="card-body">
-      <div class="sub-title">F1.1 · TCE: reanimação e prevenção da lesão secundária</div>
+      <div class="sub-title" id="f1-1">F1.1 · TCE: reanimação e prevenção da lesão secundária</div>
       <ul class="bullets">
         <li><b>Oxigênio e ventilação:</b> SpO2 ≥94%, ETCO2 35–40 mmHg e PaCO2 35–45 mmHg. IOT se GCS ≤8, agitação ou piora neurológica, ou lesão medular proximal a C5. A indução e a sequência rápida estão no CT01: escolha o agente que preserve a PAM e corrija o choque antes.</li>
         <li><b>Pressão:</b> PAS ≥100 mmHg no adulto (idoso e hipertenso: manter acima de 110 mmHg); PAM acima de 80 mmHg; criança, PAS acima do percentil 5 (70 mmHg + 2 × idade). Sangue na hemorragia; soro fisiológico como cristaloide; sem soluções hipotônicas ou glicosadas. Hipotensão persistente: noradrenalina titulada.</li>
@@ -1352,7 +1371,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
       </ul>
       <div class="box danger"><span class="box-label">DANGER</span><div class="box-title">Dexametasona e metilprednisolona não têm lugar no TCE</div><div class="box-body">O corticoide não melhora o prognóstico do TCE e pode aumentar a mortalidade, as complicações gastrintestinais, a hiperglicemia e a infecção (ATLS 11, p. 123). A dexametasona só trata edema vasogênico de tumor e abscesso (NE01).</div></div>
 
-      <div class="sub-title">F1.2 · Hipertensão intracraniana e herniação</div>
+      <div class="sub-title" id="f1-2">F1.2 · Hipertensão intracraniana e herniação</div>
       <ul class="bullets">
         <li><b>Gatilho:</b> PIC &gt;22 mmHg sustentada, anisocoria, queda de 2 pontos, Cushing. Sem monitor, pelo exame e pela TC (CREVICE).</li>
         <li><b>Degrau 1:</b> cabeceira 30–45°, pescoço neutro, colar sem apertar, tubo sem comprimir jugulares, sedação, normotermia (36–37,4 °C), PaCO2 35–45 mmHg, derivação ventricular externa se houver.</li>
@@ -1361,7 +1380,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
         <li><b>Degrau 4:</b> craniectomia descompressiva como resgate (PIC &gt;25 mmHg refratária: RESCUEicp); evacuação da massa que causa a hipertensão.</li>
       </ul>
 
-      <div class="sub-title">F1.3 · Cirurgia no TCE</div>
+      <div class="sub-title" id="f1-3">F1.3 · Cirurgia no TCE</div>
       <ul class="bullets">
         <li><b>Extradural:</b> volume &gt;25 mL, espessura &gt;15 mm, desvio &gt;5 mm ou GCS ≤8.</li>
         <li><b>Subdural agudo:</b> espessura &gt;10 mm ou desvio &gt;5 mm; qualquer tamanho com queda de ≥2 pontos, pupilas assimétricas ou arreativas.</li>
@@ -1370,7 +1389,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
         <li><b>Local remoto:</b> trepanação de alívio se GCS &lt;8, imagem com hematoma extra-axial, desvio e pupilas desiguais, de preferência com orientação de neurocirurgião (ATLS 11, p. 126). Não atrase a transferência para fazer TC.</li>
       </ul>
 
-      <div class="sub-title">F1.4 · Crise, coagulopatia e tromboprofilaxia</div>
+      <div class="sub-title" id="f1-4">F1.4 · Crise, coagulopatia e tromboprofilaxia</div>
       <ul class="bullets">
         <li><b>Anticrise por 7 dias</b> em GCS ≤8, penetrante e moderados selecionados: levetiracetam 500–1.000 mg IV 12/12 h (conferir), ou fenitoína. Parar em 7 dias.</li>
         <li><b>Ácido tranexâmico</b> 1 g IV em 10 min + 1 g IV em 8 h (ou 2 g IV em dose única), em até 3 h, no TCE moderado ou grave.</li>
@@ -1378,7 +1397,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
         <li><b>TEV:</b> compressão pneumática na admissão; enoxaparina 40 mg SC 1×/dia a partir de 24–48 h se a TC de controle estiver estável.</li>
       </ul>
 
-      <div class="sub-title">F1.5 · Coluna e medula</div>
+      <div class="sub-title" id="f1-5">F1.5 · Coluna e medula</div>
       <ul class="bullets">
         <li><b>Restrição seletiva:</b> colar de tamanho correto, alinhamento, rolamento em bloco; prancha só para transporte; sem rotina no penetrante sem sinais; coluna toda, não sentado.</li>
         <li><b>Liberação:</b> NEXUS ou Regra Canadense no alerta e estável; TC multidetectores cervical até T1; toda a coluna se houver fratura.</li>
@@ -1388,14 +1407,14 @@ ul.bullets li b{color:var(--ink);font-weight:600}
       </ul>
       <div class="box decision"><span class="box-label">DECISION</span><div class="box-title">Quando trocar noradrenalina por fenilefrina</div><div class="box-body">A noradrenalina (α1 e β1) trata a hipotensão e a bradicardia do neurogênico acima de T6. A fenilefrina (α pura) pode agravar a bradicardia acima de T6 e fica para lesões abaixo desse nível, ou quando a taquicardia limita a noradrenalina. Acesso central de preferência; em emergência, veia periférica calibrosa (ATLS 11, p. 121).</div></div>
 
-      <div class="sub-title">F1.6 · Criança, idoso e morte encefálica</div>
+      <div class="sub-title" id="f1-6">F1.6 · Criança, idoso e morte encefálica</div>
       <ul class="bullets">
         <li><b>Criança:</b> PECARN; GCS verbal modificado; NaCl 3% 2–5 mL/kg IV em 10–20 min, máx. 250 mL por bólus (conferir); anticrise com levetiracetam 20 mg/kg IV 12/12 h, com o teto da dose adulta (1.000 mg); abuso suspeito: notificar o Conselho Tutelar.</li>
         <li><b>Idoso e anticoagulado:</b> TC com limiar baixo; PAS acima de 110 mmHg; reversão pelo HO03; ácido tranexâmico até 3 h.</li>
         <li><b>Morte encefálica:</b> corrija hipotermia (&gt;35 °C), sedação (4–5 meias-vidas) e choque; dois exames clínicos por médicos diferentes; teste de apneia (PaCO2 &gt;55 mmHg); exame complementar; notificar a central de transplantes.</li>
       </ul>
 
-      <div class="sub-title">F1.7 · Pré-hospitalar (SAMU 192) e ponte para o hospital</div>
+      <div class="sub-title" id="f1-7">F1.7 · Pré-hospitalar (SAMU 192) e ponte para o hospital</div>
       <ul class="bullets">
         <li><b>Protocolo AT5 (TCE, MS 2014/2015):</b> estabilização manual da coluna cervical, oxigênio em alto fluxo para SatO2 ≥94%, via aérea avançada se Glasgow &lt;8, acesso venoso, <b>pressão sistólica acima de 90 mmHg</b>, glicemia capilar, não hiperventilar de forma profilática. O ATLS 11 pede PAS ≥100 mmHg e aceita intubação pré-hospitalar com GCS abaixo de 9 por equipe experiente.</li>
         <li><b>Sangramento externo:</b> couro cabeludo, pressão nas bordas e curativo compressivo; em fratura aberta ou deformidade óssea, sem pressão sobre a lesão; em ouvido e nariz, tamponar de modo a permitir vazamento leve, para não elevar a PIC.</li>
@@ -1405,7 +1424,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
     </div>
   </div>
 
-  <div class="card tx">
+  <div class="card tx" id="f2">
     <div class="card-head">
       <div class="card-eyebrow"><span class="card-num">F.2</span> Doses Operacionais</div>
       <h3>Tabela de doses — neurotrauma</h3>
@@ -1438,7 +1457,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
     </div>
   </div>
 
-  <div class="card tx">
+  <div class="card tx" id="f3">
     <div class="card-head">
       <div class="card-eyebrow"><span class="card-num">F.3</span> Casos</div>
       <h3>Caso → conduta certa → erro típico</h3>
@@ -1462,7 +1481,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
     </div>
   </div>
 
-  <div class="card tx">
+  <div class="card tx" id="f4">
     <div class="card-head">
       <div class="card-eyebrow"><span class="card-num">F.4</span> Brasil e SUS</div>
       <h3>Acesso no Brasil: o que existe e o que é só internacional</h3>
@@ -1485,7 +1504,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
     </div>
   </div>
 
-  <div class="card tx">
+  <div class="card tx" id="f5">
     <div class="card-head">
       <div class="card-eyebrow"><span class="card-num">F.5</span> Checklist</div>
       <h3>Morte encefálica passo a passo (Resolução CFM 2.173/2017) <span class="ank ank-dec">DECISION</span></h3>
@@ -1505,7 +1524,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
     </div>
   </div>
 
-  <div class="card tx">
+  <div class="card tx" id="f6">
     <div class="card-head">
       <div class="card-eyebrow"><span class="card-num">F.6</span> UTI e transferência</div>
       <h3>Bundle do neurotrauma grave e o que enviar na transferência</h3>
@@ -1533,7 +1552,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
     <div class="section-sub">Os erros do neurotrauma são quase sempre de pressão, de oxigênio e de rótulo: um nome errado (neurogênico, medular) leva à conduta errada.</div>
   </div>
 
-  <div class="card pearl">
+  <div class="card pearl" id="g1">
     <div class="card-head">
       <div class="card-eyebrow"><span class="card-num">G.1</span> Pegadinhas</div>
       <h3>10 Erros Operacionais em TCE e Trauma Raquimedular</h3>
@@ -1555,7 +1574,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
     </div>
   </div>
 
-  <div class="card pearl">
+  <div class="card pearl" id="g2">
     <div class="card-head">
       <div class="card-eyebrow"><span class="card-num">G.2</span> Mitos · Controvérsias</div>
       <h3>Mitos Vivos e Debates Atuais</h3>
@@ -1578,7 +1597,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
     <div class="section-sub">O que distingue quem trata o neurotrauma bem: o componente motor, o lado do exame, a hora da reavaliação e a lista do que não se faz mais.</div>
   </div>
 
-  <div class="card pearl">
+  <div class="card pearl" id="h1">
     <div class="card-head">
       <div class="card-eyebrow"><span class="card-num">H.1</span> Pearls</div>
       <h3>8 Nuances que Distinguem o Expert</h3>
@@ -1595,7 +1614,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
     </div>
   </div>
 
-  <div class="card pearl">
+  <div class="card pearl" id="h2">
     <div class="card-head">
       <div class="card-eyebrow"><span class="card-num">H.2</span> Evolving</div>
       <h3>7 Paradigmas em Mudança — Neurotrauma 2023–2026</h3>
@@ -1657,5 +1676,36 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <a class="to-top" href="#" aria-label="Voltar ao topo">↑</a>
 <div class="watermark">@dr.lorencato · TCE e Trauma Raquimedular v5.2</div>
 
-</body>
+<!--hp-f2--><script>(function(){var d=document,M=d.querySelector('main');if(!M)return;
+var SELF='CT03',HP=' CT01 CT02 CT03 CT04 CT05 CT06 CT08 CT10 CV01 CV03 CV04 CV05 CV06 CV07 CV08 EN01 EN02 EN03 EN04 EN06 EN07 GH01 GH02 GH03 GH05 GH06 GH07 GH08 GH09 GH10 GO01 GO02 GO03 GO04 GO09 GO10 GO11 GO12 GO13 GO14 HO01 HO02 HO03 HO04 HO05 HO06 II01 II02 II03 II04 II07 II08 NE01 NE02 NE03 NE04 NE05 NE06 NE07 NE08 NU01 NU02 NU03 NU04 NU05 OE01 OE02 PC01 PC02 PC03 PC04 PC05 PC06 PD01 PD02 PD03 PD04 PD05 PD06 PD07 PD08 PD09 PD10 RD01 RD02 RD03 RD04 RD05 RD07 RP01 RP02 RP03 RP04 ';
+var SK='A,H1,H2,H3,SCRIPT,STYLE,NAV,.card-num,.card-eyebrow,.sub-title,.disease-tag,.toc';
+var R=/\b(?:([A-H])(\d)?\.(\d{1,2}[a-c]?)|(CV|RP|GH|NE|EN|NU|HO|II|RD|GO|PD|PC|CT|OE)(\d\d))\b/g;
+function skip(n){for(var e=n.parentNode;e&&e!==M;e=e.parentNode)if(e.matches&&e.matches(SK))return 1;return 0}
+var w=d.createTreeWalker(M,4),t,L=[];while(t=w.nextNode())if(R.test(t.data)&&!skip(t))L.push(t);
+L.forEach(function(t){var s=t.data,f=d.createDocumentFragment(),i=0,m;R.lastIndex=0;
+while(m=R.exec(s)){var h=null;
+if(m[1]){var id=m[1].toLowerCase()+(m[2]?m[2]+'-':'')+m[3];if(d.getElementById(id))h='#'+id}
+else{var x=m[4]+m[5];if(x!==SELF&&HP.indexOf(' '+x+' ')>=0)h='../'+x+'/'+x+'.html'}
+if(!h)continue;f.appendChild(d.createTextNode(s.slice(i,m.index)));
+var a=d.createElement('a');a.href=h;a.className='xr';a.textContent=m[0];f.appendChild(a);i=R.lastIndex}
+if(i){f.appendChild(d.createTextNode(s.slice(i)));t.parentNode.replaceChild(f,t)}});
+function nz(s){return s.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'')}
+var q=d.querySelector('.hp-q'),n=d.querySelector('.hp-n'),it=M.querySelectorAll('.card,.pocket-card'),T;
+function clr(){M.querySelectorAll('.q-off').forEach(function(e){e.classList.remove('q-off')})}
+function run(){var v=nz(q.value.trim());clr();n.textContent='';if(v.length<2)return;var k=0;
+it.forEach(function(c){if(nz(c.textContent).indexOf(v)<0){c.classList.add('q-off');return}k++;
+var r=c.querySelectorAll('.stbl-row,.disease-row,.score-row'),h=[];r.forEach(function(x){if(nz(x.textContent).indexOf(v)>=0)h.push(x)});
+if(h.length)r.forEach(function(x){if(h.indexOf(x)<0)x.classList.add('q-off')});
+c.querySelectorAll('details').forEach(function(x){if(nz(x.textContent).indexOf(v)>=0)x.open=true})});
+M.querySelectorAll('section').forEach(function(s){if(!s.querySelector('.card:not(.q-off),.pocket-card:not(.q-off)'))s.classList.add('q-off')});
+n.textContent=k?k+' achado'+(k>1?'s':''):'nada'}
+if(q){q.addEventListener('input',function(){clearTimeout(T);T=setTimeout(run,180)});
+q.addEventListener('keydown',function(e){if(e.key==='Escape'){q.value='';run()}})}
+function tg(b,f){b.addEventListener('click',function(){var on=b.getAttribute('aria-pressed')!=='true';b.setAttribute('aria-pressed',on);f(on)})}
+var bd=d.querySelector('.hp-dz'),bo=d.querySelector('.hp-op');
+if(bd)tg(bd,function(on){d.body.classList.toggle('dz',on);if(on)d.getElementById('tratamento').scrollIntoView()});
+if(bo)tg(bo,function(on){M.querySelectorAll('details').forEach(function(x){x.open=on})});
+var P=[];addEventListener('beforeprint',function(){P=[];M.querySelectorAll('details:not([open])').forEach(function(x){P.push(x);x.open=true})});
+addEventListener('afterprint',function(){P.forEach(function(x){x.open=false})});
+})();</script><!--/hp-f2--></body>
 </html>

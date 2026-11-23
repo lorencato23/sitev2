@@ -345,13 +345,32 @@ ul.bullets li b{color:var(--ink);font-weight:600}
   .pocket .pocket-card.tx{--accent:#a8481a}
   .pocket .pocket-card.clin{--accent:#0b5d4e}
 }
+
+/* === v5.2.2 · fase 2 (navegação) === */
+.hp-tools{display:flex;gap:6px;align-items:center;flex:none;order:1;margin-left:auto;padding-left:6px;position:sticky;right:0;background:#f1eee5;box-shadow:-10px 0 10px -4px #f1eee5,16px 0 0 #f1eee5}
+@media(min-width:900px){html{scroll-padding-top:150px}.toc-inner{flex-wrap:wrap;overflow:visible}.card[id],.sub-title[id]{scroll-margin-top:150px}}
+@media(max-width:899px){.hp-b,.hp-n{display:none}.hp-q{width:104px}}
+.hp-q{width:128px;font:500 12px/1 'DM Sans',system-ui,sans-serif;padding:7px 11px;border:1px solid var(--line-strong);border-radius:999px;background:var(--paper);color:var(--ink)}
+.hp-b{font:600 11px/1 'DM Sans',system-ui,sans-serif;letter-spacing:.05em;text-transform:uppercase;padding:7px 10px;border-radius:999px;border:1px solid var(--line-strong);background:var(--paper);color:var(--ink-soft);cursor:pointer;white-space:nowrap}
+.hp-b[aria-pressed=true]{background:var(--ink);color:#fff;border-color:var(--ink)}
+.hp-n{font:600 11px/1 'DM Mono',monospace;color:var(--ink-mute);white-space:nowrap}
+.sec-idx{display:flex;flex-wrap:wrap;gap:6px;margin:12px 0 20px}
+.sec-idx a{font:500 12px/1.25 'DM Sans',system-ui,sans-serif;padding:6px 10px;border-radius:999px;background:var(--paper);border:1px solid var(--line);color:var(--ink-soft);text-decoration:none}
+.sec-idx a:hover{border-color:var(--line-strong);color:var(--ink)}
+.sec-idx b{color:var(--c-prim);margin-right:5px;font-weight:700}
+a.xr{color:inherit;text-decoration:underline dotted;text-underline-offset:2px}
+a.xr:hover{color:var(--c-prim)}
+.card[id],.sub-title[id]{scroll-margin-top:110px}
+.q-off{display:none!important}
+body.dz main section:not(#tratamento){display:none}
+@media print{.hp-tools,.sec-idx,.toc-doses{display:none!important}}
 </style>
 </head>
 <body>
 
 <header class="header"><div class="header-row"><div class="h-mark">V</div><div class="h-titles"><div class="h-title">Aorta, DAP, Doença Venosa e TVP · Pocket Handbook</div><div class="h-sub">Elite edition · Cardiologia e cirurgia vascular · CV08</div></div><div class="h-author">@dr.lorencato</div><div class="h-edition">v5.2</div></div></header>
 
-<nav class="toc"><div class="toc-inner"><a href="#pocket" class="toc-chip"><span class="toc-chip-num">0</span>Pocket</a><a href="#redflags" class="toc-chip"><span class="toc-chip-num">A</span>Red Flags</a><a href="#approach" class="toc-chip"><span class="toc-chip-num">B</span>Apresentação</a><a href="#primarias" class="toc-chip"><span class="toc-chip-num">C</span>Entidades</a><a href="#secundarias" class="toc-chip"><span class="toc-chip-num">D</span>Secundárias</a><a href="#algoritmo" class="toc-chip"><span class="toc-chip-num">E</span>Algoritmo</a><a href="#tratamento" class="toc-chip"><span class="toc-chip-num">F</span>Tratamento</a><a href="#pitfalls" class="toc-chip"><span class="toc-chip-num">G</span>Pitfalls</a><a href="#pearls" class="toc-chip"><span class="toc-chip-num">H</span>Pearls</a></div></nav>
+<nav class="toc"><div class="toc-inner"><!--hp-f2--><span class="hp-tools"><input class="hp-q" type="search" placeholder="Buscar no HP" aria-label="Buscar no HP"><button class="hp-b hp-dz" type="button" aria-pressed="false">Só doses</button><button class="hp-b hp-op" type="button" aria-pressed="false">Abrir tudo</button><span class="hp-n" aria-live="polite"></span></span><!--/hp-f2--><a href="#pocket" class="toc-chip"><span class="toc-chip-num">0</span>Pocket</a><a href="#redflags" class="toc-chip"><span class="toc-chip-num">A</span>Red Flags</a><a href="#approach" class="toc-chip"><span class="toc-chip-num">B</span>Apresentação</a><a href="#primarias" class="toc-chip"><span class="toc-chip-num">C</span>Entidades</a><a href="#secundarias" class="toc-chip"><span class="toc-chip-num">D</span>Secundárias</a><a href="#algoritmo" class="toc-chip"><span class="toc-chip-num">E</span>Algoritmo</a><a href="#tratamento" class="toc-chip"><span class="toc-chip-num">F</span>Tratamento</a><!--hp-f2--><a href="#f2" class="toc-chip toc-doses"><span class="toc-chip-num">Rx</span>Doses</a><!--/hp-f2--><a href="#pitfalls" class="toc-chip"><span class="toc-chip-num">G</span>Pitfalls</a><a href="#pearls" class="toc-chip"><span class="toc-chip-num">H</span>Pearls</a></div></nav>
 
 <main>
 <div class="wrap">
@@ -421,7 +440,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <section id="redflags">
 <div class="section"><div class="section-eyebrow"><span>A</span> Red Flags</div><div class="section-title">Aorta e artéria matam em horas; a veia mata quando o trombo muda de endereço</div><div class="section-sub">Sinal objetivo, suspeita e conduta imediata. Os eventos evitáveis deste HP são a dissecção tratada como infarto com heparina e fibrinolítico, o aneurisma roto atribuído a cólica renal, a perna isquêmica à espera do exame de imagem e a flegmasia confundida com celulite.</div></div>
 
-<div class="card emerg">
+<div class="card emerg" id="a1">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">A.1</span> Emergências</div><h3>Sinais de alarme — aorta, artérias e veias <span class="ank ank-dgr">DANGER</span></h3></div>
 <div class="card-body">
 
@@ -463,7 +482,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <section id="approach">
 <div class="section"><div class="section-eyebrow"><span>B</span> Por Apresentação</div><div class="section-title">Mapa sindrômico: onde dói, o que está frio, o que está inchado</div><div class="section-sub">Cinco queixas que o plantão recebe: a dor súbita no tronco, a massa pulsátil, a perna isquêmica, a perna edemaciada e a pressão ou o pulso assimétrico.</div></div>
 
-<div class="card clin">
+<div class="card clin" id="b1">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">B.1</span> Dor súbita no tronco</div><h3>Tórax, dorso ou abdome, pico no início <span class="ank ank-hy">HIGH-YIELD</span></h3><div class="card-sub">Dissecção, IAM, TEP, pericardite, pneumotórax, perfuração esofágica</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">O que separa a dissecção do infarto é o <b>início</b> (máximo de imediato, e não progressivo), a <b>migração</b> da dor do tórax ao dorso e ao abdome e a <b>assimetria de pulsos</b>. Mas a dor pode ser em aperto. <b>O que muda conduta:</b> ADD-RS ≥2 leva à angio-TC direta; ADD-RS &lt;2 com D-dímero &lt;500 ng/mL torna a dissecção pouco provável.</div></div>
@@ -476,7 +495,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card clin">
+<div class="card clin" id="b2">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">B.2</span> Massa pulsátil e dor lombar</div><h3>O aneurisma que se anuncia ou se rompe <span class="ank ank-dgr">DANGER</span></h3><div class="card-sub">AAA assintomático, sintomático, roto; aneurisma ilíaco e poplíteo</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">A maioria é achado de USG ou de tomografia feita por outro motivo. <b>Sintoma</b> (dor lombar, abdominal vaga, inguinal) em quem tem AAA significa <b>expansão ou ruptura contida</b> até prova em contrário. <b>O que muda conduta:</b> AAA sintomático opera-se, qualquer que seja o diâmetro; hipotensão com AAA é ruptura.</div></div>
@@ -489,7 +508,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card clin">
+<div class="card clin" id="b3">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">B.3</span> Perna ou pé isquêmico</div><h3>Claudicar, doer em repouso, gangrenar ou fechar de repente <span class="ank ank-dec">DECISION</span></h3><div class="card-sub">DAP crônica, CLTI, oclusão arterial aguda, mímicos</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">O tempo separa três doenças: <b>dor ao caminhar que cede em 2–5 minutos de repouso</b> (claudicação), <b>dor noturna em repouso ou ferida isquêmica há mais de 2 semanas</b> (isquemia ameaçadora do membro) e <b>horas</b> (oclusão aguda). <b>O que muda conduta:</b> da claudicação trata-se o risco cardiovascular; da CLTI e da oclusão aguda, o membro.</div></div>
@@ -502,7 +521,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card clin">
+<div class="card clin" id="b4">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">B.4</span> Perna edemaciada, varizes e úlcera</div><h3>Trombose, insuficiência venosa, linfedema e o resto <span class="ank ank-hy">HIGH-YIELD</span></h3><div class="card-sub">TVP, tromboflebite, insuficiência venosa crônica, síndrome pós-trombótica, mímicos</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Edema <b>agudo e unilateral</b> pede Wells e D-dímero ou USG no mesmo dia; edema <b>crônico, vespertino, perimaleolar, com pigmentação e úlcera no maléolo medial</b> é doença venosa crônica; edema <b>bilateral e simétrico</b> raramente é venoso: insuficiência cardíaca, nefrótica, hepatopatia, fármacos (anlodipino). <b>O que muda conduta:</b> a TVP se trata no dia; a insuficiência venosa se classifica pelo CEAP e se comprime.</div></div>
@@ -515,7 +534,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card clin">
+<div class="card clin" id="b5">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">B.5</span> Pressão e pulso assimétricos</div><h3>Do jovem hipertenso à arterite <span class="ank ank-dec">DECISION</span></h3><div class="card-sub">Coarctação, dissecção, estenose subclávia, Takayasu, estenose renal</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">PA em <b>quatro membros</b> na primeira consulta do hipertenso &lt;30 anos e em todo portador de doença aórtica (ESC I B para os dois braços). Pulso femoral fraco e retardado em relação ao radial é <b>coarctação</b>; diferença entre braços é <b>subclávia, inominada ou dissecção</b>. <b>O que muda conduta:</b> gradiente braço–perna com hipertensão leva à imagem e ao reparo (C.4).</div></div>
@@ -530,9 +549,9 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </section>
 
 <section id="primarias">
-<div class="section"><div class="section-eyebrow"><span>C</span> Entidades Primárias</div><div class="section-title">Onze entidades: três da aorta, uma da coarctação, três do leito arterial periférico e quatro do venoso</div><div class="section-sub">A aorta abre o capítulo porque é onde o erro de minutos custa a vida; o leito arterial vem em seguida, em ordem de urgência (claudicação, isquemia crônica ameaçadora, oclusão aguda); o sistema venoso fecha com a TVP no centro e a doença venosa crônica, a síndrome pós-trombótica e a tromboflebite ao redor.</div></div>
+<div class="section"><div class="section-eyebrow"><span>C</span> Entidades Primárias</div><div class="section-title">Onze entidades: três da aorta, uma da coarctação, três do leito arterial periférico e quatro do venoso</div><div class="section-sub">A aorta abre o capítulo porque é onde o erro de minutos custa a vida; o leito arterial vem em seguida, em ordem de urgência (claudicação, isquemia crônica ameaçadora, oclusão aguda); o sistema venoso fecha com a TVP no centro e a doença venosa crônica, a síndrome pós-trombótica e a tromboflebite ao redor.</div></div><!--hp-f2--><nav class="sec-idx" aria-label="Neste capítulo"><a href="#c1"><b>C.1</b>Aneurisma de aorta abdominal…</a><a href="#c2"><b>C.2</b>Aneurismas torácicos: raiz, a…</a><a href="#c3"><b>C.3</b>Dissecção, hematoma intramura…</a><a href="#c4"><b>C.4</b>Coarctação da aorta: o jovem…</a><a href="#c5"><b>C.5</b>Doença arterial periférica e…</a><a href="#c6"><b>C.6</b>CLTI: dor de repouso, úlcera…</a><a href="#c7"><b>C.7</b>Isquemia aguda do membro: emb…</a><a href="#c8"><b>C.8</b>Insuficiência venosa crônica…</a><a href="#c9"><b>C.9</b>TVP de membros inferiores: We…</a><a href="#c10"><b>C.10</b>SPT: a sequela venosa da TVP</a><a href="#c11"><b>C.11</b>Trombose venosa superficial…</a></nav><!--/hp-f2-->
 
-<div class="card prim">
+<div class="card prim" id="c1">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.1</span> Aorta abdominal</div><h3>Aneurisma de aorta abdominal: rastrear, vigiar, reparar e atender a ruptura <span class="ank ank-hy">HIGH-YIELD</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">AAA é dilatação da aorta abdominal <b>≥3,0 cm</b> (a apostila usa &gt;3 cm no homem e &gt;2,6 cm na mulher). Cresce sem sintoma e rompe com mortalidade de 50% ou mais. <b>Rastreie homens ≥65 anos fumantes ou ex-fumantes com um USG</b>; <b>repare a partir de 5,5 cm no homem e 5,0 cm na mulher</b>, com crescimento rápido, formato sacular ou sintoma. <b>O que muda conduta:</b> diâmetro e sexo decidem entre vigiar e operar; anatomia do colo decide EVAR ou cirurgia aberta; hipotensão decide a ruptura.</div></div>
@@ -591,7 +610,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="c2">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.2</span> Aorta torácica e toracoabdominal</div><h3>Aneurismas torácicos: raiz, ascendente, arco, descendente e toracoabdominal <span class="ank ank-dec">DECISION</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Raiz e aorta ascendente dilatam por necrose cística da média, hipertensão, valva bicúspide e doenças hereditárias; a descendente e a toracoabdominal, por aterosclerose. <b>Opera-se a raiz ou a ascendente com valva tricúspide a partir de 55 mm</b> (ESC I B), a <b>descendente a partir de 55 mm com TEVAR preferida</b> e a <b>toracoabdominal a partir de 60 mm</b>. <b>O que muda conduta:</b> fatores de risco permitem operar a 50 mm; Marfan e raiz, a 50 mm; avaliar a aorta inteira e a valva em todo aneurisma torácico.</div></div>
@@ -620,7 +639,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="c3">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.3</span> Síndrome aórtica aguda</div><h3>Dissecção, hematoma intramural e úlcera aterosclerótica penetrante <span class="ank ank-dgr">DANGER</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Rasgo da íntima, ruptura de vasa vasorum ou erosão de placa: três portas de entrada de uma mesma emergência. <b>Tipo A de Stanford (ascendente envolvida): cirurgia imediata. Tipo B complicado: TEVAR.</b> Em todos, <b>FC ≤60 bpm e PAS &lt;120 mmHg</b>, analgesia, UTI, linha arterial. <b>O que muda conduta:</b> ADD-RS e angio-TC definem tipo e complicação; malperfusão, ruptura, dor ou hipertensão refratárias tornam o tipo B complicado.</div></div>
@@ -675,7 +694,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="c4">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.4</span> Coarctação do adulto</div><h3>Coarctação da aorta: o jovem hipertenso com pulso femoral fraco <span class="ank ank-dec">DECISION</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Estreitamento da aorta junto ao canal arterial (98% justaductal), responsável por hipertensão nos braços e hipoperfusão nas pernas. Muitas formas leves só aparecem na adolescência ou na vida adulta. <b>PA nos dois braços e em uma perna, ITB e pulsos femorais</b> em todo hipertenso jovem. <b>Reparo com stent coberto</b> quando há hipertensão e gradiente pico a pico &gt;20 mmHg. <b>O que muda conduta:</b> a coarctação é cirurgia ou cateterismo, não anti-hipertensivo para sempre; e nitroprussiato é contraindicado na hipertensão compensatória que ela gera, e também na circulação cerebral inadequada (bula).</div></div>
@@ -704,7 +723,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="c5">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.5</span> DAP crônica</div><h3>Doença arterial periférica e claudicação intermitente <span class="ank ank-hy">HIGH-YIELD</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Aterosclerose das artérias dos membros: marcador de doença cardiovascular sistêmica, cuja <b>principal causa de morte é o infarto</b>, e não a perda do membro. O diagnóstico é <b>ITB ≤0,90</b>; a claudicação é tratada com cessação do fumo, estatina, antitrombótico, exercício supervisionado e, se persistir incapacitante, revascularização. <b>O que muda conduta:</b> alto risco isquêmico e baixo risco de sangramento justificam rivaroxabana 2,5 mg + AAS; insuficiência cardíaca proíbe cilostazol; ITB não confiável no diabético e no renal exige índice dedo-braço.</div></div>
@@ -744,7 +763,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="c6">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.6</span> Isquemia ameaçadora do membro</div><h3>CLTI: dor de repouso, úlcera isquêmica e gangrena <span class="ank ank-dgr">DANGER</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Estágio avançado da DAP: <b>dor isquêmica em repouso ou ferida isquêmica</b>, com perfusão que não cicatriza. Pressão do tornozelo &lt;50 mmHg, do hálux &lt;30 mmHg ou TcPO₂ &lt;30 mmHg sustentam o diagnóstico (ESC). <b>Encaminhamento urgente ao cirurgião vascular e revascularização o mais cedo possível</b> (ESC I B). <b>O que muda conduta:</b> infecção do pé se trata com antibiótico e drenagem; exercício não se prescreve com ferida; amputação primária só se o membro é irrecuperável ou há infecção extensa.</div></div>
@@ -782,7 +801,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="c7">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.7</span> Oclusão arterial aguda</div><h3>Isquemia aguda do membro: embolia e trombose in situ <span class="ank ank-dgr">DANGER</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Uma das emergências mais frequentes da cirurgia vascular: o membro tolera <b>5–6 horas</b> de isquemia importante antes de perda irreversível (apostila), com nervo mais sensível que músculo e pele. <b>Heparina agora, classificação de Rutherford à beira do leito, revascularização conforme a categoria.</b> <b>O que muda conduta:</b> déficit motor ou sensitivo além dos dedos leva à revascularização urgente; categoria III, à amputação primária; trombólise sistêmica não tem papel (ESC).</div></div>
@@ -833,7 +852,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="c8">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.8</span> Doença venosa crônica</div><h3>Insuficiência venosa crônica: do CEAP à compressão e à ablação <span class="ank ank-hy">HIGH-YIELD</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Hipertensão venosa por <b>refluxo valvar, obstrução ou ambos</b>, que se traduz de telangiectasias a úlcera. O diagnóstico é clínico, a <b>classificação é pelo CEAP</b> (e a gravidade, pelo VCSS) e o <b>duplex</b> é o exame que mapeia o refluxo. <b>O que muda conduta:</b> sintoma ou complicação (C2 sintomática a C6) leva à compressão, a venoativos e à ablação do refluxo; telangiectasia (C1) trata-se com escleroterapia líquida; antes de operar varizes, exclua obstrução profunda e TVP prévia.</div></div>
@@ -864,7 +883,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="c9">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.9</span> Trombose venosa profunda</div><h3>TVP de membros inferiores: Wells, D-dímero, USG e o resumo do tratamento <span class="ank ank-dec">DECISION</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Metade dos casos não tem sinal local, e a clínica sozinha não confirma nem exclui. <b>Probabilidade pré-teste pelo Wells, depois D-dímero (improvável) ou USG de compressão (provável)</b>. Proximal (ilíaca, femoral, poplítea) ou distal: a distal propaga em até 20% e se trata de modo semelhante. <b>O que muda conduta:</b> DOAC por no mínimo 3 meses, sem trombólise na maioria; trombose iliofemoral sintomática em paciente selecionado de baixo risco hemorrágico pode receber remoção precoce do trombo; farmacologia, duração e reversão estão no HO03.</div></div>
@@ -911,7 +930,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="c10">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.10</span> Síndrome pós-trombótica</div><h3>SPT: a sequela venosa da TVP <span class="ank ank-hy">HIGH-YIELD</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Dor, peso, edema, cãibra, prurido e, nos casos graves, hiperpigmentação, lipodermatoesclerose e úlcera, que surgem meses a anos depois de uma TVP, por <b>refluxo valvar e obstrução residual</b>. O diagnóstico é clínico e se mede pela <b>escala de Villalta</b> (≥5 pontos ou úlcera). <b>O que muda conduta:</b> a melhor prevenção é a anticoagulação adequada de uma TVP proximal; a meia de compressão não previne de rotina (ASH), mas alivia o sintoma; úlcera segue o manejo da doença venosa crônica (C.8).</div></div>
@@ -931,7 +950,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="c11">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.11</span> Tromboflebite superficial</div><h3>Trombose venosa superficial: onde está, quanto mede e o que fazer <span class="ank ank-dec">DECISION</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Cordão doloroso, eritema e calor no trajeto de uma veia superficial, geralmente varicosa. O <b>duplex</b> mede a extensão e a distância da junção safenofemoral ou safenopoplítea e procura TVP associada. <b>O que muda conduta:</b> <b>≥5 cm, ≤3 cm da junção, risco trombótico ou piora em 7 dias levam ao anticoagulante</b> (fondaparinux 2,5 mg/dia por 45 dias, ou enoxaparina 40 mg/dia por 4 semanas); &lt;5 cm e longe da junção: AINE, calor local, heparinoide tópico e meia de compressão.</div></div>
@@ -953,9 +972,9 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </section>
 
 <section id="secundarias">
-<div class="section"><div class="section-eyebrow"><span>D</span> Entidades Secundárias</div><div class="section-title">O que completa o mapa: aneurismas periféricos, aortopatias hereditárias, trauma, outras artérias, TVP especial e úlcera de perna</div><div class="section-sub">Entidades raras ou correlatas agrupadas pela conduta que compartilham. Carótida e AVC ficam no NE03, a isquemia mesentérica no GH06, a estenose renal como doença renal no NU02, a bicúspide como lesão valvar no CV07 e o trauma torácico no CT01.</div></div>
+<div class="section"><div class="section-eyebrow"><span>D</span> Entidades Secundárias</div><div class="section-title">O que completa o mapa: aneurismas periféricos, aortopatias hereditárias, trauma, outras artérias, TVP especial e úlcera de perna</div><div class="section-sub">Entidades raras ou correlatas agrupadas pela conduta que compartilham. Carótida e AVC ficam no NE03, a isquemia mesentérica no GH06, a estenose renal como doença renal no NU02, a bicúspide como lesão valvar no CV07 e o trauma torácico no CT01.</div></div><!--hp-f2--><nav class="sec-idx" aria-label="Neste capítulo"><a href="#d1"><b>D.1</b>Poplíteo, femoral, ilíaco e p…</a><a href="#d2"><b>D.2</b>Marfan, Loeys-Dietz, vEDS, AC…</a><a href="#d3"><b>D.3</b>Lesão aórtica traumática e le…</a><a href="#d4"><b>D.4</b>Carótida, subclávia, renal e…</a><a href="#d5"><b>D.5</b>Flegmasia, membro superior, i…</a><a href="#d6"><b>D.6</b>Venosa, arterial, neuropática…</a></nav><!--/hp-f2-->
 
-<div class="card diag">
+<div class="card diag" id="d1">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">D.1</span> Aneurismas periféricos</div><h3>Poplíteo, femoral, ilíaco e pseudoaneurisma femoral <span class="ank ank-dec">DECISION</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">O aneurisma poplíteo é o periférico mais comum (cerca de 70% dos periféricos); <b>quase sempre associado a aneurisma aortoilíaco</b> e bilateral em metade. Complica por trombose e embolia distal, não por ruptura. <b>O que muda conduta:</b> todo AAA pede duplex de femorais e poplíteas (ESC IIa C); aneurisma poplíteo e femoral se tratam ao diagnóstico, qualquer que seja o diâmetro, segundo a apostila (os limiares do ESC e da SBACV para aneurisma poplíteo não foram relidos: conferir).</div></div>
@@ -970,7 +989,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card diag">
+<div class="card diag" id="d2">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">D.2</span> Aortopatias hereditárias e bicúspide</div><h3>Marfan, Loeys-Dietz, vEDS, ACTA2, Turner e valva aórtica bicúspide <span class="ank ank-hy">HIGH-YIELD</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Raiz dilatada ou dissecção em jovem é hereditária até prova em contrário: <b>história familiar de três gerações, genética e rastreio de parentes</b> (ESC I B). Marfan: <b>betabloqueador ou BRA em dose máxima tolerada</b> (I A) e cirurgia da raiz com ≥50 mm (I B). Bicúspide: cirurgia da aorta com ≥55 mm, ou ≥50 mm na raiz ou com fatores de risco. <b>O que muda conduta:</b> a gravidez muda tudo: Marfan com raiz &gt;45 mm tem indicação de cirurgia profilática antes de engravidar (I C), e BRA é proibido na gestação (III B).</div></div>
@@ -985,7 +1004,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card diag">
+<div class="card diag" id="d3">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">D.3</span> Trauma vascular</div><h3>Lesão aórtica traumática e lesão vascular de extremidade <span class="ank ank-dgr">DANGER</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Cerca de 6% das vítimas de trauma civil têm lesão vascular; no Brasil predominam arma branca e arma de fogo nas extremidades de homens jovens. <b>Sinais maiores</b> (sangramento pulsátil, hematoma pulsátil ou em expansão, ausência de pulso distal, sopro ou frêmito) levam <b>direto ao controle da hemorragia e à revascularização</b>; torniquete no pré-hospitalar. <b>O que muda conduta:</b> sinal menor ou ITB &lt;0,9 em estável pede angio-TC; exame normal com ITB ≥0,9 permite alta sem imagem, com retorno ambulatorial.</div></div>
@@ -999,7 +1018,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card diag">
+<div class="card diag" id="d4">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">D.4</span> Outras artérias</div><h3>Carótida, subclávia, renal e mesentérica: o que se faz aqui e o que se remete <span class="ank ank-dec">DECISION</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">A doença aterosclerótica é sistêmica: o paciente com DAP e AAA carrega estenoses em carótida, subclávia, renais e mesentéricas. <b>PA nos dois braços em todo portador de doença arterial ou aórtica</b> (ESC I B). <b>O que muda conduta:</b> a carótida sintomática 70–99% vai à endarterectomia em até 14 dias (NE03); a estenose renal unilateral aterosclerótica não se revasculariza de rotina; o intestino isquêmico é do GH06.</div></div>
@@ -1014,7 +1033,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card diag">
+<div class="card diag" id="d5">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">D.5</span> TVP em situações especiais</div><h3>Flegmasia, membro superior, iliocaval, câncer, gestação, COVID e TVP distal <span class="ank ank-dgr">DANGER</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">As regras de C.9 valem; o contexto muda o fármaco, o local ou a urgência. <b>Flegmasia cerulea dolens é emergência vascular</b>; a TVP distal propaga em até 20% e a SBACV a trata como a proximal; <b>gestação: HBPM, sem DOAC</b>. <b>O que muda conduta:</b> o fármaco por contexto vem do HO03; aqui ficam o reconhecimento e o destino.</div></div>
@@ -1030,7 +1049,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card diag">
+<div class="card diag" id="d6">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">D.6</span> Úlceras de perna</div><h3>Venosa, arterial, neuropática e as que não são nenhuma delas <span class="ank ank-hy">HIGH-YIELD</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">A úlcera venosa é a mais comum, mas o plantão confunde as três principais: <b>venosa (maléolo medial, fundo úmido, alívio ao elevar a perna), arterial (dedos e calcanhar, seca, dor noturna, pulsos ausentes) e neuropática (planta, indolor, calosidade)</b>. <b>O que muda conduta:</b> <b>meça o ITB antes de comprimir</b>; a compressão sobre um membro isquêmico produz necrose; a úlcera que não cicatriza em 6 semanas ou tem aspecto atípico pede biópsia (carcinoma, pioderma gangrenoso, vasculite).</div></div>
@@ -1058,7 +1077,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <section id="algoritmo">
 <div class="section"><div class="section-eyebrow"><span>E</span> Algoritmo</div><div class="section-title">Da queixa ao destino em cinco perguntas: aorta, ruptura, membro frio, perna inchada, perna crônica</div><div class="section-sub">A árvore começa pela pergunta que separa a urgência de minutos da de horas e termina em conduta com dose ou alvo. O raciocínio narrado repete a lógica em passos e explica por que a ordem importa.</div></div>
 
-<div class="card prim">
+<div class="card prim" id="e1">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">E.1</span> Árvore de decisão</div><h3>Queixa vascular no plantão <span class="ank ank-dec">DECISION</span></h3></div>
 <div class="card-body">
 
@@ -1181,13 +1200,13 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </section>
 
 <section id="tratamento">
-<div class="section"><div class="section-eyebrow"><span>F</span> Tratamento Integrado</div><div class="section-title">F1 · Estratégia por entidade · F2 · Doses · F3 · Casos · F4 · SUS e CMED</div><div class="section-sub">Doses de fonte lida levam a sigla (SBC 2025, SBACV, ESC 2024, bula FDA, HO03); as de fonte não relida levam "conferir". Bula FDA não substitui a bula Anvisa. A anticoagulação da TVP é resumo: a farmacologia, a duração e a reversão estão no HO03.</div></div>
+<div class="section"><div class="section-eyebrow"><span>F</span> Tratamento Integrado</div><div class="section-title">F1 · Estratégia por entidade · F2 · Doses · F3 · Casos · F4 · SUS e CMED</div><div class="section-sub">Doses de fonte lida levam a sigla (SBC 2025, SBACV, ESC 2024, bula FDA, HO03); as de fonte não relida levam "conferir". Bula FDA não substitui a bula Anvisa. A anticoagulação da TVP é resumo: a farmacologia, a duração e a reversão estão no HO03.</div></div><!--hp-f2--><nav class="sec-idx" aria-label="Neste capítulo"><a href="#f1"><b>F.1</b>Escada terapêutica por entida…</a><a href="#f2"><b>F.2</b>Tabela de doses: concreta, co…</a><a href="#f3"><b>F.3</b>Caso → conduta certa → erro t…</a><a href="#f4"><b>F.4</b>O que existe no Brasil e o qu…</a></nav><!--/hp-f2-->
 
-<div class="card tx">
+<div class="card tx" id="f1">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">F.1</span> Estratégia</div><h3>Escada terapêutica por entidade <span class="ank ank-dec">DECISION</span></h3></div>
 <div class="card-body">
 
-<div class="sub-title">F1.1 · Aneurisma de aorta abdominal: vigiar, reparar e seguir depois do reparo (C.1)</div>
+<div class="sub-title" id="f1-1">F1.1 · Aneurisma de aorta abdominal: vigiar, reparar e seguir depois do reparo (C.1)</div>
 <ul class="bullets">
 <li><b>Clínico em todos:</b> abandono do fumo (medida de maior efeito), AAS 100 mg/dia, estatina de alta intensidade, PA &lt;130/80 mmHg com betabloqueador ou BRA quando há indicação. Nenhum fármaco reduz o crescimento do aneurisma de modo comprovado; doxiciclina falhou e metformina segue em estudo. Fluoroquinolona só sem alternativa (ESC IIb B).</li>
 <li><b>Vigilância:</b> USG por faixa de diâmetro (C.1); 3–6 meses acima de 5,0 cm; angio-TC ou RM quando o USG não mede bem (ESC I B).</li>
@@ -1196,14 +1215,14 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </ul>
 <div class="box danger"><span class="box-label">DANGER</span><div class="box-title">Ruptura: o objetivo é a sala, não a pressão normal</div><div class="box-body">Reposição para PAS 70–90 mmHg com consciência (SBACV I), sangue em vez de grandes volumes de cristaloide, EVAR se a anatomia permite (ESC I B; SBACV I); não intubar antes da hora quando o EVAR sob anestesia local é possível. Transferência só se a hemodinâmica suportar e se o serviço de destino tem as duas técnicas disponíveis.</div></div>
 
-<div class="sub-title">F1.2 · Aorta torácica e toracoabdominal (C.2)</div>
+<div class="sub-title" id="f1-2">F1.2 · Aorta torácica e toracoabdominal (C.2)</div>
 <ul class="bullets">
 <li><b>Controle de PA e de risco global</b> (ESC I C), cessação do fumo e imagem seriada por TC ou RM no arco e na descendente; o eco só vale para raiz e ascendente.</li>
 <li><b>Cirurgia:</b> raiz ou ascendente com valva tricúspide ≥55 mm (I B); ≥50 mm com fatores de risco (IIb B); descendente ≥55 mm com TEVAR se a anatomia permite (I B) e revascularização da subclávia esquerda se coberta; toracoabdominal ≥60 mm (I B).</li>
 <li><b>Depois da prótese mecânica na raiz (Bentall):</b> varfarina vitalícia (I B).</li>
 </ul>
 
-<div class="sub-title">F1.3 · Síndrome aórtica aguda: o primeiro quarto de hora (C.3)</div>
+<div class="sub-title" id="f1-3">F1.3 · Síndrome aórtica aguda: o primeiro quarto de hora (C.3)</div>
 <ul class="bullets">
 <li><b>Monitorização:</b> UTI, linha arterial, ECG contínuo, oximetria, diurese (ESC I B).</li>
 <li><b>Dor:</b> opioide (morfina 2–4 mg IV titulada, parar se sedação ou FR &lt;12; conferir protocolo; a dor é estímulo adrenérgico).</li>
@@ -1214,14 +1233,14 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </ul>
 <div class="box danger"><span class="box-label">DANGER</span><div class="box-title">Betabloqueador não serve a todo mundo, e a alternativa também falha</div><div class="box-body">Esmolol e labetalol têm contraindicação de bula em bradicardia grave, BAV acima do 1º grau, choque cardiogênico e IC descompensada; o labetalol, também em asma. Diltiazem ou verapamil IV (ESC; SBC em asmáticos) não se associam ao esmolol, e os injetáveis não constam na CMED de 09/10/2026 (conferir). IA aguda grave da dissecção: o betabloqueador pode bloquear a taquicardia compensatória; decisão com cirurgia (CV07).</div></div>
 
-<div class="sub-title">F1.4 · Coarctação do adulto (C.4)</div>
+<div class="sub-title" id="f1-4">F1.4 · Coarctação do adulto (C.4)</div>
 <ul class="bullets">
 <li><b>PA em braços e perna</b>, ITB e imagem (CMR ou angio-TC). Reparo se hipertensão com gradiente aumentado e pico a pico invasivo &gt;20 mmHg (I C), com stent coberto de preferência.</li>
 <li><b>Hipertensão:</b> tratar pela diretriz de HAS (I C); nitroprussiato contraindicado na hipertensão compensatória (bula; lista em F.2).</li>
 <li><b>Seguimento:</b> CMR ou angio-TC a cada 3–5 anos, vitalício (I B); MAPA do braço direito ou teste de esforço para detectar hipertensão.</li>
 </ul>
 
-<div class="sub-title">F1.5 · DAP crônica e claudicação (C.5)</div>
+<div class="sub-title" id="f1-5">F1.5 · DAP crônica e claudicação (C.5)</div>
 <ul class="bullets">
 <li><b>Degrau 1:</b> parar de fumar (aconselhamento, reposição de nicotina, bupropiona ou vareniclina; SBACV 1A) e exercício supervisionado 3×/semana, ≥30 minutos, ≥3 meses (SBACV 1B).</li>
 <li><b>Degrau 2:</b> estatina de alta intensidade e alvo de LDL &lt;55 mg/dL com queda &gt;50% (ESC) ou &lt;70 mg/dL (SBACV); PA; HbA1c &lt;7% com iSGLT2 ou agonista de GLP-1 se diabetes.</li>
@@ -1231,14 +1250,14 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </ul>
 <div class="box hy"><span class="box-label">HIGH-YIELD</span><div class="box-title">TASC II: quem vai para qual via</div><div class="box-body">Tipo A: endovascular. Tipo B: endovascular preferido, cirurgia se falha. Tipo C: cirurgia, com endovascular se risco cirúrgico alto. Tipo D: cirurgia (apostila 2025). A patência do stent ilíaco é de cerca de 85% em 1 ano; a ponte aortobifemoral com Dácron mantém ~80% de patência em 10 anos; ponte femoropoplítea com safena tem 70–80% em 5 anos, contra ~30% com PTFE.</div></div>
 
-<div class="sub-title">F1.6 · Isquemia crônica ameaçadora do membro (C.6)</div>
+<div class="sub-title" id="f1-6">F1.6 · Isquemia crônica ameaçadora do membro (C.6)</div>
 <ul class="bullets">
 <li><b>Equipe vascular no mesmo dia útil</b>; analgesia; antibiótico e drenagem para infecção; descarga de pressão; pacote da DAP.</li>
 <li><b>Revascularização o mais cedo possível</b> (ESC I B; SBACV 1C): veia autóloga preferida nas pontes infrainguinais; influxo antes do fluxo distal.</li>
 <li><b>Amputação primária</b> quando o membro é irrecuperável ou há infecção extensa; 5–10% dos pacientes com dor de repouso a recebem como primeira terapia.</li>
 </ul>
 
-<div class="sub-title">F1.7 · Oclusão arterial aguda (C.7)</div>
+<div class="sub-title" id="f1-7">F1.7 · Oclusão arterial aguda (C.7)</div>
 <ul class="bullets">
 <li><b>Antes da sala:</b> HNF 70–100 UI/kg em bólus (máximo 10.000 UI) e infusão ajustada por TTPa ou TCA, ou enoxaparina 1 mg/kg SC 12/12 h; analgesia; hidratação; agasalho do membro.</li>
 <li><b>Revascularização por Rutherford:</b> I e IIa, avaliação por imagem e escolha entre trombólise por cateter, trombectomia ou ponte; IIb, emergência; III, amputação.</li>
@@ -1246,14 +1265,14 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <li><b>Causa:</b> ECG e eco; FA ou trombo de VE seguem para anticoagulação plena (HO03).</li>
 </ul>
 
-<div class="sub-title">F1.8 · Doença venosa crônica (C.8)</div>
+<div class="sub-title" id="f1-8">F1.8 · Doença venosa crônica (C.8)</div>
 <ul class="bullets">
 <li><b>C1:</b> escleroterapia líquida; <b>C2 sintomática a C6:</b> compressão (20–30 mmHg, a conferir; ≥35 mmHg com edema ou alteração trófica; ≥40 mmHg para evitar recidiva da úlcera), exercício, controle de peso, venoativo, e ablação térmica das safenas incompetentes sem ligadura da junção.</li>
 <li><b>Úlcera ativa:</b> ITB primeiro; bandagem de ≥40 mmHg (bota de Unna); antibiótico só com infecção sistêmica; ablação do refluxo.</li>
 <li><b>Alternativas ao laser ou radiofrequência:</b> safenectomia, espuma guiada por USG, ablação mecanoquímica; tributárias: flebectomia ou espuma.</li>
 </ul>
 
-<div class="sub-title">F1.9 · TVP: resumo e remissão ao HO03 (C.9)</div>
+<div class="sub-title" id="f1-9">F1.9 · TVP: resumo e remissão ao HO03 (C.9)</div>
 <ul class="bullets">
 <li><b>Suspeita alta:</b> comece a anticoagular se a imagem demora e não há contraindicação.</li>
 <li><b>Fármaco:</b> rivaroxabana 15 mg 12/12 h por 21 dias e depois 20 mg/dia, com a refeição; ou apixabana 10 mg 12/12 h por 7 dias e depois 5 mg 12/12 h. No SUS, o arsenal é HNF, enoxaparina e varfarina (HO03).</li>
@@ -1261,7 +1280,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <li><b>Sem trombólise na maioria;</b> remoção do trombo na iliofemoral sintomática selecionada; filtro de cava temporário só se a anticoagulação é impossível.</li>
 </ul>
 
-<div class="sub-title">F1.10 · Síndrome pós-trombótica e tromboflebite superficial (C.10, C.11)</div>
+<div class="sub-title" id="f1-10">F1.10 · Síndrome pós-trombótica e tromboflebite superficial (C.10, C.11)</div>
 <ul class="bullets">
 <li><b>SPT:</b> prevenção por anticoagulação eficaz; meia de compressão para sintomas, não para prevenção de rotina; úlcera como na doença venosa crônica; stent ilíaco em centro especializado.</li>
 <li><b>Tromboflebite de baixo risco</b> (&lt;5 cm, longe da junção): AINE, heparinoide tópico, calor, meia de compressão.</li>
@@ -1272,7 +1291,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card tx">
+<div class="card tx" id="f2">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">F.2</span> Doses operacionais</div><h3>Tabela de doses: concreta, com via, frequência, duração e teto <span class="ank ank-hy">HIGH-YIELD</span></h3></div>
 <div class="card-body">
 <div class="stbl stbl-3">
@@ -1310,7 +1329,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card tx">
+<div class="card tx" id="f3">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">F.3</span> Casos</div><h3>Caso → conduta certa → erro típico <span class="ank ank-dec">DECISION</span></h3></div>
 <div class="card-body">
 <div class="stbl stbl-3">
@@ -1329,7 +1348,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card tx">
+<div class="card tx" id="f4">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">F.4</span> SUS e CMED</div><h3>O que existe no Brasil e o que depende do serviço <span class="ank ank-hy">HIGH-YIELD</span></h3></div>
 <div class="card-body">
 <div class="stbl stbl-3">
@@ -1350,7 +1369,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <section id="pitfalls">
 <div class="section"><div class="section-eyebrow"><span>G</span> Pitfalls · Mitos · Controvérsias</div><div class="section-title">Erros Operacionais + Mitos Vivos + Debates Atuais</div><div class="section-sub">Dez erros que se repetem no plantão e na prova, três mitos com a evidência que os desmonta e três debates em que as diretrizes divergem ou a evidência é discordante.</div></div>
 
-<div class="card pearl">
+<div class="card pearl" id="g1">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">G.1</span> Erro comum → correto</div><h3>Dez pitfalls do capítulo <span class="ank ank-dgr">DANGER</span></h3></div>
 <div class="card-body">
 <div class="stbl stbl-2">
@@ -1386,7 +1405,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <section id="pearls">
 <div class="section"><div class="section-eyebrow"><span>H</span> Pearls · Evolving</div><div class="section-title">H1 · Pearls de Especialista · H2 · Áreas em Evolução</div><div class="section-sub">Oito nuances que separam quem conhece a doença de quem conhece a lista, e as mudanças recentes de diretriz que ainda não chegaram às apostilas de 2025.</div></div>
 
-<div class="card pearl">
+<div class="card pearl" id="h1">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">H.1</span> Pearls</div><h3>Oito pearls de especialista <span class="ank ank-prl">PEARL</span></h3></div>
 <div class="card-body">
 
@@ -1409,7 +1428,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card pearl">
+<div class="card pearl" id="h2">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">H.2</span> Evolving</div><h3>Mudanças recentes <span class="ank ank-evo">EVOLVING</span></h3></div>
 <div class="card-body">
 
@@ -1467,5 +1486,36 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <a class="to-top" href="#" aria-label="Voltar ao topo">↑</a>
 <div class="watermark">@dr.lorencato · CV08 Aorta, DAP, Doença Venosa e TVP v5.2</div>
 
-</body>
+<!--hp-f2--><script>(function(){var d=document,M=d.querySelector('main');if(!M)return;
+var SELF='CV08',HP=' CT01 CT02 CT03 CT04 CT05 CT06 CT08 CT10 CV01 CV03 CV04 CV05 CV06 CV07 CV08 EN01 EN02 EN03 EN04 EN06 EN07 GH01 GH02 GH03 GH05 GH06 GH07 GH08 GH09 GH10 GO01 GO02 GO03 GO04 GO09 GO10 GO11 GO12 GO13 GO14 HO01 HO02 HO03 HO04 HO05 HO06 II01 II02 II03 II04 II07 II08 NE01 NE02 NE03 NE04 NE05 NE06 NE07 NE08 NU01 NU02 NU03 NU04 NU05 OE01 OE02 PC01 PC02 PC03 PC04 PC05 PC06 PD01 PD02 PD03 PD04 PD05 PD06 PD07 PD08 PD09 PD10 RD01 RD02 RD03 RD04 RD05 RD07 RP01 RP02 RP03 RP04 ';
+var SK='A,H1,H2,H3,SCRIPT,STYLE,NAV,.card-num,.card-eyebrow,.sub-title,.disease-tag,.toc';
+var R=/\b(?:([A-H])(\d)?\.(\d{1,2}[a-c]?)|(CV|RP|GH|NE|EN|NU|HO|II|RD|GO|PD|PC|CT|OE)(\d\d))\b/g;
+function skip(n){for(var e=n.parentNode;e&&e!==M;e=e.parentNode)if(e.matches&&e.matches(SK))return 1;return 0}
+var w=d.createTreeWalker(M,4),t,L=[];while(t=w.nextNode())if(R.test(t.data)&&!skip(t))L.push(t);
+L.forEach(function(t){var s=t.data,f=d.createDocumentFragment(),i=0,m;R.lastIndex=0;
+while(m=R.exec(s)){var h=null;
+if(m[1]){var id=m[1].toLowerCase()+(m[2]?m[2]+'-':'')+m[3];if(d.getElementById(id))h='#'+id}
+else{var x=m[4]+m[5];if(x!==SELF&&HP.indexOf(' '+x+' ')>=0)h='../'+x+'/'+x+'.html'}
+if(!h)continue;f.appendChild(d.createTextNode(s.slice(i,m.index)));
+var a=d.createElement('a');a.href=h;a.className='xr';a.textContent=m[0];f.appendChild(a);i=R.lastIndex}
+if(i){f.appendChild(d.createTextNode(s.slice(i)));t.parentNode.replaceChild(f,t)}});
+function nz(s){return s.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'')}
+var q=d.querySelector('.hp-q'),n=d.querySelector('.hp-n'),it=M.querySelectorAll('.card,.pocket-card'),T;
+function clr(){M.querySelectorAll('.q-off').forEach(function(e){e.classList.remove('q-off')})}
+function run(){var v=nz(q.value.trim());clr();n.textContent='';if(v.length<2)return;var k=0;
+it.forEach(function(c){if(nz(c.textContent).indexOf(v)<0){c.classList.add('q-off');return}k++;
+var r=c.querySelectorAll('.stbl-row,.disease-row,.score-row'),h=[];r.forEach(function(x){if(nz(x.textContent).indexOf(v)>=0)h.push(x)});
+if(h.length)r.forEach(function(x){if(h.indexOf(x)<0)x.classList.add('q-off')});
+c.querySelectorAll('details').forEach(function(x){if(nz(x.textContent).indexOf(v)>=0)x.open=true})});
+M.querySelectorAll('section').forEach(function(s){if(!s.querySelector('.card:not(.q-off),.pocket-card:not(.q-off)'))s.classList.add('q-off')});
+n.textContent=k?k+' achado'+(k>1?'s':''):'nada'}
+if(q){q.addEventListener('input',function(){clearTimeout(T);T=setTimeout(run,180)});
+q.addEventListener('keydown',function(e){if(e.key==='Escape'){q.value='';run()}})}
+function tg(b,f){b.addEventListener('click',function(){var on=b.getAttribute('aria-pressed')!=='true';b.setAttribute('aria-pressed',on);f(on)})}
+var bd=d.querySelector('.hp-dz'),bo=d.querySelector('.hp-op');
+if(bd)tg(bd,function(on){d.body.classList.toggle('dz',on);if(on)d.getElementById('tratamento').scrollIntoView()});
+if(bo)tg(bo,function(on){M.querySelectorAll('details').forEach(function(x){x.open=on})});
+var P=[];addEventListener('beforeprint',function(){P=[];M.querySelectorAll('details:not([open])').forEach(function(x){P.push(x);x.open=true})});
+addEventListener('afterprint',function(){P.forEach(function(x){x.open=false})});
+})();</script><!--/hp-f2--></body>
 </html>

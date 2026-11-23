@@ -345,13 +345,32 @@ ul.bullets li b{color:var(--ink);font-weight:600}
   .pocket .pocket-card.tx{--accent:#a8481a}
   .pocket .pocket-card.clin{--accent:#0b5d4e}
 }
+
+/* === v5.2.2 · fase 2 (navegação) === */
+.hp-tools{display:flex;gap:6px;align-items:center;flex:none;order:1;margin-left:auto;padding-left:6px;position:sticky;right:0;background:#f1eee5;box-shadow:-10px 0 10px -4px #f1eee5,16px 0 0 #f1eee5}
+@media(min-width:900px){html{scroll-padding-top:150px}.toc-inner{flex-wrap:wrap;overflow:visible}.card[id],.sub-title[id]{scroll-margin-top:150px}}
+@media(max-width:899px){.hp-b,.hp-n{display:none}.hp-q{width:104px}}
+.hp-q{width:128px;font:500 12px/1 'DM Sans',system-ui,sans-serif;padding:7px 11px;border:1px solid var(--line-strong);border-radius:999px;background:var(--paper);color:var(--ink)}
+.hp-b{font:600 11px/1 'DM Sans',system-ui,sans-serif;letter-spacing:.05em;text-transform:uppercase;padding:7px 10px;border-radius:999px;border:1px solid var(--line-strong);background:var(--paper);color:var(--ink-soft);cursor:pointer;white-space:nowrap}
+.hp-b[aria-pressed=true]{background:var(--ink);color:#fff;border-color:var(--ink)}
+.hp-n{font:600 11px/1 'DM Mono',monospace;color:var(--ink-mute);white-space:nowrap}
+.sec-idx{display:flex;flex-wrap:wrap;gap:6px;margin:12px 0 20px}
+.sec-idx a{font:500 12px/1.25 'DM Sans',system-ui,sans-serif;padding:6px 10px;border-radius:999px;background:var(--paper);border:1px solid var(--line);color:var(--ink-soft);text-decoration:none}
+.sec-idx a:hover{border-color:var(--line-strong);color:var(--ink)}
+.sec-idx b{color:var(--c-prim);margin-right:5px;font-weight:700}
+a.xr{color:inherit;text-decoration:underline dotted;text-underline-offset:2px}
+a.xr:hover{color:var(--c-prim)}
+.card[id],.sub-title[id]{scroll-margin-top:110px}
+.q-off{display:none!important}
+body.dz main section:not(#tratamento){display:none}
+@media print{.hp-tools,.sec-idx,.toc-doses{display:none!important}}
 </style>
 </head>
 <body>
 
 <header class="header"><div class="header-row"><div class="h-mark">H</div><div class="h-titles"><div class="h-title">Neutropenia Febril, Transfusão e Urgências · Pocket Handbook</div><div class="h-sub">Elite edition · Hemato-oncologia de plantão · HO06</div></div><div class="h-author">@dr.lorencato</div><div class="h-edition">v5.2</div></div></header>
 
-<nav class="toc"><div class="toc-inner"><a href="#pocket" class="toc-chip"><span class="toc-chip-num">0</span>Pocket</a><a href="#redflags" class="toc-chip"><span class="toc-chip-num">A</span>Red Flags</a><a href="#approach" class="toc-chip"><span class="toc-chip-num">B</span>Apresentação</a><a href="#primarias" class="toc-chip"><span class="toc-chip-num">C</span>Entidades</a><a href="#secundarias" class="toc-chip"><span class="toc-chip-num">D</span>Secundárias</a><a href="#algoritmo" class="toc-chip"><span class="toc-chip-num">E</span>Algoritmo</a><a href="#tratamento" class="toc-chip"><span class="toc-chip-num">F</span>Tratamento</a><a href="#pitfalls" class="toc-chip"><span class="toc-chip-num">G</span>Pitfalls</a><a href="#pearls" class="toc-chip"><span class="toc-chip-num">H</span>Pearls</a></div></nav>
+<nav class="toc"><div class="toc-inner"><!--hp-f2--><span class="hp-tools"><input class="hp-q" type="search" placeholder="Buscar no HP" aria-label="Buscar no HP"><button class="hp-b hp-dz" type="button" aria-pressed="false">Só doses</button><button class="hp-b hp-op" type="button" aria-pressed="false">Abrir tudo</button><span class="hp-n" aria-live="polite"></span></span><!--/hp-f2--><a href="#pocket" class="toc-chip"><span class="toc-chip-num">0</span>Pocket</a><a href="#redflags" class="toc-chip"><span class="toc-chip-num">A</span>Red Flags</a><a href="#approach" class="toc-chip"><span class="toc-chip-num">B</span>Apresentação</a><a href="#primarias" class="toc-chip"><span class="toc-chip-num">C</span>Entidades</a><a href="#secundarias" class="toc-chip"><span class="toc-chip-num">D</span>Secundárias</a><a href="#algoritmo" class="toc-chip"><span class="toc-chip-num">E</span>Algoritmo</a><a href="#tratamento" class="toc-chip"><span class="toc-chip-num">F</span>Tratamento</a><!--hp-f2--><a href="#f2" class="toc-chip toc-doses"><span class="toc-chip-num">Rx</span>Doses</a><!--/hp-f2--><a href="#pitfalls" class="toc-chip"><span class="toc-chip-num">G</span>Pitfalls</a><a href="#pearls" class="toc-chip"><span class="toc-chip-num">H</span>Pearls</a></div></nav>
 
 <main>
 <div class="wrap">
@@ -415,7 +434,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <section id="redflags">
 <div class="section"><div class="section-eyebrow"><span>A</span> Red Flags</div><div class="section-title">No paciente oncológico, o tempo até a primeira dose vale mais que a escolha da dose</div><div class="section-sub">Sinal objetivo, suspeita e conduta imediata. Os eventos evitáveis deste HP são o antibiótico dado depois de uma hora, a bolsa transfundida no paciente errado, a rasburicase dada a quem tem G6PD baixa, o corticoide dado a massa mediastinal sem biópsia e a transfusão de hemácias na leucostase.</div></div>
 
-<div class="card emerg">
+<div class="card emerg" id="a1">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">A.1</span> Emergências</div><h3>Sinais de alarme — neutropenia, hemocomponente e lise <span class="ank ank-dgr">DANGER</span></h3></div>
 <div class="card-body">
 
@@ -455,7 +474,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <section id="approach">
 <div class="section"><div class="section-eyebrow"><span>B</span> Por Apresentação</div><div class="section-title">Mapa sindrômico — do sinal à emergência certa</div><div class="section-sub">Cinco padrões em que o plantão enfrenta o paciente com câncer ou doença hematológica. A pergunta de cada card é a que separa a causa que muda a conduta daquela que só gera exame.</div></div>
 
-<div class="card clin">
+<div class="card clin" id="b1">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">B.1</span> Padrão 1</div><h3>Febre em quem recebeu quimioterapia <span class="ank ank-dgr">DANGER</span></h3><div class="card-sub">Neutropenia febril, febre de outra causa ou reação à infusão?</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">A pergunta única é <b>se os neutrófilos estão ou estarão abaixo de 500/µL</b>. A quimioterapia mielotóxica 7–14 dias antes, a mucosite e o cateter central completam o risco. Colha as culturas e dê o antibiótico sem esperar o hemograma; o resultado só muda o nível de risco, não o fato de tratar.</div></div>
@@ -469,7 +488,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card clin">
+<div class="card clin" id="b2">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">B.2</span> Padrão 2</div><h3>O paciente piora durante ou logo após a transfusão <span class="ank ank-dgr">DANGER</span></h3><div class="card-sub">Hemólise, sobrecarga, lesão pulmonar, alergia ou contaminação?</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Toda reação começa do mesmo modo: <b>pare, mantenha o acesso com SF 0,9% e confira a identificação</b>. O quadro clínico dirige a conduta específica: choque com febre alta (contaminação), urticária (alergia), hipertensão com edema (TACO), hipotensão com edema (TRALI), hemoglobinúria (hemólise).</div></div>
@@ -481,7 +500,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card clin">
+<div class="card clin" id="b3">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">B.3</span> Padrão 3</div><h3>Potássio, fósforo e ácido úrico altos, creatinina subindo <span class="ank ank-dec">DECISION</span></h3><div class="card-sub">Lise tumoral, outra causa de LRA ou hipercalemia isolada?</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Doença volumosa e proliferativa (LLA, LMA com leucocitose, Burkitt, LDGCB bulky) mais quimioterapia, corticoide ou venetoclax. <b>Dois ou mais desequilíbrios na mesma janela de 24 horas, de 3 dias antes a 7 dias depois do início do tratamento, definem a forma laboratorial;</b> acrescenta-se creatinina, arritmia ou convulsão para a clínica (Cairo-Bishop).</div></div>
@@ -492,7 +511,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card clin">
+<div class="card clin" id="b4">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">B.4</span> Padrão 4</div><h3>Câncer, sede, poliúria, constipação e confusão <span class="ank ank-dec">DECISION</span></h3><div class="card-sub">Hipercalcemia da malignidade, desidratação ou uremia?</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body"><b>Cálcio total mal corrigido pela albumina engana.</b> Corrija: Ca + 0,8 × (4 − albumina em g/dL). Acima de 12 mg/dL há tratamento urgente; acima de 13,5 mg/dL, emergência. Mieloma, mama, pulmão escamoso, rim, ATLL e linfoma (calcitriol) são os campeões.</div></div>
@@ -503,7 +522,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card clin">
+<div class="card clin" id="b5">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">B.5</span> Padrão 5</div><h3>Leucemia ou linfoma com dispneia, edema de face ou cefaleia <span class="ank ank-dgr">DANGER</span></h3><div class="card-sub">Leucostase, veia cava superior, hiperviscosidade ou infecção?</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Três síndromes se confundem com pneumonia. <b>Leucócitos &gt;100.000/mm³ com hipoxemia sem infiltrado compatível = leucostase; face e braços edemaciados com circulação colateral = veia cava superior; cefaleia, borramento e epistaxe com IgM alta = hiperviscosidade.</b> Todas pedem tratamento antes da confirmação.</div></div>
@@ -516,9 +535,9 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 
 </section>
 <section id="primarias">
-<div class="section"><div class="section-eyebrow"><span>C</span> Entidades Primárias</div><div class="section-title">Nove entidades: a infecção do neutropênico, o hemocomponente e as urgências do câncer</div><div class="section-sub">A neutropenia febril abre o capítulo por ser a emergência de maior letalidade evitável; a transfusão e as quatro famílias de reação ocupam os boxes seguintes; lise tumoral, hipercalcemia, leucostase e veia cava superior fecham a lista. Compressão medular, hiperviscosidade, CIVD e transfusão maciça entram agrupadas em D.</div></div>
+<div class="section"><div class="section-eyebrow"><span>C</span> Entidades Primárias</div><div class="section-title">Nove entidades: a infecção do neutropênico, o hemocomponente e as urgências do câncer</div><div class="section-sub">A neutropenia febril abre o capítulo por ser a emergência de maior letalidade evitável; a transfusão e as quatro famílias de reação ocupam os boxes seguintes; lise tumoral, hipercalcemia, leucostase e veia cava superior fecham a lista. Compressão medular, hiperviscosidade, CIVD e transfusão maciça entram agrupadas em D.</div></div><!--hp-f2--><nav class="sec-idx" aria-label="Neste capítulo"><a href="#c1"><b>C.1</b>Neutropenia febril: estratifi…</a><a href="#c2"><b>C.2</b>Hemocomponentes: indicação, l…</a><a href="#c3"><b>C.3</b>Reação hemolítica transfusion…</a><a href="#c4"><b>C.4</b>TRALI, TACO e contaminação ba…</a><a href="#c5"><b>C.5</b>Reação febril não hemolítica…</a><a href="#c6"><b>C.6</b>Síndrome de lise tumoral: cla…</a><a href="#c7"><b>C.7</b>Hipercalcemia da malignidade…</a><a href="#c8"><b>C.8</b>Leucostase e hiperleucocitose…</a><a href="#c9"><b>C.9</b>Síndrome da veia cava superio…</a></nav><!--/hp-f2-->
 
-<div class="card prim">
+<div class="card prim" id="c1">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.1</span> Emergência infecciosa</div><h3>Neutropenia febril: estratificar, tratar na primeira hora e reavaliar <span class="ank ank-hy">HIGH-YIELD</span> <span class="ank ank-dgr">DANGER</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Neutrófilos <b>&lt;500/µL (ou &lt;1.000 com queda esperada abaixo de 500 em 48 h)</b> e temperatura oral <b>≥38,3 °C numa medida ou ≥38,0 °C por mais de 1 h</b>. Hemocultura e <b>betalactâmico antipseudomonas IV em até 60 minutos</b>; vancomicina só com indicação; antifúngico a partir de 4–7 dias de febre. <b>O que muda conduta:</b> instabilidade (sepse, II03), MASCC &lt;21, cateter, foco localizado e colonização por germe multirresistente.</div></div>
@@ -574,7 +593,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="c2">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.2</span> Hemoterapia</div><h3>Hemocomponentes: indicação, limiar, dose e velocidade <span class="ank ank-hy">HIGH-YIELD</span> <span class="ank ank-dec">DECISION</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">A transfusão restaura <b>oxigênio, volume ou hemostasia</b> e se decide pelo quadro clínico, nunca só pelo número. Hemácias: Hb &lt;7 g/dL sem sintomas (limiar restritivo); plaquetas: &lt;10.000/µL na aplasia; plasma: sangramento por déficit de vários fatores; crioprecipitado: fibrinogênio &lt;100 mg/dL. Cada produto tem dose, tempo de infusão e verificação da resposta. <b>O que muda conduta:</b> sangramento ativo, febre, comorbidade cardiopulmonar e procedimento.</div></div>
@@ -613,7 +632,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="c3">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.3</span> Reação imune grave</div><h3>Reação hemolítica transfusional, aguda e tardia <span class="ank ank-dgr">DANGER</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">A aguda é <b>intravascular, ABO-incompatível e por erro operacional</b>: febre, calafrio, dor no acesso, no tórax ou no flanco, hipotensão, urina escura e CIVD nos primeiros minutos. A tardia é <b>extravascular, 1–2 semanas depois</b>, por aloanticorpo de baixo título (Kidd, Rh, Kell): queda de Hb sem estado crítico. <b>O que muda conduta:</b> instabilidade, hemoglobinúria e coagulopatia.</div></div>
@@ -652,7 +671,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="c4">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.4</span> Reação respiratória e séptica</div><h3>TRALI, TACO e contaminação bacteriana: as três reações que matam <span class="ank ank-dgr">DANGER</span> <span class="ank ank-dec">DECISION</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Insuficiência respiratória até 6 h depois da bolsa é <b>TRALI (lesão pulmonar, doador com anti-HLA), TACO (sobrecarga com hipertensão) ou anafilaxia</b>; febre alta com choque pede cultura da bolsa e antibiótico (contaminação, sobretudo de plaquetas). <b>O que muda conduta:</b> a pressão arterial e o BNP separam TRALI de TACO; o diurético ajuda um e piora o outro; a bolsa suspeita nunca é descartada antes de ir ao banco.</div></div>
@@ -691,7 +710,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="c5">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.5</span> Reação leve a grave</div><h3>Reação febril não hemolítica, alérgica e anafilática <span class="ank ank-dec">DECISION</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">A febril é a mais comum, de exclusão e benigna; a alérgica leve cede ao anti-histamínico; <b>a anafilaxia começa nos primeiros mililitros e exige adrenalina IM</b>. <b>O que muda conduta:</b> a urticária isolada permite retomar a transfusão, mas a febre só após afastar hemólise e contaminação, e o broncoespasmo ou a hipotensão não.</div></div>
@@ -712,7 +731,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="c6">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.6</span> Urgência metabólica</div><h3>Síndrome de lise tumoral: classificar, hidratar, baixar o urato e vigiar o potássio <span class="ank ank-hy">HIGH-YIELD</span> <span class="ank ank-dgr">DANGER</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">A lise libera potássio, fósforo e ácidos nucleicos (que viram urato) em quantidade maior que a homeostase aguenta. <b>Duas anormalidades laboratoriais na mesma janela de 24 h, entre 3 dias antes e 7 depois do tratamento, = lise laboratorial; acrescenta-se creatinina, arritmia ou convulsão para a clínica.</b> Hidratação vigorosa, rasburicase (ou alopurinol), potássio a cada 4–6 h e ECG. <b>O que muda conduta:</b> alto risco, G6PD, oligúria e hipercalemia.</div></div>
@@ -752,7 +771,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="c7">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.7</span> Urgência metabólica</div><h3>Hipercalcemia da malignidade: hidratar, bloquear o osteoclasto e tratar a causa <span class="ank ank-hy">HIGH-YIELD</span> <span class="ank ank-dec">DECISION</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">É a causa mais comum de emergência metabólica no câncer. <b>Cálcio corrigido = Ca + 0,8 × (4 − albumina em g/dL);</b> ≥12 mg/dL trata-se, &gt;13,5 é grave. Primeiro <b>solução salina 0,9%</b>, depois <b>ácido zoledrônico 4 mg IV</b> (ou pamidronato), calcitonina como ponte e denosumabe se refratária. <b>O que muda conduta:</b> função renal, sintoma neurológico, linfoma (corticoide) e tumor sem tratamento possível.</div></div>
@@ -790,7 +809,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="c8">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.8</span> Urgência leucêmica</div><h3>Leucostase e hiperleucocitose: reduzir os blastos antes que o pulmão e o cérebro decidam <span class="ank ank-hy">HIGH-YIELD</span> <span class="ank ank-dgr">DANGER</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Hiperleucocitose é leucócito <b>&gt;100.000/mm³</b> (&gt;50.000 para alguns autores); leucostase é a síndrome de <b>hipoxemia, cefaleia ou confusão, priapismo e sangramento</b> causada pelos blastos. É comum na LMA monocítica (M4/M5). <b>Hidroxiureia, hidratação e indução precoce;</b> leucaférese se sintomático; <b>não transfundir hemácias</b> sem necessidade. <b>O que muda conduta:</b> sintoma, leucemia promielocítica (sem leucaférese) e função renal.</div></div>
@@ -819,7 +838,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="c9">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.9</span> Urgência torácica</div><h3>Síndrome da veia cava superior: via aérea, histologia e desobstrução <span class="ank ank-dgr">DANGER</span> <span class="ank ank-dec">DECISION</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Obstrução do retorno venoso da cabeça e dos braços por tumor mediastinal (pulmão, sobretudo pequenas células, e linfoma não Hodgkin) ou trombose de cateter. <b>O perigo é a via aérea e o cérebro, não o edema.</b> Cabeceira elevada, oxigênio, TC com contraste, <b>biópsia antes do corticoide</b> e stent ou radioterapia no sintomático. <b>O que muda conduta:</b> estridor, edema cerebral e a histologia (linfoma e pequenas células respondem rápido).</div></div>
@@ -842,9 +861,9 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 
 </section>
 <section id="secundarias">
-<div class="section"><div class="section-eyebrow"><span>D</span> Entidades Secundárias</div><div class="section-title">Sete grupos que completam o plantão: hemocomponente modificado, viscosidade, medula, CIVD, transfusão maciça, infecção específica e aloimunização</div><div class="section-sub">Entidades agrupadas por compartilharem conduta ou por terem dono em outro HP. Compressão medular, CIVD e transfusão maciça trazem só o que o plantão onco-hematológico precisa e remetem ao HP que detém a conduta completa.</div></div>
+<div class="section"><div class="section-eyebrow"><span>D</span> Entidades Secundárias</div><div class="section-title">Sete grupos que completam o plantão: hemocomponente modificado, viscosidade, medula, CIVD, transfusão maciça, infecção específica e aloimunização</div><div class="section-sub">Entidades agrupadas por compartilharem conduta ou por terem dono em outro HP. Compressão medular, CIVD e transfusão maciça trazem só o que o plantão onco-hematológico precisa e remetem ao HP que detém a conduta completa.</div></div><!--hp-f2--><nav class="sec-idx" aria-label="Neste capítulo"><a href="#d1"><b>D.1</b>Hemocomponente modificado: le…</a><a href="#d2"><b>D.2</b>Hiperviscosidade sérica: Wald…</a><a href="#d3"><b>D.3</b>Compressão medular metastátic…</a><a href="#d4"><b>D.4</b>CIVD na urgência onco-hematol…</a><a href="#d5"><b>D.5</b>Transfusão maciça: o que é, o…</a><a href="#d6"><b>D.6</b>Neutropenia complicada: catet…</a><a href="#d7"><b>D.7</b>Refratariedade plaquetária, p…</a></nav><!--/hp-f2-->
 
-<div class="card diag">
+<div class="card diag" id="d1">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">D.1</span> Processamento</div><h3>Hemocomponente modificado: leucorreduzido, irradiado, lavado, fenotipado e aquecido <span class="ank ank-dec">DECISION</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Cada modificação previne um evento diferente: <b>leucorredução</b> (CMV, aloimunização HLA, RFNH), <b>irradiação ≥25 Gy</b> (DECH transfusional), <b>lavagem</b> (alergia grave, deficiência de IgA), <b>fenotipagem</b> (aloimunização eritrocitária) e <b>aquecimento</b> (hipotermia). <b>O que muda conduta:</b> o diagnóstico de base e o tempo do tratamento imunossupressor determinam o pedido.</div></div>
@@ -860,7 +879,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card diag">
+<div class="card diag" id="d2">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">D.2</span> Plasma monoclonal</div><h3>Hiperviscosidade sérica: Waldenström e mieloma <span class="ank ank-dgr">DANGER</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Viscosidade normal até 1,8 (relativa à água); sintomas surgem acima de 4 e estão sempre presentes acima de 8. Típica do Waldenström (IgM &gt;4.000 mg/dL), rara no mieloma IgA e IgG3. <b>Sintoma = plasmaférese de urgência, seguida de tratamento sistêmico.</b> <b>O que muda conduta:</b> nunca transfundir hemácias antes de reduzir a viscosidade, e plasmaférese antes do rituximabe se IgM &gt;4.000 mg/dL.</div></div>
@@ -876,7 +895,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card diag">
+<div class="card diag" id="d3">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">D.3</span> Remissão ao NE07</div><h3>Compressão medular metastática: o que o plantão faz em 60 minutos <span class="ank ank-dgr">DANGER</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">A medula é do <b>NE07</b>: RM, radioterapia, cirurgia e NICE ficam lá. Aqui só o gesto de plantão: <b>dexametasona 16 mg VO/IV</b> com déficit, RM de toda a coluna em até 24 h e contato com o neurocirurgião e o radio-oncologista no mesmo dia. <b>O que muda conduta:</b> linfoma suspeito sem histologia e déficit já instalado.</div></div>
@@ -891,7 +910,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card diag">
+<div class="card diag" id="d4">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">D.4</span> Remissão ao HO03</div><h3>CIVD na urgência onco-hematológica: leucemia promielocítica e sepse <span class="ank ank-dgr">DANGER</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">A CIVD tem capítulo no <b>HO03</b>. Na leucemia promielocítica a CIVD e a hiperfibrinólise matam antes da indução. <b>ATRA ao suspeitar, sem esperar o PML-RARA;</b> repor <b>fibrinogênio &gt;150 mg/dL</b> e plaquetas &gt;30–50.000. <b>O que muda conduta:</b> sangramento (repõe-se) versus exame alterado sem sangramento (não se repõe).</div></div>
@@ -906,7 +925,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card diag">
+<div class="card diag" id="d5">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">D.5</span> Transfusão maciça</div><h3>Transfusão maciça: o que é, o que dá errado e quem detém o protocolo <span class="ank ank-dec">DECISION</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">É a reposição de <b>1 volemia em 24 h (10–12 CH)</b>, ou 50% da volemia em 3 h, ou &gt;4 CH em 1 h (MS 2015). O protocolo (1:1:1, ácido tranexâmico, cálcio) é do <b>CT01</b>. Aqui, os eventos adversos: hipotermia, hipocalcemia por citrato, hipercalemia, alcalose, diluição e TACO. <b>O que muda conduta:</b> aquecer, repor cálcio e monitorar K⁺.</div></div>
@@ -921,7 +940,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card diag">
+<div class="card diag" id="d6">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">D.6</span> Infecção específica</div><h3>Neutropenia complicada: cateter, enterocolite neutropênica, fungo invasivo e granulócitos <span class="ank ank-dec">DECISION</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Febre com foco muda o esquema: <b>cateter</b> (vancomicina, retirar se instável ou germe de risco), <b>dor abdominal com diarreia</b> (TC e toxina de <i>C. difficile</i>; enterocolite neutropênica), <b>pulmão</b> com halo (mofos). <b>Granulócitos transfundidos</b> são exceção. <b>O que muda conduta:</b> o foco define duração e fármaco, e o antibiótico continua até os neutrófilos &gt;500/µL.</div></div>
@@ -938,7 +957,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card diag">
+<div class="card diag" id="d7">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">D.7</span> Aloimunização e reação tardia</div><h3>Refratariedade plaquetária, púrpura pós-transfusional e DECH transfusional <span class="ank ank-dgr">DANGER</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body"><b>Refratariedade:</b> recuperação &lt;30% em 1 h ou incremento corrigido &lt;7,5, causa imune (anti-HLA) ou não imune (febre, esplenomegalia, CIVD, armazenamento). <b>Púrpura pós-transfusional:</b> plaquetopenia grave 7–10 dias depois, em mulher, com IVIg. <b>DECH:</b> 8–10 dias depois, fatal; prevenida pela irradiação. <b>O que muda conduta:</b> não repetir plaquetas aleatórias na púrpura e no HLA positivo.</div></div>
@@ -958,7 +977,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <section id="algoritmo">
 <div class="section"><div class="section-eyebrow"><span>E</span> Algoritmo</div><div class="section-title">Do sinal à conduta: febre no neutropênico, reação à transfusão e urgência oncológica em três árvores</div><div class="section-sub">Cada ponta termina em fármaco com dose ou em ato com prazo. A primeira árvore decide o antibiótico e a reavaliação; a segunda, o que fazer nos primeiros 10 minutos de uma reação; a terceira, qual urgência oncológica explica o quadro.</div></div>
 
-<div class="card prim">
+<div class="card prim" id="e1">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">E.1</span> Algoritmo</div><h3>Febre em neutropênico: risco, esquema e reavaliação <span class="ank ank-dec">DECISION</span></h3></div>
 <div class="card-body">
 <div class="algo"><div class="tree">
@@ -996,7 +1015,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="e2">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">E.2</span> Algoritmo</div><h3>Reação à transfusão: os primeiros 10 minutos <span class="ank ank-dgr">DANGER</span></h3></div>
 <div class="card-body">
 <div class="algo"><div class="tree">
@@ -1016,7 +1035,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="e3">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">E.3</span> Algoritmo</div><h3>Urgência oncológica pelo exame ou pela síndrome <span class="ank ank-hy">HIGH-YIELD</span></h3></div>
 <div class="card-body">
 <div class="algo"><div class="tree">
@@ -1053,7 +1072,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="e4">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">E.4</span> Sequência mental</div><h3>Raciocínio em seis passos para o paciente oncológico que piora <span class="ank ank-dec">DECISION</span></h3></div>
 <div class="card-body">
 <div class="box decision"><span class="box-label">DECISION</span><div class="box-title">Seis perguntas, nesta ordem</div><div class="box-body"><ul>
@@ -1069,13 +1088,13 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 
 </section>
 <section id="tratamento">
-<div class="section"><div class="section-eyebrow"><span>F</span> Tratamento Integrado</div><div class="section-title">F1 · Estratégia por entidade · F2 · Doses com teto e critério de parada · F3 · Casos</div><div class="section-sub">Doses lidas nas bulas FDA, no Guia do MS de 2015, na revisão de 2011 de lise tumoral e nas apostilas levam a sigla da fonte; as dos textos integrais fechados (IDSA, ASCO, AABB) e as de revisões narrativas levam "conferir". Mesma dose, mesmo texto em todo o HP. Todo fármaco de dose titulada traz teto e critério de parada.</div></div>
+<div class="section"><div class="section-eyebrow"><span>F</span> Tratamento Integrado</div><div class="section-title">F1 · Estratégia por entidade · F2 · Doses com teto e critério de parada · F3 · Casos</div><div class="section-sub">Doses lidas nas bulas FDA, no Guia do MS de 2015, na revisão de 2011 de lise tumoral e nas apostilas levam a sigla da fonte; as dos textos integrais fechados (IDSA, ASCO, AABB) e as de revisões narrativas levam "conferir". Mesma dose, mesmo texto em todo o HP. Todo fármaco de dose titulada traz teto e critério de parada.</div></div><!--hp-f2--><nav class="sec-idx" aria-label="Neste capítulo"><a href="#f1"><b>F.1</b>Escada terapêutica por entida…</a><a href="#f2"><b>F.2</b>Tabela de doses, tetos e crit…</a><a href="#f3"><b>F.3</b>Caso → conduta certa → erro t…</a></nav><!--/hp-f2-->
 
-<div class="card tx">
+<div class="card tx" id="f1">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">F.1</span> Estratégia</div><h3>Escada terapêutica por entidade <span class="ank ank-dec">DECISION</span></h3></div>
 <div class="card-body">
 
-<div class="sub-title">F1.1 · Neutropenia febril: antibiótico empírico em até 60 minutos (C.1)</div>
+<div class="sub-title" id="f1-1">F1.1 · Neutropenia febril: antibiótico empírico em até 60 minutos (C.1)</div>
 <ul class="bullets">
 <li><b>Antes e junto:</b> dois sets de hemocultura de 20 mL (um de cada lúmen do cateter e um de veia periférica), hemograma, creatinina, eletrólitos, transaminases, bilirrubinas; radiografia, urina, escarro e outras culturas conforme o sintoma. Sem toque retal, supositório ou colonoscopia. O atraso das culturas jamais justifica atrasar o antibiótico.</li>
 <li><b>Escolha (monoterapia antipseudomonas IV):</b> cefepima 2 g de 8/8 h (bula FDA; reavaliar após 7 dias de neutropenia, sem ser limite), ou piperacilina-tazobactam 4,5 g de 6/6 h (fora da bula geral; ILAS 2024), ou meropeném 1 g de 8/8 h (bula FDA; ILAS: 1–2 g). Primeira dose cheia em bólus, as seguintes em infusão estendida (ILAS 2026), e sem ajuste renal nas primeiras 24–72 h. Ceftazidima e imipeném também são aceitos pela apostila; cefepima, piperacilina-tazobactam, meropeném, imipeném e ceftazidima constam na CMED de 09/10/2026. Não use fluoroquinolona isolada, aztreonam isolado, ceftriaxona nem ertapeném.</li>
@@ -1085,7 +1104,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </ul>
 <div class="box danger"><span class="box-label">DANGER</span><div class="box-title">Quem foi estratificado como baixo risco e continua febril no 2º dia sai do ambulatório</div><div class="box-body">A internação e a passagem ao betalactâmico IV (de ciprofloxacino mais amoxicilina-clavulanato VO, conferir IDSA 2010 e ASCO/IDSA 2018) são obrigatórias. Leucemia aguda, TCTH, colonização por multirresistente, mucosite grave e neutropenia prevista &gt;7 dias nunca entram no ambulatório, mesmo com MASCC ≥21.</div></div>
 
-<div class="sub-title">F1.2 · Neutropenia febril: reavaliação, antifúngico, duração e G-CSF (C.1, D.6)</div>
+<div class="sub-title" id="f1-2">F1.2 · Neutropenia febril: reavaliação, antifúngico, duração e G-CSF (C.1, D.6)</div>
 <ul class="bullets">
 <li><b>Febre persistente no 2º–4º dia, estável:</b> não troca "às cegas"; reavaliar o foco. Febre &gt;3 dias: novo set de hemoculturas e TC de tórax e seios da face (sinal do halo), galactomanana e beta-D-glucana. Dor abdominal com diarreia: toxina de <i>C. difficile</i> e TC de abdome para enterocolite neutropênica. Instável: ampliar cobertura (Gram-positivos e Gram-negativos resistentes) e acrescentar antifúngico, com a CCIH.</li>
 <li><b>Antifúngico (4–7 dias de febre):</b> empírico no instável e preemptivo no estável com evidência (TC, marcadores). Sem fluconazol profilático: caspofungina 70 mg no dia 1 e depois 50 mg/dia (teto 70 mg/dia), ou anfotericina B lipossomal 3 mg/kg/dia (bula FDA; conferir registro). Com fluconazol profilático ou mofo suspeito: voriconazol 6 mg/kg IV de 12/12 h em 2 doses e depois 4 mg/kg de 12/12 h. Úlceras orais e odinofagia: tratar também herpes simples e <i>Candida</i>.</li>
@@ -1093,7 +1112,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <li><b>G-CSF:</b> não rotineiro na neutropenia febril estabelecida (encurta pouco a febre e a neutropenia, sem impacto em mortalidade); considerar no alto risco (IDSA 2010, conferir). Profilaxia primária se o risco de neutropenia febril do regime for ≥20%: filgrastim 5 mcg/kg/dia SC, iniciado ≥24 h após a quimioterapia e não nas 24 h anteriores à seguinte, até neutrófilos &gt;10.000/mm³ após o nadir (máximo de 2 semanas; hemograma 2×/semana; bula FDA). Filgrastim consta na CMED.</li>
 </ul>
 
-<div class="sub-title">F1.3 · Hemocomponentes: prescrever com indicação, dose e velocidade (C.2, D.1)</div>
+<div class="sub-title" id="f1-3">F1.3 · Hemocomponentes: prescrever com indicação, dose e velocidade (C.2, D.1)</div>
 <ul class="bullets">
 <li><b>Hemácias:</b> Hb &lt;7 g/dL ou sintoma de hipóxia; 7–10 pelo quadro; 9–10 na coronariopatia aguda; DPOC &gt;10 (MS 2015). Uma unidade eleva 1 g/dL; infusão em 60–120 min (máx. 4 h); reavaliar Hb 1–2 h depois. AABB 2023: 7 g/dL no adulto hospitalizado estável (conferir). Na leucemia aguda a apostila mantém &gt;8 g/dL.</li>
 <li><b>Plaquetas:</b> profilaxia &lt;10.000/µL; &lt;20.000 se febre, petéquias, hiperleucocitose &gt;30.000, DECH, esplenomegalia ou LPA; terapêutica com sangramento &gt;40–50.000; procedimentos pelos limiares do Quadro 4 (punção lombar &gt;30.000 no adulto, &gt;20.000 na criança; neurocirurgia &gt;100.000). Dose: 1 U/7–10 kg ou 1 aférese; adulto &gt;55 kg: terapêutica 6×10¹¹ e profilática 4×10¹¹; 15–55 kg: terapêutica mínima 3×10¹¹ (4–6 U) e profilática 1 U/10 kg; criança &lt;15 kg: 5–10 mL/kg (MS 3.2.2). Infusão em ~30 min. TCTH autólogo estável, vigiado: aceita-se não transfundir &gt;10.000 sem sangramento.</li>
@@ -1102,7 +1121,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </ul>
 <div class="box decision"><span class="box-label">DECISION</span><div class="box-title">Irradiar, filtrar ou lavar: cinco perguntas ao prescrever</div><div class="box-body"><ul><li><b>1. É receptor de TCTH, em fludarabina, cladribina, LMA, linfoma ou aplasia em tratamento?</b> Irradiado (≥25 Gy) e leucorreduzido.</li><li><b>2. O doador é parente?</b> Irradiado, sempre.</li><li><b>3. Houve ≥2 reações febris, risco de CMV ou aloimunização HLA?</b> Leucorreduzido.</li><li><b>4. Houve alergia grave?</b> Lavado (1–3 L de salina).</li><li><b>5. É mulher em idade fértil ou transfundido crônico?</b> Fenotipado, com K negativo (HO02, GO12).</li></ul></div></div>
 
-<div class="sub-title">F1.4 · Reação transfusional: conduta por tipo (C.3 a C.5, D.7)</div>
+<div class="sub-title" id="f1-4">F1.4 · Reação transfusional: conduta por tipo (C.3 a C.5, D.7)</div>
 <ul class="bullets">
 <li><b>Todas:</b> parar, SF 0,9% no acesso, sinais vitais, conferir identificação, bolsa e equipo ao banco de sangue, amostra pós-transfusional de outro acesso (dispensável na urticária e na sobrecarga), registro em prontuário e notificação.</li>
 <li><b>Hemolítica aguda:</b> hidratar para diurese ≥100 mL/h, UTI se instável, furosemida ou manitol após repor volume (apostila; sem dose padronizada), Coombs, LDH, haptoglobina, coagulograma, cuidados de CIVD e diálise se oligúria. <b>Tardia:</b> sem tratamento específico; fenotipar.</li>
@@ -1111,7 +1130,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </ul>
 <div class="box hy"><span class="box-label">HIGH-YIELD</span><div class="box-title">Prevenção que muda a próxima bolsa</div><div class="box-body">RFNH recorrente → leucorreduzido; alergia grave → lavado; hemólise tardia ou aloimunização → fenotipado e antígeno-negativo; politransfundido → fenotipagem estendida (Rh, Kell, Duffy, Kidd e MNS); imunodeprimido → irradiado.</div></div>
 
-<div class="sub-title">F1.5 · Lise tumoral: hidratar, baixar o urato e vigiar o potássio (C.6)</div>
+<div class="sub-title" id="f1-5">F1.5 · Lise tumoral: hidratar, baixar o urato e vigiar o potássio (C.6)</div>
 <ul class="bullets">
 <li><b>Estratificar:</b> alto risco (LLA, LMA com ≥100.000/mm³, Burkitt, LDGCB volumoso com LDH alta, creatinina alterada, urato &gt;8) recebe rasburicase; baixo risco, hidratação com ou sem alopurinol e monitorização diária.</li>
 <li><b>Hidratação:</b> SF até euvolemia e depois ~2× a manutenção (2.500–3.000 mL/m²/dia; ~180 mL/h) enquanto a função cardíaca permitir; diurese-alvo ≥100 mL/m²/h na criança e ≥2 L/dia no adulto (bula do alopurinol). Não alcalinizar.</li>
@@ -1120,20 +1139,20 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </ul>
 <div class="box danger"><span class="box-label">DANGER</span><div class="box-title">Rasburicase em G6PD baixa e urato "falsamente baixo"</div><div class="box-body">A rasburicase gera peróxido de hidrogênio: em deficiência de G6PD causa hemólise e metemoglobinemia, e a bula FDA a contraindica. Se o urato dosado a temperatura ambiente cai a zero, a enzima degradou a amostra: repita em tubo heparinizado pré-resfriado, em gelo, e dose em 4 h. Quimioterapia só com urato &lt;8 mg/dL e creatinina &lt;1,6 mg/dL (apostila; sem fonte aberta: conferir; não consta em Howard 2011).</div></div>
 
-<div class="sub-title">F1.6 · Hipercalcemia da malignidade: volume, bisfosfonato e causa (C.7)</div>
+<div class="sub-title" id="f1-6">F1.6 · Hipercalcemia da malignidade: volume, bisfosfonato e causa (C.7)</div>
 <ul class="bullets">
 <li><b>Volume:</b> SF 0,9% 1–2 L na primeira hora e depois ~200 mL/h, para ~2 L/dia de diurese; furosemida só depois de repor.</li>
 <li><b>Bisfosfonato:</b> zoledrônico 4 mg IV em ≥15 min (retratar após ≥7 dias; creatinina antes) ou pamidronato 60–90 mg IV (revisão J Clin Med 2024: sem faixa por cálcio; conferir). <b>Calcitonina</b> 4 UI/kg SC/IM de 12/12 h, até 8 UI/kg de 6/6 h (ponte). <b>Denosumabe</b> 120 mg SC D1, D8 e D15 e depois a cada 4 semanas, se refratária.</li>
 <li><b>Causa:</b> tratar a neoplasia; glicocorticoide em linfoma; suspender cálcio, vitamina D, tiazídicos e lítio; diálise se insuficiência cardíaca ou renal.</li>
 </ul>
 
-<div class="sub-title">F1.7 · Leucostase e hiperviscosidade: reduzir a carga antes que o órgão decida (C.8, D.2)</div>
+<div class="sub-title" id="f1-7">F1.7 · Leucostase e hiperviscosidade: reduzir a carga antes que o órgão decida (C.8, D.2)</div>
 <ul class="bullets">
 <li><b>Leucostase:</b> hidroxiureia 50–60 mg/kg/dia VO, teto de 60 mg/kg/dia (prática; revisão narrativa; conferir protocolo do serviço; −50% se ClCr &lt;60 mL/min, bula; parar com leucócitos &lt;50.000/mm³ ou no início da indução), hidratação, profilaxia de lise e indução precoce. Leucaférese se hipoxemia ou alteração neurológica. Evitar concentrado de hemácias; plaquetas se sangrar. LPA: ATRA e sem leucaférese.</li>
 <li><b>Hiperviscosidade:</b> plasmaférese até o alívio e depois o tratamento do clone (HO05); antes do rituximabe com IgM &gt;4.000 mg/dL, considerar plasmaférese (revisão; conferir). Hemácias só se indispensável e devagar.</li>
 </ul>
 
-<div class="sub-title">F1.8 · Veia cava superior, compressão medular e CIVD: o gesto de plantão (C.9, D.3, D.4)</div>
+<div class="sub-title" id="f1-8">F1.8 · Veia cava superior, compressão medular e CIVD: o gesto de plantão (C.9, D.3, D.4)</div>
 <ul class="bullets">
 <li><b>Veia cava superior:</b> cabeceira elevada, oxigênio, TC, biópsia antes do corticoide; stent no sintoma grave; radioterapia ou quimioterapia pela histologia; anticoagulação na trombose.</li>
 <li><b>Compressão medular:</b> com déficit, dexametasona 16 mg VO/IV e RM de toda a coluna em até 24 h; sem déficit, RM em até 1 semana, e corticoide só se dor intensa ou neoplasia hematológica; tratamento definitivo no mesmo dia (NE07). Linfoma suspeito sem histologia: biópsia rápida (NE07).</li>
@@ -1144,7 +1163,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card tx">
+<div class="card tx" id="f2">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">F.2</span> Doses Operacionais</div><h3>Tabela de doses, tetos e critérios de parada <span class="ank ank-dgr">DANGER</span></h3></div>
 <div class="card-body">
 <div class="stbl stbl-3">
@@ -1178,7 +1197,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card tx">
+<div class="card tx" id="f3">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">F.3</span> Casos</div><h3>Caso → conduta certa → erro típico <span class="ank ank-hy">HIGH-YIELD</span></h3></div>
 <div class="card-body">
 <div class="stbl stbl-3">
@@ -1200,7 +1219,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <section id="pitfalls">
 <div class="section"><div class="section-eyebrow"><span>G</span> Pitfalls · Mitos · Controvérsias</div><div class="section-title">Erros operacionais, mitos vivos e debates abertos</div><div class="section-sub">Os erros que se repetem: esperar o exame para dar o antibiótico, transfundir pelo número, corticoide antes da biópsia e rasburicase sem G6PD.</div></div>
 
-<div class="card pearl">
+<div class="card pearl" id="g1">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">G.1</span> Pegadinhas</div><h3>10 erros operacionais em neutropenia febril, transfusão e urgências oncológicas</h3></div>
 <div class="card-body">
 <div class="stbl stbl-2">
@@ -1219,7 +1238,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card pearl">
+<div class="card pearl" id="g2">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">G.2</span> Mitos</div><h3>Três mitos vivos</h3></div>
 <div class="card-body">
 <div class="box myth"><span class="box-label">MYTH</span><div class="box-title">"Hemocultura negativa afasta infecção no neutropênico"</div><div class="box-body">Apenas 10–25% das neutropenias febris têm hemocultura positiva, e 20–30% algum sinal localizador. A maioria é translocação intestinal sem germe isolado. O resultado negativo não autoriza suspender o antibiótico antes dos neutrófilos e da apirexia.</div></div>
@@ -1228,7 +1247,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card pearl">
+<div class="card pearl" id="g3">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">G.3</span> Controvérsias</div><h3>Três debates sem consenso</h3></div>
 <div class="card-body">
 <div class="box controversy"><span class="box-label">CONTROVERSY</span><div class="box-title">Antifúngico empírico ou preemptivo na febre persistente</div><div class="box-body">Entre 22% e 34% recebem antifúngico empírico e só ~4% têm fungo invasivo; a estratégia preemptiva (TC, galactomanana, beta-D-glucana) poupa fármaco no estável. No instável ou no leucêmico de alto risco com neutropenia longa, o empírico continua aceito. Falta ensaio comparativo no Brasil.</div></div>
@@ -1242,7 +1261,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <section id="pearls">
 <div class="section"><div class="section-eyebrow"><span>H</span> Pearls · Evolving</div><div class="section-title">H1 · Pearls de Especialista · H2 · Áreas em Evolução</div><div class="section-sub">Oito nuances que separam quem prescreve de quem pensa, e cinco pontos em que a conduta mudou ou ainda está sendo revista. O restante do tema é estável.</div></div>
 
-<div class="card pearl">
+<div class="card pearl" id="h1">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">H.1</span> Pearls</div><h3>8 nuances que distinguem o especialista</h3></div>
 <div class="card-body">
 <div class="box pearl"><span class="box-label">PEARL</span><div class="box-title">A primeira dose é plena, mesmo com creatinina alta</div><div class="box-body">Os betalactâmicos hidrofílicos têm volume de distribuição aumentado pela ressuscitação volêmica; reduzir a dose pela função renal nas primeiras 24–72 h subdosa o antibiótico no momento em que a carga bacteriana é maior. A primeira dose vai em bólus e as seguintes em infusão estendida (ILAS 2026). O ajuste vem depois, com a evolução da creatinina.</div></div>
@@ -1256,7 +1275,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card pearl">
+<div class="card pearl" id="h2">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">H.2</span> Evolving</div><h3>O que mudou: cinco itens reais; o resto do tema é estável</h3></div>
 <div class="card-body">
 <div class="box evolving"><span class="box-label">EVOLVING</span><div class="box-title">Limiar restritivo de hemácias: AABB 2023 × Guia do MS 2015</div><div class="box-body">O AABB 2023 propõe 7 g/dL no adulto hospitalizado estável e limiares maiores só para cirurgia cardíaca e ortopédica e doença cardiovascular; o Guia do MS, de 2014, preserva faixas mais altas em coronariopatia e DPOC. Texto do AABB não lido nesta sessão: os valores levam "conferir". O HO01 já usa o mesmo conjunto.</div></div>
@@ -1305,5 +1324,36 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <a class="to-top" href="#" aria-label="Voltar ao topo">↑</a>
 <div class="watermark">@dr.lorencato · HO06 Neutropenia Febril, Transfusão e Urgências v5.2</div>
 
-</body>
+<!--hp-f2--><script>(function(){var d=document,M=d.querySelector('main');if(!M)return;
+var SELF='HO06',HP=' CT01 CT02 CT03 CT04 CT05 CT06 CT08 CT10 CV01 CV03 CV04 CV05 CV06 CV07 CV08 EN01 EN02 EN03 EN04 EN06 EN07 GH01 GH02 GH03 GH05 GH06 GH07 GH08 GH09 GH10 GO01 GO02 GO03 GO04 GO09 GO10 GO11 GO12 GO13 GO14 HO01 HO02 HO03 HO04 HO05 HO06 II01 II02 II03 II04 II07 II08 NE01 NE02 NE03 NE04 NE05 NE06 NE07 NE08 NU01 NU02 NU03 NU04 NU05 OE01 OE02 PC01 PC02 PC03 PC04 PC05 PC06 PD01 PD02 PD03 PD04 PD05 PD06 PD07 PD08 PD09 PD10 RD01 RD02 RD03 RD04 RD05 RD07 RP01 RP02 RP03 RP04 ';
+var SK='A,H1,H2,H3,SCRIPT,STYLE,NAV,.card-num,.card-eyebrow,.sub-title,.disease-tag,.toc';
+var R=/\b(?:([A-H])(\d)?\.(\d{1,2}[a-c]?)|(CV|RP|GH|NE|EN|NU|HO|II|RD|GO|PD|PC|CT|OE)(\d\d))\b/g;
+function skip(n){for(var e=n.parentNode;e&&e!==M;e=e.parentNode)if(e.matches&&e.matches(SK))return 1;return 0}
+var w=d.createTreeWalker(M,4),t,L=[];while(t=w.nextNode())if(R.test(t.data)&&!skip(t))L.push(t);
+L.forEach(function(t){var s=t.data,f=d.createDocumentFragment(),i=0,m;R.lastIndex=0;
+while(m=R.exec(s)){var h=null;
+if(m[1]){var id=m[1].toLowerCase()+(m[2]?m[2]+'-':'')+m[3];if(d.getElementById(id))h='#'+id}
+else{var x=m[4]+m[5];if(x!==SELF&&HP.indexOf(' '+x+' ')>=0)h='../'+x+'/'+x+'.html'}
+if(!h)continue;f.appendChild(d.createTextNode(s.slice(i,m.index)));
+var a=d.createElement('a');a.href=h;a.className='xr';a.textContent=m[0];f.appendChild(a);i=R.lastIndex}
+if(i){f.appendChild(d.createTextNode(s.slice(i)));t.parentNode.replaceChild(f,t)}});
+function nz(s){return s.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'')}
+var q=d.querySelector('.hp-q'),n=d.querySelector('.hp-n'),it=M.querySelectorAll('.card,.pocket-card'),T;
+function clr(){M.querySelectorAll('.q-off').forEach(function(e){e.classList.remove('q-off')})}
+function run(){var v=nz(q.value.trim());clr();n.textContent='';if(v.length<2)return;var k=0;
+it.forEach(function(c){if(nz(c.textContent).indexOf(v)<0){c.classList.add('q-off');return}k++;
+var r=c.querySelectorAll('.stbl-row,.disease-row,.score-row'),h=[];r.forEach(function(x){if(nz(x.textContent).indexOf(v)>=0)h.push(x)});
+if(h.length)r.forEach(function(x){if(h.indexOf(x)<0)x.classList.add('q-off')});
+c.querySelectorAll('details').forEach(function(x){if(nz(x.textContent).indexOf(v)>=0)x.open=true})});
+M.querySelectorAll('section').forEach(function(s){if(!s.querySelector('.card:not(.q-off),.pocket-card:not(.q-off)'))s.classList.add('q-off')});
+n.textContent=k?k+' achado'+(k>1?'s':''):'nada'}
+if(q){q.addEventListener('input',function(){clearTimeout(T);T=setTimeout(run,180)});
+q.addEventListener('keydown',function(e){if(e.key==='Escape'){q.value='';run()}})}
+function tg(b,f){b.addEventListener('click',function(){var on=b.getAttribute('aria-pressed')!=='true';b.setAttribute('aria-pressed',on);f(on)})}
+var bd=d.querySelector('.hp-dz'),bo=d.querySelector('.hp-op');
+if(bd)tg(bd,function(on){d.body.classList.toggle('dz',on);if(on)d.getElementById('tratamento').scrollIntoView()});
+if(bo)tg(bo,function(on){M.querySelectorAll('details').forEach(function(x){x.open=on})});
+var P=[];addEventListener('beforeprint',function(){P=[];M.querySelectorAll('details:not([open])').forEach(function(x){P.push(x);x.open=true})});
+addEventListener('afterprint',function(){P.forEach(function(x){x.open=false})});
+})();</script><!--/hp-f2--></body>
 </html>

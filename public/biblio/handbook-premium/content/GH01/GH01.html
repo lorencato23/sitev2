@@ -346,13 +346,31 @@ ul.bullets li b{color:var(--ink);font-weight:600}
   .pocket .pocket-card.clin{--accent:#0b5d4e}
 }
 
+/* === v5.2.2 · fase 2 (navegação) === */
+.hp-tools{display:flex;gap:6px;align-items:center;flex:none;order:1;margin-left:auto;padding-left:6px;position:sticky;right:0;background:#f1eee5;box-shadow:-10px 0 10px -4px #f1eee5,16px 0 0 #f1eee5}
+@media(min-width:900px){html{scroll-padding-top:150px}.toc-inner{flex-wrap:wrap;overflow:visible}.card[id],.sub-title[id]{scroll-margin-top:150px}}
+@media(max-width:899px){.hp-b,.hp-n{display:none}.hp-q{width:104px}}
+.hp-q{width:128px;font:500 12px/1 'DM Sans',system-ui,sans-serif;padding:7px 11px;border:1px solid var(--line-strong);border-radius:999px;background:var(--paper);color:var(--ink)}
+.hp-b{font:600 11px/1 'DM Sans',system-ui,sans-serif;letter-spacing:.05em;text-transform:uppercase;padding:7px 10px;border-radius:999px;border:1px solid var(--line-strong);background:var(--paper);color:var(--ink-soft);cursor:pointer;white-space:nowrap}
+.hp-b[aria-pressed=true]{background:var(--ink);color:#fff;border-color:var(--ink)}
+.hp-n{font:600 11px/1 'DM Mono',monospace;color:var(--ink-mute);white-space:nowrap}
+.sec-idx{display:flex;flex-wrap:wrap;gap:6px;margin:12px 0 20px}
+.sec-idx a{font:500 12px/1.25 'DM Sans',system-ui,sans-serif;padding:6px 10px;border-radius:999px;background:var(--paper);border:1px solid var(--line);color:var(--ink-soft);text-decoration:none}
+.sec-idx a:hover{border-color:var(--line-strong);color:var(--ink)}
+.sec-idx b{color:var(--c-prim);margin-right:5px;font-weight:700}
+a.xr{color:inherit;text-decoration:underline dotted;text-underline-offset:2px}
+a.xr:hover{color:var(--c-prim)}
+.card[id],.sub-title[id]{scroll-margin-top:110px}
+.q-off{display:none!important}
+body.dz main section:not(#tratamento){display:none}
+@media print{.hp-tools,.sec-idx,.toc-doses{display:none!important}}
 </style>
 </head>
 <body>
 
 <header class="header"><div class="header-row"><div class="h-mark">H</div><div class="h-titles"><div class="h-title">Disfagia, Motilidade e DRGE · Pocket Handbook</div><div class="h-sub">Elite edition · Gastroenterologia · GH01</div></div><div class="h-author">@dr.lorencato</div><div class="h-edition">v5.2</div></div></header>
 
-<nav class="toc"><div class="toc-inner"><a href="#pocket" class="toc-chip"><span class="toc-chip-num">0</span>Pocket</a><a href="#redflags" class="toc-chip"><span class="toc-chip-num">A</span>Red Flags</a><a href="#approach" class="toc-chip"><span class="toc-chip-num">B</span>Apresentação</a><a href="#primarias" class="toc-chip"><span class="toc-chip-num">C</span>Entidades</a><a href="#secundarias" class="toc-chip"><span class="toc-chip-num">D</span>Secundárias</a><a href="#algoritmo" class="toc-chip"><span class="toc-chip-num">E</span>Algoritmo</a><a href="#tratamento" class="toc-chip"><span class="toc-chip-num">F</span>Tratamento</a><a href="#pitfalls" class="toc-chip"><span class="toc-chip-num">G</span>Pitfalls</a><a href="#pearls" class="toc-chip"><span class="toc-chip-num">H</span>Pearls</a></div></nav>
+<nav class="toc"><div class="toc-inner"><!--hp-f2--><span class="hp-tools"><input class="hp-q" type="search" placeholder="Buscar no HP" aria-label="Buscar no HP"><button class="hp-b hp-dz" type="button" aria-pressed="false">Só doses</button><button class="hp-b hp-op" type="button" aria-pressed="false">Abrir tudo</button><span class="hp-n" aria-live="polite"></span></span><!--/hp-f2--><a href="#pocket" class="toc-chip"><span class="toc-chip-num">0</span>Pocket</a><a href="#redflags" class="toc-chip"><span class="toc-chip-num">A</span>Red Flags</a><a href="#approach" class="toc-chip"><span class="toc-chip-num">B</span>Apresentação</a><a href="#primarias" class="toc-chip"><span class="toc-chip-num">C</span>Entidades</a><a href="#secundarias" class="toc-chip"><span class="toc-chip-num">D</span>Secundárias</a><a href="#algoritmo" class="toc-chip"><span class="toc-chip-num">E</span>Algoritmo</a><a href="#tratamento" class="toc-chip"><span class="toc-chip-num">F</span>Tratamento</a><!--hp-f2--><a href="#f2" class="toc-chip toc-doses"><span class="toc-chip-num">Rx</span>Doses</a><!--/hp-f2--><a href="#pitfalls" class="toc-chip"><span class="toc-chip-num">G</span>Pitfalls</a><a href="#pearls" class="toc-chip"><span class="toc-chip-num">H</span>Pearls</a></div></nav>
 
 <main>
 <div class="wrap">
@@ -415,7 +433,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <section id="redflags">
 <div class="section"><div class="section-eyebrow"><span>A</span> Red Flags</div><div class="section-title">No esôfago, o perigo é o câncer rotulado de refluxo e a perfuração rotulada de dor torácica</div><div class="section-sub">Sinal objetivo, suspeita e conduta imediata. Os eventos evitáveis deste HP: a disfagia progressiva tratada com IBP por meses, o bolo impactado sem endoscopia em horas, o vômito seguido de dor torácica e enfisema sem tomografia, o cáustico induzido a vomitar e a sonda passada às cegas num divertículo de Zenker.</div></div>
 
-<div class="card emerg">
+<div class="card emerg" id="a1">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">A.1</span> Emergências</div><h3>Sinais de alarme — disfagia, impactação, perfuração e ingestão <span class="ank ank-dgr">DANGER</span></h3></div>
 <div class="card-body">
 
@@ -456,7 +474,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <section id="approach">
 <div class="section"><div class="section-eyebrow"><span>B</span> Por Apresentação</div><div class="section-title">Cinco portas de entrada: o bolo, o ácido, o peito, a tosse e o impacto agudo</div><div class="section-sub">O paciente não chega com o rótulo de acalásia ou de Barrett. Chega engasgando, queimando, com dor no peito, tossindo à noite ou com um pedaço de carne parado.</div></div>
 
-<div class="card clin">
+<div class="card clin" id="b1">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">B.1</span> Padrão 1</div><h3>Disfagia: onde está o problema? <span class="ank ank-hy">HIGH-YIELD</span></h3><div class="card-sub">Orofaríngea × esofágica, mecânica × motora, e o alarme que decide a pressa</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body"><b>Orofaríngea:</b> dificuldade em iniciar a deglutição, tosse e engasgo logo ao engolir, regurgitação nasal, sólidos e líquidos. <b>Esofágica:</b> sensação de parada no tórax, horas depois do início. <b>Só sólidos e progressiva = mecânica (câncer); sólidos e líquidos desde o início = motora (acalásia, espasmo, esclerose).</b> <b>O que muda conduta:</b> alarme leva à EDA em dias; orofaríngea leva à videofluoroscopia e à neurologia; esofágica com EDA normal leva à manometria.</div></div>
@@ -470,7 +488,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card clin">
+<div class="card clin" id="b2">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">B.2</span> Padrão 2</div><h3>Pirose e regurgitação <span class="ank ank-dec">DECISION</span></h3><div class="card-sub">Típico sem alarme trata; típico com alarme investiga</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body"><b>Pirose e regurgitação, sem disfagia, perda de peso, sangramento ou anemia:</b> prova terapêutica com IBP por 8 semanas (ACG 2022, forte). <b>Com alarme, refratário, ≥3 fatores de risco para Barrett ou história prolongada: EDA.</b> A resposta ao IBP não confirma DRGE sozinha (Lyon 2.0) e sustenta o hiperdiagnóstico. <b>O que muda conduta:</b> alarme, idade a partir de 45–55 anos (apostila; ACG 2022 usa 60 anos em alguns contextos), falha do IBP e dor torácica sem causa cardíaca levam à investigação objetiva.</div></div>
@@ -482,7 +500,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card clin">
+<div class="card clin" id="b3">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">B.3</span> Padrão 3</div><h3>Dor torácica não cardíaca <span class="ank ank-dgr">DANGER</span></h3><div class="card-sub">O coração primeiro, o esôfago depois</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Espasmo, DRGE e hipersensibilidade esofágica simulam angina, inclusive com irradiação para o dorso, a mandíbula e os braços. <b>A ordem: ECG e investigação coronária; depois EDA e monitorização do refluxo se há DRGE provável; por fim manometria se há disfagia.</b> A DRGE é a principal causa de dor torácica não cardíaca (apostila); ansiedade e depressão são comuns. <b>O que muda conduta:</b> coronariopatia afastada permite prova de IBP 2×/dia por 8–12 semanas ou testes objetivos (ACG 2022).</div></div>
@@ -493,7 +511,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card clin">
+<div class="card clin" id="b4">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">B.4</span> Padrão 4</div><h3>Tosse crônica, rouquidão, asma e regurgitação noturna <span class="ank ank-hy">HIGH-YIELD</span></h3><div class="card-sub">Refluxo, aspiração ou outra causa</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body"><b>Regurgitação noturna com tosse, pneumonias de repetição e halitose</b> sugere acalásia ou Zenker, não DRGE. <b>Tosse crônica e laringite sem pirose</b> têm baixa probabilidade de causa refluxa; o ACG 2022 recomenda excluir causas não refluxas e testar o refluxo antes do IBP. <b>O que muda conduta:</b> acalásia entra no diagnóstico diferencial de quem "tem DRGE" e não responde ao IBP (ACG Acalásia 2020, recomendação 1).</div></div>
@@ -504,7 +522,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card clin">
+<div class="card clin" id="b5">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">B.5</span> Padrão 5</div><h3>Odinofagia e impacto agudo <span class="ank ank-dec">DECISION</span></h3><div class="card-sub">Infecção, comprimido, cáustico, corpo estranho, EoE</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body"><b>Odinofagia:</b> esofagite infecciosa no imunossuprimido (Candida, herpes, CMV), esofagite por comprimido (tetraciclina, AINE, bisfosfonato, cloreto de potássio, ferro), úlcera de refluxo. <b>Impacto agudo:</b> corpo estranho e bolo alimentar; investigar sempre a doença de base (até 25% das impactações; EoE em até 9%, WSES 2019). <b>O que muda conduta:</b> imunossupressão e candidíase oral tratam sem endoscopia; falha ou odinofagia grave levam à EDA com biópsia.</div></div>
@@ -516,9 +534,9 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </section>
 <section id="primarias">
-<div class="section"><div class="section-eyebrow"><span>C</span> Entidades Primárias</div><div class="section-title">Nove entidades do esôfago, da disfagia ao câncer</div><div class="section-sub">A disfagia e a motilidade abrem o capítulo porque decidem o exame; a DRGE, a hérnia de hiato, o Barrett e a esofagite eosinofílica formam o núcleo ambulatorial; o câncer fecha a lista. Lesões agudas, divertículos, esofagites secundárias e tumores benignos estão em D.</div></div>
+<div class="section"><div class="section-eyebrow"><span>C</span> Entidades Primárias</div><div class="section-title">Nove entidades do esôfago, da disfagia ao câncer</div><div class="section-sub">A disfagia e a motilidade abrem o capítulo porque decidem o exame; a DRGE, a hérnia de hiato, o Barrett e a esofagite eosinofílica formam o núcleo ambulatorial; o câncer fecha a lista. Lesões agudas, divertículos, esofagites secundárias e tumores benignos estão em D.</div></div><!--hp-f2--><nav class="sec-idx" aria-label="Neste capítulo"><a href="#c1"><b>C.1</b>Disfagia: orofaríngea × esofá…</a><a href="#c2"><b>C.2</b>Acalásia e distúrbios do eflu…</a><a href="#c3"><b>C.3</b>Esofagopatia chagásica: megae…</a><a href="#c4"><b>C.4</b>Espasmo esofágico distal, esô…</a><a href="#c5"><b>C.5</b>Doença do refluxo gastroesofá…</a><a href="#c6"><b>C.6</b>Hérnia de hiato: deslizamento…</a><a href="#c7"><b>C.7</b>Esôfago de Barrett: vigilânci…</a><a href="#c8"><b>C.8</b>Esofagite eosinofílica: IBP…</a><a href="#c9"><b>C.9</b>Câncer de esôfago: epidermoid…</a></nav><!--/hp-f2-->
 
-<div class="card prim">
+<div class="card prim" id="c1">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.1</span> Sintoma</div><h3>Disfagia: orofaríngea × esofágica, mecânica × motora <span class="ank ank-hy">HIGH-YIELD</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Disfagia é o sintoma-guia do esôfago e tem dois eixos. <b>Topografia:</b> orofaríngea (transferência) ou esofágica (condução). <b>Mecanismo:</b> mecânica (estreitamento ou bolo grande) ou motora (falha da peristalse ou do relaxamento). <b>O que muda conduta:</b> alarme leva à EDA com biópsia em dias; orofaríngea à videofluoroscopia e à causa neurológica ou muscular; esofágica com EDA normal à manometria de alta resolução.</div></div>
@@ -548,7 +566,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="c2">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.2</span> Motilidade</div><h3>Acalásia e distúrbios do efluxo da junção esofagogástrica <span class="ank ank-hy">HIGH-YIELD</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body"><b>Acalásia = relaxamento incompleto do esfíncter inferior (IRP elevada) + ausência de peristalse normal.</b> Disfagia para sólidos e líquidos, regurgitação, perda de peso lenta, tosse noturna. Exame de escolha: manometria de alta resolução (Chicago 4.0), depois do esofagograma e da EDA. <b>Tratamento definitivo: dilatação pneumática, miotomia de Heller com fundoplicatura parcial ou POEM.</b> <b>O que muda conduta:</b> o tipo III e o megaesôfago avançado mudam a técnica; Chagas muda a pesquisa de cardiopatia.</div></div>
@@ -590,7 +608,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="c3">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.3</span> Motilidade</div><h3>Esofagopatia chagásica: megaesôfago e classificação de Rezende <span class="ank ank-hy">HIGH-YIELD</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body"><b>A principal causa secundária de acalásia no Brasil.</b> O <i>Trypanosoma cruzi</i> destrói neurônios do plexo mioentérico na fase crônica; o diagnóstico é sorológico (ELISA, e um segundo método). O megaesôfago é graduado radiologicamente por Rezende (I a IV) e por Mascarenhas (por diâmetro). <b>O que muda conduta:</b> graus I e II: dilatação ou miotomia; graus III e IV: miotomia com fundoplicatura parcial ou esofagectomia; sempre procurar cardiopatia (CV01, CV04) e megacólon.</div></div>
@@ -630,7 +648,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="c4">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.4</span> Motilidade</div><h3>Espasmo esofágico distal, esôfago hipercontrátil e motilidade ineficaz <span class="ank ank-dec">DECISION</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Distúrbios de peristalse com junção normal. <b>Chicago 4.0:</b> espasmo distal = ≥20% de contrações prematuras (latência distal &lt;4,5 s, DCI &gt;450); hipercontrátil = ≥20% de deglutições com DCI &gt;8.000; motilidade ineficaz = &gt;70% de deglutições ineficazes ou ≥50% de falha. São padrões manométricos, e só viram doença com <b>disfagia ou dor torácica não cardíaca</b>. <b>O que muda conduta:</b> coronariopatia primeiro; IBP se há refluxo; nitrato ou antagonista do cálcio; POEM ou toxina apenas em refratários selecionados.</div></div>
@@ -652,7 +670,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="c5">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.5</span> Refluxo</div><h3>Doença do refluxo gastroesofágico: Lyon 2.0, IBP e desmame <span class="ank ank-hy">HIGH-YIELD</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">DRGE é a doença crônica do refluxo patológico, com sintomas ou lesão. <b>Pirose e regurgitação sem alarme:</b> IBP 1×/dia 30–60 min antes da refeição por 8 semanas (ACG 2022, forte). <b>Prova objetiva:</b> LA B, C, D, Barrett com biópsia ou estenose péptica, ou tempo de exposição ao ácido &gt;6% (Lyon 2.0). <b>Manutenção:</b> menor dose eficaz; LA C/D e Barrett continuam por tempo indefinido. <b>O que muda conduta:</b> alarme e refratariedade → EDA e monitorização; refluxo comprovado com regurgitação refratária → cirurgia ou procedimento endoscópico.</div></div>
@@ -695,7 +713,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="c6">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.6</span> Anatomia</div><h3>Hérnia de hiato: deslizamento, paraesofágica e volvo <span class="ank ank-dec">DECISION</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body"><b>Tipo I (deslizamento)</b> é a forma comum e se liga à DRGE; <b>tipos II a IV (paraesofágicas)</b> deslocam o fundo ou outros órgãos ao lado do esôfago e causam obstrução, anemia e volvo. A EDA é o primeiro exame; o esofagograma mostra a anatomia. <b>O que muda conduta:</b> hérnia deslizante assintomática não se opera; hérnia fixa &gt;2 cm com DRGE e hérnia paraesofágica sintomática têm indicação cirúrgica; volvo é emergência (A.1).</div></div>
@@ -717,7 +735,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="c7">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.7</span> Neoplasia precursora</div><h3>Esôfago de Barrett: vigilância, displasia e erradicação <span class="ank ank-hy">HIGH-YIELD</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Metaplasia intestinal do esôfago tubular (≥1 cm, Prague C e M) por refluxo crônico; único precursor conhecido do adenocarcinoma. <b>Vigilância por comprimento: ≥3 cm a cada 3 anos, &lt;3 cm a cada 5; displasia de qualquer grau confirmada por segundo patologista; alto grau e carcinoma intramucoso: erradicação endoscópica.</b> IBP ao menos 1×/dia. <b>O que muda conduta:</b> o grau de displasia e o comprimento do segmento definem o intervalo e o tratamento.</div></div>
@@ -771,7 +789,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="c8">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.8</span> Imunoalérgica</div><h3>Esofagite eosinofílica: IBP, corticoide deglutido, dieta e dupilumabe <span class="ank ank-hy">HIGH-YIELD</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Doença esofágica mediada por Th2: <b>disfagia ou impactação + ≥15 eosinófilos por campo de grande aumento em biópsias</b> (≥6 fragmentos, em ≥2 níveis), sem outra causa. Tratamento em três degraus equivalentes: <b>IBP em dose dobrada, corticoide deglutido (budesonida ou fluticasona) ou dieta de eliminação;</b> dupilumabe nos refratários; dilatar a estenose; manter o tratamento depois da remissão. <b>O que muda conduta:</b> impactação e estenose, resposta histológica e comorbidade atópica orientam a droga.</div></div>
@@ -801,7 +819,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="c9">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.9</span> Neoplasia</div><h3>Câncer de esôfago: epidermoide × adenocarcinoma, estadiamento e tratamento <span class="ank ank-hy">HIGH-YIELD</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body"><b>No Brasil, 96% são carcinoma epidermoide</b> (INCA): álcool, tabaco, bebida quente a ≥65 °C, acalásia, cáustico. O <b>adenocarcinoma</b> vem do Barrett, do refluxo e da obesidade, e cresce no mundo ocidental. Disfagia progressiva e perda de peso são a apresentação típica. Diagnóstico: EDA com biópsia; estadiamento por TC, ecoendoscopia e PET-TC. <b>O que muda conduta:</b> T1a/CEC mucoso: ressecção endoscópica; localmente avançado: neoadjuvância (CROSS ou FLOT) e esofagectomia; irressecável: radioquimioterapia definitiva ou paliação.</div></div>
@@ -842,9 +860,9 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </section>
 <section id="secundarias">
-<div class="section"><div class="section-eyebrow"><span>D</span> Entidades Secundárias</div><div class="section-title">Divertículos, lesões agudas, cáustico, corpo estranho, esofagites secundárias e tumores benignos</div><div class="section-sub">Entidades que completam o diferencial e as urgências do esôfago. Mallory-Weiss, Boerhaave, cáustico e corpo estranho não têm dono em outro HP do catálogo (GH02, GH06, CT10 e PD07 não os cobrem) e foram assumidos aqui, com remissões.</div></div>
+<div class="section"><div class="section-eyebrow"><span>D</span> Entidades Secundárias</div><div class="section-title">Divertículos, lesões agudas, cáustico, corpo estranho, esofagites secundárias e tumores benignos</div><div class="section-sub">Entidades que completam o diferencial e as urgências do esôfago. Mallory-Weiss, Boerhaave, cáustico e corpo estranho não têm dono em outro HP do catálogo (GH02, GH06, CT10 e PD07 não os cobrem) e foram assumidos aqui, com remissões.</div></div><!--hp-f2--><nav class="sec-idx" aria-label="Neste capítulo"><a href="#d1"><b>D.1</b>Divertículos (Zenker, médio e…</a><a href="#d2"><b>D.2</b>Mallory-Weiss e síndrome de B…</a><a href="#d3"><b>D.3</b>Esofagite cáustica: da via aé…</a><a href="#d4"><b>D.4</b>Corpo estranho e impactação a…</a><a href="#d5"><b>D.5</b>Esofagites infecciosas, por c…</a><a href="#d6"><b>D.6</b>Esclerose sistêmica e outras…</a><a href="#d7"><b>D.7</b>DRGE refratária, pirose funci…</a><a href="#d8"><b>D.8</b>Leiomioma, GIST esofágico e c…</a></nav><!--/hp-f2-->
 
-<div class="card diag">
+<div class="card diag" id="d1">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">D.1</span> Obstrução benigna</div><h3>Divertículos (Zenker, médio e epifrênico), anéis, membranas e estenose péptica <span class="ank ank-hy">HIGH-YIELD</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body"><b>Zenker:</b> pseudodivertículo de pulsão no triângulo de Killian, em idosos, com regurgitação tardia, halitose e aspiração; <b>nunca passar sonda às cegas.</b> <b>Médio</b> (tração ou pulsão) e <b>epifrênico</b> (pulsão, ligado a acalásia ou espasmo): manometria. <b>Anel de Schatzki:</b> bolo de carne em &gt;40 anos; <b>Plummer-Vinson:</b> membrana com ferropenia; <b>estenose péptica:</b> dilatação e IBP. <b>O que muda conduta:</b> o tamanho do Zenker e o distúrbio motor de base definem a técnica.</div></div>
@@ -860,7 +878,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card diag">
+<div class="card diag" id="d2">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">D.2</span> Lesão aguda</div><h3>Mallory-Weiss e síndrome de Boerhaave: reconhecimento e conduta inicial <span class="ank ank-dgr">DANGER</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body"><b>Mallory-Weiss:</b> laceração mucosa da junção por vômitos ou ânsia, com hematêmese, em geral autolimitada. <b>Boerhaave:</b> ruptura transmural (15% das perfurações esofágicas), com dor intensa, enfisema, febre e derrame pleural; mortalidade de 10–20%. <b>TC com contraste, jejum, antibiótico, IBP e cirurgia precoce.</b> <b>O que muda conduta:</b> intervalo até o tratamento (&lt;24 h) e critérios de tratamento não operatório.</div></div>
@@ -876,7 +894,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card diag">
+<div class="card diag" id="d3">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">D.3</span> Lesão aguda</div><h3>Esofagite cáustica: da via aérea à estenose <span class="ank ank-dgr">DANGER</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Álcalis (soda cáustica) causam necrose de liquefação e lesam mais fundo; ácidos, necrose de coagulação. <b>Sem vômito, sem neutralização, sem lavagem gástrica, sem carvão</b> (CT10). <b>TC com contraste na admissão</b> classifica a lesão (graus I a III) e decide cirurgia imediata se há necrose transmural; endoscopia se a TC não está disponível, se há dúvida e na criança (WSES 2019). Estenose em até 4 meses. <b>O que muda conduta:</b> necrose transmural → cirurgia; sem necrose → tratamento não operatório e avaliação psiquiátrica.</div></div>
@@ -891,7 +909,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card diag">
+<div class="card diag" id="d4">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">D.4</span> Urgência</div><h3>Corpo estranho e impactação alimentar <span class="ank ank-dec">DECISION</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">80–90% dos corpos estranhos passam sozinhos; os que ficam no esôfago pedem endoscopia. <b>Em 2 h (máximo 6 h):</b> pontiagudo, bateria de botão, ímã e obstrução completa; <b>em &lt;24 h:</b> os demais. Empurrar o bolo alimentar com delicadeza (sucesso de até 90%) ou retirar. <b>Biópsias do esôfago depois</b>, porque até 25% têm doença de base e EoE aparece em até 9%. <b>O que muda conduta:</b> o tipo do objeto e a sialorreia definem a pressa.</div></div>
@@ -906,7 +924,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card diag">
+<div class="card diag" id="d5">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">D.5</span> Infecção e fármaco</div><h3>Esofagites infecciosas, por comprimido e úlcera esofágica <span class="ank ank-hy">HIGH-YIELD</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body"><b>Candida</b> (HIV, corticoide inalado, diabetes) dá odinofagia e placas; <b>herpes</b> dá úlceras pequenas e múltiplas; <b>CMV</b> dá úlcera grande e profunda com CD4 &lt;50 e células "em olho de coruja". <b>Comprimido</b> (tetraciclina, AINE, bisfosfonato, KCl, ferro) lesiona na altura da carina. <b>O que muda conduta:</b> candidíase oral com disfagia trata sem endoscopia (II01); falha do antifúngico ou imunossupressão grave pedem EDA com biópsia.</div></div>
@@ -921,7 +939,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card diag">
+<div class="card diag" id="d6">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">D.6</span> Dismotilidade secundária</div><h3>Esclerose sistêmica e outras causas de motilidade esofágica ineficaz <span class="ank ank-dec">DECISION</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body"><b>Esclerose sistêmica:</b> fibrose do músculo liso dos 2/3 distais, esfíncter inferior hipotônico e peristalse ausente, com DRGE grave, estenose e Barrett (cerca de 90% têm envolvimento esofágico; RD02). <b>Outras causas:</b> diabetes (neuropatia), amiloidose, opioide, miopatias. <b>O que muda conduta:</b> IBP em dose alta; cirurgia antirrefluxo com válvula parcial e extremo cuidado; manometria antes.</div></div>
@@ -936,7 +954,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card diag">
+<div class="card diag" id="d7">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">D.7</span> Refratária</div><h3>DRGE refratária, pirose funcional e sintomas extraesofágicos <span class="ank ank-dec">DECISION</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Sintoma persistente apesar do IBP dobrado: <b>causa mais comum é o distúrbio funcional (até 60%, apostila),</b> seguida de má adesão, resistência ao IBP, refluxo não ácido e escape ácido noturno. <b>1º passo: otimizar o IBP</b> (ACG 2022, forte); depois EDA e monitorização do refluxo. Fenótipos: DRGE refratária comprovada, hipersensibilidade ao refluxo, pirose funcional. <b>O que muda conduta:</b> fenótipo define cirurgia (refluxo comprovado com regurgitação) ou neuromodulador (funcional).</div></div>
@@ -951,7 +969,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card diag">
+<div class="card diag" id="d8">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">D.8</span> Lesão estrutural</div><h3>Leiomioma, GIST esofágico e compressão extrínseca <span class="ank ank-hy">HIGH-YIELD</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body"><b>Leiomioma</b> (60% dos tumores benignos) é submucoso, com mucosa normal, e só sintomático acima de 5 cm; ressecar os ≥2 cm sintomáticos ou de alto risco. Muitos "leiomiomas" são GIST (c-KIT positivo). <b>Compressão extrínseca:</b> átrio esquerdo (Ortner), aneurisma de aorta, tireoide retroesternal, artéria subclávia direita aberrante (lusória). <b>O que muda conduta:</b> ecoendoscopia define a camada; biópsia mucosa não resolve.</div></div>
@@ -968,7 +986,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <section id="algoritmo">
 <div class="section"><div class="section-eyebrow"><span>E</span> Algoritmo</div><div class="section-title">Da queixa ao tratamento: disfagia, refluxo e acalásia em três árvores</div><div class="section-sub">A primeira árvore separa o que vai à endoscopia hoje do que vai à videofluoroscopia ou à manometria; a segunda conduz a pirose da prova de IBP à cirurgia; a terceira organiza a acalásia do tipo à técnica. Cada ponta termina em exame ou conduta com número.</div></div>
 
-<div class="card prim">
+<div class="card prim" id="e1">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">E.1</span> Algoritmo</div><h3>Disfagia: alarme, topografia e primeiro exame <span class="ank ank-dgr">DANGER</span></h3></div>
 <div class="card-body">
 <div class="algo"><div class="tree">
@@ -996,7 +1014,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="e2">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">E.2</span> Algoritmo</div><h3>Pirose e regurgitação: da prova de IBP ao procedimento <span class="ank ank-hy">HIGH-YIELD</span></h3></div>
 <div class="card-body">
 <div class="algo"><div class="tree">
@@ -1019,7 +1037,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="e3">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">E.3</span> Algoritmo</div><h3>Manometria de alta resolução: do padrão ao tratamento <span class="ank ank-dec">DECISION</span></h3></div>
 <div class="card-body">
 <div class="algo"><div class="tree">
@@ -1048,7 +1066,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="e4">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">E.4</span> Raciocínio</div><h3>Raciocínio em 6 passos: do sintoma ao esôfago <span class="ank ank-dec">DECISION</span></h3></div>
 <div class="card-body">
 <div class="box decision"><span class="box-label">DECISION</span><div class="box-title">A sequência mental da disfagia e do refluxo</div><div class="box-body">
@@ -1058,19 +1076,19 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </section>
 <section id="tratamento">
-<div class="section"><div class="section-eyebrow"><span>F</span> Tratamento Integrado</div><div class="section-title">F1 · Estratégia por entidade · F2 · Doses · F3 · Populações especiais · F4 · SUS e CMED</div><div class="section-sub">Doses lidas no ACG Acalásia 2020, no ACG GERD 2022, no ACG Barrett 2022, no FBG 2010 e 2025, no ACG EoE 2025 e no WSES 2019 levam a sigla da fonte; as de bula, as de fonte não lida e as de prática levam "conferir". A mesma dose tem o mesmo texto em todo o HP. Analgesia e antibiótico seguem GH08, NU05, GH02, GH06 e II03. Bula da Anvisa não foi consultada (bloqueio): toda dose de bula é "conferir".</div></div>
+<div class="section"><div class="section-eyebrow"><span>F</span> Tratamento Integrado</div><div class="section-title">F1 · Estratégia por entidade · F2 · Doses · F3 · Populações especiais · F4 · SUS e CMED</div><div class="section-sub">Doses lidas no ACG Acalásia 2020, no ACG GERD 2022, no ACG Barrett 2022, no FBG 2010 e 2025, no ACG EoE 2025 e no WSES 2019 levam a sigla da fonte; as de bula, as de fonte não lida e as de prática levam "conferir". A mesma dose tem o mesmo texto em todo o HP. Analgesia e antibiótico seguem GH08, NU05, GH02, GH06 e II03. Bula da Anvisa não foi consultada (bloqueio): toda dose de bula é "conferir".</div></div><!--hp-f2--><nav class="sec-idx" aria-label="Neste capítulo"><a href="#f1"><b>F.1</b>Escada terapêutica por entida…</a><a href="#f2"><b>F.2</b>Tabela de doses — esôfago, mo…</a><a href="#f3"><b>F.3</b>Gestante, idoso, imunossuprim…</a><a href="#f4"><b>F.4</b>Disponibilidade no Brasil (CM…</a><a href="#f5"><b>F.5</b>Caso → conduta certa → erro t…</a><a href="#f6"><b>F.6</b>Internação, encaminhamento e…</a></nav><!--/hp-f2-->
 
-<div class="card tx">
+<div class="card tx" id="f1">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">F.1</span> Estratégia</div><h3>Escada terapêutica por entidade <span class="ank ank-dec">DECISION</span></h3></div>
 <div class="card-body">
 
-<div class="sub-title">F1.1 · Disfagia (C.1)</div>
+<div class="sub-title" id="f1-1">F1.1 · Disfagia (C.1)</div>
 <ul class="bullets">
 <li><b>Alarme:</b> EDA com biópsia e estadiamento se câncer; nutrição pelo CT09 enquanto aguarda. <b>Orofaríngea:</b> avaliação da deglutição, fonoterapia, consistência e via alternativa; causa neurológica ou muscular no NE03, NE07 e NE08.</li>
 <li><b>Esofágica com EDA normal:</b> manometria de alta resolução e esofagograma cronometrado antes de rotular de funcional.</li>
 </ul>
 
-<div class="sub-title">F1.2 · Acalásia e Chagas (C.2, C.3)</div>
+<div class="sub-title" id="f1-2">F1.2 · Acalásia e Chagas (C.2, C.3)</div>
 <ul class="bullets">
 <li><b>Definitivo:</b> dilatação pneumática (3,0 cm, depois 3,5 e 4,0 cm em 4–6 semanas), miotomia de Heller laparoscópica com fundoplicatura parcial (Dor ou Toupet) ou POEM; tipos I e II com eficácia equivalente, tipo III com POEM ou miotomia estendida (ACG 2020).</li>
 <li><b>Sem condição para o definitivo:</b> toxina botulínica 100 U; fármacos (nifedipino, nitrato, sildenafila) só se nada disso for possível e de forma transitória.</li>
@@ -1078,12 +1096,12 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </ul>
 <div class="box danger"><span class="box-label">DANGER</span><div class="box-title">Perfuração depois de dilatação pneumática ou POEM</div><div class="box-body">A perfuração ocorre em 1,9% das dilatações (0–10%), e o paciente deve ser candidato cirúrgico. Dor, crepitação e febre depois do procedimento pedem TC com contraste e conduta de perfuração (D.2). O ACG 2020 não sugere esofagograma de rotina depois da dilatação; sugere atenção ao quadro clínico e endoscopia para identificar e tratar a perfuração.</div></div>
 
-<div class="sub-title">F1.3 · Espasmo e hipercontrátil (C.4)</div>
+<div class="sub-title" id="f1-3">F1.3 · Espasmo e hipercontrátil (C.4)</div>
 <ul class="bullets">
 <li>Coronariopatia afastada; explicar; IBP se refluxo; nitrato ou nifedipino antes das refeições; antidepressivo em dor persistente; POEM ou toxina só em refratários selecionados, em centro de referência.</li>
 </ul>
 
-<div class="sub-title">F1.4 · DRGE e refratária (C.5, D.7)</div>
+<div class="sub-title" id="f1-4">F1.4 · DRGE e refratária (C.5, D.7)</div>
 <ul class="bullets">
 <li><b>Hora 0:</b> medidas (perda de peso, jantar 2–3 h antes de deitar, cabeceira, parar de fumar, gatilhos individuais) e IBP 1×/dia 30–60 min antes de uma refeição por 8 semanas.</li>
 <li><b>Resposta:</b> desmame; recaída: menor dose eficaz ou demanda (NERD); LA C/D, Barrett e dose dobrada inicial: manutenção contínua com a menor dose efetiva. <b>Sem resposta:</b> dose 2×/dia, EDA, monitorização do refluxo e fenótipo (D.7).</li>
@@ -1091,27 +1109,27 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </ul>
 <div class="box decision"><span class="box-label">DECISION</span><div class="box-title">Quando o anti-H2, o alginato e o baclofeno entram</div><div class="box-body">Antiácido ou alginato para o sintoma de escape depois das refeições; anti-H2 ao deitar para sintoma noturno, com taquifilaxia no uso contínuo; baclofeno só se o refluxo é objetivo e a regurgitação ou eructação predomina. Procinético não se usa na DRGE sem gastroparesia (ACG 2022, forte). Sucralfato só na gestação (ACG 2022).</div></div>
 
-<div class="sub-title">F1.5 · Hérnia de hiato (C.6)</div>
+<div class="sub-title" id="f1-5">F1.5 · Hérnia de hiato (C.6)</div>
 <ul class="bullets">
 <li>Assintomática: observar. Com DRGE: IBP em doses maiores; fixa e &gt;2 cm, refratária ou paraesofágica sintomática: cirurgia laparoscópica com redução da hérnia, cruroplastia e válvula. Volvo: emergência.</li>
 </ul>
 
-<div class="sub-title">F1.6 · Barrett (C.7)</div>
+<div class="sub-title" id="f1-6">F1.6 · Barrett (C.7)</div>
 <ul class="bullets">
 <li>IBP ao menos 1×/dia; vigilância 3 anos (≥3 cm) ou 5 anos (&lt;3 cm); displasia: segundo patologista; baixo grau confirmado: erradicação ou vigilância a cada 6 meses por 1 ano e depois anual; alto grau e carcinoma intramucoso: ressecção de lesão visível e radiofrequência; depois, vigilância.</li>
 </ul>
 
-<div class="sub-title">F1.7 · Esofagite eosinofílica (C.8)</div>
+<div class="sub-title" id="f1-7">F1.7 · Esofagite eosinofílica (C.8)</div>
 <ul class="bullets">
 <li><b>1º degrau, à escolha:</b> IBP em dose dobrada 8–12 semanas; corticoide deglutido; dieta empírica de eliminação (leite e trigo e ampliação). <b>Resposta avaliada por sintoma, endoscopia (EREFS) e histologia.</b> <b>Refratária ou com atopia relevante:</b> dupilumabe SC por faixa de peso (≥40 kg: 300 mg semanal; F.2). <b>Estenose:</b> dilatar até 16 mm, sem esquecer da inflamação. <b>Manutenção</b> do tratamento eficaz para todos.</li>
 </ul>
 
-<div class="sub-title">F1.8 · Câncer de esôfago (C.9)</div>
+<div class="sub-title" id="f1-8">F1.8 · Câncer de esôfago (C.9)</div>
 <ul class="bullets">
 <li>Estadiar com TC, ecoendoscopia e PET-TC; reunião multidisciplinar; precoce: ressecção endoscópica; avançado: CROSS ou FLOT e esofagectomia; cervical, inapto e T4b: radioquimioterapia definitiva; metastático: sistêmico e paliação (stent, radioterapia). Doses: oncologia.</li>
 </ul>
 
-<div class="sub-title">F1.9 · Lesões agudas (D.2 a D.4)</div>
+<div class="sub-title" id="f1-9">F1.9 · Lesões agudas (D.2 a D.4)</div>
 <ul class="bullets">
 <li><b>Boerhaave:</b> jejum, antibiótico, IBP, nutrição, cirurgia precoce ou tratamento endoscópico em centro. <b>Cáustico:</b> via aérea, TC, cirurgia se necrose, dilatação depois de 3–6 semanas, psiquiatria. <b>Corpo estranho:</b> 2 h ou 6 h conforme o objeto; biópsias depois.</li>
 </ul>
@@ -1120,7 +1138,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card tx">
+<div class="card tx" id="f2">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">F.2</span> Doses Operacionais</div><h3>Tabela de doses — esôfago, motilidade e DRGE</h3></div>
 <div class="card-body">
 <div class="stbl stbl-3">
@@ -1163,7 +1181,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card tx">
+<div class="card tx" id="f3">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">F.3</span> Populações especiais</div><h3>Gestante, idoso, imunossuprimido, obeso e criança</h3></div>
 <div class="card-body">
 <ul class="bullets">
@@ -1176,14 +1194,14 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card tx">
+<div class="card tx" id="f4">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">F.4</span> SUS e CMED</div><h3>Disponibilidade no Brasil (CMED PMVG de 09/10/2026)</h3></div>
 <div class="card-body">
 <div class="box hy"><span class="box-label">HIGH-YIELD</span><div class="box-title">Consta na CMED e o que não consta</div><div class="box-body">Constam: omeprazol, esomeprazol, pantoprazol, lansoprazol, rabeprazol, dexlansoprazol, vonoprazana (Inzelm 10 e 20 mg), famotidina, alginato (Luftagastro), nifedipino, isossorbida sublingual, sildenafila, toxina botulínica (várias marcas), glucagon (Glucagen), dupilumabe (Dupixent), fluticasona e budesonida em formas inalatórias, fluconazol, tiamina e metoclopramida. Não constam como produtos específicos: budesonida deglutida ou orodispersível para EoE, tegoprazana. "Conferir registro" significa que a ausência na CMED não prova ausência de registro. Disponibilidade no SUS de POEM, dupilumabe e vonoprazana, e a existência de PCDT de DRGE ou de EoE: não localizadas nas fontes lidas; conferir RENAME, Conitec e a Linha de cuidado.</div></div>
 </div>
 </div>
 
-<div class="card tx">
+<div class="card tx" id="f5">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">F.5</span> Casos</div><h3>Caso → conduta certa → erro típico <span class="ank ank-dec">DECISION</span></h3></div>
 <div class="card-body">
 <div class="stbl stbl-3">
@@ -1198,7 +1216,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card tx">
+<div class="card tx" id="f6">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">F.6</span> Seguimento</div><h3>Internação, encaminhamento e retorno por entidade</h3></div>
 <div class="card-body">
 <ul class="bullets">
@@ -1216,7 +1234,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <section id="pitfalls">
 <div class="section"><div class="section-eyebrow"><span>G</span> Pitfalls · Mitos · Controvérsias</div><div class="section-title">Erros operacionais, mitos vivos e debates abertos</div><div class="section-sub">Os erros que se repetem: IBP empírico na disfagia, bário antes da endoscopia, "DRGE refratária" que era acalásia ou EoE, dilatação sem biópsia, vômito induzido e sonda às cegas.</div></div>
 
-<div class="card pearl">
+<div class="card pearl" id="g1">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">G.1</span> Pegadinhas</div><h3>10 erros operacionais em disfagia, motilidade e DRGE</h3></div>
 <div class="card-body">
 <div class="stbl stbl-2">
@@ -1247,7 +1265,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <section id="pearls">
 <div class="section"><div class="section-eyebrow"><span>H</span> Pearls + Evolving</div><div class="section-title">Nuances de especialista e o que mudou</div><div class="section-sub">Oito pérolas e cinco mudanças recentes: Lyon 2.0, Chicago 4.0, dupilumabe na EoE, POEM e refluxo, e erradicação endoscópica no Barrett. O resto do tema é estável.</div></div>
 
-<div class="card pearl">
+<div class="card pearl" id="h1">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">H.1</span> Pérolas</div><h3>Oito nuances de especialista</h3></div>
 <div class="card-body">
 <div class="box pearl"><span class="box-label">PEARL</span><div class="box-title">O ar não passa: a pressão do esôfago na acalásia supera a do estômago</div><div class="box-body">Como o esfíncter não relaxa, o ar fica retido e pressuriza o esôfago acima da pressão gástrica; é um achado que sugere acalásia na manometria e explica o nível hidroaéreo no mediastino e a ausência de bolha gástrica no raio X de tórax (apostila).</div></div>
@@ -1308,5 +1326,36 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <a class="to-top" href="#" aria-label="Voltar ao topo">↑</a>
 <div class="watermark">@dr.lorencato · GH01 Disfagia, Motilidade e DRGE v5.2</div>
 
-</body>
+<!--hp-f2--><script>(function(){var d=document,M=d.querySelector('main');if(!M)return;
+var SELF='GH01',HP=' CT01 CT02 CT03 CT04 CT05 CT06 CT08 CT10 CV01 CV03 CV04 CV05 CV06 CV07 CV08 EN01 EN02 EN03 EN04 EN06 EN07 GH01 GH02 GH03 GH05 GH06 GH07 GH08 GH09 GH10 GO01 GO02 GO03 GO04 GO09 GO10 GO11 GO12 GO13 GO14 HO01 HO02 HO03 HO04 HO05 HO06 II01 II02 II03 II04 II07 II08 NE01 NE02 NE03 NE04 NE05 NE06 NE07 NE08 NU01 NU02 NU03 NU04 NU05 OE01 OE02 PC01 PC02 PC03 PC04 PC05 PC06 PD01 PD02 PD03 PD04 PD05 PD06 PD07 PD08 PD09 PD10 RD01 RD02 RD03 RD04 RD05 RD07 RP01 RP02 RP03 RP04 ';
+var SK='A,H1,H2,H3,SCRIPT,STYLE,NAV,.card-num,.card-eyebrow,.sub-title,.disease-tag,.toc';
+var R=/\b(?:([A-H])(\d)?\.(\d{1,2}[a-c]?)|(CV|RP|GH|NE|EN|NU|HO|II|RD|GO|PD|PC|CT|OE)(\d\d))\b/g;
+function skip(n){for(var e=n.parentNode;e&&e!==M;e=e.parentNode)if(e.matches&&e.matches(SK))return 1;return 0}
+var w=d.createTreeWalker(M,4),t,L=[];while(t=w.nextNode())if(R.test(t.data)&&!skip(t))L.push(t);
+L.forEach(function(t){var s=t.data,f=d.createDocumentFragment(),i=0,m;R.lastIndex=0;
+while(m=R.exec(s)){var h=null;
+if(m[1]){var id=m[1].toLowerCase()+(m[2]?m[2]+'-':'')+m[3];if(d.getElementById(id))h='#'+id}
+else{var x=m[4]+m[5];if(x!==SELF&&HP.indexOf(' '+x+' ')>=0)h='../'+x+'/'+x+'.html'}
+if(!h)continue;f.appendChild(d.createTextNode(s.slice(i,m.index)));
+var a=d.createElement('a');a.href=h;a.className='xr';a.textContent=m[0];f.appendChild(a);i=R.lastIndex}
+if(i){f.appendChild(d.createTextNode(s.slice(i)));t.parentNode.replaceChild(f,t)}});
+function nz(s){return s.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'')}
+var q=d.querySelector('.hp-q'),n=d.querySelector('.hp-n'),it=M.querySelectorAll('.card,.pocket-card'),T;
+function clr(){M.querySelectorAll('.q-off').forEach(function(e){e.classList.remove('q-off')})}
+function run(){var v=nz(q.value.trim());clr();n.textContent='';if(v.length<2)return;var k=0;
+it.forEach(function(c){if(nz(c.textContent).indexOf(v)<0){c.classList.add('q-off');return}k++;
+var r=c.querySelectorAll('.stbl-row,.disease-row,.score-row'),h=[];r.forEach(function(x){if(nz(x.textContent).indexOf(v)>=0)h.push(x)});
+if(h.length)r.forEach(function(x){if(h.indexOf(x)<0)x.classList.add('q-off')});
+c.querySelectorAll('details').forEach(function(x){if(nz(x.textContent).indexOf(v)>=0)x.open=true})});
+M.querySelectorAll('section').forEach(function(s){if(!s.querySelector('.card:not(.q-off),.pocket-card:not(.q-off)'))s.classList.add('q-off')});
+n.textContent=k?k+' achado'+(k>1?'s':''):'nada'}
+if(q){q.addEventListener('input',function(){clearTimeout(T);T=setTimeout(run,180)});
+q.addEventListener('keydown',function(e){if(e.key==='Escape'){q.value='';run()}})}
+function tg(b,f){b.addEventListener('click',function(){var on=b.getAttribute('aria-pressed')!=='true';b.setAttribute('aria-pressed',on);f(on)})}
+var bd=d.querySelector('.hp-dz'),bo=d.querySelector('.hp-op');
+if(bd)tg(bd,function(on){d.body.classList.toggle('dz',on);if(on)d.getElementById('tratamento').scrollIntoView()});
+if(bo)tg(bo,function(on){M.querySelectorAll('details').forEach(function(x){x.open=on})});
+var P=[];addEventListener('beforeprint',function(){P=[];M.querySelectorAll('details:not([open])').forEach(function(x){P.push(x);x.open=true})});
+addEventListener('afterprint',function(){P.forEach(function(x){x.open=false})});
+})();</script><!--/hp-f2--></body>
 </html>

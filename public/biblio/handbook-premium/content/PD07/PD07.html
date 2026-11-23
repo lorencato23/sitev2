@@ -345,11 +345,30 @@ ul.bullets li b{color:var(--ink);font-weight:600}
   .pocket .pocket-card.tx{--accent:#a8481a}
   .pocket .pocket-card.clin{--accent:#0b5d4e}
 }
+
+/* === v5.2.2 · fase 2 (navegação) === */
+.hp-tools{display:flex;gap:6px;align-items:center;flex:none;order:1;margin-left:auto;padding-left:6px;position:sticky;right:0;background:#f1eee5;box-shadow:-10px 0 10px -4px #f1eee5,16px 0 0 #f1eee5}
+@media(min-width:900px){html{scroll-padding-top:150px}.toc-inner{flex-wrap:wrap;overflow:visible}.card[id],.sub-title[id]{scroll-margin-top:150px}}
+@media(max-width:899px){.hp-b,.hp-n{display:none}.hp-q{width:104px}}
+.hp-q{width:128px;font:500 12px/1 'DM Sans',system-ui,sans-serif;padding:7px 11px;border:1px solid var(--line-strong);border-radius:999px;background:var(--paper);color:var(--ink)}
+.hp-b{font:600 11px/1 'DM Sans',system-ui,sans-serif;letter-spacing:.05em;text-transform:uppercase;padding:7px 10px;border-radius:999px;border:1px solid var(--line-strong);background:var(--paper);color:var(--ink-soft);cursor:pointer;white-space:nowrap}
+.hp-b[aria-pressed=true]{background:var(--ink);color:#fff;border-color:var(--ink)}
+.hp-n{font:600 11px/1 'DM Mono',monospace;color:var(--ink-mute);white-space:nowrap}
+.sec-idx{display:flex;flex-wrap:wrap;gap:6px;margin:12px 0 20px}
+.sec-idx a{font:500 12px/1.25 'DM Sans',system-ui,sans-serif;padding:6px 10px;border-radius:999px;background:var(--paper);border:1px solid var(--line);color:var(--ink-soft);text-decoration:none}
+.sec-idx a:hover{border-color:var(--line-strong);color:var(--ink)}
+.sec-idx b{color:var(--c-prim);margin-right:5px;font-weight:700}
+a.xr{color:inherit;text-decoration:underline dotted;text-underline-offset:2px}
+a.xr:hover{color:var(--c-prim)}
+.card[id],.sub-title[id]{scroll-margin-top:110px}
+.q-off{display:none!important}
+body.dz main section:not(#tratamento){display:none}
+@media print{.hp-tools,.sec-idx,.toc-doses{display:none!important}}
 </style>
 </head>
 <body>
 <header class="header"><div class="header-row"><div class="h-mark">R</div><div class="h-titles"><div class="h-title">Respiratório Pediátrico · Pocket Handbook</div><div class="h-sub">Elite edition · Pediatria · PD07</div></div><div class="h-author">@dr.lorencato</div><div class="h-edition">v5.2</div></div></header>
-<nav class="toc"><div class="toc-inner"><a href="#pocket" class="toc-chip"><span class="toc-chip-num">0</span>Pocket</a><a href="#redflags" class="toc-chip"><span class="toc-chip-num">A</span>Red Flags</a><a href="#approach" class="toc-chip"><span class="toc-chip-num">B</span>Apresentação</a><a href="#primarias" class="toc-chip"><span class="toc-chip-num">C</span>Entidades</a><a href="#secundarias" class="toc-chip"><span class="toc-chip-num">D</span>Secundárias</a><a href="#algoritmo" class="toc-chip"><span class="toc-chip-num">E</span>Algoritmo</a><a href="#tratamento" class="toc-chip"><span class="toc-chip-num">F</span>Tratamento</a><a href="#pitfalls" class="toc-chip"><span class="toc-chip-num">G</span>Pitfalls</a><a href="#pearls" class="toc-chip"><span class="toc-chip-num">H</span>Pearls</a></div></nav>
+<nav class="toc"><div class="toc-inner"><!--hp-f2--><span class="hp-tools"><input class="hp-q" type="search" placeholder="Buscar no HP" aria-label="Buscar no HP"><button class="hp-b hp-dz" type="button" aria-pressed="false">Só doses</button><button class="hp-b hp-op" type="button" aria-pressed="false">Abrir tudo</button><span class="hp-n" aria-live="polite"></span></span><!--/hp-f2--><a href="#pocket" class="toc-chip"><span class="toc-chip-num">0</span>Pocket</a><a href="#redflags" class="toc-chip"><span class="toc-chip-num">A</span>Red Flags</a><a href="#approach" class="toc-chip"><span class="toc-chip-num">B</span>Apresentação</a><a href="#primarias" class="toc-chip"><span class="toc-chip-num">C</span>Entidades</a><a href="#secundarias" class="toc-chip"><span class="toc-chip-num">D</span>Secundárias</a><a href="#algoritmo" class="toc-chip"><span class="toc-chip-num">E</span>Algoritmo</a><a href="#tratamento" class="toc-chip"><span class="toc-chip-num">F</span>Tratamento</a><!--hp-f2--><a href="#f2" class="toc-chip toc-doses"><span class="toc-chip-num">Rx</span>Doses</a><!--/hp-f2--><a href="#pitfalls" class="toc-chip"><span class="toc-chip-num">G</span>Pitfalls</a><a href="#pearls" class="toc-chip"><span class="toc-chip-num">H</span>Pearls</a></div></nav>
 <main>
 <div class="wrap">
 <div class="hero">
@@ -393,7 +412,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <div class="section-sub">Na criança, a insuficiência respiratória é a via final comum de quase toda PCR. Os sinais de exaustão (tórax silencioso, bradipneia, rebaixamento, sudorese, hipotonia) aparecem depois da taquipneia e da tiragem e antes da bradicardia: quem espera a cianose espera demais.</div>
 </div>
 
-<div class="card emerg">
+<div class="card emerg" id="a1">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">A.1</span> Reconhecimento</div><h3>Sinais que tiram a criança da fila <span class="ank ank-dgr">DANGER</span></h3><div class="card-sub">Sinal objetivo → suspeita → ação nos primeiros minutos</div></div>
 <div class="card-body">
 <div class="mnemo">
@@ -439,7 +458,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <div class="section-sub">A criança chega com um ruído (estridor, sibilo, ronco), uma tosse com tempo e caráter, uma febre com foco ou sem foco. O raciocínio começa pela topografia do ruído e pela idade.</div>
 </div>
 
-<div class="card clin">
+<div class="card clin" id="b1">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">B.1</span> Ruído inspiratório agudo</div><h3>Estridor agudo <span class="ank ank-dec">DECISION</span></h3><div class="card-sub">Supraglote, glote ou subglote/traqueia</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Estridor inspiratório é obstrução extratorácica; bifásico aponta para glote/subglote fixa ou traqueia. <b>Tosse ladrante + rouquidão + coriza, 6 m–3 a</b> é crupe; <b>sialorreia, toxemia, sem tosse</b> é supraglote (epiglotite, abscesso); <b>início súbito sem pródromo</b> é corpo estranho; <b>urticária, exposição, hipotensão</b> é anafilaxia (adrenalina IM 0,01 mg/kg, máx. 0,5 mg — PD10).</div></div>
@@ -454,7 +473,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card clin">
+<div class="card clin" id="b2">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">B.2</span> Ruído expiratório</div><h3>Lactente e pré-escolar que chia</h3><div class="card-sub">Bronquiolite, sibilância viral recorrente, asma, ou "o que não é asma"</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Primeiro episódio &lt;2 anos, pródromo de coriza, sibilos e crepitações difusos: <b>bronquiolite</b>. Episódios recorrentes desencadeados por vírus, resposta ao SABA em 20–60 min e sem causa alternativa: <b>asma ou asma suspeita (GINA 2026)</b>. Sibilância desde o nascimento, piora com mamadas, sopro, déficit de ganho ou sibilo unilateral: procure a <b>causa estrutural</b>.</div></div>
@@ -466,7 +485,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card clin">
+<div class="card clin" id="b3">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">B.3</span> Febre + tosse + FR alta</div><h3>Criança com suspeita de pneumonia <span class="ank ank-dec">DECISION</span></h3><div class="card-sub">AIDPI: contar a FR antes de auscultar</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Tosse ou dificuldade respiratória + <b>taquipneia para a idade</b> = pneumonia no algoritmo OMS; <b>tiragem subcostal, estridor em repouso, incapacidade de beber, convulsão, letargia ou SpO2 &lt;90–92%</b> = pneumonia grave e internação (o MS ainda interna pela tiragem; a OMS 2014 passou a tratá-la com amoxicilina oral se não houver outros sinais).</div></div>
@@ -479,7 +498,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card clin">
+<div class="card clin" id="b4">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">B.4</span> Tosse que não passa</div><h3>Tosse prolongada, paroxística ou crônica</h3><div class="card-sub">Tempo e caráter definem o diferencial</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Tosse ≥14 dias (≥10 dias se &lt;6 meses) com paroxismos, guincho, vômito pós-tosse ou apneia = <b>caso suspeito de coqueluche</b> (MS 2024). Coriza e tosse diurna &gt;10 dias sem melhora = <b>rinossinusite bacteriana</b>. Tosse úmida &gt;4 semanas = bronquite bacteriana persistente, FC, discinesia ciliar, bronquiectasia, corpo estranho. Tosse seca noturna e ao exercício = asma (variante de tosse).</div></div>
@@ -491,7 +510,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card clin">
+<div class="card clin" id="b5">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">B.5</span> IVAS febril</div><h3>Ouvido, garganta e nariz</h3><div class="card-sub">Viral e autolimitada até que um critério diga o contrário</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Resfriado não usa antibiótico. ATB entra com <b>membrana timpânica abaulada</b> (OMA), <b>teste rápido ou cultura positivos para estreptococo do grupo A</b> (faringite) ou <b>critério temporal de sinusite</b> (≥10 dias, grave ≥3 dias com febre ≥39 °C e secreção purulenta, ou dupla piora).</div></div>
@@ -510,9 +529,9 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <div class="section-eyebrow"><span>C</span> Entidades Primárias</div>
 <div class="section-title">Disease Boxes — onze entidades que decidem plantão e prova</div>
 <div class="section-sub">Bronquiolite, pneumonia e asma respondem pela maior parte das internações respiratórias de menores de cinco anos; crupe, epiglotite, coqueluche e corpo estranho são as que matam em horas; OMA e faringite são as que mais geram antibiótico desnecessário; a fibrose cística é a que mudou de prognóstico com os moduladores.</div>
-</div>
+</div><!--hp-f2--><nav class="sec-idx" aria-label="Neste capítulo"><a href="#c1"><b>C.1</b>Bronquiolite viral aguda</a><a href="#c2"><b>C.2</b>Pneumonia adquirida na comuni…</a><a href="#c3"><b>C.3</b>Asma na criança (≤5 anos e 6–…</a><a href="#c4"><b>C.4</b>Crise de asma e sibilância ag…</a><a href="#c5"><b>C.5</b>Laringotraqueobronquite viral…</a><a href="#c6"><b>C.6</b>Epiglotite aguda (supraglotit…</a><a href="#c7"><b>C.7</b>Coqueluche</a><a href="#c8"><b>C.8</b>Otite média aguda</a><a href="#c9"><b>C.9</b>Faringoamigdalite estreptocóc…</a><a href="#c10"><b>C.10</b>Aspiração de corpo estranho</a><a href="#c11"><b>C.11</b>Fibrose cística</a></nav><!--/hp-f2-->
 
-<div class="card prim">
+<div class="card prim" id="c1">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.1</span> Via aérea inferior</div><h3>Bronquiolite viral aguda <span class="ank ank-hy">HIGH-YIELD</span></h3><div class="card-sub">O primeiro sibilo do lactente, quase sempre VSR</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Lactente &lt;2 anos (pico 2–6 meses) com 2–3 dias de coriza que evolui com <b>taquipneia, tiragem, sibilos e crepitações difusos</b>. Diagnóstico clínico; tratamento é <b>suporte</b> (O2 se hipoxemia, hidratação, desobstrução nasal). Prevenção no SUS: <b>nirsevimabe</b> para prematuros e comorbidades.</div></div>
@@ -544,7 +563,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="c2">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.2</span> Via aérea inferior</div><h3>Pneumonia adquirida na comunidade da criança <span class="ank ank-hy">HIGH-YIELD</span></h3><div class="card-sub">Taquipneia é o sinal; amoxicilina é a resposta</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Febre + tosse + <b>taquipneia para a idade</b> (o sinal isolado mais sensível) com crepitações localizadas, macicez ou sopro tubário. Vírus na maioria dos &lt;5 anos, <b>pneumococo</b> o bacteriano principal. Não grave: <b>amoxicilina oral por 5 dias</b>. Grave (tiragem, hipoxemia, sinais de perigo): internação e penicilina/ampicilina IV.</div></div>
@@ -577,7 +596,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="c3">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.3</span> Doença crônica</div><h3>Asma na criança (≤5 anos e 6–11 anos) e sibilância pré-escolar <span class="ank ank-dec">DECISION</span></h3><div class="card-sub">Diagnóstico por padrão e resposta; tratamento sempre com corticoide inalatório</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">≤5 anos: <b>três critérios GINA 2026</b> — episódios recorrentes de sibilância confirmada, ausência de causa alternativa e resposta oportuna ao tratamento; com um ou dois, "asma suspeita". 6–11 anos: variabilidade documentada (espirometria/PFE). <b>SABA isolado não é tratamento de controle a partir dos 6 anos</b>; ≤5 anos, CI diário em dose baixa se sintomas &gt;2×/semana ou crise que exigiu atendimento.</div></div>
@@ -610,7 +629,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="c4">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.4</span> Emergência</div><h3>Crise de asma e sibilância aguda na criança <span class="ank ank-dgr">DANGER</span></h3><div class="card-sub">Broncodilatar a cada 20 minutos e decidir em uma hora</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Classifique pela fala/alimentação, consciência, FR, uso de musculatura, SpO2 e ausculta. <b>Salbutamol com espaçador em séries a cada 20 min na 1ª hora</b>, ipratrópio nas moderadas/graves, <b>corticoide sistêmico precoce</b>, O2 para SpO2 ≥92% (≤5 a) e MgSO4 IV na grave que não responde. Alta com CI de manutenção, nunca só com SABA.</div></div>
@@ -629,7 +648,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="c5">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.5</span> Obstrução alta</div><h3>Laringotraqueobronquite viral (crupe) <span class="ank ank-hy">HIGH-YIELD</span></h3><div class="card-sub">Tosse de cachorro, rouquidão e estridor — corticoide para todos</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">6 meses–3 anos, pródromo de coriza e febre baixa, depois <b>tosse ladrante, rouquidão e estridor inspiratório</b>, pior à noite e com agitação. <b>Dexametasona em dose única para todos</b> (inclusive leves); adrenalina nebulizada se estridor em repouso ou desconforto moderado-grave, com observação de 2–4 h.</div></div>
@@ -663,7 +682,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="c6">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.6</span> Obstrução alta</div><h3>Epiglotite aguda (supraglotite) <span class="ank ank-dgr">DANGER</span></h3><div class="card-sub">Rara depois da vacina Hib, letal quando esquecida</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Instalação em horas: <b>febre alta, toxemia, odinofagia intensa, sialorreia, voz abafada, posição em tripé</b>, estridor tardio e pouca tosse. Diagnóstico por visualização da epiglote vermelho-cereja <b>em ambiente controlado</b>; primeiro a via aérea, depois o antibiótico.</div></div>
@@ -682,7 +701,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="c7">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.7</span> Infecção toxigênica</div><h3>Coqueluche <span class="ank ank-hy">HIGH-YIELD</span></h3><div class="card-sub">Tosse de cem dias no escolar, apneia que mata no lactente</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Três fases: catarral (1–2 semanas, a mais contagiosa), paroxística (2–6 semanas: 5–10 tossidas numa expiração, guincho, vômito pós-tosse) e convalescença (até 3 meses). No &lt;3 meses: <b>apneia, cianose e engasgos sem tosse típica</b>. <b>Azitromicina 5 dias</b> para tratar e para a quimioprofilaxia dos comunicantes; notificação compulsória.</div></div>
@@ -706,7 +725,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="c8">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.8</span> IVAS</div><h3>Otite média aguda <span class="ank ank-dec">DECISION</span></h3><div class="card-sub">Abaulamento define; idade e gravidade decidem o antibiótico</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Pico 6–24 meses. Diagnóstico exige <b>efusão + inflamação aguda</b>: abaulamento moderado-grave, otorreia nova não explicada por otite externa, ou abaulamento leve com otalgia &lt;48 h/hiperemia intensa. <b>Amoxicilina 80–90 mg/kg/dia</b> quando indicada; observação vigilante de 48–72 h é opção nos casos não graves elegíveis.</div></div>
@@ -725,7 +744,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="c9">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.9</span> IVAS</div><h3>Faringoamigdalite estreptocócica <span class="ank ank-hy">HIGH-YIELD</span></h3><div class="card-sub">Tratar para evitar febre reumática e supuração</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">5–15 anos, início abrupto, febre, odinofagia, exsudato, petéquias no palato, adenomegalia cervical anterior dolorosa, <b>sem tosse, coriza ou conjuntivite</b>. Confirmar com teste rápido ou cultura; <b>penicilina benzatina dose única ou amoxicilina 10 dias</b>. ATB até o 9º dia previne febre reumática, não GNPE.</div></div>
@@ -744,7 +763,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="c10">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.10</span> Obstrução mecânica</div><h3>Aspiração de corpo estranho <span class="ank ank-dgr">DANGER</span></h3><div class="card-sub">A história de engasgo vale mais que o RX</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">1–3 anos, amendoim, grãos, pedaços de brinquedo. Engasgo súbito com tosse e cianose → intervalo assintomático → sibilo localizado, MV reduzido, pneumonia recorrente. <b>Obstrução grave: manobras de desobstrução</b>; impactado: <b>broncoscopia rígida mesmo com RX normal</b>.</div></div>
@@ -763,7 +782,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="c11">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.11</span> Doença genética</div><h3>Fibrose cística <span class="ank ank-evo">EVOLVING</span></h3><div class="card-sub">Canal de cloreto que desidrata secreções em todos os epitélios</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Autossômica recessiva, ~1:9.000–10.000 nascidos vivos no Brasil. Triagem neonatal por <b>TIR em duas dosagens</b> → <b>teste do suor (cloreto ≥60 mmol/L)</b> → genotipagem CFTR. Tratamento: depuração mucociliar diária, controle de infecção (Pseudomonas), enzimas e nutrição, e <b>moduladores de CFTR</b> conforme a variante.</div></div>
@@ -794,9 +813,9 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <div class="section-eyebrow"><span>D</span> Entidades Secundárias</div>
 <div class="section-title">O que completa o diferencial — agrupado por raciocínio, não por capítulo</div>
 <div class="section-sub">Quatorze boxes: o sintomático (resfriado e gripe), as complicações de IVAS (órbita, mastoide, pescoço), o que imita o crupe, as pneumonias fora do betalactâmico, a pleura, a tosse úmida, a alergia alta, o ronco, o nariz, o estridor congênito, o berço e a antiprotease.</div>
-</div>
+</div><!--hp-f2--><nav class="sec-idx" aria-label="Neste capítulo"><a href="#d1"><b>D.1</b>Resfriado comum e síndrome gr…</a><a href="#d2"><b>D.2</b>Rinossinusite bacteriana agud…</a><a href="#d3"><b>D.3</b>Complicações da OMA: efusão…</a><a href="#d4"><b>D.4</b>Abscessos cervicais profundos…</a><a href="#d5"><b>D.5</b>Crupe espasmódico, traqueíte…</a><a href="#d6"><b>D.6</b>Pneumonias atípicas: Mycoplas…</a><a href="#d7"><b>D.7</b>Derrame parapneumônico, empie…</a><a href="#d8"><b>D.8</b>Bronquite aguda, bronquite ba…</a><a href="#d9"><b>D.9</b>Rinite alérgica e polipose na…</a><a href="#d10"><b>D.10</b>Hipertrofia adenotonsilar e a…</a><a href="#d11"><b>D.11</b>Atresia de coanas, corpo estr…</a><a href="#d12"><b>D.12</b>Estridor congênito: laringoma…</a><a href="#d13"><b>D.13</b>Síndrome da morte súbita do l…</a><a href="#d14"><b>D.14</b>Deficiência de alfa-1-antitri…</a></nav><!--/hp-f2-->
 
-<div class="card diag">
+<div class="card diag" id="d1">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">D.1</span> IVAS sintomática</div><h3>Resfriado comum e síndrome gripal</h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">O pré-escolar tem 6–8 resfriados por ano (mais na creche); cada um dura 7–10 dias, a tosse até 3 semanas. Tratamento é lavagem nasal, antitérmico e tempo. A diferença prática da <b>síndrome gripal</b> é o antiviral: no Brasil, toda criança <b>&lt;5 anos</b> é grupo de risco e recebe <b>oseltamivir</b> mesmo ambulatorialmente, sem esperar teste.</div></div>
@@ -812,7 +831,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card diag">
+<div class="card diag" id="d2">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">D.2</span> Complicação de IVAS</div><h3>Rinossinusite bacteriana aguda e complicações orbitárias <span class="ank ank-dec">DECISION</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">O diagnóstico é <b>temporal</b>, não radiológico: secreção nasal ou tosse diurna <b>≥10 dias sem melhora</b>; início grave (febre ≥39 °C + secreção purulenta por ≥3 dias); ou <b>dupla piora</b>. Amoxicilina. Edema palpebral com dor à movimentação ocular, proptose ou oftalmoplegia = órbita: TC e antibiótico IV no mesmo dia.</div></div>
@@ -838,7 +857,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card diag">
+<div class="card diag" id="d3">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">D.3</span> Complicação de IVAS</div><h3>Complicações da OMA: efusão, otite crônica, colesteatoma, mastoidite e Gradenigo</h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Efusão sem inflamação depois de OMA é a regra e não pede antibiótico (<b>OME</b>); vigiar audição e fala. Perfuração com otorreia por &gt;6 semanas é <b>OMC</b>; retração com debris e otorreia fétida é <b>colesteatoma</b>. Orelha em abano com dor retroauricular é <b>mastoidite</b>; otorreia + paralisia do VI + dor retro-orbitária é <b>Gradenigo</b>.</div></div>
@@ -855,7 +874,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card diag">
+<div class="card diag" id="d4">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">D.4</span> Complicação de IVAS</div><h3>Abscessos cervicais profundos: periamigdaliano, retrofaríngeo e Lemierre <span class="ank ank-dgr">DANGER</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Faringite que piora em vez de melhorar: <b>trismo, voz de batata quente, desvio da úvula</b> no adolescente (periamigdaliano); <b>torcicolo e dor à extensão do pescoço</b>, febre e sialorreia no pré-escolar (retrofaríngeo, linfonodos de Rouvière que involuem após 5 anos); <b>sepse + dor cervical + êmbolos pulmonares</b> após faringite (Lemierre).</div></div>
@@ -871,7 +890,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card diag">
+<div class="card diag" id="d5">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">D.5</span> Diferenciais do crupe</div><h3>Crupe espasmódico, traqueíte bacteriana e crupe diftérico <span class="ank ank-dec">DECISION</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Mesmo ruído, três histórias: <b>espasmódico</b> (acorda à noite sem febre, melhora em horas, recorre — atopia, refluxo); <b>traqueíte bacteriana</b> (crupe viral que no 3º–5º dia vira toxemia, febre alta e secreção purulenta, sem resposta à adrenalina); <b>difteria</b> (não vacinado, pseudomembrana acinzentada aderente que sangra, pescoço taurino).</div></div>
@@ -887,7 +906,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card diag">
+<div class="card diag" id="d6">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">D.6</span> Pneumonia que o betalactâmico não cobre</div><h3>Pneumonias atípicas: Mycoplasma pneumoniae e Chlamydia trachomatis do lactente</h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body"><b>Mycoplasma</b>: escolar com tosse seca arrastada, cefaleia, febre moderada, ausculta pobre para o RX intersticial ("pneumonia que anda"). <b>Chlamydia trachomatis</b>: lactente de 1–3 meses <b>afebril</b>, tosse em staccato, taquipneia, conjuntivite prévia e <b>eosinofilia</b>. Ambos: macrolídeo.</div></div>
@@ -903,7 +922,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card diag">
+<div class="card diag" id="d7">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">D.7</span> Complicação de pneumonia</div><h3>Derrame parapneumônico, empiema e pneumonia necrosante <span class="ank ank-dec">DECISION</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Febre que não cede em 48–72 h de ATB adequado, dor pleurítica, macicez e MV abolido. <b>Ultrassom</b> caracteriza o derrame (volume, septos, ecogenicidade) e guia a punção. Pequeno e sem desconforto: só ATB. Moderado-grande, septado ou com desconforto: <b>dreno + fibrinolítico</b> antes de pensar em cirurgia (IDSA/PIDS 2026).</div></div>
@@ -919,7 +938,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card diag">
+<div class="card diag" id="d8">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">D.8</span> Tosse úmida</div><h3>Bronquite aguda, bronquite bacteriana persistente e bronquiolite obliterante pós-infecciosa</h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body"><b>Bronquite aguda</b>: tosse viral de 1–3 semanas, sem antibiótico. <b>Bronquite bacteriana persistente</b>: tosse úmida &gt;4 semanas em criança bem, sem sinais de outra causa, que some com 2 semanas de amoxicilina-clavulanato. <b>Bronquiolite obliterante</b>: lactente que nunca mais ficou bem depois de pneumonia grave por adenovírus — sibilância e hipoxemia persistentes, mosaico na TC.</div></div>
@@ -935,7 +954,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card diag">
+<div class="card diag" id="d9">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">D.9</span> Alergia respiratória alta</div><h3>Rinite alérgica e polipose nasal</h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Espirros em salva, prurido, rinorreia aquosa, obstrução, saudação alérgica, prega nasal transversa, olheiras, Dennie-Morgan, mucosa <b>pálida</b> e edemaciada. Classificação ARIA: intermitente × persistente, leve × moderada-grave. <b>Corticoide nasal</b> é o tratamento mais eficaz; pólipo nasal na criança é <b>fibrose cística até prova em contrário</b>.</div></div>
@@ -951,7 +970,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card diag">
+<div class="card diag" id="d10">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">D.10</span> Sono</div><h3>Hipertrofia adenotonsilar e apneia obstrutiva do sono</h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Ronco habitual (≥3 noites/semana), pausas, respiração bucal, sono agitado, enurese secundária, sonolência ou hiperatividade e desatenção diurnas, baixo ganho. Pico de hipertrofia entre 3 e 6 anos. <b>Adenotonsilectomia</b> é o tratamento de primeira linha; o tamanho da amígdala não prediz a gravidade.</div></div>
@@ -967,7 +986,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card diag">
+<div class="card diag" id="d11">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">D.11</span> Nariz</div><h3>Atresia de coanas, corpo estranho nasal e epistaxe</h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">RN respirador nasal obrigatório que fica <b>cianótico ao mamar e róseo ao chorar</b> = atresia bilateral de coanas (sonda não passa 3–4 cm). Secreção nasal <b>unilateral fétida</b> no pré-escolar = corpo estranho (bateria é emergência). Epistaxe anterior pelo plexo de Kiesselbach: compressão contínua das asas nasais por 10 minutos, inclinado para frente.</div></div>
@@ -983,7 +1002,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card diag">
+<div class="card diag" id="d12">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">D.12</span> Estridor crônico</div><h3>Estridor congênito: laringomalácia, estenose subglótica, paralisia de pregas vocais e anéis vasculares</h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body"><b>Laringomalácia</b> responde por ~60% do estridor crônico do lactente: inspiratório, começa nas 2 primeiras semanas, piora com choro, mamada e decúbito dorsal, melhora em prono, pico aos 6–8 meses e some até 18–24 meses. Estridor <b>bifásico</b>, choro fraco, disfagia ou déficit de ganho mudam o diagnóstico.</div></div>
@@ -999,7 +1018,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card diag">
+<div class="card diag" id="d13">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">D.13</span> Berço</div><h3>Síndrome da morte súbita do lactente e BRUE <span class="ank ank-dgr">DANGER</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body"><b>SMSL</b>: óbito súbito de &lt;1 ano, inexplicado após autópsia, cena e história; pico <b>2–4 meses</b>. Prevenção é sono seguro. <b>BRUE</b>: evento &lt;1 minuto, já resolvido, em &lt;1 ano, com cianose ou palidez, respiração ausente/irregular, alteração de tônus ou de responsividade, sem explicação após anamnese e exame. Baixo risco: educar, não internar.</div></div>
@@ -1026,7 +1045,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card diag">
+<div class="card diag" id="d14">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">D.14</span> Antiprotease</div><h3>Deficiência de alfa-1-antitripsina — remissão</h3></div>
 <div class="card-body">
 <div class="disease">
@@ -1054,7 +1073,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <div class="section-sub">A árvore começa pela pergunta que separa a vida da rotina (o ar está passando?) e segue pelo ruído: estridor é alto, sibilo é baixo, taquipneia sem ruído é parênquima.</div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="e1">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">E.1</span> Algoritmo</div><h3>Desconforto respiratório na criança — PS e UBS <span class="ank ank-dec">DECISION</span></h3></div>
 <div class="card-body">
 <div class="algo">
@@ -1141,13 +1160,13 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <div class="section-eyebrow"><span>F</span> Tratamento Integrado</div>
 <div class="section-title">F1 · Estratégia por entidade · F2 · Doses pediátricas operacionais</div>
 <div class="section-sub">Quase todo erro de tratamento respiratório na criança é de indicação (antibiótico no viral, broncodilatador na bronquiolite, SABA isolado na asma) ou de dose (subdose por peso, teto esquecido). As escadas abaixo dizem quando; a tabela F2 diz quanto. Onde SUS e diretriz internacional divergem, as duas aparecem.</div>
-</div>
+</div><!--hp-f2--><nav class="sec-idx" aria-label="Neste capítulo"><a href="#f1"><b>F.1</b>Escadas de conduta por entida…</a><a href="#f2"><b>F.2</b>Tabela de doses pediátricas…</a></nav><!--/hp-f2-->
 
-<div class="card tx">
+<div class="card tx" id="f1">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">F.1</span> Estratégia</div><h3>Escadas de conduta por entidade <span class="ank ank-dec">DECISION</span></h3></div>
 <div class="card-body">
 
-<div class="sub-title">F1.1 · IVAS: resfriado, gripe, OMA, sinusite e faringite</div>
+<div class="sub-title" id="f1-1">F1.1 · IVAS: resfriado, gripe, OMA, sinusite e faringite</div>
 <ul class="bullets">
 <li><b>Resfriado:</b> SF 0,9% nasal, antitérmico por desconforto (não pela cifra), mel ≥1 ano para tosse; nada de descongestionante, anti-histamínico, antitussígeno ou mucolítico. Explique a curva natural: coriza melhora em 7–10 dias, tosse pode ir a 3 semanas.</li>
 <li><b>Síndrome gripal:</b> oseltamivir 5 dias para &lt;5 anos e outros grupos de risco, em toda SRAG e em internados, sem esperar teste; benefício maior até 48 h, mantido até 5 dias no grave. Fora de risco e após 48 h: sintomáticos.</li>
@@ -1156,7 +1175,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <li><b>Faringite:</b> estratificar (≥3 anos, sem sinais virais) → teste rápido ou cultura → tratar só o positivo; penicilina benzatina dose única (adesão garantida, profilaxia de febre reumática) ou amoxicilina 10 dias; alergia: cefalexina, azitromicina ou clindamicina. Recorrência documentada: Paradise.</li>
 </ul>
 
-<div class="sub-title">F1.2 · Obstrução alta: crupe, epiglotite, traqueíte e abscessos</div>
+<div class="sub-title" id="f1-2">F1.2 · Obstrução alta: crupe, epiglotite, traqueíte e abscessos</div>
 <ul class="bullets">
 <li><b>Crupe leve (Westley ≤2):</b> dexametasona 0,15–0,6 mg/kg VO dose única, alta com orientação (estridor em repouso, tiragem, cianose, sialorreia → retorno imediato).</li>
 <li><b>Moderado (3–5):</b> dexametasona 0,6 mg/kg + adrenalina nebulizada; observar 2–4 h após a última dose; alta se sem estridor em repouso, SpO2 normal e cuidador confiável.</li>
@@ -1166,7 +1185,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </ul>
 <div class="box danger"><span class="box-label">DANGER</span><div class="box-title">Adrenalina nebulizada tem meia-vida curta</div><div class="box-body">O efeito começa em 10 minutos, é máximo em 30 e some em cerca de 2 horas; a criança que "melhorou muito" e é liberada logo após a nebulização volta pior (efeito de desaparecimento, não rebote verdadeiro). Por isso a regra de 2–4 h de observação após a última dose e a dexametasona obrigatória, cujo efeito começa em 1–2 h e dura 24–72 h.</div></div>
 
-<div class="sub-title">F1.3 · Bronquiolite e prevenção do VSR</div>
+<div class="sub-title" id="f1-3">F1.3 · Bronquiolite e prevenção do VSR</div>
 <ul class="bullets">
 <li><b>Ambulatorial:</b> lavagem e aspiração nasal superficial, oferta fracionada, sinais de alarme por escrito (apneia, gemência, tiragem, recusa de mais da metade das mamadas, sonolência), retorno em 24–48 h no pico (3º–5º dia).</li>
 <li><b>Internado:</b> O2 umidificado para SpO2 ≥90% (AAP) ou ≥92% (SBP); sonda nasogástrica antes da via venosa se não mama (preserva a via oral e é tão segura); fluido IV isotônico; oximetria intermitente quando estável em ar ambiente. Salina hipertônica 3% 4 mL nebulizada só se internação prevista &gt;72 h.</li>
@@ -1174,7 +1193,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <li><b>Prevenção (SUS 2026):</b> nirsevimabe dose única IM na maternidade para todo prematuro &lt;37 semanas o ano inteiro (50 mg &lt;5 kg; 100 mg ≥5 kg), independentemente da vacina materna; comorbidades até 24 meses na sazonalidade (fevereiro a agosto), 200 mg na 2ª temporada; quem iniciou palivizumabe em 2025 completa com palivizumabe 15 mg/kg IM mensal. Vacina materna e calendário: PD05.</li>
 </ul>
 
-<div class="sub-title">F1.4 · Pneumonia comunitária e complicações</div>
+<div class="sub-title" id="f1-4">F1.4 · Pneumonia comunitária e complicações</div>
 <ul class="bullets">
 <li><b>Não grave (≥2 meses):</b> amoxicilina VO 5 dias; reavaliar em 48–72 h (febre deve ceder; taquipneia pode demorar mais). Escolar com quadro atípico: azitromicina 5 dias. Vacinação incompleta para Hib/pneumococo pesa a favor de dose alta de amoxicilina.</li>
 <li><b>Grave/internada:</b> ampicilina IV ou penicilina cristalina (pneumococo); ceftriaxona se não vacinado, grave, ou risco de resistência; oxacilina ou vancomicina/clindamicina se S. aureus provável. Oxigênio para SpO2 ≥92% (≥90% OMS em recursos limitados). Transição VO quando afebril 24–48 h e aceitando dieta; total 5–7 dias na não complicada.</li>
@@ -1182,7 +1201,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <li><b>&lt;2 meses:</b> ampicilina + gentamicina (ou cefotaxima), internação; afebril com conjuntivite prévia: macrolídeo para clamídia (D.6).</li>
 </ul>
 
-<div class="sub-title">F1.5 · Coqueluche: tratamento, quimioprofilaxia e vacinação seletiva</div>
+<div class="sub-title" id="f1-5">F1.5 · Coqueluche: tratamento, quimioprofilaxia e vacinação seletiva</div>
 <ul class="bullets">
 <li><b>Caso suspeito:</b> colher swab de nasofaringe (PCR) antes do ATB, iniciar azitromicina 5 dias sem esperar resultado, notificar, isolamento por gotículas até 5 dias de macrolídeo; afastar da escola/creche pelo mesmo período.</li>
 <li><b>Quimioprofilaxia (QPE) — contatos elegíveis:</b> vulneráveis (&lt;1 ano independentemente da vacina; imunocomprometidos; asma moderada-grave e outras doenças que a coqueluche descompensa); quem convive com um vulnerável; gestantes ≥32 semanas não vacinadas na gestação; profissionais de saúde que assistem vulneráveis (mesmo vacinados); quem convive ou trabalha em creches com bebês &lt;1 ano. Mesmo esquema do tratamento, até 21 dias da exposição (nota técnica MS 2025, via apostila).</li>
@@ -1191,7 +1210,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </ul>
 <div class="box hy"><span class="box-label">HIGH-YIELD</span><div class="box-title">Macrolídeo no lactente pequeno: o piloro</div><div class="box-body">Azitromicina e sobretudo eritromicina no 1º mês associam-se a estenose hipertrófica do piloro (eritromicina até 10 vezes o risco). A azitromicina continua sendo a escolha no &lt;1 mês porque o risco da coqueluche supera o do piloro — mas oriente vômitos em jato e reavalie. Claritromicina e eritromicina não são recomendadas &lt;1 mês; SMZ-TMP é contraindicado &lt;2 meses (kernicterus).</div></div>
 
-<div class="sub-title">F1.6 · Asma de controle: ≤5 anos e 6–11 anos</div>
+<div class="sub-title" id="f1-6">F1.6 · Asma de controle: ≤5 anos e 6–11 anos</div>
 <ul class="bullets">
 <li><b>≤5 anos:</b> etapa 1 SABA sob demanda (sibilância viral infrequente) → etapa 2 CI diário em dose baixa por 2–3 meses como teste terapêutico (PCDT: BDP 100 mcg 12/12 h, reduzindo a 50 mcg 12/12 h após resposta) → etapa 3 dobrar a dose baixa → etapa 4 encaminhar. Revisar a cada 1–3 meses; reduzir após 3 meses controlado.</li>
 <li><b>6–11 anos (GINA 2026):</b> etapa 1 AIR (budesonida-formoterol baixa dose sob demanda, ou CI sempre que usar SABA) → etapa 2 CI baixa diária → etapa 3 MART com budesonida-formoterol 80/4,5 ou CI-LABA baixa ou CI média → etapa 4 MART 12/12 h ou CI-LABA média → etapa 5 fenotipagem (eosinófilos, IgE, FeNO) e biológico no PCDT: omalizumabe &gt;6 anos alérgica; mepolizumabe e dupilumabe ≥6 anos eosinofílica.</li>
@@ -1199,7 +1218,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <li><b>Dispositivo:</b> spray com espaçador valvulado para todos; máscara facial até ~3–4 anos, bocal depois; pó seco só ≥6 anos com fluxo inspiratório adequado; nebulizador não é superior ao espaçador.</li>
 </ul>
 
-<div class="sub-title">F1.7 · Crise de asma no PS</div>
+<div class="sub-title" id="f1-7">F1.7 · Crise de asma no PS</div>
 <ul class="bullets">
 <li><b>Primeira hora:</b> salbutamol com espaçador a cada 20 min ×3 (≤5 anos 4–6 jatos; 6–11 anos 4–10 jatos), ipratrópio junto nas moderadas-graves (3 doses), corticoide sistêmico na primeira hora, O2 para alvo (≥92% ≤5 anos; 94–98% 6–11 anos).</li>
 <li><b>Sem resposta:</b> salbutamol contínuo nebulizado em UTI; MgSO4 40–50 mg/kg IV em 20 min (máx. 2 g); gasometria. Aminofilina e adrenalina SC não são rotina; terbutalina IV e cetamina ficam com a UTI.</li>
@@ -1207,7 +1226,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <li><b>Alta:</b> sem O2, SABA a cada ≥3–4 h, prednisolona 3–5 dias ou dexametasona 1–2 dias, CI de manutenção iniciado ou ajustado, técnica revisada, plano de ação e retorno em 2–7 dias (PCDT 2026).</li>
 </ul>
 
-<div class="sub-title">F1.8 · Fibrose cística</div>
+<div class="sub-title" id="f1-8">F1.8 · Fibrose cística</div>
 <ul class="bullets">
 <li><b>Pulmão:</b> fisioterapia diária + salina hipertônica + alfadornase; cultura de escarro ou swab de orofaringe a cada consulta (ao menos 4×/ano); primeira P. aeruginosa → tobramicina inalatória 28 dias; crônica → ciclos alternados; azitromicina crônica.</li>
 <li><b>Exacerbação:</b> ATB guiado por cultura, IV 14 dias se grave (dupla antipseudomonas).</li>
@@ -1215,7 +1234,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <li><b>Nutrição:</b> pancreatina com cada refeição e lanche, dieta hipercalórica, vitaminas A, D, E, K, sal suplementar no lactente e no calor; nirsevimabe até 24 meses.</li>
 </ul>
 
-<div class="sub-title">F1.9 · Técnica inalatória — o dispositivo decide a dose que chega</div>
+<div class="sub-title" id="f1-9">F1.9 · Técnica inalatória — o dispositivo decide a dose que chega</div>
 <div class="stbl stbl-3">
 <div class="stbl-head stbl-3"><div>Dispositivo</div><div>Como usar</div><div>Erro típico</div></div>
 <div class="stbl-row stbl-3"><div class="col col1" data-l="Dispositivo">Spray + espaçador + máscara (≤3–4 anos)</div><div class="col" data-l="Como">Agitar, acoplar, vedar a máscara sobre nariz e boca, 1 jato por vez, 5–6 respirações (ou 30 s) por jato</div><div class="col" data-l="Erro">Máscara frouxa ou criança chorando (deposição cai a quase zero); vários jatos de uma vez</div></div>
@@ -1224,7 +1243,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <div class="stbl-row stbl-3"><div class="col col1" data-l="Dispositivo">Nebulizador</div><div class="col" data-l="Como">Fluxo de 6–8 L/min, máscara bem ajustada, 5–10 min</div><div class="col" data-l="Erro">Achar que é mais potente que o espaçador; "blow-by" (máscara afastada) quase não entrega droga</div></div>
 </div>
 
-<div class="sub-title">F1.10 · Cenários — caso, conduta certa, erro típico</div>
+<div class="sub-title" id="f1-10">F1.10 · Cenários — caso, conduta certa, erro típico</div>
 <div class="stbl stbl-3">
 <div class="stbl-head stbl-3"><div>Caso</div><div>Conduta certa</div><div>Erro típico</div></div>
 <div class="stbl-row stbl-3"><div class="col col1" data-l="Caso">Lactente de 4 meses, 3º dia de coriza, sibilos e crepitações difusos, SpO2 93%, mama 70%</div><div class="col" data-l="Conduta">Bronquiolite leve-moderada: aspiração nasal, observação da mamada, alta com sinais de alarme e retorno em 24 h</div><div class="col" data-l="Erro">Salbutamol, corticoide, RX e antibiótico pela imagem de atelectasia</div></div>
@@ -1238,7 +1257,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card tx">
+<div class="card tx" id="f2">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">F.2</span> Doses Operacionais</div><h3>Tabela de doses pediátricas — mg/kg com dose máxima <span class="ank ank-dec">DECISION</span></h3></div>
 <div class="card-body">
 <div class="stbl stbl-3">
@@ -1303,7 +1322,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <div class="section-title">Erros Operacionais + Mitos Vivos + Debates Atuais</div>
 <div class="section-sub">Respiratório pediátrico é onde mais se prescreve por hábito: nebulização para todo chiado, antibiótico para toda febre com tosse, xarope para todo resfriado.</div>
 </div>
-<div class="card pearl">
+<div class="card pearl" id="g1">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">G.1</span> Pegadinhas</div><h3>10 Erros Operacionais no Respiratório Pediátrico</h3></div>
 <div class="card-body">
 <div class="stbl stbl-2">
@@ -1321,7 +1340,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 </div>
-<div class="card pearl">
+<div class="card pearl" id="g2">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">G.2</span> Mitos · Controvérsias</div><h3>Mitos Vivos e Debates Atuais</h3></div>
 <div class="card-body">
 <div class="box myth"><span class="box-label">MYTH</span><div class="box-title">"Vapor e inalação com soro melhoram o crupe"</div><div class="box-body">Ensaios randomizados não mostram benefício da umidificação em escore, internação ou necessidade de adrenalina; a tenda de vapor agita a criança e afasta o cuidador. O que muda o curso é a dexametasona.</div></div>
@@ -1340,7 +1359,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <div class="section-title">Nuances de Especialista + O que mudou</div>
 <div class="section-sub">Oito ideias que reorganizam o raciocínio respiratório pediátrico e as mudanças reais de 2024–2026.</div>
 </div>
-<div class="card pearl">
+<div class="card pearl" id="h1">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">H.1</span> Pearls</div><h3>Oito nuances que mudam a conduta</h3></div>
 <div class="card-body">
 <div class="box pearl"><span class="box-label">PEARL</span><div class="box-title">Taquipneia sem sibilo é pneumonia; com sibilo, é broncoespasmo até recontar</div><div class="box-body">O ponto de corte da OMS foi validado contra RX em crianças sem sibilância. O sibilo eleva a FR por obstrução e hiperinsuflação, não por consolidação: broncodilate, espere 15–20 minutos e reconte antes de prescrever antibiótico. Sibilância difusa com febre baixa favorece vírus ou Mycoplasma; crepitação localizada que persiste após o broncodilatador é que sustenta a pneumonia bacteriana.</div></div>
@@ -1353,7 +1372,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <div class="box pearl"><span class="box-label">PEARL</span><div class="box-title">Na asma do pré-escolar, o critério que decide é a resposta</div><div class="box-body">Sem espirometria, o diagnóstico GINA 2026 depende de sibilância confirmada, ausência de alternativa e resposta oportuna. O teste terapêutico de 2–3 meses com CI em dose baixa é ao mesmo tempo tratamento e prova diagnóstica: melhora e piora ao suspender confirmam; sem melhora com boa técnica e adesão, o problema é o diagnóstico, não a dose — volte ao diferencial (aspiração, malácia, anel vascular, FC, discinesia ciliar).</div></div>
 </div>
 </div>
-<div class="card pearl">
+<div class="card pearl" id="h2">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">H.2</span> Evolving</div><h3>O que mudou entre 2024 e 2026</h3></div>
 <div class="card-body">
 <div class="box evolving"><span class="box-label">EVOLVING</span><div class="box-title">Nirsevimabe no SUS substitui o palivizumabe (2026)</div><div class="box-body">Dose única por temporada para prematuros &lt;37 semanas o ano todo e comorbidades até 24 meses na sazonalidade; palivizumabe só para completar esquemas de 2025. Vacina materna e calendário: PD05.</div></div>
@@ -1403,5 +1422,36 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </footer>
 <a class="to-top" href="#" aria-label="Voltar ao topo">↑</a>
 <div class="watermark">@dr.lorencato · PD07 Respiratório Pediátrico v5.2</div>
-</body>
+<!--hp-f2--><script>(function(){var d=document,M=d.querySelector('main');if(!M)return;
+var SELF='PD07',HP=' CT01 CT02 CT03 CT04 CT05 CT06 CT08 CT10 CV01 CV03 CV04 CV05 CV06 CV07 CV08 EN01 EN02 EN03 EN04 EN06 EN07 GH01 GH02 GH03 GH05 GH06 GH07 GH08 GH09 GH10 GO01 GO02 GO03 GO04 GO09 GO10 GO11 GO12 GO13 GO14 HO01 HO02 HO03 HO04 HO05 HO06 II01 II02 II03 II04 II07 II08 NE01 NE02 NE03 NE04 NE05 NE06 NE07 NE08 NU01 NU02 NU03 NU04 NU05 OE01 OE02 PC01 PC02 PC03 PC04 PC05 PC06 PD01 PD02 PD03 PD04 PD05 PD06 PD07 PD08 PD09 PD10 RD01 RD02 RD03 RD04 RD05 RD07 RP01 RP02 RP03 RP04 ';
+var SK='A,H1,H2,H3,SCRIPT,STYLE,NAV,.card-num,.card-eyebrow,.sub-title,.disease-tag,.toc';
+var R=/\b(?:([A-H])(\d)?\.(\d{1,2}[a-c]?)|(CV|RP|GH|NE|EN|NU|HO|II|RD|GO|PD|PC|CT|OE)(\d\d))\b/g;
+function skip(n){for(var e=n.parentNode;e&&e!==M;e=e.parentNode)if(e.matches&&e.matches(SK))return 1;return 0}
+var w=d.createTreeWalker(M,4),t,L=[];while(t=w.nextNode())if(R.test(t.data)&&!skip(t))L.push(t);
+L.forEach(function(t){var s=t.data,f=d.createDocumentFragment(),i=0,m;R.lastIndex=0;
+while(m=R.exec(s)){var h=null;
+if(m[1]){var id=m[1].toLowerCase()+(m[2]?m[2]+'-':'')+m[3];if(d.getElementById(id))h='#'+id}
+else{var x=m[4]+m[5];if(x!==SELF&&HP.indexOf(' '+x+' ')>=0)h='../'+x+'/'+x+'.html'}
+if(!h)continue;f.appendChild(d.createTextNode(s.slice(i,m.index)));
+var a=d.createElement('a');a.href=h;a.className='xr';a.textContent=m[0];f.appendChild(a);i=R.lastIndex}
+if(i){f.appendChild(d.createTextNode(s.slice(i)));t.parentNode.replaceChild(f,t)}});
+function nz(s){return s.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'')}
+var q=d.querySelector('.hp-q'),n=d.querySelector('.hp-n'),it=M.querySelectorAll('.card,.pocket-card'),T;
+function clr(){M.querySelectorAll('.q-off').forEach(function(e){e.classList.remove('q-off')})}
+function run(){var v=nz(q.value.trim());clr();n.textContent='';if(v.length<2)return;var k=0;
+it.forEach(function(c){if(nz(c.textContent).indexOf(v)<0){c.classList.add('q-off');return}k++;
+var r=c.querySelectorAll('.stbl-row,.disease-row,.score-row'),h=[];r.forEach(function(x){if(nz(x.textContent).indexOf(v)>=0)h.push(x)});
+if(h.length)r.forEach(function(x){if(h.indexOf(x)<0)x.classList.add('q-off')});
+c.querySelectorAll('details').forEach(function(x){if(nz(x.textContent).indexOf(v)>=0)x.open=true})});
+M.querySelectorAll('section').forEach(function(s){if(!s.querySelector('.card:not(.q-off),.pocket-card:not(.q-off)'))s.classList.add('q-off')});
+n.textContent=k?k+' achado'+(k>1?'s':''):'nada'}
+if(q){q.addEventListener('input',function(){clearTimeout(T);T=setTimeout(run,180)});
+q.addEventListener('keydown',function(e){if(e.key==='Escape'){q.value='';run()}})}
+function tg(b,f){b.addEventListener('click',function(){var on=b.getAttribute('aria-pressed')!=='true';b.setAttribute('aria-pressed',on);f(on)})}
+var bd=d.querySelector('.hp-dz'),bo=d.querySelector('.hp-op');
+if(bd)tg(bd,function(on){d.body.classList.toggle('dz',on);if(on)d.getElementById('tratamento').scrollIntoView()});
+if(bo)tg(bo,function(on){M.querySelectorAll('details').forEach(function(x){x.open=on})});
+var P=[];addEventListener('beforeprint',function(){P=[];M.querySelectorAll('details:not([open])').forEach(function(x){P.push(x);x.open=true})});
+addEventListener('afterprint',function(){P.forEach(function(x){x.open=false})});
+})();</script><!--/hp-f2--></body>
 </html>

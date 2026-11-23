@@ -345,11 +345,30 @@ ul.bullets li b{color:var(--ink);font-weight:600}
   .pocket .pocket-card.tx{--accent:#a8481a}
   .pocket .pocket-card.clin{--accent:#0b5d4e}
 }
+
+/* === v5.2.2 · fase 2 (navegação) === */
+.hp-tools{display:flex;gap:6px;align-items:center;flex:none;order:1;margin-left:auto;padding-left:6px;position:sticky;right:0;background:#f1eee5;box-shadow:-10px 0 10px -4px #f1eee5,16px 0 0 #f1eee5}
+@media(min-width:900px){html{scroll-padding-top:150px}.toc-inner{flex-wrap:wrap;overflow:visible}.card[id],.sub-title[id]{scroll-margin-top:150px}}
+@media(max-width:899px){.hp-b,.hp-n{display:none}.hp-q{width:104px}}
+.hp-q{width:128px;font:500 12px/1 'DM Sans',system-ui,sans-serif;padding:7px 11px;border:1px solid var(--line-strong);border-radius:999px;background:var(--paper);color:var(--ink)}
+.hp-b{font:600 11px/1 'DM Sans',system-ui,sans-serif;letter-spacing:.05em;text-transform:uppercase;padding:7px 10px;border-radius:999px;border:1px solid var(--line-strong);background:var(--paper);color:var(--ink-soft);cursor:pointer;white-space:nowrap}
+.hp-b[aria-pressed=true]{background:var(--ink);color:#fff;border-color:var(--ink)}
+.hp-n{font:600 11px/1 'DM Mono',monospace;color:var(--ink-mute);white-space:nowrap}
+.sec-idx{display:flex;flex-wrap:wrap;gap:6px;margin:12px 0 20px}
+.sec-idx a{font:500 12px/1.25 'DM Sans',system-ui,sans-serif;padding:6px 10px;border-radius:999px;background:var(--paper);border:1px solid var(--line);color:var(--ink-soft);text-decoration:none}
+.sec-idx a:hover{border-color:var(--line-strong);color:var(--ink)}
+.sec-idx b{color:var(--c-prim);margin-right:5px;font-weight:700}
+a.xr{color:inherit;text-decoration:underline dotted;text-underline-offset:2px}
+a.xr:hover{color:var(--c-prim)}
+.card[id],.sub-title[id]{scroll-margin-top:110px}
+.q-off{display:none!important}
+body.dz main section:not(#tratamento){display:none}
+@media print{.hp-tools,.sec-idx,.toc-doses{display:none!important}}
 </style>
 </head>
 <body>
 <header class="header"><div class="header-row"><div class="h-mark">G</div><div class="h-titles"><div class="h-title">HAS, Diabetes e Gemelaridade na Gestação · Pocket Handbook</div><div class="h-sub">Elite edition · Obstetrícia de alto risco · GO13</div></div><div class="h-author">@dr.lorencato</div><div class="h-edition">v5.2</div></div></header>
-<nav class="toc"><div class="toc-inner"><a href="#pocket" class="toc-chip"><span class="toc-chip-num">0</span>Pocket</a><a href="#redflags" class="toc-chip"><span class="toc-chip-num">A</span>Red Flags</a><a href="#approach" class="toc-chip"><span class="toc-chip-num">B</span>Apresentação</a><a href="#primarias" class="toc-chip"><span class="toc-chip-num">C</span>Entidades</a><a href="#secundarias" class="toc-chip"><span class="toc-chip-num">D</span>Secundárias</a><a href="#algoritmo" class="toc-chip"><span class="toc-chip-num">E</span>Algoritmo</a><a href="#tratamento" class="toc-chip"><span class="toc-chip-num">F</span>Tratamento</a><a href="#pitfalls" class="toc-chip"><span class="toc-chip-num">G</span>Pitfalls</a><a href="#pearls" class="toc-chip"><span class="toc-chip-num">H</span>Pearls</a></div></nav>
+<nav class="toc"><div class="toc-inner"><!--hp-f2--><span class="hp-tools"><input class="hp-q" type="search" placeholder="Buscar no HP" aria-label="Buscar no HP"><button class="hp-b hp-dz" type="button" aria-pressed="false">Só doses</button><button class="hp-b hp-op" type="button" aria-pressed="false">Abrir tudo</button><span class="hp-n" aria-live="polite"></span></span><!--/hp-f2--><a href="#pocket" class="toc-chip"><span class="toc-chip-num">0</span>Pocket</a><a href="#redflags" class="toc-chip"><span class="toc-chip-num">A</span>Red Flags</a><a href="#approach" class="toc-chip"><span class="toc-chip-num">B</span>Apresentação</a><a href="#primarias" class="toc-chip"><span class="toc-chip-num">C</span>Entidades</a><a href="#secundarias" class="toc-chip"><span class="toc-chip-num">D</span>Secundárias</a><a href="#algoritmo" class="toc-chip"><span class="toc-chip-num">E</span>Algoritmo</a><a href="#tratamento" class="toc-chip"><span class="toc-chip-num">F</span>Tratamento</a><!--hp-f2--><a href="#f2" class="toc-chip toc-doses"><span class="toc-chip-num">Rx</span>Doses</a><!--/hp-f2--><a href="#pitfalls" class="toc-chip"><span class="toc-chip-num">G</span>Pitfalls</a><a href="#pearls" class="toc-chip"><span class="toc-chip-num">H</span>Pearls</a></div></nav>
 <main>
 <div class="wrap">
 <div class="hero">
@@ -388,7 +407,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 
 <section id="redflags">
 <div class="section"><div class="section-eyebrow"><span>A</span> Red Flags</div><h2 class="section-title">Quando a gestação de alto risco vira emergência</h2><div class="section-sub">A hipertensão é a principal causa de morte materna direta no Brasil; a hemorragia cerebral responde pela maior parte dos óbitos por eclâmpsia, e o edema pulmonar, a rotura hepática e a CIVD completam a lista. No diabetes, mata a cetoacidose; no gemelar monocoriônico, morre o feto que ninguém examinou a tempo. Cada linha: sinal objetivo → suspeita → conduta imediata.</div></div>
-<div class="card emerg">
+<div class="card emerg" id="a1">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">A.1</span> Emergências</div><h3>Sinais de alarme na gestante hipertensa, diabética ou gemelar <span class="ank ank-dgr">DANGER</span></h3></div>
 <div class="card-body">
 <div class="mnemo"><div class="mnemo-title"><b>ECLAMPSIA</b> nove portas para a sala de emergência obstétrica</div><div class="mnemo-grid">
@@ -423,7 +442,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <section id="approach">
 <div class="section"><div class="section-eyebrow"><span>B</span> Por Apresentação</div><h2 class="section-title">Mapa sindrômico — da queixa ao diagnóstico que muda conduta</h2><div class="section-sub">Na gestação de alto risco, a mesma queixa (PA alta, glicemia alterada, útero grande) tem leituras opostas conforme a idade gestacional em que aparece. A primeira pergunta é sempre o tempo: antes ou depois de 20 semanas, e se a gestação é única ou múltipla.</div></div>
 
-<div class="card clin"><div class="card-head"><div class="card-eyebrow"><span class="card-num">B.1</span> Padrão 1</div><h3>PA ≥140/90 mmHg após 20 semanas em gestante antes normotensa</h3><div class="card-sub">Hipertensão gestacional ou pré-eclâmpsia — o que separa é proteinúria ou disfunção de órgão</div></div><div class="card-body">
+<div class="card clin" id="b1"><div class="card-head"><div class="card-eyebrow"><span class="card-num">B.1</span> Padrão 1</div><h3>PA ≥140/90 mmHg após 20 semanas em gestante antes normotensa</h3><div class="card-sub">Hipertensão gestacional ou pré-eclâmpsia — o que separa é proteinúria ou disfunção de órgão</div></div><div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Confirme a medida (sentada, repouso, manguito adequado, 5º som de Korotkoff). Peça <b>relação proteína/creatinina urinária, hemograma com plaquetas, creatinina, TGO/TGP, LDH e bilirrubinas</b>, e avalie o feto (crescimento, líquido, Doppler). Qualquer disfunção de órgão ou placentária já fecha PE, mesmo sem proteinúria.</div></div>
 <ul class="bullets">
 <li><b>Proteinúria significativa:</b> ≥300 mg/24 h, RPC ≥0,3 (mg/dL ÷ mg/dL) ou fita ≥2+ quando nada mais está disponível; a RPC é o exame de escolha no Brasil (RBEHG 2023).</li>
@@ -435,7 +454,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <div class="box hy"><span class="box-label">HIGH-YIELD</span><div class="box-title">PE antes de 20 semanas existe — e aponta para outra coisa</div><div class="box-body">Quadro de PE no primeiro trimestre ou início do segundo sugere <b>mola hidatiforme</b> (massa trofoblástica excessiva), triploidia, gemelaridade com hidropisia ou síndrome antifosfolípide catastrófica. Peça β-hCG quantitativo e USG antes de rotular.</div></div>
 </div></div>
 
-<div class="card clin"><div class="card-head"><div class="card-eyebrow"><span class="card-num">B.2</span> Padrão 2</div><h3>Hipertensa crônica cuja PA piora ou cuja proteinúria sobe após 20 semanas</h3><div class="card-sub">Piora da HAC ou PE sobreposta — a resposta muda o momento do parto</div></div><div class="card-body">
+<div class="card clin" id="b2"><div class="card-head"><div class="card-eyebrow"><span class="card-num">B.2</span> Padrão 2</div><h3>Hipertensa crônica cuja PA piora ou cuja proteinúria sobe após 20 semanas</h3><div class="card-sub">Piora da HAC ou PE sobreposta — a resposta muda o momento do parto</div></div><div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">A PE sobreposta é mais precoce, mais grave e mais associada a restrição de crescimento. Pense nela se a proteinúria basal <b>triplica</b>, se a PA exige aumento de dose ou nova droga, se surge disfunção de órgão ou sinal placentário (RBEHG 2023). O exame basal do primeiro trimestre (RPC, creatinina, TGO/TGP, plaquetas, ácido úrico) é o que permite essa comparação.</div></div>
 <ul class="bullets">
 <li><b>Queda fisiológica da PA no 2º trimestre</b> mascara a HAC; a PA "nova" do 3º trimestre pode ser só a pressão basal voltando.</li>
@@ -445,7 +464,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </ul>
 </div></div>
 
-<div class="card clin"><div class="card-head"><div class="card-eyebrow"><span class="card-num">B.3</span> Padrão 3</div><h3>Dor epigástrica, náuseas e mal-estar no 3º trimestre, com ou sem PA alta</h3><div class="card-sub">HELLP até prova em contrário — e não "gastrite" ou "virose"</div></div><div class="card-body">
+<div class="card clin" id="b3"><div class="card-head"><div class="card-eyebrow"><span class="card-num">B.3</span> Padrão 3</div><h3>Dor epigástrica, náuseas e mal-estar no 3º trimestre, com ou sem PA alta</h3><div class="card-sub">HELLP até prova em contrário — e não "gastrite" ou "virose"</div></div><div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Cerca de 15% das HELLP não têm hipertensão ou proteinúria no início. Dor em barra ou em hipocôndrio direito em gestante de 3º trimestre pede <b>hemograma com plaquetas, LDH, bilirrubinas, TGO/TGP, haptoglobina, esfregaço, glicemia, creatinina e coagulograma</b>. A hipoglicemia, o TP alargado antes da plaquetopenia e a creatinina desproporcional empurram para esteatose hepática aguda.</div></div>
 <ul class="bullets">
 <li><b>HELLP (Tennessee):</b> LDH ≥600 U/L ou esquizócitos ou bilirrubina ≥1,2 mg/dL; TGO ≥70 U/L; plaquetas &lt;100.000/mm³.</li>
@@ -455,7 +474,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </ul>
 </div></div>
 
-<div class="card clin"><div class="card-head"><div class="card-eyebrow"><span class="card-num">B.4</span> Padrão 4</div><h3>Glicemia alterada no pré-natal, feto grande ou polidrâmnio</h3><div class="card-sub">DMG, diabetes pré-gestacional não diagnosticado ou outra causa de macrossomia</div></div><div class="card-body">
+<div class="card clin" id="b4"><div class="card-head"><div class="card-eyebrow"><span class="card-num">B.4</span> Padrão 4</div><h3>Glicemia alterada no pré-natal, feto grande ou polidrâmnio</h3><div class="card-sub">DMG, diabetes pré-gestacional não diagnosticado ou outra causa de macrossomia</div></div><div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">O rastreio brasileiro é universal: <b>glicemia de jejum na primeira consulta</b> e <b>TOTG 75 g entre 24 e 28 semanas</b> para quem teve jejum &lt;92 mg/dL. Jejum ≥126 mg/dL, glicemia ao acaso ≥200 com sintomas, HbA1c ≥6,5% ou TOTG 2 h ≥200 mg/dL classificam como diabetes diagnosticado na gestação, com risco de malformação e de persistência pós-parto.</div></div>
 <ul class="bullets">
 <li><b>Início de pré-natal após 28 semanas:</b> fazer o TOTG imediatamente; entre 20 e 28 semanas, TOTG como primeiro exame (MS/OPAS 2017).</li>
@@ -466,7 +485,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <div class="box decision"><span class="box-label">DECISION</span><div class="box-title">Glicosúria não diagnostica nada</div><div class="box-body">A taxa de filtração glomerular aumenta 40–50% na gestação e satura o transporte tubular de glicose; glicosúria com glicemia normal é fisiológica. Inversamente, cetonúria leve no primeiro trimestre reflete o "jejum acelerado" da gestante. Nenhuma das duas substitui glicemia plasmática.</div></div>
 </div></div>
 
-<div class="card clin"><div class="card-head"><div class="card-eyebrow"><span class="card-num">B.5</span> Padrão 5</div><h3>Útero maior que a idade gestacional, β-hCG alto, hiperêmese</h3><div class="card-sub">Gestação múltipla (ou mola, ou erro de data) — USG precoce decide</div></div><div class="card-body">
+<div class="card clin" id="b5"><div class="card-head"><div class="card-eyebrow"><span class="card-num">B.5</span> Padrão 5</div><h3>Útero maior que a idade gestacional, β-hCG alto, hiperêmese</h3><div class="card-sub">Gestação múltipla (ou mola, ou erro de data) — USG precoce decide</div></div><div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Fundo uterino excessivo, palpação de dois polos cefálicos, dois focos de BCF com diferença ≥10 bpm separados por zona de silêncio, uso de indutor de ovulação ou FIV. A <b>USG transvaginal</b> vê dois sacos com 4–5 semanas e dois embriões com batimento com 6–7 semanas; a <b>corionicidade</b> deve ser documentada (com imagem arquivada) até 13+6 semanas.</div></div>
 <ul class="bullets">
 <li><b>Hiperêmese, anemia, PE precoce e DMG</b> são mais frequentes; a PE é 2–3 vezes mais comum no gemelar, mais precoce e com mais HELLP.</li>
@@ -478,9 +497,9 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </section>
 
 <section id="primarias">
-<div class="section"><div class="section-eyebrow"><span>C</span> Entidades Primárias</div><h2 class="section-title">Disease boxes — pré-eclâmpsia, HELLP, eclâmpsia, DMG, diabetes pré-gestacional, gemelar e STFF</h2><div class="section-sub">Sete entidades com conduta própria. Pré-eclâmpsia, HELLP e eclâmpsia têm boxes separados porque cada uma muda a decisão de parto e o protocolo de suporte; HAC com PE sobreposta e hipertensão gestacional ficam em D. O sulfato de magnésio é linha de F2, não entidade; AAS, metas pressóricas, insulina × antidiabético oral e via de parto gemelar são competências tratadas em E e F.</div></div>
+<div class="section"><div class="section-eyebrow"><span>C</span> Entidades Primárias</div><h2 class="section-title">Disease boxes — pré-eclâmpsia, HELLP, eclâmpsia, DMG, diabetes pré-gestacional, gemelar e STFF</h2><div class="section-sub">Sete entidades com conduta própria. Pré-eclâmpsia, HELLP e eclâmpsia têm boxes separados porque cada uma muda a decisão de parto e o protocolo de suporte; HAC com PE sobreposta e hipertensão gestacional ficam em D. O sulfato de magnésio é linha de F2, não entidade; AAS, metas pressóricas, insulina × antidiabético oral e via de parto gemelar são competências tratadas em E e F.</div></div><!--hp-f2--><nav class="sec-idx" aria-label="Neste capítulo"><a href="#c1"><b>C.1</b>Pré-eclâmpsia</a><a href="#c2"><b>C.2</b>Síndrome HELLP</a><a href="#c3"><b>C.3</b>Eclâmpsia</a><a href="#c4"><b>C.4</b>Diabetes mellitus gestacional</a><a href="#c5"><b>C.5</b>Diabetes pré-gestacional (tip…</a><a href="#c6"><b>C.6</b>Gestação gemelar — corionicid…</a><a href="#c7"><b>C.7</b>Síndrome de transfusão feto-f…</a></nav><!--/hp-f2-->
 
-<div class="card prim"><div class="card-head"><div class="card-eyebrow"><span class="card-num">C.1</span> Entidade âncora</div><h3>Pré-eclâmpsia <span class="ank ank-hy">HIGH-YIELD</span> <span class="ank ank-dec">DECISION</span></h3><div class="card-sub">Doença placentária com expressão endotelial sistêmica — o parto é o único tratamento definitivo</div></div><div class="card-body">
+<div class="card prim" id="c1"><div class="card-head"><div class="card-eyebrow"><span class="card-num">C.1</span> Entidade âncora</div><h3>Pré-eclâmpsia <span class="ank ank-hy">HIGH-YIELD</span> <span class="ank ank-dec">DECISION</span></h3><div class="card-sub">Doença placentária com expressão endotelial sistêmica — o parto é o único tratamento definitivo</div></div><div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Hipertensão após 20 semanas + proteinúria <b>ou</b> disfunção de órgão materno <b>ou</b> disfunção uteroplacentária. Classifique pela presença de sinais de gravidade (deterioração clínica ou laboratorial), nunca como "leve" para relaxar a vigilância. Sem gravidade → expectante até 37 semanas; com deterioração → magnésio, controle pressórico e parto conforme idade gestacional e estabilidade.</div></div>
 <div class="disease"><div class="disease-head"><div class="disease-name">Pré-eclâmpsia (com e sem sinais de gravidade)</div><div class="disease-tag">CID-10 O14.0 · O14.1 · O14.9</div></div><div class="disease-body"><div class="disease-rows">
 <div class="disease-row"><div class="k">Epidemiologia</div><div class="v">Afeta 2–8% das gestações no mundo (1,5–16,7% conforme a população); no Brasil responde por cerca de um quarto dos óbitos maternos e é a principal causa de morte materna direta. Eclâmpsia em 5,2 por 1.000 nascidos vivos em 27 maternidades brasileiras, de 2,2 nas áreas de alta renda a 8,3 nas de baixa renda (RBEHG 2023). Fatores de risco altos: PE prévia, HAC, DM pré-gestacional, DRC, LES/SAF, gemelaridade, FIV; moderados: nuliparidade, obesidade, idade ≥35 anos, história familiar, intervalo intergestacional &gt;10 anos, PIG prévio.</div></div>
@@ -508,7 +527,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div></details>
 </div></div>
 
-<div class="card prim"><div class="card-head"><div class="card-eyebrow"><span class="card-num">C.2</span> Forma grave</div><h3>Síndrome HELLP <span class="ank ank-dgr">DANGER</span></h3><div class="card-sub">Microangiopatia trombótica hepática da PE — plaquetas caem, fígado necrosa, parto não espera</div></div><div class="card-body">
+<div class="card prim" id="c2"><div class="card-head"><div class="card-eyebrow"><span class="card-num">C.2</span> Forma grave</div><h3>Síndrome HELLP <span class="ank ank-dgr">DANGER</span></h3><div class="card-sub">Microangiopatia trombótica hepática da PE — plaquetas caem, fígado necrosa, parto não espera</div></div><div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Hemólise + enzimas hepáticas elevadas + plaquetopenia. Dor epigástrica é o sintoma mais comum; 10–20% não têm hipertensão grave e cerca de 15% não têm proteinúria. É indicação de <b>MgSO₄ e resolução da gestação após estabilização, em qualquer idade gestacional</b>. Até 30% surgem ou pioram no puerpério, com nadir de plaquetas em 24–48 h.</div></div>
 <div class="disease"><div class="disease-head"><div class="disease-name">Síndrome HELLP</div><div class="disease-tag">CID-10 O14.2 (OMS, revisão 2016; na tabela DATASUS V2008 é registrada como PE grave)</div></div><div class="disease-body"><div class="disease-rows">
 <div class="disease-row"><div class="k">Epidemiologia</div><div class="v">≈1 a 2 por 1.000 gestações e 10–20% das PE graves; mais em multíparas e brancas que a PE clássica. Mortalidade materna de 1 a 24% nas séries, por rotura hepática, CIVD, insuficiência renal, edema pulmonar e AVC hemorrágico; recorrência de 3 a 27%.</div></div>
@@ -527,7 +546,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div></details>
 </div></div>
 
-<div class="card prim"><div class="card-head"><div class="card-eyebrow"><span class="card-num">C.3</span> Emergência</div><h3>Eclâmpsia <span class="ank ank-dgr">DANGER</span></h3><div class="card-sub">Convulsão em gestante com PE — magnésio salva mais que qualquer anticonvulsivante clássico</div></div><div class="card-body">
+<div class="card prim" id="c3"><div class="card-head"><div class="card-eyebrow"><span class="card-num">C.3</span> Emergência</div><h3>Eclâmpsia <span class="ank ank-dgr">DANGER</span></h3><div class="card-sub">Convulsão em gestante com PE — magnésio salva mais que qualquer anticonvulsivante clássico</div></div><div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Crise tônico-clônica generalizada (60–90 s) em gestante ou puérpera com hipertensão, não atribuível a outra causa. Cerca de 50% ocorrem antes do parto, 20% intraparto e 30% no puerpério (até 6 semanas, a maioria em 48 h). Conduta: <b>ABC, decúbito lateral, MgSO₄ 4 g IV, controle da PA, laboratório, parto após estabilização</b> — nunca expectante.</div></div>
 <div class="disease"><div class="disease-head"><div class="disease-name">Eclâmpsia</div><div class="disease-tag">CID-10 O15.0 (gravidez) · O15.1 (trabalho de parto) · O15.2 (puerpério) · O15.9</div></div><div class="disease-body"><div class="disease-rows">
 <div class="disease-row"><div class="k">Epidemiologia</div><div class="v">No Brasil, 20% dos desfechos maternos graves em maternidades de referência; até 2–3% das PE com sinais de gravidade sem magnésio convulsionam, contra 0,6% das sem gravidade. Mortalidade materna de 10–15% nas séries brasileiras antigas da apostila; hemorragia cerebral responde pela maioria dos óbitos.</div></div>
@@ -547,7 +566,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div></details>
 </div></div>
 
-<div class="card prim"><div class="card-head"><div class="card-eyebrow"><span class="card-num">C.4</span> Entidade âncora</div><h3>Diabetes mellitus gestacional <span class="ank ank-hy">HIGH-YIELD</span></h3><div class="card-sub">Resistência insulínica placentária que a célula β materna não compensa — o alvo é o feto que engorda</div></div><div class="card-body">
+<div class="card prim" id="c4"><div class="card-head"><div class="card-eyebrow"><span class="card-num">C.4</span> Entidade âncora</div><h3>Diabetes mellitus gestacional <span class="ank ank-hy">HIGH-YIELD</span></h3><div class="card-sub">Resistência insulínica placentária que a célula β materna não compensa — o alvo é o feto que engorda</div></div><div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Hiperglicemia surgida na gestação abaixo dos limiares de diabetes franco. Diagnóstico brasileiro pela <b>glicemia de jejum de 92–125 mg/dL em qualquer momento ou TOTG 75 g alterado com 24–28 semanas</b>. Tratamento: dieta, atividade física, automonitorização; se fora da meta em 7–14 dias, <b>insulina</b>. Reavaliar com TOTG 6–12 semanas após o parto e rastrear DM2 por toda a vida.</div></div>
 <div class="disease"><div class="disease-head"><div class="disease-name">Diabetes mellitus gestacional (DMG)</div><div class="disease-tag">CID-10 O24.4</div></div><div class="disease-body"><div class="disease-rows">
 <div class="disease-row"><div class="k">Epidemiologia</div><div class="v">Prevalência estimada em ≈18% no Brasil com os critérios IADPSG; 7–14% nos EUA conforme o critério. Fatores de risco: idade, IMC ≥25, DM em parente de primeiro grau, SOP, HbA1c ≥5,7%, DMG ou macrossomia prévias, óbito fetal inexplicado, uso de corticoide e antipsicótico. Cerca de 50% evolui para DM2 em 10–20 anos.</div></div>
@@ -573,7 +592,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div></details>
 </div></div>
 
-<div class="card prim"><div class="card-head"><div class="card-eyebrow"><span class="card-num">C.5</span> Diabetes prévio</div><h3>Diabetes pré-gestacional (tipo 1 e tipo 2) na gravidez <span class="ank ank-dec">DECISION</span></h3><div class="card-sub">A HbA1c da concepção decide malformação; o controle no 3º trimestre decide macrossomia e óbito fetal</div></div><div class="card-body">
+<div class="card prim" id="c5"><div class="card-head"><div class="card-eyebrow"><span class="card-num">C.5</span> Diabetes prévio</div><h3>Diabetes pré-gestacional (tipo 1 e tipo 2) na gravidez <span class="ank ank-dec">DECISION</span></h3><div class="card-sub">A HbA1c da concepção decide malformação; o controle no 3º trimestre decide macrossomia e óbito fetal</div></div><div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Planejar a gestação com <b>HbA1c &lt;6,5%</b>, trocar antidiabéticos orais e agonistas de GLP-1 por insulina antes ou logo após a concepção, suspender IECA/BRA e estatina, iniciar ácido fólico e <b>AAS 100–150 mg a partir de 12–16 semanas</b>. Fundo de olho por trimestre, morfológico e ecocardiograma fetal, parto programado conforme controle e vasculopatia.</div></div>
 <div class="disease"><div class="disease-head"><div class="disease-name">Diabetes pré-gestacional (DM1, DM2) e diabetes diagnosticado na gestação</div><div class="disease-tag">CID-10 O24.0 (insulinodependente prévio) · O24.1 (não insulinodependente prévio) · O24.3</div></div><div class="disease-body"><div class="disease-rows">
 <div class="disease-row"><div class="k">Epidemiologia</div><div class="v">≈1–2% das gestações, com crescimento do DM2 em mulheres jovens obesas. Malformação congênita em 6–10% quando a concepção ocorre com HbA1c alta (2–6× a população), abortamento proporcional à HbA1c do primeiro trimestre e óbito fetal tardio em ≈1%.</div></div>
@@ -600,7 +619,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div></details>
 </div></div>
 
-<div class="card prim"><div class="card-head"><div class="card-eyebrow"><span class="card-num">C.6</span> Entidade âncora</div><h3>Gestação gemelar — corionicidade, vigilância e conduta obstétrica <span class="ank ank-hy">HIGH-YIELD</span></h3><div class="card-sub">A corionicidade, não a zigotia, define o risco, a frequência do ultrassom e a data do parto</div></div><div class="card-body">
+<div class="card prim" id="c6"><div class="card-head"><div class="card-eyebrow"><span class="card-num">C.6</span> Entidade âncora</div><h3>Gestação gemelar — corionicidade, vigilância e conduta obstétrica <span class="ank ank-hy">HIGH-YIELD</span></h3><div class="card-sub">A corionicidade, não a zigotia, define o risco, a frequência do ultrassom e a data do parto</div></div><div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Toda gemelar é de alto risco. Documente <b>corionicidade e amnionicidade até 13+6 semanas</b> e rotule os fetos. Dicoriônica: USG no 1º trimestre, com 20 semanas e a cada 4 semanas; monocoriônica: <b>a cada 2 semanas a partir de 16 semanas</b>, com bolsões, bexiga, Doppler e ACM. AAS pela gemelaridade, ferro dobrado, colo uterino com 18–24 semanas, parto planejado pela corionicidade.</div></div>
 <div class="disease"><div class="disease-head"><div class="disease-name">Gestação múltipla (gemelar, trigemelar e superior)</div><div class="disease-tag">CID-10 O30.0 (gêmeos) · O30.1 (trigêmeos) · O30.2 (quadrigêmeos) · O30.8 · O30.9</div></div><div class="disease-body"><div class="disease-rows">
 <div class="disease-row"><div class="k">Epidemiologia</div><div class="v">≈3% dos nascimentos e ≈17% dos partos pré-termo; 60% dos gemelares nascem antes de 37 semanas e 12% antes de 32. Monozigóticos ≈1:250 nascimentos, estáveis; dizigóticos variam com idade materna (pico ≈37 anos), etnia (maior em negras), paridade, história familiar materna, IMC e indução de ovulação/FIV. ≈20% dos gemelares são monocoriônicos.</div></div>
@@ -628,7 +647,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div></details>
 </div></div>
 
-<div class="card prim"><div class="card-head"><div class="card-eyebrow"><span class="card-num">C.7</span> Monocoriônicas</div><h3>Síndrome de transfusão feto-fetal e sequência anemia-policitemia (TAPS) <span class="ank ank-dgr">DANGER</span></h3><div class="card-sub">Desequilíbrio das anastomoses — volume na STFF, hemoglobina na TAPS</div></div><div class="card-body">
+<div class="card prim" id="c7"><div class="card-head"><div class="card-eyebrow"><span class="card-num">C.7</span> Monocoriônicas</div><h3>Síndrome de transfusão feto-fetal e sequência anemia-policitemia (TAPS) <span class="ank ank-dgr">DANGER</span></h3><div class="card-sub">Desequilíbrio das anastomoses — volume na STFF, hemoglobina na TAPS</div></div><div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">STFF complica 10–15% das MCDA, geralmente entre 16 e 26 semanas; sem tratamento antes de 26 semanas, a perda de um ou ambos os fetos chega a 80–90%. O critério obrigatório é a <b>discordância de líquido: maior bolsão &gt;8 cm no receptor e &lt;2 cm no doador</b>. Estadiamento de Quintero e <b>fotocoagulação a laser das anastomoses entre 16 e 26 semanas</b> nos estágios II–IV. TAPS: <b>ACM-PVS ≥1,5 MoM no doador e ≤0,8 MoM no receptor</b>, sem discordância de líquido.</div></div>
 <div class="disease"><div class="disease-head"><div class="disease-name">STFF e TAPS</div><div class="disease-tag">CID-10 O43.0 (síndromes de transfusão placentária)</div></div><div class="disease-body"><div class="disease-rows">
 <div class="disease-row"><div class="k">Epidemiologia</div><div class="v">STFF em 10–15% das MCDA (menos nas MCMA); TAPS espontânea em 3–5% das monocoriônicas e em até 13–16% após laser incompleto, geralmente nas 5 semanas seguintes.</div></div>
@@ -656,9 +675,9 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </section>
 
 <section id="secundarias">
-<div class="section"><div class="section-eyebrow"><span>D</span> Entidades Secundárias</div><h2 class="section-title">Hipertensão crônica, hipertensão gestacional, imitadoras da HELLP, repercussões fetais do diabetes e complicações monocoriônicas raras</h2><div class="section-sub">Entidades que completam o diferencial ou que derivam das primárias e têm conduta própria. Correlatas e raras foram agrupadas (MCMA, TRAP e gêmeos unidos num box; esteatose aguda, colestase, PTT e SHU noutro). As doenças intercorrentes do apêndice da apostila têm remissão para o HP dono no card D.7.</div></div>
+<div class="section"><div class="section-eyebrow"><span>D</span> Entidades Secundárias</div><h2 class="section-title">Hipertensão crônica, hipertensão gestacional, imitadoras da HELLP, repercussões fetais do diabetes e complicações monocoriônicas raras</h2><div class="section-sub">Entidades que completam o diferencial ou que derivam das primárias e têm conduta própria. Correlatas e raras foram agrupadas (MCMA, TRAP e gêmeos unidos num box; esteatose aguda, colestase, PTT e SHU noutro). As doenças intercorrentes do apêndice da apostila têm remissão para o HP dono no card D.7.</div></div><!--hp-f2--><nav class="sec-idx" aria-label="Neste capítulo"><a href="#d1"><b>D.1</b>Hipertensão arterial crônica…</a><a href="#d2"><b>D.2</b>Hipertensão gestacional</a><a href="#d3"><b>D.3</b>Hepatopatias e microangiopati…</a><a href="#d4"><b>D.4</b>Repercussões fetais e neonata…</a><a href="#d5"><b>D.5</b>Restrição de crescimento sele…</a><a href="#d6"><b>D.6</b>Monocoriônica monoamniótica…</a><a href="#d7"><b>D.7</b>Doenças intercorrentes da apo…</a></nav><!--/hp-f2-->
 
-<div class="card diag"><div class="card-head"><div class="card-eyebrow"><span class="card-num">D.1</span> Hipertensão prévia</div><h3>Hipertensão arterial crônica e pré-eclâmpsia sobreposta <span class="ank ank-dec">DECISION</span></h3></div><div class="card-body">
+<div class="card diag" id="d1"><div class="card-head"><div class="card-eyebrow"><span class="card-num">D.1</span> Hipertensão prévia</div><h3>Hipertensão arterial crônica e pré-eclâmpsia sobreposta <span class="ank ank-dec">DECISION</span></h3></div><div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">PA ≥140/90 antes da gestação ou antes de 20 semanas, ou que persiste 12 semanas após o parto. Tratar a partir de 140/90 (CHAP), alvo de PAD ≈85; trocar IECA/BRA antes ou no início da gestação; AAS desde 12 semanas; avaliação basal de órgão-alvo para reconhecer depois a PE sobreposta (20–50% das HAC).</div></div>
 <div class="disease"><div class="disease-head"><div class="disease-name">HAC na gestação e PE sobreposta</div><div class="disease-tag">CID-10 O10.0 (essencial pré-existente) · O10.4 (secundária pré-existente) · O11 (com PE sobreposta)</div></div><div class="disease-body"><div class="disease-rows">
 <div class="disease-row"><div class="k">Epidemiologia</div><div class="v">≈1–2% das gestantes, em alta com obesidade e idade materna; 90% essencial. PE sobreposta 5× mais frequente que na normotensa; restrição de crescimento 2×; parto pré-termo em ≈28%, em geral iatrogênico.</div></div>
@@ -668,7 +687,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div></div></div>
 </div></div>
 
-<div class="card diag"><div class="card-head"><div class="card-eyebrow"><span class="card-num">D.2</span> Hipertensão induzida</div><h3>Hipertensão gestacional</h3></div><div class="card-body">
+<div class="card diag" id="d2"><div class="card-head"><div class="card-eyebrow"><span class="card-num">D.2</span> Hipertensão induzida</div><h3>Hipertensão gestacional</h3></div><div class="card-body">
 <div class="disease"><div class="disease-head"><div class="disease-name">Hipertensão gestacional</div><div class="disease-tag">CID-10 O13 (sem proteinúria significativa)</div></div><div class="disease-body"><div class="disease-rows">
 <div class="disease-row"><div class="k">Definição</div><div class="v">PA ≥140/90 após 20 semanas em normotensa, sem proteinúria nem disfunção de órgão ou placenta; normaliza até 12 semanas pós-parto. Diagnóstico definitivo só retrospectivo: inclui futuras PE e HAC mascaradas pela queda pressórica do 2º trimestre.</div></div>
 <div class="disease-row"><div class="k">Risco</div><div class="v">≈25% das que surgem antes de 34 semanas evoluem para PE (até 50% em séries antigas); forma grave (≥160/110) comporta-se como PE com sinais de gravidade e é conduzida como tal <span class="ev ev-acr">ACOG PB 222</span>. Recorrência elevada em gestações seguintes e risco cardiovascular futuro semelhante ao da PE.</div></div>
@@ -677,7 +696,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div></div></div>
 </div></div>
 
-<div class="card diag"><div class="card-head"><div class="card-eyebrow"><span class="card-num">D.3</span> Diferencial da HELLP</div><h3>Hepatopatias e microangiopatias que imitam a HELLP: esteatose aguda, colestase, PTT e SHU atípica <span class="ank ank-dgr">DANGER</span></h3></div><div class="card-body">
+<div class="card diag" id="d3"><div class="card-head"><div class="card-eyebrow"><span class="card-num">D.3</span> Diferencial da HELLP</div><h3>Hepatopatias e microangiopatias que imitam a HELLP: esteatose aguda, colestase, PTT e SHU atípica <span class="ank ank-dgr">DANGER</span></h3></div><div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Quatro perguntas separam: <b>há hipoglicemia e TP alargado?</b> (esteatose aguda), <b>há prurido sem hemólise?</b> (colestase), <b>há ADAMTS13 &lt;10% e neurológico?</b> (PTT), <b>a creatinina piora após o parto?</b> (SHU atípica). A HELLP melhora em até 72–96 h pós-parto; as outras não, ou exigem terapia específica.</div></div>
 <div class="disease"><div class="disease-head"><div class="disease-name">Esteatose hepática aguda, colestase intra-hepática, PTT e SHU atípica na gestação</div><div class="disease-tag">CID-10 O26.6 (transtornos hepáticos da gravidez) · M31.1 (microangiopatia trombótica/PTT) · D59.3 (síndrome hemolítico-urêmica)</div></div><div class="disease-body"><div class="disease-rows">
 <div class="disease-row"><div class="k">Esteatose aguda</div><div class="v">1:7.000–20.000 gestações, 3º trimestre, mais em gemelares e fetos masculinos; deficiência fetal de LCHAD (testar o RN). Náuseas, dor, icterícia, <b>hipoglicemia</b>, encefalopatia, TP alargado e fibrinogênio baixo precoces, creatinina e ácido úrico altos; critérios de Swansea (≥6). Conduta: <b>parto imediato após estabilização</b>, glicose IV, plasma/crioprecipitado, UTI.</div></div>
@@ -687,7 +706,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div></div></div>
 </div></div>
 
-<div class="card diag"><div class="card-head"><div class="card-eyebrow"><span class="card-num">D.4</span> Feto da diabética</div><h3>Repercussões fetais e neonatais do diabetes: macrossomia, distocia de ombro e filho de mãe diabética <span class="ank ank-hy">HIGH-YIELD</span></h3></div><div class="card-body">
+<div class="card diag" id="d4"><div class="card-head"><div class="card-eyebrow"><span class="card-num">D.4</span> Feto da diabética</div><h3>Repercussões fetais e neonatais do diabetes: macrossomia, distocia de ombro e filho de mãe diabética <span class="ank ank-hy">HIGH-YIELD</span></h3></div><div class="card-body">
 <div class="disease"><div class="disease-head"><div class="disease-name">Macrossomia, distocia de ombro e síndrome do filho de mãe diabética</div><div class="disease-tag">CID-10 O36.6 (crescimento fetal excessivo) · O66.0 (distocia de ombro) · P70.1 (filho de mãe diabética)</div></div><div class="disease-body"><div class="disease-rows">
 <div class="disease-row"><div class="k">Macrossomia</div><div class="v">Peso ≥4.000 g (ou ≥4.500 g na definição de maior risco) ou &gt;p90; no diabetes, gordura concentrada em tronco, ombros e abdome, com diâmetro biacromial desproporcional à cabeça. A estimativa ultrassonográfica erra ±10–15% no termo. <b>Cesárea eletiva pode ser oferecida com peso estimado ≥4.500 g na diabética</b> (≥5.000 g na não diabética) <span class="ev ev-acr">ACOG PB 190</span>; a apostila usa 4.000–4.500 g. Diabetes não é, por si, indicação de cesárea.</div></div>
 <div class="disease-row"><div class="k">Distocia de ombro</div><div class="v">Impactação do ombro anterior na sínfise após saída da cabeça (sinal da tartaruga). Sequência ALSO (HELPERR): pedir ajuda, avaliar episiotomia, <b>McRoberts + pressão suprapúbica</b> (resolvem ≈50%), manobras internas (Rubin II, Woods, Woods reverso), <b>retirada do braço posterior (Jacquemier)</b>, rolar para quatro apoios (Gaskin); Zavanelli, clidotomia e sinfisiotomia como último recurso. Nunca tracionar a cabeça nem fazer pressão fúndica: Erb-Duchenne (C5–C6) e Klumpke (C8–T1).</div></div>
@@ -697,7 +716,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <div class="box danger"><span class="box-label">DANGER</span><div class="box-title">Distocia de ombro: as três ações proibidas</div><div class="box-body"><b>Tração lateral da cabeça</b> (lesão de plexo braquial), <b>pressão no fundo uterino</b> (piora a impactação e arrisca rotura uterina) e <b>pânico sem sequência</b>. Anote o horário da saída da cabeça: após 5 minutos, o risco de encefalopatia hipóxico-isquêmica sobe rapidamente. Avise a pediatria antes do parto de qualquer feto macrossômico de mãe diabética.</div></div>
 </div></div>
 
-<div class="card diag"><div class="card-head"><div class="card-eyebrow"><span class="card-num">D.5</span> Crescimento e perda</div><h3>Restrição de crescimento seletiva e óbito de um gemelar <span class="ank ank-dec">DECISION</span></h3></div><div class="card-body">
+<div class="card diag" id="d5"><div class="card-head"><div class="card-eyebrow"><span class="card-num">D.5</span> Crescimento e perda</div><h3>Restrição de crescimento seletiva e óbito de um gemelar <span class="ank ank-dec">DECISION</span></h3></div><div class="card-body">
 <div class="disease"><div class="disease-head"><div class="disease-name">CIUR seletivo (sFGR) e óbito intrauterino de um gemelar</div><div class="disease-tag">CID-10 O36.5 (crescimento fetal deficiente) · O31.2 (gestação continuada após óbito de um feto)</div></div><div class="disease-body"><div class="disease-rows">
 <div class="disease-row"><div class="k">CIUR seletivo · definição</div><div class="v">Delphi: um feto com PFE &lt;p3 basta; ou ≥2 de 4 na monocoriônica (PFE &lt;p10 de um, CA &lt;p10, discordância ≥25%, IP da umbilical do menor &gt;p95) e ≥2 de 3 na dicoriônica <span class="ev ev-eular">ISUOG 2025</span>. Discordância = (maior − menor)/maior × 100; a apostila usa 20%. Diferencia-se da STFF pelo líquido normal do cogemelar.</div></div>
 <div class="disease-row"><div class="k">Gratacós (monocoriônica)</div><div class="v">Tipo I diástole positiva (sobrevida &gt;90%, parto ≈34–35 sem); tipo II diástole zero ou reversa persistente (risco alto de óbito do menor, parto 30–32 sem); tipo III intermitente (anastomose AA grande, morte súbita imprevisível de ambos, parto ≈32–34 sem). Doppler pelo menos semanal; antes de 26 semanas com risco alto de óbito, oclusão seletiva de cordão ou laser podem ser discutidos.</div></div>
@@ -706,7 +725,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div></div></div>
 </div></div>
 
-<div class="card diag"><div class="card-head"><div class="card-eyebrow"><span class="card-num">D.6</span> Monocoriônicas raras</div><h3>Monocoriônica monoamniótica, sequência TRAP (gêmeo acárdico) e gêmeos unidos</h3></div><div class="card-body">
+<div class="card diag" id="d6"><div class="card-head"><div class="card-eyebrow"><span class="card-num">D.6</span> Monocoriônicas raras</div><h3>Monocoriônica monoamniótica, sequência TRAP (gêmeo acárdico) e gêmeos unidos</h3></div><div class="card-body">
 <div class="disease"><div class="disease-head"><div class="disease-name">MCMA, sequência TRAP e gêmeos unidos</div><div class="disease-tag">CID-10 Q89.4 (gêmeos unidos) · O43.8 (TRAP e MCMA sem código nominal; codificar a gemelaridade no C.6)</div></div><div class="disease-body"><div class="disease-rows">
 <div class="disease-row"><div class="k">MCMA</div><div class="v">≈1% dos monozigóticos; cordões entrelaçados em quase todos, mas a morte súbita (≈15% após 20 semanas, ≈4% após 32) não é prevista por USG ou Doppler. Monitorização da FCF a partir de 26–28 semanas (internação ou ambulatório intensivo), corticoide e <b>cesárea entre 32 e 34 semanas</b> <span class="ev ev-eular">ISUOG 2025</span>.</div></div>
 <div class="disease-row"><div class="k">Sequência TRAP</div><div class="v">≈2,5% das monocoriônicas; um feto "bomba" normal perfunde retrogradamente, por anastomose AA e VV, uma massa acárdica (acardia, acefalia, membros superiores ausentes). Risco de insuficiência cardíaca de alto débito e hidropisia do bomba. Razão de peso acárdico/bomba &gt;50–70%, polidrâmnio e Doppler anormal indicam <b>oclusão do cordão do acárdico (laser intrafetal, radiofrequência, coagulação bipolar)</b>, idealmente 12–16 semanas.</div></div>
@@ -715,7 +734,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div></div></div>
 </div></div>
 
-<div class="card tx"><div class="card-head"><div class="card-eyebrow"><span class="card-num">D.7</span> Remissões</div><h3>Doenças intercorrentes da apostila OBS 4 — onde ficam</h3><div class="card-sub">A apostila traz um apêndice clínico que o contrato do GO13 não reivindica; registro de destino para não perder cobertura</div></div><div class="card-body">
+<div class="card tx" id="d7"><div class="card-head"><div class="card-eyebrow"><span class="card-num">D.7</span> Remissões</div><h3>Doenças intercorrentes da apostila OBS 4 — onde ficam</h3><div class="card-sub">A apostila traz um apêndice clínico que o contrato do GO13 não reivindica; registro de destino para não perder cobertura</div></div><div class="card-body">
 <div class="stbl stbl-3">
 <div class="stbl-head stbl-3"><div>Tema do apêndice</div><div>Ponto de contato com GO13</div><div>Destino</div></div>
 <div class="stbl-row stbl-3"><div class="col col1" data-l="Tema">Hipo e hipertireoidismo, tireotoxicose gestacional transitória</div><div class="col" data-l="Contato">Tireoidopatia é fator de risco listado para PE; hiperêmese do gemelar eleva T4L</div><div class="col" data-l="Destino">EN03 (tireoidopatias) · lacuna obstétrica a confirmar</div></div>
@@ -731,7 +750,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <section id="algoritmo">
 <div class="section"><div class="section-eyebrow"><span>E</span> Algoritmo</div><h2 class="section-title">Da PA alterada, da glicemia alterada e do útero com dois fetos até a conduta</h2><div class="section-sub">Três árvores porque os três eixos têm perguntas iniciais diferentes: na hipertensão, "há deterioração?"; no diabetes, "é gestacional ou prévio?"; no gemelar, "quantas placentas?". Cada ramo termina em dose, alvo ou data, não em rótulo.</div></div>
 
-<div class="card prim"><div class="card-head"><div class="card-eyebrow"><span class="card-num">E.1</span> Hipertensão</div><h3>PA ≥140/90 mmHg na gestação <span class="ank ank-dec">DECISION</span></h3></div><div class="card-body">
+<div class="card prim" id="e1"><div class="card-head"><div class="card-eyebrow"><span class="card-num">E.1</span> Hipertensão</div><h3>PA ≥140/90 mmHg na gestação <span class="ank ank-dec">DECISION</span></h3></div><div class="card-body">
 <div class="algo"><div class="tree">
 <div class="tree-line"><span class="tree-node start">PA ≥140/90 confirmada em gestante</span></div>
 <div class="tree-branch"><div class="tree-label yes">PA ≥160/110, convulsão, cefaleia/visão, epigastralgia, dispneia?</div>
@@ -760,7 +779,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </ol></div></div>
 </div></div>
 
-<div class="card prim"><div class="card-head"><div class="card-eyebrow"><span class="card-num">E.2</span> Diabetes</div><h3>Hiperglicemia na gestação</h3></div><div class="card-body">
+<div class="card prim" id="e2"><div class="card-head"><div class="card-eyebrow"><span class="card-num">E.2</span> Diabetes</div><h3>Hiperglicemia na gestação</h3></div><div class="card-body">
 <div class="algo"><div class="tree">
 <div class="tree-line"><span class="tree-node start">Glicemia de jejum na 1ª consulta (universal)</span></div>
 <div class="tree-branch"><div class="tree-label yes">≥126 mg/dL, acaso ≥200 ou HbA1c ≥6,5%</div><div class="tree-line"><span class="tree-node dgr">Diabetes diagnosticado na gestação: insulina, HbA1c, fundo de olho, morfológico e ecocardiograma fetal, AAS 100–150 mg</span></div></div>
@@ -775,7 +794,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <div class="box hy"><span class="box-label">HIGH-YIELD</span><div class="box-title">Sequência mental do diabetes na gestação</div><div class="box-body">Quando começou (prévio, diagnosticado na gestação ou DMG) → risco de malformação só nos dois primeiros → meta glicêmica alcançada com dieta em 1–2 semanas? → insulina como padrão, metformina como exceção documentada → vigilância do crescimento e da vitalidade a partir de 32–34 semanas nas tratadas com fármaco → data do parto pelo controle → reavaliação pós-parto com TOTG em 6–12 semanas e rastreio para a vida.</div></div>
 </div></div>
 
-<div class="card prim"><div class="card-head"><div class="card-eyebrow"><span class="card-num">E.3</span> Gemelaridade</div><h3>Gestação gemelar: corionicidade → vigilância → parto <span class="ank ank-dec">DECISION</span></h3></div><div class="card-body">
+<div class="card prim" id="e3"><div class="card-head"><div class="card-eyebrow"><span class="card-num">E.3</span> Gemelaridade</div><h3>Gestação gemelar: corionicidade → vigilância → parto <span class="ank ank-dec">DECISION</span></h3></div><div class="card-body">
 <div class="algo"><div class="tree">
 <div class="tree-line"><span class="tree-node start">Dois embriões na USG (até 13+6 semanas)</span></div>
 <div class="tree-branch"><div class="tree-label no">Sinal do lambda / sexo discordante</div><div class="tree-line"><span class="tree-node dx">Dicoriônica: USG 1º tri, 20 sem, depois a cada 4 sem; colo 18–24 sem; AAS</span></div>
@@ -796,11 +815,11 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </section>
 
 <section id="tratamento">
-<div class="section"><div class="section-eyebrow"><span>F</span> Tratamento Integrado</div><h2 class="section-title">F1 · Estratégia por entidade · F2 · Doses operacionais</h2><div class="section-sub">Escadas organizadas por doença e por momento (prevenção, pré-natal, crise, parto, puerpério). Onde a recomendação internacional e o protocolo brasileiro divergem, as duas aparecem com a fonte; o que está no SUS vem separado no fim do F1.</div></div>
+<div class="section"><div class="section-eyebrow"><span>F</span> Tratamento Integrado</div><h2 class="section-title">F1 · Estratégia por entidade · F2 · Doses operacionais</h2><div class="section-sub">Escadas organizadas por doença e por momento (prevenção, pré-natal, crise, parto, puerpério). Onde a recomendação internacional e o protocolo brasileiro divergem, as duas aparecem com a fonte; o que está no SUS vem separado no fim do F1.</div></div><!--hp-f2--><nav class="sec-idx" aria-label="Neste capítulo"><a href="#f1"><b>F.1</b>Escadas terapêuticas por enti…</a><a href="#f2"><b>F.2</b>Tabela de doses — hipertensão…</a></nav><!--/hp-f2-->
 
-<div class="card tx"><div class="card-head"><div class="card-eyebrow"><span class="card-num">F.1</span> Estratégia</div><h3>Escadas terapêuticas por entidade <span class="ank ank-dec">DECISION</span></h3></div><div class="card-body">
+<div class="card tx" id="f1"><div class="card-head"><div class="card-eyebrow"><span class="card-num">F.1</span> Estratégia</div><h3>Escadas terapêuticas por entidade <span class="ank ank-dec">DECISION</span></h3></div><div class="card-body">
 
-<div class="sub-title">F1.1 · Prevenção da pré-eclâmpsia — AAS, cálcio e exercício</div>
+<div class="sub-title" id="f1-1">F1.1 · Prevenção da pré-eclâmpsia — AAS, cálcio e exercício</div>
 <ul class="bullets">
 <li><b>Indicação de AAS:</b> um fator de alto risco (PE prévia, gestação múltipla, HAC, DM1 ou DM2, DRC, LES ou SAF, FIV na lista brasileira; obesidade IMC &gt;30 é alto risco para o MS) ou dois ou mais moderados (nuliparidade, IMC &gt;30 pelo ACOG, história familiar de PE, idade ≥35 anos, intervalo &gt;10 anos, PIG ou desfecho adverso prévio, fatores sociodemográficos). Rastreio combinado do 1º trimestre (FMF: história + PAM + IP das uterinas + PlGF) é alternativa onde disponível.</li>
 <li><b>Dose e janela:</b> MS e RBEHG: <b>100 mg VO à noite, de 12 semanas (preferencialmente antes de 16, aceitável até 20) até 36 semanas</b>; ASPRE e FIGO: 150 mg/noite de 11–14 até 36 semanas; ACOG/USPSTF: 81 mg/dia de 12–28 semanas (ideal &lt;16) até o parto; ADA 2026: 100–150 mg/dia desde 12–16 semanas no DM pré-gestacional; OMS: 75 mg/dia. A dose noturna tem racional cronobiológico (maior síntese de tromboxano à noite) e menor desconforto gástrico.</li>
@@ -810,7 +829,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </ul>
 <div class="box hy"><span class="box-label">HIGH-YIELD</span><div class="box-title">AAS depois de 16 semanas ainda vale?</div><div class="box-body">O benefício é maior quando o AAS começa antes de 16 semanas (fase de remodelamento das espiraladas) e com doses ≥100 mg, mas metanálises mostram redução modesta da PE mesmo com início até 20 semanas. Gestante de alto risco que chega com 18 semanas deve receber AAS; com mais de 20–28 semanas, o benefício é incerto (ACOG ainda aceita até 28 semanas).</div></div>
 
-<div class="sub-title">F1.2 · Hipertensão não grave (HAC, hipertensão gestacional, PE sem deterioração) — manutenção</div>
+<div class="sub-title" id="f1-2">F1.2 · Hipertensão não grave (HAC, hipertensão gestacional, PE sem deterioração) — manutenção</div>
 <ul class="bullets">
 <li><b>Limiar e meta:</b> tratar PA persistente ≥140/90 em qualquer síndrome hipertensiva (CHAP para HAC; ISSHP e RBEHG estendem a HG e PE); <b>alvo de PAD ≈85 mmHg</b> (CHIPS: menos hipertensão grave sem prejuízo fetal), PAS 110–140; reduzir ou suspender se PA &lt;110/70 ou sintomas de hipotensão.</li>
 <li><b>Primeira linha:</b> metildopa 250 mg VO 2–3×/dia, até 2.000 mg/dia (MS/RBEHG; a apostila cita até 3 g/dia), anti-hipertensivo fraco, sedativo, contraindicado com depressão e hepatopatia; ou nifedipino de liberação prolongada 20–30 mg 1–2×/dia até 120 mg/dia; ou anlodipino 5–10 mg/dia. Sem hierarquia entre classes; escolher pela disponibilidade (todas na RENAME).</li>
@@ -819,7 +838,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <li><b>Vigilância na PE sem gravidade:</b> PA 2×/semana (domiciliar quando possível), hemograma, creatinina, TGO/TGP e LDH semanais; proteinúria não precisa ser repetida depois de positiva (MS 2022); USG de crescimento a cada 2–4 semanas, Doppler e CTG semanais desde 32 semanas; parto com 37 semanas.</li>
 </ul>
 
-<div class="sub-title">F1.3 · Crise hipertensiva e iminência de eclâmpsia — a primeira hora</div>
+<div class="sub-title" id="f1-3">F1.3 · Crise hipertensiva e iminência de eclâmpsia — a primeira hora</div>
 <ul class="bullets">
 <li><b>Ordem prática:</b> acesso venoso, decúbito lateral, sonda vesical (diurese horária), oxímetro; <b>MgSO₄ antes do hipotensor quando há sintomas</b> (emergência hipertensiva) e junto com ele na crise assintomática com PE suspeita; laboratório (hemograma, LDH, bilirrubinas, TGO/TGP, creatinina, ácido úrico, coagulograma, fibrinogênio, RPC).</li>
 <li><b>Hipotensor rápido:</b> hidralazina 5 mg IV a cada 20 min até 30 mg (RBEHG/MS; ACOG: 5–10 mg IV, máx. 20 mg IV), ou nifedipino de liberação imediata 10 mg VO a cada 20–30 min até 30 mg (RBEHG; ACOG aceita 10–20 mg e máximo diário de 180 mg) — <b>comprimido inteiro, nunca sublingual nem mastigado</b>; sem resposta após 30 mg de um, trocar para o outro. Labetalol IV (20 mg, depois 40 e 80 mg a cada 10 min, até 300 mg) é primeira linha nos EUA e indisponível na maior parte do Brasil.</li>
@@ -829,7 +848,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </ul>
 <div class="box danger"><span class="box-label">DANGER</span><div class="box-title">Hidratação liberal na PE mata no pulmão</div><div class="box-body">A gestante com PE tem volume plasmático baixo, mas também permeabilidade capilar aumentada, pressão coloidosmótica reduzida e pós-carga alta: <b>expansão volêmica não melhora diurese nem perfusão placentária e precipita edema agudo de pulmão</b>. Limite o volume total a ≈80–100 mL/h (incluindo o magnésio e a ocitocina), aceite oligúria transitória de 15–20 mL/h sem bolus repetidos e use furosemida apenas para congestão. No puerpério, a mobilização do terceiro espaço aumenta o risco nas primeiras 72 h.</div></div>
 
-<div class="sub-title">F1.4 · Sulfato de magnésio, HELLP e eclâmpsia</div>
+<div class="sub-title" id="f1-4">F1.4 · Sulfato de magnésio, HELLP e eclâmpsia</div>
 <ul class="bullets">
 <li><b>Indicações (RBEHG/MS):</b> iminência de eclâmpsia, eclâmpsia, HELLP, PE com deterioração, crise hipertensiva com PE (mesmo assintomática); antes de 32 semanas, também para neuroproteção fetal se o parto é iminente. Na PE sem gravidade, não é rotina.</li>
 <li><b>Esquemas equivalentes:</b> Zuspan (4 g IV + 1 g/h IV) e Pritchard (4 g IV + 10 g IM, depois 5 g IM a cada 4 h); Sibai (6 g + 2 g/h) aparece na literatura americana. ACOG sugere manutenção de 2 g/h pela pior absorção da dose de 1 g/h em obesas; RBEHG sobe a 2 g/h se sintomas persistem. Manter 24 h após o parto ou a última crise; se usado por crise hipertensiva em conduta expectante, 24 h e retirada após estabilização.</li>
@@ -839,7 +858,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </ul>
 <div class="box decision"><span class="box-label">DECISION</span><div class="box-title">Expectante na PE com sinais de gravidade antes de 34 semanas — quem pode</div><div class="box-body">Somente em <b>hospital terciário com UTI materna e neonatal</b>, com mãe estabilizada (PA controlada com até 2–3 drogas, sem HELLP, sem iminência, sem EAP, função renal estável) e feto sem Doppler crítico. Ganha-se em média 1–2 semanas e melhora o desfecho neonatal sem aumentar a mortalidade materna nos ensaios. Reavaliar a mãe diariamente (clínica, PA, diurese) e o laboratório a cada 24–72 h; qualquer critério de resolução encerra a conduta. Restrição de crescimento isolada, com Doppler preservado, não é indicação de parto pela ACOG.</div></div>
 
-<div class="sub-title">F1.5 · Parto e puerpério na síndrome hipertensiva</div>
+<div class="sub-title" id="f1-5">F1.5 · Parto e puerpério na síndrome hipertensiva</div>
 <ul class="bullets">
 <li><b>Via:</b> indicação obstétrica; parto vaginal desejável inclusive na eclâmpsia e na HELLP; preparo cervical com misoprostol ou sonda de Foley (Foley preferida com restrição de crescimento); cesárea se colo desfavorável com deterioração materna ou vitalidade alterada. Ocitocina em SF 0,9% concentrada (10 UI em 500 mL) pela retenção hídrica.</li>
 <li><b>Analgesia de neuroeixo</b> é desejável (reduz picos pressóricos) com plaquetas ≥70.000–80.000 estáveis e sem coagulopatia; ergometrina e metilergometrina são contraindicadas na HPP de hipertensa — usar ocitocina, misoprostol e ácido tranexâmico (carbetocina só na profilaxia, WHO 2025, e sem comercialização no Brasil desde 2025).</li>
@@ -847,7 +866,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <li><b>Seguimento:</b> PA em 72 h nas formas graves e em 7–10 dias nas demais (ACOG); PA persistente após 12 semanas = HAC; aconselhar sobre risco cardiovascular, PA, glicemia e lípides anuais, contracepção sem estrogênio enquanto hipertensa, AAS e cálcio na próxima gestação.</li>
 </ul>
 
-<div class="sub-title">F1.6 · Diabetes gestacional</div>
+<div class="sub-title" id="f1-6">F1.6 · Diabetes gestacional</div>
 <ul class="bullets">
 <li><b>Nutrição:</b> 3 refeições e 2–3 lanches, carboidrato ≥175 g/dia (50–55% do VET), proteína 15–20%, lipídio 30–40%; adoçantes não nutritivos com moderação; ganho de peso pelo IMC pré-gestacional. Atividade física 150 min/semana e caminhada de 10–15 min após as refeições.</li>
 <li><b>Monitorização:</b> glicemia capilar jejum + 1 h (ou 2 h) após café, almoço e jantar, diária ou ≥3×/semana na dieta; diária e com pré-prandiais em insulina. Insumos (glicosímetro, fitas, lancetas) garantidos pelo SUS para gestante com DMG.</li>
@@ -858,7 +877,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <li><b>Pós-parto:</b> suspender insulina; glicemia nas primeiras 24–72 h se usou fármaco; <b>TOTG 75 g entre 4 e 12 semanas</b> (ADA; MS 6–8 semanas) com cortes de não gestante; depois glicemia/HbA1c a cada 1–3 anos por toda a vida; amamentação reduz o risco de DM2.</li>
 </ul>
 
-<div class="sub-title">F1.7 · Diabetes pré-gestacional — pré-concepção, gestação, parto e puerpério</div>
+<div class="sub-title" id="f1-7">F1.7 · Diabetes pré-gestacional — pré-concepção, gestação, parto e puerpério</div>
 <ul class="bullets">
 <li><b>Pré-concepção:</b> HbA1c &lt;6,5% sem hipoglicemia, contracepção eficaz até lá; trocar antidiabéticos orais, iSGLT2 e agonistas de GLP-1 por insulina (GLP-1 semanal suspenso ≥2 meses antes); trocar IECA/BRA, suspender estatina; ácido fólico (ver F2); avaliar retina, rim, tireoide, coração.</li>
 <li><b>Gestação:</b> insulina basal-bolus ou bomba; CGM (TIR 63–140 mg/dL &gt;70%, abaixo de 63 &lt;4%, acima de 140 &lt;25% no DM1); glucagon em casa; AAS 100–150 mg desde 12–16 semanas; ecocardiograma fetal 24–26 semanas; fundo de olho por trimestre; função renal e RPC por trimestre.</li>
@@ -867,7 +886,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <li><b>Puerpério:</b> DM1 — 50% da dose pré-gestacional (ou ≈70% da final da gestação) nas primeiras horas, ajustes diários, risco alto de hipoglicemia na amamentação; DM2 — retomar metformina, alguns ficam sem medicação nas primeiras semanas; contracepção planejada.</li>
 </ul>
 
-<div class="sub-title">F1.8 · Gestação gemelar — pré-natal, pré-termo e parto</div>
+<div class="sub-title" id="f1-8">F1.8 · Gestação gemelar — pré-natal, pré-termo e parto</div>
 <ul class="bullets">
 <li><b>Pré-natal:</b> ferro elementar 40 mg/dia no 1º trimestre e 80 mg/dia a partir do 2º; ácido fólico; +300 kcal/dia; ganho de peso de 17–25 kg no IMC normal (IOM 2009; a apostila cita 15–18 kg); hemoglobina e urocultura por trimestre; pesquisa de estreptococo do grupo B com 32 semanas (DC) e 30 semanas (MC) (MS 2022); AAS 100 mg.</li>
 <li><b>Prevenção do pré-termo:</b> colo transvaginal com 18–24 semanas; ≤25 mm → progesterona vaginal 200 mg/noite pode ser considerada; ≤15 mm antes de 24 semanas → cerclagem pode ser considerada; dilatação antes de 24 semanas → cerclagem de emergência + antibiótico + indometacina em centro especializado (ISUOG 2025). Pessário, repouso, internação e progesterona universal não funcionam.</li>
@@ -875,7 +894,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <li><b>Parto vaginal:</b> monitorização contínua dos dois, neuroeixo com cateter, USG na sala; após o primeiro, clampear o cordão, checar apresentação do segundo, amniotomia só com polo insinuado; segundo não cefálico → extração pélvica com versão interna (útero relaxado: nitroglicerina IV 50–100 µg em bolus, sempre diluída — F2, conferir com a anestesia) ou versão externa; não há limite fixo de intervalo se a CTG é tranquilizadora. Ocitocina profilática e massagem uterina no 4º período pelo risco de atonia.</li>
 </ul>
 
-<div class="sub-title">F1.9 · Tabela de momento do parto (sem outra complicação)</div>
+<div class="sub-title" id="f1-9">F1.9 · Tabela de momento do parto (sem outra complicação)</div>
 <div class="stbl stbl-3">
 <div class="stbl-head stbl-3"><div>Condição</div><div>Idade gestacional</div><div>Fonte / nota</div></div>
 <div class="stbl-row stbl-3"><div class="col col1" data-l="Condição">PE sem sinais de gravidade · HG</div><div class="col" data-l="IG">37+0 semanas (HG: 37–39+6 compartilhado no Brasil)</div><div class="col" data-l="Fonte">ACOG PB 222 · RBEHG 2023 · HYPITAT</div></div>
@@ -888,7 +907,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <div class="stbl-row stbl-3"><div class="col col1" data-l="Condição">Gemelar MCDA · MCMA</div><div class="col" data-l="IG">36+0–36+6 (ACOG 34–37+6) · 32–34 por cesárea</div><div class="col" data-l="Fonte">ISUOG 2025 · MS 2022 · ACOG PB 231</div></div>
 </div>
 
-<div class="sub-title">F1.10 · Cenários: caso → conduta certa → erro típico</div>
+<div class="sub-title" id="f1-10">F1.10 · Cenários: caso → conduta certa → erro típico</div>
 <div class="stbl stbl-3">
 <div class="stbl-head stbl-3"><div>Caso</div><div>Conduta certa</div><div>Erro típico</div></div>
 <div class="stbl-row stbl-3"><div class="col col1" data-l="Caso">31 semanas, PA 166/112 sem sintomas, plaquetas 180.000, RPC 0,6</div><div class="col" data-l="Conduta">Nifedipino 10 mg VO ou hidralazina 5 mg IV até PA 140–150/90–100, MgSO₄, betametasona, internação em terciário, expectante se estabilizar</div><div class="col" data-l="Erro">Indicar cesárea imediata pela PA ou omitir o magnésio porque "não tem sintoma"</div></div>
@@ -904,7 +923,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <div class="stbl-row stbl-3"><div class="col col1" data-l="Caso">DCDA a termo, primeiro cefálico, segundo pélvico, pesos semelhantes</div><div class="col" data-l="Conduta">Parto vaginal com equipe experiente e analgesia com cateter; extração pélvica do segundo</div><div class="col" data-l="Erro">Cesárea por rotina "porque é gemelar"</div></div>
 </div>
 
-<div class="sub-title">F1.11 · Acesso no SUS × recomendação internacional</div>
+<div class="sub-title" id="f1-11">F1.11 · Acesso no SUS × recomendação internacional</div>
 <ul class="bullets">
 <li><b>Disponível na RENAME e na rede:</b> metildopa 250/500 mg, nifedipino 10 e 20 mg (liberação imediata e retard), anlodipino, hidralazina injetável e oral, metoprolol, carvedilol, enalapril, captopril, furosemida, sulfato de magnésio 10/20/50%, gluconato de cálcio 10%, nitroprussiato, AAS 100 mg, carbonato de cálcio, insulinas NPH e regular, metformina, betametasona e dexametasona, insumos de glicemia capilar para gestante diabética.</li>
 <li><b>Restrito ou indisponível:</b> labetalol IV e oral; análogos de insulina rápida e basal dependem de PCDT (DM1) ou protocolo estadual; CGM e sistemas de alça fechada fora da rotina SUS; razão sFlt-1/PlGF em poucos serviços; laser fetoscópico concentrado em centros de referência (regulação urgente).</li>
@@ -912,7 +931,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </ul>
 </div></div>
 
-<div class="card tx"><div class="card-head"><div class="card-eyebrow"><span class="card-num">F.2</span> Doses Operacionais</div><h3>Tabela de doses — hipertensão, diabetes e gemelaridade na gestação</h3></div><div class="card-body">
+<div class="card tx" id="f2"><div class="card-head"><div class="card-eyebrow"><span class="card-num">F.2</span> Doses Operacionais</div><h3>Tabela de doses — hipertensão, diabetes e gemelaridade na gestação</h3></div><div class="card-body">
 <div class="stbl stbl-3">
 <div class="stbl-head stbl-3"><div>Fármaco</div><div>Dose (adulta, gestante/puérpera)</div><div>Indicação / notas</div></div>
 <div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Ácido acetilsalicílico</div><div class="col" data-l="Dose">100 mg VO 1×/dia à noite, de 12 (ideal &lt;16, até 20) a 36 semanas <span class="ev ev-sbr">MS 2022</span></div><div class="col" data-l="Indicação">Prevenção de PE no alto risco; ASPRE usou 150 mg; ACOG 81 mg até o parto; inibe COX-1 plaquetária irreversivelmente, poupando a prostaciclina endotelial</div></div>
@@ -961,7 +980,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 
 <section id="pitfalls">
 <div class="section"><div class="section-eyebrow"><span>G</span> Pitfalls · Mitos · Controvérsias</div><h2 class="section-title">Erros operacionais, mitos vivos e debates atuais</h2><div class="section-sub">Os erros que mais custam neste tema são de tempo (parto cedo demais ou tarde demais), de fármaco (sublingual, betamimético, IECA) e de critério (usar o corte americano numa prova brasileira, ou vice-versa).</div></div>
-<div class="card pearl"><div class="card-head"><div class="card-eyebrow"><span class="card-num">G.1</span> Pegadinhas</div><h3>10 erros operacionais em HAS, diabetes e gemelaridade na gestação</h3></div><div class="card-body">
+<div class="card pearl" id="g1"><div class="card-head"><div class="card-eyebrow"><span class="card-num">G.1</span> Pegadinhas</div><h3>10 erros operacionais em HAS, diabetes e gemelaridade na gestação</h3></div><div class="card-body">
 <div class="stbl stbl-2">
 <div class="stbl-head stbl-2"><div>Erro comum</div><div>Correto</div></div>
 <div class="stbl-row stbl-2"><div class="col col1" data-l="Erro">Exigir proteinúria para diagnosticar PE</div><div class="col" data-l="Correto">Hipertensão após 20 semanas com plaquetopenia, creatinina ou transaminases alteradas, sintomas neurológicos, EAP ou disfunção placentária já é PE (ISSHP 2021, RBEHG 2023, ACOG 2020).</div></div>
@@ -976,7 +995,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <div class="stbl-row stbl-2"><div class="col col1" data-l="Erro">Marcar a data do parto gemelar sem saber a corionicidade</div><div class="col" data-l="Correto">Corionicidade documentada até 13+6 semanas define vigilância e data (DCDA 37–38, MCDA 36, MCMA 32–34); se indeterminada, conduzir como monocoriônica.</div></div>
 </div>
 </div></div>
-<div class="card pearl"><div class="card-head"><div class="card-eyebrow"><span class="card-num">G.2</span> Mitos · Controvérsias</div><h3>Mitos vivos e debates atuais</h3></div><div class="card-body">
+<div class="card pearl" id="g2"><div class="card-head"><div class="card-eyebrow"><span class="card-num">G.2</span> Mitos · Controvérsias</div><h3>Mitos vivos e debates atuais</h3></div><div class="card-body">
 <div class="box myth"><span class="box-label">MYTH</span><div class="box-title">"Baixar a pressão da gestante prejudica o feto"</div><div class="box-body">O receio vinha de estudos antigos com atenolol e de quedas bruscas na crise. CHIPS (2015) mostrou que alvo de PAD 85 reduz hipertensão grave sem piorar desfecho perinatal, e CHAP (2022) mostrou que tratar HAC leve a partir de 140/90 reduz PE grave, parto pré-termo e DPP sem aumentar PIG. O que prejudica é a hipotensão abrupta da crise e o atenolol, não o controle.</div></div>
 <div class="box myth"><span class="box-label">MYTH</span><div class="box-title">"Repouso no leito e dieta sem sal tratam a pré-eclâmpsia"</div><div class="box-body">Nenhum ensaio mostrou benefício de repouso absoluto ou de restrição de sódio na PE ou na HG, e o repouso aumenta tromboembolismo e descondicionamento. A recomendação atual é atividade física regular para prevenção e sal habitual (o MS limita a 5 g/dia como hábito saudável geral).</div></div>
 <div class="box myth"><span class="box-label">MYTH</span><div class="box-title">"Gemelar é indicação de cesárea"</div><div class="box-body">No diamniótico com primeiro gemelar cefálico a partir de 32 semanas, a cesárea planejada não melhorou desfecho neonatal no Twin Birth Study e aumenta morbidade materna. A cesárea é indicada por monoamnionicidade, gêmeos unidos, primeiro não cefálico, prematuridade extrema, ≥3 fetos e indicações clássicas; a falta de equipe treinada é real, mas é um problema do serviço, não da gestação.</div></div>
@@ -988,7 +1007,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 
 <section id="pearls">
 <div class="section"><div class="section-eyebrow"><span>H</span> Pearls · Evolving</div><h2 class="section-title">H1 · Pearls de especialista · H2 · Áreas em evolução</h2><div class="section-sub">Nuances que mudam a leitura de um caso e mudanças recentes com fonte; o tema é dinâmico em biomarcadores, alvos pressóricos, rastreio glicêmico e técnica fetal, e estável na base do tratamento com magnésio e parto.</div></div>
-<div class="card pearl"><div class="card-head"><div class="card-eyebrow"><span class="card-num">H.1</span> Pearls</div><h3>8 nuances que distinguem o especialista</h3></div><div class="card-body">
+<div class="card pearl" id="h1"><div class="card-head"><div class="card-eyebrow"><span class="card-num">H.1</span> Pearls</div><h3>8 nuances que distinguem o especialista</h3></div><div class="card-body">
 <div class="box pearl"><span class="box-label">PEARL</span><div class="box-title">PE é doença da placenta; a hipertensão é só o sinal mais visível</div><div class="box-body">Por isso existe HELLP sem hipertensão, eclâmpsia com PA de 140/90, PE com restrição de crescimento antes de qualquer proteinúria e PE pós-parto até 6 semanas. O diagnóstico ISSHP incorpora a disfunção uteroplacentária justamente para capturar esse fenótipo; avaliar o feto é parte de avaliar a mãe.</div></div>
 <div class="box pearl"><span class="box-label">PEARL</span><div class="box-title">Razão sFlt-1/PlGF serve mais para excluir que para confirmar</div><div class="box-body">Com suspeita clínica entre 24 e 37 semanas, razão ≤38 tem valor preditivo negativo ≈99% para PE na semana seguinte (PROGNOSIS), o que permite dar alta com segurança e evita internações e partos iatrogênicos. O valor preditivo positivo de &gt;38 para PE em 4 semanas é de apenas ≈36–40%; valores &gt;85 (antes de 34 semanas) ou &gt;110 (depois) reforçam o diagnóstico, mas não indicam parto por si.</div></div>
 <div class="box pearl"><span class="box-label">PEARL</span><div class="box-title">A convulsão tardia que não é eclâmpsia</div><div class="box-body">Cefaleia em trovoada, déficit focal ou crise após 48–72 h do parto, sobretudo com PA modesta, apontam para síndrome de vasoconstrição cerebral reversível, trombose venosa cerebral ou hemorragia. PRES e SVCR coexistem com a PE; a RM com angiografia separa. Tratar como eclâmpsia e não investigar é o erro que deixa passar a trombose venosa.</div></div>
@@ -998,7 +1017,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <div class="box pearl"><span class="box-label">PEARL</span><div class="box-title">Após óbito de um monocoriônico, o dano ao sobrevivente já aconteceu</div><div class="box-body">A lesão neurológica é por exsanguinação aguda no momento da morte; tirar o sobrevivente às pressas depois não a evita e soma prematuridade. Por isso a conduta é vigilância (ACM-PVS para anemia), neuroimagem em 4–6 semanas e parto com 34–36 semanas — o oposto do impulso de "salvar o outro" com cesárea imediata. Na dicoriônica, o sobrevivente segue como gestação única de risco.</div></div>
 <div class="box pearl"><span class="box-label">PEARL</span><div class="box-title">PE, HG e DMG são marcadores cardiometabólicos para a vida inteira</div><div class="box-body">PE dobra o risco de doença coronariana e AVC e quadruplica o de HAS; DMG multiplica por 7–10 o risco de DM2. A American Heart Association inclui esses diagnósticos como fatores de risco específicos da mulher. A consulta de puerpério é a oportunidade de registrar o diagnóstico, aferir PA, programar glicemia e lípides e orientar a próxima gestação (AAS precoce, cálcio, TOTG precoce).</div></div>
 </div></div>
-<div class="card pearl"><div class="card-head"><div class="card-eyebrow"><span class="card-num">H.2</span> Evolving</div><h3>6 paradigmas em mudança — 2021–2026</h3></div><div class="card-body">
+<div class="card pearl" id="h2"><div class="card-head"><div class="card-eyebrow"><span class="card-num">H.2</span> Evolving</div><h3>6 paradigmas em mudança — 2021–2026</h3></div><div class="card-body">
 <div class="box evolving"><span class="box-label">EVOLVING</span><div class="box-title">Biomarcadores angiogênicos na rotina</div><div class="box-body">A FDA autorizou em 2023 um teste de razão sFlt-1/PlGF para estratificar risco de progressão para PE grave em gestantes internadas entre 23 e 35 semanas; NICE recomenda testes de PlGF para excluir PE pré-termo. No Brasil, RBEHG e MS reconhecem o valor do corte de 38, mas o acesso é restrito. A direção é usar o teste para evitar parto desnecessário, não para indicar parto.</div></div>
 <div class="box evolving"><span class="box-label">EVOLVING</span><div class="box-title">Tratar mais cedo e alvos mais baixos</div><div class="box-body">CHAP (2022) mudou o limiar de tratamento da HAC para 140/90 no ACOG e consolidou a meta de PAD 85 (CHIPS) adotada por ISSHP e RBEHG; ADA 2026 propõe 110–135/85 na diabética hipertensa. A revisão sistemática de diretrizes de 2026 (Febles, AJOG) mostrou convergência nesse ponto e na faixa de AAS 75–162 mg, com divergências persistentes na definição de PE grave e no momento do parto pré-termo.</div></div>
 <div class="box evolving"><span class="box-label">EVOLVING</span><div class="box-title">Hiperglicemia precoce: diagnosticar e tratar antes de 20 semanas</div><div class="box-body">O TOBOGM (2023) mostrou que tratar hiperglicemia detectada antes de 20 semanas em mulheres de risco reduz modestamente um desfecho neonatal composto, com benefício concentrado em valores mais altos. A ADA 2026 integrou o tema de "metabolismo glicêmico anormal precoce" à seção de gestação; o Brasil já diagnostica pelo jejum de 92 mg/dL desde 2017. Falta definir o limiar que traz benefício.</div></div>
@@ -1037,5 +1056,36 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </footer>
 <a class="to-top" href="#" aria-label="Voltar ao topo">↑</a>
 <div class="watermark">@dr.lorencato · GO13 Gestação de alto risco v5.2</div>
-</body>
+<!--hp-f2--><script>(function(){var d=document,M=d.querySelector('main');if(!M)return;
+var SELF='GO13',HP=' CT01 CT02 CT03 CT04 CT05 CT06 CT08 CT10 CV01 CV03 CV04 CV05 CV06 CV07 CV08 EN01 EN02 EN03 EN04 EN06 EN07 GH01 GH02 GH03 GH05 GH06 GH07 GH08 GH09 GH10 GO01 GO02 GO03 GO04 GO09 GO10 GO11 GO12 GO13 GO14 HO01 HO02 HO03 HO04 HO05 HO06 II01 II02 II03 II04 II07 II08 NE01 NE02 NE03 NE04 NE05 NE06 NE07 NE08 NU01 NU02 NU03 NU04 NU05 OE01 OE02 PC01 PC02 PC03 PC04 PC05 PC06 PD01 PD02 PD03 PD04 PD05 PD06 PD07 PD08 PD09 PD10 RD01 RD02 RD03 RD04 RD05 RD07 RP01 RP02 RP03 RP04 ';
+var SK='A,H1,H2,H3,SCRIPT,STYLE,NAV,.card-num,.card-eyebrow,.sub-title,.disease-tag,.toc';
+var R=/\b(?:([A-H])(\d)?\.(\d{1,2}[a-c]?)|(CV|RP|GH|NE|EN|NU|HO|II|RD|GO|PD|PC|CT|OE)(\d\d))\b/g;
+function skip(n){for(var e=n.parentNode;e&&e!==M;e=e.parentNode)if(e.matches&&e.matches(SK))return 1;return 0}
+var w=d.createTreeWalker(M,4),t,L=[];while(t=w.nextNode())if(R.test(t.data)&&!skip(t))L.push(t);
+L.forEach(function(t){var s=t.data,f=d.createDocumentFragment(),i=0,m;R.lastIndex=0;
+while(m=R.exec(s)){var h=null;
+if(m[1]){var id=m[1].toLowerCase()+(m[2]?m[2]+'-':'')+m[3];if(d.getElementById(id))h='#'+id}
+else{var x=m[4]+m[5];if(x!==SELF&&HP.indexOf(' '+x+' ')>=0)h='../'+x+'/'+x+'.html'}
+if(!h)continue;f.appendChild(d.createTextNode(s.slice(i,m.index)));
+var a=d.createElement('a');a.href=h;a.className='xr';a.textContent=m[0];f.appendChild(a);i=R.lastIndex}
+if(i){f.appendChild(d.createTextNode(s.slice(i)));t.parentNode.replaceChild(f,t)}});
+function nz(s){return s.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'')}
+var q=d.querySelector('.hp-q'),n=d.querySelector('.hp-n'),it=M.querySelectorAll('.card,.pocket-card'),T;
+function clr(){M.querySelectorAll('.q-off').forEach(function(e){e.classList.remove('q-off')})}
+function run(){var v=nz(q.value.trim());clr();n.textContent='';if(v.length<2)return;var k=0;
+it.forEach(function(c){if(nz(c.textContent).indexOf(v)<0){c.classList.add('q-off');return}k++;
+var r=c.querySelectorAll('.stbl-row,.disease-row,.score-row'),h=[];r.forEach(function(x){if(nz(x.textContent).indexOf(v)>=0)h.push(x)});
+if(h.length)r.forEach(function(x){if(h.indexOf(x)<0)x.classList.add('q-off')});
+c.querySelectorAll('details').forEach(function(x){if(nz(x.textContent).indexOf(v)>=0)x.open=true})});
+M.querySelectorAll('section').forEach(function(s){if(!s.querySelector('.card:not(.q-off),.pocket-card:not(.q-off)'))s.classList.add('q-off')});
+n.textContent=k?k+' achado'+(k>1?'s':''):'nada'}
+if(q){q.addEventListener('input',function(){clearTimeout(T);T=setTimeout(run,180)});
+q.addEventListener('keydown',function(e){if(e.key==='Escape'){q.value='';run()}})}
+function tg(b,f){b.addEventListener('click',function(){var on=b.getAttribute('aria-pressed')!=='true';b.setAttribute('aria-pressed',on);f(on)})}
+var bd=d.querySelector('.hp-dz'),bo=d.querySelector('.hp-op');
+if(bd)tg(bd,function(on){d.body.classList.toggle('dz',on);if(on)d.getElementById('tratamento').scrollIntoView()});
+if(bo)tg(bo,function(on){M.querySelectorAll('details').forEach(function(x){x.open=on})});
+var P=[];addEventListener('beforeprint',function(){P=[];M.querySelectorAll('details:not([open])').forEach(function(x){P.push(x);x.open=true})});
+addEventListener('afterprint',function(){P.forEach(function(x){x.open=false})});
+})();</script><!--/hp-f2--></body>
 </html>

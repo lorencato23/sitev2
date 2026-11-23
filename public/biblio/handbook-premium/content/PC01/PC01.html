@@ -345,13 +345,32 @@ ul.bullets li b{color:var(--ink);font-weight:600}
   .pocket .pocket-card.tx{--accent:#a8481a}
   .pocket .pocket-card.clin{--accent:#0b5d4e}
 }
+
+/* === v5.2.2 · fase 2 (navegação) === */
+.hp-tools{display:flex;gap:6px;align-items:center;flex:none;order:1;margin-left:auto;padding-left:6px;position:sticky;right:0;background:#f1eee5;box-shadow:-10px 0 10px -4px #f1eee5,16px 0 0 #f1eee5}
+@media(min-width:900px){html{scroll-padding-top:150px}.toc-inner{flex-wrap:wrap;overflow:visible}.card[id],.sub-title[id]{scroll-margin-top:150px}}
+@media(max-width:899px){.hp-b,.hp-n{display:none}.hp-q{width:104px}}
+.hp-q{width:128px;font:500 12px/1 'DM Sans',system-ui,sans-serif;padding:7px 11px;border:1px solid var(--line-strong);border-radius:999px;background:var(--paper);color:var(--ink)}
+.hp-b{font:600 11px/1 'DM Sans',system-ui,sans-serif;letter-spacing:.05em;text-transform:uppercase;padding:7px 10px;border-radius:999px;border:1px solid var(--line-strong);background:var(--paper);color:var(--ink-soft);cursor:pointer;white-space:nowrap}
+.hp-b[aria-pressed=true]{background:var(--ink);color:#fff;border-color:var(--ink)}
+.hp-n{font:600 11px/1 'DM Mono',monospace;color:var(--ink-mute);white-space:nowrap}
+.sec-idx{display:flex;flex-wrap:wrap;gap:6px;margin:12px 0 20px}
+.sec-idx a{font:500 12px/1.25 'DM Sans',system-ui,sans-serif;padding:6px 10px;border-radius:999px;background:var(--paper);border:1px solid var(--line);color:var(--ink-soft);text-decoration:none}
+.sec-idx a:hover{border-color:var(--line-strong);color:var(--ink)}
+.sec-idx b{color:var(--c-prim);margin-right:5px;font-weight:700}
+a.xr{color:inherit;text-decoration:underline dotted;text-underline-offset:2px}
+a.xr:hover{color:var(--c-prim)}
+.card[id],.sub-title[id]{scroll-margin-top:110px}
+.q-off{display:none!important}
+body.dz main section:not(#tratamento){display:none}
+@media print{.hp-tools,.sec-idx,.toc-doses{display:none!important}}
 </style>
 </head>
 <body>
 
 <header class="header"><div class="header-row"><div class="h-mark">P</div><div class="h-titles"><div class="h-title">Psicopatologia, Exame Mental e Delirium · Pocket Handbook</div><div class="h-sub">Elite edition · Psiquiatria clínica · PC01</div></div><div class="h-author">@dr.lorencato</div><div class="h-edition">v5.2</div></div></header>
 
-<nav class="toc"><div class="toc-inner"><a href="#pocket" class="toc-chip"><span class="toc-chip-num">0</span>Pocket</a><a href="#redflags" class="toc-chip"><span class="toc-chip-num">A</span>Red Flags</a><a href="#approach" class="toc-chip"><span class="toc-chip-num">B</span>Apresentação</a><a href="#primarias" class="toc-chip"><span class="toc-chip-num">C</span>Entidades</a><a href="#secundarias" class="toc-chip"><span class="toc-chip-num">D</span>Secundárias</a><a href="#algoritmo" class="toc-chip"><span class="toc-chip-num">E</span>Algoritmo</a><a href="#tratamento" class="toc-chip"><span class="toc-chip-num">F</span>Tratamento</a><a href="#pitfalls" class="toc-chip"><span class="toc-chip-num">G</span>Pitfalls</a><a href="#pearls" class="toc-chip"><span class="toc-chip-num">H</span>Pearls</a></div></nav>
+<nav class="toc"><div class="toc-inner"><!--hp-f2--><span class="hp-tools"><input class="hp-q" type="search" placeholder="Buscar no HP" aria-label="Buscar no HP"><button class="hp-b hp-dz" type="button" aria-pressed="false">Só doses</button><button class="hp-b hp-op" type="button" aria-pressed="false">Abrir tudo</button><span class="hp-n" aria-live="polite"></span></span><!--/hp-f2--><a href="#pocket" class="toc-chip"><span class="toc-chip-num">0</span>Pocket</a><a href="#redflags" class="toc-chip"><span class="toc-chip-num">A</span>Red Flags</a><a href="#approach" class="toc-chip"><span class="toc-chip-num">B</span>Apresentação</a><a href="#primarias" class="toc-chip"><span class="toc-chip-num">C</span>Entidades</a><a href="#secundarias" class="toc-chip"><span class="toc-chip-num">D</span>Secundárias</a><a href="#algoritmo" class="toc-chip"><span class="toc-chip-num">E</span>Algoritmo</a><a href="#tratamento" class="toc-chip"><span class="toc-chip-num">F</span>Tratamento</a><!--hp-f2--><a href="#f2" class="toc-chip toc-doses"><span class="toc-chip-num">Rx</span>Doses</a><!--/hp-f2--><a href="#pitfalls" class="toc-chip"><span class="toc-chip-num">G</span>Pitfalls</a><a href="#pearls" class="toc-chip"><span class="toc-chip-num">H</span>Pearls</a></div></nav>
 
 <main>
 <div class="wrap">
@@ -415,7 +434,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <section id="redflags">
 <div class="section"><div class="section-eyebrow"><span>A</span> Red Flags</div><div class="section-title">No exame mental o perigo está no que se deixa de perguntar</div><div class="section-sub">Sinal objetivo, suspeita e conduta imediata. Os eventos evitáveis deste HP são o delirium rotulado de psicose, o suicida que ninguém perguntou, a anorexia internada sem monitorar o fósforo, o conversivo que escondia a esclerose múltipla e o paciente tratado ou internado sem que ninguém tenha avaliado a capacidade de decidir.</div></div>
 
-<div class="card emerg">
+<div class="card emerg" id="a1">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">A.1</span> Emergências</div><h3>Sinais de alarme — exame mental, sono, alimentação e capacidade <span class="ank ank-dgr">DANGER</span></h3></div>
 <div class="card-body">
 
@@ -452,7 +471,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <section id="approach">
 <div class="section"><div class="section-eyebrow"><span>B</span> Por Apresentação</div><div class="section-title">Cinco portas de entrada: pela consciência, pela ideia, pelo corpo, pelo peso e pelo comportamento</div><div class="section-sub">O paciente não chega dizendo "tenho um delírio persecutório" nem "sou borderline". Chega confuso, com medo, com uma fraqueza que ninguém explica, sem comer ou sem dormir, ou impulsivo.</div></div>
 
-<div class="card clin">
+<div class="card clin" id="b1">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">B.1</span> Padrão 1</div><h3>Mudança aguda de comportamento, pensamento ou consciência <span class="ank ank-hy">HIGH-YIELD</span></h3><div class="card-sub">Primeiro a consciência, depois o resto</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">A primeira pergunta do exame mental é "o nível de consciência e a atenção estão preservados?". <b>Se não estão, é síndrome orgânica (delirium) até prova em contrário;</b> se estão, siga para sensopercepção, pensamento e humor. Em ordem: delirium, intoxicação ou abstinência, psicose primária, mania, catatonia, causa orgânica de início psiquiátrico, conversivo ou dissociativo.</div></div>
@@ -466,7 +485,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card clin">
+<div class="card clin" id="b2">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">B.2</span> Padrão 2</div><h3>Voz, medo de perseguição, vivência estranha: sintoma ou normalidade? <span class="ank ank-dec">DECISION</span></h3><div class="card-sub">Definir o fenômeno antes de dar o nome</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Cada termo da psicopatologia descreve uma vivência com forma própria. <b>A forma do fenômeno, e não o assunto, define o sintoma:</b> ouvir a voz da pessoa falecida durante o luto é culturalmente comum e não é alucinação patológica; convicção irremovível e incompreensível é delírio; medo de ser perseguido no contexto de maus-tratos reais é cautela. O exame mental registra o que o paciente diz, como o diz e o que faz com isso.</div></div>
@@ -479,7 +498,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card clin">
+<div class="card clin" id="b3">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">B.3</span> Padrão 3</div><h3>Queixa física sem causa orgânica ou sintoma neurológico estranho <span class="ank ank-dec">DECISION</span></h3><div class="card-sub">O sintoma é real; a pergunta é o mecanismo</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">O foco do sintoma separa as categorias: <b>sintoma somático com pensamento, sentimento e comportamento desproporcionais (sintomas somáticos); medo de ter doença sem sintoma relevante (ansiedade de doença); déficit motor ou sensitivo incompatível com a neurologia (conversivo); lacuna de memória ou desligamento (dissociativo); sinais produzidos para assumir o papel de doente (factício).</b> A simulação é de ganho externo; o factício, de ganho interno.</div></div>
@@ -493,7 +512,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card clin">
+<div class="card clin" id="b4">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">B.4</span> Padrão 4</div><h3>Alteração do peso, da alimentação ou do sono <span class="ank ank-hy">HIGH-YIELD</span></h3><div class="card-sub">Perda de peso e insônia têm causa clínica e causa psiquiátrica</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Perda de peso sem causa clínica pede <b>depressão, anorexia nervosa, bulimia com purgação, psicose, abuso de estimulantes ou doença clínica oculta</b> antes de qualquer rótulo. Insônia crônica pede <b>depressão, ansiedade, apneia, dor, fármacos, álcool e cafeína</b>. O peso e o sono são o termômetro mais barato da saúde mental.</div></div>
@@ -506,7 +525,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card clin">
+<div class="card clin" id="b5">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">B.5</span> Padrão 5</div><h3>Desatenção, impulsividade e relações instáveis no adulto <span class="ank ank-dec">DECISION</span></h3><div class="card-sub">Três diagnósticos que se parecem e se somam</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body"><b>O TDAH começa na infância e é crônico; o transtorno bipolar é episódico; o borderline é reativo a vínculos e tem autolesão;</b> o uso de substâncias e o sono ruim imitam os três. Pergunte o início (antes dos 12 anos), a persistência em mais de um ambiente e o que acontece na ausência de substância. Comorbidade é a regra.</div></div>
@@ -520,9 +539,9 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </section>
 <section id="primarias">
-<div class="section"><div class="section-eyebrow"><span>C</span> Entidades Primárias</div><div class="section-title">Doze entidades: o exame, a linguagem, o delirium, a decisão, o suicídio, o peso, a personalidade, o corpo, a atenção e o sono</div><div class="section-sub">Os quatro primeiros boxes são a ferramenta (exame mental, glossário, delirium, capacidade); o quinto traz a triagem do risco de suicídio; do sexto ao décimo segundo estão os transtornos que o psiquiatra e o clínico encontram no ambulatório e que a apostila ou a lei exigem. A apostila de 2025 não traz TDAH, insônia, capacidade decisória nem aspectos legais; esses boxes vêm de bulas, de diretrizes abertas e das leis lidas no texto.</div></div>
+<div class="section"><div class="section-eyebrow"><span>C</span> Entidades Primárias</div><div class="section-title">Doze entidades: o exame, a linguagem, o delirium, a decisão, o suicídio, o peso, a personalidade, o corpo, a atenção e o sono</div><div class="section-sub">Os quatro primeiros boxes são a ferramenta (exame mental, glossário, delirium, capacidade); o quinto traz a triagem do risco de suicídio; do sexto ao décimo segundo estão os transtornos que o psiquiatra e o clínico encontram no ambulatório e que a apostila ou a lei exigem. A apostila de 2025 não traz TDAH, insônia, capacidade decisória nem aspectos legais; esses boxes vêm de bulas, de diretrizes abertas e das leis lidas no texto.</div></div><!--hp-f2--><nav class="sec-idx" aria-label="Neste capítulo"><a href="#c1"><b>C.1</b>Exame do estado mental e súmu…</a><a href="#c2"><b>C.2</b>Glossário psicopatológico: o…</a><a href="#c3"><b>C.3</b>Delirium: semiologia e difere…</a><a href="#c4"><b>C.4</b>Capacidade de decisão, consen…</a><a href="#c5"><b>C.5</b>Risco de suicídio no ambulató…</a><a href="#c6"><b>C.6</b>Anorexia nervosa: internação…</a><a href="#c7"><b>C.7</b>Bulimia nervosa e transtorno…</a><a href="#c8"><b>C.8</b>Transtornos de personalidade…</a><a href="#c9"><b>C.9</b>Transtorno de personalidade b…</a><a href="#c10"><b>C.10</b>Transtorno de sintomas somáti…</a><a href="#c11"><b>C.11</b>TDAH no adulto: diagnóstico…</a><a href="#c12"><b>C.12</b>Insônia crônica: TCC-I primei…</a></nav><!--/hp-f2-->
 
-<div class="card prim">
+<div class="card prim" id="c1">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.1</span> Exame do estado mental</div><h3>Exame do estado mental e súmula psicopatológica <span class="ank ank-hy">HIGH-YIELD</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">O exame do estado mental é <b>um corte transversal do que o paciente apresenta agora</b>; a anamnese conta a história. Ordem em 15 itens: consciência, atenção, orientação, aspecto geral, atitude, comportamento e psicomotricidade, linguagem, afetividade e humor, sensopercepção, pensamento (curso, forma e conteúdo), memória, vontade, inteligência, <b>consciência de morbidade (insight)</b> e planos para o futuro. A súmula psicopatológica resume tudo em termos técnicos. <b>O que muda conduta:</b> consciência ou atenção alteradas → síndrome orgânica (delirium) antes de qualquer rótulo; ideação suicida ou violenta → avaliação de risco no mesmo ato; insight e crítica prejudicados → capacidade decisória (C.4).</div></div>
@@ -559,7 +578,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="c2">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.2</span> Glossário psicopatológico</div><h3>Glossário psicopatológico: o termo certo para o fenômeno <span class="ank ank-hy">HIGH-YIELD</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body"><b>Ilusão:</b> percepção deformada de objeto real. <b>Alucinação:</b> percepção sem objeto. <b>Delírio:</b> juízo falso com convicção extraordinária, irremovível, de conteúdo impossível e particular ao indivíduo. <b>Fuga de ideias:</b> aceleração com associação por assonância (mania). <b>Afrouxamento e desagregação:</b> perda progressiva dos nexos (esquizofrenia). <b>Embotamento afetivo:</b> perda de vivências afetivas. <b>Despersonalização:</b> estranheza em relação a si; <b>desrealização:</b> estranheza em relação ao mundo. <b>O que muda conduta:</b> o termo aponta o sistema afetado e o diagnóstico a investigar.</div></div>
@@ -598,7 +617,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="c3">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.3</span> Delirium</div><h3>Delirium: semiologia e diferencial (manejo no NE04) <span class="ank ank-dec">DECISION</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Delirium é a <b>síndrome de alteração global das funções psíquicas, com início agudo (horas a dias), consciência e atenção comprometidas, curso flutuante e causa orgânica.</b> Subtipos: hiperativo, hipoativo e misto; o hipoativo é o mais subdiagnosticado. A orientação temporal se perde cedo, a autopsíquica quase nunca. <b>O que muda conduta:</b> consciência ou atenção alteradas e início agudo → buscar a causa no mesmo turno e seguir o NE04; benzodiazepínico só em abstinência de álcool ou de benzodiazepínico; paciente com demência que piora em dias tem delirium sobreposto até prova em contrário.</div></div>
@@ -637,7 +656,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="c4">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.4</span> Capacidade decisória</div><h3>Capacidade de decisão, consentimento e recusa <span class="ank ank-dec">DECISION</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Capacidade é <b>funcional, específica para a decisão e graduada pelo risco</b>; qualquer médico a avalia, e a incapacidade civil, que é jurídica, só o juiz declara. Quatro habilidades: <b>comunicar uma escolha, compreender a informação, apreciar sua aplicação à própria situação e raciocinar sobre as opções</b> (Appelbaum 2007 · conferir). Diagnóstico psiquiátrico, recusa ou discordância do médico não definem incapacidade. <b>O que muda conduta:</b> capaz que recusa → respeitar com informação e registro; incapaz → representante, com participação do paciente; risco iminente de morte → tratar (CEM, arts. 22 e 31).</div></div>
@@ -675,7 +694,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="c5">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.5</span> Suicídio no ambulatório</div><h3>Risco de suicídio no ambulatório: perguntar, triar, estratificar, proteger <span class="ank ank-dgr">DANGER</span> <span class="ank ank-hy">HIGH-YIELD</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body"><b>Pergunte a todo paciente com sofrimento psíquico, de forma direta.</b> Triagem: ASQ (4 perguntas), item 9 do PHQ-9 ou C-SSRS. Estratificação em risco baixo, médio, alto e urgência (ABP/CFM 2014). Em qualquer nível: <b>plano de segurança escrito, restrição de meios e contato de seguimento</b>; o "contrato de não suicídio" não protege. Risco alto ou urgência: PC06. Depressão e bipolar em seguimento: PC02 (D.7). <b>O que muda conduta:</b> plano, meio e intenção hoje → nunca sozinho e avaliação psiquiátrica no mesmo dia; tentativa prévia, desesperança, álcool, alta recente de internação ou medicamento letal em casa → risco maior.</div></div>
@@ -717,7 +736,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="c6">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.6</span> Anorexia nervosa</div><h3>Anorexia nervosa: internação, realimentação e síndrome de realimentação <span class="ank ank-dgr">DANGER</span> <span class="ank ank-hy">HIGH-YIELD</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Restrição que leva a peso significativamente baixo, <b>medo intenso de ganhar peso ou comportamento que impede o ganho</b> e perturbação da imagem corporal. A apostila ainda traz os critérios antigos (peso &lt;85% do esperado e amenorreia obrigatória). <b>Base do tratamento: recuperação nutricional e psicoterapia focada no transtorno</b> (adulto) ou terapia familiar (adolescente); SSRI não restaura peso. Realimentar com monitorização diária de fósforo, magnésio, potássio e cálcio na primeira semana. <b>O que muda conduta:</b> qualquer critério de instabilidade (FC &lt;50, PA &lt;90/60, ortostase, temperatura &lt;36 °C, glicose &lt;60, IMC &lt;15, QTc &gt;450, eletrólitos baixos) → internação.</div></div>
@@ -754,7 +773,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="c7">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.7</span> Bulimia e compulsão alimentar</div><h3>Bulimia nervosa e transtorno de compulsão alimentar <span class="ank ank-dec">DECISION</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body"><b>Bulimia:</b> episódios recorrentes de comer em excesso com perda de controle e compensação (vômito, laxante, diurético, jejum, exercício), peso em geral normal; <b>compulsão alimentar:</b> os mesmos episódios, sem compensação, com sofrimento. Tratamento: psicoterapia (TCC) mais <b>fluoxetina 60 mg/dia</b> na bulimia; TCC ou terapia interpessoal na compulsão, com antidepressivo ou lisdexamfetamina como opção. <b>O que muda conduta:</b> hipocalemia, arritmia ou QTc longo → internar; bupropiona contraindicada na bulimia e na anorexia (convulsão).</div></div>
@@ -773,7 +792,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="c8">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.8</span> Transtornos de personalidade</div><h3>Transtornos de personalidade: grupos A, B e C <span class="ank ank-hy">HIGH-YIELD</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Padrão duradouro, inflexível e mal ajustado de percepção, relação e afeto, que começa no fim da infância ou na adolescência; <b>evita-se o diagnóstico antes dos 16 anos</b>. DSM-5-TR: <b>grupo A (estranho, excêntrico):</b> paranoide, esquizoide, esquizotípica; <b>grupo B (dramático, emotivo, errático):</b> antissocial, borderline, histriônica, narcisista; <b>grupo C (ansioso, medroso):</b> evitativa, dependente, obsessivo-compulsiva. A psicoterapia é o tratamento de base; o fármaco trata sintomas-alvo. <b>O que muda conduta:</b> risco de suicídio (antissocial e borderline) → C.5; depressão e ansiedade associadas → tratar; psicose breve → PC03.</div></div>
@@ -805,7 +824,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="c9">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.9</span> Borderline</div><h3>Transtorno de personalidade borderline: a diretriz da APA 2025 <span class="ank ank-dec">DECISION</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Padrão de instabilidade nas relações, na autoimagem e no afeto, com impulsividade, esforços frenéticos para evitar o abandono, vazio crônico, raiva intensa, dissociação e <b>comportamento suicida ou autolesivo recorrente</b>. A APA 2025 recomenda <b>psicoterapia estruturada que mire os traços centrais (1B)</b>; <b>fármaco só como adjuvante, por tempo limitado, com sintoma-alvo e com revisão a cada 6 meses.</b> Cerca de 85% deixam de preencher o critério em 10 anos. <b>O que muda conduta:</b> risco imediato → internação breve e PC06; comorbidade (depressão, TEPT, substâncias, TDAH, bipolar) → tratar sem perder o foco na psicoterapia.</div></div>
@@ -824,7 +843,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="c10">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.10</span> Sintomas somáticos e conversivo</div><h3>Transtorno de sintomas somáticos, ansiedade de doença e sintomas neurológicos funcionais <span class="ank ank-dec">DECISION</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">O foco separa as categorias: <b>sintoma somático</b> (múltiplos sintomas físicos, pensamento e comportamento desproporcionais), <b>ansiedade de doença</b> (medo de estar doente, sem sintoma relevante), <b>conversivo ou sintomas neurológicos funcionais</b> (déficit motor ou sensitivo incompatível com a neurologia). Não são simulação. <b>O que muda conduta:</b> diagnóstico positivo (sinais de funcionalidade), exames dirigidos e não repetidos, consultas regulares e agendadas, psicoterapia e tratamento da depressão e da ansiedade; excluir doença orgânica grave coexistente.</div></div>
@@ -843,7 +862,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="c11">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.11</span> TDAH no adulto</div><h3>TDAH no adulto: diagnóstico, comorbidade e tratamento <span class="ank ank-dec">DECISION</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Transtorno do neurodesenvolvimento com desatenção e/ou hiperatividade-impulsividade <b>desde a infância</b> (DSM-5-TR: início antes dos 12 anos, pelo menos 5 sintomas no adulto, em 2 ou mais contextos, com prejuízo; conferir). A apostila não traz o tema; fontes: consenso europeu (Kooij 2010), umbrella review (BMJ 2025) e bulas. <b>Estimulante é a primeira linha; atomoxetina, a segunda.</b> Avaliar PA, FC, antecedente cardíaco, tiques, mania, psicose e uso de substâncias antes. <b>O que muda conduta:</b> uso de substâncias ativo ou risco de desvio → atomoxetina; IMAO nos últimos 14 dias → contraindicado; mania ou psicose → tratar primeiro.</div></div>
@@ -863,7 +882,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="c12">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.12</span> Insônia</div><h3>Insônia crônica: TCC-I primeiro, fármaco curto e com cautela <span class="ank ank-hy">HIGH-YIELD</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Dificuldade para iniciar ou manter o sono ou despertar precoce, <b>com consequência diurna</b> (fadiga, déficit de atenção e memória, humor), três noites por semana por três meses (insônia crônica; conferir). <b>A TCC-I multicomponente é o padrão-ouro (Associação Brasileira do Sono 2023); a higiene do sono isolada não é recomendada.</b> Fármacos são curtos, intermitentes e secundários. <b>O que muda conduta:</b> roncos com sonolência ou pernas inquietas → excluir apneia e movimento periódico; idoso → dose menor ou evitar; histórico de sonambulismo com hipnótico → suspender.</div></div>
@@ -884,9 +903,9 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </section>
 <section id="secundarias">
-<div class="section"><div class="section-eyebrow"><span>D</span> Entidades Secundárias</div><div class="section-title">Sete quadros que completam o diferencial e fecham as fronteiras</div><div class="section-sub">Dissociativos, factícios, neurodesenvolvimento no adulto, a causa orgânica por trás do sintoma psiquiátrico, o diferencial do sono, os transtornos alimentares raros e a Lei 10.216. Cada box muda uma decisão: qual exame pedir, qual diagnóstico não fechar e que papel assinar.</div></div>
+<div class="section"><div class="section-eyebrow"><span>D</span> Entidades Secundárias</div><div class="section-title">Sete quadros que completam o diferencial e fecham as fronteiras</div><div class="section-sub">Dissociativos, factícios, neurodesenvolvimento no adulto, a causa orgânica por trás do sintoma psiquiátrico, o diferencial do sono, os transtornos alimentares raros e a Lei 10.216. Cada box muda uma decisão: qual exame pedir, qual diagnóstico não fechar e que papel assinar.</div></div><!--hp-f2--><nav class="sec-idx" aria-label="Neste capítulo"><a href="#d1"><b>D.1</b>Transtornos dissociativos: am…</a><a href="#d2"><b>D.2</b>Transtornos factícios: autoim…</a><a href="#d3"><b>D.3</b>Neurodesenvolvimento no adult…</a><a href="#d4"><b>D.4</b>Sintoma psiquiátrico de causa…</a><a href="#d5"><b>D.5</b>Diferencial da insônia: apnei…</a><a href="#d6"><b>D.6</b>ARFID, pica e ruminação: o tr…</a><a href="#d7"><b>D.7</b>Internação psiquiátrica, sigi…</a></nav><!--/hp-f2-->
 
-<div class="card diag">
+<div class="card diag" id="d1">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">D.1</span> Dissociativos</div><h3>Transtornos dissociativos: amnésia, fuga, despersonalização e identidade <span class="ank ank-hy">HIGH-YIELD</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Perda da integração normal de consciência, memória, identidade, emoção, percepção, representação corporal, controle motor e comportamento, como defesa contra o trauma. <b>Amnésia dissociativa</b> (a mais comum): lacuna de memória, em geral sobre evento traumático, com o aprendizado de informações novas preservado; <b>fuga:</b> amnésia com afastamento físico e nova identidade, em horas a dias; <b>transtorno dissociativo de identidade:</b> duas ou mais identidades, ligado a trauma infantil. Não são simulação. <b>O que muda conduta:</b> excluir intoxicação, crise epiléptica, TCE e demência antes; psicoterapia como base.</div></div>
@@ -902,7 +921,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card diag">
+<div class="card diag" id="d2">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">D.2</span> Factícios</div><h3>Transtornos factícios: autoimposto e imposto a outro <span class="ank ank-dgr">DANGER</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">O paciente falsifica ou induz sinais físicos ou psicológicos, apresenta-se como doente, e o comportamento fraudulento persiste mesmo sem recompensa externa óbvia: o objetivo é assumir o papel de doente. No <b>factício imposto a outro</b> (antes "por procuração") o agente, em geral um cuidador, adoece a criança ou outra pessoa e é ele quem recebe o diagnóstico; a vítima corre risco de dano e de morte. <b>O que muda conduta:</b> suspeita em criança → proteger e comunicar ao conselho tutelar; no adulto, evitar procedimentos invasivos desnecessários e coordenar o cuidado.</div></div>
@@ -918,7 +937,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card diag">
+<div class="card diag" id="d3">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">D.3</span> Neurodesenvolvimento</div><h3>Neurodesenvolvimento no adulto: só o reconhecimento <span class="ank ank-dec">DECISION</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Transtorno do espectro autista, deficiência intelectual, transtornos da linguagem e da aprendizagem e tiques começam na infância e persistem. No adulto aparecem como <b>dificuldade social e de comunicação, interesses restritos, rigidez e sobrecarga sensorial</b> (autismo), baixa escolaridade e dificuldade de aprendizagem (deficiência intelectual, dislexia) ou como comorbidade de ansiedade, depressão e TDAH. <b>O que muda conduta:</b> pensar nesses diagnósticos quando o tratamento de ansiedade ou depressão falha em adulto com história de isolamento; adaptar a comunicação e a capacidade decisória; encaminhar à avaliação especializada. Criança e adolescente: PC04.</div></div>
@@ -934,7 +953,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card diag">
+<div class="card diag" id="d4">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">D.4</span> Causa orgânica</div><h3>Sintoma psiquiátrico de causa orgânica: quando não aceitar o primeiro diagnóstico <span class="ank ank-dgr">DANGER</span> <span class="ank ank-dec">DECISION</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Alucinose, delírio, humor ou ansiedade podem ser a face psiquiátrica de doença cerebral ou sistêmica. <b>Desconfie com início agudo, idade fora do usual (primeiro episódio depois dos 40 anos), alucinação visual, tátil ou olfatória, flutuação da consciência, déficit focal, cefaleia nova, crise, febre, fármaco ou substância recente, ou resposta atípica ao tratamento.</b> O que muda conduta: pedir o corte clínico e neurológico antes do tratamento psiquiátrico definitivo.</div></div>
@@ -950,7 +969,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card diag">
+<div class="card diag" id="d5">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">D.5</span> Diferencial do sono</div><h3>Diferencial da insônia: apneia, narcolepsia, pernas inquietas e ritmo circadiano <span class="ank ank-dec">DECISION</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">A queixa de "dormir mal" esconde apneia obstrutiva (roncos, pausas, sonolência diurna, sono não reparador), narcolepsia (sonolência excessiva, cataplexia, alucinações hipnagógicas e paralisia do sono), síndrome das pernas inquietas (necessidade de mover as pernas ao anoitecer, alívio com movimento) e transtorno do ritmo circadiano (fase atrasada, trabalho em turnos). <b>O que muda conduta:</b> hipnótico antes do diagnóstico agrava a apneia; antagonista de orexina é contraindicado na narcolepsia; pernas inquietas pedem ferritina e revisão de antidepressivo.</div></div>
@@ -965,7 +984,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card diag">
+<div class="card diag" id="d6">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">D.6</span> ARFID e outros alimentares</div><h3>ARFID, pica e ruminação: o transtorno alimentar sem medo de engordar <span class="ank ank-hy">HIGH-YIELD</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Restrição ou evitação alimentar por aversão sensorial, falta de interesse ou medo de consequências (engasgo, vômito), <b>sem o medo de engordar e sem a distorção da imagem corporal</b>, com perda de peso, deficiência nutricional ou dependência de suplemento. Pica é a ingestão persistente de substâncias não nutritivas; ruminação, a regurgitação repetida e voluntária. <b>O que muda conduta:</b> a APA 2023 aplica os mesmos princípios de estabilização clínica e restauração nutricional da anorexia (C.6) aos transtornos restritivos, inclusive ARFID; a pica pede ferritina e chumbo.</div></div>
@@ -980,7 +999,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card diag">
+<div class="card diag" id="d7">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">D.7</span> Lei 10.216 e sigilo</div><h3>Internação psiquiátrica, sigilo e notificação: o que a lei exige <span class="ank ank-dec">DECISION</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">A internação só se indica quando os recursos extra-hospitalares são insuficientes (art. 4º), com <b>laudo médico circunstanciado</b> (art. 6º). Três tipos: <b>voluntária</b> (com consentimento), <b>involuntária</b> (sem consentimento do usuário e a pedido de terceiro) e <b>compulsória</b> (determinada pela Justiça). <b>A involuntária é comunicada ao Ministério Público estadual em 72 horas</b>, e também a alta (art. 8º, § 1º). <b>O que muda conduta:</b> sem crítica e com risco, internar sem consentimento só com laudo e comunicação; em risco iminente de morte, o tratamento necessário não espera (CEM, arts. 22 e 31).</div></div>
@@ -999,7 +1018,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <section id="algoritmo">
 <div class="section"><div class="section-eyebrow"><span>E</span> Algoritmo</div><div class="section-title">Do sinal à conduta: consciência, suicídio e capacidade em três árvores</div><div class="section-sub">A primeira árvore organiza o exame mental pela pergunta que decide o capítulo (a consciência está preservada?); a segunda conduz o risco de suicídio da pergunta à ação; a terceira resolve a decisão do paciente que recusa ou aceita sem entender. Cada ponta termina em exame, dose ou encaminhamento.</div></div>
 
-<div class="card prim">
+<div class="card prim" id="e1">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">E.1</span> Algoritmo</div><h3>Alteração mental: a consciência está preservada? <span class="ank ank-dec">DECISION</span></h3></div>
 <div class="card-body">
 <div class="algo"><div class="tree">
@@ -1032,7 +1051,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="e2">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">E.2</span> Algoritmo</div><h3>Ideação suicida no consultório: da pergunta à conduta <span class="ank ank-dgr">DANGER</span></h3></div>
 <div class="card-body">
 <div class="algo"><div class="tree">
@@ -1057,7 +1076,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="e3">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">E.3</span> Algoritmo</div><h3>Recusa ou aceitação sem compreensão: o paciente decide? <span class="ank ank-dec">DECISION</span></h3></div>
 <div class="card-body">
 <div class="algo"><div class="tree">
@@ -1091,75 +1110,75 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </ul></div></div>
 </section>
 <section id="tratamento">
-<div class="section"><div class="section-eyebrow"><span>F</span> Tratamento Integrado</div><div class="section-title">F1 · Estratégia por entidade · F2 · Doses · F3 · Casos · F4 · SUS e CMED · F5 · Monitorização</div><div class="section-sub">Doses lidas em texto (APA 2023 e 2025, ABS 2023, bulas FDA via openFDA, NICE via Mehanna 2008, leis) levam a sigla; as de apostila e de conhecimento prévio levam "conferir". Mesma dose, mesmo texto em todo o HP. Benzodiazepínico no ambulatório e sua retirada: PC02 D.5. Agitação e sedação: PC06.</div></div>
+<div class="section"><div class="section-eyebrow"><span>F</span> Tratamento Integrado</div><div class="section-title">F1 · Estratégia por entidade · F2 · Doses · F3 · Casos · F4 · SUS e CMED · F5 · Monitorização</div><div class="section-sub">Doses lidas em texto (APA 2023 e 2025, ABS 2023, bulas FDA via openFDA, NICE via Mehanna 2008, leis) levam a sigla; as de apostila e de conhecimento prévio levam "conferir". Mesma dose, mesmo texto em todo o HP. Benzodiazepínico no ambulatório e sua retirada: PC02 D.5. Agitação e sedação: PC06.</div></div><!--hp-f2--><nav class="sec-idx" aria-label="Neste capítulo"><a href="#f1"><b>F.1</b>Escada terapêutica por entida…</a><a href="#f2"><b>F.2</b>Tabela de doses — psicopatolo…</a><a href="#f3"><b>F.3</b>Caso → conduta certa → erro t…</a><a href="#f4"><b>F.4</b>O que o SUS e a CMED trazem e…</a><a href="#f5"><b>F.5</b>O que medir, quando e o que f…</a></nav><!--/hp-f2-->
 
-<div class="card tx">
+<div class="card tx" id="f1">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">F.1</span> Estratégia</div><h3>Escada terapêutica por entidade <span class="ank ank-dec">DECISION</span></h3></div>
 <div class="card-body">
 
-<div class="sub-title">F1.1 · Delirium: o tratamento é a causa (C.3; NE04)</div>
+<div class="sub-title" id="f1-1">F1.1 · Delirium: o tratamento é a causa (C.3; NE04)</div>
 <ul class="bullets">
 <li><b>Reconhecer e buscar a causa no mesmo turno:</b> 4AT ≥4 ou CAM; glicemia, SpO2, sódio, cálcio, ureia, urina, globo vesical, fecaloma, fármacos e abstinência; TC se queda, anticoagulante ou déficit focal.</li>
 <li><b>Medidas multicomponentes:</b> orientação, sono, mobilização, óculos e aparelho auditivo, hidratação, presença de familiar, evitar contenção física (APA 2025, 1B e 1C).</li>
 <li><b>Fármaco só com sofrimento significativo ou risco de dano físico, após desescalada ineficaz:</b> haloperidol 0,5–2 mg VO, IM ou IV, em dose menor no idoso frágil (repetir após 30–60 min; em geral até 5 mg/dia no idoso, prática; conferir); quetiapina 12,5–25 mg se doença de Parkinson ou corpos de Lewy (NE04). Sem benzodiazepínico, exceto abstinência de álcool ou de benzodiazepínico. Sem melatonina nem ramelteona (APA 2025, 2C).</li>
 </ul>
 
-<div class="sub-title">F1.2 · Capacidade e internação: o laudo antes da caneta (C.4, D.7)</div>
+<div class="sub-title" id="f1-2">F1.2 · Capacidade e internação: o laudo antes da caneta (C.4, D.7)</div>
 <ul class="bullets">
 <li><b>Avaliar a capacidade para a decisão específica:</b> comunicar escolha, compreender, apreciar e raciocinar; documentar. Tratar a causa reversível e reavaliar.</li>
 <li><b>Capaz:</b> respeitar a recusa, informar, oferecer alternativas, registrar. <b>Incapaz:</b> representante ou familiar, com a participação possível do paciente (Lei 13.146, art. 12, § 1º). <b>Risco iminente de morte:</b> tratar (CEM, arts. 22 e 31).</li>
 <li><b>Internação involuntária:</b> laudo circunstanciado, médico com CRM do estado, comunicação ao Ministério Público em 72 horas e na alta (Lei 10.216, arts. 6º e 8º); a compulsória é determinada pelo juiz.</li>
 </ul>
 
-<div class="sub-title">F1.3 · Risco de suicídio no consultório (C.5)</div>
+<div class="sub-title" id="f1-3">F1.3 · Risco de suicídio no consultório (C.5)</div>
 <ul class="bullets">
 <li><b>Todo paciente com sofrimento:</b> pergunta direta; ASQ, item 9 do PHQ-9 ou C-SSRS; estratificar em baixo, médio, alto e urgência (ABP/CFM 2014).</li>
 <li><b>Baixo e médio:</b> plano de segurança escrito (sinais de alerta, estratégias, pessoas, contatos, CVV 188), restrição de meios, quantidades pequenas de fármaco letal, tratamento do transtorno de base, retorno em até 1 semana, encaminhamento breve no risco médio.</li>
 <li><b>Alto e urgência:</b> ficar com a pessoa, retirar os objetos, avaliação psiquiátrica no mesmo dia, ambulância, internação (PC06). <b>Notificar</b> a tentativa e a automutilação (Lei 13.819).</li>
 </ul>
 
-<div class="sub-title">F1.4 · Anorexia nervosa e realimentação (C.6)</div>
+<div class="sub-title" id="f1-4">F1.4 · Anorexia nervosa e realimentação (C.6)</div>
 <ul class="bullets">
 <li><b>Nível de cuidado:</b> internar com qualquer critério da APA 2023 (FC &lt;50, PA &lt;90/60, ortostase, temperatura &lt;36 °C, glicose &lt;60, IMC &lt;15, QTc &gt;450, eletrólitos baixos, síncope). Ambulatório: pesagem semanal em jejum, sinais vitais e eletrólitos; sem ganho de 0,5–1 lb/semana em 6 semanas, subir o nível.</li>
 <li><b>Realimentação:</b> a APA 2023 descreve programas com 1.500–2.000 kcal/dia sob monitorização, chegando a 3.000–4.000 kcal/dia; fósforo, magnésio, potássio e cálcio diários na primeira semana; <b>tiamina 100 mg/dia</b> antes da primeira refeição, por 3–5 dias; hidratação IV lenta. <b>Alto risco (NICE 2006 via Mehanna):</b> partida de no máximo 10 kcal/kg/dia (5 kcal/kg/dia se IMC ≤14 ou jejum ≥2 semanas), com protocolo do serviço.</li>
 <li><b>Psicoterapia:</b> terapia focada no transtorno (adulto) ou familiar (adolescente). Sem fármaco que restaure peso; olanzapina: sem recomendação da APA 2023, uso individual com especialista.</li>
 </ul>
 
-<div class="sub-title">F1.5 · Bulimia e compulsão alimentar (C.7)</div>
+<div class="sub-title" id="f1-5">F1.5 · Bulimia e compulsão alimentar (C.7)</div>
 <ul class="bullets">
 <li><b>Bulimia:</b> TCC focada no transtorno; <b>fluoxetina 60 mg/dia</b> desde o início ou se não houver resposta em 6 semanas; manter 6 a 12 meses após a remissão (apostila). Corrigir potássio nos que purgam. Bupropiona contraindicada.</li>
 <li><b>Compulsão alimentar:</b> TCC ou terapia interpessoal; antidepressivo ou <b>lisdexamfetamina 30 mg pela manhã, até 50–70 mg/dia (teto 70)</b> se preferência ou falha da psicoterapia; suspender se não melhorar.</li>
 </ul>
 
-<div class="sub-title">F1.6 · Borderline e outros transtornos de personalidade (C.8, C.9)</div>
+<div class="sub-title" id="f1-6">F1.6 · Borderline e outros transtornos de personalidade (C.8, C.9)</div>
 <ul class="bullets">
 <li><b>Psicoterapia estruturada</b> (DBT, MBT, TFP, esquema, STEPPS, manejo psiquiátrico geral) por 6 a 18 meses; psicoeducação; plano de crise.</li>
 <li><b>Fármaco:</b> após revisar comorbidades e tratamentos prévios; um alvo mensurável, por tempo limitado, adjuvante; ISRS se depressão ou TOC; antipsicótico de segunda geração em baixa dose para psicose, impulsividade ou agitação; sem benzodiazepínico; <b>reconciliar a lista a cada 6 meses</b>.</li>
 <li><b>Hospitalização</b> breve, para risco imediato; evitar internação prolongada rotineira.</li>
 </ul>
 
-<div class="sub-title">F1.7 · TDAH no adulto (C.11)</div>
+<div class="sub-title" id="f1-7">F1.7 · TDAH no adulto (C.11)</div>
 <ul class="bullets">
 <li><b>Antes:</b> PA, FC, história cardíaca, tiques, mania, psicose, substâncias; psicoeducação e TCC.</li>
 <li><b>Primeira linha:</b> metilfenidato (liberação imediata 20–30 mg/dia em 2–3 tomadas, teto 60 mg/dia; OROS 18–36 mg pela manhã até 72 mg/dia) ou lisdexamfetamina (30 mg pela manhã, 30–70 mg/dia, teto 70). <b>Segunda linha:</b> atomoxetina 40 mg/dia, alvo 80 mg/dia, teto 100 mg/dia, preferida com uso ativo de substâncias, tique ou ansiedade social.</li>
 <li><b>Contraindicações:</b> IMAO nos 14 dias anteriores; atomoxetina com glaucoma de ângulo fechado e feocromocitoma. Reavaliar PA, FC, peso e risco de mau uso a cada consulta.</li>
 </ul>
 
-<div class="sub-title">F1.8 · Insônia crônica (C.12)</div>
+<div class="sub-title" id="f1-8">F1.8 · Insônia crônica (C.12)</div>
 <ul class="bullets">
 <li><b>TCC-I multicomponente</b> (presencial ou online), com higiene incluída e não isolada; atenção plena, exercício como adjuvantes. Corrigir cafeína, álcool, fármacos, apneia, dor e depressão.</li>
 <li><b>Fármaco, por exceção:</b> zolpidem IR 5 mg na mulher, 5–10 mg no homem (idoso 5 mg; teto 10 mg) por no máximo 4 semanas, intermitente; zopiclona 7,5 mg (idoso 3,75 mg); eszopiclona 2–3 mg (idoso até 2 mg; bula FDA inicia com 1 mg); doxepina 3–6 mg; trazodona 25–150 mg; lemborexante 5–10 mg. Parar se sonambulismo ou comportamento complexo.</li>
 <li><b>Não recomendados:</b> benzodiazepínico, anti-histamínico, fitoterápico, gabapentinoide e canabinoide (ABS 2023).</li>
 </ul>
 
-<div class="sub-title">F1.9 · Sintomas somáticos, conversivo, dissociativos e factícios (C.10, D.1, D.2)</div>
+<div class="sub-title" id="f1-9">F1.9 · Sintomas somáticos, conversivo, dissociativos e factícios (C.10, D.1, D.2)</div>
 <ul class="bullets">
 <li><b>Conversivo:</b> diagnóstico positivo (Hoover, tremor que muda com a distração), exclusão do que é grave sem repetir exames, explicação como real e tratável, fisioterapia e psicoterapia; crises não epilépticas: NE02.</li>
 <li><b>Sintomas somáticos e ansiedade de doença:</b> consultas regulares e agendadas, um médico coordenador, exames só por indicação, TCC; antidepressivo se depressão ou ansiedade comórbidas.</li>
 <li><b>Dissociativos:</b> psicoterapia, causa orgânica excluída, tratamento do TEPT e da depressão. <b>Factício:</b> coordenação do cuidado, limite de procedimentos invasivos; imposto a outro: proteger a vítima e comunicar o conselho tutelar.</li>
 </ul>
 
-<div class="sub-title">F1.10 · ARFID e outros alimentares (D.6)</div>
+<div class="sub-title" id="f1-10">F1.10 · ARFID e outros alimentares (D.6)</div>
 <ul class="bullets">
 <li><b>ARFID:</b> estabilização clínica e restauração nutricional como na anorexia (APA 2023), nutrição e TCC adaptada com exposição gradual; internar pelos mesmos critérios de instabilidade. <b>Pica:</b> ferro, zinco e chumbo. <b>Ruminação:</b> reeducação respiratória.</li>
 </ul>
@@ -1169,7 +1188,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card tx">
+<div class="card tx" id="f2">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">F.2</span> Doses Operacionais</div><h3>Tabela de doses — psicopatologia, sono, alimentar e TDAH</h3></div>
 <div class="card-body">
 <div class="stbl stbl-3">
@@ -1195,7 +1214,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card tx">
+<div class="card tx" id="f3">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">F.3</span> Cenários</div><h3>Caso → conduta certa → erro típico</h3></div>
 <div class="card-body">
 <div class="stbl stbl-3">
@@ -1214,7 +1233,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card tx">
+<div class="card tx" id="f4">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">F.4</span> Acesso</div><h3>O que o SUS e a CMED trazem e o que fica a conferir <span class="ank ank-dec">DECISION</span></h3></div>
 <div class="card-body">
 <div class="stbl stbl-3">
@@ -1227,7 +1246,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card tx">
+<div class="card tx" id="f5">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">F.5</span> Monitorização</div><h3>O que medir, quando e o que fazer com o resultado</h3></div>
 <div class="card-body">
 <div class="stbl stbl-3">
@@ -1245,7 +1264,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <section id="pitfalls">
 <div class="section"><div class="section-eyebrow"><span>G</span> Pitfalls · Mitos · Controvérsias</div><div class="section-title">Erros operacionais, mitos vivos e debates abertos</div><div class="section-sub">Os erros que se repetem: o delirium chamado de psicose, o suicida a quem ninguém perguntou, a capacidade confundida com diagnóstico, a anorexia realimentada sem fósforo e o hipnótico dado antes da apneia.</div></div>
 
-<div class="card pearl">
+<div class="card pearl" id="g1">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">G.1</span> Pegadinhas</div><h3>10 erros operacionais em psicopatologia, capacidade, alimentar, TDAH e sono</h3></div>
 <div class="card-body">
 <div class="stbl stbl-2">
@@ -1264,7 +1283,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card pearl">
+<div class="card pearl" id="g2">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">G.2</span> Mitos</div><h3>Três mitos vivos</h3></div>
 <div class="card-body">
 <div class="box myth"><span class="box-label">MYTH</span><div class="box-title">"Perguntar sobre suicídio põe a ideia na cabeça do paciente"</div><div class="box-body">A pergunta direta não induz o ato e costuma aliviar, porque dá a quem sofre a permissão de falar; o silêncio da equipe é que deixa o risco sem avaliação. O suicídio é o desfecho de acúmulo de fatores ao longo do tempo, não de uma frase do médico. Pergunte a todo paciente com sofrimento psíquico, e não só ao deprimido, e anote a resposta; a recusa de perguntar é o que deveria ser tratada como risco (ABP/CFM 2014; mhGAP 2023).</div></div>
@@ -1273,7 +1292,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card pearl">
+<div class="card pearl" id="g3">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">G.3</span> Controvérsias</div><h3>Três debates sem consenso</h3></div>
 <div class="card-body">
 <div class="box controversy"><span class="box-label">CONTROVERSY</span><div class="box-title">Quantas calorias na primeira semana da anorexia: 1.500–2.000 ou 5–10 kcal/kg?</div><div class="box-body">A APA 2023 e a Society for Adolescent Health and Medicine defendem partidas mais altas (1.500–2.000 kcal/dia) com monitorização e reposição de eletrólitos, porque protocolos conservadores (1.000–1.200 kcal/dia) associaram-se a pior ganho e internação mais longa sem benefício comprovado na síndrome de realimentação; o NICE (2006, via Mehanna 2008) limita a 10 kcal/kg/dia (5 kcal/kg/dia na desnutrição extrema) em quem tem alto risco. A diferença é de população e evidência (jovens com anorexia × adultos com jejum por outras causas). O HP usa a APA e cita o NICE; o serviço deve ter protocolo e monitorar.</div></div>
@@ -1286,7 +1305,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <section id="pearls">
 <div class="section"><div class="section-eyebrow"><span>H</span> Pearls · Evolving</div><div class="section-title">H1 · Nuances de especialista · H2 · O que mudou entre 2023 e 2026</div><div class="section-sub">Oito ideias que o plantão e o consultório esquecem e cinco mudanças reais; onde o tema é estável (a semiologia, a hierarquia do exame mental, a definição de capacidade), diz-se.</div></div>
 
-<div class="card pearl">
+<div class="card pearl" id="h1">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">H.1</span> Pearls</div><h3>8 nuances que distinguem o especialista</h3></div>
 <div class="card-body">
 <div class="box pearl"><span class="box-label">PEARL</span><div class="box-title">A atenção é o único item do exame que não se finge e que desmonta o diagnóstico psiquiátrico</div><div class="box-body">O paciente pode contar delírios, ocultar depressão e minimizar o uso de álcool, mas não consegue repetir os meses do ano de trás para a frente com a atenção quebrada. Teste de atenção em todo idoso internado e em todo "primeiro surto" antes do rótulo: é a manobra de 30 segundos que separa o delirium do resto da psiquiatria.</div></div>
@@ -1300,7 +1319,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card pearl">
+<div class="card pearl" id="h2">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">H.2</span> Evolving</div><h3>O que mudou: cinco itens reais; o resto do tema é estável</h3></div>
 <div class="card-body">
 <div class="box evolving"><span class="box-label">EVOLVING</span><div class="box-title">APA 2025 para borderline: psicoterapia estruturada, fármaco adjuvante e revisão a cada 6 meses</div><div class="box-body">A segunda edição da diretriz (2025) reforça a psicoterapia estruturada como eixo (1B), a remissão frequente (85% em 10 anos) e a farmacoterapia limitada, com alvo e prazo, revisão semestral e ressalvas explícitas para valproato, lamotrigina e topiramato. A apostila de 2025 ainda descreve antidepressivos, antipsicóticos e anticonvulsivantes sem esse limite.</div></div>
@@ -1358,5 +1377,36 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <a class="to-top" href="#" aria-label="Voltar ao topo">↑</a>
 <div class="watermark">@dr.lorencato · PC01 Psicopatologia, Exame Mental e Delirium v5.2</div>
 
-</body>
+<!--hp-f2--><script>(function(){var d=document,M=d.querySelector('main');if(!M)return;
+var SELF='PC01',HP=' CT01 CT02 CT03 CT04 CT05 CT06 CT08 CT10 CV01 CV03 CV04 CV05 CV06 CV07 CV08 EN01 EN02 EN03 EN04 EN06 EN07 GH01 GH02 GH03 GH05 GH06 GH07 GH08 GH09 GH10 GO01 GO02 GO03 GO04 GO09 GO10 GO11 GO12 GO13 GO14 HO01 HO02 HO03 HO04 HO05 HO06 II01 II02 II03 II04 II07 II08 NE01 NE02 NE03 NE04 NE05 NE06 NE07 NE08 NU01 NU02 NU03 NU04 NU05 OE01 OE02 PC01 PC02 PC03 PC04 PC05 PC06 PD01 PD02 PD03 PD04 PD05 PD06 PD07 PD08 PD09 PD10 RD01 RD02 RD03 RD04 RD05 RD07 RP01 RP02 RP03 RP04 ';
+var SK='A,H1,H2,H3,SCRIPT,STYLE,NAV,.card-num,.card-eyebrow,.sub-title,.disease-tag,.toc';
+var R=/\b(?:([A-H])(\d)?\.(\d{1,2}[a-c]?)|(CV|RP|GH|NE|EN|NU|HO|II|RD|GO|PD|PC|CT|OE)(\d\d))\b/g;
+function skip(n){for(var e=n.parentNode;e&&e!==M;e=e.parentNode)if(e.matches&&e.matches(SK))return 1;return 0}
+var w=d.createTreeWalker(M,4),t,L=[];while(t=w.nextNode())if(R.test(t.data)&&!skip(t))L.push(t);
+L.forEach(function(t){var s=t.data,f=d.createDocumentFragment(),i=0,m;R.lastIndex=0;
+while(m=R.exec(s)){var h=null;
+if(m[1]){var id=m[1].toLowerCase()+(m[2]?m[2]+'-':'')+m[3];if(d.getElementById(id))h='#'+id}
+else{var x=m[4]+m[5];if(x!==SELF&&HP.indexOf(' '+x+' ')>=0)h='../'+x+'/'+x+'.html'}
+if(!h)continue;f.appendChild(d.createTextNode(s.slice(i,m.index)));
+var a=d.createElement('a');a.href=h;a.className='xr';a.textContent=m[0];f.appendChild(a);i=R.lastIndex}
+if(i){f.appendChild(d.createTextNode(s.slice(i)));t.parentNode.replaceChild(f,t)}});
+function nz(s){return s.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'')}
+var q=d.querySelector('.hp-q'),n=d.querySelector('.hp-n'),it=M.querySelectorAll('.card,.pocket-card'),T;
+function clr(){M.querySelectorAll('.q-off').forEach(function(e){e.classList.remove('q-off')})}
+function run(){var v=nz(q.value.trim());clr();n.textContent='';if(v.length<2)return;var k=0;
+it.forEach(function(c){if(nz(c.textContent).indexOf(v)<0){c.classList.add('q-off');return}k++;
+var r=c.querySelectorAll('.stbl-row,.disease-row,.score-row'),h=[];r.forEach(function(x){if(nz(x.textContent).indexOf(v)>=0)h.push(x)});
+if(h.length)r.forEach(function(x){if(h.indexOf(x)<0)x.classList.add('q-off')});
+c.querySelectorAll('details').forEach(function(x){if(nz(x.textContent).indexOf(v)>=0)x.open=true})});
+M.querySelectorAll('section').forEach(function(s){if(!s.querySelector('.card:not(.q-off),.pocket-card:not(.q-off)'))s.classList.add('q-off')});
+n.textContent=k?k+' achado'+(k>1?'s':''):'nada'}
+if(q){q.addEventListener('input',function(){clearTimeout(T);T=setTimeout(run,180)});
+q.addEventListener('keydown',function(e){if(e.key==='Escape'){q.value='';run()}})}
+function tg(b,f){b.addEventListener('click',function(){var on=b.getAttribute('aria-pressed')!=='true';b.setAttribute('aria-pressed',on);f(on)})}
+var bd=d.querySelector('.hp-dz'),bo=d.querySelector('.hp-op');
+if(bd)tg(bd,function(on){d.body.classList.toggle('dz',on);if(on)d.getElementById('tratamento').scrollIntoView()});
+if(bo)tg(bo,function(on){M.querySelectorAll('details').forEach(function(x){x.open=on})});
+var P=[];addEventListener('beforeprint',function(){P=[];M.querySelectorAll('details:not([open])').forEach(function(x){P.push(x);x.open=true})});
+addEventListener('afterprint',function(){P.forEach(function(x){x.open=false})});
+})();</script><!--/hp-f2--></body>
 </html>

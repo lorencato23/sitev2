@@ -345,11 +345,30 @@ ul.bullets li b{color:var(--ink);font-weight:600}
   .pocket .pocket-card.tx{--accent:#a8481a}
   .pocket .pocket-card.clin{--accent:#0b5d4e}
 }
+
+/* === v5.2.2 · fase 2 (navegação) === */
+.hp-tools{display:flex;gap:6px;align-items:center;flex:none;order:1;margin-left:auto;padding-left:6px;position:sticky;right:0;background:#f1eee5;box-shadow:-10px 0 10px -4px #f1eee5,16px 0 0 #f1eee5}
+@media(min-width:900px){html{scroll-padding-top:150px}.toc-inner{flex-wrap:wrap;overflow:visible}.card[id],.sub-title[id]{scroll-margin-top:150px}}
+@media(max-width:899px){.hp-b,.hp-n{display:none}.hp-q{width:104px}}
+.hp-q{width:128px;font:500 12px/1 'DM Sans',system-ui,sans-serif;padding:7px 11px;border:1px solid var(--line-strong);border-radius:999px;background:var(--paper);color:var(--ink)}
+.hp-b{font:600 11px/1 'DM Sans',system-ui,sans-serif;letter-spacing:.05em;text-transform:uppercase;padding:7px 10px;border-radius:999px;border:1px solid var(--line-strong);background:var(--paper);color:var(--ink-soft);cursor:pointer;white-space:nowrap}
+.hp-b[aria-pressed=true]{background:var(--ink);color:#fff;border-color:var(--ink)}
+.hp-n{font:600 11px/1 'DM Mono',monospace;color:var(--ink-mute);white-space:nowrap}
+.sec-idx{display:flex;flex-wrap:wrap;gap:6px;margin:12px 0 20px}
+.sec-idx a{font:500 12px/1.25 'DM Sans',system-ui,sans-serif;padding:6px 10px;border-radius:999px;background:var(--paper);border:1px solid var(--line);color:var(--ink-soft);text-decoration:none}
+.sec-idx a:hover{border-color:var(--line-strong);color:var(--ink)}
+.sec-idx b{color:var(--c-prim);margin-right:5px;font-weight:700}
+a.xr{color:inherit;text-decoration:underline dotted;text-underline-offset:2px}
+a.xr:hover{color:var(--c-prim)}
+.card[id],.sub-title[id]{scroll-margin-top:110px}
+.q-off{display:none!important}
+body.dz main section:not(#tratamento){display:none}
+@media print{.hp-tools,.sec-idx,.toc-doses{display:none!important}}
 </style>
 </head>
 <body>
 <header class="header"><div class="header-row"><div class="h-mark">N</div><div class="h-titles"><div class="h-title">Sódio, Potássio e Ácido-Base · Pocket Handbook</div><div class="h-sub">Elite edition · Nefrologia clínica · NU04</div></div><div class="h-author">@dr.lorencato</div><div class="h-edition">v5.2</div></div></header>
-<nav class="toc"><div class="toc-inner"><a href="#pocket" class="toc-chip"><span class="toc-chip-num">0</span>Pocket</a><a href="#redflags" class="toc-chip"><span class="toc-chip-num">A</span>Red Flags</a><a href="#approach" class="toc-chip"><span class="toc-chip-num">B</span>Apresentação</a><a href="#primarias" class="toc-chip"><span class="toc-chip-num">C</span>Entidades</a><a href="#secundarias" class="toc-chip"><span class="toc-chip-num">D</span>Secundárias</a><a href="#algoritmo" class="toc-chip"><span class="toc-chip-num">E</span>Algoritmo</a><a href="#tratamento" class="toc-chip"><span class="toc-chip-num">F</span>Tratamento</a><a href="#pitfalls" class="toc-chip"><span class="toc-chip-num">G</span>Pitfalls</a><a href="#pearls" class="toc-chip"><span class="toc-chip-num">H</span>Pearls</a></div></nav>
+<nav class="toc"><div class="toc-inner"><!--hp-f2--><span class="hp-tools"><input class="hp-q" type="search" placeholder="Buscar no HP" aria-label="Buscar no HP"><button class="hp-b hp-dz" type="button" aria-pressed="false">Só doses</button><button class="hp-b hp-op" type="button" aria-pressed="false">Abrir tudo</button><span class="hp-n" aria-live="polite"></span></span><!--/hp-f2--><a href="#pocket" class="toc-chip"><span class="toc-chip-num">0</span>Pocket</a><a href="#redflags" class="toc-chip"><span class="toc-chip-num">A</span>Red Flags</a><a href="#approach" class="toc-chip"><span class="toc-chip-num">B</span>Apresentação</a><a href="#primarias" class="toc-chip"><span class="toc-chip-num">C</span>Entidades</a><a href="#secundarias" class="toc-chip"><span class="toc-chip-num">D</span>Secundárias</a><a href="#algoritmo" class="toc-chip"><span class="toc-chip-num">E</span>Algoritmo</a><a href="#tratamento" class="toc-chip"><span class="toc-chip-num">F</span>Tratamento</a><!--hp-f2--><a href="#f2" class="toc-chip toc-doses"><span class="toc-chip-num">Rx</span>Doses</a><!--/hp-f2--><a href="#pitfalls" class="toc-chip"><span class="toc-chip-num">G</span>Pitfalls</a><a href="#pearls" class="toc-chip"><span class="toc-chip-num">H</span>Pearls</a></div></nav>
 <main>
 <div class="wrap">
 <div class="hero">
@@ -388,7 +407,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 
 <section id="redflags">
 <div class="section"><div class="section-eyebrow"><span>A</span> Red Flags</div><h2 class="section-title">Quando o íon mata antes do diagnóstico</h2><div class="section-sub">O cérebro edemaciado pela água, o coração parado pelo potássio, o pH que desliga enzimas e a correção rápida demais que desmieliniza a ponte. Cada linha: sinal objetivo → suspeita → conduta imediata com número.</div></div>
-<div class="card emerg">
+<div class="card emerg" id="a1">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">A.1</span> Emergências</div><h3>Sinais de alarme em Na⁺, K⁺ e ácido-base <span class="ank ank-dgr">DANGER</span></h3></div>
 <div class="card-body">
 <div class="mnemo"><div class="mnemo-title"><b>OSMOLAR</b> sete portas de entrada na sala vermelha</div><div class="mnemo-grid">
@@ -421,7 +440,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <section id="approach">
 <div class="section"><div class="section-eyebrow"><span>B</span> Por Apresentação</div><h2 class="section-title">Mapa sindrômico — do número alterado ao mecanismo</h2><div class="section-sub">Nenhum distúrbio deste HP é diagnóstico: são sinais laboratoriais de uma doença de base. A apresentação dirige quais três exames pedir a seguir.</div></div>
 
-<div class="card clin">
+<div class="card clin" id="b1">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">B.1</span> Padrão 1</div><h3>Confusão, quedas e náusea em idoso com Na⁺ baixo</h3><div class="card-sub">tonicidade → urina → volemia</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Na enfermaria, hiponatremia leve crônica não é benigna: déficit de atenção, instabilidade de marcha, <b>quedas e fraturas</b> e osteoporose por liberação de sódio do osso. A sequência é <b>Posm medida → Uosm → UNa</b>, nessa ordem, antes de qualquer soro.</div></div>
@@ -436,7 +455,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card clin">
+<div class="card clin" id="b2">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">B.2</span> Padrão 2</div><h3>Rebaixamento com Na⁺ alto, sede ausente e fralda seca</h3><div class="card-sub">perda de água livre sem acesso à água</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Quem tem sede e acesso a água não sustenta hipernatremia. Ela aparece no <b>idoso dependente, no intubado, no lactente e no paciente com lesão hipotalâmica</b>. A <b>Uosm</b> diz por onde a água saiu: &gt;600–800 = rim poupando (perda extrarrenal); &lt;300 com poliúria = rim perdendo (deficiência ou resistência à AVP); 300–600 = diurese osmótica ou DI parcial.</div></div>
@@ -450,7 +469,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card clin">
+<div class="card clin" id="b3">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">B.3</span> Padrão 3</div><h3>Fraqueza muscular, câimbras e palpitação</h3><div class="card-sub">K⁺ baixo ou alto — o ECG decide a urgência</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Ambos os extremos do potássio dão fraqueza flácida; o que separa é o ECG e o contexto. <b>Hipocalemia</b>: onda U, T achatada, ST infradesnivelado, QT(U) longo, ectopia ventricular. <b>Hipercalemia</b>: T apiculada simétrica, PR longo, P que some, QRS largo, ritmo sinusoidal, bradicardia e BAV.</div></div>
@@ -465,7 +484,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card clin">
+<div class="card clin" id="b4">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">B.4</span> Padrão 4</div><h3>Taquipneia de Kussmaul, dor abdominal e HCO₃⁻ baixo</h3><div class="card-sub">acidose metabólica — o ânion gap separa produção de perda</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Respiração profunda e regular é compensação, não doença pulmonar. Ânion gap alto = <b>ácido novo acumulado</b> (lactato, cetonas, formato, glicolato, salicilato, sulfato/fosfato urêmicos, piroglutamato). AG normal = <b>perda de bicarbonato</b> (diarreia, fístula, derivação urinária) ou <b>falha renal de acidificação</b> (ATR).</div></div>
@@ -479,7 +498,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card clin">
+<div class="card clin" id="b5">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">B.5</span> Padrão 5</div><h3>Vômitos, sonda drenando, diurético e HCO₃⁻ de 38</h3><div class="card-sub">alcalose metabólica — gerar e manter são problemas diferentes</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">O rim excreta bicarbonato com facilidade; alcalose que persiste exige um fator de <b>manutenção</b>: contração de volume, depleção de cloreto, hipocalemia, hiperaldosteronismo ou hipercapnia. O <b>Cl⁻ urinário</b> é o exame: &lt;20 mEq/L = cloreto-responsiva; &gt;20 = diurético em uso, Bartter/Gitelman ou excesso de mineralocorticoide.</div></div>
@@ -496,9 +515,9 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </section>
 
 <section id="primarias">
-<div class="section"><div class="section-eyebrow"><span>C</span> Entidades Primárias</div><h2 class="section-title">Disease boxes — água, sódio, potássio e ácido</h2><div class="section-sub">Nove entidades com raciocínio próprio. A teoria completa (osmorregulação, adaptação cerebral, fisiologia do túbulo coletor, química do tampão) fica nos deep-dives; o corpo visível é o que se usa à beira do leito.</div></div>
+<div class="section"><div class="section-eyebrow"><span>C</span> Entidades Primárias</div><h2 class="section-title">Disease boxes — água, sódio, potássio e ácido</h2><div class="section-sub">Nove entidades com raciocínio próprio. A teoria completa (osmorregulação, adaptação cerebral, fisiologia do túbulo coletor, química do tampão) fica nos deep-dives; o corpo visível é o que se usa à beira do leito.</div></div><!--hp-f2--><nav class="sec-idx" aria-label="Neste capítulo"><a href="#c1"><b>C.1</b>Hiponatremia hipotônica</a><a href="#c2"><b>C.2</b>SIAD e perda cerebral de sal</a><a href="#c3"><b>C.3</b>Síndrome de desmielinização o…</a><a href="#c4"><b>C.4</b>Hipernatremia</a><a href="#c5"><b>C.5</b>Hipocalemia</a><a href="#c6"><b>C.6</b>Hipercalemia</a><a href="#c7"><b>C.7</b>Acidose metabólica com ânion…</a><a href="#c8"><b>C.8</b>Acidose com ânion gap normal…</a><a href="#c9"><b>C.9</b>Alcalose metabólica</a></nav><!--/hp-f2-->
 
-<div class="card prim">
+<div class="card prim" id="c1">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.1</span> Disnatremia hipotônica</div><h3>Hiponatremia hipotônica <span class="ank ank-hy">HIGH-YIELD</span></h3><div class="card-sub">excesso relativo de água sobre o sódio corporal trocável</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Na⁺ &lt;135 com <b>osmolalidade plasmática &lt;275 mOsm/kg</b>. Classifique por <b>gravidade bioquímica</b> (leve 130–135, moderada 125–129, profunda &lt;125), <b>tempo</b> (aguda &lt;48 h × crônica) e, sobretudo, <b>sintoma</b> — é o sintoma que decide hipertônica. A etiologia sai de Uosm e UNa, não do exame de turgor.</div></div>
@@ -529,7 +548,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="c2">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.2</span> Euvolemia com urina concentrada</div><h3>SIAD e perda cerebral de sal <span class="ank ank-dec">DECISION</span></h3><div class="card-sub">antidiurese inapropriada × natriurese verdadeira com hipovolemia</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">SIAD é diagnóstico de exclusão: hipotonicidade, <b>Uosm &gt;100</b>, <b>UNa &gt;30</b> com ingestão normal de sal, euvolemia clínica, <b>sem diurético recente</b>, com cortisol e tireoide normais. A perda cerebral de sal (CSW, sem código nominal no CID-10) tem os mesmos números de urina, mas com <b>hipovolemia real</b>: o tratamento é o oposto.</div></div>
@@ -556,7 +575,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="c3">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.3</span> Complicação iatrogênica</div><h3>Síndrome de desmielinização osmótica <span class="ank ank-dgr">DANGER</span></h3><div class="card-sub">mielinólise pontina e extrapontina após correção rápida de hiponatremia crônica</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Doença evitável: aparece <b>2–6 dias</b> após elevação rápida do Na⁺ em hiponatremia crônica, com quadro bifásico (melhora da encefalopatia e depois piora). Teto <b>10 mmol/L/24 h</b> para todos e <b>8 mmol/L/24 h</b> para alto risco. Hipercorrigiu: abaixe de novo.</div></div>
@@ -578,7 +597,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="c4">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.4</span> Disnatremia hipertônica</div><h3>Hipernatremia <span class="ank ank-hy">HIGH-YIELD</span></h3><div class="card-sub">déficit de água livre, quase sempre com sede abolida ou inacessível</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Na⁺ &gt;145 é sempre hipertonicidade. Calcule o <b>déficit de água livre</b> = ACT × (Na⁺/140 − 1), reponha água pelo tubo digestivo ou SG 5%, <b>some perdas insensíveis e urinárias em curso</b> e baixe ≤10–12 mmol/L/dia na forma crônica. A forma aguda (&lt;48 h: sal, DI pós-operatório) pode ser corrigida em horas.</div></div>
@@ -600,7 +619,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="c5">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.5</span> Discalemia</div><h3>Hipocalemia <span class="ank ank-hy">HIGH-YIELD</span></h3><div class="card-sub">translocação, perda renal ou perda extrarrenal — e quase sempre magnésio junto</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">K⁺ &lt;3,5 (grave &lt;2,5). Primeiro afaste <b>translocação</b> (insulina, β₂, alcalose, tireotoxicose, hipotermia, recuperação medular de B12), depois meça a <b>excreção urinária</b>: K/creatinina urinária &gt;13 mEq/g ou K⁺ 24 h &gt;20 mEq = perda renal. PA e HCO₃⁻ fecham o eixo.</div></div>
@@ -616,7 +635,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="c6">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.6</span> Discalemia ameaçadora</div><h3>Hipercalemia <span class="ank ank-dgr">DANGER</span></h3><div class="card-sub">retenção renal, saída celular ou artefato — o ECG manda</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Leve <b>5,5–5,9</b>, moderada <b>6,0–6,4</b>, grave <b>≥6,5 mmol/L</b> <span class="ev ev-nice">UKKA 2026</span>. A sequência é <b>cálcio (se ECG) → insulina-glicose + salbutamol → remoção (quelante, alça, diálise) → monitorização → prevenção</b>. Na DRC crônica, a meta é manter o bloqueio do SRAA, não suspendê-lo.</div></div>
@@ -646,7 +665,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="c7">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.7</span> Acidose com ácido novo</div><h3>Acidose metabólica com ânion gap elevado <span class="ank ank-dec">DECISION</span></h3><div class="card-sub">lactato, cetonas, toxinas, uremia e piroglutamato</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">HCO₃⁻ &lt;22 com AG acima do valor de referência do laboratório (habitualmente 8–12, ou 3–11 em analisadores com ISE moderno) — <b>corrigido pela albumina</b> (+2,5 por g/dL abaixo de 4,0). A conduta é a do <b>ânion</b>: lactato → perfusão e causa; cetonas → insulina ou glicose; formato/glicolato → bloqueio enzimático e diálise; uremia → diálise ou álcali.</div></div>
@@ -679,7 +698,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="c8">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.8</span> Acidose hiperclorêmica</div><h3>Acidose com ânion gap normal e acidoses tubulares renais <span class="ank ank-hy">HIGH-YIELD</span></h3><div class="card-sub">perda de bicarbonato ou falha de acidificação — ATR tipos 1, 2 e 4</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">AG normal com Cl⁻ alto. Pergunte: <b>o rim está excretando NH₄⁺?</b> AG urinário (UNa + UK − UCl) <b>negativo</b> = NH₄⁺ adequado → perda GI (diarreia, fístula, derivação ileal/ureterossigmoidostomia) ou SF. <b>Positivo</b> com K⁺ baixo = ATR distal (tipo 1); com K⁺ alto = tipo 4. Bicarbonatúria com glicosúria normoglicêmica e fosfatúria = proximal (tipo 2, Fanconi).</div></div>
@@ -707,7 +726,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="c9">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.9</span> Alcalose</div><h3>Alcalose metabólica <span class="ank ank-hy">HIGH-YIELD</span></h3><div class="card-sub">geração (perda de H⁺ ou ganho de álcali) + manutenção (volume, Cl⁻, K⁺, aldosterona)</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">HCO₃⁻ &gt;26 com pH &gt;7,45 e pCO₂ compensatória ≈ <b>HCO₃⁻ + 15</b> (ou 0,7 mmHg por mEq). <b>Cl⁻ urinário &lt;20</b> = responsiva a cloreto (vômito, SNG, pós-diurético, pós-hipercapnia): SF + KCl. <b>&gt;20 com HAS</b> = mineralocorticoide; <b>&gt;20 sem HAS</b> = diurético em uso, Bartter, Gitelman.</div></div>
@@ -725,9 +744,9 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </section>
 
 <section id="secundarias">
-<div class="section"><div class="section-eyebrow"><span>D</span> Entidades Secundárias</div><h2 class="section-title">O que completa o diferencial — poliúria aquosa, tubulopatias, canalopatias, toxinas, CO₂ e magnésio</h2><div class="section-sub">Seis blocos agrupados por raciocínio comum. A investigação hipofisária do diabetes insípido central fica no EN05; o manejo de antídotos e descontaminação dos álcoois tóxicos e do salicilato, no CT10; ventilação e SDRA, no RP01. Aqui entra o que essas entidades fazem com a água, o potássio e o pH.</div></div>
+<div class="section"><div class="section-eyebrow"><span>D</span> Entidades Secundárias</div><h2 class="section-title">O que completa o diferencial — poliúria aquosa, tubulopatias, canalopatias, toxinas, CO₂ e magnésio</h2><div class="section-sub">Seis blocos agrupados por raciocínio comum. A investigação hipofisária do diabetes insípido central fica no EN05; o manejo de antídotos e descontaminação dos álcoois tóxicos e do salicilato, no CT10; ventilação e SDRA, no RP01. Aqui entra o que essas entidades fazem com a água, o potássio e o pH.</div></div><!--hp-f2--><nav class="sec-idx" aria-label="Neste capítulo"><a href="#d1"><b>D.1</b>Deficiência e resistência à A…</a><a href="#d2"><b>D.2</b>Bartter, Gitelman, Liddle e G…</a><a href="#d3"><b>D.3</b>Paralisias periódicas — hipoc…</a><a href="#d4"><b>D.4</b>Álcoois tóxicos e salicilato…</a><a href="#d5"><b>D.5</b>Acidose e alcalose respiratór…</a><a href="#d6"><b>D.6</b>Hipomagnesemia e hipermagnese…</a></nav><!--/hp-f2-->
 
-<div class="card diag">
+<div class="card diag" id="d1">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">D.1</span> Poliúria hipotônica</div><h3>Deficiência e resistência à AVP (o antigo diabetes insípido) <span class="ank ank-dec">DECISION</span></h3><div class="card-sub">AVP-D (central) × AVP-R (nefrogênico) × polidipsia primária</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Poliúria = <b>&gt;50 mL/kg/24 h</b> (ou &gt;3 L/dia no adulto) com <b>Uosm &lt;300 mOsm/kg</b>. Primeiro exclua diurese osmótica (glicose, ureia, manitol). Na⁺ alto-normal ou alto sugere AVP-D/AVP-R; Na⁺ baixo-normal sugere <b>polidipsia primária</b>. O teste que separa as três hoje é a <b>copeptina</b> — basal (≥21,4 pmol/L sem privação = AVP-R) ou estimulada por salina hipertônica (≤4,9 pmol/L com Na⁺ &gt;149 = AVP-D).</div></div>
@@ -747,7 +766,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card diag">
+<div class="card diag" id="d2">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">D.2</span> Tubulopatias hereditárias</div><h3>Bartter, Gitelman, Liddle e Gordon — o néfron como diurético <span class="ank ank-hy">HIGH-YIELD</span></h3><div class="card-sub">cada síndrome reproduz (ou espelha) um fármaco</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Hipocalemia + alcalose com <b>PA normal ou baixa</b> e Cl⁻ urinário alto sem diurético = <b>Bartter</b> (alça; cálcio urinário alto) ou <b>Gitelman</b> (TCD; <b>hipocalciúria e hipomagnesemia</b>). Hipocalemia + alcalose com <b>HAS e aldosterona baixa</b> = <b>Liddle</b> (ENaC hiperativo). <b>Hipercalemia + acidose hiperclorêmica + HAS</b> com TFG normal = <b>Gordon</b> (NCC hiperativo).</div></div>
@@ -774,7 +793,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card diag">
+<div class="card diag" id="d3">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">D.3</span> Canalopatias musculares</div><h3>Paralisias periódicas — hipocalêmica, tireotóxica e hipercalêmica <span class="ank ank-dgr">DANGER</span></h3><div class="card-sub">translocação aguda de K⁺ sobre um músculo com canal defeituoso</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Fraqueza flácida proximal aguda, <b>sensibilidade e consciência preservadas</b>, reflexos reduzidos, ao acordar ou após refeição rica em carboidrato, álcool ou repouso pós-exercício. K⁺ muito baixo com <b>excreção urinária baixa</b> (K/Cr &lt;13 mEq/g) e sem acidose = translocação. Homem jovem sem história familiar: <b>TSH e T4 livre</b> no PS. Reponha pouco K⁺ — o estoque corporal está normal e o rebote hipercalêmico é frequente.</div></div>
@@ -789,7 +808,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card diag">
+<div class="card diag" id="d4">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">D.4</span> AG alto de origem tóxica</div><h3>Álcoois tóxicos e salicilato — o ângulo ácido-básico <span class="ank ank-dgr">DANGER</span></h3><div class="card-sub">reconhecer pelo padrão; antídoto, descontaminação e manejo → CT10</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Pense nos três quando a acidose com AG alto <b>não é explicada por lactato, cetonas ou uremia</b>. Gap osmolar alto com AG ainda normal = ingestão recente de álcool tóxico; AG alto com gap normal = fase tardia. <b>Salicilato</b> faz um distúrbio misto que nenhum outro faz no adulto: <b>alcalose respiratória primária + acidose metabólica com AG alto</b>. Conduta toxicológica completa no <b>CT10</b>.</div></div>
@@ -804,7 +823,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card diag">
+<div class="card diag" id="d5">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">D.5</span> Distúrbios do CO₂</div><h3>Acidose e alcalose respiratórias primárias <span class="ank ank-dec">DECISION</span></h3><div class="card-sub">a ventilação alveolar fixa a pCO₂; o rim compensa em dias · ponte RP01</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body"><b>Acidose respiratória</b>: pCO₂ &gt;45 e pH baixo; aguda se HCO₃⁻ sobe só 1 por 10 mmHg de pCO₂, crônica se sobe 3,5–4. <b>Alcalose respiratória</b>: pCO₂ &lt;35; aguda se HCO₃⁻ cai 2 por 10, crônica se cai 4–5. O HCO₃⁻ fora da faixa esperada denuncia distúrbio metabólico associado. Decisão ventilatória (VNI, IOT, parâmetros) → <b>RP01</b>.</div></div>
@@ -827,7 +846,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card tx">
+<div class="card tx" id="d6">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">D.6</span> Cátion esquecido</div><h3>Hipomagnesemia e hipermagnesemia <span class="ank ank-dec">DECISION</span></h3><div class="card-sub">sem dono no catálogo — entra aqui porque governa o K⁺ e o Ca²⁺</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Mg sérico &lt;1,7 mg/dL (0,7 mmol/L) — mas o sérico é só 1% do estoque: <b>normal não exclui depleção</b>. Pense em Mg baixo diante de <b>hipocalemia refratária, hipocalcemia com PTH inapropriadamente baixo, torsades</b>, IBP crônico, diurético, etilismo, diarreia, aminoglicosídeo, anfotericina, cisplatina, anti-EGFR. Mg alto é quase sempre <b>iatrogênico com rim ruim</b> (sulfato de magnésio na pré-eclâmpsia, laxativos e antiácidos na DRC).</div></div>
@@ -846,7 +865,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <section id="algoritmo">
 <div class="section"><div class="section-eyebrow"><span>E</span> Algoritmo</div><h2 class="section-title">Do número à conduta — duas árvores e uma sequência mental</h2><div class="section-sub">A pergunta que mata vem antes da que classifica: há sintoma grave, ECG alterado ou pH incompatível? Só depois tonicidade, urina e ânion gap.</div></div>
 
-<div class="card prim"><div class="card-head"><div class="card-eyebrow"><span class="card-num">E.1</span> Sódio</div><h3>Na⁺ &lt;135 — da tonicidade à causa <span class="ank ank-dec">DECISION</span></h3></div><div class="card-body">
+<div class="card prim" id="e1"><div class="card-head"><div class="card-eyebrow"><span class="card-num">E.1</span> Sódio</div><h3>Na⁺ &lt;135 — da tonicidade à causa <span class="ank ank-dec">DECISION</span></h3></div><div class="card-body">
 <div class="algo"><div class="tree">
 <div class="tree-line"><span class="tree-node start">Na⁺ &lt;135 mmol/L</span></div>
 <div class="tree-branch"><div class="tree-label yes">Sintoma grave (vômitos, convulsão, Glasgow ≤8, sofrimento cardiorrespiratório)</div><div class="tree-line"><span class="tree-node dgr">NaCl 3% 150 mL em 20 min, até 3×, alvo +5 mmol/L · UTI · teto 10/24 h</span></div></div>
@@ -864,7 +883,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div></div>
 </div></div>
 
-<div class="card prim"><div class="card-head"><div class="card-eyebrow"><span class="card-num">E.2</span> Potássio</div><h3>K⁺ alterado — ECG primeiro <span class="ank ank-dgr">DANGER</span></h3></div><div class="card-body">
+<div class="card prim" id="e2"><div class="card-head"><div class="card-eyebrow"><span class="card-num">E.2</span> Potássio</div><h3>K⁺ alterado — ECG primeiro <span class="ank ank-dgr">DANGER</span></h3></div><div class="card-body">
 <div class="algo"><div class="tree">
 <div class="tree-line"><span class="tree-node start">K⁺ fora de 3,5–5,5 mmol/L</span></div>
 <div class="tree-branch"><div class="tree-label yes">≥6,0 ou ECG alterado</div><div class="tree-line"><span class="tree-node dgr">ECG + monitor · cálcio se ECG · insulina-glicose + salbutamol · SZC · diálise se anúria</span></div></div>
@@ -879,7 +898,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div></div>
 </div></div>
 
-<div class="card prim"><div class="card-head"><div class="card-eyebrow"><span class="card-num">E.3</span> Gasometria</div><h3>Raciocínio em 7 passos — ácido-base sem atalho <span class="ank ank-dec">DECISION</span></h3></div><div class="card-body">
+<div class="card prim" id="e3"><div class="card-head"><div class="card-eyebrow"><span class="card-num">E.3</span> Gasometria</div><h3>Raciocínio em 7 passos — ácido-base sem atalho <span class="ank ank-dec">DECISION</span></h3></div><div class="card-body">
 <div class="box decision"><span class="box-label">DECISION</span><div class="box-title">Sequência mental da gasometria</div><div class="box-body"><ol>
 <li><b>O pH manda na palavra.</b> Abaixo de 7,35 há acidemia, acima de 7,45 alcalemia; pH normal com pCO₂ e HCO₃⁻ anormais já é distúrbio misto até prova contrária.</li>
 <li><b>Quem explica o pH?</b> Se o HCO₃⁻ anda no mesmo sentido do pH, o primário é metabólico; se a pCO₂ anda em sentido oposto, é respiratório. Confira a coerência interna (Henderson: H⁺ = 24 × pCO₂/HCO₃⁻).</li>
@@ -894,11 +913,11 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </section>
 
 <section id="tratamento">
-<div class="section"><div class="section-eyebrow"><span>F</span> Tratamento Integrado</div><h2 class="section-title">F1 · Estratégia por entidade · F2 · Doses e soluções</h2><div class="section-sub">Escadas por distúrbio, com o que é diretriz e o que é disponibilidade no Brasil separados. Doses adultas de referência; "confirmar" só onde a dose depende de protocolo institucional, bula ou registro.</div></div>
+<div class="section"><div class="section-eyebrow"><span>F</span> Tratamento Integrado</div><h2 class="section-title">F1 · Estratégia por entidade · F2 · Doses e soluções</h2><div class="section-sub">Escadas por distúrbio, com o que é diretriz e o que é disponibilidade no Brasil separados. Doses adultas de referência; "confirmar" só onde a dose depende de protocolo institucional, bula ou registro.</div></div><!--hp-f2--><nav class="sec-idx" aria-label="Neste capítulo"><a href="#f1"><b>F.1</b>Escadas terapêuticas por dist…</a><a href="#f2"><b>F.2</b>Tabela operacional — adulto</a></nav><!--/hp-f2-->
 
-<div class="card tx"><div class="card-head"><div class="card-eyebrow"><span class="card-num">F.1</span> Estratégia</div><h3>Escadas terapêuticas por distúrbio <span class="ank ank-dec">DECISION</span></h3></div><div class="card-body">
+<div class="card tx" id="f1"><div class="card-head"><div class="card-eyebrow"><span class="card-num">F.1</span> Estratégia</div><h3>Escadas terapêuticas por distúrbio <span class="ank ank-dec">DECISION</span></h3></div><div class="card-body">
 
-<div class="sub-title">F1.1 · Hiponatremia hipotônica</div>
+<div class="sub-title" id="f1-1">F1.1 · Hiponatremia hipotônica</div>
 <ul class="bullets">
 <li><b>Sintoma grave, qualquer cronologia:</b> 150 mL de NaCl 3% em 20 min, Na⁺ ao fim de cada bolus, até três bolus ou +5 mmol/L; atingido o alvo, parar a hipertônica, manter acesso e tratar a causa; Na⁺ em 6, 12 e 24 h (ESE 2014). Bolus intermitente preferível a infusão contínua (SALSA 2021).</li>
 <li><b>Sintoma moderado:</b> um bolus de 150 mL e investigação; Na⁺ em 1, 6 e 12 h; objetivo de 5 mmol/L/24 h, teto de 10.</li>
@@ -909,7 +928,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </ul>
 <div class="box decision"><span class="box-label">DECISION</span><div class="box-title">Estratégia de "clamp" com desmopressina</div><div class="box-body">Quando a causa é reversível e o risco de SDO é alto (Na⁺ ≤115, etilista, hipocalêmico), desmopressina 1–2 μg IV/SC a cada 6–8 h desde o início, com NaCl 3% em infusão titulada (habitualmente 15–30 mL/h) e restrição de água oral, transforma a correção em variável controlada pela hipertônica, e não pela aquarese. Exige Na⁺ a cada 4–6 h, enfermagem treinada e plano de saída; em paciente que bebe escondido, a desmopressina piora a hiponatremia.</div></div>
 
-<div class="sub-title">F1.2 · Hipernatremia e poliúria aquosa</div>
+<div class="sub-title" id="f1-2">F1.2 · Hipernatremia e poliúria aquosa</div>
 <ul class="bullets">
 <li><b>Instável:</b> SF 0,9% ou balanceado em bolus até perfusão adequada — o choque tem prioridade sobre o sódio.</li>
 <li><b>Estável:</b> água enteral (preferível) ou SG 5% pelo déficit + perdas insensíveis (~10 mL/kg/dia) + água livre urinária medida (depuração de água livre de eletrólitos); NaCl 0,45% quando há déficit de sódio associado (diarreia).</li>
@@ -918,7 +937,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <li><b>Prevenção na UTI:</b> evitar salina como veículo e "manutenção" isotônica em quem já está hipernatrêmico; prescrever água livre enteral em horários fixos.</li>
 </ul>
 
-<div class="sub-title">F1.3 · Hipocalemia</div>
+<div class="sub-title" id="f1-3">F1.3 · Hipocalemia</div>
 <ul class="bullets">
 <li><b>Leve (3,0–3,4) e assintomática:</b> KCl VO 40–80 mEq/dia fracionados, mais dieta; tratar a causa (diurético → associar poupador ou IECA/BRA).</li>
 <li><b>Grave (&lt;2,5), ECG alterado, paralisia ou digital:</b> KCl IV 10 mEq/h por periférica, 20 mEq/h com monitor; concentração e velocidade máximas pelo protocolo institucional; 40 mEq/h só por acesso central e em arritmia. K⁺ após cada 40–60 mEq.</li>
@@ -930,7 +949,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <div class="box hy"><span class="box-label">HIGH-YIELD</span><div class="box-title">Quanto falta de potássio — e por que a conta erra</div><div class="box-body">Sem translocação, a queda de 4,0 para 3,0 mmol/L corresponde a ~200–400 mEq de déficit corporal, e de 3,0 para 2,0, outros 200–400 — a relação não é linear porque o reservatório intracelular (~3.500 mEq) se esvazia antes do plasma. A conta superestima o déficit quando há alcalose, insulina ou β₂ (K⁺ dentro da célula) e o subestima na acidose e na hiperglicemia (K⁺ fora). Na prática, reponha 40–60 mEq, dose de novo e decida a próxima etapa pelo valor medido, não pela estimativa; uma dose oral de 40–60 mEq costuma elevar o K⁺ em 1–1,5 mmol/L de forma transitória, que cai à medida que o potássio redistribui para o intracelular.</div></div>
 <div class="box danger"><span class="box-label">DANGER</span><div class="box-title">KCl IV: o erro é de diluição, não de dose</div><div class="box-body">Ampola de KCl 19,1% tem 25 mEq em 10 mL (2,5 mEq/mL); a de 10% tem 13,4 mEq em 10 mL. Nunca injete KCl concentrado em bolus nem o acrescente a uma bolsa já pendurada sem homogeneizar (o KCl é mais denso e se concentra no fundo). Use bolsas pré-diluídas quando houver, bomba de infusão sempre, e duplo checagem de enfermagem — é um dos medicamentos de alta vigilância listados pelo ISMP Brasil.</div></div>
 
-<div class="sub-title">F1.4 · Hipercalemia — aguda e crônica</div>
+<div class="sub-title" id="f1-4">F1.4 · Hipercalemia — aguda e crônica</div>
 <ul class="bullets">
 <li><b>Aguda grave (≥6,5 ou ECG):</b> cálcio IV se ECG → insulina 10 U + glicose 25 g (SG 10% 50 mL/h por 5 h se glicemia pré &lt;126 mg/dL) → salbutamol 10–20 mg nebulizado → SZC 10 g 8/8 h até 72 h → K⁺ em 1, 2, 4, 6 e 24 h → diálise se refratária, oligoanúria ou lise (UKKA 2026).</li>
 <li><b>Moderada (6,0–6,4):</b> ECG urgente; insulina-glicose sugerida; SZC considerado; tratar acidose, hipovolemia e suspender retentores.</li>
@@ -940,7 +959,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </ul>
 <div class="box hy"><span class="box-label">HIGH-YIELD</span><div class="box-title">Quem deve ir para diálise de urgência</div><div class="box-body">Hipercalemia grave em paciente anúrico ou oligúrico, refratária a duas rodadas de terapia de deslocamento, com lise tumoral ou rabdomiólise em curso, ou com acidose grave e sobrecarga de volume que impedem bicarbonato. A hemodiálise remove 25–50 mEq/h com banho de 1–2 mmol/L; espere rebote de 4–6 h e meça o K⁺ após a sessão. Indicação e técnica dialítica → NU03.</div></div>
 
-<div class="sub-title">F1.5 · Acidose metabólica com AG alto</div>
+<div class="sub-title" id="f1-5">F1.5 · Acidose metabólica com AG alto</div>
 <ul class="bullets">
 <li><b>Láctica:</b> perfusão, controle de foco, suspender metformina/linezolida; tiamina 200–500 mg IV 8/8 h se etilista, desnutrido ou em nutrição parenteral sem vitaminas.</li>
 <li><b>Cetoacidose:</b> CAD/EHH → EN02. Alcoólica: SG 5% + SF com tiamina junto (qualquer ordem; nunca atrasar a glicose); insulina não é necessária. iSGLT2: suspender, glicose + insulina como CAD euglicêmica.</li>
@@ -951,7 +970,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <li><b>5-oxoprolina:</b> suspender paracetamol; N-acetilcisteína repõe glutationa (uso descrito em séries).</li>
 </ul>
 
-<div class="sub-title">F1.6 · Acidose hiperclorêmica, ATR e DRC</div>
+<div class="sub-title" id="f1-6">F1.6 · Acidose hiperclorêmica, ATR e DRC</div>
 <ul class="bullets">
 <li><b>Iatrogênica (SF):</b> trocar por cristaloide balanceado em grandes volumes (BaSICS 2021: sem diferença de mortalidade; menos hipercloremia).</li>
 <li><b>Diarreia/fístula:</b> repor volume e K⁺ primeiro, depois bicarbonato ou citrato se HCO₃⁻ muito baixo.</li>
@@ -962,7 +981,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <li><b>DRC:</b> considerar NaHCO₃ VO se HCO₃⁻ &lt;18 mmol/L, sem ultrapassar o normal; dieta com mais frutas e vegetais é alternativa (KDIGO 2024).</li>
 </ul>
 
-<div class="sub-title">F1.7 · Alcalose metabólica</div>
+<div class="sub-title" id="f1-7">F1.7 · Alcalose metabólica</div>
 <ul class="bullets">
 <li><b>Cloreto-responsiva:</b> SF 0,9% + KCl; IBP na SNG de alto débito; suspender diurético quando possível.</li>
 <li><b>Com edema ou ICC:</b> acetazolamida 250–500 mg 1–2×/dia, com reposição de K⁺; no pós-hipercapnia, reduzir ventilação minuto para o pH.</li>
@@ -971,7 +990,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <li><b>Grave refratária (pH ≥7,55–7,60):</b> HCl 0,1–0,2 N por acesso central em UTI, ou hemodiálise com banho de baixo bicarbonato — decisão de especialista.</li>
 </ul>
 
-<div class="sub-title">F1.8 · Magnésio, tubulopatias e paralisias</div>
+<div class="sub-title" id="f1-8">F1.8 · Magnésio, tubulopatias e paralisias</div>
 <ul class="bullets">
 <li><b>Hipomagnesemia:</b> IV na grave ou arritmia; VO na crônica; amilorida na perda renal (diurético, cisplatina, Gitelman). <b>Hipermagnesemia:</b> cálcio IV, diurese, diálise.</li>
 <li><b>Gitelman/Bartter:</b> sal liberal, KCl e Mg; indometacina no Bartter; metas K⁺ ≥3,0 e Mg ≥0,6 mmol/L no Gitelman.</li>
@@ -980,7 +999,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </ul>
 <div class="box danger"><span class="box-label">DANGER</span><div class="box-title">Hiponatremia associada ao exercício</div><div class="box-body">Maratonista, triatleta ou militar em marcha com confusão ou vômitos após prova longa: hiponatremia aguda por ingestão de água acima da perda, com AVP não suprimida pelo esforço e náusea. É aguda por definição e mata por edema cerebral e pulmonar. Trate com <b>NaCl 3% 100–150 mL em bolus</b> já na tenda médica ou no PS, repetindo se necessário, e <b>nunca com SF ou água</b>. Não há risco relevante de SDO nesse cenário.</div></div>
 
-<div class="sub-title">F1.9 · Monitorização — quando e o quê dosar</div>
+<div class="sub-title" id="f1-9">F1.9 · Monitorização — quando e o quê dosar</div>
 <ul class="bullets">
 <li><b>Hipertônica em bolus:</b> Na⁺ 20 min após cada bolus; depois em 6, 12 e 24 h e diariamente até estabilizar. Na infusão contínua ou no clamp, a cada 4–6 h; com diurese aquosa (&gt;100 mL/h, urina clara), a cada 2 h e Uosm junto.</li>
 <li><b>Hiponatremia crônica sem hipertônica:</b> Na⁺ de 12/12 h nas primeiras 48 h quando a causa é reversível (hipovolemia, tiazídico, potomania, cortisol), porque é aí que a aquarese surpreende; diário na SIAD estável sob restrição.</li>
@@ -990,7 +1009,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <li><b>Fármacos indutores:</b> Na⁺ antes e 1–2 semanas após iniciar tiazídico, ISRS, carbamazepina ou oxcarbazepina em idosos; K⁺ e creatinina 1–2 semanas após iniciar ou aumentar IECA/BRA/ARM (aceitar alta de creatinina até 30% e K⁺ até 5,5 sem suspender).</li>
 </ul>
 
-<div class="sub-title">F1.10 · Onde tratar — internação, UTI e alta</div>
+<div class="sub-title" id="f1-10">F1.10 · Onde tratar — internação, UTI e alta</div>
 <ul class="bullets">
 <li><b>UTI ou sala vermelha:</b> hiponatremia com sintoma grave ou necessidade de hipertônica em infusão; Na⁺ &gt;160 com rebaixamento; K⁺ ≥6,5 ou qualquer K⁺ com ECG alterado; K⁺ &lt;2,5 com arritmia ou paralisia; pH ≤7,15; suspeita de álcool tóxico ou salicilato; acidose respiratória com rebaixamento ou fadiga.</li>
 <li><b>Enfermaria com monitorização:</b> Na⁺ &lt;125 assintomático com causa ainda indefinida, sobretudo se fator de risco para SDO; hipercalemia moderada (6,0–6,4) sem ECG alterado; hipocalemia 2,5–2,9 que exige reposição IV; alcalose metabólica com pH ≥7,55.</li>
@@ -1001,7 +1020,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <div class="box decision"><span class="box-label">DECISION</span><div class="box-title">Hipercalemia crônica: suspender o SRAA é a última opção</div><div class="box-body">Em DRC com albuminúria e na ICFEr, IECA/BRA, ARM e iSGLT2 reduzem mortalidade e progressão; a hipercalemia que leva à suspensão custa mais do que o próprio potássio. A ordem é: revisar AINE, trimetoprima e suplementos com K⁺ (inclusive "sal light", que é KCl), corrigir acidose, introduzir ou aumentar diurético de alça ou tiazídico, orientar dieta com nutricionista (o potássio dos alimentos processados e aditivos é mais absorvível que o dos vegetais), associar quelante crônico e só então reduzir a dose do bloqueador. O iSGLT2 reduz o risco de hipercalemia e não deve ser retirado por ela.</div></div>
 </div></div>
 
-<div class="card tx"><div class="card-head"><div class="card-eyebrow"><span class="card-num">F.2</span> Doses</div><h3>Tabela operacional — adulto <span class="ank ank-hy">HIGH-YIELD</span></h3></div><div class="card-body">
+<div class="card tx" id="f2"><div class="card-head"><div class="card-eyebrow"><span class="card-num">F.2</span> Doses</div><h3>Tabela operacional — adulto <span class="ank ank-hy">HIGH-YIELD</span></h3></div><div class="card-body">
 <div class="stbl stbl-3">
 <div class="stbl-head stbl-3"><div>Fármaco / solução</div><div>Dose adulto</div><div>Indicação · notas</div></div>
 <div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">NaCl 3% (513 mEq/L)</div><div class="col" data-l="Dose"><b>150 mL IV em 20 min</b>, até 3× <span class="ev ev-eular">ESE 2014</span></div><div class="col" data-l="Notas">Hiponatremia com sintoma grave; 1 bolus no moderado. Periférico calibroso aceitável. Preparo: 890 mL SF 0,9% + 110 mL NaCl 20%.</div></div>
@@ -1049,7 +1068,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 
 <section id="pitfalls">
 <div class="section"><div class="section-eyebrow"><span>G</span> Pitfalls · Mitos · Controvérsias</div><h2 class="section-title">Os erros que deixam sequela e os debates que seguem abertos</h2><div class="section-sub">Quase todo dano em distúrbio hidroeletrolítico é iatrogênico: o soro errado, a correção sem freio, a reposição sem magnésio, o bicarbonato sem ventilação.</div></div>
-<div class="card pearl"><div class="card-head"><div class="card-eyebrow"><span class="card-num">G.1</span> Pegadinhas</div><h3>10 erros operacionais em Na⁺, K⁺ e ácido-base</h3></div><div class="card-body">
+<div class="card pearl" id="g1"><div class="card-head"><div class="card-eyebrow"><span class="card-num">G.1</span> Pegadinhas</div><h3>10 erros operacionais em Na⁺, K⁺ e ácido-base</h3></div><div class="card-body">
 <div class="stbl stbl-2"><div class="stbl-head stbl-2"><div>Erro comum</div><div>Correto</div></div>
 <div class="stbl-row stbl-2"><div class="col col1" data-l="Erro">Prescrever SF 0,9% para "toda hiponatremia"</div><div class="col" data-l="Correto">SF só corrige a hipovolêmica; na SIAD com Uosm acima de ~530 mOsm/kg o sal sai e a água fica, e o Na⁺ cai. Uosm e UNa antes do soro.</div></div>
 <div class="stbl-row stbl-2"><div class="col col1" data-l="Erro">Calcular o déficit de sódio e infundir hipertônica em horas no sintomático</div><div class="col" data-l="Correto">Bolus fixo de 150 mL de 3% (até 3×) com Na⁺ a cada bolus; a fórmula ignora a aquarese e não substitui a dosagem seriada (ESE 2014).</div></div>
@@ -1063,7 +1082,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <div class="stbl-row stbl-2"><div class="col col1" data-l="Erro">Repor potássio "pelo déficit" na paralisia periódica</div><div class="col" data-l="Correto">É translocação com estoque normal: 40–90 mEq costumam bastar, VO de preferência, com K⁺ de 1–2 h — o rebote hipercalêmico é iatrogênico.</div></div>
 </div>
 </div></div>
-<div class="card pearl"><div class="card-head"><div class="card-eyebrow"><span class="card-num">G.2</span> Mitos · Controvérsias</div><h3>Mitos vivos e debates sem consenso</h3></div><div class="card-body">
+<div class="card pearl" id="g2"><div class="card-head"><div class="card-eyebrow"><span class="card-num">G.2</span> Mitos · Controvérsias</div><h3>Mitos vivos e debates sem consenso</h3></div><div class="card-body">
 <div class="box myth"><span class="box-label">MYTH</span><div class="box-title">"Hiponatremia crônica leve é achado sem importância"</div><div class="box-body">Na⁺ de 128–134 associa-se a déficit de atenção, alteração de marcha, quedas, fraturas e osteoporose (o osso cede sódio e perde massa), além de marcar pior prognóstico na ICC e na cirrose. Assintomático não quer dizer sem efeito: investigue a causa e trate quando ela for corrigível.</div></div>
 <div class="box myth"><span class="box-label">MYTH</span><div class="box-title">"Bicarbonato é terapia de primeira linha na hipercalemia"</div><div class="box-body">Sem acidose metabólica, o NaHCO₃ quase não desloca K⁺ nas primeiras horas, e a carga de sódio e volume pesa justamente no anúrico. Ele entra quando há acidemia, como adjuvante, e na parada (UKKA 2026) — não no lugar de insulina, salbutamol e remoção.</div></div>
 <div class="box myth"><span class="box-label">MYTH</span><div class="box-title">"Ringer lactato é proibido no hiperlactatêmico e no hepatopata"</div><div class="box-body">O lactato do Ringer é L-lactato metabolizado em bicarbonato pelo fígado e pelo rim, mesmo em choque; a contribuição para o lactato sérico é pequena e não invalida a dosagem. A restrição real ao Ringer é sua hipotonicidade leve (TCE, hiponatremia grave), não o lactato.</div></div>
@@ -1075,7 +1094,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 
 <section id="pearls">
 <div class="section"><div class="section-eyebrow"><span>H</span> Pearls · Evolving</div><h2 class="section-title">Nuances de especialista e o que mudou de verdade</h2><div class="section-sub">Oito ideias que mudam o raciocínio e cinco mudanças reais entre 2022 e 2026. O campo é estável na fisiologia e móvel na terapêutica.</div></div>
-<div class="card pearl"><div class="card-head"><div class="card-eyebrow"><span class="card-num">H.1</span> Pearls</div><h3>8 nuances que distinguem o expert</h3></div><div class="card-body">
+<div class="card pearl" id="h1"><div class="card-head"><div class="card-eyebrow"><span class="card-num">H.1</span> Pearls</div><h3>8 nuances que distinguem o expert</h3></div><div class="card-body">
 <div class="box pearl"><span class="box-label">PEARL</span><div class="box-title">O potássio que você repõe também sobe o sódio</div><div class="box-body">Pela equação de Edelman, K⁺ e Na⁺ trocáveis entram juntos no numerador: 40 mEq de KCl elevam a natremia como 40 mEq de NaCl. No hiponatrêmico hipocalêmico, some o K⁺ da reposição no cálculo da hipertônica — é assim que se ultrapassa o teto sem perceber.</div></div>
 <div class="box pearl"><span class="box-label">PEARL</span><div class="box-title">Ureia plasmática baixa é a assinatura da SIAD</div><div class="box-body">A expansão discreta de volume aumenta a depuração de ureia e de ácido úrico; ureia &lt;21 mg/dL e ácido úrico &lt;4 mg/dL num hiponatrêmico sugerem SIAD antes do resultado do Na⁺ urinário. Ureia alta aponta para hipovolemia, insuficiência adrenal ou dieta hiperproteica.</div></div>
 <div class="box pearl"><span class="box-label">PEARL</span><div class="box-title">Cl⁻ urinário mente quando o diurético ainda age</div><div class="box-body">Na alcalose de quem usa diurético, o Cl⁻ urinário é alto enquanto a droga atua e baixo horas depois; uma única amostra pode classificar errado. Em suspeita de uso oculto, colete em momentos diferentes e peça triagem de diuréticos na urina.</div></div>
@@ -1085,7 +1104,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <div class="box pearl"><span class="box-label">PEARL</span><div class="box-title">Hipocalcemia que não corrige pede magnésio</div><div class="box-body">Mg²⁺ baixo bloqueia a secreção de PTH e a resposta ao PTH; o cálcio infundido cai de novo em horas. PTH baixo ou "normal" diante de cálcio ionizado baixo, em etilista, usuário crônico de IBP ou em quimioterapia com cisplatina, resolve com sulfato de magnésio — não com mais cálcio.</div></div>
 <div class="box pearl"><span class="box-label">PEARL</span><div class="box-title">AG baixo também é diagnóstico</div><div class="box-body">AG abaixo de 3–4 mEq/L, depois de corrigido pela albumina, sugere paraproteína IgG catiônica (mieloma), hipercalcemia ou hipermagnesemia graves, ou intoxicação por brometo ou lítio. Num idoso com anemia e insuficiência renal, um AG perto de zero é motivo para eletroforese de proteínas.</div></div>
 </div></div>
-<div class="card pearl"><div class="card-head"><div class="card-eyebrow"><span class="card-num">H.2</span> Evolving</div><h3>O que mudou de verdade — 2022 a 2026</h3></div><div class="card-body">
+<div class="card pearl" id="h2"><div class="card-head"><div class="card-eyebrow"><span class="card-num">H.2</span> Evolving</div><h3>O que mudou de verdade — 2022 a 2026</h3></div><div class="card-body">
 <div class="box evolving"><span class="box-label">EVOLVING</span><div class="box-title">UKKA 2026: cálcio rebaixado, resina fora, zircônio dentro</div><div class="box-body">A atualização de julho de 2026 manteve a sequência terapêutica, rebaixou a força do cálcio IV para 2C após o ILCOR 2025, reafirmou 25 g de glicose com SG 10% preventivo e retirou o poliestirenossulfonato também do manejo crônico; o ciclossilicato de zircônio passou a ser o quelante de escolha no grave. <span class="ev ev-nice">UKKA 2026</span></div></div>
 <div class="box evolving"><span class="box-label">EVOLVING</span><div class="box-title">BICARICU-2 (2025): o bicarbonato vira poupador de diálise</div><div class="box-body">Em 640 pacientes com pH ≤7,20 e LRA KDIGO 2–3, mortalidade de 90 dias igual e menos TRS. A indicação passa a ser definida pelo rim, não pelo número do pH. <span class="ev ev-cochrane">BICARICU-2 2025</span></div></div>
 <div class="box evolving"><span class="box-label">EVOLVING</span><div class="box-title">AVP-D e AVP-R substituem "diabetes insípido"; copeptina vira o teste</div><div class="box-body">Nomenclatura proposta em 2022 por sociedades internacionais; a copeptina estimulada por salina hipertônica superou a privação hídrica (2018) e a arginina (2023) como teste diagnóstico — disponibilidade no Brasil ainda restrita. <span class="ev ev-nice">Refardt NEJM 2023</span></div></div>
@@ -1140,5 +1159,36 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </footer>
 <a class="to-top" href="#" aria-label="Voltar ao topo">↑</a>
 <div class="watermark">@dr.lorencato · Na/K/Ácido-Base NU04 v5.2</div>
-</body>
+<!--hp-f2--><script>(function(){var d=document,M=d.querySelector('main');if(!M)return;
+var SELF='NU04',HP=' CT01 CT02 CT03 CT04 CT05 CT06 CT08 CT10 CV01 CV03 CV04 CV05 CV06 CV07 CV08 EN01 EN02 EN03 EN04 EN06 EN07 GH01 GH02 GH03 GH05 GH06 GH07 GH08 GH09 GH10 GO01 GO02 GO03 GO04 GO09 GO10 GO11 GO12 GO13 GO14 HO01 HO02 HO03 HO04 HO05 HO06 II01 II02 II03 II04 II07 II08 NE01 NE02 NE03 NE04 NE05 NE06 NE07 NE08 NU01 NU02 NU03 NU04 NU05 OE01 OE02 PC01 PC02 PC03 PC04 PC05 PC06 PD01 PD02 PD03 PD04 PD05 PD06 PD07 PD08 PD09 PD10 RD01 RD02 RD03 RD04 RD05 RD07 RP01 RP02 RP03 RP04 ';
+var SK='A,H1,H2,H3,SCRIPT,STYLE,NAV,.card-num,.card-eyebrow,.sub-title,.disease-tag,.toc';
+var R=/\b(?:([A-H])(\d)?\.(\d{1,2}[a-c]?)|(CV|RP|GH|NE|EN|NU|HO|II|RD|GO|PD|PC|CT|OE)(\d\d))\b/g;
+function skip(n){for(var e=n.parentNode;e&&e!==M;e=e.parentNode)if(e.matches&&e.matches(SK))return 1;return 0}
+var w=d.createTreeWalker(M,4),t,L=[];while(t=w.nextNode())if(R.test(t.data)&&!skip(t))L.push(t);
+L.forEach(function(t){var s=t.data,f=d.createDocumentFragment(),i=0,m;R.lastIndex=0;
+while(m=R.exec(s)){var h=null;
+if(m[1]){var id=m[1].toLowerCase()+(m[2]?m[2]+'-':'')+m[3];if(d.getElementById(id))h='#'+id}
+else{var x=m[4]+m[5];if(x!==SELF&&HP.indexOf(' '+x+' ')>=0)h='../'+x+'/'+x+'.html'}
+if(!h)continue;f.appendChild(d.createTextNode(s.slice(i,m.index)));
+var a=d.createElement('a');a.href=h;a.className='xr';a.textContent=m[0];f.appendChild(a);i=R.lastIndex}
+if(i){f.appendChild(d.createTextNode(s.slice(i)));t.parentNode.replaceChild(f,t)}});
+function nz(s){return s.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'')}
+var q=d.querySelector('.hp-q'),n=d.querySelector('.hp-n'),it=M.querySelectorAll('.card,.pocket-card'),T;
+function clr(){M.querySelectorAll('.q-off').forEach(function(e){e.classList.remove('q-off')})}
+function run(){var v=nz(q.value.trim());clr();n.textContent='';if(v.length<2)return;var k=0;
+it.forEach(function(c){if(nz(c.textContent).indexOf(v)<0){c.classList.add('q-off');return}k++;
+var r=c.querySelectorAll('.stbl-row,.disease-row,.score-row'),h=[];r.forEach(function(x){if(nz(x.textContent).indexOf(v)>=0)h.push(x)});
+if(h.length)r.forEach(function(x){if(h.indexOf(x)<0)x.classList.add('q-off')});
+c.querySelectorAll('details').forEach(function(x){if(nz(x.textContent).indexOf(v)>=0)x.open=true})});
+M.querySelectorAll('section').forEach(function(s){if(!s.querySelector('.card:not(.q-off),.pocket-card:not(.q-off)'))s.classList.add('q-off')});
+n.textContent=k?k+' achado'+(k>1?'s':''):'nada'}
+if(q){q.addEventListener('input',function(){clearTimeout(T);T=setTimeout(run,180)});
+q.addEventListener('keydown',function(e){if(e.key==='Escape'){q.value='';run()}})}
+function tg(b,f){b.addEventListener('click',function(){var on=b.getAttribute('aria-pressed')!=='true';b.setAttribute('aria-pressed',on);f(on)})}
+var bd=d.querySelector('.hp-dz'),bo=d.querySelector('.hp-op');
+if(bd)tg(bd,function(on){d.body.classList.toggle('dz',on);if(on)d.getElementById('tratamento').scrollIntoView()});
+if(bo)tg(bo,function(on){M.querySelectorAll('details').forEach(function(x){x.open=on})});
+var P=[];addEventListener('beforeprint',function(){P=[];M.querySelectorAll('details:not([open])').forEach(function(x){P.push(x);x.open=true})});
+addEventListener('afterprint',function(){P.forEach(function(x){x.open=false})});
+})();</script><!--/hp-f2--></body>
 </html>

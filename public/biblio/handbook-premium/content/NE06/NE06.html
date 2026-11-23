@@ -345,6 +345,25 @@ ul.bullets li b{color:var(--ink);font-weight:600}
   .pocket .pocket-card.tx{--accent:#a8481a}
   .pocket .pocket-card.clin{--accent:#0b5d4e}
 }
+
+/* === v5.2.2 · fase 2 (navegação) === */
+.hp-tools{display:flex;gap:6px;align-items:center;flex:none;order:1;margin-left:auto;padding-left:6px;position:sticky;right:0;background:#f1eee5;box-shadow:-10px 0 10px -4px #f1eee5,16px 0 0 #f1eee5}
+@media(min-width:900px){html{scroll-padding-top:150px}.toc-inner{flex-wrap:wrap;overflow:visible}.card[id],.sub-title[id]{scroll-margin-top:150px}}
+@media(max-width:899px){.hp-b,.hp-n{display:none}.hp-q{width:104px}}
+.hp-q{width:128px;font:500 12px/1 'DM Sans',system-ui,sans-serif;padding:7px 11px;border:1px solid var(--line-strong);border-radius:999px;background:var(--paper);color:var(--ink)}
+.hp-b{font:600 11px/1 'DM Sans',system-ui,sans-serif;letter-spacing:.05em;text-transform:uppercase;padding:7px 10px;border-radius:999px;border:1px solid var(--line-strong);background:var(--paper);color:var(--ink-soft);cursor:pointer;white-space:nowrap}
+.hp-b[aria-pressed=true]{background:var(--ink);color:#fff;border-color:var(--ink)}
+.hp-n{font:600 11px/1 'DM Mono',monospace;color:var(--ink-mute);white-space:nowrap}
+.sec-idx{display:flex;flex-wrap:wrap;gap:6px;margin:12px 0 20px}
+.sec-idx a{font:500 12px/1.25 'DM Sans',system-ui,sans-serif;padding:6px 10px;border-radius:999px;background:var(--paper);border:1px solid var(--line);color:var(--ink-soft);text-decoration:none}
+.sec-idx a:hover{border-color:var(--line-strong);color:var(--ink)}
+.sec-idx b{color:var(--c-prim);margin-right:5px;font-weight:700}
+a.xr{color:inherit;text-decoration:underline dotted;text-underline-offset:2px}
+a.xr:hover{color:var(--c-prim)}
+.card[id],.sub-title[id]{scroll-margin-top:110px}
+.q-off{display:none!important}
+body.dz main section:not(#tratamento){display:none}
+@media print{.hp-tools,.sec-idx,.toc-doses{display:none!important}}
 </style>
 </head>
 <body>
@@ -360,14 +379,14 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </header>
 <nav class="toc">
-<div class="toc-inner">
+<div class="toc-inner"><!--hp-f2--><span class="hp-tools"><input class="hp-q" type="search" placeholder="Buscar no HP" aria-label="Buscar no HP"><button class="hp-b hp-dz" type="button" aria-pressed="false">Só doses</button><button class="hp-b hp-op" type="button" aria-pressed="false">Abrir tudo</button><span class="hp-n" aria-live="polite"></span></span><!--/hp-f2-->
 <a href="#pocket"      class="toc-chip"><span class="toc-chip-num">0</span>Pocket</a>
 <a href="#redflags"    class="toc-chip"><span class="toc-chip-num">A</span>Red Flags</a>
 <a href="#approach"    class="toc-chip"><span class="toc-chip-num">B</span>Apresentação</a>
 <a href="#primarias"   class="toc-chip"><span class="toc-chip-num">C</span>Entidades</a>
 <a href="#secundarias" class="toc-chip"><span class="toc-chip-num">D</span>Secundárias</a>
 <a href="#algoritmo"   class="toc-chip"><span class="toc-chip-num">E</span>Algoritmo</a>
-<a href="#tratamento"  class="toc-chip"><span class="toc-chip-num">F</span>Tratamento</a>
+<a href="#tratamento"  class="toc-chip"><span class="toc-chip-num">F</span>Tratamento</a><!--hp-f2--><a href="#f2" class="toc-chip toc-doses"><span class="toc-chip-num">Rx</span>Doses</a><!--/hp-f2-->
 <a href="#pitfalls"    class="toc-chip"><span class="toc-chip-num">G</span>Pitfalls</a>
 <a href="#pearls"      class="toc-chip"><span class="toc-chip-num">H</span>Pearls</a>
 </div>
@@ -480,7 +499,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <div class="section-title">Quando o movimento anormal vira UTI</div>
 <div class="section-sub">Rigidez com febre, retirada de dopaminérgico, distonia de via aérea, hemibalismo súbito e o parkinsoniano internado: as cinco situações em que a fenomenologia muda a conduta em minutos.</div>
 </div>
-<div class="card emerg">
+<div class="card emerg" id="a1">
 <div class="card-head">
 <div class="card-eyebrow"><span class="card-num">A.1</span> Emergências</div>
 <h3>Sinais de alarme — distúrbios do movimento <span class="ank ank-dgr">DANGER</span></h3>
@@ -567,7 +586,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <div class="section-title">Mapa fenomenológico — primeiro nomeie o movimento</div>
 <div class="section-sub">Em distúrbios do movimento o diagnóstico começa pela fenomenologia: hipocinético ou hipercinético; rítmico ou irregular; sustentado ou breve; supressível ou não. Errar o nome leva ao exame e ao remédio errados.</div>
 </div>
-<div class="card clin">
+<div class="card clin" id="b1">
 <div class="card-head">
 <div class="card-eyebrow"><span class="card-num">B.1</span> Padrão 1</div>
 <h3>Lentidão, rigidez e marcha em bloco</h3>
@@ -592,7 +611,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 </div>
-<div class="card clin">
+<div class="card clin" id="b2">
 <div class="card-head">
 <div class="card-eyebrow"><span class="card-num">B.2</span> Padrão 2</div>
 <h3>Tremor — o contexto de ativação decide</h3>
@@ -612,7 +631,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </ul>
 </div>
 </div>
-<div class="card clin">
+<div class="card clin" id="b3">
 <div class="card-head">
 <div class="card-eyebrow"><span class="card-num">B.3</span> Padrão 3</div>
 <h3>Movimentos irregulares que "fluem" entre segmentos</h3>
@@ -632,7 +651,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </ul>
 </div>
 </div>
-<div class="card clin">
+<div class="card clin" id="b4">
 <div class="card-head">
 <div class="card-eyebrow"><span class="card-num">B.4</span> Padrão 4</div>
 <h3>Posturas sustentadas e torção</h3>
@@ -652,7 +671,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </ul>
 </div>
 </div>
-<div class="card clin">
+<div class="card clin" id="b5">
 <div class="card-head">
 <div class="card-eyebrow"><span class="card-num">B.5</span> Padrão 5</div>
 <h3>Abalos breves, tiques, urgência sensorial e o que não encaixa</h3>
@@ -683,8 +702,8 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <div class="section-eyebrow"><span>C</span> Entidades Primárias</div>
 <div class="section-title">Disease boxes — o núcleo do NE06</div>
 <div class="section-sub">Doença de Parkinson, parkinsonismos atípicos, tremor essencial, Huntington, distonias e síndromes induzidas por fármacos: as seis entidades que concentram prova, ambulatório e plantão.</div>
-</div>
-<div class="card prim">
+</div><!--hp-f2--><nav class="sec-idx" aria-label="Neste capítulo"><a href="#c1"><b>C.1</b>Doença de Parkinson</a><a href="#c2"><b>C.2</b>Parkinsonismos atípicos: AMS…</a><a href="#c3"><b>C.3</b>Tremor essencial</a><a href="#c4"><b>C.4</b>Doença de Huntington</a><a href="#c5"><b>C.5</b>Distonias</a><a href="#c6"><b>C.6</b>Distúrbios do movimento induz…</a></nav><!--/hp-f2-->
+<div class="card prim" id="c1">
 <div class="card-head">
 <div class="card-eyebrow"><span class="card-num">C.1</span> Hipocinético · sinucleinopatia</div>
 <h3>Doença de Parkinson <span class="ank ank-hy">HIGH-YIELD</span> <span class="ank ank-dec">DECISION</span></h3>
@@ -765,7 +784,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </details>
 </div>
 </div>
-<div class="card prim">
+<div class="card prim" id="c2">
 <div class="card-head">
 <div class="card-eyebrow"><span class="card-num">C.2</span> Parkinson-plus · box agrupado</div>
 <h3>Parkinsonismos atípicos: AMS, PSP e DCB <span class="ank ank-dgr">DANGER</span></h3>
@@ -829,7 +848,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </details>
 </div>
 </div>
-<div class="card prim">
+<div class="card prim" id="c3">
 <div class="card-head">
 <div class="card-eyebrow"><span class="card-num">C.3</span> Hipercinético · tremor de ação</div>
 <h3>Tremor essencial <span class="ank ank-hy">HIGH-YIELD</span></h3>
@@ -881,7 +900,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </details>
 </div>
 </div>
-<div class="card prim">
+<div class="card prim" id="c4">
 <div class="card-head">
 <div class="card-eyebrow"><span class="card-num">C.4</span> Hipercinético · coreia hereditária</div>
 <h3>Doença de Huntington <span class="ank ank-hy">HIGH-YIELD</span> <span class="ank ank-dec">DECISION</span></h3>
@@ -922,7 +941,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </details>
 </div>
 </div>
-<div class="card prim">
+<div class="card prim" id="c5">
 <div class="card-head">
 <div class="card-eyebrow"><span class="card-num">C.5</span> Hipercinético · posturas sustentadas</div>
 <h3>Distonias <span class="ank ank-hy">HIGH-YIELD</span></h3>
@@ -962,7 +981,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </details>
 </div>
 </div>
-<div class="card prim">
+<div class="card prim" id="c6">
 <div class="card-head">
 <div class="card-eyebrow"><span class="card-num">C.6</span> Iatrogênico · bloqueio dopaminérgico</div>
 <h3>Distúrbios do movimento induzidos por fármacos <span class="ank ank-dgr">DANGER</span> <span class="ank ank-dec">DECISION</span></h3>
@@ -1004,8 +1023,8 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <div class="section-eyebrow"><span>D</span> Entidades Secundárias</div>
 <div class="section-title">Os diferenciais que mudam a conduta</div>
 <div class="section-sub">Parkinsonismo de marcha, outros tremores, coreias secundárias, Wilson, mioclonia, tiques, pernas inquietas e distúrbios funcionais — agrupados quando compartilham abordagem, separados quando têm raciocínio próprio.</div>
-</div>
-<div class="card diag">
+</div><!--hp-f2--><nav class="sec-idx" aria-label="Neste capítulo"><a href="#d1"><b>D.1</b>Parkinsonismo vascular e hidr…</a><a href="#d2"><b>D.2</b>Outros tremores: fisiológico…</a><a href="#d3"><b>D.3</b>Hemicoreia-hemibalismo, corei…</a><a href="#d4"><b>D.4</b>Doença de Wilson — forma neur…</a><a href="#d5"><b>D.5</b>Mioclonia e asterixe</a><a href="#d6"><b>D.6</b>Tiques e síndrome de Tourette</a><a href="#d7"><b>D.7</b>Síndrome das pernas inquietas…</a><a href="#d8"><b>D.8</b>Distúrbios funcionais do movi…</a></nav><!--/hp-f2-->
+<div class="card diag" id="d1">
 <div class="card-head">
 <div class="card-eyebrow"><span class="card-num">D.1</span> Parkinsonismo secundário · box agrupado</div>
 <h3>Parkinsonismo vascular e hidrocefalia de pressão normal</h3>
@@ -1032,7 +1051,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 </div>
-<div class="card diag">
+<div class="card diag" id="d2">
 <div class="card-head">
 <div class="card-eyebrow"><span class="card-num">D.2</span> Tremores · box comparativo</div>
 <h3>Outros tremores: fisiológico exacerbado, distônico, cerebelar, Holmes, ortostático, neuropático</h3>
@@ -1061,7 +1080,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 </div>
-<div class="card diag">
+<div class="card diag" id="d3">
 <div class="card-head">
 <div class="card-eyebrow"><span class="card-num">D.3</span> Coreias secundárias · box agrupado</div>
 <h3>Hemicoreia-hemibalismo, coreia metabólica, autoimune e de Sydenham <span class="ank ank-dec">DECISION</span></h3>
@@ -1090,7 +1109,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 </div>
-<div class="card diag">
+<div class="card diag" id="d4">
 <div class="card-head">
 <div class="card-eyebrow"><span class="card-num">D.4</span> Metabólico tratável</div>
 <h3>Doença de Wilson — forma neurológica <span class="ank ank-dgr">DANGER</span></h3>
@@ -1127,7 +1146,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </details>
 </div>
 </div>
-<div class="card diag">
+<div class="card diag" id="d5">
 <div class="card-head">
 <div class="card-eyebrow"><span class="card-num">D.5</span> Abalos breves</div>
 <h3>Mioclonia e asterixe</h3>
@@ -1154,7 +1173,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 </div>
-<div class="card diag">
+<div class="card diag" id="d6">
 <div class="card-head">
 <div class="card-eyebrow"><span class="card-num">D.6</span> Hipercinético supressível</div>
 <h3>Tiques e síndrome de Tourette</h3>
@@ -1182,7 +1201,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 </div>
-<div class="card diag">
+<div class="card diag" id="d7">
 <div class="card-head">
 <div class="card-eyebrow"><span class="card-num">D.7</span> Sensorimotor do sono</div>
 <h3>Síndrome das pernas inquietas (Willis-Ekbom) <span class="ank ank-dec">DECISION</span></h3>
@@ -1209,7 +1228,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 </div>
-<div class="card diag">
+<div class="card diag" id="d8">
 <div class="card-head">
 <div class="card-eyebrow"><span class="card-num">D.8</span> Neuropsiquiatria do movimento</div>
 <h3>Distúrbios funcionais do movimento <span class="ank ank-prl">PEARL</span></h3>
@@ -1244,7 +1263,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <div class="section-title">Da fenomenologia à conduta</div>
 <div class="section-sub">Primeiro, exclua a emergência (febre + rigidez, retirada, via aérea). Depois nomeie o movimento; só então peça exame. Os dois formatos: árvore visual + sequência mental.</div>
 </div>
-<div class="card prim">
+<div class="card prim" id="e1">
 <div class="card-head">
 <div class="card-eyebrow"><span class="card-num">E.1</span> Árvore</div>
 <h3>Movimento anormal — PS e ambulatório <span class="ank ank-dec">DECISION</span></h3>
@@ -1332,14 +1351,14 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <div class="section-eyebrow"><span>F</span> Tratamento Integrado</div>
 <div class="section-title">F1 · Estratégia por entidade · F2 · Doses operacionais</div>
 <div class="section-sub">F1 organizado por entidade (DP inicial, flutuações, discinesias, não motores, terapias avançadas, internação; TE; DH; distonias; síndromes induzidas; SPI e tiques). F2: dose adulta, via, frequência, titulação e o que muda a prescrição. SUS separado de recomendação internacional.</div>
-</div>
-<div class="card tx">
+</div><!--hp-f2--><nav class="sec-idx" aria-label="Neste capítulo"><a href="#f1"><b>F.1</b>Escadas terapêuticas por enti…</a><a href="#f1b"><b>F.1b</b>Caso → conduta certa → erro t…</a><a href="#f2"><b>F.2</b>Esquemas adultos de referência</a></nav><!--/hp-f2-->
+<div class="card tx" id="f1">
 <div class="card-head">
 <div class="card-eyebrow"><span class="card-num">F.1</span> Estratégia</div>
 <h3>Escadas terapêuticas por entidade <span class="ank ank-dec">DECISION</span></h3>
 </div>
 <div class="card-body">
-<div class="sub-title">F1.1 · Doença de Parkinson inicial</div>
+<div class="sub-title" id="f1-1">F1.1 · Doença de Parkinson inicial</div>
 <ul class="bullets">
 <li><b>Quando iniciar:</b> no diagnóstico, se há qualquer prejuízo funcional (PCDT 2025: obrigatório com incapacidade). Não existe droga neuroprotetora comprovada; o ensaio LEAP mostrou que iniciar levodopa cedo não acelera nem retarda a doença — derrubando o argumento de "guardar a levodopa".</li>
 <li><b>Escolha da molécula:</b> levodopa/benserazida ou levodopa/carbidopa é a escolha &gt;70 anos, com comorbidades ou déficit cognitivo; em jovens com risco alto de complicações motoras, pramipexol ou rasagilina podem iniciar, com levodopa adicionada logo que o controle for insuficiente. O PD MED mostrou pequena vantagem de qualidade de vida a longo prazo para quem começou com levodopa, e as diferenças de discinesia entre estratégias desaparecem após uma década.</li>
@@ -1347,14 +1366,14 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <li><b>Titulação da levodopa:</b> começar com 50 mg 3×/dia ou 100 mg 2–3×/dia, subir a cada 3–7 dias até 300–600 mg/dia de levodopa; tomar 30–60 min antes das refeições (proteína compete na absorção) — se náusea, tomar com lanche pobre em proteína ou associar domperidona nas primeiras semanas.</li>
 <li><b>Não farmacológico é tratamento:</b> exercício aeróbico regular (nível A no estágio inicial), fisioterapia (8–26 semanas, 2–3×/semana), tai chi, LSVT para hipofonia, terapia ocupacional; o PCDT organiza esse cuidado nos Centros Especializados em Reabilitação.</li>
 </ul>
-<div class="sub-title">F1.2 · DP com flutuações motoras</div>
+<div class="sub-title" id="f1-2">F1.2 · DP com flutuações motoras</div>
 <ul class="bullets">
 <li><b>Primeiro, otimize a levodopa:</b> encurtar intervalo (a cada 3–4 h) sem aumentar muito o total; afastar de refeições proteicas; tratar constipação e gastroparesia; levodopa dispersível como resgate matinal (início em 10–20 min).</li>
 <li><b>Adjuvantes eficazes (nível A):</b> entacapona 200 mg com cada dose de levodopa (reduzir levodopa 10–30% se discinesia), pramipexol, rasagilina; internacionais fora do SUS: opicapona, safinamida, rotigotina transdérmica, istradefilina, zonisamida.</li>
 <li><b>Acinesia noturna/matinal:</b> levodopa de liberação controlada ao deitar ou agonista de longa ação (pramipexol ER, rotigotina).</li>
 <li><b>Flutuações refratárias apesar de 5 tomadas/dia e adjuvantes:</b> avaliar terapia avançada (F1.5) — critério prático "5-2-1" (Delphi, Antonini 2018; basta um dos três): ≥5 doses orais de levodopa/dia, ≥2 h/dia de "off", ≥1 h/dia de discinesia incômoda.</li>
 </ul>
-<div class="sub-title">F1.3 · Discinesias induzidas por levodopa</div>
+<div class="sub-title" id="f1-3">F1.3 · Discinesias induzidas por levodopa</div>
 <ul class="bullets">
 <li><b>Pico de dose:</b> reduzir a dose unitária e fracionar; retirar ou reduzir entacapona e IMAO-B; <b>amantadina</b> (antagonista NMDA) 100 mg 2–3×/dia, até 400 mg/dia, retirada gradual (abstinência com hiperpirexia e delirium descritos).</li>
 <li><b>Bifásica:</b> paradoxalmente melhora com <b>mais</b> estimulação dopaminérgica contínua (doses mais próximas, agonista).</li>
@@ -1366,7 +1385,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <div class="box-title">Agonista dopaminérgico: prescrever é monitorar impulso</div>
 <div class="box-body">Transtornos de controle de impulsos (jogo, compras, hipersexualidade, compulsão alimentar, punding) acometem até 40% dos usuários de agonistas segundo o PCDT, com risco dose-dependente e maior em homens jovens, com depressão ou história de adição. <b>Pergunte ativamente ao paciente e ao familiar em toda consulta</b>, alerte sobre ataque súbito de sono ao dirigir e, se ocorrer, reduza o agonista gradualmente (risco de síndrome de abstinência de agonista: ansiedade, disforia, dor), compensando com levodopa.</div>
 </div>
-<div class="sub-title">F1.4 · Não motores, psicose e demência da DP</div>
+<div class="sub-title" id="f1-4">F1.4 · Não motores, psicose e demência da DP</div>
 <ul class="bullets">
 <li><b>Psicose:</b> excluir delirium e infecção; retirar na ordem anticolinérgicos → amantadina → IMAO-B → agonistas → entacapona, preservando levodopa; se persistir e incomodar, <b>clozapina</b> (escolha do SUS; ABN 2025 B) com hemograma; quetiapina é "provavelmente ineficaz" em ensaios, mas segue usada como opção pragmática; pimavanserina (agonista inverso 5-HT2A) não está disponível no Brasil.</li>
 <li><b>Demência da DP:</b> suspender anticolinérgicos, tricíclicos e benzodiazepínicos; <b>rivastigmina</b> (incorporada ao SUS para DDP leve a moderada) ou donepezila (ABN 2025, B); atenção ao tremor que pode piorar com rivastigmina; memantina com benefício limitado. Anticolinesterásico não é indicado no comprometimento cognitivo leve da DP (errata ABN 2025).</li>
@@ -1376,7 +1395,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <li><b>Constipação:</b> fibras, água, macrogol ou lactulose; <b>sialorreia:</b> glicopirrolato VO (curto prazo) ou toxina botulínica em parótidas e submandibulares; <b>urgência urinária:</b> preferir mirabegrona a antimuscarínicos centrais; <b>dor:</b> otimizar dopaminérgico (dor do "off"), safinamida (B).</li>
 <li><b>Cuidados paliativos</b> desde o diagnóstico em todas as fases (PCDT 2025): planejamento antecipado, disfagia e nutrição, suporte ao cuidador.</li>
 </ul>
-<div class="sub-title">F1.5 · Terapias avançadas e neurocirurgia funcional</div>
+<div class="sub-title" id="f1-5">F1.5 · Terapias avançadas e neurocirurgia funcional</div>
 <ul class="bullets">
 <li><b>Indicação:</b> flutuações/discinesias incapacitantes apesar de terapia otimizada, resposta à levodopa (melhora ≥30% no teste agudo), ≥5 anos de doença (exceto tremor refratário), sem demência, depressão maior ou psicose ativa, sem atrofia/lesão relevante na RM, sem parkinsonismo atípico, com acesso à programação.</li>
 <li><b>Alvos:</b> NST (mais redução de medicação, ~50%), GPi (antidiscinético direto, perfil cognitivo-afetivo mais seguro), VIM (tremor-dominante puro) — tabela abaixo.</li>
@@ -1410,7 +1429,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <div class="col" data-l="Cuidado">Irreversível; bilateral simultâneo desaconselhado (fala/deglutição); crânio com baixa razão de densidade</div>
 </div>
 </div>
-<div class="sub-title">F1.6 · DP internada, perioperatória e na gestação</div>
+<div class="sub-title" id="f1-6">F1.6 · DP internada, perioperatória e na gestação</div>
 <ul class="bullets">
 <li><b>Nunca suspender abruptamente</b> levodopa, agonista ou amantadina; administrar nos horários de casa com mínimo de água no jejum; se via oral impossível, levodopa/benserazida dispersível por SNG; no íleo, adesivo de rotigotina (conversão aproximada pela dose equivalente; fora do SUS) <span class="ev ev-nice">NICE NG71</span>.</li>
 <li><b>Antieméticos:</b> domperidona 10 mg até 3×/dia (vigiar QT) ou ondansetrona; evitar metoclopramida, bromoprida, prometazina, droperidol, haloperidol.</li>
@@ -1423,7 +1442,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <div class="box-title">Interações que matam na DP</div>
 <div class="box-body">Levodopa é contraindicada com IMAO não seletivos (crise hipertensiva). Rasagilina + fluoxetina/fluvoxamina é contraindicada; com outros ISRS exige vigilância (PCDT 2025). Entacapona exige monitorar transaminases a cada 2 semanas nos 6 primeiros meses (PCDT) e é contraindicada em feocromocitoma. Clozapina: agranulocitose ~1,3%/ano — hemograma semanal nas primeiras 18 semanas e mensal depois; suspender se leucócitos &lt;3.000/mm³ ou neutrófilos &lt;1.500/mm³ nas 18 semanas iniciais.</div>
 </div>
-<div class="sub-title">F1.7 · Tremor essencial</div>
+<div class="sub-title" id="f1-7">F1.7 · Tremor essencial</div>
 <ul class="bullets">
 <li><b>Sem impacto funcional:</b> orientação, evitar cafeína e estimulantes, adaptações (talheres pesados, canudos).</li>
 <li><b>Primeira linha:</b> propranolol (contraindicado em asma, BAV, bradicardia; cuidado em DM com hipoglicemia) ou primidona (iniciar em microdose noturna pela reação aguda); combinar os dois se resposta parcial.</li>
@@ -1431,21 +1450,21 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <li><b>Focal (cabeça, voz, mão):</b> toxina botulínica guiada (risco de fraqueza da mão).</li>
 <li><b>Refratário:</b> DBS VIM (uni ou bilateral) ou MRgFUS unilateral; radiocirurgia se inelegível.</li>
 </ul>
-<div class="sub-title">F1.8 · Doença de Huntington</div>
+<div class="sub-title" id="f1-8">F1.8 · Doença de Huntington</div>
 <ul class="bullets">
 <li><b>Coreia que incapacita, cai ou machuca:</b> inibidor de VMAT2 (tetrabenazina, deutetrabenazina, valbenazina) se sem depressão importante; <b>neuroléptico</b> (olanzapina, risperidona, aripiprazol, haloperidol) se há irritabilidade, psicose, agressividade ou perda de peso <span class="ev ev-eular">Intl HD 2019</span>.</li>
 <li><b>Psiquiatria:</b> ISRS para depressão, irritabilidade e TOC; rastreio ativo de suicídio; mirtazapina se insônia e perda de peso.</li>
 <li><b>Suporte:</b> fonoterapia (disfagia), fisioterapia, nutrição hipercalórica, diretivas antecipadas e aconselhamento genético familiar.</li>
 <li><b>Brasil:</b> só a deutetrabenazina tem registro na Anvisa (Austedo®, 2021; coreia da DH e discinesia tardia), e a CONITEC decidiu não incorporá-la ao SUS (Portaria SCTIE/MS nº 28/2026); tetrabenazina e valbenazina não têm registro (só importação). Na prática, neurolépticos são a opção acessível.</li>
 </ul>
-<div class="sub-title">F1.9 · Distonias</div>
+<div class="sub-title" id="f1-9">F1.9 · Distonias</div>
 <ul class="bullets">
 <li><b>Focal do adulto:</b> toxina botulínica a cada ~12 semanas, com seleção muscular guiada; fisioterapia.</li>
 <li><b>Início na infância ou generalizada:</b> levodopa em teste (dopa-responsiva responde a 50–300 mg/dia); triexifenidil em titulação lenta (crianças toleram doses altas); baclofeno, clonazepam.</li>
 <li><b>Generalizada isolada ou cervical refratária:</b> DBS GPi bilateral; efeito em semanas a meses.</li>
 <li><b>Status distônico:</b> UTI, sedação, analgesia, hidratação, tratar gatilho (infecção, retirada de fármaco, falha de DBS/baclofeno intratecal), baclofeno intratecal ou DBS de urgência.</li>
 </ul>
-<div class="sub-title">F1.10 · Síndromes induzidas, SPI e tiques</div>
+<div class="sub-title" id="f1-10">F1.10 · Síndromes induzidas, SPI e tiques</div>
 <ul class="bullets">
 <li><b>Distonia aguda:</b> anticolinérgico parenteral e manter VO 24–72 h; reavaliar a necessidade do antipsicótico/antiemético.</li>
 <li><b>Acatisia:</b> reduzir dose ou trocar por agente de menor risco; propranolol, mirtazapina em dose baixa ou benzodiazepínico.</li>
@@ -1461,7 +1480,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 </div>
-<div class="card tx">
+<div class="card tx" id="f1b">
 <div class="card-head">
 <div class="card-eyebrow"><span class="card-num">F.1b</span> Cenários</div>
 <h3>Caso → conduta certa → erro típico <span class="ank ank-dgr">DANGER</span></h3>
@@ -1551,7 +1570,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 </div>
-<div class="card tx">
+<div class="card tx" id="f2">
 <div class="card-head">
 <div class="card-eyebrow"><span class="card-num">F.2</span> Doses operacionais</div>
 <h3>Esquemas adultos de referência <span class="ank ank-dec">DECISION</span></h3>
@@ -1800,7 +1819,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <div class="section-title">Erros operacionais + mitos vivos + debates atuais</div>
 <div class="section-sub">Os erros que pioram parkinsonianos internados, rotulam doenças tratáveis e mandam o paciente errado para a cirurgia.</div>
 </div>
-<div class="card pearl">
+<div class="card pearl" id="g1">
 <div class="card-head">
 <div class="card-eyebrow"><span class="card-num">G.1</span> Pegadinhas</div>
 <h3>10 erros operacionais em distúrbios do movimento</h3>
@@ -1851,7 +1870,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 </div>
-<div class="card pearl">
+<div class="card pearl" id="g2">
 <div class="card-head">
 <div class="card-eyebrow"><span class="card-num">G.2</span> Mitos · Controvérsias</div>
 <h3>Mitos vivos e debates atuais <span class="ank ank-myt">MYTH</span> <span class="ank ank-con">CONTROVERSY</span></h3>
@@ -1896,7 +1915,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <div class="section-title">H1 · Pearls de especialista · H2 · O que mudou de 2023 a 2026</div>
 <div class="section-sub">Oito nuances que distinguem quem vê distúrbio do movimento todo dia, e sete mudanças reais — com a distinção explícita entre pesquisa, aprovação regulatória no exterior e acesso no SUS.</div>
 </div>
-<div class="card pearl">
+<div class="card pearl" id="h1">
 <div class="card-head">
 <div class="card-eyebrow"><span class="card-num">H.1</span> Pearls</div>
 <h3>8 nuances que distinguem o expert <span class="ank ank-prl">PEARL</span></h3>
@@ -1944,7 +1963,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 </div>
-<div class="card pearl">
+<div class="card pearl" id="h2">
 <div class="card-head">
 <div class="card-eyebrow"><span class="card-num">H.2</span> Evolving</div>
 <h3>O que realmente mudou — 2023 a 2026 <span class="ank ank-evo">EVOLVING</span></h3>
@@ -2033,5 +2052,36 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </footer>
 <a class="to-top" href="#" aria-label="Voltar ao topo">↑</a>
 <div class="watermark">@dr.lorencato · NE06 Movimento v5.2</div>
-</body>
+<!--hp-f2--><script>(function(){var d=document,M=d.querySelector('main');if(!M)return;
+var SELF='NE06',HP=' CT01 CT02 CT03 CT04 CT05 CT06 CT08 CT10 CV01 CV03 CV04 CV05 CV06 CV07 CV08 EN01 EN02 EN03 EN04 EN06 EN07 GH01 GH02 GH03 GH05 GH06 GH07 GH08 GH09 GH10 GO01 GO02 GO03 GO04 GO09 GO10 GO11 GO12 GO13 GO14 HO01 HO02 HO03 HO04 HO05 HO06 II01 II02 II03 II04 II07 II08 NE01 NE02 NE03 NE04 NE05 NE06 NE07 NE08 NU01 NU02 NU03 NU04 NU05 OE01 OE02 PC01 PC02 PC03 PC04 PC05 PC06 PD01 PD02 PD03 PD04 PD05 PD06 PD07 PD08 PD09 PD10 RD01 RD02 RD03 RD04 RD05 RD07 RP01 RP02 RP03 RP04 ';
+var SK='A,H1,H2,H3,SCRIPT,STYLE,NAV,.card-num,.card-eyebrow,.sub-title,.disease-tag,.toc';
+var R=/\b(?:([A-H])(\d)?\.(\d{1,2}[a-c]?)|(CV|RP|GH|NE|EN|NU|HO|II|RD|GO|PD|PC|CT|OE)(\d\d))\b/g;
+function skip(n){for(var e=n.parentNode;e&&e!==M;e=e.parentNode)if(e.matches&&e.matches(SK))return 1;return 0}
+var w=d.createTreeWalker(M,4),t,L=[];while(t=w.nextNode())if(R.test(t.data)&&!skip(t))L.push(t);
+L.forEach(function(t){var s=t.data,f=d.createDocumentFragment(),i=0,m;R.lastIndex=0;
+while(m=R.exec(s)){var h=null;
+if(m[1]){var id=m[1].toLowerCase()+(m[2]?m[2]+'-':'')+m[3];if(d.getElementById(id))h='#'+id}
+else{var x=m[4]+m[5];if(x!==SELF&&HP.indexOf(' '+x+' ')>=0)h='../'+x+'/'+x+'.html'}
+if(!h)continue;f.appendChild(d.createTextNode(s.slice(i,m.index)));
+var a=d.createElement('a');a.href=h;a.className='xr';a.textContent=m[0];f.appendChild(a);i=R.lastIndex}
+if(i){f.appendChild(d.createTextNode(s.slice(i)));t.parentNode.replaceChild(f,t)}});
+function nz(s){return s.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'')}
+var q=d.querySelector('.hp-q'),n=d.querySelector('.hp-n'),it=M.querySelectorAll('.card,.pocket-card'),T;
+function clr(){M.querySelectorAll('.q-off').forEach(function(e){e.classList.remove('q-off')})}
+function run(){var v=nz(q.value.trim());clr();n.textContent='';if(v.length<2)return;var k=0;
+it.forEach(function(c){if(nz(c.textContent).indexOf(v)<0){c.classList.add('q-off');return}k++;
+var r=c.querySelectorAll('.stbl-row,.disease-row,.score-row'),h=[];r.forEach(function(x){if(nz(x.textContent).indexOf(v)>=0)h.push(x)});
+if(h.length)r.forEach(function(x){if(h.indexOf(x)<0)x.classList.add('q-off')});
+c.querySelectorAll('details').forEach(function(x){if(nz(x.textContent).indexOf(v)>=0)x.open=true})});
+M.querySelectorAll('section').forEach(function(s){if(!s.querySelector('.card:not(.q-off),.pocket-card:not(.q-off)'))s.classList.add('q-off')});
+n.textContent=k?k+' achado'+(k>1?'s':''):'nada'}
+if(q){q.addEventListener('input',function(){clearTimeout(T);T=setTimeout(run,180)});
+q.addEventListener('keydown',function(e){if(e.key==='Escape'){q.value='';run()}})}
+function tg(b,f){b.addEventListener('click',function(){var on=b.getAttribute('aria-pressed')!=='true';b.setAttribute('aria-pressed',on);f(on)})}
+var bd=d.querySelector('.hp-dz'),bo=d.querySelector('.hp-op');
+if(bd)tg(bd,function(on){d.body.classList.toggle('dz',on);if(on)d.getElementById('tratamento').scrollIntoView()});
+if(bo)tg(bo,function(on){M.querySelectorAll('details').forEach(function(x){x.open=on})});
+var P=[];addEventListener('beforeprint',function(){P=[];M.querySelectorAll('details:not([open])').forEach(function(x){P.push(x);x.open=true})});
+addEventListener('afterprint',function(){P.forEach(function(x){x.open=false})});
+})();</script><!--/hp-f2--></body>
 </html>

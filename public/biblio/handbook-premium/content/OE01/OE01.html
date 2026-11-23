@@ -345,13 +345,32 @@ ul.bullets li b{color:var(--ink);font-weight:600}
   .pocket .pocket-card.tx{--accent:#a8481a}
   .pocket .pocket-card.clin{--accent:#0b5d4e}
 }
+
+/* === v5.2.2 · fase 2 (navegação) === */
+.hp-tools{display:flex;gap:6px;align-items:center;flex:none;order:1;margin-left:auto;padding-left:6px;position:sticky;right:0;background:#f1eee5;box-shadow:-10px 0 10px -4px #f1eee5,16px 0 0 #f1eee5}
+@media(min-width:900px){html{scroll-padding-top:150px}.toc-inner{flex-wrap:wrap;overflow:visible}.card[id],.sub-title[id]{scroll-margin-top:150px}}
+@media(max-width:899px){.hp-b,.hp-n{display:none}.hp-q{width:104px}}
+.hp-q{width:128px;font:500 12px/1 'DM Sans',system-ui,sans-serif;padding:7px 11px;border:1px solid var(--line-strong);border-radius:999px;background:var(--paper);color:var(--ink)}
+.hp-b{font:600 11px/1 'DM Sans',system-ui,sans-serif;letter-spacing:.05em;text-transform:uppercase;padding:7px 10px;border-radius:999px;border:1px solid var(--line-strong);background:var(--paper);color:var(--ink-soft);cursor:pointer;white-space:nowrap}
+.hp-b[aria-pressed=true]{background:var(--ink);color:#fff;border-color:var(--ink)}
+.hp-n{font:600 11px/1 'DM Mono',monospace;color:var(--ink-mute);white-space:nowrap}
+.sec-idx{display:flex;flex-wrap:wrap;gap:6px;margin:12px 0 20px}
+.sec-idx a{font:500 12px/1.25 'DM Sans',system-ui,sans-serif;padding:6px 10px;border-radius:999px;background:var(--paper);border:1px solid var(--line);color:var(--ink-soft);text-decoration:none}
+.sec-idx a:hover{border-color:var(--line-strong);color:var(--ink)}
+.sec-idx b{color:var(--c-prim);margin-right:5px;font-weight:700}
+a.xr{color:inherit;text-decoration:underline dotted;text-underline-offset:2px}
+a.xr:hover{color:var(--c-prim)}
+.card[id],.sub-title[id]{scroll-margin-top:110px}
+.q-off{display:none!important}
+body.dz main section:not(#tratamento){display:none}
+@media print{.hp-tools,.sec-idx,.toc-doses{display:none!important}}
 </style>
 </head>
 <body>
 
 <header class="header"><div class="header-row"><div class="h-mark">O</div><div class="h-titles"><div class="h-title">Olho Vermelho, Córnea, Refração e Catarata · Pocket Handbook</div><div class="h-sub">Elite edition · Oftalmologia clínica · OE01</div></div><div class="h-author">@dr.lorencato</div><div class="h-edition">v5.2</div></div></header>
 
-<nav class="toc"><div class="toc-inner"><a href="#pocket" class="toc-chip"><span class="toc-chip-num">0</span>Pocket</a><a href="#redflags" class="toc-chip"><span class="toc-chip-num">A</span>Red Flags</a><a href="#approach" class="toc-chip"><span class="toc-chip-num">B</span>Apresentação</a><a href="#primarias" class="toc-chip"><span class="toc-chip-num">C</span>Entidades</a><a href="#secundarias" class="toc-chip"><span class="toc-chip-num">D</span>Secundárias</a><a href="#algoritmo" class="toc-chip"><span class="toc-chip-num">E</span>Algoritmo</a><a href="#tratamento" class="toc-chip"><span class="toc-chip-num">F</span>Tratamento</a><a href="#pitfalls" class="toc-chip"><span class="toc-chip-num">G</span>Pitfalls</a><a href="#pearls" class="toc-chip"><span class="toc-chip-num">H</span>Pearls</a></div></nav>
+<nav class="toc"><div class="toc-inner"><!--hp-f2--><span class="hp-tools"><input class="hp-q" type="search" placeholder="Buscar no HP" aria-label="Buscar no HP"><button class="hp-b hp-dz" type="button" aria-pressed="false">Só doses</button><button class="hp-b hp-op" type="button" aria-pressed="false">Abrir tudo</button><span class="hp-n" aria-live="polite"></span></span><!--/hp-f2--><a href="#pocket" class="toc-chip"><span class="toc-chip-num">0</span>Pocket</a><a href="#redflags" class="toc-chip"><span class="toc-chip-num">A</span>Red Flags</a><a href="#approach" class="toc-chip"><span class="toc-chip-num">B</span>Apresentação</a><a href="#primarias" class="toc-chip"><span class="toc-chip-num">C</span>Entidades</a><a href="#secundarias" class="toc-chip"><span class="toc-chip-num">D</span>Secundárias</a><a href="#algoritmo" class="toc-chip"><span class="toc-chip-num">E</span>Algoritmo</a><a href="#tratamento" class="toc-chip"><span class="toc-chip-num">F</span>Tratamento</a><!--hp-f2--><a href="#f2" class="toc-chip toc-doses"><span class="toc-chip-num">Rx</span>Doses</a><!--/hp-f2--><a href="#pitfalls" class="toc-chip"><span class="toc-chip-num">G</span>Pitfalls</a><a href="#pearls" class="toc-chip"><span class="toc-chip-num">H</span>Pearls</a></div></nav>
 
 <main>
 <div class="wrap">
@@ -415,7 +434,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <section id="redflags">
 <div class="section"><div class="section-eyebrow"><span>A</span> Red Flags</div><div class="section-title">No olho vermelho, o perigo é o que não parece conjuntivite</div><div class="section-sub">Sinal objetivo, suspeita e conduta imediata. Os eventos evitáveis deste HP são a ceratite de lente tratada como conjuntivite, o dendrito tratado com esteroide, a queimadura química examinada antes de ser lavada, o globo aberto comprimido e a endoftalmite que espera a segunda-feira.</div></div>
 
-<div class="card emerg">
+<div class="card emerg" id="a1">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">A.1</span> Emergências</div><h3>Sinais de alarme — olho vermelho <span class="ank ank-dgr">DANGER</span></h3></div>
 <div class="card-body">
 
@@ -452,7 +471,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card emerg">
+<div class="card emerg" id="a2">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">A.2</span> Encaminhamento</div><h3>Quando encaminhar com urgência <span class="ank ank-dec">DECISION</span></h3></div>
 <div class="card-body">
 <div class="stbl stbl-2">
@@ -468,7 +487,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <section id="approach">
 <div class="section"><div class="section-eyebrow"><span>B</span> Por Apresentação</div><div class="section-title">Cinco portas de entrada: pela dor, pela visão, pela origem e pela idade</div><div class="section-sub">O paciente não chega com o rótulo de ceratite ou de uveíte. Chega com um olho vermelho, uma pergunta sobre dor e uma história de lente, trauma ou cirurgia.</div></div>
 
-<div class="card clin">
+<div class="card clin" id="b1">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">B.1</span> Padrão 1</div><h3>Olho vermelho indolor, visão normal <span class="ank ank-hy">HIGH-YIELD</span></h3><div class="card-sub">O clínico resolve; falta de dor é o critério</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Conjuntivite (viral, bacteriana, alérgica), hemorragia subconjuntival, episclerite, hordéolo, blefarite e pterígio inflamado. <b>Secreção e areia, sem dor, sem queda de visão e com pupila normal</b> autorizam o tratamento na UBS. O diagnóstico da conjuntivite é clínico; reação folicular e linfonodo pré-auricular apontam para vírus, secreção purulenta contínua para bactéria, prurido para alergia.</div></div>
@@ -482,7 +501,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card clin">
+<div class="card clin" id="b2">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">B.2</span> Padrão 2</div><h3>Olho vermelho doloroso, com fotofobia ou baixa de visão <span class="ank ank-dgr">DANGER</span></h3><div class="card-sub">Seis diagnósticos que não esperam</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body"><b>Dor ocular é a indicação mais precisa de encaminhamento.</b> Ceratite, uveíte anterior, esclerite, crise de fechamento angular, endoftalmite e trauma ocupam este quadrante. A fluoresceína separa a córnea (defeito corado), a lâmpada de fenda separa a íris (células e flare) e a tonometria separa o glaucoma agudo. Na dúvida, flush ciliar mais pupila miótica mais fotofobia é úvea ou córnea, nunca conjuntiva.</div></div>
@@ -497,7 +516,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card clin">
+<div class="card clin" id="b3">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">B.3</span> Padrão 3</div><h3>Olho vermelho depois de lente, trauma ou cirurgia <span class="ank ank-dgr">DANGER</span></h3><div class="card-sub">A origem muda o pré-teste</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Lente de contato faz do olho vermelho doloroso uma ceratite infecciosa até prova em contrário, com Pseudomonas e Acanthamoeba à frente. Trauma pede fluoresceína, eversão da pálpebra superior e a pergunta sobre martelo, esmeril, vegetal e estilhaço. Cirurgia ou injeção intravítrea recente leva ao diagnóstico de endoftalmite, que antes de ser descartada é o diagnóstico.</div></div>
@@ -511,7 +530,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card clin">
+<div class="card clin" id="b4">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">B.4</span> Padrão 4</div><h3>Baixa de visão indolor: refração, cristalino ou outro segmento <span class="ank ank-dec">DECISION</span></h3><div class="card-sub">O buraco estenopeico faz o primeiro corte</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Se a visão melhora com o buraco estenopeico, é refração (C.14); se o reflexo vermelho está opaco e há ofuscamento, é catarata (C.15); se o reflexo é bom e a visão não melhora, a causa é retina ou nervo (OE02, NE05). Presbiopia explica a visão de perto borrada depois dos 40 anos e dispensa investigação; baixa súbita nunca é presbiopia.</div></div>
@@ -525,7 +544,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card clin">
+<div class="card clin" id="b5">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">B.5</span> Padrão 5</div><h3>Criança: secreção, lacrimejamento, leucocoria e desvio <span class="ank ank-dgr">DANGER</span></h3><div class="card-sub">Janela de 3–6 anos para a ambliopia</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">No recém-nascido, secreção nos primeiros 5 dias é gonocócica até prova em contrário (C.3); lacrimejamento com secreção sem hiperemia é obstrução do ducto nasolacrimal, que abre sozinha em 90% no primeiro ano (D.1). Leucocoria e reflexo vermelho assimétrico pedem oftalmologia pediátrica no prazo de dias (C.16). Desvio persistente depois dos 4–6 meses e anisometropia são ambliogênicos.</div></div>
@@ -540,9 +559,9 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </section>
 
 <section id="primarias">
-<div class="section"><div class="section-eyebrow"><span>C</span> Entidades Primárias</div><div class="section-title">Dezesseis entidades do segmento anterior, da úvea, da refração e do cristalino</div><div class="section-sub">A abordagem do olho vermelho abre o capítulo; as conjuntivites e as ceratites vêm em seguida, depois as uveítes (todas, por decisão do autor), a endoftalmite, o trauma e a queimadura química, e por fim a refração e a catarata, com o ceratocone entre as secundárias. Padrão brasileiro (PCDT de IST 2022, PCDT de Uveítes 2019, PCDT HIV 2024); AAO, CDC e ESCRS entram ao lado, rotulados.</div></div>
+<div class="section"><div class="section-eyebrow"><span>C</span> Entidades Primárias</div><div class="section-title">Dezesseis entidades do segmento anterior, da úvea, da refração e do cristalino</div><div class="section-sub">A abordagem do olho vermelho abre o capítulo; as conjuntivites e as ceratites vêm em seguida, depois as uveítes (todas, por decisão do autor), a endoftalmite, o trauma e a queimadura química, e por fim a refração e a catarata, com o ceratocone entre as secundárias. Padrão brasileiro (PCDT de IST 2022, PCDT de Uveítes 2019, PCDT HIV 2024); AAO, CDC e ESCRS entram ao lado, rotulados.</div></div><!--hp-f2--><nav class="sec-idx" aria-label="Neste capítulo"><a href="#c1"><b>C.1</b>Abordagem do olho vermelho: d…</a><a href="#c2"><b>C.2</b>Conjuntivites infecciosas: vi…</a><a href="#c3"><b>C.3</b>Conjuntivite neonatal (oftalm…</a><a href="#c4"><b>C.4</b>Conjuntivites alérgicas, vern…</a><a href="#c5"><b>C.5</b>Ceratite bacteriana e de usuá…</a><a href="#c6"><b>C.6</b>Ceratite herpética (HSV) e zó…</a><a href="#c7"><b>C.7</b>Ceratite fúngica e por Acanth…</a><a href="#c8"><b>C.8</b>Uveíte anterior aguda e crôni…</a><a href="#c9"><b>C.9</b>Uveítes intermediárias, poste…</a><a href="#c10"><b>C.10</b>Uveítes infecciosas posterior…</a><a href="#c11"><b>C.11</b>Endoftalmite: pós-cirúrgica…</a><a href="#c12"><b>C.12</b>Trauma ocular mecânico: globo…</a><a href="#c13"><b>C.13</b>Queimadura química e térmica…</a><a href="#c14"><b>C.14</b>Erros de refração: miopia, hi…</a><a href="#c15"><b>C.15</b>Catarata adquirida: indicação…</a><a href="#c16"><b>C.16</b>Catarata congênita, leucocori…</a></nav><!--/hp-f2-->
 
-<div class="card prim">
+<div class="card prim" id="c1">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.1</span> Síndrome</div><h3>Abordagem do olho vermelho: dor, visão, córnea e pupila <span class="ank ank-hy">HIGH-YIELD</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Quatro perguntas separam o olho que o clínico trata do que o oftalmologista examina no dia: <b>há dor? a visão caiu? a córnea está clara? a pupila é normal?</b> Conjuntivite não complicada tem desconforto, secreção e visão preservada. Qualquer dor, fotofobia, queda de visão, opacidade corneana ou pupila alterada desloca o caso. <b>O que muda conduta:</b> uma resposta "sim" já é critério de encaminhamento no dia (A.2); lente de contato, trauma, cirurgia e imunossupressão baixam o limiar.</div></div>
@@ -581,7 +600,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="c2">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.2</span> Conjuntivites</div><h3>Conjuntivites infecciosas: viral, bacteriana e gonocócica <span class="ank ank-hy">HIGH-YIELD</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">A <b>viral por adenovírus</b> é a causa mais comum de olho vermelho: lacrimejamento, folículos, linfonodo pré-auricular, segundo olho em 1–3 dias, autolimitada. A <b>bacteriana aguda</b> tem secreção purulenta contínua e papilas; trata-se com antibiótico tópico por 5–7 dias. A <b>gonocócica</b> é hiperaguda, com pus copioso e quemose, e exige tratamento sistêmico. <b>O que muda conduta:</b> dor, fotofobia ou opacidade (ceratite associada) e secreção hiperaguda tiram o caso da UBS; corticoide só com diagnóstico firmado e nunca na suspeita de herpes.</div></div>
@@ -599,7 +618,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="c3">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.3</span> Neonatal</div><h3>Conjuntivite neonatal (oftalmia neonatal): o dia de início indica o agente <span class="ank ank-dgr">DANGER</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Conjuntivite no primeiro mês: <b>química em até 48 h</b> (nitrato de prata), <b>gonocócica entre o 2º e o 5º dia</b>, <b>clamídia entre o 5º e o 14º</b>, herpética mais tarde. Secreção purulenta nos primeiros 5 dias é gonococo até prova em contrário. <b>O que muda conduta:</b> gonococo é tratado sistêmico e no dia; clamídia exige macrolídeo oral, com vigilância de estenose hipertrófica de piloro; e a mãe e a parceria são tratadas e testadas para as outras ISTs.</div></div>
@@ -628,7 +647,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="c4">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.4</span> Alérgicas</div><h3>Conjuntivites alérgicas, vernal e não infecciosas <span class="ank ank-dec">DECISION</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Prurido e quemose, sazonalidade e atopia: <b>alérgica comum</b> (anti-histamínico tópico); <b>papilas gigantes</b> e filamentos em criança masculina de 5–20 anos: <b>vernal</b>; papilas em usuário de lente: <b>conjuntivite da lente</b>. <b>O que muda conduta:</b> dor, fotofobia ou ulceração em escudo na vernal, ou queda de visão, exigem oftalmologista; corticoide por 2–3 semanas e nunca crônico sem medir a PIO; evitar esfregar os olhos, que sustenta o ceratocone (C.14).</div></div>
@@ -646,7 +665,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="c5">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.5</span> Ceratite</div><h3>Ceratite bacteriana e de usuário de lente de contato <span class="ank ank-dgr">DANGER</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Dor, fotofobia, olho vermelho e infiltrado branco na córnea; <b>lente de contato é o principal fator de risco</b> e <i>Pseudomonas</i> o agente mais agressivo. É emergência: antibiótico tópico em dose de ataque desde a primeira hora, raspado para Gram e cultura nas formas graves, cicloplégico e seguimento diário. <b>O que muda conduta:</b> úlcera central, maior que 2 mm, com hipópio, de lente ou sem resposta em 48 h → raspado e internação ou retorno em 24 h; esteroide só depois de melhora inequívoca.</div></div>
@@ -673,7 +692,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="c6">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.6</span> Ceratite viral</div><h3>Ceratite herpética (HSV) e zóster oftálmico <span class="ank ank-dgr">DANGER</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">A causa infecciosa mais comum de cegueira corneana. <b>Dendrito na fluoresceína é herpes até prova em contrário</b> e se trata com antiviral, <b>sem corticoide</b>. A forma estromal e a endotelite são imunes e pedem esteroide, sempre sob cobertura antiviral. A recidiva ocorre em cerca de 40% em 5 anos; aciclovir profilático por 12 meses reduz a recorrência. <b>O que muda conduta:</b> epitélio ativo → antiviral sem esteroide; estroma ou endotélio → esteroide mais antiviral, em desmame lento; V1 com ponta do nariz → zóster oftálmico e valaciclovir nas primeiras 72 h.</div></div>
@@ -700,7 +719,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="c7">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.7</span> Ceratites incomuns</div><h3>Ceratite fúngica e por Acanthamoeba <span class="ank ank-dgr">DANGER</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Úlcera que <b>não responde a 48–72 h de quinolona</b>: fungo (trauma vegetal, filamentoso) ou ameba (lente, água de torneira, dor desproporcional, ceratoneurite radial). Diagnóstico por raspado e cultura ou PCR; tratamento específico e prolongado, que o SUS não oferece pronto. <b>O que muda conduta:</b> nunca iniciar esteroide sem excluir as duas; a ameba precisa de biguanida mais diamidina e dura meses; natamicina e PHMB não existem no Brasil e dependem de manipulação.</div></div>
@@ -718,7 +737,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="c8">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.8</span> Uveíte anterior</div><h3>Uveíte anterior aguda e crônica: células, flare e o esteroide em desmame <span class="ank ank-dec">DECISION</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Inflamação da íris e do corpo ciliar, 70–90% das uveítes: dor, fotofobia, flush ciliar, <b>pupila miótica ou irregular, células e flare na câmara anterior</b>, fluoresceína negativa. HLA-B27 em até metade das agudas; em criança, pensar em artrite idiopática juvenil. <b>O que muda conduta:</b> esteroide tópico em dose alta e depois em desmame lento, com cicloplégico; <b>PIO em toda consulta</b>; recorrência ou bilateralidade pede investigação e, se necessário, poupador de corticoide (PCDT).</div></div>
@@ -756,7 +775,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="c9">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.9</span> Uveíte intermediária, posterior e pan</div><h3>Uveítes intermediárias, posteriores e panuveítes não infecciosas <span class="ank ank-dec">DECISION</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Moscas volantes, borramento e perda visual <b>sem olho vermelho</b>: vitreíte, coriorretinite, vasculite ou edema macular. Excluir infecção (sífilis, tuberculose, toxoplasmose, CMV, herpes) e linfoma antes de imunossuprimir. <b>O que muda conduta:</b> doença grave (VKH, Behçet, serpiginosa, vasculite) começa com pulso de metilprednisolona 1.000 mg/dia por 3–5 dias (com profilaxia de estrongiloidíase, C.9) e imunossupressor precoce; o SUS oferece azatioprina, ciclosporina e adalimumabe pelo PCDT de 2019, com critérios; rastreio de TB latente é obrigatório antes do anti-TNF.</div></div>
@@ -794,7 +813,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="c10">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.10</span> Uveíte infecciosa</div><h3>Uveítes infecciosas posteriores: toxoplasmose, CMV, necrose retiniana aguda, sífilis e tuberculose <span class="ank ank-dgr">DANGER</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">A <b>toxoplasmose ocular</b> é a causa mais comum de uveíte posterior no Brasil: foco branco de retinocoroidite junto a cicatriz pigmentada, com vitreíte. <b>CMV</b> aparece com CD4 &lt;50–100; a <b>necrose retiniana aguda</b> (HSV/VZV) é emergência indolor. <b>O que muda conduta:</b> antiparasitário antes do esteroide na toxoplasmose; ganciclovir IV ou valganciclovir na retinite por CMV; aciclovir IV imediato na necrose retiniana; sífilis ocular é tratada como neurossífilis. Tratamento sistêmico do HIV e da gestação: II01, GO10.</div></div>
@@ -812,7 +831,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="c11">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.11</span> Endoftalmite</div><h3>Endoftalmite: pós-cirúrgica, pós-injeção, pós-trauma, endógena e fúngica <span class="ank ank-dgr">DANGER</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Dor, olho vermelho, <b>baixa de visão</b> e fotofobia dias depois de cirurgia, injeção intravítrea ou trauma; hipópio em cerca de 85%. É emergência cirúrgica: <b>punção de vítreo e antibiótico intravítreo no mesmo dia</b>, vitrectomia se a visão for percepção luminosa. <b>O que muda conduta:</b> pós-operatório com dor e hipópio nunca é "inflamação normal"; candidemia exige fundoscopia; a prevenção é a cefuroxima intracameral e a antissepsia com povidona-iodo (ESCRS 2024).</div></div>
@@ -839,7 +858,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="c12">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.12</span> Trauma</div><h3>Trauma ocular mecânico: globo aberto, hifema, corpo estranho e abrasão <span class="ank ank-dgr">DANGER</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">A primeira pergunta é se o globo está aberto. Suspeita de ferimento penetrante: <b>protetor rígido, sem pressão, sem colírio, jejum, analgesia, antiemético, tétano e antibiótico sistêmico</b>, e reparo cirúrgico idealmente em até 24 h. Abrasão e corpo estranho são frequentes e resolvem em 24–72 h com cuidados simples. <b>O que muda conduta:</b> pupila deformada, câmara rasa, hifema total ou hipotonia = globo aberto até prova em contrário; lente de contato na abrasão proíbe oclusão.</div></div>
@@ -857,7 +876,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="c13">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.13</span> Queimadura química</div><h3>Queimadura química e térmica do olho: lavar primeiro <span class="ank ank-dgr">DANGER</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Cerca de 85% das queimaduras oculares são químicas, ácido ou álcali; o álcali penetra a câmara anterior em 5–15 min. <b>Irrigação imediata e copiosa, no local, por 30 minutos e no mínimo 1 litro, até o pH neutro.</b> A lavagem vale mais que qualquer colírio. <b>O que muda conduta:</b> irrigar antes de examinar, sem neutralizante; branco isquêmico no limbo e córnea opaca indicam grau grave e transferência para centro de córnea.</div></div>
@@ -905,7 +924,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="c14">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.14</span> Refração</div><h3>Erros de refração: miopia, hipermetropia, astigmatismo, presbiopia e anisometropia <span class="ank ank-hy">HIGH-YIELD</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">O olho tem ~58 dioptrias, dois terços na córnea. Míope vê mal de longe (eixo longo ou curvatura excessiva), hipermétrope esforça a acomodação e tem astenopia e esotropia, astigmático distorce em todas as distâncias, presbíope perde a acomodação após os 40 anos. A <b>criança</b> pede refração sob cicloplegia, porque o erro não corrigido e a anisometropia geram ambliopia. <b>O que muda conduta:</b> baixa de visão que melhora com buraco estenopeico é refração; míope em progressão rápida entra em controle da miopia; erro alto ou assimétrico na criança é urgência ambliogênica.</div></div>
@@ -933,7 +952,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="c15">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.15</span> Catarata</div><h3>Catarata adquirida: indicação, cirurgia e prevenção da endoftalmite <span class="ank ank-dec">DECISION</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Opacificação do cristalino, primeira causa de cegueira reversível: visão turva, ofuscamento, miopização, cores amareladas e reflexo vermelho opaco. <b>A cirurgia é o único tratamento e é eletiva</b>: indica-se quando a doença limita as atividades do paciente, em decisão compartilhada, e não quando "amadurece". <b>O que muda conduta:</b> catarata que fecha o ângulo (facomórfica) ou vaza proteína (facolítica) é urgência; doença ocular ativa (uveíte, retinopatia proliferativa, ceratite herpética) pede quiescência antes; cefuroxima intracameral e povidona-iodo previnem a endoftalmite.</div></div>
@@ -960,7 +979,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="c16">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.16</span> Pediatria ocular</div><h3>Catarata congênita, leucocoria, ambliopia e estrabismo: reconhecimento <span class="ank ank-dgr">DANGER</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Reflexo vermelho ausente, branco ou assimétrico no recém-nascido e no lactente é emergência: <b>catarata congênita, retinoblastoma, retinopatia da prematuridade, doença de Coats, persistência do vítreo primário e toxocaríase</b> são as causas de leucocoria. A catarata congênita visualmente significativa opera-se em torno de 4–6 semanas de vida (não além de 12). <b>O que muda conduta:</b> leucocoria é do oftalmologista pediátrico em dias; desvio persistente depois dos 4–6 meses e anisometropia exigem tratamento antes dos 6–8 anos; a ambliopia é uma doença do cérebro, tratável só na infância.</div></div>
@@ -980,9 +999,9 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </section>
 
 <section id="secundarias">
-<div class="section"><div class="section-eyebrow"><span>D</span> Entidades Secundárias</div><div class="section-title">Pálpebra, esclera, clamídia, superfície, AIJ, ceratocone e complicações da catarata</div><div class="section-sub">Casos que completam o diferencial do segmento anterior. Aqui entram as formas que o clínico encontra na UBS e as que o oftalmologista acompanha por anos, agrupadas por mecanismo e não atomizadas.</div></div>
+<div class="section"><div class="section-eyebrow"><span>D</span> Entidades Secundárias</div><div class="section-title">Pálpebra, esclera, clamídia, superfície, AIJ, ceratocone e complicações da catarata</div><div class="section-sub">Casos que completam o diferencial do segmento anterior. Aqui entram as formas que o clínico encontra na UBS e as que o oftalmologista acompanha por anos, agrupadas por mecanismo e não atomizadas.</div></div><!--hp-f2--><nav class="sec-idx" aria-label="Neste capítulo"><a href="#d1"><b>D.1</b>Hordéolo, calázio, blefarite…</a><a href="#d2"><b>D.2</b>Episclerite e esclerite: a do…</a><a href="#d3"><b>D.3</b>Clamídia ocular: conjuntivite…</a><a href="#d4"><b>D.4</b>Hemorragia subconjuntival, pt…</a><a href="#d5"><b>D.5</b>Uveíte da artrite idiopática…</a><a href="#d6"><b>D.6</b>Ceratocone, lentes de contato…</a><a href="#d7"><b>D.7</b>Complicações da catarata e da…</a></nav><!--/hp-f2-->
 
-<div class="card diag">
+<div class="card diag" id="d1">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">D.1</span> Pálpebras</div><h3>Hordéolo, calázio, blefarite, celulite periorbitária e orbitária, dacriocistite <span class="ank ank-dgr">DANGER</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Hordéolo dói e tem pus (estafilococo); calázio é lipogranuloma indolor. A <b>celulite pré-septal</b> não mexe com a motilidade ocular nem com a visão; a <b>orbitária</b> tem proptose, dor ao mover o olho, oftalmoplegia, febre e pede internação. <b>O que muda conduta:</b> proptose, diplopia ou queda de visão → TC e antibiótico IV no mesmo dia; no diabético com necrose, mucormicose (EN02).</div></div>
@@ -997,7 +1016,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card diag">
+<div class="card diag" id="d2">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">D.2</span> Esclera</div><h3>Episclerite e esclerite: a dor separa o benigno do que perfura <span class="ank ank-dec">DECISION</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Episclerite: vermelhidão setorial ou nodular, desconforto leve, branqueia com fenilefrina, 70% idiopática e autolimitada. Esclerite anterior: <b>dor profunda e noturna, cor violácea</b>, não branqueia; 50% com doença sistêmica (AR em 1/3, vasculites). <b>O que muda conduta:</b> esclerite exige investigação sistêmica e imunossupressão nas necrosantes e refratárias.</div></div>
@@ -1012,7 +1031,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card diag">
+<div class="card diag" id="d3">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">D.3</span> Clamídia</div><h3>Clamídia ocular: conjuntivite de inclusão, tracoma e síndrome de Parinaud <span class="ank ank-hy">HIGH-YIELD</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Sorotipos D–K causam a <b>conjuntivite de inclusão</b> (IST, folicular, unilateral, crônica); A–C causam o <b>tracoma</b> (não é IST; maior causa infecciosa de cegueira no mundo; triquíase e opacidade). Parinaud = conjuntivite granulomatosa com adenite (<i>Bartonella</i>). <b>O que muda conduta:</b> conjuntivite folicular crônica não responde a colírio; tratamento sistêmico.</div></div>
@@ -1027,7 +1046,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card diag">
+<div class="card diag" id="d4">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">D.4</span> Superfície</div><h3>Hemorragia subconjuntival, pterígio, olho seco e ceratite actínica <span class="ank ank-hy">HIGH-YIELD</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Quatro quadros de olho vermelho de superfície com decisão simples. <b>Hemorragia subconjuntival</b> não se trata e some em 2–3 semanas. <b>Pterígio</b> opera-se se baixa a visão ou causa astigmatismo. <b>Olho seco</b> (Schirmer &lt;5 mm) trata-se com lubrificante. <b>Ceratite actínica</b> aparece 6–12 h após solda e passa em 36–72 h. <b>O que muda conduta:</b> dor intensa depois de solda exige fluoresceína e exclusão de ceratite infecciosa.</div></div>
@@ -1042,7 +1061,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card diag">
+<div class="card diag" id="d5">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">D.5</span> AIJ</div><h3>Uveíte da artrite idiopática juvenil: rastreio e escalada <span class="ank ank-dec">DECISION</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Principal causa de uveíte anterior em criança, <b>crônica e sem sintomas</b> até as complicações (sinéquias, catarata, glaucoma em 25–50%). O rastreio oftalmológico a cada 3 meses vale para oligoartrite, poliartrite FR-negativa, psoriásica e indiferenciada com <b>ANA positivo, início antes dos 7 anos e até 4 anos de doença</b> (ACR/AF 2019). <b>O que muda conduta:</b> precisar de 1–2 gotas de prednisolona por mais de 3 meses é gatilho para poupador sistêmico.</div></div>
@@ -1056,7 +1075,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card diag">
+<div class="card diag" id="d6">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">D.6</span> Córnea e refração</div><h3>Ceratocone, lentes de contato e cirurgia refrativa <span class="ank ank-hy">HIGH-YIELD</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Ectasia corneana progressiva em jovem com atopia, esfregação ocular ou síndrome de Down: astigmatismo irregular e miopia crescente. Progressão pede <b>cross-linking</b>; lente rígida ou escleral corrige a visão. Cirurgia refrativa só em cornea normal, maior de 18 anos, com refração estável por 1 ano. <b>O que muda conduta:</b> topografia antes de qualquer cirurgia refrativa; lente de contato nunca dorme no olho nem toca água de torneira.</div></div>
@@ -1071,7 +1090,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card diag">
+<div class="card diag" id="d7">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">D.7</span> Pós-catarata</div><h3>Complicações da catarata e da sua cirurgia <span class="ank ank-dec">DECISION</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body"><b>Facoglaucoma</b> (facolítico, facoanafilático, facomórfico) é a complicação da catarata madura; no pós-operatório, a mais comum é a opacificação da cápsula posterior (20–50%), tratada com YAG. <b>O que muda conduta:</b> dor, hipópio e baixa de visão em dias são endoftalmite (C.11); fotopsia e cortina são retina (OE02); embaçamento tardio com PIO alta pede glaucoma (OE02).</div></div>
@@ -1090,7 +1109,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <section id="algoritmo">
 <div class="section"><div class="section-eyebrow"><span>E</span> Algoritmo</div><div class="section-title">Do olho vermelho ao diagnóstico: dor, córnea, câmara anterior e cada ponta com conduta</div><div class="section-sub">A primeira árvore faz a triagem do olho vermelho; a segunda trata o infiltrado de córnea, onde a pressa e o erro de esteroide cegam. O raciocínio em 7 passos amarra as duas.</div></div>
 
-<div class="card prim">
+<div class="card prim" id="e1">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">E.1</span> Algoritmo</div><h3>Olho vermelho: o clínico trata ou o oftalmologista examina hoje? <span class="ank ank-dec">DECISION</span></h3></div>
 <div class="card-body">
 <div class="algo"><div class="tree">
@@ -1116,7 +1135,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="e2">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">E.2</span> Algoritmo</div><h3>Infiltrado de córnea: o que pingar e o que nunca pingar <span class="ank ank-dgr">DANGER</span></h3></div>
 <div class="card-body">
 <div class="algo"><div class="tree">
@@ -1152,13 +1171,13 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </section>
 
 <section id="tratamento">
-<div class="section"><div class="section-eyebrow"><span>F</span> Tratamento Integrado</div><div class="section-title">F1 · Estratégia por entidade · F2 · Doses · F3 · Casos · F4 · SUS e CMED</div><div class="section-sub">Doses lidas nos PCDT do MS (IST 2022, Uveítes 2019, HIV 2024), na ESCRS 2024, no ACR/AF 2019 e nas bulas FDA levam a sigla da fonte; as da apostila 2025, de revisões narrativas e de coorte levam "conferir" ou rótulo explícito. Mesma dose, mesmo texto em todo o HP. As diretrizes da AAO estavam bloqueadas.</div></div>
+<div class="section"><div class="section-eyebrow"><span>F</span> Tratamento Integrado</div><div class="section-title">F1 · Estratégia por entidade · F2 · Doses · F3 · Casos · F4 · SUS e CMED</div><div class="section-sub">Doses lidas nos PCDT do MS (IST 2022, Uveítes 2019, HIV 2024), na ESCRS 2024, no ACR/AF 2019 e nas bulas FDA levam a sigla da fonte; as da apostila 2025, de revisões narrativas e de coorte levam "conferir" ou rótulo explícito. Mesma dose, mesmo texto em todo o HP. As diretrizes da AAO estavam bloqueadas.</div></div><!--hp-f2--><nav class="sec-idx" aria-label="Neste capítulo"><a href="#f1"><b>F.1</b>Escada terapêutica por entida…</a><a href="#f2"><b>F.2</b>Tabela de doses — olho vermel…</a><a href="#f3"><b>F.3</b>Caso → conduta certa → erro t…</a><a href="#f4"><b>F.4</b>O que está disponível e o que…</a><a href="#f5"><b>F.5</b>Onde a dose ou o fármaco muda</a></nav><!--/hp-f2-->
 
-<div class="card tx">
+<div class="card tx" id="f1">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">F.1</span> Estratégia</div><h3>Escada terapêutica por entidade <span class="ank ank-dec">DECISION</span></h3></div>
 <div class="card-body">
 
-<div class="sub-title">F1.1 · Conjuntivites: sintomáticas primeiro, antibiótico só onde muda o curso (C.2, C.4, D.3)</div>
+<div class="sub-title" id="f1-1">F1.1 · Conjuntivites: sintomáticas primeiro, antibiótico só onde muda o curso (C.2, C.4, D.3)</div>
 <ul class="bullets">
 <li><b>Degrau 1, todas:</b> compressas frias 4×/dia, lubrificante (carmelose ou hipromelose) 4–6×/dia, lavagem das mãos, toalha própria e afastamento do trabalho ou da escola enquanto houver secreção. Vasoconstritor por poucos dias, pelo rebote.</li>
 <li><b>Viral:</b> sem antibiótico e sem esteroide; retorno em dor, fotofobia ou baixa de visão. A ceratite com opacidade subepitelial vai ao oftalmologista, que decide pela prednisolona 1% em desmame.</li>
@@ -1169,7 +1188,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 
 <div class="box danger"><span class="box-label">DANGER</span><div class="box-title">Colírio com corticoide e antibiótico associado não é para conjuntivite do clínico</div><div class="box-body">A associação (dexametasona com neomicina e polimixina, tobramicina com dexametasona) está na CMED e é prescrita com frequência na UBS. Em olho com herpes, fungo ou ameba, o esteroide acelera a lesão, e o antibiótico combinado esconde o diagnóstico. Prescrever só depois de diagnóstico firmado pelo oftalmologista.</div></div>
 
-<div class="sub-title">F1.2 · Conjuntivite neonatal: profilaxia, sistêmico e família (C.3)</div>
+<div class="sub-title" id="f1-2">F1.2 · Conjuntivite neonatal: profilaxia, sistêmico e família (C.3)</div>
 <ul class="bullets">
 <li><b>Na sala de parto:</b> nitrato de prata 1% ou tetraciclina 1% em dose única na 1ª hora (MS); a profilaxia não protege da clamídia.</li>
 <li><b>Purulência até o 5º dia:</b> Gram, cultura e ceftriaxona 25–50 mg/kg IM/IV, dose única (máx. 125 mg; PCDT IST 2022; CDC aceita 250 mg); cefotaxima se ictérico ou com cálcio IV; lavagem com soro de hora em hora.</li>
@@ -1177,7 +1196,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <li><b>Família:</b> testar e tratar mãe e parceria; sífilis e HIV na mesma coleta (GO10, PD02).</li>
 </ul>
 
-<div class="sub-title">F1.3 · Ceratites: dose de ataque, cicloplegia e esteroide tardio (C.5 a C.7)</div>
+<div class="sub-title" id="f1-3">F1.3 · Ceratites: dose de ataque, cicloplegia e esteroide tardio (C.5 a C.7)</div>
 <ul class="bullets">
 <li><b>Hora zero:</b> retirar a lente, raspar nos casos de risco, iniciar quinolona em dose de ataque (ciprofloxacino 0,3%: 2 gotas a cada 15 min por 6 h e escalonar) e cicloplégico 12/12 h; sem curativo oclusivo.</li>
 <li><b>24–48 h:</b> melhora do infiltrado, da dor e da câmara anterior confirma o esquema; sem resposta, trocar pela cultura e reconsiderar fungo, ameba ou herpes; fortificados nas graves.</li>
@@ -1186,7 +1205,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <li><b>Fúngica e ameba:</b> natamicina 5% ou antifúngico manipulado; biguanida mais diamidina por semanas a meses; perfuração ou progressão: ceratoplastia terapêutica.</li>
 </ul>
 
-<div class="sub-title">F1.4 · Uveítes: tópico, periocular, sistêmico e poupador (C.8 a C.10, D.5)</div>
+<div class="sub-title" id="f1-4">F1.4 · Uveítes: tópico, periocular, sistêmico e poupador (C.8 a C.10, D.5)</div>
 <ul class="bullets">
 <li><b>Anterior:</b> prednisolona 1% a cada 2 h por 1 semana, espaçar em semanas, cicloplégico; refratária: injeção periocular ou prednisona 1–2 mg/kg/dia; recorrente: poupador. PIO a cada consulta.</li>
 <li><b>Posterior, intermediária e pan não infecciosas (PCDT 2019):</b> prednisona 1–2 mg/kg/dia ou pulso de 1.000 mg/dia por 3–5 dias nas graves (com profilaxia de estrongiloidíase, C.9); imunossupressor junto: azatioprina ou ciclosporina; adalimumabe para adulto após falha ou intolerância ou no Behçet bilateral posterior; manter 6–24 meses.</li>
@@ -1196,7 +1215,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 
 <div class="box hy"><span class="box-label">HIGH-YIELD</span><div class="box-title">Monitorização do imunossupressor</div><div class="box-body">Azatioprina: hemograma e transaminases periódicos, suspender se leucopenia. Ciclosporina: creatinina e pressão arterial, nível quando disponível, atenção a interações. Anti-TNF: infecção, tuberculose, demielinização. A PCDT exige reavaliação contínua e permite substituir o imunossupressor só após 3 semanas de dose adequada, pois o efeito pleno demora 20–30 dias.</div></div>
 
-<div class="sub-title">F1.5 · Endoftalmite, trauma e queimadura: sequência nos primeiros minutos (C.11 a C.13)</div>
+<div class="sub-title" id="f1-5">F1.5 · Endoftalmite, trauma e queimadura: sequência nos primeiros minutos (C.11 a C.13)</div>
 <ul class="bullets">
 <li><b>Endoftalmite:</b> punção de vítreo e aquoso, vancomicina 1 mg + ceftazidima 2,25 mg intravítreas, vitrectomia se percepção luminosa; fúngica: anfotericina 10 mcg, vitrectomia e antifúngico sistêmico por 6–12 semanas. Prevenção: povidona-iodo e cefuroxima intracameral.</li>
 <li><b>Globo aberto:</b> protetor rígido, jejum, antiemético, tétano, antibiótico sistêmico, reparo em 24 h; nada de pressão, colírio ou retirada do objeto.</li>
@@ -1204,7 +1223,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <li><b>Queimadura química:</b> LAVE (C.13): no mínimo 30 min e 1 L, até pH 7; depois cicloplégico, antibiótico, analgésico e centro terciário nas graves.</li>
 </ul>
 
-<div class="sub-title">F1.6 · Refração, ceratocone e catarata: do óculos à cirurgia (C.14 a C.16, D.6)</div>
+<div class="sub-title" id="f1-6">F1.6 · Refração, ceratocone e catarata: do óculos à cirurgia (C.14 a C.16, D.6)</div>
 <ul class="bullets">
 <li><b>Refração:</b> corrigir o erro sintomático; metade das dioptrias na hipermetropia moderada; cicloplegia na criança; atropina em baixa dose, ortoceratologia e tempo ao ar livre para controlar a miopia (apostila; conferir).</li>
 <li><b>Ceratocone:</b> sem esfregar, lente rígida ou escleral, cross-linking quando progride, anel e ceratoplastia nos avançados.</li>
@@ -1212,7 +1231,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <li><b>Criança:</b> reflexo vermelho em toda consulta; catarata visualmente significativa em 4–6 semanas; oclusão do olho melhor e correção óptica; leucocoria com urgência (OE02, PD05).</li>
 </ul>
 
-<div class="sub-title">F1.7 · Seguimento, critérios de alta e retorno antecipado</div>
+<div class="sub-title" id="f1-7">F1.7 · Seguimento, critérios de alta e retorno antecipado</div>
 <ul class="bullets">
 <li><b>Ceratite bacteriana:</b> consulta em 24 h e depois a cada 1–3 dias até a reepitelização; alta quando o epitélio fecha e a câmara anterior acalma; internação se o paciente não consegue pingar de hora em hora ou há risco de perfuração.</li>
 <li><b>Uveíte anterior:</b> revisão em 1 semana, desmame em passos semanais com PIO; alta do esteroide só com células ausentes; recorrência em semanas após a suspensão indica reinício e investigação.</li>
@@ -1224,7 +1243,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card tx">
+<div class="card tx" id="f2">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">F.2</span> Doses Operacionais</div><h3>Tabela de doses — olho vermelho, córnea, uveítes e catarata</h3></div>
 <div class="card-body">
 <div class="stbl stbl-3">
@@ -1255,7 +1274,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card tx">
+<div class="card tx" id="f3">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">F.3</span> Casos</div><h3>Caso → conduta certa → erro típico <span class="ank ank-dgr">DANGER</span></h3></div>
 <div class="card-body">
 <div class="stbl stbl-3">
@@ -1272,7 +1291,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card tx">
+<div class="card tx" id="f4">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">F.4</span> SUS e CMED</div><h3>O que está disponível e o que depende de manipulação <span class="ank ank-hy">HIGH-YIELD</span></h3></div>
 <div class="card-body">
 <ul class="bullets">
@@ -1284,7 +1303,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card tx">
+<div class="card tx" id="f5">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">F.5</span> Populações especiais</div><h3>Onde a dose ou o fármaco muda <span class="ank ank-dec">DECISION</span></h3></div>
 <div class="card-body">
 <ul class="bullets">
@@ -1302,7 +1321,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <section id="pitfalls">
 <div class="section"><div class="section-eyebrow"><span>G</span> Pitfalls · Mitos · Controvérsias</div><div class="section-title">Erros operacionais, mitos vivos e debates abertos</div><div class="section-sub">Os erros que se repetem: esteroide antes do diagnóstico, lente tratada como conjuntivite, anestésico para casa e o químico examinado antes de ser lavado.</div></div>
 
-<div class="card pearl">
+<div class="card pearl" id="g1">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">G.1</span> Pegadinhas</div><h3>10 erros operacionais em olho vermelho, córnea, uveíte e catarata</h3></div>
 <div class="card-body">
 <div class="stbl stbl-2">
@@ -1321,7 +1340,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card pearl">
+<div class="card pearl" id="g2">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">G.2</span> Mitos</div><h3>Três mitos vivos</h3></div>
 <div class="card-body">
 <div class="box myth"><span class="box-label">MYTH</span><div class="box-title">"Conjuntivite é infecção bacteriana e pede antibiótico"</div><div class="box-body">A causa mais frequente é o adenovírus, autolimitado; o antibiótico não muda o curso e seleciona resistência. Só a secreção purulenta contínua com papilas e a gonocócica justificam antibiótico. Na dúvida entre viral e bacteriana, o critério é a dor: com dor, não é conjuntivite.</div></div>
@@ -1330,7 +1349,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card pearl">
+<div class="card pearl" id="g3">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">G.3</span> Controvérsias</div><h3>Três debates sem consenso</h3></div>
 <div class="card-body">
 <div class="box controversy"><span class="box-label">CONTROVERSY</span><div class="box-title">Corticoide tópico na ceratite bacteriana</div><div class="box-body">A apostila o considera controverso e só o admite depois de melhora inequívoca; ensaios como o SCUT (não relido aqui) não mostraram benefício geral de acuidade, e a prática de oftalmologistas varia. O HP adota a regra conservadora: nunca antes de 24–48 h de resposta e nunca com fungo ou ameba por excluir.</div></div>
@@ -1343,7 +1362,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <section id="pearls">
 <div class="section"><div class="section-eyebrow"><span>H</span> Pearls + Evolving</div><div class="section-title">Nuances do especialista e o que mudou em 2024–2026</div><div class="section-sub">Oito pearls do segmento anterior e da úvea; cinco mudanças reais. O restante do tema, como a abordagem do olho vermelho e a irrigação do químico, é estável.</div></div>
 
-<div class="card pearl">
+<div class="card pearl" id="h1">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">H.1</span> Pearls</div><h3>8 nuances que distinguem o especialista</h3></div>
 <div class="card-body">
 <div class="box pearl"><span class="box-label">PEARL</span><div class="box-title">Dor desproporcional ao exame é Acanthamoeba até prova em contrário</div><div class="box-body">Em usuário de lente com água de torneira, a dor intensa com pouca lesão visível sugere ceratoneurite radial da ameba; o cisto resiste a quase tudo e o esteroide prévio dobra a falha do tratamento. Raspado, PCR ou confocal e biguanida mais diamidina por semanas a meses.</div></div>
@@ -1357,7 +1376,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card pearl">
+<div class="card pearl" id="h2">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">H.2</span> Evolving</div><h3>O que mudou: cinco itens reais; o resto do tema é estável</h3></div>
 <div class="card-body">
 <div class="box evolving"><span class="box-label">EVOLVING</span><div class="box-title">ESCRS 2024 (publicada em 2026): cefuroxima intracameral, tórica a partir de 1,0 D e AINE</div><div class="box-body">A primeira diretriz GRADE da ESCRS recomenda cefuroxima intracameral 1 mg em 0,1 mL (GRADE +++), povidona-iodo na pele e no fórnice, tórica em astigmatismo corneano ≥1,0 D, anestesia tópica preferida e cirurgia bilateral imediata possível; o colírio de AINE, só ou com esteroide, previne a inflamação e o edema macular.</div></div>
@@ -1409,5 +1428,36 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <a class="to-top" href="#" aria-label="Voltar ao topo">↑</a>
 <div class="watermark">@dr.lorencato · OE01 Olho Vermelho, Córnea, Refração e Catarata v5.2</div>
 
-</body>
+<!--hp-f2--><script>(function(){var d=document,M=d.querySelector('main');if(!M)return;
+var SELF='OE01',HP=' CT01 CT02 CT03 CT04 CT05 CT06 CT08 CT10 CV01 CV03 CV04 CV05 CV06 CV07 CV08 EN01 EN02 EN03 EN04 EN06 EN07 GH01 GH02 GH03 GH05 GH06 GH07 GH08 GH09 GH10 GO01 GO02 GO03 GO04 GO09 GO10 GO11 GO12 GO13 GO14 HO01 HO02 HO03 HO04 HO05 HO06 II01 II02 II03 II04 II07 II08 NE01 NE02 NE03 NE04 NE05 NE06 NE07 NE08 NU01 NU02 NU03 NU04 NU05 OE01 OE02 PC01 PC02 PC03 PC04 PC05 PC06 PD01 PD02 PD03 PD04 PD05 PD06 PD07 PD08 PD09 PD10 RD01 RD02 RD03 RD04 RD05 RD07 RP01 RP02 RP03 RP04 ';
+var SK='A,H1,H2,H3,SCRIPT,STYLE,NAV,.card-num,.card-eyebrow,.sub-title,.disease-tag,.toc';
+var R=/\b(?:([A-H])(\d)?\.(\d{1,2}[a-c]?)|(CV|RP|GH|NE|EN|NU|HO|II|RD|GO|PD|PC|CT|OE)(\d\d))\b/g;
+function skip(n){for(var e=n.parentNode;e&&e!==M;e=e.parentNode)if(e.matches&&e.matches(SK))return 1;return 0}
+var w=d.createTreeWalker(M,4),t,L=[];while(t=w.nextNode())if(R.test(t.data)&&!skip(t))L.push(t);
+L.forEach(function(t){var s=t.data,f=d.createDocumentFragment(),i=0,m;R.lastIndex=0;
+while(m=R.exec(s)){var h=null;
+if(m[1]){var id=m[1].toLowerCase()+(m[2]?m[2]+'-':'')+m[3];if(d.getElementById(id))h='#'+id}
+else{var x=m[4]+m[5];if(x!==SELF&&HP.indexOf(' '+x+' ')>=0)h='../'+x+'/'+x+'.html'}
+if(!h)continue;f.appendChild(d.createTextNode(s.slice(i,m.index)));
+var a=d.createElement('a');a.href=h;a.className='xr';a.textContent=m[0];f.appendChild(a);i=R.lastIndex}
+if(i){f.appendChild(d.createTextNode(s.slice(i)));t.parentNode.replaceChild(f,t)}});
+function nz(s){return s.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'')}
+var q=d.querySelector('.hp-q'),n=d.querySelector('.hp-n'),it=M.querySelectorAll('.card,.pocket-card'),T;
+function clr(){M.querySelectorAll('.q-off').forEach(function(e){e.classList.remove('q-off')})}
+function run(){var v=nz(q.value.trim());clr();n.textContent='';if(v.length<2)return;var k=0;
+it.forEach(function(c){if(nz(c.textContent).indexOf(v)<0){c.classList.add('q-off');return}k++;
+var r=c.querySelectorAll('.stbl-row,.disease-row,.score-row'),h=[];r.forEach(function(x){if(nz(x.textContent).indexOf(v)>=0)h.push(x)});
+if(h.length)r.forEach(function(x){if(h.indexOf(x)<0)x.classList.add('q-off')});
+c.querySelectorAll('details').forEach(function(x){if(nz(x.textContent).indexOf(v)>=0)x.open=true})});
+M.querySelectorAll('section').forEach(function(s){if(!s.querySelector('.card:not(.q-off),.pocket-card:not(.q-off)'))s.classList.add('q-off')});
+n.textContent=k?k+' achado'+(k>1?'s':''):'nada'}
+if(q){q.addEventListener('input',function(){clearTimeout(T);T=setTimeout(run,180)});
+q.addEventListener('keydown',function(e){if(e.key==='Escape'){q.value='';run()}})}
+function tg(b,f){b.addEventListener('click',function(){var on=b.getAttribute('aria-pressed')!=='true';b.setAttribute('aria-pressed',on);f(on)})}
+var bd=d.querySelector('.hp-dz'),bo=d.querySelector('.hp-op');
+if(bd)tg(bd,function(on){d.body.classList.toggle('dz',on);if(on)d.getElementById('tratamento').scrollIntoView()});
+if(bo)tg(bo,function(on){M.querySelectorAll('details').forEach(function(x){x.open=on})});
+var P=[];addEventListener('beforeprint',function(){P=[];M.querySelectorAll('details:not([open])').forEach(function(x){P.push(x);x.open=true})});
+addEventListener('afterprint',function(){P.forEach(function(x){x.open=false})});
+})();</script><!--/hp-f2--></body>
 </html>

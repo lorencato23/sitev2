@@ -345,6 +345,25 @@ ul.bullets li b{color:var(--ink);font-weight:600}
   .pocket .pocket-card.tx{--accent:#a8481a}
   .pocket .pocket-card.clin{--accent:#0b5d4e}
 }
+
+/* === v5.2.2 · fase 2 (navegação) === */
+.hp-tools{display:flex;gap:6px;align-items:center;flex:none;order:1;margin-left:auto;padding-left:6px;position:sticky;right:0;background:#f1eee5;box-shadow:-10px 0 10px -4px #f1eee5,16px 0 0 #f1eee5}
+@media(min-width:900px){html{scroll-padding-top:150px}.toc-inner{flex-wrap:wrap;overflow:visible}.card[id],.sub-title[id]{scroll-margin-top:150px}}
+@media(max-width:899px){.hp-b,.hp-n{display:none}.hp-q{width:104px}}
+.hp-q{width:128px;font:500 12px/1 'DM Sans',system-ui,sans-serif;padding:7px 11px;border:1px solid var(--line-strong);border-radius:999px;background:var(--paper);color:var(--ink)}
+.hp-b{font:600 11px/1 'DM Sans',system-ui,sans-serif;letter-spacing:.05em;text-transform:uppercase;padding:7px 10px;border-radius:999px;border:1px solid var(--line-strong);background:var(--paper);color:var(--ink-soft);cursor:pointer;white-space:nowrap}
+.hp-b[aria-pressed=true]{background:var(--ink);color:#fff;border-color:var(--ink)}
+.hp-n{font:600 11px/1 'DM Mono',monospace;color:var(--ink-mute);white-space:nowrap}
+.sec-idx{display:flex;flex-wrap:wrap;gap:6px;margin:12px 0 20px}
+.sec-idx a{font:500 12px/1.25 'DM Sans',system-ui,sans-serif;padding:6px 10px;border-radius:999px;background:var(--paper);border:1px solid var(--line);color:var(--ink-soft);text-decoration:none}
+.sec-idx a:hover{border-color:var(--line-strong);color:var(--ink)}
+.sec-idx b{color:var(--c-prim);margin-right:5px;font-weight:700}
+a.xr{color:inherit;text-decoration:underline dotted;text-underline-offset:2px}
+a.xr:hover{color:var(--c-prim)}
+.card[id],.sub-title[id]{scroll-margin-top:110px}
+.q-off{display:none!important}
+body.dz main section:not(#tratamento){display:none}
+@media print{.hp-tools,.sec-idx,.toc-doses{display:none!important}}
 </style>
 </head>
 <body>
@@ -362,14 +381,14 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </header>
 
 <nav class="toc">
-  <div class="toc-inner">
+  <div class="toc-inner"><!--hp-f2--><span class="hp-tools"><input class="hp-q" type="search" placeholder="Buscar no HP" aria-label="Buscar no HP"><button class="hp-b hp-dz" type="button" aria-pressed="false">Só doses</button><button class="hp-b hp-op" type="button" aria-pressed="false">Abrir tudo</button><span class="hp-n" aria-live="polite"></span></span><!--/hp-f2-->
     <a href="#pocket"      class="toc-chip"><span class="toc-chip-num">0</span>Pocket</a>
     <a href="#redflags"    class="toc-chip"><span class="toc-chip-num">A</span>Red Flags</a>
     <a href="#approach"    class="toc-chip"><span class="toc-chip-num">B</span>Apresentação</a>
     <a href="#primarias"   class="toc-chip"><span class="toc-chip-num">C</span>Entidades</a>
     <a href="#secundarias" class="toc-chip"><span class="toc-chip-num">D</span>Secundárias</a>
     <a href="#algoritmo"   class="toc-chip"><span class="toc-chip-num">E</span>Algoritmo</a>
-    <a href="#tratamento"  class="toc-chip"><span class="toc-chip-num">F</span>Tratamento</a>
+    <a href="#tratamento"  class="toc-chip"><span class="toc-chip-num">F</span>Tratamento</a><!--hp-f2--><a href="#f2" class="toc-chip toc-doses"><span class="toc-chip-num">Rx</span>Doses</a><!--/hp-f2-->
     <a href="#pitfalls"    class="toc-chip"><span class="toc-chip-num">G</span>Pitfalls</a>
     <a href="#pearls"      class="toc-chip"><span class="toc-chip-num">H</span>Pearls</a>
   </div>
@@ -484,7 +503,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
     <div class="section-sub">Três planos de risco: o cálcio agudo (alto ou baixo), o fármaco que muda o cálcio (bisfosfonato, denosumabe, tiazídico, vitamina D) e a fratura que já aconteceu. Cada linha é sinal, suspeita e conduta.</div>
   </div>
 
-  <div class="card emerg">
+  <div class="card emerg" id="a1">
     <div class="card-head">
       <div class="card-eyebrow"><span class="card-num">A.1</span> Emergências do cálcio</div>
       <h3>Hipercalcemia grave e hipocalcemia sintomática <span class="ank ank-dgr">DANGER</span></h3>
@@ -527,7 +546,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
     <div class="section-sub">Cada padrão pergunta o que o cálcio, o PTH e a fosfatase alcalina dizem juntos; o diagnóstico mineral nasce da combinação, não do valor isolado.</div>
   </div>
 
-  <div class="card clin">
+  <div class="card clin" id="b1">
     <div class="card-head">
       <div class="card-eyebrow"><span class="card-num">B.1</span> Padrão 1</div>
       <h3>Cálcio alto em exame de rotina</h3>
@@ -556,7 +575,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
     </div>
   </div>
 
-  <div class="card clin">
+  <div class="card clin" id="b2">
     <div class="card-head">
       <div class="card-eyebrow"><span class="card-num">B.2</span> Padrão 2</div>
       <h3>Cálcio baixo, parestesias ou pós-cirurgia cervical</h3>
@@ -574,7 +593,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
     </div>
   </div>
 
-  <div class="card clin">
+  <div class="card clin" id="b3">
     <div class="card-head">
       <div class="card-eyebrow"><span class="card-num">B.3</span> Padrão 3</div>
       <h3>Fratura por fragilidade</h3>
@@ -591,7 +610,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
     </div>
   </div>
 
-  <div class="card clin">
+  <div class="card clin" id="b4">
     <div class="card-head">
       <div class="card-eyebrow"><span class="card-num">B.4</span> Padrão 4</div>
       <h3>Densitometria alterada em mulher na pós-menopausa ou em homem idoso</h3>
@@ -608,7 +627,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
     </div>
   </div>
 
-  <div class="card clin">
+  <div class="card clin" id="b5">
     <div class="card-head">
       <div class="card-eyebrow"><span class="card-num">B.5</span> Padrão 5</div>
       <h3>Dor óssea e fosfatase alcalina alta</h3>
@@ -630,9 +649,9 @@ ul.bullets li b{color:var(--ink);font-weight:600}
     <div class="section-eyebrow"><span>C</span> Entidades Primárias</div>
     <div class="section-title">Nove entidades: o cálcio (alto, baixo, vitamina D) e o osso (osteoporose e as outras doenças ósseas)</div>
     <div class="section-sub">O PTH e a vitamina D organizam o mineral; a osteoporose, a osteomalácia, o Paget e as complicações do tratamento organizam o osso. Cada box termina na linha que muda a conduta.</div>
-  </div>
+  </div><!--hp-f2--><nav class="sec-idx" aria-label="Neste capítulo"><a href="#c1"><b>C.1</b>Hipercalcemia: abordagem pelo…</a><a href="#c2"><b>C.2</b>Hiperparatireoidismo primário…</a><a href="#c3"><b>C.3</b>Hipocalcemia e hipoparatireoi…</a><a href="#c4"><b>C.4</b>Vitamina D: deficiência, repo…</a><a href="#c5"><b>C.5</b>Osteoporose pós-menopáusica…</a><a href="#c6"><b>C.6</b>Osteoporose por glicocorticoi…</a><a href="#c7"><b>C.7</b>Osteomalácia e raquitismo: o…</a><a href="#c8"><b>C.8</b>Doença de Paget óssea: remode…</a><a href="#c9"><b>C.9</b>Osteonecrose de mandíbula e f…</a></nav><!--/hp-f2-->
 
-  <div class="card prim">
+  <div class="card prim" id="c1">
     <div class="card-head">
       <div class="card-eyebrow"><span class="card-num">C.1</span> Metabolismo do cálcio</div>
       <h3>Hipercalcemia: abordagem pelo PTH e crise hipercalcêmica <span class="ank ank-hy">HIGH-YIELD</span> <span class="ank ank-dec">DECISION</span></h3>
@@ -679,7 +698,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
     </div>
   </div>
 
-  <div class="card prim">
+  <div class="card prim" id="c2">
     <div class="card-head">
       <div class="card-eyebrow"><span class="card-num">C.2</span> Paratireoide</div>
       <h3>Hiperparatireoidismo primário: diagnóstico, indicação cirúrgica e seguimento <span class="ank ank-hy">HIGH-YIELD</span> <span class="ank ank-dec">DECISION</span></h3>
@@ -723,7 +742,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
       <div class="box decision"><span class="box-label">DECISION</span><div class="box-title">Hiperparatireoidismo primário em gestante, em NEM e em DRC</div><div class="box-body">Gestante: a decisão é individual, com hidratação como ponte e cirurgia reservada ao cálcio muito alto ou à complicação (conferir momento e conduta; sem fonte lida neste HP); tiazídico não deve ser usado. NEM 1 e 2A: doença multiglandular e recidiva alta, com paratireoidectomia subtotal ou total com autoimplante. DRC: o PTH alto é secundário até prova em contrário (D.1, NU03).</div></div>
     </div>
   </div>
-  <div class="card prim">
+  <div class="card prim" id="c3">
     <div class="card-head">
       <div class="card-eyebrow"><span class="card-num">C.3</span> Paratireoide</div>
       <h3>Hipocalcemia e hipoparatireoidismo, com o pós-tireoidectomia <span class="ank ank-hy">HIGH-YIELD</span> <span class="ank ank-dgr">DANGER</span></h3>
@@ -769,7 +788,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
     </div>
   </div>
 
-  <div class="card prim">
+  <div class="card prim" id="c4">
     <div class="card-head">
       <div class="card-eyebrow"><span class="card-num">C.4</span> Vitamina D</div>
       <h3>Vitamina D: deficiência, reposição com dose e teto, intoxicação <span class="ank ank-hy">HIGH-YIELD</span> <span class="ank ank-dec">DECISION</span></h3>
@@ -803,7 +822,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
       <div class="box decision"><span class="box-label">DECISION</span><div class="box-title">Teto prático: dose e controle</div><div class="box-body">Repita a 25(OH)D e o cálcio sérico após 8–12 semanas de ataque e uma vez depois do ajuste da manutenção. Doses diárias acima de 4.000 UI sem controle, ou produto manipulado sem laudo de dosagem, não têm respaldo nesta captura (limite superior tolerável do IOM não lido: <b>conferir</b>). Pela apostila 2025, a Endocrine Society 2024 restringe a dosagem laboratorial às situações que a justifiquem; o original da diretriz (acesso fechado) não foi lido.</div></div>
     </div>
   </div>
-  <div class="card prim">
+  <div class="card prim" id="c5">
     <div class="card-head">
       <div class="card-eyebrow"><span class="card-num">C.5</span> Osso</div>
       <h3>Osteoporose pós-menopáusica: diagnóstico, risco e tratamento <span class="ank ank-hy">HIGH-YIELD</span> <span class="ank ank-dec">DECISION</span></h3>
@@ -875,7 +894,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
     </div>
   </div>
 
-  <div class="card prim">
+  <div class="card prim" id="c6">
     <div class="card-head">
       <div class="card-eyebrow"><span class="card-num">C.6</span> Osso</div>
       <h3>Osteoporose por glicocorticoide e osteoporose masculina <span class="ank ank-hy">HIGH-YIELD</span></h3>
@@ -899,7 +918,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
       <div class="box hy"><span class="box-label">HIGH-YIELD</span><div class="box-title">Diretriz do ACR 2022 para glicocorticoide: referência não lida</div><div class="box-body">A diretriz do American College of Rheumatology (2022) sobre prevenção e tratamento da osteoporose por glicocorticoide está em acesso fechado e não foi lida no original; as indicações e os fármacos deste box vêm do PCDT 2025 e das bulas FDA. Conferir o texto antes de uso em prova ou decisão individual.</div></div>
     </div>
   </div>
-  <div class="card prim">
+  <div class="card prim" id="c7">
     <div class="card-head">
       <div class="card-eyebrow"><span class="card-num">C.7</span> Osso</div>
       <h3>Osteomalácia e raquitismo: o osso que não mineraliza <span class="ank ank-hy">HIGH-YIELD</span> <span class="ank ank-dgr">DANGER</span></h3>
@@ -932,7 +951,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
     </div>
   </div>
 
-  <div class="card prim">
+  <div class="card prim" id="c8">
     <div class="card-head">
       <div class="card-eyebrow"><span class="card-num">C.8</span> Osso</div>
       <h3>Doença de Paget óssea: remodelamento focal desorganizado <span class="ank ank-hy">HIGH-YIELD</span></h3>
@@ -955,7 +974,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
     </div>
   </div>
 
-  <div class="card prim">
+  <div class="card prim" id="c9">
     <div class="card-head">
       <div class="card-eyebrow"><span class="card-num">C.9</span> Osso · complicações do tratamento</div>
       <h3>Osteonecrose de mandíbula e fratura atípica de fêmur <span class="ank ank-dgr">DANGER</span> <span class="ank ank-dec">DECISION</span></h3>
@@ -994,9 +1013,9 @@ ul.bullets li b{color:var(--ink);font-weight:600}
     <div class="section-eyebrow"><span>D</span> Entidades Secundárias</div>
     <div class="section-title">O que completa o diferencial: o PTH secundário, as síndromes, o carcinoma, a fome óssea e o osso em situações especiais</div>
     <div class="section-sub">Cinco blocos agrupados por raciocínio comum. Os componentes de outros HPs ficam com remissão: DMO-DRC no NU03, tireoide no EN03, suprarrenal e hipófise no EN04, bariátrica no EN07.</div>
-  </div>
+  </div><!--hp-f2--><nav class="sec-idx" aria-label="Neste capítulo"><a href="#d1"><b>D.1</b>Hiperparatireoidismo secundár…</a><a href="#d2"><b>D.2</b>NEM 1 e NEM 2A: o componente…</a><a href="#d3"><b>D.3</b>Carcinoma de paratireoide, hi…</a><a href="#d4"><b>D.4</b>Síndrome da fome óssea e hipo…</a><a href="#d5"><b>D.5</b>Saúde óssea em pré-menopausa…</a></nav><!--/hp-f2-->
 
-  <div class="card diag">
+  <div class="card diag" id="d1">
     <div class="card-head">
       <div class="card-eyebrow"><span class="card-num">D.1</span> PTH reativo</div>
       <h3>Hiperparatireoidismo secundário e terciário <span class="ank ank-dec">DECISION</span></h3>
@@ -1028,7 +1047,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
     </div>
   </div>
 
-  <div class="card diag">
+  <div class="card diag" id="d2">
     <div class="card-head">
       <div class="card-eyebrow"><span class="card-num">D.2</span> Síndromes endócrinas</div>
       <h3>NEM 1 e NEM 2A: o componente paratireoide <span class="ank ank-dec">DECISION</span></h3>
@@ -1051,7 +1070,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
     </div>
   </div>
 
-  <div class="card diag">
+  <div class="card diag" id="d3">
     <div class="card-head">
       <div class="card-eyebrow"><span class="card-num">D.3</span> Neoplasia e variantes</div>
       <h3>Carcinoma de paratireoide, hipercalcemia hipocalciúrica familiar e HPT-JT</h3>
@@ -1074,7 +1093,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
     </div>
   </div>
 
-  <div class="card diag">
+  <div class="card diag" id="d4">
     <div class="card-head">
       <div class="card-eyebrow"><span class="card-num">D.4</span> Pós-cirúrgico e magnésio</div>
       <h3>Síndrome da fome óssea e hipomagnesemia</h3>
@@ -1097,7 +1116,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
     </div>
   </div>
 
-  <div class="card diag">
+  <div class="card diag" id="d5">
     <div class="card-head">
       <div class="card-eyebrow"><span class="card-num">D.5</span> Situações especiais</div>
       <h3>Saúde óssea em pré-menopausa, gestação, pós-bariátrica, DRC avançada e terapia hormonal oncológica</h3>
@@ -1127,7 +1146,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
     <div class="section-sub">Duas árvores: a primeira parte do cálcio corrigido e termina no diagnóstico mineral; a segunda parte da fratura, da DXA e do FRAX e termina na escolha do fármaco. A sequência mental vem depois, em passos.</div>
   </div>
 
-  <div class="card prim">
+  <div class="card prim" id="e1">
     <div class="card-head">
       <div class="card-eyebrow"><span class="card-num">E.1</span> Algoritmo</div>
       <h3>Cálcio alterado: decisão em sequência</h3>
@@ -1188,7 +1207,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
     </div>
   </div>
 
-  <div class="card prim">
+  <div class="card prim" id="e2">
     <div class="card-head">
       <div class="card-eyebrow"><span class="card-num">E.2</span> Algoritmo</div>
       <h3>Osteoporose: da fratura ou da DXA ao fármaco</h3>
@@ -1253,15 +1272,15 @@ ul.bullets li b{color:var(--ink);font-weight:600}
     <div class="section-eyebrow"><span>F</span> Tratamento Integrado</div>
     <div class="section-title">F1 · Estratégia por entidade · F2 · Doses · F3 · Casos · F4 · Brasil e SUS</div>
     <div class="section-sub">No cálcio, a ordem é volume, antirreabsortivo e causa (alto) ou cálcio IV, calcitriol e magnésio (baixo). No osso, é a escolha do fármaco pelo risco, pela via e pelo rim, com sequência e duração definidas. Cada degrau tem dose, via e limite.</div>
-  </div>
+  </div><!--hp-f2--><nav class="sec-idx" aria-label="Neste capítulo"><a href="#f1"><b>F.1</b>Escada terapêutica por entida…</a><a href="#f2"><b>F.2</b>Tabela de doses — cálcio, par…</a><a href="#f3"><b>F.3</b>Caso → conduta correta → erro…</a><a href="#f4"><b>F.4</b>Disponibilidade, PCDT e o que…</a></nav><!--/hp-f2-->
 
-  <div class="card tx">
+  <div class="card tx" id="f1">
     <div class="card-head">
       <div class="card-eyebrow"><span class="card-num">F.1</span> Estratégia</div>
       <h3>Escada terapêutica por entidade <span class="ank ank-dec">DECISION</span></h3>
     </div>
     <div class="card-body">
-      <div class="sub-title">F1.1 · Hipercalcemia grave e crise hipercalcêmica (C.1)</div>
+      <div class="sub-title" id="f1-1">F1.1 · Hipercalcemia grave e crise hipercalcêmica (C.1)</div>
       <ul class="bullets">
         <li><b>Degrau 1, volume:</b> SF 0,9% 1–2 L na primeira hora e depois ~200 mL/h até diurese de ~2 L/dia; balanço rígido no cardiopata e no renal; suspender tiazídico, lítio, cálcio, vitamina D e vitamina A.</li>
         <li><b>Degrau 2, antirreabsortivo:</b> ácido zoledrônico 4 mg IV em ≥15 min (creatinina antes; creatinina &gt;4,5 mg/dL: não estudado; a bula não reduz a dose por ClCr nesta indicação; bula FDA Zometa, conferir bula Anvisa) ou pamidronato 60–90 mg IV (conferir; bula não lida). O efeito começa em 2–3 dias e atinge o pico em 4–7.</li>
@@ -1271,7 +1290,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
       </ul>
       <div class="box danger"><span class="box-label">DANGER</span><div class="box-title">Critério de parada e ordem de erro</div><div class="box-body">Parar a salina se houver sobrecarga (crepitações, hipoxemia, edema) e reconsiderar diálise. Calcitonina é ponte de horas e não substitui o bisfosfonato. A hipercalcemia da malignidade segue o HO06 (cálcio corrigido ≥12 mg/dL trata-se; &gt;13,5 é grave); este HP descreve a mesma conduta pela causa paratireoidiana e pelas outras causas.</div></div>
 
-      <div class="sub-title">F1.2 · Hiperparatireoidismo primário (C.2)</div>
+      <div class="sub-title" id="f1-2">F1.2 · Hiperparatireoidismo primário (C.2)</div>
       <ul class="bullets">
         <li><b>Operar:</b> sintomático sempre; assintomático com um dos critérios do 5º Workshop (cálcio &gt;1 mg/dL acima do limite, T-score ≤−2,5 ou fratura vertebral, ClCr &lt;60, cálculo ou nefrocalcinose, hipercalciúria, idade &lt;50 anos). Localização com USG e sestamibi, PTH intraoperatório.</li>
         <li><b>Seguir:</b> hidratação, cálcio alimentar 800–1.200 mg/dia, 25(OH)D em 30–50 ng/mL, evitar tiazídico e lítio; cálcio e creatinina periódicos, DXA e imagem renal para surgimento de indicação (intervalos: conferir 5º Workshop).</li>
@@ -1279,7 +1298,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
         <li><b>Pós-operatório:</b> cálcio em 24–48 h e até o quarto dia; alta antes do quinto dia leva cálcio e calcitriol e retorna em uma semana; fome óssea se PTH alto com cálcio baixo (D.4).</li>
       </ul>
 
-      <div class="sub-title">F1.3 · Hipocalcemia aguda e hipoparatireoidismo (C.3)</div>
+      <div class="sub-title" id="f1-3">F1.3 · Hipocalcemia aguda e hipoparatireoidismo (C.3)</div>
       <ul class="bullets">
         <li><b>Crise:</b> gluconato de cálcio 10% 10–20 mL IV em 10–20 min, repetível; depois infusão contínua de 0,5–1,5 mg/kg/h de cálcio elementar (esquema da apostila e do EN03; não é teto farmacológico) por 8–10 h ou até o cálcio VO agir; calcemia a cada 4–6 h (1–4 h no início).</li>
         <li><b>Cálcio refratário:</b> dosar magnésio; repor magnésio se &lt;1 mg/dL com sintomas.</li>
@@ -1289,14 +1308,14 @@ ul.bullets li b{color:var(--ink);font-weight:600}
       </ul>
       <div class="box hy"><span class="box-label">HIGH-YIELD</span><div class="box-title">Meta é o limite inferior, não o centro da faixa</div><div class="box-body">Normalizar a calcemia no hipoparatireoidismo gera calciúria e nefrolitíase, porque falta o PTH no túbulo distal. Aceitar cálcio no limite inferior da normalidade (ou discretamente abaixo), sem sintomas, com fósforo no limite superior e produto cálcio × fósforo abaixo de 55.</div></div>
 
-      <div class="sub-title">F1.4 · Vitamina D (C.4)</div>
+      <div class="sub-title" id="f1-4">F1.4 · Vitamina D (C.4)</div>
       <ul class="bullets">
         <li><b>Dose a 25(OH)D</b> só em risco ou doença óssea; deficiência &lt;20 ng/mL: colecalciferol 50.000 UI VO 1×/semana por 8 semanas, reavaliar e passar a 1.000–2.000 UI/dia; meta 30–60 ng/mL nos grupos de risco.</li>
         <li><b>Osteoporose:</b> 800–1.000 UI/dia (ou 7.000 UI/semana), até 2.000 UI/dia a partir dos 60 anos (PCDT 2025). Sem prescrever doses altas contínuas.</li>
         <li><b>Intoxicação (25(OH)D &gt;100 ng/mL com hipercalcemia):</b> suspender vitamina D e cálcio, SF 0,9% e função renal; prednisona 20–40 mg/dia ou bisfosfonato se persistir (conferir).</li>
       </ul>
 
-      <div class="sub-title">F1.5 · Osteoporose pós-menopáusica (C.5)</div>
+      <div class="sub-title" id="f1-5">F1.5 · Osteoporose pós-menopáusica (C.5)</div>
       <ul class="bullets">
         <li><b>Base para todos:</b> exercício com carga, prevenção de quedas, sem tabaco, cálcio total de 1.000–1.200 mg/dia (suplemento &lt;1.400 mg/dia, ≤500 mg elementar por vez) e colecalciferol.</li>
         <li><b>1ª linha no SUS:</b> alendronato 70 mg VO 1×/semana (ou 10 mg/dia) ou risedronato 35 mg/semana; em jejum, 200 mL de água, 30–60 min em pé.</li>
@@ -1307,14 +1326,14 @@ ul.bullets li b{color:var(--ink);font-weight:600}
       </ul>
       <div class="box danger"><span class="box-label">DANGER</span><div class="box-title">Denosumabe: transição obrigatória, e cálcio antes e depois</div><div class="box-body">Parar sem substituir o fármaco dá rebote e fraturas vertebrais múltiplas. Corrigir hipocalcemia e vitamina D antes de cada dose, cálcio 1.000 mg e vitamina D ≥400 UI/dia (bula FDA), teste de gravidez em mulher fértil e atenção redobrada com eGFR &lt;30.</div></div>
 
-      <div class="sub-title">F1.6 · Glicocorticoide, osteoporose masculina e situações especiais (C.6, D.5)</div>
+      <div class="sub-title" id="f1-6">F1.6 · Glicocorticoide, osteoporose masculina e situações especiais (C.6, D.5)</div>
       <ul class="bullets">
         <li><b>Glicocorticoide:</b> prednisona &gt;5 mg/dia por ≥3 meses e fratura, T ≤−2,0 ou FRAX acima do limiar: bisfosfonato oral; zoledronato 5 mg/ano, denosumabe ou teriparatida nos de maior risco (bulas FDA).</li>
         <li><b>Homem:</b> T ≤−2,5 ou fratura: alendronato 70 mg/semana, risedronato 35 mg/semana ou zoledronato 5 mg/ano; tratar hipogonadismo, álcool e fármacos.</li>
         <li><b>Terapia hormonal oncológica:</b> T ≤−2,0 (ou 2 ou mais fatores): tratar pelo PCDT. <b>Gestação e lactação:</b> sem bisfosfonato. <b>DRC 4–5:</b> sem fármaco pelo PCDT; NU03.</li>
       </ul>
 
-      <div class="sub-title">F1.7 · Fratura aguda: analgesia e quedas</div>
+      <div class="sub-title" id="f1-7">F1.7 · Fratura aguda: analgesia e quedas</div>
       <ul class="bullets">
         <li><b>Dor da fratura vertebral aguda:</b> dipirona 1 g IV de 6/6 h, máximo de 4 g/dia, ou até 5 g/dia pela bula brasileira de injetável; paracetamol é a alternativa na rotina oral.</li>
         <li><b>AINE:</b> cetorolaco 30 mg IV, máx. 120 mg/dia, com 15 mg e máx. 60 mg/dia em pessoas com 65 anos ou mais, com menos de 50 kg ou com disfunção renal leve, e máx. 5 dias; contraindicado na insuficiência renal, na hipovolemia e com sangramento. No idoso osteoporótico, a dipirona é a escolha, e o AINE é exceção.</li>
@@ -1322,7 +1341,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
         <li><b>Prevenção de quedas:</b> revisar psicoativos e anti-hipertensivos, corrigir visão e audição, calçado, iluminação, treino de equilíbrio e força; vitamina D e cálcio.</li>
       </ul>
 
-      <div class="sub-title">F1.8 · Osteomalácia, Paget, ONJ e fratura atípica (C.7–C.9)</div>
+      <div class="sub-title" id="f1-8">F1.8 · Osteomalácia, Paget, ONJ e fratura atípica (C.7–C.9)</div>
       <ul class="bullets">
         <li><b>Osteomalácia:</b> vitamina D em ataque e cálcio (nutricional); calcitriol 0,25 mcg VO 2×/dia no déficit de 1-α-hidroxilase e na hipofosfatêmica; burosumabe, asfotase alfa e fosfato por especialista (conferir bula).</li>
         <li><b>Paget:</b> ácido zoledrônico 5 mg IV em dose única, ou alendronato 40 mg/dia por 6 meses, ou risedronato 35 mg/dia por 2 meses (PCDT Paget 2020: a dose estudada é 30 mg/dia; no Brasil só há 35 mg; diário só no Paget; na osteoporose, 35 mg é semanal); FA a cada 3–6 meses; retratar se subir.</li>
@@ -1331,7 +1350,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
     </div>
   </div>
 
-  <div class="card tx">
+  <div class="card tx" id="f2">
     <div class="card-head">
       <div class="card-eyebrow"><span class="card-num">F.2</span> Doses Operacionais</div>
       <h3>Tabela de doses — cálcio, paratireoide e osso <span class="ank ank-dgr">DANGER</span></h3>
@@ -1378,7 +1397,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
     </div>
   </div>
 
-  <div class="card tx">
+  <div class="card tx" id="f3">
     <div class="card-head">
       <div class="card-eyebrow"><span class="card-num">F.3</span> Casos</div>
       <h3>Caso → conduta correta → erro típico <span class="ank ank-hy">HIGH-YIELD</span></h3>
@@ -1399,7 +1418,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
     </div>
   </div>
 
-  <div class="card tx">
+  <div class="card tx" id="f4">
     <div class="card-head">
       <div class="card-eyebrow"><span class="card-num">F.4</span> Brasil e SUS</div>
       <h3>Disponibilidade, PCDT e o que conferir <span class="ank ank-dec">DECISION</span></h3>
@@ -1414,7 +1433,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
       </ul>
       <div class="box decision"><span class="box-label">DECISION</span><div class="box-title">Quando internar, quando dar alta e quando encaminhar</div><div class="box-body"><b>Internar:</b> cálcio corrigido ≥14 mg/dL ou ≥12 com sintoma, QT alterado, cálcio ≤7,5 mg/dL ou sintomático, hipocalcemia refratária, fratura de quadril ou vertebral dolorosa sem controle. <b>Alta com seguimento:</b> hiperparatireoidismo assintomático, hipoparatireoidismo estável, osteoporose em tratamento. <b>Encaminhar:</b> endocrinologia para hiperparatireoidismo, osso metabólico raro e osteoporose de muito alto risco; cirurgia de cabeça e pescoço para paratireoidectomia; odontologia antes de zoledronato ou denosumabe oncológico; ortopedia para fratura atípica.</div></div>
 
-      <div class="sub-title">F4.1 · Populações especiais que mudam a conduta</div>
+      <div class="sub-title" id="f4-1">F4.1 · Populações especiais que mudam a conduta</div>
       <ul class="bullets">
         <li><b>Gestante:</b> cálcio e vitamina D são seguros; calcitriol aumenta na gestação e volta ao basal depois; tiazídico suspenso; bisfosfonato não; gluconato de cálcio 1–2 g IV em 10 min na tetania; cálcio a cada 2–3 semanas (PCDT 2026).</li>
         <li><b>Criança e adolescente:</b> fármacos do PCDT no hipoparatireoidismo, com dose individualizada e controle renal e oftalmológico; gluconato em bólus ≤100 mg/min (bula; neonato com ceftriaxona: contraindicado); raquitismo no PD03; sem dose pediátrica fixada neste HP.</li>
@@ -1422,7 +1441,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
         <li><b>Idoso frágil:</b> priorizar via, adesão e quedas; dipirona em vez de AINE; zoledronato anual melhora a adesão; reavaliar polifarmácia.</li>
       </ul>
 
-      <div class="sub-title">F4.2 · Monitorização</div>
+      <div class="sub-title" id="f4-2">F4.2 · Monitorização</div>
       <ul class="bullets">
         <li><b>Hipercalcemia tratada:</b> cálcio, creatinina, eletrólitos e ECG seriados, em intervalos do serviço (prática; conferir), com balanço hídrico enquanto durar a hidratação.</li>
         <li><b>Hipoparatireoidismo:</b> no início a cada 7–14 dias; estável, cálcio, creatinina, magnésio e fósforo entre 3 e 12 meses, 25(OH)D a cada 6–12 meses, calciúria de 24 h a cada 6–24 meses, USG renal a cada 2 anos se hipercalciúria e a cada 5 se creatinina alta (PCDT 2026).</li>
@@ -1439,7 +1458,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
     <div class="section-sub">No cálcio, os erros são de ordem (diurético antes do volume, cálcio sem magnésio) e de rótulo (total × corrigido). No osso, são de sequência: parar o denosumabe, tratar osteomalácia como osteoporose, esquecer a vitamina D.</div>
   </div>
 
-  <div class="card pearl">
+  <div class="card pearl" id="g1">
     <div class="card-head">
       <div class="card-eyebrow"><span class="card-num">G.1</span> Pegadinhas</div>
       <h3>10 Erros Operacionais em Cálcio, Paratireoide e Osso</h3>
@@ -1475,7 +1494,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
     <div class="section-sub">O que distingue quem trata o mineral e o osso bem: a razão por trás do número, o fármaco que se pensa na saída e a pergunta que se faz antes de prescrever.</div>
   </div>
 
-  <div class="card pearl">
+  <div class="card pearl" id="h1">
     <div class="card-head">
       <div class="card-eyebrow"><span class="card-num">H.1</span> Pearls</div>
       <h3>8 Nuances que Distinguem o Expert</h3>
@@ -1492,7 +1511,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
     </div>
   </div>
 
-  <div class="card pearl">
+  <div class="card pearl" id="h2">
     <div class="card-head">
       <div class="card-eyebrow"><span class="card-num">H.2</span> Em evolução</div>
       <h3>Áreas em Evolução <span class="ank ank-evo">EVOLVING</span></h3>
@@ -1541,5 +1560,36 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <a class="to-top" href="#" aria-label="Voltar ao topo">↑</a>
 <div class="watermark">@dr.lorencato · Paratireoide, Cálcio e Osso v5.2</div>
 
-</body>
+<!--hp-f2--><script>(function(){var d=document,M=d.querySelector('main');if(!M)return;
+var SELF='EN06',HP=' CT01 CT02 CT03 CT04 CT05 CT06 CT08 CT10 CV01 CV03 CV04 CV05 CV06 CV07 CV08 EN01 EN02 EN03 EN04 EN06 EN07 GH01 GH02 GH03 GH05 GH06 GH07 GH08 GH09 GH10 GO01 GO02 GO03 GO04 GO09 GO10 GO11 GO12 GO13 GO14 HO01 HO02 HO03 HO04 HO05 HO06 II01 II02 II03 II04 II07 II08 NE01 NE02 NE03 NE04 NE05 NE06 NE07 NE08 NU01 NU02 NU03 NU04 NU05 OE01 OE02 PC01 PC02 PC03 PC04 PC05 PC06 PD01 PD02 PD03 PD04 PD05 PD06 PD07 PD08 PD09 PD10 RD01 RD02 RD03 RD04 RD05 RD07 RP01 RP02 RP03 RP04 ';
+var SK='A,H1,H2,H3,SCRIPT,STYLE,NAV,.card-num,.card-eyebrow,.sub-title,.disease-tag,.toc';
+var R=/\b(?:([A-H])(\d)?\.(\d{1,2}[a-c]?)|(CV|RP|GH|NE|EN|NU|HO|II|RD|GO|PD|PC|CT|OE)(\d\d))\b/g;
+function skip(n){for(var e=n.parentNode;e&&e!==M;e=e.parentNode)if(e.matches&&e.matches(SK))return 1;return 0}
+var w=d.createTreeWalker(M,4),t,L=[];while(t=w.nextNode())if(R.test(t.data)&&!skip(t))L.push(t);
+L.forEach(function(t){var s=t.data,f=d.createDocumentFragment(),i=0,m;R.lastIndex=0;
+while(m=R.exec(s)){var h=null;
+if(m[1]){var id=m[1].toLowerCase()+(m[2]?m[2]+'-':'')+m[3];if(d.getElementById(id))h='#'+id}
+else{var x=m[4]+m[5];if(x!==SELF&&HP.indexOf(' '+x+' ')>=0)h='../'+x+'/'+x+'.html'}
+if(!h)continue;f.appendChild(d.createTextNode(s.slice(i,m.index)));
+var a=d.createElement('a');a.href=h;a.className='xr';a.textContent=m[0];f.appendChild(a);i=R.lastIndex}
+if(i){f.appendChild(d.createTextNode(s.slice(i)));t.parentNode.replaceChild(f,t)}});
+function nz(s){return s.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'')}
+var q=d.querySelector('.hp-q'),n=d.querySelector('.hp-n'),it=M.querySelectorAll('.card,.pocket-card'),T;
+function clr(){M.querySelectorAll('.q-off').forEach(function(e){e.classList.remove('q-off')})}
+function run(){var v=nz(q.value.trim());clr();n.textContent='';if(v.length<2)return;var k=0;
+it.forEach(function(c){if(nz(c.textContent).indexOf(v)<0){c.classList.add('q-off');return}k++;
+var r=c.querySelectorAll('.stbl-row,.disease-row,.score-row'),h=[];r.forEach(function(x){if(nz(x.textContent).indexOf(v)>=0)h.push(x)});
+if(h.length)r.forEach(function(x){if(h.indexOf(x)<0)x.classList.add('q-off')});
+c.querySelectorAll('details').forEach(function(x){if(nz(x.textContent).indexOf(v)>=0)x.open=true})});
+M.querySelectorAll('section').forEach(function(s){if(!s.querySelector('.card:not(.q-off),.pocket-card:not(.q-off)'))s.classList.add('q-off')});
+n.textContent=k?k+' achado'+(k>1?'s':''):'nada'}
+if(q){q.addEventListener('input',function(){clearTimeout(T);T=setTimeout(run,180)});
+q.addEventListener('keydown',function(e){if(e.key==='Escape'){q.value='';run()}})}
+function tg(b,f){b.addEventListener('click',function(){var on=b.getAttribute('aria-pressed')!=='true';b.setAttribute('aria-pressed',on);f(on)})}
+var bd=d.querySelector('.hp-dz'),bo=d.querySelector('.hp-op');
+if(bd)tg(bd,function(on){d.body.classList.toggle('dz',on);if(on)d.getElementById('tratamento').scrollIntoView()});
+if(bo)tg(bo,function(on){M.querySelectorAll('details').forEach(function(x){x.open=on})});
+var P=[];addEventListener('beforeprint',function(){P=[];M.querySelectorAll('details:not([open])').forEach(function(x){P.push(x);x.open=true})});
+addEventListener('afterprint',function(){P.forEach(function(x){x.open=false})});
+})();</script><!--/hp-f2--></body>
 </html>

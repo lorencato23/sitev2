@@ -345,13 +345,32 @@ ul.bullets li b{color:var(--ink);font-weight:600}
   .pocket .pocket-card.tx{--accent:#a8481a}
   .pocket .pocket-card.clin{--accent:#0b5d4e}
 }
+
+/* === v5.2.2 · fase 2 (navegação) === */
+.hp-tools{display:flex;gap:6px;align-items:center;flex:none;order:1;margin-left:auto;padding-left:6px;position:sticky;right:0;background:#f1eee5;box-shadow:-10px 0 10px -4px #f1eee5,16px 0 0 #f1eee5}
+@media(min-width:900px){html{scroll-padding-top:150px}.toc-inner{flex-wrap:wrap;overflow:visible}.card[id],.sub-title[id]{scroll-margin-top:150px}}
+@media(max-width:899px){.hp-b,.hp-n{display:none}.hp-q{width:104px}}
+.hp-q{width:128px;font:500 12px/1 'DM Sans',system-ui,sans-serif;padding:7px 11px;border:1px solid var(--line-strong);border-radius:999px;background:var(--paper);color:var(--ink)}
+.hp-b{font:600 11px/1 'DM Sans',system-ui,sans-serif;letter-spacing:.05em;text-transform:uppercase;padding:7px 10px;border-radius:999px;border:1px solid var(--line-strong);background:var(--paper);color:var(--ink-soft);cursor:pointer;white-space:nowrap}
+.hp-b[aria-pressed=true]{background:var(--ink);color:#fff;border-color:var(--ink)}
+.hp-n{font:600 11px/1 'DM Mono',monospace;color:var(--ink-mute);white-space:nowrap}
+.sec-idx{display:flex;flex-wrap:wrap;gap:6px;margin:12px 0 20px}
+.sec-idx a{font:500 12px/1.25 'DM Sans',system-ui,sans-serif;padding:6px 10px;border-radius:999px;background:var(--paper);border:1px solid var(--line);color:var(--ink-soft);text-decoration:none}
+.sec-idx a:hover{border-color:var(--line-strong);color:var(--ink)}
+.sec-idx b{color:var(--c-prim);margin-right:5px;font-weight:700}
+a.xr{color:inherit;text-decoration:underline dotted;text-underline-offset:2px}
+a.xr:hover{color:var(--c-prim)}
+.card[id],.sub-title[id]{scroll-margin-top:110px}
+.q-off{display:none!important}
+body.dz main section:not(#tratamento){display:none}
+@media print{.hp-tools,.sec-idx,.toc-doses{display:none!important}}
 </style>
 </head>
 <body>
 
 <header class="header"><div class="header-row"><div class="h-mark">H</div><div class="h-titles"><div class="h-title">Linfomas, Mieloma e Gamopatias · Pocket Handbook</div><div class="h-sub">Elite edition · Hemato-oncologia · HO05</div></div><div class="h-author">@dr.lorencato</div><div class="h-edition">v5.2</div></div></header>
 
-<nav class="toc"><div class="toc-inner"><a href="#pocket" class="toc-chip"><span class="toc-chip-num">0</span>Pocket</a><a href="#redflags" class="toc-chip"><span class="toc-chip-num">A</span>Red Flags</a><a href="#approach" class="toc-chip"><span class="toc-chip-num">B</span>Apresentação</a><a href="#primarias" class="toc-chip"><span class="toc-chip-num">C</span>Entidades</a><a href="#secundarias" class="toc-chip"><span class="toc-chip-num">D</span>Secundárias</a><a href="#algoritmo" class="toc-chip"><span class="toc-chip-num">E</span>Algoritmo</a><a href="#tratamento" class="toc-chip"><span class="toc-chip-num">F</span>Tratamento</a><a href="#pitfalls" class="toc-chip"><span class="toc-chip-num">G</span>Pitfalls</a><a href="#pearls" class="toc-chip"><span class="toc-chip-num">H</span>Pearls</a></div></nav>
+<nav class="toc"><div class="toc-inner"><!--hp-f2--><span class="hp-tools"><input class="hp-q" type="search" placeholder="Buscar no HP" aria-label="Buscar no HP"><button class="hp-b hp-dz" type="button" aria-pressed="false">Só doses</button><button class="hp-b hp-op" type="button" aria-pressed="false">Abrir tudo</button><span class="hp-n" aria-live="polite"></span></span><!--/hp-f2--><a href="#pocket" class="toc-chip"><span class="toc-chip-num">0</span>Pocket</a><a href="#redflags" class="toc-chip"><span class="toc-chip-num">A</span>Red Flags</a><a href="#approach" class="toc-chip"><span class="toc-chip-num">B</span>Apresentação</a><a href="#primarias" class="toc-chip"><span class="toc-chip-num">C</span>Entidades</a><a href="#secundarias" class="toc-chip"><span class="toc-chip-num">D</span>Secundárias</a><a href="#algoritmo" class="toc-chip"><span class="toc-chip-num">E</span>Algoritmo</a><a href="#tratamento" class="toc-chip"><span class="toc-chip-num">F</span>Tratamento</a><!--hp-f2--><a href="#f2" class="toc-chip toc-doses"><span class="toc-chip-num">Rx</span>Doses</a><!--/hp-f2--><a href="#pitfalls" class="toc-chip"><span class="toc-chip-num">G</span>Pitfalls</a><a href="#pearls" class="toc-chip"><span class="toc-chip-num">H</span>Pearls</a></div></nav>
 
 <main>
 <div class="wrap">
@@ -416,7 +435,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <section id="redflags">
 <div class="section"><div class="section-eyebrow"><span>A</span> Red Flags</div><div class="section-title">No linfoma e no mieloma o erro caro é tratar antes do tecido e transfundir antes de pensar no clone</div><div class="section-sub">Sinal objetivo, suspeita e conduta imediata. Os eventos evitáveis deste HP são o corticoide dado à massa mediastinal sem biópsia, a punção aspirativa que não classifica o linfoma, o anti-CD20 sem sorologia de hepatite B, o contraste ou o AINE no rim do mieloma e a hemácia no hiperviscoso.</div></div>
 
-<div class="card emerg">
+<div class="card emerg" id="a1">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">A.1</span> Emergências</div><h3>Sinais de alarme — linfomas, mieloma e gamopatias <span class="ank ank-dgr">DANGER</span></h3></div>
 <div class="card-body">
 
@@ -457,7 +476,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <section id="approach">
 <div class="section"><div class="section-eyebrow"><span>B</span> Por Apresentação</div><div class="section-title">Cinco portas de entrada: o linfonodo, a massa torácica, o osso, o pico e a linfocitose</div><div class="section-sub">O paciente chega com um sintoma e um exame, não com o rótulo de linfoma folicular ou de MGUS. A primeira pergunta é sempre se há tecido ou clone para classificar.</div></div>
 
-<div class="card clin">
+<div class="card clin" id="b1">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">B.1</span> Padrão 1</div><h3>Adenomegalia periférica persistente <span class="ank ank-hy">HIGH-YIELD</span></h3><div class="card-sub">Reativa, infecciosa ou neoplásica: quem merece o bisturi</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Linfonodo reativo é pequeno, doloroso, móvel e regride em semanas. <b>Linfoma é indolor, elástico ou duro, persistente e cresce.</b> Os critérios de biópsia da apostila (tamanho &gt;2 cm, supraclavicular, crescimento, dureza, persistência &gt;4–6 semanas) valem para qualquer idade; nos jovens com massa mediastinal e prurido, o Hodgkin lidera. No Brasil, tuberculose ganglionar e HIV pesam no diferencial (C.1).</div></div>
@@ -470,7 +489,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card clin">
+<div class="card clin" id="b2">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">B.2</span> Padrão 2</div><h3>Massa mediastinal e dispneia <span class="ank ank-dgr">DANGER</span></h3><div class="card-sub">Quatro tumores, um risco de via aérea</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Mediastino anterior no jovem: timoma, teratoma, tireoide e <b>linfoma</b> (os quatro "T"). Hodgkin esclerose nodular e linfoma B mediastinal primário ocupam &gt;10 cm ou &gt;1/3 do diâmetro torácico; o linfoblástico T é da criança e do adolescente. <b>O que muda conduta:</b> a via aérea e a biópsia vêm antes do tratamento.</div></div>
@@ -483,7 +502,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card clin">
+<div class="card clin" id="b3">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">B.3</span> Padrão 3</div><h3>Dor óssea, anemia, hipercalcemia ou creatinina alta <span class="ank ank-dec">DECISION</span></h3><div class="card-sub">O "CRAB" como convite à eletroforese</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Quem tem lombalgia persistente, fratura patológica, anemia normocítica, cálcio alto e creatinina sem causa pede <b>eletroforese de proteínas com imunofixação e cadeias leves livres</b> (juntas detectam 99,5% dos monoclonais em revisão de 2026). Osteoporose isolada não justifica o teste. A lesão lítica pede TC de corpo inteiro de baixa dose, não radiografia focal.</div></div>
@@ -496,7 +515,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card clin">
+<div class="card clin" id="b4">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">B.4</span> Padrão 4</div><h3>Pico monoclonal, proteinúria ou neuropatia sem causa <span class="ank ank-hy">HIGH-YIELD</span></h3><div class="card-sub">O monoclonal como pista que atravessa as especialidades</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Nefrologia, neurologia e cardiologia encontram o pico antes da hematologia. <b>A pergunta é se o clone lesa órgão:</b> sim, gamopatia de significado clínico (renal, neurológico, cardíaco, cutâneo) ou amiloidose AL; não, MGUS com seguimento por risco. Nos dois casos o encaminhamento à hematologia é a regra.</div></div>
@@ -509,7 +528,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card clin">
+<div class="card clin" id="b5">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">B.5</span> Padrão 5</div><h3>Linfocitose, esplenomegalia e citopenia no idoso <span class="ank ank-dec">DECISION</span></h3><div class="card-sub">Doenças linfoproliferativas crônicas e seus diferenciais</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Linfocitose madura persistente com citometria é a LLC (C.9). Esplenomegalia sem adenomegalia: <b>zona marginal esplênica</b> (D.1) e tricoleucemia (D.8). Anemia hemolítica com Coombs positivo em LLC ou linfoma é secundária e responde ao corticoide (HO02). <b>O que muda conduta:</b> o imunofenótipo e o estágio decidem observar ou tratar.</div></div>
@@ -523,9 +542,9 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </section>
 <section id="primarias">
-<div class="section"><div class="section-eyebrow"><span>C</span> Entidades Primárias</div><div class="section-title">Nove entidades: o linfonodo, Hodgkin, difuso e folicular, o mieloma, o monoclonal, a amiloidose AL, Waldenström e a LLC</div><div class="section-sub">A abordagem do linfonodo abre o capítulo; os linfomas mais cobrados vêm com estadiamento e esquema; mieloma, MGUS e amiloidose AL formam o bloco do clone plasmocitário, e Waldenström e LLC fecham a lista das doenças B maduras. Os doentes raros ficam agrupados na seção D.</div></div>
+<div class="section"><div class="section-eyebrow"><span>C</span> Entidades Primárias</div><div class="section-title">Nove entidades: o linfonodo, Hodgkin, difuso e folicular, o mieloma, o monoclonal, a amiloidose AL, Waldenström e a LLC</div><div class="section-sub">A abordagem do linfonodo abre o capítulo; os linfomas mais cobrados vêm com estadiamento e esquema; mieloma, MGUS e amiloidose AL formam o bloco do clone plasmocitário, e Waldenström e LLC fecham a lista das doenças B maduras. Os doentes raros ficam agrupados na seção D.</div></div><!--hp-f2--><nav class="sec-idx" aria-label="Neste capítulo"><a href="#c1"><b>C.1</b>Linfonodo persistente: quando…</a><a href="#c2"><b>C.2</b>Hodgkin clássico e de predomí…</a><a href="#c3"><b>C.3</b>LDGCB: IPI, R-CHOP e a pergun…</a><a href="#c4"><b>C.4</b>Linfoma folicular: espera vig…</a><a href="#c5"><b>C.5</b>Mieloma múltiplo: SLiM-CRAB…</a><a href="#c6"><b>C.6</b>MGUS e gamopatias monoclonais…</a><a href="#c7"><b>C.7</b>Amiloidose de cadeia leve: o…</a><a href="#c8"><b>C.8</b>Macroglobulinemia de Waldenst…</a><a href="#c9"><b>C.9</b>LLC: observar o assintomático…</a></nav><!--/hp-f2-->
 
-<div class="card prim">
+<div class="card prim" id="c1">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.1</span> Linfadenopatia</div><h3>Linfonodo persistente: quando biopsiar e como <span class="ank ank-dec">DECISION</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">A decisão é binária: <b>observar duas a quatro semanas ou biopsiar o linfonodo inteiro</b>. Pedem bisturi o linfonodo &gt;2 cm, supraclavicular ou escalênico, de crescimento progressivo, duro e aderido, ou persistente por 4–6 semanas, com ou sem sintomas B. <b>O que muda conduta:</b> a biópsia excisional (não a punção) classifica o linfoma; o corticoide antes do tecido a inviabiliza.</div></div>
@@ -547,7 +566,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="c2">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.2</span> Linfoma de Hodgkin</div><h3>Hodgkin clássico e de predomínio linfocitário nodular <span class="ank ank-hy">HIGH-YIELD</span></h3><div class="card-sub">Alto potencial de cura, tratamento adaptado por PET</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Jovem com adenomegalia cervical ou mediastinal, prurido e sintomas B; biópsia com células de Reed-Sternberg <b>CD15+, CD30+ e PAX5 fraco</b>. <b>Estadiar por PET-TC (Lugano), sem biópsia de medula, e tratar por risco:</b> precoce favorável (2 ABVD e radioterapia), desfavorável (4 ciclos) e avançado (ABVD guiado por PET ou esquemas com brentuximabe e nivolumabe fora do SUS). Cura de 80–90% nos estádios iniciais. <b>O que muda conduta:</b> Deauville após o 2º ciclo e massa volumosa.</div></div>
@@ -587,7 +606,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="c3">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.3</span> Linfoma difuso de grandes células B</div><h3>LDGCB: IPI, R-CHOP e a pergunta do sistema nervoso <span class="ank ank-hy">HIGH-YIELD</span></h3><div class="card-sub">O linfoma não Hodgkin mais comum, curável em 60–70% dos casos</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Massa de crescimento rápido (cervical, abdominal ou extranodal digestiva), LDH alta, sintomas B em 30–40%. <b>Biópsia excisional, PET-TC, FISH para MYC e, se positivo, para BCL2; sorologias antes do rituximabe.</b> Tratamento padrão: <b>R-CHOP a cada 21 dias por 6 ciclos</b>; IPI &gt;2, MYC com BCL2 ou sítio de risco pedem decisão sobre intensificação e SNC. <b>O que muda conduta:</b> estádio limitado, idade, IPI e duplo-hit.</div></div>
@@ -625,7 +644,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="c4">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.4</span> Linfoma folicular</div><h3>Linfoma folicular: espera vigilante e R-CHOP ou R-CVP <span class="ank ank-dec">DECISION</span></h3><div class="card-sub">Indolente, sem cura convencional, tratado pela carga tumoral</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Adenomegalia indolor que cresce e regride, em adulto de ~60 anos, 2/3 já em estádio III–IV. <b>Não se trata por estádio, trata-se por critério GELF.</b> Sem sintomas nem carga: <b>espera vigilante</b>. Com critério: R-CHOP ou R-CVP no SUS. Em todo caso de recaída, <b>rebiopsia</b> para afastar transformação em difuso de grandes células. <b>O que muda conduta:</b> GELF, localizado (24 Gy) e grau 3B.</div></div>
@@ -662,7 +681,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </details>
 </div>
 </div>
-<div class="card prim">
+<div class="card prim" id="c5">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.5</span> Mieloma múltiplo</div><h3>Mieloma múltiplo: SLiM-CRAB, R-ISS e o que o SUS oferece <span class="ank ank-hy">HIGH-YIELD</span></h3><div class="card-sub">Clone plasmocitário, lesão de órgão-alvo e tratamento por elegibilidade ao transplante</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Idoso com dor óssea, anemia, creatinina alta ou cálcio alto e pico monoclonal. <b>Diagnóstico: plasmocitose ≥10% ou plasmocitoma, mais um evento definidor (CRAB ou SLiM).</b> Estadia-se por ISS e R-ISS (FISH obrigatório); trata-se pela <b>elegibilidade ao transplante autólogo</b>: no SUS, esquemas com bortezomibe e talidomida ou ciclofosfamida; internacionalmente, quadruplos com anticorpo anti-CD38. Bisfosfonato para todos. <b>O que muda conduta:</b> idade, função renal, risco citogenético e acesso.</div></div>
@@ -717,7 +736,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="c6">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.6</span> Gamopatias monoclonais</div><h3>MGUS e gamopatias monoclonais de significado clínico: renal, neurológico e outros <span class="ank ank-hy">HIGH-YIELD</span></h3><div class="card-sub">O pico incidental e o pico que lesa órgão</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">MGUS é um estado pré-maligno assintomático (<b>M &lt;3 g/dL, plasmócitos &lt;10%, nenhum CRAB, nenhuma amiloidose</b>) que progride a ~1% ao ano (0,3% se for só cadeia leve). A pergunta decisiva é se o clone <b>lesa órgão</b>: nesse caso é gamopatia de significado clínico, e o pico pequeno não tranquiliza. <b>O que muda conduta:</b> risco de Mayo define o seguimento; lesão de órgão define o tratamento do clone.</div></div>
@@ -747,7 +766,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="c7">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.7</span> Amiloidose AL</div><h3>Amiloidose de cadeia leve: o coração decide <span class="ank ank-dgr">DANGER</span></h3><div class="card-sub">Diagnóstico por tecido, estadiamento por troponina e NT-proBNP</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Cadeias leves mal dobradas se depositam como fibrilas no coração, no rim, no nervo e no fígado. Suspeitar de <b>síndrome nefrótica, insuficiência cardíaca com parede espessada e baixa voltagem, neuropatia autonômica, macroglossia, púrpura periorbitária ou túnel do carpo bilateral</b>. Imunofixação sérica e urinária com cadeias leves livres, depois biópsia (gordura abdominal mais medula, ou do órgão) com tipagem. <b>O que muda conduta:</b> o estágio cardíaco define o tratamento e a elegibilidade ao transplante.</div></div>
@@ -776,7 +795,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </details>
 </div>
 </div>
-<div class="card prim">
+<div class="card prim" id="c8">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.8</span> Waldenström</div><h3>Macroglobulinemia de Waldenström: IgM, hiperviscosidade e o rituximabe que piora a IgM <span class="ank ank-dec">DECISION</span></h3><div class="card-sub">Linfoma linfoplasmocitário com IgM monoclonal</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Idoso com anemia, adenomegalia ou esplenomegalia, <b>pico IgM</b> e, às vezes, hiperviscosidade (cefaleia, borramento, epistaxe, veias retinianas em salsicha). Diagnóstico: IgM monoclonal mais infiltração linfoplasmocitária da medula, com MYD88 L265P apoiando. <b>Assintomático não se trata</b>; hiperviscosidade pede plasmaférese; o clone é tratado com rituximabe e combinações. <b>O que muda conduta:</b> viscosidade, citopenias, neuropatia e crioglobulina.</div></div>
@@ -806,7 +825,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="c9">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.9</span> Leucemia linfocítica crônica</div><h3>LLC: observar o assintomático e tratar com agentes dirigidos <span class="ank ank-hy">HIGH-YIELD</span></h3><div class="card-sub">A doença cumulativa do idoso, com citometria como diagnóstico</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Idoso com <b>linfocitose &gt;5.000/mm³ por ≥3 meses e imunofenótipo CD19, CD23, CD5 com FMC7 negativo</b>; sem necessidade de medula. Estadia-se por Rai ou Binet. <b>Rai 0–I assintomático: observação.</b> Tratar com critério de doença ativa. Hoje o tratamento é com inibidor de BTK ou de BCL2 com anti-CD20, não com fludarabina. <b>O que muda conduta:</b> del(17p) ou TP53, IGHV, autoimunidade e infecção.</div></div>
@@ -846,9 +865,9 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </section>
 <section id="secundarias">
-<div class="section"><div class="section-eyebrow"><span>D</span> Entidades Secundárias</div><div class="section-title">Zona marginal, manto, linfomas raros, T/NK, SNC, variantes do mieloma, rim do mieloma, tricoleucemia e as profilaxias</div><div class="section-sub">Linfomas menos frequentes ficam agrupados pelo que compartilham de abordagem; o linfoma do SNC e o do HIV têm dono próprio (NE01 e II01) e entram só como remissão com o que muda a conduta. A última entidade, as profilaxias, é a que mais evita morte no paciente tratado.</div></div>
+<div class="section"><div class="section-eyebrow"><span>D</span> Entidades Secundárias</div><div class="section-title">Zona marginal, manto, linfomas raros, T/NK, SNC, variantes do mieloma, rim do mieloma, tricoleucemia e as profilaxias</div><div class="section-sub">Linfomas menos frequentes ficam agrupados pelo que compartilham de abordagem; o linfoma do SNC e o do HIV têm dono próprio (NE01 e II01) e entram só como remissão com o que muda a conduta. A última entidade, as profilaxias, é a que mais evita morte no paciente tratado.</div></div><!--hp-f2--><nav class="sec-idx" aria-label="Neste capítulo"><a href="#d1"><b>D.1</b>Linfomas da zona marginal: MA…</a><a href="#d2"><b>D.2</b>Linfoma do manto e linfoma B…</a><a href="#d3"><b>D.3</b>Burkitt, linfoblástico e plas…</a><a href="#d4"><b>D.4</b>Linfomas T e NK e linfomas cu…</a><a href="#d5"><b>D.5</b>Linfoma do SNC, do testículo…</a><a href="#d6"><b>D.6</b>Mieloma indolente, plasmocito…</a><a href="#d7"><b>D.7</b>Rim do mieloma, hipercalcemia…</a><a href="#d8"><b>D.8</b>Tricoleucemia e outras leucem…</a><a href="#d9"><b>D.9</b>Profilaxias na quimioterapia…</a></nav><!--/hp-f2-->
 
-<div class="card diag">
+<div class="card diag" id="d1">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">D.1</span> Zona marginal e MALT</div><h3>Linfomas da zona marginal: MALT gástrico, esplênico e nodal <span class="ank ank-hy">HIGH-YIELD</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Indolentes, nascidos de estímulo antigênico crônico: <b><i>H. pylori</i> no estômago</b>, tireoidite de Hashimoto e síndrome de Sjögren em tireoide e glândulas salivares, HCV no esplênico. <b>O tratamento do MALT gástrico começa com a erradicação do <i>H. pylori</i></b>, que induz remissão em cerca de metade (apostila). <b>O que muda conduta:</b> t(11;18), invasão profunda e linfonodo predizem falha dos antibióticos.</div></div>
@@ -867,7 +886,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card diag">
+<div class="card diag" id="d2">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">D.2</span> Manto e mediastinal</div><h3>Linfoma do manto e linfoma B primário do mediastino <span class="ank ank-dec">DECISION</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body"><b>Manto:</b> homem de ~63 anos, adenomegalia, esplenomegalia, polipose linfomatosa e medula; t(11;14) com ciclina D1 em ~95%. <b>Mediastinal primário:</b> mulher jovem com massa &gt;10 cm e síndrome da veia cava superior em ~60%. <b>O que muda conduta:</b> Ki-67, TP53 e MIPI no manto; massa mediastinal exige via aérea e biópsia segura.</div></div>
@@ -886,7 +905,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card diag">
+<div class="card diag" id="d3">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">D.3</span> Linfomas agressivos raros</div><h3>Burkitt, linfoblástico e plasmablástico: emergência de proliferação <span class="ank ank-dgr">DANGER</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Tumores de dobra em dias: <b>Burkitt</b> (MYC, Ki-67 ~100%, "céu estrelado"), <b>linfoblástico</b> (T no adolescente, com massa mediastinal) e <b>plasmablástico</b> (HIV, cavidade oral, CD138+ e CD20−). Pedem <b>profilaxia de lise tumoral antes do primeiro ciclo</b>, profilaxia de SNC e centro de referência. <b>O que muda conduta:</b> HIV (II01) e infiltração de medula e SNC.</div></div>
@@ -905,7 +924,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card diag">
+<div class="card diag" id="d4">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">D.4</span> T/NK e cutâneos</div><h3>Linfomas T e NK e linfomas cutâneos: reconhecimento <span class="ank ank-hy">HIGH-YIELD</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Grupo heterogêneo e de prognóstico geralmente pior: <b>micose fungoide</b> (cutâneo, de placas), <b>anaplásico de grandes células (CD30)</b>, <b>angioimunoblástico</b> (TFH), enteropático associado à doença celíaca, leucemia/linfoma por <b>HTLV-1</b> (hipercalcemia) e hepatoesplênico gama-delta (tiopurina com anti-TNF; GH05). <b>O que muda conduta:</b> CD30+ pede brentuximabe com CHP.</div></div>
@@ -924,7 +943,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card diag">
+<div class="card diag" id="d5">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">D.5</span> SNC e sítios especiais</div><h3>Linfoma do SNC, do testículo e do HIV: o que este HP entrega a outros <span class="ank ank-dec">DECISION</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">O <b>linfoma primário do SNC</b> é tratado no <b>NE01</b>: lesão cerebral com realce, corticoide suspenso até a biópsia, metotrexato em dose alta ≥3 g/m². O do <b>HIV</b> segue o <b>II01</b>. Aqui entram a coerência de dose e o que muda a conduta no linfoma sistêmico com sítio de alto risco para o SNC. <b>O que muda conduta:</b> testículo, rim, adrenal e CNS-IPI alto.</div></div>
@@ -943,7 +962,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card diag">
+<div class="card diag" id="d6">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">D.6</span> Variantes do mieloma</div><h3>Mieloma indolente, plasmocitoma solitário, POEMS e leucemia plasmocitária <span class="ank ank-hy">HIGH-YIELD</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body"><b>Indolente:</b> M ≥3 g/dL ou Bence Jones ≥500 mg/24 h, plasmócitos 10–59% e <b>nenhum CRAB nem SLiM</b>. <b>Plasmocitoma solitário:</b> lesão única sem pico e com medula normal. <b>POEMS:</b> polineuropatia desmielinizante com lambda, lesões osteoscleróticas, VEGF alto. <b>Leucemia plasmocitária:</b> &gt;5% de plasmócitos circulantes. <b>O que muda conduta:</b> o indolente se observa, o POEMS se trata pelo clone.</div></div>
@@ -962,7 +981,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card diag">
+<div class="card diag" id="d7">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">D.7</span> Urgências do mieloma</div><h3>Rim do mieloma, hipercalcemia e compressão: o que fazer no PS <span class="ank ank-dgr">DANGER</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">A insuficiência renal do mieloma é emergência e é <b>reversível se o clone cair em semanas</b>: hidratar, suspender nefrotóxicos, tratar a hipercalcemia e iniciar quimioterapia com bortezomibe e dexametasona alta sem esperar a biópsia. <b>Hipercalcemia e hiperviscosidade seguem o HO06; compressão medular, o NE07.</b> <b>O que muda conduta:</b> a função renal que não volta em 48 horas leva à nefrologia.</div></div>
@@ -981,7 +1000,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card diag">
+<div class="card diag" id="d8">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">D.8</span> Tricoleucemia</div><h3>Tricoleucemia e outras leucemias linfoides crônicas <span class="ank ank-dec">DECISION</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Homem de ~50 anos com <b>pancitopenia, monocitopenia e esplenomegalia</b> sem adenomegalia; medula "seca" com mielofibrose. Células pilosas CD22+, CD25+, CD103+, TRAP+ e BRAF V600E. <b>Cladribina IV por 7 dias</b> induz remissão completa em &gt;80% (apostila). <b>O que muda conduta:</b> só os sintomáticos tratam, e o diagnóstico correto muda o prognóstico.</div></div>
@@ -1000,7 +1019,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card diag">
+<div class="card diag" id="d9">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">D.9</span> Profilaxias</div><h3>Profilaxias na quimioterapia e nos anticorpos: HBV, pneumocystis, varicela-zóster e vacinas <span class="ank ank-dec">DECISION</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Cinco checagens antes do primeiro ciclo: <b>HBsAg, anti-HBc total e anti-HBs</b>; HIV e HCV; vacinas inativadas ≥14 dias antes; aciclovir se inibidor de proteassoma ou corticoide alto; e plano de pneumocystis conforme o esquema. A lise tumoral e o G-CSF seguem o HO06. <b>O que muda conduta:</b> HBsAg positivo, ou anti-HBc com risco alto (anti-CD20 ou corticoide alto), obriga antiviral.</div></div>
@@ -1024,7 +1043,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <section id="algoritmo">
 <div class="section"><div class="section-eyebrow"><span>E</span> Algoritmo</div><div class="section-title">Do linfonodo ao tipo de linfoma e do pico monoclonal ao clone que lesa órgão</div><div class="section-sub">A primeira árvore leva do linfonodo ao estadiamento e à decisão por tipo; a segunda separa o pico incidental do mieloma, da amiloidose e da gamopatia de significado clínico. A sequência narrada fecha o raciocínio.</div></div>
 
-<div class="card prim">
+<div class="card prim" id="e1">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">E.1</span> Algoritmo</div><h3>Linfonodo persistente: biópsia, estadiamento e primeira decisão <span class="ank ank-dec">DECISION</span></h3></div>
 <div class="card-body">
 <div class="algo"><div class="tree">
@@ -1051,7 +1070,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="e2">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">E.2</span> Algoritmo</div><h3>Pico monoclonal ou suspeita de mieloma: do exame ao clone <span class="ank ank-hy">HIGH-YIELD</span></h3></div>
 <div class="card-body">
 <div class="algo"><div class="tree">
@@ -1085,13 +1104,13 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </ul></div></div>
 </section>
 <section id="tratamento">
-<div class="section"><div class="section-eyebrow"><span>F</span> Tratamento Integrado</div><div class="section-title">F1 · Estratégia por entidade · F2 · Doses · F3 · Casos · F4 · SUS e CMED</div><div class="section-sub">Doses lidas nos PCDT de 2026, na bula FDA e no ESMO e NCCN em disco levam a sigla da fonte; as da apostila, de consenso ou de fonte não relida levam "conferir". Esquema de quimioterapia aparece em linhas gerais, com a dose do PCDT quando existe.</div></div>
+<div class="section"><div class="section-eyebrow"><span>F</span> Tratamento Integrado</div><div class="section-title">F1 · Estratégia por entidade · F2 · Doses · F3 · Casos · F4 · SUS e CMED</div><div class="section-sub">Doses lidas nos PCDT de 2026, na bula FDA e no ESMO e NCCN em disco levam a sigla da fonte; as da apostila, de consenso ou de fonte não relida levam "conferir". Esquema de quimioterapia aparece em linhas gerais, com a dose do PCDT quando existe.</div></div><!--hp-f2--><nav class="sec-idx" aria-label="Neste capítulo"><a href="#f1"><b>F.1</b>Escada terapêutica por entida…</a><a href="#f2"><b>F.2</b>Tabela de doses — linfomas, m…</a><a href="#f3"><b>F.3</b>Caso → conduta certa → erro t…</a><a href="#f4"><b>F.4</b>O que existe no Brasil, o que…</a></nav><!--/hp-f2-->
 
-<div class="card tx">
+<div class="card tx" id="f1">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">F.1</span> Estratégia</div><h3>Escada terapêutica por entidade <span class="ank ank-dec">DECISION</span></h3></div>
 <div class="card-body">
 
-<div class="sub-title">F1.1 · Hodgkin clássico: risco, PET e esquema (C.2)</div>
+<div class="sub-title" id="f1-1">F1.1 · Hodgkin clássico: risco, PET e esquema (C.2)</div>
 <ul class="bullets">
 <li><b>Estadiar e estratificar:</b> PET-TC (Lugano), sem medula; grupo precoce favorável, desfavorável ou avançado; fertilidade e função cardíaca e pulmonar antes do esquema.</li>
 <li><b>SUS:</b> favorável, 2 ABVD e radioterapia de campo envolvido; desfavorável, 4 ABVD e radioterapia; avançado, 2 ABVD, PET e, com Deauville 1–3, 4 AVD; BEACOPP escalonado só em &lt;60 anos selecionados. Idoso: 2 ABVD e AVD.</li>
@@ -1101,7 +1120,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </ul>
 <div class="box decision"><span class="box-label">DECISION</span><div class="box-title">Bleomicina fora se o PET permite; dacarbazina a confirmar</div><div class="box-body">A decisão de suprimir a bleomicina nasce do PET interino e da função pulmonar, não da idade. Usa-se dacarbazina 375 mg/m² no ABVD, dias 1 e 15 (esquema padrão). O apêndice 1 do PCDT traz 365 mg/m² no ABVD, inconsistência do documento, e 375 mg/m² no BEACODD (dia 8); o BEACOPP não tem dacarbazina. Confirmar com o hematologista ou com errata do PCDT (conferir).</div></div>
 
-<div class="sub-title">F1.2 · Difuso de grandes células B: R-CHOP e a pergunta do SNC (C.3)</div>
+<div class="sub-title" id="f1-2">F1.2 · Difuso de grandes células B: R-CHOP e a pergunta do SNC (C.3)</div>
 <ul class="bullets">
 <li><b>Antes do ciclo:</b> HBsAg e anti-HBc, ECG (eco no idoso), PET-TC, FISH de MYC, profilaxia da lise em massa volumosa (HO06).</li>
 <li><b>Primeira linha:</b> R-CHOP a cada 21 dias por 6 ciclos; estádio limitado e jovem, 3–4 ciclos com radioterapia ou 4 mais 2 de rituximabe (ESMO); IPI ≥2, R-Pola-CHP (fora do PCDT); ≥80 anos, R-miniCHOP.</li>
@@ -1110,7 +1129,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <li><b>Resposta:</b> PET-TC ao fim do tratamento com Deauville; lesão residual ávida em PET se biopsia antes de chamar de refratário; sem PET ou TC de vigilância de rotina em remissão fora de ensaio (ESMO), com exame clínico a cada 3–6 meses por 2 anos.</li>
 </ul>
 
-<div class="sub-title">F1.3 · Folicular e zona marginal (C.4, D.1)</div>
+<div class="sub-title" id="f1-3">F1.3 · Folicular e zona marginal (C.4, D.1)</div>
 <ul class="bullets">
 <li><b>Folicular sem critério GELF:</b> espera vigilante (PCDT); localizado com PET, 24 Gy.</li>
 <li><b>Folicular com critério (SUS):</b> R-CHOP ou R-CVP a cada 21 dias; rituximabe isolado no frágil; sem manutenção e sem obinutuzumabe. ESMO: bendamustina com rituximabe ou obinutuzumabe, R-lenalidomida, manutenção a cada 2 meses por 12 doses.</li>
@@ -1118,7 +1137,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </ul>
 <div class="box danger"><span class="box-label">DANGER</span><div class="box-title">Bendamustina e imunossupressão prolongada pedem profilaxia anti-infecciosa</div><div class="box-body">A bendamustina reduz linfócitos T por tempo longo: pneumocystis, herpes-vírus e CMV aparecem meses depois. O ESMO recomenda considerar profilaxia de pneumocystis e antiviral durante a manutenção, e evitar o fármaco antes da coleta de linfócitos para CAR-T e em ≥70 anos com doença respiratória.</div></div>
 
-<div class="sub-title">F1.4 · Mieloma múltiplo (C.5)</div>
+<div class="sub-title" id="f1-4">F1.4 · Mieloma múltiplo (C.5)</div>
 <ul class="bullets">
 <li><b>Elegível (&lt;75 anos, ECOG 0–2, bilirrubina direta ≤2, creatinina ≤2,5 mg/dL, NYHA I–II):</b> VTD ou VCD por 3–4 ciclos ou mais; coleta; melfalano 200 mg/m² (100–140 se insuficiência renal); manutenção com lenalidomida 10 mg/dia, subindo a 15 mg após 3 ciclos (PCDT 2026); com ClCr 30–60, 5 mg/dia; com ClCr &lt;30 sem diálise, 2,5 mg/dia (bula FDA).</li>
 <li><b>Inelegível:</b> VCD ou MPT preferidos; VMP, VTD, CTD ou Vd no frágil; mantém-se até a progressão, com desescalonamento de dose e de dexametasona (20 mg semanal no idoso, NCCN).</li>
@@ -1130,7 +1149,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </ul>
 <div class="box evolving"><span class="box-label">EVOLVING</span><div class="box-title">De três para quatro fármacos na indução</div><div class="box-body">PERSEUS (dara-VRd) e GMMG-HD7 (Isa-VRd) mostraram ganho de PFS e de doença residual mínima indetectável; o NCCN 2026 elegeu o quadruplo como preferido, e a manutenção com daratumumabe pode ser interrompida após 24 meses de remissão completa com MRD negativa por 12 meses. No Brasil, o acesso define o que se prescreve.</div></div>
 
-<div class="sub-title">F1.5 · Proteção óssea e rim do mieloma (C.5, D.7)</div>
+<div class="sub-title" id="f1-5">F1.5 · Proteção óssea e rim do mieloma (C.5, D.7)</div>
 <ul class="bullets">
 <li><b>Bisfosfonato em todos:</b> ácido zoledrônico 4 mg IV em ≥15 min mensal (PCDT) ou a cada 3–4 semanas (bula); reduzir por ClCr; máximo de 24 meses no PCDT, com redução de frequência depois de 12 meses com resposta; pamidronato 90 mg em 4 horas se zoledrônico indisponível.</li>
 <li><b>Antes e durante:</b> avaliação odontológica, evitar extração (suspender 90 dias antes de procedimento invasivo), cálcio 500 mg e vitamina D 400 UI/dia, creatinina e eletrólitos mensais.</li>
@@ -1138,7 +1157,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <li><b>Rim:</b> hidratação, suspender nefrotóxico, bortezomibe com dexametasona alta no primeiro mês; lenalidomida ajustada; hemodiálise quando indicada.</li>
 </ul>
 
-<div class="sub-title">F1.6 · Amiloidose AL (C.7)</div>
+<div class="sub-title" id="f1-6">F1.6 · Amiloidose AL (C.7)</div>
 <ul class="bullets">
 <li><b>Primeira linha:</b> dara-VCD se disponível; VCD; ou bortezomibe-melfalano (consenso brasileiro 2026; doses de protocolo, conferir). Antes: troponina, NT-proBNP e estágio.</li>
 <li><b>Autotransplante:</b> só em estágio ≤IIIa e sem derrame refratário, hipotensão ortostática refratária ou sangramento digestivo; melfalano 140 ou 200 mg/m².</li>
@@ -1146,7 +1165,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <li><b>Suporte:</b> diurético cauteloso, evitar digoxina e bloqueador de cálcio não di-hidropiridínico (conferir), manejo da hipotensão ortostática e nutrição.</li>
 </ul>
 
-<div class="sub-title">F1.7 · MGUS, gamopatia de significado clínico, Waldenström e POEMS (C.6, C.8, D.6)</div>
+<div class="sub-title" id="f1-7">F1.7 · MGUS, gamopatia de significado clínico, Waldenström e POEMS (C.6, C.8, D.6)</div>
 <ul class="bullets">
 <li><b>MGUS:</b> sem tratamento; Mayo e seguimento (6 meses, depois 2–3 anos no baixo risco; anual nos demais).</li>
 <li><b>Gamopatia de significado clínico:</b> biópsia do órgão; clone tratado por hematologia; anti-MAG com NE07; crioaglutinina com HO02.</li>
@@ -1154,7 +1173,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <li><b>POEMS:</b> tratar o clone, com autotransplante quando apto; radioterapia se lesão única.</li>
 </ul>
 
-<div class="sub-title">F1.8 · LLC (C.9)</div>
+<div class="sub-title" id="f1-8">F1.8 · LLC (C.9)</div>
 <ul class="bullets">
 <li><b>Observar</b> Rai 0–I assintomático. <b>Tratar</b> por critério de doença ativa, com FISH, TP53 e IGHV antes.</li>
 <li><b>Primeira linha (consenso australiano 2026):</b> inibidor de BTK contínuo (acalabrutinibe ou zanubrutinibe, em vez de ibrutinibe) ou venetoclax com obinutuzumabe por duração fixa; sem quimioimunoterapia de rotina; FCR só sem acesso e sem TP53 aberrante.</li>
@@ -1164,7 +1183,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <li><b>Transformação ou falha:</b> crescimento súbito, LDH alta e sintomas B pedem PET e biópsia (Richter); progressão sob BTK exige pesquisa de mutações de resistência e troca de classe, com TP53 repetido antes de cada linha (consenso australiano).</li>
 </ul>
 
-<div class="sub-title">F1.9 · Profilaxias e suporte comuns a todos (D.9)</div>
+<div class="sub-title" id="f1-9">F1.9 · Profilaxias e suporte comuns a todos (D.9)</div>
 <ul class="bullets">
 <li><b>Antes do primeiro ciclo:</b> HBsAg, anti-HBc total e anti-HBs; HIV e HCV; antiviral se HBsAg ou anti-HBc de risco (entecavir 0,5 mg/dia ou tenofovir 300 mg/dia) e ALT com HBV-DNA durante o seguimento; Strongyloides em quem receberá corticoide em dose alta e vive ou viveu em área endêmica (NU01).</li>
 <li><b>Durante:</b> aciclovir com inibidor de proteassoma ou corticoide alto; SMX-TMP 800/160 mg 3×/semana (prática; bula: 1 DS diário) quando há análogo de purina, bendamustina ou corticoide ≥20 mg/dia por ≥4 semanas (conferir); profilaxia de lise tumoral e G-CSF conforme o HO06.</li>
@@ -1177,7 +1196,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card tx">
+<div class="card tx" id="f2">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">F.2</span> Doses Operacionais</div><h3>Tabela de doses — linfomas, mieloma e gamopatias</h3></div>
 <div class="card-body">
 <div class="stbl stbl-3">
@@ -1206,7 +1225,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card tx">
+<div class="card tx" id="f3">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">F.3</span> Casos</div><h3>Caso → conduta certa → erro típico</h3></div>
 <div class="card-body">
 <div class="stbl stbl-3">
@@ -1222,7 +1241,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card tx">
+<div class="card tx" id="f4">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">F.4</span> SUS e CMED</div><h3>O que existe no Brasil, o que o SUS preconiza <span class="ank ank-dec">DECISION</span></h3></div>
 <div class="card-body">
 <div class="stbl stbl-3">
@@ -1241,7 +1260,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <section id="pitfalls">
 <div class="section"><div class="section-eyebrow"><span>G</span> Pitfalls · Mitos · Controvérsias</div><div class="section-title">Erros operacionais, mitos vivos e debates abertos</div><div class="section-sub">Os erros que se repetem: o corticoide antes do tecido, o anti-CD20 sem sorologia, o pico pequeno tratado como benigno e o rim do mieloma agredido por contraste e AINE.</div></div>
 
-<div class="card pearl">
+<div class="card pearl" id="g1">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">G.1</span> Pegadinhas</div><h3>10 erros operacionais em linfomas, mieloma e gamopatias</h3></div>
 <div class="card-body">
 <div class="stbl stbl-2">
@@ -1260,7 +1279,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card pearl">
+<div class="card pearl" id="g2">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">G.2</span> Mitos</div><h3>Três mitos vivos</h3></div>
 <div class="card-body">
 <div class="box myth"><span class="box-label">MYTH</span><div class="box-title">"O linfoma de Hodgkin é incurável no adulto e mata"</div><div class="box-body">A cura é de 80–90% nos estádios iniciais e de ~60% no avançado (apostila). O risco que persiste é de segunda neoplasia e de toxicidade cardiopulmonar tardia, que explicam a busca por tratamento adaptado por PET e por esquemas sem bleomicina.</div></div>
@@ -1269,7 +1288,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card pearl">
+<div class="card pearl" id="g3">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">G.3</span> Controvérsias</div><h3>Três debates sem consenso</h3></div>
 <div class="card-body">
 <div class="box controversy"><span class="box-label">CONTROVERSY</span><div class="box-title">ABVD, BV-AVD ou os esquemas com brentuximabe e nivolumabe no Hodgkin avançado</div><div class="box-body">O ESMO 2025 prefere BrECADD e nivolumabe-AVD, com BV-AVD como terceira via e ABVD só se não houver acesso; o PCDT brasileiro de 2026 mantém ABVD guiado por PET e reserva o brentuximabe à recidiva pós-transplante; a apostila de 2025 apresenta ABVD e BV-AVD. Os estudos mostram maior PFS com os novos, mas o custo, a toxicidade e a disponibilidade dividem a prática. O HP usa o SUS como padrão e rotula o internacional.</div></div>
@@ -1282,7 +1301,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <section id="pearls">
 <div class="section"><div class="section-eyebrow"><span>H</span> Pearls · Evolving</div><div class="section-title">H1 · Nuances de especialista · H2 · O que mudou em 2025–2026</div><div class="section-sub">Oito ideias que o plantão esquece e seis mudanças reais; onde o tema é estável (biópsia excisional, CRAB, antiviral contra HBV), diz-se.</div></div>
 
-<div class="card pearl">
+<div class="card pearl" id="h1">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">H.1</span> Pearls</div><h3>8 nuances que distinguem o especialista</h3></div>
 <div class="card-body">
 <div class="box pearl"><span class="box-label">PEARL</span><div class="box-title">Escolha o linfonodo pelo PET e pela dimensão, não pela comodidade</div><div class="box-body">Linfoma é heterogêneo: o linfonodo mais acessível pode ser reativo, e o mais ávido por FDG tem maior chance de conter a área transformada. No folicular, biopsiar a lesão de maior captação no PET encurta o caminho até a transformação; o linfonodo inguinal é evitado pelo ruído inflamatório local.</div></div>
@@ -1296,7 +1315,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card pearl">
+<div class="card pearl" id="h2">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">H.2</span> Evolving</div><h3>O que mudou: seis itens reais; o resto do tema é estável</h3></div>
 <div class="card-body">
 <div class="box evolving"><span class="box-label">EVOLVING</span><div class="box-title">Três PCDT de oncohematologia renovados em outubro de 2026</div><div class="box-body">Portarias Conjuntas SAES/SCTIE de 20/10/2026 aprovam os PCDT de Mieloma Múltiplo (nº 90, que revoga a de 2023), de Linfoma de Hodgkin no Adulto (nº 91) e de Linfoma Folicular (nº 99). Trazem SLiM-CRAB, R-ISS, lenalidomida de manutenção pós-transplante, ABVD guiado por PET e a decisão de não incorporar obinutuzumabe nem manutenção no folicular. O do LDGCB continua de 2014.</div></div>
@@ -1346,5 +1365,36 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <a class="to-top" href="#" aria-label="Voltar ao topo">↑</a>
 <div class="watermark">@dr.lorencato · HO05 Linfomas, Mieloma e Gamopatias v5.2</div>
 
-</body>
+<!--hp-f2--><script>(function(){var d=document,M=d.querySelector('main');if(!M)return;
+var SELF='HO05',HP=' CT01 CT02 CT03 CT04 CT05 CT06 CT08 CT10 CV01 CV03 CV04 CV05 CV06 CV07 CV08 EN01 EN02 EN03 EN04 EN06 EN07 GH01 GH02 GH03 GH05 GH06 GH07 GH08 GH09 GH10 GO01 GO02 GO03 GO04 GO09 GO10 GO11 GO12 GO13 GO14 HO01 HO02 HO03 HO04 HO05 HO06 II01 II02 II03 II04 II07 II08 NE01 NE02 NE03 NE04 NE05 NE06 NE07 NE08 NU01 NU02 NU03 NU04 NU05 OE01 OE02 PC01 PC02 PC03 PC04 PC05 PC06 PD01 PD02 PD03 PD04 PD05 PD06 PD07 PD08 PD09 PD10 RD01 RD02 RD03 RD04 RD05 RD07 RP01 RP02 RP03 RP04 ';
+var SK='A,H1,H2,H3,SCRIPT,STYLE,NAV,.card-num,.card-eyebrow,.sub-title,.disease-tag,.toc';
+var R=/\b(?:([A-H])(\d)?\.(\d{1,2}[a-c]?)|(CV|RP|GH|NE|EN|NU|HO|II|RD|GO|PD|PC|CT|OE)(\d\d))\b/g;
+function skip(n){for(var e=n.parentNode;e&&e!==M;e=e.parentNode)if(e.matches&&e.matches(SK))return 1;return 0}
+var w=d.createTreeWalker(M,4),t,L=[];while(t=w.nextNode())if(R.test(t.data)&&!skip(t))L.push(t);
+L.forEach(function(t){var s=t.data,f=d.createDocumentFragment(),i=0,m;R.lastIndex=0;
+while(m=R.exec(s)){var h=null;
+if(m[1]){var id=m[1].toLowerCase()+(m[2]?m[2]+'-':'')+m[3];if(d.getElementById(id))h='#'+id}
+else{var x=m[4]+m[5];if(x!==SELF&&HP.indexOf(' '+x+' ')>=0)h='../'+x+'/'+x+'.html'}
+if(!h)continue;f.appendChild(d.createTextNode(s.slice(i,m.index)));
+var a=d.createElement('a');a.href=h;a.className='xr';a.textContent=m[0];f.appendChild(a);i=R.lastIndex}
+if(i){f.appendChild(d.createTextNode(s.slice(i)));t.parentNode.replaceChild(f,t)}});
+function nz(s){return s.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'')}
+var q=d.querySelector('.hp-q'),n=d.querySelector('.hp-n'),it=M.querySelectorAll('.card,.pocket-card'),T;
+function clr(){M.querySelectorAll('.q-off').forEach(function(e){e.classList.remove('q-off')})}
+function run(){var v=nz(q.value.trim());clr();n.textContent='';if(v.length<2)return;var k=0;
+it.forEach(function(c){if(nz(c.textContent).indexOf(v)<0){c.classList.add('q-off');return}k++;
+var r=c.querySelectorAll('.stbl-row,.disease-row,.score-row'),h=[];r.forEach(function(x){if(nz(x.textContent).indexOf(v)>=0)h.push(x)});
+if(h.length)r.forEach(function(x){if(h.indexOf(x)<0)x.classList.add('q-off')});
+c.querySelectorAll('details').forEach(function(x){if(nz(x.textContent).indexOf(v)>=0)x.open=true})});
+M.querySelectorAll('section').forEach(function(s){if(!s.querySelector('.card:not(.q-off),.pocket-card:not(.q-off)'))s.classList.add('q-off')});
+n.textContent=k?k+' achado'+(k>1?'s':''):'nada'}
+if(q){q.addEventListener('input',function(){clearTimeout(T);T=setTimeout(run,180)});
+q.addEventListener('keydown',function(e){if(e.key==='Escape'){q.value='';run()}})}
+function tg(b,f){b.addEventListener('click',function(){var on=b.getAttribute('aria-pressed')!=='true';b.setAttribute('aria-pressed',on);f(on)})}
+var bd=d.querySelector('.hp-dz'),bo=d.querySelector('.hp-op');
+if(bd)tg(bd,function(on){d.body.classList.toggle('dz',on);if(on)d.getElementById('tratamento').scrollIntoView()});
+if(bo)tg(bo,function(on){M.querySelectorAll('details').forEach(function(x){x.open=on})});
+var P=[];addEventListener('beforeprint',function(){P=[];M.querySelectorAll('details:not([open])').forEach(function(x){P.push(x);x.open=true})});
+addEventListener('afterprint',function(){P.forEach(function(x){x.open=false})});
+})();</script><!--/hp-f2--></body>
 </html>

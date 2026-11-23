@@ -346,11 +346,30 @@ ul.bullets li b{color:var(--ink);font-weight:600}
   .pocket .pocket-card.tx{--accent:#a8481a}
   .pocket .pocket-card.clin{--accent:#0b5d4e}
 }
+
+/* === v5.2.2 · fase 2 (navegação) === */
+.hp-tools{display:flex;gap:6px;align-items:center;flex:none;order:1;margin-left:auto;padding-left:6px;position:sticky;right:0;background:#f1eee5;box-shadow:-10px 0 10px -4px #f1eee5,16px 0 0 #f1eee5}
+@media(min-width:900px){html{scroll-padding-top:150px}.toc-inner{flex-wrap:wrap;overflow:visible}.card[id],.sub-title[id]{scroll-margin-top:150px}}
+@media(max-width:899px){.hp-b,.hp-n{display:none}.hp-q{width:104px}}
+.hp-q{width:128px;font:500 12px/1 'DM Sans',system-ui,sans-serif;padding:7px 11px;border:1px solid var(--line-strong);border-radius:999px;background:var(--paper);color:var(--ink)}
+.hp-b{font:600 11px/1 'DM Sans',system-ui,sans-serif;letter-spacing:.05em;text-transform:uppercase;padding:7px 10px;border-radius:999px;border:1px solid var(--line-strong);background:var(--paper);color:var(--ink-soft);cursor:pointer;white-space:nowrap}
+.hp-b[aria-pressed=true]{background:var(--ink);color:#fff;border-color:var(--ink)}
+.hp-n{font:600 11px/1 'DM Mono',monospace;color:var(--ink-mute);white-space:nowrap}
+.sec-idx{display:flex;flex-wrap:wrap;gap:6px;margin:12px 0 20px}
+.sec-idx a{font:500 12px/1.25 'DM Sans',system-ui,sans-serif;padding:6px 10px;border-radius:999px;background:var(--paper);border:1px solid var(--line);color:var(--ink-soft);text-decoration:none}
+.sec-idx a:hover{border-color:var(--line-strong);color:var(--ink)}
+.sec-idx b{color:var(--c-prim);margin-right:5px;font-weight:700}
+a.xr{color:inherit;text-decoration:underline dotted;text-underline-offset:2px}
+a.xr:hover{color:var(--c-prim)}
+.card[id],.sub-title[id]{scroll-margin-top:110px}
+.q-off{display:none!important}
+body.dz main section:not(#tratamento){display:none}
+@media print{.hp-tools,.sec-idx,.toc-doses{display:none!important}}
 </style>
 </head>
 <body>
 <header class="header"><div class="header-row"><div class="h-mark">C</div><div class="h-titles"><div class="h-title">SCA e DAC Crônica · Pocket Handbook</div><div class="h-sub">Elite edition · Cardiologia clínica · CV03</div></div><div class="h-author">@dr.lorencato</div><div class="h-edition">v5.2</div></div></header>
-<nav class="toc"><div class="toc-inner"><a href="#pocket" class="toc-chip"><span class="toc-chip-num">0</span>Pocket</a><a href="#redflags" class="toc-chip"><span class="toc-chip-num">A</span>Red Flags</a><a href="#approach" class="toc-chip"><span class="toc-chip-num">B</span>Apresentação</a><a href="#primarias" class="toc-chip"><span class="toc-chip-num">C</span>Entidades</a><a href="#secundarias" class="toc-chip"><span class="toc-chip-num">D</span>Secundárias</a><a href="#algoritmo" class="toc-chip"><span class="toc-chip-num">E</span>Algoritmo</a><a href="#tratamento" class="toc-chip"><span class="toc-chip-num">F</span>Tratamento</a><a href="#pitfalls" class="toc-chip"><span class="toc-chip-num">G</span>Pitfalls</a><a href="#pearls" class="toc-chip"><span class="toc-chip-num">H</span>Pearls</a></div></nav>
+<nav class="toc"><div class="toc-inner"><!--hp-f2--><span class="hp-tools"><input class="hp-q" type="search" placeholder="Buscar no HP" aria-label="Buscar no HP"><button class="hp-b hp-dz" type="button" aria-pressed="false">Só doses</button><button class="hp-b hp-op" type="button" aria-pressed="false">Abrir tudo</button><span class="hp-n" aria-live="polite"></span></span><!--/hp-f2--><a href="#pocket" class="toc-chip"><span class="toc-chip-num">0</span>Pocket</a><a href="#redflags" class="toc-chip"><span class="toc-chip-num">A</span>Red Flags</a><a href="#approach" class="toc-chip"><span class="toc-chip-num">B</span>Apresentação</a><a href="#primarias" class="toc-chip"><span class="toc-chip-num">C</span>Entidades</a><a href="#secundarias" class="toc-chip"><span class="toc-chip-num">D</span>Secundárias</a><a href="#algoritmo" class="toc-chip"><span class="toc-chip-num">E</span>Algoritmo</a><a href="#tratamento" class="toc-chip"><span class="toc-chip-num">F</span>Tratamento</a><!--hp-f2--><a href="#f2" class="toc-chip toc-doses"><span class="toc-chip-num">Rx</span>Doses</a><!--/hp-f2--><a href="#pitfalls" class="toc-chip"><span class="toc-chip-num">G</span>Pitfalls</a><a href="#pearls" class="toc-chip"><span class="toc-chip-num">H</span>Pearls</a></div></nav>
 <main>
 <div class="wrap">
 <div class="hero">
@@ -410,7 +429,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <div class="section-sub">A necrose começa em cerca de 20 minutos de oclusão total e caminha do subendocárdio ao epicárdio em 6–12 horas. Cada red flag abaixo é um sinal objetivo que encurta esse relógio ou que transforma o tratamento padrão em erro fatal.</div>
 </div>
 
-<div class="card emerg">
+<div class="card emerg" id="a1">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">A.1</span> Emergências coronarianas</div><h3>Sinais de alarme na dor torácica isquêmica <span class="ank ank-dgr">DANGER</span></h3></div>
 <div class="card-body">
 <div class="mnemo">
@@ -458,7 +477,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <div class="section-sub">A pergunta inicial não é "é infarto?", e sim "a artéria está fechada agora?". Depois: há lesão miocárdica aguda? É isquêmica? A placa é estável ou instável? Cada padrão abaixo leva a um ramo diferente.</div>
 </div>
 
-<div class="card clin">
+<div class="card clin" id="b1">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">B.1</span> Padrão 1</div><h3>Dor em repouso, intensa, &gt;20 min, ECG com supra</h3><div class="card-sub">Oclusão coronária aguda — IAMCSST</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Dor constritiva com sudorese, náusea e sensação de morte iminente, sem alívio com nitrato sublingual. <b>O supra de ST é o marcador de artéria ocluída</b>; o laboratório não entra na decisão de reperfundir.</div></div>
@@ -472,7 +491,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card clin">
+<div class="card clin" id="b2">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">B.2</span> Padrão 2</div><h3>Dor aguda resolvida ou em curso, ECG sem supra</h3><div class="card-sub">SCA sem supra — IAMSSST ou angina instável; ou lesão miocárdica de outra causa</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">ECG normal em até metade dos casos iniciais: <b>repita o ECG a cada 15–30 min enquanto houver dor</b>. A troponina ultrassensível em 0 e 1 h (ou 0 e 2 h) classifica em exclusão, observação ou inclusão.</div></div>
@@ -486,7 +505,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card clin">
+<div class="card clin" id="b3">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">B.3</span> Padrão 3</div><h3>Desconforto aos esforços, alívio em 1–5 min com repouso ou nitrato</h3><div class="card-sub">Síndrome coronariana crônica — angina estável</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Angina típica = três elementos: aperto retroesternal, desencadeado por esforço ou emoção, aliviado por repouso ou nitrato. Dois = atípica; um ou nenhum = dor não anginosa. <b>A classe CCS gradua o sintoma; a probabilidade pré-teste escolhe o exame.</b></div></div>
@@ -500,7 +519,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card clin">
+<div class="card clin" id="b4">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">B.4</span> Padrão 4</div><h3>Angina convincente com coronárias "limpas"</h3><div class="card-sub">ANOCA/INOCA, vasoespasmo e, se houver troponina, MINOCA</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Até metade dos pacientes com angina que chega ao cateterismo não tem estenose obstrutiva. <b>Sem troponina: pense em disfunção microvascular ou espasmo (ANOCA/INOCA). Com troponina: MINOCA, diagnóstico de trabalho que exige ressonância.</b></div></div>
@@ -512,7 +531,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card clin">
+<div class="card clin" id="b5">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">B.5</span> Padrão 5</div><h3>Piora clínica nos dias seguintes ao IAM</h3><div class="card-sub">Complicações mecânicas, isquêmicas, elétricas, pericárdicas e tromboembólicas</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">O sintoma guia o mecanismo: <b>sopro novo + EAP</b> (papilar, CIV), <b>AESP súbita</b> (parede livre), <b>dor anginosa recorrente</b> (reoclusão, reinfarto, trombose de stent), <b>dor pleurítica com atrito</b> (pericardite epistenocárdica), <b>déficit neurológico</b> (embolia de trombo de VE).</div></div>
@@ -532,10 +551,10 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <div class="section-eyebrow"><span>C</span> Entidades Primárias</div>
 <div class="section-title">As três faces da aterotrombose coronária</div>
 <div class="section-sub">Uma mesma placa pode obstruir de forma fixa (síndrome crônica), fissurar e formar trombo plaquetário suboclusivo (SCA sem supra) ou romper em profundidade e formar trombo de fibrina oclusivo (IAMCSST). Os territórios do IAM são subitens do C.1, não entidades próprias.</div>
-</div>
+</div><!--hp-f2--><nav class="sec-idx" aria-label="Neste capítulo"><a href="#c1"><b>C.1</b>Infarto agudo do miocárdio co…</a><a href="#c2"><b>C.2</b>IAM sem supra de ST e angina…</a><a href="#c3"><b>C.3</b>Angina estável e DAC crônica</a></nav><!--/hp-f2-->
 
 <!-- C.1 IAMCSST -->
-<div class="card prim">
+<div class="card prim" id="c1">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.1</span> SCA com supra</div><h3>Infarto agudo do miocárdio com supradesnível de ST <span class="ank ank-hy">HIGH-YIELD</span> <span class="ank ank-dgr">DANGER</span></h3><div class="card-sub">IAMCSST e equivalentes de oclusão · reperfusão no relógio</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Oclusão trombótica aguda de artéria epicárdica, quase sempre sobre placa rota. <b>Diagnóstico de trabalho = sintoma + supra (ou equivalente); tratamento = reperfusão imediata</b>, de preferência mecânica. O intervalo diagnóstico-reperfusão é o determinante modificável mais forte da mortalidade.</div></div>
@@ -576,7 +595,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 
 <!-- C.2 SCA SEM SUPRA -->
-<div class="card prim">
+<div class="card prim" id="c2">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.2</span> SCA sem supra</div><h3>IAM sem supra de ST e angina instável <span class="ank ank-hy">HIGH-YIELD</span> <span class="ank ank-dec">DECISION</span></h3><div class="card-sub">Troponina ultrassensível, risco e momento do cateterismo</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Trombo suboclusivo rico em plaquetas, ou oclusão com boa colateral. <b>Troponina com delta e quadro isquêmico = IAMSSST; sem necrose = angina instável</b>, cada vez mais rara com os ensaios ultrassensíveis. O risco, e não a troponina isolada, decide quando cateterizar.</div></div>
@@ -613,7 +632,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 
 <!-- C.3 SCC -->
-<div class="card prim">
+<div class="card prim" id="c3">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.3</span> Síndrome coronariana crônica</div><h3>Angina estável e DAC crônica <span class="ank ank-hy">HIGH-YIELD</span></h3><div class="card-sub">Diagnóstico por probabilidade, tratamento por prevenção de eventos e por sintoma</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">A SCC inclui angina estável com DAC obstrutiva, pacientes estáveis após SCA ou revascularização, cardiomiopatia isquêmica e ANOCA/INOCA. <b>Dois objetivos independentes:</b> reduzir eventos (antiplaquetário, LDL, PA, glicemia, tabagismo, atividade física) e controlar sintomas (antianginosos e, quando necessário, revascularização).</div></div>
@@ -661,10 +680,10 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <div class="section-eyebrow"><span>D</span> Entidades Secundárias</div>
 <div class="section-title">Isquemia sem estenose, infarto sem placa e o que o infarto deixa para trás</div>
 <div class="section-sub">As entidades raras e correlatas foram agrupadas pela conduta que compartilham: coronárias sem obstrução (D.1–D.3), complicações do IAM (D.4–D.5, com o quadro elétrico em D.8), aterosclerose subclínica (D.6) e falência da revascularização (D.7). Choque cardiogênico e IC pós-IAM são do CV04; pericardiopatias como entidade, do CV07.</div>
-</div>
+</div><!--hp-f2--><nav class="sec-idx" aria-label="Neste capítulo"><a href="#d1"><b>D.1</b>ANOCA/INOCA: disfunção microv…</a><a href="#d2"><b>D.2</b>MINOCA: dissecção espontânea…</a><a href="#d3"><b>D.3</b>Infarto secundário (antigo ti…</a><a href="#d4"><b>D.4</b>Ruptura de septo, de músculo…</a><a href="#d5"><b>D.5</b>Trombo de VE, pericardite pós…</a><a href="#d6"><b>D.6</b>Isquemia silenciosa e aterosc…</a><a href="#d7"><b>D.7</b>Trombose de stent, reestenose…</a><a href="#d8"><b>D.8</b>Arritmias e distúrbios de con…</a></nav><!--/hp-f2-->
 
 <!-- D.1 ANOCA/INOCA + VASOESPASMO -->
-<div class="card diag">
+<div class="card diag" id="d1">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">D.1</span> Coronárias sem obstrução, sem troponina</div><h3>ANOCA/INOCA: disfunção microvascular e angina vasoespástica (Prinzmetal) <span class="ank ank-dec">DECISION</span></h3><div class="card-sub">Angina real, cateterismo "normal" — o teste de função coronária separa os endotipos</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">ANOCA = angina sem obstrução; INOCA = com isquemia demonstrada. Endotipos: <b>disfunção microvascular</b> (reserva de fluxo reduzida ou resistência microvascular alta), <b>espasmo epicárdico</b> (Prinzmetal), <b>espasmo microvascular</b> ou combinações. O endotipo escolhe o fármaco.</div></div>
@@ -686,7 +705,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 
 <!-- D.2 MINOCA -->
-<div class="card diag">
+<div class="card diag" id="d2">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">D.2</span> Coronárias sem obstrução, com troponina</div><h3>MINOCA: dissecção espontânea, Takotsubo, embolia e cocaína <span class="ank ank-dgr">DANGER</span></h3><div class="card-sub">Lesão miocárdica com coronárias não obstrutivas — diagnóstico de trabalho, não final</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Critérios de IAM com coronárias &lt;50% e sem outra explicação evidente. <b>Ressonância cardíaca em todos</b> (realce tardio isquêmico subendocárdico × miocardite mesoepicárdica × edema sem realce do Takotsubo) e revisão da angiografia em busca de SCAD.</div></div>
@@ -708,7 +727,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 
 <!-- D.3 IAM SECUNDÁRIO -->
-<div class="card diag">
+<div class="card diag" id="d3">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">D.3</span> Desbalanço oferta-consumo</div><h3>Infarto secundário (antigo tipo 2) e lesão miocárdica não isquêmica <span class="ank ank-dec">DECISION</span></h3><div class="card-sub">Troponina alta no doente grave — tratar a causa, não a coronária</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Taquiarritmia, anemia, hipotensão, hipoxemia, sepse ou crise hipertensiva sobre DAC estável geram isquemia sem trombose aguda. <b>Sem evidência de isquemia, é lesão miocárdica</b> (TEP, miocardite, sepse, DRC, quimioterapia, contusão), não infarto.</div></div>
@@ -725,7 +744,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 
 <!-- D.4 COMPLICAÇÕES MECÂNICAS -->
-<div class="card emerg">
+<div class="card emerg" id="d4">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">D.4</span> Complicações mecânicas</div><h3>Ruptura de septo, de músculo papilar, de parede livre e aneurisma de VE <span class="ank ank-dgr">DANGER</span></h3><div class="card-sub">Raras na era da ICP, letais sem cirurgia</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Sopro novo, EAP ou choque súbito, AESP. <b>Eco à beira-leito é o exame</b>; a conduta é estabilização como ponte e cirurgia. Incidência somada &lt;1% após reperfusão precoce, maior em reperfusão tardia ou ausente.</div></div>
@@ -750,7 +769,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 
 <!-- D.5 PÓS-IAM -->
-<div class="card tx">
+<div class="card tx" id="d5">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">D.5</span> Complicações isquêmicas, trombóticas e pericárdicas</div><h3>Trombo de VE, pericardite pós-IAM, Dressler, angina pós-IAM e reinfarto <span class="ank ank-dec">DECISION</span></h3><div class="card-sub">O que muda a anticoagulação e o anti-inflamatório depois do infarto</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Trombo de VE no IAM anterior com acinesia apical → <b>anticoagulação oral por 3–6 meses</b>. Pericardite precoce → AAS em dose anti-inflamatória; evitar outros AINE e corticoide. Angina recorrente ou reinfarto → nova curva de troponina e cateterismo.</div></div>
@@ -767,7 +786,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 
 <!-- D.6 ISQUEMIA SILENCIOSA / ATEROSCLEROSE -->
-<div class="card diag">
+<div class="card diag" id="d6">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">D.6</span> Doença sem sintoma</div><h3>Isquemia silenciosa e aterosclerose coronária subclínica <span class="ank ank-prl">PEARL</span></h3><div class="card-sub">A ponta do iceberg — e quando procurar o resto dele</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">A maior parte dos episódios isquêmicos de quem tem DAC é assintomática, com o mesmo prognóstico dos sintomáticos. <b>Não rastreie isquemia em assintomático de rotina</b>; use escore de cálcio para reclassificar risco e trate fatores de risco com intensidade.</div></div>
@@ -789,7 +808,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 
 <!-- D.7 FALÊNCIA DA REVASCULARIZAÇÃO -->
-<div class="card tx">
+<div class="card tx" id="d7">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">D.7</span> Depois do stent e da ponte</div><h3>Trombose de stent, reestenose e falência de enxerto <span class="ank ank-dgr">DANGER</span></h3><div class="card-sub">Por que a DAPT não pode ser suspensa por conveniência</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Trombose de stent apresenta-se como IAMCSST, com mortalidade de 10–40%: <b>ICP primária com imagem intravascular</b>. Reestenose é angina progressiva meses após. A causa número um de trombose precoce é a interrupção prematura da DAPT.</div></div>
@@ -806,7 +825,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 
 <!-- D.8 ARRITMIAS NO IAM (competência, sem box de doença) -->
-<div class="card emerg">
+<div class="card emerg" id="d8">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">D.8</span> Complicações elétricas</div><h3>Arritmias e distúrbios de condução na fase aguda do IAM <span class="ank ank-dgr">DANGER</span></h3><div class="card-sub">Conduta imediata no contexto coronário · eletrofisiologia e dispositivos no CV01</div></div>
 <div class="card-body">
 <div class="stbl stbl-3">
@@ -832,7 +851,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <div class="section-sub">Três perguntas encadeadas resolvem quase toda SCA no PS; a quarta, sobre probabilidade pré-teste, resolve o ambulatório. A árvore termina em condutas com tempo e dose, não em rótulos.</div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="e1">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">E.1</span> Algoritmo</div><h3>Dor torácica suspeita de SCA <span class="ank ank-dec">DECISION</span></h3></div>
 <div class="card-body">
 <div class="algo"><div class="tree">
@@ -921,13 +940,13 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <div class="section-eyebrow"><span>F</span> Tratamento Integrado</div>
 <div class="section-title">F1 · Estratégia por entidade · F2 · Doses operacionais</div>
 <div class="section-sub">A conduta segue ESC ACS 2023, ACC/AHA ACS 2025 e ESC CCS 2024, adaptada pela SBC 2025; o acesso no SUS é separado da recomendação. Doses de adulto com função renal normal, salvo indicação.</div>
-</div>
+</div><!--hp-f2--><nav class="sec-idx" aria-label="Neste capítulo"><a href="#f1"><b>F.1</b>Escadas terapêuticas por enti…</a><a href="#f2"><b>F.2</b>Tabela de doses — SCA e DAC c…</a></nav><!--/hp-f2-->
 
-<div class="card tx">
+<div class="card tx" id="f1">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">F.1</span> Estratégia</div><h3>Escadas terapêuticas por entidade <span class="ank ank-dec">DECISION</span></h3></div>
 <div class="card-body">
 
-<div class="sub-title">F1.1 · IAMCSST — as primeiras 24 horas</div>
+<div class="sub-title" id="f1-1">F1.1 · IAMCSST — as primeiras 24 horas</div>
 <ul class="bullets">
 <li><b>Primeiro contato:</b> ECG em 10 min, monitorização, desfibrilador ao lado; oxigênio <b>só se SpO2 &lt;90%</b> (oxigênio de rotina não reduziu mortalidade — DETO2X, AVOID); AAS mastigado; nitrato sublingual se PAS ≥90 mmHg, FC 50–100 bpm, sem infarto de VD e sem inibidor de PDE-5 em 24 h (48 h para tadalafila); morfina IV titulada só para dor refratária (opioide IV: ESC 2023, IIa C, para dor intensa; atrasa a absorção dos inibidores P2Y12 orais).</li>
 <li><b>Via mecânica (preferida):</b> ICP primária radial com stent farmacológico; inibidor P2Y12 potente no momento do diagnóstico ou na sala; HNF em bolus; inibidor de GP IIb/IIIa só como resgate (no-reflow, trombo maciço, complicação trombótica).</li>
@@ -938,7 +957,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </ul>
 <div class="box danger"><span class="box-label">DANGER</span><div class="box-title">Ticagrelor e prasugrel não entram na fibrinólise</div><div class="box-body">Os ensaios de fibrinólise usaram clopidogrel (CLARITY, COMMIT); prasugrel e ticagrelor potencializam o risco hemorrágico e não foram testados na fase aguda com fibrinolítico. Após 48 h da lise, quem vai para ICP pode trocar clopidogrel por ticagrelor (TREAT mostrou segurança) — decisão do hemodinamicista. Pacientes &gt;75 anos: TNK em meia dose e clopidogrel sem ataque (75 mg); a partir de 75 anos, enoxaparina sem bolus (0,75 mg/kg 12/12 h).</div></div>
 
-<div class="sub-title">F1.2 · SCA sem supra — risco, anatomia e antitrombóticos</div>
+<div class="sub-title" id="f1-2">F1.2 · SCA sem supra — risco, anatomia e antitrombóticos</div>
 <ul class="bullets">
 <li><b>Todos:</b> AAS, anticoagulação parenteral desde o diagnóstico até a revascularização (no tratamento clínico, mínimo 2 dias e até estabilização clínica), estatina de alta intensidade, betabloqueador se sem contraindicação, nitrato para dor ou hipertensão.</li>
 <li><b>Escolha do anticoagulante:</b> HNF se cateterismo imediato ou precoce, DRC grave ou risco de CRM; enoxaparina 1 mg/kg 12/12 h como alternativa; <b>fondaparinux 2,5 mg/dia quando a estratégia não for invasiva precoce</b> (menos sangramento que enoxaparina no OASIS-5), com bolus de HNF na ICP pelo risco de trombose de cateter; disponível no Brasil, de acesso limitado (raramente 1ª linha, obtível quando indicado): no Brasil, enoxaparina 1 mg/kg 12/12 h (ou HNF). Não trocar de heparina no meio do tratamento (HNF ↔ enoxaparina aumenta sangramento).</li>
@@ -948,7 +967,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </ul>
 <div class="box decision"><span class="box-label">DECISION</span><div class="box-title">Idoso frágil com IAMSSST: invasivo ou não?</div><div class="box-body">A idade, por si, não contraindica a estratégia invasiva; nos ensaios em octogenários (After Eighty), o invasivo reduziu IAM e revascularização urgente. Pese fragilidade, cognição, expectativa de vida, risco de sangramento e preferência; use acesso radial, clopidogrel como P2Y12 (POPular AGE: menos sangramento que ticagrelor sem perda de eficácia em ≥70 anos) e ajuste de anticoagulante à função renal. O que aumenta a mortalidade do idoso é o sangramento evitável, não o cateterismo.</div></div>
 
-<div class="sub-title">F1.3 · DAPT, desescalonamento e antitrombótico de longo prazo <span class="ank ank-dec">DECISION</span></div>
+<div class="sub-title" id="f1-3">F1.3 · DAPT, desescalonamento e antitrombótico de longo prazo <span class="ank ank-dec">DECISION</span></div>
 <ul class="bullets">
 <li><b>Padrão SCA:</b> AAS + inibidor P2Y12 por 12 meses, independentemente de ICP, CRM ou tratamento clínico, se sem alto risco de sangramento <span class="ev ev-acr">ACC/AHA 2025</span>.</li>
 <li><b>Redução de sangramento (estratégias validadas):</b> IBP para todos em DAPT com risco gastrointestinal; após ≥1 mês, transição para <b>ticagrelor em monoterapia</b> em quem tolerou DAPT com ticagrelor (TWILIGHT, TICO, ULTIMATE-DAPT; ACC/AHA classe 1); desescalonamento de ticagrelor ou prasugrel para clopidogrel após 1 mês (TOPIC, TALOS-AMI; classe 2b); no alto risco de sangramento (critérios ARC-HBR ou PRECISE-DAPT ≥25), monoterapia após 1 mês (ESC 2023, IIb B; MASTER DAPT).</li>
@@ -958,7 +977,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </ul>
 <div class="box danger"><span class="box-label">DANGER</span><div class="box-title">Suspender a DAPT por um procedimento eletivo é a causa clássica de trombose de stent</div><div class="box-body">Procedimentos eletivos devem aguardar o fim do período mínimo de DAPT. Se inadiável, mantenha o AAS sempre que o sangramento cirúrgico permitir, suspenda o P2Y12 pelo menor tempo (clopidogrel e ticagrelor 5 dias, prasugrel 7 dias) e reinicie em 24–48 h com dose de ataque; ponte com heparina não protege de trombose de stent. Nos primeiros 30 dias após stent em SCA, considere ponte com cangrelor ou inibidor de GP IIb/IIIa em centro experiente. Extração dentária e endoscopia diagnóstica não exigem suspensão.</div></div>
 
-<div class="sub-title">F1.4 · Síndrome coronariana crônica — sintomas e prevenção</div>
+<div class="sub-title" id="f1-4">F1.4 · Síndrome coronariana crônica — sintomas e prevenção</div>
 <ul class="bullets">
 <li><b>Antianginoso de primeira linha:</b> betabloqueador (preferido após IAM com FEVE reduzida, FA, taquicardia) ou bloqueador de canal de cálcio (preferido em vasoespasmo, broncoespasmo, bradicardia, DAP); associar betabloqueador + di-hidropiridínico se insuficiente; <b>não associar betabloqueador a verapamil ou diltiazem</b> (bradicardia, BAV, inotropismo negativo).</li>
 <li><b>Segunda linha</b> (por comorbidade): nitrato de ação prolongada com intervalo livre de 10–12 h; ranolazina (cautela com QT e inibidores de CYP3A4); trimetazidina (contraindicada em Parkinson e DRC grave); ivabradina se FC ≥70 bpm e FEVE reduzida (não somar a diltiazem/verapamil); nicorandil.</li>
@@ -972,14 +991,14 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <li><b>Técnica:</b> mamária esquerda para a DA em todos (85–90% patente em 10 anos); segundo enxerto arterial (radial) melhora patência; safena ocluída em ~50% em 10 anos. Na ICP: radial, stent farmacológico, imagem intravascular em lesões complexas e de tronco.</li>
 </ul></div></div>
 
-<div class="sub-title">F1.5 · ANOCA/INOCA, vasoespasmo e MINOCA</div>
+<div class="sub-title" id="f1-5">F1.5 · ANOCA/INOCA, vasoespasmo e MINOCA</div>
 <ul class="bullets">
 <li><b>Vasoespasmo:</b> BCC em dose plena (às vezes duas classes), nitrato de ação prolongada como adição, nicorandil; cessar tabagismo, cocaína, anfetaminas e triptanos; evitar betabloqueador não seletivo; estatina tem dados observacionais favoráveis.</li>
 <li><b>Disfunção microvascular:</b> betabloqueador (de preferência vasodilatador, como nebivolol ou carvedilol), BCC, ranolazina; IECA e estatina para função endotelial; reabilitação e controle de fatores de risco.</li>
 <li><b>MINOCA aterotrombótico (ruptura de placa não obstrutiva):</b> prevenção secundária completa de SCA. <b>SCAD:</b> conservador, betabloqueador, AAS isolado aceitável; evitar trombólise e anticoagulação. <b>Takotsubo:</b> IECA e betabloqueador se FEVE reduzida (sem evidência forte de prevenção de recorrência), anticoagular trombo, evitar catecolaminas.</li>
 </ul>
 
-<div class="sub-title">F1.6 · Prevenção secundária pós-SCA e alta hospitalar</div>
+<div class="sub-title" id="f1-6">F1.6 · Prevenção secundária pós-SCA e alta hospitalar</div>
 <ul class="bullets">
 <li><b>Lipídios:</b> estatina de alta intensidade na internação (com ou sem ezetimiba de início); perfil lipídico em 4–6 semanas; <b>LDL ≥70 mg/dL sob estatina máxima → adicionar não estatina (classe 1); 55–69 mg/dL → intensificar é razoável</b> (ACC/AHA 2025); alvo &lt;55 mg/dL e queda ≥50% (ESC); &lt;50 mg/dL (SBC SCC 2025); &lt;40 mg/dL se segundo evento em 2 anos.</li>
 <li><b>Betabloqueador de longo prazo:</b> indicado se FEVE ≤40% ou IC; com FEVE preservada, o benefício é questionado (REDUCE-AMI e REBOOT neutros com FEVE ≥50%; BETAMI-DANBLOCK com sinal favorável em FEVE ≥40%) — ver controvérsia em G.</li>
@@ -999,7 +1018,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="sub-title">F1.7 · Casos de plantão: conduta certa e erro típico</div>
+<div class="sub-title" id="f1-7">F1.7 · Casos de plantão: conduta certa e erro típico</div>
 <div class="stbl stbl-3">
 <div class="stbl-head stbl-3"><div>Caso</div><div>Conduta certa</div><div>Erro típico</div></div>
 <div class="stbl-row stbl-3"><div class="col col1" data-l="Caso">Homem, 58 a, supra anterior há 2 h, hospital sem hemodinâmica, centro de referência a 3 h</div><div class="col" data-l="Conduta certa"><b>TNK em ≤10 min</b> + AAS + clopidogrel 300 mg + enoxaparina 30 mg IV e 1 mg/kg SC; transferir; cateterismo em 2–24 h</div><div class="col" data-l="Erro típico">Transferir sem lisar "porque ICP é melhor", perdendo 3 h de miocárdio</div></div>
@@ -1014,7 +1033,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <div class="stbl-row stbl-3"><div class="col col1" data-l="Caso">Angina CCS II, angio-TC com estenose de 70% em circunflexa média, FEVE normal</div><div class="col" data-l="Conduta certa"><b>Tratamento clínico otimizado</b>; revascularizar se angina limitante persistir</div><div class="col" data-l="Erro típico">Stent "para evitar infarto" (ISCHEMIA não mostrou redução de morte)</div></div>
 </div>
 
-<div class="sub-title">F1.8 · Brasil e SUS: o que existe, o que falta</div>
+<div class="sub-title" id="f1-8">F1.8 · Brasil e SUS: o que existe, o que falta</div>
 <div class="stbl stbl-3">
 <div class="stbl-head stbl-3"><div>Componente</div><div>Recomendação vigente</div><div>Realidade SUS (confirmar protocolo local)</div></div>
 <div class="stbl-row stbl-3"><div class="col col1" data-l="Componente">Fluxo do IAM</div><div class="col" data-l="Recomendação">Rede regional com ECG pré-hospitalar, telecardiologia e hemodinâmica 24 h</div><div class="col" data-l="SUS">Linha de cuidado do IAM e protocolo de SCA (Portaria GM/MS nº 2.994/2011): SAMU, unidades coronarianas e centros de referência; desatualizada em fármacos e prazos</div></div>
@@ -1026,10 +1045,10 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card tx">
+<div class="card tx" id="f2">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">F.2</span> Doses operacionais</div><h3>Tabela de doses — SCA e DAC crônica <span class="ank ank-dgr">DANGER</span></h3><div class="card-sub">Adulto · ajustes só onde mudam conduta · fontes nos chips</div></div>
 <div class="card-body">
-<div class="sub-title">F2.1 · Antiplaquetários</div>
+<div class="sub-title" id="f2-1">F2.1 · Antiplaquetários</div>
 <div class="stbl stbl-3">
 <div class="stbl-head stbl-3"><div>Fármaco</div><div>Dose adulto</div><div>Indicação / notas</div></div>
 <div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">AAS (ataque)</div><div class="col" data-l="Dose">150–300 mg VO mastigado (ESC) · 162–325 mg (AHA) · 75–250 mg IV se VO impossível <span class="ev ev-acr">ESC 2023</span></div><div class="col" data-l="Indicação">Toda SCA, na suspeita; formulação não entérica. No Brasil, 200–300 mg (2–3 comprimidos de 100 mg)</div></div>
@@ -1043,7 +1062,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Eptifibatida</div><div class="col" data-l="Dose">180 µg/kg IV 2 bolus com 10 min de intervalo + 2 µg/kg/min até 18 h; ClCr 30–50: 1 µg/kg/min</div><div class="col" data-l="Indicação">Mesmas indicações; contraindicada na DRC dialítica</div></div>
 </div>
 
-<div class="sub-title">F2.2 · Anticoagulantes parenterais e orais</div>
+<div class="sub-title" id="f2-2">F2.2 · Anticoagulantes parenterais e orais</div>
 <div class="stbl stbl-3">
 <div class="stbl-head stbl-3"><div>Fármaco</div><div>Dose adulto</div><div>Indicação / notas</div></div>
 <div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">HNF — SCA sem supra ou com lise</div><div class="col" data-l="Dose">60 UI/kg IV (máx. 4.000 UI) + 12 UI/kg/h (máx. 1.000 UI/h), TTPa 60–80 s (1,5–2× controle) <span class="ev ev-acr">ACC/AHA 2025</span></div><div class="col" data-l="Indicação">Preferida com cateterismo imediato, DRC grave (ClCr &lt;15–30) ou provável CRM; com lise, manter 48 h; reversível com protamina</div></div>
@@ -1058,7 +1077,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Varfarina (trombo de VE)</div><div class="col" data-l="Dose">Ajuste por INR 2,0–3,0 (2,0–2,5 em terapia tripla), 3–6 meses</div><div class="col" data-l="Indicação">ACOD é alternativa crescente; repetir imagem em 3 meses</div></div>
 </div>
 
-<div class="sub-title">F2.3 · Fibrinolíticos</div>
+<div class="sub-title" id="f2-3">F2.3 · Fibrinolíticos</div>
 <div class="stbl stbl-3">
 <div class="stbl-head stbl-3"><div>Fármaco</div><div>Dose adulto</div><div>Indicação / notas</div></div>
 <div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Tenecteplase (TNK)</div><div class="col" data-l="Dose">Bolus IV único em 5–10 s: &lt;60 kg 30 mg · 60–69 kg 35 mg · 70–79 kg 40 mg · 80–89 kg 45 mg · ≥90 kg 50 mg <span class="ev ev-acr">ACC/AHA 2025</span>; <b>meia dose se &gt;75 anos</b> <span class="ev ev-acr">ESC 2023</span></div><div class="col" data-l="Indicação">Preferido, inclusive pré-hospitalar; sem alergia; 0,53 mg/kg é a regra prática</div></div>
@@ -1066,7 +1085,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Estreptoquinase</div><div class="col" data-l="Dose">1,5 milhão UI IV em 30–60 min, em 100 mL de SF 0,9% ou SG 5%</div><div class="col" data-l="Indicação">Não fibrino-específica; hipotensão (interromper, elevar membros, volume) e alergia; não repetir após 5 dias; com fibrinólise, a anticoagulação preferida é enoxaparina (ESC 2023, I A); fondaparinux só com SK (IIa B). Fondaparinux: disponível no Brasil, de acesso limitado (raramente 1ª linha, obtível quando indicado); no Brasil, enoxaparina</div></div>
 </div>
 
-<div class="sub-title">F2.4 · Anti-isquêmicos e analgesia aguda</div>
+<div class="sub-title" id="f2-4">F2.4 · Anti-isquêmicos e analgesia aguda</div>
 <div class="stbl stbl-3">
 <div class="stbl-head stbl-3"><div>Fármaco</div><div>Dose adulto</div><div>Indicação / notas</div></div>
 <div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Nitroglicerina SL / dinitrato de isossorbida SL</div><div class="col" data-l="Dose">NTG 0,4 mg SL ou dinitrato 5 mg SL a cada 5 min, até 3 doses</div><div class="col" data-l="Indicação">Contraindicado: PAS &lt;90 mmHg ou queda ≥30 mmHg, FC &lt;50 ou &gt;100 bpm, infarto de VD, PDE-5 (sildenafila 24 h, tadalafila 48 h); paciente sentado</div></div>
@@ -1080,7 +1099,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Nitroprussiato de sódio</div><div class="col" data-l="Dose">0,3–0,5 µg/kg/min IV, titular a cada 5 min (máx. ~10 µg/kg/min por tempo curto)</div><div class="col" data-l="Indicação">Ponte na IM aguda e CIV se PAS permite; vigiar cianeto em infusão longa ou DRC</div></div>
 </div>
 
-<div class="sub-title">F2.5 · Antianginosos crônicos</div>
+<div class="sub-title" id="f2-5">F2.5 · Antianginosos crônicos</div>
 <div class="stbl stbl-3">
 <div class="stbl-head stbl-3"><div>Fármaco</div><div>Dose adulto</div><div>Indicação / notas</div></div>
 <div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Atenolol</div><div class="col" data-l="Dose">25–100 mg VO 1×/dia</div><div class="col" data-l="Indicação">Hidrofílico, excreção renal: reduzir na DRC</div></div>
@@ -1096,7 +1115,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Nicorandil</div><div class="col" data-l="Dose">10–20 mg VO 12/12 h</div><div class="col" data-l="Indicação">Abridor de canal de K-ATP + doador de NO; úlceras orais e anais; não com PDE-5</div></div>
 </div>
 
-<div class="sub-title">F2.6 · Lipídios, neuro-hormonais e prevenção</div>
+<div class="sub-title" id="f2-6">F2.6 · Lipídios, neuro-hormonais e prevenção</div>
 <div class="stbl stbl-3">
 <div class="stbl-head stbl-3"><div>Fármaco</div><div>Dose adulto</div><div>Indicação / notas</div></div>
 <div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Atorvastatina</div><div class="col" data-l="Dose">40–80 mg VO 1×/dia (alta intensidade) <span class="ev ev-acr">ACC/AHA 2025</span></div><div class="col" data-l="Indicação">Iniciar na internação independentemente do LDL; ALT basal; CK só se sintoma</div></div>
@@ -1127,7 +1146,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <div class="section-sub">Os erros abaixo custam miocárdio, sangramento ou um stent que não precisava existir; os mitos sobrevivem em prescrições antigas; as controvérsias têm ensaios recentes puxando em direções diferentes.</div>
 </div>
 
-<div class="card pearl">
+<div class="card pearl" id="g1">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">G.1</span> Pegadinhas</div><h3>10 erros operacionais em SCA e DAC crônica <span class="ank ank-dgr">DANGER</span></h3></div>
 <div class="card-body">
 <div class="stbl stbl-2">
@@ -1146,7 +1165,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card pearl">
+<div class="card pearl" id="g2">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">G.2</span> Mitos · Controvérsias</div><h3>Mitos vivos e debates atuais <span class="ank ank-con">CONTROVERSY</span></h3></div>
 <div class="card-body">
 <div class="box myth"><span class="box-label">MYTH</span><div class="box-title">"Todo infartado precisa de oxigênio"</div><div class="box-body">Hiperóxia causa vasoconstrição coronária e sistêmica, aumenta espécies reativas de oxigênio e, no AVOID, associou-se a infarto maior. No DETO2X (6.629 pacientes com SpO2 ≥90%), oxigênio não reduziu mortalidade em 1 ano. Indicação atual: SpO2 &lt;90% ou desconforto respiratório.</div></div>
@@ -1167,7 +1186,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <div class="section-sub">Cada pearl é uma ideia com o argumento que a sustenta; os itens em evolução são mudanças reais de diretriz ou de ensaio, não novidades de vitrine.</div>
 </div>
 
-<div class="card pearl">
+<div class="card pearl" id="h1">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">H.1</span> Pearls</div><h3>8 nuances que distinguem o especialista</h3></div>
 <div class="card-body">
 <div class="box pearl"><span class="box-label">PEARL</span><div class="box-title">Supra em aVR com infra difuso é isquemia subendocárdica global, não "supra de tronco"</div><div class="box-body">O vetor da lesão subendocárdica circunferencial aponta para a cavidade, e aVR é a derivação que olha para ela; o padrão aparece em doença de tronco, triarterial e em isquemia de demanda grave (anemia, taquiarritmia, hipotensão). Não há trombo oclusivo a lisar: o paciente é NSTE de muito alto risco, que precisa de cateterismo urgente e correção do desbalanço, não de fibrinolítico.</div></div>
@@ -1181,7 +1200,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card pearl">
+<div class="card pearl" id="h2">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">H.2</span> Evolving</div><h3>6 mudanças reais — SCA e DAC 2024–2026 <span class="ank ank-evo">EVOLVING</span></h3></div>
 <div class="card-body">
 <div class="box evolving"><span class="box-label">EVOLVING</span><div class="box-title">Quinta definição universal de infarto (agosto de 2026)</div><div class="box-body">ESC/ACC/AHA/WHF substituíram os tipos 1–5 por infarto primário, secundário e relacionado a procedimento; SCAD, vasoespasmo e embolia passam a ser infarto primário; troponina com percentil 99 por sexo; MINOCA vira "lesão miocárdica com coronárias não obstrutivas"; critérios objetivos para infarto silencioso. As diretrizes de tratamento ainda usam a linguagem antiga; espere a transição nas próximas edições e nas provas a partir de 2027.</div></div>
@@ -1220,5 +1239,36 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </footer>
 <a class="to-top" href="#" aria-label="Voltar ao topo">↑</a>
 <div class="watermark">@dr.lorencato · SCA e DAC CV03 v5.2</div>
-</body>
+<!--hp-f2--><script>(function(){var d=document,M=d.querySelector('main');if(!M)return;
+var SELF='CV03',HP=' CT01 CT02 CT03 CT04 CT05 CT06 CT08 CT10 CV01 CV03 CV04 CV05 CV06 CV07 CV08 EN01 EN02 EN03 EN04 EN06 EN07 GH01 GH02 GH03 GH05 GH06 GH07 GH08 GH09 GH10 GO01 GO02 GO03 GO04 GO09 GO10 GO11 GO12 GO13 GO14 HO01 HO02 HO03 HO04 HO05 HO06 II01 II02 II03 II04 II07 II08 NE01 NE02 NE03 NE04 NE05 NE06 NE07 NE08 NU01 NU02 NU03 NU04 NU05 OE01 OE02 PC01 PC02 PC03 PC04 PC05 PC06 PD01 PD02 PD03 PD04 PD05 PD06 PD07 PD08 PD09 PD10 RD01 RD02 RD03 RD04 RD05 RD07 RP01 RP02 RP03 RP04 ';
+var SK='A,H1,H2,H3,SCRIPT,STYLE,NAV,.card-num,.card-eyebrow,.sub-title,.disease-tag,.toc';
+var R=/\b(?:([A-H])(\d)?\.(\d{1,2}[a-c]?)|(CV|RP|GH|NE|EN|NU|HO|II|RD|GO|PD|PC|CT|OE)(\d\d))\b/g;
+function skip(n){for(var e=n.parentNode;e&&e!==M;e=e.parentNode)if(e.matches&&e.matches(SK))return 1;return 0}
+var w=d.createTreeWalker(M,4),t,L=[];while(t=w.nextNode())if(R.test(t.data)&&!skip(t))L.push(t);
+L.forEach(function(t){var s=t.data,f=d.createDocumentFragment(),i=0,m;R.lastIndex=0;
+while(m=R.exec(s)){var h=null;
+if(m[1]){var id=m[1].toLowerCase()+(m[2]?m[2]+'-':'')+m[3];if(d.getElementById(id))h='#'+id}
+else{var x=m[4]+m[5];if(x!==SELF&&HP.indexOf(' '+x+' ')>=0)h='../'+x+'/'+x+'.html'}
+if(!h)continue;f.appendChild(d.createTextNode(s.slice(i,m.index)));
+var a=d.createElement('a');a.href=h;a.className='xr';a.textContent=m[0];f.appendChild(a);i=R.lastIndex}
+if(i){f.appendChild(d.createTextNode(s.slice(i)));t.parentNode.replaceChild(f,t)}});
+function nz(s){return s.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'')}
+var q=d.querySelector('.hp-q'),n=d.querySelector('.hp-n'),it=M.querySelectorAll('.card,.pocket-card'),T;
+function clr(){M.querySelectorAll('.q-off').forEach(function(e){e.classList.remove('q-off')})}
+function run(){var v=nz(q.value.trim());clr();n.textContent='';if(v.length<2)return;var k=0;
+it.forEach(function(c){if(nz(c.textContent).indexOf(v)<0){c.classList.add('q-off');return}k++;
+var r=c.querySelectorAll('.stbl-row,.disease-row,.score-row'),h=[];r.forEach(function(x){if(nz(x.textContent).indexOf(v)>=0)h.push(x)});
+if(h.length)r.forEach(function(x){if(h.indexOf(x)<0)x.classList.add('q-off')});
+c.querySelectorAll('details').forEach(function(x){if(nz(x.textContent).indexOf(v)>=0)x.open=true})});
+M.querySelectorAll('section').forEach(function(s){if(!s.querySelector('.card:not(.q-off),.pocket-card:not(.q-off)'))s.classList.add('q-off')});
+n.textContent=k?k+' achado'+(k>1?'s':''):'nada'}
+if(q){q.addEventListener('input',function(){clearTimeout(T);T=setTimeout(run,180)});
+q.addEventListener('keydown',function(e){if(e.key==='Escape'){q.value='';run()}})}
+function tg(b,f){b.addEventListener('click',function(){var on=b.getAttribute('aria-pressed')!=='true';b.setAttribute('aria-pressed',on);f(on)})}
+var bd=d.querySelector('.hp-dz'),bo=d.querySelector('.hp-op');
+if(bd)tg(bd,function(on){d.body.classList.toggle('dz',on);if(on)d.getElementById('tratamento').scrollIntoView()});
+if(bo)tg(bo,function(on){M.querySelectorAll('details').forEach(function(x){x.open=on})});
+var P=[];addEventListener('beforeprint',function(){P=[];M.querySelectorAll('details:not([open])').forEach(function(x){P.push(x);x.open=true})});
+addEventListener('afterprint',function(){P.forEach(function(x){x.open=false})});
+})();</script><!--/hp-f2--></body>
 </html>

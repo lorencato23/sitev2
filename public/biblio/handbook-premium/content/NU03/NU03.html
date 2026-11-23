@@ -345,11 +345,30 @@ ul.bullets li b{color:var(--ink);font-weight:600}
   .pocket .pocket-card.tx{--accent:#a8481a}
   .pocket .pocket-card.clin{--accent:#0b5d4e}
 }
+
+/* === v5.2.2 · fase 2 (navegação) === */
+.hp-tools{display:flex;gap:6px;align-items:center;flex:none;order:1;margin-left:auto;padding-left:6px;position:sticky;right:0;background:#f1eee5;box-shadow:-10px 0 10px -4px #f1eee5,16px 0 0 #f1eee5}
+@media(min-width:900px){html{scroll-padding-top:150px}.toc-inner{flex-wrap:wrap;overflow:visible}.card[id],.sub-title[id]{scroll-margin-top:150px}}
+@media(max-width:899px){.hp-b,.hp-n{display:none}.hp-q{width:104px}}
+.hp-q{width:128px;font:500 12px/1 'DM Sans',system-ui,sans-serif;padding:7px 11px;border:1px solid var(--line-strong);border-radius:999px;background:var(--paper);color:var(--ink)}
+.hp-b{font:600 11px/1 'DM Sans',system-ui,sans-serif;letter-spacing:.05em;text-transform:uppercase;padding:7px 10px;border-radius:999px;border:1px solid var(--line-strong);background:var(--paper);color:var(--ink-soft);cursor:pointer;white-space:nowrap}
+.hp-b[aria-pressed=true]{background:var(--ink);color:#fff;border-color:var(--ink)}
+.hp-n{font:600 11px/1 'DM Mono',monospace;color:var(--ink-mute);white-space:nowrap}
+.sec-idx{display:flex;flex-wrap:wrap;gap:6px;margin:12px 0 20px}
+.sec-idx a{font:500 12px/1.25 'DM Sans',system-ui,sans-serif;padding:6px 10px;border-radius:999px;background:var(--paper);border:1px solid var(--line);color:var(--ink-soft);text-decoration:none}
+.sec-idx a:hover{border-color:var(--line-strong);color:var(--ink)}
+.sec-idx b{color:var(--c-prim);margin-right:5px;font-weight:700}
+a.xr{color:inherit;text-decoration:underline dotted;text-underline-offset:2px}
+a.xr:hover{color:var(--c-prim)}
+.card[id],.sub-title[id]{scroll-margin-top:110px}
+.q-off{display:none!important}
+body.dz main section:not(#tratamento){display:none}
+@media print{.hp-tools,.sec-idx,.toc-doses{display:none!important}}
 </style>
 </head>
 <body>
 <header class="header"><div class="header-row"><div class="h-mark">R</div><div class="h-titles"><div class="h-title">IRA, DRC, Diálise e Transplante · Pocket Handbook</div><div class="h-sub">Elite edition · Nefrologia clínica · NU03</div></div><div class="h-author">@dr.lorencato</div><div class="h-edition">v5.2</div></div></header>
-<nav class="toc"><div class="toc-inner"><a href="#pocket" class="toc-chip"><span class="toc-chip-num">0</span>Pocket</a><a href="#redflags" class="toc-chip"><span class="toc-chip-num">A</span>Red Flags</a><a href="#approach" class="toc-chip"><span class="toc-chip-num">B</span>Apresentação</a><a href="#primarias" class="toc-chip"><span class="toc-chip-num">C</span>Entidades</a><a href="#secundarias" class="toc-chip"><span class="toc-chip-num">D</span>Secundárias</a><a href="#algoritmo" class="toc-chip"><span class="toc-chip-num">E</span>Algoritmo</a><a href="#tratamento" class="toc-chip"><span class="toc-chip-num">F</span>Tratamento</a><a href="#pitfalls" class="toc-chip"><span class="toc-chip-num">G</span>Pitfalls</a><a href="#pearls" class="toc-chip"><span class="toc-chip-num">H</span>Pearls</a></div></nav>
+<nav class="toc"><div class="toc-inner"><!--hp-f2--><span class="hp-tools"><input class="hp-q" type="search" placeholder="Buscar no HP" aria-label="Buscar no HP"><button class="hp-b hp-dz" type="button" aria-pressed="false">Só doses</button><button class="hp-b hp-op" type="button" aria-pressed="false">Abrir tudo</button><span class="hp-n" aria-live="polite"></span></span><!--/hp-f2--><a href="#pocket" class="toc-chip"><span class="toc-chip-num">0</span>Pocket</a><a href="#redflags" class="toc-chip"><span class="toc-chip-num">A</span>Red Flags</a><a href="#approach" class="toc-chip"><span class="toc-chip-num">B</span>Apresentação</a><a href="#primarias" class="toc-chip"><span class="toc-chip-num">C</span>Entidades</a><a href="#secundarias" class="toc-chip"><span class="toc-chip-num">D</span>Secundárias</a><a href="#algoritmo" class="toc-chip"><span class="toc-chip-num">E</span>Algoritmo</a><a href="#tratamento" class="toc-chip"><span class="toc-chip-num">F</span>Tratamento</a><!--hp-f2--><a href="#f2" class="toc-chip toc-doses"><span class="toc-chip-num">Rx</span>Doses</a><!--/hp-f2--><a href="#pitfalls" class="toc-chip"><span class="toc-chip-num">G</span>Pitfalls</a><a href="#pearls" class="toc-chip"><span class="toc-chip-num">H</span>Pearls</a></div></nav>
 <main>
 <div class="wrap">
 <div class="hero">
@@ -389,7 +408,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <section id="redflags">
 <div class="section"><div class="section-eyebrow"><span>A</span> Red Flags</div><h2 class="section-title">Quando o rim mata em horas — e quando mata em dias sem ninguém notar</h2><div class="section-sub">O rim raramente dói. O que mata na LRA e na DRC avançada é o que ele deixa de excretar (potássio, ácido, água, toxinas) e o que se deixa de fazer a tempo (desobstruir, dialisar, suspender o nefrotóxico).</div></div>
 
-<div class="card emerg">
+<div class="card emerg" id="a1">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">A.1</span> Emergências</div><h3>Sinais de alarme da falência renal <span class="ank ank-dgr">DANGER</span></h3><div class="card-sub">indicações de diálise de urgência e as situações que não podem esperar a próxima creatinina</div></div>
 <div class="card-body">
 <div class="mnemo"><div class="mnemo-title"><b>AEIOU</b> as cinco portas da diálise de urgência — clínicas e refratárias, não um número de ureia</div><div class="mnemo-grid">
@@ -421,7 +440,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <section id="approach">
 <div class="section"><div class="section-eyebrow"><span>B</span> Por Apresentação</div><h2 class="section-title">Mapa sindrômico — cinco formas de o rim chegar ao seu plantão</h2><div class="section-sub">A creatinina é tardia e indireta. O que orienta é o contexto (onde, quanto tempo, que fármaco), o débito urinário, o sedimento e o tamanho dos rins.</div></div>
 
-<div class="card clin"><div class="card-head"><div class="card-eyebrow"><span class="card-num">B.1</span> Padrão 1</div><h3>Creatinina subindo no internado</h3><div class="card-sub">pré-renal × NTA × nefrotóxico × obstrução — nesta ordem de frequência no hospital</div></div><div class="card-body">
+<div class="card clin" id="b1"><div class="card-head"><div class="card-eyebrow"><span class="card-num">B.1</span> Padrão 1</div><h3>Creatinina subindo no internado</h3><div class="card-sub">pré-renal × NTA × nefrotóxico × obstrução — nesta ordem de frequência no hospital</div></div><div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Pré-renal responde 55–60% das LRA comunitárias; na UTI, a <b>NTA isquêmico-séptica</b> lidera (~50%). Antes de pedir FENa, revise <b>PAM, balanço, AINE, IECA/BRA, diurético, contraste, aminoglicosídeo, vancomicina</b> — a prescrição é a causa mais tratável.</div></div>
 <ul class="bullets">
 <li><b>Contexto cirúrgico/séptico:</b> hipotensão, vasopressor, balanço positivo crescente com oligúria → NTA; cilindros granulosos pigmentados ("marrons") confirmam.</li>
@@ -432,7 +451,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </ul>
 </div></div>
 
-<div class="card clin"><div class="card-head"><div class="card-eyebrow"><span class="card-num">B.2</span> Padrão 2</div><h3>Azotemia sem creatinina prévia — aguda ou crônica?</h3><div class="card-sub">o primeiro exame é procurar um exame antigo</div></div><div class="card-body">
+<div class="card clin" id="b2"><div class="card-head"><div class="card-eyebrow"><span class="card-num">B.2</span> Padrão 2</div><h3>Azotemia sem creatinina prévia — aguda ou crônica?</h3><div class="card-sub">o primeiro exame é procurar um exame antigo</div></div><div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Sem valor basal, o <b>USG renal</b> decide: rins &lt;8–9 cm com perda da diferenciação corticomedular = crônico. <b>Anemia normocítica, P alto, Ca baixo, PTH alto</b> e poucos sintomas para creatinina de 8 reforçam cronicidade.</div></div>
 <ul class="bullets">
 <li><b>Rins normais ou grandes com DRC:</b> nefropatia diabética, amiloidose, doença policística, nefropatia do HIV, mieloma, falciforme, esclerodermia, obstrutiva crônica.</li>
@@ -441,7 +460,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </ul>
 </div></div>
 
-<div class="card clin"><div class="card-head"><div class="card-eyebrow"><span class="card-num">B.3</span> Padrão 3</div><h3>O ambulatório: TFG reduzida ou albuminúria num exame de rotina</h3><div class="card-sub">confirmar cronicidade, estadiar e proteger</div></div><div class="card-body">
+<div class="card clin" id="b3"><div class="card-head"><div class="card-eyebrow"><span class="card-num">B.3</span> Padrão 3</div><h3>O ambulatório: TFG reduzida ou albuminúria num exame de rotina</h3><div class="card-sub">confirmar cronicidade, estadiar e proteger</div></div><div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Repita em ≥3 meses; estadie <b>G × A</b>; procure a causa (DM, HAS, glomerulopatia, policística, obstrução, fármacos). A albuminúria prediz progressão e evento CV independentemente da TFG — <b>RAC em amostra isolada é o exame</b>, não a fita.</div></div>
 <ul class="bullets">
 <li><b>Hematúria dismórfica, cilindros hemáticos, proteinúria nefrótica, queda rápida:</b> glomerulopatia → NU01 e biópsia.</li>
@@ -451,7 +470,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </ul>
 </div></div>
 
-<div class="card clin"><div class="card-head"><div class="card-eyebrow"><span class="card-num">B.4</span> Padrão 4</div><h3>O paciente em diálise no PS</h3><div class="card-sub">potássio, volume, acesso e coração — nesta ordem</div></div><div class="card-body">
+<div class="card clin" id="b4"><div class="card-head"><div class="card-eyebrow"><span class="card-num">B.4</span> Padrão 4</div><h3>O paciente em diálise no PS</h3><div class="card-sub">potássio, volume, acesso e coração — nesta ordem</div></div><div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Pergunte <b>quando foi a última sessão</b>. Sessão perdida → hipercalemia e congestão. Febre com cateter → bacteremia por <i>S. aureus</i> até prova em contrário. Dor torácica → SCA (troponina cronicamente elevada: valorize a curva) ou pericardite.</div></div>
 <ul class="bullets">
 <li><b>Acesso:</b> não puncione nem afira PA no braço da fístula; frêmito ausente = trombose (cirurgia vascular em horas, não dias).</li>
@@ -460,7 +479,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </ul>
 </div></div>
 
-<div class="card clin"><div class="card-head"><div class="card-eyebrow"><span class="card-num">B.5</span> Padrão 5</div><h3>O transplantado renal com febre, diarreia ou creatinina alterada</h3><div class="card-sub">o calendário pós-transplante orienta o diagnóstico</div></div><div class="card-body">
+<div class="card clin" id="b5"><div class="card-head"><div class="card-eyebrow"><span class="card-num">B.5</span> Padrão 5</div><h3>O transplantado renal com febre, diarreia ou creatinina alterada</h3><div class="card-sub">o calendário pós-transplante orienta o diagnóstico</div></div><div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">1º mês: <b>infecção nosocomial e cirúrgica</b>. Meses 1–6: <b>oportunistas</b> (CMV, PJP, BK, <i>Listeria</i>, <i>Nocardia</i>). Depois de 6 meses: comunitárias, mais BK, CMV tardio e neoplasia. Toda diarreia altera o nível de tacrolimo.</div></div>
 <ul class="bullets">
 <li><b>Creatinina ↑:</b> pré-renal (diarreia, diurético), nível alto de tacrolimo, obstrução, ITU, rejeição, BK, trombose; dosar nível e fazer Doppler antes de qualquer pulso.</li>
@@ -471,9 +490,9 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div></div>
 </section>
 <section id="primarias">
-<div class="section"><div class="section-eyebrow"><span>C</span> Entidades Primárias</div><h2 class="section-title">Disease boxes — da lesão aguda à substituição</h2><div class="section-sub">Oito entidades com raciocínio próprio. A fisiologia da filtração, da lesão tubular, da hiperfiltração, da eritropoese, do eixo FGF23–PTH, da diálise e da aloimunidade fica nos deep-dives.</div></div>
+<div class="section"><div class="section-eyebrow"><span>C</span> Entidades Primárias</div><h2 class="section-title">Disease boxes — da lesão aguda à substituição</h2><div class="section-sub">Oito entidades com raciocínio próprio. A fisiologia da filtração, da lesão tubular, da hiperfiltração, da eritropoese, do eixo FGF23–PTH, da diálise e da aloimunidade fica nos deep-dives.</div></div><!--hp-f2--><nav class="sec-idx" aria-label="Neste capítulo"><a href="#c1"><b>C.1</b>Lesão renal aguda — definição…</a><a href="#c2"><b>C.2</b>Necrose tubular aguda — isquê…</a><a href="#c3"><b>C.3</b>Nefrotoxicidade por contraste…</a><a href="#c4"><b>C.4</b>Doença renal crônica — diagnó…</a><a href="#c5"><b>C.5</b>Anemia da DRC</a><a href="#c6"><b>C.6</b>Distúrbio mineral e ósseo da…</a><a href="#c7"><b>C.7</b>Terapia renal substitutiva…</a><a href="#c8"><b>C.8</b>Transplante renal — candidato…</a></nav><!--/hp-f2-->
 
-<div class="card prim">
+<div class="card prim" id="c1">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.1</span> Síndrome</div><h3>Lesão renal aguda — definição, estadiamento e abordagem <span class="ank ank-hy">HIGH-YIELD</span> <span class="ank ank-dec">DECISION</span></h3><div class="card-sub">queda abrupta da TFG medida por dois marcadores tardios: creatinina e diurese</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">KDIGO: <b>creatinina ↑ ≥0,3 mg/dL em 48 h</b>, ou <b>≥1,5× o basal em 7 dias</b>, ou <b>diurese &lt;0,5 mL/kg/h por &gt;6 h</b>. Estadie (1–3) pelo pior critério. Raciocine em três compartimentos — <b>pré-renal, intrínseca, pós-renal</b> — e trate primeiro o que é reversível em horas: obstrução e hipoperfusão.</div></div>
@@ -500,7 +519,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div></details>
 </div></div>
 
-<div class="card prim">
+<div class="card prim" id="c2">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.2</span> Intrínseca</div><h3>Necrose tubular aguda — isquêmica, séptica e nefrotóxica <span class="ank ank-hy">HIGH-YIELD</span></h3><div class="card-sub">90% da LRA intrínseca; o diagnóstico diferencial com a pré-renal decide quanto volume dar</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Pré-renal prolongada vira NTA. Na NTA os túbulos perdem a capacidade de reabsorver sódio e concentrar: <b>FENa &gt;2%, FEureia &gt;50%, Uosm &lt;350, Na urinário &gt;40, cilindros granulosos pigmentados</b>. Não existe droga que acelere a recuperação: o trabalho é não agravar (volume certo, PAM, nefrotóxicos fora) e suportar.</div></div>
@@ -529,7 +548,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div></details>
 </div></div>
 
-<div class="card prim">
+<div class="card prim" id="c3">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.3</span> Iatrogenia</div><h3>Nefrotoxicidade por contraste e por fármacos <span class="ank ank-dec">DECISION</span></h3><div class="card-sub">a LRA mais prevenível — e a de risco mais superestimado no contraste venoso</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Contraste IV moderno: risco real só com <b>TFG &lt;30 ou LRA</b>; profilaxia = <b>SF 0,9% IV</b>; nada de bicarbonato, NAC ou diálise profilática. Fármacos: aminoglicosídeo em <b>dose única diária</b> por menor tempo, <b>formulação lipídica</b> de anfotericina, nível de vancomicina, evitar AINE e o "triplo golpe" (IECA/BRA + diurético + AINE).</div></div>
@@ -545,7 +564,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <div class="box decision"><span class="box-label">DECISION</span><div class="box-title">Profilaxia de contraste: o que fazer na prática</div><div class="box-body">Regimes com SF 0,9% IV antes e depois do exame (por exemplo, 1 mL/kg/h por 6–12 h antes e depois) aparecem nos protocolos e nos ensaios; o consenso ACR/NKF não fixa um volume único. Ajuste ao estado volêmico (IC e anúrico em diálise não recebem). <b>Regime exato: conferir protocolo local</b>. Paciente em diálise: não há profilaxia; o contraste é removido na sessão de rotina.</div></div>
 </div></div>
 
-<div class="card prim">
+<div class="card prim" id="c4">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.4</span> Crônica</div><h3>Doença renal crônica — diagnóstico, estadiamento e nefroproteção <span class="ank ank-hy">HIGH-YIELD</span> <span class="ank ank-dec">DECISION</span></h3><div class="card-sub">dano ou perda de função por ≥3 meses, com implicação para a saúde</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body"><b>TFG &lt;60</b> ou marcador de dano (<b>RAC ≥30 mg/g</b>, sedimento alterado, distúrbio tubular, imagem, histologia, transplante) por <b>≥3 meses</b>. Estadie <b>causa + G + A</b>. Trate em camadas: <b>IECA/BRA na dose máxima</b> (A2–A3), <b>iSGLT2 para quase todos</b>, <b>finerenona no DM2 com albuminúria</b>, PA sistólica &lt;120 se tolerada, estatina, sódio &lt;2 g/dia, proteína 0,8 g/kg/dia, nada de AINE.</div></div>
@@ -582,7 +601,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div></details>
 </div></div>
 
-<div class="card prim">
+<div class="card prim" id="c5">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.5</span> Complicação</div><h3>Anemia da DRC <span class="ank ank-hy">HIGH-YIELD</span></h3><div class="card-sub">deficiência relativa de eritropoetina, inflamação e ferro sequestrado</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Normocítica e normocrômica, aparece com TFG &lt;30–45 e é universal na falência. <b>Ferro primeiro</b>, depois AEE. Alvo do AEE: <b>Hb 10–12 g/dL, sem passar de 12</b> no PCDT 2017 (padrão SUS); <b>abaixo de 11,5</b> no KDIGO 2026. Hb normal com AEE aumentou AVC e eventos (TREAT, CHOIR, CREATE).</div></div>
@@ -603,7 +622,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div></details>
 </div></div>
 
-<div class="card prim">
+<div class="card prim" id="c6">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.6</span> Complicação</div><h3>Distúrbio mineral e ósseo da DRC <span class="ank ank-hy">HIGH-YIELD</span></h3><div class="card-sub">fósforo retido, calcitriol baixo, FGF23 e PTH altos — osso e vaso doentes</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Laboratório típico: <b>P alto, Ca normal-baixo, PTH alto, fosfatase alcalina alta</b>. Trate pela tendência, não por um valor: baixar o fósforo em direção ao normal, <b>evitar hipercalcemia</b>, restringir quelante à base de cálcio, PTH-alvo em diálise <b>2–9× o limite superior</b> (KDIGO; no SUS, 150–300 pg/mL pelo PCDT 2022). Calcitriol não é rotina em G3a–G5 não dialítico.</div></div>
@@ -624,7 +643,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div></details>
 </div></div>
 
-<div class="card prim">
+<div class="card prim" id="c7">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.7</span> Substituição</div><h3>Terapia renal substitutiva — indicação, modalidade e prescrição <span class="ank ank-dec">DECISION</span></h3><div class="card-sub">hemodiálise intermitente, métodos contínuos e híbridos, diálise peritoneal</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Aguda: dialise por <b>AEIOU refratário</b>; <b>contínua (CRRT) no instável e no cérebro em risco</b>, intermitente no estável, DP onde não há máquina ou na criança. Crônica: inicie por <b>sintomas e complicações</b>, em geral com TFG 5–10, não por número; acesso preferido = <b>fístula arteriovenosa</b>; DP preserva função residual e funciona em casa. A diálise não corrige anemia, DMO nem o risco cardiovascular.</div></div>
@@ -651,7 +670,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div></details>
 </div></div>
 
-<div class="card prim">
+<div class="card prim" id="c8">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.8</span> Substituição definitiva</div><h3>Transplante renal — candidato, imunossupressão e seguimento <span class="ank ank-hy">HIGH-YIELD</span> <span class="ank ank-dec">DECISION</span></h3><div class="card-sub">a melhor TRS para quem é elegível, idealmente preemptiva e de doador vivo</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Encaminhe <b>6–12 meses antes da diálise prevista</b>; preemptivo com <b>TFG &lt;10</b> (adulto) ou &lt;15 (criança) ou antes se sintomático. Idade não exclui. Imunossupressão padrão: <b>indução</b> (basiliximabe no baixo risco; timoglobulina no alto) + <b>tacrolimo + micofenolato + prednisona</b>. Rejeição: biópsia, <b>pulso de metilprednisolona</b>. Profilaxia de CMV e de <i>Pneumocystis</i> nos primeiros meses.</div></div>
@@ -674,9 +693,9 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div></div>
 </section>
 <section id="secundarias">
-<div class="section"><div class="section-eyebrow"><span>D</span> Entidades Secundárias</div><h2 class="section-title">O que completa o diferencial — agrupado, com dono e remissão</h2><div class="section-sub">Sete boxes que reúnem entidades raras ou correlatas: a LRA obstrutiva, as LRA com dono em outro HP, as emergências urêmicas, o rim do diabético avançado, as complicações da diálise e do transplante e a criança com DRC avançada.</div></div>
+<div class="section"><div class="section-eyebrow"><span>D</span> Entidades Secundárias</div><h2 class="section-title">O que completa o diferencial — agrupado, com dono e remissão</h2><div class="section-sub">Sete boxes que reúnem entidades raras ou correlatas: a LRA obstrutiva, as LRA com dono em outro HP, as emergências urêmicas, o rim do diabético avançado, as complicações da diálise e do transplante e a criança com DRC avançada.</div></div><!--hp-f2--><nav class="sec-idx" aria-label="Neste capítulo"><a href="#d1"><b>D.1</b>LRA pós-renal (obstrutiva)</a><a href="#d2"><b>D.2</b>LRA de causa específica — rec…</a><a href="#d3"><b>D.3</b>Emergências urêmicas — perica…</a><a href="#d4"><b>D.4</b>Doença renal do diabetes avan…</a><a href="#d5"><b>D.5</b>Complicações da diálise — da…</a><a href="#d6"><b>D.6</b>Complicações do transplante r…</a><a href="#d7"><b>D.7</b>DRC avançada, diálise e trans…</a></nav><!--/hp-f2-->
 
-<div class="card diag"><div class="card-head"><div class="card-eyebrow"><span class="card-num">D.1</span> Pós-renal</div><h3>LRA pós-renal (obstrutiva) <span class="ank ank-dgr">DANGER</span></h3><div class="card-sub">a causa mais rapidamente reversível — e a que mais se perde por atraso</div></div><div class="card-body">
+<div class="card diag" id="d1"><div class="card-head"><div class="card-eyebrow"><span class="card-num">D.1</span> Pós-renal</div><h3>LRA pós-renal (obstrutiva) <span class="ank ank-dgr">DANGER</span></h3><div class="card-sub">a causa mais rapidamente reversível — e a que mais se perde por atraso</div></div><div class="card-body">
 <div class="disease"><div class="disease-head"><div class="disease-name">LRA pós-renal</div><div class="disease-tag">CID-10 N13.9 · R33</div></div><div class="disease-body"><div class="disease-rows">
 <div class="disease-row"><div class="k">Quem e por quê</div><div class="v">Exige obstrução bilateral, de rim único ou em quem já tem DRC. Homem idoso com HPB e retenção aguda precipitada por anticolinérgico, simpatomimético (descongestionante), opioide, prostatite ou infarto prostático; mulher com câncer de colo uterino invadindo os ureteres; fibrose retroperitoneal; cálculo em rim único; bexiga neurogênica (DM, lesão medular); coágulo; cateter obstruído.</div></div>
 <div class="disease-row"><div class="k">Diagnóstico</div><div class="v">Bexigoma, toque retal, <b>USG</b> (hidronefrose em ~98%; hidronefrose com bexiga vazia = ureteral). Diurese presente não exclui (transbordamento, parcial com poliúria); anúria com fluxo oscilante sugere obstrução. Tardiamente, bioquímica urinária de padrão NTA <span class="ev ev-sbr">KDIGO 2012</span>.</div></div>
@@ -685,7 +704,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div></div></div>
 </div></div>
 
-<div class="card diag"><div class="card-head"><div class="card-eyebrow"><span class="card-num">D.2</span> Mapa</div><h3>LRA de causa específica — reconhecer aqui, tratar no HP dono <span class="ank ank-dec">DECISION</span></h3><div class="card-sub">síndrome hepatorrenal, cardiorrenal, rabdomiólise, lise tumoral, leptospirose, microangiopatias, NIA, GNRP</div></div><div class="card-body">
+<div class="card diag" id="d2"><div class="card-head"><div class="card-eyebrow"><span class="card-num">D.2</span> Mapa</div><h3>LRA de causa específica — reconhecer aqui, tratar no HP dono <span class="ank ank-dec">DECISION</span></h3><div class="card-sub">síndrome hepatorrenal, cardiorrenal, rabdomiólise, lise tumoral, leptospirose, microangiopatias, NIA, GNRP</div></div><div class="card-body">
 <div class="disease"><div class="disease-head"><div class="disease-name">LRA com fisiopatologia própria</div><div class="disease-tag">CID-10 K76.7 · E88.3 · A27.9</div></div><div class="disease-body"><div class="disease-rows">
 <div class="disease-row"><div class="k">Pistas</div><div class="v"><b>Cirrose com ascite</b>, sedimento inocente, sem resposta a 2 dias de albumina → HRS-AKI: terlipressina + albumina (GH10). <b>IC congestiva</b> com creatinina subindo em descompensação → cardiorrenal: descongestionar melhora o rim (CV04). <b>CK muito alta, urina escura, fita com heme e poucas hemácias</b> → rabdomiólise (NE08). <b>Quimioterapia de linfoma/leucemia, ácido úrico &gt;12, K⁺ e P altos, relação ácido úrico/creatinina urinária &gt;1</b> → lise tumoral: hidratação, rasburicase (HO06). <b>Febre, mialgia de panturrilha, icterícia rubínica, LRA não oligúrica com hipocalemia</b> após enchente → leptospirose (II06). <b>Anemia hemolítica com esquizócitos + plaquetopenia</b> → MAT (HO02, HO03; criança PD08). <b>Rash, eosinofilia, leucocitúria estéril após fármaco</b> → NIA (NU02). <b>Hemácias dismórficas, cilindros hemáticos, creatinina subindo dia a dia</b> → GNRP: biópsia e imunossupressão (NU01). <b>Embolia de colesterol</b> após cateterismo: livedo, eosinofilia, complemento baixo (NU02). <b>Crise renal esclerodérmica</b>: IECA mesmo com creatinina subindo (RD02).</div></div>
 <div class="disease-row"><div class="k">Regra comum</div><div class="v">Toda LRA destas tem o mesmo suporte (C.1) e as mesmas indicações de diálise; o que muda é o tratamento específico, que tem dose e evidência nos HPs donos <span class="ev ev-sbr">KDIGO 2012</span>.</div></div>
@@ -693,7 +712,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div></div></div>
 </div></div>
 
-<div class="card diag"><div class="card-head"><div class="card-eyebrow"><span class="card-num">D.3</span> Uremia</div><h3>Emergências urêmicas — pericardite, sangramento, encefalopatia e neuropatia <span class="ank ank-dgr">DANGER</span></h3><div class="card-sub">manifestações de toxinas dialisáveis: a resposta é diálise (intensificada)</div></div><div class="card-body">
+<div class="card diag" id="d3"><div class="card-head"><div class="card-eyebrow"><span class="card-num">D.3</span> Uremia</div><h3>Emergências urêmicas — pericardite, sangramento, encefalopatia e neuropatia <span class="ank ank-dgr">DANGER</span></h3><div class="card-sub">manifestações de toxinas dialisáveis: a resposta é diálise (intensificada)</div></div><div class="card-body">
 <div class="disease"><div class="disease-head"><div class="disease-name">Complicações da síndrome urêmica</div><div class="disease-tag">CID-10 I32.8 · G63.8 · D69.1</div></div><div class="disease-body"><div class="disease-rows">
 <div class="disease-row"><div class="k">Pericardite</div><div class="v">Dor pleurítica, atrito, ECG de pericardite pode faltar (pouca inflamação epicárdica); derrame <b>hemorrágico</b> por pericárdio hipervascularizado. Pré-diálise (urêmica) ou em diálise (inadequação). Tamponamento precipitado por heparina ou hipovolemia da sessão: turgência, pulso paradoxal, alternância elétrica. Conduta: diálise diária por ~10 dias <b>sem heparina</b>; pericardiocentese se instável; pericardiectomia se recorrente. Afastar TB, LES, infecção.</div></div>
 <div class="disease-row"><div class="k">Sangramento</div><div class="v">Plaquetas em número normal, tempo de sangramento prolongado (ácido guanidinossuccínico, NO, FvW disfuncional, anemia). <b>DDAVP 0,3 µg/kg IV</b> em 50–100 mL de SF em 30 min (efeito em 1 h, dura 4–8 h, taquifilaxia após 2–3 doses) <span class="ev ev-expert">HO03 · padrão Brasil</span>; corrigir anemia; crioprecipitado; diálise; estrogênio conjugado 0,6 mg/kg/dia IV × 5 dias para efeito prolongado (= HO03; forma IV não encontrada na CMED, sem comercialização no Brasil). O spray de alta concentração da apostila (3 µg/kg intranasal) não existe no Brasil.</div></div>
@@ -702,7 +721,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div></div></div>
 </div></div>
 
-<div class="card diag"><div class="card-head"><div class="card-eyebrow"><span class="card-num">D.4</span> Ponte EN01/EN02</div><h3>Doença renal do diabetes avançada — TFG &lt;30, diálise e transplante <span class="ank ank-hy">HIGH-YIELD</span></h3><div class="card-sub">rastreio e quatro pilares no EN01; aqui, o que muda quando a função cai</div></div><div class="card-body">
+<div class="card diag" id="d4"><div class="card-head"><div class="card-eyebrow"><span class="card-num">D.4</span> Ponte EN01/EN02</div><h3>Doença renal do diabetes avançada — TFG &lt;30, diálise e transplante <span class="ank ank-hy">HIGH-YIELD</span></h3><div class="card-sub">rastreio e quatro pilares no EN01; aqui, o que muda quando a função cai</div></div><div class="card-body">
 <div class="disease"><div class="disease-head"><div class="disease-name">Doença renal do diabetes avançada</div><div class="disease-tag">CID-10 E11.2 · E10.2 · N08.3</div></div><div class="disease-body"><div class="disease-rows">
 <div class="disease-row"><div class="k">Particularidades</div><div class="v">Principal causa de DRC terminal com o HAS. Rins de tamanho normal ou aumentado mesmo avançada; hipoaldosteronismo hiporreninêmico (hipercalemia precoce, ATR tipo 4); gastroparesia e neuropatia autonômica (hipotensão intradialítica); doença coronariana silenciosa; retinopatia proliferativa (heparina e anticoagulação em discussão); maior mortalidade em diálise.</div></div>
 <div class="disease-row"><div class="k">Fármacos</div><div class="v">Mesmas doses do EN01: <b>dapagliflozina 10 mg VO 1×/dia</b> (iniciar com TFG ≥25 pelo PCDT; empagliflozina 10 mg com TFG ≥20) mantida até a diálise; <b>finerenona 10 mg VO 1×/dia se TFG 25–59</b> (20 mg se ≥60; subir para 20 mg em 4 semanas se K⁺ ≤4,8; suspender se &gt;5,5); <b>metformina máx. 1 g/dia com TFG 30–44; suspender &lt;30</b>; insulina em dose reduzida (a depuração renal de insulina cai abaixo de ~40 mL/min); linagliptina sem ajuste; evitar glibenclamida <span class="ev ev-sbr">KDIGO DM-DRC 2022</span>. HbA1c subestima a glicemia em diálise e com AEE (sobrevida eritrocitária menor): usar automonitorização ou sensor.</div></div>
@@ -711,7 +730,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div></div></div>
 </div></div>
 
-<div class="card tx"><div class="card-head"><div class="card-eyebrow"><span class="card-num">D.5</span> Complicações</div><h3>Complicações da diálise — da sessão ao longo prazo <span class="ank ank-dgr">DANGER</span></h3><div class="card-sub">hipotensão, desequilíbrio, infecção de acesso, peritonite, amiloidose, alumínio, calcifilaxia</div></div><div class="card-body">
+<div class="card tx" id="d5"><div class="card-head"><div class="card-eyebrow"><span class="card-num">D.5</span> Complicações</div><h3>Complicações da diálise — da sessão ao longo prazo <span class="ank ank-dgr">DANGER</span></h3><div class="card-sub">hipotensão, desequilíbrio, infecção de acesso, peritonite, amiloidose, alumínio, calcifilaxia</div></div><div class="card-body">
 <div class="disease"><div class="disease-head"><div class="disease-name">Complicações da hemodiálise e da diálise peritoneal</div><div class="disease-tag">CID-10 T85.7 · T82.7 · E85.3</div></div><div class="disease-body"><div class="disease-rows">
 <div class="disease-row"><div class="k">Na sessão</div><div class="v"><b>Hipotensão</b> (a mais comum): ultrafiltração rápida, peso seco subestimado, disautonomia, anti-hipertensivo pré-sessão, isquemia, pericardite, sepse — reduzir taxa de UF, SF no circuito, rever peso seco e banho. <b>Câimbras</b>. <b>Síndrome do desequilíbrio</b>: cefaleia, náusea, confusão, convulsão por edema cerebral (queda rápida da osmolalidade plasmática com ureia retida no cérebro) — prevenir com sessões curtas e lentas no início. <b>Reação ao dialisador</b> (anafilaxia ao óxido de etileno, síndrome do primeiro uso). <b>Embolia gasosa</b>: decúbito lateral esquerdo e Trendelenburg, O₂ 100%. Hipocalemia e arritmia com banho pobre em K⁺.</div></div>
 <div class="disease-row"><div class="k">Acesso e infecção</div><div class="v">Bacteremia de cateter: <i>S. aureus</i> (inclusive MRSA) e Gram-negativos; hemoculturas, vancomicina + cobertura Gram-negativa, retirar ou trocar cateter conforme agente e gravidade; buscar endocardite (→ II02). Endarterite da fístula; trombose da fístula (frêmito ausente: cirurgia vascular em horas); estenose venosa central; síndrome do roubo (isquemia da mão). Hepatites B e C e HIV: triagem periódica e vacina de hepatite B.</div></div>
@@ -721,7 +740,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div></div></div>
 </div></div>
 
-<div class="card tx"><div class="card-head"><div class="card-eyebrow"><span class="card-num">D.6</span> Pós-transplante</div><h3>Complicações do transplante renal — rejeição, toxicidade, infecção e câncer <span class="ank ank-dec">DECISION</span></h3><div class="card-sub">o diagnóstico diferencial da creatinina que sobe no enxerto</div></div><div class="card-body">
+<div class="card tx" id="d6"><div class="card-head"><div class="card-eyebrow"><span class="card-num">D.6</span> Pós-transplante</div><h3>Complicações do transplante renal — rejeição, toxicidade, infecção e câncer <span class="ank ank-dec">DECISION</span></h3><div class="card-sub">o diagnóstico diferencial da creatinina que sobe no enxerto</div></div><div class="card-body">
 <div class="disease"><div class="disease-head"><div class="disease-name">Rejeição e complicações do enxerto</div><div class="disease-tag">CID-10 T86.1 · B25.8 · B34.4</div></div><div class="disease-body"><div class="disease-rows">
 <div class="disease-row"><div class="k">Rejeição</div><div class="v">Celular aguda: tubulite e arterite; pulso de <b>metilprednisolona 5–10 mg/kg IV/dia (usualmente 250–1.000 mg) por 3–5 dias</b>; resistente ao corticoide ou vascular grave: <b>timoglobulina 1 mg/kg/dia por 7–14 dias</b> <span class="ev ev-nice">PCDT Imunossupressão TxR 2021</span>. Mediada por anticorpo: plasmaférese, imunoglobulina IV, otimização da imunossupressão. Biópsia antes do tratamento sempre que possível; tratar subclínica e borderline <span class="ev ev-sbr">KDIGO 2009</span>.</div></div>
 <div class="disease-row"><div class="k">Nefrotoxicidade do ICN</div><div class="v">Creatinina ↑ com nível de vale alto, tremor, hipercalemia, hipomagnesemia, HAS; reduzir dose. Interações por CYP3A4/glicoproteína-P: azóis, claritromicina, diltiazem, verapamil, suco de toranja elevam; rifampicina, carbamazepina, fenitoína, erva-de-são-joão baixam.</div></div>
@@ -731,7 +750,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div></div></div>
 </div></div>
 
-<div class="card tx"><div class="card-head"><div class="card-eyebrow"><span class="card-num">D.7</span> Pediatria</div><h3>DRC avançada, diálise e transplante na criança <span class="ank ank-hy">HIGH-YIELD</span></h3><div class="card-sub">seção decidida para o NU03 em 2026-11-09 · CAKUT, VUP, nefrótico e SHU ficam no PD08</div></div><div class="card-body">
+<div class="card tx" id="d7"><div class="card-head"><div class="card-eyebrow"><span class="card-num">D.7</span> Pediatria</div><h3>DRC avançada, diálise e transplante na criança <span class="ank ank-hy">HIGH-YIELD</span></h3><div class="card-sub">seção decidida para o NU03 em 2026-11-09 · CAKUT, VUP, nefrótico e SHU ficam no PD08</div></div><div class="card-body">
 <div class="disease"><div class="disease-head"><div class="disease-name">DRC pediátrica avançada e TRS na criança</div><div class="disease-tag">CID-10 P96.0 · Q61.4</div></div><div class="disease-body"><div class="disease-rows">
 <div class="disease-row"><div class="k">Causas e medida</div><div class="v">Predominam <b>anomalias congênitas do rim e do trato urinário (CAKUT)</b> — hipodisplasia, válvula de uretra posterior, refluxo de alto grau — e depois glomerulopatias (GESF) e doenças hereditárias (nefronoftise, Alport, cistinose). TFG pela <b>equação de Schwartz à beira do leito: 0,413 × altura (cm) / creatinina (mg/dL)</b> (CKiD; creatinina enzimática). LRA estágio 3 inclui TFGe &lt;35 mL/min/1,73 m² em &lt;18 anos <span class="ev ev-sbr">KDIGO 2012</span>. Encaminhar ao nefropediatra com RAC ≥30 mg/g ou RPC ≥200 mg/g confirmadas, hematúria persistente, qualquer queda sustentada de TFG, HAS, CAKUT ou ITU recorrente <span class="ev ev-sbr">KDIGO 2024</span>.</div></div>
 <div class="disease-row"><div class="k">O que é diferente</div><div class="v"><b>Crescimento</b> é o desfecho: não restringir proteína; nutrição, correção de acidose, DMO e anemia; somatropina 0,045–0,05 mg/kg/dia SC à noite na baixa estatura persistente após otimização (consenso 2019; fora do PCDT/SUS para DRC — no SUS, só DGH e Turner, PD04). PA-alvo por MAP de 24 h no percentil 50 (MAPA) <span class="ev ev-sbr">KDIGO 2024</span>. DMO: raquitismo renal; Ca e P por faixa etária. Anemia: Hb-alvo 11–12 g/dL no PCDT. Neurodesenvolvimento e escola. Transição para o cuidado adulto a partir de 11–14 anos.</div></div>
@@ -744,7 +763,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <section id="algoritmo">
 <div class="section"><div class="section-eyebrow"><span>E</span> Algoritmo</div><h2 class="section-title">Da creatinina alterada à conduta — duas árvores e uma sequência mental</h2><div class="section-sub">A primeira pergunta não é "qual a causa", é "este paciente precisa de diálise ou de desobstrução agora?". A segunda é "isto é agudo, crônico ou crônico agudizado?".</div></div>
 
-<div class="card prim"><div class="card-head"><div class="card-eyebrow"><span class="card-num">E.1</span> Agudo</div><h3>Creatinina subindo ou oligúria — LRA passo a passo <span class="ank ank-dec">DECISION</span></h3></div><div class="card-body">
+<div class="card prim" id="e1"><div class="card-head"><div class="card-eyebrow"><span class="card-num">E.1</span> Agudo</div><h3>Creatinina subindo ou oligúria — LRA passo a passo <span class="ank ank-dec">DECISION</span></h3></div><div class="card-body">
 <div class="algo"><div class="tree">
 <div class="tree-line"><span class="tree-node start">Critério KDIGO de LRA (↑ ≥0,3 em 48 h, ≥1,5× em 7 dias ou diurese &lt;0,5 mL/kg/h &gt;6 h)</span></div>
 <div class="tree-branch"><div class="tree-label yes">K⁺ ≥6,5/ECG, pH &lt;7,15, EAP, uremia sintomática ou intoxicação dialisável refratários</div><div class="tree-line"><span class="tree-node dgr">Tratar a ameaça (NU04) + cateter guiado por USG + diálise (contínua se instável)</span></div></div>
@@ -763,7 +782,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div></div>
 </div></div>
 
-<div class="card prim"><div class="card-head"><div class="card-eyebrow"><span class="card-num">E.2</span> Crônico</div><h3>TFG baixa ou albuminúria persistente — da classificação ao preparo para TRS <span class="ank ank-dec">DECISION</span></h3></div><div class="card-body">
+<div class="card prim" id="e2"><div class="card-head"><div class="card-eyebrow"><span class="card-num">E.2</span> Crônico</div><h3>TFG baixa ou albuminúria persistente — da classificação ao preparo para TRS <span class="ank ank-dec">DECISION</span></h3></div><div class="card-body">
 <div class="algo"><div class="tree">
 <div class="tree-line"><span class="tree-node start">TFG &lt;60 e/ou RAC ≥30 confirmados por ≥3 meses</span></div>
 <div class="tree-branch"><div class="tree-label yes">Estadiar G × A + causa + KFRE</div><div class="tree-line"><span class="tree-node action">Camada 1 para todos: PA sistólica &lt;120 se tolerada, sódio &lt;2 g/dia, proteína 0,8 g/kg/dia, sem AINE, estatina se ≥50 anos, vacinas, doses ajustadas</span></div></div>
@@ -786,11 +805,11 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </ol></div></div>
 </section>
 <section id="tratamento">
-<div class="section"><div class="section-eyebrow"><span>F</span> Tratamento Integrado</div><h2 class="section-title">F1 · Estratégia por entidade · F2 · Doses operacionais · F3 · Ajuste à TFG · F4 · Casos</h2><div class="section-sub">Doses com fonte. Onde o KDIGO e o PCDT divergem, as duas aparecem com rótulo; o PCDT é o padrão de acesso no SUS. Hipercalemia, acidose e sódio: doses no NU04, não repetidas aqui.</div></div>
+<div class="section"><div class="section-eyebrow"><span>F</span> Tratamento Integrado</div><h2 class="section-title">F1 · Estratégia por entidade · F2 · Doses operacionais · F3 · Ajuste à TFG · F4 · Casos</h2><div class="section-sub">Doses com fonte. Onde o KDIGO e o PCDT divergem, as duas aparecem com rótulo; o PCDT é o padrão de acesso no SUS. Hipercalemia, acidose e sódio: doses no NU04, não repetidas aqui.</div></div><!--hp-f2--><nav class="sec-idx" aria-label="Neste capítulo"><a href="#f1"><b>F.1</b>Escadas terapêuticas por enti…</a><a href="#f2"><b>F.2</b>Tabela de doses — nefroproteç…</a><a href="#f3"><b>F.3</b>Ajuste de fármacos à função r…</a><a href="#f4"><b>F.4</b>Caso → conduta certa → erro t…</a><a href="#f5"><b>F.5</b>SUS × recomendação internacio…</a></nav><!--/hp-f2-->
 
-<div class="card tx"><div class="card-head"><div class="card-eyebrow"><span class="card-num">F.1</span> Estratégia</div><h3>Escadas terapêuticas por entidade <span class="ank ank-dec">DECISION</span></h3></div><div class="card-body">
+<div class="card tx" id="f1"><div class="card-head"><div class="card-eyebrow"><span class="card-num">F.1</span> Estratégia</div><h3>Escadas terapêuticas por entidade <span class="ank ank-dec">DECISION</span></h3></div><div class="card-body">
 
-<div class="sub-title">F1.1 · Lesão renal aguda (C.1, C.2, D.1)</div>
+<div class="sub-title" id="f1-1">F1.1 · Lesão renal aguda (C.1, C.2, D.1)</div>
 <ul class="bullets">
 <li><b>Hora zero:</b> ameaças (K⁺, pH, pulmão, sensório) → NU04 e diálise; USG e sonda; suspender nefrotóxicos e anti-hipertensivos se hipotenso; revisar todas as doses pela TFG estimada mais baixa plausível (não use CKD-EPI fora do estado estável).</li>
 <li><b>Perfusão:</b> cristaloide isotônico em bolus com reavaliação de responsividade; vasopressor para PAM ≥65 (mais alta no hipertenso crônico, individualizar); sem amido, sem gelatina; balanceado preferível em grandes volumes (SMART; BaSICS neutro → II03) <span class="ev ev-sbr">KDIGO 2012</span>.</li>
@@ -801,7 +820,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </ul>
 <div class="box danger"><span class="box-label">DANGER</span><div class="box-title">Dopamina em "dose renal" e diurético para "proteger o rim"</div><div class="box-body">Dopamina 2–3 µg/kg/min aumenta a diurese sem mudar a TFG, a necessidade de diálise ou a mortalidade, e provoca taquiarritmias: recomendação forte contra (KDIGO 2012, 1A). Furosemida para prevenir ou tratar LRA também é recomendação contra (1B/2C); a apostila ainda descreve 0,3–0,6 mg/kg/h para converter oligúria — não use com esse objetivo.</div></div>
 
-<div class="sub-title">F1.2 · Contraste e nefrotóxicos (C.3)</div>
+<div class="sub-title" id="f1-2">F1.2 · Contraste e nefrotóxicos (C.3)</div>
 <ul class="bullets">
 <li><b>Antes do contraste:</b> TFG recente; se LRA ou TFG &lt;30 sem diálise → SF 0,9% IV antes e depois (regime local) e menor dose de agente iso ou baixa osmolaridade <span class="ev ev-acr">ACR/NKF 2020</span>; 30–44 → profilaxia a critério em alto risco; ≥45 → nada.</li>
 <li><b>Não fazer:</b> bicarbonato no lugar do SF, N-acetilcisteína, hemodiálise profilática, suspender exame indispensável.</li>
@@ -809,7 +828,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <li><b>Gadolínio:</b> TFG &lt;30 → agentes dos grupos II e III; dialisado → sessão após o exame.</li>
 </ul>
 
-<div class="sub-title">F1.3 · DRC — nefroproteção em camadas (C.4, D.4)</div>
+<div class="sub-title" id="f1-3">F1.3 · DRC — nefroproteção em camadas (C.4, D.4)</div>
 <ul class="bullets">
 <li><b>Camada 1 (todos):</b> PA sistólica &lt;120 se tolerada (menos intensivo no frágil); sódio &lt;2 g/dia (exceto perdedores de sal); proteína 0,8 g/kg/dia em adulto com risco de progressão, sem passar de 1,3 e sem restringir em criança ou desnutrido; atividade física; cessar tabagismo; estatina; sem AINE; doses pela TFG <span class="ev ev-sbr">KDIGO 2024</span>.</li>
 <li><b>Camada 2 (albuminúria):</b> IECA ou BRA titulado até a maior dose tolerada; no SUS, losartana 50→100 mg, enalapril ou captopril pelo PCDT; nunca IECA + BRA <span class="ev ev-nice">PCDT DRC 2024</span>.</li>
@@ -819,7 +838,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </ul>
 <div class="box hy"><span class="box-label">HIGH-YIELD</span><div class="box-title">Monitorização depois de iniciar IECA/BRA</div><div class="box-body">Creatinina e K⁺ em 2–4 semanas. Alta de creatinina até 30% em 4 semanas é esperada e associada a proteção. K⁺ alto: dieta, diurético de alça, correção de acidose e quelante (ciclossilicato no Brasil; doses no NU04) antes de reduzir o bloqueador. Reduzir ou suspender só com hipotensão sintomática, hipercalemia incontrolável ou para aliviar sintomas urêmicos com TFG &lt;15 <span class="ev ev-sbr">KDIGO 2024</span>.</div></div>
 
-<div class="sub-title">F1.4 · Anemia da DRC (C.5)</div>
+<div class="sub-title" id="f1-4">F1.4 · Anemia da DRC (C.5)</div>
 <ul class="bullets">
 <li><b>Investigar e corrigir:</b> ferro, B12, folato, sangramento, hipotireoidismo, hiperparatireoidismo, inflamação, adequação da diálise.</li>
 <li><b>Ferro:</b> HD → IV proativo (ferritina ≤500 e saturação ≤30%); não dialítico/DP → VO ou IV conforme preferência, gravidade e tolerância; trocar VO por IV se resposta insuficiente em 1–3 meses; suspender durante infecção sistêmica <span class="ev ev-sbr">KDIGO 2026</span>.</li>
@@ -827,7 +846,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <li><b>Hiporresposta:</b> ferro, infecção, sangramento, PTH, alumínio, adequação, aplasia pura anti-EPO (suspender AEE, transfundir, hematologia).</li>
 </ul>
 
-<div class="sub-title">F1.5 · DMO-DRC (C.6)</div>
+<div class="sub-title" id="f1-5">F1.5 · DMO-DRC (C.6)</div>
 <ul class="bullets">
 <li><b>Fósforo:</b> dieta (evitar aditivos com fosfato, proteína de alto valor biológico), quelante às refeições quando alto e subindo; preferir sevelâmer quando houver hipercalcemia, PTH baixo ou calcificação; carbonato de cálcio limitado; alumínio só por curto prazo <span class="ev ev-sbr">KDIGO 2017</span>.</li>
 <li><b>PTH:</b> não dialítico — corrigir P, Ca, 25-OH-D; calcitriol só em G4–G5 com HPT grave e progressivo. Diálise — manter 2–9× o LSN; acima ou subindo: cinacalcete, calcitriol ou paricalcitol, isolados ou combinados.</li>
@@ -835,7 +854,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <li><b>Paratireoidectomia:</b> HPT grave refratário, hipercalcemia espontânea, calcifilaxia, dor óssea ou prurido intratáveis, fraturas.</li>
 </ul>
 
-<div class="sub-title">F1.6 · Terapia renal substitutiva (C.7, D.3, D.5)</div>
+<div class="sub-title" id="f1-6">F1.6 · Terapia renal substitutiva (C.7, D.3, D.5)</div>
 <ul class="bullets">
 <li><b>Preparo:</b> KFRE 2 anos &gt;40% → educação de modalidade, preservar veias do braço não dominante (sem punção, sem PICC), fístula; Tenckhoff ~2 semanas antes do uso eletivo; vacina de hepatite B; avaliação de transplante.</li>
 <li><b>Início:</b> sintomas e complicações (não um número); início precoce sistemático não reduz mortalidade (IDEAL).</li>
@@ -845,7 +864,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </ul>
 <div class="box decision"><span class="box-label">DECISION</span><div class="box-title">Contínua, intermitente ou peritoneal na LRA</div><div class="box-body">Não há diferença de mortalidade entre métodos em ensaios; a escolha é operacional. <b>CRRT</b> se instável (vasopressor, ultrafiltração necessária alta) ou com edema cerebral/insuficiência hepática aguda; <b>SLED</b> como meio-termo; <b>HD intermitente</b> no estável e para hipercalemia grave (remove K⁺ mais rápido); <b>DP aguda</b> em criança e onde não há máquina, evitando hipercatabólico grave e abdome cirúrgico <span class="ev ev-sbr">KDIGO 2012</span>.</div></div>
 
-<div class="sub-title">F1.7 · Transplante renal (C.8, D.6)</div>
+<div class="sub-title" id="f1-7">F1.7 · Transplante renal (C.8, D.6)</div>
 <ul class="bullets">
 <li><b>Encaminhamento:</b> 6–12 meses antes da diálise prevista; preemptivo de doador vivo é o preferido (TFG &lt;10 adulto, &lt;15 criança, ou antes com sintomas) <span class="ev ev-sbr">KDIGO 2020</span>.</li>
 <li><b>Indução:</b> metilprednisolona intraoperatória para todos; basiliximabe (baixo risco) ou timoglobulina (alto risco: sensibilizado, retransplante, DSA, isquemia fria longa) <span class="ev ev-nice">PCDT Imunossupressão TxR 2021</span>.</li>
@@ -855,7 +874,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </ul>
 <div class="box danger"><span class="box-label">DANGER</span><div class="box-title">Interações que derrubam ou intoxicam o enxerto</div><div class="box-body">Tacrolimo, ciclosporina, sirolimo e everolimo são substratos de CYP3A4 e glicoproteína-P. <b>Inibidores</b> (fluconazol, voriconazol, posaconazol, claritromicina, diltiazem, verapamil, ritonavir/cobicistate, suco de toranja) → nível tóxico, LRA, neurotoxicidade. <b>Indutores</b> (rifampicina, carbamazepina, fenitoína, fenobarbital, erva-de-são-joão) → nível subterapêutico e rejeição em dias. Azatioprina + alopurinol/febuxostate → aplasia medular. Toda prescrição nova no transplantado passa pela checagem de interação e por nível de vale em 3–5 dias.</div></div>
 
-<div class="sub-title">F1.8 · Populações especiais</div>
+<div class="sub-title" id="f1-8">F1.8 · Populações especiais</div>
 <ul class="bullets">
 <li><b>Gestante com DRC, em diálise ou transplantada:</b> risco de pré-eclâmpsia, prematuridade e perda de função; IECA/BRA, iSGLT2, finerenona e micofenolato contraindicados (trocar micofenolato por azatioprina antes da concepção; tacrolimo e prednisona mantidos); diálise intensificada (quase diária) melhora o desfecho fetal; AEE e ferro IV podem ser usados — manejo obstétrico no GO13.</li>
 <li><b>Idoso frágil:</b> metas de PA menos agressivas, cuidado conservador sem diálise como opção informada, KFRE e expectativa de vida na decisão; KDIGO 2020: idade isolada não exclui transplante.</li>
@@ -864,7 +883,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </ul>
 </div></div>
 
-<div class="card tx"><div class="card-head"><div class="card-eyebrow"><span class="card-num">F.2</span> Doses operacionais</div><h3>Tabela de doses — nefroproteção, anemia, DMO, uremia e transplante <span class="ank ank-hy">HIGH-YIELD</span></h3></div><div class="card-body">
+<div class="card tx" id="f2"><div class="card-head"><div class="card-eyebrow"><span class="card-num">F.2</span> Doses operacionais</div><h3>Tabela de doses — nefroproteção, anemia, DMO, uremia e transplante <span class="ank ank-hy">HIGH-YIELD</span></h3></div><div class="card-body">
 <div class="stbl stbl-3"><div class="stbl-head stbl-3"><div>Fármaco</div><div>Dose adulto</div><div>Indicação / notas</div></div>
 <div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Dapagliflozina <span class="ev ev-nice">PCDT DRC 2024</span></div><div class="col" data-l="Dose">10 mg VO 1×/dia</div><div class="col" data-l="Indicação">DRC com ou sem DM; iniciar com TFG ≥20–25 (SUS: TFG 25–75 + IECA/BRA + DM2 ou RAC &gt;300); manter até a TRS. Queda inicial de TFG esperada; pausar em jejum, cirurgia, doença aguda (cetoacidose euglicêmica).</div></div>
 <div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Empagliflozina <span class="ev ev-sbr">KDIGO 2024</span></div><div class="col" data-l="Dose">10 mg VO 1×/dia</div><div class="col" data-l="Indicação">Iniciar com TFG ≥20 (EMPA-KIDNEY); fora do PCDT de DRC.</div></div>
@@ -903,7 +922,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <div class="box hy"><span class="box-label">HIGH-YIELD</span><div class="box-title">Fora do mercado brasileiro (CMED out/2026)</div><div class="box-body">Metoxipolietilenoglicol-epoetina beta, roxadustate e daprodustate (HIF-PHI), carbonato de lantânio, oxi-hidróxido sucroférrico, citrato férrico, patirômero, belatacepte, etelcalcetida, difelicefalina e tolvaptana não constavam da lista CMED de 09/10/2026. Aparecem neste HP só como contexto de prova e de diretriz internacional.</div></div>
 </div></div>
 
-<div class="card tx"><div class="card-head"><div class="card-eyebrow"><span class="card-num">F.3</span> Segurança</div><h3>Ajuste de fármacos à função renal — os que mais causam dano <span class="ank ank-dgr">DANGER</span></h3></div><div class="card-body">
+<div class="card tx" id="f3"><div class="card-head"><div class="card-eyebrow"><span class="card-num">F.3</span> Segurança</div><h3>Ajuste de fármacos à função renal — os que mais causam dano <span class="ank ank-dgr">DANGER</span></h3></div><div class="card-body">
 <div class="stbl stbl-3"><div class="stbl-head stbl-3"><div>Fármaco ou classe</div><div>Problema na TFG baixa</div><div>Conduta</div></div>
 <div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Estimativa da TFG para dose</div><div class="col" data-l="Problema">CKD-EPI indexado a 1,73 m² erra nos extremos de peso; nada vale na LRA em evolução</div><div class="col" data-l="Conduta">TFG não indexada (mL/min) ou Cockcroft-Gault conforme a bula; eGFRcr-cys ou ClCr medido em fármaco de índice terapêutico estreito <span class="ev ev-sbr">KDIGO 2024</span>.</div></div>
 <div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Morfina, codeína, tramadol, meperidina</div><div class="col" data-l="Problema">Metabólitos ativos acumulam (M6G, normeperidina): sedação, depressão respiratória, convulsão</div><div class="col" data-l="Conduta">Evitar meperidina; morfina e codeína evitadas na TFG &lt;30; preferir fentanil ou metadona com especialista; doses menores e intervalos maiores.</div></div>
@@ -918,7 +937,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div></div>
 
-<div class="card tx"><div class="card-head"><div class="card-eyebrow"><span class="card-num">F.4</span> Cenários</div><h3>Caso → conduta certa → erro típico <span class="ank ank-dec">DECISION</span></h3></div><div class="card-body">
+<div class="card tx" id="f4"><div class="card-head"><div class="card-eyebrow"><span class="card-num">F.4</span> Cenários</div><h3>Caso → conduta certa → erro típico <span class="ank ank-dec">DECISION</span></h3></div><div class="card-body">
 <div class="stbl stbl-3"><div class="stbl-head stbl-3"><div>Caso</div><div>Conduta certa</div><div>Erro típico</div></div>
 <div class="stbl-row stbl-3"><div class="col col1" data-l="Caso">Séptico em noradrenalina, oligúria 12 h, creatinina 2,1 (basal 0,9), K⁺ 5,3, balanço +6 L, pH 7,28</div><div class="col" data-l="Certa">LRA KDIGO 2 com NTA provável: manter PAM, parar de expandir, revisar vancomicina e piperacilina-tazobactam, doses pela função real, K⁺ e gasometria seriados; diálise se AEIOU refratário</div><div class="col" data-l="Erro">Mais 2 L de cristaloide "para o rim", furosemida em infusão para "converter" a oligúria ou diálise só pela creatinina.</div></div>
 <div class="stbl-row stbl-3"><div class="col col1" data-l="Caso">Idoso de 78 anos, anúria há 18 h, dor suprapúbica, uso recente de antigripal com fenilefrina</div><div class="col" data-l="Certa">Sonda vesical (drena 1,8 L), monitorar diurese pós-obstrutiva e eletrólitos, urologia</div><div class="col" data-l="Erro">Pedir FENa e "hidratar" antes de examinar o abdome.</div></div>
@@ -931,7 +950,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div></div>
 
-<div class="card tx"><div class="card-head"><div class="card-eyebrow"><span class="card-num">F.5</span> Acesso</div><h3>SUS × recomendação internacional (nov/2026) <span class="ank ank-hy">HIGH-YIELD</span></h3></div><div class="card-body">
+<div class="card tx" id="f5"><div class="card-head"><div class="card-eyebrow"><span class="card-num">F.5</span> Acesso</div><h3>SUS × recomendação internacional (nov/2026) <span class="ank ank-hy">HIGH-YIELD</span></h3></div><div class="card-body">
 <ul class="bullets">
 <li><b>Nefroproteção:</b> SUS tem captopril, enalapril, losartana, espironolactona e dapagliflozina (com critério); KDIGO acrescenta empagliflozina, finerenona e semaglutida (fora do SUS).</li>
 <li><b>Anemia:</b> SUS tem alfaepoetina e sacarato de hidróxido férrico (PCDT 2017); atualização em consulta pública (CP 97/2024) sem portaria localizada; KDIGO 2026 traz cortes de ferro por modalidade, HIF-PHI (sem registro no Brasil) e alvo &lt;11,5.</li>
@@ -943,7 +962,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </section>
 <section id="pitfalls">
 <div class="section"><div class="section-eyebrow"><span>G</span> Pitfalls · Mitos · Controvérsias</div><h2 class="section-title">Os erros que custam néfrons e os debates que seguem abertos</h2><div class="section-sub">Na nefrologia o dano evitável vem de três fontes: o fármaco que não foi ajustado, o volume dado sem critério e a decisão adiada (desobstruir, encaminhar, preparar o acesso).</div></div>
-<div class="card pearl"><div class="card-head"><div class="card-eyebrow"><span class="card-num">G.1</span> Pegadinhas</div><h3>10 erros operacionais em LRA, DRC, diálise e transplante</h3></div><div class="card-body">
+<div class="card pearl" id="g1"><div class="card-head"><div class="card-eyebrow"><span class="card-num">G.1</span> Pegadinhas</div><h3>10 erros operacionais em LRA, DRC, diálise e transplante</h3></div><div class="card-body">
 <div class="stbl stbl-2"><div class="stbl-head stbl-2"><div>Erro comum</div><div>Correto</div></div>
 <div class="stbl-row stbl-2"><div class="col col1" data-l="Erro">Calcular CKD-EPI ou Cockcroft-Gault com a creatinina do primeiro dia de LRA para dosar antibiótico</div><div class="col" data-l="Correto">Fora do estado estável a fórmula superestima a TFG; na LRA em evolução, assuma TFG baixa (&lt;10–30) para fármacos tóxicos e use nível sérico quando existir.</div></div>
 <div class="stbl-row stbl-2"><div class="col col1" data-l="Erro">Usar FENa &lt;1% para fechar pré-renal em quem usa diurético ou tem DRC</div><div class="col" data-l="Correto">Diurético e DRC elevam a FENa; use FEureia (&lt;35%) e, sobretudo, a resposta clínica à expansão. Rabdomiólise, contraste e glomerulonefrite dão FENa baixa sem pré-renal.</div></div>
@@ -958,7 +977,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div></div>
 
-<div class="card pearl"><div class="card-head"><div class="card-eyebrow"><span class="card-num">G.2</span> Mitos · Controvérsias</div><h3>Mitos vivos e debates atuais</h3></div><div class="card-body">
+<div class="card pearl" id="g2"><div class="card-head"><div class="card-eyebrow"><span class="card-num">G.2</span> Mitos · Controvérsias</div><h3>Mitos vivos e debates atuais</h3></div><div class="card-body">
 <div class="box myth"><span class="box-label">MYTH</span><div class="box-title">"Contraste venoso é nefrotóxico para todo paciente com creatinina alterada"</div><div class="box-body">Estudos com controles pareados mostraram que boa parte da "nefropatia por contraste" era LRA que ocorreria de qualquer forma. Com agentes modernos, o risco atribuível só é plausível com TFG &lt;30 ou LRA; acima de 45 é próximo de zero (ACR/NKF 2020). Negar ou atrasar tomografia por medo do contraste gera mais dano do que o contraste.</div></div>
 <div class="box myth"><span class="box-label">MYTH</span><div class="box-title">"Furosemida protege o rim e transforma a LRA oligúrica em não oligúrica com melhor prognóstico"</div><div class="box-body">A IRA não oligúrica tem prognóstico melhor porque é menos grave, não porque o diurético a converteu. Diurético não reduz mortalidade, diálise nem duração da LRA e não acelera a recuperação; serve para tratar sobrecarga (KDIGO 2012). A ototoxicidade com doses altas é real.</div></div>
 <div class="box myth"><span class="box-label">MYTH</span><div class="box-title">"Restrição proteica rigorosa adia a diálise"</div><div class="box-body">Na LRA, restringir proteína para adiar a diálise está contraindicado (catabolismo, pior desfecho). Na DRC, o alvo é 0,8 g/kg/dia — evitar o excesso (&gt;1,3), não a privação; dietas muito hipoproteicas suplementadas exigem nutricionista e paciente estável, e na criança e no desnutrido não se restringe (KDIGO 2024).</div></div>
@@ -970,7 +989,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <section id="pearls">
 <div class="section"><div class="section-eyebrow"><span>H</span> Pearls · Evolving</div><h2 class="section-title">H1 · Pearls de especialista · H2 · Áreas em evolução</h2><div class="section-sub">O que separa quem lê creatinina de quem lê rim: a fisiologia por trás do número e o que mudou desde as diretrizes que a apostila de 2025 ainda reproduz.</div></div>
 
-<div class="card pearl"><div class="card-head"><div class="card-eyebrow"><span class="card-num">H.1</span> Pearls</div><h3>8 nuances que distinguem o especialista</h3></div><div class="card-body">
+<div class="card pearl" id="h1"><div class="card-head"><div class="card-eyebrow"><span class="card-num">H.1</span> Pearls</div><h3>8 nuances que distinguem o especialista</h3></div><div class="card-body">
 <div class="box pearl"><span class="box-label">PEARL</span><div class="box-title">A creatinina sobe tarde e cai tarde: o débito urinário e a tendência valem mais que o valor</div><div class="box-body">Depois de uma perda súbita de TFG, a creatinina leva 24–72 h para chegar ao novo platô; na recuperação, a diurese volta dias antes de ela cair. Decidir diálise ou dose de antimicrobiano pela creatinina de um único momento é ler um termômetro atrasado; a curva, o débito horário e o balanço contam o presente.</div></div>
 <div class="box pearl"><span class="box-label">PEARL</span><div class="box-title">Creatinina sem queda de TFG: secreção tubular bloqueada, não lesão</div><div class="box-body">Trimetoprima, cimetidina, cobicistate, dolutegravir e bictegravir inibem OCT2/MATE e elevam a creatinina 0,1–0,3 mg/dL sem mudar a filtração; a cistatina C não se move. Saber isso evita suspender TARV ou SMX-TMP no transplantado por uma "LRA" que não existe — e, inversamente, a trimetoprima também eleva o K⁺ por bloqueio do ENaC, efeito real.</div></div>
 <div class="box pearl"><span class="box-label">PEARL</span><div class="box-title">Rim de tamanho normal não exclui DRC; rim pequeno quase a confirma</div><div class="box-body">Atrofia (&lt;8–9 cm) com cortical fina e hiperecogênica fecha cronicidade. A exceção cobra prova: nefropatia diabética, amiloidose, doença policística, nefropatia do HIV, mieloma, falciforme e esclerodermia cursam com rins normais ou grandes. Assimetria &gt;1,5 cm sugere doença renovascular ou refluxo unilateral.</div></div>
@@ -981,7 +1000,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <div class="box pearl"><span class="box-label">PEARL</span><div class="box-title">A troponina do dialítico precisa de curva, e a escolha é a troponina I</div><div class="box-body">Troponinas cronicamente elevadas são comuns na DRC avançada (miocárdio hipertrofiado, microinfartos, menor depuração) e predizem mau prognóstico, mas não fazem diagnóstico de IAM. Um valor isolado não define infarto: delta significativo em dosagens seriadas sim. A troponina I tem menos falso-positivos que a T nesse grupo.</div></div>
 </div></div>
 
-<div class="card pearl"><div class="card-head"><div class="card-eyebrow"><span class="card-num">H.2</span> Evolving</div><h3>4 mudanças reais — e o que ainda não mudou</h3></div><div class="card-body">
+<div class="card pearl" id="h2"><div class="card-head"><div class="card-eyebrow"><span class="card-num">H.2</span> Evolving</div><h3>4 mudanças reais — e o que ainda não mudou</h3></div><div class="card-body">
 <div class="box evolving"><span class="box-label">EVOLVING</span><div class="box-title">KDIGO AKI/AKD 2026 (rascunho): de lesão a doença renal aguda</div><div class="box-body">Primeira revisão desde 2012, em consulta pública até maio de 2026 e não publicada até a data deste HP: moldura contínua LRA → DRA (7–90 dias) → DRC, critérios estruturais com biomarcadores, alertas eletrônicos, gestão de nefrotóxicos, TRS e seguimento pós-LRA, seções pediátrica e neonatal. Até a versão final, a conduta segue o KDIGO 2012.</div></div>
 <div class="box evolving"><span class="box-label">EVOLVING</span><div class="box-title">Nefroproteção em quatro pilares e o acesso no SUS</div><div class="box-body">IECA/BRA, iSGLT2 (DAPA-CKD, EMPA-KIDNEY, com e sem DM), finerenona (DM2) e semaglutida (FLOW) somam mecanismos distintos; o KDIGO 2024 recomenda iSGLT2 para a maioria com TFG ≥20. O PCDT de 2024 trouxe a dapagliflozina ao SUS com critério restrito; finerenona e semaglutida seguem fora.</div></div>
 <div class="box evolving"><span class="box-label">EVOLVING</span><div class="box-title">KDIGO 2026 de anemia: ferro por modalidade e HIF-PHI em segunda linha</div><div class="box-body">Novos cortes de ferritina e saturação para iniciar ferro (HD × não dialítico/DP), ferro IV proativo em HD (PIVOTAL), suspensão da rotina com ferritina &gt;700 ou saturação ≥40%, AEE preferido aos inibidores de prolil-hidroxilase e alvo de Hb abaixo de 11,5 g/dL. O PCDT brasileiro de 2017 ainda não foi atualizado (consulta pública 97/2024).</div></div>
@@ -1033,5 +1052,36 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </footer>
 <a class="to-top" href="#" aria-label="Voltar ao topo">↑</a>
 <div class="watermark">@dr.lorencato · IRA/DRC/TRS NU03 v5.2</div>
-</body>
+<!--hp-f2--><script>(function(){var d=document,M=d.querySelector('main');if(!M)return;
+var SELF='NU03',HP=' CT01 CT02 CT03 CT04 CT05 CT06 CT08 CT10 CV01 CV03 CV04 CV05 CV06 CV07 CV08 EN01 EN02 EN03 EN04 EN06 EN07 GH01 GH02 GH03 GH05 GH06 GH07 GH08 GH09 GH10 GO01 GO02 GO03 GO04 GO09 GO10 GO11 GO12 GO13 GO14 HO01 HO02 HO03 HO04 HO05 HO06 II01 II02 II03 II04 II07 II08 NE01 NE02 NE03 NE04 NE05 NE06 NE07 NE08 NU01 NU02 NU03 NU04 NU05 OE01 OE02 PC01 PC02 PC03 PC04 PC05 PC06 PD01 PD02 PD03 PD04 PD05 PD06 PD07 PD08 PD09 PD10 RD01 RD02 RD03 RD04 RD05 RD07 RP01 RP02 RP03 RP04 ';
+var SK='A,H1,H2,H3,SCRIPT,STYLE,NAV,.card-num,.card-eyebrow,.sub-title,.disease-tag,.toc';
+var R=/\b(?:([A-H])(\d)?\.(\d{1,2}[a-c]?)|(CV|RP|GH|NE|EN|NU|HO|II|RD|GO|PD|PC|CT|OE)(\d\d))\b/g;
+function skip(n){for(var e=n.parentNode;e&&e!==M;e=e.parentNode)if(e.matches&&e.matches(SK))return 1;return 0}
+var w=d.createTreeWalker(M,4),t,L=[];while(t=w.nextNode())if(R.test(t.data)&&!skip(t))L.push(t);
+L.forEach(function(t){var s=t.data,f=d.createDocumentFragment(),i=0,m;R.lastIndex=0;
+while(m=R.exec(s)){var h=null;
+if(m[1]){var id=m[1].toLowerCase()+(m[2]?m[2]+'-':'')+m[3];if(d.getElementById(id))h='#'+id}
+else{var x=m[4]+m[5];if(x!==SELF&&HP.indexOf(' '+x+' ')>=0)h='../'+x+'/'+x+'.html'}
+if(!h)continue;f.appendChild(d.createTextNode(s.slice(i,m.index)));
+var a=d.createElement('a');a.href=h;a.className='xr';a.textContent=m[0];f.appendChild(a);i=R.lastIndex}
+if(i){f.appendChild(d.createTextNode(s.slice(i)));t.parentNode.replaceChild(f,t)}});
+function nz(s){return s.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'')}
+var q=d.querySelector('.hp-q'),n=d.querySelector('.hp-n'),it=M.querySelectorAll('.card,.pocket-card'),T;
+function clr(){M.querySelectorAll('.q-off').forEach(function(e){e.classList.remove('q-off')})}
+function run(){var v=nz(q.value.trim());clr();n.textContent='';if(v.length<2)return;var k=0;
+it.forEach(function(c){if(nz(c.textContent).indexOf(v)<0){c.classList.add('q-off');return}k++;
+var r=c.querySelectorAll('.stbl-row,.disease-row,.score-row'),h=[];r.forEach(function(x){if(nz(x.textContent).indexOf(v)>=0)h.push(x)});
+if(h.length)r.forEach(function(x){if(h.indexOf(x)<0)x.classList.add('q-off')});
+c.querySelectorAll('details').forEach(function(x){if(nz(x.textContent).indexOf(v)>=0)x.open=true})});
+M.querySelectorAll('section').forEach(function(s){if(!s.querySelector('.card:not(.q-off),.pocket-card:not(.q-off)'))s.classList.add('q-off')});
+n.textContent=k?k+' achado'+(k>1?'s':''):'nada'}
+if(q){q.addEventListener('input',function(){clearTimeout(T);T=setTimeout(run,180)});
+q.addEventListener('keydown',function(e){if(e.key==='Escape'){q.value='';run()}})}
+function tg(b,f){b.addEventListener('click',function(){var on=b.getAttribute('aria-pressed')!=='true';b.setAttribute('aria-pressed',on);f(on)})}
+var bd=d.querySelector('.hp-dz'),bo=d.querySelector('.hp-op');
+if(bd)tg(bd,function(on){d.body.classList.toggle('dz',on);if(on)d.getElementById('tratamento').scrollIntoView()});
+if(bo)tg(bo,function(on){M.querySelectorAll('details').forEach(function(x){x.open=on})});
+var P=[];addEventListener('beforeprint',function(){P=[];M.querySelectorAll('details:not([open])').forEach(function(x){P.push(x);x.open=true})});
+addEventListener('afterprint',function(){P.forEach(function(x){x.open=false})});
+})();</script><!--/hp-f2--></body>
 </html>

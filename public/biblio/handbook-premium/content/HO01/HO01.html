@@ -345,13 +345,32 @@ ul.bullets li b{color:var(--ink);font-weight:600}
   .pocket .pocket-card.tx{--accent:#a8481a}
   .pocket .pocket-card.clin{--accent:#0b5d4e}
 }
+
+/* === v5.2.2 · fase 2 (navegação) === */
+.hp-tools{display:flex;gap:6px;align-items:center;flex:none;order:1;margin-left:auto;padding-left:6px;position:sticky;right:0;background:#f1eee5;box-shadow:-10px 0 10px -4px #f1eee5,16px 0 0 #f1eee5}
+@media(min-width:900px){html{scroll-padding-top:150px}.toc-inner{flex-wrap:wrap;overflow:visible}.card[id],.sub-title[id]{scroll-margin-top:150px}}
+@media(max-width:899px){.hp-b,.hp-n{display:none}.hp-q{width:104px}}
+.hp-q{width:128px;font:500 12px/1 'DM Sans',system-ui,sans-serif;padding:7px 11px;border:1px solid var(--line-strong);border-radius:999px;background:var(--paper);color:var(--ink)}
+.hp-b{font:600 11px/1 'DM Sans',system-ui,sans-serif;letter-spacing:.05em;text-transform:uppercase;padding:7px 10px;border-radius:999px;border:1px solid var(--line-strong);background:var(--paper);color:var(--ink-soft);cursor:pointer;white-space:nowrap}
+.hp-b[aria-pressed=true]{background:var(--ink);color:#fff;border-color:var(--ink)}
+.hp-n{font:600 11px/1 'DM Mono',monospace;color:var(--ink-mute);white-space:nowrap}
+.sec-idx{display:flex;flex-wrap:wrap;gap:6px;margin:12px 0 20px}
+.sec-idx a{font:500 12px/1.25 'DM Sans',system-ui,sans-serif;padding:6px 10px;border-radius:999px;background:var(--paper);border:1px solid var(--line);color:var(--ink-soft);text-decoration:none}
+.sec-idx a:hover{border-color:var(--line-strong);color:var(--ink)}
+.sec-idx b{color:var(--c-prim);margin-right:5px;font-weight:700}
+a.xr{color:inherit;text-decoration:underline dotted;text-underline-offset:2px}
+a.xr:hover{color:var(--c-prim)}
+.card[id],.sub-title[id]{scroll-margin-top:110px}
+.q-off{display:none!important}
+body.dz main section:not(#tratamento){display:none}
+@media print{.hp-tools,.sec-idx,.toc-doses{display:none!important}}
 </style>
 </head>
 <body>
 
 <header class="header"><div class="header-row"><div class="h-mark">H</div><div class="h-titles"><div class="h-title">Anemias Micro, Normo e Macrocíticas · Pocket Handbook</div><div class="h-sub">Elite edition · Hematologia clínica · HO01</div></div><div class="h-author">@dr.lorencato</div><div class="h-edition">v5.2</div></div></header>
 
-<nav class="toc"><div class="toc-inner"><a href="#pocket" class="toc-chip"><span class="toc-chip-num">0</span>Pocket</a><a href="#redflags" class="toc-chip"><span class="toc-chip-num">A</span>Red Flags</a><a href="#approach" class="toc-chip"><span class="toc-chip-num">B</span>Apresentação</a><a href="#primarias" class="toc-chip"><span class="toc-chip-num">C</span>Entidades</a><a href="#secundarias" class="toc-chip"><span class="toc-chip-num">D</span>Secundárias</a><a href="#algoritmo" class="toc-chip"><span class="toc-chip-num">E</span>Algoritmo</a><a href="#tratamento" class="toc-chip"><span class="toc-chip-num">F</span>Tratamento</a><a href="#pitfalls" class="toc-chip"><span class="toc-chip-num">G</span>Pitfalls</a><a href="#pearls" class="toc-chip"><span class="toc-chip-num">H</span>Pearls</a></div></nav>
+<nav class="toc"><div class="toc-inner"><!--hp-f2--><span class="hp-tools"><input class="hp-q" type="search" placeholder="Buscar no HP" aria-label="Buscar no HP"><button class="hp-b hp-dz" type="button" aria-pressed="false">Só doses</button><button class="hp-b hp-op" type="button" aria-pressed="false">Abrir tudo</button><span class="hp-n" aria-live="polite"></span></span><!--/hp-f2--><a href="#pocket" class="toc-chip"><span class="toc-chip-num">0</span>Pocket</a><a href="#redflags" class="toc-chip"><span class="toc-chip-num">A</span>Red Flags</a><a href="#approach" class="toc-chip"><span class="toc-chip-num">B</span>Apresentação</a><a href="#primarias" class="toc-chip"><span class="toc-chip-num">C</span>Entidades</a><a href="#secundarias" class="toc-chip"><span class="toc-chip-num">D</span>Secundárias</a><a href="#algoritmo" class="toc-chip"><span class="toc-chip-num">E</span>Algoritmo</a><a href="#tratamento" class="toc-chip"><span class="toc-chip-num">F</span>Tratamento</a><!--hp-f2--><a href="#f2" class="toc-chip toc-doses"><span class="toc-chip-num">Rx</span>Doses</a><!--/hp-f2--><a href="#pitfalls" class="toc-chip"><span class="toc-chip-num">G</span>Pitfalls</a><a href="#pearls" class="toc-chip"><span class="toc-chip-num">H</span>Pearls</a></div></nav>
 
 <main>
 <div class="wrap">
@@ -415,7 +434,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <section id="redflags">
 <div class="section"><div class="section-eyebrow"><span>A</span> Red Flags</div><div class="section-title">Na anemia carencial o perigo raramente é a hemoglobina: é o que ela esconde</div><div class="section-sub">Sinal objetivo, suspeita e conduta imediata. Os eventos evitáveis deste HP são o câncer digestivo tratado com sulfato ferroso, a degeneração combinada fixada pelo folato isolado, a pancitopenia por B12 rotulada de leucemia e a reação ao ferro IV sem observação.</div></div>
 
-<div class="card emerg">
+<div class="card emerg" id="a1">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">A.1</span> Emergências</div><h3>Sinais de alarme — anemia carencial e crônica <span class="ank ank-dgr">DANGER</span></h3></div>
 <div class="card-body">
 
@@ -455,7 +474,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <section id="approach">
 <div class="section"><div class="section-eyebrow"><span>B</span> Por Apresentação</div><div class="section-title">Cinco portas de entrada: pelo VCM, pelo nervo e pelo paciente</div><div class="section-sub">O paciente não chega com o rótulo de ferropriva ou megaloblástica. Chega com um VCM, um reticulócito, uma queixa e uma doença de base.</div></div>
 
-<div class="card clin">
+<div class="card clin" id="b1">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">B.1</span> Padrão 1</div><h3>Anemia microcítica (VCM &lt;80 fL) <span class="ank ank-hy">HIGH-YIELD</span></h3><div class="card-sub">Quatro causas principais, um exame que separa três</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Ferropenia, talassemia, doença crônica e sideroblástica explicam a quase totalidade. <b>Ferritina e saturação separam ferropenia de doença crônica; Mentzer, RDW e eletroforese separam talassemia.</b> RDW alto e plaquetas altas favorecem ferropenia; RDW normal e eritrócitos altos favorecem talassemia.</div></div>
@@ -469,7 +488,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card clin">
+<div class="card clin" id="b2">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">B.2</span> Padrão 2</div><h3>Anemia normocítica (VCM 80–100 fL) <span class="ank ank-dec">DECISION</span></h3><div class="card-sub">O reticulócito corrigido divide o mapa ao meio</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Com <b>IPR &gt;2</b>, pense em hemorragia aguda ou hemólise (HO02). Com <b>IPR baixo</b>, a produção é o problema: doença crônica, DRC, hepatopatia, endocrinopatia, ocupação medular, ferropenia ou carência mista (VCM normal com RDW alto) e aplasia (HO02). O sintoma ensina pouco; a doença de base ensina muito.</div></div>
@@ -483,7 +502,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card clin">
+<div class="card clin" id="b3">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">B.3</span> Padrão 3</div><h3>Anemia macrocítica (VCM &gt;100 fL) <span class="ank ank-hy">HIGH-YIELD</span></h3><div class="card-sub">Megaloblástica é uma entre as causas, não sinônimo</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Macrocitose é VCM alto; <b>megaloblastose é alteração nuclear dos precursores</b>. Hipersegmentação de neutrófilos (≥6 lobos em um, ou ≥5% com 5 lobos) é quase patognomônica de megaloblástica. VCM &gt;110 fL sugere megaloblástica; &gt;120 fL, praticamente nenhuma outra causa.</div></div>
@@ -498,7 +517,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card clin">
+<div class="card clin" id="b4">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">B.4</span> Padrão 4</div><h3>Anemia com glossite, sintoma digestivo ou neurológico <span class="ank ank-dgr">DANGER</span></h3><div class="card-sub">O sinal extra define a carência</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Glossite e queilite angular aparecem na ferropenia, na B12 e no folato. <b>Parestesia, perda de vibração e ataxia são só da B12</b> (ou do cobre e do óxido nitroso). Pica e pagofagia são da ferropenia e cedem em dias com o ferro; coiloníquia e disfagia sideropênica marcam ferropenia crônica.</div></div>
@@ -512,7 +531,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card clin">
+<div class="card clin" id="b5">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">B.5</span> Padrão 5</div><h3>Anemia por contexto: gestante, idoso, doente renal, cirurgia gástrica <span class="ank ank-dec">DECISION</span></h3><div class="card-sub">O cenário muda o limiar e o caminho</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">O mesmo hemograma tem causas diferentes conforme o paciente. <b>Gestante:</b> hemodiluição mais ferropenia, com limiar OMS por trimestre (GO10). <b>Idoso:</b> um terço nutricional, um terço DRC ou inflamação, um terço inexplicado. <b>DRC:</b> eritropoetina e ferro (NU03). <b>Gastrectomia, bariátrica, celíaca:</b> ferro e B12 por má absorção.</div></div>
@@ -528,9 +547,9 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </section>
 
 <section id="primarias">
-<div class="section"><div class="section-eyebrow"><span>C</span> Entidades Primárias</div><div class="section-title">Oito entidades que cobrem a anemia que nasce da carência, da inflamação e do rim</div><div class="section-sub">A abordagem pelo VCM e pelo reticulócito abre o capítulo; a ferropriva ocupa o box mais longo por ser a anemia mais frequente e a de pior investigação; doença crônica, DRC, talassemia minor, sideroblástica, megaloblástica e perniciosa fecham a lista.</div></div>
+<div class="section"><div class="section-eyebrow"><span>C</span> Entidades Primárias</div><div class="section-title">Oito entidades que cobrem a anemia que nasce da carência, da inflamação e do rim</div><div class="section-sub">A abordagem pelo VCM e pelo reticulócito abre o capítulo; a ferropriva ocupa o box mais longo por ser a anemia mais frequente e a de pior investigação; doença crônica, DRC, talassemia minor, sideroblástica, megaloblástica e perniciosa fecham a lista.</div></div><!--hp-f2--><nav class="sec-idx" aria-label="Neste capítulo"><a href="#c1"><b>C.1</b>Abordagem da anemia: confirma…</a><a href="#c2"><b>C.2</b>Anemia ferropriva: diagnóstic…</a><a href="#c3"><b>C.3</b>Anemia de doença crônica: o f…</a><a href="#c4"><b>C.4</b>Anemia da doença renal crônic…</a><a href="#c5"><b>C.5</b>Talassemia minor × ferropriva…</a><a href="#c6"><b>C.6</b>Anemia sideroblástica: ferro…</a><a href="#c7"><b>C.7</b>Deficiência de B12 e de folat…</a><a href="#c8"><b>C.8</b>Anemia perniciosa: o fator in…</a></nav><!--/hp-f2-->
 
-<div class="card prim">
+<div class="card prim" id="c1">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.1</span> Síndrome anêmica</div><h3>Abordagem da anemia: confirmar, classificar, nomear a causa <span class="ank ank-hy">HIGH-YIELD</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Anemia é <b>Hb &lt;13 g/dL no homem e &lt;12 g/dL na mulher não gestante</b> (OMS); é síndrome, nunca diagnóstico final. Três perguntas em ordem: <b>o reticulócito corrigido (IPR) está alto?</b> (hemólise ou hemorragia × produção insuficiente); <b>qual é o VCM?</b> (micro, normo, macro); <b>qual é o RDW?</b> (população única ou mista). <b>O que muda conduta:</b> IPR alto desvia para HO02/HO03; VCM baixo exige ferritina e saturação antes de qualquer ferro; VCM alto exige B12 e folato antes de qualquer folato.</div></div>
@@ -569,7 +588,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="c2">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.2</span> Carência de ferro</div><h3>Anemia ferropriva: diagnóstico, causa e reposição <span class="ank ank-hy">HIGH-YIELD</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Ferropenia é um <b>balanço negativo de ferro</b> (perda ou má absorção) até esgotar o estoque; nunca é o diagnóstico final. A <b>ferritina</b> documenta; saturação &lt;20% e TIBC alta completam; a <b>causa</b> (endoscopia bidirecional em ≥50 anos, homem ou pós-menopausa) vem antes de o paciente "responder". Ferro oral <b>60–120 mg de ferro elementar em dose única diária ou em dias alternados</b>; ferro IV quando falha, intolera ou não absorve. <b>O que muda conduta:</b> ferritina corrigida pela inflamação, Hb muito baixa, perda ativa e necessidade de resposta rápida decidem entre oral e IV.</div></div>
@@ -635,7 +654,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="c3">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.3</span> Anemia inflamatória</div><h3>Anemia de doença crônica: o ferro preso pela hepcidina <span class="ank ank-hy">HIGH-YIELD</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Anemia leve a moderada (Hb 8–11 g/dL, Ht &gt;25% em 80%) em quem tem <b>inflamação, infecção ou neoplasia há mais de 1–2 meses</b>. O ferro está preso nos macrófagos pela hepcidina induzida por IL-6: <b>ferritina normal ou alta, ferro e saturação baixos, TIBC normal ou baixa</b>. Trata-se a doença de base. <b>O que muda conduta:</b> Ht &lt;25% exige procurar outra causa (ferropenia, B12, hemólise, sangramento); ferropenia sobreposta exige limiar de ferritina maior e, em casos selecionados, ferro IV.</div></div>
@@ -673,7 +692,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="c4">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.4</span> Anemia renal</div><h3>Anemia da doença renal crônica: ferro aqui, eritropoetina no NU03 <span class="ank ank-dec">DECISION</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Anemia normocítica e normocrômica com <b>TFG &lt;30–40 mL/min/1,73 m²</b>, por déficit relativo de eritropoetina somado a ferropenia absoluta ou funcional, inflamação, hiperparatireoidismo e toxinas urêmicas. <b>Antes de qualquer eritropoetina, corrija o ferro</b> (PCDT e KDIGO 2026). Este HP traz o diagnóstico e o ferro; <b>agentes estimuladores da eritropoese, alvos e HIF-PHI → NU03</b>. <b>O que muda conduta:</b> o critério de ferro difere entre o PCDT (SUS) e o KDIGO 2026; a diálise muda o limiar e a via.</div></div>
@@ -694,7 +713,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="c5">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.5</span> Microcitose sem ferropenia</div><h3>Talassemia minor × ferropriva: o diagnóstico diferencial que evita ferro errado <span class="ank ank-hy">HIGH-YIELD</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Anemia leve, <b>VCM muito baixo para a Hb, eritrócitos &gt;5 milhões/µL, RDW normal, ferritina normal</b> e esfregaço com alvos e pontilhado basófilo sugerem traço talassêmico. <b>Índice de Mentzer (VCM ÷ eritrócitos em milhões/µL) &lt;13</b> favorece talassemia; &gt;13, ferropenia. É triagem, não diagnóstico. A eletroforese ou HPLC confirma a beta (HbA2 &gt;3,5%); a alfa-talassemia minor tem HbA2 normal e só o estudo molecular a confirma. <b>O que muda conduta:</b> não prescrever ferro sem ferritina e saturação; a talassemia major e intermédia, a quelação e a transfusão → HO02.</div></div>
@@ -722,7 +741,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="c6">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.6</span> Defeito do heme</div><h3>Anemia sideroblástica: ferro alto, hipocromia e sideroblastos em anel <span class="ank ank-dec">DECISION</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Grupo heterogêneo de anemias por <b>defeito da síntese de heme com ferro acumulado nas mitocôndrias dos eritroblastos</b> (sideroblastos em anel). Suspeite diante de <b>hipocromia com ferro sérico alto, saturação alta e ferritina alta</b> e duas populações de hemácias. Confirma-se na medula (&gt;15% de sideroblastos em anel). <b>O que muda conduta:</b> piridoxina em dose farmacológica na forma hereditária; suspender o agente (álcool, isoniazida, chumbo, cobre ou zinco) na forma reversível; forma clonal (MDS-SF3B1) → HO04; nunca ferro, nunca esplenectomia.</div></div>
@@ -750,7 +769,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="c7">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.7</span> Anemia megaloblástica</div><h3>Deficiência de B12 e de folato: diagnóstico, reposição e a regra do folato <span class="ank ank-hy">HIGH-YIELD</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Bloqueio da síntese de DNA: o núcleo amadurece devagar e o citoplasma cresce (macrocitose, megaloblastos que morrem na medula, eritropoiese ineficaz). Até prova em contrário é <b>B12 ou folato</b>. <b>O ácido metilmalônico (MMA) sobe só na falta de B12; a homocisteína sobe nas duas.</b> Neurologia é só da B12. <b>O que muda conduta:</b> VCM &gt;110 fL com LDH alta e reticulócito baixo → colher B12, folato, MMA e homocisteína e repor B12; sintoma neurológico → B12 IM imediata (NE07, NE04); <b>nunca folato isolado</b> antes de excluir B12.</div></div>
@@ -797,7 +816,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="c8">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.8</span> Gastrite autoimune</div><h3>Anemia perniciosa: o fator intrínseco que falta e o estômago que adoece <span class="ank ank-dec">DECISION</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Principal causa de deficiência de B12 no adulto: <b>gastrite atrófica autoimune do corpo e do fundo</b>, com anticorpos anti-célula parietal (~90%, sensível, pouco específico) e <b>anti-fator intrínseco (50–70%, especificidade próxima de 100%)</b>. Mulheres brancas de 45–65 anos, com doenças autoimunes associadas. <b>O que muda conduta:</b> reposição vitalícia de B12, endoscopia com biópsia ao diagnóstico por causa do risco de adenocarcinoma gástrico e de tumor neuroendócrino tipo 1, e rastreio de tireoide e de outras autoimunidades.</div></div>
@@ -827,9 +846,9 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 
 </section>
 <section id="secundarias">
-<div class="section"><div class="section-eyebrow"><span>D</span> Entidades Secundárias</div><div class="section-title">Gestação, idoso, hemocromatose e as anemias de segunda linha</div><div class="section-sub">Casos que completam o diferencial. A gestação segue o padrão do GO10; a hemocromatose hereditária é a promessa do HO02; o idoso pede causa, não resignação.</div></div>
+<div class="section"><div class="section-eyebrow"><span>D</span> Entidades Secundárias</div><div class="section-title">Gestação, idoso, hemocromatose e as anemias de segunda linha</div><div class="section-sub">Casos que completam o diferencial. A gestação segue o padrão do GO10; a hemocromatose hereditária é a promessa do HO02; o idoso pede causa, não resignação.</div></div><!--hp-f2--><nav class="sec-idx" aria-label="Neste capítulo"><a href="#d1"><b>D.1</b>Anemia na gestação: padrão no…</a><a href="#d2"><b>D.2</b>Anemia no idoso e anemia inex…</a><a href="#d3"><b>D.3</b>Hemocromatose hereditária: o…</a><a href="#d4"><b>D.4</b>Hepatopatia, endocrinopatias…</a><a href="#d5"><b>D.5</b>Cobre, zinco e chumbo: a anem…</a><a href="#d6"><b>D.6</b>Ferropenia refratária, ferro…</a></nav><!--/hp-f2-->
 
-<div class="card diag">
+<div class="card diag" id="d1">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">D.1</span> Gestação</div><h3>Anemia na gestação: padrão no GO10, resumo aqui <span class="ank ank-dec">DECISION</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">A gestação exige ~1.000 mg de ferro (feto e placenta ~300, expansão eritrocitária ~500, perdas ~200), concentrados no 2º e 3º trimestres, somados à hemodiluição. <b>Anemia: Hb &lt;11 g/dL no 1º e 3º trimestres ou &lt;10,5 no 2º</b> (OMS 2024, como no GO10). <b>O que muda conduta:</b> Hb &lt;8 g/dL ou ausência de resposta em 30–60 dias → alto risco e ferro IV; VCM baixo com ferritina normal → eletroforese; VCM alto → B12 e folato. Doses, profilaxia e rastreio seguem o GO10 e o GO13.</div></div>
@@ -848,7 +867,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card diag">
+<div class="card diag" id="d2">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">D.2</span> Idoso</div><h3>Anemia no idoso e anemia inexplicada <span class="ank ank-hy">HIGH-YIELD</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body"><b>Hb &lt;13 g/dL no homem e &lt;12 g/dL na mulher</b> (OMS) não é "anemia da idade": associa-se a quedas, declínio cognitivo, internação e mortalidade. Em linhas gerais, um terço é nutricional (ferro, B12, folato), um terço é DRC ou inflamação e um terço é inexplicado. <b>O que muda conduta:</b> perda digestiva (colonoscopia e EDA), MDS (displasia no esfregaço), mieloma (eletroforese de proteínas) e fármacos precisam ser procurados antes de rotular.</div></div>
@@ -867,7 +886,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card diag">
+<div class="card diag" id="d3">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">D.3</span> Sobrecarga de ferro primária</div><h3>Hemocromatose hereditária: o ferro que sobra sem transfusão <span class="ank ank-dgr">DANGER</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Doença autossômica recessiva do metabolismo do ferro: <b>mais de 90% por mutação do HFE (C282Y e H63D)</b>, com absorção intestinal inadequadamente alta por hepcidina baixa. Homens de 40–50 anos com fadiga, artralgia de 2ª e 3ª metacarpofalangeanas, pigmentação, diabetes e hepatopatia. <b>A saturação de transferrina em jejum (corte de 45%) é mais sensível que a ferritina.</b> <b>O que muda conduta:</b> flebotomia é a escolha inicial; ferro oral e suplementos com ferro são proibidos; as formas transfusionais (talassemia, MDS, aplasia) vão ao HO02.</div></div>
@@ -894,7 +913,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card diag">
+<div class="card diag" id="d4">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">D.4</span> Anemias sistêmicas</div><h3>Hepatopatia, endocrinopatias e ocupação medular <span class="ank ank-hy">HIGH-YIELD</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Três contextos em que a anemia é leve, multifatorial e quase sempre trata-se a doença de base. <b>Hepatopatia:</b> hemodiluição (75% têm anemia, 40% massa eritrocitária reduzida), hiperesplenismo, acantócitos, folato. <b>Endocrinopatia:</b> hipotireoidismo, hipogonadismo, Addison. <b>Ocupação medular:</b> leucoeritroblastose e dacriócitos. <b>O que muda conduta:</b> Ht &lt;30% no hipotireoidismo e Hb muito baixa na hepatopatia pedem outra causa (ferropenia, sangramento, folato); leucoeritroblastose pede medula.</div></div>
@@ -913,7 +932,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card diag">
+<div class="card diag" id="d5">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">D.5</span> Carências raras e metais</div><h3>Cobre, zinco e chumbo: a anemia que imita a B12 e a MDS <span class="ank ank-dgr">DANGER</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">A <b>deficiência de cobre</b> cursa com anemia (micro, normo ou macrocítica), neutropenia, às vezes sideroblastos em anel e <b>mielopatia indistinguível da B12</b>. Causas: cirurgia bariátrica em Y de Roux, nutrição parenteral, má absorção, celíaca e <b>excesso de zinco</b> (suplemento, pasta de dentadura). Chumbo causa anemia sideroblástica com pontilhado basófilo. <b>O que muda conduta:</b> mielopatia com B12 normal → cobre e ceruloplasmina; suspender o zinco; repor cobre (dose no D.5; mielopatia no NE07).</div></div>
@@ -932,7 +951,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card diag">
+<div class="card diag" id="d6">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">D.6</span> Ferropenia difícil</div><h3>Ferropenia refratária, ferro funcional e deficiência sem anemia <span class="ank ank-dec">DECISION</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Quando o ferro oral não funciona, a pergunta é <b>"o ferro está sendo perdido, não absorvido ou não está indisponível?"</b>. Causas de não absorção: celíaca, <i>H. pylori</i>, gastrite atrófica, IBP, bariátrica, doença inflamatória intestinal, e a rara <b>IRIDA</b> (mutação de <i>TMPRSS6</i>, hepcidina inadequadamente alta). Deficiência sem anemia (ferritina baixa com sintomas, insuficiência cardíaca, pernas inquietas, pré-operatório) também pode merecer ferro. <b>O que muda conduta:</b> falha do oral por 4 semanas → ferro IV e busca da causa.</div></div>
@@ -955,7 +974,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <section id="algoritmo">
 <div class="section"><div class="section-eyebrow"><span>E</span> Algoritmo</div><div class="section-title">Do hemograma à causa: reticulócito, VCM, ferro e B12 em três árvores</div><div class="section-sub">Cada ponta termina em exame ou conduta com número. A primeira árvore separa produção de destruição; a segunda desfaz a microcitose; a terceira resolve a macrocitose e define a reposição.</div></div>
 
-<div class="card prim">
+<div class="card prim" id="e1">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">E.1</span> Algoritmo</div><h3>Anemia: produção, destruição ou perda? <span class="ank ank-dec">DECISION</span></h3></div>
 <div class="card-body">
 <div class="algo"><div class="tree">
@@ -981,7 +1000,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="e2">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">E.2</span> Algoritmo</div><h3>Microcitose: ferro, talassemia ou doença crônica? <span class="ank ank-hy">HIGH-YIELD</span></h3></div>
 <div class="card-body">
 <div class="algo"><div class="tree">
@@ -1006,7 +1025,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="e3">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">E.3</span> Algoritmo</div><h3>Macrocitose: B12, folato ou outra causa? <span class="ank ank-dgr">DANGER</span></h3></div>
 <div class="card-body">
 <div class="algo"><div class="tree">
@@ -1043,13 +1062,13 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </ul></div></div>
 </section>
 <section id="tratamento">
-<div class="section"><div class="section-eyebrow"><span>F</span> Tratamento Integrado</div><div class="section-title">F1 · Estratégia por entidade · F2 · Doses · F3 · Casos · F4 · SUS e CMED</div><div class="section-sub">Doses lidas nos PCDT de 2017–2026 e na apostila levam a sigla da fonte; as de BSH, AGA, AABB e bulas não relidas nesta sessão levam "conferir". Mesma dose, mesmo texto em todo o HP.</div></div>
+<div class="section"><div class="section-eyebrow"><span>F</span> Tratamento Integrado</div><div class="section-title">F1 · Estratégia por entidade · F2 · Doses · F3 · Casos · F4 · SUS e CMED</div><div class="section-sub">Doses lidas nos PCDT de 2017–2026 e na apostila levam a sigla da fonte; as de BSH, AGA, AABB e bulas não relidas nesta sessão levam "conferir". Mesma dose, mesmo texto em todo o HP.</div></div><!--hp-f2--><nav class="sec-idx" aria-label="Neste capítulo"><a href="#f1"><b>F.1</b>Escada terapêutica por entida…</a><a href="#f2"><b>F.2</b>Tabela de doses — anemias car…</a><a href="#f3"><b>F.3</b>Caso → conduta certa → erro t…</a><a href="#f4"><b>F.4</b>O que o SUS e a CMED trazem e…</a><a href="#f5"><b>F.5</b>Quando reavaliar, o que esper…</a></nav><!--/hp-f2-->
 
-<div class="card tx">
+<div class="card tx" id="f1">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">F.1</span> Estratégia</div><h3>Escada terapêutica por entidade <span class="ank ank-dec">DECISION</span></h3></div>
 <div class="card-body">
 
-<div class="sub-title">F1.1 · Anemia ferropriva: causa primeiro, depois o ferro oral (C.2)</div>
+<div class="sub-title" id="f1-1">F1.1 · Anemia ferropriva: causa primeiro, depois o ferro oral (C.2)</div>
 <ul class="bullets">
 <li><b>Antes da prescrição:</b> ferritina, saturação, hemograma com RDW e reticulócitos; causa pesquisada conforme o paciente (EDA e colonoscopia em homem, pós-menopausa e ≥50 anos; história menstrual, parasitológico e sorologia de celíaca em todos). Ferro sem investigação só na menacme com perda evidente e anemia leve.</li>
 <li><b>Ferro oral:</b> 60–120 mg de ferro elementar VO, 1×/dia ou em dias alternados (comprimido de 40 mg de ferro elementar (≈200 mg de sulfato ferroso): 1,5 a 3 comprimidos; ferripolimaltose para quem não tolera o sal ferroso), em jejum ou longe de chá, café, leite, cálcio e IBP; vitamina C opcional. A apostila usa 200 mg/dia fracionados e o PCDT de DRC, 40 mg 3×/dia, mas a evidência de absorção (hepcidina) favorece dose única ou dias alternados.</li>
@@ -1059,7 +1078,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 
 <div class="box danger"><span class="box-label">DANGER</span><div class="box-title">Ferro oral não é a resposta a todo VCM baixo</div><div class="box-body">Na talassemia, na sideroblástica e na hemocromatose a absorção de ferro já está alta, e o sulfato ferroso agrava a sobrecarga. Ferritina e saturação são pré-requisito de toda prescrição de ferro. Dar ferro a quem tem inflamação ativa e ferritina alta pouco absorve e alimenta infecção (KDIGO: suspender durante infecção sistêmica).</div></div>
 
-<div class="sub-title">F1.2 · Ferro IV: quando, quanto e como (C.2, D.6)</div>
+<div class="sub-title" id="f1-2">F1.2 · Ferro IV: quando, quanto e como (C.2, D.6)</div>
 <ul class="bullets">
 <li><b>Indicações:</b> intolerância ou falha do oral após ~4 semanas com adesão; má absorção (celíaca, bariátrica, gastrectomia, DII ativa); perda contínua superior à reposição; Hb baixa com procedimento próximo ou gestação avançada (2º–3º trimestre, nunca no 1º); hemodiálise (preferência do KDIGO 2026); insuficiência cardíaca e DII com deficiência (CV04, GH05).</li>
 <li><b>Dose total:</b> Ganzoni, peso × (Hb-alvo − Hb) × 2,4 + 500 mg (alvo 12 g/dL na mulher e 13 g/dL no homem; a apostila usa depósito de 1.000 mg no homem e 600 mg na mulher). Exemplo: mulher de 60 kg, Hb 8 g/dL, ~1.080 mg. As SmPC da carboximaltose e da derisomaltose (EMC) trazem tabelas por peso e Hb (conferir bula Anvisa).</li>
@@ -1069,14 +1088,14 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 
 <div class="box decision"><span class="box-label">DECISION</span><div class="box-title">Oral ou IV? Cinco perguntas</div><div class="box-body"><ul><li><b>1. O intestino absorve?</b> Celíaca, bariátrica, gastrectomia, inflamação ativa: IV.</li><li><b>2. A perda continua?</b> Se sim, o oral não acompanha: IV e tratar a perda.</li><li><b>3. Precisa de resposta rápida?</b> Pré-operatório em &lt;4–6 semanas, Hb &lt;7–8, gestação avançada: IV.</li><li><b>4. Houve falha com adesão?</b> Após ~4 semanas sem ≥1 g/dL: IV e rever causa.</li><li><b>5. Tem sobrecarga ou infecção ativa?</b> Não usar ferro; D.3 e F1.7.</li></ul></div></div>
 
-<div class="sub-title">F1.3 · Doença crônica e DRC: ferro aqui, AEE no NU03 (C.3, C.4)</div>
+<div class="sub-title" id="f1-3">F1.3 · Doença crônica e DRC: ferro aqui, AEE no NU03 (C.3, C.4)</div>
 <ul class="bullets">
 <li><b>Doença crônica:</b> tratar a doença de base; ferro oral não funciona com hepcidina alta. Ferro IV só na deficiência funcional documentada (ferritina &lt;100 com saturação &lt;20%, ou critérios de IC, DII e DRC). Eritropoetina só na anemia grave sem alternativa (DRC, quimioterapia com Hb &lt;10), sempre com ferro IV, sem ultrapassar Hb 12 g/dL (NU03).</li>
 <li><b>DRC (PCDT 2017):</b> deficiência quando ferritina &lt;100 e saturação &lt;20% (conservador e diálise peritoneal) ou &lt;200 e &lt;20% (hemodiálise). Conservador e DP: comprimido de 40 mg de ferro elementar (≈200 mg de sulfato ferroso) VO 3×/dia entre as refeições; sacarato de hidróxido férrico 1.000 mg em 10 aplicações de 100 mg (ataque) e 100 mg a cada 15 dias (manutenção com ferritina &gt;200 e saturação &gt;20%). Exclusões: hemocromatose, hemossiderose, hemólise, ferritina &gt;500 ou saturação &gt;30%.</li>
 <li><b>KDIGO 2026 como divergência rotulada:</b> iniciar ferro com ferritina ≤500 e saturação ≤30% em hemodiálise (IV); com ferritina &lt;100 e saturação &lt;40%, ou 100–300 e &lt;25%, fora da hemodiálise (oral ou IV); suspender com ferritina &gt;700 ou saturação ≥40%; hemoglobina, ferritina e saturação a cada 3 meses (1–3 meses em HD). O critério dispensador do SUS é o do PCDT.</li>
 </ul>
 
-<div class="sub-title">F1.4 · Megaloblástica: B12 e folato, na ordem certa (C.7)</div>
+<div class="sub-title" id="f1-4">F1.4 · Megaloblástica: B12 e folato, na ordem certa (C.7)</div>
 <ul class="bullets">
 <li><b>Antes de tratar:</b> colher B12, folato, MMA e homocisteína; hemograma e reticulócitos; função renal. Zona cinzenta de B12 (200–300 pg/mL): MMA e homocisteína. Se houver neurologia ou pancitopenia grave, iniciar B12 no mesmo ato.</li>
 <li><b>B12 por má absorção (a regra):</b> MS 2022: cianocobalamina 1.000 µg IM semanal até normalizar, depois mensal; escala diária ×7 → semanal por 4 semanas → mensal (apostila e EN01), vitalício enquanto a causa persistir. Bula FDA (cianocobalamina): 100 µg/dia por 6–7 dias, depois em dias alternados (7 doses), a cada 3–4 dias por 2–3 semanas e 100 µg mensal, ou seja, dez vezes menos que a regra brasileira. <b>Com neurologia:</b> hidroxocobalamina 1 mg IM em dias alternados até parar de melhorar, depois 1 mg a cada 2 meses (BSH 2014, igual a NE07 e NE04); a bula FDA (genérico) traz 30 µg/dia por 5–10 dias e depois 100–200 µg/mês, mas diz que neurologia pede doses maiores. <b>Oral:</b> 1.000–2.000 µg/dia sem neurologia e com adesão (conferir registro).</li>
@@ -1086,14 +1105,14 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 
 <div class="box danger"><span class="box-label">DANGER</span><div class="box-title">Hipocalemia e sobrecarga de volume na reposição de B12 em megaloblástica grave</div><div class="box-body">As células novas captam potássio em quantidade, com queda de até 2 mEq/L nas primeiras 48 horas em Hb muito baixa; arritmia em cardiopata e em quem usa digoxina. A reposição parenteral pode reter sódio. Em Hb ≤5 g/dL compensada, evite transfusão rápida: se necessária, uma unidade lenta com diurético (conferir protocolo do banco de sangue) e potássio medido de 6/6 horas no início (esquema do HP; conferir).</div></div>
 
-<div class="sub-title">F1.5 · Anemia perniciosa: reposição vitalícia e vigilância gástrica (C.8)</div>
+<div class="sub-title" id="f1-5">F1.5 · Anemia perniciosa: reposição vitalícia e vigilância gástrica (C.8)</div>
 <ul class="bullets">
 <li>B12 IM vitalícia no esquema de F1.4; reavaliação de Hb, VCM e B12 em 2 meses e depois a cada 6–12 meses; aumentar a frequência se recaída.</li>
 <li>EDA com biópsias de corpo e antro no diagnóstico; vigilância endoscópica a seguir o seu serviço: a apostila recomenda regular, o MAPS II 2019 sugere considerar a cada 3 anos na atrofia avançada (conferir). Sintoma digestivo novo, perda de peso ou anemia nova: EDA sem espera.</li>
 <li>TSH e rastreio de celíaca ao diagnóstico; corrigir ferropenia associada.</li>
 </ul>
 
-<div class="sub-title">F1.6 · Sideroblástica (C.6)</div>
+<div class="sub-title" id="f1-6">F1.6 · Sideroblástica (C.6)</div>
 <ul class="bullets">
 <li><b>Hereditária ligada ao X:</b> piridoxina 100–200 mg VO/dia por 3 meses (40–60% respondem; reticulocitose em 2–3 semanas); conferir apresentação (comprimido comum de 40 mg).</li>
 <li><b>Reversível:</b> suspender álcool, isoniazida (piridoxina junto), pirazinamida, cloranfenicol, linezolida; repor cobre se deficiente (D.5); remover chumbo e zinco.</li>
@@ -1101,14 +1120,14 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <li><b>Sobrecarga:</b> a sobrecarga de ferro segue os critérios do PCDT de Sobrecarga de Ferro 2026 (RM T2* e quelação; HO02), conferir. <b>Esplenectomia é contraindicada.</b></li>
 </ul>
 
-<div class="sub-title">F1.7 · Hemocromatose hereditária (D.3)</div>
+<div class="sub-title" id="f1-7">F1.7 · Hemocromatose hereditária (D.3)</div>
 <ul class="bullets">
 <li><b>Flebotomia:</b> 500 mL (até 1.000 mL) por semana até ferritina de 50 µg/L; manutenção de 2–6 sessões por ano com ferritina entre 50 e 100 µg/L; Hb mantida &gt;11 g/dL (PCDT 2026). IBP adjuvante não é rotina.</li>
 <li><b>Quelante só se:</b> Hb &lt;11 g/dL por anemia não ferropriva, hipotensão sintomática e intolerância à flebotomia, ou sem acesso venoso (PCDT 2026; doses no HO02: desferroxamina SC 20–60 mg/kg/dia, deferasirox 20 mg/kg/dia, máx. 40).</li>
 <li><b>Familiares de 1º grau:</b> saturação e HFE. Cirrose: vigilância de CHC (GH10). Suspender ferro, vitamina C em excesso e álcool.</li>
 </ul>
 
-<div class="sub-title">F1.8 · Gestação, idoso e outros contextos (D.1, D.2)</div>
+<div class="sub-title" id="f1-8">F1.8 · Gestação, idoso e outros contextos (D.1, D.2)</div>
 <ul class="bullets">
 <li><b>Gestação:</b> profilaxia 40 mg/dia de ferro elementar até o 3º mês pós-parto e ácido fólico 0,4 mg/dia na gestação; 5 mg se DTN prévio ou antiepiléptico (GO10). Tratamento oral: <b>160–200 mg/dia de ferro elementar</b>, com aumento gradual (MS 2022); depois de Hb &gt;10,5, manutenção com 60–80 mg/dia até o puerpério. Rótulos ao lado: OMS 2025, 120 mg/dia; GO10 e Stoffel, 60–120 mg/dia, dose única ou dias alternados. IV preferível se Hb &lt;9 g/dL e IG ≥14 semanas (MS 2022): sacarato 200 mg 2–3×/semana, em infusão de 30–60 min; com DRC, sacarato 25 mg/semana, fora do 1º trimestre, com nefrologia (PCDT DRC 2017); carboximaltose 20 mg/kg, máx. 1.000 mg, dose única (GO14, no pós-parto; na gestação, conferir bula). Ganzoni na gestação, pelo MS 2022: peso × 2,3 × (Hb-alvo − Hb) + 15 mg/kg. Gemelar: profilaxia de 80 mg/dia a partir do 2º trimestre e, na anemia, 120–200 mg/dia ou ferro IV (GO13).</li>
 <li><b>Idoso:</b> causa antes do rótulo; eletroforese de proteínas e esfregaço; oral em dias alternados; transfusão restritiva (HO06).</li>
@@ -1120,7 +1139,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card tx">
+<div class="card tx" id="f2">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">F.2</span> Doses Operacionais</div><h3>Tabela de doses — anemias carenciais e crônicas</h3></div>
 <div class="card-body">
 <div class="stbl stbl-3">
@@ -1146,7 +1165,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card tx">
+<div class="card tx" id="f3">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">F.3</span> Cenários</div><h3>Caso → conduta certa → erro típico</h3></div>
 <div class="card-body">
 <div class="stbl stbl-3">
@@ -1163,7 +1182,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card tx">
+<div class="card tx" id="f4">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">F.4</span> Acesso</div><h3>O que o SUS e a CMED trazem e o que fica a conferir <span class="ank ank-dec">DECISION</span></h3></div>
 <div class="card-body">
 <div class="stbl stbl-3">
@@ -1178,7 +1197,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card tx">
+<div class="card tx" id="f5">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">F.5</span> Monitorização</div><h3>Quando reavaliar, o que esperar e o que fazer se não responde <span class="ank ank-hy">HIGH-YIELD</span></h3></div>
 <div class="card-body">
 <div class="stbl stbl-3">
@@ -1198,7 +1217,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <section id="pitfalls">
 <div class="section"><div class="section-eyebrow"><span>G</span> Pitfalls · Mitos · Controvérsias</div><div class="section-title">Erros operacionais, mitos vivos e debates abertos</div><div class="section-sub">Os erros que se repetem: ferro para quem não é ferropênico, folato antes da B12, ferritina lida sem a inflamação e transfusão por número.</div></div>
 
-<div class="card pearl">
+<div class="card pearl" id="g1">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">G.1</span> Pegadinhas</div><h3>10 erros operacionais em anemias carenciais e crônicas</h3></div>
 <div class="card-body">
 <div class="stbl stbl-2">
@@ -1217,7 +1236,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card pearl">
+<div class="card pearl" id="g2">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">G.2</span> Mitos</div><h3>Três mitos vivos</h3></div>
 <div class="card-body">
 <div class="box myth"><span class="box-label">MYTH</span><div class="box-title">"Anemia ferropriva se corrige com dieta e alimentos ricos em ferro"</div><div class="box-body">A absorção do ferro dos alimentos (10–30%, heme ~30% e não heme ~10%) é baixa, e a perda crônica excede o aporte; a terapia dietética não tem valor para corrigir a anemia estabelecida, ainda que ajude na prevenção. A dieta complementa a reposição, que precisa de dose farmacológica, e jamais dispensa a busca da causa.</div></div>
@@ -1226,7 +1245,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card pearl">
+<div class="card pearl" id="g3">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">G.3</span> Controvérsias</div><h3>Três debates sem consenso</h3></div>
 <div class="card-body">
 <div class="box controversy"><span class="box-label">CONTROVERSY</span><div class="box-title">Qual ferritina define ferropenia: 15, 30, 45 ou 100?</div><div class="box-body">A apostila usa &lt;15 µg/L (especificidade ~99%), a OMS 2020 também &lt;15 em saudáveis e &lt;70 com inflamação (conferir), a BSG 2021 usa &lt;30, a AGA 2020 propõe 45 como melhor equilíbrio, o PCDT de DRC usa &lt;100 (ou &lt;200 em hemodiálise) com saturação &lt;20%, e a insuficiência cardíaca usa &lt;100 ou 100–299 com saturação &lt;20% (CV04). Limiar menor aumenta a especificidade e perde casos; limiar maior inclui inflamação sem deficiência. O HP usa &lt;30 sem inflamação e &lt;100 com saturação &lt;20% em inflamação.</div></div>
@@ -1239,7 +1258,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <section id="pearls">
 <div class="section"><div class="section-eyebrow"><span>H</span> Pearls · Evolving</div><div class="section-title">H1 · Nuances de especialista · H2 · O que mudou entre 2019 e 2026</div><div class="section-sub">Oito ideias que o plantão esquece e cinco mudanças reais; onde o tema é estável (B12, folato, mecanismo da doença crônica), diz-se.</div></div>
 
-<div class="card pearl">
+<div class="card pearl" id="h1">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">H.1</span> Pearls</div><h3>8 nuances que distinguem o especialista</h3></div>
 <div class="card-body">
 <div class="box pearl"><span class="box-label">PEARL</span><div class="box-title">O reticulócito é o termômetro da reposição: sem pico, o diagnóstico está errado</div><div class="box-body">Com ferro, os reticulócitos sobem em 5–10 dias (pico discreto, 5–10%) e a Hb em 1–2 semanas; com B12 ou folato, o pico é no 4º–7º dia e vai de 10 a 50% nas anemias mais graves. Ausência de pico significa diagnóstico errado, doença associada, perda ativa ou falta de adesão, e a dose maior não resolve: a pergunta é "o que mais?".</div></div>
@@ -1253,7 +1272,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card pearl">
+<div class="card pearl" id="h2">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">H.2</span> Evolving</div><h3>O que mudou: cinco itens reais; o resto do tema é estável</h3></div>
 <div class="card-body">
 <div class="box evolving"><span class="box-label">EVOLVING</span><div class="box-title">Ferro oral em dias alternados no lugar das 3 tomadas diárias</div><div class="box-body">Os estudos de isótopos estáveis de Moretti (2015) e Stoffel (2017 e 2020) mostraram que a hepcidina eleva-se por ~24 horas depois de uma dose e que dias alternados melhoram a absorção fracional e a tolerância; diretrizes recentes e o GO10 já adotam dose única diária ou alternada. A apostila de 2025 e o PCDT de DRC de 2017 ainda trazem 200 mg/dia fracionados e 40 mg 3×/dia.</div></div>
@@ -1306,5 +1325,36 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <a class="to-top" href="#" aria-label="Voltar ao topo">↑</a>
 <div class="watermark">@dr.lorencato · HO01 Anemias Carenciais e Crônicas v5.2</div>
 
-</body>
+<!--hp-f2--><script>(function(){var d=document,M=d.querySelector('main');if(!M)return;
+var SELF='HO01',HP=' CT01 CT02 CT03 CT04 CT05 CT06 CT08 CT10 CV01 CV03 CV04 CV05 CV06 CV07 CV08 EN01 EN02 EN03 EN04 EN06 EN07 GH01 GH02 GH03 GH05 GH06 GH07 GH08 GH09 GH10 GO01 GO02 GO03 GO04 GO09 GO10 GO11 GO12 GO13 GO14 HO01 HO02 HO03 HO04 HO05 HO06 II01 II02 II03 II04 II07 II08 NE01 NE02 NE03 NE04 NE05 NE06 NE07 NE08 NU01 NU02 NU03 NU04 NU05 OE01 OE02 PC01 PC02 PC03 PC04 PC05 PC06 PD01 PD02 PD03 PD04 PD05 PD06 PD07 PD08 PD09 PD10 RD01 RD02 RD03 RD04 RD05 RD07 RP01 RP02 RP03 RP04 ';
+var SK='A,H1,H2,H3,SCRIPT,STYLE,NAV,.card-num,.card-eyebrow,.sub-title,.disease-tag,.toc';
+var R=/\b(?:([A-H])(\d)?\.(\d{1,2}[a-c]?)|(CV|RP|GH|NE|EN|NU|HO|II|RD|GO|PD|PC|CT|OE)(\d\d))\b/g;
+function skip(n){for(var e=n.parentNode;e&&e!==M;e=e.parentNode)if(e.matches&&e.matches(SK))return 1;return 0}
+var w=d.createTreeWalker(M,4),t,L=[];while(t=w.nextNode())if(R.test(t.data)&&!skip(t))L.push(t);
+L.forEach(function(t){var s=t.data,f=d.createDocumentFragment(),i=0,m;R.lastIndex=0;
+while(m=R.exec(s)){var h=null;
+if(m[1]){var id=m[1].toLowerCase()+(m[2]?m[2]+'-':'')+m[3];if(d.getElementById(id))h='#'+id}
+else{var x=m[4]+m[5];if(x!==SELF&&HP.indexOf(' '+x+' ')>=0)h='../'+x+'/'+x+'.html'}
+if(!h)continue;f.appendChild(d.createTextNode(s.slice(i,m.index)));
+var a=d.createElement('a');a.href=h;a.className='xr';a.textContent=m[0];f.appendChild(a);i=R.lastIndex}
+if(i){f.appendChild(d.createTextNode(s.slice(i)));t.parentNode.replaceChild(f,t)}});
+function nz(s){return s.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'')}
+var q=d.querySelector('.hp-q'),n=d.querySelector('.hp-n'),it=M.querySelectorAll('.card,.pocket-card'),T;
+function clr(){M.querySelectorAll('.q-off').forEach(function(e){e.classList.remove('q-off')})}
+function run(){var v=nz(q.value.trim());clr();n.textContent='';if(v.length<2)return;var k=0;
+it.forEach(function(c){if(nz(c.textContent).indexOf(v)<0){c.classList.add('q-off');return}k++;
+var r=c.querySelectorAll('.stbl-row,.disease-row,.score-row'),h=[];r.forEach(function(x){if(nz(x.textContent).indexOf(v)>=0)h.push(x)});
+if(h.length)r.forEach(function(x){if(h.indexOf(x)<0)x.classList.add('q-off')});
+c.querySelectorAll('details').forEach(function(x){if(nz(x.textContent).indexOf(v)>=0)x.open=true})});
+M.querySelectorAll('section').forEach(function(s){if(!s.querySelector('.card:not(.q-off),.pocket-card:not(.q-off)'))s.classList.add('q-off')});
+n.textContent=k?k+' achado'+(k>1?'s':''):'nada'}
+if(q){q.addEventListener('input',function(){clearTimeout(T);T=setTimeout(run,180)});
+q.addEventListener('keydown',function(e){if(e.key==='Escape'){q.value='';run()}})}
+function tg(b,f){b.addEventListener('click',function(){var on=b.getAttribute('aria-pressed')!=='true';b.setAttribute('aria-pressed',on);f(on)})}
+var bd=d.querySelector('.hp-dz'),bo=d.querySelector('.hp-op');
+if(bd)tg(bd,function(on){d.body.classList.toggle('dz',on);if(on)d.getElementById('tratamento').scrollIntoView()});
+if(bo)tg(bo,function(on){M.querySelectorAll('details').forEach(function(x){x.open=on})});
+var P=[];addEventListener('beforeprint',function(){P=[];M.querySelectorAll('details:not([open])').forEach(function(x){P.push(x);x.open=true})});
+addEventListener('afterprint',function(){P.forEach(function(x){x.open=false})});
+})();</script><!--/hp-f2--></body>
 </html>

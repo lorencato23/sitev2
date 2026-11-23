@@ -345,13 +345,32 @@ ul.bullets li b{color:var(--ink);font-weight:600}
   .pocket .pocket-card.tx{--accent:#a8481a}
   .pocket .pocket-card.clin{--accent:#0b5d4e}
 }
+
+/* === v5.2.2 · fase 2 (navegação) === */
+.hp-tools{display:flex;gap:6px;align-items:center;flex:none;order:1;margin-left:auto;padding-left:6px;position:sticky;right:0;background:#f1eee5;box-shadow:-10px 0 10px -4px #f1eee5,16px 0 0 #f1eee5}
+@media(min-width:900px){html{scroll-padding-top:150px}.toc-inner{flex-wrap:wrap;overflow:visible}.card[id],.sub-title[id]{scroll-margin-top:150px}}
+@media(max-width:899px){.hp-b,.hp-n{display:none}.hp-q{width:104px}}
+.hp-q{width:128px;font:500 12px/1 'DM Sans',system-ui,sans-serif;padding:7px 11px;border:1px solid var(--line-strong);border-radius:999px;background:var(--paper);color:var(--ink)}
+.hp-b{font:600 11px/1 'DM Sans',system-ui,sans-serif;letter-spacing:.05em;text-transform:uppercase;padding:7px 10px;border-radius:999px;border:1px solid var(--line-strong);background:var(--paper);color:var(--ink-soft);cursor:pointer;white-space:nowrap}
+.hp-b[aria-pressed=true]{background:var(--ink);color:#fff;border-color:var(--ink)}
+.hp-n{font:600 11px/1 'DM Mono',monospace;color:var(--ink-mute);white-space:nowrap}
+.sec-idx{display:flex;flex-wrap:wrap;gap:6px;margin:12px 0 20px}
+.sec-idx a{font:500 12px/1.25 'DM Sans',system-ui,sans-serif;padding:6px 10px;border-radius:999px;background:var(--paper);border:1px solid var(--line);color:var(--ink-soft);text-decoration:none}
+.sec-idx a:hover{border-color:var(--line-strong);color:var(--ink)}
+.sec-idx b{color:var(--c-prim);margin-right:5px;font-weight:700}
+a.xr{color:inherit;text-decoration:underline dotted;text-underline-offset:2px}
+a.xr:hover{color:var(--c-prim)}
+.card[id],.sub-title[id]{scroll-margin-top:110px}
+.q-off{display:none!important}
+body.dz main section:not(#tratamento){display:none}
+@media print{.hp-tools,.sec-idx,.toc-doses{display:none!important}}
 </style>
 </head>
 <body>
 
 <header class="header"><div class="header-row"><div class="h-mark">S</div><div class="h-titles"><div class="h-title">Doenças da Suprarrenal · Pocket Handbook</div><div class="h-sub">Elite edition · Endocrinologia clínica · EN04</div></div><div class="h-author">@dr.lorencato</div><div class="h-edition">v5.2</div></div></header>
 
-<nav class="toc"><div class="toc-inner"><a href="#pocket" class="toc-chip"><span class="toc-chip-num">0</span>Pocket</a><a href="#redflags" class="toc-chip"><span class="toc-chip-num">A</span>Red Flags</a><a href="#approach" class="toc-chip"><span class="toc-chip-num">B</span>Apresentação</a><a href="#primarias" class="toc-chip"><span class="toc-chip-num">C</span>Entidades</a><a href="#secundarias" class="toc-chip"><span class="toc-chip-num">D</span>Secundárias</a><a href="#algoritmo" class="toc-chip"><span class="toc-chip-num">E</span>Algoritmo</a><a href="#tratamento" class="toc-chip"><span class="toc-chip-num">F</span>Tratamento</a><a href="#pitfalls" class="toc-chip"><span class="toc-chip-num">G</span>Pitfalls</a><a href="#pearls" class="toc-chip"><span class="toc-chip-num">H</span>Pearls</a></div></nav>
+<nav class="toc"><div class="toc-inner"><!--hp-f2--><span class="hp-tools"><input class="hp-q" type="search" placeholder="Buscar no HP" aria-label="Buscar no HP"><button class="hp-b hp-dz" type="button" aria-pressed="false">Só doses</button><button class="hp-b hp-op" type="button" aria-pressed="false">Abrir tudo</button><span class="hp-n" aria-live="polite"></span></span><!--/hp-f2--><a href="#pocket" class="toc-chip"><span class="toc-chip-num">0</span>Pocket</a><a href="#redflags" class="toc-chip"><span class="toc-chip-num">A</span>Red Flags</a><a href="#approach" class="toc-chip"><span class="toc-chip-num">B</span>Apresentação</a><a href="#primarias" class="toc-chip"><span class="toc-chip-num">C</span>Entidades</a><a href="#secundarias" class="toc-chip"><span class="toc-chip-num">D</span>Secundárias</a><a href="#algoritmo" class="toc-chip"><span class="toc-chip-num">E</span>Algoritmo</a><a href="#tratamento" class="toc-chip"><span class="toc-chip-num">F</span>Tratamento</a><!--hp-f2--><a href="#f2" class="toc-chip toc-doses"><span class="toc-chip-num">Rx</span>Doses</a><!--/hp-f2--><a href="#pitfalls" class="toc-chip"><span class="toc-chip-num">G</span>Pitfalls</a><a href="#pearls" class="toc-chip"><span class="toc-chip-num">H</span>Pearls</a></div></nav>
 
 <main>
 <div class="wrap">
@@ -415,7 +434,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <section id="redflags">
 <div class="section"><div class="section-eyebrow"><span>A</span> Red Flags</div><div class="section-title">Hormônio a menos mata em horas, hormônio a mais mata na anestesia</div><div class="section-sub">Sinal objetivo, suspeita e conduta imediata. As mortes evitáveis neste HP são a crise adrenal sem hidrocortisona, o feocromocitoma desconhecido que chega ao centro cirúrgico e o corticoide suspenso de repente.</div></div>
 
-<div class="card emerg">
+<div class="card emerg" id="a1">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">A.1</span> Emergências</div><h3>Sinais de alarme — suprarrenal <span class="ank ank-dgr">DANGER</span></h3></div>
 <div class="card-body">
 
@@ -454,7 +473,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <section id="approach">
 <div class="section"><div class="section-eyebrow"><span>B</span> Por Apresentação</div><div class="section-title">Cinco portas de entrada para as doenças da suprarrenal</div><div class="section-sub">A queixa escolhe o hormônio a dosar. Cada cartão leva do sintoma ao exame que separa a doença do ruído.</div></div>
 
-<div class="card clin">
+<div class="card clin" id="b1">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">B.1</span> Hipertensão</div><h3>PA alta que sugere causa suprarrenal <span class="ank ank-hy">HIGH-YIELD</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Três hormônios elevam a PA por uma suprarrenal doente: aldosterona (retém sódio), cortisol (efeito mineralocorticoide e permissivo) e catecolaminas (vasoconstrição). <b>Aldosteronismo primário atinge 8–10% dos hipertensos e até 20% dos resistentes;</b> feocromocitoma é raro, mas fatal se ignorado. O rastreio de HAS secundária na APS é do CV05; aqui está a doença.</div></div>
@@ -467,7 +486,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card clin">
+<div class="card clin" id="b2">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">B.2</span> Fenótipo</div><h3>Ganho de peso central, estrias, fraqueza proximal e equimoses</h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Obesidade, HAS e diabetes são comuns demais para rastrear todo mundo. <b>Duas pistas aumentam a probabilidade pré-teste:</b> vários sinais piorando juntos e os estigmas específicos (fraqueza proximal, equimoses espontâneas, estrias violáceas com mais de 1 cm). A causa mais comum é o corticoide que o paciente toma; confira todas as vias antes de qualquer dosagem.</div></div>
@@ -480,7 +499,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card clin">
+<div class="card clin" id="b3">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">B.3</span> Hipocortisolismo</div><h3>Fadiga, perda de peso, hipotensão e hiponatremia <span class="ank ank-dec">DECISION</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Astenia, anorexia, náuseas, dor abdominal e hipotensão postural em paciente sem explicação. <b>Hiperpigmentação e hipercalemia apontam a causa primária;</b> hiponatremia sem hipercalemia é compatível com a secundária (ADH aumentado sem o freio do cortisol). Colha cortisol às 8–9 h: ≤3 µg/dL com clínica confirma; ≥18 µg/dL afasta; 3–18 µg/dL → teste de cortrosina.</div></div>
@@ -493,7 +512,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card clin">
+<div class="card clin" id="b4">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">B.4</span> Catecolaminas</div><h3>Paroxismos de cefaleia, sudorese e palpitação</h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">A tríade <b>cefaleia, sudorese e taquicardia</b> tem alto valor preditivo mesmo sem hipertensão. O tumor secreta de forma intermitente, e por isso o rastreio mede os metabólitos (metanefrinas), que são produzidos continuamente. Antes de dosar: suspender fármacos interferentes e evitar alimentos com tiramina.</div></div>
@@ -506,7 +525,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card clin">
+<div class="card clin" id="b5">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">B.5</span> Imagem</div><h3>Massa adrenal descoberta em exame feito por outro motivo <span class="ank ank-hy">HIGH-YIELD</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Duas perguntas: <b>é maligna? é funcionante?</b> A maioria é adenoma não funcionante. A TC sem contraste responde à primeira; dexametasona 1 mg, metanefrinas (se a imagem não for típica de adenoma) e aldosterona/renina (se HAS ou hipocalemia) respondem à segunda. Só se investiga lesão ≥1 cm, salvo sinais de excesso hormonal.</div></div>
@@ -522,9 +541,9 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </section>
 
 <section id="primarias">
-<div class="section"><div class="section-eyebrow"><span>C</span> Entidades Primárias</div><div class="section-title">Sete entidades: o cortisol que sobra, o que falta, a crise, a aldosterona, a catecolamina e a massa achada ao acaso</div><div class="section-sub">Cushing e aldosteronismo são doenças de rastreio e de confirmação em duas etapas; a insuficiência adrenal e a crise são doenças de reposição e de reconhecimento; o feocromocitoma e o incidentaloma são doenças de imagem que exigem bioquímica antes da faca.</div></div>
+<div class="section"><div class="section-eyebrow"><span>C</span> Entidades Primárias</div><div class="section-title">Sete entidades: o cortisol que sobra, o que falta, a crise, a aldosterona, a catecolamina e a massa achada ao acaso</div><div class="section-sub">Cushing e aldosteronismo são doenças de rastreio e de confirmação em duas etapas; a insuficiência adrenal e a crise são doenças de reposição e de reconhecimento; o feocromocitoma e o incidentaloma são doenças de imagem que exigem bioquímica antes da faca.</div></div><!--hp-f2--><nav class="sec-idx" aria-label="Neste capítulo"><a href="#c1"><b>C.1</b>Síndrome de Cushing: confirma…</a><a href="#c2"><b>C.2</b>Insuficiência adrenal primári…</a><a href="#c3"><b>C.3</b>Insuficiência adrenal secundá…</a><a href="#c4"><b>C.4</b>Crise adrenal e dose de estre…</a><a href="#c5"><b>C.5</b>Hiperaldosteronismo primário…</a><a href="#c6"><b>C.6</b>Feocromocitoma e paragangliom…</a><a href="#c7"><b>C.7</b>Incidentaloma adrenal, MACS e…</a></nav><!--/hp-f2-->
 
-<div class="card prim">
+<div class="card prim" id="c1">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.1</span> Hipercortisolismo</div><h3>Síndrome de Cushing: confirmar, achar o ACTH, localizar, operar <span class="ank ank-hy">HIGH-YIELD</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">A causa mais comum de síndrome de Cushing é <b>iatrogênica</b>. Excluído o corticoide exógeno, o raciocínio tem duas etapas: confirmar o hipercortisolismo (dois de três testes de primeira linha concordantes) e só então dosar o ACTH, que separa dependente (hipófise, ectópico) de independente (adenoma, carcinoma, hiperplasia adrenal). <b>O que muda conduta:</b> ACTH suprimido leva à TC de adrenais; ACTH dependente leva à RM de sela e, se duvidoso, ao cateterismo de seios petrosos; hipocalemia grave com cortisol muito alto aponta para ectópico.</div></div>
@@ -580,7 +599,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="c2">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.2</span> Hipocortisolismo primário</div><h3>Insuficiência adrenal primária (doença de Addison) <span class="ank ank-dec">DECISION</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Destruição de &gt;90% do córtex: cortisol, aldosterona e androgênios caem, e o ACTH sobe. <b>Hiperpigmentação, hipercalemia, hiponatremia e avidez por sal</b> marcam a forma primária. Diagnóstico por cortisol matinal e, se intermediário, cortrosina; ACTH e renina confirmam a origem. Tratamento é reposição vitalícia com dose de estresse. <b>O que muda conduta:</b> hipotensão ou vômitos em quem tem Addison é crise iminente e pede hidrocortisona parenteral.</div></div>
@@ -617,7 +636,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="c3">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.3</span> Hipocortisolismo secundário</div><h3>Insuficiência adrenal secundária e corticoide crônico: o eixo suprimido e a retirada <span class="ank ank-hy">HIGH-YIELD</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">A forma mais comum de insuficiência adrenal é a <b>secundária ao corticoide exógeno</b>, não a doença de Addison. Glicocorticoide em dose suprafisiológica por &gt;3–4 semanas suprime o CRH e o ACTH e atrofia a fasciculada; a glomerulosa, controlada pela renina, é poupada, de modo que não há hipercalemia nem necessidade de fludrocortisona. <b>O que muda conduta:</b> uso &gt;3–4 semanas pede retirada gradual e cobertura de estresse; menos de 3–4 semanas, de qualquer dose, pode parar sem desmame (apostila 2025; algumas bancas ainda usam 2 semanas).</div></div>
@@ -655,7 +674,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="c4">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.4</span> Emergência</div><h3>Crise adrenal e dose de estresse <span class="ank ank-dgr">DANGER</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Choque com hiponatremia, hipercalemia (na primária) e hipoglicemia em quem tem ou pode ter insuficiência adrenal. <b>O tratamento é hidrocortisona e volume antes do diagnóstico bioquímico:</b> 100 mg IV em bolus, depois 200 mg em 24 h (infusão contínua ou 50 mg IV de 6/6 h), com ≥1 L de SF 0,9% na primeira hora. Na prevenção, dobrar ou triplicar a dose oral na febre e usar 100 mg parenteral quando há vômitos. <b>O que muda conduta:</b> procurar e tratar o gatilho; sem fludrocortisona na fase aguda.</div></div>
@@ -688,7 +707,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="c5">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.5</span> Excesso de aldosterona</div><h3>Hiperaldosteronismo primário: rastrear, confirmar, lateralizar <span class="ank ank-hy">HIGH-YIELD</span> <span class="ank ank-evo">EVOLVING</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Aldosterona autônoma com renina suprimida: <b>HAS (muitas vezes resistente), hipocalemia em 30–50% e alcalose</b>, com mais FA, AVC e hipertrofia ventricular do que a HAS primária de mesma PA. A causa mais comum é a hiperplasia adrenal bilateral, não o adenoma. Rastreio pela relação aldosterona/renina; confirmação por supressão; TC de adrenais; <b>cateterismo de veias adrenais</b> decide quem opera. <b>O que muda conduta:</b> lateralizou, cirurgia; bilateral, espironolactona; a renina "desbloqueada" é o alvo.</div></div>
@@ -726,7 +745,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="c6">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.6</span> Catecolaminas</div><h3>Feocromocitoma e paraganglioma: metanefrinas, α antes de β, genética <span class="ank ank-hy">HIGH-YIELD</span> <span class="ank ank-dgr">DANGER</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Tumor de células cromafins que secreta catecolaminas: <b>feocromocitoma</b> na medula adrenal, <b>paraganglioma</b> nos paragânglios extra-adrenais (só noradrenalina, pela falta de PNMT). Hoje formam uma única família (PPGL), todos com potencial metastático e 10–40% hereditários. Rastreio por metanefrinas livres plasmáticas ou fracionadas urinárias; imagem depois da bioquímica; <b>α-bloqueio por 7–14 dias antes da cirurgia e betabloqueador só depois.</b> Este HP é o dono da doença (decisão registrada); o rastreio de HAS secundária fica no CV05.</div></div>
@@ -765,7 +784,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="c7">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.7</span> Imagem e tumor</div><h3>Incidentaloma adrenal, MACS e carcinoma adrenocortical (ESE 2023) <span class="ank ank-hy">HIGH-YIELD</span> <span class="ank ank-evo">EVOLVING</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Incidentaloma é massa adrenal ≥1 cm descoberta em imagem pedida por outro motivo. <b>TC sem contraste:</b> homogênea e ≤10 UH é benigna e dispensa imagem adicional, de qualquer tamanho. Em todos, <b>dexametasona 1 mg</b> (&gt;1,8 µg/dL = secreção autônoma leve de cortisol, MACS); metanefrinas se a imagem não for de adenoma típico; aldosterona/renina se HAS ou hipocalemia. <b>O que muda conduta:</b> só lesões &gt;4 cm heterogêneas ou &gt;20 UH têm risco que faz da cirurgia a escolha usual; biópsia quase nunca.</div></div>
@@ -807,9 +826,9 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </section>
 
 <section id="secundarias">
-<div class="section"><div class="section-eyebrow"><span>D</span> Entidades Secundárias</div><div class="section-title">O que completa o diferencial: HAC do adulto, NEM, falsos Cushing, insuficiência em cenários especiais e mineralocorticoide que não é Conn</div><div class="section-sub">Cinco boxes agrupados. A HAC clássica do recém-nascido é do PD04; o carcinoma medular da NEM 2 é do EN03; o hiperparatireoidismo da NEM é do EN06.</div></div>
+<div class="section"><div class="section-eyebrow"><span>D</span> Entidades Secundárias</div><div class="section-title">O que completa o diferencial: HAC do adulto, NEM, falsos Cushing, insuficiência em cenários especiais e mineralocorticoide que não é Conn</div><div class="section-sub">Cinco boxes agrupados. A HAC clássica do recém-nascido é do PD04; o carcinoma medular da NEM 2 é do EN03; o hiperparatireoidismo da NEM é do EN06.</div></div><!--hp-f2--><nav class="sec-idx" aria-label="Neste capítulo"><a href="#d1"><b>D.1</b>HAC não clássica no adulto e…</a><a href="#d2"><b>D.2</b>NEM 1, 2A e 2B e outras síndr…</a><a href="#d3"><b>D.3</b>Diferenciais do Cushing: pseu…</a><a href="#d4"><b>D.4</b>Insuficiência adrenal no crít…</a><a href="#d5"><b>D.5</b>Aldosteronismos que não são C…</a></nav><!--/hp-f2-->
 
-<div class="card diag">
+<div class="card diag" id="d1">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">D.1</span> Hiperandrogenismo</div><h3>HAC não clássica no adulto e a ponte para a clássica <span class="ank ank-dec">DECISION</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Deficiência parcial de 21-hidroxilase (gene CYP21A2): cortisol e aldosterona normais, androgênio em excesso. Na mulher adulta imita a SOP: hirsutismo, acne, oligomenorreia, infertilidade. <b>17-OH-progesterona basal matinal (fase folicular) &gt;200 ng/dL sugere; &gt;1.000 ng/dL após 250 µg de cosintropina confirma.</b> Tratar só se sintomática. <b>Decisão de fronteira:</b> o adulto com forma não clássica é daqui; a forma clássica (perdedora de sal, genitália atípica, doses por m²) é do PD04. <b>O que muda conduta:</b> hirsutismo com 17-OHP alta antes de rotular SOP.</div></div>
@@ -829,7 +848,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card diag">
+<div class="card diag" id="d2">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">D.2</span> Síndromes hereditárias</div><h3>NEM 1, 2A e 2B e outras síndromes com tumor adrenal: quem faz o quê <span class="ank ank-hy">HIGH-YIELD</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Box agrupado de remissão. NEM 1 (gene MEN1): paratireoide, tumor neuroendócrino de pâncreas e hipófise, com adenomas adrenocorticais, em geral benignos e não funcionantes. NEM 2A e 2B (gene RET): carcinoma medular de tireoide, <b>feocromocitoma em até 50% (bilateral, adrenérgico, raramente maligno)</b> e, na 2A, hiperparatireoidismo. <b>O que muda conduta:</b> em NEM 2, o feocromocitoma é excluído e operado antes da tireoidectomia ou de qualquer cirurgia.</div></div>
@@ -855,7 +874,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card diag">
+<div class="card diag" id="d3">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">D.3</span> Falsos hipercortisolismos</div><h3>Diferenciais do Cushing: pseudo-Cushing, iatrogênico, cíclico e álcool</h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Cortisol discretamente alto sem síndrome de Cushing tem causas comuns: <b>depressão, ansiedade, álcool, obesidade central, SOP, diabetes descontrolado e gestação</b>. O hipercortisolismo do pseudo-Cushing resulta de hipersecreção de CRH e costuma ficar abaixo de 3–4× o limite urinário. O Cushing cíclico é o oposto: a clínica manda e o rastreio se repete. <b>O que muda conduta:</b> a causa subjacente tratada reverte o pseudo-Cushing.</div></div>
@@ -871,7 +890,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card diag">
+<div class="card diag" id="d4">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">D.4</span> Hipocortisolismo em cenários especiais</div><h3>Insuficiência adrenal no crítico, na apoplexia, no etomidato, nos inibidores de checkpoint e nas infecções <span class="ank ank-dgr">DANGER</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Cenários em que o eixo falha por mecanismos distintos do Addison clássico: <b>apoplexia adrenal</b> (anticoagulante, sepse, trauma, SAF), <b>doença crítica</b> (relativa), <b>etomidato</b>, <b>checkpoint inhibitors</b> (hipofisite), <b>tuberculose, paracoccidioidomicose e HIV</b>, fármacos (cetoconazol, rifampicina, abiraterona) e <b>adrenoleucodistrofia</b> no homem jovem. <b>O que muda conduta:</b> suspeita clínica com instabilidade trata-se antes do cortisol; choque séptico refratário a vasopressor recebe hidrocortisona 200 mg/dia (50 mg IV 6/6 h), como no II03.</div></div>
@@ -898,7 +917,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card diag">
+<div class="card diag" id="d5">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">D.5</span> Mineralocorticoide</div><h3>Aldosteronismos que não são Conn: secundário, pseudo-hiperaldosteronismo, Liddle, alcaçuz, Bartter e Gitelman</h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Hipocalemia com alcalose pede o par aldosterona/renina. <b>Renina alta com aldosterona alta é secundário</b> (hipovolemia, insuficiência cardíaca, cirrose, estenose de artéria renal, diuréticos); <b>aldosterona alta com renina baixa é primário</b> (C.5); <b>os dois baixos com HAS</b> sugerem excesso de outro mineralocorticoide: alcaçuz, excesso aparente de mineralocorticoide, Liddle, deficiência de 11β ou 17α-hidroxilase, Cushing grave. <b>O que muda conduta:</b> a renina escolhe o fármaco.</div></div>
@@ -920,7 +939,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <section id="algoritmo">
 <div class="section"><div class="section-eyebrow"><span>E</span> Algoritmo</div><div class="section-title">Da massa na imagem ao hormônio, da hipotensão à hidrocortisona, do cortisol alto ao ACTH</div><div class="section-sub">Quatro árvores curtas e um raciocínio narrado. Cada ponta termina em exame ou conduta com número.</div></div>
 
-<div class="card prim">
+<div class="card prim" id="e1">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">E.1</span> Algoritmo</div><h3>Massa adrenal ≥1 cm descoberta ao acaso <span class="ank ank-dec">DECISION</span></h3></div>
 <div class="card-body">
 <div class="algo"><div class="tree">
@@ -942,7 +961,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="e2">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">E.2</span> Algoritmo</div><h3>Hipercortisolismo: exógeno? confirmado? de onde vem?</h3></div>
 <div class="card-body">
 <div class="algo"><div class="tree">
@@ -969,7 +988,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="e3">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">E.3</span> Algoritmo</div><h3>Hipotensão, hiponatremia, fadiga: é insuficiência adrenal? <span class="ank ank-dgr">DANGER</span></h3></div>
 <div class="card-body">
 <div class="algo"><div class="tree">
@@ -994,7 +1013,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="e4">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">E.4</span> Algoritmo</div><h3>Hipertensão com hipocalemia, resistente ou com paroxismos: aldosterona ou catecolamina?</h3></div>
 <div class="card-body">
 <div class="algo"><div class="tree">
@@ -1018,7 +1037,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="e5">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">E.5</span> Raciocínio</div><h3>Raciocínio em seis passos: perguntar pelo hormônio antes de olhar a glândula <span class="ank ank-dec">DECISION</span></h3></div>
 <div class="card-body">
 <div class="box decision"><span class="box-label">DECISION</span><div class="box-title">A sequência mental da suprarrenal</div><div class="box-body"><ol class="bullets">
@@ -1035,13 +1054,13 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </section>
 
 <section id="tratamento">
-<div class="section"><div class="section-eyebrow"><span>F</span> Tratamento Integrado</div><div class="section-title">F1 · Estratégia por entidade · F2 · Doses · F3 · Casos · F4 · Brasil e SUS</div><div class="section-sub">Doses lidas na apostila END 1 ou no ESE 2023 levam a sigla da fonte; doses da Endocrine Society, da ESE/ES 2024, de bula ou de consenso que não estão em disco levam "conferir". A disponibilidade segue a lista CMED PMVG de 09/10/2026. Mesma dose, mesmo texto em todo o HP.</div></div>
+<div class="section"><div class="section-eyebrow"><span>F</span> Tratamento Integrado</div><div class="section-title">F1 · Estratégia por entidade · F2 · Doses · F3 · Casos · F4 · Brasil e SUS</div><div class="section-sub">Doses lidas na apostila END 1 ou no ESE 2023 levam a sigla da fonte; doses da Endocrine Society, da ESE/ES 2024, de bula ou de consenso que não estão em disco levam "conferir". A disponibilidade segue a lista CMED PMVG de 09/10/2026. Mesma dose, mesmo texto em todo o HP.</div></div><!--hp-f2--><nav class="sec-idx" aria-label="Neste capítulo"><a href="#f1"><b>F.1</b>Escada terapêutica por entida…</a><a href="#f2"><b>F.2</b>Tabela de doses — suprarrenal</a><a href="#f3"><b>F.3</b>Caso → conduta certa → erro t…</a><a href="#f4"><b>F.4</b>O que existe, o que não exist…</a><a href="#f5"><b>F.5</b>O que monitorar, e quando</a></nav><!--/hp-f2-->
 
-<div class="card tx">
+<div class="card tx" id="f1">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">F.1</span> Estratégia</div><h3>Escada terapêutica por entidade <span class="ank ank-dec">DECISION</span></h3></div>
 <div class="card-body">
 
-<div class="sub-title">F1.1 · Síndrome de Cushing (C.1, D.3)</div>
+<div class="sub-title" id="f1-1">F1.1 · Síndrome de Cushing (C.1, D.3)</div>
 <ul class="bullets">
 <li><b>Todos:</b> excluir glicocorticoide exógeno; controlar HAS (ARM: espironolactona é boa escolha com hipocalemia), glicemia, lipídios, K e osteoporose; considerar profilaxia de tromboembolismo no perioperatório e de pneumocistose nos casos mais graves (conferir).</li>
 <li><b>Doença de Cushing:</b> ressecção transesfenoidal (1ª linha). Reposição de hidrocortisona no pós-operatório até documentar recuperação do eixo; cortisol matinal na 1ª e 2ª semana sem reposição noturna indica remissão. Persistência ou recidiva: segunda cirurgia, radioterapia estereotáxica (resposta em meses a anos, risco de hipopituitarismo), fármacos, adrenalectomia bilateral (síndrome de Nelson).</li>
@@ -1051,7 +1070,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </ul>
 <div class="box danger"><span class="box-label">DANGER</span><div class="box-title">Bloqueio da esteroidogênese sem monitorização é crise adrenal iatrogênica</div><div class="box-body">Osilodrostato, cetoconazol e etomidato reduzem o cortisol rapidamente, e a dose eficaz varia muito entre pacientes. Quem trata com bloqueio total e reposição ("block and replace") precisa de glicocorticoide parenteral nos dias de doença. Quem trata por titulação deve ser orientado sobre os sintomas de hipocortisolismo (náuseas, tontura, fadiga) e sobre o cartão. O cetoconazol exige função hepática periódica e ECG (QT); a bula FDA não tem indicação para Cushing (conferir a bula brasileira).</div></div>
 
-<div class="sub-title">F1.2 · Insuficiência adrenal crônica: primária e secundária (C.2, C.3)</div>
+<div class="sub-title" id="f1-2">F1.2 · Insuficiência adrenal crônica: primária e secundária (C.2, C.3)</div>
 <ul class="bullets">
 <li><b>Glicocorticoide:</b> hidrocortisona 15–25 mg/dia VO em 2–3 tomadas é o padrão internacional; no Brasil, a reposição é prednisona 4–5 mg/dia VO pela manhã (ou prednisolona), dentro da faixa fisiológica de 4–6 mg/dia. Não usar dexametasona (potência alta, sem efeito mineralocorticoide).</li>
 <li><b>Mineralocorticoide (só primária):</b> fludrocortisona 0,05–0,2 mg/dia VO pela manhã; metas de PA ortostática, K e renina normais. Sal liberado no calor e na diarreia.</li>
@@ -1063,7 +1082,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 
 <div class="box hy"><span class="box-label">HIGH-YIELD</span><div class="box-title">Prednisona no lugar da hidrocortisona: o que muda na prática</div><div class="box-body">A prednisona tem meia-vida biológica longa, de modo que uma tomada matinal cobre o dia, mas a janela entre falta e excesso é estreita: dose acima de 5 mg/dia em adulto costuma dar ganho de peso, perda de massa óssea e hipertensão em anos. Se o paciente persiste com fadiga no fim da tarde, pode-se fracionar (por exemplo, dois terços ao acordar e um terço ao início da tarde). A avaliação é clínica; cortisol sérico não mede prednisona de modo confiável e não deve guiar o ajuste (conferir).</div></div>
 
-<div class="sub-title">F1.3 · Crise adrenal, dose de estresse e retirada do corticoide (C.3, C.4)</div>
+<div class="sub-title" id="f1-3">F1.3 · Crise adrenal, dose de estresse e retirada do corticoide (C.3, C.4)</div>
 <ul class="bullets">
 <li><b>Crise:</b> hidrocortisona 100 mg IV em bolus, depois 200 mg em 24 h (infusão contínua ou 50 mg IV de 6/6 h); no dia seguinte 100 mg/dia e transição para via oral. SF 0,9% ≥1 L na primeira hora, repetido; glicose se hipoglicemia; K elevado segue NU04. Sem fludrocortisona nesta fase.</li>
 <li><b>Prevenção:</b> a tabela de C.4 define febre, vômitos, cirurgia pequena, grande e parto. Cobertura vale também para quem usou corticoide supressor nos últimos 6–12 meses (janela de supressão: conferir).</li>
@@ -1071,7 +1090,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </ul>
 <div class="box decision"><span class="box-label">DECISION</span><div class="box-title">Dose oral dobrada ou injeção?</div><div class="box-body"><ul><li><b>Dobrar ou triplicar a dose oral:</b> febre, infecção moderada, o paciente tolera a via oral e está consciente.</li><li><b>Hidrocortisona 100 mg IM ou SC e urgência:</b> vômitos, diarreia intensa, prostração, infecção grave, trauma, dor abdominal súbita, hipotensão.</li><li><b>Hidrocortisona IV com cobertura de cirurgia:</b> procedimento sob anestesia (tabela de C.4).</li></ul></div></div>
 
-<div class="sub-title">F1.4 · Hiperaldosteronismo primário (C.5, D.5)</div>
+<div class="sub-title" id="f1-4">F1.4 · Hiperaldosteronismo primário (C.5, D.5)</div>
 <ul class="bullets">
 <li><b>Adenoma ou lateralização:</b> adrenalectomia laparoscópica; espironolactona antes da cirurgia para PA e K; operar com renina desbloqueada (&gt;1 ng/mL/h); K e creatinina nas primeiras semanas (hipercalemia transitória); suspender a espironolactona e reduzir os demais anti-hipertensivos conforme a PA.</li>
 <li><b>Bilateral, ou sem condição cirúrgica:</b> espironolactona, com início baixo (12,5–25 mg/dia) e titulação até normalizar K e PA e desbloquear a renina (apostila: 50–200 mg/dia; CV05: dose máxima de 100 mg; conferir). Efeitos: ginecomastia, redução da libido, disfunção erétil, irregularidade menstrual, hipercalemia (vigiar com DRC, IECA e BRA).</li>
@@ -1079,7 +1098,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <li><b>Forma supressível por glicocorticoide:</b> dexametasona em dose baixa à noite, em especialista (conferir).</li>
 </ul>
 
-<div class="sub-title">F1.5 · Feocromocitoma e paraganglioma (C.6)</div>
+<div class="sub-title" id="f1-5">F1.5 · Feocromocitoma e paraganglioma (C.6)</div>
 <ul class="bullets">
 <li><b>Preparo (≥7–14 dias):</b> doxazosina (fenoxibenzamina 20–240 mg/dia é a referência e não consta na lista CMED), sal &gt;5 g/dia e líquidos; meta PA sentado &lt;130/80 mmHg e FC 60–70 bpm sentado. BCC (anlodipino) se o α não basta; <b>betabloqueador só depois do α completo.</b></li>
 <li><b>Intraoperatório:</b> nitroprussiato IV (fentolamina indisponível); propranolol na taquicardia ou ectopia ventricular; linha arterial e anestesista com experiência.</li>
@@ -1088,7 +1107,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </ul>
 <div class="box danger"><span class="box-label">DANGER</span><div class="box-title">Crise hipertensiva por PPGL: o que não dar e o que dar</div><div class="box-body"><ul><li><b>Evitar:</b> betabloqueador isolado, glicocorticoide em bolus, metoclopramida, droperidol, contraste iônico, opioide que libera histamina em dose alta.</li><li><b>Dar:</b> nitroprussiato IV, com titulação e monitorização; fentolamina onde houver (indisponível na lista CMED); α1 seletivo por via oral quando a crise cede; depois metanefrinas e imagem.</li></ul></div></div>
 
-<div class="sub-title">F1.6 · Incidentaloma, MACS e carcinoma adrenocortical (C.7)</div>
+<div class="sub-title" id="f1-6">F1.6 · Incidentaloma, MACS e carcinoma adrenocortical (C.7)</div>
 <ul class="bullets">
 <li><b>Benigno e não funcionante (≤10 UH homogêneo):</b> sem cirurgia, sem imagem de seguimento, sem repetir hormônio.</li>
 <li><b>MACS:</b> rastrear e tratar HAS, DM2 e osteoporose; cirurgia unilateral discutida se houver comorbidade relevante; reavaliação anual das comorbidades.</li>
@@ -1096,14 +1115,14 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <li><b>Funcionante ou ≥4 cm heterogêneo (ou &gt;20 UH):</b> cirurgia por equipe experiente (aberta em suspeita com invasão); glicocorticoide em dose de estresse no perioperatório; carcinoma: mitotano adjuvante e quimioterapia na doença avançada (conferir esquemas).</li>
 </ul>
 
-<div class="sub-title">F1.7 · HAC não clássica e NEM (D.1, D.2)</div>
+<div class="sub-title" id="f1-7">F1.7 · HAC não clássica e NEM (D.1, D.2)</div>
 <ul class="bullets">
 <li><b>HAC não clássica:</b> tratar só se sintomática; hirsutismo com contraceptivo e antiandrogênio (GO01); glicocorticoide em dose baixa à noite quando indicado (conferir); a forma clássica é do PD04.</li>
 <li><b>NEM:</b> feocromocitoma antes da tireoidectomia (EN03); paratireoide (EN06) e hipófise (EN05); aconselhamento genético e rastreio dos familiares.</li>
 </ul>
 
 
-<div class="sub-title">F1.8 · Situações especiais: gestação, perioperatório, idoso e interações</div>
+<div class="sub-title" id="f1-8">F1.8 · Situações especiais: gestação, perioperatório, idoso e interações</div>
 <ul class="bullets">
 <li><b>Gestação com insuficiência adrenal:</b> manter a reposição; vômitos da hiperêmese podem exigir hidrocortisona parenteral; trabalho de parto e cesárea seguem a cobertura de C.4. Espironolactona é evitada na gestação com aldosteronismo (GO13); feocromocitoma na gestação exige α-bloqueio e equipe de alto risco (conferir momento da cirurgia).</li>
 <li><b>Perioperatório de quem tem eixo suprimido ou doença adrenal:</b> a cobertura é decidida antes da anestesia; paciente com adenoma produtor de cortisol recebe glicocorticoide em dose de estresse na cirurgia (ESE 2023 R4.7) e cortisol matinal pré-operatório; feocromocitoma exige preparo prévio de 7–14 dias; aldosteronismo, K corrigido e renina desbloqueada.</li>
@@ -1114,7 +1133,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card tx">
+<div class="card tx" id="f2">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">F.2</span> Doses Operacionais</div><h3>Tabela de doses — suprarrenal</h3></div>
 <div class="card-body">
 <div class="stbl stbl-3">
@@ -1146,7 +1165,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card tx">
+<div class="card tx" id="f3">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">F.3</span> Casos</div><h3>Caso → conduta certa → erro típico</h3></div>
 <div class="card-body">
 <div class="stbl stbl-3">
@@ -1163,7 +1182,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card tx">
+<div class="card tx" id="f4">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">F.4</span> Brasil e SUS</div><h3>O que existe, o que não existe e o que fazer <span class="ank ank-hy">HIGH-YIELD</span></h3></div>
 <div class="card-body">
 <div class="stbl stbl-3">
@@ -1182,7 +1201,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 
 
-<div class="card tx">
+<div class="card tx" id="f5">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">F.5</span> Seguimento</div><h3>O que monitorar, e quando <span class="ank ank-dec">DECISION</span></h3></div>
 <div class="card-body">
 <div class="stbl stbl-3">
@@ -1203,7 +1222,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <section id="pitfalls">
 <div class="section"><div class="section-eyebrow"><span>G</span> Pitfalls · Mitos · Controvérsias</div><div class="section-title">Erros operacionais, mitos vivos e debates abertos</div><div class="section-sub">Os erros que se repetem: cortisol aleatório para rastrear, imagem antes da bioquímica, corticoide suspenso de repente, betabloqueador sem α e cirurgia de aldosteronismo sem cateterismo.</div></div>
 
-<div class="card pearl">
+<div class="card pearl" id="g1">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">G.1</span> Pegadinhas</div><h3>10 erros operacionais em doenças da suprarrenal</h3></div>
 <div class="card-body">
 <div class="stbl stbl-2">
@@ -1222,7 +1241,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card pearl">
+<div class="card pearl" id="g2">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">G.2</span> Mitos · Controvérsias</div><h3>Mitos vivos e debates atuais</h3></div>
 <div class="card-body">
 <div class="box myth"><span class="box-label">MYTH</span><div class="box-title">"Sem hipocalemia, não é hiperaldosteronismo"</div><div class="box-body">A hipocalemia espontânea aparece em apenas 30–50% (sobretudo nos adenomas) e na série contemporânea, detectada por rastreio, em 9–37%. O que sustenta o diagnóstico é a renina suprimida com aldosterona inapropriadamente alta, e o quadro típico (HAS, hipocalemia e alcalose) é o mais grave, não o mais comum.</div></div>
@@ -1239,7 +1258,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <section id="pearls">
 <div class="section"><div class="section-eyebrow"><span>H</span> Pearls · Evolving</div><div class="section-title">H1 · Nuances de especialista · H2 · O que mudou em 2023–2026</div><div class="section-sub">Oito ideias que o plantão esquece e quatro mudanças reais; onde o tema é estável, diz-se.</div></div>
 
-<div class="card pearl">
+<div class="card pearl" id="h1">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">H.1</span> Pearls</div><h3>8 nuances que distinguem o especialista</h3></div>
 <div class="card-body">
 <div class="box pearl"><span class="box-label">PEARL</span><div class="box-title">Hiperpigmentação e hipercalemia separam a insuficiência primária da secundária</div><div class="box-body">O ACTH alto vem da POMC, que também libera MSH e escurece a pele; a falta de aldosterona retém K. Na secundária o ACTH é baixo, a pele é pálida e a zona glomerulosa continua controlada pela renina, por isso o K é normal e a fludrocortisona é dispensável.</div></div>
@@ -1253,7 +1272,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card pearl">
+<div class="card pearl" id="h2">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">H.2</span> Evolving</div><h3>4 mudanças reais — 2023–2026 (o restante do tema é estável)</h3></div>
 <div class="card-body">
 <div class="box evolving"><span class="box-label">EVOLVING</span><div class="box-title">ESE/ENSAT 2023: UH ≤10 encerra a imagem e nasce o termo MACS</div><div class="box-body">Frente a 2016, a ESE 2023 dispensa imagem adicional em lesão homogênea de ≤10 UH de qualquer tamanho, abole a gradação "possível autonomia" do cortisol e designa MACS todo cortisol &gt;1,8 µg/dL após 1 mg, sem sinais de Cushing, e passa a exigir metanefrinas só nas lesões não típicas de adenoma. A apostila 2025 ainda ensina a regra de >4 cm e UH com wash-out.</div></div>
@@ -1300,5 +1319,36 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <a class="to-top" href="#" aria-label="Voltar ao topo">↑</a>
 <div class="watermark">@dr.lorencato · EN04 Doenças da Suprarrenal v5.2</div>
 
-</body>
+<!--hp-f2--><script>(function(){var d=document,M=d.querySelector('main');if(!M)return;
+var SELF='EN04',HP=' CT01 CT02 CT03 CT04 CT05 CT06 CT08 CT10 CV01 CV03 CV04 CV05 CV06 CV07 CV08 EN01 EN02 EN03 EN04 EN06 EN07 GH01 GH02 GH03 GH05 GH06 GH07 GH08 GH09 GH10 GO01 GO02 GO03 GO04 GO09 GO10 GO11 GO12 GO13 GO14 HO01 HO02 HO03 HO04 HO05 HO06 II01 II02 II03 II04 II07 II08 NE01 NE02 NE03 NE04 NE05 NE06 NE07 NE08 NU01 NU02 NU03 NU04 NU05 OE01 OE02 PC01 PC02 PC03 PC04 PC05 PC06 PD01 PD02 PD03 PD04 PD05 PD06 PD07 PD08 PD09 PD10 RD01 RD02 RD03 RD04 RD05 RD07 RP01 RP02 RP03 RP04 ';
+var SK='A,H1,H2,H3,SCRIPT,STYLE,NAV,.card-num,.card-eyebrow,.sub-title,.disease-tag,.toc';
+var R=/\b(?:([A-H])(\d)?\.(\d{1,2}[a-c]?)|(CV|RP|GH|NE|EN|NU|HO|II|RD|GO|PD|PC|CT|OE)(\d\d))\b/g;
+function skip(n){for(var e=n.parentNode;e&&e!==M;e=e.parentNode)if(e.matches&&e.matches(SK))return 1;return 0}
+var w=d.createTreeWalker(M,4),t,L=[];while(t=w.nextNode())if(R.test(t.data)&&!skip(t))L.push(t);
+L.forEach(function(t){var s=t.data,f=d.createDocumentFragment(),i=0,m;R.lastIndex=0;
+while(m=R.exec(s)){var h=null;
+if(m[1]){var id=m[1].toLowerCase()+(m[2]?m[2]+'-':'')+m[3];if(d.getElementById(id))h='#'+id}
+else{var x=m[4]+m[5];if(x!==SELF&&HP.indexOf(' '+x+' ')>=0)h='../'+x+'/'+x+'.html'}
+if(!h)continue;f.appendChild(d.createTextNode(s.slice(i,m.index)));
+var a=d.createElement('a');a.href=h;a.className='xr';a.textContent=m[0];f.appendChild(a);i=R.lastIndex}
+if(i){f.appendChild(d.createTextNode(s.slice(i)));t.parentNode.replaceChild(f,t)}});
+function nz(s){return s.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'')}
+var q=d.querySelector('.hp-q'),n=d.querySelector('.hp-n'),it=M.querySelectorAll('.card,.pocket-card'),T;
+function clr(){M.querySelectorAll('.q-off').forEach(function(e){e.classList.remove('q-off')})}
+function run(){var v=nz(q.value.trim());clr();n.textContent='';if(v.length<2)return;var k=0;
+it.forEach(function(c){if(nz(c.textContent).indexOf(v)<0){c.classList.add('q-off');return}k++;
+var r=c.querySelectorAll('.stbl-row,.disease-row,.score-row'),h=[];r.forEach(function(x){if(nz(x.textContent).indexOf(v)>=0)h.push(x)});
+if(h.length)r.forEach(function(x){if(h.indexOf(x)<0)x.classList.add('q-off')});
+c.querySelectorAll('details').forEach(function(x){if(nz(x.textContent).indexOf(v)>=0)x.open=true})});
+M.querySelectorAll('section').forEach(function(s){if(!s.querySelector('.card:not(.q-off),.pocket-card:not(.q-off)'))s.classList.add('q-off')});
+n.textContent=k?k+' achado'+(k>1?'s':''):'nada'}
+if(q){q.addEventListener('input',function(){clearTimeout(T);T=setTimeout(run,180)});
+q.addEventListener('keydown',function(e){if(e.key==='Escape'){q.value='';run()}})}
+function tg(b,f){b.addEventListener('click',function(){var on=b.getAttribute('aria-pressed')!=='true';b.setAttribute('aria-pressed',on);f(on)})}
+var bd=d.querySelector('.hp-dz'),bo=d.querySelector('.hp-op');
+if(bd)tg(bd,function(on){d.body.classList.toggle('dz',on);if(on)d.getElementById('tratamento').scrollIntoView()});
+if(bo)tg(bo,function(on){M.querySelectorAll('details').forEach(function(x){x.open=on})});
+var P=[];addEventListener('beforeprint',function(){P=[];M.querySelectorAll('details:not([open])').forEach(function(x){P.push(x);x.open=true})});
+addEventListener('afterprint',function(){P.forEach(function(x){x.open=false})});
+})();</script><!--/hp-f2--></body>
 </html>

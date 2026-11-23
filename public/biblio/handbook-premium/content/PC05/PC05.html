@@ -345,6 +345,25 @@ ul.bullets li b{color:var(--ink);font-weight:600}
   .pocket .pocket-card.tx{--accent:#a8481a}
   .pocket .pocket-card.clin{--accent:#0b5d4e}
 }
+
+/* === v5.2.2 · fase 2 (navegação) === */
+.hp-tools{display:flex;gap:6px;align-items:center;flex:none;order:1;margin-left:auto;padding-left:6px;position:sticky;right:0;background:#f1eee5;box-shadow:-10px 0 10px -4px #f1eee5,16px 0 0 #f1eee5}
+@media(min-width:900px){html{scroll-padding-top:150px}.toc-inner{flex-wrap:wrap;overflow:visible}.card[id],.sub-title[id]{scroll-margin-top:150px}}
+@media(max-width:899px){.hp-b,.hp-n{display:none}.hp-q{width:104px}}
+.hp-q{width:128px;font:500 12px/1 'DM Sans',system-ui,sans-serif;padding:7px 11px;border:1px solid var(--line-strong);border-radius:999px;background:var(--paper);color:var(--ink)}
+.hp-b{font:600 11px/1 'DM Sans',system-ui,sans-serif;letter-spacing:.05em;text-transform:uppercase;padding:7px 10px;border-radius:999px;border:1px solid var(--line-strong);background:var(--paper);color:var(--ink-soft);cursor:pointer;white-space:nowrap}
+.hp-b[aria-pressed=true]{background:var(--ink);color:#fff;border-color:var(--ink)}
+.hp-n{font:600 11px/1 'DM Mono',monospace;color:var(--ink-mute);white-space:nowrap}
+.sec-idx{display:flex;flex-wrap:wrap;gap:6px;margin:12px 0 20px}
+.sec-idx a{font:500 12px/1.25 'DM Sans',system-ui,sans-serif;padding:6px 10px;border-radius:999px;background:var(--paper);border:1px solid var(--line);color:var(--ink-soft);text-decoration:none}
+.sec-idx a:hover{border-color:var(--line-strong);color:var(--ink)}
+.sec-idx b{color:var(--c-prim);margin-right:5px;font-weight:700}
+a.xr{color:inherit;text-decoration:underline dotted;text-underline-offset:2px}
+a.xr:hover{color:var(--c-prim)}
+.card[id],.sub-title[id]{scroll-margin-top:110px}
+.q-off{display:none!important}
+body.dz main section:not(#tratamento){display:none}
+@media print{.hp-tools,.sec-idx,.toc-doses{display:none!important}}
 </style>
 </head>
 <body>
@@ -362,14 +381,14 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </header>
 
 <nav class="toc">
-  <div class="toc-inner">
+  <div class="toc-inner"><!--hp-f2--><span class="hp-tools"><input class="hp-q" type="search" placeholder="Buscar no HP" aria-label="Buscar no HP"><button class="hp-b hp-dz" type="button" aria-pressed="false">Só doses</button><button class="hp-b hp-op" type="button" aria-pressed="false">Abrir tudo</button><span class="hp-n" aria-live="polite"></span></span><!--/hp-f2-->
     <a href="#pocket"      class="toc-chip"><span class="toc-chip-num">0</span>Pocket</a>
     <a href="#redflags"    class="toc-chip"><span class="toc-chip-num">A</span>Red Flags</a>
     <a href="#approach"    class="toc-chip"><span class="toc-chip-num">B</span>Apresentação</a>
     <a href="#primarias"   class="toc-chip"><span class="toc-chip-num">C</span>Entidades</a>
     <a href="#secundarias" class="toc-chip"><span class="toc-chip-num">D</span>Secundárias</a>
     <a href="#algoritmo"   class="toc-chip"><span class="toc-chip-num">E</span>Algoritmo</a>
-    <a href="#tratamento"  class="toc-chip"><span class="toc-chip-num">F</span>Tratamento</a>
+    <a href="#tratamento"  class="toc-chip"><span class="toc-chip-num">F</span>Tratamento</a><!--hp-f2--><a href="#f2" class="toc-chip toc-doses"><span class="toc-chip-num">Rx</span>Doses</a><!--/hp-f2-->
     <a href="#pitfalls"    class="toc-chip"><span class="toc-chip-num">G</span>Pitfalls</a>
     <a href="#pearls"      class="toc-chip"><span class="toc-chip-num">H</span>Pearls</a>
   </div>
@@ -487,7 +506,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
     <div class="section-sub">Nos transtornos alimentares o paciente morre de arritmia, hipoglicemia e síndrome de realimentação; nos de personalidade e na autolesão, de tentativa de suicídio que parecia mais uma crise. Cada linha liga um sinal objetivo a uma suspeita e a uma ação concreta; o limiar numérico vem da tabela 6 da APA 2023.</div>
   </div>
 
-  <div class="card emerg">
+  <div class="card emerg" id="a1">
     <div class="card-head">
       <div class="card-eyebrow"><span class="card-num">A.1</span> Emergências</div>
       <h3>Sinais de alarme no transtorno alimentar, na personalidade e na autolesão <span class="ank ank-dgr">DANGER</span></h3>
@@ -571,7 +590,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
     <div class="section-sub">Ninguém chega dizendo "tenho anorexia" ou "sou borderline". Chega com fraqueza, amenorreia, vômito, ansiedade, cortes, brigas e uma pilha de receitas. A entrevista começa pela queixa e só depois nomeia o quadro.</div>
   </div>
 
-  <div class="card clin">
+  <div class="card clin" id="b1">
     <div class="card-head">
       <div class="card-eyebrow"><span class="card-num">B.1</span> Como rastrear e entrevistar</div>
       <h3>Rastrear alimentação em toda avaliação psiquiátrica e pesar o paciente <span class="ank ank-hy">HIGH-YIELD</span></h3>
@@ -596,7 +615,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
     </div>
   </div>
 
-  <div class="card clin">
+  <div class="card clin" id="b2">
     <div class="card-head">
       <div class="card-eyebrow"><span class="card-num">B.2</span> Padrão 1</div>
       <h3>Peso baixo, restrição e medo de engordar <span class="ank ank-dec">DECISION</span></h3>
@@ -614,7 +633,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
     </div>
   </div>
 
-  <div class="card clin">
+  <div class="card clin" id="b3">
     <div class="card-head">
       <div class="card-eyebrow"><span class="card-num">B.3</span> Padrão 2</div>
       <h3>Comer em excesso com perda de controle, vômito, laxante <span class="ank ank-dec">DECISION</span></h3>
@@ -632,7 +651,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
     </div>
   </div>
 
-  <div class="card clin">
+  <div class="card clin" id="b4">
     <div class="card-head">
       <div class="card-eyebrow"><span class="card-num">B.4</span> Padrão 3</div>
       <h3>Humor que muda em horas, relações intensas e autolesão <span class="ank ank-dec">DECISION</span></h3>
@@ -650,7 +669,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
     </div>
   </div>
 
-  <div class="card clin">
+  <div class="card clin" id="b5">
     <div class="card-head">
       <div class="card-eyebrow"><span class="card-num">B.5</span> Padrão 4</div>
       <h3>O paciente "difícil", desconfiado, frio, grandioso ou dependente <span class="ank ank-hy">HIGH-YIELD</span></h3>
@@ -674,9 +693,9 @@ ul.bullets li b{color:var(--ink);font-weight:600}
     <div class="section-eyebrow"><span>C</span> Entidades Primárias</div>
     <div class="section-title">Nove quadros com raciocínio próprio: personalidade (A e C, antissocial, borderline), alimentares (anorexia, realimentação, bulimia, compulsão, ARFID) e autolesão</div>
     <div class="section-sub">Cada box traz CID-10 (OMS/DATASUS), a fonte ao lado da conduta e a linha que muda o manejo. A teoria que não muda a conduta de hoje, mas explica o porquê, fica nos aprofundamentos.</div>
-  </div>
+  </div><!--hp-f2--><nav class="sec-idx" aria-label="Neste capítulo"><a href="#c1"><b>C.1</b>Transtornos de personalidade…</a><a href="#c2"><b>C.2</b>Transtorno de personalidade a…</a><a href="#c3"><b>C.3</b>Transtorno de personalidade b…</a><a href="#c4"><b>C.4</b>Anorexia nervosa: critérios…</a><a href="#c5"><b>C.5</b>Realimentação: quilocalorias…</a><a href="#c6"><b>C.6</b>Bulimia nervosa: TCC focada n…</a><a href="#c7"><b>C.7</b>Transtorno de compulsão alime…</a><a href="#c8"><b>C.8</b>Transtorno alimentar restriti…</a><a href="#c9"><b>C.9</b>Autolesão não suicida: avalia…</a></nav><!--/hp-f2-->
 
-  <div class="card prim">
+  <div class="card prim" id="c1">
     <div class="card-head">
       <div class="card-eyebrow"><span class="card-num">C.1</span> Grupos A e C</div>
       <h3>Transtornos de personalidade paranoide, esquizoide, esquizotípica, evitativa, dependente e anancástica <span class="ank ank-hy">HIGH-YIELD</span></h3>
@@ -718,7 +737,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
     </div>
   </div>
 
-  <div class="card prim">
+  <div class="card prim" id="c2">
     <div class="card-head">
       <div class="card-eyebrow"><span class="card-num">C.2</span> Antissocial e outros do grupo B</div>
       <h3>Transtorno de personalidade antissocial (dissocial), histriônica e narcisista <span class="ank ank-dec">DECISION</span></h3>
@@ -750,7 +769,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
     </div>
   </div>
 
-  <div class="card prim">
+  <div class="card prim" id="c3">
     <div class="card-head">
       <div class="card-eyebrow"><span class="card-num">C.3</span> Borderline</div>
       <h3>Transtorno de personalidade borderline (emocionalmente instável): a diretriz da APA 2025 <span class="ank ank-hy">HIGH-YIELD</span> <span class="ank ank-dec">DECISION</span></h3>
@@ -812,7 +831,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
       </details>
     </div>
   </div>
-  <div class="card prim">
+  <div class="card prim" id="c4">
     <div class="card-head">
       <div class="card-eyebrow"><span class="card-num">C.4</span> Anorexia nervosa</div>
       <h3>Anorexia nervosa: critérios, internação e nível de cuidado <span class="ank ank-hy">HIGH-YIELD</span> <span class="ank ank-dgr">DANGER</span></h3>
@@ -875,7 +894,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
     </div>
   </div>
 
-  <div class="card prim">
+  <div class="card prim" id="c5">
     <div class="card-head">
       <div class="card-eyebrow"><span class="card-num">C.5</span> Síndrome de realimentação</div>
       <h3>Realimentação: quilocalorias iniciais, fósforo, potássio, magnésio e tiamina <span class="ank ank-dgr">DANGER</span> <span class="ank ank-dec">DECISION</span></h3>
@@ -943,7 +962,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
       </details>
     </div>
   </div>
-  <div class="card prim">
+  <div class="card prim" id="c6">
     <div class="card-head">
       <div class="card-eyebrow"><span class="card-num">C.6</span> Bulimia nervosa</div>
       <h3>Bulimia nervosa: TCC focada no transtorno e fluoxetina 60 mg <span class="ank ank-dec">DECISION</span></h3>
@@ -988,7 +1007,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
     </div>
   </div>
 
-  <div class="card prim">
+  <div class="card prim" id="c7">
     <div class="card-head">
       <div class="card-eyebrow"><span class="card-num">C.7</span> Compulsão alimentar</div>
       <h3>Transtorno de compulsão alimentar: TCC ou terapia interpessoal e lisdexanfetamina <span class="ank ank-dec">DECISION</span></h3>
@@ -1020,7 +1039,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
     </div>
   </div>
 
-  <div class="card prim">
+  <div class="card prim" id="c8">
     <div class="card-head">
       <div class="card-eyebrow"><span class="card-num">C.8</span> ARFID</div>
       <h3>Transtorno alimentar restritivo/evitativo (ARFID): restrição sem medo de engordar <span class="ank ank-hy">HIGH-YIELD</span></h3>
@@ -1052,7 +1071,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
     </div>
   </div>
 
-  <div class="card prim">
+  <div class="card prim" id="c9">
     <div class="card-head">
       <div class="card-eyebrow"><span class="card-num">C.9</span> Autolesão não suicida</div>
       <h3>Autolesão não suicida: avaliar a função, medir o risco e separar do comportamento suicida <span class="ank ank-hy">HIGH-YIELD</span> <span class="ank ank-dgr">DANGER</span></h3>
@@ -1111,9 +1130,9 @@ ul.bullets li b{color:var(--ink);font-weight:600}
     <div class="section-eyebrow"><span>D</span> Entidades Secundárias</div>
     <div class="section-title">O diferencial e o entorno: comorbidade do borderline, complicações médicas, o adolescente e os outros transtornos alimentares</div>
     <div class="section-sub">Quatro boxes agrupados que completam o diagnóstico e mudam o nível de cuidado. A doença-base fica em C; aqui está o que a cerca.</div>
-  </div>
+  </div><!--hp-f2--><nav class="sec-idx" aria-label="Neste capítulo"><a href="#d1"><b>D.1</b>Borderline × bipolar × TEPT ×…</a><a href="#d2"><b>D.2</b>Osso, coração, trato digestiv…</a><a href="#d3"><b>D.3</b>Transtorno alimentar e autole…</a><a href="#d4"><b>D.4</b>Pica, ruminação, purgação iso…</a></nav><!--/hp-f2-->
 
-  <div class="card diag">
+  <div class="card diag" id="d1">
     <div class="card-head">
       <div class="card-eyebrow"><span class="card-num">D.1</span> Diferencial</div>
       <h3>Borderline × bipolar × TEPT × TDAH: o que se parece, o que se soma <span class="ank ank-dec">DECISION</span></h3>
@@ -1162,7 +1181,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
     </div>
   </div>
 
-  <div class="card diag">
+  <div class="card diag" id="d2">
     <div class="card-head">
       <div class="card-eyebrow"><span class="card-num">D.2</span> Complicações médicas</div>
       <h3>Osso, coração, trato digestivo, gestação, diabetes tipo 1 e atleta nos transtornos alimentares <span class="ank ank-hy">HIGH-YIELD</span></h3>
@@ -1188,7 +1207,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
     </div>
   </div>
 
-  <div class="card diag">
+  <div class="card diag" id="d3">
     <div class="card-head">
       <div class="card-eyebrow"><span class="card-num">D.3</span> Adolescente</div>
       <h3>Transtorno alimentar e autolesão no adolescente: terapia familiar e remissão ao PC04 <span class="ank ank-dec">DECISION</span></h3>
@@ -1214,7 +1233,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
     </div>
   </div>
 
-  <div class="card diag">
+  <div class="card diag" id="d4">
     <div class="card-head">
       <div class="card-eyebrow"><span class="card-num">D.4</span> Outros transtornos alimentares</div>
       <h3>Pica, ruminação, purgação isolada e comer noturno <span class="ank ank-hy">HIGH-YIELD</span></h3>
@@ -1247,7 +1266,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
     <div class="section-sub">A primeira árvore começa pela instabilidade clínica, que decide o local do tratamento; a segunda separa o risco de suicídio da autolesão e do transtorno de personalidade. O raciocínio em seis passos costura as duas.</div>
   </div>
 
-  <div class="card prim">
+  <div class="card prim" id="e1">
     <div class="card-head">
       <div class="card-eyebrow"><span class="card-num">E.1</span> Algoritmo</div>
       <h3>Paciente com perda de peso, restrição, compulsão ou purgação <span class="ank ank-dec">DECISION</span></h3>
@@ -1293,7 +1312,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
     </div>
   </div>
 
-  <div class="card prim">
+  <div class="card prim" id="e2">
     <div class="card-head">
       <div class="card-eyebrow"><span class="card-num">E.2</span> Algoritmo</div>
       <h3>Instabilidade afetiva, relações intensas, autolesão <span class="ank ank-dec">DECISION</span></h3>
@@ -1351,16 +1370,16 @@ ul.bullets li b{color:var(--ink);font-weight:600}
     <div class="section-eyebrow"><span>F</span> Tratamento Integrado</div>
     <div class="section-title">F1 · Estratégia por entidade · F2 · Doses com teto e contraindicações · F3 · Casos, erros e SUS</div>
     <div class="section-sub">Nos transtornos alimentares o primeiro degrau é o corpo (estabilizar, realimentar com monitorização); nos de personalidade e na autolesão, a psicoterapia estruturada. O fármaco é o degrau de menor evidência da maioria das escadas e a fonte do erro mais comum, a polifarmácia. Doses de bula levam "bula FDA · conferir bula Anvisa"; as da prática levam o rótulo "prática", com teto e critério de parada.</div>
-  </div>
+  </div><!--hp-f2--><nav class="sec-idx" aria-label="Neste capítulo"><a href="#f1"><b>F.1</b>Escada terapêutica por entida…</a><a href="#f2"><b>F.2</b>Tabela de doses para adultos…</a><a href="#f3"><b>F.3</b>Caso → conduta certa → erro t…</a></nav><!--/hp-f2-->
 
-  <div class="card tx">
+  <div class="card tx" id="f1">
     <div class="card-head">
       <div class="card-eyebrow"><span class="card-num">F.1</span> Estratégia</div>
       <h3>Escada terapêutica por entidade <span class="ank ank-dec">DECISION</span></h3>
     </div>
     <div class="card-body">
 
-      <div class="sub-title">F1.1 · Anorexia nervosa</div>
+      <div class="sub-title" id="f1-1">F1.1 · Anorexia nervosa</div>
       <ul class="bullets">
         <li><b>Degrau 0 (hoje):</b> sinais vitais com ortostase, ECG, bioquímica com K, Na, P, Mg e glicose; um critério da tabela 6 internar (A.1, C.4). Avaliar a capacidade de decidir (PC01) antes de discutir tratamento involuntário.</li>
         <li><b>Degrau 1:</b> plano multidisciplinar com meta de ganho semanal e peso-alvo; adulto, psicoterapia focada no transtorno; adolescente com cuidador, terapia familiar <span class="ev ev-eular">APA 2023 · afirmações 9–12</span>.</li>
@@ -1373,7 +1392,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
         <div class="box-body">O IMC isolado deixa passar bradicardia, hipofosfatemia e síncope da anorexia atípica; glicose IV rápida sem tiamina e sem fósforo precipita a síndrome de realimentação e a encefalopatia de Wernicke; o estrogênio no osso não funciona sem recuperar o peso e mascara a amenorreia como sinal. Em todos, o dado que decide está nos sinais vitais, nos eletrólitos e na rapidez da perda <span class="ev ev-eular">APA 2023</span></div>
       </div>
 
-      <div class="sub-title">F1.2 · Realimentação (primeira semana)</div>
+      <div class="sub-title" id="f1-2">F1.2 · Realimentação (primeira semana)</div>
       <ul class="bullets">
         <li><b>Antes da primeira refeição:</b> tiamina 100 mg VO ou IV; fósforo, magnésio, potássio e cálcio de base; ECG; glicemia capilar.</li>
         <li><b>Calorias:</b> escolher o protocolo do serviço entre APA 2023 (1.500–2.000 kcal/dia com monitorização, subindo até 3.000–4.000 kcal/dia) e NICE via PC01 (no máximo 10 kcal/kg/dia, ou 5 kcal/kg/dia se IMC ≤14 ou jejum ≥2 semanas, subindo em 4 a 7 dias).</li>
@@ -1381,26 +1400,26 @@ ul.bullets li b{color:var(--ink);font-weight:600}
         <li><b>Repor:</b> por via oral quando possível; IV pelas doses da F2 e do NU04; hidratação IV lenta, sobretudo em quem usou laxante ou diurético.</li>
       </ul>
 
-      <div class="sub-title">F1.3 · Bulimia nervosa</div>
+      <div class="sub-title" id="f1-3">F1.3 · Bulimia nervosa</div>
       <ul class="bullets">
         <li><b>Degrau 1:</b> TCC focada no transtorno (CBT-E), 14–21 sessões; regularizar três refeições por dia; tratar o K e o QTc se purga.</li>
         <li><b>Degrau 2:</b> fluoxetina 60 mg pela manhã, desde o início ou se sem resposta em 6 semanas <span class="ev ev-eular">APA 2023 · afirmação 13</span>.</li>
         <li><b>Degrau 3:</b> mudar a abordagem (terapia interpessoal ou psicodinâmica), prolongar a duração, nível de cuidado maior; outro ISRS em dose alta da faixa se não tolera a fluoxetina; sem bupropiona.</li>
       </ul>
 
-      <div class="sub-title">F1.4 · Compulsão alimentar</div>
+      <div class="sub-title" id="f1-4">F1.4 · Compulsão alimentar</div>
       <ul class="bullets">
         <li><b>Degrau 1:</b> TCC ou terapia interpessoal, individual ou em grupo; autoajuda guiada ou digital como porta de entrada se faltar acesso.</li>
         <li><b>Degrau 2:</b> antidepressivo ou lisdexanfetamina (30 mg pela manhã, +20 mg por semana até 50–70 mg/dia; teto 70 mg); avaliar PA, FC, sono e humor; parar se não houver melhora.</li>
         <li><b>Degrau 3:</b> topiramato só com contracepção eficaz e cognição monitorada; obesidade grave: EN07.</li>
       </ul>
 
-      <div class="sub-title">F1.5 · ARFID</div>
+      <div class="sub-title" id="f1-5">F1.5 · ARFID</div>
       <ul class="bullets">
         <li>Excluir doença gastrintestinal (GH01); nutrição, exposição gradual, TCC adaptada e tratamento da ansiedade, do TEA e do TDAH; internar pelos critérios da tabela 6; sem fármaco recomendado <span class="ev ev-eular">APA 2023</span>.</li>
       </ul>
 
-      <div class="sub-title">F1.6 · Borderline</div>
+      <div class="sub-title" id="f1-6">F1.6 · Borderline</div>
       <ul class="bullets">
         <li><b>Degrau 1:</b> avaliação estruturada, plano documentado, discussão do diagnóstico com psicoeducação, e <b>psicoterapia estruturada</b> (DBT, MBT, TFP, esquema, STEPPS, manejo psiquiátrico geral) <span class="ev ev-eular">APA BPD 2025 · afirmações 1–5</span>.</li>
         <li><b>Degrau 2:</b> tratar a comorbidade com fármaco eficaz; revisar os medicamentos prévios antes de acrescentar.</li>
@@ -1413,13 +1432,13 @@ ul.bullets li b{color:var(--ink);font-weight:600}
         <div class="box-body">Qual é o alvo que será medido? O que já foi tentado, em que dose e por quanto tempo? A psicoterapia está sendo feita com fidelidade? O que acontece em overdose, com os fármacos que já estão em casa? O que será retirado? Se não houver resposta para essas perguntas, a prescrição não deve ser feita; a conciliação a cada 6 meses é obrigatória <span class="ev ev-eular">APA BPD 2025 · afirmações 6–8</span></div>
       </div>
 
-      <div class="sub-title">F1.7 · Antissocial e grupos A e C</div>
+      <div class="sub-title" id="f1-7">F1.7 · Antissocial e grupos A e C</div>
       <ul class="bullets">
         <li>Psicoterapia estruturada de longo prazo, tratamento da dependência (PC03) e da depressão ou ansiedade (PC02); antipsicótico em dose baixa na agitação paranoide ou esquizotípica; segurança da equipe e limites explícitos <span class="ev ev-sbr">PSI 01 · piso</span>.</li>
         <li>Sem fármaco para o transtorno em si; benzodiazepínico por curto prazo e só quando indispensável.</li>
       </ul>
 
-      <div class="sub-title">F1.8 · Autolesão não suicida</div>
+      <div class="sub-title" id="f1-8">F1.8 · Autolesão não suicida</div>
       <ul class="bullets">
         <li><b>Hoje:</b> cuidar da ferida, perguntar sobre suicídio, restringir meios (medicamentos), plano de segurança escrito, notificar.</li>
         <li><b>Depois:</b> DBT ou treino de habilidades, TCC, tratamento do transtorno de base, família no adolescente; seguimento em dias após o episódio.</li>
@@ -1427,7 +1446,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
       </ul>
     </div>
   </div>
-  <div class="card tx">
+  <div class="card tx" id="f2">
     <div class="card-head">
       <div class="card-eyebrow"><span class="card-num">F.2</span> Doses Operacionais</div>
       <h3>Tabela de doses para adultos, com via, teto, contraindicação e o que muda a prescrição</h3>
@@ -1550,13 +1569,13 @@ ul.bullets li b{color:var(--ink);font-weight:600}
       </div>
     </div>
   </div>
-  <div class="card tx">
+  <div class="card tx" id="f3">
     <div class="card-head">
       <div class="card-eyebrow"><span class="card-num">F.3</span> Casos e SUS</div>
       <h3>Caso → conduta certa → erro típico, e o que existe no SUS <span class="ank ank-hy">HIGH-YIELD</span></h3>
     </div>
     <div class="card-body">
-      <div class="sub-title">F3.1 · Cenários de plantão e de ambulatório</div>
+      <div class="sub-title" id="f3-1">F3.1 · Cenários de plantão e de ambulatório</div>
       <div class="stbl stbl-3">
         <div class="stbl-head stbl-3"><div>Caso</div><div>Conduta certa</div><div>Erro típico</div></div>
         <div class="stbl-row stbl-3">
@@ -1601,7 +1620,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
         </div>
       </div>
 
-      <div class="sub-title">F3.2 · O que existe no SUS e no mercado (CMED de 09/10/2026)</div>
+      <div class="sub-title" id="f3-2">F3.2 · O que existe no SUS e no mercado (CMED de 09/10/2026)</div>
       <div class="stbl stbl-2">
         <div class="stbl-head stbl-2"><div>Item</div><div>Situação</div></div>
         <div class="stbl-row stbl-2">
@@ -1622,7 +1641,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
         </div>
       </div>
 
-      <div class="sub-title">F3.3 · Monitorização, alta e seguimento</div>
+      <div class="sub-title" id="f3-3">F3.3 · Monitorização, alta e seguimento</div>
       <ul class="bullets">
         <li><b>Alta da anorexia:</b> sinais vitais e eletrólitos estáveis sem reposição, ganho de peso sustentado, plano alimentar aceito pelo paciente e pela família, consulta médica e psicoterapia agendadas em dias. Quanto mais perto do peso-alvo na alta, menor a recaída <span class="ev ev-eular">APA 2023</span>.</li>
         <li><b>Seguimento da bulimia e da compulsão:</b> contagem semanal de episódios e compensações; potássio e ECG enquanto houver purgação; reavaliar a fluoxetina em 6 semanas e manter 6–12 meses após a remissão; lisdexanfetamina com PA, FC, sono e humor em cada consulta.</li>
@@ -1644,7 +1663,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
     <div class="section-sub">Os erros deste campo repetem dois padrões: olhar o número da balança e não os sinais vitais, e prescrever como resposta a cada crise sem alvo, prazo nem revisão.</div>
   </div>
 
-  <div class="card pearl">
+  <div class="card pearl" id="g1">
     <div class="card-head">
       <div class="card-eyebrow"><span class="card-num">G.1</span> Pegadinhas</div>
       <h3>10 erros operacionais em personalidade, transtornos alimentares e autolesão</h3>
@@ -1696,7 +1715,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
     </div>
   </div>
 
-  <div class="card pearl">
+  <div class="card pearl" id="g2">
     <div class="card-head">
       <div class="card-eyebrow"><span class="card-num">G.2</span> Mitos e controvérsias</div>
       <h3>Três mitos vivos e três debates sem consenso</h3>
@@ -1742,7 +1761,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
     <div class="section-sub">Oito nuances que separam quem trata o número da balança ou o rótulo de quem trata o paciente, e quatro mudanças recentes verificadas nas fontes lidas. O tema é, em boa parte, estável: não há novidade fabricada para completar a contagem.</div>
   </div>
 
-  <div class="card pearl">
+  <div class="card pearl" id="h1">
     <div class="card-head">
       <div class="card-eyebrow"><span class="card-num">H.1</span> Pearls</div>
       <h3>8 nuances que distinguem o especialista</h3>
@@ -1791,7 +1810,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
     </div>
   </div>
 
-  <div class="card pearl">
+  <div class="card pearl" id="h2">
     <div class="card-head">
       <div class="card-eyebrow"><span class="card-num">H.2</span> Evolving</div>
       <h3>Quatro mudanças recentes nas fontes lidas</h3>
@@ -1852,5 +1871,36 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <a class="to-top" href="#" aria-label="Voltar ao topo">↑</a>
 <div class="watermark">@dr.lorencato · Personalidade, TCA e Autolesão v5.2</div>
 
-</body>
+<!--hp-f2--><script>(function(){var d=document,M=d.querySelector('main');if(!M)return;
+var SELF='PC05',HP=' CT01 CT02 CT03 CT04 CT05 CT06 CT08 CT10 CV01 CV03 CV04 CV05 CV06 CV07 CV08 EN01 EN02 EN03 EN04 EN06 EN07 GH01 GH02 GH03 GH05 GH06 GH07 GH08 GH09 GH10 GO01 GO02 GO03 GO04 GO09 GO10 GO11 GO12 GO13 GO14 HO01 HO02 HO03 HO04 HO05 HO06 II01 II02 II03 II04 II07 II08 NE01 NE02 NE03 NE04 NE05 NE06 NE07 NE08 NU01 NU02 NU03 NU04 NU05 OE01 OE02 PC01 PC02 PC03 PC04 PC05 PC06 PD01 PD02 PD03 PD04 PD05 PD06 PD07 PD08 PD09 PD10 RD01 RD02 RD03 RD04 RD05 RD07 RP01 RP02 RP03 RP04 ';
+var SK='A,H1,H2,H3,SCRIPT,STYLE,NAV,.card-num,.card-eyebrow,.sub-title,.disease-tag,.toc';
+var R=/\b(?:([A-H])(\d)?\.(\d{1,2}[a-c]?)|(CV|RP|GH|NE|EN|NU|HO|II|RD|GO|PD|PC|CT|OE)(\d\d))\b/g;
+function skip(n){for(var e=n.parentNode;e&&e!==M;e=e.parentNode)if(e.matches&&e.matches(SK))return 1;return 0}
+var w=d.createTreeWalker(M,4),t,L=[];while(t=w.nextNode())if(R.test(t.data)&&!skip(t))L.push(t);
+L.forEach(function(t){var s=t.data,f=d.createDocumentFragment(),i=0,m;R.lastIndex=0;
+while(m=R.exec(s)){var h=null;
+if(m[1]){var id=m[1].toLowerCase()+(m[2]?m[2]+'-':'')+m[3];if(d.getElementById(id))h='#'+id}
+else{var x=m[4]+m[5];if(x!==SELF&&HP.indexOf(' '+x+' ')>=0)h='../'+x+'/'+x+'.html'}
+if(!h)continue;f.appendChild(d.createTextNode(s.slice(i,m.index)));
+var a=d.createElement('a');a.href=h;a.className='xr';a.textContent=m[0];f.appendChild(a);i=R.lastIndex}
+if(i){f.appendChild(d.createTextNode(s.slice(i)));t.parentNode.replaceChild(f,t)}});
+function nz(s){return s.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'')}
+var q=d.querySelector('.hp-q'),n=d.querySelector('.hp-n'),it=M.querySelectorAll('.card,.pocket-card'),T;
+function clr(){M.querySelectorAll('.q-off').forEach(function(e){e.classList.remove('q-off')})}
+function run(){var v=nz(q.value.trim());clr();n.textContent='';if(v.length<2)return;var k=0;
+it.forEach(function(c){if(nz(c.textContent).indexOf(v)<0){c.classList.add('q-off');return}k++;
+var r=c.querySelectorAll('.stbl-row,.disease-row,.score-row'),h=[];r.forEach(function(x){if(nz(x.textContent).indexOf(v)>=0)h.push(x)});
+if(h.length)r.forEach(function(x){if(h.indexOf(x)<0)x.classList.add('q-off')});
+c.querySelectorAll('details').forEach(function(x){if(nz(x.textContent).indexOf(v)>=0)x.open=true})});
+M.querySelectorAll('section').forEach(function(s){if(!s.querySelector('.card:not(.q-off),.pocket-card:not(.q-off)'))s.classList.add('q-off')});
+n.textContent=k?k+' achado'+(k>1?'s':''):'nada'}
+if(q){q.addEventListener('input',function(){clearTimeout(T);T=setTimeout(run,180)});
+q.addEventListener('keydown',function(e){if(e.key==='Escape'){q.value='';run()}})}
+function tg(b,f){b.addEventListener('click',function(){var on=b.getAttribute('aria-pressed')!=='true';b.setAttribute('aria-pressed',on);f(on)})}
+var bd=d.querySelector('.hp-dz'),bo=d.querySelector('.hp-op');
+if(bd)tg(bd,function(on){d.body.classList.toggle('dz',on);if(on)d.getElementById('tratamento').scrollIntoView()});
+if(bo)tg(bo,function(on){M.querySelectorAll('details').forEach(function(x){x.open=on})});
+var P=[];addEventListener('beforeprint',function(){P=[];M.querySelectorAll('details:not([open])').forEach(function(x){P.push(x);x.open=true})});
+addEventListener('afterprint',function(){P.forEach(function(x){x.open=false})});
+})();</script><!--/hp-f2--></body>
 </html>

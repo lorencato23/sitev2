@@ -345,6 +345,25 @@ ul.bullets li b{color:var(--ink);font-weight:600}
   .pocket .pocket-card.tx{--accent:#a8481a}
   .pocket .pocket-card.clin{--accent:#0b5d4e}
 }
+
+/* === v5.2.2 · fase 2 (navegação) === */
+.hp-tools{display:flex;gap:6px;align-items:center;flex:none;order:1;margin-left:auto;padding-left:6px;position:sticky;right:0;background:#f1eee5;box-shadow:-10px 0 10px -4px #f1eee5,16px 0 0 #f1eee5}
+@media(min-width:900px){html{scroll-padding-top:150px}.toc-inner{flex-wrap:wrap;overflow:visible}.card[id],.sub-title[id]{scroll-margin-top:150px}}
+@media(max-width:899px){.hp-b,.hp-n{display:none}.hp-q{width:104px}}
+.hp-q{width:128px;font:500 12px/1 'DM Sans',system-ui,sans-serif;padding:7px 11px;border:1px solid var(--line-strong);border-radius:999px;background:var(--paper);color:var(--ink)}
+.hp-b{font:600 11px/1 'DM Sans',system-ui,sans-serif;letter-spacing:.05em;text-transform:uppercase;padding:7px 10px;border-radius:999px;border:1px solid var(--line-strong);background:var(--paper);color:var(--ink-soft);cursor:pointer;white-space:nowrap}
+.hp-b[aria-pressed=true]{background:var(--ink);color:#fff;border-color:var(--ink)}
+.hp-n{font:600 11px/1 'DM Mono',monospace;color:var(--ink-mute);white-space:nowrap}
+.sec-idx{display:flex;flex-wrap:wrap;gap:6px;margin:12px 0 20px}
+.sec-idx a{font:500 12px/1.25 'DM Sans',system-ui,sans-serif;padding:6px 10px;border-radius:999px;background:var(--paper);border:1px solid var(--line);color:var(--ink-soft);text-decoration:none}
+.sec-idx a:hover{border-color:var(--line-strong);color:var(--ink)}
+.sec-idx b{color:var(--c-prim);margin-right:5px;font-weight:700}
+a.xr{color:inherit;text-decoration:underline dotted;text-underline-offset:2px}
+a.xr:hover{color:var(--c-prim)}
+.card[id],.sub-title[id]{scroll-margin-top:110px}
+.q-off{display:none!important}
+body.dz main section:not(#tratamento){display:none}
+@media print{.hp-tools,.sec-idx,.toc-doses{display:none!important}}
 </style>
 </head>
 <body>
@@ -364,14 +383,14 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 
 <!-- STICKY TOC -->
 <nav class="toc">
-<div class="toc-inner">
+<div class="toc-inner"><!--hp-f2--><span class="hp-tools"><input class="hp-q" type="search" placeholder="Buscar no HP" aria-label="Buscar no HP"><button class="hp-b hp-dz" type="button" aria-pressed="false">Só doses</button><button class="hp-b hp-op" type="button" aria-pressed="false">Abrir tudo</button><span class="hp-n" aria-live="polite"></span></span><!--/hp-f2-->
 <a href="#pocket"      class="toc-chip"><span class="toc-chip-num">0</span>Pocket</a>
 <a href="#redflags"    class="toc-chip"><span class="toc-chip-num">A</span>Red Flags</a>
 <a href="#approach"    class="toc-chip"><span class="toc-chip-num">B</span>Apresentação</a>
 <a href="#primarias"   class="toc-chip"><span class="toc-chip-num">C</span>Entidades</a>
 <a href="#secundarias" class="toc-chip"><span class="toc-chip-num">D</span>Secundárias</a>
 <a href="#algoritmo"   class="toc-chip"><span class="toc-chip-num">E</span>Algoritmo</a>
-<a href="#tratamento"  class="toc-chip"><span class="toc-chip-num">F</span>Tratamento</a>
+<a href="#tratamento"  class="toc-chip"><span class="toc-chip-num">F</span>Tratamento</a><!--hp-f2--><a href="#f2" class="toc-chip toc-doses"><span class="toc-chip-num">Rx</span>Doses</a><!--/hp-f2-->
 <a href="#pitfalls"    class="toc-chip"><span class="toc-chip-num">G</span>Pitfalls</a>
 <a href="#pearls"      class="toc-chip"><span class="toc-chip-num">H</span>Pearls</a>
 </div>
@@ -492,7 +511,7 @@ SECTION A · RED FLAGS
 <div class="section-sub">O que não pode esperar a próxima passagem de plantão: oclusão de grande vaso, AVC de fossa posterior que parece labirintite, hemorragia que expande, aneurisma que ressangra e edema que hernia.</div>
 </div>
 
-<div class="card emerg">
+<div class="card emerg" id="a1">
 <div class="card-head">
 <div class="card-eyebrow"><span class="card-num">A.1</span> Emergências</div>
 <h3>Sinais de alarme neurovasculares <span class="ank ank-dgr">DANGER</span></h3>
@@ -587,7 +606,7 @@ SECTION A · RED FLAGS
 </div>
 </div>
 
-<div class="card emerg">
+<div class="card emerg" id="a2">
 <div class="card-head">
 <div class="card-eyebrow"><span class="card-num">A.2</span> Mimetizadores e camaleões</div>
 <h3>O que parece AVC e o AVC que não parece <span class="ank ank-dec">DECISION</span></h3>
@@ -645,7 +664,7 @@ SECTION B · POR APRESENTAÇÃO
 <div class="section-sub">A apresentação localiza o território, sugere o mecanismo e decide a próxima imagem; o diagnóstico nosológico vem depois da tomografia.</div>
 </div>
 
-<div class="card clin">
+<div class="card clin" id="b1">
 <div class="card-head">
 <div class="card-eyebrow"><span class="card-num">B.1</span> Padrão 1</div>
 <h3>Déficit focal súbito e persistente</h3>
@@ -666,7 +685,7 @@ SECTION B · POR APRESENTAÇÃO
 </div>
 </div>
 
-<div class="card clin">
+<div class="card clin" id="b2">
 <div class="card-head">
 <div class="card-eyebrow"><span class="card-num">B.2</span> Padrão 2</div>
 <h3>Sintomas transitórios</h3>
@@ -687,7 +706,7 @@ SECTION B · POR APRESENTAÇÃO
 </div>
 </div>
 
-<div class="card clin">
+<div class="card clin" id="b3">
 <div class="card-head">
 <div class="card-eyebrow"><span class="card-num">B.3</span> Padrão 3</div>
 <h3>Cefaleia súbita e intensa</h3>
@@ -708,7 +727,7 @@ SECTION B · POR APRESENTAÇÃO
 </div>
 </div>
 
-<div class="card clin">
+<div class="card clin" id="b4">
 <div class="card-head">
 <div class="card-eyebrow"><span class="card-num">B.4</span> Padrão 4</div>
 <h3>Rebaixamento de consciência com sinais de tronco</h3>
@@ -728,7 +747,7 @@ SECTION B · POR APRESENTAÇÃO
 </div>
 </div>
 
-<div class="card clin">
+<div class="card clin" id="b5">
 <div class="card-head">
 <div class="card-eyebrow"><span class="card-num">B.5</span> Padrão 5</div>
 <h3>AVC no adulto jovem (&lt;50 anos)</h3>
@@ -763,10 +782,10 @@ SECTION C · ENTIDADES PRIMÁRIAS
 <div class="section-eyebrow"><span>C</span> Entidades Primárias</div>
 <div class="section-title">Disease Boxes — isquemia, hemorragia e o mecanismo que decide a prevenção</div>
 <div class="section-sub">Seis entidades com caixa própria: AVC isquêmico agudo, AIT, hemorragia intraparenquimatosa, HSA aneurismática, aterosclerose de grandes artérias e cardioembolismo/ESUS/FOP. Teoria completa nos deep-dives.</div>
-</div>
+</div><!--hp-f2--><nav class="sec-idx" aria-label="Neste capítulo"><a href="#c1"><b>C.1</b>AVC isquêmico agudo e reperfu…</a><a href="#c2"><b>C.2</b>Ataque isquêmico transitório…</a><a href="#c3"><b>C.3</b>Hemorragia intraparenquimatos…</a><a href="#c4"><b>C.4</b>Hemorragia subaracnóidea aneu…</a><a href="#c5"><b>C.5</b>Aterosclerose de grandes arté…</a><a href="#c6"><b>C.6</b>Cardioembolismo, ESUS e foram…</a></nav><!--/hp-f2-->
 
 <!-- C.1 AVC ISQUÊMICO AGUDO -->
-<div class="card prim">
+<div class="card prim" id="c1">
 <div class="card-head">
 <div class="card-eyebrow"><span class="card-num">C.1</span> Isquemia aguda</div>
 <h3>AVC isquêmico agudo e reperfusão <span class="ank ank-hy">HIGH-YIELD</span> <span class="ank ank-dec">DECISION</span></h3>
@@ -838,7 +857,7 @@ SECTION C · ENTIDADES PRIMÁRIAS
 </div>
 
 <!-- C.2 AIT -->
-<div class="card prim">
+<div class="card prim" id="c2">
 <div class="card-head">
 <div class="card-eyebrow"><span class="card-num">C.2</span> Isquemia transitória</div>
 <h3>Ataque isquêmico transitório (AIT) <span class="ank ank-hy">HIGH-YIELD</span> <span class="ank ank-dgr">DANGER</span></h3>
@@ -895,7 +914,7 @@ SECTION C · ENTIDADES PRIMÁRIAS
 </div>
 
 <!-- C.3 HEMORRAGIA INTRAPARENQUIMATOSA -->
-<div class="card prim">
+<div class="card prim" id="c3">
 <div class="card-head">
 <div class="card-eyebrow"><span class="card-num">C.3</span> Hemorragia</div>
 <h3>Hemorragia intraparenquimatosa espontânea <span class="ank ank-hy">HIGH-YIELD</span> <span class="ank ank-dgr">DANGER</span></h3>
@@ -951,7 +970,7 @@ SECTION C · ENTIDADES PRIMÁRIAS
 </div>
 
 <!-- C.4 HSA ANEURISMÁTICA -->
-<div class="card prim">
+<div class="card prim" id="c4">
 <div class="card-head">
 <div class="card-eyebrow"><span class="card-num">C.4</span> Hemorragia</div>
 <h3>Hemorragia subaracnóidea aneurismática <span class="ank ank-hy">HIGH-YIELD</span> <span class="ank ank-dgr">DANGER</span></h3>
@@ -1033,7 +1052,7 @@ SECTION C · ENTIDADES PRIMÁRIAS
 </div>
 
 <!-- C.5 ATEROSCLEROSE DE GRANDES ARTÉRIAS -->
-<div class="card prim">
+<div class="card prim" id="c5">
 <div class="card-head">
 <div class="card-eyebrow"><span class="card-num">C.5</span> Mecanismo · TOAST 1</div>
 <h3>Aterosclerose de grandes artérias: estenose carotídea sintomática e intracraniana <span class="ank ank-dec">DECISION</span></h3>
@@ -1076,7 +1095,7 @@ SECTION C · ENTIDADES PRIMÁRIAS
 </div>
 
 <!-- C.6 CARDIOEMBOLISMO / ESUS / FOP -->
-<div class="card prim">
+<div class="card prim" id="c6">
 <div class="card-head">
 <div class="card-eyebrow"><span class="card-num">C.6</span> Mecanismo · TOAST 2 e 5</div>
 <h3>Cardioembolismo, ESUS e forame oval patente <span class="ank ank-dec">DECISION</span> <span class="ank ank-con">CONTROVERSY</span></h3>
@@ -1127,10 +1146,10 @@ SECTION D · ENTIDADES SECUNDÁRIAS
 <div class="section-eyebrow"><span>D</span> Entidades Secundárias</div>
 <div class="section-title">Topografia, causas menos comuns e a complicação neurocirúrgica</div>
 <div class="section-sub">Síndromes vasculares agrupadas em um único box de topografia; trombose venosa, dissecção, malformações e vasculopatias não ateroscleróticas; edema maligno e infarto cerebelar expansivo.</div>
-</div>
+</div><!--hp-f2--><nav class="sec-idx" aria-label="Neste capítulo"><a href="#d1"><b>D.1</b>Síndromes vasculares: do exam…</a><a href="#d2"><b>D.2</b>Trombose venosa cerebral</a><a href="#d3"><b>D.3</b>Dissecção arterial cervical e…</a><a href="#d4"><b>D.4</b>Malformações vasculares e ane…</a><a href="#d5"><b>D.5</b>SVCR, PRES, moyamoya, vasculi…</a><a href="#d6"><b>D.6</b>Infarto maligno da ACM e infa…</a></nav><!--/hp-f2-->
 
 <!-- D.1 TOPOGRAFIA -->
-<div class="card diag">
+<div class="card diag" id="d1">
 <div class="card-head">
 <div class="card-eyebrow"><span class="card-num">D.1</span> Topografia</div>
 <h3>Síndromes vasculares: do exame ao vaso <span class="ank ank-hy">HIGH-YIELD</span></h3>
@@ -1192,7 +1211,7 @@ SECTION D · ENTIDADES SECUNDÁRIAS
 </div>
 
 <!-- D.2 TROMBOSE VENOSA CEREBRAL -->
-<div class="card diag">
+<div class="card diag" id="d2">
 <div class="card-head">
 <div class="card-eyebrow"><span class="card-num">D.2</span> Venoso</div>
 <h3>Trombose venosa cerebral <span class="ank ank-dgr">DANGER</span></h3>
@@ -1235,7 +1254,7 @@ SECTION D · ENTIDADES SECUNDÁRIAS
 </div>
 
 <!-- D.3 DISSECÇÃO -->
-<div class="card diag">
+<div class="card diag" id="d3">
 <div class="card-head">
 <div class="card-eyebrow"><span class="card-num">D.3</span> Arterial não aterosclerótico</div>
 <h3>Dissecção arterial cervical e intracraniana <span class="ank ank-dec">DECISION</span></h3>
@@ -1268,7 +1287,7 @@ SECTION D · ENTIDADES SECUNDÁRIAS
 </div>
 
 <!-- D.4 MALFORMAÇÕES E ANEURISMA NÃO ROTO -->
-<div class="card diag">
+<div class="card diag" id="d4">
 <div class="card-head">
 <div class="card-eyebrow"><span class="card-num">D.4</span> Estrutural</div>
 <h3>Malformações vasculares e aneurisma não roto <span class="ank ank-con">CONTROVERSY</span></h3>
@@ -1314,7 +1333,7 @@ SECTION D · ENTIDADES SECUNDÁRIAS
 </div>
 
 <!-- D.5 VASCULOPATIAS -->
-<div class="card diag">
+<div class="card diag" id="d5">
 <div class="card-head">
 <div class="card-eyebrow"><span class="card-num">D.5</span> Vasculopatias</div>
 <h3>SVCR, PRES, moyamoya, vasculite primária do SNC e CADASIL <span class="ank ank-dgr">DANGER</span></h3>
@@ -1346,7 +1365,7 @@ SECTION D · ENTIDADES SECUNDÁRIAS
 </div>
 
 <!-- D.6 EDEMA MALIGNO -->
-<div class="card tx">
+<div class="card tx" id="d6">
 <div class="card-head">
 <div class="card-eyebrow"><span class="card-num">D.6</span> Complicação neurocirúrgica</div>
 <h3>Infarto maligno da ACM e infarto cerebelar expansivo <span class="ank ank-dgr">DANGER</span> <span class="ank ank-dec">DECISION</span></h3>
@@ -1389,7 +1408,7 @@ SECTION E · ALGORITMO
 <div class="section-sub">Primeiro separe sangue de isquemia. Na isquemia, o tempo decide a imagem e a imagem decide a reperfusão. Árvore visual + sequência mental.</div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="e1">
 <div class="card-head">
 <div class="card-eyebrow"><span class="card-num">E.1</span> Árvore</div>
 <h3>Déficit focal súbito ou cefaleia em trovoada <span class="ank ank-dec">DECISION</span></h3>
@@ -1486,16 +1505,16 @@ SECTION F · TRATAMENTO
 <div class="section-eyebrow"><span>F</span> Tratamento Integrado</div>
 <div class="section-title">F1 · Estratégia por entidade · F2 · Doses operacionais · F3 · Casos · F4 · SUS</div>
 <div class="section-sub">Escadas organizadas por entidade e fase; doses adultas com unidade, via, frequência e duração; cenários "caso → conduta certa → erro típico"; e o que o PCDT de 2023 entrega separado do que as diretrizes internacionais recomendam.</div>
-</div>
+</div><!--hp-f2--><nav class="sec-idx" aria-label="Neste capítulo"><a href="#f1"><b>F.1</b>Escadas terapêuticas por enti…</a><a href="#f2"><b>F.2</b>Tabela de doses — AVC, hemorr…</a><a href="#f3"><b>F.3</b>Caso → conduta certa → erro t…</a><a href="#f4"><b>F.4</b>O que o SUS entrega × o que a…</a></nav><!--/hp-f2-->
 
 <!-- F.1 ESTRATÉGIA -->
-<div class="card tx">
+<div class="card tx" id="f1">
 <div class="card-head">
 <div class="card-eyebrow"><span class="card-num">F.1</span> Estratégia</div>
 <h3>Escadas terapêuticas por entidade <span class="ank ank-dec">DECISION</span></h3>
 </div>
 <div class="card-body">
-<div class="sub-title">F1.1 · AVC isquêmico hiperagudo: estabilizar e reperfundir</div>
+<div class="sub-title" id="f1-1">F1.1 · AVC isquêmico hiperagudo: estabilizar e reperfundir</div>
 <ul class="bullets">
 <li><b>Minuto 0–10:</b> via aérea se Glasgow ≤8 ou disfagia com aspiração; O2 apenas se SpO2 ≤94%; acesso venoso, glicemia capilar, ECG; cabeceira plana ou 30° conforme risco de aspiração (posição da cabeça não muda desfecho). Hipoglicemia &lt;60 mg/dL é tratada antes de qualquer decisão.</li>
 <li><b>Minuto 10–25:</b> TC sem contraste e angio-TC de arco a vértice no mesmo tempo quando há suspeita de oclusão proximal; perfusão apenas fora de 4,5 h. Creatinina, troponina e coagulograma não atrasam imagem nem trombolítico, salvo uso de varfarina, heparina, hepatopatia ou suspeita de plaquetopenia.</li>
@@ -1510,7 +1529,7 @@ SECTION F · TRATAMENTO
 <div class="box-body">No IAM, a tenecteplase é dosada por faixas de 30–50 mg; no AVC a dose é <b>0,25 mg/kg com teto de 25 mg</b> (metade do frasco de 50 mg, ou o frasco de 25 mg aprovado pela Anvisa em dezembro de 2025, segundo o fabricante). A dose de 0,40 mg/kg aumentou hemorragia intracraniana. Padronize a apresentação, a diluição e a tabela por peso no protocolo institucional para evitar erro por analogia com o protocolo de dor torácica.</div>
 </div>
 
-<div class="sub-title">F1.2 · Primeiras 24–72 h: unidade de AVC</div>
+<div class="sub-title" id="f1-2">F1.2 · Primeiras 24–72 h: unidade de AVC</div>
 <ul class="bullets">
 <li><b>Monitorização pós-trombólise:</b> PA e exame neurológico a cada 15 min por 2 h, a cada 30 min por 6 h e de hora em hora até 24 h; aumentar a frequência se PAS &gt;180 ou PAD &gt;105. Adiar sonda nasogástrica, sonda vesical e cateter arterial se possível. TC ou RM de controle em 24 h antes de antiagregante ou anticoagulante.</li>
 <li><b>Metas fisiológicas:</b> glicemia 140–180 mg/dL (insulina IV para 80–130 não melhora e causa hipoglicemia, SHINE); temperatura &lt;37,5 °C com busca do foco; normonatremia; soro fisiológico, sem soluções hipotônicas; corrigir hipovolemia e hipotensão.</li>
@@ -1519,14 +1538,14 @@ SECTION F · TRATAMENTO
 <li><b>Reabilitação:</b> mobilização precoce, mas sem treinamento intensivo fora do leito nas primeiras 24 h (AVERT); fisioterapia, fonoaudiologia e terapia ocupacional; rastrear depressão; fluoxetina não melhora função (FOCUS, AFFINITY, EFFECTS).</li>
 </ul>
 
-<div class="sub-title">F1.3 · Pressão arterial no AVC isquêmico sem reperfusão</div>
+<div class="sub-title" id="f1-3">F1.3 · Pressão arterial no AVC isquêmico sem reperfusão</div>
 <ul class="bullets">
 <li>PA &lt;220/120 sem comorbidade que exija controle (síndrome coronariana aguda, edema pulmonar, dissecção de aorta, eclâmpsia): não iniciar nem reintroduzir anti-hipertensivo nas primeiras 48–72 h, pois não reduz morte ou dependência.</li>
 <li>PA ≥220/120: benefício de tratar é incerto; quando tratar, reduzir ~15% nas primeiras 24 h, sem quedas bruscas. Retomar anti-hipertensivos orais após 48–72 h se estável, rumo a &lt;130/80 na prevenção secundária.</li>
 <li>Hipotensão e hipovolemia devem ser corrigidas; vasopressor de rotina para "elevar a perfusão" na piora sem reperfusão não é recomendado (ESO 2025).</li>
 </ul>
 
-<div class="sub-title">F1.4 · AIT e AVC menor: antitrombótico nas primeiras 24 h</div>
+<div class="sub-title" id="f1-4">F1.4 · AIT e AVC menor: antitrombótico nas primeiras 24 h</div>
 <ul class="bullets">
 <li><b>NIHSS ≤3 ou ABCD2 ≥4, não cardioembólico, sem trombólise:</b> AAS + clopidogrel com dose de ataque em até 24 h, por 21 dias, depois monoterapia (classe 1).</li>
 <li><b>NIHSS 4–5 em 24 h, ou NIHSS ≤5/ABCD2 ≥4 entre 24 e 72 h, com aterosclerose presumida:</b> AAS + clopidogrel por 21 dias (2a, INSPIRES).</li>
@@ -1540,7 +1559,7 @@ SECTION F · TRATAMENTO
 <div class="box-body"><ul><li>AIT: imediatamente após excluir hemorragia.</li><li>Infarto leve ou moderado: DOAC em até 48 h (ELAN, OPTIMAS, TIMING).</li><li>Infarto grave pelo tamanho na imagem: dia 6–7.</li><li>Transformação hemorrágica: decisão individual; petéquias (HI1–HI2) raramente mudam o plano, hematoma parenquimatoso (PH2) adia.</li><li>Nunca heparina plena "ponte" nas primeiras 48 h só para prevenir recorrência.</li></ul></div>
 </div>
 
-<div class="sub-title">F1.5 · Prevenção secundária por mecanismo (TOAST)</div>
+<div class="sub-title" id="f1-5">F1.5 · Prevenção secundária por mecanismo (TOAST)</div>
 <ul class="bullets">
 <li><b>Universal:</b> PA &lt;130/80 (IECA ou BRA com tiazídico têm a melhor evidência, PROGRESS); estatina de alta intensidade com LDL &lt;70 mg/dL, acrescentando ezetimiba se necessário (SPARCL, TST); cessar tabagismo; atividade física; dieta mediterrânea; controle de diabetes com agentes de benefício cardiovascular; triagem de apneia do sono.</li>
 <li><b>Aterosclerose de grandes artérias:</b> antiagregante; carótida sintomática 70–99% → endarterectomia em até 14 dias; intracraniana 70–99% → AAS + clopidogrel por 90 dias, PAS &lt;140, LDL &lt;70; cilostazol associado é opção (2b).</li>
@@ -1550,7 +1569,7 @@ SECTION F · TRATAMENTO
 <li><b>Outras causas:</b> dissecção (antiagregante ou anticoagulante por ≥3 meses), SAF (varfarina), vasculite (imunossupressão), câncer (tratar a neoplasia, HBPM na endocardite marântica), doença falciforme (transfusão/troca, HO02).</li>
 </ul>
 
-<div class="sub-title">F1.6 · Hemorragia intraparenquimatosa</div>
+<div class="sub-title" id="f1-6">F1.6 · Hemorragia intraparenquimatosa</div>
 <ul class="bullets">
 <li><b>Pacote da primeira hora (INTERACT3):</b> PAS alvo &lt;140 em 1 h (faixa 130–150, evitar &lt;130 e quedas &gt;70 mmHg), glicemia 110–140 mg/dL no não diabético e 140–180 mg/dL no diabético (alvos do INTERACT3), temperatura ≤37,5 °C, reversão de varfarina com INR &lt;1,5 na primeira hora.</li>
 <li><b>Reversão por classe:</b> varfarina → CCP 4F + vitamina K IV; dabigatrana → idarucizumabe; apixabana, rivaroxabana, edoxabana → CCP 4F (andexanete não encontrado no mercado brasileiro); HNF → protamina; HBPM → protamina parcial; antiagregante → sem plaquetas se não for operar; trombolítico → crioprecipitado e antifibrinolítico.</li>
@@ -1559,7 +1578,7 @@ SECTION F · TRATAMENTO
 <li><b>Longo prazo:</b> PA &lt;130/80; reintrodução de antiagregante com indicação formal é segura (RESTART); reintroduzir anticoagulante na FA é individualizado (em geral entre 2 e 8 semanas, evitando quando há AAC com siderose cortical); oclusão do apêndice atrial é alternativa.</li>
 </ul>
 
-<div class="sub-title">F1.7 · Hemorragia subaracnóidea aneurismática</div>
+<div class="sub-title" id="f1-7">F1.7 · Hemorragia subaracnóidea aneurismática</div>
 <ul class="bullets">
 <li><b>Até ocluir o aneurisma:</b> UTI neurológica em centro de alto volume; PAS &lt;160 (sem alvo validado por ECR), analgesia com opioide, antiemético, laxante; reverter anticoagulante; antifibrinolítico de rotina não melhora desfecho funcional (ULTRA); ácido tranexâmico por curto período (&lt;72 h) quando a oclusão vai atrasar tem utilidade incerta e não substitui ocluir cedo.</li>
 <li><b>Ocluir em até 24 h:</b> coil se o aneurisma for adequado para ambos; clipe em ACM com colo largo ou hematoma a evacuar; stent e diversor de fluxo só sem alternativa.</li>
@@ -1568,13 +1587,13 @@ SECTION F · TRATAMENTO
 <li><b>Hidrocefalia:</b> DVE se sintomática; desmame gradual; derivação ventriculoperitoneal se dependência. TEV: compressão pneumática desde a admissão e heparina profilática após a oclusão do aneurisma, em tempo definido com a neurocirurgia (habitualmente ≥24 h após clipe ou craniotomia).</li>
 </ul>
 
-<div class="sub-title">F1.8 · Trombose venosa cerebral e dissecção</div>
+<div class="sub-title" id="f1-8">F1.8 · Trombose venosa cerebral e dissecção</div>
 <ul class="bullets">
 <li><b>TVC:</b> HBPM em dose plena mesmo com hemorragia → após 5–15 dias, varfarina (INR 2–3) ou dabigatrana por 3–12 meses → indefinido em trombofilia grave ou recorrência. Endovascular se piora sob anticoagulação; craniectomia se herniação. Gestação: HBPM até o fim do puerpério; contraindicar estrógeno futuramente.</li>
 <li><b>Dissecção:</b> reperfusão como em qualquer AVC; antiagregante ou anticoagulante por ≥3 meses; imagem de controle em 3–6 meses; após recanalização, monoterapia antiagregante por tempo variável. Dissecção intracraniana com HSA: oclusão urgente, sem antitrombótico.</li>
 </ul>
 
-<div class="sub-title">F1.9 · Edema, crises e complicações</div>
+<div class="sub-title" id="f1-9">F1.9 · Edema, crises e complicações</div>
 <ul class="bullets">
 <li><b>Edema maligno:</b> TC em 24–48 h em todo infarto extenso; osmoterapia como ponte; hemicraniectomia em até 48 h (≤60 anos classe 1; &gt;60 anos decisão compartilhada); cerebelo com DVE e craniectomia suboccipital.</li>
 <li><b>Crises:</b> tratar crises clínicas ou eletrográficas como qualquer crise sintomática aguda (NE02); profilaxia não é recomendada no isquêmico nem na HIC; crise tardia (&gt;7 dias) já configura epilepsia pós-AVC.</li>
@@ -1595,14 +1614,14 @@ SECTION F · TRATAMENTO
 </div>
 
 <!-- F.2 DOSES -->
-<div class="card tx">
+<div class="card tx" id="f2">
 <div class="card-head">
 <div class="card-eyebrow"><span class="card-num">F.2</span> Doses Operacionais</div>
 <h3>Tabela de doses — AVC, hemorragia e neurointensivismo <span class="ank ank-dgr">DANGER</span></h3>
 <div class="card-sub">Adulto. Doses de referência das diretrizes e bulas; "confirmar protocolo" apenas onde a dose varia de fato.</div>
 </div>
 <div class="card-body">
-<div class="sub-title">F2.1 · Reperfusão e complicações do trombolítico</div>
+<div class="sub-title" id="f2-1">F2.1 · Reperfusão e complicações do trombolítico</div>
 <div class="stbl stbl-3">
 <div class="stbl-head stbl-3"><div>Fármaco</div><div>Dose adulto</div><div>Indicação / notas</div></div>
 <div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Tenecteplase</div><div class="col" data-l="Dose"><b>0,25 mg/kg IV em bolus único de 5–10 s, máx 25 mg</b>. Faixas: &lt;60 kg 15 mg; 60–69 kg 17,5 mg; 70–79 kg 20 mg; 80–89 kg 22,5 mg; ≥90 kg 25 mg</div><div class="col" data-l="Indicação">AVC ≤4,5 h; preferível em oclusão de grande vaso antes da trombectomia (ESO 2023). Não usar 0,40 mg/kg. Registro Anvisa para AVC em dez/2025 (fabricante); não consta do PCDT 2023 <span class="ev ev-acr">AHA/ASA 2026</span></div></div>
@@ -1615,7 +1634,7 @@ SECTION F · TRATAMENTO
 <div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Icatibanto</div><div class="col" data-l="Dose"><b>30 mg SC</b> no abdome; repetir a cada 6 h, máx 3 doses/24 h</div><div class="col" data-l="Indicação">Angioedema refratário mediado por bradicinina; alternativa: inibidor de C1 derivado de plasma 20 UI/kg</div></div>
 </div>
 
-<div class="sub-title">F2.2 · Pressão arterial na fase aguda</div>
+<div class="sub-title" id="f2-2">F2.2 · Pressão arterial na fase aguda</div>
 <div class="stbl stbl-3">
 <div class="stbl-head stbl-3"><div>Fármaco</div><div>Dose adulto</div><div>Indicação / notas</div></div>
 <div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Labetalol</div><div class="col" data-l="Dose"><b>10–20 mg IV em 1–2 min</b>, repetir 1 vez; manutenção 10 mg IV seguido de infusão 2–8 mg/min</div><div class="col" data-l="Indicação">Antes (&lt;185/110) e após reperfusão (&lt;180/105); sem registro na Anvisa (dados abertos, out/2026) <span class="ev ev-acr">AHA/ASA 2019 (dose)</span></div></div>
@@ -1626,7 +1645,7 @@ SECTION F · TRATAMENTO
 <div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Metoprolol</div><div class="col" data-l="Dose"><b>5 mg IV em 1–2 min</b>, repetir a cada 5–10 min até 15 mg</div><div class="col" data-l="Indicação">Alternativa disponível para bolus; efeito menos titulável; confirmar protocolo local</div></div>
 </div>
 
-<div class="sub-title">F2.3 · Antitrombóticos e prevenção secundária</div>
+<div class="sub-title" id="f2-3">F2.3 · Antitrombóticos e prevenção secundária</div>
 <div class="stbl stbl-3">
 <div class="stbl-head stbl-3"><div>Fármaco</div><div>Dose adulto</div><div>Indicação / notas</div></div>
 <div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">AAS (fase aguda)</div><div class="col" data-l="Dose"><b>160–325 mg VO, SNG ou via retal</b> em até 24–48 h; manutenção 75–100 mg/dia</div><div class="col" data-l="Indicação">Todo AVC isquêmico sem indicação de anticoagulação; após trombólise, só depois da imagem de 24 h; AAS IV em até 90 min do trombolítico é prejudicial <span class="ev ev-acr">AHA/ASA 2026</span></div></div>
@@ -1643,7 +1662,7 @@ SECTION F · TRATAMENTO
 <div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Perindopril + indapamida</div><div class="col" data-l="Dose"><b>4 mg + 2,5 mg VO 1×/dia</b> (esquema do PROGRESS) ou IECA/BRA + tiazídico equivalente</div><div class="col" data-l="Indicação">Prevenção secundária após 48–72 h; alvo &lt;130/80, inclusive após HIC</div></div>
 </div>
 
-<div class="sub-title">F2.4 · Hemorragia intracraniana: reversão e neurointensivismo</div>
+<div class="sub-title" id="f2-4">F2.4 · Hemorragia intracraniana: reversão e neurointensivismo</div>
 <div class="stbl stbl-3">
 <div class="stbl-head stbl-3"><div>Fármaco</div><div>Dose adulto</div><div>Indicação / notas</div></div>
 <div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Complexo protrombínico 4 fatores</div><div class="col" data-l="Dose"><b>INR 2–3,9: 25 UI/kg (máx 2.500); INR 4–6: 35 UI/kg (máx 3.500); INR &gt;6: 50 UI/kg (máx 5.000)</b></div><div class="col" data-l="Indicação">HIC em uso de varfarina; preferido ao plasma; repetir INR em 15–60 min. Alternativa de dose fixa: 1.500 UI na HIC (1.000 UI em sangramento maior fora do SNC) <span class="ev ev-acr">ACC 2020</span> <span class="ev ev-acr">AHA/ASA 2022</span></div></div>
@@ -1658,7 +1677,7 @@ SECTION F · TRATAMENTO
 <div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Enoxaparina profilática</div><div class="col" data-l="Dose"><b>40 mg SC 1×/dia</b> (ou HNF 5.000 UI SC 8/8–12/12 h)</div><div class="col" data-l="Indicação">Imobilidade: AVCi após 24 h da trombólise; HIC após 24–48 h com hematoma estável; HSA após oclusão do aneurisma</div></div>
 </div>
 
-<div class="sub-title">F2.5 · HSA, TVC e suporte</div>
+<div class="sub-title" id="f2-5">F2.5 · HSA, TVC e suporte</div>
 <div class="stbl stbl-3">
 <div class="stbl-head stbl-3"><div>Fármaco</div><div>Dose adulto</div><div>Indicação / notas</div></div>
 <div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Nimodipina</div><div class="col" data-l="Dose"><b>60 mg VO ou SNG a cada 4 h por 21 dias</b>; se hipotensão, 30 mg a cada 2 h</div><div class="col" data-l="Indicação">Toda HSA aneurismática, iniciar em até 96 h; IV em bolus é prejudicial; comprimido de 30 mg no Brasil <span class="ev ev-eular">ESO-EANS-ESMINT 2026</span> <span class="ev ev-acr">AHA/ASA 2023</span></div></div>
@@ -1675,7 +1694,7 @@ SECTION F · TRATAMENTO
 </div>
 
 <!-- F.3 CENÁRIOS -->
-<div class="card tx">
+<div class="card tx" id="f3">
 <div class="card-head">
 <div class="card-eyebrow"><span class="card-num">F.3</span> Cenários</div>
 <h3>Caso → conduta certa → erro típico <span class="ank ank-dec">DECISION</span></h3>
@@ -1703,7 +1722,7 @@ SECTION F · TRATAMENTO
 </div>
 
 <!-- F.4 SUS × INTERNACIONAL -->
-<div class="card tx">
+<div class="card tx" id="f4">
 <div class="card-head">
 <div class="card-eyebrow"><span class="card-num">F.4</span> Brasil</div>
 <h3>O que o SUS entrega × o que a diretriz internacional recomenda <span class="ank ank-con">CONTROVERSY</span></h3>
@@ -1742,7 +1761,7 @@ SECTION G · PITFALLS · MITOS · CONTROVÉRSIAS
 <div class="section-sub">Os erros que mais custam penumbra e os pontos em que as diretrizes ainda divergem.</div>
 </div>
 
-<div class="card pearl">
+<div class="card pearl" id="g1">
 <div class="card-head">
 <div class="card-eyebrow"><span class="card-num">G.1</span> Pegadinhas</div>
 <h3>10 Erros Operacionais em AVC e Neurovascular <span class="ank ank-dgr">DANGER</span></h3>
@@ -1764,7 +1783,7 @@ SECTION G · PITFALLS · MITOS · CONTROVÉRSIAS
 </div>
 </div>
 
-<div class="card pearl">
+<div class="card pearl" id="g2">
 <div class="card-head">
 <div class="card-eyebrow"><span class="card-num">G.2</span> Mitos · Controvérsias</div>
 <h3>Mitos Vivos e Debates Atuais <span class="ank ank-myt">MYTH</span> <span class="ank ank-con">CONTROVERSY</span></h3>
@@ -1814,7 +1833,7 @@ SECTION H · PEARLS + EVOLVING
 <div class="section-sub">Oito nuances que separam o neurologista vascular do plantonista e sete mudanças reais de 2023 a 2026, com registro do que já chegou ao SUS.</div>
 </div>
 
-<div class="card pearl">
+<div class="card pearl" id="h1">
 <div class="card-head">
 <div class="card-eyebrow"><span class="card-num">H.1</span> Pearls</div>
 <h3>8 Nuances que Distinguem o Expert <span class="ank ank-prl">PEARL</span></h3>
@@ -1855,7 +1874,7 @@ SECTION H · PEARLS + EVOLVING
 </div>
 </div>
 
-<div class="card pearl">
+<div class="card pearl" id="h2">
 <div class="card-head">
 <div class="card-eyebrow"><span class="card-num">H.2</span> Evolving</div>
 <h3>7 Paradigmas em Mudança — AVC 2023–2026 <span class="ank ank-evo">EVOLVING</span></h3>
@@ -1942,5 +1961,36 @@ SECTION H · PEARLS + EVOLVING
 <a class="to-top" href="#" aria-label="Voltar ao topo">↑</a>
 <div class="watermark">@dr.lorencato · NE03 AVC v5.2</div>
 
-</body>
+<!--hp-f2--><script>(function(){var d=document,M=d.querySelector('main');if(!M)return;
+var SELF='NE03',HP=' CT01 CT02 CT03 CT04 CT05 CT06 CT08 CT10 CV01 CV03 CV04 CV05 CV06 CV07 CV08 EN01 EN02 EN03 EN04 EN06 EN07 GH01 GH02 GH03 GH05 GH06 GH07 GH08 GH09 GH10 GO01 GO02 GO03 GO04 GO09 GO10 GO11 GO12 GO13 GO14 HO01 HO02 HO03 HO04 HO05 HO06 II01 II02 II03 II04 II07 II08 NE01 NE02 NE03 NE04 NE05 NE06 NE07 NE08 NU01 NU02 NU03 NU04 NU05 OE01 OE02 PC01 PC02 PC03 PC04 PC05 PC06 PD01 PD02 PD03 PD04 PD05 PD06 PD07 PD08 PD09 PD10 RD01 RD02 RD03 RD04 RD05 RD07 RP01 RP02 RP03 RP04 ';
+var SK='A,H1,H2,H3,SCRIPT,STYLE,NAV,.card-num,.card-eyebrow,.sub-title,.disease-tag,.toc';
+var R=/\b(?:([A-H])(\d)?\.(\d{1,2}[a-c]?)|(CV|RP|GH|NE|EN|NU|HO|II|RD|GO|PD|PC|CT|OE)(\d\d))\b/g;
+function skip(n){for(var e=n.parentNode;e&&e!==M;e=e.parentNode)if(e.matches&&e.matches(SK))return 1;return 0}
+var w=d.createTreeWalker(M,4),t,L=[];while(t=w.nextNode())if(R.test(t.data)&&!skip(t))L.push(t);
+L.forEach(function(t){var s=t.data,f=d.createDocumentFragment(),i=0,m;R.lastIndex=0;
+while(m=R.exec(s)){var h=null;
+if(m[1]){var id=m[1].toLowerCase()+(m[2]?m[2]+'-':'')+m[3];if(d.getElementById(id))h='#'+id}
+else{var x=m[4]+m[5];if(x!==SELF&&HP.indexOf(' '+x+' ')>=0)h='../'+x+'/'+x+'.html'}
+if(!h)continue;f.appendChild(d.createTextNode(s.slice(i,m.index)));
+var a=d.createElement('a');a.href=h;a.className='xr';a.textContent=m[0];f.appendChild(a);i=R.lastIndex}
+if(i){f.appendChild(d.createTextNode(s.slice(i)));t.parentNode.replaceChild(f,t)}});
+function nz(s){return s.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'')}
+var q=d.querySelector('.hp-q'),n=d.querySelector('.hp-n'),it=M.querySelectorAll('.card,.pocket-card'),T;
+function clr(){M.querySelectorAll('.q-off').forEach(function(e){e.classList.remove('q-off')})}
+function run(){var v=nz(q.value.trim());clr();n.textContent='';if(v.length<2)return;var k=0;
+it.forEach(function(c){if(nz(c.textContent).indexOf(v)<0){c.classList.add('q-off');return}k++;
+var r=c.querySelectorAll('.stbl-row,.disease-row,.score-row'),h=[];r.forEach(function(x){if(nz(x.textContent).indexOf(v)>=0)h.push(x)});
+if(h.length)r.forEach(function(x){if(h.indexOf(x)<0)x.classList.add('q-off')});
+c.querySelectorAll('details').forEach(function(x){if(nz(x.textContent).indexOf(v)>=0)x.open=true})});
+M.querySelectorAll('section').forEach(function(s){if(!s.querySelector('.card:not(.q-off),.pocket-card:not(.q-off)'))s.classList.add('q-off')});
+n.textContent=k?k+' achado'+(k>1?'s':''):'nada'}
+if(q){q.addEventListener('input',function(){clearTimeout(T);T=setTimeout(run,180)});
+q.addEventListener('keydown',function(e){if(e.key==='Escape'){q.value='';run()}})}
+function tg(b,f){b.addEventListener('click',function(){var on=b.getAttribute('aria-pressed')!=='true';b.setAttribute('aria-pressed',on);f(on)})}
+var bd=d.querySelector('.hp-dz'),bo=d.querySelector('.hp-op');
+if(bd)tg(bd,function(on){d.body.classList.toggle('dz',on);if(on)d.getElementById('tratamento').scrollIntoView()});
+if(bo)tg(bo,function(on){M.querySelectorAll('details').forEach(function(x){x.open=on})});
+var P=[];addEventListener('beforeprint',function(){P=[];M.querySelectorAll('details:not([open])').forEach(function(x){P.push(x);x.open=true})});
+addEventListener('afterprint',function(){P.forEach(function(x){x.open=false})});
+})();</script><!--/hp-f2--></body>
 </html>

@@ -345,11 +345,30 @@ ul.bullets li b{color:var(--ink);font-weight:600}
   .pocket .pocket-card.tx{--accent:#a8481a}
   .pocket .pocket-card.clin{--accent:#0b5d4e}
 }
+
+/* === v5.2.2 · fase 2 (navegação) === */
+.hp-tools{display:flex;gap:6px;align-items:center;flex:none;order:1;margin-left:auto;padding-left:6px;position:sticky;right:0;background:#f1eee5;box-shadow:-10px 0 10px -4px #f1eee5,16px 0 0 #f1eee5}
+@media(min-width:900px){html{scroll-padding-top:150px}.toc-inner{flex-wrap:wrap;overflow:visible}.card[id],.sub-title[id]{scroll-margin-top:150px}}
+@media(max-width:899px){.hp-b,.hp-n{display:none}.hp-q{width:104px}}
+.hp-q{width:128px;font:500 12px/1 'DM Sans',system-ui,sans-serif;padding:7px 11px;border:1px solid var(--line-strong);border-radius:999px;background:var(--paper);color:var(--ink)}
+.hp-b{font:600 11px/1 'DM Sans',system-ui,sans-serif;letter-spacing:.05em;text-transform:uppercase;padding:7px 10px;border-radius:999px;border:1px solid var(--line-strong);background:var(--paper);color:var(--ink-soft);cursor:pointer;white-space:nowrap}
+.hp-b[aria-pressed=true]{background:var(--ink);color:#fff;border-color:var(--ink)}
+.hp-n{font:600 11px/1 'DM Mono',monospace;color:var(--ink-mute);white-space:nowrap}
+.sec-idx{display:flex;flex-wrap:wrap;gap:6px;margin:12px 0 20px}
+.sec-idx a{font:500 12px/1.25 'DM Sans',system-ui,sans-serif;padding:6px 10px;border-radius:999px;background:var(--paper);border:1px solid var(--line);color:var(--ink-soft);text-decoration:none}
+.sec-idx a:hover{border-color:var(--line-strong);color:var(--ink)}
+.sec-idx b{color:var(--c-prim);margin-right:5px;font-weight:700}
+a.xr{color:inherit;text-decoration:underline dotted;text-underline-offset:2px}
+a.xr:hover{color:var(--c-prim)}
+.card[id],.sub-title[id]{scroll-margin-top:110px}
+.q-off{display:none!important}
+body.dz main section:not(#tratamento){display:none}
+@media print{.hp-tools,.sec-idx,.toc-doses{display:none!important}}
 </style>
 </head>
 <body>
 <header class="header"><div class="header-row"><div class="h-mark">N</div><div class="h-titles"><div class="h-title">Patologias Neonatais e Prematuridade · Pocket Handbook</div><div class="h-sub">Elite edition · Neonatologia · PD02</div></div><div class="h-author">@dr.lorencato</div><div class="h-edition">v5.2</div></div></header>
-<nav class="toc"><div class="toc-inner"><a href="#pocket" class="toc-chip"><span class="toc-chip-num">0</span>Pocket</a><a href="#redflags" class="toc-chip"><span class="toc-chip-num">A</span>Red Flags</a><a href="#approach" class="toc-chip"><span class="toc-chip-num">B</span>Apresentação</a><a href="#primarias" class="toc-chip"><span class="toc-chip-num">C</span>Entidades</a><a href="#secundarias" class="toc-chip"><span class="toc-chip-num">D</span>Secundárias</a><a href="#algoritmo" class="toc-chip"><span class="toc-chip-num">E</span>Algoritmo</a><a href="#tratamento" class="toc-chip"><span class="toc-chip-num">F</span>Tratamento</a><a href="#pitfalls" class="toc-chip"><span class="toc-chip-num">G</span>Pitfalls</a><a href="#pearls" class="toc-chip"><span class="toc-chip-num">H</span>Pearls</a></div></nav>
+<nav class="toc"><div class="toc-inner"><!--hp-f2--><span class="hp-tools"><input class="hp-q" type="search" placeholder="Buscar no HP" aria-label="Buscar no HP"><button class="hp-b hp-dz" type="button" aria-pressed="false">Só doses</button><button class="hp-b hp-op" type="button" aria-pressed="false">Abrir tudo</button><span class="hp-n" aria-live="polite"></span></span><!--/hp-f2--><a href="#pocket" class="toc-chip"><span class="toc-chip-num">0</span>Pocket</a><a href="#redflags" class="toc-chip"><span class="toc-chip-num">A</span>Red Flags</a><a href="#approach" class="toc-chip"><span class="toc-chip-num">B</span>Apresentação</a><a href="#primarias" class="toc-chip"><span class="toc-chip-num">C</span>Entidades</a><a href="#secundarias" class="toc-chip"><span class="toc-chip-num">D</span>Secundárias</a><a href="#algoritmo" class="toc-chip"><span class="toc-chip-num">E</span>Algoritmo</a><a href="#tratamento" class="toc-chip"><span class="toc-chip-num">F</span>Tratamento</a><!--hp-f2--><a href="#f2" class="toc-chip toc-doses"><span class="toc-chip-num">Rx</span>Doses</a><!--/hp-f2--><a href="#pitfalls" class="toc-chip"><span class="toc-chip-num">G</span>Pitfalls</a><a href="#pearls" class="toc-chip"><span class="toc-chip-num">H</span>Pearls</a></div></nav>
 <main>
 <div class="wrap">
 <div class="hero">
@@ -393,7 +412,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <div class="section-sub">No período neonatal a reserva é mínima e os sinais são inespecíficos: a mesma letargia é sepse, hipoglicemia, encefalopatia, erro inato ou cardiopatia canal-dependente. A regra do plantão é tratar o que mata primeiro (glicose, antibiótico, oxigênio, prostaglandina, fototerapia) enquanto a investigação corre.</div>
 </div>
 
-<div class="card emerg">
+<div class="card emerg" id="a1">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">A.1</span> Emergências</div><h3>Sinais de alarme no RN depois da sala de parto <span class="ank ank-dgr">DANGER</span></h3></div>
 <div class="card-body">
 <div class="mnemo">
@@ -436,7 +455,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <div class="section-sub">O RN raramente chega com diagnóstico: chega amarelo, cansado, sonolento, distendido ou com abalos. Cada padrão abaixo parte do achado e da hora de vida, que no período neonatal é quase um exame complementar.</div>
 </div>
 
-<div class="card clin">
+<div class="card clin" id="b1">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">B.1</span> Padrão 1</div><h3>RN ictérico</h3><div class="card-sub">A hora de início e a fração da bilirrubina decidem tudo</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Icterícia aparece em ~60% dos termos e ~80% dos pré-termos. <b>Antes de 24 h</b> = hemólise; <b>2º–3º dia, pico no 3º–5º</b>, BT ≤12 mg/dL e só fração indireta = fisiológica; <b>após 14 dias</b> = dosar bilirrubina direta (colestase) e lembrar do leite materno e do hipotireoidismo.</div></div>
@@ -451,7 +470,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card clin">
+<div class="card clin" id="b2">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">B.2</span> Padrão 2</div><h3>RN com desconforto respiratório</h3><div class="card-sub">Idade gestacional, tipo de parto e radiografia separam as quatro causas clássicas</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">FR &gt;60 irpm, gemido, batimento de asas, retrações. <b>Pré-termo com piora nas primeiras 48 h</b> = SDR; <b>termo de cesárea eletiva, taquipneia que melhora em 24–72 h com pouco O2</b> = TTRN; <b>pós-termo impregnado de mecônio</b> = SAM; <b>hipoxemia desproporcional à radiografia</b> = HPPN. Sempre pense em pneumonia/sepse por GBS — simula todas.</div></div>
@@ -474,7 +493,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card clin">
+<div class="card clin" id="b3">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">B.3</span> Padrão 3</div><h3>RN que "não está bem"</h3><div class="card-sub">Sepse, hipoglicemia, erro inato e cardiopatia têm a mesma cara</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Hipoatividade, sucção fraca, instabilidade térmica, palidez ou moteado. <b>Glicemia capilar, gasometria com lactato, hemocultura e antibiótico</b> no mesmo atendimento. Se piora com a introdução da dieta, cheiro anômalo ou acidose com ânion gap alto e amônia elevada: erro inato (PD09). Pulsos femorais fracos e choque no 5º–10º dia: coarctação ou hipoplasia de VE com fechamento do canal.</div></div>
@@ -488,7 +507,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card clin">
+<div class="card clin" id="b4">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">B.4</span> Padrão 4</div><h3>RN com distensão, vômito ou sem evacuar</h3><div class="card-sub">Bilioso é cirúrgico; no prematuro alimentado, é NEC</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Primeiro mecônio em 99% dos termos em 48 h. <b>Polidrâmnio + salivação</b> = atresia de esôfago; <b>dupla bolha</b> = atresia duodenal (pensar em trissomia 21); <b>vômito bilioso súbito</b> = volvo; <b>distensão com retardo do mecônio</b> = Hirschsprung, íleo meconial (fibrose cística), rolha meconial; <b>prematuro com dieta</b> = NEC.</div></div>
@@ -500,7 +519,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card clin">
+<div class="card clin" id="b5">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">B.5</span> Padrão 5</div><h3>RN com crise, hipotonia ou alteração neurológica</h3><div class="card-sub">Crise neonatal é sintoma: a causa costuma ser aguda e tratável</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Crises neonatais são focais, sutis ou eletrográficas; tremor que para com contenção e é desencadeado por estímulo não é crise. Causas por ordem: <b>EHI (primeiras 24–48 h)</b>, AVC isquêmico, hemorragia intracraniana, distúrbio metabólico (glicose, cálcio, magnésio, sódio), infecção (meningite, HSV), abstinência, erros inatos e epilepsias neonatais genéticas.</div></div>
@@ -520,9 +539,9 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <div class="section-eyebrow"><span>C</span> Entidades Primárias</div>
 <div class="section-title">Disease Boxes — as onze doenças que enchem a UTI neonatal e a prova</div>
 <div class="section-sub">Do RN classificado ao nascer até a encefalopatia que precisa de resfriamento: icterícia indireta e colestática, quatro desconfortos respiratórios, sepse, sífilis, exposição ao HIV e à hepatite B, hipoglicemia, enterocolite e o cuidado pós-reanimação.</div>
-</div>
+</div><!--hp-f2--><nav class="sec-idx" aria-label="Neste capítulo"><a href="#c1"><b>C.1</b>Classificação do RN, prematur…</a><a href="#c2"><b>C.2</b>Hiperbilirrubinemia indireta…</a><a href="#c3"><b>C.3</b>Colestase neonatal e atresia…</a><a href="#c4"><b>C.4</b>Síndrome do desconforto respi…</a><a href="#c5"><b>C.5</b>TTRN × aspiração meconial × h…</a><a href="#c6"><b>C.6</b>Sepse neonatal precoce e tard…</a><a href="#c7"><b>C.7</b>Sífilis congênita e criança e…</a><a href="#c8"><b>C.8</b>RN exposto ao HIV e ao vírus…</a><a href="#c9"><b>C.9</b>Hipoglicemia neonatal e RN de…</a><a href="#c10"><b>C.10</b>Enterocolite necrosante</a><a href="#c11"><b>C.11</b>Encefalopatia hipóxico-isquêm…</a></nav><!--/hp-f2-->
 
-<div class="card prim">
+<div class="card prim" id="c1">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.1</span> Classificação</div><h3>Classificação do RN, prematuridade e restrição de crescimento <span class="ank ank-hy">HIGH-YIELD</span></h3><div class="card-sub">Duas medidas (idade gestacional e peso) e uma relação entre elas</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Pré-termo &lt;37 sem (tardio 34–36+6; moderado 32–33+6; muito pré-termo 28–31+6; extremo &lt;28), termo 37–41+6, pós-termo ≥42. Baixo peso &lt;2.500 g, muito baixo &lt;1.500 g, extremo baixo &lt;1.000 g. <b>PIG &lt;p10, AIG p10–90, GIG &gt;p90</b> na curva Intergrowth-21st (recomendada pela SBP) ou Fenton. <b>PIG não é sinônimo de CIUR.</b></div></div>
@@ -549,7 +568,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="c2">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.2</span> Icterícia indireta</div><h3>Hiperbilirrubinemia indireta e encefalopatia bilirrubínica <span class="ank ank-hy">HIGH-YIELD</span> <span class="ank ank-dec">DECISION</span></h3><div class="card-sub">Fisiológica, hemolítica, do aleitamento e do leite materno</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Fisiológica: surge após 24 h, pico de ~12 mg/dL entre 3º e 5º dia no termo, só fração indireta, some em 1–2 semanas. <b>Patológica:</b> &lt;24–36 h, BT acima da linha da hora de vida, subida &gt;0,2 mg/dL/h (ou &gt;5 mg/dL/dia), BD &gt;1 mg/dL, persistência &gt;14 dias. <b>Tratamento por hora de vida e IG:</b> fototerapia intensiva e, se falhar ou houver encefalopatia, exsanguineotransfusão.</div></div>
@@ -599,7 +618,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="c3">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.3</span> Colestase</div><h3>Colestase neonatal e atresia de vias biliares <span class="ank ank-dgr">DANGER</span></h3><div class="card-sub">Sempre patológica, frequentemente tardia no diagnóstico</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body"><b>Bilirrubina direta (conjugada) &gt;1 mg/dL é anormal</b> em qualquer RN. Icterícia além de 2 semanas → BT e frações. Atresia biliar = icterícia progressiva, <b>acolia persistente</b>, colúria, hepatomegalia firme, RN em bom estado e ganhando peso no início. <b>Portoenterostomia de Kasai</b> quanto mais cedo melhor (idealmente antes de 45–60 dias).</div></div>
@@ -626,7 +645,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="c4">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.4</span> SDR</div><h3>Síndrome do desconforto respiratório (doença da membrana hialina) <span class="ank ank-hy">HIGH-YIELD</span> <span class="ank ank-dec">DECISION</span></h3><div class="card-sub">Deficiência de surfactante no pulmão imaturo</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Pré-termo com desconforto desde o nascimento que <b>piora nas primeiras 24–48 h</b>, gemido intenso, RX com <b>infiltrado reticulogranular difuso (vidro moído) e broncograma aéreo</b>, volume pulmonar reduzido. Conduta: <b>CPAP 6–8 cmH2O desde a sala de parto</b>, surfactante precoce se FiO2 ≥0,30, cafeína, ventilação só se falhar o não invasivo.</div></div>
@@ -654,7 +673,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="c5">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.5</span> Termo com desconforto</div><h3>TTRN × aspiração meconial × hipertensão pulmonar persistente <span class="ank ank-dec">DECISION</span></h3><div class="card-sub">Três doenças do termo e próximo do termo, de gravidades opostas</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body"><b>TTRN</b>: termo de cesárea eletiva, taquipneia 60–100 irpm nas primeiras horas, FiO2 &lt;0,40, resolve em 24–72 h. <b>SAM</b>: pós-termo ou asfixiado, banhado em mecônio, tórax hiperinsuflado, infiltrado grosseiro, risco de pneumotórax e HPPN. <b>HPPN</b>: hipoxemia grave e lábil, gradiente pré/pós-ductal, RX que não explica a hipóxia.</div></div>
@@ -673,7 +692,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="c6">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.6</span> Sepse</div><h3>Sepse neonatal precoce e tardia <span class="ank ank-dgr">DANGER</span> <span class="ank ank-dec">DECISION</span></h3><div class="card-sub">Pneumonia e meningite neonatais incluídas</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body"><b>Precoce (&lt;72 h)</b>: transmissão vertical — GBS, E. coli, Listeria; empírico <b>ampicilina + gentamicina</b>. <b>Tardia (&gt;72 h)</b>: hospitalar ou comunitária — estafilococo coagulase-negativo, S. aureus, Gram-negativos, Candida; empírico conforme a flora da UTI (oxacilina ou vancomicina + aminoglicosídeo ou cefepima). Hemocultura antes, LCR em todo sintomático que tolera a punção.</div></div>
@@ -701,7 +720,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="c7">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.7</span> Sífilis</div><h3>Sífilis congênita e criança exposta à sífilis <span class="ank ank-hy">HIGH-YIELD</span> <span class="ank ank-dec">DECISION</span></h3><div class="card-sub">O fluxograma do Ministério da Saúde decide quem trata, com o quê e por quanto tempo</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Pergunta 1: <b>a mãe foi tratada adequadamente?</b> (benzilpenicilina benzatina completa para o estágio, primeira dose ≥30 dias antes do parto, documentada). Pergunta 2: <b>VDRL do RN (sangue periférico) ≥2 diluições acima do materno?</b> Pergunta 3: <b>exame físico, hemograma, RX de ossos longos e LCR normais?</b> As respostas levam a: criança exposta (seguimento), benzatina dose única, procaína/cristalina 10 dias, ou cristalina 10 dias (neurossífilis).</div></div>
@@ -720,7 +739,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="c8">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.8</span> Transmissão vertical</div><h3>RN exposto ao HIV e ao vírus da hepatite B <span class="ank ank-dec">DECISION</span></h3><div class="card-sub">O que se faz na sala de parto e nas primeiras horas é o que mais previne</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body"><b>HIV</b>: classificar risco (baixo = TARV na gestação e CV indetectável a partir de 28 sem sem falha de adesão; todo o resto = alto); AZT em todos nas primeiras 4 h por 28 dias; alto risco ≥37 sem: AZT + 3TC + RAL; 34–37 sem: AZT + 3TC (28 dias) + NVP (14 dias); &lt;34 sem: só AZT. Sem aleitamento. <b>HBV</b>: vacina &lt;12 h em todos + IGHAHB se HBsAg materno reagente.</div></div>
@@ -739,7 +758,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="c9">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.9</span> Glicose</div><h3>Hipoglicemia neonatal e RN de mãe diabética <span class="ank ank-dgr">DANGER</span></h3><div class="card-sub">Rastrear o grupo de risco, porque o RN hipoglicêmico costuma ser assintomático</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">A glicemia cai fisiologicamente a ~30 mg/dL com 1–2 h e estabiliza em 45–70 mg/dL. Rastrear <b>filho de diabética, GIG, PIG, pré-termo tardio, asfixiado, hipotérmico</b>. AAP: intervir &lt;25 mg/dL (0–4 h) e &lt;35 mg/dL (4–24 h), alvo ≥45 antes das mamadas; PES: &gt;50 nas primeiras 48 h e &gt;60–70 depois. Persistente (&gt;48–72 h ou TIG &gt;8–10) = investigar hiperinsulinismo.</div></div>
@@ -758,7 +777,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="c10">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.10</span> NEC</div><h3>Enterocolite necrosante <span class="ank ank-dgr">DANGER</span> <span class="ank ank-hy">HIGH-YIELD</span></h3><div class="card-sub">Emergência gastrointestinal mais comum do prematuro</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Prematuro de muito baixo peso, em dieta, entre a 2ª e a 3ª semana (quanto menor a IG, mais tardia): <b>distensão, resíduo bilioso, sangue nas fezes, apneia, instabilidade</b>. RX: <b>pneumatose intestinal</b> (patognomônica no contexto), gás portal, pneumoperitônio. Bell II: jejum 7–14 dias + antibiótico; Bell III com perfuração: cirurgia.</div></div>
@@ -787,7 +806,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="c11">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.11</span> Pós-reanimação</div><h3>Encefalopatia hipóxico-isquêmica, hipotermia terapêutica e crises neonatais <span class="ank ank-dgr">DANGER</span> <span class="ank ank-dec">DECISION</span></h3><div class="card-sub">O PD01 reconhece e elege; aqui está o manejo da UTI</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">≥35–36 sem, &lt;6 h de vida, evidência de asfixia (pH ≤7,0 ou BE ≤−16 no cordão/1ª hora, ou evento sentinela com Apgar ≤5 aos 10 min ou VPP aos 10 min) e <b>encefalopatia moderada ou grave</b> = <b>resfriamento corporal total a 33,5 °C por 72 h</b> e reaquecimento ≤0,5 °C/h. Suporte: normoxemia, normocapnia, PAM adequada, glicose e cálcio normais, restrição hídrica pela SIADH/NTA. Crise: <b>fenobarbital 20 mg/kg</b>.</div></div>
@@ -828,9 +847,9 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <div class="section-eyebrow"><span>D</span> Entidades Secundárias</div>
 <div class="section-title">Boxes agrupados — o resto da neonatologia que cai em prova</div>
 <div class="section-sub">Entidades raras ou que compartilham a mesma abordagem ficam juntas: infecções congênitas, complicações crônicas do prematuro, lesões cerebrais do prematuro, eletrólitos, hematologia, trauma de parto, obstruções cirúrgicas, exame físico e malformações do SNC.</div>
-</div>
+</div><!--hp-f2--><nav class="sec-idx" aria-label="Neste capítulo"><a href="#d1"><b>D.1</b>Infecções congênitas: toxopla…</a><a href="#d2"><b>D.2</b>Apneia da prematuridade, disp…</a><a href="#d3"><b>D.3</b>Hemorragia peri-intraventricu…</a><a href="#d4"><b>D.4</b>Hipocalcemia, hipomagnesemia…</a><a href="#d5"><b>D.5</b>Policitemia, doença hemorrági…</a><a href="#d6"><b>D.6</b>Tocotraumatismos: crânio, ple…</a><a href="#d7"><b>D.7</b>Obstruções gastrointestinais…</a><a href="#d8"><b>D.8</b>Achados benignos do exame fís…</a><a href="#d9"><b>D.9</b>Defeitos do tubo neural e mal…</a></nav><!--/hp-f2-->
 
-<div class="card diag">
+<div class="card diag" id="d1">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">D.1</span> TORCH-Z</div><h3>Infecções congênitas: toxoplasmose, CMV, rubéola, herpes, varicela e zika <span class="ank ank-hy">HIGH-YIELD</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Pistas de prova: <b>calcificações difusas + hidrocefalia + coriorretinite</b> = toxoplasmose (tétrade de Sabin); <b>calcificações periventriculares + microcefalia + petéquias + surdez</b> = CMV; <b>catarata + PCA/estenose pulmonar + surdez</b> = rubéola; <b>vesículas no fim da 1ª semana, sepse com hepatite</b> = HSV; <b>cicatriz em dermátomo + hipoplasia de membro</b> = varicela; <b>microcefalia grave, desproporção craniofacial, calcificações subcorticais, artrogripose</b> = zika.</div></div>
@@ -846,7 +865,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card diag">
+<div class="card diag" id="d2">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">D.2</span> Prematuro crônico</div><h3>Apneia da prematuridade, displasia broncopulmonar, PCA, retinopatia e doença metabólica óssea</h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">O mesmo &lt;32 sem passa pelas cinco: <b>apneia</b> (cafeína), <b>PCA</b> (tratar só se hemodinamicamente significativa), <b>DBP</b> (O2 ou suporte com 36 sem de IG corrigida), <b>ROP</b> (fundoscopia a partir de 4–6 semanas se ≤32 sem ou ≤1.500 g) e <b>doença metabólica óssea</b> (fosfatase alcalina &gt;500–1.000 UI/L, fósforo &lt;4 mg/dL).</div></div>
@@ -862,7 +881,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card diag">
+<div class="card diag" id="d3">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">D.3</span> Cérebro do prematuro</div><h3>Hemorragia peri-intraventricular e leucomalácia periventricular <span class="ank ank-dec">DECISION</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body"><b>HPIV</b>: matriz germinativa subependimária (sulco caudotalâmico), &gt;90% na 1ª semana, muitas silenciosas — <b>USG transfontanela de rotina</b> nos de risco. <b>LPV</b>: necrose da substância branca periventricular (oligodendrócito pré-mielinizante), cistos em 2–6 semanas, <b>diplegia espástica</b> (Little) depois.</div></div>
@@ -878,7 +897,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card diag">
+<div class="card diag" id="d4">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">D.4</span> Cálcio e magnésio</div><h3>Hipocalcemia, hipomagnesemia e hiperglicemia neonatais</h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body"><b>Precoce (24–72 h)</b>: exagero da queda fisiológica — prematuro, asfixia, filho de diabética, CIUR; geralmente assintomática. <b>Tardia (5–10 dias)</b>: tetania por fórmula/leite de vaca rico em fósforo, hipoparatireoidismo (materno hiperparatireoidismo, DiGeorge), hipomagnesemia, vitamina D. Hiperglicemia (&gt;145–150 mg/dL): quase sempre iatrogênica no extremo prematuro.</div></div>
@@ -893,7 +912,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card diag">
+<div class="card diag" id="d5">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">D.5</span> Hematologia</div><h3>Policitemia, doença hemorrágica do RN, anemia da prematuridade e trombocitopenia aloimune</h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body"><b>Policitemia</b>: Ht venoso central &gt;65% (PIG, pós-termo, filho de diabética, receptor de transfusão feto-fetal, clampeamento tardio). <b>Doença hemorrágica</b>: falta de vitamina K — precoce (fármacos maternos), clássica (2º–7º dia) e tardia (2–12 semanas, aleitamento exclusivo, colestase; hemorragia intracraniana). <b>RN bem com plaquetas &lt;50.000 e petéquias</b> = aloimune até prova em contrário.</div></div>
@@ -908,7 +927,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card diag">
+<div class="card diag" id="d6">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">D.6</span> Tocotrauma</div><h3>Tocotraumatismos: crânio, plexo braquial, nervo facial, clavícula e vísceras</h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body"><b>Bossa serossanguínea</b> cruza suturas, tem equimose e some em dias; <b>céfalo-hematoma</b> é subperiosteal, respeita suturas, aparece em horas e some em semanas (icterícia, raramente fratura); <b>subgaleal</b> é flutuante, cruza suturas e pode causar choque. <b>Erb-Duchenne</b> (C5–C6): "gorjeta de garçom", Moro ausente no lado, preensão presente; <b>Klumpke</b> (C8–T1): mão em garra, preensão ausente, Horner. <b>Clavícula</b>: fratura mais comum.</div></div>
@@ -924,7 +943,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card tx">
+<div class="card tx" id="d7">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">D.7</span> Cirurgia neonatal</div><h3>Obstruções gastrointestinais congênitas e defeitos de parede <span class="ank ank-dgr">DANGER</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body"><b>Atresia de esôfago</b>: polidrâmnio, salivação, sonda que para a ~10 cm (85% com fístula traqueoesofágica distal: gás no estômago); VACTERL. <b>Duodenal</b>: vômito bilioso nas primeiras horas, dupla bolha, 30% trissomia 21. <b>Má rotação com volvo</b>: vômito bilioso súbito em RN bem — emergência. <b>Íleo meconial</b>: fibrose cística. <b>Hirschsprung</b>: mecônio &gt;48 h, explosão ao toque retal. <b>Gastrosquise</b>: à direita do cordão, sem saco; <b>onfalocele</b>: com saco, associações.</div></div>
@@ -939,7 +958,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card diag">
+<div class="card diag" id="d8">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">D.8</span> Exame físico</div><h3>Achados benignos do exame físico, dermatoses transitórias e conjuntivite neonatal</h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Exame completo nas primeiras 12–24 h. Benignos: acrocianose, fenômeno de arlequim, <b>eritema tóxico</b> (pápulas-pústulas com eosinófilos, 1º–3º dia), melanose pustulosa (pústulas ao nascer, colarete, máculas hipercrômicas), milium, miliária, manchas mongólicas, mancha salmão, pérolas de Epstein, craniotabes, ingurgitamento mamário, pseudomenstruação, uratos na fralda. <b>Conjuntivite</b>: química &lt;48 h; gonocócica 2º–5º dia; clamídia 5º–14º dia.</div></div>
@@ -954,7 +973,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card diag">
+<div class="card diag" id="d9">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">D.9</span> Malformações do SNC</div><h3>Defeitos do tubo neural e malformações do prosencéfalo e da fossa posterior</h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Falha de fechamento do tubo neural na 3ª–4ª semana (alfafetoproteína e acetilcolinesterase no líquido amniótico). <b>Mielomeningocele</b> (lombossacra em 75%): Chiari II em quase todos, hidrocefalia, bexiga neurogênica, pé torto; <b>meningocele</b>: só meninges; <b>espinha bífida oculta</b>: marcadores cutâneos, medula ancorada. Ácido fólico periconcepcional reduz o risco em até ~50–70%.</div></div>
@@ -977,7 +996,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <div class="section-sub">A icterícia é a queixa neonatal mais frequente e a que mais leva a erro por omissão; a árvore começa pela pergunta que separa hemólise, fisiologia e colestase, e termina em conduta com número.</div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="e1">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">E.1</span> Fluxograma</div><h3>Icterícia neonatal — SBP 2021 com contraponto AAP 2022 <span class="ank ank-dec">DECISION</span></h3></div>
 <div class="card-body">
 <div class="algo">
@@ -1035,12 +1054,12 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <div class="section-eyebrow"><span>F</span> Tratamento Integrado</div>
 <div class="section-title">F1 · Estratégia por entidade · F2 · Doses neonatais operacionais</div>
 <div class="section-sub">No RN, a dose depende de peso, idade gestacional e idade pós-natal (o clearance renal amadurece semana a semana). As doses abaixo são de referência; aminoglicosídeos e vancomicina exigem nível sérico e protocolo da unidade.</div>
-</div>
+</div><!--hp-f2--><nav class="sec-idx" aria-label="Neste capítulo"><a href="#f1"><b>F.1</b>Escadas terapêuticas por enti…</a><a href="#f1b"><b>F.1b</b>Fototerapia, exsanguineotrans…</a><a href="#f2"><b>F.2</b>Tabela de doses neonatais</a><a href="#f3"><b>F.3</b>Caso → conduta certa → erro t…</a></nav><!--/hp-f2-->
 
-<div class="card tx">
+<div class="card tx" id="f1">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">F.1</span> Estratégia</div><h3>Escadas terapêuticas por entidade <span class="ank ank-dec">DECISION</span></h3></div>
 <div class="card-body">
-<div class="sub-title">F1.1 · Hiperbilirrubinemia indireta</div>
+<div class="sub-title" id="f1-1">F1.1 · Hiperbilirrubinemia indireta</div>
 <ul class="bullets">
 <li><b>Prevenção:</b> amamentação ≥8–12 vezes/dia, avaliação de icterícia a cada 8–12 h, BT ou TcB antes da alta nos de risco, retorno em 48–72 h.</li>
 <li><b>Primeira linha:</b> fototerapia de alta intensidade (≥30 µW/cm²/nm, LED azul, máxima superfície, fototerapia dupla ou reversa se subida rápida), sem interromper a amamentação; complemento só se perda de peso excessiva ou desidratação.</li>
@@ -1048,12 +1067,12 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <li><b>Definitivo:</b> exsanguineotransfusão na linha de EST após fototerapia, 5 mg/dL acima da linha, ou com encefalopatia; após EST, manter fototerapia (rebote).</li>
 <li><b>Não fazer:</b> suspender aleitamento rotineiramente, água/glicose oral, exposição ao sol como tratamento, fenobarbital para "acelerar a conjugação".</li>
 </ul>
-<div class="sub-title">F1.2 · Colestase e atresia biliar</div>
+<div class="sub-title" id="f1-2">F1.2 · Colestase e atresia biliar</div>
 <ul class="bullets">
 <li>Vitamina K IV se TP alargado; suspender lactose se suspeita de galactosemia; levotiroxina se hipotireoidismo; tratar infecção.</li>
 <li>Atresia: Kasai o mais cedo possível; depois ursodesoxicólico, profilaxia de colangite, fórmula com TCM, vitaminas A, D, E, K; transplante se falha.</li>
 </ul>
-<div class="sub-title">F1.3 · SDR do prematuro</div>
+<div class="sub-title" id="f1-3">F1.3 · SDR do prematuro</div>
 <ul class="bullets">
 <li><b>Antes do parto:</b> corticoide antenatal até 34 sem, sulfato de magnésio &lt;32 sem, transferência intraútero.</li>
 <li><b>Sala de parto:</b> clampeamento ≥60 s, saco plástico, CPAP ≥6 cmH2O, O2 inicial por IG (ver PD01).</li>
@@ -1061,42 +1080,42 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <li><b>Suporte:</b> hídrico 70–80 mL/kg/dia no 1º dia, parenteral desde o nascimento, leite materno no 1º dia se estável, normotermia, antibiótico só se risco infeccioso real, suspenso em 36–48 h.</li>
 </ul>
 <div class="box decision"><span class="box-label">DECISION</span><div class="box-title">Surfactante: quando e como</div><div class="box-body">FiO2 ≥0,30 em CPAP ≥6 cmH2O (pressão média ≥6 em suporte não invasivo) ou ultrassom pulmonar indicando deficiência; no extremamente prematuro em piora, limiar menor. RN respirando: cateter fino com videolaringoscópio; intubado para estabilização &lt;32 sem: surfactante assim que possível. Budesonida misturada ao surfactante não tem papel (European RDS 2025).</div></div>
-<div class="sub-title">F1.4 · TTRN, SAM e HPPN</div>
+<div class="sub-title" id="f1-4">F1.4 · TTRN, SAM e HPPN</div>
 <ul class="bullets">
 <li><b>TTRN:</b> O2 ou CPAP, dieta por sonda se FR &gt;60–80, observação; nada de furosemida ou antibiótico de rotina.</li>
 <li><b>SAM:</b> termoneutralidade, O2, ventilação com tempo expiratório suficiente, surfactante, antibiótico se critério, vigilância de pneumotórax.</li>
 <li><b>HPPN:</b> O2 sem hiperóxia, sedação, manuseio mínimo, PA sistêmica acima da pulmonar (volume, epinefrina/norepinefrina, vasopressina), correção de acidose e hipocalcemia, surfactante se doença parenquimatosa, óxido nítrico 20 ppm com IO ≥25, milrinona se disfunção de VE, ECMO com IO &gt;40.</li>
 </ul>
-<div class="sub-title">F1.5 · Sepse neonatal</div>
+<div class="sub-title" id="f1-5">F1.5 · Sepse neonatal</div>
 <ul class="bullets">
 <li><b>Precoce:</b> ampicilina + gentamicina; meningite: acrescentar cefotaxima e usar dose meníngea de ampicilina (meningite após o período neonatal → II04); ajustar ao agente; 36–48 h com cultura negativa e RN bem → suspender.</li>
 <li><b>Tardia:</b> oxacilina + amicacina (ou vancomicina + cefepima/meropeném conforme a CCIH); retirar cateter na fungemia, por S. aureus ou Gram-negativo persistente; fluconazol profilático no &lt;1.000 g em unidades com alta incidência de Candida.</li>
 <li><b>Duração:</b> bacteremia 7–10 dias; GBS com meningite 14 dias; Gram-negativo com meningite ≥21 dias; Candida 14 dias após hemocultura negativa, com fundoscopia, eco e USG renal.</li>
 </ul>
-<div class="sub-title">F1.6 · Sífilis congênita, HIV e hepatite B</div>
+<div class="sub-title" id="f1-6">F1.6 · Sífilis congênita, HIV e hepatite B</div>
 <ul class="bullets">
 <li>Sífilis: seguir o fluxograma do MS (C.7); penicilina é a única droga com eficácia comprovada; reiniciar se atraso &gt;24 h.</li>
 <li>HIV: ARV nas primeiras 4 h por 28 dias; SMX-TMP para pneumocistose a partir de 4–6 semanas até excluir a infecção; fórmula infantil; vacinação conforme o calendário da criança exposta (PCDT; PD05).</li>
 <li>HBV: vacina &lt;12 h para todos; IGHAHB para filho de HBsAg reagente; completar esquema e sorologia pós-vacinal.</li>
 </ul>
-<div class="sub-title">F1.7 · Hipoglicemia, cálcio e filho de diabética</div>
+<div class="sub-title" id="f1-7">F1.7 · Hipoglicemia, cálcio e filho de diabética</div>
 <ul class="bullets">
 <li>Assintomático: amamentar ± gel de dextrose → nova glicemia em 30 min → até 2 tentativas → glicose IV.</li>
 <li>Sintomático: bolus de 2 mL/kg de glicose 10% + infusão; subir TIG de 1–2 mg/kg/min; &gt;10 mg/kg/min ou concentração &gt;12,5% → acesso central e investigação.</li>
 <li>Hipocalcemia sintomática: gluconato de cálcio com monitor; magnésio se refratária.</li>
 </ul>
-<div class="sub-title">F1.8 · NEC</div>
+<div class="sub-title" id="f1-8">F1.8 · NEC</div>
 <ul class="bullets">
 <li>Jejum, sonda aberta, parenteral, antibiótico triplo, RX seriado, correção de acidose, plaquetas e coagulopatia; reintrodução lenta com leite humano; cirurgia na perfuração ou deterioração.</li>
 <li>Prevenção: leite materno ou de banco, protocolo padronizado de progressão de dieta, evitar antibiótico prolongado e anti-H2/IBP; probióticos em discussão (ver H.2).</li>
 </ul>
-<div class="sub-title">F1.9 · EHI e crises</div>
+<div class="sub-title" id="f1-9">F1.9 · EHI e crises</div>
 <ul class="bullets">
 <li>Hipotermia &lt;6 h, 72 h, 33,5 °C; normoglicemia, normocapnia, PAM adequada, restrição hídrica, tratamento de coagulopatia.</li>
 <li>Crise: corrigir glicose e eletrólitos → fenobarbital → 2ª linha (levetiracetam, fenitoína, midazolam, lidocaína) → piridoxina; EEG contínuo; suspender antes da alta se crise aguda sintomática controlada.</li>
 </ul>
 <div class="box danger"><span class="box-label">DANGER</span><div class="box-title">Lidocaína e fenitoína depois de fenitoína</div><div class="box-body">Lidocaína intravenosa como 2ª linha é contraindicada se já se usou fenitoína (cardiotoxicidade aditiva, arritmias) e exige monitor e esquema decrescente; fenitoína precipita em glicose e causa necrose tecidual por extravasamento — fosfenitoína é mais segura.</div></div>
-<div class="sub-title">F1.10 · Prematuro crônico e hematologia</div>
+<div class="sub-title" id="f1-10">F1.10 · Prematuro crônico e hematologia</div>
 <ul class="bullets">
 <li>Cafeína até ~33–35 sem IGPM e 5–7 dias sem apneia; DBP: dexametasona em baixa dose só com ventilação prolongada e alto risco; diuréticos em descompensação; nirsevimabe/palivizumabe (PD05).</li>
 <li>PCA: tratar só se hemodinamicamente significativa (ibuprofeno, indometacina ou paracetamol); ligadura ou oclusão percutânea se falha e dependência ventilatória.</li>
@@ -1106,7 +1125,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card tx">
+<div class="card tx" id="f1b">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">F.1b</span> Técnica</div><h3>Fototerapia, exsanguineotransfusão e procedimentos — o detalhe que faz funcionar <span class="ank ank-dec">DECISION</span></h3></div>
 <div class="card-body">
 <div class="mnemo">
@@ -1136,7 +1155,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card tx">
+<div class="card tx" id="f2">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">F.2</span> Doses operacionais</div><h3>Tabela de doses neonatais <span class="ank ank-dgr">DANGER</span></h3></div>
 <div class="card-body">
 <div class="stbl stbl-3">
@@ -1190,7 +1209,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card tx">
+<div class="card tx" id="f3">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">F.3</span> Cenários</div><h3>Caso → conduta certa → erro típico <span class="ank ank-hy">HIGH-YIELD</span></h3></div>
 <div class="card-body">
 <div class="stbl stbl-3">
@@ -1218,7 +1237,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <div class="section-sub">A neonatologia erra mais por excesso (antibiótico, exame, separação do binômio) e por omissão no seguimento (icterícia, colestase) do que por desconhecimento.</div>
 </div>
 
-<div class="card pearl">
+<div class="card pearl" id="g1">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">G.1</span> Pegadinhas</div><h3>10 erros operacionais em neonatologia</h3></div>
 <div class="card-body">
 <div class="stbl stbl-2">
@@ -1237,7 +1256,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card pearl">
+<div class="card pearl" id="g2">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">G.2</span> Mitos · Controvérsias</div><h3>Mitos vivos e debates atuais</h3></div>
 <div class="card-body">
 <div class="box myth"><span class="box-label">MYTH</span><div class="box-title">"Banho de sol trata icterícia"</div><div class="box-body">A luz solar tem irradiância azul variável, traz risco de hipertermia e queimadura e atrasa o tratamento eficaz. Não substitui fototerapia nem a dosagem de BT; a orientação de expor o RN ao sol na alta é uma das origens dos casos de kernicterus tardio.</div></div>
@@ -1257,7 +1276,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <div class="section-sub">Ideias que mudam a leitura do caso e o que mudou entre 2021 e 2026.</div>
 </div>
 
-<div class="card pearl">
+<div class="card pearl" id="h1">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">H.1</span> Pearls</div><h3>8 nuances que distinguem o neonatologista</h3></div>
 <div class="card-body">
 <div class="box pearl"><span class="box-label">PEARL</span><div class="box-title">O pré-termo tardio é o RN de maior risco de kernicterus, não o extremo</div><div class="box-body">O extremo prematuro está na UTI, com BT diária e fototerapia precoce. O de 35–36 semanas parece termo, vai ao alojamento conjunto, mama pouco (sucção imatura), tem conjugação mais lenta e recebe alta cedo. É o perfil predominante nos registros de kernicterus, e por isso tem linha de fototerapia própria e retorno em 48 h.</div></div>
@@ -1271,7 +1290,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card pearl">
+<div class="card pearl" id="h2">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">H.2</span> Evolving</div><h3>5 mudanças reais 2021–2026</h3></div>
 <div class="card-body">
 <div class="box evolving"><span class="box-label">EVOLVING</span><div class="box-title">Consenso Europeu de SDR 2025</div><div class="box-body">O2 inicial 60% abaixo de 29 semanas, clampeamento fisiológico, profilaxia seletiva de surfactante abaixo de 28 semanas, NIPPV sincronizada como modo não invasivo preferido, LISA com videolaringoscopia e limiares de transfusão por suporte respiratório (Neonatology 2026).</div></div>
@@ -1316,5 +1335,36 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </footer>
 <a class="to-top" href="#" aria-label="Voltar ao topo">↑</a>
 <div class="watermark">@dr.lorencato · PD02 Patologias Neonatais v5.2</div>
-</body>
+<!--hp-f2--><script>(function(){var d=document,M=d.querySelector('main');if(!M)return;
+var SELF='PD02',HP=' CT01 CT02 CT03 CT04 CT05 CT06 CT08 CT10 CV01 CV03 CV04 CV05 CV06 CV07 CV08 EN01 EN02 EN03 EN04 EN06 EN07 GH01 GH02 GH03 GH05 GH06 GH07 GH08 GH09 GH10 GO01 GO02 GO03 GO04 GO09 GO10 GO11 GO12 GO13 GO14 HO01 HO02 HO03 HO04 HO05 HO06 II01 II02 II03 II04 II07 II08 NE01 NE02 NE03 NE04 NE05 NE06 NE07 NE08 NU01 NU02 NU03 NU04 NU05 OE01 OE02 PC01 PC02 PC03 PC04 PC05 PC06 PD01 PD02 PD03 PD04 PD05 PD06 PD07 PD08 PD09 PD10 RD01 RD02 RD03 RD04 RD05 RD07 RP01 RP02 RP03 RP04 ';
+var SK='A,H1,H2,H3,SCRIPT,STYLE,NAV,.card-num,.card-eyebrow,.sub-title,.disease-tag,.toc';
+var R=/\b(?:([A-H])(\d)?\.(\d{1,2}[a-c]?)|(CV|RP|GH|NE|EN|NU|HO|II|RD|GO|PD|PC|CT|OE)(\d\d))\b/g;
+function skip(n){for(var e=n.parentNode;e&&e!==M;e=e.parentNode)if(e.matches&&e.matches(SK))return 1;return 0}
+var w=d.createTreeWalker(M,4),t,L=[];while(t=w.nextNode())if(R.test(t.data)&&!skip(t))L.push(t);
+L.forEach(function(t){var s=t.data,f=d.createDocumentFragment(),i=0,m;R.lastIndex=0;
+while(m=R.exec(s)){var h=null;
+if(m[1]){var id=m[1].toLowerCase()+(m[2]?m[2]+'-':'')+m[3];if(d.getElementById(id))h='#'+id}
+else{var x=m[4]+m[5];if(x!==SELF&&HP.indexOf(' '+x+' ')>=0)h='../'+x+'/'+x+'.html'}
+if(!h)continue;f.appendChild(d.createTextNode(s.slice(i,m.index)));
+var a=d.createElement('a');a.href=h;a.className='xr';a.textContent=m[0];f.appendChild(a);i=R.lastIndex}
+if(i){f.appendChild(d.createTextNode(s.slice(i)));t.parentNode.replaceChild(f,t)}});
+function nz(s){return s.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'')}
+var q=d.querySelector('.hp-q'),n=d.querySelector('.hp-n'),it=M.querySelectorAll('.card,.pocket-card'),T;
+function clr(){M.querySelectorAll('.q-off').forEach(function(e){e.classList.remove('q-off')})}
+function run(){var v=nz(q.value.trim());clr();n.textContent='';if(v.length<2)return;var k=0;
+it.forEach(function(c){if(nz(c.textContent).indexOf(v)<0){c.classList.add('q-off');return}k++;
+var r=c.querySelectorAll('.stbl-row,.disease-row,.score-row'),h=[];r.forEach(function(x){if(nz(x.textContent).indexOf(v)>=0)h.push(x)});
+if(h.length)r.forEach(function(x){if(h.indexOf(x)<0)x.classList.add('q-off')});
+c.querySelectorAll('details').forEach(function(x){if(nz(x.textContent).indexOf(v)>=0)x.open=true})});
+M.querySelectorAll('section').forEach(function(s){if(!s.querySelector('.card:not(.q-off),.pocket-card:not(.q-off)'))s.classList.add('q-off')});
+n.textContent=k?k+' achado'+(k>1?'s':''):'nada'}
+if(q){q.addEventListener('input',function(){clearTimeout(T);T=setTimeout(run,180)});
+q.addEventListener('keydown',function(e){if(e.key==='Escape'){q.value='';run()}})}
+function tg(b,f){b.addEventListener('click',function(){var on=b.getAttribute('aria-pressed')!=='true';b.setAttribute('aria-pressed',on);f(on)})}
+var bd=d.querySelector('.hp-dz'),bo=d.querySelector('.hp-op');
+if(bd)tg(bd,function(on){d.body.classList.toggle('dz',on);if(on)d.getElementById('tratamento').scrollIntoView()});
+if(bo)tg(bo,function(on){M.querySelectorAll('details').forEach(function(x){x.open=on})});
+var P=[];addEventListener('beforeprint',function(){P=[];M.querySelectorAll('details:not([open])').forEach(function(x){P.push(x);x.open=true})});
+addEventListener('afterprint',function(){P.forEach(function(x){x.open=false})});
+})();</script><!--/hp-f2--></body>
 </html>

@@ -345,13 +345,32 @@ ul.bullets li b{color:var(--ink);font-weight:600}
   .pocket .pocket-card.tx{--accent:#a8481a}
   .pocket .pocket-card.clin{--accent:#0b5d4e}
 }
+
+/* === v5.2.2 · fase 2 (navegação) === */
+.hp-tools{display:flex;gap:6px;align-items:center;flex:none;order:1;margin-left:auto;padding-left:6px;position:sticky;right:0;background:#f1eee5;box-shadow:-10px 0 10px -4px #f1eee5,16px 0 0 #f1eee5}
+@media(min-width:900px){html{scroll-padding-top:150px}.toc-inner{flex-wrap:wrap;overflow:visible}.card[id],.sub-title[id]{scroll-margin-top:150px}}
+@media(max-width:899px){.hp-b,.hp-n{display:none}.hp-q{width:104px}}
+.hp-q{width:128px;font:500 12px/1 'DM Sans',system-ui,sans-serif;padding:7px 11px;border:1px solid var(--line-strong);border-radius:999px;background:var(--paper);color:var(--ink)}
+.hp-b{font:600 11px/1 'DM Sans',system-ui,sans-serif;letter-spacing:.05em;text-transform:uppercase;padding:7px 10px;border-radius:999px;border:1px solid var(--line-strong);background:var(--paper);color:var(--ink-soft);cursor:pointer;white-space:nowrap}
+.hp-b[aria-pressed=true]{background:var(--ink);color:#fff;border-color:var(--ink)}
+.hp-n{font:600 11px/1 'DM Mono',monospace;color:var(--ink-mute);white-space:nowrap}
+.sec-idx{display:flex;flex-wrap:wrap;gap:6px;margin:12px 0 20px}
+.sec-idx a{font:500 12px/1.25 'DM Sans',system-ui,sans-serif;padding:6px 10px;border-radius:999px;background:var(--paper);border:1px solid var(--line);color:var(--ink-soft);text-decoration:none}
+.sec-idx a:hover{border-color:var(--line-strong);color:var(--ink)}
+.sec-idx b{color:var(--c-prim);margin-right:5px;font-weight:700}
+a.xr{color:inherit;text-decoration:underline dotted;text-underline-offset:2px}
+a.xr:hover{color:var(--c-prim)}
+.card[id],.sub-title[id]{scroll-margin-top:110px}
+.q-off{display:none!important}
+body.dz main section:not(#tratamento){display:none}
+@media print{.hp-tools,.sec-idx,.toc-doses{display:none!important}}
 </style>
 </head>
 <body>
 
 <header class="header"><div class="header-row"><div class="h-mark">F</div><div class="h-titles"><div class="h-title">Dengue, Arboviroses e Síndromes Febris · Pocket Handbook</div><div class="h-sub">Elite edition · Infectologia · II07</div></div><div class="h-author">@dr.lorencato</div><div class="h-edition">v5.2</div></div></header>
 
-<nav class="toc"><div class="toc-inner"><a href="#pocket" class="toc-chip"><span class="toc-chip-num">0</span>Pocket</a><a href="#redflags" class="toc-chip"><span class="toc-chip-num">A</span>Red Flags</a><a href="#approach" class="toc-chip"><span class="toc-chip-num">B</span>Apresentação</a><a href="#primarias" class="toc-chip"><span class="toc-chip-num">C</span>Entidades</a><a href="#secundarias" class="toc-chip"><span class="toc-chip-num">D</span>Secundárias</a><a href="#algoritmo" class="toc-chip"><span class="toc-chip-num">E</span>Algoritmo</a><a href="#tratamento" class="toc-chip"><span class="toc-chip-num">F</span>Tratamento</a><a href="#pitfalls" class="toc-chip"><span class="toc-chip-num">G</span>Pitfalls</a><a href="#pearls" class="toc-chip"><span class="toc-chip-num">H</span>Pearls</a></div></nav>
+<nav class="toc"><div class="toc-inner"><!--hp-f2--><span class="hp-tools"><input class="hp-q" type="search" placeholder="Buscar no HP" aria-label="Buscar no HP"><button class="hp-b hp-dz" type="button" aria-pressed="false">Só doses</button><button class="hp-b hp-op" type="button" aria-pressed="false">Abrir tudo</button><span class="hp-n" aria-live="polite"></span></span><!--/hp-f2--><a href="#pocket" class="toc-chip"><span class="toc-chip-num">0</span>Pocket</a><a href="#redflags" class="toc-chip"><span class="toc-chip-num">A</span>Red Flags</a><a href="#approach" class="toc-chip"><span class="toc-chip-num">B</span>Apresentação</a><a href="#primarias" class="toc-chip"><span class="toc-chip-num">C</span>Entidades</a><a href="#secundarias" class="toc-chip"><span class="toc-chip-num">D</span>Secundárias</a><a href="#algoritmo" class="toc-chip"><span class="toc-chip-num">E</span>Algoritmo</a><a href="#tratamento" class="toc-chip"><span class="toc-chip-num">F</span>Tratamento</a><!--hp-f2--><a href="#f2" class="toc-chip toc-doses"><span class="toc-chip-num">Rx</span>Doses</a><!--/hp-f2--><a href="#pitfalls" class="toc-chip"><span class="toc-chip-num">G</span>Pitfalls</a><a href="#pearls" class="toc-chip"><span class="toc-chip-num">H</span>Pearls</a></div></nav>
 
 <main>
 <div class="wrap">
@@ -415,7 +434,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <section id="redflags">
 <div class="section"><div class="section-eyebrow"><span>A</span> Red Flags</div><div class="section-title">Na febre tropical, a gravidade chega em silêncio: depois que a febre cede, antes do exame confirmar</div><div class="section-sub">Sinal objetivo, suspeita e conduta imediata. Os eventos evitáveis deste HP são o choque da dengue que ninguém reestadiou, o AINE dado a quem tinha dengue, a malária tratada como virose por faltar gota espessa, a leptospirose e a febre maculosa à espera de sorologia e a primaquina dada sem G6PD.</div></div>
 
-<div class="card emerg">
+<div class="card emerg" id="a1">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">A.1</span> Emergências</div><h3>Sinais de alarme — febre aguda em área tropical <span class="ank ank-dgr">DANGER</span></h3></div>
 <div class="card-body">
 
@@ -446,7 +465,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card emerg">
+<div class="card emerg" id="a2">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">A.2</span> Protocolos de alarme</div><h3>Quatro erros que matam nesta síndrome <span class="ank ank-dgr">DANGER</span></h3></div>
 <div class="card-body">
 <div class="box danger"><span class="box-label">DANGER</span><div class="box-title">A febre cedeu e o paciente foi embora: é a hora de maior risco, não de alta</div><div class="box-body">O extravasamento plasmático da dengue começa quando a temperatura cai, entre o 3º e o 7º dia. O paciente sai "bem" e volta em choque. Todo caso de dengue precisa de <b>retorno marcado para o dia da defervescência</b> (ou no 5º dia, se a febre persistir) e de cartão de acompanhamento com os sinais de alarme por escrito.</div></div>
@@ -460,7 +479,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <section id="approach">
 <div class="section"><div class="section-eyebrow"><span>B</span> Por Apresentação</div><div class="section-title">Cinco padrões que organizam a febre do trópico antes do diagnóstico</div><div class="section-sub">A queixa que chega à porta não é a doença: é febre com exantema, com artralgia, com icterícia ou hemorragia, com sinal neurológico ou febre prolongada. Cada padrão abre uma lista curta, com a doença que mata mais rápido no topo.</div></div>
 
-<div class="card clin">
+<div class="card clin" id="b1">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">B.1</span> Padrão</div><h3>Febre aguda de 2 a 7 dias em área de Aedes: dengue até prova em contrário <span class="ank ank-hy">HIGH-YIELD</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Febre de 2 a 7 dias com <b>duas ou mais</b> entre náusea, vômito, exantema, mialgia, artralgia, cefaleia, dor retro-orbital, petéquias, prova do laço positiva e leucopenia, em quem mora ou esteve em área com transmissão nos últimos 14 dias, é caso suspeito de dengue; na criança, basta febre aguda de 2 a 7 dias sem foco. <b>O que muda conduta:</b> na dúvida entre dengue, Zika e chikungunya, conduza como dengue, que é a que mais mata.</div></div>
@@ -494,7 +513,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card clin">
+<div class="card clin" id="b2">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">B.2</span> Padrão</div><h3>Febre com artralgia ou poliartrite intensa <span class="ank ank-dec">DECISION</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Febre de início súbito com artralgia ou artrite que não se explica por outra causa, em área de transmissão, é chikungunya até prova em contrário; no idoso a febre pode faltar. Diferenciais: dengue, Zika, Mayaro, febre reumática, artrite séptica, parvovirose, rubéola e lúpus. <b>O que muda conduta:</b> no idoso, na gestante a termo e no recém-nascido a chikungunya é grave, e o AINE continua proibido na fase aguda.</div></div>
@@ -506,7 +525,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card clin">
+<div class="card clin" id="b3">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">B.3</span> Padrão</div><h3>Febre com icterícia ou hemorragia <span class="ank ank-dgr">DANGER</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Síndrome febril íctero-hemorrágica no Brasil: febre amarela, leptospirose, malária grave, dengue grave, hantavirose, riquetsiose, hepatites fulminantes e sepse. A exposição decide: epizootia ou mata (febre amarela), enchente (leptospirose), garimpo e Amazônia (malária), carrapato (febre maculosa). <b>O que muda conduta:</b> com exposição a enchente e sinal de alerta, antibiótico antes da sorologia; com viagem a área de malária, gota espessa antes de tudo.</div></div>
@@ -518,7 +537,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card clin">
+<div class="card clin" id="b4">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">B.4</span> Padrão</div><h3>Febre com manifestação neurológica <span class="ank ank-dec">DECISION</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Febre com cefaleia, alteração de consciência, crise ou déficit exige três exclusões em paralelo: <b>meningite ou encefalite bacteriana e herpética (II04), malária cerebral e hipoglicemia</b>. A arbovirose neuroinvasiva é diagnóstico de exclusão e de contexto epidemiológico, confirmada por PCR ou IgM no LCR. <b>O que muda conduta:</b> a meningoencefalite não espera a arbovirose: antibiótico e aciclovir empíricos até excluir.</div></div>
@@ -530,7 +549,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card clin">
+<div class="card clin" id="b5">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">B.5</span> Padrão</div><h3>Febre prolongada, do viajante ou sem foco <span class="ank ank-hy">HIGH-YIELD</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Febre de uma a três semanas depois de viagem: malária (a mais importante), febre tifoide, dengue e riquetsiose, e menos comumente leishmaniose visceral e hepatite. Acima de 3 semanas com investigação inicial negativa: febre de origem indeterminada. <b>O que muda conduta:</b> viagem a área de malária e febre exigem gota espessa, qualquer que seja o tempo desde o retorno e a profilaxia usada.</div></div>
@@ -544,9 +563,9 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </section>
 
 <section id="primarias">
-<div class="section"><div class="section-eyebrow"><span>C</span> Entidades Primárias</div><div class="section-title">Dez entidades: três arboviroses urbanas, a febre amarela, a malária em dois boxes e as três febres bacterianas do trópico</div><div class="section-sub">A dengue ocupa dois boxes porque a conduta muda de lugar quando o alarme aparece: sem alarme (grupos A e B) trata-se por via oral e vigilância; com alarme ou choque (C e D) trata-se por volume e hematócrito. Zika, Oropouche e as formas neuroinvasivas ficam no D, junto às populações especiais da dengue.</div></div>
+<div class="section"><div class="section-eyebrow"><span>C</span> Entidades Primárias</div><div class="section-title">Dez entidades: três arboviroses urbanas, a febre amarela, a malária em dois boxes e as três febres bacterianas do trópico</div><div class="section-sub">A dengue ocupa dois boxes porque a conduta muda de lugar quando o alarme aparece: sem alarme (grupos A e B) trata-se por via oral e vigilância; com alarme ou choque (C e D) trata-se por volume e hematócrito. Zika, Oropouche e as formas neuroinvasivas ficam no D, junto às populações especiais da dengue.</div></div><!--hp-f2--><nav class="sec-idx" aria-label="Neste capítulo"><a href="#c1"><b>C.1</b>Dengue sem alarme: estadiamen…</a><a href="#c2"><b>C.2</b>Dengue com alarme e dengue gr…</a><a href="#c3"><b>C.3</b>Chikungunya: fase aguda, pós…</a><a href="#c4"><b>C.4</b>Zika: febre leve, Guillain-Ba…</a><a href="#c5"><b>C.5</b>Febre amarela: vacina, forma…</a><a href="#c6"><b>C.6</b>Malária não complicada: P. vi…</a><a href="#c7"><b>C.7</b>Malária complicada: artesunat…</a><a href="#c8"><b>C.8</b>Leptospirose: da forma anicté…</a><a href="#c9"><b>C.9</b>Febre maculosa e outras ricke…</a><a href="#c10"><b>C.10</b>Febre tifoide: hemocultura an…</a></nav><!--/hp-f2-->
 
-<div class="card prim">
+<div class="card prim" id="c1">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.1</span> Dengue</div><h3>Dengue sem alarme: estadiamento, hidratação oral e vigilância <span class="ank ank-hy">HIGH-YIELD</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Não há antiviral. O tratamento é <b>hidratação, antitérmico que não seja AINE e reavaliação no dia em que a febre cede</b>. O estadiamento em A, B, C e D independe de confirmação e deve ser refeito a cada visita. <b>O que muda conduta:</b> um único sinal de alarme ou hematócrito acima do basal (hemoconcentração) faz de B um C: bolus venoso e internação.</div></div>
@@ -586,7 +605,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="c2">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.2</span> Dengue grave</div><h3>Dengue com alarme e dengue grave: grupos C e D, volume, hematócrito e choque <span class="ank ank-dgr">DANGER</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body"><b>Grupo C:</b> SF 0,9% 10 mL/kg na 1ª hora, reavaliação, mais 10 mL/kg na 2ª hora e hematócrito; <b>grupo D:</b> 20 mL/kg em até 20 minutos, até três vezes. Esperar o exame atrasa a vida: a reposição começa onde o paciente estiver. <b>O que muda conduta:</b> a resposta do hematócrito decide o próximo passo: subindo com choque pede albumina; caindo com choque pede busca de sangramento e coagulopatia.</div></div>
@@ -615,7 +634,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="c3">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.3</span> Chikungunya</div><h3>Chikungunya: fase aguda, pós-aguda, crônica e a forma grave <span class="ank ank-dec">DECISION</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Febre súbita e poliartralgia incapacitante; a doença é articular por semanas a anos e, em minoria, sistêmica e grave. <b>Na fase aguda: sem AINE e sem corticoide, dor tratada em dose fixa.</b> O AINE entra na pós-aguda não inflamatória e o corticoide na artrite depois do 14º dia. <b>O que muda conduta:</b> a fase da doença (≤14 dias, 15–90, &gt;90) decide a classe do fármaco.</div></div>
@@ -654,7 +673,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="c4">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.4</span> Zika</div><h3>Zika: febre leve, Guillain-Barré e síndrome congênita <span class="ank ank-hy">HIGH-YIELD</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Doença benigna no adulto (cerca de 80% assintomáticos), temida pelo que faz ao feto e ao nervo periférico. Sem tratamento antiviral: sintomático, <b>sem AINE</b>. <b>O que muda conduta:</b> gestante com febre e exantema é notificada e acompanhada; recém-nascido com PC &lt;−2 DP segue o protocolo da síndrome congênita (neuroimagem, STORCH, audição e visão); paralisia ascendente depois de febre é Guillain-Barré e vai para IgIV.</div></div>
@@ -674,7 +693,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="c5">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.5</span> Febre amarela</div><h3>Febre amarela: vacina, forma grave e UTI <span class="ank ank-dgr">DANGER</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Flavivírus viscerotrópico com letalidade de 20 a 50% nas formas graves; <b>a vacina de vírus vivo atenuado (17DD) é a prevenção e é dose única</b> a partir dos 5 anos. Não há antiviral; o tratamento é de suporte de órgão em UTI. <b>O que muda conduta:</b> qualquer critério de gravidade (icterícia, oligúria, ALT/AST ≥2.000, creatinina ≥2, INR ≥1,5, plaquetas &lt;50.000) leva à UTI, e AAS e AINE são proibidos.</div></div>
@@ -704,7 +723,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="c6">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.6</span> Malária não grave</div><h3>Malária não complicada: P. vivax, P. falciparum, P. malariae e mista <span class="ank ank-hy">HIGH-YIELD</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Gota espessa ou TDR em todo febril exposto. <b>P. vivax:</b> cloroquina por 3 dias + 8-aminoquinolina conforme a G6PD quantitativa (tafenoquina em dose única, primaquina em 7 dias, primaquina semanal por 8 semanas). <b>P. falciparum:</b> ASMQ ou arteméter-lumefantrina por 3 dias + primaquina 0,5 mg/kg em dose única. <b>O que muda conduta:</b> gestante, criança &lt;6 meses e G6PD baixa mudam o esquema; sinal de gravidade muda a via (C.7).</div></div>
@@ -742,7 +761,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="c7">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.7</span> Malária grave</div><h3>Malária complicada: artesunato IV, hipoglicemia e sepse associada <span class="ank ank-dgr">DANGER</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Qualquer sinal de gravidade com parasitemia positiva é malária grave: tratamento em hospital de referência com <b>artesunato IV ou IM 2,4 mg/kg às 0, 12 e 24 h e depois a cada 24 h por até 7 dias</b>, trocando para o esquema oral da espécie quando o paciente puder engolir. <b>O que muda conduta:</b> peso &lt;20 kg usa 3 mg/kg; sem artesunato, qualquer ACT disponível até a chegada do injetável.</div></div>
@@ -762,7 +781,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="c8">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.8</span> Leptospirose</div><h3>Leptospirose: da forma anictérica à síndrome de Weil e à hemorragia pulmonar <span class="ank ank-dgr">DANGER</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Febre, cefaleia e mialgia com exposição a água de enchente, lama ou esgoto nos 30 dias anteriores. <b>Antibiótico na suspeita, em qualquer fase, sem esperar sorologia</b>; o benefício é maior na primeira semana. <b>O que muda conduta:</b> um sinal de alerta (dispneia, oligúria, hemorragia, hipotensão, confusão, vômitos frequentes, arritmia, icterícia) leva ao hospital, ao antibiótico IV e à vigilância de pulmão e rim.</div></div>
@@ -791,7 +810,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="c9">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.9</span> Febre maculosa</div><h3>Febre maculosa e outras rickettsioses: doxiciclina antes da sorologia, em toda idade <span class="ank ank-dgr">DANGER</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Febre, cefaleia e mialgia com exantema que começa em punhos e tornozelos e sobe, depois de contato com carrapato (<i>Amblyomma</i>) ou capivara. A doença é grave e a janela é curta. <b>A doxiciclina é o fármaco de escolha em qualquer idade e gravidade</b>; o cloranfenicol é a alternativa se não houver doxiciclina. <b>O que muda conduta:</b> não espere confirmação, e não use profilaxia em picada assintomática.</div></div>
@@ -811,7 +830,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="c10">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.10</span> Febre tifoide</div><h3>Febre tifoide: hemocultura antes do antibiótico e a escolha que depende do antibiograma <span class="ank ank-hy">HIGH-YIELD</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Febre prolongada em degraus, bradicardia relativa, hepatoesplenomegalia e dor abdominal em quem tem exposição à água ou alimento contaminados. Coletar hemocultura (duas a três, antes do antibiótico). <b>No Brasil, o padrão do MS é cloranfenicol, ampicilina ou amoxicilina, com quinolona para resistência e para o HIV;</b> a azitromicina e a ceftriaxona são as escolhas internacionais. <b>O que muda conduta:</b> a resistência do antibiograma e a gravidade escolhem o fármaco.</div></div>
@@ -833,9 +852,9 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </section>
 
 <section id="secundarias">
-<div class="section"><div class="section-eyebrow"><span>D</span> Entidades Secundárias</div><div class="section-title">Populações especiais, Oropouche, neuroinvasivas, febre sem foco e febres hemorrágicas raras</div><div class="section-sub">Aqui entram o que muda o volume, o fármaco ou o destino do paciente: a dengue na criança, na gestante, no idoso, no cardiopata e no antiagregado; o Oropouche, que é o arbovírus emergente; as formas neuroinvasivas; a febre de origem indeterminada; e, em remissão, a hantavirose e o Ebola. As seções D.6 e D.7 trazem a pediatria e a notificação em tabela.</div></div>
+<div class="section"><div class="section-eyebrow"><span>D</span> Entidades Secundárias</div><div class="section-title">Populações especiais, Oropouche, neuroinvasivas, febre sem foco e febres hemorrágicas raras</div><div class="section-sub">Aqui entram o que muda o volume, o fármaco ou o destino do paciente: a dengue na criança, na gestante, no idoso, no cardiopata e no antiagregado; o Oropouche, que é o arbovírus emergente; as formas neuroinvasivas; a febre de origem indeterminada; e, em remissão, a hantavirose e o Ebola. As seções D.6 e D.7 trazem a pediatria e a notificação em tabela.</div></div><!--hp-f2--><nav class="sec-idx" aria-label="Neste capítulo"><a href="#d1"><b>D.1</b>Dengue na criança, na gestant…</a><a href="#d2"><b>D.2</b>Febre do Oropouche: o arbovír…</a><a href="#d3"><b>D.3</b>Arboviroses neuroinvasivas: W…</a><a href="#d4"><b>D.4</b>Febre de origem indeterminada…</a><a href="#d5"><b>D.5</b>Hantavirose, Ebola e outras f…</a><a href="#d6"><b>D.6</b>Arboviroses e febres tropicai…</a><a href="#d7"><b>D.7</b>Notificação: o que, quando e…</a></nav><!--/hp-f2-->
 
-<div class="card diag">
+<div class="card diag" id="d1">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">D.1</span> Populações especiais</div><h3>Dengue na criança, na gestante, no idoso, no cardiopata e em uso de antitrombóticos <span class="ank ank-dec">DECISION</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Os grupos de risco entram no grupo B mesmo sem alarme: lactente &lt;2 anos, idoso &gt;65, gestante, comorbidade, risco social. <b>O que muda conduta:</b> na criança o agravamento é súbito; na gestante o volume é igual ao dos demais, com decúbito lateral esquerdo; no cardiopata o bolus cai para 10 a 15 mL/kg em 30 minutos, até 3 vezes; no anticoagulado, o que decide é a contagem de plaquetas.</div></div>
@@ -855,7 +874,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card diag">
+<div class="card diag" id="d2">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">D.2</span> Oropouche</div><h3>Febre do Oropouche: o arbovírus que saiu da Amazônia <span class="ank ank-hy">HIGH-YIELD</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Orthobunyavírus transmitido pelo maruim (<i>Culicoides paraensis</i>), com febre súbita, cefaleia intensa, mialgia e artralgia por 2 a 7 dias e <b>recorrência em até 60% depois de 1 a 2 semanas</b>. Sem antiviral. <b>O que muda conduta:</b> manifestação hemorrágica ou neurológica exige manejo individualizado como a dengue grave, e a gestante com Oropouche é investigada pela transmissão vertical e por óbito fetal.</div></div>
@@ -875,7 +894,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card diag">
+<div class="card diag" id="d3">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">D.3</span> Neuroinvasivas</div><h3>Arboviroses neuroinvasivas: West Nile, Oropouche, dengue, Zika, chikungunya e febre amarela <span class="ank ank-dgr">DANGER</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Febre aguda com encefalite, meningite asséptica, mielite ou paralisia flácida em época de arbovirose: <b>exclua primeiro meningite bacteriana, encefalite herpética e malária cerebral</b>; depois colha PCR e IgM no LCR. Sem tratamento específico, com suporte de UTI e IgIV no Guillain-Barré. <b>O que muda conduta:</b> a arbovirose é diagnóstico de exclusão e nunca justifica reter antibiótico e aciclovir empíricos.</div></div>
@@ -904,7 +923,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card diag">
+<div class="card diag" id="d4">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">D.4</span> Febre sem foco</div><h3>Febre de origem indeterminada: definição, três causas e a regra de não empilhar exames <span class="ank ank-hy">HIGH-YIELD</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Definição clássica (Petersdorf e Beeson, 1961): febre &gt;38,3 °C em várias ocasiões, por mais de 3 semanas, sem diagnóstico depois de uma semana de investigação hospitalar ou de três visitas ambulatoriais. Causas: infecção, neoplasia, doença inflamatória não infecciosa e, em cerca de um quinto, nenhuma. <b>O que muda conduta:</b> repita história, exame e medicamentos antes de pedir PET e biópsia; corticoide e antibiótico empíricos prejudicam o diagnóstico.</div></div>
@@ -924,7 +943,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card diag">
+<div class="card diag" id="d5">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">D.5</span> Febres hemorrágicas raras</div><h3>Hantavirose, Ebola e outras febres hemorrágicas virais: reconhecer, isolar e remeter <span class="ank ank-dgr">DANGER</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Hantavirose na forma cardiopulmonar (SCPH): febre seguida de dispneia, hipotensão e edema pulmonar não cardiogênico por exposição a poeira de roedores silvestres; <b>notificação imediata</b> e UTI. O Ebola é importado e exige isolamento estrito. <b>O que muda conduta:</b> o contexto (roedor, viagem à África) decide o isolamento e a notificação antes do exame.</div></div>
@@ -944,7 +963,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card diag">
+<div class="card diag" id="d6">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">D.6</span> Seção pediátrica</div><h3>Arboviroses e febres tropicais na criança: lacuna fechada aqui, com teto em cada dose <span class="ank ank-dec">DECISION</span></h3></div>
 <div class="card-body">
 <div class="stbl stbl-3">
@@ -960,7 +979,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card diag">
+<div class="card diag" id="d7">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">D.7</span> Vigilância</div><h3>Notificação: o que, quando e a quem <span class="ank ank-dec">DECISION</span></h3></div>
 <div class="card-body">
 <div class="stbl stbl-3">
@@ -979,7 +998,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <section id="algoritmo">
 <div class="section"><div class="section-eyebrow"><span>E</span> Algoritmo</div><div class="section-title">Da febre ao grupo, à exposição e ao fármaco: três árvores e um raciocínio em seis passos</div><div class="section-sub">A primeira árvore estadia a dengue e fixa o volume; a segunda reparte a febre por exposição (carrapato, enchente, viagem, mata, neuro); a terceira conduz a malária pela espécie e pela G6PD. O quadro narrado ao final é a sequência mental que une as três.</div></div>
 
-<div class="card prim">
+<div class="card prim" id="e1">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">E.1</span> Algoritmo</div><h3>Suspeita de dengue: A, B, C ou D, com volume em cada ponta <span class="ank ank-dec">DECISION</span></h3></div>
 <div class="card-body">
 <div class="algo"><div class="tree">
@@ -1010,7 +1029,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="e2">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">E.2</span> Algoritmo</div><h3>Febre aguda tropical: a exposição escolhe o próximo ato <span class="ank ank-dgr">DANGER</span></h3></div>
 <div class="card-body">
 <div class="algo"><div class="tree">
@@ -1049,7 +1068,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="e3">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">E.3</span> Algoritmo</div><h3>Malária: espécie, gravidade, G6PD e gestação <span class="ank ank-hy">HIGH-YIELD</span></h3></div>
 <div class="card-body">
 <div class="algo"><div class="tree">
@@ -1092,13 +1111,13 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </section>
 
 <section id="tratamento">
-<div class="section"><div class="section-eyebrow"><span>F</span> Tratamento Integrado</div><div class="section-title">F1 · Estratégia por entidade · F2 · Doses · F3 · Casos · F4 · SUS e CMED · F5 · Reavaliação</div><div class="section-sub">Doses lidas nos manuais do MS (dengue 2024, chikungunya 2024, malária 2026, GVS 2024) levam a sigla da fonte; as da apostila de 2025, dos clássicos da febre tifoide e da febre de origem indeterminada, sem texto relido, levam "conferir". Metotrexato é sempre semanal. Doses tituladas trazem teto e critério de parada.</div></div>
+<div class="section"><div class="section-eyebrow"><span>F</span> Tratamento Integrado</div><div class="section-title">F1 · Estratégia por entidade · F2 · Doses · F3 · Casos · F4 · SUS e CMED · F5 · Reavaliação</div><div class="section-sub">Doses lidas nos manuais do MS (dengue 2024, chikungunya 2024, malária 2026, GVS 2024) levam a sigla da fonte; as da apostila de 2025, dos clássicos da febre tifoide e da febre de origem indeterminada, sem texto relido, levam "conferir". Metotrexato é sempre semanal. Doses tituladas trazem teto e critério de parada.</div></div><!--hp-f2--><nav class="sec-idx" aria-label="Neste capítulo"><a href="#f1"><b>F.1</b>Escada terapêutica por entida…</a><a href="#f2"><b>F.2</b>Tabela de doses — dengue, arb…</a><a href="#f3"><b>F.3</b>Caso → conduta certa → erro t…</a><a href="#f4"><b>F.4</b>O que o SUS e a CMED trazem e…</a><a href="#f5"><b>F.5</b>Quando reavaliar, o que esper…</a></nav><!--/hp-f2-->
 
-<div class="card tx">
+<div class="card tx" id="f1">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">F.1</span> Estratégia</div><h3>Escada terapêutica por entidade <span class="ank ank-dec">DECISION</span></h3></div>
 <div class="card-body">
 
-<div class="sub-title">F1.1 · Dengue: o volume segue o grupo, e o grupo segue a reavaliação (C.1, C.2, D.1)</div>
+<div class="sub-title" id="f1-1">F1.1 · Dengue: o volume segue o grupo, e o grupo segue a reavaliação (C.1, C.2, D.1)</div>
 <ul class="bullets">
 <li><b>Grupos A e B:</b> hidratação oral de 60 mL/kg/dia no adulto e por faixa de peso na criança (130, 100 e 80 mL/kg/dia), com um terço nas primeiras 4 a 6 horas; antitérmico e repouso; retorno no dia da melhora da febre; cartão de acompanhamento; repelente para o paciente virêmico, que infecta mosquitos.</li>
 <li><b>Grupo C:</b> expansão de 10 mL/kg de SF 0,9% por hora, por duas horas, com reavaliação clínica depois da primeira e hematócrito depois da segunda; manutenção com 25 mL/kg em 6 h e 25 mL/kg em 8 h; a apostila de 2025 prescreve a segunda etapa com soro glicosado (1/3 SF e 2/3 SG 5%), e o MS de 2024 escreve soro fisiológico.</li>
@@ -1107,14 +1126,14 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </ul>
 <div class="box danger"><span class="box-label">DANGER</span><div class="box-title">O idoso e o cardiopata afogam-se no volume que salvaria o jovem</div><div class="box-body">Hidratação em idoso, hipertenso e cardiopata se faz em alíquotas de 10 a 15 mL/kg em 30 minutos, com ausculta pulmonar, diurese e pressão a cada etapa; crepitação é o sinal de parar. A fase de reabsorção, depois do 6º dia, devolve o líquido do terceiro espaço e é a hora do edema agudo de pulmão.</div></div>
 
-<div class="sub-title">F1.2 · Chikungunya: analgesia por fase e a regra do AINE (C.3)</div>
+<div class="sub-title" id="f1-2">F1.2 · Chikungunya: analgesia por fase e a regra do AINE (C.3)</div>
 <ul class="bullets">
 <li><b>Aguda:</b> dipirona ou paracetamol em dose fixa; opioide fraco para dor intensa (EVA); repouso, compressas frias e fisioterapia; sem AINE e sem corticoide enquanto durar a fase aguda e houver chance de dengue.</li>
 <li><b>Pós-aguda:</b> AINE para o padrão não inflamatório, reavaliado em 10 dias e mantido até 4 semanas; prednisona 0,5 mg/kg/dia (máx. 40 mg) para artrite e tenossinovite; DN4 positivo associa amitriptilina ou gabapentina; exames de base (hemograma, glicemia, função renal e hepática) antes de AINE e corticoide.</li>
 <li><b>Crônica:</b> hidroxicloroquina, depois metotrexato 1 vez por semana, depois reumatologia e, raramente, imunobiológico; antes de imunossupressor: HBsAg, anti-HBc, anti-HCV, HIV e, se corticoide em dose alta, Mantoux e radiografia de tórax.</li>
 </ul>
 
-<div class="sub-title">F1.3 · Malária: da gota espessa à cura radical (C.6, C.7)</div>
+<div class="sub-title" id="f1-3">F1.3 · Malária: da gota espessa à cura radical (C.6, C.7)</div>
 <ul class="bullets">
 <li><b>Diagnosticar antes de tratar:</b> gota espessa ou TDR; toda febre em exposição sem diagnóstico pede lâmina; antibiótico prévio pode negativá-la, e o exame se repete a cada 48 h.</li>
 <li><b>P. vivax:</b> a G6PD quantitativa abre o esquema (tafenoquina, primaquina de 7 dias ou semanal); cloroquina por 3 dias em todos; primaquina com peso corrigido e teto pelo peso acima de 120 kg; orientar o paciente sobre hemólise e sobre completar os 7 dias.</li>
@@ -1123,7 +1142,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </ul>
 <div class="box danger"><span class="box-label">DANGER</span><div class="box-title">Hemólise por 8-aminoquinolina: o primeiro sinal é a cor da urina</div><div class="box-body">Urina escura (coca-cola), icterícia, tontura, dispneia e queda da Hb em 2 a 5 dias da primeira dose exigem parar o fármaco e procurar urgência; a hemólise é maior no tipo mediterrâneo e na atividade ≤4,0 UI/gHb. A tafenoquina tem meia-vida de cerca de 15 dias e não se interrompe depois da dose.</div></div>
 
-<div class="sub-title">F1.4 · Febre amarela, leptospirose, febre maculosa e tifoide: antibiótico ou suporte (C.5, C.8, C.9, C.10)</div>
+<div class="sub-title" id="f1-4">F1.4 · Febre amarela, leptospirose, febre maculosa e tifoide: antibiótico ou suporte (C.5, C.8, C.9, C.10)</div>
 <ul class="bullets">
 <li><b>Febre amarela:</b> suporte, sem antiviral; leve em casa com hidratação e retorno em 24 h até 48 h sem febre; moderada internada; grave em UTI (C.5); vacinar depois da alta o caso suspeito não confirmado.</li>
 <li><b>Leptospirose:</b> amoxicilina ou doxiciclina por 5–7 dias no leve; penicilina cristalina ou ceftriaxona IV no alerta, ao menos 7 dias; diurese, K⁺, pulmão e diálise precoce.</li>
@@ -1132,7 +1151,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </ul>
 <div class="box hy"><span class="box-label">HIGH-YIELD</span><div class="box-title">Quatro doenças em que a sorologia atrasa e o antibiótico salva</div><div class="box-body">Leptospirose, febre maculosa, febre tifoide e malária grave são tratadas na suspeita. Na prova, a pergunta é qual fármaco e qual dose; na prática, é também quanto tempo se perdeu esperando o exame.</div></div>
 
-<div class="sub-title">F1.5 · Zika, Oropouche e neuroinvasivas: sintomático e suporte (C.4, D.2, D.3)</div>
+<div class="sub-title" id="f1-5">F1.5 · Zika, Oropouche e neuroinvasivas: sintomático e suporte (C.4, D.2, D.3)</div>
 <ul class="bullets">
 <li>Sem antiviral para nenhuma delas: paracetamol ou dipirona, anti-histamínico no prurido do Zika, repouso e hidratação; sem AINE até a dengue ser excluída.</li>
 <li>Neuroinvasiva: meningite e encefalite tratáveis primeiro; Guillain-Barré com IgIV 0,4 g/kg/dia por 5 dias; suporte em UTI.</li>
@@ -1142,7 +1161,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card tx">
+<div class="card tx" id="f2">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">F.2</span> Doses Operacionais</div><h3>Tabela de doses — dengue, arboviroses, malária e febres bacterianas do trópico</h3></div>
 <div class="card-body">
 <div class="stbl stbl-3">
@@ -1185,7 +1204,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card tx">
+<div class="card tx" id="f3">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">F.3</span> Cenários</div><h3>Caso → conduta certa → erro típico</h3></div>
 <div class="card-body">
 <div class="stbl stbl-3">
@@ -1202,7 +1221,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card tx">
+<div class="card tx" id="f4">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">F.4</span> Acesso</div><h3>O que o SUS e a CMED trazem e o que fica a conferir <span class="ank ank-dec">DECISION</span></h3></div>
 <div class="card-body">
 <div class="stbl stbl-3">
@@ -1216,7 +1235,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card tx">
+<div class="card tx" id="f5">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">F.5</span> Monitorização</div><h3>Quando reavaliar, o que esperar e o que fazer se não responde <span class="ank ank-hy">HIGH-YIELD</span></h3></div>
 <div class="card-body">
 <div class="stbl stbl-3">
@@ -1235,7 +1254,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <section id="pitfalls">
 <div class="section"><div class="section-eyebrow"><span>G</span> Pitfalls · Mitos · Controvérsias</div><div class="section-title">Erros operacionais, mitos vivos e debates abertos</div><div class="section-sub">Os erros que se repetem: dar alta quando a febre cede, medicar com AINE, esperar sorologia para tratar leptospirose e febre maculosa, usar 8-aminoquinolina sem G6PD e confundir o volume com o objetivo da hidratação.</div></div>
 
-<div class="card pearl">
+<div class="card pearl" id="g1">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">G.1</span> Pegadinhas</div><h3>10 erros operacionais em dengue, arboviroses e febres do trópico</h3></div>
 <div class="card-body">
 <div class="stbl stbl-2">
@@ -1254,7 +1273,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card pearl">
+<div class="card pearl" id="g2">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">G.2</span> Mitos</div><h3>Três mitos vivos</h3></div>
 <div class="card-body">
 <div class="box myth"><span class="box-label">MYTH</span><div class="box-title">"Dengue só é grave quando a plaqueta cai muito"</div><div class="box-body">O extravasamento plasmático e o choque dependem do endotélio e do glicocálice, não da contagem de plaquetas; paciente com 80.000 plaquetas e dor abdominal contínua, vômitos e Ht subindo está em risco, e outro com 20.000 sem alarme pode seguir em casa. O MS estadia por clínica e hematócrito; as plaquetas orientam o antitrombótico e a vigilância, não a internação isolada.</div></div>
@@ -1263,7 +1282,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card pearl">
+<div class="card pearl" id="g3">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">G.3</span> Controvérsias</div><h3>Três debates sem consenso</h3></div>
 <div class="card-body">
 <div class="box controversy"><span class="box-label">CONTROVERSY</span><div class="box-title">Qual cristaloide e quanto volume na dengue grave</div><div class="box-body">O MS escreve soro fisiológico a 0,9% nos grupos C e D e, na cardiopatia, aceita Ringer simples; a apostila de 2025 aceita Ringer lactato e coloides e prescreve glicose na manutenção do grupo C. Evidência em dengue é limitada e extrapolada de choque pediátrico; a guia da OMS de 2025 que reúne dengue, chikungunya, Zika e febre amarela não foi lida e entra aqui só como remissão. Neste HP vale o MS, com reavaliação a cada etapa.</div></div>
@@ -1276,7 +1295,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <section id="pearls">
 <div class="section"><div class="section-eyebrow"><span>H</span> Pearls · Evolving</div><div class="section-title">H1 · Nuances de especialista · H2 · O que mudou entre 2024 e 2026</div><div class="section-sub">Oito ideias que o plantão esquece e cinco mudanças reais; o resto (fisiopatologia do extravasamento, ciclo do plasmódio, leptospirose) é estável e se diz estável.</div></div>
 
-<div class="card pearl">
+<div class="card pearl" id="h1">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">H.1</span> Pearls</div><h3>8 nuances que distinguem o especialista</h3></div>
 <div class="card-body">
 <div class="box pearl"><span class="box-label">PEARL</span><div class="box-title">O hematócrito é o monitor da reposição e a regra de parada é tão importante quanto a de início</div><div class="box-body">Na dengue, o Ht sobe com o vazamento, cai com a reposição adequada e cai também com a hemorragia ou com a hiper-hidratação; a leitura isolada engana, e só a combinação com diurese, pressão de pulso e perfusão orienta. Parar a infusão quando o vazamento termina evita o edema pulmonar da fase de reabsorção.</div></div>
@@ -1290,7 +1309,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card pearl">
+<div class="card pearl" id="h2">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">H.2</span> Evolving</div><h3>O que mudou: cinco itens reais; o resto do tema é estável</h3></div>
 <div class="card-body">
 <div class="box evolving"><span class="box-label">EVOLVING</span><div class="box-title">Dengue: 6ª edição do manual do MS (2024)</div><div class="box-body">A edição de 2024 mantém os grupos A a D, passa a fixar o bolus do grupo C em 10 mL/kg por hora, escreve a segunda etapa de manutenção com soro fisiológico, enuncia critérios de alta mais enxutos, dedica capítulos a hipertensão, cardiopatia e antitrombóticos e rebaixa a prova do laço (valor preditivo baixo na revisão OPAS/OMS de 2022). A apostila de 2025 reproduz a versão anterior.</div></div>
@@ -1341,5 +1360,36 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <a class="to-top" href="#" aria-label="Voltar ao topo">↑</a>
 <div class="watermark">@dr.lorencato · II07 Dengue, Arboviroses e Febris v5.2</div>
 
-</body>
+<!--hp-f2--><script>(function(){var d=document,M=d.querySelector('main');if(!M)return;
+var SELF='II07',HP=' CT01 CT02 CT03 CT04 CT05 CT06 CT08 CT10 CV01 CV03 CV04 CV05 CV06 CV07 CV08 EN01 EN02 EN03 EN04 EN06 EN07 GH01 GH02 GH03 GH05 GH06 GH07 GH08 GH09 GH10 GO01 GO02 GO03 GO04 GO09 GO10 GO11 GO12 GO13 GO14 HO01 HO02 HO03 HO04 HO05 HO06 II01 II02 II03 II04 II07 II08 NE01 NE02 NE03 NE04 NE05 NE06 NE07 NE08 NU01 NU02 NU03 NU04 NU05 OE01 OE02 PC01 PC02 PC03 PC04 PC05 PC06 PD01 PD02 PD03 PD04 PD05 PD06 PD07 PD08 PD09 PD10 RD01 RD02 RD03 RD04 RD05 RD07 RP01 RP02 RP03 RP04 ';
+var SK='A,H1,H2,H3,SCRIPT,STYLE,NAV,.card-num,.card-eyebrow,.sub-title,.disease-tag,.toc';
+var R=/\b(?:([A-H])(\d)?\.(\d{1,2}[a-c]?)|(CV|RP|GH|NE|EN|NU|HO|II|RD|GO|PD|PC|CT|OE)(\d\d))\b/g;
+function skip(n){for(var e=n.parentNode;e&&e!==M;e=e.parentNode)if(e.matches&&e.matches(SK))return 1;return 0}
+var w=d.createTreeWalker(M,4),t,L=[];while(t=w.nextNode())if(R.test(t.data)&&!skip(t))L.push(t);
+L.forEach(function(t){var s=t.data,f=d.createDocumentFragment(),i=0,m;R.lastIndex=0;
+while(m=R.exec(s)){var h=null;
+if(m[1]){var id=m[1].toLowerCase()+(m[2]?m[2]+'-':'')+m[3];if(d.getElementById(id))h='#'+id}
+else{var x=m[4]+m[5];if(x!==SELF&&HP.indexOf(' '+x+' ')>=0)h='../'+x+'/'+x+'.html'}
+if(!h)continue;f.appendChild(d.createTextNode(s.slice(i,m.index)));
+var a=d.createElement('a');a.href=h;a.className='xr';a.textContent=m[0];f.appendChild(a);i=R.lastIndex}
+if(i){f.appendChild(d.createTextNode(s.slice(i)));t.parentNode.replaceChild(f,t)}});
+function nz(s){return s.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'')}
+var q=d.querySelector('.hp-q'),n=d.querySelector('.hp-n'),it=M.querySelectorAll('.card,.pocket-card'),T;
+function clr(){M.querySelectorAll('.q-off').forEach(function(e){e.classList.remove('q-off')})}
+function run(){var v=nz(q.value.trim());clr();n.textContent='';if(v.length<2)return;var k=0;
+it.forEach(function(c){if(nz(c.textContent).indexOf(v)<0){c.classList.add('q-off');return}k++;
+var r=c.querySelectorAll('.stbl-row,.disease-row,.score-row'),h=[];r.forEach(function(x){if(nz(x.textContent).indexOf(v)>=0)h.push(x)});
+if(h.length)r.forEach(function(x){if(h.indexOf(x)<0)x.classList.add('q-off')});
+c.querySelectorAll('details').forEach(function(x){if(nz(x.textContent).indexOf(v)>=0)x.open=true})});
+M.querySelectorAll('section').forEach(function(s){if(!s.querySelector('.card:not(.q-off),.pocket-card:not(.q-off)'))s.classList.add('q-off')});
+n.textContent=k?k+' achado'+(k>1?'s':''):'nada'}
+if(q){q.addEventListener('input',function(){clearTimeout(T);T=setTimeout(run,180)});
+q.addEventListener('keydown',function(e){if(e.key==='Escape'){q.value='';run()}})}
+function tg(b,f){b.addEventListener('click',function(){var on=b.getAttribute('aria-pressed')!=='true';b.setAttribute('aria-pressed',on);f(on)})}
+var bd=d.querySelector('.hp-dz'),bo=d.querySelector('.hp-op');
+if(bd)tg(bd,function(on){d.body.classList.toggle('dz',on);if(on)d.getElementById('tratamento').scrollIntoView()});
+if(bo)tg(bo,function(on){M.querySelectorAll('details').forEach(function(x){x.open=on})});
+var P=[];addEventListener('beforeprint',function(){P=[];M.querySelectorAll('details:not([open])').forEach(function(x){P.push(x);x.open=true})});
+addEventListener('afterprint',function(){P.forEach(function(x){x.open=false})});
+})();</script><!--/hp-f2--></body>
 </html>

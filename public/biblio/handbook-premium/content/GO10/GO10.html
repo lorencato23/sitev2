@@ -345,6 +345,25 @@ ul.bullets li b{color:var(--ink);font-weight:600}
   .pocket .pocket-card.tx{--accent:#a8481a}
   .pocket .pocket-card.clin{--accent:#0b5d4e}
 }
+
+/* === v5.2.2 · fase 2 (navegação) === */
+.hp-tools{display:flex;gap:6px;align-items:center;flex:none;order:1;margin-left:auto;padding-left:6px;position:sticky;right:0;background:#f1eee5;box-shadow:-10px 0 10px -4px #f1eee5,16px 0 0 #f1eee5}
+@media(min-width:900px){html{scroll-padding-top:150px}.toc-inner{flex-wrap:wrap;overflow:visible}.card[id],.sub-title[id]{scroll-margin-top:150px}}
+@media(max-width:899px){.hp-b,.hp-n{display:none}.hp-q{width:104px}}
+.hp-q{width:128px;font:500 12px/1 'DM Sans',system-ui,sans-serif;padding:7px 11px;border:1px solid var(--line-strong);border-radius:999px;background:var(--paper);color:var(--ink)}
+.hp-b{font:600 11px/1 'DM Sans',system-ui,sans-serif;letter-spacing:.05em;text-transform:uppercase;padding:7px 10px;border-radius:999px;border:1px solid var(--line-strong);background:var(--paper);color:var(--ink-soft);cursor:pointer;white-space:nowrap}
+.hp-b[aria-pressed=true]{background:var(--ink);color:#fff;border-color:var(--ink)}
+.hp-n{font:600 11px/1 'DM Mono',monospace;color:var(--ink-mute);white-space:nowrap}
+.sec-idx{display:flex;flex-wrap:wrap;gap:6px;margin:12px 0 20px}
+.sec-idx a{font:500 12px/1.25 'DM Sans',system-ui,sans-serif;padding:6px 10px;border-radius:999px;background:var(--paper);border:1px solid var(--line);color:var(--ink-soft);text-decoration:none}
+.sec-idx a:hover{border-color:var(--line-strong);color:var(--ink)}
+.sec-idx b{color:var(--c-prim);margin-right:5px;font-weight:700}
+a.xr{color:inherit;text-decoration:underline dotted;text-underline-offset:2px}
+a.xr:hover{color:var(--c-prim)}
+.card[id],.sub-title[id]{scroll-margin-top:110px}
+.q-off{display:none!important}
+body.dz main section:not(#tratamento){display:none}
+@media print{.hp-tools,.sec-idx,.toc-doses{display:none!important}}
 </style>
 </head>
 <body>
@@ -362,14 +381,14 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </header>
 
 <nav class="toc">
-  <div class="toc-inner">
+  <div class="toc-inner"><!--hp-f2--><span class="hp-tools"><input class="hp-q" type="search" placeholder="Buscar no HP" aria-label="Buscar no HP"><button class="hp-b hp-dz" type="button" aria-pressed="false">Só doses</button><button class="hp-b hp-op" type="button" aria-pressed="false">Abrir tudo</button><span class="hp-n" aria-live="polite"></span></span><!--/hp-f2-->
     <a href="#pocket"      class="toc-chip"><span class="toc-chip-num">0</span>Pocket</a>
     <a href="#redflags"    class="toc-chip"><span class="toc-chip-num">A</span>Red Flags</a>
     <a href="#approach"    class="toc-chip"><span class="toc-chip-num">B</span>Apresentação</a>
     <a href="#primarias"   class="toc-chip"><span class="toc-chip-num">C</span>Entidades</a>
     <a href="#secundarias" class="toc-chip"><span class="toc-chip-num">D</span>Secundárias</a>
     <a href="#algoritmo"   class="toc-chip"><span class="toc-chip-num">E</span>Algoritmo</a>
-    <a href="#tratamento"  class="toc-chip"><span class="toc-chip-num">F</span>Tratamento</a>
+    <a href="#tratamento"  class="toc-chip"><span class="toc-chip-num">F</span>Tratamento</a><!--hp-f2--><a href="#f2" class="toc-chip toc-doses"><span class="toc-chip-num">Rx</span>Doses</a><!--/hp-f2-->
     <a href="#pitfalls"    class="toc-chip"><span class="toc-chip-num">G</span>Pitfalls</a>
     <a href="#pearls"      class="toc-chip"><span class="toc-chip-num">H</span>Pearls</a>
   </div>
@@ -484,7 +503,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
     <div class="section-sub">A maior parte do pré-natal é rotina, mas a rotina existe para captar oito sinais que mudam o nível de cuidado no mesmo dia. Cada linha abaixo é sinal objetivo → hipótese → ação concreta; a conduta definitiva das síndromes obstétricas vive nos HPs vizinhos (GO11–GO14).</div>
   </div>
 
-  <div class="card emerg">
+  <div class="card emerg" id="a1">
     <div class="card-head">
       <div class="card-eyebrow"><span class="card-num">A.1</span> Emergências no pré-natal</div>
       <h3>Sinais de alarme da gestante <span class="ank ank-dgr">DANGER</span></h3>
@@ -576,7 +595,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
     <div class="section-sub">O pré-natal chega ao médico em cinco formatos: a mulher que suspeita estar grávida, a primeira consulta, a queixa que parece doença, o exame "alterado" e a sorologia reagente. Cada formato tem uma pergunta inicial que separa fisiologia de patologia.</div>
   </div>
 
-  <div class="card clin">
+  <div class="card clin" id="b1">
     <div class="card-head">
       <div class="card-eyebrow"><span class="card-num">B.1</span> Padrão 1</div>
       <h3>Atraso menstrual e suspeita de gravidez</h3>
@@ -602,7 +621,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
     </div>
   </div>
 
-  <div class="card clin">
+  <div class="card clin" id="b2">
     <div class="card-head">
       <div class="card-eyebrow"><span class="card-num">B.2</span> Padrão 2</div>
       <h3>Primeira consulta de pré-natal</h3>
@@ -623,7 +642,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
     </div>
   </div>
 
-  <div class="card clin">
+  <div class="card clin" id="b3">
     <div class="card-head">
       <div class="card-eyebrow"><span class="card-num">B.3</span> Padrão 3</div>
       <h3>Queixa comum que parece doença</h3>
@@ -646,7 +665,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
     </div>
   </div>
 
-  <div class="card clin">
+  <div class="card clin" id="b4">
     <div class="card-head">
       <div class="card-eyebrow"><span class="card-num">B.4</span> Padrão 4</div>
       <h3>Exame "alterado" na gestante</h3>
@@ -668,7 +687,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
     </div>
   </div>
 
-  <div class="card clin">
+  <div class="card clin" id="b5">
     <div class="card-head">
       <div class="card-eyebrow"><span class="card-num">B.5</span> Padrão 5</div>
       <h3>Sorologia ou teste rápido reagente no pré-natal</h3>
@@ -700,9 +719,9 @@ ul.bullets li b{color:var(--ink);font-weight:600}
     <div class="section-eyebrow"><span>C</span> Entidades Primárias</div>
     <h2 class="section-title">Disease boxes — diagnóstico e datação, fisiologia materna, pré-natal de risco habitual e triagem de alto risco</h2>
     <div class="section-sub">As quatro entidades do contrato com conduta própria. A fisiologia materna ganha box porque é o diagnóstico diferencial de quase toda queixa da gestante. Calendário de consultas, vacinas e suplementação são competências (E e F); rastreio de DMG e pré-eclâmpsia é remissão ao GO13; ectópica e aloimunização, ao GO12.</div>
-  </div>
+  </div><!--hp-f2--><nav class="sec-idx" aria-label="Neste capítulo"><a href="#c1"><b>C.1</b>Diagnóstico de gravidez e dat…</a><a href="#c2"><b>C.2</b>Modificações gerais do organi…</a><a href="#c3"><b>C.3</b>Pré-natal de risco habitual</a><a href="#c4"><b>C.4</b>Gestação de alto risco — estr…</a></nav><!--/hp-f2-->
 
-  <div class="card prim">
+  <div class="card prim" id="c1">
     <div class="card-head">
       <div class="card-eyebrow"><span class="card-num">C.1</span> Entidade âncora</div>
       <h3>Diagnóstico de gravidez e datação <span class="ank ank-hy">HIGH-YIELD</span> <span class="ank ank-dec">DECISION</span></h3>
@@ -750,7 +769,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
     </div>
   </div>
 
-  <div class="card prim">
+  <div class="card prim" id="c2">
     <div class="card-head">
       <div class="card-eyebrow"><span class="card-num">C.2</span> Entidade âncora</div>
       <h3>Modificações gerais do organismo materno <span class="ank ank-hy">HIGH-YIELD</span> <span class="ank ank-prl">PEARL</span></h3>
@@ -808,7 +827,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
     </div>
   </div>
 
-  <div class="card prim">
+  <div class="card prim" id="c3">
     <div class="card-head">
       <div class="card-eyebrow"><span class="card-num">C.3</span> Entidade âncora</div>
       <h3>Pré-natal de risco habitual <span class="ank ank-hy">HIGH-YIELD</span> <span class="ank ank-dec">DECISION</span></h3>
@@ -855,7 +874,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
     </div>
   </div>
 
-  <div class="card prim">
+  <div class="card prim" id="c4">
     <div class="card-head">
       <div class="card-eyebrow"><span class="card-num">C.4</span> Triagem</div>
       <h3>Gestação de alto risco — estratificação e encaminhamento <span class="ank ank-dec">DECISION</span></h3>
@@ -892,9 +911,9 @@ ul.bullets li b{color:var(--ink);font-weight:600}
     <div class="section-eyebrow"><span>D</span> Entidades Secundárias</div>
     <h2 class="section-title">O que o pré-natal rastreia e trata — hiperêmese, transmissão vertical, ITU, anemia, tireoide, aneuploidias e teratogenia</h2>
     <div class="section-sub">Este HP assume as condições <b>detectadas pelo rastreio do pré-natal</b> e cuja primeira conduta acontece na UBS (decisão de fronteira registrada no GO10_NOTAS: parte do card D.7 do GO13). Seguimento especializado, conduta neonatal e doença fora da gestação ficam com os donos (II01, GO09, EN03, HO01, PD02). Cardiopatia e COVID-19 na gestação continuam lacuna.</div>
-  </div>
+  </div><!--hp-f2--><nav class="sec-idx" aria-label="Neste capítulo"><a href="#d1"><b>D.1</b>Náuseas e vômitos da gestação…</a><a href="#d2"><b>D.2</b>Sífilis na gestação</a><a href="#d3"><b>D.3</b>HIV, hepatites B e C e HTLV n…</a><a href="#d4"><b>D.4</b>Toxoplasmose gestacional</a><a href="#d5"><b>D.5</b>Colonização por estreptococo…</a><a href="#d6"><b>D.6</b>Bacteriúria assintomática e i…</a><a href="#d7"><b>D.7</b>Anemia na gestação</a><a href="#d8"><b>D.8</b>Tireoide no pré-natal</a><a href="#d9"><b>D.9</b>Rastreamento de aneuploidias…</a><a href="#d10"><b>D.10</b>Teratogenia — fármacos, álcoo…</a></nav><!--/hp-f2-->
 
-  <div class="card diag">
+  <div class="card diag" id="d1">
     <div class="card-head">
       <div class="card-eyebrow"><span class="card-num">D.1</span> Apostila OBS 1</div>
       <h3>Náuseas e vômitos da gestação e hiperêmese gravídica <span class="ank ank-dgr">DANGER</span></h3>
@@ -929,7 +948,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
     </div>
   </div>
 
-  <div class="card diag">
+  <div class="card diag" id="d2">
     <div class="card-head">
       <div class="card-eyebrow"><span class="card-num">D.2</span> Transmissão vertical</div>
       <h3>Sífilis na gestação <span class="ank ank-hy">HIGH-YIELD</span> <span class="ank ank-dgr">DANGER</span></h3>
@@ -963,7 +982,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
     </div>
   </div>
 
-  <div class="card diag">
+  <div class="card diag" id="d3">
     <div class="card-head">
       <div class="card-eyebrow"><span class="card-num">D.3</span> Transmissão vertical</div>
       <h3>HIV, hepatites B e C e HTLV no pré-natal <span class="ank ank-dec">DECISION</span></h3>
@@ -994,7 +1013,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
     </div>
   </div>
 
-  <div class="card diag">
+  <div class="card diag" id="d4">
     <div class="card-head">
       <div class="card-eyebrow"><span class="card-num">D.4</span> Transmissão vertical</div>
       <h3>Toxoplasmose gestacional <span class="ank ank-hy">HIGH-YIELD</span></h3>
@@ -1038,7 +1057,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
     </div>
   </div>
 
-  <div class="card diag">
+  <div class="card diag" id="d5">
     <div class="card-head">
       <div class="card-eyebrow"><span class="card-num">D.5</span> Rastreio do 3º trimestre</div>
       <h3>Colonização por estreptococo do grupo B <span class="ank ank-con">CONTROVERSY</span></h3>
@@ -1064,7 +1083,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
     </div>
   </div>
 
-  <div class="card diag">
+  <div class="card diag" id="d6">
     <div class="card-head">
       <div class="card-eyebrow"><span class="card-num">D.6</span> Rastreio</div>
       <h3>Bacteriúria assintomática e infecção urinária baixa <span class="ank ank-hy">HIGH-YIELD</span></h3>
@@ -1090,7 +1109,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
     </div>
   </div>
 
-  <div class="card diag">
+  <div class="card diag" id="d7">
     <div class="card-head">
       <div class="card-eyebrow"><span class="card-num">D.7</span> Rastreio</div>
       <h3>Anemia na gestação <span class="ank ank-dec">DECISION</span></h3>
@@ -1116,7 +1135,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
     </div>
   </div>
 
-  <div class="card diag">
+  <div class="card diag" id="d8">
     <div class="card-head">
       <div class="card-eyebrow"><span class="card-num">D.8</span> Rastreio dirigido</div>
       <h3>Tireoide no pré-natal <span class="ank ank-con">CONTROVERSY</span></h3>
@@ -1142,7 +1161,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
     </div>
   </div>
 
-  <div class="card diag">
+  <div class="card diag" id="d9">
     <div class="card-head">
       <div class="card-eyebrow"><span class="card-num">D.9</span> Apêndice da apostila</div>
       <h3>Rastreamento de aneuploidias, defeitos do tubo neural e diagnóstico pré-natal invasivo</h3>
@@ -1168,7 +1187,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
     </div>
   </div>
 
-  <div class="card tx">
+  <div class="card tx" id="d10">
     <div class="card-head">
       <div class="card-eyebrow"><span class="card-num">D.10</span> Medicamentos e exposições</div>
       <h3>Teratogenia — fármacos, álcool, drogas e radiação <span class="ank ank-dgr">DANGER</span></h3>
@@ -1207,7 +1226,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
     <div class="section-sub">Uma árvore para a primeira consulta (confirmar, localizar, datar, estratificar, rastrear) e o raciocínio narrado que a acompanha. A árvore termina em condutas, não em rótulos.</div>
   </div>
 
-  <div class="card prim">
+  <div class="card prim" id="e1">
     <div class="card-head">
       <div class="card-eyebrow"><span class="card-num">E.1</span> Algoritmo</div>
       <h3>Primeira consulta: confirmar → localizar → datar → estratificar → rastrear <span class="ank ank-dec">DECISION</span></h3>
@@ -1304,16 +1323,16 @@ ul.bullets li b{color:var(--ink);font-weight:600}
     <div class="section-eyebrow"><span>F</span> Tratamento Integrado</div>
     <h2 class="section-title">F1 · Estratégia por entidade · F2 · Doses operacionais</h2>
     <div class="section-sub">No pré-natal, "tratamento" é sobretudo prevenção programada no tempo: o que suplementar, o que vacinar, o que repetir e quando, e como tratar o que o rastreio encontra. As doses de pré-eclâmpsia, DMG, anti-D e profilaxias de parto ficam nos HPs donos.</div>
-  </div>
+  </div><!--hp-f2--><nav class="sec-idx" aria-label="Neste capítulo"><a href="#f1"><b>F.1</b>Escadas e calendários por ent…</a><a href="#f2"><b>F.2</b>Tabela de doses — pré-natal</a></nav><!--/hp-f2-->
 
-  <div class="card tx">
+  <div class="card tx" id="f1">
     <div class="card-head">
       <div class="card-eyebrow"><span class="card-num">F.1</span> Estratégia</div>
       <h3>Escadas e calendários por entidade <span class="ank ank-dec">DECISION</span></h3>
     </div>
     <div class="card-body">
 
-      <div class="sub-title">F1.1 · Calendário de consultas e exames (risco habitual)</div>
+      <div class="sub-title" id="f1-1">F1.1 · Calendário de consultas e exames (risco habitual)</div>
       <div class="stbl stbl-3">
         <div class="stbl-head stbl-3"><div>Momento</div><div>Exames e ações</div><div>Racional / observação</div></div>
         <div class="stbl-row stbl-3"><div class="col col1" data-l="Momento">Pré-concepção</div><div class="col" data-l="Exames">Ácido fólico 0,4 mg (≥30 dias antes); revisar fármacos teratogênicos; vacinar tríplice viral, varicela, HPV, hepatite B; sorologias (sífilis, HIV, hepatites, toxo); controlar DM, HAS, tireoide, epilepsia</div><div class="col" data-l="Racional">Fechamento do tubo neural ocorre até 28 dias pós-concepção, antes de a mulher saber que está grávida; vírus vivo → aguardar 1 mês para engravidar</div></div>
@@ -1326,7 +1345,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
         <div class="stbl-row stbl-3"><div class="col col1" data-l="Momento">Parto e admissão</div><div class="col" data-l="Exames">TR sífilis e HIV na admissão (e HBsAg se não testada); vacina HB ≤12 h e IGHAHB 12–24 h no RN de HBsAg+</div><div class="col" data-l="Racional">Última oportunidade de prevenir transmissão vertical</div></div>
       </div>
 
-      <div class="sub-title">F1.2 · Suplementação</div>
+      <div class="sub-title" id="f1-2">F1.2 · Suplementação</div>
       <ul class="bullets">
         <li><b>Ácido fólico:</b> 0,4 mg/dia de ≥30 dias antes da concepção até, no mínimo, o fim do 1º trimestre; MS e SMS-Rio mantêm até o fim da gestação. <b>4–5 mg/dia</b> se DTN prévio, uso de antiepilépticos (valproato, carbamazepina), DM pré-gestacional, obesidade importante, bariátrica ou síndrome de má absorção (dose alta varia entre fontes — confirmar protocolo). No SUS, a apresentação disponível costuma ser 5 mg; a solução oral 0,2 mg/mL permite 0,4 mg (2 mL).</li>
         <li><b>Ferro:</b> 40 mg/dia de ferro elementar (sulfato ferroso 200 mg) do início do pré-natal até o 3º mês pós-parto ou pós-aborto <span class="ev ev-sbr">MS/SMS-Rio 2025</span>; OMS 30–60 mg/dia, ou 120 mg 1×/semana se a diária não for tolerada <span class="ev ev-eular">OMS 2025</span>. Suspender temporariamente na hiperêmese.</li>
@@ -1335,7 +1354,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
         <li><b>Não rotineiros:</b> vitamina D (OMS: só se deficiência documentada), multivitamínicos e micronutrientes múltiplos (OMS 2025: só em contexto de pesquisa), vitamina A (teratogênica acima de 10.000 UI/dia), ômega-3 (benefício modesto em prematuridade em populações de baixa ingesta — individualizar).</li>
       </ul>
 
-      <div class="sub-title">F1.3 · Imunizações da gestante (calendário 2026)</div>
+      <div class="sub-title" id="f1-3">F1.3 · Imunizações da gestante (calendário 2026)</div>
       <div class="stbl stbl-3">
         <div class="stbl-head stbl-3"><div>Vacina</div><div>Esquema na gestação</div><div>Notas</div></div>
         <div class="stbl-row stbl-3"><div class="col col1" data-l="Vacina">dTpa adulto / dT</div><div class="col" data-l="Esquema">3 doses prévias: <b>1 dTpa a cada gestação a partir de 20 sem</b>. &lt;3 doses: completar com dT e ao menos 1 dTpa ≥20 sem. Não vacinada: dT, dT, dTpa (intervalo 60 dias, mínimo 30) — última dose até 20 dias antes da DPP</div><div class="col" data-l="Notas">Anticorpos anti-pertussis transplacentários protegem o RN até a 1ª dose aos 2 meses; não vacinada → puerpério até 45 dias <span class="ev ev-sbr">PNI 2026</span>; ACOG prefere 27–36 sem</div></div>
@@ -1347,7 +1366,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
         <div class="stbl-row stbl-3"><div class="col col1" data-l="Vacina">Imunoglobulinas</div><div class="col" data-l="Esquema">Varicela (VZIG) em suscetível exposta até 96 h (CRIE); antitetânica, anti-HB, antirrábica conforme exposição; raiva: vacinar normalmente</div><div class="col" data-l="Notas">Anti-D na Rh− não sensibilizada → GO12</div></div>
       </div>
 
-      <div class="sub-title">F1.4 · Náuseas, vômitos e hiperêmese</div>
+      <div class="sub-title" id="f1-4">F1.4 · Náuseas, vômitos e hiperêmese</div>
       <ul class="bullets">
         <li><b>Degrau 1:</b> refeições pequenas a cada 2–3 h, evitar gatilhos olfativos, gengibre 250 mg 6/6 h, suspender ferro temporariamente; piridoxina 10–25 mg 8/8 h ± doxilamina 10 mg.</li>
         <li><b>Degrau 2:</b> anti-H1 (dimenidrinato, prometazina) ou metoclopramida 10 mg 8/8 h VO.</li>
@@ -1361,7 +1380,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
         <div class="box-body">Metoclopramida e fenotiazínicos (prometazina, clorpromazina) somam risco extrapiramidal — não combine dois antidopaminérgicos; injete metoclopramida IV lentamente (≥3 min). Ondansetrona prolonga QT: corrija hipocalemia e hipomagnesemia antes e evite associar outros fármacos que alargam QT.</div>
       </div>
 
-      <div class="sub-title">F1.5 · Sífilis na gestação</div>
+      <div class="sub-title" id="f1-5">F1.5 · Sífilis na gestação</div>
       <ul class="bullets">
         <li><b>TR reagente:</b> 1ª dose de benzatina no mesmo atendimento; VDRL quantitativo basal; classificar fase; notificar; convocar parceria.</li>
         <li><b>Fase ignorada (regra na gestante assintomática):</b> 2,4 milhões UI IM semanal × 3; intervalo ≤9 dias, senão reiniciar <span class="ev ev-sbr">NT 14/2023</span>.</li>
@@ -1369,7 +1388,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
         <li><b>Alergia relatada:</b> anamnese cuidadosa (Jarisch-Herxheimer prévio não é alergia); alergia verdadeira → dessensibilização hospitalar; não substituir por ceftriaxona como esquema "adequado".</li>
       </ul>
 
-      <div class="sub-title">F1.6 · HIV, hepatites e HTLV</div>
+      <div class="sub-title" id="f1-6">F1.6 · HIV, hepatites e HTLV</div>
       <ul class="bullets">
         <li><b>HIV:</b> TDF/3TC + DTG no diagnóstico, inclusive no 1º trimestre (preocupação inicial com DTN e dolutegravir não se confirmou no Tsepamo); CV mensal até indetectável e com 34 sem; cesárea eletiva 38 sem se CV ≥1.000 ou desconhecida; AZT IV intraparto se CV desconhecida ou detectável a partir de 34 sem, ou má adesão (PCDT TV 2022, §24.1); cabergolina e fórmula; profilaxia do RN (PD02).</li>
         <li><b>HBV:</b> HBV-DNA/HBeAg ao diagnóstico; TDF 300 mg/dia a partir da 24ª semana se ≥200.000 UI/mL ou HBeAg+; avaliar indicação de tratamento para a própria mulher (PCDT Hepatite B); RN vacina + IGHAHB; amamentação liberada.</li>
@@ -1377,33 +1396,33 @@ ul.bullets li b{color:var(--ink);font-weight:600}
         <li><b>HTLV:</b> confirmatório; sem tratamento antiviral; via obstétrica; inibir lactação.</li>
       </ul>
 
-      <div class="sub-title">F1.7 · Toxoplasmose</div>
+      <div class="sub-title" id="f1-7">F1.7 · Toxoplasmose</div>
       <ul class="bullets">
         <li><b>Suspeita de infecção aguda:</b> espiramicina 1 g VO 8/8 h imediatamente, enquanto se esclarece (avidez, repetição de sorologia).</li>
         <li><b>Infecção provável/confirmada ≥16 sem ou feto infectado:</b> sulfadiazina + pirimetamina + ácido folínico até o parto, hemograma quinzenal; USG mensal; amniocentese ≥18 sem e ≥4 semanas da infecção.</li>
         <li><b>Prevenção primária para todas:</b> carne bem cozida (≥66 °C), lavar frutas e verduras, água filtrada, luvas para terra e caixa de areia, evitar leite não pasteurizado e ovos crus.</li>
       </ul>
 
-      <div class="sub-title">F1.8 · Bacteriúria, cistite e pielonefrite</div>
+      <div class="sub-title" id="f1-8">F1.8 · Bacteriúria, cistite e pielonefrite</div>
       <ul class="bullets">
         <li><b>Bacteriúria/cistite:</b> antibiótico guiado por antibiograma por 5–7 dias (cistite empírica sem esperar cultura) e urocultura de controle 1–2 semanas depois.</li>
         <li><b>Pielonefrite:</b> internação, hemoculturas, ceftriaxona IV; atenção a SDRA e sepse; trocar para oral após 48 h afebril, total 10–14 dias.</li>
         <li><b>Recorrência:</b> profilaxia noturna até o parto + urocultura mensal; USG de vias urinárias.</li>
       </ul>
 
-      <div class="sub-title">F1.9 · Anemia</div>
+      <div class="sub-title" id="f1-9">F1.9 · Anemia</div>
       <ul class="bullets">
         <li><b>Leve a moderada:</b> ferro elementar 160–200 mg/dia (MS 2022); OMS 2025: 120 mg/dia; 60–120 mg/dia ou dias alternados (apostila, sem fonte lida), parasitológico de fezes e tratamento de parasitose (após o 1º trimestre), Hb em 30–60 dias.</li>
         <li><b>Grave ou refratária:</b> referência ao alto risco; ferro IV preferível se Hb &lt;9 e IG ≥14 semanas (MS 2022); investigar hemoglobinopatia, B12/folato, perdas.</li>
       </ul>
 
-      <div class="sub-title">F1.10 · Tireoide</div>
+      <div class="sub-title" id="f1-10">F1.10 · Tireoide</div>
       <ul class="bullets">
         <li><b>Hipotireóidea prévia:</b> +25–30% da levotiroxina (2 doses extras por semana) ao confirmar a gravidez; TSH a cada 4 semanas até 20 semanas, depois a cada trimestre; voltar à dose prévia após o parto.</li>
         <li><b>Diagnóstico novo:</b> levotiroxina 1,6 µg/kg/dia se manifesto; tireotoxicose gestacional transitória → sintomáticos (betabloqueador por curto período se necessário), sem antitireoidiano.</li>
       </ul>
 
-      <div class="sub-title">F1.11 · Queixas comuns</div>
+      <div class="sub-title" id="f1-11">F1.11 · Queixas comuns</div>
       <ul class="bullets">
         <li><b>Pirose:</b> medidas posturais; antiácido (hidróxido de alumínio/magnésio) após refeições; IBP (omeprazol 20 mg) se persistente.</li>
         <li><b>Constipação e hemorroidas:</b> fibras e água; polietilenoglicol ou lactulose; analgesia tópica; evitar óleo mineral prolongado.</li>
@@ -1412,7 +1431,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
         <li><b>Cãibras:</b> alongamento; magnésio oral tem evidência inconsistente.</li>
       </ul>
 
-      <div class="sub-title">F1.12 · Fármacos de uso crônico — o que fazer quando a mulher engravida</div>
+      <div class="sub-title" id="f1-12">F1.12 · Fármacos de uso crônico — o que fazer quando a mulher engravida</div>
       <div class="stbl stbl-3">
         <div class="stbl-head stbl-3"><div>Em uso</div><div>Conduta na gestação</div><div>Por quê / armadilha</div></div>
         <div class="stbl-row stbl-3"><div class="col col1" data-l="Em uso">Valproato (epilepsia ou transtorno bipolar)</div><div class="col" data-l="Conduta">Não suspender abruptamente; trocar com neurologista/psiquiatra por lamotrigina ou levetiracetam, idealmente antes da concepção; ácido fólico 4–5 mg; USG morfológica e ecocardiograma</div><div class="col" data-l="Por quê">DTN ~10%, malformações múltiplas e QI 8–10 pontos menor; crise convulsiva generalizada na gestação também mata (NE02)</div></div>
@@ -1439,7 +1458,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
         </div>
       </div>
 
-      <div class="sub-title">F1.13 · Cenários — caso → conduta certa → erro típico</div>
+      <div class="sub-title" id="f1-13">F1.13 · Cenários — caso → conduta certa → erro típico</div>
       <div class="stbl stbl-3">
         <div class="stbl-head stbl-3"><div>Caso</div><div>Conduta certa</div><div>Erro típico</div></div>
         <div class="stbl-row stbl-3"><div class="col col1" data-l="Caso">Gestante de 10 sem, TR de sífilis reagente, assintomática, sem tratamento prévio</div><div class="col" data-l="Conduta certa">Benzatina 2,4 milhões UI IM hoje, mais 2 doses semanais; VDRL basal; notificar; tratar parceria</div><div class="col" data-l="Erro típico">Pedir VDRL e marcar retorno para "confirmar" antes de tratar</div></div>
@@ -1455,7 +1474,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
     </div>
   </div>
 
-  <div class="card tx">
+  <div class="card tx" id="f2">
     <div class="card-head">
       <div class="card-eyebrow"><span class="card-num">F.2</span> Doses operacionais</div>
       <h3>Tabela de doses — pré-natal <span class="ank ank-dgr">DANGER</span></h3>
@@ -1515,7 +1534,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
     <div class="section-sub">Os erros do pré-natal raramente são de conhecimento raro: são de tempo (tratar tarde), de referência (ler exame de gestante com valores de não grávida) e de fluxo (encaminhar o que a UBS resolve e reter o que precisa ir hoje).</div>
   </div>
 
-  <div class="card pearl">
+  <div class="card pearl" id="g1">
     <div class="card-head">
       <div class="card-eyebrow"><span class="card-num">G.1</span> Pegadinhas</div>
       <h3>10 erros operacionais no pré-natal</h3>
@@ -1537,7 +1556,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
     </div>
   </div>
 
-  <div class="card pearl">
+  <div class="card pearl" id="g2">
     <div class="card-head">
       <div class="card-eyebrow"><span class="card-num">G.2</span> Mitos · Controvérsias</div>
       <h3>Mitos vivos e debates atuais</h3>
@@ -1584,7 +1603,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
     <div class="section-sub">Nuances que mudam a leitura de um exame ou a ordem de uma conduta, e as mudanças reais de 2024–2026 no pré-natal brasileiro.</div>
   </div>
 
-  <div class="card pearl">
+  <div class="card pearl" id="h1">
     <div class="card-head">
       <div class="card-eyebrow"><span class="card-num">H.1</span> Pearls</div>
       <h3>8 nuances que distinguem o expert</h3>
@@ -1633,7 +1652,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
     </div>
   </div>
 
-  <div class="card pearl">
+  <div class="card pearl" id="h2">
     <div class="card-head">
       <div class="card-eyebrow"><span class="card-num">H.2</span> Evolving</div>
       <h3>5 mudanças reais no pré-natal — 2024–2026</h3>
@@ -1705,5 +1724,36 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <a class="to-top" href="#" aria-label="Voltar ao topo">↑</a>
 <div class="watermark">@dr.lorencato · GO10 Pré-natal v5.2</div>
 
-</body>
+<!--hp-f2--><script>(function(){var d=document,M=d.querySelector('main');if(!M)return;
+var SELF='GO10',HP=' CT01 CT02 CT03 CT04 CT05 CT06 CT08 CT10 CV01 CV03 CV04 CV05 CV06 CV07 CV08 EN01 EN02 EN03 EN04 EN06 EN07 GH01 GH02 GH03 GH05 GH06 GH07 GH08 GH09 GH10 GO01 GO02 GO03 GO04 GO09 GO10 GO11 GO12 GO13 GO14 HO01 HO02 HO03 HO04 HO05 HO06 II01 II02 II03 II04 II07 II08 NE01 NE02 NE03 NE04 NE05 NE06 NE07 NE08 NU01 NU02 NU03 NU04 NU05 OE01 OE02 PC01 PC02 PC03 PC04 PC05 PC06 PD01 PD02 PD03 PD04 PD05 PD06 PD07 PD08 PD09 PD10 RD01 RD02 RD03 RD04 RD05 RD07 RP01 RP02 RP03 RP04 ';
+var SK='A,H1,H2,H3,SCRIPT,STYLE,NAV,.card-num,.card-eyebrow,.sub-title,.disease-tag,.toc';
+var R=/\b(?:([A-H])(\d)?\.(\d{1,2}[a-c]?)|(CV|RP|GH|NE|EN|NU|HO|II|RD|GO|PD|PC|CT|OE)(\d\d))\b/g;
+function skip(n){for(var e=n.parentNode;e&&e!==M;e=e.parentNode)if(e.matches&&e.matches(SK))return 1;return 0}
+var w=d.createTreeWalker(M,4),t,L=[];while(t=w.nextNode())if(R.test(t.data)&&!skip(t))L.push(t);
+L.forEach(function(t){var s=t.data,f=d.createDocumentFragment(),i=0,m;R.lastIndex=0;
+while(m=R.exec(s)){var h=null;
+if(m[1]){var id=m[1].toLowerCase()+(m[2]?m[2]+'-':'')+m[3];if(d.getElementById(id))h='#'+id}
+else{var x=m[4]+m[5];if(x!==SELF&&HP.indexOf(' '+x+' ')>=0)h='../'+x+'/'+x+'.html'}
+if(!h)continue;f.appendChild(d.createTextNode(s.slice(i,m.index)));
+var a=d.createElement('a');a.href=h;a.className='xr';a.textContent=m[0];f.appendChild(a);i=R.lastIndex}
+if(i){f.appendChild(d.createTextNode(s.slice(i)));t.parentNode.replaceChild(f,t)}});
+function nz(s){return s.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'')}
+var q=d.querySelector('.hp-q'),n=d.querySelector('.hp-n'),it=M.querySelectorAll('.card,.pocket-card'),T;
+function clr(){M.querySelectorAll('.q-off').forEach(function(e){e.classList.remove('q-off')})}
+function run(){var v=nz(q.value.trim());clr();n.textContent='';if(v.length<2)return;var k=0;
+it.forEach(function(c){if(nz(c.textContent).indexOf(v)<0){c.classList.add('q-off');return}k++;
+var r=c.querySelectorAll('.stbl-row,.disease-row,.score-row'),h=[];r.forEach(function(x){if(nz(x.textContent).indexOf(v)>=0)h.push(x)});
+if(h.length)r.forEach(function(x){if(h.indexOf(x)<0)x.classList.add('q-off')});
+c.querySelectorAll('details').forEach(function(x){if(nz(x.textContent).indexOf(v)>=0)x.open=true})});
+M.querySelectorAll('section').forEach(function(s){if(!s.querySelector('.card:not(.q-off),.pocket-card:not(.q-off)'))s.classList.add('q-off')});
+n.textContent=k?k+' achado'+(k>1?'s':''):'nada'}
+if(q){q.addEventListener('input',function(){clearTimeout(T);T=setTimeout(run,180)});
+q.addEventListener('keydown',function(e){if(e.key==='Escape'){q.value='';run()}})}
+function tg(b,f){b.addEventListener('click',function(){var on=b.getAttribute('aria-pressed')!=='true';b.setAttribute('aria-pressed',on);f(on)})}
+var bd=d.querySelector('.hp-dz'),bo=d.querySelector('.hp-op');
+if(bd)tg(bd,function(on){d.body.classList.toggle('dz',on);if(on)d.getElementById('tratamento').scrollIntoView()});
+if(bo)tg(bo,function(on){M.querySelectorAll('details').forEach(function(x){x.open=on})});
+var P=[];addEventListener('beforeprint',function(){P=[];M.querySelectorAll('details:not([open])').forEach(function(x){P.push(x);x.open=true})});
+addEventListener('afterprint',function(){P.forEach(function(x){x.open=false})});
+})();</script><!--/hp-f2--></body>
 </html>

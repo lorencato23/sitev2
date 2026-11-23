@@ -345,11 +345,30 @@ ul.bullets li b{color:var(--ink);font-weight:600}
   .pocket .pocket-card.tx{--accent:#a8481a}
   .pocket .pocket-card.clin{--accent:#0b5d4e}
 }
+
+/* === v5.2.2 · fase 2 (navegação) === */
+.hp-tools{display:flex;gap:6px;align-items:center;flex:none;order:1;margin-left:auto;padding-left:6px;position:sticky;right:0;background:#f1eee5;box-shadow:-10px 0 10px -4px #f1eee5,16px 0 0 #f1eee5}
+@media(min-width:900px){html{scroll-padding-top:150px}.toc-inner{flex-wrap:wrap;overflow:visible}.card[id],.sub-title[id]{scroll-margin-top:150px}}
+@media(max-width:899px){.hp-b,.hp-n{display:none}.hp-q{width:104px}}
+.hp-q{width:128px;font:500 12px/1 'DM Sans',system-ui,sans-serif;padding:7px 11px;border:1px solid var(--line-strong);border-radius:999px;background:var(--paper);color:var(--ink)}
+.hp-b{font:600 11px/1 'DM Sans',system-ui,sans-serif;letter-spacing:.05em;text-transform:uppercase;padding:7px 10px;border-radius:999px;border:1px solid var(--line-strong);background:var(--paper);color:var(--ink-soft);cursor:pointer;white-space:nowrap}
+.hp-b[aria-pressed=true]{background:var(--ink);color:#fff;border-color:var(--ink)}
+.hp-n{font:600 11px/1 'DM Mono',monospace;color:var(--ink-mute);white-space:nowrap}
+.sec-idx{display:flex;flex-wrap:wrap;gap:6px;margin:12px 0 20px}
+.sec-idx a{font:500 12px/1.25 'DM Sans',system-ui,sans-serif;padding:6px 10px;border-radius:999px;background:var(--paper);border:1px solid var(--line);color:var(--ink-soft);text-decoration:none}
+.sec-idx a:hover{border-color:var(--line-strong);color:var(--ink)}
+.sec-idx b{color:var(--c-prim);margin-right:5px;font-weight:700}
+a.xr{color:inherit;text-decoration:underline dotted;text-underline-offset:2px}
+a.xr:hover{color:var(--c-prim)}
+.card[id],.sub-title[id]{scroll-margin-top:110px}
+.q-off{display:none!important}
+body.dz main section:not(#tratamento){display:none}
+@media print{.hp-tools,.sec-idx,.toc-doses{display:none!important}}
 </style>
 </head>
 <body>
 <header class="header"><div class="header-row"><div class="h-mark">I</div><div class="h-titles"><div class="h-title">Imunizações, Prevenção e Puericultura · Pocket Handbook</div><div class="h-sub">Elite edition · Pediatria · PD05</div></div><div class="h-author">@dr.lorencato</div><div class="h-edition">v5.2</div></div></header>
-<nav class="toc"><div class="toc-inner"><a href="#pocket" class="toc-chip"><span class="toc-chip-num">0</span>Pocket</a><a href="#redflags" class="toc-chip"><span class="toc-chip-num">A</span>Red Flags</a><a href="#approach" class="toc-chip"><span class="toc-chip-num">B</span>Apresentação</a><a href="#primarias" class="toc-chip"><span class="toc-chip-num">C</span>Entidades</a><a href="#secundarias" class="toc-chip"><span class="toc-chip-num">D</span>Secundárias</a><a href="#algoritmo" class="toc-chip"><span class="toc-chip-num">E</span>Algoritmo</a><a href="#tratamento" class="toc-chip"><span class="toc-chip-num">F</span>Tratamento</a><a href="#pitfalls" class="toc-chip"><span class="toc-chip-num">G</span>Pitfalls</a><a href="#pearls" class="toc-chip"><span class="toc-chip-num">H</span>Pearls</a></div></nav>
+<nav class="toc"><div class="toc-inner"><!--hp-f2--><span class="hp-tools"><input class="hp-q" type="search" placeholder="Buscar no HP" aria-label="Buscar no HP"><button class="hp-b hp-dz" type="button" aria-pressed="false">Só doses</button><button class="hp-b hp-op" type="button" aria-pressed="false">Abrir tudo</button><span class="hp-n" aria-live="polite"></span></span><!--/hp-f2--><a href="#pocket" class="toc-chip"><span class="toc-chip-num">0</span>Pocket</a><a href="#redflags" class="toc-chip"><span class="toc-chip-num">A</span>Red Flags</a><a href="#approach" class="toc-chip"><span class="toc-chip-num">B</span>Apresentação</a><a href="#primarias" class="toc-chip"><span class="toc-chip-num">C</span>Entidades</a><a href="#secundarias" class="toc-chip"><span class="toc-chip-num">D</span>Secundárias</a><a href="#algoritmo" class="toc-chip"><span class="toc-chip-num">E</span>Algoritmo</a><a href="#tratamento" class="toc-chip"><span class="toc-chip-num">F</span>Tratamento</a><!--hp-f2--><a href="#f2" class="toc-chip toc-doses"><span class="toc-chip-num">Rx</span>Doses</a><!--/hp-f2--><a href="#pitfalls" class="toc-chip"><span class="toc-chip-num">G</span>Pitfalls</a><a href="#pearls" class="toc-chip"><span class="toc-chip-num">H</span>Pearls</a></div></nav>
 <main>
 <div class="wrap">
 <div class="hero">
@@ -393,7 +412,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <div class="section-sub">A anafilaxia aparece em minutos e exige adrenalina antes de qualquer outra coisa. Os outros alarmes são silenciosos e têm janela: a imunoprofilaxia do RN de mãe HBsAg positiva vale nas primeiras 12 horas, a cardiopatia canal-dependente se revela quando o canal fecha, o hipotireoidismo congênito lesa o cérebro a partir da segunda semana e a leucocoria pode ser o único sinal de um retinoblastoma.</div>
 </div>
 
-<div class="card emerg">
+<div class="card emerg" id="a1">
 <div class="card-head">
 <div class="card-eyebrow"><span class="card-num">A.1</span> Sinais de alarme</div>
 <h3>Imunização, triagem e segurança: o que não pode esperar <span class="ank ank-dgr">DANGER</span></h3>
@@ -441,7 +460,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <div class="section-sub">Em imunização e puericultura não há queixa principal no sentido clássico: há uma criança numa idade, um cartão com lacunas, uma condição de base ou um evento depois de uma dose. Cada cenário tem a pergunta certa para começar.</div>
 </div>
 
-<div class="card clin">
+<div class="card clin" id="b1">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">B.1</span> Cenário 1</div><h3>RN na maternidade e primeira semana</h3><div class="card-sub">BCG, hepatite B, triagens e alta segura</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Antes da alta: <b>hepatite B nas primeiras 12 h, BCG se ≥2.000 g</b>, oximetria entre 24 e 48 h, reflexo vermelho, triagem auditiva, avaliação do frênulo, pezinho agendado entre o 3º e o 5º dia e consulta da 1ª semana marcada. Confira a sorologia materna (HBsAg, HIV, sífilis) e o uso de imunobiológicos na gestação.</div></div>
@@ -455,7 +474,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card clin">
+<div class="card clin" id="b2">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">B.2</span> Cenário 2</div><h3>Lactente na consulta de rotina</h3><div class="card-sub">Agenda oportuna aos 2, 3, 4, 5, 6, 9, 12 e 15 meses</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">A consulta é ocasião de vacinar: confira o cartão em toda visita, inclusive no pronto-socorro. Aos 2 meses a criança recebe <b>penta, VIP, VPC20 e rotavírus</b>; aos 3, MenC; aos 4, penta, VIP, VPC10 e rotavírus; aos 5, MenC; aos 6, penta, VIP, influenza e covid; aos 9, febre amarela; aos 12, VPC20, MenACWY e SCR; aos 15, DTP, VIP, SCR, varicela e hepatite A.</div></div>
@@ -467,7 +486,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card clin">
+<div class="card clin" id="b3">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">B.3</span> Cenário 3</div><h3>Criança com cartão incompleto ou sem cartão</h3><div class="card-sub">Recuperação de esquema</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Sem comprovação = não vacinado. <b>Dose aplicada é dose válida</b>, desde que respeitados idade mínima e intervalo mínimo; não se reinicia esquema. Aplique no mesmo dia todas as vacinas possíveis e agende as próximas pelos intervalos padrão (60 dias entre doses de inativadas; 30 dias entre vivas parenterais não simultâneas).</div></div>
@@ -478,7 +497,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card clin">
+<div class="card clin" id="b4">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">B.4</span> Cenário 4</div><h3>Criança com condição clínica especial</h3><div class="card-sub">CRIE/RIE</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Classifique o grau de imunodepressão antes de qualquer vacina viva e encaminhe ao CRIE com relatório: diagnóstico, drogas e doses, data da última dose, CD4 quando HIV. Inativadas são seguras em qualquer imunodepressão, mas podem precisar de doses extras ou dose dobrada (hepatite B).</div></div>
@@ -490,7 +509,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card clin">
+<div class="card clin" id="b5">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">B.5</span> Cenário 5</div><h3>Evento depois de uma vacina</h3><div class="card-sub">Esperado, grave ou coincidente?</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Pergunte: <b>qual vacina, quanto tempo depois, o quadro é plausível para aquele produto e há outra causa?</b> Inativadas dão eventos em horas (até 48–72 h); vivas, no período de incubação do agente vacinal (5–21 dias). Todo ESAVI grave (internação, risco de morte, sequela, óbito) e todo erro de imunização são notificados.</div></div>
@@ -508,9 +527,9 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <div class="section-eyebrow"><span>C</span> Entidades Primárias</div>
 <div class="section-title">Disease Boxes — cada vacina, cada triagem, cada janela</div>
 <div class="section-sub">Doze boxes de imunização (regras gerais, nove grupos de vacinas, VSR e ESAVI) e cinco de puericultura e prevenção. As doenças imunopreveníveis como doenças estão no PD10; aqui o objeto é o imunobiológico, sua indicação, seus limites e seus eventos.</div>
-</div>
+</div><!--hp-f2--><nav class="sec-idx" aria-label="Neste capítulo"><a href="#c1"><b>C.1</b>Bases imunológicas e regras g…</a><a href="#c2"><b>C.2</b>BCG</a><a href="#c3"><b>C.3</b>Hepatites B e A</a><a href="#c4"><b>C.4</b>Tríplice bacteriana: penta, D…</a><a href="#c5"><b>C.5</b>Vacina poliomielite inativada…</a><a href="#c6"><b>C.6</b>Rotavírus</a><a href="#c7"><b>C.7</b>Conjugadas: pneumocócicas, me…</a><a href="#c8"><b>C.8</b>Tríplice viral, varicela e te…</a><a href="#c9"><b>C.9</b>Febre amarela</a><a href="#c10"><b>C.10</b>Influenza e covid-19</a><a href="#c11"><b>C.11</b>VSR: vacina materna e anticor…</a><a href="#c12"><b>C.12</b>ESAVI: vigilância, gravidade…</a><a href="#c13"><b>C.13</b>Consulta de puericultura e ca…</a><a href="#c14"><b>C.14</b>Teste do pezinho (PNTN) e a a…</a><a href="#c15"><b>C.15</b>Teste do coraçãozinho: oximet…</a><a href="#c16"><b>C.16</b>Reflexo vermelho e triagem au…</a><a href="#c17"><b>C.17</b>Prevenção de injúrias não int…</a></nav><!--/hp-f2-->
 
-<div class="card prim">
+<div class="card prim" id="c1">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.1</span> Fundamentos</div><h3>Bases imunológicas e regras gerais de vacinação <span class="ank ank-hy">HIGH-YIELD</span></h3><div class="card-sub">Vivas × não vivas, coadministração, intervalos e contraindicações verdadeiras</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Vacinas <b>vivas atenuadas</b> (BCG, rotavírus, SCR, varicela, febre amarela, dengue) replicam: imunidade forte e duradoura com uma ou duas doses, mas contraindicadas na gestação e na imunodepressão grave. <b>Não vivas</b> (toxoides, subunidades, recombinantes, conjugadas, inativadas inteiras, RNAm) não replicam: seguras em qualquer hospedeiro, precisam de séries e reforços. Inativadas combinam com tudo a qualquer intervalo; <b>vivas parenterais entre si: mesmo dia ou 30 dias</b> (mínimo de 15 em exceção).</div></div>
@@ -548,7 +567,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="c2">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.2</span> Tuberculose</div><h3>BCG <span class="ank ank-hy">HIGH-YIELD</span></h3><div class="card-sub">Mycobacterium bovis atenuado, intradérmica, dose única ao nascer</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Dose única ao nascer, <b>0,05 mL ID (menores de 1 ano; 0,1 mL a partir de 1 ano) na inserção inferior do deltoide direito</b>, se peso ≥2.000 g. Protege contra formas graves (meníngea e miliar), não contra infecção. <b>Sem revacinação</b> por ausência de cicatriz. Até 4a11m29d no PNI; a partir de 5 anos só contatos de hanseníase.</div></div>
@@ -567,7 +586,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="c3">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.3</span> Hepatites virais</div><h3>Hepatites B e A <span class="ank ank-dec">DECISION</span></h3><div class="card-sub">Recombinante HBsAg ao nascer · inativada aos 15 meses</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Hepatite B: <b>monovalente nas primeiras 12 h</b> (aplicável até 30 dias de vida), depois três doses dentro da penta (2, 4, 6 meses) = 4 doses. Mãe HBsAg+: <b>+ HBIG 0,5 mL</b>. A partir de 7 anos, monovalente 0-1-6. Hepatite A: <b>1 dose aos 15 meses no PNI</b> (até 4a11m29d); SBP recomenda 2 doses (12 e 18 meses).</div></div>
@@ -586,7 +605,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="c4">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.4</span> Difteria, tétano, coqueluche</div><h3>Tríplice bacteriana: penta, DTP, DTPa, DT, dT e dTpa <span class="ank ank-dgr">DANGER</span></h3><div class="card-sub">O componente pertussis define a reatogenicidade e as trocas de vacina</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">PNI: <b>penta (DTPw + Hib + HB) aos 2, 4 e 6 meses; DTP aos 15 meses e 4 anos; dT aos 14 anos e a cada 10 anos</b> (5 anos se ferimento de risco). Penta/DTP só até 6a11m29d. Gestante: <b>dTpa a cada gestação a partir de 20 semanas</b>. SBP prefere DTPa (acelular) e dTpa no reforço dos 14 anos.</div></div>
@@ -614,7 +633,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="c5">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.5</span> Poliomielite</div><h3>Vacina poliomielite inativada (VIP) <span class="ank ank-evo">EVOLVING</span></h3><div class="card-sub">A VOP saiu do calendário em novembro de 2024; o 2º reforço voltou em 2026</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">PNI 2026: <b>VIP aos 2, 4 e 6 meses + reforços aos 15 meses e aos 4 anos</b> (2º reforço reincorporado em 2026, NT 64/2026), IM 0,5 mL, até 4a11m29d. A apostila de 2025 ainda traz um único reforço aos 15 meses. Viajante a partir de 5 anos para área com circulação: VIP.</div></div>
@@ -633,7 +652,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="c6">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.6</span> Diarreia viral</div><h3>Rotavírus <span class="ank ank-dec">DECISION</span></h3><div class="card-sub">Oral, atenuada, com janela etária rígida</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">PNI: <b>monovalente G1P[8] (VRH) 1,5 mL VO aos 2 e 4 meses</b>. <b>1ª dose de 1m15d a 11m29d; 2ª de 3m15d a 23m29d</b>; intervalo de 60 dias (mínimo 30). Perdeu a janela da 1ª dose, perdeu as duas. Cuspiu ou vomitou: não repetir. SBP admite pentavalente (RV5) em 3 doses na rede privada.</div></div>
@@ -652,7 +671,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="c7">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.7</span> Bactérias encapsuladas</div><h3>Conjugadas: pneumocócicas, meningocócicas e Hib <span class="ank ank-evo">EVOLVING</span></h3><div class="card-sub">VPC20 entra no SUS em 2026; MenACWY no reforço dos 12 meses desde 2025</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body"><b>Pneumo (PNI, transição): VPC20 aos 2 m → VPC10 aos 4 m → VPC20 aos 12 m</b>; esgotada a VPC10, VPC20 aos 2, 4 e 12 m. <b>Meningo: MenC aos 3 e 5 m; MenACWY aos 12 m e aos 11–14 anos.</b> Hib: dentro da penta (2, 4, 6 m). SBP: VPC20 ou VPC15 em 3+1 (2, 4, 6 e 12–15 m), MenACWY desde 2 meses com reforços aos 5–6 anos e na adolescência, MenB 2 doses + reforço.</div></div>
@@ -679,7 +698,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="c8">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.8</span> Vírus vivos parenterais</div><h3>Tríplice viral, varicela e tetraviral <span class="ank ank-hy">HIGH-YIELD</span></h3><div class="card-sub">SC no tríceps, depois de 12 meses, nunca na gestante</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">PNI 2026: <b>SCR aos 12 e 15 meses; varicela monovalente aos 15 meses (junto da 2ª SCR) e aos 4 anos</b>; SCRV só na falta da monovalente. SBP: SCR + varicela separadas (ou SCRV) aos 12 meses e SCRV aos 15. SCR disponível até 59 anos (2 doses até 29 anos; 1 dose de 30 a 59). Dose zero de SCR entre 6 e 11 meses em surto ou contato, sem validade para o calendário.</div></div>
@@ -698,7 +717,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="c9">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.9</span> Arbovirose</div><h3>Febre amarela <span class="ank ank-dgr">DANGER</span></h3><div class="card-sub">17DD Bio-Manguinhos, SC, 9 meses e 4 anos</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">PNI: <b>1 dose aos 9 meses e reforço aos 4 anos</b>; 1 dose antes de 5 anos → mais 1; 1 dose a partir de 5 anos → vacinado; só dose fracionada (2018) → 1 dose padrão. Recomendada até 59 anos; ≥60 anos, gestante e 6–8 meses só em área com circulação confirmada e sem como adiar. Viagem: 10 dias antes.</div></div>
@@ -717,7 +736,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="c10">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.10</span> Vírus respiratórios</div><h3>Influenza e covid-19 <span class="ank ank-hy">HIGH-YIELD</span></h3><div class="card-sub">Inativada trivalente anual · RNAm em 3 doses</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Influenza (PNI): <b>6 meses a 5a11m29d, anual</b>; primovacinação abaixo de 9 anos = 2 doses com 30 dias. Volume: <b>0,25 mL de 6 meses a 2 anos; 0,5 mL a partir de 3 anos</b> (IM ou SC). Covid (PNI): <b>Comirnaty aos 6, 7 e 9 meses</b> (0,3 mL tampa amarela); atraso até 4a11m29d (4 semanas e 8 semanas entre doses). Doses periódicas só em imunocomprometidos (6/6 meses) e comorbidade/indígena/quilombola/ribeirinho (anual).</div></div>
@@ -736,7 +755,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="c11">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.11</span> Imunização passiva</div><h3>VSR: vacina materna e anticorpos monoclonais <span class="ank ank-evo">EVOLVING</span></h3><div class="card-sub">Abrysvo na gestante · nirsevimabe, clesrovimabe e palivizumabe no lactente</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Gestante: <b>Abrysvo 0,5 mL IM dose única a cada gestação a partir de 28 semanas</b> (SUS, sem limite superior, exceto trabalho de parto ativo). Lactente: <b>nirsevimabe IM dose única — 50 mg se &lt;5 kg, 100 mg se ≥5 kg; 2ª temporada de alto risco 200 mg (2 × 100 mg)</b>. PNI (protocolo 2026): nascidos com &lt;37 sem, qualquer peso, de preferência ainda na maternidade, e comorbidades até 24 meses na sazonalidade; prematuro sem comorbidade não recebe 2ª temporada. Palivizumabe 15 mg/kg/mês em transição (só quem iniciou em 2025).</div></div>
@@ -755,7 +774,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="c12">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.12</span> Farmacovigilância</div><h3>ESAVI: vigilância, gravidade, causalidade e anafilaxia <span class="ank ank-dec">DECISION</span></h3><div class="card-sub">Evento Supostamente Atribuível à Vacinação ou Imunização</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Notificar no <b>e-SUS Notifica (módulo ESAVI)</b>: todo ESAVI grave (em até 24 h), todo erro de imunização (com ou sem evento), surtos de eventos e eventos inusitados. Grave = internação ≥24 h, risco de morte, disfunção significativa ou incapacidade, anomalia congênita, óbito. Causalidade pela OMS (A, B, C, D) após investigação.</div></div>
@@ -794,7 +813,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="c13">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.13</span> Puericultura</div><h3>Consulta de puericultura e calendário de consultas <span class="ank ank-hy">HIGH-YIELD</span></h3><div class="card-sub">Vigilância do crescimento, do desenvolvimento, da vacinação e do contexto</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body"><b>MS (Caderneta da Criança): 1ª semana, 1, 2, 4, 6, 9, 12, 18 e 24 meses e, depois, anual</b> (7 consultas no 1º ano, 2 no 2º). <b>SBP: 1ª semana, mensal até 6 meses, bimestral de 6 a 12, trimestral de 12 a 18, semestral até 5 anos e anual até 18</b>, com consulta pré-natal pediátrica no 3º trimestre. Cada consulta: antropometria na curva OMS, marcos, vacinas, alimentação, sono, sinais de violência, orientação preventiva da idade.</div></div>
@@ -813,7 +832,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="c14">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.14</span> Triagem biológica</div><h3>Teste do pezinho (PNTN) e a ampliação da Lei 14.154/2021 <span class="ank ank-dec">DECISION</span></h3><div class="card-sub">Papel-filtro, calcanhar, 3º a 5º dia</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Coleta <b>entre o 3º e o 5º dia de vida</b> (nunca antes de 48 h de alimentação proteica, pela fenilalanina), em papel-filtro, na UBS ou maternidade. Rol básico do SUS: <b>fenilcetonúria, hipotireoidismo congênito, doença falciforme e hemoglobinopatias, fibrose cística, HAC e deficiência de biotinidase</b> (toxoplasmose congênita em parte dos estados). A lei amplia em 5 etapas, com implantação estadual desigual em 2026.</div></div>
@@ -840,7 +859,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="c15">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.15</span> Triagem cardíaca</div><h3>Teste do coraçãozinho: oximetria para cardiopatia congênita crítica <span class="ank ank-dgr">DANGER</span></h3><div class="card-sub">Mão direita e um pé, entre 24 e 48 h de vida</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Todo RN <b>≥35 semanas</b>, aparentemente saudável, <b>entre 24 e 48 h</b>, antes da alta: SpO2 no membro superior direito (pré-ductal) e em um membro inferior (pós-ductal). <b>Normal: ≥95% em ambos e diferença ≤3%.</b> <b>Alterado: &lt;90% em qualquer um → ecocardiograma.</b> Intermediário (90–94% ou diferença &gt;3%): repetir em 1 h, até 2 vezes.</div></div>
@@ -867,7 +886,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="c16">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.16</span> Triagens sensoriais</div><h3>Reflexo vermelho e triagem auditiva neonatal <span class="ank ank-hy">HIGH-YIELD</span></h3><div class="card-sub">Teste do olhinho e teste da orelhinha</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Olhinho: oftalmoscópio a ~45–50 cm, sala escurecida, os dois olhos simultaneamente; <b>reflexo vermelho simétrico = normal</b>; ausente, opaco, assimétrico ou branco → oftalmologista com urgência. Repetir em consultas até os 3 anos (SBP: ao menos 2–3 vezes/ano). Orelhinha (Lei 12.303/2010): <b>EOA sem indicador de risco; PEATE-A com indicador</b>; meta <b>1-3-6</b> (triagem até 1 mês, diagnóstico até 3, intervenção até 6).</div></div>
@@ -886,7 +905,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="c17">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.17</span> Segurança</div><h3>Prevenção de injúrias não intencionais e sono seguro <span class="ank ank-dgr">DANGER</span></h3><div class="card-sub">Acidente é evento previsível, e portanto evitável</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Após o 1º ano, <b>causas externas</b> matam mais que todas as doenças somadas. Principais mortes de 1 a 14 anos: <b>trânsito (1º) e afogamento (2º)</b>; abaixo de 1 ano, sufocação (sono). Medidas passivas (grades, telas, cercas de piscina de 4 lados, tampas de segurança, cadeirinha) funcionam mais que orientação isolada; a orientação ativa deve ser antecipatória, por fase do desenvolvimento.</div></div>
@@ -910,9 +929,9 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <div class="section-eyebrow"><span>D</span> Entidades Secundárias</div>
 <div class="section-title">Situações especiais, atraso, pós-exposição e o resto da prevenção</div>
 <div class="section-sub">Oito boxes que completam o raciocínio: quem precisa de CRIE, como recuperar um cartão, o que fazer depois de uma exposição, as vacinas do escolar e do adolescente, a linguinha, os rastreios de rotina, as profilaxias de calendário e o reconhecimento da violência.</div>
-</div>
+</div><!--hp-f2--><nav class="sec-idx" aria-label="Neste capítulo"><a href="#d1"><b>D.1</b>Imunização em condições clíni…</a><a href="#d2"><b>D.2</b>Atraso vacinal e recuperação…</a><a href="#d3"><b>D.3</b>Profilaxia pós-exposição com…</a><a href="#d4"><b>D.4</b>HPV, MenACWY, dT/dTpa e dengue</a><a href="#d5"><b>D.5</b>Anquiloglossia e teste da lin…</a><a href="#d6"><b>D.6</b>Rastreios de rotina na infânc…</a><a href="#d7"><b>D.7</b>Suplementação profilática de…</a><a href="#d8"><b>D.8</b>Violência contra a criança: r…</a></nav><!--/hp-f2-->
 
-<div class="card diag">
+<div class="card diag" id="d1">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">D.1</span> CRIE/RIE</div><h3>Imunização em condições clínicas especiais <span class="ank ank-dec">DECISION</span></h3></div>
 <div class="card-body">
 <div class="disease">
@@ -927,7 +946,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card diag">
+<div class="card diag" id="d2">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">D.2</span> Atraso</div><h3>Atraso vacinal e recuperação de esquemas</h3></div>
 <div class="card-body">
 <div class="disease">
@@ -942,7 +961,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card diag">
+<div class="card diag" id="d3">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">D.3</span> Pós-exposição</div><h3>Profilaxia pós-exposição com imunobiológicos <span class="ank ank-dgr">DANGER</span></h3></div>
 <div class="card-body">
 <div class="disease">
@@ -957,7 +976,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card diag">
+<div class="card diag" id="d4">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">D.4</span> Escolar e adolescente</div><h3>HPV, MenACWY, dT/dTpa e dengue <span class="ank ank-evo">EVOLVING</span></h3></div>
 <div class="card-body">
 <div class="disease">
@@ -972,7 +991,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card diag">
+<div class="card diag" id="d5">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">D.5</span> Frênulo lingual</div><h3>Anquiloglossia e teste da linguinha <span class="ank ank-con">CONTROVERSY</span></h3></div>
 <div class="card-body">
 <div class="disease">
@@ -996,7 +1015,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card diag">
+<div class="card diag" id="d6">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">D.6</span> Rastreios</div><h3>Rastreios de rotina na infância</h3></div>
 <div class="card-body">
 <div class="disease">
@@ -1009,7 +1028,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card tx">
+<div class="card tx" id="d7">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">D.7</span> Profilaxias</div><h3>Suplementação profilática de rotina (calendário)</h3></div>
 <div class="card-body">
 <div class="disease">
@@ -1022,7 +1041,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card emerg">
+<div class="card emerg" id="d8">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">D.8</span> Violência</div><h3>Violência contra a criança: reconhecer e notificar <span class="ank ank-dgr">DANGER</span></h3></div>
 <div class="card-body">
 <div class="disease">
@@ -1043,7 +1062,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <div class="section-sub">A árvore começa pela pergunta que pode matar (houve anafilaxia?) e termina em conduta concreta: qual vacina, que dose, onde, quando, ou para onde encaminhar.</div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="e1">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">E.1</span> Fluxograma</div><h3>Decisão de vacinar hoje <span class="ank ank-dec">DECISION</span></h3></div>
 <div class="card-body">
 <div class="algo">
@@ -1105,13 +1124,13 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <div class="section-eyebrow"><span>F</span> Conduta Integrada</div>
 <div class="section-title">F1 · Escadas de conduta por situação · F2 · Esquemas, doses e imunobiológicos</div>
 <div class="section-sub">Em imunização, "tratar" é escolher o produto, a dose, a via, o dia e a alternativa quando a primeira opção é contraindicada. As escadas abaixo seguem o PNI 2026; a recomendação SBP/SBIm aparece quando muda a conduta na rede privada.</div>
-</div>
+</div><!--hp-f2--><nav class="sec-idx" aria-label="Neste capítulo"><a href="#f1"><b>F.1</b>Escadas por entidade e cenário</a><a href="#f2"><b>F.2</b>F2.1 · Vacinas do calendário…</a></nav><!--/hp-f2-->
 
-<div class="card tx">
+<div class="card tx" id="f1">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">F.1</span> Estratégia</div><h3>Escadas por entidade e cenário <span class="ank ank-dec">DECISION</span></h3></div>
 <div class="card-body">
 
-<div class="sub-title">F1.1 · RN na maternidade</div>
+<div class="sub-title" id="f1-1">F1.1 · RN na maternidade</div>
 <ul class="bullets">
 <li><b>Hepatite B</b> monovalente 0,5 mL IM na coxa nas primeiras 12 h (até 30 dias); mãe HBsAg+ → + HBIG 0,5 mL IM na outra coxa (até 7 dias); mãe com sorologia desconhecida → vacina e investigar a mãe.</li>
 <li><b>BCG</b> 0,05 mL ID no deltoide direito se ≥2.000 g; adiar se peso menor, mãe com anti-TNF/rituximabe na gestação (6/12 meses), mãe bacilífera (tratamento preventivo → PT), suspeita de imunodeficiência ou TREC baixo.</li>
@@ -1119,14 +1138,14 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <li><b>Triagens</b>: oximetria 24–48 h, reflexo vermelho, EOA ou PEATE-A, BTAT; pezinho do 3º ao 5º dia; agendar consulta da 1ª semana.</li>
 </ul>
 
-<div class="sub-title">F1.2 · Lactente de 2 a 15 meses (agenda oportuna PNI 2026)</div>
+<div class="sub-title" id="f1-2">F1.2 · Lactente de 2 a 15 meses (agenda oportuna PNI 2026)</div>
 <ul class="bullets">
 <li><b>2 m</b>: penta, VIP, VPC20, rotavírus · <b>3 m</b>: MenC · <b>4 m</b>: penta, VIP, VPC10, rotavírus · <b>5 m</b>: MenC · <b>6 m</b>: penta, VIP, influenza (2 doses na primovacinação), covid · <b>7 m</b>: covid · <b>9 m</b>: febre amarela, covid · <b>12 m</b>: VPC20, MenACWY, SCR · <b>15 m</b>: DTP, VIP, SCR, varicela, hepatite A · <b>4 anos</b>: DTP, VIP, febre amarela, varicela.</li>
 <li><b>Rede privada (SBP)</b>: hexa acelular (DTPa-Hib-VIP-HB) aos 2, 4, 6 meses com Hib aos 15 meses; VPC20/VPC15 3+1; MenACWY desde 2 meses; MenB aos 3 e 5 meses (SBIm) com reforço; RV1 ou RV5; SCR + V ou SCRV aos 12 meses.</li>
 <li><b>Prematuro</b>: idade cronológica; &lt;33 sem/&lt;1.500 g → DTPa no CRIE; ≤28 sem internado → monitorar apneia 48–72 h após a série primária sem adiar; hepatite B 4 doses.</li>
 </ul>
 
-<div class="sub-title">F1.3 · ESAVI após vacina com pertussis</div>
+<div class="sub-title" id="f1-3">F1.3 · ESAVI após vacina com pertussis</div>
 <ul class="bullets">
 <li><b>Febre, choro &lt;3 h, sonolência, reação local</b>: continuar penta/DTP; se febre &gt;39,5 °C ou choro ≥3 h, ou convulsão na história pessoal/familiar, antitérmico no momento da vacina e a intervalos regulares por 24–48 h (paracetamol 15 mg/kg/dose).</li>
 <li><b>EHH ≤48 h ou convulsão ≤72 h</b>: notificar; doses seguintes com DTPa (penta ou hexa acelular) no CRIE.</li>
@@ -1134,7 +1153,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <li><b>Anafilaxia</b>: tratar (F2), notificar, nenhuma vacina com aqueles componentes; alergista para decidir toxoides isolados.</li>
 </ul>
 
-<div class="sub-title">F1.4 · ESAVI de vacinas vivas e de BCG</div>
+<div class="sub-title" id="f1-4">F1.4 · ESAVI de vacinas vivas e de BCG</div>
 <ul class="bullets">
 <li><b>BCG</b>: úlcera &gt;1 cm sem cicatrizar em 12 semanas, abscesso frio, linfadenite supurada → isoniazida 10 mg/kg/dia (máx. 400 mg) até regressão; abscesso quente → antibiótico antiestafilocócico; disseminada → isoniazida + rifampicina + etambutol (sem pirazinamida) e investigar imunodeficiência.</li>
 <li><b>SCR</b>: febre e exantema tardios → sintomáticos; PTI → hemograma, seguimento; nova dose só após sorologia e avaliação; meningite/encefalite → não repetir.</li>
@@ -1142,7 +1161,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <li><b>Rotavírus</b>: intussuscepção → cirurgia pediátrica, não dar a 2ª dose.</li>
 </ul>
 
-<div class="sub-title">F1.5 · Anafilaxia na sala de vacina</div>
+<div class="sub-title" id="f1-5">F1.5 · Anafilaxia na sala de vacina</div>
 <ul class="bullets">
 <li>Reconhecer (pele + respiratório/circulatório/GI, minutos após a injeção), chamar ajuda, ABC; registrar horário e produto.</li>
 <li><b>Adrenalina IM no vasto lateral primeiro</b>, repetida a cada 5–15 min (até 3 doses) se necessário; decúbito com pernas elevadas (sentado se dispneia); O2 6–8 L/min.</li>
@@ -1150,28 +1169,28 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <li>Transferir para observação hospitalar (reação bifásica em até 5–20%); notificar em 24 h; contraindicar a vacina e investigar o componente.</li>
 </ul>
 
-<div class="sub-title">F1.6 · Imunodeprimido e conviventes</div>
+<div class="sub-title" id="f1-6">F1.6 · Imunodeprimido e conviventes</div>
 <ul class="bullets">
 <li>Vacinar com todas as inativadas indicadas, preferencialmente ≥2 semanas antes da imunossupressão; doses adicionais/dobradas conforme CRIE (hepatite B, pneumo + VPP23, Hib, meningo).</li>
 <li>Vivas: 14–30 dias antes do início; depois, aguardar 1 mês após corticoide imunossupressor, 3 meses após QT e 3–6 meses após outros imunossupressores, 6 meses após rituximabe; febre amarela só após avaliação com CD4 no HIV.</li>
 <li>Conviventes: influenza anual, varicela e SCR em dia; rotavírus permitido (higiene de fraldas por 4 semanas).</li>
 </ul>
 
-<div class="sub-title">F1.7 · Atraso vacinal</div>
+<div class="sub-title" id="f1-7">F1.7 · Atraso vacinal</div>
 <ul class="bullets">
 <li>Montar o "cartão-alvo" para a idade, listar o que falta e aplicar tudo o que for possível no mesmo dia.</li>
 <li>Para &lt;7 anos, usar penta/DTP; a partir de 7 anos, trocar por dT (0, 60, 120 dias) e hepatite B monovalente (0-1-6); não há Hib após 5 anos fora de indicação de risco.</li>
 <li>Vivas parenterais não feitas no mesmo dia: 30 dias entre elas; febre amarela e SCR em &lt;2 anos: 30 dias.</li>
 </ul>
 
-<div class="sub-title">F1.8 · Pós-exposição</div>
+<div class="sub-title" id="f1-8">F1.8 · Pós-exposição</div>
 <ul class="bullets">
 <li><b>Ferimento</b>: limpar, desbridar, decidir vacina e IGHAT/SAT pela tabela F2.3; não suturar mordedura de alto risco sem avaliação (raiva → II06).</li>
 <li><b>Varicela</b>: vacina até 120 h no imunocompetente ≥9 meses (9–11 meses: dose zero); IGHVZ até 96 h nos de alto risco.</li>
 <li><b>Sarampo</b>: SCR até 72 h a partir de 6 meses; imunoglobulina humana até 6 dias para contraindicados; quem tomou SCR há &lt;30 dias ou tem esquema completo não precisa de bloqueio.</li>
 </ul>
 
-<div class="sub-title">F1.9 · Triagem alterada e puericultura</div>
+<div class="sub-title" id="f1-9">F1.9 · Triagem alterada e puericultura</div>
 <ul class="bullets">
 <li>Oximetria positiva → eco; instável com suspeita de canal-dependente → PGE1 e transferência (PD09).</li>
 <li>Pezinho: TSH → TSH/T4L e levotiroxina &lt;14 dias (PD04); 17-OHP → eletrólitos e 17-OHP sérica, observar perda de sal; Hb FS → penicilina profilática a partir de 2–3 meses e CRIE (HO02); IRT → recoleta e teste do suor (PD07); TREC → sem vivas, imunologia.</li>
@@ -1192,7 +1211,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="sub-title">F1.10 · Gestação: vacinas da mãe que protegem o lactente</div>
+<div class="sub-title" id="f1-10">F1.10 · Gestação: vacinas da mãe que protegem o lactente</div>
 <ul class="bullets">
 <li><b>dTpa</b> a partir de 20 semanas em toda gestação, mesmo com esquema completo; sem esquema, completar com dT (3 doses no total, uma delas dTpa); não vacinada na gestação, dTpa no puerpério até 45 dias. É a principal estratégia contra a coqueluche fatal antes dos 2 meses.</li>
 <li><b>VSR (Abrysvo)</b> a partir de 28 semanas, dose única por gestação, sem limite superior exceto trabalho de parto ativo; aplicação antes de 28 semanas no SUS é erro programático. Se o parto ocorrer em menos de 14 dias, o RN recebe nirsevimabe.</li>
@@ -1200,7 +1219,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <li><b>Hepatite B</b>: completar esquema durante o pré-natal; gestante suscetível exposta recebe vacina + HBIG. Vivas (SCR, varicela, dengue) são contraindicadas, mas vacinação inadvertida não indica interrupção da gravidez. Conduta pré-natal completa → GO10.</li>
 </ul>
 
-<div class="sub-title">F1.11 · Técnica e boas práticas na sala de vacina</div>
+<div class="sub-title" id="f1-11">F1.11 · Técnica e boas práticas na sala de vacina</div>
 <ul class="bullets">
 <li><b>Sítios</b>: até 2 anos, vasto lateral da coxa para todas as IM (até 2–3 injeções por coxa, separadas por ≥2,5 cm); depois, deltoide conforme massa muscular. BCG sempre ID na inserção inferior do deltoide direito; vivas SC no tríceps; dorsoglúteo evitado (resposta menor).</li>
 <li><b>Agulhas</b>: IM em lactente 25 × 6 ou 20 × 5,5 mm a 90°; SC 13 × 4,5 mm a 45–90°; ID 13 × 3,8 mm com bisel para cima, formando pápula. Não aspirar antes da IM (aumenta dor, sem benefício); não massagear.</li>
@@ -1209,14 +1228,14 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <li><b>Registro</b>: SI-PNI/RNDS e Caderneta com lote, sítio e próxima data; orientar o que esperar (dor e febre em 48 h nas inativadas; febre e exantema em 5–12 dias nas vivas) e os sinais que exigem retorno.</li>
 </ul>
 
-<div class="sub-title">F1.12 · Comunicação com famílias hesitantes</div>
+<div class="sub-title" id="f1-12">F1.12 · Comunicação com famílias hesitantes</div>
 <ul class="bullets">
 <li>Abordagem presuntiva ("hoje vamos fazer as vacinas dos 2 meses") aumenta a aceitação em relação à pergunta aberta; ouça a preocupação específica antes de responder.</li>
 <li>Use dados concretos: risco de anafilaxia de cerca de 1 por milhão contra letalidade de 1–3 por mil no sarampo e de até 1% na coqueluche do lactente; benefício do rebanho para quem não pode ser vacinado.</li>
 <li>Recusa persistente: registrar em prontuário, manter o vínculo e oferecer a vacina em toda consulta; recusa que expõe a criança a risco grave pode configurar negligência (ECA), situação a discutir com a equipe antes de acionar o Conselho Tutelar.</li>
 </ul>
 
-<div class="sub-title">F1.13 · Orientação antecipatória de segurança por faixa etária</div>
+<div class="sub-title" id="f1-13">F1.13 · Orientação antecipatória de segurança por faixa etária</div>
 <ul class="bullets">
 <li><b>0–6 meses</b>: sono em decúbito dorsal no berço próprio sem objetos, quarto compartilhado; bebê-conforto voltado para trás no banco traseiro, nunca no banco da frente com airbag; não deixar sozinho em trocador, cama ou sofá (o rolar começa sem aviso); água do banho testada, sem líquidos quentes com o bebê no colo; não sacudir (orientar sobre choro do lactente e plano para o cuidador exausto).</li>
 <li><b>6–12 meses</b>: engatinhar e levar à boca — tomadas protegidas, objetos menores que 3 cm e baterias de botão fora do alcance (perfuração esofágica em horas), medicamentos e saneantes trancados, portões nas escadas, sem andador; supervisão contínua no banho (afogamento em poucos centímetros de água, balde e vaso sanitário).</li>
@@ -1230,7 +1249,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card tx">
+<div class="card tx" id="f2">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">F.2</span> Doses</div><h3>F2.1 · Vacinas do calendário: volume, via e esquema (PNI 2026) <span class="ank ank-hy">HIGH-YIELD</span></h3></div>
 <div class="card-body">
 <div class="stbl stbl-3">
@@ -1254,7 +1273,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <div class="stbl-row stbl-3"><div class="col col1" data-l="Vacina">Dengue (Qdenga)</div><div class="col" data-l="Dose">0,5 mL SC · 2 doses com 3 meses · 10–14 anos</div><div class="col" data-l="Notas">Observar 15 min (30 se alergia grave); 6 meses após dengue; contraindicada em imunodeprimido, gestante, lactante</div></div>
 </div>
 
-<div class="sub-title">F2.2 · Imunoglobulinas, monoclonais e fármacos</div>
+<div class="sub-title" id="f2-2">F2.2 · Imunoglobulinas, monoclonais e fármacos</div>
 <div class="stbl stbl-3">
 <div class="stbl-head stbl-3"><div>Produto / fármaco</div><div>Dose · via</div><div>Indicação / notas</div></div>
 <div class="stbl-row stbl-3"><div class="col col1" data-l="Produto">Imunoglobulina anti-hepatite B (HBIG)</div><div class="col" data-l="Dose">RN: 0,5 mL IM · demais: 0,06 mL/kg IM (máx. 5 mL)</div><div class="col" data-l="Notas">RN de mãe HBsAg+ até 7 dias (ideal 12 h); exposição em suscetível; sítio diferente da vacina</div></div>
@@ -1276,7 +1295,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <div class="stbl-row stbl-3"><div class="col col1" data-l="Produto">Vitamina D (SBP)</div><div class="col" data-l="Dose">400 UI/dia VO (0–12 m) · 600 UI/dia (12–24 m)</div><div class="col" data-l="Notas">Independe do tipo de leite; dose de tratamento → PD03</div></div>
 </div>
 
-<div class="sub-title">F2.3 · Profilaxia do tétano acidental (MS)</div>
+<div class="sub-title" id="f2-3">F2.3 · Profilaxia do tétano acidental (MS)</div>
 <div class="stbl stbl-3">
 <div class="stbl-head stbl-3"><div>História vacinal (doses com componente tetânico)</div><div>Ferimento limpo e superficial</div><div>Ferimento de risco (profundo, sujo, corpo estranho, mordedura, queimadura, fratura exposta)</div></div>
 <div class="stbl-row stbl-3"><div class="col col1" data-l="História">Incerta ou &lt;3 doses</div><div class="col" data-l="Limpo">Vacinar e completar o esquema; sem imunoglobulina</div><div class="col" data-l="Risco">Vacinar e completar + <b>IGHAT 250 UI (ou SAT 5.000 UI)</b></div></div>
@@ -1285,7 +1304,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <div class="stbl-row stbl-3"><div class="col col1" data-l="História">≥3 doses, última há &gt;10 anos</div><div class="col" data-l="Limpo">1 reforço</div><div class="col" data-l="Risco">1 reforço; IGHAT/SAT se imunodeprimido, desnutrido grave, idoso ou ferimento muito contaminado</div></div>
 </div>
 
-<div class="sub-title">F2.4 · Casos de sala de vacina: conduta certa e erro típico</div>
+<div class="sub-title" id="f2-4">F2.4 · Casos de sala de vacina: conduta certa e erro típico</div>
 <div class="stbl stbl-3">
 <div class="stbl-head stbl-3"><div>Caso</div><div>Conduta certa</div><div>Erro típico</div></div>
 <div class="stbl-row stbl-3"><div class="col col1" data-l="Caso">Lactente de 2 meses com coriza e 37,6 °C</div><div class="col" data-l="Certa">Vacinar com tudo da idade</div><div class="col" data-l="Erro">Adiar por "gripe" e perder a janela do rotavírus</div></div>
@@ -1311,7 +1330,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <div class="section-sub">Boa parte dos erros em imunização vem de contraindicações que não existem e de regras que mudaram: a apostila de 2025 ainda traz VPC10, um único reforço de VIP e a tetraviral aos 15 meses no PNI.</div>
 </div>
 
-<div class="card pearl">
+<div class="card pearl" id="g1">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">G.1</span> Pegadinhas</div><h3>10 erros operacionais</h3></div>
 <div class="card-body">
 <div class="stbl stbl-2">
@@ -1395,5 +1414,36 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </footer>
 <a class="to-top" href="#" aria-label="Voltar ao topo">↑</a>
 <div class="watermark">@dr.lorencato · PD05 Imunizações e Puericultura v5.2</div>
-</body>
+<!--hp-f2--><script>(function(){var d=document,M=d.querySelector('main');if(!M)return;
+var SELF='PD05',HP=' CT01 CT02 CT03 CT04 CT05 CT06 CT08 CT10 CV01 CV03 CV04 CV05 CV06 CV07 CV08 EN01 EN02 EN03 EN04 EN06 EN07 GH01 GH02 GH03 GH05 GH06 GH07 GH08 GH09 GH10 GO01 GO02 GO03 GO04 GO09 GO10 GO11 GO12 GO13 GO14 HO01 HO02 HO03 HO04 HO05 HO06 II01 II02 II03 II04 II07 II08 NE01 NE02 NE03 NE04 NE05 NE06 NE07 NE08 NU01 NU02 NU03 NU04 NU05 OE01 OE02 PC01 PC02 PC03 PC04 PC05 PC06 PD01 PD02 PD03 PD04 PD05 PD06 PD07 PD08 PD09 PD10 RD01 RD02 RD03 RD04 RD05 RD07 RP01 RP02 RP03 RP04 ';
+var SK='A,H1,H2,H3,SCRIPT,STYLE,NAV,.card-num,.card-eyebrow,.sub-title,.disease-tag,.toc';
+var R=/\b(?:([A-H])(\d)?\.(\d{1,2}[a-c]?)|(CV|RP|GH|NE|EN|NU|HO|II|RD|GO|PD|PC|CT|OE)(\d\d))\b/g;
+function skip(n){for(var e=n.parentNode;e&&e!==M;e=e.parentNode)if(e.matches&&e.matches(SK))return 1;return 0}
+var w=d.createTreeWalker(M,4),t,L=[];while(t=w.nextNode())if(R.test(t.data)&&!skip(t))L.push(t);
+L.forEach(function(t){var s=t.data,f=d.createDocumentFragment(),i=0,m;R.lastIndex=0;
+while(m=R.exec(s)){var h=null;
+if(m[1]){var id=m[1].toLowerCase()+(m[2]?m[2]+'-':'')+m[3];if(d.getElementById(id))h='#'+id}
+else{var x=m[4]+m[5];if(x!==SELF&&HP.indexOf(' '+x+' ')>=0)h='../'+x+'/'+x+'.html'}
+if(!h)continue;f.appendChild(d.createTextNode(s.slice(i,m.index)));
+var a=d.createElement('a');a.href=h;a.className='xr';a.textContent=m[0];f.appendChild(a);i=R.lastIndex}
+if(i){f.appendChild(d.createTextNode(s.slice(i)));t.parentNode.replaceChild(f,t)}});
+function nz(s){return s.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'')}
+var q=d.querySelector('.hp-q'),n=d.querySelector('.hp-n'),it=M.querySelectorAll('.card,.pocket-card'),T;
+function clr(){M.querySelectorAll('.q-off').forEach(function(e){e.classList.remove('q-off')})}
+function run(){var v=nz(q.value.trim());clr();n.textContent='';if(v.length<2)return;var k=0;
+it.forEach(function(c){if(nz(c.textContent).indexOf(v)<0){c.classList.add('q-off');return}k++;
+var r=c.querySelectorAll('.stbl-row,.disease-row,.score-row'),h=[];r.forEach(function(x){if(nz(x.textContent).indexOf(v)>=0)h.push(x)});
+if(h.length)r.forEach(function(x){if(h.indexOf(x)<0)x.classList.add('q-off')});
+c.querySelectorAll('details').forEach(function(x){if(nz(x.textContent).indexOf(v)>=0)x.open=true})});
+M.querySelectorAll('section').forEach(function(s){if(!s.querySelector('.card:not(.q-off),.pocket-card:not(.q-off)'))s.classList.add('q-off')});
+n.textContent=k?k+' achado'+(k>1?'s':''):'nada'}
+if(q){q.addEventListener('input',function(){clearTimeout(T);T=setTimeout(run,180)});
+q.addEventListener('keydown',function(e){if(e.key==='Escape'){q.value='';run()}})}
+function tg(b,f){b.addEventListener('click',function(){var on=b.getAttribute('aria-pressed')!=='true';b.setAttribute('aria-pressed',on);f(on)})}
+var bd=d.querySelector('.hp-dz'),bo=d.querySelector('.hp-op');
+if(bd)tg(bd,function(on){d.body.classList.toggle('dz',on);if(on)d.getElementById('tratamento').scrollIntoView()});
+if(bo)tg(bo,function(on){M.querySelectorAll('details').forEach(function(x){x.open=on})});
+var P=[];addEventListener('beforeprint',function(){P=[];M.querySelectorAll('details:not([open])').forEach(function(x){P.push(x);x.open=true})});
+addEventListener('afterprint',function(){P.forEach(function(x){x.open=false})});
+})();</script><!--/hp-f2--></body>
 </html>

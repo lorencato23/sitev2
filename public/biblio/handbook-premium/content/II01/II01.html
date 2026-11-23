@@ -345,13 +345,32 @@ ul.bullets li b{color:var(--ink);font-weight:600}
   .pocket .pocket-card.tx{--accent:#a8481a}
   .pocket .pocket-card.clin{--accent:#0b5d4e}
 }
+
+/* === v5.2.2 · fase 2 (navegação) === */
+.hp-tools{display:flex;gap:6px;align-items:center;flex:none;order:1;margin-left:auto;padding-left:6px;position:sticky;right:0;background:#f1eee5;box-shadow:-10px 0 10px -4px #f1eee5,16px 0 0 #f1eee5}
+@media(min-width:900px){html{scroll-padding-top:150px}.toc-inner{flex-wrap:wrap;overflow:visible}.card[id],.sub-title[id]{scroll-margin-top:150px}}
+@media(max-width:899px){.hp-b,.hp-n{display:none}.hp-q{width:104px}}
+.hp-q{width:128px;font:500 12px/1 'DM Sans',system-ui,sans-serif;padding:7px 11px;border:1px solid var(--line-strong);border-radius:999px;background:var(--paper);color:var(--ink)}
+.hp-b{font:600 11px/1 'DM Sans',system-ui,sans-serif;letter-spacing:.05em;text-transform:uppercase;padding:7px 10px;border-radius:999px;border:1px solid var(--line-strong);background:var(--paper);color:var(--ink-soft);cursor:pointer;white-space:nowrap}
+.hp-b[aria-pressed=true]{background:var(--ink);color:#fff;border-color:var(--ink)}
+.hp-n{font:600 11px/1 'DM Mono',monospace;color:var(--ink-mute);white-space:nowrap}
+.sec-idx{display:flex;flex-wrap:wrap;gap:6px;margin:12px 0 20px}
+.sec-idx a{font:500 12px/1.25 'DM Sans',system-ui,sans-serif;padding:6px 10px;border-radius:999px;background:var(--paper);border:1px solid var(--line);color:var(--ink-soft);text-decoration:none}
+.sec-idx a:hover{border-color:var(--line-strong);color:var(--ink)}
+.sec-idx b{color:var(--c-prim);margin-right:5px;font-weight:700}
+a.xr{color:inherit;text-decoration:underline dotted;text-underline-offset:2px}
+a.xr:hover{color:var(--c-prim)}
+.card[id],.sub-title[id]{scroll-margin-top:110px}
+.q-off{display:none!important}
+body.dz main section:not(#tratamento){display:none}
+@media print{.hp-tools,.sec-idx,.toc-doses{display:none!important}}
 </style>
 </head>
 <body>
 
 <header class="header"><div class="header-row"><div class="h-mark">H</div><div class="h-titles"><div class="h-title">HIV, AIDS e Infecções Oportunistas · Pocket Handbook</div><div class="h-sub">Elite edition · Infectologia · II01</div></div><div class="h-author">@dr.lorencato</div><div class="h-edition">v5.2</div></div></header>
 
-<nav class="toc"><div class="toc-inner"><a href="#pocket" class="toc-chip"><span class="toc-chip-num">0</span>Pocket</a><a href="#redflags" class="toc-chip"><span class="toc-chip-num">A</span>Red Flags</a><a href="#approach" class="toc-chip"><span class="toc-chip-num">B</span>Apresentação</a><a href="#primarias" class="toc-chip"><span class="toc-chip-num">C</span>Entidades</a><a href="#secundarias" class="toc-chip"><span class="toc-chip-num">D</span>Secundárias</a><a href="#algoritmo" class="toc-chip"><span class="toc-chip-num">E</span>Algoritmo</a><a href="#tratamento" class="toc-chip"><span class="toc-chip-num">F</span>Tratamento</a><a href="#pitfalls" class="toc-chip"><span class="toc-chip-num">G</span>Pitfalls</a><a href="#pearls" class="toc-chip"><span class="toc-chip-num">H</span>Pearls</a></div></nav>
+<nav class="toc"><div class="toc-inner"><!--hp-f2--><span class="hp-tools"><input class="hp-q" type="search" placeholder="Buscar no HP" aria-label="Buscar no HP"><button class="hp-b hp-dz" type="button" aria-pressed="false">Só doses</button><button class="hp-b hp-op" type="button" aria-pressed="false">Abrir tudo</button><span class="hp-n" aria-live="polite"></span></span><!--/hp-f2--><a href="#pocket" class="toc-chip"><span class="toc-chip-num">0</span>Pocket</a><a href="#redflags" class="toc-chip"><span class="toc-chip-num">A</span>Red Flags</a><a href="#approach" class="toc-chip"><span class="toc-chip-num">B</span>Apresentação</a><a href="#primarias" class="toc-chip"><span class="toc-chip-num">C</span>Entidades</a><a href="#secundarias" class="toc-chip"><span class="toc-chip-num">D</span>Secundárias</a><a href="#algoritmo" class="toc-chip"><span class="toc-chip-num">E</span>Algoritmo</a><a href="#tratamento" class="toc-chip"><span class="toc-chip-num">F</span>Tratamento</a><!--hp-f2--><a href="#f2" class="toc-chip toc-doses"><span class="toc-chip-num">Rx</span>Doses</a><!--/hp-f2--><a href="#pitfalls" class="toc-chip"><span class="toc-chip-num">G</span>Pitfalls</a><a href="#pearls" class="toc-chip"><span class="toc-chip-num">H</span>Pearls</a></div></nav>
 
 <main>
 <div class="wrap">
@@ -415,7 +434,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <section id="redflags">
 <div class="section"><div class="section-eyebrow"><span>A</span> Red Flags</div><div class="section-title">No HIV avançado a oportunista mata em dias, e o erro costuma ser tratar o que não é ou adiar a punção</div><div class="section-sub">Sinal objetivo, suspeita e conduta imediata. O CD4 define o menu de diagnósticos: acima de 200 prevalecem as infecções comuns e a TB; abaixo de 100 entram criptococo, toxoplasma, CMV e LEMP; abaixo de 50, MAC e a disseminação de tudo.</div></div>
 
-<div class="card emerg">
+<div class="card emerg" id="a1">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">A.1</span> Emergências</div><h3>Sinais de alarme na pessoa vivendo com HIV <span class="ank ank-dgr">DANGER</span></h3></div>
 <div class="card-body">
 
@@ -455,7 +474,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <section id="approach">
 <div class="section"><div class="section-eyebrow"><span>B</span> Por Apresentação</div><div class="section-title">Cinco portas de entrada: o pulmão, o cérebro, o tubo digestivo e o olho, o sistema hematolinfático e o assintomático</div><div class="section-sub">O paciente chega com um sintoma e um CD4 desconhecido. Peça o CD4 e a carga viral na primeira hora: o número reorganiza o diferencial.</div></div>
 
-<div class="card clin">
+<div class="card clin" id="b1">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">B.1</span> Padrão 1</div><h3>Febre, tosse e dispneia <span class="ank ank-hy">HIGH-YIELD</span></h3><div class="card-sub">CD4 &gt;200: pneumonia bacteriana e TB; CD4 &lt;200: pneumocistose, TB atípica e fungos</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">A pneumonia bacteriana segue como a causa mais frequente de internação por infecção respiratória na PVHIV, mas a pneumocistose é a oportunista pulmonar mais comum com CD4 &lt;200. A TB aparece em qualquer CD4, com radiografia atípica quando baixo. <b>Escarro purulento sugere bacteriana; tosse seca com hipoxemia desproporcional, pneumocistose.</b> Derrame pleural e adenomegalia intratorácica não são de pneumocistose.</div></div>
@@ -469,7 +488,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card clin">
+<div class="card clin" id="b2">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">B.2</span> Padrão 2</div><h3>Cefaleia, déficit focal, crise ou alteração do sensório <span class="ank ank-dgr">DANGER</span></h3><div class="card-sub">Quatro síndromes: meningite, massa, substância branca e encefalite</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">O padrão de imagem e o CD4 definem a oportunista: <b>meningite subaguda com pressão alta</b> é criptococo; <b>massas com realce anelar</b> são toxoplasmose, linfoma ou TB; <b>substância branca sem realce</b> é LEMP; <b>encefalite com ventriculite</b> é CMV; neurossífilis e HIV agudo fazem meningite asséptica. Meningites e encefalites em geral → II04.</div></div>
@@ -483,7 +502,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card clin">
+<div class="card clin" id="b3">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">B.3</span> Padrão 3</div><h3>Odinofagia, diarreia crônica e perda visual <span class="ank ank-hy">HIGH-YIELD</span></h3><div class="card-sub">Boca e esôfago, cólon e retina: Candida e CMV dividem o mapa</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body"><b>Placas removíveis na boca com disfagia: candidíase esofágica</b>, tratável sem endoscopia; persistência após o antifúngico pede EDA (CMV, herpes, úlcera aftosa). Diarreia crônica com CD4 &lt;100: Cryptosporidium, Cystoisospora (SMX-TMP), microsporídios, MAC, CMV de cólon. <b>Qualquer sintoma visual com CD4 &lt;50 é retinite por CMV até o fundo de olho dizer o contrário.</b></div></div>
@@ -495,7 +514,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card clin">
+<div class="card clin" id="b4">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">B.4</span> Padrão 4</div><h3>Febre prolongada, adenomegalia, citopenias, lesões de pele <span class="ank ank-hy">HIGH-YIELD</span></h3><div class="card-sub">Linfadenopatia e síndrome consumptiva têm diferencial por CD4</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Com CD4 &gt;200, linfadenopatia generalizada persistente é benigna e o diferencial é linfoproliferativo; com CD4 &lt;200, pesquise TB ganglionar, histoplasmose, MAC e linfoma, e biopsie. <b>Pancitopenia com hepatoesplenomegalia e CD4 &lt;150 em área endêmica:</b> histoplasmose disseminada. <b>Lesões violáceas de pele e palato:</b> sarcoma de Kaposi (HHV-8).</div></div>
@@ -507,7 +526,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card clin">
+<div class="card clin" id="b5">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">B.5</span> Padrão 5</div><h3>O assintomático: teste positivo, exposição e síndrome viral aguda <span class="ank ank-dec">DECISION</span></h3><div class="card-sub">Porta de maior retorno: 95% dos diagnósticos são feitos na fase crônica</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Teste reagente: confirme pelo fluxograma, notifique, <b>inicie a TARV na primeira consulta</b> e peça CD4, carga viral, genotipagem quando indicada, sorologias de hepatites A, B, C, sífilis e toxoplasma, IGRA ou PT e fundoscopia se CD4 &lt;100. Exposição: PEP até 72 h. Risco sem exposição imediata: PrEP.</div></div>
@@ -522,9 +541,9 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </section>
 
 <section id="primarias">
-<div class="section"><div class="section-eyebrow"><span>C</span> Entidades Primárias</div><div class="section-title">Dez entidades: o diagnóstico, a TARV e as oportunistas que decidem plantão</div><div class="section-sub">Diagnóstico, infecção aguda, TARV inicial, falha, doença avançada e profilaxias abrem o capítulo; pneumocistose, criptococose, neurotoxoplasmose e LEMP (boxes assumidos do II04), tuberculose e histoplasmose fecham. Doses do PCDT HIV 2024 são marcadas pela sigla; o que não está em disco vem como "conferir".</div></div>
+<div class="section"><div class="section-eyebrow"><span>C</span> Entidades Primárias</div><div class="section-title">Dez entidades: o diagnóstico, a TARV e as oportunistas que decidem plantão</div><div class="section-sub">Diagnóstico, infecção aguda, TARV inicial, falha, doença avançada e profilaxias abrem o capítulo; pneumocistose, criptococose, neurotoxoplasmose e LEMP (boxes assumidos do II04), tuberculose e histoplasmose fecham. Doses do PCDT HIV 2024 são marcadas pela sigla; o que não está em disco vem como "conferir".</div></div><!--hp-f2--><nav class="sec-idx" aria-label="Neste capítulo"><a href="#c1"><b>C.1</b>Diagnóstico da infecção pelo…</a><a href="#c2"><b>C.2</b>Síndrome retroviral aguda: re…</a><a href="#c3"><b>C.3</b>Primeira consulta e TARV inic…</a><a href="#c4"><b>C.4</b>Falha virológica, genotipagem…</a><a href="#c5"><b>C.5</b>Doença avançada (CD4 ≤200) e…</a><a href="#c6"><b>C.6</b>Pneumonia por Pneumocystis ji…</a><a href="#c7"><b>C.7</b>Meningite criptocócica no HIV…</a><a href="#c8"><b>C.8</b>Massas e lesões de substância…</a><a href="#c9"><b>C.9</b>TB-HIV: esquema básico, TARV…</a><a href="#c10"><b>C.10</b>Histoplasmose disseminada no…</a></nav><!--/hp-f2-->
 
-<div class="card prim">
+<div class="card prim" id="c1">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.1</span> Diagnóstico</div><h3>Diagnóstico da infecção pelo HIV: fluxogramas, janela e o controlador de elite <span class="ank ank-hy">HIGH-YIELD</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Acima de 18 meses o diagnóstico tem <b>duas etapas: triagem sensível e confirmação específica</b>. O fluxograma de escolha é o <b>imunoensaio de 4ª geração + teste molecular</b>; dois testes rápidos sequenciais valem em locais sem laboratório, no pronto-socorro, na gestante sem pré-natal e no acidente ocupacional. Suspeita de infecção aguda: parta do teste molecular. <b>O que muda conduta:</b> janela (resultado negativo com exposição recente), CV &lt;5.000 cópias/mL no molecular (pede Western blot ou nova amostra) e criança ≤18 meses (nunca sorologia).</div></div>
@@ -562,7 +581,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="c2">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.2</span> Infecção aguda</div><h3>Síndrome retroviral aguda: reconhecer na janela e tratar sem esperar a sorologia <span class="ank ank-dec">DECISION</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body"><b>Febre, faringite, exantema maculopapular de tronco, adenopatia, mialgia, úlceras orais ou genitais</b> 2–4 semanas depois de uma exposição. A sorologia costuma ser negativa; <b>peça CV e imunoensaio de 4ª geração</b>. Diagnóstico diferencial: mononucleose, sífilis secundária, CMV, rubéola, dengue, hepatite A. <b>O que muda conduta:</b> CV positiva em quadro compatível autoriza TARV no mesmo dia, sem aguardar a confirmação em 30 dias, e a genotipagem se o parceiro usa ou usou TARV ou se a pessoa usava PrEP.</div></div>
@@ -582,7 +601,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="c3">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.3</span> TARV inicial</div><h3>Primeira consulta e TARV inicial: quando, com quê e nas situações especiais <span class="ank ank-hy">HIGH-YIELD</span> <span class="ank ank-dec">DECISION</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Toda pessoa com HIV recebe TARV, <b>com início rápido, na primeira consulta, sem esperar CD4</b>. Esquema: <b>tenofovir/lamivudina 300/300 mg 1 comprimido + dolutegravir 50 mg, VO 1×/dia</b> (PCDT 2024). Dolutegravir passa a 12/12 h com rifampicina. TFGe &lt;60: sem tenofovir. Gestante: o mesmo esquema; darunavir 800 vira 600 mg 12/12 h. <b>O que muda conduta:</b> TB (até 7 dias; meníngea 4–6 semanas), meningite criptocócica (4–6 semanas), CD4 &lt;50 (profilaxias e rastreio de TB e criptococo antes), HBV (TDF/3TC é obrigatório).</div></div>
@@ -635,7 +654,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="c4">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.4</span> Falha e resgate</div><h3>Falha virológica, genotipagem, resgate e terapia dupla <span class="ank ank-dec">DECISION</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body"><b>Falha virológica = CV &gt;200 cópias/mL confirmada</b> após 6 meses de TARV ou depois de uma supressão. Blip isolado abaixo de 200 não é falha. A causa número um é a adesão. Antes de trocar: adesão, tolerância, interação e dose; repita a CV em 4 semanas; <b>genotipagem se CV &gt;500</b> sob TARV. No resgate, ao menos dois fármacos ativos, um deles com alta barreira (DTG ou DRV/r). <b>O que muda conduta:</b> falha prévia a efavirenz ou nevirapina (presumir resistência a ambos), falha prévia a lamivudina (presumir M184V), falha com INI (genotipagem de integrase) e CD4 baixo com CV indetectável (não é falha: não trocar).</div></div>
@@ -684,7 +703,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="c5">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.5</span> Doença avançada e profilaxias</div><h3>Doença avançada (CD4 ≤200) e profilaxias primárias e secundárias por CD4 <span class="ank ank-hy">HIGH-YIELD</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">A OMS 2025 define <b>doença avançada como CD4 ≤200 ou estágio 3 ou 4 da OMS</b> (todas as crianças &lt;5 anos, salvo em TARV por mais de 1 ano e estáveis). Oferece-se um <b>pacote</b>: rastreio de TB (LF-LAM, TRM-TB) e de criptococo (LF-CrAg), profilaxia com SMX-TMP, tratamento preventivo da TB, TARV rápida e adesão intensificada. As <b>profilaxias seguem o CD4</b>: SMX-TMP &lt;200 (pneumocystis) e &lt;100 (toxoplasma), azitromicina &lt;50 sem TARV. <b>O que muda conduta:</b> CD4 &lt;200 (SMX-TMP), CD4 ≤100 (fundoscopia e LF-LAM ambulatorial), CD4 ≤200 internado (LF-LAM) e CD4 &gt;200 por mais de 3 meses (suspender profilaxias).</div></div>
@@ -723,7 +742,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="c6">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.6</span> Pneumocistose</div><h3>Pneumonia por Pneumocystis jirovecii: tratar na suspeita e dar corticoide se hipoxêmica <span class="ank ank-dgr">DANGER</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Tosse seca, febre e dispneia progressiva em CD4 &lt;200 (mais de 95%), com RX normal em até um quarto e hipoxemia desproporcional. <b>SMX-TMP 15–20 mg/kg/dia de trimetoprima em 3–4 tomadas por 21 dias</b>, IV se PaO₂ &lt;70 mmHg. <b>Prednisona 40 mg VO 12/12 h por 5 dias, reduzindo à metade a cada 5 dias</b>, se PaO₂ &lt;70 em ar ambiente ou gradiente A–a &gt;35. <b>O que muda conduta:</b> gravidade (via IV, corticoide, UTI), sulfa-alergia (clindamicina + primaquina com G6PD) e pneumotórax (cistos).</div></div>
@@ -743,7 +762,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="c7">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.7</span> Criptococose</div><h3>Meningite criptocócica no HIV: indução, pressão e a hora certa da TARV <span class="ank ank-dgr">DANGER</span> <span class="ank ank-hy">HIGH-YIELD</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Box assumido do II04, que mantém um resumo e remete a este. Cefaleia subaguda com CD4 &lt;100; <b>LF-CrAg no LCR (&gt;98% de sensibilidade) e no soro, pressão de abertura sempre</b>. Indução com <b>anfotericina B lipossomal 3 mg/kg/dia IV + flucitosina 100 mg/kg/dia VO em 4 tomadas por ≥2 semanas</b>; fluconazol 400–800 mg/dia por ≥8 semanas; 200 mg/dia por 6–12 meses. <b>O que muda conduta:</b> pressão &gt;25 cmH₂O (punção de alívio), CrAg sérico positivo em assintomático (punção lombar e preemptivo), momento da TARV (4–6 semanas) e criptococomas (indução ≥6 semanas).</div></div>
@@ -771,7 +790,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="c8">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.8</span> Neurotoxoplasmose, LEMP e linfoma do SNC</div><h3>Massas e lesões de substância branca no HIV: tratar o toxoplasma e provar o resto <span class="ank ank-dec">DECISION</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Box assumido do II04. CD4 &lt;100 e lesões com realce anelar e edema nos núcleos da base: <b>neurotoxoplasmose, tratada empiricamente</b>, com reavaliação clínica e por imagem em 10–14 dias. <b>Sulfadiazina 1.000 mg (&lt;60 kg) ou 1.500 mg (≥60 kg) VO 6/6 h + pirimetamina 200 mg no 1º dia, depois 50 mg (&lt;60 kg) ou 75 mg/dia + ácido folínico 10 mg/dia, por 6 semanas</b>; ou SMX-TMP 25 mg/kg de SMX 12/12 h VO ou IV por 6 semanas. Substância branca sem realce: LEMP. <b>O que muda conduta:</b> resposta em 10–14 dias, IgG, CD4 e CV (linfoma), e o tempo da TARV (até 7 dias).</div></div>
@@ -799,7 +818,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="c9">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.9</span> Tuberculose no HIV</div><h3>TB-HIV: esquema básico, TARV em até 7 dias e a interação com o dolutegravir <span class="ank ank-dec">DECISION</span> <span class="ank ank-dgr">DANGER</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">TB como doença e o esquema básico completo → RP03; aqui o recorte do HIV. Todo caso de TB faz teste de HIV, e toda PVHIV com sintoma respiratório faz TRM-TB. <b>RHZE 2 meses + RH 4 meses</b> (12 meses se SNC ou osteoarticular). <b>TARV em até 7 dias do início do tratamento da TB, qualquer CD4</b> (PCDT 2024; OMS 2025: até 2 semanas); meníngea em 4–6 semanas. Com rifampicina, <b>dolutegravir 50 mg 12/12 h</b> e por 15 dias após. <b>O que muda conduta:</b> CD4 &lt;50 (TARV precoce reduz mortalidade, com mais SIRI), TB do SNC, IP no esquema (rifabutina) e TFGe &lt;60.</div></div>
@@ -827,7 +846,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="c10">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.10</span> Histoplasmose</div><h3>Histoplasmose disseminada no HIV: antígeno, anfotericina e itraconazol <span class="ank ank-hy">HIGH-YIELD</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">CD4 &lt;150 em área endêmica (Nordeste, Centro-Oeste), febre prolongada, pancitopenia, hepatoesplenomegalia, lesões cutâneas, diarreia; 20% coinfectam com TB. <b>Antígeno de Histoplasma em urina ou soro</b> (sensibilidade 95%; ainda sem oferta no SUS). Grave: <b>anfotericina B complexo lipídico 5 mg/kg/dia IV por 1–2 semanas</b>, depois <b>itraconazol 200 mg 12/12 h por 12 meses</b>. <b>O que muda conduta:</b> SNC (lipossomal 3 mg/kg/dia), TB associada (anfotericina em vez de itraconazol pela interação com rifampicina) e CD4 &gt;150 com CV indetectável (reduzir a manutenção).</div></div>
@@ -850,9 +869,9 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </section>
 
 <section id="secundarias">
-<div class="section"><div class="section-eyebrow"><span>D</span> Entidades Secundárias</div><div class="section-title">CMV, candidíase, MAC, SIRI, PEP, PrEP, vacinas, gestação, neoplasias e coinfecções</div><div class="section-sub">Dez boxes agrupados. A gestante e a criança exposta ficam com GO10, PD02 e PD10; as vacinas, com PD05 e o CRIE; hepatites, sífilis e HTLV só no que muda a TARV.</div></div>
+<div class="section"><div class="section-eyebrow"><span>D</span> Entidades Secundárias</div><div class="section-title">CMV, candidíase, MAC, SIRI, PEP, PrEP, vacinas, gestação, neoplasias e coinfecções</div><div class="section-sub">Dez boxes agrupados. A gestante e a criança exposta ficam com GO10, PD02 e PD10; as vacinas, com PD05 e o CRIE; hepatites, sífilis e HTLV só no que muda a TARV.</div></div><!--hp-f2--><nav class="sec-idx" aria-label="Neste capítulo"><a href="#d1"><b>D.1</b>Doença por citomegalovírus: r…</a><a href="#d2"><b>D.2</b>Candidíase orofaríngea e esof…</a><a href="#d3"><b>D.3</b>Complexo Mycobacterium avium…</a><a href="#d4"><b>D.4</b>Síndrome inflamatória da reco…</a><a href="#d5"><b>D.5</b>Profilaxia pós-exposição: ava…</a><a href="#d6"><b>D.6</b>Profilaxia pré-exposição: TDF…</a><a href="#d7"><b>D.7</b>Vacinas na PVHIV: inativadas…</a><a href="#d8"><b>D.8</b>HIV na gestação e na criança…</a><a href="#d9"><b>D.9</b>Sarcoma de Kaposi, linfomas…</a><a href="#d10"><b>D.10</b>Hepatites B e C, sífilis, HTL…</a></nav><!--/hp-f2-->
 
-<div class="card diag">
+<div class="card diag" id="d1">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">D.1</span> CMV</div><h3>Doença por citomegalovírus: retina, tubo digestivo e SNC <span class="ank ank-dgr">DANGER</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">CD4 &lt;100 (sobretudo &lt;50). <b>Retinite:</b> escotoma, moscas volantes e perda visual unilateral; diagnóstico clínico pela fundoscopia com dilatação, que deve ser rotina com CD4 &lt;100. <b>Digestivo:</b> esofagite e colite com úlceras e células em olho de coruja na biópsia. <b>Viremia (PCR ou antigenemia) não diagnostica nem indica tratar.</b> <b>O que muda conduta:</b> sítio (retina ou SNC: IV), gravidade digestiva (VO possível) e leucopenia (ganciclovir).</div></div>
@@ -868,7 +887,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card diag">
+<div class="card diag" id="d2">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">D.2</span> Candidíase</div><h3>Candidíase orofaríngea e esofágica: o marcador e a disfagia <span class="ank ank-hy">HIGH-YIELD</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Placas brancas removíveis na mucosa oral marcam imunodepressão (CD4 &lt;200); dor retroesternal, disfagia e odinofagia indicam esôfago (CD4 &lt;100). <b>O diagnóstico é clínico</b>; a cultura é inútil (comensal). Tratar sem endoscopia. <b>O que muda conduta:</b> ausência de resposta em 7–14 dias do antifúngico sistêmico (EDA: CMV, herpes, aftas) e refratariedade ao fluconazol (anidulafungina ou anfotericina).</div></div>
@@ -883,7 +902,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card diag">
+<div class="card diag" id="d3">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">D.3</span> MAC</div><h3>Complexo Mycobacterium avium e outras micobacterioses: a febre com CD4 &lt;50 <span class="ank ank-hy">HIGH-YIELD</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Febre, sudorese noturna, emagrecimento, diarreia, anemia e fosfatase alcalina alta com <b>CD4 &lt;50</b>; hepatoesplenomegalia e linfadenopatia abdominal. <b>Hemocultura para micobactérias</b> (meio líquido) confirma. Tratar: claritromicina + etambutol + rifampicina (ou RH) + amicacina por 3–6 meses, com 12 meses de tratamento total (MS MNT 2021), e TARV. <b>O que muda conduta:</b> interações (claritromicina com IP e efavirenz) e CD4 &gt;100 por 6 meses após 1 ano de tratamento (suspender).</div></div>
@@ -898,7 +917,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card diag">
+<div class="card diag" id="d4">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">D.4</span> SIRI</div><h3>Síndrome inflamatória da reconstituição imune: reconhecer, excluir e não parar a TARV <span class="ank ank-dec">DECISION</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Sinais inflamatórios <b>4–8 semanas após iniciar, reiniciar ou otimizar a TARV</b>, com CD4 subindo e CV caindo, CD4 &lt;100 antes. Paradoxal (piora de doença tratada) ou desmascarada (doença nova). Diagnóstico clínico, de exclusão. <b>Mantenha a TARV</b>; trate a oportunista; corticoide nos casos graves. <b>O que muda conduta:</b> neuroinfecção (TB e criptococo: avaliar suspender TARV se grave) e Kaposi (sem corticoide).</div></div>
@@ -913,7 +932,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card diag">
+<div class="card diag" id="d5">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">D.5</span> PEP</div><h3>Profilaxia pós-exposição: avaliar o risco, iniciar o mais cedo possível, no máximo em 72 <span class="ank ank-dgr">DANGER</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">PEP é urgência médica: <b>o mais cedo possível, limite de 72 h (PCDT PEP 2024)</b>. Indicada quando uma pessoa sem HIV tem exposição de risco (percutânea, mucosa, pele não íntegra, sexo, mordedura com sangue) a material infectante (sangue, sêmen, fluido vaginal, líquidos serosos, leite) de fonte com HIV ou desconhecida. <b>TDF/3TC + DTG 50 mg por 28 dias (PCDT PEP 2024)</b> <b>O que muda conduta:</b> tempo desde a exposição, fonte negativa e sem exposição recente (dispensa), TFG &lt;50 (cautela com TDF) e gestação.</div></div>
@@ -928,7 +947,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card diag">
+<div class="card diag" id="d6">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">D.6</span> PrEP</div><h3>Profilaxia pré-exposição: TDF/FTC oral, diária ou sob demanda, e as opções injetáveis <span class="ank ank-hy">HIGH-YIELD</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Oferecer a quem tem risco elevado de exposição (≥15 anos e &gt;35 kg), com HIV excluído e <b>ClCr ≥60 mL/min</b>. <b>TDF 300 mg/FTC 200 mg: 2 comprimidos no 1º dia, depois 1 por dia</b>. Sob demanda (2+1+1) restrita a quem tem sexo menos de 2×/semana e planeja com 2 horas. <b>O que muda conduta:</b> estradiol (7 dias para proteção), infecção aguda (adiar), função renal e adesão (≥6 comprimidos/semana nas mulheres).</div></div>
@@ -943,7 +962,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card diag">
+<div class="card diag" id="d7">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">D.7</span> Vacinas</div><h3>Vacinas na PVHIV: inativadas já, vivas só com imunidade preservada <span class="ank ank-dec">DECISION</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Vacinas inativadas devem ser dadas o mais cedo possível; a resposta melhora com CD4 maior. <b>Vivas (SCR, varicela, febre amarela) não se aplicam com imunodepressão grave</b> (CD4 &lt;200 no adulto). Calendário completo → PD05 e CRIE. <b>O que muda conduta:</b> CD4 (categoria imunológica), risco epidemiológico para febre amarela e vacina de vírus vivo em contactantes (permitida em geral).</div></div>
@@ -957,7 +976,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card diag">
+<div class="card diag" id="d8">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">D.8</span> Gestação e criança exposta</div><h3>HIV na gestação e na criança exposta: o essencial e o dono (GO10, PD02, PD10) <span class="ank ank-dec">DECISION</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">TARV <b>no diagnóstico, sem esperar CD4</b>: TDF/3TC + DTG. CV mensal até indetectável e com 34 semanas. <b>CV desconhecida ou ≥1.000 cópias/mL após 34 semanas: cesárea eletiva a partir de 38 semanas</b>; AZT IV se CV desconhecida ou detectável a partir de 34 semanas ou má adesão. No Brasil, amamentação contraindicada e lactação inibida com cabergolina 1 mg VO dose única. <b>O que muda conduta:</b> CV com 34 semanas e adesão. Divisão de donos: GO10 (gestante), PD02 e PD10 (RN e criança).</div></div>
@@ -971,7 +990,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card diag">
+<div class="card diag" id="d9">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">D.9</span> Neoplasias e comorbidades</div><h3>Sarcoma de Kaposi, linfomas, câncer de colo e as comorbidades da PVHIV <span class="ank ank-hy">HIGH-YIELD</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Neoplasias definidoras de aids caíram com a TARV: <b>Kaposi (HHV-8), linfoma não Hodgkin, linfoma primário do SNC e câncer de colo invasivo</b>. Subiram as não definidoras (pulmão, ânus, Hodgkin, fígado). <b>Kaposi leve e moderado: TARV imediata; grave ou sintomático: TARV + quimioterapia.</b> <b>O que muda conduta:</b> lesão cutâneo-mucosa violácea (biópsia), HIVAN (TARV independente do CD4) e tenofovir com TFGe baixa.</div></div>
@@ -987,7 +1006,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card diag">
+<div class="card diag" id="d10">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">D.10</span> Coinfecções</div><h3>Hepatites B e C, sífilis, HTLV e Chagas: o que muda na TARV <span class="ank ank-dec">DECISION</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">O PCDT HIV Módulo 2 dedica capítulos a hepatites B e C, sífilis, Chagas, hanseníase, HTLV, leishmaniose e paracoccidioidomicose. <b>HBV:</b> TDF/3TC é a única dupla recomendada, e a retirada do tenofovir pode causar exacerbação hepática grave. <b>Sífilis:</b> rastrear; neurossífilis é mais frequente e mais precoce no HIV. Chagas: reativação com meningoencefalite e lesões pseudotumorais. Hepatite B/C como doença → GH09; sífilis como IST → GO09. <b>O que muda conduta:</b> HBsAg ou anti-HBc positivos (não retirar TDF), sintoma neurológico com sífilis (punção e penicilina IV) e CD4 &lt;200 em reativação de Chagas.</div></div>
@@ -1006,7 +1025,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <section id="algoritmo">
 <div class="section"><div class="section-eyebrow"><span>E</span> Algoritmo</div><div class="section-title">Do teste ao primeiro comprimido, do sintoma ao CD4, da carga viral detectável ao resgate</div><div class="section-sub">Três árvores curtas e um raciocínio narrado. Cada ponta termina em exame ou conduta com dose; a ordem importa mais que a lista.</div></div>
 
-<div class="card prim">
+<div class="card prim" id="e1">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">E.1</span> Algoritmo</div><h3>Teste reagente ou exposição: confirmar, tratar e prevenir <span class="ank ank-dec">DECISION</span></h3></div>
 <div class="card-body">
 <div class="algo"><div class="tree">
@@ -1029,7 +1048,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="e2">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">E.2</span> Algoritmo</div><h3>PVHIV com sintoma: o CD4 define o diferencial e o plantão <span class="ank ank-dgr">DANGER</span></h3></div>
 <div class="card-body">
 <div class="algo"><div class="tree">
@@ -1051,7 +1070,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="e3">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">E.3</span> Algoritmo</div><h3>CV detectável sob TARV: falha, blip ou problema de adesão? <span class="ank ank-dec">DECISION</span></h3></div>
 <div class="card-body">
 <div class="algo"><div class="tree">
@@ -1073,7 +1092,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="e4">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">E.4</span> Raciocínio</div><h3>Raciocínio em 7 passos: do primeiro contato com o HIV à decisão de plantão <span class="ank ank-dec">DECISION</span></h3></div>
 <div class="card-body">
 <div class="box decision"><span class="box-label">DECISION</span><div class="box-title">Sequência mental, na ordem em que se pensa</div><div class="box-body"><ol>
@@ -1090,13 +1109,13 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </section>
 
 <section id="tratamento">
-<div class="section"><div class="section-eyebrow"><span>F</span> Tratamento Integrado</div><div class="section-title">F1 · Estratégia por entidade · F2 · Doses · F3 · Casos · F4 · Registro e SUS · F5 · Seguimento</div><div class="section-sub">Doses lidas no PCDT HIV (2024), PCDT PrEP (2025), PCDT TV (2022) e nos documentos da OMS (2025) estão marcadas pela sigla; o que não está em disco vem como "conferir". Disponibilidade conferida na lista CMED PMVG de 09/10/2026; a ausência na lista não prova a falta de registro.</div></div>
+<div class="section"><div class="section-eyebrow"><span>F</span> Tratamento Integrado</div><div class="section-title">F1 · Estratégia por entidade · F2 · Doses · F3 · Casos · F4 · Registro e SUS · F5 · Seguimento</div><div class="section-sub">Doses lidas no PCDT HIV (2024), PCDT PrEP (2025), PCDT TV (2022) e nos documentos da OMS (2025) estão marcadas pela sigla; o que não está em disco vem como "conferir". Disponibilidade conferida na lista CMED PMVG de 09/10/2026; a ausência na lista não prova a falta de registro.</div></div><!--hp-f2--><nav class="sec-idx" aria-label="Neste capítulo"><a href="#f1"><b>F.1</b>Escada terapêutica por entida…</a><a href="#f2"><b>F.2</b>Tabela de doses: HIV, oportun…</a><a href="#f3"><b>F.3</b>Caso → conduta certa → erro t…</a><a href="#f4"><b>F.4</b>O que o SUS oferece e o que a…</a><a href="#f5"><b>F.5</b>Monitorização: o que pedir, q…</a><a href="#f6"><b>F.6</b>O que muda a dose antes de pr…</a></nav><!--/hp-f2-->
 
-<div class="card tx">
+<div class="card tx" id="f1">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">F.1</span> Estratégia</div><h3>Escada terapêutica por entidade <span class="ank ank-dec">DECISION</span></h3></div>
 <div class="card-body">
 
-<div class="sub-title">F1.1 · TARV inicial e situações especiais (C.3)</div>
+<div class="sub-title" id="f1-1">F1.1 · TARV inicial e situações especiais (C.3)</div>
 <ul class="bullets">
 <li><b>Todos, na primeira consulta:</b> tenofovir 300 mg + lamivudina 300 mg em um comprimido, mais dolutegravir 50 mg, uma vez ao dia, sem esperar CD4 nem genotipagem. A genotipagem pré-tratamento só orienta troca depois, e é pedida para parceria em TARV, gestante, criança, uso de PrEP e TB-HIV.</li>
 <li><b>Meningite criptocócica ou tuberculosa do SNC:</b> começar o tratamento da oportunista e esperar 4–6 semanas (criptococo: com melhora neurológica e cultura negativa); neurotoxoplasmose: TARV em até 7 dias; TB pulmonar ou extrapulmonar: até 7 dias, sem exigir CD4.</li>
@@ -1106,7 +1125,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </ul>
 <div class="box decision"><span class="box-label">DECISION</span><div class="box-title">Quando adiar a TARV e quando é erro adiar</div><div class="box-body">Adie só diante de meningite criptocócica ou tuberculosa; em todos os demais, o atraso por falta de CD4, de genotipagem, de adesão "garantida" ou de oportunista em tratamento aumenta mortalidade e transmissão. A pessoa em uso ativo de drogas ou álcool recebe TARV, com suporte, e a TARV não é suspensa por isso.</div></div>
 
-<div class="sub-title">F1.2 · Falha, resgate, terapia dupla e interrupção (C.4)</div>
+<div class="sub-title" id="f1-2">F1.2 · Falha, resgate, terapia dupla e interrupção (C.4)</div>
 <ul class="bullets">
 <li><b>Confirme antes de trocar:</b> CV &gt;200 duas vezes, adesão, interações, dose; a segunda CV é feita 4 semanas depois da primeira; genotipagem com CV &gt;500, sob o esquema em falha.</li>
 <li><b>Resgate de 1ª falha:</b> TDF/3TC + DTG 50 mg 1×/dia; ou TDF/3TC + DRV 800 mg/r 100 mg 1×/dia quando a adesão é precária ou a CV é alta; ou DTG + DRV/r se o TDF/3TC não é possível; mutação de darunavir: 600/100 mg 12/12 h.</li>
@@ -1114,7 +1133,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <li><b>Opções da OMS 2025 rotuladas:</b> DRV/r como IP preferencial, reaproveitamento de TDF/TAF e cabotegravir + rilpivirina de ação prolongada como alternativa de troca em quem tem dificuldade de adesão e não tem HBV ativo; rilpivirina não consta da lista CMED (conferir registro).</li>
 </ul>
 
-<div class="sub-title">F1.3 · Profilaxias primárias e secundárias (C.5)</div>
+<div class="sub-title" id="f1-3">F1.3 · Profilaxias primárias e secundárias (C.5)</div>
 <ul class="bullets">
 <li><b>SMX-TMP:</b> CD4 &lt;200 (ou &lt;14%), candidíase oral, febre &gt;2 semanas ou doença definidora; toxoplasma com CD4 &lt;100; suspensão com CD4 &gt;200 por &gt;3 meses (toxoplasma primária; secundária 6 meses).</li>
 <li><b>MAC:</b> azitromicina 1.250–1.500 mg 1×/semana só com CD4 &lt;50 sem TARV; histoplasma: itraconazol 200 mg/dia em área hiperendêmica com CD4 &lt;150.</li>
@@ -1122,7 +1141,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <li><b>Secundárias:</b> sulfadiazina + pirimetamina + ácido folínico (toxoplasma), fluconazol 200 mg/dia (criptococo, ≥1 ano e CD4 &gt;200 por &gt;6 meses), valganciclovir 900 mg/dia (retinite), claritromicina + etambutol (MAC).</li>
 </ul>
 
-<div class="sub-title">F1.4 · Oportunistas com dose (C.6 a C.10, D.1 a D.3)</div>
+<div class="sub-title" id="f1-4">F1.4 · Oportunistas com dose (C.6 a C.10, D.1 a D.3)</div>
 <ul class="bullets">
 <li><b>Pneumocistose:</b> SMX-TMP 15–20 mg/kg/dia de trimetoprima por 21 dias, mais prednisona 40 mg 12/12 h por 5 dias, reduzida à metade a cada 5 dias, se PaO₂ &lt;70 mmHg; sulfa-intolerância: clindamicina + primaquina, com G6PD.</li>
 <li><b>Criptococose:</b> lipossomal 3 mg/kg/dia + flucitosina 100 mg/kg/dia por ≥2 semanas, fluconazol 400–800 mg/dia por ≥8 semanas e 200 mg/dia depois; punções de alívio com abertura &gt;25 cmH₂O.</li>
@@ -1133,14 +1152,14 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </ul>
 <div class="box danger"><span class="box-label">DANGER</span><div class="box-title">Sulfa em dose de tratamento exige olhar o potássio, a creatinina e o hemograma</div><div class="box-body">O SMX-TMP em 15–20 mg/kg/dia de trimetoprima bloqueia o canal de sódio epitelial do túbulo distal e produz hiperpotassemia, além de elevar a creatinina por inibição da secreção tubular. Combinado a IECA, espironolactona ou tenofovir em DRC, a hiperpotassemia pode ser grave. Os efeitos adversos do SMX-TMP atingem 20–85% das PVHIV (apostila), de rash tolerável a pancitopenia e síndrome de Stevens-Johnson; associado a pirimetamina ou zidovudina, soma toxicidade medular.</div></div>
 
-<div class="sub-title">F1.5 · SIRI (D.4)</div>
+<div class="sub-title" id="f1-5">F1.5 · SIRI (D.4)</div>
 <ul class="bullets">
 <li><b>Regra:</b> tratar a oportunista, manter a TARV (salvo neuroinfecção grave por TB ou criptococo), corticoide nos casos moderados a graves.</li>
 <li><b>Doses:</b> prednisona 0,5–1,5 mg/kg/dia por 1–2 semanas com desmame; metilprednisolona 1 g/dia IV ou dexametasona 0,3 mg/kg/dia IV nos críticos; na TB, 1–2 mg/kg/dia por 2 semanas e 0,75 mg/kg/dia por mais 2.</li>
 <li><b>Exceção:</b> sarcoma de Kaposi, que piora com corticoide.</li>
 </ul>
 
-<div class="sub-title">F1.6 · PEP e PrEP (D.5, D.6)</div>
+<div class="sub-title" id="f1-6">F1.6 · PEP e PrEP (D.5, D.6)</div>
 <ul class="bullets">
 <li><b>PEP:</b> TDF/3TC + DTG por 28 dias (PCDT PEP 2024), em até 72 horas; alternativas por TFGe baixa ou intolerância ao DTG; reavaliação em 2 semanas.</li>
 <li><b>PrEP:</b> TDF 300 mg/FTC 200 mg, 2 comprimidos no 1º dia e depois 1 por dia; sob demanda 2+1+1 só para homens cis e mulheres trans sem estradiol com sexo pouco frequente.</li>
@@ -1150,7 +1169,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card tx">
+<div class="card tx" id="f2">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">F.2</span> Doses Operacionais</div><h3>Tabela de doses: HIV, oportunistas, TPT, PEP e PrEP</h3></div>
 <div class="card-body">
 <div class="stbl stbl-3">
@@ -1186,7 +1205,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card tx">
+<div class="card tx" id="f3">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">F.3</span> Cenários</div><h3>Caso → conduta certa → erro típico</h3></div>
 <div class="card-body">
 <div class="stbl stbl-3">
@@ -1203,7 +1222,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card tx">
+<div class="card tx" id="f4">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">F.4</span> Acesso</div><h3>O que o SUS oferece e o que a CMED mostra <span class="ank ank-dec">DECISION</span></h3></div>
 <div class="card-body">
 <div class="stbl stbl-3">
@@ -1219,7 +1238,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card tx">
+<div class="card tx" id="f5">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">F.5</span> Seguimento</div><h3>Monitorização: o que pedir, quando e o que fazer com o resultado</h3></div>
 <div class="card-body">
 <ul class="bullets">
@@ -1233,10 +1252,10 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card tx">
+<div class="card tx" id="f6">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">F.6</span> Interações e populações</div><h3>O que muda a dose antes de prescrever <span class="ank ank-dgr">DANGER</span></h3></div>
 <div class="card-body">
-<div class="sub-title">F6.1 · Interações com peso de conduta</div>
+<div class="sub-title" id="f6-1">F6.1 · Interações com peso de conduta</div>
 <ul class="bullets">
 <li><b>Dolutegravir:</b> contraindicado com dofetilida e pilsicainida; dose de 12/12 h com rifampicina, carbamazepina, oxcarbazepina, fenitoína e fenobarbital; cátions polivalentes (alumínio, magnésio, ferro e cálcio em jejum) a 2 h antes ou 6 h depois; aumenta a metformina, limitar a 1.000 mg/dia ao início <span class="ev ev-sbr">PCDT HIV 2024</span>.</li>
 <li><b>Darunavir/ritonavir:</b> contraindicado com rifampicina, alfuzosina, cisaprida, lurasidona, sinvastatina, astemizol e terfenadina; indutor e inibidor enzimático, de modo que toda comedicação nova pede consulta à ferramenta de interações antes da prescrição.</li>
@@ -1244,7 +1263,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <li><b>Claritromicina:</b> interage com IP e efavirenz; azitromicina é a alternativa com menos interações, mas com a mesma indicação em MAC.</li>
 <li><b>Fluconazol:</b> inibe CYP2C9 e CYP3A4, e a dose alta do criptococo exige revisão de varfarina, fenitoína, estatinas e macrolídeos.</li>
 </ul>
-<div class="sub-title">F6.2 · Populações especiais (só o que muda conduta)</div>
+<div class="sub-title" id="f6-2">F6.2 · Populações especiais (só o que muda conduta)</div>
 <ul class="bullets">
 <li><b>DRC e diálise:</b> dolutegravir sem ajuste; tenofovir evitado com TFGe &lt;60 e dose ajustada com TFGe &lt;50 se já em uso; lamivudina, SMX-TMP, ganciclovir, fluconazol e flucitosina pedem ajuste pela depuração (doses da bula: conferir). Anfotericina lipossomal e lipídica são preferidas por poupar o rim. HIVAN: TARV imediata e IECA ou BRA (apostila).</li>
 <li><b>Idoso e frágil:</b> maior risco ósseo e renal com tenofovir, mais interações por polifarmácia e recuperação de CD4 menos robusta; o dolutegravir é o terceiro fármaco com menos interações.</li>
@@ -1261,7 +1280,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <section id="pitfalls">
 <div class="section"><div class="section-eyebrow"><span>G</span> Pitfalls · Mitos · Controvérsias</div><div class="section-title">Erros operacionais, mitos vivos e debates abertos</div><div class="section-sub">Os erros que repetem no HIV: esperar CD4, confundir resposta imune com falha, esquecer a rifampicina, tratar pressão de criptococo com fármaco e adiar a PEP.</div></div>
 
-<div class="card pearl">
+<div class="card pearl" id="g1">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">G.1</span> Pegadinhas</div><h3>10 erros operacionais em HIV, AIDS e oportunistas</h3></div>
 <div class="card-body">
 <div class="stbl stbl-2">
@@ -1292,7 +1311,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <section id="pearls">
 <div class="section"><div class="section-eyebrow"><span>H</span> Pearls · Evolving</div><div class="section-title">H1 · Nuances de especialista · H2 · O que mudou em 2024–2026</div><div class="section-sub">Oito ideias que o plantão esquece e seis mudanças reais; onde o tema é estável, diz-se.</div></div>
 
-<div class="card pearl">
+<div class="card pearl" id="h1">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">H.1</span> Pearls</div><h3>8 nuances que distinguem o especialista</h3></div>
 <div class="card-body">
 <div class="box pearl"><span class="box-label">PEARL</span><div class="box-title">A creatinina sobe 10–15% com o dolutegravir e o rim está inteiro</div><div class="box-body">O dolutegravir bloqueia o OCT2 tubular e reduz a secreção de creatinina nas primeiras 4 semanas. A filtração medida por inulina não muda. Pedir cistatina C ou depuração medida evita suspender um esquema eficaz por uma elevação que não é nefrotoxicidade, e o fármaco não é contraindicado na DRC.</div></div>
@@ -1306,7 +1325,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card pearl">
+<div class="card pearl" id="h2">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">H.2</span> Evolving</div><h3>O que mudou, com data e fonte</h3></div>
 <div class="card-body">
 <div class="box evolving"><span class="box-label">EVOLVING</span><div class="box-title">PCDT HIV 2024: TDF/3TC + DTG preferencial e efavirenz fora da primeira linha</div><div class="box-body">O Módulo 1 de 2024 mantém o dolutegravir como terceiro fármaco, define a genotipagem pré-tratamento por critérios, a terapia dupla por condições e a TARV na TB em até 7 dias independentemente do CD4. O RP03 e o II04 publicados trazem prazos mais antigos para a TB. A OMS 2025 fala em até 2 semanas, qualquer CD4.</div></div>
@@ -1362,5 +1381,36 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <a class="to-top" href="#" aria-label="Voltar ao topo">↑</a>
 <div class="watermark">@dr.lorencato · II01 HIV e Oportunistas v5.2</div>
 
-</body>
+<!--hp-f2--><script>(function(){var d=document,M=d.querySelector('main');if(!M)return;
+var SELF='II01',HP=' CT01 CT02 CT03 CT04 CT05 CT06 CT08 CT10 CV01 CV03 CV04 CV05 CV06 CV07 CV08 EN01 EN02 EN03 EN04 EN06 EN07 GH01 GH02 GH03 GH05 GH06 GH07 GH08 GH09 GH10 GO01 GO02 GO03 GO04 GO09 GO10 GO11 GO12 GO13 GO14 HO01 HO02 HO03 HO04 HO05 HO06 II01 II02 II03 II04 II07 II08 NE01 NE02 NE03 NE04 NE05 NE06 NE07 NE08 NU01 NU02 NU03 NU04 NU05 OE01 OE02 PC01 PC02 PC03 PC04 PC05 PC06 PD01 PD02 PD03 PD04 PD05 PD06 PD07 PD08 PD09 PD10 RD01 RD02 RD03 RD04 RD05 RD07 RP01 RP02 RP03 RP04 ';
+var SK='A,H1,H2,H3,SCRIPT,STYLE,NAV,.card-num,.card-eyebrow,.sub-title,.disease-tag,.toc';
+var R=/\b(?:([A-H])(\d)?\.(\d{1,2}[a-c]?)|(CV|RP|GH|NE|EN|NU|HO|II|RD|GO|PD|PC|CT|OE)(\d\d))\b/g;
+function skip(n){for(var e=n.parentNode;e&&e!==M;e=e.parentNode)if(e.matches&&e.matches(SK))return 1;return 0}
+var w=d.createTreeWalker(M,4),t,L=[];while(t=w.nextNode())if(R.test(t.data)&&!skip(t))L.push(t);
+L.forEach(function(t){var s=t.data,f=d.createDocumentFragment(),i=0,m;R.lastIndex=0;
+while(m=R.exec(s)){var h=null;
+if(m[1]){var id=m[1].toLowerCase()+(m[2]?m[2]+'-':'')+m[3];if(d.getElementById(id))h='#'+id}
+else{var x=m[4]+m[5];if(x!==SELF&&HP.indexOf(' '+x+' ')>=0)h='../'+x+'/'+x+'.html'}
+if(!h)continue;f.appendChild(d.createTextNode(s.slice(i,m.index)));
+var a=d.createElement('a');a.href=h;a.className='xr';a.textContent=m[0];f.appendChild(a);i=R.lastIndex}
+if(i){f.appendChild(d.createTextNode(s.slice(i)));t.parentNode.replaceChild(f,t)}});
+function nz(s){return s.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'')}
+var q=d.querySelector('.hp-q'),n=d.querySelector('.hp-n'),it=M.querySelectorAll('.card,.pocket-card'),T;
+function clr(){M.querySelectorAll('.q-off').forEach(function(e){e.classList.remove('q-off')})}
+function run(){var v=nz(q.value.trim());clr();n.textContent='';if(v.length<2)return;var k=0;
+it.forEach(function(c){if(nz(c.textContent).indexOf(v)<0){c.classList.add('q-off');return}k++;
+var r=c.querySelectorAll('.stbl-row,.disease-row,.score-row'),h=[];r.forEach(function(x){if(nz(x.textContent).indexOf(v)>=0)h.push(x)});
+if(h.length)r.forEach(function(x){if(h.indexOf(x)<0)x.classList.add('q-off')});
+c.querySelectorAll('details').forEach(function(x){if(nz(x.textContent).indexOf(v)>=0)x.open=true})});
+M.querySelectorAll('section').forEach(function(s){if(!s.querySelector('.card:not(.q-off),.pocket-card:not(.q-off)'))s.classList.add('q-off')});
+n.textContent=k?k+' achado'+(k>1?'s':''):'nada'}
+if(q){q.addEventListener('input',function(){clearTimeout(T);T=setTimeout(run,180)});
+q.addEventListener('keydown',function(e){if(e.key==='Escape'){q.value='';run()}})}
+function tg(b,f){b.addEventListener('click',function(){var on=b.getAttribute('aria-pressed')!=='true';b.setAttribute('aria-pressed',on);f(on)})}
+var bd=d.querySelector('.hp-dz'),bo=d.querySelector('.hp-op');
+if(bd)tg(bd,function(on){d.body.classList.toggle('dz',on);if(on)d.getElementById('tratamento').scrollIntoView()});
+if(bo)tg(bo,function(on){M.querySelectorAll('details').forEach(function(x){x.open=on})});
+var P=[];addEventListener('beforeprint',function(){P=[];M.querySelectorAll('details:not([open])').forEach(function(x){P.push(x);x.open=true})});
+addEventListener('afterprint',function(){P.forEach(function(x){x.open=false})});
+})();</script><!--/hp-f2--></body>
 </html>

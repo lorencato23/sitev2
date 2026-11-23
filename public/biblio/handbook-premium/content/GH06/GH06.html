@@ -345,13 +345,32 @@ ul.bullets li b{color:var(--ink);font-weight:600}
   .pocket .pocket-card.tx{--accent:#a8481a}
   .pocket .pocket-card.clin{--accent:#0b5d4e}
 }
+
+/* === v5.2.2 · fase 2 (navegação) === */
+.hp-tools{display:flex;gap:6px;align-items:center;flex:none;order:1;margin-left:auto;padding-left:6px;position:sticky;right:0;background:#f1eee5;box-shadow:-10px 0 10px -4px #f1eee5,16px 0 0 #f1eee5}
+@media(min-width:900px){html{scroll-padding-top:150px}.toc-inner{flex-wrap:wrap;overflow:visible}.card[id],.sub-title[id]{scroll-margin-top:150px}}
+@media(max-width:899px){.hp-b,.hp-n{display:none}.hp-q{width:104px}}
+.hp-q{width:128px;font:500 12px/1 'DM Sans',system-ui,sans-serif;padding:7px 11px;border:1px solid var(--line-strong);border-radius:999px;background:var(--paper);color:var(--ink)}
+.hp-b{font:600 11px/1 'DM Sans',system-ui,sans-serif;letter-spacing:.05em;text-transform:uppercase;padding:7px 10px;border-radius:999px;border:1px solid var(--line-strong);background:var(--paper);color:var(--ink-soft);cursor:pointer;white-space:nowrap}
+.hp-b[aria-pressed=true]{background:var(--ink);color:#fff;border-color:var(--ink)}
+.hp-n{font:600 11px/1 'DM Mono',monospace;color:var(--ink-mute);white-space:nowrap}
+.sec-idx{display:flex;flex-wrap:wrap;gap:6px;margin:12px 0 20px}
+.sec-idx a{font:500 12px/1.25 'DM Sans',system-ui,sans-serif;padding:6px 10px;border-radius:999px;background:var(--paper);border:1px solid var(--line);color:var(--ink-soft);text-decoration:none}
+.sec-idx a:hover{border-color:var(--line-strong);color:var(--ink)}
+.sec-idx b{color:var(--c-prim);margin-right:5px;font-weight:700}
+a.xr{color:inherit;text-decoration:underline dotted;text-underline-offset:2px}
+a.xr:hover{color:var(--c-prim)}
+.card[id],.sub-title[id]{scroll-margin-top:110px}
+.q-off{display:none!important}
+body.dz main section:not(#tratamento){display:none}
+@media print{.hp-tools,.sec-idx,.toc-doses{display:none!important}}
 </style>
 </head>
 <body>
 
 <header class="header"><div class="header-row"><div class="h-mark">H</div><div class="h-titles"><div class="h-title">Abdome Agudo Intestinal, Cólon e Reto · Pocket Handbook</div><div class="h-sub">Elite edition · Gastroenterologia e cirurgia do aparelho digestivo · GH06</div></div><div class="h-author">@dr.lorencato</div><div class="h-edition">v5.2</div></div></header>
 
-<nav class="toc"><div class="toc-inner"><a href="#pocket" class="toc-chip"><span class="toc-chip-num">0</span>Pocket</a><a href="#redflags" class="toc-chip"><span class="toc-chip-num">A</span>Red Flags</a><a href="#approach" class="toc-chip"><span class="toc-chip-num">B</span>Apresentação</a><a href="#primarias" class="toc-chip"><span class="toc-chip-num">C</span>Entidades</a><a href="#secundarias" class="toc-chip"><span class="toc-chip-num">D</span>Secundárias</a><a href="#algoritmo" class="toc-chip"><span class="toc-chip-num">E</span>Algoritmo</a><a href="#tratamento" class="toc-chip"><span class="toc-chip-num">F</span>Tratamento</a><a href="#pitfalls" class="toc-chip"><span class="toc-chip-num">G</span>Pitfalls</a><a href="#pearls" class="toc-chip"><span class="toc-chip-num">H</span>Pearls</a></div></nav>
+<nav class="toc"><div class="toc-inner"><!--hp-f2--><span class="hp-tools"><input class="hp-q" type="search" placeholder="Buscar no HP" aria-label="Buscar no HP"><button class="hp-b hp-dz" type="button" aria-pressed="false">Só doses</button><button class="hp-b hp-op" type="button" aria-pressed="false">Abrir tudo</button><span class="hp-n" aria-live="polite"></span></span><!--/hp-f2--><a href="#pocket" class="toc-chip"><span class="toc-chip-num">0</span>Pocket</a><a href="#redflags" class="toc-chip"><span class="toc-chip-num">A</span>Red Flags</a><a href="#approach" class="toc-chip"><span class="toc-chip-num">B</span>Apresentação</a><a href="#primarias" class="toc-chip"><span class="toc-chip-num">C</span>Entidades</a><a href="#secundarias" class="toc-chip"><span class="toc-chip-num">D</span>Secundárias</a><a href="#algoritmo" class="toc-chip"><span class="toc-chip-num">E</span>Algoritmo</a><a href="#tratamento" class="toc-chip"><span class="toc-chip-num">F</span>Tratamento</a><!--hp-f2--><a href="#f2" class="toc-chip toc-doses"><span class="toc-chip-num">Rx</span>Doses</a><!--/hp-f2--><a href="#pitfalls" class="toc-chip"><span class="toc-chip-num">G</span>Pitfalls</a><a href="#pearls" class="toc-chip"><span class="toc-chip-num">H</span>Pearls</a></div></nav>
 
 <main>
 <div class="wrap">
@@ -415,7 +434,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <section id="redflags">
 <div class="section"><div class="section-eyebrow"><span>A</span> Red Flags</div><div class="section-title">No abdome agudo o perigo é a hora que passa, não o diagnóstico que falta</div><div class="section-sub">Sinal objetivo, suspeita e conduta imediata. Os eventos evitáveis deste HP são a isquemia mesentérica descoberta com o intestino já necrosado, a obstrução complicada observada por 48 horas, a neostigmina dada sobre obstrução mecânica, a hemorragia baixa "alta" sem colonoscopia e o câncer de cólon tratado como hemorroida.</div></div>
 
-<div class="card emerg">
+<div class="card emerg" id="a1">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">A.1</span> Emergências</div><h3>Sinais de alarme — abdome agudo intestinal, cólon e reto <span class="ank ank-dgr">DANGER</span></h3></div>
 <div class="card-body">
 
@@ -453,7 +472,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card emerg">
+<div class="card emerg" id="a2">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">A.2</span> Populações especiais</div><h3>Onde o exame engana e o dono do assunto muda <span class="ank ank-dec">DECISION</span></h3></div>
 <div class="card-body">
 <ul class="bullets">
@@ -471,7 +490,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <section id="approach">
 <div class="section"><div class="section-eyebrow"><span>B</span> Por Apresentação</div><div class="section-title">Seis padrões: da queixa ao mecanismo, antes do órgão</div><div class="section-sub">A dor é lida por localização e cronologia, e o abdome agudo por mecanismo: inflamatório, obstrutivo, perfurativo, vascular ou hemorrágico. Cada padrão lista o diferencial e o ponto em que a conduta muda.</div></div>
 
-<div class="card clin">
+<div class="card clin" id="b1">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">B.1</span> Padrão 1</div><h3>Dor em fossa ilíaca direita <span class="ank ank-hy">HIGH-YIELD</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">A dor migra do epigástrio ou da região periumbilical (inervação visceral do intestino médio) para a fossa ilíaca direita quando o peritônio parietal é atingido, com anorexia e vômito <b>depois</b> da dor. Apendicite é a primeira hipótese; mulher fértil e idoso têm o diferencial mais largo. <b>O que muda conduta:</b> score de risco decide entre alta, imagem e cirurgia; mulher fértil faz β-hCG e USG transvaginal antes da TC.</div></div>
@@ -484,7 +503,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card clin">
+<div class="card clin" id="b2">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">B.2</span> Padrão 2</div><h3>Dor em fossa ilíaca esquerda ou hipogástrio com febre <span class="ank ank-dec">DECISION</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Dor em quadrante inferior esquerdo que piora ao evacuar, febre, leucocitose e alteração do hábito: <b>diverticulite</b> até a TC mostrar outra coisa. O câncer colorretal perfurado ou obstruído e a doença inflamatória intestinal imitam. <b>O que muda conduta:</b> a TC com contraste IV define a classe (Hinchey, WSES) e, com ela, ambulatório sem antibiótico, internação, drenagem ou cirurgia.</div></div>
@@ -497,7 +516,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card clin">
+<div class="card clin" id="b3">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">B.3</span> Padrão 3</div><h3>Distensão, vômitos e parada de flatos e fezes <span class="ank ank-dgr">DANGER</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Cólica intermitente com peristalse de luta, depois dor contínua e silêncio: o tempo conta. Quanto mais proximal, mais precoces os vômitos e menor a distensão; quanto mais distal, mais distensão e vômito fecaloide. <b>Toque retal é obrigatório:</b> ampola vazia sugere obstrução mecânica, ampola com fezes sugere funcional. <b>O que muda conduta:</b> mecânica não complicada espera; complicada, com peritonite ou isquemia, opera; funcional trata a causa.</div></div>
@@ -510,7 +529,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card clin">
+<div class="card clin" id="b4">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">B.4</span> Padrão 4</div><h3>Dor desproporcional, abdome silencioso, sangue nas fezes e acidose <span class="ank ank-dgr">DANGER</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">O padrão vascular não tem sinal peritoneal no início. Pense nele em quem tem fibrilação atrial, arteriopatia, ICC ou choque, e em jovem com cocaína ou hipercoagulabilidade. <b>O que muda conduta:</b> suspeita clínica basta para angio-TC; a anticoagulação com HNF começa no diagnóstico, antes da cirurgia.</div></div>
@@ -523,7 +542,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card clin">
+<div class="card clin" id="b5">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">B.5</span> Padrão 5</div><h3>Hematoquezia e melena <span class="ank ank-dec">DECISION</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Hemorragia digestiva baixa é a que nasce depois do ângulo de Treitz: 10% a 15% das hemorragias digestivas agudas, autolimitada em cerca de 80% e com melhor prognóstico que a alta. <b>O que muda conduta:</b> instabilidade com hematoquezia pede EDA antes (a fonte alta existe e mata mais); estabilizado, colonoscopia após preparo; sangramento contínuo e instável sem colonoscopia viável pede angio-TC e embolização.</div></div>
@@ -535,7 +554,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card clin">
+<div class="card clin" id="b6">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">B.6</span> Padrão 6</div><h3>Dor, sangue ou secreção no ânus; mudança do hábito e anemia <span class="ank ank-hy">HIGH-YIELD</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">A queixa dominante separa as doenças: <b>dor ao evacuar</b> é fissura; <b>sangramento ou prolapso indolor</b> é hemorroida; <b>dor contínua com abaulamento</b> é abscesso; <b>secreção purulenta crônica</b> é fístula; <b>nódulo sacral com secreção</b> é doença pilonidal. <b>O que muda conduta:</b> a hemorroida sintomática só se atribui depois que câncer foi considerado pela idade e pelo risco.</div></div>
@@ -549,9 +568,9 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </section>
 
 <section id="primarias">
-<div class="section"><div class="section-eyebrow"><span>C</span> Entidades Primárias</div><div class="section-title">Onze entidades que cobrem o abdome que opera, o intestino que sangra e o ânus que dói</div><div class="section-sub">A abordagem do abdome agudo abre o capítulo; apendicite, diverticulite, obstrução do delgado e do cólon e isquemia mesentérica carregam as decisões de plantão; hemorragia baixa e câncer colorretal ocupam a ponte com a endoscopia e a oncologia; hemorroida, fissura e abscesso e fístula anal fecham a proctologia.</div></div>
+<div class="section"><div class="section-eyebrow"><span>C</span> Entidades Primárias</div><div class="section-title">Onze entidades que cobrem o abdome que opera, o intestino que sangra e o ânus que dói</div><div class="section-sub">A abordagem do abdome agudo abre o capítulo; apendicite, diverticulite, obstrução do delgado e do cólon e isquemia mesentérica carregam as decisões de plantão; hemorragia baixa e câncer colorretal ocupam a ponte com a endoscopia e a oncologia; hemorroida, fissura e abscesso e fístula anal fecham a proctologia.</div></div><!--hp-f2--><nav class="sec-idx" aria-label="Neste capítulo"><a href="#c1"><b>C.1</b>Abdome agudo: cinco mecanismo…</a><a href="#c2"><b>C.2</b>Apendicite aguda: score, imag…</a><a href="#c3"><b>C.3</b>Diverticulite aguda e doença…</a><a href="#c4"><b>C.4</b>Obstrução do intestino delgad…</a><a href="#c5"><b>C.5</b>Obstrução do cólon: volvo de…</a><a href="#c6"><b>C.6</b>Isquemia mesentérica aguda: e…</a><a href="#c7"><b>C.7</b>Hemorragia digestiva baixa: d…</a><a href="#c8"><b>C.8</b>Câncer colorretal: rastreio…</a><a href="#c9"><b>C.9</b>Doença hemorroidária: graus d…</a><a href="#c10"><b>C.10</b>Fissura anal: dor em lâmina…</a><a href="#c11"><b>C.11</b>Abscesso e fístula anal: dren…</a></nav><!--/hp-f2-->
 
-<div class="card prim">
+<div class="card prim" id="c1">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.1</span> Síndrome</div><h3>Abdome agudo: cinco mecanismos, uma pergunta (opera ou não opera?) <span class="ank ank-hy">HIGH-YIELD</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Abdome agudo é dor abdominal de instalação recente que pode exigir cirurgia. Ordene pelo <b>mecanismo</b>: inflamatório (apendicite, diverticulite), obstrutivo (brida, volvo, tumor), perfurativo (úlcera, diverticulite, tumor), vascular (isquemia mesentérica) e hemorrágico (aneurisma roto, ectópica, ruptura de víscera sólida, HDB maciça). <b>O que muda conduta:</b> peritonite difusa, pneumoperitônio, instabilidade que não responde à reposição ou isquemia na TC levam à sala cirúrgica; o resto ganha exame seriado e imagem.</div></div>
@@ -580,7 +599,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="c2">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.2</span> Inflamatório</div><h3>Apendicite aguda: score, imagem, cirurgia e a opção do antibiótico <span class="ank ank-hy">HIGH-YIELD</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Causa mais comum de abdome agudo cirúrgico, de 10 a 30 anos, com obstrução luminal (fecalito, hiperplasia linfoide), alça fechada, isquemia e perfuração em torno de 48 h. <b>Tratamento padrão: apendicectomia laparoscópica nas primeiras 24 h da admissão.</b> Antibiótico como primeira linha é alternativa discutida com o paciente, sem apendicolito e sem complicação. <b>O que muda conduta:</b> AIR ou Alvarado definem alta, imagem ou cirurgia; apendicolito, abscesso, fleimão, peritonite, gestação, idoso e imunossuprimido mudam o caminho.</div></div>
@@ -631,7 +650,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="c3">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.3</span> Inflamatório</div><h3>Diverticulite aguda e doença diverticular: classificar na TC e poupar antibiótico <span class="ank ank-hy">HIGH-YIELD</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">A diverticulite é macro ou microperfuração de divertículo obstruído por fecalito: dor em quadrante inferior esquerdo, febre, leucocitose e alteração do trânsito. <b>TC com contraste IV</b> define estágio. A não complicada, sem sinais sistêmicos, em imunocompetente, vai para casa <b>sem antibiótico</b>; abscesso grande drena; peritonite opera. <b>O que muda conduta:</b> classe tomográfica, idade &gt;70 anos, comorbidade, imunossupressão, impossibilidade de via oral e falha ambulatorial decidem internação.</div></div>
@@ -671,7 +690,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="c4">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.4</span> Obstrutivo</div><h3>Obstrução do intestino delgado: bridas, tentativa de 72 h e contraste hidrossolúvel <span class="ank ank-dec">DECISION</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">A obstrução mecânica do delgado tem como causa mais comum a <b>brida</b> (cirurgia abdominal prévia, mesmo décadas antes), seguida de hérnia, Crohn, tumor e íleo biliar. Todo paciente tem <b>hipovolemia por terceiro espaço</b>. Dieta zero, SNG aberta, cristaloide com potássio e <b>TC com contraste IV e contraste oral hidrossolúvel</b> separam simples de complicada. <b>O que muda conduta:</b> peritonite, isquemia ou alça fechada operam; o resto tenta 24–72 h.</div></div>
@@ -698,7 +717,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="c5">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.5</span> Obstrutivo</div><h3>Obstrução do cólon: volvo de sigmoide, câncer obstrutivo e pseudo-obstrução de Ogilvie <span class="ank ank-dgr">DANGER</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">A decisão comum é <b>mecânica ou funcional?</b> A TC com contraste IV e o toque retal separam. <b>Volvo de sigmoide</b> (grão de café, alça fechada) descomprime por endoscopia e opera no mesmo internamento; com peritonite, Hartmann. <b>Câncer obstrutivo</b> do cólon direito opera com anastomose; esquerdo tem opções (Hartmann, ressecção com anastomose, estoma). <b>Ogilvie</b> trata a causa, corrige K⁺ e Mg²⁺ e, com ceco &gt;12 cm ou 48–72 h sem resposta, usa neostigmina. <b>O que muda conduta:</b> peritonite ou isquemia, qualquer volvo recorrente e ceco que se aproxima de 12 cm.</div></div>
@@ -727,7 +746,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="c6">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.6</span> Vascular</div><h3>Isquemia mesentérica aguda: embólica, trombótica, não oclusiva e venosa <span class="ank ank-dgr">DANGER</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Interrupção súbita do fluxo para o intestino, em geral pela artéria mesentérica superior. A <b>embolia</b> (cerca de metade; fibrilação atrial) é hiperaguda; a <b>trombose arterial</b> ocorre sobre placa; a <b>não oclusiva</b>, em choque e vasopressor; a <b>venosa</b>, em hipercoagulável, é mais arrastada. <b>HNF imediata, angio-TC, antibiótico, revascularização e avaliação da viabilidade.</b> <b>O que muda conduta:</b> peritonite vai direto à laparotomia; sem peritonite, revascularização endovascular ou aberta conforme a oclusão e a viabilidade; venosa e não oclusiva têm tratamento próprio.</div></div>
@@ -754,7 +773,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="c7">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.7</span> Hemorrágico</div><h3>Hemorragia digestiva baixa: divertículo, angiodisplasia e a escolha do exame <span class="ank ank-dec">DECISION</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Sangramento de fonte distal ao ângulo de Treitz, 10–15% das hemorragias digestivas agudas, autolimitado em cerca de 80% dos casos. Acima dos 50 anos, o <b>divertículo</b> lidera (cólon direito em 50–70% dos sangramentos diverticulares), seguido de <b>angiodisplasia</b>, câncer, colites e hemorroidas. <b>Ressuscitar, excluir fonte alta e anorretal, colonoscopia após preparo.</b> <b>O que muda conduta:</b> instabilidade, anticoagulação, comorbidade e Oakland &gt;8 indicam internação; sangramento contínuo sem colonoscopia viável leva à angio-TC e à angioembolização.</div></div>
@@ -781,7 +800,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="c8">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.8</span> Neoplasia</div><h3>Câncer colorretal: rastreio, estadiamento e tratamento em linhas gerais <span class="ank ank-hy">HIGH-YIELD</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Terceiro tumor mais comum no mundo e <b>segundo mais incidente no Brasil</b> (53.810 casos novos por ano em 2026–2028; 23.953 óbitos em 2023; INCA 2026). Adenocarcinoma em 95%; sequência adenoma–carcinoma de 10 anos. <b>Colonoscopia completa com biópsia, TC de tórax, abdome e pelve, CEA e, no reto, RM de pelve.</b> Cirurgia com ≥12 linfonodos; adjuvância no estágio III e no II de alto risco. <b>O que muda conduta:</b> localização (cólon × reto), estágio, dMMR/MSI, RAS e BRAF, obstrução ou perfuração.</div></div>
@@ -826,7 +845,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="c9">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.9</span> Proctologia</div><h3>Doença hemorroidária: graus de Goligher, banda elástica e a trombose externa <span class="ank ank-hy">HIGH-YIELD</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Coxins vasculares do canal anal que prolapsam e sangram. Interna (acima da linha pectínea, indolor) e externa (abaixo, inervada, dolorosa quando trombosa). <b>Graus I–IV de Goligher</b> definem a escada: fibras e flavonoide, ligadura elástica em consultório, hemorroidectomia. <b>O que muda conduta:</b> sangramento ou anemia em ≥50 anos, ferropenia, mudança de hábito ou história familiar pedem colonoscopia antes de atribuir à hemorroida; trombose externa com menos de 72 h pode ser excisada.</div></div>
@@ -856,7 +875,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="c10">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.10</span> Proctologia</div><h3>Fissura anal: dor em lâmina, hipertonia e a escada de nitrato, diltiazem, toxina e cirurgia <span class="ank ank-dec">DECISION</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Úlcera longitudinal do canal anal, 90% na linha média posterior e 10% na anterior. <b>Dor intensa ao evacuar e por horas depois</b>, com sangue vivo no papel, e hipertonia do esfíncter interno. Aguda (até 6 semanas): fibras, líquidos, banho de assento. Crônica (&gt;6 semanas, com plicoma sentinela, papila hipertrófica e fibras do esfíncter visíveis): <b>diltiazem ou nitrato tópico</b>, toxina botulínica, esfincterotomia lateral interna. <b>O que muda conduta:</b> fissura fora da linha média ou multiple sugere Crohn, tuberculose, sífilis, HIV ou câncer; idoso e multípara têm risco de incontinência com esfincterotomia.</div></div>
@@ -876,7 +895,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="c11">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.11</span> Proctologia</div><h3>Abscesso e fístula anal: drenar, classificar pela relação com o esfíncter e preservar a continência <span class="ank ank-dgr">DANGER</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Quase toda supuração anorretal nasce na infecção das glândulas das criptas anais (plano interesfinctérico). O <b>abscesso é a fase aguda e a fístula a crônica</b>. Abscesso: <b>drenagem cirúrgica</b>; antibiótico isolado não resolve. Fístula: exame sob anestesia com a regra de Goodsall e, nas complexas, RM da pelve; fistulotomia nas baixas, seton nas altas e na Crohn. <b>O que muda conduta:</b> diabetes, imunossupressão, sepse e dor desproporcional (Fournier) exigem desbridamento e antibiótico; fístula complexa ou recorrente pergunta por Crohn.</div></div>
@@ -905,9 +924,9 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </section>
 
 <section id="secundarias">
-<div class="section"><div class="section-eyebrow"><span>D</span> Entidades Secundárias</div><div class="section-title">Seis grupos que completam o diferencial e fecham as remissões do catálogo</div><div class="section-sub">Entidades raras ou correlatas agrupadas pela conduta que compartilham. A colite isquêmica e a vigilância de displasia na colite ficam no GH05; o íleo biliar e a síndrome de Mirizzi, no GH08; a hérnia encarcerada, no CT05; a invaginação da criança, no PD06.</div></div>
+<div class="section"><div class="section-eyebrow"><span>D</span> Entidades Secundárias</div><div class="section-title">Seis grupos que completam o diferencial e fecham as remissões do catálogo</div><div class="section-sub">Entidades raras ou correlatas agrupadas pela conduta que compartilham. A colite isquêmica e a vigilância de displasia na colite ficam no GH05; o íleo biliar e a síndrome de Mirizzi, no GH08; a hérnia encarcerada, no CT05; a invaginação da criança, no PD06.</div></div><!--hp-f2--><nav class="sec-idx" aria-label="Neste capítulo"><a href="#d1"><b>D.1</b>Isquemia mesentérica crônica…</a><a href="#d2"><b>D.2</b>Íleo paralítico, intussuscepç…</a><a href="#d3"><b>D.3</b>Pólipos colorretais, síndrome…</a><a href="#d4"><b>D.4</b>Neoplasias do apêndice, mucoc…</a><a href="#d5"><b>D.5</b>Carcinoma do canal anal e o d…</a><a href="#d6"><b>D.6</b>Doença pilonidal sacrococcíge…</a></nav><!--/hp-f2-->
 
-<div class="card diag">
+<div class="card diag" id="d1">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">D.1</span> Vascular</div><h3>Isquemia mesentérica crônica: angina intestinal, ou a dor que ensina o paciente a não comer <span class="ank ank-dec">DECISION</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Aterosclerose de pelo menos duas das três artérias viscerais (celíaca, mesentérica superior e inferior) em idoso com doença aterosclerótica difusa: <b>dor 15–30 min depois de comer, medo de se alimentar e perda de peso</b>. A angio-TC define; a revascularização é o tratamento. <b>O que muda conduta:</b> perda de peso com dor pós-prandial e estenose visceral sintomática vai à revascularização (endovascular no idoso comórbido); estenose assintomática não se trata (CV08).</div></div>
@@ -924,7 +943,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div></div>
 </div>
 
-<div class="card diag">
+<div class="card diag" id="d2">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">D.2</span> Obstrutivo</div><h3>Íleo paralítico, intussuscepção do adulto, bezoar e impactação fecal: outras obstruções que não são brida nem volvo</h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Todas se resolvem na pergunta: <b>há lesão mecânica que operar, ou fator reversível que tratar?</b> Íleo: pós-operatório, opioide, sepse, hipocalemia. Intussuscepção do adulto é quase sempre secundária (tumor ou pólipo como cabeça) e opera. Bezoar remove-se por endoscopia. Fecaloma desimpacta-se. <b>O que muda conduta:</b> a invaginação do adulto não se reduz por pressão; a da criança é do PD06.</div></div>
@@ -939,7 +958,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div></div>
 </div>
 
-<div class="card diag">
+<div class="card diag" id="d3">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">D.3</span> Neoplasia</div><h3>Pólipos colorretais, síndromes hereditárias e vigilância <span class="ank ank-hy">HIGH-YIELD</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">O pólipo é o alvo do rastreio: o adenoma &gt;1 cm, o viloso e o de displasia de alto grau pesam. <b>Polipectomia completa na colonoscopia e intervalo de vigilância pelo achado.</b> Famílias com Lynch, PAF, MUTYH, Peutz-Jeghers e polipose juvenil têm rastreio próprio e precoce. <b>O que muda conduta:</b> histologia avançada, número de adenomas, lesão serrilhada &gt;10 mm, história familiar de primeiro grau e critérios de Amsterdam alteram o intervalo.</div></div>
@@ -954,7 +973,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div></div>
 </div>
 
-<div class="card diag">
+<div class="card diag" id="d4">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">D.4</span> Neoplasia</div><h3>Neoplasias do apêndice, mucocele e pseudomixoma peritoneal</h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Achado de histopatologia depois de apendicectomia (por isso a peça vai sempre ao patologista; WSES 2020). <b>Tumor neuroendócrino</b> é o mais comum (65% na apostila) e tem comportamento em geral benigno; <b>adenocarcinoma mucinoso</b> e <b>mucocele</b> exigem atenção à ruptura, que causa pseudomixoma. <b>O que muda conduta:</b> o tamanho e a base do tumor, a invasão do mesoapêndice e a mucina fora do apêndice decidem entre apendicectomia, hemicolectomia direita e citorredução com HIPEC.</div></div>
@@ -968,7 +987,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div></div>
 </div>
 
-<div class="card diag">
+<div class="card diag" id="d5">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">D.5</span> Neoplasia</div><h3>Carcinoma do canal anal e o diferencial do ânus que sangra ou dói</h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Em geral carcinoma espinocelular ligado ao HPV, mais em quem tem HIV, imunossupressão, sexo anal receptivo e tabagismo. Sangramento, dor, prurido, massa palpável, tenesmo. <b>Biópsia de qualquer lesão persistente ou "hemorroida" que não responde.</b> Tratamento primário é a quimiorradioterapia, não a cirurgia. <b>O que muda conduta:</b> a cirurgia (amputação abdominoperineal) fica para resgate ou persistência; rastreio anal em HIV e em imunossuprimidos é decisão de serviço.</div></div>
@@ -982,7 +1001,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div></div>
 </div>
 
-<div class="card diag">
+<div class="card diag" id="d6">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">D.6</span> Proctologia</div><h3>Doença pilonidal sacrococcígea: abscesso, sinus crônico e a escolha da técnica</h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Doença do adulto jovem (sobretudo homens, hirsutos, obesos e quem passa muito tempo sentado), com poros e sinus na fenda interglútea que se infectam por pelos encravados. <b>Abscesso agudo: incisão e drenagem lateral à linha média.</b> Doença crônica: excisão com fechamento fora da linha média (Limberg, Karydakis) ou técnicas mínimas (<i>pit-picking</i>, ablação por laser). <b>O que muda conduta:</b> abscesso drena sem esperar; a cirurgia definitiva fora do surto agudo; fonte: ASCRS 2019 e revisões (não relidas, conferir).</div></div>
@@ -1000,7 +1019,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <section id="algoritmo">
 <div class="section"><div class="section-eyebrow"><span>E</span> Algoritmo</div><div class="section-title">Do abdome ao desfecho: três árvores e a sequência mental que as une</div><div class="section-sub">A primeira árvore separa quem vai para a sala cirúrgica de quem tem tempo para imagem; a segunda resolve a obstrução (mecânica ou funcional, delgado ou cólon); a terceira conduz a hemorragia baixa. Cada ponta termina em exame ou conduta com número.</div></div>
 
-<div class="card prim">
+<div class="card prim" id="e1">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">E.1</span> Algoritmo</div><h3>Dor abdominal aguda: sala cirúrgica, imagem ou observação? <span class="ank ank-dec">DECISION</span></h3></div>
 <div class="card-body">
 <div class="algo"><div class="tree">
@@ -1025,7 +1044,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="e2">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">E.2</span> Algoritmo</div><h3>Obstrução intestinal: mecânica ou funcional? Simples ou complicada? <span class="ank ank-hy">HIGH-YIELD</span></h3></div>
 <div class="card-body">
 <div class="algo"><div class="tree">
@@ -1046,7 +1065,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="e3">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">E.3</span> Algoritmo</div><h3>Hemorragia digestiva baixa: ressuscitar, excluir a fonte alta, localizar e tratar <span class="ank ank-dec">DECISION</span></h3></div>
 <div class="card-body">
 <div class="algo"><div class="tree">
@@ -1067,7 +1086,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="e4">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">E.4</span> Raciocínio</div><h3>Raciocínio em 6 passos — a sequência mental diante de um abdome agudo intestinal <span class="ank ank-dec">DECISION</span></h3></div>
 <div class="card-body">
 <div class="box decision"><span class="box-label">DECISION</span><div class="box-title">Seis perguntas, nesta ordem</div><div class="box-body">
@@ -1082,13 +1101,13 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </section>
 
 <section id="tratamento">
-<div class="section"><div class="section-eyebrow"><span>F</span> Tratamento Integrado</div><div class="section-title">F1 · Estratégia por entidade · F2 · Doses · F3 · Casos · F4 · SUS e CMED</div><div class="section-sub">Doses lidas nas diretrizes WSES 2017–2022 e no ACG 2016 levam a sigla; as de ESCP, ASCRS, USPSTF, ACG 2021, CODA e bulas não relidas hoje levam "conferir". Antibióticos, heparina e a neostigmina seguem a mesma redação no pocket, em A, C, E e F; infusões e fármacos titulados levam teto e critério de parada.</div></div>
+<div class="section"><div class="section-eyebrow"><span>F</span> Tratamento Integrado</div><div class="section-title">F1 · Estratégia por entidade · F2 · Doses · F3 · Casos · F4 · SUS e CMED</div><div class="section-sub">Doses lidas nas diretrizes WSES 2017–2022 e no ACG 2016 levam a sigla; as de ESCP, ASCRS, USPSTF, ACG 2021, CODA e bulas não relidas hoje levam "conferir". Antibióticos, heparina e a neostigmina seguem a mesma redação no pocket, em A, C, E e F; infusões e fármacos titulados levam teto e critério de parada.</div></div><!--hp-f2--><nav class="sec-idx" aria-label="Neste capítulo"><a href="#f1"><b>F.1</b>Escada terapêutica por entida…</a><a href="#f2"><b>F.2</b>Tabela de doses — abdome agud…</a><a href="#f3"><b>F.3</b>Caso → conduta certa → erro t…</a><a href="#f4"><b>F.4</b>O que o SUS e a CMED trazem e…</a></nav><!--/hp-f2-->
 
-<div class="card tx">
+<div class="card tx" id="f1">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">F.1</span> Estratégia</div><h3>Escada terapêutica por entidade <span class="ank ank-dec">DECISION</span></h3></div>
 <div class="card-body">
 
-<div class="sub-title">F1.1 · Abdome agudo: o que se faz antes do diagnóstico (C.1)</div>
+<div class="sub-title" id="f1-1">F1.1 · Abdome agudo: o que se faz antes do diagnóstico (C.1)</div>
 <ul class="bullets">
 <li><b>Primeira hora:</b> monitor, dois acessos calibrosos, cristaloide em alíquotas de 250–500 mL com reavaliação de perfusão, lactato, gasometria, hemoculturas se febre ou choque, jejum, SNG se vômito ou distensão. Sonda vesical na instabilidade para medir diurese.</li>
 <li><b>Analgesia:</b> dipirona 1 g IV de 6/6 h, máximo de 4 g/dia, ou até 5 g/dia pela bula de injetável; cetorolaco 30 mg IV; cetorolaco: máximo de 120 mg/dia; 15 mg IV por dose e máx. 60 mg/dia se ≥65 anos, &lt;50 kg ou disfunção renal leve; máximo de 5 dias; contraindicado na insuficiência renal, na hipovolemia e com sangramento; conferir bula e função renal; se insuficiente, morfina 2–4 mg IV a cada 5–15 min (0,05–0,1 mg/kg/dose), titulada até o alívio, em geral até 10–15 mg na 1ª hora; parar se sedação, FR &lt;12 ou SpO₂ caindo; conferir bula; teto de dose em 24 h e metabólitos se acumulam em IRC (conferir); antiemético ondansetrona 4 mg IV 8/8 h (alerta de QT prolongado; conferir bula). <b>Evitar procinéticos (metoclopramida) em suspeita de obstrução mecânica.</b></li>
@@ -1096,7 +1115,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <li><b>Controle do foco:</b> a duração do antibiótico conta a partir dele: 4 dias na diverticulite (STOP-IT; WSES 2020) e 3–5 dias na apendicite complicada (WSES 2020). Persistência de sepse após 5–7 dias de tratamento adequado pede nova imagem e nova abordagem.</li>
 </ul>
 
-<div class="sub-title">F1.2 · Apendicite aguda: cirurgia primeiro, antibiótico selecionado (C.2)</div>
+<div class="sub-title" id="f1-2">F1.2 · Apendicite aguda: cirurgia primeiro, antibiótico selecionado (C.2)</div>
 <ul class="bullets">
 <li><b>Não complicada:</b> apendicectomia laparoscópica em até 24 h da admissão (WSES 1A, 1B); profilaxia cefazolina 2 g + metronidazol 500 mg IV em dose única até 60 min antes da incisão, sem antibiótico depois. Alta no mesmo dia é possível com via ambulatorial estruturada (2B).</li>
 <li><b>Antibiótico primeiro</b> (sem apendicolito, sem complicação, paciente informado do risco de falha e recorrência de até 39% em 5 anos): IV nas primeiras 24–48 h e depois oral até cerca de 7–10 dias totais; moxifloxacino 400 mg VO 24/24 h (dose sem fonte lida, conferir) ou amoxicilina-clavulanato 875/125 mg VO 12/12 h (sem fonte lida, conferir bula e protocolo). Falha em 24–48 h: cirurgia.</li>
@@ -1106,7 +1125,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 
 <div class="box danger"><span class="box-label">DANGER</span><div class="box-title">Alta com "gastroenterite" na apendicite do adulto jovem</div><div class="box-body">O sinal de que a dor mudou de lugar e de caráter vale mais que qualquer exame. A alta de apendicite exige score baixo, instruções escritas de retorno e reavaliação em 12–24 h se a dúvida persiste. Em dúvida persistente, TC ou laparoscopia diagnóstica (WSES 2020, 1B).</div></div>
 
-<div class="sub-title">F1.3 · Diverticulite: classificar, poupar antibiótico, drenar e decidir a cirurgia (C.3)</div>
+<div class="sub-title" id="f1-3">F1.3 · Diverticulite: classificar, poupar antibiótico, drenar e decidir a cirurgia (C.3)</div>
 <ul class="bullets">
 <li><b>Não complicada, imunocompetente, sem sinais sistêmicos nem comorbidades:</b> ambulatorial, dieta líquida, dipirona 1 g VO 6/6 h, sem antibiótico (1A), reavaliação em até 7 dias; com sinais sistêmicos, idoso ou imunossuprimido, amoxicilina-clavulanato 875/125 mg VO 12/12 h por 5–7 dias (sem fonte lida; conferir; WSES 2020 recomenda via oral sempre que possível, 1B).</li>
 <li><b>Internação:</b> ceftriaxona 2 g IV 24/24 h + metronidazol 500 mg IV 8/8 h (padrão brasileiro; WSES 2020: 6/6 h), passando à via oral quando melhora (3–5 dias); a apostila discute aderir à mesalazina e probióticos, sem consenso. Hinchey Ia: antibiótico (2C).</li>
@@ -1115,7 +1134,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <li><b>Cirurgia eletiva:</b> individualizar; fístula colovesical, estenose, imunossuprimido e abscesso tratado clinicamente costumam operar (WSES 2D). Prevenção: fibras 25–30 g/dia, atividade física, cessação do tabaco, evitar AINE e opioide.</li>
 </ul>
 
-<div class="sub-title">F1.4 · Obstrução do delgado: tentativa de 72 h e a hora de parar (C.4)</div>
+<div class="sub-title" id="f1-4">F1.4 · Obstrução do delgado: tentativa de 72 h e a hora de parar (C.4)</div>
 <ul class="bullets">
 <li><b>Todos:</b> jejum, SNG aberta, SF 0,9% com KCl conforme potássio e gasometria (alcalose hipoclorêmica hipocalêmica), diurese, correção de Mg²⁺.</li>
 <li><b>Tentativa não operatória</b> sem peritonite, estrangulamento ou isquemia, até 72 h; <b>contraste hidrossolúvel VO ou SNG</b> (volume não fixado em diretriz; ajustar ao produto) com radiografia em 24 h. Passagem ao cólon: realimentar; ausência: cirurgia.</li>
@@ -1123,7 +1142,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <li><b>Causas não adesivas:</b> hérnia estrangulada (CT05), íleo biliar (GH08), Crohn (GH05), tumor (C.8): operar a causa.</li>
 </ul>
 
-<div class="sub-title">F1.5 · Obstrução do cólon e Ogilvie: descomprimir sem perfurar (C.5)</div>
+<div class="sub-title" id="f1-5">F1.5 · Obstrução do cólon e Ogilvie: descomprimir sem perfurar (C.5)</div>
 <ul class="bullets">
 <li><b>Volvo de sigmoide:</b> retossigmoidoscopia descompressiva com tubo, depois sigmoidectomia eletiva no mesmo internamento; peritonite ou necrose: sigmoidectomia de urgência, Hartmann; recorrência após distorção é muito alta, e o volvo de ceco é cirúrgico.</li>
 <li><b>Câncer obstrutivo:</b> direito, colectomia com anastomose; esquerdo, Hartmann, ressecção com anastomose e estoma de proteção, ou stent (ponte só em alto risco; paliação em doença irressecável: stent preferido à colostomia, WSES 2017).</li>
@@ -1132,7 +1151,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 
 <div class="box decision"><span class="box-label">DECISION</span><div class="box-title">Quando a neostigmina é o fármaco errado</div><div class="box-body">Antes da primeira ampola, três perguntas: a TC afastou obstrução mecânica e perfuração? Há bradicardia, hipotensão, asma com sibilância, infarto recente ou arritmia? O paciente está em unidade com monitor e atropina? Qualquer não: o caminho é descompressão colonoscópica, não colinérgico.</div></div>
 
-<div class="sub-title">F1.6 · Isquemia mesentérica aguda e crônica (C.6, D.1)</div>
+<div class="sub-title" id="f1-6">F1.6 · Isquemia mesentérica aguda e crônica (C.6, D.1)</div>
 <ul class="bullets">
 <li><b>Todos:</b> ressuscitação, antibiótico de amplo espectro por ≥4 dias, <b>HNF 80 UI/kg (máx. 10.000 UI) em bólus + 18 UI/kg/h</b>, TTPa 1,5–2,5× ou anti-Xa 0,3–0,7 UI/mL; critério de parada e reversão: sangramento maior, plaquetas em queda &gt;50% (HIT, HO03), protamina 1 mg/100 UI da dose das últimas 2–3 h (máx. 50 mg).</li>
 <li><b>Embólica ou trombótica:</b> embolectomia, bypass ou endovascular; endovascular tem menor mortalidade em séries observacionais; <i>second look</i> programado se a viabilidade é duvidosa; laparostomia no instável. Terapia trombolítica só sem peritonite e com cirurgia disponível.</li>
@@ -1140,7 +1159,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <li><b>Crônica:</b> revascularização endovascular no comórbido, bypass no jovem; estatina e antiplaquetário; nutrição de apoio.</li>
 </ul>
 
-<div class="sub-title">F1.7 · Hemorragia digestiva baixa (C.7)</div>
+<div class="sub-title" id="f1-7">F1.7 · Hemorragia digestiva baixa (C.7)</div>
 <ul class="bullets">
 <li><b>Ressuscitação:</b> cristaloide até normalizar PA e FC; <b>transfusão de hemácias com Hb &lt;7 g/dL</b> (alvo 7–9; 9 se sangramento maciço, doença isquêmica ou demora do tratamento: ACG; ESGE ≤8 e alvo ≥10 em cardiopata); plaquetas &gt;50.000/mm³ e plasma conforme coagulopatia; INR &gt;2,5: reverter (HO03).</li>
 <li><b>Preparo:</b> PEG 4–6 L VO ou por SNG em 3–4 h até efluente claro; colonoscopia em até 24 h se alto risco e sangramento ativo, na primeira vaga nos demais; Oakland ≤8 e estável: alta com investigação ambulatorial (ESGE 2021).</li>
@@ -1148,7 +1167,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <li><b>Antitrombóticos:</b> aspirina de prevenção secundária continua; AINE evita; segundo antiagregante retoma em até 7 dias; anticoagulante: decisão multidisciplinar.</li>
 </ul>
 
-<div class="sub-title">F1.8 · Câncer colorretal: da colonoscopia à adjuvância (C.8, D.3)</div>
+<div class="sub-title" id="f1-8">F1.8 · Câncer colorretal: da colonoscopia à adjuvância (C.8, D.3)</div>
 <ul class="bullets">
 <li><b>Rastreio:</b> 45–75 anos, colonoscopia a cada 10 anos ou FIT anual; positivo = colonoscopia (ACG, USPSTF 2021, conferir); Brasil: oportunístico, sem programa nacional (INCA 2026).</li>
 <li><b>Estadiamento:</b> colonoscopia completa, TC de tórax, abdome e pelve, CEA, RM de pelve no reto; MMR/MSI em todos, RAS e BRAF no avançado.</li>
@@ -1156,20 +1175,20 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <li><b>Metastático:</b> ressecção de metástases quando possível; terapia por RAS, BRAF, lado e MSI; imunoterapia em dMMR/MSI-H. Seguimento: CEA e imagem periódicos e colonoscopia em 1 ano.</li>
 </ul>
 
-<div class="sub-title">F1.9 · Hemorroidas (C.9)</div>
+<div class="sub-title" id="f1-9">F1.9 · Hemorroidas (C.9)</div>
 <ul class="bullets">
 <li><b>I–II:</b> fibras 25–30 g/dia, líquido 2–2,5 L, banho de assento, flavonoide; ligadura elástica, escleroterapia ou infravermelho se persiste.</li>
 <li><b>III–IV e complicadas:</b> hemorroidectomia; analgesia multimodal (dipirona 1 g VO 6/6 h, AINE, diltiazem tópico), laxativo para evitar esforço; vigiar retenção urinária (~30%) e hemorragia tardia (7º–16º dia).</li>
 <li><b>Trombose externa:</b> &lt;72 h, excisão local; &gt;72 h, conservador, com analgesia e nifedipino 0,3% tópico em manipulado (conferir).</li>
 </ul>
 
-<div class="sub-title">F1.10 · Fissura anal (C.10)</div>
+<div class="sub-title" id="f1-10">F1.10 · Fissura anal (C.10)</div>
 <ul class="bullets">
 <li><b>Aguda:</b> fibras, água, banho de assento e analgésico comum.</li>
 <li><b>Crônica:</b> <b>diltiazem 2% tópico 2–3×/dia por 6–8 semanas</b> (dose sem fonte lida; manipulado; conferir ASCRS) ou <b>nitroglicerina 0,2–0,4% em pomada 2×/dia</b> (dose sem fonte lida; cefaleia; contraindicada com inibidor de PDE-5 e com hipotensão, conhecimento prévio, confirmar na bula; conferir registro); toxina botulínica intraesfinctérica em falha ou risco de incontinência (dose por produto, conferir bula); esfincterotomia lateral interna na falha clínica, evitando idoso e multípara.</li>
 </ul>
 
-<div class="sub-title">F1.11 · Abscesso, fístula anal e doença pilonidal (C.11, D.6)</div>
+<div class="sub-title" id="f1-11">F1.11 · Abscesso, fístula anal e doença pilonidal (C.11, D.6)</div>
 <ul class="bullets">
 <li><b>Abscesso anorretal:</b> drenagem cirúrgica; antibiótico (amoxicilina-clavulanato 875/125 mg VO 12/12 h por 5–7 dias) só em celulite, diabetes, imunossupressão ou valva protética (ASCRS, conferir). Fournier: desbridamento e cobertura ampla: piperacilina-tazobactam 4,5 g IV 6/6 h ou carbapenêmico, mais vancomicina e clindamicina 900 mg IV 8/8 h, como no II03.</li>
 <li><b>Fístula:</b> fistulotomia nas baixas; seton nas altas e na Crohn; LIFT, retalho de avanço, plug e cola nas complexas; Crohn: GH05.</li>
@@ -1181,7 +1200,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card tx">
+<div class="card tx" id="f2">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">F.2</span> Doses Operacionais</div><h3>Tabela de doses — abdome agudo, hemorragia baixa, câncer e proctologia</h3></div>
 <div class="card-body">
 <div class="stbl stbl-3">
@@ -1211,7 +1230,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card tx">
+<div class="card tx" id="f3">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">F.3</span> Cenários</div><h3>Caso → conduta certa → erro típico</h3></div>
 <div class="card-body">
 <div class="stbl stbl-3">
@@ -1228,7 +1247,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card tx">
+<div class="card tx" id="f4">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">F.4</span> Acesso</div><h3>O que o SUS e a CMED trazem e o que fica a conferir <span class="ank ank-dec">DECISION</span></h3></div>
 <div class="card-body">
 <div class="box decision"><span class="box-label">DECISION</span><div class="box-title">Disponibilidade no Brasil (CMED PMVG de 09/10/2026)</div><div class="box-body"><b>Constam na lista:</b> ceftriaxona, metronidazol, amoxicilina-clavulanato, ciprofloxacino, cefazolina, piperacilina-tazobactam, ertapenem, meropenem, heparina sódica, enoxaparina, neostigmina (metilsulfato), papaverina injetável, diosmina e hesperidina, toxina botulínica tipo A, diltiazem e nifedipino orais, oxaliplatina, capecitabina, fluorouracila e folinato. <b>Não encontrados:</b> diatrizoato (Gastrografin), nitroglicerina em pomada e gel de diltiazem; o gel de diltiazem ou o nifedipino tópico saem de farmácia de manipulação. Ausência na lista não prova ausência de registro: conferir registro. A disponibilidade no SUS (RENAME, PCDT) não foi conferida nesta sessão.</div></div>
@@ -1240,7 +1259,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <section id="pitfalls">
 <div class="section"><div class="section-eyebrow"><span>G</span> Pitfalls · Mitos · Controvérsias</div><div class="section-title">Erros operacionais, mitos vivos e debates sem consenso</div><div class="section-sub">Dez erros que se repetem no plantão e na prova, três mitos que a evidência desmontou e três controvérsias em que o padrão ainda muda.</div></div>
 
-<div class="card pearl">
+<div class="card pearl" id="g1">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">G.1</span> Pegadinhas</div><h3>10 erros operacionais em abdome agudo intestinal, cólon e reto</h3></div>
 <div class="card-body">
 <div class="stbl stbl-2">
@@ -1259,7 +1278,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card pearl">
+<div class="card pearl" id="g2">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">G.2</span> Mitos</div><h3>Três mitos vivos</h3></div>
 <div class="card-body">
 <div class="box myth"><span class="box-label">MYTH</span><div class="box-title">"Analgesia atrapalha o diagnóstico do abdome agudo"</div><div class="box-body">O exame seriado e a imagem fazem o diagnóstico, não a dor sem tratamento. Dipirona e opioide titulado aliviam sem apagar a defesa abdominal de uma peritonite verdadeira, e a dor intensa deixa o exame pior (defesa voluntária, agitação). A dose mínima eficaz e a reavaliação protegem o paciente; revisões sistemáticas devem ser conferidas ao protocolo local.</div></div>
@@ -1268,7 +1287,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card pearl">
+<div class="card pearl" id="g3">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">G.3</span> Controvérsias</div><h3>Três debates sem consenso</h3></div>
 <div class="card-body">
 <div class="box controversy"><span class="box-label">CONTROVERSY</span><div class="box-title">Antibiótico primeiro ou apendicectomia na apendicite não complicada do adulto</div><div class="box-body">O WSES 2020 recomenda discutir a estratégia clínica como alternativa segura (1A) em casos selecionados sem apendicolito, mas a recorrência chega a 39% em 5 anos, o apendicolito e a idade ≥40 (neoplasia) a tornam menos segura, e a apostila de 2025 mantém a cirurgia como padrão. A decisão compartilhada, com TC e informação sobre falha, é o ponto de equilíbrio; o CODA sustenta a não inferioridade em qualidade de vida aos 30 dias, com seleção cuidadosa (conferir).</div></div>
@@ -1281,7 +1300,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <section id="pearls">
 <div class="section"><div class="section-eyebrow"><span>H</span> Pearls · Evolving</div><div class="section-title">H1 · Nuances de especialista · H2 · O que mudou nos últimos anos</div><div class="section-sub">Oito pérolas para quem já sabe a doença e erra o detalhe; cinco mudanças reais de prática; o resto do tema é estável, e nenhuma novidade foi inventada para completar o número.</div></div>
 
-<div class="card pearl">
+<div class="card pearl" id="h1">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">H.1</span> Pearls</div><h3>8 nuances que distinguem o especialista</h3></div>
 <div class="card-body">
 <div class="box pearl"><span class="box-label">PEARL</span><div class="box-title">O dedo no reto resolve metade do problema: ampola vazia é mecânica, ampola com fezes é funcional</div><div class="box-body">O reflexo neuroentérico da obstrução mecânica aumenta a peristalse em todo o tubo e esvazia o segmento distal; na paralisia funcional, o conteúdo para onde estiver, inclusive no reto. O fecaloma, a massa retal e o sangue ao toque mudam o diagnóstico antes da imagem. Quem pula o toque retal pede TC para o que o dedo mostraria.</div></div>
@@ -1295,7 +1314,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card pearl">
+<div class="card pearl" id="h2">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">H.2</span> Evolving</div><h3>O que mudou: cinco itens reais; o resto do tema é estável</h3></div>
 <div class="card-body">
 <div class="box evolving"><span class="box-label">EVOLVING</span><div class="box-title">Diverticulite não complicada sem antibiótico</div><div class="box-body">Os ensaios AVOD (2012) e DIABOLO (2017), conhecimento prévio, deslocaram a prática; a WSES 2020 transformou em recomendação forte (1A) que imunocompetentes sem sinais sistêmicos não recebam antibiótico, e a apostila de 2025 ainda trata o antibiótico como escolha médica. A direção está firme; a duração do antibiótico, quando indicado, ainda oscila (4 dias depois do controle do foco, STOP-IT).</div></div>
@@ -1349,5 +1368,36 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <a class="to-top" href="#" aria-label="Voltar ao topo">↑</a>
 <div class="watermark">@dr.lorencato · GH06 Abdome Agudo Intestinal, Cólon e Reto v5.2</div>
 
-</body>
+<!--hp-f2--><script>(function(){var d=document,M=d.querySelector('main');if(!M)return;
+var SELF='GH06',HP=' CT01 CT02 CT03 CT04 CT05 CT06 CT08 CT10 CV01 CV03 CV04 CV05 CV06 CV07 CV08 EN01 EN02 EN03 EN04 EN06 EN07 GH01 GH02 GH03 GH05 GH06 GH07 GH08 GH09 GH10 GO01 GO02 GO03 GO04 GO09 GO10 GO11 GO12 GO13 GO14 HO01 HO02 HO03 HO04 HO05 HO06 II01 II02 II03 II04 II07 II08 NE01 NE02 NE03 NE04 NE05 NE06 NE07 NE08 NU01 NU02 NU03 NU04 NU05 OE01 OE02 PC01 PC02 PC03 PC04 PC05 PC06 PD01 PD02 PD03 PD04 PD05 PD06 PD07 PD08 PD09 PD10 RD01 RD02 RD03 RD04 RD05 RD07 RP01 RP02 RP03 RP04 ';
+var SK='A,H1,H2,H3,SCRIPT,STYLE,NAV,.card-num,.card-eyebrow,.sub-title,.disease-tag,.toc';
+var R=/\b(?:([A-H])(\d)?\.(\d{1,2}[a-c]?)|(CV|RP|GH|NE|EN|NU|HO|II|RD|GO|PD|PC|CT|OE)(\d\d))\b/g;
+function skip(n){for(var e=n.parentNode;e&&e!==M;e=e.parentNode)if(e.matches&&e.matches(SK))return 1;return 0}
+var w=d.createTreeWalker(M,4),t,L=[];while(t=w.nextNode())if(R.test(t.data)&&!skip(t))L.push(t);
+L.forEach(function(t){var s=t.data,f=d.createDocumentFragment(),i=0,m;R.lastIndex=0;
+while(m=R.exec(s)){var h=null;
+if(m[1]){var id=m[1].toLowerCase()+(m[2]?m[2]+'-':'')+m[3];if(d.getElementById(id))h='#'+id}
+else{var x=m[4]+m[5];if(x!==SELF&&HP.indexOf(' '+x+' ')>=0)h='../'+x+'/'+x+'.html'}
+if(!h)continue;f.appendChild(d.createTextNode(s.slice(i,m.index)));
+var a=d.createElement('a');a.href=h;a.className='xr';a.textContent=m[0];f.appendChild(a);i=R.lastIndex}
+if(i){f.appendChild(d.createTextNode(s.slice(i)));t.parentNode.replaceChild(f,t)}});
+function nz(s){return s.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'')}
+var q=d.querySelector('.hp-q'),n=d.querySelector('.hp-n'),it=M.querySelectorAll('.card,.pocket-card'),T;
+function clr(){M.querySelectorAll('.q-off').forEach(function(e){e.classList.remove('q-off')})}
+function run(){var v=nz(q.value.trim());clr();n.textContent='';if(v.length<2)return;var k=0;
+it.forEach(function(c){if(nz(c.textContent).indexOf(v)<0){c.classList.add('q-off');return}k++;
+var r=c.querySelectorAll('.stbl-row,.disease-row,.score-row'),h=[];r.forEach(function(x){if(nz(x.textContent).indexOf(v)>=0)h.push(x)});
+if(h.length)r.forEach(function(x){if(h.indexOf(x)<0)x.classList.add('q-off')});
+c.querySelectorAll('details').forEach(function(x){if(nz(x.textContent).indexOf(v)>=0)x.open=true})});
+M.querySelectorAll('section').forEach(function(s){if(!s.querySelector('.card:not(.q-off),.pocket-card:not(.q-off)'))s.classList.add('q-off')});
+n.textContent=k?k+' achado'+(k>1?'s':''):'nada'}
+if(q){q.addEventListener('input',function(){clearTimeout(T);T=setTimeout(run,180)});
+q.addEventListener('keydown',function(e){if(e.key==='Escape'){q.value='';run()}})}
+function tg(b,f){b.addEventListener('click',function(){var on=b.getAttribute('aria-pressed')!=='true';b.setAttribute('aria-pressed',on);f(on)})}
+var bd=d.querySelector('.hp-dz'),bo=d.querySelector('.hp-op');
+if(bd)tg(bd,function(on){d.body.classList.toggle('dz',on);if(on)d.getElementById('tratamento').scrollIntoView()});
+if(bo)tg(bo,function(on){M.querySelectorAll('details').forEach(function(x){x.open=on})});
+var P=[];addEventListener('beforeprint',function(){P=[];M.querySelectorAll('details:not([open])').forEach(function(x){P.push(x);x.open=true})});
+addEventListener('afterprint',function(){P.forEach(function(x){x.open=false})});
+})();</script><!--/hp-f2--></body>
 </html>

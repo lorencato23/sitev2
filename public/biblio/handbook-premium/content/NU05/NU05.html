@@ -345,13 +345,32 @@ ul.bullets li b{color:var(--ink);font-weight:600}
   .pocket .pocket-card.tx{--accent:#a8481a}
   .pocket .pocket-card.clin{--accent:#0b5d4e}
 }
+
+/* === v5.2.2 · fase 2 (navegação) === */
+.hp-tools{display:flex;gap:6px;align-items:center;flex:none;order:1;margin-left:auto;padding-left:6px;position:sticky;right:0;background:#f1eee5;box-shadow:-10px 0 10px -4px #f1eee5,16px 0 0 #f1eee5}
+@media(min-width:900px){html{scroll-padding-top:150px}.toc-inner{flex-wrap:wrap;overflow:visible}.card[id],.sub-title[id]{scroll-margin-top:150px}}
+@media(max-width:899px){.hp-b,.hp-n{display:none}.hp-q{width:104px}}
+.hp-q{width:128px;font:500 12px/1 'DM Sans',system-ui,sans-serif;padding:7px 11px;border:1px solid var(--line-strong);border-radius:999px;background:var(--paper);color:var(--ink)}
+.hp-b{font:600 11px/1 'DM Sans',system-ui,sans-serif;letter-spacing:.05em;text-transform:uppercase;padding:7px 10px;border-radius:999px;border:1px solid var(--line-strong);background:var(--paper);color:var(--ink-soft);cursor:pointer;white-space:nowrap}
+.hp-b[aria-pressed=true]{background:var(--ink);color:#fff;border-color:var(--ink)}
+.hp-n{font:600 11px/1 'DM Mono',monospace;color:var(--ink-mute);white-space:nowrap}
+.sec-idx{display:flex;flex-wrap:wrap;gap:6px;margin:12px 0 20px}
+.sec-idx a{font:500 12px/1.25 'DM Sans',system-ui,sans-serif;padding:6px 10px;border-radius:999px;background:var(--paper);border:1px solid var(--line);color:var(--ink-soft);text-decoration:none}
+.sec-idx a:hover{border-color:var(--line-strong);color:var(--ink)}
+.sec-idx b{color:var(--c-prim);margin-right:5px;font-weight:700}
+a.xr{color:inherit;text-decoration:underline dotted;text-underline-offset:2px}
+a.xr:hover{color:var(--c-prim)}
+.card[id],.sub-title[id]{scroll-margin-top:110px}
+.q-off{display:none!important}
+body.dz main section:not(#tratamento){display:none}
+@media print{.hp-tools,.sec-idx,.toc-doses{display:none!important}}
 </style>
 </head>
 <body>
 
 <header class="header"><div class="header-row"><div class="h-mark">U</div><div class="h-titles"><div class="h-title">Litíase e Uropatia Obstrutiva · Pocket Handbook</div><div class="h-sub">Elite edition · Nefrologia e urologia clínica · NU05</div></div><div class="h-author">@dr.lorencato</div><div class="h-edition">v5.2</div></div></header>
 
-<nav class="toc"><div class="toc-inner"><a href="#pocket" class="toc-chip"><span class="toc-chip-num">0</span>Pocket</a><a href="#redflags" class="toc-chip"><span class="toc-chip-num">A</span>Red Flags</a><a href="#approach" class="toc-chip"><span class="toc-chip-num">B</span>Apresentação</a><a href="#primarias" class="toc-chip"><span class="toc-chip-num">C</span>Entidades</a><a href="#secundarias" class="toc-chip"><span class="toc-chip-num">D</span>Secundárias</a><a href="#algoritmo" class="toc-chip"><span class="toc-chip-num">E</span>Algoritmo</a><a href="#tratamento" class="toc-chip"><span class="toc-chip-num">F</span>Tratamento</a><a href="#pitfalls" class="toc-chip"><span class="toc-chip-num">G</span>Pitfalls</a><a href="#pearls" class="toc-chip"><span class="toc-chip-num">H</span>Pearls</a></div></nav>
+<nav class="toc"><div class="toc-inner"><!--hp-f2--><span class="hp-tools"><input class="hp-q" type="search" placeholder="Buscar no HP" aria-label="Buscar no HP"><button class="hp-b hp-dz" type="button" aria-pressed="false">Só doses</button><button class="hp-b hp-op" type="button" aria-pressed="false">Abrir tudo</button><span class="hp-n" aria-live="polite"></span></span><!--/hp-f2--><a href="#pocket" class="toc-chip"><span class="toc-chip-num">0</span>Pocket</a><a href="#redflags" class="toc-chip"><span class="toc-chip-num">A</span>Red Flags</a><a href="#approach" class="toc-chip"><span class="toc-chip-num">B</span>Apresentação</a><a href="#primarias" class="toc-chip"><span class="toc-chip-num">C</span>Entidades</a><a href="#secundarias" class="toc-chip"><span class="toc-chip-num">D</span>Secundárias</a><a href="#algoritmo" class="toc-chip"><span class="toc-chip-num">E</span>Algoritmo</a><a href="#tratamento" class="toc-chip"><span class="toc-chip-num">F</span>Tratamento</a><!--hp-f2--><a href="#f2" class="toc-chip toc-doses"><span class="toc-chip-num">Rx</span>Doses</a><!--/hp-f2--><a href="#pitfalls" class="toc-chip"><span class="toc-chip-num">G</span>Pitfalls</a><a href="#pearls" class="toc-chip"><span class="toc-chip-num">H</span>Pearls</a></div></nav>
 
 <main>
 <div class="wrap">
@@ -415,7 +434,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <section id="redflags">
 <div class="section"><div class="section-eyebrow"><span>A</span> Red Flags</div><div class="section-title">Na litíase o perigo não é a dor: é o rim que apodrece fechado e o diagnóstico que não era cálculo</div><div class="section-sub">Sinal objetivo, suspeita e conduta imediata. Os eventos evitáveis deste HP são a pionefrose tratada só com antibiótico, o rim único obstruído observado em casa, o aneurisma roto rotulado de cólica e a sepse que surge depois do procedimento feito com urina infectada.</div></div>
 
-<div class="card emerg">
+<div class="card emerg" id="a1">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">A.1</span> Emergências</div><h3>Sinais de alarme — obstrução do trato urinário <span class="ank ank-dgr">DANGER</span></h3></div>
 <div class="card-body">
 
@@ -455,7 +474,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <section id="approach">
 <div class="section"><div class="section-eyebrow"><span>B</span> Por Apresentação</div><div class="section-title">Cinco portas de entrada: pela dor, pela febre, pelo achado, pela anúria e pelo jato</div><div class="section-sub">O paciente não chega com o rótulo de ureterolitíase. Chega com uma dor, uma febre, uma hidronefrose no laudo de USG, uma creatinina ou uma bexiga que não esvazia.</div></div>
 
-<div class="card clin">
+<div class="card clin" id="b1">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">B.1</span> Padrão 1</div><h3>Dor lombar em cólica, com irradiação e inquietude <span class="ank ank-hy">HIGH-YIELD</span></h3><div class="card-sub">A dor sobe e desce porque o ureter contrai contra o cálculo</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Dor de início súbito, em ondas de 20 a 60 minutos, com o paciente incapaz de ficar parado, náuseas e hematúria. A localização acompanha o cálculo: <b>flanco e Giordano na junção ureteropélvica; abdome com irradiação para a virilha, testículo ou grande lábio no ureter médio; disúria e polaciúria na junção vesicoureteral.</b> Sem peritonismo. A TC sem contraste confirma; o laboratório do plantão pede creatinina, hemograma, urina e PCR.</div></div>
@@ -469,7 +488,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card clin">
+<div class="card clin" id="b2">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">B.2</span> Padrão 2</div><h3>Febre com dor lombar e hidronefrose <span class="ank ank-dgr">DANGER</span></h3><div class="card-sub">Pielonefrite simples ou rim obstruído e infectado?</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Toda pielonefrite febril em adulto precisa de <b>imagem do trato urinário para excluir obstrução</b> (EAU Infecções 2026, forte). Hidronefrose com febre ou sepse: drenagem. Febre que persiste depois de 48 a 72 horas de antibiótico adequado: nova imagem (TC sem contraste) à procura de obstrução, abscesso ou outra complicação (EAU Infecções 2026). A pielonefrite não obstrutiva sem imagem alterada segue o tratamento da ITU, que não é deste HP.</div></div>
@@ -482,7 +501,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card clin">
+<div class="card clin" id="b3">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">B.3</span> Padrão 3</div><h3>Hidronefrose ou cálculo achados na imagem, sem dor <span class="ank ank-dec">DECISION</span></h3><div class="card-sub">O assintomático tem três perguntas: obstrui, infecta, cresce?</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Cálculo calicinal assintomático não obstrutivo admite <b>observação com imagem anual</b> (EAU 2026); intervir se crescer (sobretudo acima de 5 mm), obstruir, infectar ou doer. <b>Coraliforme sempre se trata</b>, ainda que silencioso. Hidronefrose sem cálculo exige causa: junção ureteropélvica, massa, fibrose, refluxo, retenção crônica.</div></div>
@@ -494,7 +513,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card clin">
+<div class="card clin" id="b4">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">B.4</span> Padrão 4</div><h3>Oligúria ou anúria com creatinina subindo <span class="ank ank-dec">DECISION</span></h3><div class="card-sub">Pós-renal é a causa reversível que se procura primeiro</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body"><b>Sonda vesical primeiro: se a bexiga se esvazia, o problema era infravesical.</b> Se não, USG renal. Hidronefrose bilateral ou em rim único mais anúria completa: obstrução ureteral alta, drenagem urgente. Diurese preservada não afasta obstrução (transbordamento, obstrução parcial, poliúria). A classificação por KDIGO e o resto da LRA ficam no NU03.</div></div>
@@ -505,7 +524,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card clin">
+<div class="card clin" id="b5">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">B.5</span> Padrão 5</div><h3>Homem com jato fraco, bexiga palpável ou incapacidade de urinar <span class="ank ank-hy">HIGH-YIELD</span></h3><div class="card-sub">Obstrução infravesical e retenção aguda</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Hesitância, jato fraco e gotejamento terminal, com ou sem noctúria, no homem acima dos 50 anos: hiperplasia benigna da próstata é a causa mais comum. Se o paciente não urina, <b>sondagem de alívio e dosagem de creatinina</b>; o gatilho (anticolinérgico, descongestionante, constipação, infecção, cirurgia) se procura e se retira. Tratamento crônico e cirurgia: NU06.</div></div>
@@ -519,9 +538,9 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 
 </section>
 <section id="primarias">
-<div class="section"><div class="section-eyebrow"><span>C</span> Entidades Primárias</div><div class="section-title">Sete entidades: o cálculo que dói, o cálculo que fica, o rim que infecta fechado, o que se previne e a obstrução sem cálculo</div><div class="section-sub">A cólica abre o capítulo por ser a porta de entrada; a obstrução infectada ocupa um box próprio por ser a emergência que não tolera adiamento; os dois boxes de prevenção separam o cálculo cálcico, que domina, dos cálculos de causa específica; a uropatia obstrutiva e a retenção fecham a lista.</div></div>
+<div class="section"><div class="section-eyebrow"><span>C</span> Entidades Primárias</div><div class="section-title">Sete entidades: o cálculo que dói, o cálculo que fica, o rim que infecta fechado, o que se previne e a obstrução sem cálculo</div><div class="section-sub">A cólica abre o capítulo por ser a porta de entrada; a obstrução infectada ocupa um box próprio por ser a emergência que não tolera adiamento; os dois boxes de prevenção separam o cálculo cálcico, que domina, dos cálculos de causa específica; a uropatia obstrutiva e a retenção fecham a lista.</div></div><!--hp-f2--><nav class="sec-idx" aria-label="Neste capítulo"><a href="#c1"><b>C.1</b>Cólica renal: diagnóstico, an…</a><a href="#c2"><b>C.2</b>Cálculo renal: observar, queb…</a><a href="#c3"><b>C.3</b>Pielonefrite obstrutiva e pio…</a><a href="#c4"><b>C.4</b>Investigação metabólica e pre…</a><a href="#c5"><b>C.5</b>Ácido úrico, cistina e estruv…</a><a href="#c6"><b>C.6</b>Hidronefrose e IRA pós-renal…</a><a href="#c7"><b>C.7</b>Retenção urinária aguda: sond…</a></nav><!--/hp-f2-->
 
-<div class="card prim">
+<div class="card prim" id="c1">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.1</span> Ureterolitíase</div><h3>Cólica renal: diagnóstico, analgesia, terapia expulsiva e quando desistir de esperar <span class="ank ank-hy">HIGH-YIELD</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Dor súbita em cólica, com hematúria e inquietude: <b>confirme com imagem (TC sem contraste, ou USG na gestante e na criança), alivie com AINE e decida entre esperar e operar pelo tamanho, pela posição e pelas complicações.</b> Cálculo ureteral de até 10 mm, dor controlada, sem infecção e sem insuficiência renal: observação ou terapia expulsiva por 4 a 6 semanas. <b>O que muda conduta:</b> febre, rim único, anúria, creatinina subindo, dor refratária ou cálculo &gt;10 mm tiram o paciente da conduta expectante.</div></div>
@@ -559,7 +578,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="c2">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.2</span> Litíase renal</div><h3>Cálculo renal: observar, quebrar ou retirar — e escolher o método pelo tamanho, pela posição e pela dureza <span class="ank ank-dec">DECISION</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Cálculo calicinal pequeno, assintomático e não obstrutivo: <b>observar com imagem anual</b>. Tratar se crescer, obstruir, infectar, doer, ou no formador de alto risco. Método: <b>&gt;20 mm, coraliforme ou polo inferior grande: nefrolitotomia percutânea; 10–20 mm: LECO ou endourologia; &lt;10 mm: LECO ou RIRS.</b> <b>O que muda conduta:</b> a dureza do cálculo (UH na TC, brushita, oxalato monoidratado, cistina), a anatomia e o uso de antitrombótico decidem entre LECO e endourologia.</div></div>
@@ -599,7 +618,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="c3">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.3</span> Obstrução infectada</div><h3>Pielonefrite obstrutiva e pionefrose: drenar primeiro, tratar o cálculo depois <span class="ank ank-dgr">DANGER</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Obstrução com febre, sepse ou anúria é <b>emergência urológica</b>: coleta de hemoculturas e urocultura, antibiótico imediato e <b>descompressão urgente por cateter duplo J ou nefrostomia percutânea</b>, que têm a mesma eficácia. O cálculo só se aborda depois de resolvida a infecção e completado o antibiótico. <b>O que muda conduta:</b> o antibiótico sem drenagem falha; a litotripsia ou ureteroscopia de cálculo infectado antes da drenagem fabrica sepse.</div></div>
@@ -637,7 +656,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="c4">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.4</span> Litíase cálcica</div><h3>Investigação metabólica e prevenção do cálculo de cálcio <span class="ank ank-hy">HIGH-YIELD</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">O cálculo de cálcio (70–80%) tem causa metabólica modificável. <b>Analise o cálculo, dose cálcio, ácido úrico, creatinina e PTH no sangue e colha duas urinas de 24 horas em dias não consecutivos</b>, 3 a 8 semanas depois da limpeza e sem cateter, com a dieta habitual. Para todos: <b>urina &gt;2,5 L/dia, cálcio da dieta mantido, sal e proteína moderados.</b> <b>O que muda conduta:</b> hipercalciúria leva ao tiazídico; hipocitratúria, ao citrato de potássio; hiperuricosúria, ao alopurinol.</div></div>
@@ -678,7 +697,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="c5">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.5</span> Cálculos não cálcicos</div><h3>Ácido úrico, cistina e estruvita: o pH e a urease dizem quem é <span class="ank ank-dec">DECISION</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Três cálculos têm tratamento próprio. <b>Ácido úrico:</b> radiotransparente no RX, visível na TC, urina ácida; dissolve-se com alcalinização. <b>Cistina:</b> cristais hexagonais, doença genética, urina muito diluída e alcalina, tiol se não bastar. <b>Estruvita:</b> infecção por bactéria produtora de urease, urina alcalina, cálculo que enche a pelve; <b>só a remoção completa cura.</b> <b>O que muda conduta:</b> o pH e a cultura da urina identificam o tipo antes da análise do cálculo e definem se a prevenção é química ou cirúrgica.</div></div>
@@ -717,7 +736,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="c6">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.6</span> Uropatia obstrutiva</div><h3>Hidronefrose e IRA pós-renal: achar, aliviar e vigiar o que vem depois <span class="ank ank-dec">DECISION</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Hidronefrose é a dilatação do sistema coletor; uropatia obstrutiva é o impedimento ao fluxo; nefropatia obstrutiva é o dano ao rim. <b>Obstrução aguda e completa, bilateral ou em rim único, é urgência</b>: sonda vesical se a bexiga está cheia, USG, e drenagem do rim por duplo J ou nefrostomia. Depois de aliviar, <b>vigie a diurese pós-obstrutiva</b>. A classificação e a conduta geral da LRA estão no NU03. <b>O que muda conduta:</b> febre, anúria, rim único e hipercalemia aceleram a drenagem.</div></div>
@@ -746,7 +765,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="c7">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.7</span> Obstrução infravesical</div><h3>Retenção urinária aguda: sondar, achar o gatilho e testar sem cateter <span class="ank ank-hy">HIGH-YIELD</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Incapacidade abrupta de urinar, com dor suprapúbica e bexigoma. <b>Sondagem vesical de alívio</b>, creatinina, urina com cultura e <b>retirada do gatilho</b> (anticolinérgico, descongestionante, constipação, infecção). No prostático, alfabloqueador e teste sem cateter em 2 a 7 dias; a falha em torno de 40% é indicação de cirurgia. Hiperplasia e tratamento crônico: NU06. <b>O que muda conduta:</b> creatinina alta ou hidronefrose bilateral, infecção e retenção recidivante mudam o prazo e o destino.</div></div>
@@ -777,9 +796,9 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 
 </section>
 <section id="secundarias">
-<div class="section"><div class="section-eyebrow"><span>D</span> Entidades Secundárias</div><div class="section-title">Gestação, cálculos de bexiga e coraliformes, obstrução sem cálculo, hematúria, bexiga neurogênica e causas sistêmicas</div><div class="section-sub">Casos que completam o diferencial e as fronteiras. A infecção urinária da gestante é do GO10 e do GO13; a hiperplasia da próstata e a uro-oncologia, do NU06; a litíase da criança, do PD08.</div></div>
+<div class="section"><div class="section-eyebrow"><span>D</span> Entidades Secundárias</div><div class="section-title">Gestação, cálculos de bexiga e coraliformes, obstrução sem cálculo, hematúria, bexiga neurogênica e causas sistêmicas</div><div class="section-sub">Casos que completam o diferencial e as fronteiras. A infecção urinária da gestante é do GO10 e do GO13; a hiperplasia da próstata e a uro-oncologia, do NU06; a litíase da criança, do PD08.</div></div><!--hp-f2--><nav class="sec-idx" aria-label="Neste capítulo"><a href="#d1"><b>D.1</b>Hidronefrose, litíase e obstr…</a><a href="#d2"><b>D.2</b>Cálculo de bexiga e de uretra…</a><a href="#d3"><b>D.3</b>Obstrução urinária que não é…</a><a href="#d4"><b>D.4</b>Hematúria não glomerular: cál…</a><a href="#d5"><b>D.5</b>Bexiga neurogênica e estenose…</a><a href="#d6"><b>D.6</b>Hiperparatireoidismo, ATR dis…</a></nav><!--/hp-f2-->
 
-<div class="card diag">
+<div class="card diag" id="d1">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">D.1</span> Gestação</div><h3>Hidronefrose, litíase e obstrução na gestante <span class="ank ank-dec">DECISION</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">A hidronefrose fisiológica, mais à direita, mimetiza obstrução e <b>não se opera</b>. Dor lombar com febre ou cálculo impactado: <b>USG primeiro, RM em seguida, TC de baixa dose como último recurso</b>; tratamento conservador; se falhar ou houver infecção, duplo J, nefrostomia ou ureteroscopia no 2º trimestre. <b>LECO é contraindicada.</b> <b>O que muda conduta:</b> febre, dor refratária, hidronefrose volumosa e trabalho de parto prematuro justificam a drenagem.</div></div>
@@ -798,7 +817,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card diag">
+<div class="card diag" id="d2">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">D.2</span> Cálculos especiais</div><h3>Cálculo de bexiga e de uretra, steinstrasse e fragmentos residuais <span class="ank ank-hy">HIGH-YIELD</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Cálculo vesical no adulto quase sempre nasce de <b>obstrução infravesical ou de bexiga neurogênica</b>: remova o cálculo (cistolitotripsia endoscópica) e trate a causa. <b>Steinstrasse</b> (coluna de fragmentos depois da LECO) com febre exige nefrostomia. <b>Fragmentos residuais &gt;4 mm</b> merecem novo tratamento. <b>O que muda conduta:</b> a causa de base decide se o cálculo recidiva.</div></div>
@@ -817,7 +836,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card diag">
+<div class="card diag" id="d3">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">D.3</span> Sem cálculo</div><h3>Obstrução urinária que não é cálculo: JUP, fibrose retroperitoneal, tumor, radioterapia <span class="ank ank-dec">DECISION</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Hidronefrose sem cálculo, sobretudo bilateral e indolor no adulto, <b>pede causa</b>: neoplasia pélvica ou retroperitoneal, <b>fibrose retroperitoneal</b>, estenose pós-radioterapia, junção ureteropélvica, necrose de papila, aneurisma de aorta. <b>O que muda conduta:</b> a causa extrínseca ou maligna muda a drenagem (stent pode não passar, nefrostomia é mais frequente) e o prognóstico.</div></div>
@@ -836,7 +855,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card diag">
+<div class="card diag" id="d4">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">D.4</span> Hematúria</div><h3>Hematúria não glomerular: cálculo ou tumor? <span class="ank ank-dgr">DANGER</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Hematúria isomórfica, com coágulos e sem cilindros hemáticos é <b>urológica até prova em contrário</b>. A cólica com hematúria não encerra a investigação no fumante e no adulto acima de 40 anos. <b>Cistoscopia e imagem do trato urinário</b> antes de pensar em biópsia renal (NU01). O fluxo glomerular × não glomerular está no NU01; a uro-oncologia, no NU06. <b>O que muda conduta:</b> coágulos, idade e tabagismo desviam para a urologia.</div></div>
@@ -855,7 +874,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card diag">
+<div class="card diag" id="d5">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">D.5</span> Disfunção vesical</div><h3>Bexiga neurogênica e estenose de uretra: a obstrução funcional <span class="ank ank-hy">HIGH-YIELD</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Bexiga que não esvazia sem obstrução anatômica da próstata: <b>neurogênica</b> (lesão medular, esclerose múltipla, mielomeningocele, diabetes), <b>estenose de uretra</b>, fármaco, constipação. Pressão vesical alta transmite-se ao rim e causa hidronefrose, refluxo e cálculo. <b>O que muda conduta:</b> cateterismo intermitente limpo e vigilância do trato superior; a bacteriúria assintomática no cateterizado não se trata.</div></div>
@@ -874,7 +893,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card diag">
+<div class="card diag" id="d6">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">D.6</span> Causas sistêmicas</div><h3>Hiperparatireoidismo, ATR distal, hiperoxalúria, fármacos e nefrocalcinose <span class="ank ank-dec">DECISION</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Quando a análise do cálculo e a urina de 24 horas apontam doença sistêmica, o tratamento é o da doença: <b>cálcio alto com PTH não suprimido</b> (paratireoidectomia), <b>pH urinário &gt;5,5 com acidose e hipocalemia</b> (ATR distal, citrato de potássio, NU04), <b>oxalato &gt;90 mg/dia</b> (hiperoxalúria primária) e <b>diarreia ou bariátrica</b> (entérica). <b>O que muda conduta:</b> doença sistêmica troca a prevenção sintomática por tratamento da causa.</div></div>
@@ -897,7 +916,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <section id="algoritmo">
 <div class="section"><div class="section-eyebrow"><span>E</span> Algoritmo</div><div class="section-title">Da dor ou da anúria à decisão: quatro árvores e uma sequência mental</div><div class="section-sub">A primeira árvore separa a cólica do que parece cólica e da obstrução infectada. A segunda decide entre esperar e operar, e com qual método. A terceira trata a anúria e a retenção. A quarta leva o tipo de cálculo à prevenção. Cada ponta termina em conduta com número.</div></div>
 
-<div class="card prim">
+<div class="card prim" id="e1">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">E.1</span> Algoritmo</div><h3>Dor lombar: cólica simples, obstrução infectada ou outro diagnóstico? <span class="ank ank-dgr">DANGER</span></h3></div>
 <div class="card-body">
 <div class="algo"><div class="tree">
@@ -919,7 +938,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="e2">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">E.2</span> Algoritmo</div><h3>Cálculo confirmado: esperar ou operar, e como <span class="ank ank-dec">DECISION</span></h3></div>
 <div class="card-body">
 <div class="algo"><div class="tree">
@@ -952,7 +971,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="e3">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">E.3</span> Algoritmo</div><h3>Oligúria ou anúria com hidronefrose, ou impossibilidade de urinar <span class="ank ank-dec">DECISION</span></h3></div>
 <div class="card-body">
 <div class="algo"><div class="tree">
@@ -974,7 +993,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="e4">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">E.4</span> Algoritmo</div><h3>Do cálculo à prevenção: o tipo e o número da urina decidem o fármaco <span class="ank ank-hy">HIGH-YIELD</span></h3></div>
 <div class="card-body">
 <div class="algo"><div class="tree">
@@ -1003,7 +1022,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="e5">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">E.5</span> Raciocínio</div><h3>Sequência mental em 7 passos <span class="ank ank-dec">DECISION</span></h3></div>
 <div class="card-body">
 <div class="box decision"><span class="box-label">DECISION</span><div class="box-title">Raciocínio em 7 passos para o paciente com dor lombar, anúria ou hidronefrose</div><div class="box-body"><ul>
@@ -1020,13 +1039,13 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 
 </section>
 <section id="tratamento">
-<div class="section"><div class="section-eyebrow"><span>F</span> Tratamento Integrado</div><div class="section-title">F1 · Estratégia por entidade · F2 · Doses · F3 · Casos · F4 · SUS e CMED · F5 · Monitorização</div><div class="section-sub">Doses lidas na SBN 2025, na EAU Urolitíase 2026 e na EAU Infecções 2026 levam a sigla da fonte; as da apostila levam "apostila"; o que não foi lido no texto de origem, ou varia com a bula, fica marcado "conferir". Criança: PD08. Choque séptico e vasopressor: II03.</div></div>
+<div class="section"><div class="section-eyebrow"><span>F</span> Tratamento Integrado</div><div class="section-title">F1 · Estratégia por entidade · F2 · Doses · F3 · Casos · F4 · SUS e CMED · F5 · Monitorização</div><div class="section-sub">Doses lidas na SBN 2025, na EAU Urolitíase 2026 e na EAU Infecções 2026 levam a sigla da fonte; as da apostila levam "apostila"; o que não foi lido no texto de origem, ou varia com a bula, fica marcado "conferir". Criança: PD08. Choque séptico e vasopressor: II03.</div></div><!--hp-f2--><nav class="sec-idx" aria-label="Neste capítulo"><a href="#f1"><b>F.1</b>Escada terapêutica por entida…</a><a href="#f2"><b>F.2</b>Tabela de doses — litíase e u…</a><a href="#f3"><b>F.3</b>Caso → conduta certa → erro t…</a><a href="#f4"><b>F.4</b>O que o SUS e a CMED trazem e…</a><a href="#f5"><b>F.5</b>Quando reavaliar, o que esper…</a></nav><!--/hp-f2-->
 
-<div class="card tx">
+<div class="card tx" id="f1">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">F.1</span> Estratégia</div><h3>Escada terapêutica por entidade <span class="ank ank-dec">DECISION</span></h3></div>
 <div class="card-body">
 
-<div class="sub-title">F1.1 · Cólica renal e terapia expulsiva (C.1)</div>
+<div class="sub-title" id="f1-1">F1.1 · Cólica renal e terapia expulsiva (C.1)</div>
 <ul class="bullets">
 <li><b>Imagem e laboratório:</b> TC sem contraste (ou USG na gestante e na criança), creatinina, hemograma, EAS com urocultura e PCR; imagem imediata se houver febre, rim único ou dúvida. Filtrar a urina e guardar o cálculo.</li>
 <li><b>Analgesia em degraus:</b> AINE (cetoprofeno 100 mg IV diluído em 100 mL, infundido em 20 min, ou 50 mg VO a cada 6 h; dipirona IV: 1 g de 6/6 h, máximo de 4 g/dia, ou até 5 g/dia pela bula de injetável; cetorolaco 30 mg IV, máx. 120 mg/dia, com 15 mg e máx. 60 mg/dia em pessoas com 65 anos ou mais, com menos de 50 kg ou com disfunção renal leve, e máx. 5 dias) com paracetamol 500–750 mg VO até 6×/dia (máx. 4 g/dia) como alternativa ou adjuvante. Falha ou contraindicação ao AINE: tramadol 50–100 mg VO, IM ou IV lento a cada 6 h (máx. 400 mg/dia; a cada 12 h e máx. 200 mg/dia com ClCr &lt;30) ou outro opioide titulado (EAU 2026: hidromorfona, pentazocina, tramadol ou cetamina; evitar petidina).</li>
@@ -1037,7 +1056,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 
 <div class="box danger"><span class="box-label">DANGER</span><div class="box-title">AINE na cólica: três erros que custam o rim</div><div class="box-body">Primeiro, dar AINE ao paciente com DRC, rim único ou creatinina subindo sem pensar que a prostaglandina sustenta a filtração (C.1); nesses casos, opioide e desobstrução. Segundo, repetir o AINE por dias em cólica que persiste: dor sem alívio é indicação de descompressão (EAU 2026, forte). Terceiro, dar AINE no terceiro trimestre (SBN 2025). Cetorolaco tem contraindicação absoluta em úlcera ativa, hemorragia cerebrovascular, sangramento, diátese hemorrágica, uso com AAS, AINE, probenecida ou pentoxifilina, insuficiência renal avançada e hipovolemia (rótulo FDA); dipirona: contraindicada na alergia a pirazolonas, na agranulocitose ou mielossupressão prévias, na porfiria hepática aguda e na deficiência de G6PD (bula), com agranulocitose rara e restrição relativa na gestação (SBN 2025).</div></div>
 
-<div class="sub-title">F1.2 · Remoção do cálculo e cuidados perioperatórios (C.2)</div>
+<div class="sub-title" id="f1-2">F1.2 · Remoção do cálculo e cuidados perioperatórios (C.2)</div>
 <ul class="bullets">
 <li><b>Método:</b> segue o quadro de C.2. Renal &gt;20 mm: NLPC. Renal 10–20 mm: LECO ou endourologia. Renal &lt;10 mm: LECO ou RIRS. Polo inferior &gt;10 mm: NLPC ou RIRS. Ureteral &gt;10 mm: ureteroscopia; &lt;10 mm: LECO ou ureteroscopia. Coraliforme: NLPC mais LECO ("sanduíche").</li>
 <li><b>Antes de qualquer procedimento:</b> urocultura e tratamento da ITU (EAU 2026, forte). Em obstrução infectada, drenar antes e remover depois do curso completo. Coagulograma se houver intervenção. Antitrombótico: decidir suspensão ou ponte com o médico assistente (HO03; CT06); se não puder suspender, URS flexível.</li>
@@ -1046,7 +1065,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <li><b>Depois:</b> imagem em 4 semanas (evita tratar poeira que passa), análise do cálculo, stent com data de retirada, e seguimento por imagem de 2 a 3 anos (4 anos com resíduo &lt;4 mm; SBN 2025). Fragmento &gt;4 mm: nova intervenção.</li>
 </ul>
 
-<div class="sub-title">F1.3 · Obstrução infectada (C.3)</div>
+<div class="sub-title" id="f1-3">F1.3 · Obstrução infectada (C.3)</div>
 <ul class="bullets">
 <li><b>Primeira hora:</b> hemoculturas (duas) e urocultura, antibiótico venoso, avaliação de sepse (II03: lactato, volume, vasopressor quando indicado) e imagem. Desobstrução urgente: duplo J ou nefrostomia percutânea.</li>
 <li><b>Escolha do antibiótico:</b> ceftriaxona 2 g IV 24/24 h (sem risco de germe resistente); cefepima 2 g IV 8/8 h ou piperacilina-tazobactam 4,5 g IV 6/6 h (Pseudomonas); <b>meropenem 1 g IV 8/8 h ou imipenem-cilastatina 500 mg IV 6/6 h</b> na obstrução infectada com fator de risco para ESBL, sepse, doença grave ou piora na terapia vigente (a EAU 2026 indica espectro amplo empírico, coerente com o II03; ceftriaxona para quem não tem esses fatores); vancomicina se risco de MRSA (dose no II03). Estreitar com a cultura e passar à via oral quando houver melhora e tolerância.</li>
@@ -1056,7 +1075,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 
 <div class="box decision"><span class="box-label">DECISION</span><div class="box-title">Drenar com duplo J ou com nefrostomia? Quatro perguntas</div><div class="box-body"><ul><li><b>1. O paciente está instável ou a anestesia é arriscada?</b> Nefrostomia sob anestesia local.</li><li><b>2. A uretra e o óstio permitem o acesso retrógrado?</b> Tumor, estenose e anatomia alterada favorecem a nefrostomia.</li><li><b>3. Há radiologia intervencionista disponível em poucas horas?</b> Se não, duplo J ou transferência; esperar não é opção.</li><li><b>4. O cateter será mantido por muito tempo?</b> O duplo J incomoda mais; a nefrostomia pede cuidado e bolsa. A EAU 2026 não distingue os dois em eficácia.</li></ul></div></div>
 
-<div class="sub-title">F1.4 · Prevenção do cálculo de cálcio (C.4)</div>
+<div class="sub-title" id="f1-4">F1.4 · Prevenção do cálculo de cálcio (C.4)</div>
 <ul class="bullets">
 <li><b>Para todos:</b> ingestão de líquidos para urina de 2,5 a 3 L/dia (30 mL/kg mais 400 mL), cálcio da dieta 1.000–1.200 mg/dia (sem suplemento), NaCl &lt;6 g/dia (SBN; EAU 4–5 g), proteína animal 0,8–1,0 g/kg de peso ideal, frutas e vegetais, oxalato moderado, evitar vitamina C acima de 500 mg/dia.</li>
 <li><b>Hipercalciúria:</b> hidroclorotiazida 25 mg 12/12 h ou 50 mg/dia, clortalidona 25–50 mg/dia (contraindicada na anúria; cautela na doença renal grave, pelo rótulo) ou indapamida SR 1,5 mg/dia, K⁺ sérico no início e depois de semanas; densitometria. Evitar diurético de alça.</li>
@@ -1068,14 +1087,14 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 
 <div class="box hy"><span class="box-label">HIGH-YIELD</span><div class="box-title">Três números que o formador de cálculo deve saber de cor</div><div class="box-body"><b>Urina de 2,5 L por dia</b>, que é o fármaco mais barato e de maior evidência (EAU 2026, nível 1a, e SBN 2025, grau A); <b>cálcio de 1.000 a 1.200 mg por dia na dieta</b>, porque restringir o cálcio aumenta o oxalato; <b>sal abaixo de 6 g por dia</b>, porque o sódio arrasta o cálcio e reduz o citrato.</div></div>
 
-<div class="sub-title">F1.5 · Prevenção dos cálculos não cálcicos (C.5)</div>
+<div class="sub-title" id="f1-5">F1.5 · Prevenção dos cálculos não cálcicos (C.5)</div>
 <ul class="bullets">
 <li><b>Ácido úrico:</b> dissolução com citrato de potássio ou bicarbonato até pH 7,0–7,2 com automonitoramento (EAU 2026), depois pH acima de 6,5 (SBN 2025); purinas &lt;500 mg/dia; alopurinol 100–300 mg/dia. Obstrução: drenar e dissolver.</li>
 <li><b>Cistina:</b> urina &gt;3 L/dia, citrato de potássio para pH &gt;7,5 (3–10 mmol 2–3×/dia, EAU), restrição de sódio e metionina; se falhar, tiol (D-penicilamina 500–1.500 mg/dia em 2–3 doses com piridoxina 50 mg/dia, SBN 2025; tiopronina, com dose inicial de 800 mg/dia e até 2.000 mg/dia, titulada pela frequência de episódios, efeitos e função renal (EAU; não disponível no Brasil)); meta de cistina livre &lt;250 mg/L; proteinúria e hemograma em seguimento.</li>
 <li><b>Estruvita:</b> remoção completa, antibiótico para bacteriúria, correção da estase e do cateter, acidificação (cloreto de amônio 1 g 2–3×/dia ou metionina 200–500 mg 1–3×/dia; conferir registro e contraindicações renais e hepáticas); inibidor de urease só em caso selecionado.</li>
 </ul>
 
-<div class="sub-title">F1.6 · Hidronefrose, IRA pós-renal e retenção (C.6, C.7)</div>
+<div class="sub-title" id="f1-6">F1.6 · Hidronefrose, IRA pós-renal e retenção (C.6, C.7)</div>
 <ul class="bullets">
 <li><b>Retenção:</b> sonda de Foley, registro do volume, creatinina, urina e cultura; retirar anticolinérgicos, descongestionantes, antidepressivos tricíclicos e levodopa quando possível; cistostomia se a uretra não passa.</li>
 <li><b>Prostático:</b> tansulosina 0,4 mg/dia antes do teste sem cateter em 2 a 7 dias; recidiva ou falha: urologia (NU06). Alfuzosina 10 mg/dia consta na apostila; conferir registro.</li>
@@ -1085,7 +1104,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 
 <div class="box danger"><span class="box-label">DANGER</span><div class="box-title">Esvaziou a bexiga e o paciente "urina um mar": a hora de pesar a diurese</div><div class="box-body">Depois de desobstruir bexigoma crônico ou hidronefrose bilateral, a poliúria pode ser exagerada e esvaziar volume, sódio, potássio e magnésio em horas; no outro extremo, repor mililitro por mililitro sustenta a diurese. O erro mais frequente é a alta precoce da enfermaria depois da sondagem, sem débito horário nem eletrólitos; o risco é maior com ureia alta, obstrução bilateral prolongada e rim único (NU03).</div></div>
 
-<div class="sub-title">F1.7 · Gestação (D.1)</div>
+<div class="sub-title" id="f1-7">F1.7 · Gestação (D.1)</div>
 <ul class="bullets">
 <li><b>Conservador:</b> hidratação oral, paracetamol (opioide se necessário), sem AINE no terceiro trimestre (SBN 2025). Imagem por USG; RM em segunda linha; TC de baixa dose por último.</li>
 <li><b>Intervenção:</b> duplo J ou nefrostomia na falha, na infecção, na dor refratária ou na hidronefrose grave; ureteroscopia no segundo trimestre, por urologista experiente. LECO contraindicada. Antibiótico e pielonefrite sem obstrução: GO10 e GO13.</li>
@@ -1094,7 +1113,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card tx">
+<div class="card tx" id="f2">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">F.2</span> Doses Operacionais</div><h3>Tabela de doses — litíase e uropatia obstrutiva</h3></div>
 <div class="card-body">
 <div class="stbl stbl-3">
@@ -1130,7 +1149,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card tx">
+<div class="card tx" id="f3">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">F.3</span> Cenários</div><h3>Caso → conduta certa → erro típico</h3></div>
 <div class="card-body">
 <div class="stbl stbl-3">
@@ -1147,7 +1166,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card tx">
+<div class="card tx" id="f4">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">F.4</span> Acesso</div><h3>O que o SUS e a CMED trazem e o que fica a conferir <span class="ank ank-dec">DECISION</span></h3></div>
 <div class="card-body">
 <div class="stbl stbl-3">
@@ -1162,7 +1181,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card tx">
+<div class="card tx" id="f5">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">F.5</span> Monitorização</div><h3>Quando reavaliar, o que esperar e o que fazer se não responde <span class="ank ank-hy">HIGH-YIELD</span></h3></div>
 <div class="card-body">
 <div class="stbl stbl-3">
@@ -1182,7 +1201,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <section id="pitfalls">
 <div class="section"><div class="section-eyebrow"><span>G</span> Pitfalls · Mitos · Controvérsias</div><div class="section-title">Erros operacionais, mitos vivos e debates abertos</div><div class="section-sub">Os erros que mais custam rim, sangue e tempo na litíase e na obstrução: o antibiótico sem drenagem, a restrição de cálcio, a cólica que não era cólica e a diurese que ninguém pesou.</div></div>
 
-<div class="card pearl">
+<div class="card pearl" id="g1">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">G.1</span> Pegadinhas</div><h3>10 erros operacionais em litíase e uropatia obstrutiva</h3></div>
 <div class="card-body">
 <div class="stbl stbl-2">
@@ -1201,7 +1220,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card pearl">
+<div class="card pearl" id="g2">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">G.2</span> Mitos</div><h3>Três mitos vivos</h3></div>
 <div class="card-body">
 <div class="box myth"><span class="box-label">MYTH</span><div class="box-title">"Hematúria com dor lombar prova que é cálculo"</div><div class="box-body">A hematúria ocorre em cerca de 90% dos cálculos, mas aneurisma em expansão, apendicite e diverticulite irritam o ureter e a produzem; a ausência de hematúria é um sinal de alerta. A prova do cálculo é a imagem, e não a fita reagente (apostila; SBN 2025).</div></div>
@@ -1210,7 +1229,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card pearl">
+<div class="card pearl" id="g3">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">G.3</span> Controvérsias</div><h3>Três debates sem consenso</h3></div>
 <div class="card-body">
 <div class="box controversy"><span class="box-label">CONTROVERSY</span><div class="box-title">Terapia expulsiva com alfabloqueador: ajuda ou não?</div><div class="box-body">Metanálises de ensaios pequenos mostram 44% mais chance de eliminação no cálculo distal de 5 a 10 mm; um estudo multicêntrico com mais de mil pacientes, com cálculos majoritariamente pequenos e distais, não achou diferença de intervenção em relação ao placebo. A EAU 2026 recomenda com força o alfabloqueador como uma das opções no distal de 5 a 10 mm (fora da bula), e a SBN 2025 chama de controverso, com decisão compartilhada. O HP adota a tansulosina 0,4 mg/dia como opção informada, nunca como obrigação.</div></div>
@@ -1223,7 +1242,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <section id="pearls">
 <div class="section"><div class="section-eyebrow"><span>H</span> Pearls · Evolving</div><div class="section-title">H1 · Nuances de especialista · H2 · O que mudou entre 2023 e 2026</div><div class="section-sub">Oito ideias que separam quem trata cálculo de quem trata o paciente que forma cálculo, e cinco mudanças reais; o resto do tema é estável.</div></div>
 
-<div class="card pearl">
+<div class="card pearl" id="h1">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">H.1</span> Pearls</div><h3>8 nuances que distinguem o especialista</h3></div>
 <div class="card-body">
 <div class="box pearl"><span class="box-label">PEARL</span><div class="box-title">Cálculo que aparece na TC e some no RX é urato (ou xantina) até prova em contrário</div><div class="box-body">O ácido úrico é radiotransparente no RX simples, mas visível à TC sem contraste, com densidade menor que a do cálcio; a TC de dupla energia diferencia urato de cálcio (EAU 2026). A pista muda a conduta: pH urinário ácido persistente e cálculo radiotransparente justificam tentar dissolução oral com álcali, que dissolve em 80% dos casos, antes de qualquer procedimento, exceto na obstrução infectada.</div></div>
@@ -1237,7 +1256,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card pearl">
+<div class="card pearl" id="h2">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">H.2</span> Evolving</div><h3>O que mudou: cinco itens reais; o resto do tema é estável</h3></div>
 <div class="card-body">
 <div class="box evolving"><span class="box-label">EVOLVING</span><div class="box-title">EAU Urolitíase: atualização limitada de março de 2026</div><div class="box-body">Revisou a seção de cólica renal, a terapia expulsiva, a profilaxia antibiótica na LECO, a ureteroscopia, a nefrolitotomia percutânea, os antitrombóticos, as tabelas de composição dos cálculos e de doses de prevenção (126 estudos incluídos). É a versão usada neste HP; o texto do sumário de mudanças foi lido na íntegra.</div></div>
@@ -1282,5 +1301,36 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <a class="to-top" href="#" aria-label="Voltar ao topo">↑</a>
 <div class="watermark">@dr.lorencato · NU05 Litíase e Uropatia Obstrutiva v5.2</div>
 
-</body>
+<!--hp-f2--><script>(function(){var d=document,M=d.querySelector('main');if(!M)return;
+var SELF='NU05',HP=' CT01 CT02 CT03 CT04 CT05 CT06 CT08 CT10 CV01 CV03 CV04 CV05 CV06 CV07 CV08 EN01 EN02 EN03 EN04 EN06 EN07 GH01 GH02 GH03 GH05 GH06 GH07 GH08 GH09 GH10 GO01 GO02 GO03 GO04 GO09 GO10 GO11 GO12 GO13 GO14 HO01 HO02 HO03 HO04 HO05 HO06 II01 II02 II03 II04 II07 II08 NE01 NE02 NE03 NE04 NE05 NE06 NE07 NE08 NU01 NU02 NU03 NU04 NU05 OE01 OE02 PC01 PC02 PC03 PC04 PC05 PC06 PD01 PD02 PD03 PD04 PD05 PD06 PD07 PD08 PD09 PD10 RD01 RD02 RD03 RD04 RD05 RD07 RP01 RP02 RP03 RP04 ';
+var SK='A,H1,H2,H3,SCRIPT,STYLE,NAV,.card-num,.card-eyebrow,.sub-title,.disease-tag,.toc';
+var R=/\b(?:([A-H])(\d)?\.(\d{1,2}[a-c]?)|(CV|RP|GH|NE|EN|NU|HO|II|RD|GO|PD|PC|CT|OE)(\d\d))\b/g;
+function skip(n){for(var e=n.parentNode;e&&e!==M;e=e.parentNode)if(e.matches&&e.matches(SK))return 1;return 0}
+var w=d.createTreeWalker(M,4),t,L=[];while(t=w.nextNode())if(R.test(t.data)&&!skip(t))L.push(t);
+L.forEach(function(t){var s=t.data,f=d.createDocumentFragment(),i=0,m;R.lastIndex=0;
+while(m=R.exec(s)){var h=null;
+if(m[1]){var id=m[1].toLowerCase()+(m[2]?m[2]+'-':'')+m[3];if(d.getElementById(id))h='#'+id}
+else{var x=m[4]+m[5];if(x!==SELF&&HP.indexOf(' '+x+' ')>=0)h='../'+x+'/'+x+'.html'}
+if(!h)continue;f.appendChild(d.createTextNode(s.slice(i,m.index)));
+var a=d.createElement('a');a.href=h;a.className='xr';a.textContent=m[0];f.appendChild(a);i=R.lastIndex}
+if(i){f.appendChild(d.createTextNode(s.slice(i)));t.parentNode.replaceChild(f,t)}});
+function nz(s){return s.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'')}
+var q=d.querySelector('.hp-q'),n=d.querySelector('.hp-n'),it=M.querySelectorAll('.card,.pocket-card'),T;
+function clr(){M.querySelectorAll('.q-off').forEach(function(e){e.classList.remove('q-off')})}
+function run(){var v=nz(q.value.trim());clr();n.textContent='';if(v.length<2)return;var k=0;
+it.forEach(function(c){if(nz(c.textContent).indexOf(v)<0){c.classList.add('q-off');return}k++;
+var r=c.querySelectorAll('.stbl-row,.disease-row,.score-row'),h=[];r.forEach(function(x){if(nz(x.textContent).indexOf(v)>=0)h.push(x)});
+if(h.length)r.forEach(function(x){if(h.indexOf(x)<0)x.classList.add('q-off')});
+c.querySelectorAll('details').forEach(function(x){if(nz(x.textContent).indexOf(v)>=0)x.open=true})});
+M.querySelectorAll('section').forEach(function(s){if(!s.querySelector('.card:not(.q-off),.pocket-card:not(.q-off)'))s.classList.add('q-off')});
+n.textContent=k?k+' achado'+(k>1?'s':''):'nada'}
+if(q){q.addEventListener('input',function(){clearTimeout(T);T=setTimeout(run,180)});
+q.addEventListener('keydown',function(e){if(e.key==='Escape'){q.value='';run()}})}
+function tg(b,f){b.addEventListener('click',function(){var on=b.getAttribute('aria-pressed')!=='true';b.setAttribute('aria-pressed',on);f(on)})}
+var bd=d.querySelector('.hp-dz'),bo=d.querySelector('.hp-op');
+if(bd)tg(bd,function(on){d.body.classList.toggle('dz',on);if(on)d.getElementById('tratamento').scrollIntoView()});
+if(bo)tg(bo,function(on){M.querySelectorAll('details').forEach(function(x){x.open=on})});
+var P=[];addEventListener('beforeprint',function(){P=[];M.querySelectorAll('details:not([open])').forEach(function(x){P.push(x);x.open=true})});
+addEventListener('afterprint',function(){P.forEach(function(x){x.open=false})});
+})();</script><!--/hp-f2--></body>
 </html>

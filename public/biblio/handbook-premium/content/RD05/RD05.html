@@ -345,13 +345,32 @@ ul.bullets li b{color:var(--ink);font-weight:600}
   .pocket .pocket-card.tx{--accent:#a8481a}
   .pocket .pocket-card.clin{--accent:#0b5d4e}
 }
+
+/* === v5.2.2 · fase 2 (navegação) === */
+.hp-tools{display:flex;gap:6px;align-items:center;flex:none;order:1;margin-left:auto;padding-left:6px;position:sticky;right:0;background:#f1eee5;box-shadow:-10px 0 10px -4px #f1eee5,16px 0 0 #f1eee5}
+@media(min-width:900px){html{scroll-padding-top:150px}.toc-inner{flex-wrap:wrap;overflow:visible}.card[id],.sub-title[id]{scroll-margin-top:150px}}
+@media(max-width:899px){.hp-b,.hp-n{display:none}.hp-q{width:104px}}
+.hp-q{width:128px;font:500 12px/1 'DM Sans',system-ui,sans-serif;padding:7px 11px;border:1px solid var(--line-strong);border-radius:999px;background:var(--paper);color:var(--ink)}
+.hp-b{font:600 11px/1 'DM Sans',system-ui,sans-serif;letter-spacing:.05em;text-transform:uppercase;padding:7px 10px;border-radius:999px;border:1px solid var(--line-strong);background:var(--paper);color:var(--ink-soft);cursor:pointer;white-space:nowrap}
+.hp-b[aria-pressed=true]{background:var(--ink);color:#fff;border-color:var(--ink)}
+.hp-n{font:600 11px/1 'DM Mono',monospace;color:var(--ink-mute);white-space:nowrap}
+.sec-idx{display:flex;flex-wrap:wrap;gap:6px;margin:12px 0 20px}
+.sec-idx a{font:500 12px/1.25 'DM Sans',system-ui,sans-serif;padding:6px 10px;border-radius:999px;background:var(--paper);border:1px solid var(--line);color:var(--ink-soft);text-decoration:none}
+.sec-idx a:hover{border-color:var(--line-strong);color:var(--ink)}
+.sec-idx b{color:var(--c-prim);margin-right:5px;font-weight:700}
+a.xr{color:inherit;text-decoration:underline dotted;text-underline-offset:2px}
+a.xr:hover{color:var(--c-prim)}
+.card[id],.sub-title[id]{scroll-margin-top:110px}
+.q-off{display:none!important}
+body.dz main section:not(#tratamento){display:none}
+@media print{.hp-tools,.sec-idx,.toc-doses{display:none!important}}
 </style>
 </head>
 <body>
 
 <header class="header"><div class="header-row"><div class="h-mark">F</div><div class="h-titles"><div class="h-title">Fraturas, Luxações e Tumores Ósseos · Pocket Handbook</div><div class="h-sub">Elite edition · Ortopedia e traumatologia · RD05</div></div><div class="h-author">@dr.lorencato</div><div class="h-edition">v5.2</div></div></header>
 
-<nav class="toc"><div class="toc-inner"><a href="#pocket" class="toc-chip"><span class="toc-chip-num">0</span>Pocket</a><a href="#redflags" class="toc-chip"><span class="toc-chip-num">A</span>Red Flags</a><a href="#approach" class="toc-chip"><span class="toc-chip-num">B</span>Apresentação</a><a href="#primarias" class="toc-chip"><span class="toc-chip-num">C</span>Entidades</a><a href="#secundarias" class="toc-chip"><span class="toc-chip-num">D</span>Secundárias</a><a href="#algoritmo" class="toc-chip"><span class="toc-chip-num">E</span>Algoritmo</a><a href="#tratamento" class="toc-chip"><span class="toc-chip-num">F</span>Tratamento</a><a href="#pitfalls" class="toc-chip"><span class="toc-chip-num">G</span>Pitfalls</a><a href="#pearls" class="toc-chip"><span class="toc-chip-num">H</span>Pearls</a></div></nav>
+<nav class="toc"><div class="toc-inner"><!--hp-f2--><span class="hp-tools"><input class="hp-q" type="search" placeholder="Buscar no HP" aria-label="Buscar no HP"><button class="hp-b hp-dz" type="button" aria-pressed="false">Só doses</button><button class="hp-b hp-op" type="button" aria-pressed="false">Abrir tudo</button><span class="hp-n" aria-live="polite"></span></span><!--/hp-f2--><a href="#pocket" class="toc-chip"><span class="toc-chip-num">0</span>Pocket</a><a href="#redflags" class="toc-chip"><span class="toc-chip-num">A</span>Red Flags</a><a href="#approach" class="toc-chip"><span class="toc-chip-num">B</span>Apresentação</a><a href="#primarias" class="toc-chip"><span class="toc-chip-num">C</span>Entidades</a><a href="#secundarias" class="toc-chip"><span class="toc-chip-num">D</span>Secundárias</a><a href="#algoritmo" class="toc-chip"><span class="toc-chip-num">E</span>Algoritmo</a><a href="#tratamento" class="toc-chip"><span class="toc-chip-num">F</span>Tratamento</a><!--hp-f2--><a href="#f2" class="toc-chip toc-doses"><span class="toc-chip-num">Rx</span>Doses</a><!--/hp-f2--><a href="#pitfalls" class="toc-chip"><span class="toc-chip-num">G</span>Pitfalls</a><a href="#pearls" class="toc-chip"><span class="toc-chip-num">H</span>Pearls</a></div></nav>
 
 <main>
 <div class="wrap">
@@ -415,7 +434,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <section id="redflags">
 <div class="section"><div class="section-eyebrow"><span>A</span> Red Flags</div><div class="section-title">Na fratura o que mata o membro não é o osso: é a ferida, a pressão e a artéria</div><div class="section-sub">Sinal objetivo, suspeita e conduta imediata. Os eventos evitáveis deste HP são a fratura exposta tratada como fechada, a síndrome compartimental que espera pelo pulso, a luxação de quadril reduzida tarde, o escafoide que a primeira radiografia não mostrou, o sarcoma tratado como contusão e a fratura do lactente que não foi perguntada.</div></div>
 
-<div class="card emerg">
+<div class="card emerg" id="a1">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">A.1</span> Emergências</div><h3>Sinais de alarme — o membro, a criança e o osso que não fecha <span class="ank ank-dgr">DANGER</span></h3></div>
 <div class="card-body">
 
@@ -453,7 +472,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <section id="approach">
 <div class="section"><div class="section-eyebrow"><span>B</span> Por Apresentação</div><div class="section-title">Mapa sindrômico — do mecanismo e da idade à lesão provável</div><div class="section-sub">Na ortopedia a idade e o mecanismo fazem metade do diagnóstico: o idoso que cai da própria altura, o adulto jovem da moto, a criança que cai com a mão espalmada, o adolescente com dor no quadril ou no joelho.</div></div>
 
-<div class="card clin">
+<div class="card clin" id="b1">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">B.1</span> Padrão 1</div><h3>Idoso que cai da própria altura e não consegue andar</h3><div class="card-sub">Fêmur proximal, punho, úmero proximal, vértebra, pelve</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Fratura por <b>fragilidade</b> até prova em contrário. Membro encurtado e em <b>rotação externa</b> sugere colo ou região trocantérica; dor no quadril com radiografia normal pede <b>RM ou TC</b>. A fratura é o sentinela da osteoporose: depois da cirurgia, tratamento da fragilidade (EN06). <b>O que muda conduta:</b> tempo até a cirurgia, risco clínico e uso de anticoagulante.</div></div>
@@ -466,7 +485,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card clin">
+<div class="card clin" id="b2">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">B.2</span> Padrão 2</div><h3>Adulto jovem de alta energia: moto, queda de altura, esmagamento</h3><div class="card-sub">Exposta, compartimental, vascular, pelve, múltiplas fraturas</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">O ortopedista entra <b>depois do ABCDE</b>: a fratura está no "E" do ATLS. Hemorragia de bacia e fêmur, ferida exposta e membro isquêmico competem pelo tempo. <b>O que muda conduta:</b> instabilidade hemodinâmica (CT01 e CT02 primeiro), pulso ausente e ferida exposta.</div></div>
@@ -480,7 +499,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card clin">
+<div class="card clin" id="b3">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">B.3</span> Padrão 3</div><h3>Criança que caiu com a mão espalmada</h3><div class="card-sub">Supracondiliana, rádio distal, galho verde, toro, fise</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">O osso da criança dobra (galho verde, toro) e a <b>fise</b> é o elo fraco, mais frágil que o ligamento. O cotovelo entre 4 e 10 anos é a supracondiliana de Gartland; o punho de 6 a 12 anos é a fise do rádio. <b>O que muda conduta:</b> pulso e nervo mediano (interósseo anterior), tipo de Salter-Harris e plausibilidade da história.</div></div>
@@ -492,7 +511,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card clin">
+<div class="card clin" id="b4">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">B.4</span> Padrão 4</div><h3>Criança ou adolescente que manca ou tem dor no quadril ou no joelho</h3><div class="card-sub">Sinovite, Perthes, epifisiólise, artrite séptica, osteomielite, tumor</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">A idade ordena o diferencial: <b>3–8 anos</b>, sinovite transitória e Perthes; <b>11–15 anos</b>, epifisiólise (a causa mais comum de dor no quadril nessa idade); qualquer idade com <b>febre e recusa de apoio</b>, artrite séptica. Joelho doloroso pode ser quadril: examine o quadril. <b>O que muda conduta:</b> febre, incapacidade de apoiar, VHS e PCR, e a radiografia em AP e Lauenstein.</div></div>
@@ -504,7 +523,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card clin">
+<div class="card clin" id="b5">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">B.5</span> Padrão 5</div><h3>Ombro, cotovelo ou joelho "fora do lugar"</h3><div class="card-sub">Luxação anterior do ombro, cotovelo, quadril, joelho, acromioclavicular</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">A luxação é <b>emergência de redução</b>: radiografia antes e depois, exame neurovascular antes e depois, analgesia ou sedação adequada. O ombro é o mais frequente; o cotovelo, o segundo; quadril e joelho exigem alta energia e carregam risco de necrose e de lesão arterial. <b>O que muda conduta:</b> fratura associada, déficit neurovascular e tempo desde o trauma.</div></div>
@@ -518,9 +537,9 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </section>
 
 <section id="primarias">
-<div class="section"><div class="section-eyebrow"><span>C</span> Entidades Primárias</div><div class="section-title">Quatorze entidades: princípios, complicações, fraturas e luxações do adulto, ortopedia pediátrica e tumores</div><div class="section-sub">A ordem segue o relógio do plantão: primeiro o que ameaça o membro (exposta, compartimental, embolia gordurosa), depois o que ameaça a evolução (TEV, pseudartrose, SDRC), as regiões de maior cobrança, as luxações, a criança e o osso que adoece.</div></div>
+<div class="section"><div class="section-eyebrow"><span>C</span> Entidades Primárias</div><div class="section-title">Quatorze entidades: princípios, complicações, fraturas e luxações do adulto, ortopedia pediátrica e tumores</div><div class="section-sub">A ordem segue o relógio do plantão: primeiro o que ameaça o membro (exposta, compartimental, embolia gordurosa), depois o que ameaça a evolução (TEV, pseudartrose, SDRC), as regiões de maior cobrança, as luxações, a criança e o osso que adoece.</div></div><!--hp-f2--><nav class="sec-idx" aria-label="Neste capítulo"><a href="#c1"><b>C.1</b>Fratura fechada: classificar…</a><a href="#c2"><b>C.2</b>Fratura exposta: Gustilo-Ande…</a><a href="#c3"><b>C.3</b>Síndrome compartimental aguda…</a><a href="#c4"><b>C.4</b>Embolia gordurosa: a tríade q…</a><a href="#c5"><b>C.5</b>Pseudartrose, consolidação vi…</a><a href="#c6"><b>C.6</b>Tromboembolismo venoso: quem…</a><a href="#c7"><b>C.7</b>Fratura do fêmur proximal no…</a><a href="#c8"><b>C.8</b>Fratura de Colles e fratura d…</a><a href="#c9"><b>C.9</b>Fratura de tornozelo e as reg…</a><a href="#c10"><b>C.10</b>Luxações de ombro, cotovelo…</a><a href="#c11"><b>C.11</b>Fise (Salter-Harris) e fratur…</a><a href="#c12"><b>C.12</b>Displasia do desenvolvimento…</a><a href="#c13"><b>C.13</b>Legg-Calvé-Perthes e epifisió…</a><a href="#c14"><b>C.14</b>Osteossarcoma, sarcoma de Ewi…</a></nav><!--/hp-f2-->
 
-<div class="card prim">
+<div class="card prim" id="c1">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.1</span> Princípios</div><h3>Fratura fechada: classificar, reduzir, imobilizar, esperar consolidar <span class="ank ank-hy">HIGH-YIELD</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Descreva a fratura por <b>osso e segmento (diáfise, metáfise, intra-articular), traço (transverso, oblíquo, espiral), cominuição, desvio e se é exposta</b>. Radiografia em <b>duas incidências perpendiculares</b>, incluindo as articulações acima e abaixo. Reduza o que está desviado com analgesia, imobilize com as duas articulações e <b>examine pulso, sensibilidade e motricidade antes e depois</b>. <b>O que muda conduta:</b> exposição, déficit neurovascular, envolvimento articular e fise.</div></div>
@@ -546,7 +565,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="c2">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.2</span> Fratura exposta</div><h3>Fratura exposta: Gustilo-Anderson, antibiótico, tétano, desbridamento <span class="ank ank-dgr">DANGER</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Gustilo I (&lt;1 cm, limpa), II (1–10 cm, partes moles moderadas), III (&gt;10 cm, esmagamento, alta energia); IIIA (cobertura possível), IIIB (precisa de cobertura), IIIC (lesão arterial a reparar). <b>Arma de fogo de alta energia, fratura segmentar e ambiente rural são III qualquer que seja a ferida.</b> Antibiótico na primeira hora, tétano, curativo e tala, centro cirúrgico para desbridamento e irrigação. <b>O que muda conduta:</b> grau, contaminação por solo ou água, lesão arterial e viabilidade do membro.</div></div>
@@ -586,7 +605,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="c3">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.3</span> Síndrome compartimental</div><h3>Síndrome compartimental aguda: clínica, pressão e fasciotomia <span class="ank ank-dgr">DANGER</span> <span class="ank ank-hy">HIGH-YIELD</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Pressão crescente em espaço osteofascial fechado compromete a perfusão do músculo e do nervo. <b>Diagnóstico clínico</b>: dor desproporcional, dor à extensão passiva, compartimento tenso, parestesia. Pulso e perfusão normais não afastam. <b>Pressão (ΔP = diastólica − compartimento):</b> ΔP &lt;30 mmHg levanta a hipótese e ΔP &gt;30 mmHg, em medida repetida, ajuda a afastar (AAOS 2025). Conduta: soltar tudo o que comprime e <b>fasciotomia imediata e completa</b>. <b>O que muda conduta:</b> exame confiável × não confiável (sedado, politrauma, lesão nervosa), hipotensão e tempo de isquemia.</div></div>
@@ -625,7 +644,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="c4">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.4</span> Embolia gordurosa</div><h3>Embolia gordurosa: a tríade que aparece em 24–72 horas <span class="ank ank-hy">HIGH-YIELD</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Insuficiência respiratória, alteração do nível de consciência e petéquias (tronco, axilas, conjuntivas) <b>24–72 h depois de fratura de osso longo ou pelve</b>. Risco: 1–3% em fratura fechada de osso longo, até 30–40% em fratura bilateral de fêmur (apostila). Tratamento é de suporte; a fixação precoce da fratura é a prevenção. <b>O que muda conduta:</b> hipoxemia, necessidade de ventilação e dúvida com TEP.</div></div>
@@ -643,7 +662,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="c5">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.5</span> Consolidação anormal</div><h3>Pseudartrose, consolidação viciosa, necrose avascular e SDRC <span class="ank ank-dec">DECISION</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Consolidação com <b>deformidade</b> é viciosa; <b>atraso</b> é retardo (clínico &gt;6–8 semanas, radiológico &gt;4–8 meses, ainda com evolução); a <b>falta de consolidação em 9 meses sem progressão</b> é pseudartrose (definição citada na apostila). Hipertrófica por instabilidade (fixar melhor); atrófica por falta de vascularização (enxerto). <b>SDRC</b> é dor desproporcional, edema e alterações vasomotoras depois de fratura. <b>O que muda conduta:</b> infecção associada, estabilidade, vascularização e tabagismo.</div></div>
@@ -660,7 +679,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="c6">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.6</span> TEV na fratura</div><h3>Tromboembolismo venoso: quem recebe profilaxia, quanto e por quanto tempo <span class="ank ank-dec">DECISION</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body"><b>Fratura de quadril, pelve ou fêmur e artroplastia</b> são situações de alto risco (Caprini 5 pontos: fratura de quadril, pelve ou membro inferior). Profilaxia com <b>enoxaparina 40 mg SC 1×/dia</b> (ClCr &lt;30: 20 mg/dia) ou HNF 5.000 UI SC 8/8–12/12 h, mais compressão pneumática, por até <b>35 dias</b> na fratura de quadril (CT06; coerente com o HO03). <b>O que muda conduta:</b> risco de sangramento, janela de anestesia neuroaxial (HO03), ClCr e peso.</div></div>
@@ -676,7 +695,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="c7">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.7</span> Fêmur proximal</div><h3>Fratura do fêmur proximal no idoso: o relógio da cirurgia <span class="ank ank-dec">DECISION</span> <span class="ank ank-hy">HIGH-YIELD</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Idosa que cai da própria altura, <b>membro encurtado em rotação externa</b>, sem apoio. Radiografia AP de bacia e perfil; <b>RM ou TC se a radiografia é normal</b> e a suspeita persiste. <b>Colo (intracapsular)</b>: Garden I-II fixação com parafusos; Garden III-IV desviada no idoso, prótese (hemiartroplastia ou total). <b>Intertrocantérica (extracapsular)</b>: parafuso deslizante ou haste. <b>Cirurgia no dia da internação ou no seguinte</b> (NICE NG124) e em até 48 h nos serviços (AAOS; conferir); desviada em jovem &lt;65 anos é emergência, idealmente em 12 horas (apostila). <b>O que muda conduta:</b> idade fisiológica, desvio, uso de anticoagulante e estabilidade clínica.</div></div>
@@ -714,7 +733,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="c8">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.8</span> Punho e escafoide</div><h3>Fratura de Colles e fratura do escafoide <span class="ank ank-hy">HIGH-YIELD</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body"><b>Colles:</b> fratura da metáfise distal do rádio com desvio dorsal do fragmento, em mulher &gt;50 anos com osteoporose, por queda com a mão espalmada. Redução fechada com bloqueio, imobilização braquiopalmar, controle radiográfico em 1 semana, 6 semanas no total. <b>Escafoide:</b> dor na tabaqueira anatômica; radiografia pode ser normal; imobilizar mesmo sem fratura visível; 3 meses de média; risco de necrose do polo proximal e pseudartrose. <b>O que muda conduta:</b> instabilidade (desvio dorsal &gt;20°, encurtamento &gt;5 mm, intra-articular, cominuição) e desvio do escafoide.</div></div>
@@ -732,7 +751,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="c9">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.9</span> Tornozelo</div><h3>Fratura de tornozelo e as regras de Ottawa <span class="ank ank-hy">HIGH-YIELD</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Trauma rotacional ou angulatório, com um ou ambos os maléolos e, às vezes, a sindesmose. <b>Ottawa:</b> radiografia se houver dor na região maleolar <i>e</i> dor óssea na borda posterior ou ponta dos maléolos (6 cm distais) ou <b>incapacidade de dar quatro passos</b> na hora do trauma e na avaliação. Radiografia em AP, perfil e <b>mortise</b> (20° de rotação medial). Sem desvio: tala e depois bota por 6–8 semanas; desvio, instabilidade ou sindesmose: fixação. <b>O que muda conduta:</b> estabilidade, desvio, sindesmose e fratura exposta.</div></div>
@@ -758,7 +777,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="c10">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.10</span> Luxações</div><h3>Luxações de ombro, cotovelo, quadril e joelho: reduzir, examinar, documentar <span class="ank ank-dgr">DANGER</span> <span class="ank ank-hy">HIGH-YIELD</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body"><b>Radiografia e exame neurovascular antes e depois</b> de reduzir. Ombro: 90–95% anterior, redução fechada com sedação, nervo axilar, e acima dos 40–50 anos pensar em rotura do manguito. Cotovelo: 90% posterior, nervo ulnar e artéria braquial. <b>Quadril: redução em ≤6 horas</b>, necrose avascular e ciático. <b>Joelho:</b> ao menos três ligamentos e artéria poplítea, mesmo com redução espontânea. <b>O que muda conduta:</b> fratura associada, déficit neurovascular e tempo de luxação.</div></div>
@@ -777,7 +796,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="c11">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.11</span> Fratura da criança</div><h3>Fise (Salter-Harris) e fratura supracondiliana do úmero <span class="ank ank-hy">HIGH-YIELD</span> <span class="ank ank-dec">DECISION</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">A <b>fise</b> é mais fraca que o ligamento: a criança "tem fratura onde o adulto tem entorse". <b>Salter-Harris I e II</b> (80% tipo II, sinal de Thurston-Holland) têm bom prognóstico e tratam-se por redução fechada e gesso; <b>III e IV</b> são articulares e exigem <b>redução anatômica cirúrgica</b> para não fechar a fise; <b>V</b> é de compressão e de mau prognóstico. <b>Supracondiliana</b> (4–10 anos, queda com cotovelo estendido): Gartland I gesso; II e III redução fechada e fios percutâneos. <b>O que muda conduta:</b> pulso, nervo interósseo anterior, tipo de Salter-Harris e tempo.</div></div>
@@ -816,7 +835,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="c12">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.12</span> DDQ</div><h3>Displasia do desenvolvimento do quadril: o exame do recém-nascido <span class="ank ank-hy">HIGH-YIELD</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Instabilidade, subluxação ou luxação do quadril por frouxidão e má posição, em meninas (9:1), apresentação pélvica, primogênito, oligoâmnio e história familiar. <b>Ortolani</b> (redução, "clique") e <b>Barlow</b> (luxável) no recém-nascido; depois dos 3 meses, <b>limitação da abdução, sinal de Galeazzi, assimetria</b>; depois de andar, Trendelenburg. USG a partir de 4–6 semanas e radiografia a partir de 3–4 meses. <b>O que muda conduta:</b> idade ao diagnóstico, redutibilidade e fator de risco.</div></div>
@@ -834,7 +853,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="c13">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.13</span> Quadril da criança e do adolescente</div><h3>Legg-Calvé-Perthes e epifisiólise do quadril <span class="ank ank-hy">HIGH-YIELD</span> <span class="ank ank-dgr">DANGER</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body"><b>Perthes:</b> necrose avascular idiopática da epífise femoral em menino de 2–12 anos (média 7), com claudicação e dor no quadril ou no joelho; &lt;6 anos tem melhor prognóstico (observar); &gt;6 anos, perda do pilar lateral ou subluxação pedem tratamento de contenção. <b>Epifisiólise:</b> adolescente (11–15 anos), obeso, com claudicação e rotação externa do quadril ao fletir; deslizamento posteromedial da epífise; <b>fixação cirúrgica in situ imediata e proibição do apoio</b>. <b>O que muda conduta:</b> idade, extrusão e estabilidade (consegue ou não apoiar).</div></div>
@@ -852,7 +871,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="c14">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.14</span> Tumor ósseo maligno</div><h3>Osteossarcoma, sarcoma de Ewing e condrossarcoma <span class="ank ank-dgr">DANGER</span> <span class="ank ank-hy">HIGH-YIELD</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body"><b>Dor óssea noturna, que não relaciona com o movimento, massa dura e, às vezes, fratura patológica</b> em adolescente ou adulto jovem. Radiografia em duas incidências é o primeiro exame: osteossarcoma (metáfise do fêmur distal, tíbia proximal, úmero proximal; <b>raios de sol, triângulo de Codman</b>); Ewing (diáfise, ossos planos; <b>casca de cebola, "roído de traça"</b>, febre e perda de peso); condrossarcoma (adulto, pelve e fêmur proximal). RM do osso inteiro, TC de tórax e cintilografia óssea; <b>biópsia no centro que vai operar, com trajeto ressecável</b>. <b>O que muda conduta:</b> estadiamento (Enneking), metástase pulmonar, localização na pelve e resposta à quimioterapia.</div></div>
@@ -890,9 +909,9 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </section>
 
 <section id="secundarias">
-<div class="section"><div class="section-eyebrow"><span>D</span> Entidades Secundárias</div><div class="section-title">Nove boxes: o que completa o diferencial, o que a prova cobra e o que tem dono vizinho</div><div class="section-sub">Pé torto, maus-tratos, tumores benignos e metástase, osteomielite, o quadril e o joelho doloroso da criança, o ombro de partes moles, o mapa das fraturas por segmento e as lesões ligamentares. Coluna e pelve ficam no CT03 e no CT02; artrites e gota, no RD01 e no RD04.</div></div>
+<div class="section"><div class="section-eyebrow"><span>D</span> Entidades Secundárias</div><div class="section-title">Nove boxes: o que completa o diferencial, o que a prova cobra e o que tem dono vizinho</div><div class="section-sub">Pé torto, maus-tratos, tumores benignos e metástase, osteomielite, o quadril e o joelho doloroso da criança, o ombro de partes moles, o mapa das fraturas por segmento e as lesões ligamentares. Coluna e pelve ficam no CT03 e no CT02; artrites e gota, no RD01 e no RD04.</div></div><!--hp-f2--><nav class="sec-idx" aria-label="Neste capítulo"><a href="#d1"><b>D.1</b>Pé torto congênito equinovaro…</a><a href="#d2"><b>D.2</b>Fraturas suspeitas de maus-tr…</a><a href="#d3"><b>D.3</b>Lesões benignas e tumor de cé…</a><a href="#d4"><b>D.4</b>Metástase óssea e fratura pat…</a><a href="#d5"><b>D.5</b>Osteomielite e artrite séptic…</a><a href="#d6"><b>D.6</b>Sinovite transitória, Osgood…</a><a href="#d7"><b>D.7</b>Manguito rotador e luxação ac…</a><a href="#d8"><b>D.8</b>Fraturas por segmento: o que…</a><a href="#d9"><b>D.9</b>Entorses e lesões ligamentare…</a></nav><!--/hp-f2-->
 
-<div class="card diag">
+<div class="card diag" id="d1">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">D.1</span> Pé torto</div><h3>Pé torto congênito equinovaro e metatarso varo</h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Deformidade complexa de retropé (equino, varo), mediopé (cavo, adução) e antepé, ao nascer, com panturrilha atrófica e pé menor. Diagnóstico clínico. <b>Tratamento de escolha é o método de Ponseti</b>: manipulações e gessos semanais por 6–10 semanas, tenotomia do calcâneo, depois órtese de abdução (Denis Browne) em tempo integral por 2–3 meses e noturna até 4 anos (conferir). <b>O que muda conduta:</b> pé rígido, teratológico (artrogripose, mielomeningocele) e recidiva; cirurgia de partes moles só após 9 meses.</div></div>
@@ -908,7 +927,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card diag">
+<div class="card diag" id="d2">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">D.2</span> Maus-tratos</div><h3>Fraturas suspeitas de maus-tratos na criança <span class="ank ank-dgr">DANGER</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">O osso conta uma história quando a boca não conta. <b>Alta especificidade:</b> fratura metafisária "em canto" ou "em alça de balde", fratura de costela posterior, escapular, do esterno e do processo espinhoso, fraturas múltiplas em fases diferentes de consolidação, fratura de crânio complexa, <b>qualquer fratura em lactente que ainda não anda</b>. A história que não explica o mecanismo, o atraso na procura e a mudança de versão pesam. <b>O que muda conduta:</b> proteger e notificar, não esperar certeza.</div></div>
@@ -923,7 +942,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card diag">
+<div class="card diag" id="d3">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">D.3</span> Tumores benignos</div><h3>Lesões benignas e tumor de células gigantes</h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body"><b>Osteocondroma</b> (exostose, o tumor benigno mais comum, metáfise; malignização rara), <b>encondroma</b> (mãos e pés), <b>condroblastoma</b> (epífise do imaturo), <b>osteoma osteoide</b> (dor noturna que melhora com AINE; nidus pequeno; ablação por radiofrequência), <b>osteoblastoma</b>, <b>cisto ósseo simples e aneurismático</b>, <b>displasia fibrosa</b> e <b>tumor de células gigantes</b> (adulto jovem, epífise-metáfise do fêmur distal e tíbia proximal; "bolhas de sabão"; localmente agressivo; metástase pulmonar em &lt;5%). <b>O que muda conduta:</b> agressividade (Enneking latente, ativo ou agressivo) e ressecabilidade.</div></div>
@@ -937,7 +956,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card diag">
+<div class="card diag" id="d4">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">D.4</span> Metástase óssea</div><h3>Metástase óssea e fratura patológica <span class="ank ank-dec">DECISION</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">A metástase é o tumor ósseo mais comum no adulto (mama, próstata, pulmão, rim, tireoide; mieloma, HO05). Dor óssea que acorda, fratura por trauma mínimo, hipercalcemia (HO06). <b>Fratura ameaçadora:</b> lesão lítica no fêmur proximal, &gt;50% da cortical, dor mecânica (<b>Mirels ≥9</b>: fixação profilática; conferir). Tratamento: radioterapia, agente modificador ósseo, fixação e tratamento sistêmico. Compressão medular → NE07 (NICE NG234 em disco). <b>O que muda conduta:</b> risco de fratura, déficit neurológico e prognóstico.</div></div>
@@ -951,7 +970,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card diag">
+<div class="card diag" id="d5">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">D.5</span> Osteomielite e artrite séptica</div><h3>Osteomielite e artrite séptica: box curto com doses pediátricas <span class="ank ank-dgr">DANGER</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Sem dono no catálogo para a osteomielite; a artrite séptica do adulto é do RD04. A criança com <b>febre, dor óssea ou articular e recusa de apoio</b> faz hemocultura, PCR e VHS e, se possível, punção ou cultura do osso <b>antes</b> do antibiótico. <i>S. aureus</i> (MRSA comunitário), estreptococo do grupo A e <i>Kingella kingae</i> em menores de 4 anos; <i>Salmonella</i> na falciforme; <i>Pseudomonas</i> no pé com lesão penetrante. Quadril séptico: lavagem cirúrgica de urgência. <b>O que muda conduta:</b> Kocher, MRSA, recém-nascido e implante.</div></div>
@@ -966,7 +985,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card diag">
+<div class="card diag" id="d6">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">D.6</span> Dor no quadril e no joelho da criança</div><h3>Sinovite transitória, Osgood-Schlatter e outras lesões pediátricas comuns</h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body"><b>Sinovite transitória:</b> 3–8 anos, 7–14 dias após infecção viral, febre ausente ou &lt;38 °C, bom estado geral, repouso e AINE por ~7 dias; o diferencial perigoso é a artrite séptica (Kocher). <b>Osgood-Schlatter:</b> 8–15 anos, esportista, dor e massa na tuberosidade da tíbia, radiografia de perfil, tratamento <b>sempre conservador</b>. <b>Pronação dolorosa:</b> 1–4 anos, tração do braço, criança que não usa o braço; redução por supinação e flexão ou hiperpronação.</div></div>
@@ -979,7 +998,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card diag">
+<div class="card diag" id="d7">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">D.7</span> Ombro de partes moles</div><h3>Manguito rotador e luxação acromioclavicular</h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body"><b>Manguito rotador</b> (AAOS 2025): a fisioterapia e a cirurgia melhoram desfechos em rotura completa pequena ou média; o exame clínico combinado e a imagem (RM, ultrassom, TC) estabelecem a rotura; uma única infiltração de corticoide com anestésico pode ser considerada para alívio de curto prazo. <b>Acromioclavicular:</b> queda sobre o ombro, "sinal da tecla"; maioria conservadora (Rockwood I-II). <b>O que muda conduta:</b> idade, tamanho da rotura, atrofia e demanda.</div></div>
@@ -992,7 +1011,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card diag">
+<div class="card diag" id="d8">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">D.8</span> Mapa por segmento</div><h3>Fraturas por segmento: o que a prova cobra e o que muda conduta</h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Mapa de leitura rápida: <b>clavícula</b> (conservadora com tipoia, salvo exposição, deslocamento grave ou pele em risco), <b>úmero proximal</b> (conservador na maioria), <b>diáfise do úmero</b> (nervo radial, "mão caída"), <b>cotovelo adulto</b> (cabeça do rádio e olécrano), <b>antebraço</b> (Monteggia e Galeazzi no adulto: cirurgia), <b>diáfise do fêmur</b> (haste intramedular), <b>patela e platô</b>, <b>tíbia</b> (compartimental), <b>calcâneo e tálus</b>, <b>Jones</b> (5º metatarso; consolidação ruim), <b>metacarpo e falange</b>, <b>Bennett</b>. Coluna → CT03; pelve e acetábulo → CT02.</div></div>
@@ -1006,7 +1025,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card diag">
+<div class="card diag" id="d9">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">D.9</span> Ligamentos e meniscos</div><h3>Entorses e lesões ligamentares e meniscais do joelho</h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body"><b>LCA</b>: trauma de torção sem contato, estalo, derrame precoce (hemartrose), Lachman positivo, RM; reconstrução no atleta ou na instabilidade. <b>Menisco</b>: dor na interlinha, bloqueio, McMurray. <b>LCP</b> (queda sobre a tíbia fletida), <b>LCM</b> (valgo; conservador) e <b>LCL</b>. Entorse de tornozelo sem critério de Ottawa: gelo, elevação, imobilização funcional e carga. <b>O que muda conduta:</b> hemartrose com instabilidade, bloqueio articular e lesão multiligamentar (luxação espontânea: C.10).</div></div>
@@ -1023,7 +1042,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <section id="algoritmo">
 <div class="section"><div class="section-eyebrow"><span>E</span> Algoritmo</div><div class="section-title">Três árvores: o membro traumatizado, a criança que manca e a lesão óssea agressiva</div><div class="section-sub">A primeira ordena as ameaças ao membro (vida, artéria, pressão, ferida); a segunda separa sinovite, Perthes, epifisiólise e infecção pela idade e pela febre; a terceira impede a biópsia errada. Cada ponta termina em ação com número.</div></div>
 
-<div class="card prim">
+<div class="card prim" id="e1">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">E.1</span> Algoritmo</div><h3>Membro traumatizado: da sala de trauma ao centro cirúrgico <span class="ank ank-dec">DECISION</span></h3></div>
 <div class="card-body">
 <div class="algo"><div class="tree">
@@ -1054,7 +1073,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="e2">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">E.2</span> Algoritmo</div><h3>Criança que manca ou não apoia: a idade e a febre decidem <span class="ank ank-hy">HIGH-YIELD</span></h3></div>
 <div class="card-body">
 <div class="algo"><div class="tree">
@@ -1075,7 +1094,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="e3">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">E.3</span> Algoritmo</div><h3>Lesão óssea agressiva: não biopsie antes de planejar <span class="ank ank-dgr">DANGER</span></h3></div>
 <div class="card-body">
 <div class="algo"><div class="tree">
@@ -1102,13 +1121,13 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </section>
 
 <section id="tratamento">
-<div class="section"><div class="section-eyebrow"><span>F</span> Tratamento Integrado</div><div class="section-title">F1 · Estratégia por entidade · F2 · Doses · F3 · Casos · F4 · SUS e CMED</div><div class="section-sub">Antibiótico da fratura exposta e profilaxia antitetânica leem-se no ATLS 11 e no Manual do CRIE 2023, ambos relidos no texto; a pressão do compartimento e o tratamento da síndrome seguem o AAOS 2025. Doses de pediatria, de metástase e de osteomielite vêm de HPs publicados, de bula estrangeira ou de conhecimento prévio e levam "conferir". Mesma dose, mesmo texto em todo o HP.</div></div>
+<div class="section"><div class="section-eyebrow"><span>F</span> Tratamento Integrado</div><div class="section-title">F1 · Estratégia por entidade · F2 · Doses · F3 · Casos · F4 · SUS e CMED</div><div class="section-sub">Antibiótico da fratura exposta e profilaxia antitetânica leem-se no ATLS 11 e no Manual do CRIE 2023, ambos relidos no texto; a pressão do compartimento e o tratamento da síndrome seguem o AAOS 2025. Doses de pediatria, de metástase e de osteomielite vêm de HPs publicados, de bula estrangeira ou de conhecimento prévio e levam "conferir". Mesma dose, mesmo texto em todo o HP.</div></div><!--hp-f2--><nav class="sec-idx" aria-label="Neste capítulo"><a href="#f1"><b>F.1</b>Escada terapêutica por entida…</a><a href="#f2"><b>F.2</b>Tabela de Doses — fraturas, l…</a><a href="#f3"><b>F.3</b>Caso → conduta correta → erro…</a><a href="#f4"><b>F.4</b>O que existe no Brasil e no S…</a><a href="#f5"><b>F.5</b>Tempos de imobilização, retor…</a><a href="#f6"><b>F.6</b>Mais seis casos: luxação, pós…</a></nav><!--/hp-f2-->
 
-<div class="card tx">
+<div class="card tx" id="f1">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">F.1</span> Estratégia</div><h3>Escada terapêutica por entidade <span class="ank ank-dec">DECISION</span></h3></div>
 <div class="card-body">
 
-<div class="sub-title">F1.1 · Fratura exposta: antibiótico, tétano, cirurgia (C.2) <span class="ank ank-dgr">DANGER</span></div>
+<div class="sub-title" id="f1-1">F1.1 · Fratura exposta: antibiótico, tétano, cirurgia (C.2) <span class="ank ank-dgr">DANGER</span></div>
 <ul class="bullets">
 <li><b>Primeira hora:</b> curativo estéril, alinhamento, tala, fotografia da ferida, analgesia e antibiótico IV. Gustilo I e II sem solo: cefazolina; com solo, metronidazol junto; tipo III, gentamicina ou ceftriaxona; água doce ou salgada trocam o esquema (ATLS 11, tabela 10-2).</li>
 <li><b>Duração:</b> 24 h depois do fechamento nos tipos I e II e 72 h nos tipos III (ATLS 11; o ATLS não ancora o 72 h no fechamento, e o serviço padroniza). Estender por "segurança" não reduz infecção e seleciona resistência; a regra de 24–72 h da apostila e a limitação ao desbridamento de outras diretrizes diferem entre si, e o serviço deve escolher e padronizar.</li>
@@ -1117,7 +1136,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </ul>
 <div class="box danger"><span class="box-label">DANGER</span><div class="box-title">Cefazolina não é a escolha quando o risco é MRSA, e a vancomicina entra no lugar, não ao lado</div><div class="box-body">O ATLS 11 prevê a vancomicina como substituta da cefazolina no paciente de risco para MRSA e como alternativa na alergia a beta-lactâmico (ataque 20–35 mg/kg, manutenção 15–20 mg/kg a cada 8–12 h, por nível e com dose máxima pelo protocolo institucional). A partir de 120 kg a cefazolina sobe para 3 g (CT06; o ATLS 11 usa &gt;120 kg). Gentamicina 5 mg/kg em 24 h exige peso adequado e função renal; com insuficiência renal, trocar por ceftriaxona 2 g IV 24/24 h.</div></div>
 
-<div class="sub-title">F1.2 · Síndrome compartimental (C.3) <span class="ank ank-dgr">DANGER</span></div>
+<div class="sub-title" id="f1-2">F1.2 · Síndrome compartimental (C.3) <span class="ank ank-dgr">DANGER</span></div>
 <ul class="bullets">
 <li><b>Remover tudo que comprime</b> (gesso, ataduras, curativo circular, tala apertada) e manter o membro na altura do coração; a elevação reduz a pressão arterial local e piora a perfusão.</li>
 <li><b>Analgesia IV</b> e sem bloqueio periférico (ATLS 11); anestesia neuroaxial exige exame frequente ou pressão (AAOS 2025).</li>
@@ -1125,7 +1144,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <li><b>Depois:</b> CK, potássio, creatinina e diurese; rabdomiólise pelo NU03 e pelo NU04. Síndrome perdida com dano irreversível no adulto: sem fasciotomia, com estabilização sem violar o compartimento (AAOS, consenso).</li>
 </ul>
 
-<div class="sub-title">F1.3 · Fêmur proximal no idoso (C.7) <span class="ank ank-dec">DECISION</span></div>
+<div class="sub-title" id="f1-3">F1.3 · Fêmur proximal no idoso (C.7) <span class="ank ank-dec">DECISION</span></div>
 <ul class="bullets">
 <li><b>Chegada:</b> bloqueio da fáscia ilíaca ou do nervo femoral, dipirona 1 g IV 6/6 h (máx. 4 g/dia adotado), opioide titulado; hidratação, ECG, hemograma, ClCr, tipagem; ortogeriatria.</li>
 <li><b>Cirurgia:</b> no dia da internação ou no seguinte (NICE NG124) e em até 48 h (AAOS); colo desviado em jovem em até 12 h (apostila). Escolha por Garden, idade fisiológica e demanda: parafusos, parafuso deslizante, haste, hemiartroplastia ou artroplastia total.</li>
@@ -1133,21 +1152,21 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <li><b>Depois:</b> carga conforme tolerada, nutrição, prevenção de delirium (NE04), tratamento da osteoporose (EN06) e prevenção de quedas.</li>
 </ul>
 
-<div class="sub-title">F1.4 · Profilaxia de TEV na fratura (C.6) <span class="ank ank-dec">DECISION</span></div>
+<div class="sub-title" id="f1-4">F1.4 · Profilaxia de TEV na fratura (C.6) <span class="ank ank-dec">DECISION</span></div>
 <ul class="bullets">
 <li><b>Alto risco (quadril, pelve, fêmur, artroplastia):</b> HBPM ou HNF mais compressão pneumática; manter até 35 dias na fratura de quadril e na cirurgia ortopédica de grande porte (CT06); pelve e fêmur não cirúrgicos não têm esse prazo no CT06 (conferir). Enoxaparina 40 mg SC 1×/dia; ClCr &lt;30: 20 mg/dia (bula BR); HNF 5.000 UI SC 8/8–12/12 h.</li>
 <li><b>Baixo risco ou fratura isolada abaixo do joelho:</b> individualizar; mobilização precoce; sem anticoagulação rotineira em ensaios de gesso e bota (conferir).</li>
 <li><b>Neuroeixo, sangramento, anticoagulante prévio, HIT:</b> janela e reversão pelo HO03; contraindicação à anticoagulação: compressão pneumática.</li>
 </ul>
 
-<div class="sub-title">F1.5 · Luxações: analgesia, redução e pós-redução (C.10)</div>
+<div class="sub-title" id="f1-5">F1.5 · Luxações: analgesia, redução e pós-redução (C.10)</div>
 <ul class="bullets">
 <li><b>Antes:</b> radiografia (exceto isquemia), documentação neurovascular, analgesia IV titulada em pequenas doses; o bloqueio regional ajuda na redução do ombro, mas só se não há suspeita de compartimental.</li>
 <li><b>Sedação:</b> por equipe treinada, com monitorização, equipamento de via aérea, naloxona e flumazenil disponíveis (ATLS 11); fármaco e dose pelo protocolo institucional, que este HP não fixa.</li>
 <li><b>Depois:</b> radiografia de controle, reexame do nervo e da artéria, imobilização e reavaliação em 24–48 h. Quadril: TC e vigilância da necrose; joelho: ABI e exame seriado; ombro acima de 40–50 anos: investigar o manguito (D.7).</li>
 </ul>
 
-<div class="sub-title">F1.6 · Ortopedia pediátrica (C.11 a C.13, D.1)</div>
+<div class="sub-title" id="f1-6">F1.6 · Ortopedia pediátrica (C.11 a C.13, D.1)</div>
 <ul class="bullets">
 <li><b>Fise:</b> I e II, redução fechada e gesso; III e IV, redução cruenta; supracondiliana Gartland II e III, redução e fios percutâneos; seguir a fise por 1–2 anos pelo risco de fechamento.</li>
 <li><b>DDQ:</b> diagnóstico no exame do recém-nascido; Pavlik até 6 meses (reavaliar em 3–4 semanas); depois, redução fechada ou aberta, com osteotomia a partir dos 18 meses.</li>
@@ -1155,21 +1174,21 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <li><b>Analgesia:</b> dipirona 10–25 mg/kg/dose a cada 6 h (máx. 1 g/dose e 4 g/dia); ibuprofeno 10 mg/kg/dose a cada 6–8 h (máx. 400 mg/dose e 40 mg/kg/dia); opioide só com protocolo (conferir bula e teto).</li>
 </ul>
 
-<div class="sub-title">F1.7 · Osteomielite e artrite séptica (D.5)</div>
+<div class="sub-title" id="f1-7">F1.7 · Osteomielite e artrite séptica (D.5)</div>
 <ul class="bullets">
 <li><b>Coleta antes do antibiótico:</b> hemocultura, punção articular ou cultura óssea; não colher swab de fístula.</li>
 <li><b>Criança:</b> cefazolina 100 mg/kg/dia IV ÷ 8/8 h (máx. 2 g/dose) ou oxacilina 150–200 mg/kg/dia IV ÷ 6/6 h (máx. 12 g/dia); MRSA, vancomicina 15 mg/kg/dose IV 6/6 h, máx. 4 g/dia inicial, com nível sérico; via oral com melhora e queda da PCR; 3–4 semanas se não complicada.</li>
 <li><b>Adulto:</b> oxacilina 2 g IV 4/4 h ou cefazolina 2 g IV 8/8 h por 6 semanas (vertebral, 6–8); desbridamento e retirada de implante infectado quando necessário.</li>
 </ul>
 
-<div class="sub-title">F1.8 · Tumores ósseos e metástase (C.14, D.3, D.4)</div>
+<div class="sub-title" id="f1-8">F1.8 · Tumores ósseos e metástase (C.14, D.3, D.4)</div>
 <ul class="bullets">
 <li><b>Sarcoma:</b> centro de referência, quimioterapia neoadjuvante, cirurgia com margem ampla e quimioterapia adjuvante; sem doses neste HP.</li>
 <li><b>TCG:</b> ressecção; denosumabe 120 mg SC nos dias 1, 8, 15 e depois a cada 4 semanas no irressecável; com ClCr &lt;30 ou diálise, corrigir a hipocalcemia antes e monitorizar o cálcio (bula FDA; conferir).</li>
 <li><b>Metástase:</b> radioterapia, ácido zoledrônico 4 mg IV a cada 3–4 semanas com ajuste renal ou denosumabe 120 mg SC a cada 4 semanas (sem ajuste de dose; com ClCr &lt;30 ou diálise, alerta de hipocalcemia grave, corrigir antes), cálcio e vitamina D; fixação profilática em fratura iminente.</li>
 </ul>
 
-<div class="sub-title">F1.9 · SDRC e complicações tardias (C.5)</div>
+<div class="sub-title" id="f1-9">F1.9 · SDRC e complicações tardias (C.5)</div>
 <ul class="bullets">
 <li><b>SDRC:</b> fisioterapia e movimento precoces; analgesia multimodal; prednisona 30–80 mg/dia em refratário (dose da apostila, sem fonte lida; contraindicação absoluta: infecção fúngica sistêmica; conferir); bloqueio simpático regional em casos selecionados.</li>
 <li><b>Pseudartrose:</b> excluir infecção, estabilizar e enxertar; parar de fumar; corrigir vitamina D.</li>
@@ -1177,7 +1196,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card tx">
+<div class="card tx" id="f2">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">F.2</span> Doses Operacionais</div><h3>Tabela de Doses — fraturas, luxações e tumores ósseos</h3></div>
 <div class="card-body">
 <div class="stbl stbl-3">
@@ -1211,7 +1230,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card tx">
+<div class="card tx" id="f3">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">F.3</span> Casos</div><h3>Caso → conduta correta → erro típico <span class="ank ank-hy">HIGH-YIELD</span></h3></div>
 <div class="card-body">
 <div class="stbl stbl-3">
@@ -1228,7 +1247,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card tx">
+<div class="card tx" id="f4">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">F.4</span> SUS e CMED</div><h3>O que existe no Brasil e no SUS</h3></div>
 <div class="card-body">
 <ul class="bullets">
@@ -1238,7 +1257,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </ul>
 </div>
 </div>
-<div class="card tx">
+<div class="card tx" id="f5">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">F.5</span> Imobilização e seguimento</div><h3>Tempos de imobilização, retorno e quando internar ou transferir <span class="ank ank-dec">DECISION</span></h3></div>
 <div class="card-body">
 <div class="stbl stbl-3">
@@ -1253,7 +1272,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <div class="stbl-row stbl-3"><div class="col col1" data-l="Lesão">Quadril ou joelho luxados</div><div class="col" data-l="Imobilização">Imobilização com vigilância neurovascular; TC; cirurgia conforme o caso</div><div class="col" data-l="Critério">Sempre internar: necrose avascular, ciático, artéria poplítea</div></div>
 </div>
 
-<div class="sub-title">F5.1 · Populações especiais que mudam a conduta</div>
+<div class="sub-title" id="f5-1">F5.1 · Populações especiais que mudam a conduta</div>
 <ul class="bullets">
 <li><b>Gestante:</b> proteger o abdome na radiografia, imobilizar e analgesiar sem AINE no 3º trimestre; a gestante traumatizada segue o GO12 e o CT02; HBPM é segura, DOAC não.</li>
 <li><b>Anticoagulado:</b> sem reversão de rotina para fixação do quadril; quando houver sangramento, o HO03; o AAS e o clopidogrel não adiam a cirurgia do fêmur proximal na maioria dos protocolos (conferir).</li>
@@ -1265,7 +1284,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <div class="box decision"><span class="box-label">DECISION</span><div class="box-title">Alta da sala de emergência com fratura: o que entregar por escrito</div><div class="box-body">Alta com tala só quando a perfusão e a sensibilidade estão normais, a dor é controlada com analgésico oral e o paciente entende os sinais de alarme: dor que aumenta mesmo com o analgésico, formigamento, dedos frios ou azulados, edema que cresce sob a tala. Dê retorno ortopédico em 3–7 dias, instrua a elevar o membro na altura do coração sem exagero e a não molhar o gesso. Criança: o cuidador recebe o mesmo texto e a orientação de procurar atendimento imediato por choro inconsolável ou recusa de movimentar os dedos.</div></div>
 </div>
 </div>
-<div class="card tx">
+<div class="card tx" id="f6">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">F.6</span> Casos de plantão</div><h3>Mais seis casos: luxação, pós-operatório, criança, tumor e metástase <span class="ank ank-hy">HIGH-YIELD</span></h3></div>
 <div class="card-body">
 <div class="stbl stbl-3">
@@ -1277,14 +1296,14 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <div class="stbl-row stbl-3"><div class="col col1" data-l="Caso">Menino de 5 anos, febre e recusa de apoio, VHS 60 mm/h, leucócitos 15.000/mm³</div><div class="col" data-l="Conduta">Kocher alto: USG com punção, hemocultura e antibiótico (cefazolina 100 mg/kg/dia ÷ 8/8 h) depois da coleta; lavagem cirúrgica do quadril séptico</div><div class="col" data-l="Erro">Rotular de sinovite transitória e dar AINE</div></div>
 <div class="stbl-row stbl-3"><div class="col col1" data-l="Caso">Mulher de 67 anos com câncer de mama e dor no fêmur proximal, lesão lítica de 3 cm na cortical</div><div class="col" data-l="Conduta">Mirels, ortopedia para fixação profilática, radioterapia, ácido zoledrônico 4 mg IV com ajuste renal ou denosumabe 120 mg SC (com ClCr &lt;30 ou diálise, corrigir a hipocalcemia antes)</div><div class="col" data-l="Erro">Esperar a fratura e operar de urgência</div></div>
 </div>
-<div class="sub-title">F6.1 · Reabilitação e retorno: o que muda o desfecho funcional</div>
+<div class="sub-title" id="f6-1">F6.1 · Reabilitação e retorno: o que muda o desfecho funcional</div>
 <ul class="bullets">
 <li><b>Mobilização precoce:</b> idoso com fratura de quadril levanta no 1º dia de pós-operatório e anda com apoio conforme tolerado; imobilização prolongada paga-se em pneumonia, úlcera por pressão, TEV e perda de função.</li>
 <li><b>Fisioterapia da articulação adjacente:</b> o punho e o cotovelo enrijecem em semanas; movimento ativo dos dedos e do ombro desde o primeiro dia previne rigidez e SDRC.</li>
 <li><b>Carga:</b> definida pela fixação e pelo osso (parafuso deslizante e haste permitem carga conforme tolerada; fixação de platô tibial e de pilão restringe a carga por semanas), sempre escrita no relatório de alta.</li>
 <li><b>Seguimento radiográfico:</b> controles nas semanas 2, 6 e 12 e aos 6 meses; ausência de progressão do calo em 3–4 meses sugere retardo e exige procurar infecção, instabilidade e fatores do hospedeiro.</li>
 </ul>
-<div class="sub-title">F6.2 · Retorno ao trabalho e ao esporte</div>
+<div class="sub-title" id="f6-2">F6.2 · Retorno ao trabalho e ao esporte</div>
 <ul class="bullets">
 <li><b>Critérios:</b> consolidação clínica (sem dor no foco) e radiológica, força e amplitude recuperadas e ausência de derrame; liberar pela função, não pelo calendário.</li>
 <li><b>Atleta com LCA:</b> retorno ao esporte de pivô só após reabilitação completa, em geral depois de 9 meses da reconstrução (conferir).</li>
@@ -1297,7 +1316,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <section id="pitfalls">
 <div class="section"><div class="section-eyebrow"><span>G</span> Pitfalls · Mitos · Controvérsias</div><div class="section-title">Erros Operacionais + Mitos Vivos + Debates Atuais</div><div class="section-sub">Os dez erros abaixo são os que viram evento adverso: ferida minimizada, compartimental esperando pulso, luxação reduzida tarde, escafoide liberado, tumor biopsiado no lugar errado, criança com fratura sem pergunta.</div></div>
 
-<div class="card pearl">
+<div class="card pearl" id="g1">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">G.1</span> Pegadinhas</div><h3>10 Erros Operacionais em Fraturas, Luxações e Tumores Ósseos</h3></div>
 <div class="card-body">
 <div class="stbl stbl-2">
@@ -1316,7 +1335,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card pearl">
+<div class="card pearl" id="g2">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">G.2</span> Mitos · Controvérsias</div><h3>Mitos Vivos e Debates Atuais</h3></div>
 <div class="card-body">
 <div class="box myth"><span class="box-label">MYTH</span><div class="box-title">"A fratura exposta precisa chegar ao centro cirúrgico em 6 horas, senão infecta"</div><div class="box-body">A regra de 6 horas vem de séries antigas e é debatida: resultados semelhantes aparecem em intervenções até 24 h em fraturas limpas. O que pesa no desfecho é o antibiótico precoce, na primeira hora, e a qualidade do desbridamento. O tempo continua curto para os tipos III e para a contaminação grosseira.</div></div>
@@ -1332,7 +1351,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <section id="pearls">
 <div class="section"><div class="section-eyebrow"><span>H</span> Pearls · Evolving</div><div class="section-title">H1 · Pearls de Especialista · H2 · Áreas em Evolução</div><div class="section-sub">Oito nuances de leitura de imagem e de plantão, e quatro pontos em que a literatura recente mudou ou ainda diverge. O tema é estável em seus princípios, então o bloco de evolução é curto.</div></div>
 
-<div class="card pearl">
+<div class="card pearl" id="h1">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">H.1</span> Pearls</div><h3>8 Nuances que Distinguem o Expert</h3></div>
 <div class="card-body">
 <div class="box pearl"><span class="box-label">PEARL</span><div class="box-title">O pulso é o último sinal e a dor desproporcional é o primeiro: o músculo morre em silêncio com pulso palpável</div><div class="box-body">A pressão do compartimento raramente passa da sistólica, de modo que a artéria continua pulsando enquanto a microcirculação já colapsou. Por isso o plantão que espera a palidez e a ausência de pulso opera tarde. Na criança, o sinal precoce é a necessidade crescente de analgésico, a agitação e a ansiedade, e no sedado a pressão seriada substitui a queixa.</div></div>
@@ -1346,7 +1365,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card pearl">
+<div class="card pearl" id="h2">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">H.2</span> Evolving</div><h3>4 Mudanças Recentes e Pontos em Aberto</h3></div>
 <div class="card-body">
 <div class="box evolving"><span class="box-label">EVOLVING</span><div class="box-title">AAOS 2025 atualiza a síndrome compartimental: fratura associada sobe de consenso para "limitada"</div><div class="box-body">A atualização rápida de novembro de 2025 acrescentou estudos e elevou a recomendação de fixar a fratura na estabilização inicial de consenso para limitada. As recomendações de pressão (ΔP &gt;30 mmHg) e de fasciotomia completa seguem iguais.</div></div>
@@ -1395,5 +1414,36 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <a class="to-top" href="#" aria-label="Voltar ao topo">↑</a>
 <div class="watermark">@dr.lorencato · RD05 Fraturas, Luxações e Tumores Ósseos v5.2</div>
 
-</body>
+<!--hp-f2--><script>(function(){var d=document,M=d.querySelector('main');if(!M)return;
+var SELF='RD05',HP=' CT01 CT02 CT03 CT04 CT05 CT06 CT08 CT10 CV01 CV03 CV04 CV05 CV06 CV07 CV08 EN01 EN02 EN03 EN04 EN06 EN07 GH01 GH02 GH03 GH05 GH06 GH07 GH08 GH09 GH10 GO01 GO02 GO03 GO04 GO09 GO10 GO11 GO12 GO13 GO14 HO01 HO02 HO03 HO04 HO05 HO06 II01 II02 II03 II04 II07 II08 NE01 NE02 NE03 NE04 NE05 NE06 NE07 NE08 NU01 NU02 NU03 NU04 NU05 OE01 OE02 PC01 PC02 PC03 PC04 PC05 PC06 PD01 PD02 PD03 PD04 PD05 PD06 PD07 PD08 PD09 PD10 RD01 RD02 RD03 RD04 RD05 RD07 RP01 RP02 RP03 RP04 ';
+var SK='A,H1,H2,H3,SCRIPT,STYLE,NAV,.card-num,.card-eyebrow,.sub-title,.disease-tag,.toc';
+var R=/\b(?:([A-H])(\d)?\.(\d{1,2}[a-c]?)|(CV|RP|GH|NE|EN|NU|HO|II|RD|GO|PD|PC|CT|OE)(\d\d))\b/g;
+function skip(n){for(var e=n.parentNode;e&&e!==M;e=e.parentNode)if(e.matches&&e.matches(SK))return 1;return 0}
+var w=d.createTreeWalker(M,4),t,L=[];while(t=w.nextNode())if(R.test(t.data)&&!skip(t))L.push(t);
+L.forEach(function(t){var s=t.data,f=d.createDocumentFragment(),i=0,m;R.lastIndex=0;
+while(m=R.exec(s)){var h=null;
+if(m[1]){var id=m[1].toLowerCase()+(m[2]?m[2]+'-':'')+m[3];if(d.getElementById(id))h='#'+id}
+else{var x=m[4]+m[5];if(x!==SELF&&HP.indexOf(' '+x+' ')>=0)h='../'+x+'/'+x+'.html'}
+if(!h)continue;f.appendChild(d.createTextNode(s.slice(i,m.index)));
+var a=d.createElement('a');a.href=h;a.className='xr';a.textContent=m[0];f.appendChild(a);i=R.lastIndex}
+if(i){f.appendChild(d.createTextNode(s.slice(i)));t.parentNode.replaceChild(f,t)}});
+function nz(s){return s.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'')}
+var q=d.querySelector('.hp-q'),n=d.querySelector('.hp-n'),it=M.querySelectorAll('.card,.pocket-card'),T;
+function clr(){M.querySelectorAll('.q-off').forEach(function(e){e.classList.remove('q-off')})}
+function run(){var v=nz(q.value.trim());clr();n.textContent='';if(v.length<2)return;var k=0;
+it.forEach(function(c){if(nz(c.textContent).indexOf(v)<0){c.classList.add('q-off');return}k++;
+var r=c.querySelectorAll('.stbl-row,.disease-row,.score-row'),h=[];r.forEach(function(x){if(nz(x.textContent).indexOf(v)>=0)h.push(x)});
+if(h.length)r.forEach(function(x){if(h.indexOf(x)<0)x.classList.add('q-off')});
+c.querySelectorAll('details').forEach(function(x){if(nz(x.textContent).indexOf(v)>=0)x.open=true})});
+M.querySelectorAll('section').forEach(function(s){if(!s.querySelector('.card:not(.q-off),.pocket-card:not(.q-off)'))s.classList.add('q-off')});
+n.textContent=k?k+' achado'+(k>1?'s':''):'nada'}
+if(q){q.addEventListener('input',function(){clearTimeout(T);T=setTimeout(run,180)});
+q.addEventListener('keydown',function(e){if(e.key==='Escape'){q.value='';run()}})}
+function tg(b,f){b.addEventListener('click',function(){var on=b.getAttribute('aria-pressed')!=='true';b.setAttribute('aria-pressed',on);f(on)})}
+var bd=d.querySelector('.hp-dz'),bo=d.querySelector('.hp-op');
+if(bd)tg(bd,function(on){d.body.classList.toggle('dz',on);if(on)d.getElementById('tratamento').scrollIntoView()});
+if(bo)tg(bo,function(on){M.querySelectorAll('details').forEach(function(x){x.open=on})});
+var P=[];addEventListener('beforeprint',function(){P=[];M.querySelectorAll('details:not([open])').forEach(function(x){P.push(x);x.open=true})});
+addEventListener('afterprint',function(){P.forEach(function(x){x.open=false})});
+})();</script><!--/hp-f2--></body>
 </html>

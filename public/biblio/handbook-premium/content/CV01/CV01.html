@@ -345,13 +345,32 @@ ul.bullets li b{color:var(--ink);font-weight:600}
   .pocket .pocket-card.tx{--accent:#a8481a}
   .pocket .pocket-card.clin{--accent:#0b5d4e}
 }
+
+/* === v5.2.2 · fase 2 (navegação) === */
+.hp-tools{display:flex;gap:6px;align-items:center;flex:none;order:1;margin-left:auto;padding-left:6px;position:sticky;right:0;background:#f1eee5;box-shadow:-10px 0 10px -4px #f1eee5,16px 0 0 #f1eee5}
+@media(min-width:900px){html{scroll-padding-top:150px}.toc-inner{flex-wrap:wrap;overflow:visible}.card[id],.sub-title[id]{scroll-margin-top:150px}}
+@media(max-width:899px){.hp-b,.hp-n{display:none}.hp-q{width:104px}}
+.hp-q{width:128px;font:500 12px/1 'DM Sans',system-ui,sans-serif;padding:7px 11px;border:1px solid var(--line-strong);border-radius:999px;background:var(--paper);color:var(--ink)}
+.hp-b{font:600 11px/1 'DM Sans',system-ui,sans-serif;letter-spacing:.05em;text-transform:uppercase;padding:7px 10px;border-radius:999px;border:1px solid var(--line-strong);background:var(--paper);color:var(--ink-soft);cursor:pointer;white-space:nowrap}
+.hp-b[aria-pressed=true]{background:var(--ink);color:#fff;border-color:var(--ink)}
+.hp-n{font:600 11px/1 'DM Mono',monospace;color:var(--ink-mute);white-space:nowrap}
+.sec-idx{display:flex;flex-wrap:wrap;gap:6px;margin:12px 0 20px}
+.sec-idx a{font:500 12px/1.25 'DM Sans',system-ui,sans-serif;padding:6px 10px;border-radius:999px;background:var(--paper);border:1px solid var(--line);color:var(--ink-soft);text-decoration:none}
+.sec-idx a:hover{border-color:var(--line-strong);color:var(--ink)}
+.sec-idx b{color:var(--c-prim);margin-right:5px;font-weight:700}
+a.xr{color:inherit;text-decoration:underline dotted;text-underline-offset:2px}
+a.xr:hover{color:var(--c-prim)}
+.card[id],.sub-title[id]{scroll-margin-top:110px}
+.q-off{display:none!important}
+body.dz main section:not(#tratamento){display:none}
+@media print{.hp-tools,.sec-idx,.toc-doses{display:none!important}}
 </style>
 </head>
 <body>
 
 <header class="header"><div class="header-row"><div class="h-mark">E</div><div class="h-titles"><div class="h-title">ECG, Arritmias e Síncope · Pocket Handbook</div><div class="h-sub">Elite edition · Cardiologia clínica · CV01</div></div><div class="h-author">@dr.lorencato</div><div class="h-edition">v5.2</div></div></header>
 
-<nav class="toc"><div class="toc-inner"><a href="#pocket" class="toc-chip"><span class="toc-chip-num">0</span>Pocket</a><a href="#redflags" class="toc-chip"><span class="toc-chip-num">A</span>Red Flags</a><a href="#approach" class="toc-chip"><span class="toc-chip-num">B</span>Apresentação</a><a href="#primarias" class="toc-chip"><span class="toc-chip-num">C</span>Entidades</a><a href="#secundarias" class="toc-chip"><span class="toc-chip-num">D</span>Secundárias</a><a href="#algoritmo" class="toc-chip"><span class="toc-chip-num">E</span>Algoritmo</a><a href="#tratamento" class="toc-chip"><span class="toc-chip-num">F</span>Tratamento</a><a href="#pitfalls" class="toc-chip"><span class="toc-chip-num">G</span>Pitfalls</a><a href="#pearls" class="toc-chip"><span class="toc-chip-num">H</span>Pearls</a></div></nav>
+<nav class="toc"><div class="toc-inner"><!--hp-f2--><span class="hp-tools"><input class="hp-q" type="search" placeholder="Buscar no HP" aria-label="Buscar no HP"><button class="hp-b hp-dz" type="button" aria-pressed="false">Só doses</button><button class="hp-b hp-op" type="button" aria-pressed="false">Abrir tudo</button><span class="hp-n" aria-live="polite"></span></span><!--/hp-f2--><a href="#pocket" class="toc-chip"><span class="toc-chip-num">0</span>Pocket</a><a href="#redflags" class="toc-chip"><span class="toc-chip-num">A</span>Red Flags</a><a href="#approach" class="toc-chip"><span class="toc-chip-num">B</span>Apresentação</a><a href="#primarias" class="toc-chip"><span class="toc-chip-num">C</span>Entidades</a><a href="#secundarias" class="toc-chip"><span class="toc-chip-num">D</span>Secundárias</a><a href="#algoritmo" class="toc-chip"><span class="toc-chip-num">E</span>Algoritmo</a><a href="#tratamento" class="toc-chip"><span class="toc-chip-num">F</span>Tratamento</a><!--hp-f2--><a href="#f2" class="toc-chip toc-doses"><span class="toc-chip-num">Rx</span>Doses</a><!--/hp-f2--><a href="#pitfalls" class="toc-chip"><span class="toc-chip-num">G</span>Pitfalls</a><a href="#pearls" class="toc-chip"><span class="toc-chip-num">H</span>Pearls</a></div></nav>
 
 <main>
 <div class="wrap">
@@ -415,7 +434,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <section id="redflags">
 <div class="section"><div class="section-eyebrow"><span>A</span> Red Flags</div><div class="section-title">O que não pode esperar o diagnóstico fino</div><div class="section-sub">Em arritmia a pergunta que decide a primeira hora não é "qual é o ritmo?", e sim "o paciente está instável?" e "o QRS é largo?". Cada linha abaixo vai do sinal objetivo à suspeita e à conduta com número.</div></div>
 
-<div class="card emerg">
+<div class="card emerg" id="a1">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">A.1</span> Emergências</div><h3>Sinais de alarme em arritmia e síncope <span class="ank ank-dgr">DANGER</span></h3></div>
 <div class="card-body">
 
@@ -456,7 +475,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <section id="approach">
 <div class="section"><div class="section-eyebrow"><span>B</span> Por Apresentação</div><div class="section-title">Mapa sindrômico: palpitação, QRS largo, irregularidade, bradicardia e perda de consciência</div><div class="section-sub">O ECG de 12 derivações responde a quatro perguntas em sequência: estável? QRS estreito ou largo? R-R regular? há onda P ou F? Cada padrão abaixo abre uma dessas ramificações.</div></div>
 
-<div class="card clin">
+<div class="card clin" id="b1">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">B.1</span> Padrão 1</div><h3>Palpitação de início e fim súbitos, regular, QRS estreito</h3><div class="card-sub">TSV por reentrada nodal ou por via acessória, taquicardia atrial, flutter 2:1</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">A palpitação que "estala" e para de repente, sentida no pescoço, é reentrada nodal (60–70% das TSV); a sentida no peito, por via acessória. FC 150 bpm cravada, com ondas F em D2, D3 e aVF, é flutter 2:1 até prova em contrário. <b>O que muda conduta:</b> manobra vagal e adenosina revertem a reentrada e desmascaram o flutter e a taquicardia atrial, que apenas "mostram" a atividade atrial sem reverter.</div></div>
@@ -469,7 +488,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card clin">
+<div class="card clin" id="b2">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">B.2</span> Padrão 2</div><h3>Taquicardia de QRS largo</h3><div class="card-sub">Quatro possibilidades, uma delas letal se tratada como outra</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">QRS ≥120 ms com FC &gt;100 bpm: TV (a mais provável, sobretudo com cardiopatia), TSV com aberrância de ramo, taquicardia antidrômica por via acessória, ou FA pré-excitada. A decisão prática é tratar como TV na dúvida. <b>O que muda conduta:</b> dissociação AV, batimento de fusão, concordância precordial e QRS &gt;140 ms (BRD) ou &gt;160 ms (BRE) sustentam TV; o critério de Brugada organiza a sequência.</div></div>
@@ -481,7 +500,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card clin">
+<div class="card clin" id="b3">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">B.3</span> Padrão 3</div><h3>Palpitação irregular</h3><div class="card-sub">FA, flutter com condução variável, taquicardia atrial multifocal, extrassístoles</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Irregularmente irregular, sem onda P: FA. Três ou mais morfologias de P no paciente com DPOC descompensada: taquicardia atrial multifocal, que o pulso não distingue da FA. Extrassístoles isoladas são benignas no coração normal. <b>O que muda conduta:</b> em toda FA o primeiro passo é o risco embólico e a estabilidade, não o ritmo.</div></div>
@@ -493,7 +512,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card clin">
+<div class="card clin" id="b4">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">B.4</span> Padrão 4</div><h3>Bradicardia, pausas, tontura e cansaço</h3><div class="card-sub">Vagotonia e fármacos × doença degenerativa do sistema de condução</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Atleta, sono e uso de betabloqueador, verapamil, digital ou amiodarona produzem bradicardia sinusal e BAV benignos. Idoso com síncope, pausas &gt;3 s ou bloqueio com QRS largo tem doença degenerativa. <b>O que muda conduta:</b> a localização do bloqueio (QRS, grau, resposta à atropina) separa observar de implantar marca-passo.</div></div>
@@ -505,7 +524,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card clin">
+<div class="card clin" id="b5">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">B.5</span> Padrão 5</div><h3>Perda transitória da consciência</h3><div class="card-sub">Síncope: reflexa, ortostática, cardíaca; e o que se parece com ela</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Perda abrupta, transitória e completa da consciência por hipoperfusão cerebral global, com recuperação rápida e espontânea. A reflexa é a causa mais comum (~21%); a cardíaca e a ortostática vêm depois (~9% cada). <b>O que muda conduta:</b> a síncope cardíaca carrega prognóstico pior e é a que se internou para investigar; a reflexa típica não precisa de exame além do ECG.</div></div>
@@ -520,9 +539,9 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </section>
 
 <section id="primarias">
-<div class="section"><div class="section-eyebrow"><span>C</span> Entidades Primárias</div><div class="section-title">Do ECG sistemático à síncope: onze cards, nove boxes de doença</div><div class="section-sub">A leitura do ECG abre o capítulo sem box de doença; seguem FA e flutter, TSV, pré-excitação, TV monomórfica, QT longo e torsades, morte súbita e CDI, nó sinusal, BAV e síncope. Entidades raras e as taquicardias pouco frequentes ficam agrupadas na seção D.</div></div>
+<div class="section"><div class="section-eyebrow"><span>C</span> Entidades Primárias</div><div class="section-title">Do ECG sistemático à síncope: onze cards, nove boxes de doença</div><div class="section-sub">A leitura do ECG abre o capítulo sem box de doença; seguem FA e flutter, TSV, pré-excitação, TV monomórfica, QT longo e torsades, morte súbita e CDI, nó sinusal, BAV e síncope. Entidades raras e as taquicardias pouco frequentes ficam agrupadas na seção D.</div></div><!--hp-f2--><nav class="sec-idx" aria-label="Neste capítulo"><a href="#c1"><b>C.1</b>Cinco perguntas, nesta ordem…</a><a href="#c2"><b>C.2</b>FA e flutter: instabilidade…</a><a href="#c3"><b>C.3</b>Frequência, ritmo, cardiovers…</a><a href="#c4"><b>C.4</b>Taquicardia supraventricular…</a><a href="#c5"><b>C.5</b>Wolff-Parkinson-White: a FA q…</a><a href="#c6"><b>C.6</b>Taquicardia ventricular monom…</a><a href="#c7"><b>C.7</b>Torsades de pointes e a TV po…</a><a href="#c8"><b>C.8</b>Prevenção da morte súbita: qu…</a><a href="#c9"><b>C.9</b>Bradiarritmias sinusais: vago…</a><a href="#c10"><b>C.10</b>BAV: o grau e a localização d…</a><a href="#c11"><b>C.11</b>Síncope: causa, risco e desti…</a></nav><!--/hp-f2-->
 
-<div class="card prim">
+<div class="card prim" id="c1">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.1</span> ECG sistemático</div><h3>Cinco perguntas, nesta ordem, para qualquer taquicardia <span class="ank ank-hy">HIGH-YIELD</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Ritmo de ECG se lê com método, não por reconhecimento de figura: frequência pelo R-R (1.500 ÷ distância em mm), presença de onda P ou F, largura do QRS e regularidade. O mesmo método na bradicardia olha a relação P:QRS e o PR. <b>O que muda conduta:</b> a largura do QRS separa quem aceita adenosina e verapamil de quem não pode; a regularidade separa a TSV da FA; o QTc separa a TV comum da torsades.</div></div>
@@ -562,7 +581,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="c2">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.2</span> Fibrilação atrial e flutter</div><h3>FA e flutter: instabilidade, risco embólico, frequência ou ritmo <span class="ank ank-hy">HIGH-YIELD</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">É a taquiarritmia sustentada mais comum e a principal causa de AVC cardioembólico. Três perguntas em fila: o paciente está instável (choque elétrico)? qual o risco embólico (anticoagular)? a estratégia é frequência ou ritmo (e se for ritmo, há proteção embólica)? <b>O que muda conduta:</b> instabilidade manda para o choque; estenose mitral moderada a grave e prótese mecânica mandam para a varfarina; duração &gt;48 h (ESC: &gt;24 h) manda para 3 semanas de anticoagulação ou ETE antes de reverter.</div></div>
@@ -607,7 +626,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="c3">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.3</span> FA: estratégia</div><h3>Frequência, ritmo, cardioversão e prevenção do AVC <span class="ank ank-dec">DECISION</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">No paciente estável a primeira atitude é sempre controlar a frequência (meta &lt;110 bpm em repouso, "controle brando") e anticoagular quando houver indicação; só então se escolhe manter a FA ou restaurar o ritmo. A escolha pelo ritmo é mais forte em jovens, sintomáticos, diagnóstico recente (&lt;12 meses), disfunção ventricular atribuível à FA ou frequência incontrolável. <b>O que muda conduta:</b> a duração da FA define a necessidade de ETE; a FEVE define quais fármacos nodais e antiarrítmicos são permitidos.</div></div>
@@ -655,7 +674,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="c4">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.4</span> TSV paroxística</div><h3>Taquicardia supraventricular paroxística: reentrada nodal e por via acessória <span class="ank ank-hy">HIGH-YIELD</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Taquicardia regular, de QRS estreito, com início e fim súbitos: 60–70% são reentrada no nó AV (dupla via nodal) e 30–40% por via acessória oculta ou manifesta. A adenosina reverte mais de 90% e funciona como teste diagnóstico. <b>O que muda conduta:</b> instabilidade manda para o choque; onda delta no ritmo sinusal ou QRS largo na crise manda para o WPW (C.5), onde o verapamil e a adenosina podem ser perigosos.</div></div>
@@ -678,7 +697,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="c5">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.5</span> Pré-excitação e WPW</div><h3>Wolff-Parkinson-White: a FA que mata e as drogas proibidas <span class="ank ank-dgr">DANGER</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">PR curto e onda delta no ritmo sinusal definem a pré-excitação; com taquicardia paroxística, é a síndrome de WPW. A taquicardia ortodrômica (QRS estreito) responde a adenosina e verapamil; a antidrômica (QRS largo) e a FA pré-excitada, não: choque ou fármaco que atue na via. <b>O que muda conduta:</b> em qualquer taquicardia de QRS largo com onda delta ou irregular, todo bloqueador do nó AV é proibido, inclusive a amiodarona IV (ESC 2024).</div></div>
@@ -705,7 +724,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="c6">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.6</span> TV monomórfica e QRS largo</div><h3>Taquicardia ventricular monomórfica e o diagnóstico diferencial do QRS largo <span class="ank ank-dgr">DANGER</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">TV é um ritmo ventricular com FC &gt;100 bpm, QRS ≥120 ms de morfologia constante, e é "sustentada" se dura &gt;30 s ou instabiliza. É a taquiarritmia mais temida: marca cardiopatia grave e pode degenerar em FV. <b>O que muda conduta:</b> instável, choque de 100 J (SBC 2019, QRS largo); estável, amiodarona; sempre, procurar a causa (isquemia, eletrólitos, cicatriz), porque quem tem substrato e disfunção do VE recebe CDI.</div></div>
@@ -743,7 +762,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="c7">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.7</span> QT longo e TV polimórfica</div><h3>Torsades de pointes e a TV polimórfica: o QT antes da taquicardia decide <span class="ank ank-dgr">DANGER</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">TV polimórfica tem QRS de morfologia variável e FC &gt;200 bpm. Com QT normal em ritmo sinusal, quase sempre é isquemia aguda: desfibrilar, revascularizar. Com QT longo, é torsades: desfibrilar, magnésio, parar a droga, repor potássio e impedir pausas. <b>O que muda conduta:</b> o QTc medido no ritmo sinusal, fora da taquicardia, é o que diferencia as duas condutas; a morfologia "em torção" isolada não basta.</div></div>
@@ -770,7 +789,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="c8">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.8</span> Morte súbita e CDI</div><h3>Prevenção da morte súbita: quem recebe o cardiodesfibrilador <span class="ank ank-dec">DECISION</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">O CDI reconhece FV e TV e aplica estimulação antitaquicardia ou choque interno; é superior ao antiarrítmico em FE &lt;35% e dispensa o fármaco como terapia principal. O CV01 é o dono do tema (decisão registrada); o CV03 só traz o relógio de reavaliação da FE pós-IAM. <b>O que muda conduta:</b> causa reversível (IAM nas primeiras 48 h, eletrólito, fármaco) não indica CDI; FE ≤35% persistente após ≥3 meses de tratamento otimizado em NYHA II–III indica; o tipo de dispositivo e a programação ficam no CV02.</div></div>
@@ -818,7 +837,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="c9">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.9</span> Nó sinusal e bradicardia</div><h3>Bradiarritmias sinusais: vagotonia e fármacos × doença do nó sinusal <span class="ank ank-hy">HIGH-YIELD</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Bradicardia sinusal com P positiva em D1, D2 e aVF e FC &lt;60 bpm é benigna quando causada por vagotonia ou fármacos cronotrópicos negativos, e se trata suspendendo o fármaco. A doença do nó sinusal é degenerativa, do idoso, e sintomática pede marca-passo. <b>O que muda conduta:</b> o sintoma (síncope, pré-síncope, fadiga) e a documentação da correlação com a pausa decidem; o assintomático não recebe terapia.</div></div>
@@ -839,7 +858,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="c10">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.10</span> Bloqueio atrioventricular</div><h3>BAV: o grau e a localização decidem atropina ou marca-passo <span class="ank ank-dgr">DANGER</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">O nó AV é inervado pelo vago; o feixe de His e os ramos não. Bloqueio nodal (1º grau, Mobitz I) é vagotônico, "benigno" e responde à atropina; bloqueio intra ou infra-hissiano (Mobitz II, avançado, total com QRS largo) é degenerativo, maligno e pede marca-passo. <b>O que muda conduta:</b> QRS estreito com PR longo e Wenckebach: observar; QRS largo, PR fixo ou 2:1 sem BAV de 1º grau: marca-passo, e a atropina pode piorar.</div></div>
@@ -879,7 +898,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="c11">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.11</span> Síncope</div><h3>Síncope: causa, risco e destino <span class="ank ank-dec">DECISION</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Duas perguntas guiam o paciente com síncope: qual a causa e qual o risco em 30 dias e em 1 ano. A história, o exame físico e o ECG respondem à maioria; o ECG sozinho dá o diagnóstico em ~5% e a causa fica sem explicação em até 30% mesmo em centros especializados. <b>O que muda conduta:</b> síncope cardíaca ou de alto risco = internar, monitorizar e investigar o coração; reflexa típica = alta com orientação; tomografia de crânio só com trauma ou sinal focal.</div></div>
@@ -918,9 +937,9 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </section>
 
 <section id="secundarias">
-<div class="section"><div class="section-eyebrow"><span>D</span> Entidades Secundárias</div><div class="section-title">Arritmias menos frequentes, contextos especiais e o tratamento da síncope</div><div class="section-sub">Taquicardias raras e extrassístoles agrupadas; distúrbios da condução intraventricular; Chagas, digital, cocaína e gestação; tratamento da síncope reflexa e ortostática; e as arritmias do infarto, em coerência com a tabela D.8 do CV03.</div></div>
+<div class="section"><div class="section-eyebrow"><span>D</span> Entidades Secundárias</div><div class="section-title">Arritmias menos frequentes, contextos especiais e o tratamento da síncope</div><div class="section-sub">Taquicardias raras e extrassístoles agrupadas; distúrbios da condução intraventricular; Chagas, digital, cocaína e gestação; tratamento da síncope reflexa e ortostática; e as arritmias do infarto, em coerência com a tabela D.8 do CV03.</div></div><!--hp-f2--><nav class="sec-idx" aria-label="Neste capítulo"><a href="#d1"><b>D.1</b>Sinusal, atrial focal e multi…</a><a href="#d2"><b>D.2</b>Bloqueios de ramo, hemibloque…</a><a href="#d3"><b>D.3</b>Arritmias na cardiopatia chag…</a><a href="#d4"><b>D.4</b>Arritmias por digital, cocaín…</a><a href="#d5"><b>D.5</b>Arritmia na gestação: choque…</a><a href="#d6"><b>D.6</b>Tratamento: reflexa, seio car…</a><a href="#d7"><b>D.7</b>Complicações elétricas do IAM…</a></nav><!--/hp-f2-->
 
-<div class="card diag">
+<div class="card diag" id="d1">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">D.1</span> Taquicardias raras e extrassístoles</div><h3>Sinusal, atrial focal e multifocal, juncional, Coumel e extrassístoles</h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Taquicardia sinusal é resposta (febre, anemia, sepse, hipovolemia, embolia pulmonar, estimulantes) e se trata a causa. Taquicardia atrial multifocal é a arritmia do DPOC descompensado. A taquicardia juncional não paroxística e a atrial com bloqueio são as arritmias típicas do digital. <b>O que muda conduta:</b> na multifocal, oxigênio, potássio e magnésio antes de fármaco; na incessante, ablação para prevenir taquicardiomiopatia.</div></div>
@@ -935,7 +954,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card diag">
+<div class="card diag" id="d2">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">D.2</span> Distúrbios da condução intraventricular</div><h3>Bloqueios de ramo, hemibloqueios, bifascicular e trifascicular</h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">BRD isolado e HBAE são achados frequentes e, isolados, dispensam tratamento. O risco está no bloqueio bifascicular, sobretudo BRD + HBPE, e no trifascicular, pela evolução a BAVT. <b>O que muda conduta:</b> BRE novo ou bifascicular novo na fase aguda do IAM leva a marca-passo provisório; síncope inexplicada com bifascicular leva ao EEF.</div></div>
@@ -950,7 +969,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card diag">
+<div class="card diag" id="d3">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">D.3</span> Chagas</div><h3>Arritmias na cardiopatia chagásica crônica <span class="ank ank-hy">HIGH-YIELD</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">A cardiopatia chagásica é o substrato mais brasileiro de arritmia ventricular: extrassístoles em quase todos, TVNS em 42% sem IC e 89% com IC, BRD + HBAE, doença do nó sinusal e BAV. A insuficiência cardíaca e a etiologia ficam no CV04. <b>O que muda conduta:</b> na TV sustentada, amiodarona e procainamida (ACLS), e não lidocaína, verapamil, betabloqueador IV ou sotalol; a Diretriz SBC de 2023 mantém a amiodarona como pilar e o CDI em prevenção secundária.</div></div>
@@ -965,7 +984,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card diag">
+<div class="card diag" id="d4">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">D.4</span> Digital, cocaína e fármacos</div><h3>Arritmias por digital, cocaína e fármacos pró-arrítmicos <span class="ank ank-dgr">DANGER</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Digital produz atividade deflagrada por pós-potenciais tardios: taquicardia atrial com bloqueio, juncional não paroxística, extrassístoles bigeminadas e a TV bidirecional, quase patognomônica. Cocaína produz TV, torsades e FV. <b>O que muda conduta:</b> digital: suspender e repor potássio, lidocaína ou fenitoína; cocaína: bicarbonato e proibição de betabloqueador.</div></div>
@@ -979,7 +998,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card diag">
+<div class="card diag" id="d5">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">D.5</span> Gestação</div><h3>Arritmia na gestação: choque é seguro, amiodarona não <span class="ank ank-dec">DECISION</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">A arritmia na gestação trata-se como na não gestante, com escolha de fármacos segura para o feto e monitorização fetal após a cardioversão. A cardioversão elétrica é permitida e obrigatória na instabilidade. <b>O que muda conduta:</b> DOAC e atenolol são contraindicados; amiodarona só em emergência; no fibrilador com prótese mecânica ou estenose mitral, varfarina conforme o protocolo da gestação (GO10 e GO13 cuidam da vigilância obstétrica).</div></div>
@@ -993,7 +1012,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card tx">
+<div class="card tx" id="d6">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">D.6</span> Síncope reflexa e ortostática</div><h3>Tratamento: reflexa, seio carotídeo, hipotensão ortostática e POTS</h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Durante a síncope, deitar com as pernas elevadas. Na reflexa recorrente, medidas gerais em primeiro lugar; betabloqueador não é mais recomendado; marca-passo só no componente cardioinibitório puro e refratário. <b>O que muda conduta:</b> a hipotensão ortostática pede suspender fármacos e repor volume antes de mineralocorticoide; a hipersensibilidade do seio carotídeo com pausa &gt;3 s e síncope recorrente em &gt;40 anos pode receber marca-passo.</div></div>
@@ -1007,7 +1026,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card tx">
+<div class="card tx" id="d7">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">D.7</span> Arritmia no infarto</div><h3>Complicações elétricas do IAM: conduta imediata e o que fazer depois <span class="ank ank-dgr">DANGER</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">O CV01 é dono da arritmia no IAM; o CV03 traz a tabela imediata. A reperfusão é o antiarrítmico: FV e TV polimórfica nas primeiras 48 h refletem isquemia ativa e não indicam CDI; TV monomórfica tardia reflete cicatriz. <b>O que muda conduta:</b> o corte de 48 h, a localização do infarto e a persistência do BAV após 5 dias decidem CDI e marca-passo.</div></div>
@@ -1035,7 +1054,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <section id="algoritmo">
 <div class="section"><div class="section-eyebrow"><span>E</span> Algoritmo</div><div class="section-title">Da taquicardia ao choque ou à droga, da bradicardia ao marca-passo, da perda de consciência à internação</div><div class="section-sub">Três árvores curtas e um raciocínio narrado em sete passos. Cada ponta termina em energia, dose ou destino com número, não em rótulo.</div></div>
 
-<div class="card prim">
+<div class="card prim" id="e1">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">E.1</span> Algoritmo</div><h3>Taquicardia no monitor: instável? QRS largo? regular? <span class="ank ank-dec">DECISION</span></h3></div>
 <div class="card-body">
 <div class="algo"><div class="tree">
@@ -1067,7 +1086,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="e2">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">E.2</span> Algoritmo</div><h3>Bradicardia sintomática: nodal ou infra-hissiano? <span class="ank ank-dgr">DANGER</span></h3></div>
 <div class="card-body">
 <div class="algo"><div class="tree">
@@ -1088,7 +1107,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="e3">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">E.3</span> Algoritmo</div><h3>Síncope: risco e destino <span class="ank ank-dec">DECISION</span></h3></div>
 <div class="card-body">
 <div class="algo"><div class="tree">
@@ -1117,13 +1136,13 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </section>
 
 <section id="tratamento">
-<div class="section"><div class="section-eyebrow"><span>F</span> Tratamento Integrado</div><div class="section-title">F1 · Estratégia por entidade · F2 · Doses operacionais · F3 · Casos de plantão · F4 · Acesso no Brasil</div><div class="section-sub">Escadas curtas por entidade, com a energia ou a dose escrita igual ao pocket, a A, a C e a E. Fármaco ausente da lista CMED PMVG de 09/10/2026 leva "conferir registro", o que não prova que o produto não tenha registro.</div></div>
+<div class="section"><div class="section-eyebrow"><span>F</span> Tratamento Integrado</div><div class="section-title">F1 · Estratégia por entidade · F2 · Doses operacionais · F3 · Casos de plantão · F4 · Acesso no Brasil</div><div class="section-sub">Escadas curtas por entidade, com a energia ou a dose escrita igual ao pocket, a A, a C e a E. Fármaco ausente da lista CMED PMVG de 09/10/2026 leva "conferir registro", o que não prova que o produto não tenha registro.</div></div><!--hp-f2--><nav class="sec-idx" aria-label="Neste capítulo"><a href="#f1"><b>F.1</b>Escada terapêutica por entida…</a><a href="#f2"><b>F.2</b>Tabela de doses: energia, ant…</a><a href="#f3"><b>F.3</b>Caso, conduta certa e erro tí…</a><a href="#f4"><b>F.4</b>O que existe no Brasil: CMED…</a></nav><!--/hp-f2-->
 
-<div class="card tx">
+<div class="card tx" id="f1">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">F.1</span> Estratégia</div><h3>Escada terapêutica por entidade <span class="ank ank-dec">DECISION</span></h3></div>
 <div class="card-body">
 
-<div class="sub-title">F1.1 · Instabilidade e cardioversão elétrica (C.2 a C.7)</div>
+<div class="sub-title" id="f1-1">F1.1 · Instabilidade e cardioversão elétrica (C.2 a C.7)</div>
 <ul class="bullets">
 <li><b>Preparo:</b> oxigênio, veia, monitor, material de reanimação à mão; sedação e analgesia curtas (propofol ou midazolam com fentanil, doses pelo protocolo do serviço); desfibrilador em modo <b>sincronizado</b>, com marcador sobre a onda R, para toda taquicardia com pulso.</li>
 <li><b>Energia inicial:</b> FA 200 J bifásico (SBC 2025, §7.5.1; RCP 2019: 120–200 J); flutter 50 J, depois 100 J; TV monomórfica 100 J; TSV 50–100 J (ACLS · conferir; a apostila usa 150 J na via acessória). Segunda carga maior se falhar. Pás anteroposteriores ou anterolaterais, com compressão ativa das pás (ESC 2024).</li>
@@ -1131,7 +1150,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <li><b>FA instável:</b> sem exigir anticoagulação prévia; iniciar o anticoagulante no momento do choque e manter ≥4 semanas.</li>
 </ul>
 
-<div class="sub-title">F1.2 · FA e flutter (C.2, C.3)</div>
+<div class="sub-title" id="f1-2">F1.2 · FA e flutter (C.2, C.3)</div>
 <ul class="bullets">
 <li><b>Anticoagular</b> com CHA₂DS₂-VASc ≥2 (homem) ou ≥3 (mulher), ou CHA₂DS₂-VA ≥2 (ESC); considerar com 1 ou 2 (VASc), 1 (VA). Estenose mitral moderada a grave e prótese mecânica: varfarina com INR 2–3. CMH e amiloidose: sempre. Aspirina não protege contra o AVC da FA.</li>
 <li><b>DOAC em dose plena</b> (F2): reduzir só pelos critérios da bula; trocar de varfarina para DOAC é lógico em INR lábil, enquanto o paciente estável com INR bom pode permanecer. Corrigir fatores de sangramento (PA, álcool, AINE, antiagregante) em vez de negar o anticoagulante.</li>
@@ -1140,37 +1159,37 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <li><b>Flutter:</b> mesma anticoagulação, CVE de 50 J (conferir), ablação do istmo cavotricuspídeo no recorrente (sucesso 85%, recidiva 10–15%).</li>
 </ul>
 
-<div class="sub-title">F1.3 · TSV e pré-excitação (C.4, C.5)</div>
+<div class="sub-title" id="f1-3">F1.3 · TSV e pré-excitação (C.4, C.5)</div>
 <ul class="bullets">
 <li><b>TSV estável:</b> manobra vagal; adenosina 6 mg IV em bolus rápido e 12 mg se não reverter; verapamil IV na ausência de IC e de pré-excitação; instável, CVE.</li>
 <li><b>Pré-excitação:</b> ortodrômica como TSV; antidrômica ou FA pré-excitada: CVE ou procainamida ou ibutilida (fora da CMED; ESC 2024 na pré-excitação: ibutilida ou flecainida; amiodarona evitada); nenhum bloqueador nodal nem amiodarona IV. Ablação da via em todo sintomático.</li>
 </ul>
 
-<div class="sub-title">F1.4 · TV, torsades e tempestade (C.6, C.7, C.8)</div>
+<div class="sub-title" id="f1-4">F1.4 · TV, torsades e tempestade (C.6, C.7, C.8)</div>
 <ul class="bullets">
 <li><b>TV monomórfica:</b> CVE 100 J (SBC 2019, QRS largo) se instável; estável, amiodarona 150 mg IV em 10 min e manutenção em 24 h (máx. 2,2 g em 24 h, SBC 2019); corrigir K⁺ e Mg²⁺; coronariografia se isquemia.</li>
 <li><b>Torsades:</b> 200 J se sem pulso; sulfato de magnésio 1–2 g IV em 5–20 min (SBC 2019), repetido após 15 min; suspender fármaco, repor K⁺; marca-passo se FC &lt;80 bpm.</li>
 <li><b>Tempestade elétrica:</b> betabloqueador ou amiodarona, sedação profunda, lidocaína se falha, sobre-estímulo e ablação em centro com experiência; CDI depois.</li>
 </ul>
 
-<div class="sub-title">F1.5 · Bradiarritmias, BAV e marca-passo (C.9, C.10, D.2)</div>
+<div class="sub-title" id="f1-5">F1.5 · Bradiarritmias, BAV e marca-passo (C.9, C.10, D.2)</div>
 <ul class="bullets">
 <li><b>Benigno sintomático:</b> suspender o fármaco; atropina 0,5 mg IV a cada 3–5 min, máx. 3 mg (SBC 2019; AHA 2020: 1 mg). <b>Maligno ou refratário:</b> marca-passo transcutâneo sedado; dopamina 2–10 mcg/kg/min (SBC 2019) ou adrenalina 2–10 mcg/min (SBC 2019) como ponte; transvenoso provisório; definitivo conforme classe I SBC (C.10).</li>
 <li><b>IAM:</b> inferior regride, aguardar ≥5 dias antes do definitivo; anterior com Mobitz II, bloqueio de ramo alternante ou BAVT: provisório mesmo assintomático.</li>
 </ul>
 
-<div class="sub-title">F1.6 · Síncope (C.11, D.6)</div>
+<div class="sub-title" id="f1-6">F1.6 · Síncope (C.11, D.6)</div>
 <ul class="bullets">
 <li><b>Alto risco:</b> internar, monitorizar, ecocardiograma, EEF ou registrador implantável; tratar a causa (marca-passo, CDI, ablação, valva). <b>Reflexa:</b> orientação, hidratação, sal, meias, exercício isométrico; fludrocortisona (off-label) em refratários; sem betabloqueador. <b>Ortostática:</b> suspender fármacos e repor volume.</li>
 </ul>
 
-<div class="sub-title">F1.7 · CDI e morte súbita (C.8)</div>
+<div class="sub-title" id="f1-7">F1.7 · CDI e morte súbita (C.8)</div>
 <ul class="bullets">
 <li><b>Secundária:</b> FV ou TV sustentada sem causa reversível; <b>primária:</b> FE ≤35% em NYHA II–III após ≥3 meses de tratamento otimizado; pós-IAM, reavaliar em 6–12 semanas, em geral não antes de 40 dias. Tipo de dispositivo e programação: CV02; infecção: II02.</li>
 </ul>
 
 
-<div class="sub-title">F1.8 · Seguimento, monitorização do fármaco e comorbidades (C do ABC, "C" do AF-CARE)</div>
+<div class="sub-title" id="f1-8">F1.8 · Seguimento, monitorização do fármaco e comorbidades (C do ABC, "C" do AF-CARE)</div>
 <ul class="bullets">
 <li><b>Reavaliação dinâmica da FA:</b> a cada 6 meses se possível e no mínimo anual, para revisar sintomas, escore embólico, dose do anticoagulante, função renal, estratégia de ritmo e fatores desencadeantes (apostila; AF-CARE, "E" de evaluation).</li>
 <li><b>Fatores de risco:</b> controle da pressão arterial, redução do álcool, perda de peso, tratamento da apneia do sono (CPAP) e da tireotoxicose. IECA ou BRA reduzem recidiva em disfunção do VE, estatinas e antagonistas da aldosterona têm benefício possível, e o iSGLT2 é recomendado em quem tem IC com FA, qualquer FEVE (CV04).</li>
@@ -1181,7 +1200,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </ul>
 
 
-<div class="sub-title">F1.9 · Cardioversão elétrica, passo a passo</div>
+<div class="sub-title" id="f1-9">F1.9 · Cardioversão elétrica, passo a passo</div>
 <ul class="bullets">
 <li><b>Antes:</b> confirme que é taquiarritmia com pulso e instável, ou estável com decisão de ritmo e proteção embólica cumprida; consentimento quando eletivo; jejum no eletivo; oxigênio, veia periférica, monitor contínuo, material de via aérea e aspiração prontos.</li>
 <li><b>Sedação e analgesia:</b> propofol ou midazolam com fentanil, tituláveis, por quem domina a via aérea; no instável, sedar o quanto a pressão permitir, sem atrasar o choque.</li>
@@ -1191,7 +1210,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </ul>
 
 
-<div class="sub-title">F1.10 · Quando chamar o arritmologista ou encaminhar</div>
+<div class="sub-title" id="f1-10">F1.10 · Quando chamar o arritmologista ou encaminhar</div>
 <ul class="bullets">
 <li><b>Ablação ou estudo eletrofisiológico:</b> TSV recorrente e sintomática, pré-excitação com sintomas ou FA, flutter típico recorrente, TV idiopática, bloqueio duvidoso com síncope, e FA paroxística sintomática que prefere a ablação ao fármaco.</li>
 <li><b>Dispositivo:</b> indicação de marca-passo ou CDI, choque do CDI com sintoma, tempestade elétrica, infecção do gerador (II02) e escolha do tipo (CV02).</li>
@@ -1206,7 +1225,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card tx">
+<div class="card tx" id="f2">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">F.2</span> Doses Operacionais</div><h3>Tabela de doses: energia, antiarrítmicos, anticoagulantes e suporte</h3></div>
 <div class="card-body">
 <div class="stbl stbl-3">
@@ -1247,7 +1266,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card tx">
+<div class="card tx" id="f3">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">F.3</span> Casos de plantão</div><h3>Caso, conduta certa e erro típico <span class="ank ank-hy">HIGH-YIELD</span></h3></div>
 <div class="card-body">
 <div class="stbl stbl-3">
@@ -1268,7 +1287,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card tx">
+<div class="card tx" id="f4">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">F.4</span> Acesso</div><h3>O que existe no Brasil: CMED e SUS</h3></div>
 <div class="card-body">
 <div class="stbl stbl-3">
@@ -1286,7 +1305,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <section id="pitfalls">
 <div class="section"><div class="section-eyebrow"><span>G</span> Pitfalls · Mitos · Controvérsias</div><div class="section-title">Erros operacionais, mitos vivos e debates atuais</div><div class="section-sub">Dez erros que o plantão repete, três mitos que atrapalham e três debates em que o padrão brasileiro e o europeu divergem.</div></div>
 
-<div class="card pearl">
+<div class="card pearl" id="g1">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">G.1</span> Pegadinhas</div><h3>10 erros operacionais em ECG, arritmias e síncope</h3></div>
 <div class="card-body">
 <div class="stbl stbl-2">
@@ -1305,7 +1324,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card pearl">
+<div class="card pearl" id="g2">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">G.2</span> Mitos · Controvérsias</div><h3>Mitos vivos e debates atuais</h3></div>
 <div class="card-body">
 <div class="box myth"><span class="box-label">MYTH</span><div class="box-title">"A FA assintomática é benigna e dispensa anticoagulante"</div><div class="box-body">O risco embólico depende do escore, não dos sintomas: o AVC pode ser a primeira manifestação, e microêmbolos cerebrais aparecem em 40–70% das necropsias. A ESC 2024 chega a considerar DOAC na FA subclínica detectada por dispositivo com risco embólico elevado (IIb).</div></div>
@@ -1321,7 +1340,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <section id="pearls">
 <div class="section"><div class="section-eyebrow"><span>H</span> Pearls · Evolving</div><div class="section-title">Nuances de especialista e o que mudou</div><div class="section-sub">Oito pérolas com a ideia no título e o argumento no corpo; seis mudanças reais da literatura recente. Boa parte do capítulo é estável: a TSV, o BAV e a síncope mudaram pouco.</div></div>
 
-<div class="card pearl">
+<div class="card pearl" id="h1">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">H.1</span> Pearls</div><h3>Oito nuances de ECG, ritmo e síncope</h3></div>
 <div class="card-body">
 <div class="box pearl"><span class="box-label">PEARL</span><div class="box-title">O R-R regular em FA digitalizada denuncia a toxicidade, ou o BAVT</div><div class="box-body">Se o intervalo R-R de um paciente em FA crônica em uso de digoxina fica regular, o ritmo deixou de ser dominado pela FA: ou há bloqueio total com escape juncional ou ventricular, ou taquicardia juncional não paroxística por hiperautomatismo da junção. Em ambos, a conduta é suspender o digital, dosar o potássio e olhar o ECG, não "controlar a frequência" de uma FA que não existe mais.</div></div>
@@ -1335,7 +1354,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card pearl">
+<div class="card pearl" id="h2">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">H.2</span> Evolving</div><h3>Seis mudanças reais, e o que continua estável</h3></div>
 <div class="card-body">
 <div class="box evolving"><span class="box-label">EVOLVING</span><div class="box-title">ESC 2024: CHA₂DS₂-VA, sem o sexo, e abandono da expressão "FA valvar"</div><div class="box-body">A diretriz europeia de 2024 retirou o ponto do sexo feminino, passou a recomendar anticoagulação com escore ≥2 e a considerá-la com 1, e declarou obsoleto o rótulo "valvar". A SBC mantém o VASc, e o HP apresenta os dois lado a lado.</div></div>
@@ -1379,5 +1398,36 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <a class="to-top" href="#" aria-label="Voltar ao topo">↑</a>
 <div class="watermark">@dr.lorencato · CV01 ECG, Arritmias e Síncope v5.2</div>
 
-</body>
+<!--hp-f2--><script>(function(){var d=document,M=d.querySelector('main');if(!M)return;
+var SELF='CV01',HP=' CT01 CT02 CT03 CT04 CT05 CT06 CT08 CT10 CV01 CV03 CV04 CV05 CV06 CV07 CV08 EN01 EN02 EN03 EN04 EN06 EN07 GH01 GH02 GH03 GH05 GH06 GH07 GH08 GH09 GH10 GO01 GO02 GO03 GO04 GO09 GO10 GO11 GO12 GO13 GO14 HO01 HO02 HO03 HO04 HO05 HO06 II01 II02 II03 II04 II07 II08 NE01 NE02 NE03 NE04 NE05 NE06 NE07 NE08 NU01 NU02 NU03 NU04 NU05 OE01 OE02 PC01 PC02 PC03 PC04 PC05 PC06 PD01 PD02 PD03 PD04 PD05 PD06 PD07 PD08 PD09 PD10 RD01 RD02 RD03 RD04 RD05 RD07 RP01 RP02 RP03 RP04 ';
+var SK='A,H1,H2,H3,SCRIPT,STYLE,NAV,.card-num,.card-eyebrow,.sub-title,.disease-tag,.toc';
+var R=/\b(?:([A-H])(\d)?\.(\d{1,2}[a-c]?)|(CV|RP|GH|NE|EN|NU|HO|II|RD|GO|PD|PC|CT|OE)(\d\d))\b/g;
+function skip(n){for(var e=n.parentNode;e&&e!==M;e=e.parentNode)if(e.matches&&e.matches(SK))return 1;return 0}
+var w=d.createTreeWalker(M,4),t,L=[];while(t=w.nextNode())if(R.test(t.data)&&!skip(t))L.push(t);
+L.forEach(function(t){var s=t.data,f=d.createDocumentFragment(),i=0,m;R.lastIndex=0;
+while(m=R.exec(s)){var h=null;
+if(m[1]){var id=m[1].toLowerCase()+(m[2]?m[2]+'-':'')+m[3];if(d.getElementById(id))h='#'+id}
+else{var x=m[4]+m[5];if(x!==SELF&&HP.indexOf(' '+x+' ')>=0)h='../'+x+'/'+x+'.html'}
+if(!h)continue;f.appendChild(d.createTextNode(s.slice(i,m.index)));
+var a=d.createElement('a');a.href=h;a.className='xr';a.textContent=m[0];f.appendChild(a);i=R.lastIndex}
+if(i){f.appendChild(d.createTextNode(s.slice(i)));t.parentNode.replaceChild(f,t)}});
+function nz(s){return s.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'')}
+var q=d.querySelector('.hp-q'),n=d.querySelector('.hp-n'),it=M.querySelectorAll('.card,.pocket-card'),T;
+function clr(){M.querySelectorAll('.q-off').forEach(function(e){e.classList.remove('q-off')})}
+function run(){var v=nz(q.value.trim());clr();n.textContent='';if(v.length<2)return;var k=0;
+it.forEach(function(c){if(nz(c.textContent).indexOf(v)<0){c.classList.add('q-off');return}k++;
+var r=c.querySelectorAll('.stbl-row,.disease-row,.score-row'),h=[];r.forEach(function(x){if(nz(x.textContent).indexOf(v)>=0)h.push(x)});
+if(h.length)r.forEach(function(x){if(h.indexOf(x)<0)x.classList.add('q-off')});
+c.querySelectorAll('details').forEach(function(x){if(nz(x.textContent).indexOf(v)>=0)x.open=true})});
+M.querySelectorAll('section').forEach(function(s){if(!s.querySelector('.card:not(.q-off),.pocket-card:not(.q-off)'))s.classList.add('q-off')});
+n.textContent=k?k+' achado'+(k>1?'s':''):'nada'}
+if(q){q.addEventListener('input',function(){clearTimeout(T);T=setTimeout(run,180)});
+q.addEventListener('keydown',function(e){if(e.key==='Escape'){q.value='';run()}})}
+function tg(b,f){b.addEventListener('click',function(){var on=b.getAttribute('aria-pressed')!=='true';b.setAttribute('aria-pressed',on);f(on)})}
+var bd=d.querySelector('.hp-dz'),bo=d.querySelector('.hp-op');
+if(bd)tg(bd,function(on){d.body.classList.toggle('dz',on);if(on)d.getElementById('tratamento').scrollIntoView()});
+if(bo)tg(bo,function(on){M.querySelectorAll('details').forEach(function(x){x.open=on})});
+var P=[];addEventListener('beforeprint',function(){P=[];M.querySelectorAll('details:not([open])').forEach(function(x){P.push(x);x.open=true})});
+addEventListener('afterprint',function(){P.forEach(function(x){x.open=false})});
+})();</script><!--/hp-f2--></body>
 </html>

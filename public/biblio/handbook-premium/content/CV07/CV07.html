@@ -345,13 +345,32 @@ ul.bullets li b{color:var(--ink);font-weight:600}
   .pocket .pocket-card.tx{--accent:#a8481a}
   .pocket .pocket-card.clin{--accent:#0b5d4e}
 }
+
+/* === v5.2.2 · fase 2 (navegação) === */
+.hp-tools{display:flex;gap:6px;align-items:center;flex:none;order:1;margin-left:auto;padding-left:6px;position:sticky;right:0;background:#f1eee5;box-shadow:-10px 0 10px -4px #f1eee5,16px 0 0 #f1eee5}
+@media(min-width:900px){html{scroll-padding-top:150px}.toc-inner{flex-wrap:wrap;overflow:visible}.card[id],.sub-title[id]{scroll-margin-top:150px}}
+@media(max-width:899px){.hp-b,.hp-n{display:none}.hp-q{width:104px}}
+.hp-q{width:128px;font:500 12px/1 'DM Sans',system-ui,sans-serif;padding:7px 11px;border:1px solid var(--line-strong);border-radius:999px;background:var(--paper);color:var(--ink)}
+.hp-b{font:600 11px/1 'DM Sans',system-ui,sans-serif;letter-spacing:.05em;text-transform:uppercase;padding:7px 10px;border-radius:999px;border:1px solid var(--line-strong);background:var(--paper);color:var(--ink-soft);cursor:pointer;white-space:nowrap}
+.hp-b[aria-pressed=true]{background:var(--ink);color:#fff;border-color:var(--ink)}
+.hp-n{font:600 11px/1 'DM Mono',monospace;color:var(--ink-mute);white-space:nowrap}
+.sec-idx{display:flex;flex-wrap:wrap;gap:6px;margin:12px 0 20px}
+.sec-idx a{font:500 12px/1.25 'DM Sans',system-ui,sans-serif;padding:6px 10px;border-radius:999px;background:var(--paper);border:1px solid var(--line);color:var(--ink-soft);text-decoration:none}
+.sec-idx a:hover{border-color:var(--line-strong);color:var(--ink)}
+.sec-idx b{color:var(--c-prim);margin-right:5px;font-weight:700}
+a.xr{color:inherit;text-decoration:underline dotted;text-underline-offset:2px}
+a.xr:hover{color:var(--c-prim)}
+.card[id],.sub-title[id]{scroll-margin-top:110px}
+.q-off{display:none!important}
+body.dz main section:not(#tratamento){display:none}
+@media print{.hp-tools,.sec-idx,.toc-doses{display:none!important}}
 </style>
 </head>
 <body>
 
 <header class="header"><div class="header-row"><div class="h-mark">V</div><div class="h-titles"><div class="h-title">Valvopatias e Pericárdio · Pocket Handbook</div><div class="h-sub">Elite edition · Cardiologia clínica · CV07</div></div><div class="h-author">@dr.lorencato</div><div class="h-edition">v5.2</div></div></header>
 
-<nav class="toc"><div class="toc-inner"><a href="#pocket" class="toc-chip"><span class="toc-chip-num">0</span>Pocket</a><a href="#redflags" class="toc-chip"><span class="toc-chip-num">A</span>Red Flags</a><a href="#approach" class="toc-chip"><span class="toc-chip-num">B</span>Apresentação</a><a href="#primarias" class="toc-chip"><span class="toc-chip-num">C</span>Entidades</a><a href="#secundarias" class="toc-chip"><span class="toc-chip-num">D</span>Secundárias</a><a href="#algoritmo" class="toc-chip"><span class="toc-chip-num">E</span>Algoritmo</a><a href="#tratamento" class="toc-chip"><span class="toc-chip-num">F</span>Tratamento</a><a href="#pitfalls" class="toc-chip"><span class="toc-chip-num">G</span>Pitfalls</a><a href="#pearls" class="toc-chip"><span class="toc-chip-num">H</span>Pearls</a></div></nav>
+<nav class="toc"><div class="toc-inner"><!--hp-f2--><span class="hp-tools"><input class="hp-q" type="search" placeholder="Buscar no HP" aria-label="Buscar no HP"><button class="hp-b hp-dz" type="button" aria-pressed="false">Só doses</button><button class="hp-b hp-op" type="button" aria-pressed="false">Abrir tudo</button><span class="hp-n" aria-live="polite"></span></span><!--/hp-f2--><a href="#pocket" class="toc-chip"><span class="toc-chip-num">0</span>Pocket</a><a href="#redflags" class="toc-chip"><span class="toc-chip-num">A</span>Red Flags</a><a href="#approach" class="toc-chip"><span class="toc-chip-num">B</span>Apresentação</a><a href="#primarias" class="toc-chip"><span class="toc-chip-num">C</span>Entidades</a><a href="#secundarias" class="toc-chip"><span class="toc-chip-num">D</span>Secundárias</a><a href="#algoritmo" class="toc-chip"><span class="toc-chip-num">E</span>Algoritmo</a><a href="#tratamento" class="toc-chip"><span class="toc-chip-num">F</span>Tratamento</a><!--hp-f2--><a href="#f2" class="toc-chip toc-doses"><span class="toc-chip-num">Rx</span>Doses</a><!--/hp-f2--><a href="#pitfalls" class="toc-chip"><span class="toc-chip-num">G</span>Pitfalls</a><a href="#pearls" class="toc-chip"><span class="toc-chip-num">H</span>Pearls</a></div></nav>
 
 <main>
 <div class="wrap">
@@ -414,7 +433,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <section id="redflags">
 <div class="section"><div class="section-eyebrow"><span>A</span> Red Flags</div><div class="section-title">Na valva e no pericárdio, o perigo é a hemodinâmica que cai em horas, não o sopro que se arrasta por anos</div><div class="section-sub">Sinal objetivo, suspeita e conduta imediata. Os eventos evitáveis deste HP: a regurgitação aguda tratada como crônica, o tamponamento tratado com diurético, a prótese mecânica trocada de varfarina para DOAC, a estenose aórtica grave esperando o sintoma que já existe e a febre reumática sem profilaxia.</div></div>
 
-<div class="card emerg">
+<div class="card emerg" id="a1">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">A.1</span> Emergências</div><h3>Sinais de alarme — valvopatias e pericárdio <span class="ank ank-dgr">DANGER</span></h3></div>
 <div class="card-body">
 
@@ -454,7 +473,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <section id="approach">
 <div class="section"><div class="section-eyebrow"><span>B</span> Por Apresentação</div><div class="section-title">Cinco portas de entrada: pelo sopro, pela dispneia, pela dor postural, pela hipotensão e pela prótese</div><div class="section-sub">O paciente chega com um sopro, uma dispneia ou uma dor, não com o nome da valvopatia. A pergunta que orienta tudo é se a lesão é aguda ou crônica, porque o ventrículo só compensa o que tem tempo de remodelar.</div></div>
 
-<div class="card clin">
+<div class="card clin" id="b1">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">B.1</span> Padrão 1</div><h3>Sopro sistólico <span class="ank ank-hy">HIGH-YIELD</span></h3><div class="card-sub">Cinco causas, quatro manobras</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Sopro ejetivo em losango no foco aórtico com <b>pulso parvus et tardus, B2 hipofonética ou única e B4</b>: estenose aórtica. Holossistólico no ápice com irradiação para axila: IM. Sistólico na borda esternal esquerda baixa, que aumenta na inspiração: IT. Sistólico que aumenta com Valsalva e diminui com agachamento: cardiomiopatia hipertrófica obstrutiva (CV04). <b>O que muda conduta:</b> sopro mais sintoma (síncope, angina, dispneia, IC) ou achado de esclerose com sopro alto manda para o ecocardiograma.</div></div>
@@ -468,7 +487,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card clin">
+<div class="card clin" id="b2">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">B.2</span> Padrão 2</div><h3>Sopro diastólico <span class="ank ank-dec">DECISION</span></h3><div class="card-sub">Sempre patológico</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Todo sopro diastólico é patológico até prova em contrário. <b>Ruflar diastólico com estalido de abertura e B1 hiperfonética</b>: estenose mitral. <b>Sopro aspirativo, decrescente, na borda esternal esquerda com pulso em martelo d'água</b>: IA. Graham Steell (IP por hipertensão pulmonar) é sopro de IP. <b>O que muda conduta:</b> sopro diastólico novo com febre = hemoculturas e ecocardiograma (II02); com dor torácica rasgante = angiotomografia de aorta (CV08).</div></div>
@@ -481,7 +500,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card clin">
+<div class="card clin" id="b3">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">B.3</span> Padrão 3</div><h3>Dispneia, ortopneia ou FA em quem tem valvopatia conhecida <span class="ank ank-dec">DECISION</span></h3><div class="card-sub">Descompensação: o que desencadeou?</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Antes de aumentar diurético, pergunte pelo gatilho: <b>FA com resposta rápida, anemia, infecção, gestação, endocardite, trombose de prótese, perda de adesão à anticoagulação e esforço incomum</b>. Na estenose mitral a taquicardia é o inimigo (encurta a diástole); na estenose aórtica a perda da contração atrial é o inimigo (pré-carga). <b>O que muda conduta:</b> o gatilho trata-se (controle de frequência, cardioversão, antibiótico), e a lesão trata-se em eletivo na hora certa.</div></div>
@@ -493,7 +512,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card clin">
+<div class="card clin" id="b4">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">B.4</span> Padrão 4</div><h3>Dor torácica pleurítica e postural <span class="ank ank-hy">HIGH-YIELD</span></h3><div class="card-sub">Pericárdio, coração ou pleura?</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Dor que <b>piora com inspiração, tosse e decúbito e alivia sentado inclinado para a frente</b>, atrito pericárdico, supra de ST côncavo difuso com infra de PR e <b>sem imagem em espelho</b> (exceto aVR e V1): pericardite. Troponina elevada com função preservada é miopericardite. <b>O que muda conduta:</b> o infarto, a embolia pulmonar e a dissecção entram no diferencial antes do AINE; derrame com repercussão ou febre alta muda a internação.</div></div>
@@ -505,7 +524,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card clin">
+<div class="card clin" id="b5">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">B.5</span> Padrão 5</div><h3>Paciente com prótese valvar <span class="ank ank-dec">DECISION</span></h3><div class="card-sub">Mecânica e biológica pedem perguntas diferentes</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Na <b>mecânica</b>: qual o último INR e qual o alvo, há clique, houve embolia, vai operar, vai engravidar? Na <b>biológica</b>: há sintoma novo, sopro novo, febre, e quando foi a última ecocardiografia? Em ambas, febre exige hemocultura antes de antibiótico (II02) e o procedimento dentário com manipulação gengival pede profilaxia (D.5). <b>O que muda conduta:</b> INR fora da faixa, gravidez, cirurgia eletiva, sangramento e febre são os cinco gatilhos de conduta.</div></div>
@@ -517,9 +536,9 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </section>
 <section id="primarias">
-<div class="section"><div class="section-eyebrow"><span>C</span> Entidades Primárias</div><div class="section-title">Dez entidades: quatro lesões do coração esquerdo, a valva direita, a prótese, a reumática e as três faces do pericárdio</div><div class="section-sub">Cada lesão valvar é lida pelo ciclo "mecanismo, compensação, descompensação, momento da intervenção"; a febre reumática e a prótese têm box próprio porque carregam doses (penicilina, varfarina) e prazos; o pericárdio fecha o capítulo com pericardite aguda, recorrente e constritiva, derrame e tamponamento.</div></div>
+<div class="section"><div class="section-eyebrow"><span>C</span> Entidades Primárias</div><div class="section-title">Dez entidades: quatro lesões do coração esquerdo, a valva direita, a prótese, a reumática e as três faces do pericárdio</div><div class="section-sub">Cada lesão valvar é lida pelo ciclo "mecanismo, compensação, descompensação, momento da intervenção"; a febre reumática e a prótese têm box próprio porque carregam doses (penicilina, varfarina) e prazos; o pericárdio fecha o capítulo com pericardite aguda, recorrente e constritiva, derrame e tamponamento.</div></div><!--hp-f2--><nav class="sec-idx" aria-label="Neste capítulo"><a href="#c1"><b>C.1</b>Estenose aórtica: graduar, re…</a><a href="#c2"><b>C.2</b>Insuficiência aórtica: aguda…</a><a href="#c3"><b>C.3</b>Estenose mitral reumática: te…</a><a href="#c4"><b>C.4</b>Insuficiência mitral: primári…</a><a href="#c5"><b>C.5</b>Tricúspide e pulmonar: a insu…</a><a href="#c6"><b>C.6</b>Prótese valvar: escolher o ti…</a><a href="#c7"><b>C.7</b>Febre reumática e cardite: Jo…</a><a href="#c8"><b>C.8</b>Pericardite aguda: dois de qu…</a><a href="#c9"><b>C.9</b>Pericardite recorrente e cons…</a><a href="#c10"><b>C.10</b>Derrame pericárdico e tampona…</a></nav><!--/hp-f2-->
 
-<div class="card prim">
+<div class="card prim" id="c1">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.1</span> Valva aórtica</div><h3>Estenose aórtica: graduar, reconhecer o baixo fluxo e escolher TAVI ou cirurgia <span class="ank ank-hy">HIGH-YIELD</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Estenose aórtica grave de alto gradiente: <b>gradiente médio ≥40 mmHg, velocidade máxima ≥4,0 m/s, área valvar ≤1,0 cm² (≤0,6 cm²/m²)</b>. Sintoma (angina, síncope, dispneia) ou FEVE &lt;50% sem outra causa = intervenção. Não há tratamento medicamentoso que modifique a doença. <b>O que muda conduta:</b> idade (≥70 anos com valva tricúspide e anatomia adequada → TAVI; &lt;70 anos com baixo risco → cirurgia), risco operatório (STS e EuroSCORE II), valva bicúspide, aorta dilatada e doença coronariana decidem a via, sempre pelo Heart Team.</div></div>
@@ -559,7 +578,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="c2">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.2</span> Valva aórtica</div><h3>Insuficiência aórtica: aguda é cirurgia, crônica é dimensão do VE <span class="ank ank-dec">DECISION</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Na <b>aguda</b> (endocardite, dissecção, trauma) o VE normal não suporta a sobrecarga: choque ou EAP, com sopro curto e pouco audível; tratamento é a cirurgia urgente. Na <b>crônica</b>, a dilatação compensa por anos e o momento da cirurgia é dado por <b>sintoma, FEVE ≤50% ou diâmetro sistólico &gt;50 mm (ou &gt;25 mm/m²)</b>. <b>O que muda conduta:</b> balão intra-aórtico e betabloqueador são contraindicados na IA aguda; vasodilatador só no sintomático ou hipertenso; raiz ≥55 mm opera-se independentemente da valva.</div></div>
@@ -589,7 +608,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="c3">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.3</span> Valva mitral</div><h3>Estenose mitral reumática: tempo de diástole, balão e varfarina <span class="ank ank-hy">HIGH-YIELD</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Em mais de 95% dos casos é <b>reumática</b>, mais frequente em mulheres. Estenose mitral "clinicamente significativa" na ESC/EACTS 2025 é AVM ≤1,5 cm² (a apostila chama de grave a AVM &lt;1,0 cm²). Sintomática, com anatomia favorável: <b>valvoplastia por balão</b>. Com FA, embolia ou trombo em AE: <b>varfarina com INR 2–3; DOAC não</b>. <b>O que muda conduta:</b> Wilkins ≤8, ausência de trombo no AE e de IM moderada a grave autorizam o balão; trombo, calcificação importante ou IM associada levam à cirurgia.</div></div>
@@ -627,7 +646,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 
 </div>
 </div>
-<div class="card prim">
+<div class="card prim" id="c4">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.4</span> Valva mitral</div><h3>Insuficiência mitral: primária opera, secundária trata a causa e o MitraClip tem critério <span class="ank ank-dec">DECISION</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Primeiro o mecanismo: <b>primária</b> (valva doente: prolapso, flail, reumática, endocardite) ou <b>secundária</b> (valva sã em VE ou AE dilatado: isquêmica, cardiomiopatia, FA longa). Primária grave: reparo é a técnica preferida e a cirurgia está indicada no sintoma ou com <b>DSVE ≥40 mm (≥20 mm/m²) ou FEVE ≤60%</b>. Secundária: terapia da IC otimizada, CRT se indicado e, só então, <b>TEER (MitraClip)</b> em quem preenche critérios. <b>O que muda conduta:</b> a aguda (papilar, corda, endocardite) é cirurgia de urgência; FEVE ≤60% já é disfunção na IM, porque o VE ejeta também para o átrio.</div></div>
@@ -656,7 +675,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="c5">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.5</span> Valva direita</div><h3>Tricúspide e pulmonar: a insuficiência é quase sempre secundária <span class="ank ank-hy">HIGH-YIELD</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">A <b>insuficiência tricúspide</b> é secundária (dilatação do VD e do anel por doença esquerda, hipertensão pulmonar, FA) na grande maioria; a primária decorre de endocardite no usuário de droga, marca-passo, carcinoide, reumática, Ebstein. A <b>estenose tricúspide</b> é rara e quase sempre reumática, junto com a mitral. A <b>estenose pulmonar</b> é congênita e benigna na maioria (PD09); a <b>insuficiência pulmonar</b> é, sobretudo, a de Fallot reparado ou de hipertensão pulmonar. <b>O que muda conduta:</b> IT grave em quem vai para cirurgia esquerda é operada junto; IT isolada só opera sintomática ou com dilatação de VD sem disfunção grave.</div></div>
@@ -676,7 +695,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="c6">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.6</span> Prótese</div><h3>Prótese valvar: escolher o tipo, fixar o INR por prótese e nunca usar DOAC na mecânica <span class="ank ank-dgr">DANGER</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body"><b>Mecânica = varfarina de por vida.</b> INR-alvo (ESC/EACTS 2025, Tabela 10): <b>2,5 (2–3)</b> na aórtica bileaflet de geração atual sem fator de risco; <b>3 (2,5–3,5)</b> na aórtica bileaflet com fator de risco, e na mitral ou tricúspide, ou disco e bola-gaiola, sem fator; <b>3,5 (3–4)</b> na mitral ou tricúspide, ou disco e bola-gaiola, com fator de risco. Fatores: estado hipercoagulável, FEVE &lt;35%, FA com estenose mitral significativa, evento tromboembólico no último ano. <b>Biológica</b>: sem anticoagulação permanente, salvo outra indicação. <b>DOAC e dupla antiagregação não previnem trombose da prótese mecânica.</b> <b>O que muda conduta:</b> idade, expectativa de vida, desejo de gestar, qualidade do controle de INR e risco de sangramento escolhem o tipo.</div></div>
@@ -715,7 +734,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="c7">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.7</span> Febre reumática</div><h3>Febre reumática e cardite: Jones, penicilina benzatina e a duração que cada paciente precisa <span class="ank ank-hy">HIGH-YIELD</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Complicação autoimune tardia (2 a 4 semanas) da faringite pelo estreptococo beta-hemolítico do grupo A, em criança e adolescente, com <b>artrite migratória, cardite, coreia de Sydenham, eritema marginado e nódulos</b>. O diagnóstico é clínico (Jones) com prova de infecção estreptocócica prévia. A prevenção domina o capítulo: <b>benzilpenicilina benzatina 1.200.000 UI IM (600.000 UI se &lt;25 kg) de 15/15 dias nos 2 primeiros anos do surto e de 21/21 depois</b> (SBC 2020). <b>O que muda conduta:</b> com cardite, a profilaxia é mais longa (até 25 anos ou 10 anos do surto, exceto lesões estenóticas; com sequela grave, até 40 anos ou vitalícia); sem cardite, até 18 anos ou 5 anos do surto.</div></div>
@@ -764,7 +783,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 
 </div>
 </div>
-<div class="card prim">
+<div class="card prim" id="c8">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.8</span> Pericárdio</div><h3>Pericardite aguda: dois de quatro critérios, anti-inflamatório mais colchicina, sem corticoide de partida <span class="ank ank-hy">HIGH-YIELD</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Diagnóstico com <b>2 de 4: dor pericárdica típica, atrito, ECG (supra difuso côncavo e infra de PR) e derrame novo ou crescente</b>. Na maioria é viral ou idiopática e autolimitada em 2–6 semanas. Tratamento padrão: <b>AAS 750–1.000 mg 8/8 h ou ibuprofeno 600 mg 8/8 h por 1–2 semanas, com desmame, mais colchicina 0,5 mg 12/12 h por 3 meses (0,5 mg/dia se &lt;70 kg), mais IBP.</b> <b>O que muda conduta:</b> febre &gt;38 °C, início subagudo, derrame volumoso, tamponamento, troponina alta (miopericardite) ou falha de 1 semana de AINE internam e mudam a investigação; corticoide só se AINE contraindicado ou falho.</div></div>
@@ -802,7 +821,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="c9">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.9</span> Pericárdio</div><h3>Pericardite recorrente e constritiva: IL-1, pericardiectomia e o que é transitório <span class="ank ank-dec">DECISION</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body"><b>Recorrente</b> é o retorno dos sintomas depois de ao menos 4–6 semanas livres. É a complicação mais comum da pericardite aguda (20–30% sem colchicina). Tratamento: AINE em dose plena mais <b>colchicina por 6 meses</b>; corticoide em dose baixa só em refratária; <b>bloqueio de IL-1 (anakinra, rilonacepte)</b> na corticodependente. <b>Constritiva</b> é rigidez do pericárdio com enchimento restritivo: insuficiência cardíaca direita sem cardiomegalia; tratamento definitivo é a <b>pericardiectomia</b>. <b>O que muda conduta:</b> inflamação ativa (PCR alta, realce na RM) sugere constrição reversível, que se tenta tratar clinicamente antes de operar.</div></div>
@@ -822,7 +841,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="c10">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.10</span> Pericárdio</div><h3>Derrame pericárdico e tamponamento: Beck, pulso paradoxal e a agulha guiada por eco <span class="ank ank-dgr">DANGER</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Tamponamento é <b>choque obstrutivo</b>: a pressão intrapericárdica supera as pressões diastólicas das câmaras. Depende da <b>velocidade</b> de acúmulo mais do que do volume. Tríade de Beck (hipotensão, bulhas abafadas, turgência jugular), taquicardia e pulso paradoxal (&gt;10 mmHg); ECG com baixa voltagem e alternância elétrica; ecocardiograma com colabamento diastólico de AD e VD. <b>O que muda conduta:</b> instável → pericardiocentese guiada por eco (ou drenagem cirúrgica no hemopericárdio); estável e viral → anti-inflamatório e vigilância; derrame crônico volumoso sem causa → pesquisar tireoide, TB e neoplasia.</div></div>
@@ -852,9 +871,9 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </section>
 <section id="secundarias">
-<div class="section"><div class="section-eyebrow"><span>D</span> Entidades Secundárias</div><div class="section-title">Oito grupos que completam o mapa: prótese que falha, aorta, gravidez, lesões combinadas, profilaxia, pericárdio no infarto e fora dele, miocárdio</div><div class="section-sub">Entidades raras ou correlatas agrupadas pela conduta que compartilham. Fronteiras: endocardite → II02, miocardite aguda como entidade → CV04, aorta e coarctação → CV08, pericardite pós-IAM como complicação do infarto → CV03 (com a dose alinhada aqui).</div></div>
+<div class="section"><div class="section-eyebrow"><span>D</span> Entidades Secundárias</div><div class="section-title">Oito grupos que completam o mapa: prótese que falha, aorta, gravidez, lesões combinadas, profilaxia, pericárdio no infarto e fora dele, miocárdio</div><div class="section-sub">Entidades raras ou correlatas agrupadas pela conduta que compartilham. Fronteiras: endocardite → II02, miocardite aguda como entidade → CV04, aorta e coarctação → CV08, pericardite pós-IAM como complicação do infarto → CV03 (com a dose alinhada aqui).</div></div><!--hp-f2--><nav class="sec-idx" aria-label="Neste capítulo"><a href="#d1"><b>D.1</b>Disfunção e trombose de próte…</a><a href="#d2"><b>D.2</b>Valva aórtica bicúspide, aort…</a><a href="#d3"><b>D.3</b>Valvopatia na gestação: o que…</a><a href="#d4"><b>D.4</b>Dupla lesão, valvopatia múlti…</a><a href="#d5"><b>D.5</b>Profilaxia de endocardite na…</a><a href="#d6"><b>D.6</b>Pericardite pós-IAM e pós-inj…</a><a href="#d7"><b>D.7</b>Pericardites por causa especí…</a><a href="#d8"><b>D.8</b>Miopericardite e miocardite a…</a></nav><!--/hp-f2-->
 
-<div class="card diag">
+<div class="card diag" id="d1">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">D.1</span> Prótese</div><h3>Disfunção e trombose de prótese: do vazamento paravalvar ao trombo obstrutivo <span class="ank ank-dgr">DANGER</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Qualquer prótese com dispneia nova, embolia ou aumento inesperado do gradiente: <b>trombose, pannus, degeneração, vazamento paravalvar ou endocardite</b>. Na mecânica obstrutiva com IC grave (NYHA III–IV), decisão do Heart Team entre cirurgia e fibrinólise. <b>O que muda conduta:</b> INR subterapêutico, trombo &gt;10 mm, choque, pannus, evento recorrente e contraindicação à fibrinólise empurram para cirurgia; alto risco cirúrgico e prótese direita favorecem fibrinólise em baixa dose e infusão lenta.</div></div>
@@ -870,7 +889,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card diag">
+<div class="card diag" id="d2">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">D.2</span> Aorta</div><h3>Valva aórtica bicúspide, aortopatia e coarctação do adulto <span class="ank ank-hy">HIGH-YIELD</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">A bicúspide é a valvopatia congênita mais comum e se associa a <b>dilatação da raiz e da aorta ascendente</b> e a <b>coarctação</b>. Cirurgia da aorta com diâmetro ≥55 mm; se a valva vai ser operada por EAo ou IA, a aorta ≥45 mm é operada junto (ESC/EACTS 2025). <b>Decisão de fronteira (2026-11-14): a coarctação do adulto é do CV08</b>; aqui só o que a associa à valva. <b>O que muda conduta:</b> PA em quatro membros e pulsos femorais em todo jovem hipertenso (CV05); rastrear a aorta em parentes de primeiro grau do portador de bicúspide.</div></div>
@@ -886,7 +905,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card diag">
+<div class="card diag" id="d3">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">D.3</span> Gestação</div><h3>Valvopatia na gestação: o que muda no plano e na anticoagulação da mecânica <span class="ank ank-dec">DECISION</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">A gestação eleva volume e frequência cardíaca: <b>estenose mitral e aórtica graves descompensam</b>; regurgitações são melhor toleradas. Prótese mecânica = risco mWHO ≥III (ESC Gestação 2025). <b>Betabloqueador e diurético</b> na estenose mitral sintomática; valvoplastia por balão se grave apesar do tratamento ou PSAP &gt;50 mmHg. <b>Varfarina atravessa a placenta</b>: embriopatia entre a 6ª e a 9ª semana; o plano de anticoagulação é feito antes da concepção. <b>O que muda conduta:</b> dose de varfarina (≤5 mg/dia é "baixa" na ESC), disponibilidade de anti-Xa, posição mitral, FA e geração da prótese.</div></div>
@@ -902,7 +921,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card diag">
+<div class="card diag" id="d4">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">D.4</span> Combinadas</div><h3>Dupla lesão, valvopatia múltipla e cirurgia não cardíaca <span class="ank ank-dec">DECISION</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Lesões combinadas se mascaram: a estenose reduz o fluxo e subestima a regurgitação, e vice-versa. A lesão reumática mais comum no Brasil é a <b>dupla lesão mitral não balanceada</b>. Gravidade em lesões mistas guia-se por sintomas, gradiente, pressão pulmonar e consequências no VE, não só pelas fórmulas de área. <b>O que muda conduta:</b> lesão primária grave a operar leva as lesões concomitantes importantes junto (ESC/EACTS 2025: tratar a moderada se aórtica ou tricúspide); na <b>cirurgia não cardíaca</b>, estenose grave sintomática trata-se antes da eletiva.</div></div>
@@ -917,7 +936,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card diag">
+<div class="card diag" id="d5">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">D.5</span> Profilaxia</div><h3>Profilaxia de endocardite na valvopatia: a diretriz brasileira e as internacionais divergem <span class="ank ank-con">CONTROVERSY</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body"><b>SBC 2020:</b> profilaxia para valvopatia moderada a importante e prótese valvar antes de procedimento dentário de alta probabilidade de bacteremia (classe I) e, para os de risco elevado, antes de procedimentos geniturinários, gastrointestinais, esofágicos ou respiratórios com lesão de mucosa (IIa). <b>AHA e ESC</b> restringem a quem tem prótese, endocardite prévia, cardiopatia congênita complexa ou transplante cardíaco com valvopatia (II02). <b>O que muda conduta:</b> o padrão deste HP é o brasileiro, com a divergência rotulada; higiene oral e consultas odontológicas frequentes valem mais que o antibiótico.</div></div>
@@ -932,7 +951,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card diag">
+<div class="card diag" id="d6">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">D.6</span> Pericárdio</div><h3>Pericardite pós-IAM e pós-injúria cardíaca: Dressler e a dose de AAS alinhada com o CV03 <span class="ank ank-dec">DECISION</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Epistenocárdica (2º ao 7º dia de IAM transmural), Dressler (1 a 8 semanas) e síndrome pós-pericardiotomia. <b>Pós-IAM: AAS 500–1.000 mg VO 6/6–8/8 h até melhorar (ACC/AHA 2025, Tabela 19) mais colchicina 0,5–0,6 mg 1 ou 2×/dia por 3 meses (1×/dia se &lt;70 kg)</b>; AINE (exceto AAS) e corticoide são evitados nas primeiras semanas pelo risco de remodelamento e ruptura. <b>O que muda conduta:</b> derrame com repercussão ou volumoso tira a anticoagulação plena e manda procurar ruptura subaguda (CV03 A e D.4).</div></div>
@@ -947,7 +966,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card diag">
+<div class="card diag" id="d7">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">D.7</span> Pericárdio</div><h3>Pericardites por causa específica: tuberculosa, purulenta, neoplásica, urêmica e das colagenoses <span class="ank ank-dgr">DANGER</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Se há <b>derrame com mais de 3 semanas</b>, febre alta, curso subagudo ou falha de AINE e colchicina, procure a causa: <b>tuberculose</b> (a mais frequente em populações com HIV e TB), <b>purulenta</b> (drenagem sempre), <b>neoplásica</b> (pulmão, mama, linfoma), <b>urêmica</b> (diálise: NU03), <b>colagenoses</b> (LES, AR, esclerodermia: RD02), mixedema e radioterapia. <b>O que muda conduta:</b> a causa específica manda tratar a base; a pericardiocentese diagnóstica é guiada por eco, com ADA, BAAR, cultura e citologia; a drenagem prolongada e a biópsia entram na recorrência.</div></div>
@@ -961,7 +980,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card diag">
+<div class="card diag" id="d8">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">D.8</span> Interface</div><h3>Miopericardite e miocardite aguda: o pericárdio e o músculo se sobrepõem <span class="ank ank-dec">DECISION</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Dono do catálogo: <b>CV04</b> (miocardite como entidade). Aqui só a interface: <b>troponina elevada numa pericardite</b> = miopericardite, com disfunção de VE, arritmia ou realce tardio na RM. A SBC 2022 recomenda que atletas e não atletas voltem às atividades habituais <b>3 a 6 meses</b> após miocardite, só com função sistólica normal, biomarcadores normais e ausência de arritmia no Holter e no esforço (IIa C). <b>O que muda conduta:</b> troponina alta com disfunção de VE ou arritmia muda a internação e a monitorização; a restrição ao esforço dura meses.</div></div>
@@ -979,7 +998,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <section id="algoritmo">
 <div class="section"><div class="section-eyebrow"><span>E</span> Algoritmo</div><div class="section-title">Da lesão ao momento da intervenção, da estenose aórtica à via e da dor pleurítica ao tamponamento: três árvores</div><div class="section-sub">Cada ponta termina em exame, dose ou encaminhamento. A primeira árvore pergunta se a lesão é aguda e o que o ventrículo diz; a segunda decide a estenose aórtica; a terceira percorre o pericárdio da pericardite ao tamponamento.</div></div>
 
-<div class="card prim">
+<div class="card prim" id="e1">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">E.1</span> Algoritmo</div><h3>Sopro ou dispneia com valvopatia: aguda ou crônica, e quando intervir <span class="ank ank-dec">DECISION</span></h3></div>
 <div class="card-body">
 <div class="algo"><div class="tree">
@@ -1007,7 +1026,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="e2">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">E.2</span> Algoritmo</div><h3>Estenose aórtica grave: sintoma, flutuação do fluxo e via de intervenção <span class="ank ank-hy">HIGH-YIELD</span></h3></div>
 <div class="card-body">
 <div class="algo"><div class="tree">
@@ -1033,7 +1052,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="e3">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">E.3</span> Algoritmo</div><h3>Dor torácica pleurítica e derrame: pericardite, miopericardite ou tamponamento <span class="ank ank-dgr">DANGER</span></h3></div>
 <div class="card-body">
 <div class="algo"><div class="tree">
@@ -1065,13 +1084,13 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </ul></div></div>
 </section>
 <section id="tratamento">
-<div class="section"><div class="section-eyebrow"><span>F</span> Tratamento Integrado</div><div class="section-title">F1 · Estratégia por entidade · F2 · Doses · F3 · Casos · F4 · SUS e CMED</div><div class="section-sub">Doses lidas em SBC 2020, ESC/EACTS 2025, ESC Gestação 2025, ACC/AHA 2025 e bulas FDA levam a sigla da fonte; as da ESC 2025 de pericárdio, AHA 2015 (Jones) e da diretriz brasileira de febre reumática de 2009, não abertas, levam "conferir". Mesma dose, mesmo texto em todo o HP.</div></div>
+<div class="section"><div class="section-eyebrow"><span>F</span> Tratamento Integrado</div><div class="section-title">F1 · Estratégia por entidade · F2 · Doses · F3 · Casos · F4 · SUS e CMED</div><div class="section-sub">Doses lidas em SBC 2020, ESC/EACTS 2025, ESC Gestação 2025, ACC/AHA 2025 e bulas FDA levam a sigla da fonte; as da ESC 2025 de pericárdio, AHA 2015 (Jones) e da diretriz brasileira de febre reumática de 2009, não abertas, levam "conferir". Mesma dose, mesmo texto em todo o HP.</div></div><!--hp-f2--><nav class="sec-idx" aria-label="Neste capítulo"><a href="#f1"><b>F.1</b>Escada terapêutica por entida…</a><a href="#f2"><b>F.2</b>Tabela de doses — valvopatias…</a><a href="#f3"><b>F.3</b>Caso → conduta certa → erro t…</a><a href="#f4"><b>F.4</b>O que o SUS e a CMED trazem e…</a></nav><!--/hp-f2-->
 
-<div class="card tx">
+<div class="card tx" id="f1">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">F.1</span> Estratégia</div><h3>Escada terapêutica por entidade <span class="ank ank-dec">DECISION</span></h3></div>
 <div class="card-body">
 
-<div class="sub-title">F1.1 · Estenose aórtica: nada de medicamento que modifique, tudo é o momento e a via (C.1)</div>
+<div class="sub-title" id="f1-1">F1.1 · Estenose aórtica: nada de medicamento que modifique, tudo é o momento e a via (C.1)</div>
 <ul class="bullets">
 <li><b>Sintomático de alto gradiente, baixo fluxo confirmado ou FEVE &lt;50%:</b> intervenção. Via: TAVI a partir de 70 anos com valva tricúspide e acesso adequado; cirurgia abaixo de 70 anos com risco baixo (STS e EuroSCORE II &lt;4%); bicúspide, aorta ≥45 mm e coronárias a revascularizar pendem para a cirurgia; o restante vai ao Heart Team (ESC/EACTS 2025). SBC 2020: TAVI primeira escolha em risco proibitivo, frágil ou intermediário, evitada abaixo de 70 anos com baixo risco.</li>
 <li><b>Enquanto aguarda:</b> tratar hipertensão com cuidado, evitar vasodilatador em dose alta, betabloqueador e diurético excessivo; FA recente: reverter (CV01). Estatina não retarda a progressão.</li>
@@ -1079,7 +1098,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </ul>
 <div class="box decision"><span class="box-label">DECISION</span><div class="box-title">Idade de corte: 70 anos na ESC, bom senso na SBC</div><div class="box-body">A ESC/EACTS 2025 baixou o corte de TAVI para 70 anos; a SBC 2020 manteve cautela abaixo dessa idade pela falta de dados de durabilidade. Padrão de plantão: abaixo de 70 anos e risco baixo, cirurgia; acima, TAVI se anatomia e acesso permitem; em dúvida, Heart Team.</div></div>
 
-<div class="sub-title">F1.2 · Insuficiência aórtica e mitral: o momento pelo ventrículo (C.2, C.4)</div>
+<div class="sub-title" id="f1-2">F1.2 · Insuficiência aórtica e mitral: o momento pelo ventrículo (C.2, C.4)</div>
 <ul class="bullets">
 <li><b>Aguda grave:</b> nitroprussiato 0,3 mcg/kg/min, até 10 mcg/kg/min no máximo e não mais de 10 minutos no teto; dobutamina 2–20 mcg/kg/min; balão intra-aórtico só na IM, nunca na IA; cirurgia urgente. Endocardite → II02.</li>
 <li><b>IA crônica grave:</b> cirurgia se sintoma, FEVE ≤50% ou DSVE &gt;50 mm (&gt;25 mm/m²); considerar com DSVEi &gt;22 mm/m² ou FEVE ≤55%; raiz ≥55 mm (≥45 mm se a valva será operada). Vasodilatador no hipertenso ou sintomático em espera.</li>
@@ -1087,14 +1106,14 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <li><b>IM secundária:</b> terapia da IC otimizada (CV04), CRT se indicado, revascularização com cirurgia valvar se doença coronária; TEER (I A) em sintomático estável com FEVE &lt;50% e IM grave persistente que preenche critérios; LVAD ou transplante no avançado.</li>
 </ul>
 
-<div class="sub-title">F1.3 · Estenose mitral reumática (C.3)</div>
+<div class="sub-title" id="f1-3">F1.3 · Estenose mitral reumática (C.3)</div>
 <ul class="bullets">
 <li><b>Clínico:</b> betabloqueador titulado até frequência de repouso baixa (verapamil ou diltiazem se broncoespasmo); diurético com parcimônia; <b>varfarina com INR 2–3</b> em FA, embolia ou trombo; sem DOAC.</li>
 <li><b>Valvoplastia por balão:</b> sintomático com Wilkins ≤8, sem trombo em AE e sem IM moderada a grave; assintomático com risco tromboembólico alto (embolia, contraste denso, FA) ou de descompensação (PSAP &gt;50 mmHg, cirurgia maior, gestação).</li>
 <li><b>Cirurgia:</b> comissurotomia aberta se trombo após 3 meses de anticoagulação; troca valvar se Wilkins ≥12, calcificação, IM ou coronariopatia associada. Prevenção secundária da febre reumática (F1.5).</li>
 </ul>
 
-<div class="sub-title">F1.4 · Prótese e anticoagulação (C.6, D.1, D.3)</div>
+<div class="sub-title" id="f1-4">F1.4 · Prótese e anticoagulação (C.6, D.1, D.3)</div>
 <ul class="bullets">
 <li><b>Mecânica:</b> varfarina vitalícia; alvo: 2,5 (2–3) aórtica de geração atual sem fator; 3 (2,5–3,5) mitral ou tricúspide sem fator, e aórtica bileaflet com fator; 3,5 (3–4) mitral ou tricúspide, ou disco e bola-gaiola, com fator. Heparina de transição até INR no alvo; automonitorização quando possível; IBP em risco digestivo.</li>
 <li><b>Biológica:</b> aórtica cirúrgica, anticoagulante ou AAS por 3 meses; mitral ou tricúspide, varfarina por ≥3 meses; depois AAS 75–100 mg pode ser considerado; com FA, anticoagulante (DOAC preferido; INR 2–3 na estenose mitral reumática). Pós-TAVI: ver F1.1.</li>
@@ -1103,14 +1122,14 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </ul>
 <div class="box danger"><span class="box-label">DANGER</span><div class="box-title">DOAC, dupla antiagregação e "ajuste fino" do INR na mecânica</div><div class="box-body">Dabigatrana na mecânica (RE-ALIGN, 252 pacientes) teve mais eventos combinados (9% × 5%) e mais sangramento (27% × 12%) que a varfarina, e DOAC e DAPT são classe III na ESC/EACTS 2025. Em mecânica mitral, tricúspide ou aórtica com fator, alvo de 2–3 é subdose. O paciente trocado de varfarina para DOAC por conveniência é o evento evitável deste capítulo.</div></div>
 
-<div class="sub-title">F1.5 · Febre reumática: erradicar, tratar a inflamação e proteger por anos (C.7)</div>
+<div class="sub-title" id="f1-5">F1.5 · Febre reumática: erradicar, tratar a inflamação e proteger por anos (C.7)</div>
 <ul class="bullets">
 <li><b>Agudo:</b> benzilpenicilina benzatina em dose única; AAS na artrite; prednisona na cardite moderada a grave com IC (doses a conferir); diuréticos e IECA na IC; repouso relativo; coreia: sintomático só se incapacitante (NE06).</li>
 <li><b>Profilaxia secundária (SBC 2020):</b> benzatina 1.200.000 UI IM (600.000 UI se &lt;25 kg), a cada 15 dias nos 2 primeiros anos e a cada 21 dias depois; sulfadiazina na alergia. Duração: 18 anos ou 5 anos do surto sem cardite; 25 anos ou 10 anos com cardite sem sequela relevante (exceto lesões estenóticas, SBC); até ≥40 anos ou vitalícia se sequela grave, cirurgia valvar ou exposição ocupacional.</li>
 <li><b>Divergências:</b> bula FDA (mensal ou 600.000 UI a cada 2 semanas) e ESC/EACTS 2025 (1,2 MU a cada 3–4 semanas por 10 anos); padrão deste HP é o brasileiro. Conferir bula Anvisa.</li>
 </ul>
 
-<div class="sub-title">F1.6 · Pericardite aguda, recorrente e constritiva (C.8, C.9)</div>
+<div class="sub-title" id="f1-6">F1.6 · Pericardite aguda, recorrente e constritiva (C.8, C.9)</div>
 <ul class="bullets">
 <li><b>Primeiro episódio de baixo risco:</b> AAS 750–1.000 mg 8/8 h ou ibuprofeno 600 mg 8/8 h por 1–2 semanas, com desmame guiado pela PCR; colchicina 0,5 mg 12/12 h (0,5 mg/dia se &lt;70 kg) por 3 meses; IBP; sem esforço até normalizar.</li>
 <li><b>Alto risco:</b> internação e causa específica (D.7); miopericardite: D.8.</li>
@@ -1121,14 +1140,14 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </ul>
 <div class="box hy"><span class="box-label">HIGH-YIELD</span><div class="box-title">Pós-IAM: a mesma faixa de AAS, com duração até a melhora</div><div class="box-body">No Dressler e na pericardite pós-IAM persistente: AAS 500–1.000 mg 6/6–8/8 h até melhorar mais colchicina por 3 meses (ACC/AHA 2025). A pericardite geral (C.8) usa AAS 750–1.000 mg 8/8 h. O CV03 D.5 fica alinhado com a faixa de dose; a duração no infarto é até a melhora dos sintomas.</div></div>
 
-<div class="sub-title">F1.7 · Derrame, tamponamento e constrição: drenar com imagem (C.10)</div>
+<div class="sub-title" id="f1-7">F1.7 · Derrame, tamponamento e constrição: drenar com imagem (C.10)</div>
 <ul class="bullets">
 <li><b>Tamponamento com hipotensão:</b> cristaloide e, se preciso, dobutamina como ponte; pericardiocentese guiada por eco (retirar 50–150 mL já alivia; deixar cateter); hemopericárdio agudo, cirurgia.</li>
 <li><b>Estável e viral:</b> anti-inflamatório e vigilância; derrame &gt;3 semanas sem resposta: punção diagnóstica.</li>
 <li><b>Recorrente:</b> drenagem cirúrgica com biópsia; janela pleuropericárdica; mixedema: levotiroxina (EN03).</li>
 </ul>
 
-<div class="sub-title">F1.8 · Seguimento: quando voltar a olhar e o que repetir</div>
+<div class="sub-title" id="f1-8">F1.8 · Seguimento: quando voltar a olhar e o que repetir</div>
 <ul class="bullets">
 <li><b>Estenose aórtica assintomática grave:</b> consulta e ecocardiograma ao menos a cada 6 meses, com teste de esforço se a queixa é duvidosa e BNP seriado; moderada, ao menos anual (ESC/EACTS 2025); estenose leve sem calcificação importante pode ir a 2–3 anos.</li>
 <li><b>Insuficiência aórtica e mitral grave assintomáticas:</b> avaliação anual, a cada 3–6 meses quando se aproxima dos limiares de VE (DSVE, FEVE) ou há dilatação progressiva; na IM, atenção a FA nova e à PSAP.</li>
@@ -1141,7 +1160,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card tx">
+<div class="card tx" id="f2">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">F.2</span> Doses Operacionais</div><h3>Tabela de doses — valvopatias e pericárdio</h3></div>
 <div class="card-body">
 <div class="stbl stbl-3">
@@ -1166,7 +1185,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card tx">
+<div class="card tx" id="f3">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">F.3</span> Cenários</div><h3>Caso → conduta certa → erro típico</h3></div>
 <div class="card-body">
 <div class="stbl stbl-3">
@@ -1187,7 +1206,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card tx">
+<div class="card tx" id="f4">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">F.4</span> Acesso</div><h3>O que o SUS e a CMED trazem e o que fica a conferir <span class="ank ank-dec">DECISION</span></h3></div>
 <div class="card-body">
 <ul class="bullets">
@@ -1201,7 +1220,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <section id="pitfalls">
 <div class="section"><div class="section-eyebrow"><span>G</span> Pitfalls · Mitos · Controvérsias</div><div class="section-title">Erros operacionais, mitos vivos e debates abertos</div><div class="section-sub">Os erros que se repetem: DOAC em quem deve usar varfarina, esperar o sintoma que já existe, tratar tamponamento com diurético, corticoide de partida na pericardite e febre reumática sem profilaxia.</div></div>
 
-<div class="card pearl">
+<div class="card pearl" id="g1">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">G.1</span> Pegadinhas</div><h3>10 erros operacionais em valvopatias e pericárdio</h3></div>
 <div class="card-body">
 <div class="stbl stbl-2">
@@ -1232,7 +1251,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <section id="pearls">
 <div class="section"><div class="section-eyebrow"><span>H</span> Pearls · Evolving</div><div class="section-title">H1 · Nuances de especialista · H2 · O que mudou entre 2020 e 2025</div><div class="section-sub">Oito ideias que o plantão esquece e cinco mudanças reais; onde o tema é estável (fisiologia do tamponamento, mecanismo da febre reumática), diz-se.</div></div>
 
-<div class="card pearl">
+<div class="card pearl" id="h1">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">H.1</span> Pearls</div><h3>8 nuances que distinguem o especialista</h3></div>
 <div class="card-body">
 <div class="box pearl"><span class="box-label">PEARL</span><div class="box-title">O ruflar diastólico de Austin Flint engana: é na insuficiência aórtica, não na estenose mitral</div><div class="box-body">O jato regurgitante aórtico faz o folheto anterior da mitral vibrar e fecha-a parcialmente antes da sístole, produzindo ruflar sem estalido de abertura e sem B1 hiperfonética. Estalido de abertura e B1 forte apontam estenose mitral verdadeira; o eco decide e evita colocar a lesão errada na cirurgia.</div></div>
@@ -1288,5 +1307,36 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <a class="to-top" href="#" aria-label="Voltar ao topo">↑</a>
 <div class="watermark">@dr.lorencato · CV07 Valvopatias e Pericárdio v5.2</div>
 
-</body>
+<!--hp-f2--><script>(function(){var d=document,M=d.querySelector('main');if(!M)return;
+var SELF='CV07',HP=' CT01 CT02 CT03 CT04 CT05 CT06 CT08 CT10 CV01 CV03 CV04 CV05 CV06 CV07 CV08 EN01 EN02 EN03 EN04 EN06 EN07 GH01 GH02 GH03 GH05 GH06 GH07 GH08 GH09 GH10 GO01 GO02 GO03 GO04 GO09 GO10 GO11 GO12 GO13 GO14 HO01 HO02 HO03 HO04 HO05 HO06 II01 II02 II03 II04 II07 II08 NE01 NE02 NE03 NE04 NE05 NE06 NE07 NE08 NU01 NU02 NU03 NU04 NU05 OE01 OE02 PC01 PC02 PC03 PC04 PC05 PC06 PD01 PD02 PD03 PD04 PD05 PD06 PD07 PD08 PD09 PD10 RD01 RD02 RD03 RD04 RD05 RD07 RP01 RP02 RP03 RP04 ';
+var SK='A,H1,H2,H3,SCRIPT,STYLE,NAV,.card-num,.card-eyebrow,.sub-title,.disease-tag,.toc';
+var R=/\b(?:([A-H])(\d)?\.(\d{1,2}[a-c]?)|(CV|RP|GH|NE|EN|NU|HO|II|RD|GO|PD|PC|CT|OE)(\d\d))\b/g;
+function skip(n){for(var e=n.parentNode;e&&e!==M;e=e.parentNode)if(e.matches&&e.matches(SK))return 1;return 0}
+var w=d.createTreeWalker(M,4),t,L=[];while(t=w.nextNode())if(R.test(t.data)&&!skip(t))L.push(t);
+L.forEach(function(t){var s=t.data,f=d.createDocumentFragment(),i=0,m;R.lastIndex=0;
+while(m=R.exec(s)){var h=null;
+if(m[1]){var id=m[1].toLowerCase()+(m[2]?m[2]+'-':'')+m[3];if(d.getElementById(id))h='#'+id}
+else{var x=m[4]+m[5];if(x!==SELF&&HP.indexOf(' '+x+' ')>=0)h='../'+x+'/'+x+'.html'}
+if(!h)continue;f.appendChild(d.createTextNode(s.slice(i,m.index)));
+var a=d.createElement('a');a.href=h;a.className='xr';a.textContent=m[0];f.appendChild(a);i=R.lastIndex}
+if(i){f.appendChild(d.createTextNode(s.slice(i)));t.parentNode.replaceChild(f,t)}});
+function nz(s){return s.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'')}
+var q=d.querySelector('.hp-q'),n=d.querySelector('.hp-n'),it=M.querySelectorAll('.card,.pocket-card'),T;
+function clr(){M.querySelectorAll('.q-off').forEach(function(e){e.classList.remove('q-off')})}
+function run(){var v=nz(q.value.trim());clr();n.textContent='';if(v.length<2)return;var k=0;
+it.forEach(function(c){if(nz(c.textContent).indexOf(v)<0){c.classList.add('q-off');return}k++;
+var r=c.querySelectorAll('.stbl-row,.disease-row,.score-row'),h=[];r.forEach(function(x){if(nz(x.textContent).indexOf(v)>=0)h.push(x)});
+if(h.length)r.forEach(function(x){if(h.indexOf(x)<0)x.classList.add('q-off')});
+c.querySelectorAll('details').forEach(function(x){if(nz(x.textContent).indexOf(v)>=0)x.open=true})});
+M.querySelectorAll('section').forEach(function(s){if(!s.querySelector('.card:not(.q-off),.pocket-card:not(.q-off)'))s.classList.add('q-off')});
+n.textContent=k?k+' achado'+(k>1?'s':''):'nada'}
+if(q){q.addEventListener('input',function(){clearTimeout(T);T=setTimeout(run,180)});
+q.addEventListener('keydown',function(e){if(e.key==='Escape'){q.value='';run()}})}
+function tg(b,f){b.addEventListener('click',function(){var on=b.getAttribute('aria-pressed')!=='true';b.setAttribute('aria-pressed',on);f(on)})}
+var bd=d.querySelector('.hp-dz'),bo=d.querySelector('.hp-op');
+if(bd)tg(bd,function(on){d.body.classList.toggle('dz',on);if(on)d.getElementById('tratamento').scrollIntoView()});
+if(bo)tg(bo,function(on){M.querySelectorAll('details').forEach(function(x){x.open=on})});
+var P=[];addEventListener('beforeprint',function(){P=[];M.querySelectorAll('details:not([open])').forEach(function(x){P.push(x);x.open=true})});
+addEventListener('afterprint',function(){P.forEach(function(x){x.open=false})});
+})();</script><!--/hp-f2--></body>
 </html>

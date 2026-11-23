@@ -346,13 +346,32 @@ ul.bullets li b{color:var(--ink);font-weight:600}
   .pocket .pocket-card.tx{--accent:#a8481a}
   .pocket .pocket-card.clin{--accent:#0b5d4e}
 }
+
+/* === v5.2.2 · fase 2 (navegação) === */
+.hp-tools{display:flex;gap:6px;align-items:center;flex:none;order:1;margin-left:auto;padding-left:6px;position:sticky;right:0;background:#f1eee5;box-shadow:-10px 0 10px -4px #f1eee5,16px 0 0 #f1eee5}
+@media(min-width:900px){html{scroll-padding-top:150px}.toc-inner{flex-wrap:wrap;overflow:visible}.card[id],.sub-title[id]{scroll-margin-top:150px}}
+@media(max-width:899px){.hp-b,.hp-n{display:none}.hp-q{width:104px}}
+.hp-q{width:128px;font:500 12px/1 'DM Sans',system-ui,sans-serif;padding:7px 11px;border:1px solid var(--line-strong);border-radius:999px;background:var(--paper);color:var(--ink)}
+.hp-b{font:600 11px/1 'DM Sans',system-ui,sans-serif;letter-spacing:.05em;text-transform:uppercase;padding:7px 10px;border-radius:999px;border:1px solid var(--line-strong);background:var(--paper);color:var(--ink-soft);cursor:pointer;white-space:nowrap}
+.hp-b[aria-pressed=true]{background:var(--ink);color:#fff;border-color:var(--ink)}
+.hp-n{font:600 11px/1 'DM Mono',monospace;color:var(--ink-mute);white-space:nowrap}
+.sec-idx{display:flex;flex-wrap:wrap;gap:6px;margin:12px 0 20px}
+.sec-idx a{font:500 12px/1.25 'DM Sans',system-ui,sans-serif;padding:6px 10px;border-radius:999px;background:var(--paper);border:1px solid var(--line);color:var(--ink-soft);text-decoration:none}
+.sec-idx a:hover{border-color:var(--line-strong);color:var(--ink)}
+.sec-idx b{color:var(--c-prim);margin-right:5px;font-weight:700}
+a.xr{color:inherit;text-decoration:underline dotted;text-underline-offset:2px}
+a.xr:hover{color:var(--c-prim)}
+.card[id],.sub-title[id]{scroll-margin-top:110px}
+.q-off{display:none!important}
+body.dz main section:not(#tratamento){display:none}
+@media print{.hp-tools,.sec-idx,.toc-doses{display:none!important}}
 </style>
 </head>
 <body>
 
 <header class="header"><div class="header-row"><div class="h-mark">H</div><div class="h-titles"><div class="h-title">Diarreia Aguda e Colites Infecciosas · Pocket Handbook</div><div class="h-sub">Elite edition · Gastroenterologia clínica · GH03</div></div><div class="h-author">@dr.lorencato</div><div class="h-edition">v5.2</div></div></header>
 
-<nav class="toc"><div class="toc-inner"><a href="#pocket" class="toc-chip"><span class="toc-chip-num">0</span>Pocket</a><a href="#redflags" class="toc-chip"><span class="toc-chip-num">A</span>Red Flags</a><a href="#approach" class="toc-chip"><span class="toc-chip-num">B</span>Apresentação</a><a href="#primarias" class="toc-chip"><span class="toc-chip-num">C</span>Entidades</a><a href="#secundarias" class="toc-chip"><span class="toc-chip-num">D</span>Secundárias</a><a href="#algoritmo" class="toc-chip"><span class="toc-chip-num">E</span>Algoritmo</a><a href="#tratamento" class="toc-chip"><span class="toc-chip-num">F</span>Tratamento</a><a href="#pitfalls" class="toc-chip"><span class="toc-chip-num">G</span>Pitfalls</a><a href="#pearls" class="toc-chip"><span class="toc-chip-num">H</span>Pearls</a></div></nav>
+<nav class="toc"><div class="toc-inner"><!--hp-f2--><span class="hp-tools"><input class="hp-q" type="search" placeholder="Buscar no HP" aria-label="Buscar no HP"><button class="hp-b hp-dz" type="button" aria-pressed="false">Só doses</button><button class="hp-b hp-op" type="button" aria-pressed="false">Abrir tudo</button><span class="hp-n" aria-live="polite"></span></span><!--/hp-f2--><a href="#pocket" class="toc-chip"><span class="toc-chip-num">0</span>Pocket</a><a href="#redflags" class="toc-chip"><span class="toc-chip-num">A</span>Red Flags</a><a href="#approach" class="toc-chip"><span class="toc-chip-num">B</span>Apresentação</a><a href="#primarias" class="toc-chip"><span class="toc-chip-num">C</span>Entidades</a><a href="#secundarias" class="toc-chip"><span class="toc-chip-num">D</span>Secundárias</a><a href="#algoritmo" class="toc-chip"><span class="toc-chip-num">E</span>Algoritmo</a><a href="#tratamento" class="toc-chip"><span class="toc-chip-num">F</span>Tratamento</a><!--hp-f2--><a href="#f2" class="toc-chip toc-doses"><span class="toc-chip-num">Rx</span>Doses</a><!--/hp-f2--><a href="#pitfalls" class="toc-chip"><span class="toc-chip-num">G</span>Pitfalls</a><a href="#pearls" class="toc-chip"><span class="toc-chip-num">H</span>Pearls</a></div></nav>
 
 <main>
 <div class="wrap">
@@ -416,7 +435,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <section id="redflags">
 <div class="section"><div class="section-eyebrow"><span>A</span> Red Flags</div><div class="section-title">Na diarreia aguda o perigo raramente é o agente: é o volume perdido, o cólon que dilata e o remédio dado por hábito</div><div class="section-sub">Sinal objetivo, suspeita e conduta imediata. Os eventos evitáveis deste HP são o choque hipovolêmico subestimado no idoso, a loperamida na disenteria, o antibiótico dado ao STEC, o <i>C. difficile</i> não pensado em quem usou antimicrobiano e a cólera que não foi notificada.</div></div>
 
-<div class="card emerg">
+<div class="card emerg" id="a1">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">A.1</span> Emergências</div><h3>Sinais de alarme — diarreia aguda do adulto <span class="ank ank-dgr">DANGER</span></h3></div>
 <div class="card-body">
 
@@ -460,7 +479,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <section id="approach">
 <div class="section"><div class="section-eyebrow"><span>B</span> Por Apresentação</div><div class="section-title">Cinco portas de entrada: pelo aspecto das fezes, pelo contexto e pela duração</div><div class="section-sub">O paciente não chega com o rótulo de Shigella ou de <i>C. difficile</i>. Chega com um aspecto das fezes, uma exposição, uma febre e um número de dias.</div></div>
 
-<div class="card clin">
+<div class="card clin" id="b1">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">B.1</span> Padrão 1</div><h3>Diarreia aquosa, volumosa, sem sangue (não inflamatória) <span class="ank ank-hy">HIGH-YIELD</span></h3><div class="card-sub">Delgado: grande volume, poucos episódios, dor periumbilical, vômito</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Fezes líquidas sem sangue, muco ou pus, sem febre ou com febrícula, náusea e vômito: <b>norovírus no adulto, toxina pré-formada (S. aureus, B. cereus, C. perfringens), ETEC, cólera, Giardia e Cryptosporidium.</b> Mais de 90% resolvem em 5 dias com suporte; a positividade dos exames é inferior a 3%. <b>O que muda conduta:</b> desidratação grave, viagem, surto ou volume de litros por hora (cólera) mudam o roteiro; o resto é SRO.</div></div>
@@ -475,7 +494,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card clin">
+<div class="card clin" id="b2">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">B.2</span> Padrão 2</div><h3>Diarreia com sangue e muco (inflamatória, disenteria) <span class="ank ank-dec">DECISION</span></h3><div class="card-sub">Cólon: pouco volume, muitos episódios, tenesmo, urgência, dor em fossa ilíaca esquerda</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Sangue, muco ou pus visíveis, tenesmo e febre: <b>Shigella, Campylobacter, Salmonella, EIEC, STEC e E. histolytica</b>; fora da infecção, DII, colite isquêmica, diverticulite e neoplasia. A pergunta que divide o mapa é <b>"há febre?"</b>: com febre, Shigella e Campylobacter; sem febre e com dor intensa, STEC. <b>O que muda conduta:</b> estado geral comprometido → antibiótico; sangue vivo afebril com dor intensa → nenhum antibiótico; trofozoítos hematófagos ou falha na Shigella → amebíase.</div></div>
@@ -490,7 +509,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card clin">
+<div class="card clin" id="b3">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">B.3</span> Padrão 3</div><h3>Diarreia depois de antibiótico ou internação <span class="ank ank-dgr">DANGER</span></h3><div class="card-sub">Janela de 1 dia a 8 semanas depois da exposição</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Toda diarreia que começa entre o primeiro dia e a oitava semana depois de um antimicrobiano levanta <i>C. difficile</i>; a maioria das "diarreias dos antibióticos" é osmótica e leve, sem o patógeno. <b>O que muda conduta:</b> ≥3 evacuações não formadas em 24 h sem causa → toxina com GDH ou PCR; leucócitos ≥15.000/mm³ ou creatinina &gt;1,5 mg/dL → grave; hipotensão, íleo ou megacólon → fulminante.</div></div>
@@ -503,7 +522,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card clin">
+<div class="card clin" id="b4">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">B.4</span> Padrão 4</div><h3>Diarreia no viajante, no imunossuprimido e em quem pratica sexo anal <span class="ank ank-hy">HIGH-YIELD</span></h3><div class="card-sub">O contexto muda o espectro de agentes e o limiar para tratar</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">No viajante, ETEC, EAEC, Campylobacter, Shigella, Salmonella e protozoários (Giardia, Cryptosporidium, Cyclospora); no HIV e no transplantado, Cryptosporidium, Cystoisospora, microsporídios, MAC, CMV e Salmonella recorrente; em HSH, Shigella, Campylobacter, E. histolytica e Giardia. <b>O que muda conduta:</b> viajante com ≥38,5 °C, sangue ou sepse e o imunossuprimido com doença grave recebem antibiótico; o restante, não.</div></div>
@@ -516,7 +535,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card clin">
+<div class="card clin" id="b5">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">B.5</span> Padrão 5</div><h3>Diarreia que passa de 14 dias <span class="ank ank-dec">DECISION</span></h3><div class="card-sub">Persistente (2–4 semanas) e crônica (&gt;4 semanas)</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Diarreia que dura mais de 14 dias raramente é bacteriana invasiva: <b>Giardia, Cryptosporidium, Cyclospora, <i>C. difficile</i>, supercrescimento bacteriano, SII pós-infecciosa, intolerância secundária à lactose, DII, doença celíaca e neoplasia.</b> O IDSA 2017 desaconselha antibiótico empírico na diarreia aquosa persistente de 14 dias ou mais. <b>O que muda conduta:</b> perda de peso, sangue, anemia ou diarreia noturna → endoscopia; esteatorreia → má absorção (GH04).</div></div>
@@ -530,9 +549,9 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 
 </section>
 <section id="primarias">
-<div class="section"><div class="section-eyebrow"><span>C</span> Entidades Primárias</div><div class="section-title">Nove entidades: a síndrome diarreica, seis agentes que mudam a conduta, o <i>C. difficile</i> e as protozooses</div><div class="section-sub">A abordagem da diarreia aguda e a hidratação abrem o capítulo, porque são o tratamento de quase todos os casos; Shigella, Campylobacter, Salmonella e STEC vêm em seguida por exigirem decisões opostas sobre o antibiótico; cólera e <i>C. difficile</i> têm box próprio por notificação imediata e por conduta específica; amebíase e giardíase fecham com o parasitológico.</div></div>
+<div class="section"><div class="section-eyebrow"><span>C</span> Entidades Primárias</div><div class="section-title">Nove entidades: a síndrome diarreica, seis agentes que mudam a conduta, o <i>C. difficile</i> e as protozooses</div><div class="section-sub">A abordagem da diarreia aguda e a hidratação abrem o capítulo, porque são o tratamento de quase todos os casos; Shigella, Campylobacter, Salmonella e STEC vêm em seguida por exigirem decisões opostas sobre o antibiótico; cólera e <i>C. difficile</i> têm box próprio por notificação imediata e por conduta específica; amebíase e giardíase fecham com o parasitológico.</div></div><!--hp-f2--><nav class="sec-idx" aria-label="Neste capítulo"><a href="#c1"><b>C.1</b>Diarreia aguda do adulto: cla…</a><a href="#c2"><b>C.2</b>Shigelose: a disenteria cláss…</a><a href="#c3"><b>C.3</b>Campilobacteriose: a causa ba…</a><a href="#c4"><b>C.4</b>Salmonelose não tifoide: trat…</a><a href="#c5"><b>C.5</b>STEC e síndrome hemolítico-ur…</a><a href="#c6"><b>C.6</b>Cólera: reidratar primeiro, n…</a><a href="#c7"><b>C.7</b>Clostridioides difficile : o…</a><a href="#c8"><b>C.8</b>Amebíase intestinal e abscess…</a><a href="#c9"><b>C.9</b>Giardíase, criptosporidiose e…</a></nav><!--/hp-f2-->
 
-<div class="card prim">
+<div class="card prim" id="c1">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.1</span> Síndrome diarreica</div><h3>Diarreia aguda do adulto: classificar, hidratar e decidir se investiga <span class="ank ank-hy">HIGH-YIELD</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Diarreia aguda é a eliminação de <b>≥3 evacuações líquidas ou semilíquidas em 24 h por até 14 dias</b> (Guia de Vigilância 2024); com náusea, vômito e dor, é gastroenterite. Três perguntas: <b>está desidratado? tem sangue, febre ou toxemia? há exposição que muda o agente?</b> A primeira decide a hidratação, a segunda separa inflamatória de não inflamatória, a terceira (viagem, antibiótico, surto, imunossupressão) decide o exame. <b>O que muda conduta:</b> plano A, B ou C do MS; disenteria com comprometimento do estado geral → antibiótico; ≥38,5 °C, sepse, imunossupressão ou ≥70 anos → investigar.</div></div>
@@ -578,7 +597,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="c2">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.2</span> Disenteria bacilar</div><h3>Shigelose: a disenteria clássica que pede antibiótico quando o paciente está doente <span class="ank ank-dec">DECISION</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Febre, cólica, tenesmo e 10–30 evacuações pequenas com sangue e muco, 1–3 dias após exposição fecal-oral. Autolimitada em 5–7 dias; antibiótico <b>encurta o curso e a excreção</b> e entra quando há <b>disenteria com comprometimento do estado geral</b>. <b>O que muda conduta:</b> estado geral e imunidade (antibiótico), MIC de ciprofloxacino ≥0,12 µg/mL (evitar quinolona mesmo se "sensível"), sangue persistente após 48 h (rever diagnóstico: ameba, DII, <i>C. difficile</i>), <i>S. dysenteriae</i> tipo 1 (SHU).</div></div>
@@ -598,7 +617,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="c3">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.3</span> Colite invasiva</div><h3>Campilobacteriose: a causa bacteriana mais comum e a que imita apendicite e DII <span class="ank ank-hy">HIGH-YIELD</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Frango malcozido, leite cru ou animal doméstico com diarreia; dor periumbilical em cólica e febre que precedem a diarreia, às vezes sanguinolenta, 2–5 dias depois. A maioria cede em 3–7 dias sem antibiótico. <b>O que muda conduta:</b> doença grave, prolongada, imunossuprimido ou bacteremia → <b>azitromicina</b> (a resistência de Campylobacter à quinolona é alta); dor em fossa ilíaca direita → imagem antes de rotular; fraqueza ascendente 1–3 semanas depois → Guillain-Barré (NE07).</div></div>
@@ -618,7 +637,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="c4">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.4</span> Enterite invasiva</div><h3>Salmonelose não tifoide: tratar só quem tem risco de invasão <span class="ank ank-dec">DECISION</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Aves, ovos, répteis e leite cru; incubação de 6–72 h, febre, cólica e diarreia, às vezes com sangue. <b>Antibiótico na enterite não complicada piora a excreção e não encurta a doença;</b> reserva-se a quem tem risco de infecção invasiva. <b>O que muda conduta:</b> lactente &lt;3 meses, &gt;50 anos com aterosclerose, imunossupressão, valvopatia ou prótese endovascular, doença articular significativa, hemoglobinopatia, bacteremia → antibiótico; febre entérica (Typhi e Paratyphi) → II07.</div></div>
@@ -638,7 +657,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="c5">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.5</span> E. coli enterohemorrágica</div><h3>STEC e síndrome hemolítico-urêmica: o único agente em que a ausência do antibiótico é a conduta <span class="ank ank-dgr">DANGER</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Sangue vivo, dor muito intensa e pouca febre, após carne malpassada, leite cru ou hortaliça. A diarreia melhora e, entre os dias 5 e 10, aparecem <b>palidez, petéquias, oligúria e confusão: SHU</b>. <b>O que muda conduta:</b> sem antibiótico, sem loperamida, sem AINE; toxina Shiga ou PCR nas fezes; hemograma, creatinina e plaquetas diários até estabilizarem; queda de plaquetas ou aumento de creatinina → internação e HO03; vigilância sentinela da SHU (NT 31/2025).</div></div>
@@ -666,7 +685,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="c6">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.6</span> Diarreia secretória epidêmica</div><h3>Cólera: reidratar primeiro, notificar em 24 h, antibiótico em dose única só no grave <span class="ank ank-dgr">DANGER</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Diarreia súbita, líquida e abundante, "água de arroz", vômito e sem febre, com perdas de até 1–2 L por hora nos graves. <b>A base do tratamento é a reidratação; o antibiótico é complementar</b>, indicado no grave, em quem mantém ≥1 evacuação por hora durante a reidratação oral, na gestante e na comorbidade importante. <b>O que muda conduta:</b> desidratação grave → plano C; notificação imediata em até 24 h e coleta de fezes ou vômito antes do antibiótico; contatos e fonte de água (Guia de Vigilância 2024).</div></div>
@@ -694,7 +713,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="c7">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.7</span> Colite associada a antibiótico</div><h3><i>Clostridioides difficile</i>: o diagnóstico em duas etapas, a vancomicina oral e a recorrência <span class="ank ank-dec">DECISION</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Principal infecção entérica nosocomial: diarreia ≥3 evacuações não formadas em 24 h, em geral 5–10 dias depois do antibiótico, com toxina A/B ou cepa toxigênica nas fezes. <b>Primeiro episódio: vancomicina 125 mg VO 6/6 h por 10 dias</b> (ou fidaxomicina 200 mg VO 12/12 h por 10 dias, que não consta na CMED); suspender o antibiótico indutor. <b>O que muda conduta:</b> leucócitos ≥15.000/mm³ ou creatinina &gt;1,5 mg/dL → grave; hipotensão, íleo ou megacólon → fulminante (vancomicina 500 mg + metronidazol IV ± retal, cirurgia); recorrência → pulso decrescente, vancomicina + rifaximina ou microbiota fecal; precauções de contato e água e sabão.</div></div>
@@ -750,7 +769,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="c8">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.8</span> Colite protozoária</div><h3>Amebíase intestinal e abscesso hepático: nitroimidazólico e agente luminal <span class="ank ank-dec">DECISION</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Disenteria subaguda (10–12 evacuações com sangue, muco e tenesmo) com febre em até 40%, em quem veio de área endêmica ou tem má higiene; ou dor no hipocôndrio direito com febre e leucocitose por abscesso hepático, em homens (7:1). <b>Todo caso se trata:</b> imidazólico para a forma invasiva <b>mais agente luminal</b> (assintomático faz só o luminal). <b>O que muda conduta:</b> trofozoíto hematófago nas fezes ou falha da Shigella → amebíase; <b>corticoide e antiperistáltico</b> pioram a colite amebiana (confundida com RCU, GH05); abscesso: sorologia mais imagem, drenagem só em situações específicas.</div></div>
@@ -778,7 +797,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="c9">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.9</span> Protozooses entéricas</div><h3>Giardíase, criptosporidiose e outras protozooses: o parasitológico vence a diarreia que não passa <span class="ank ank-hy">HIGH-YIELD</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Diarreia há mais de 7–10 dias, com flatulência, distensão, fezes gordurosas e perda de peso, após água não filtrada, creche ou viagem: <b>Giardia</b>. Imunossuprimido com diarreia aquosa crônica: <b>Cryptosporidium, Cystoisospora, Cyclospora e microsporídios</b>. <b>O que muda conduta:</b> três amostras de fezes ou antígeno; giardíase se trata (tinidazol 2 g VO em dose única ou nitazoxanida 500 mg 12/12 h por 3 dias); HIV e transplante: reconstituição imune e remissão ao II01; hipogamaglobulinemia: giardíase refratária.</div></div>
@@ -800,9 +819,9 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 
 </section>
 <section id="secundarias">
-<div class="section"><div class="section-eyebrow"><span>D</span> Entidades Secundárias</div><div class="section-title">Viajante, vírus e toxinas, imunossuprimido, fármacos, Yersinia, sequelas e a diarreia que persiste</div><div class="section-sub">Casos que completam o diferencial e as portas de saída: o viajante pede antibiótico mais cedo, o imunossuprimido pede biópsia, o fármaco pede suspensão e a diarreia de mais de 14 dias pede outro HP (GH04 e GH05).</div></div>
+<div class="section"><div class="section-eyebrow"><span>D</span> Entidades Secundárias</div><div class="section-title">Viajante, vírus e toxinas, imunossuprimido, fármacos, Yersinia, sequelas e a diarreia que persiste</div><div class="section-sub">Casos que completam o diferencial e as portas de saída: o viajante pede antibiótico mais cedo, o imunossuprimido pede biópsia, o fármaco pede suspensão e a diarreia de mais de 14 dias pede outro HP (GH04 e GH05).</div></div><!--hp-f2--><nav class="sec-idx" aria-label="Neste capítulo"><a href="#d1"><b>D.1</b>Diarreia do viajante: gravida…</a><a href="#d2"><b>D.2</b>Gastroenterite viral e intoxi…</a><a href="#d3"><b>D.3</b>Colite por CMV e diarreia do…</a><a href="#d4"><b>D.4</b>Diarreia associada a antimicr…</a><a href="#d5"><b>D.5</b>Yersinia e outras bactérias e…</a><a href="#d6"><b>D.6</b>Sequelas e complicações pós-i…</a><a href="#d7"><b>D.7</b>Diarreia persistente e crônic…</a></nav><!--/hp-f2-->
 
-<div class="card diag">
+<div class="card diag" id="d1">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">D.1</span> Viajante</div><h3>Diarreia do viajante: gravidade define o antibiótico <span class="ank ank-dec">DECISION</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Começa em 1–2 semanas de uma viagem a país de baixa renda; bacteriana em cerca de 90% (ETEC, EAEC, Campylobacter, Shigella, Salmonella) e parasitária em cerca de 10%. A maioria acaba em menos de 7 dias com SRO. <b>O que muda conduta:</b> leve, aquosa e afebril em adulto → loperamida; moderada → antibiótico opcional; <b>grave, febril ≥38,5 °C ou disentérica → antibiótico, com azitromicina preferida</b>; diarreia &gt;14 dias → parasitológico; febre depois do retorno → malária e febre entérica (II07).</div></div>
@@ -821,7 +840,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card diag">
+<div class="card diag" id="d2">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">D.2</span> Vírus e toxinas</div><h3>Gastroenterite viral e intoxicação alimentar: vômito, curta incubação e surto <span class="ank ank-hy">HIGH-YIELD</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">O tempo entre a refeição e o sintoma identifica a toxina: <b>1–6 h com vômito: S. aureus ou B. cereus (forma emética); 8–16 h com cólica: C. perfringens; 12–48 h: norovírus</b> (tempos de livro-texto; conferir). Sem febre alta, sem sangue, sem antibiótico. <b>O que muda conduta:</b> vários doentes do mesmo prato → surto de DTHA, notificar e preservar o alimento; diplopia, ptose, disfagia e paralisia descendente → botulismo (notificação imediata).</div></div>
@@ -840,7 +859,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card diag">
+<div class="card diag" id="d3">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">D.3</span> Imunossuprimido</div><h3>Colite por CMV e diarreia do imunossuprimido: a biópsia antes do corticoide <span class="ank ank-dgr">DANGER</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">HIV com CD4 &lt;50, transplantado, quimioterapia ou DII em corticoide e imunobiológico, com diarreia sanguinolenta, dor e febre, às vezes sem pistas na clínica. <b>O diagnóstico é histológico:</b> inclusões virais e imuno-histoquímica na biópsia; a PCR no sangue não basta. <b>O que muda conduta:</b> colite refratária ao corticoide → biópsia para CMV (GH05); ganciclovir IV com ajuste renal; neutropenia com dor em fossa ilíaca direita → enterocolite neutropênica (HO06).</div></div>
@@ -867,7 +886,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card diag">
+<div class="card diag" id="d4">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">D.4</span> Fármacos</div><h3>Diarreia associada a antimicrobianos sem <i>C. difficile</i> e diarreia medicamentosa <span class="ank ank-dec">DECISION</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">A maior parte das diarreias dos antibióticos é osmótica e leve, por redução da flora que metaboliza carboidratos no cólon; passa com a suspensão ou ao fim do tratamento. <b>O que muda conduta:</b> toxina de <i>C. difficile</i> negativa e quadro leve → observar e suspender o fármaco; sangue, febre ou leucocitose → colite (C.7, GH05); suspeita de uso furtivo de laxativo → magnésio fecal (GH04).</div></div>
@@ -886,7 +905,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card diag">
+<div class="card diag" id="d5">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">D.5</span> Outras bactérias</div><h3>Yersinia e outras bactérias entéricas que mudam o diferencial <span class="ank ank-hy">HIGH-YIELD</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Yersinia enterocolitica (suínos, leite cru, lactentes) causa diarreia, ileíte terminal e adenite mesentérica que imita apendicite; Aeromonas, Plesiomonas e Vibrio não cholerae (frutos do mar) são raros e geralmente autolimitados. <b>O que muda conduta:</b> dor em fossa ilíaca direita com diarreia → TC; Yersinia exige pedido específico de cultura; sobrecarga de ferro e hemoglobinopatia favorecem sepse; antibiótico só se invasiva.</div></div>
@@ -905,7 +924,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card diag">
+<div class="card diag" id="d6">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">D.6</span> Sequelas</div><h3>Sequelas e complicações pós-infecciosas: SII, Guillain-Barré, artrite reativa e SHU <span class="ank ank-dec">DECISION</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">A gastroenterite bacteriana, sobretudo por Salmonella, Campylobacter e Shigella, deixa três sequelas relevantes: <b>SII pós-infecciosa</b> (20–30% dos casos bacterianos, risco 14 vezes maior), <b>artrite reativa</b> (1–4 semanas depois, HLA-B27) e <b>Guillain-Barré</b> (Campylobacter, 1–3 semanas). <b>O que muda conduta:</b> sintoma persistente depois de gastroenterite → Roma IV e exame mínimo, sem painel de investigação; fraqueza ou arreflexia → internação (NE07); SHU → C.5.</div></div>
@@ -924,7 +943,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card diag">
+<div class="card diag" id="d7">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">D.7</span> Duração</div><h3>Diarreia persistente e crônica: abordagem inicial e remissão ao GH04 e ao GH05 <span class="ank ank-dec">DECISION</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Aguda &lt;2 semanas, persistente 2–4 semanas, crônica &gt;4 semanas (apostila); o Guia de Vigilância e o IDSA usam 14 dias como limite da diarreia aguda. Classifique pelo mecanismo: <b>osmótica (para com o jejum, gap fecal &gt;125), secretória (não para, gap &lt;50), inflamatória (sangue e muco), disabsortiva (esteatorreia &gt;7 g/24 h), funcional (SII, não noturna)</b>. <b>O que muda conduta:</b> inflamatória ou alarme → colonoscopia (GH05); esteatorreia → má absorção e celíaca (GH04); imunossuprimido → oportunistas (II01).</div></div>
@@ -955,7 +974,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <section id="algoritmo">
 <div class="section"><div class="section-eyebrow"><span>E</span> Algoritmo</div><div class="section-title">Da evacuação líquida à conduta: hidratação, sangue e antibiótico em três árvores</div><div class="section-sub">Cada ponta termina em plano de hidratação, exame ou fármaco com dose. A primeira árvore decide o que fazer com qualquer diarreia aguda; a segunda resolve a disenteria; a terceira resolve a diarreia depois de antibiótico ou internação. O raciocínio narrado fecha a seção.</div></div>
 
-<div class="card prim">
+<div class="card prim" id="e1">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">E.1</span> Algoritmo</div><h3>Diarreia aguda do adulto: hidratar, investigar e tratar <span class="ank ank-dec">DECISION</span></h3></div>
 <div class="card-body">
 <div class="algo"><div class="tree">
@@ -985,7 +1004,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="e2">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">E.2</span> Algoritmo</div><h3>Diarreia com sangue: antibiótico, não antibiótico ou outro diagnóstico? <span class="ank ank-dgr">DANGER</span></h3></div>
 <div class="card-body">
 <div class="algo"><div class="tree">
@@ -1011,7 +1030,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="e3">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">E.3</span> Algoritmo</div><h3>Diarreia depois de antibiótico ou internação: <i>C. difficile</i> do teste ao esquema <span class="ank ank-hy">HIGH-YIELD</span></h3></div>
 <div class="card-body">
 <div class="algo"><div class="tree">
@@ -1041,7 +1060,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="e4">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">E.4</span> Sequência mental</div><h3>Raciocínio em 7 passos para a diarreia que chega ao plantão <span class="ank ank-dec">DECISION</span></h3></div>
 <div class="card-body">
 <div class="box decision"><span class="box-label">DECISION</span><div class="box-title">Sete perguntas, nesta ordem, antes de qualquer prescrição</div><div class="box-body"><ul>
@@ -1059,13 +1078,13 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 
 </section>
 <section id="tratamento">
-<div class="section"><div class="section-eyebrow"><span>F</span> Tratamento Integrado</div><div class="section-title">F1 · Estratégia por entidade · F2 · Doses · F3 · Casos · F4 · SUS e CMED</div><div class="section-sub">Doses lidas no MS 2023, no Guia de Vigilância 2024, no IDSA 2017, no IDSA/SHEA 2017 e no ISTM 2017 levam a sigla da fonte; as da apostila e as de bula não relidas levam "conferir". Mesma dose, mesmo texto em todo o HP. Fármacos conferidos na CMED PMVG de 09/10/2026.</div></div>
+<div class="section"><div class="section-eyebrow"><span>F</span> Tratamento Integrado</div><div class="section-title">F1 · Estratégia por entidade · F2 · Doses · F3 · Casos · F4 · SUS e CMED</div><div class="section-sub">Doses lidas no MS 2023, no Guia de Vigilância 2024, no IDSA 2017, no IDSA/SHEA 2017 e no ISTM 2017 levam a sigla da fonte; as da apostila e as de bula não relidas levam "conferir". Mesma dose, mesmo texto em todo o HP. Fármacos conferidos na CMED PMVG de 09/10/2026.</div></div><!--hp-f2--><nav class="sec-idx" aria-label="Neste capítulo"><a href="#f1"><b>F.1</b>Escada terapêutica por entida…</a><a href="#f2"><b>F.2</b>Tabela de doses — diarreia ag…</a><a href="#f3"><b>F.3</b>Caso → conduta certa → erro t…</a><a href="#f4"><b>F.4</b>O que o SUS e a CMED trazem e…</a></nav><!--/hp-f2-->
 
-<div class="card tx">
+<div class="card tx" id="f1">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">F.1</span> Estratégia</div><h3>Escada terapêutica por entidade <span class="ank ank-dec">DECISION</span></h3></div>
 <div class="card-body">
 
-<div class="sub-title">F1.1 · Diarreia aguda: a reidratação é o tratamento (C.1)</div>
+<div class="sub-title" id="f1-1">F1.1 · Diarreia aguda: a reidratação é o tratamento (C.1)</div>
 <ul class="bullets">
 <li><b>Plano A (sem desidratação):</b> líquidos caseiros ou SRO em pequenas quantidades após cada evacuação ou vômito; dieta habitual; evitar refrigerante e, de preferência, não adoçar chá ou suco. Retorno em 2 dias sem melhora ou antes se aparecer sangue, vômitos repetidos, pouca urina, muita sede ou recusa alimentar (MS 2023).</li>
 <li><b>Plano B (desidratação):</b> SRO 50–100 mL/kg (média de 75) em 4–6 h no serviço de saúde, em volumes pequenos e contínuos; reavaliar durante o plano; se persistir desidratado, sonda nasogástrica (gastróclise); se agravar, plano C; sem melhora em 6 h, internar. Ondansetrona 8 mg VO em dose única no adulto com vômito persistente.</li>
@@ -1075,7 +1094,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </ul>
 <div class="box danger"><span class="box-label">DANGER</span><div class="box-title">AINE e hipovolemia: o cetorolaco não entra na gastroenterite desidratada</div><div class="box-body">Cetorolaco: máximo de 120 mg/dia; 15 mg IV por dose e máx. 60 mg/dia se ≥65 anos, &lt;50 kg ou disfunção renal leve; máximo de 5 dias; contraindicado na insuficiência renal, na hipovolemia e com sangramento. Em diarreia aguda desidratada, a perda de volume e a inibição das prostaglandinas renais somam-se e levam à lesão renal aguda; a dipirona é a opção, e o AINE só depois de reidratado e com função renal normal (conferir bula).</div></div>
 
-<div class="sub-title">F1.2 · Antibiótico empírico: quando, qual e com que cuidado (C.2, D.1)</div>
+<div class="sub-title" id="f1-2">F1.2 · Antibiótico empírico: quando, qual e com que cuidado (C.2, D.1)</div>
 <ul class="bullets">
 <li><b>Quando:</b> disenteria com comprometimento do estado geral (MS 2023); febre ≥38,5 °C ou sepse em viajante; imunossuprimido com doença grave e sangue (IDSA 2017); cólera grave (C.6). Não dar na diarreia aquosa afebril, em STEC suspeito, nem na diarreia de 14 dias ou mais.</li>
 <li><b>Escolha no adulto:</b> ciprofloxacino 500 mg VO 12/12 h por 3 dias (MS 2023); azitromicina 500 mg VO 1×/dia por 3 dias (ISTM 2017); ceftriaxona 2 g IV ou IM 1×/dia por 3 a 5 dias se o estado geral está comprometido ou há bacteremia (divergência: o MS 2023 traz 50–100 mg/kg IM 1×/dia por 3 a 5 dias, sem teto citado para adulto; o HP usa 2 g/dia, como no II03; conferir). Escolha pelo padrão local de resistência e pela viagem: azitromicina na Ásia e na disenteria do viajante.</li>
@@ -1083,7 +1102,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <li><b>Depois do antibiótico:</b> se aparecer diarreia nova depois de 3 dias, pensar em <i>C. difficile</i> e testar; a diarreia pós-antibiótico não é falha do esquema.</li>
 </ul>
 
-<div class="sub-title">F1.3 · Antidiarreicos e adjuvantes (C.1, D.4)</div>
+<div class="sub-title" id="f1-3">F1.3 · Antidiarreicos e adjuvantes (C.1, D.4)</div>
 <ul class="bullets">
 <li><b>Loperamida:</b> 4 mg e depois 2 mg após cada evacuação líquida, máximo de 16 mg/dia; apenas em adulto imunocompetente com diarreia aquosa, afebril e sem sangue (IDSA 2017). Contraindicada na disenteria, na febre, na toxemia e na suspeita de colite por <i>C. difficile</i> ou de megacólon; contraindicada abaixo de 2 anos (bula). O MS 2023 desaconselha antidiarreicos em qualquer idade: divergência declarada com o IDSA 2017. Doses acima do teto causam arritmia ventricular grave (conferir bula).</li>
 <li><b>Racecadotrila:</b> 100 mg VO 8/8 h (apostila; duração máxima conforme bula: conferir); mesma contraindicação na diarreia inflamatória.</li>
@@ -1093,28 +1112,28 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </ul>
 <div class="box hy"><span class="box-label">HIGH-YIELD</span><div class="box-title">Ondansetrona antes de desistir da SRO</div><div class="box-body">O vômito que impede a SRO é a principal razão de falha do plano B; uma dose de ondansetrona 8 mg no adulto (4 mg de 2 a 10 anos e até 30 kg; 2 mg de 6 meses a 2 anos) permite iniciar a reidratação oral em 15–30 minutos, o que evita a punção venosa (MS 2023; IDSA 2017 limita a criança &gt;4 anos). Atenção ao QT em quem usa azitromicina ou ciprofloxacino (conferir).</div></div>
 
-<div class="sub-title">F1.4 · Shigella, Campylobacter e Salmonella: dirigido pela cultura (C.2, C.3, C.4)</div>
+<div class="sub-title" id="f1-4">F1.4 · Shigella, Campylobacter e Salmonella: dirigido pela cultura (C.2, C.3, C.4)</div>
 <ul class="bullets">
 <li><b>Shigelose:</b> tratar a disenteria com comprometimento do estado geral com ciprofloxacino 500 mg VO 12/12 h por 3 dias ou azitromicina 500 mg VO 1×/dia por 3 dias; evitar quinolona se a MIC de ciprofloxacino for ≥0,12 µg/mL, mesmo "sensível"; ceftriaxona nos graves; TMP-SMX ou ampicilina só se sensíveis (IDSA 2017). Ajustar pela cultura.</li>
 <li><b>Campylobacter:</b> maioria sem antibiótico; grave, bacteriêmico, prolongado ou imunossuprimido: azitromicina 500 mg VO 1×/dia por 3 dias, que é 1ª escolha do IDSA 2017 pela resistência a quinolona.</li>
 <li><b>Salmonella não tifoide:</b> sem antibiótico se enterite simples; grupos de risco e bacteremia: ceftriaxona 2 g IV 24/24 h, ou ciprofloxacino 500 mg VO 12/12 h se sensível, por 7–14 dias, com duração maior no imunossuprimido (conferir) e prolongada na infecção endovascular (II02, II03). Febre entérica: II07.</li>
 </ul>
 
-<div class="sub-title">F1.5 · STEC e SHU: suporte e abstenção (C.5)</div>
+<div class="sub-title" id="f1-5">F1.5 · STEC e SHU: suporte e abstenção (C.5)</div>
 <ul class="bullets">
 <li><b>Fazer:</b> cristaloide isotônico precoce, controle de diurese, hemograma, plaquetas e creatinina diários, eletrólitos, transfusão de hemácias se Hb baixa, diálise se indicada (NT 31/2025).</li>
 <li><b>Não fazer:</b> antibiótico, loperamida, AINE, opioide, transfusão de plaquetas sem sangramento ou procedimento; plasmaférese e anticomplemento só pela diferenciação com PTT e SHU atípica (HO03).</li>
 </ul>
 <div class="box danger"><span class="box-label">DANGER</span><div class="box-title">Diarreia sanguinolenta afebril tratada com ciprofloxacino e loperamida</div><div class="box-body">É o cenário de maior dano evitável do capítulo: induz a produção de toxina Shiga, prolonga a exposição da mucosa e aumenta o risco de SHU. Antes de prescrever, pergunte pela febre, pelo tipo de sangue (vivo e abundante), pela dor e pelo alimento; quando a probabilidade de STEC é alta, o tratamento é a hidratação e a vigília de 10 dias.</div></div>
 
-<div class="sub-title">F1.6 · Cólera (C.6)</div>
+<div class="sub-title" id="f1-6">F1.6 · Cólera (C.6)</div>
 <ul class="bullets">
 <li><b>Reidratação:</b> planos A, B e C do MS; plano C no grave; SRO assim que possível; vigilância de potássio e glicemia na criança.</li>
 <li><b>Antibiótico (grave, ≥1 evacuação/h em 4 h de reidratação oral, gestação ou comorbidade importante):</b> doxiciclina 300 mg VO em dose única ou azitromicina 1 g VO em dose única (Guia de Vigilância 2024); ciprofloxacino 20 mg/kg (máx. 1 g) em dose única como outra opção; gestante: azitromicina (conferir).</li>
 <li><b>Vigilância:</b> notificação imediata em 24 h, cultura de fezes ou vômito antes do antibiótico, investigação da água e dos contatos; sem profilaxia no portador assintomático.</li>
 </ul>
 
-<div class="sub-title">F1.7 · <i>C. difficile</i> por episódio e por gravidade (C.7)</div>
+<div class="sub-title" id="f1-7">F1.7 · <i>C. difficile</i> por episódio e por gravidade (C.7)</div>
 <ul class="bullets">
 <li><b>Todos os episódios:</b> suspender o antibiótico indutor quando possível; reidratar; evitar antidiarreico e opioide; isolamento de contato em quarto privativo com banheiro dedicado; luvas e avental; água e sabão em surtos (os esporos resistem ao álcool); manter o isolamento por ≥48 h depois que a diarreia cessar (IDSA/SHEA 2017).</li>
 <li><b>1º episódio, não grave ou grave:</b> vancomicina 125 mg VO 6/6 h por 10 dias ou fidaxomicina 200 mg VO 12/12 h por 10 dias (IDSA/SHEA 2017); a fidaxomicina é a preferida pelo IDSA/SHEA 2021 (só resumo lido: conferir) e não consta na CMED. Metronidazol 500 mg VO 8/8 h por 10 dias apenas no não grave sem acesso às duas; evitar cursos repetidos ou prolongados pelo risco de neurotoxicidade.</li>
@@ -1126,14 +1145,14 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </ul>
 <div class="box decision"><span class="box-label">DECISION</span><div class="box-title">Quando operar a colite fulminante</div><div class="box-body">Choque refratário, perfuração, megacólon com piora ou ausência de resposta clínica em 24–48 h de tratamento máximo clínico indicam colectomia total com ileostomia, antes da falência de órgãos (apostila; GH06); leucocitose muito alta e lactato elevado pioram o prognóstico (conferir os limiares). A avaliação cirúrgica começa no momento do diagnóstico de fulminante e não ao fim das 48 horas.</div></div>
 
-<div class="sub-title">F1.8 · Amebíase, giardíase e protozooses (C.8, C.9)</div>
+<div class="sub-title" id="f1-8">F1.8 · Amebíase, giardíase e protozooses (C.8, C.9)</div>
 <ul class="bullets">
 <li><b>Amebíase:</b> tinidazol 2 g VO por dia durante 3 dias, ou metronidazol 500–750 mg VO 8/8 h por 10 dias (MS 2023), ou secnidazol 2 g VO em dose única, na intestinal não grave; metronidazol 750 mg VO ou IV 8/8 h por 10 dias na grave e no abscesso hepático; sempre seguir com agente luminal (teclozana 100 mg 8/8 h por 5 dias; etofamida 200 mg 8/8 h por 5 dias; sem registro na CMED: conferir). Sem corticoide.</li>
 <li><b>Giardíase:</b> tinidazol 2 g VO em dose única, secnidazol 2 g VO em dose única ou nitazoxanida 500 mg VO 12/12 h por 3 dias; metronidazol 250 mg VO 8/8 h por 5 dias; albendazol 400 mg/dia por 5 dias como alternativa (apostila). Hipogamaglobulinemia: repetir e investigar.</li>
 <li><b>Cryptosporidium, Cyclospora e Cystoisospora:</b> nitazoxanida 500 mg VO 12/12 h por 3 dias no imunocompetente com criptosporidiose; SMX-TMP em dose de tratamento nas outras duas (dose, via e duração conferir); no HIV, TARV efetiva (II01).</li>
 </ul>
 
-<div class="sub-title">F1.9 · Viajante e imunossuprimido (D.1, D.3)</div>
+<div class="sub-title" id="f1-9">F1.9 · Viajante e imunossuprimido (D.1, D.3)</div>
 <ul class="bullets">
 <li><b>Viajante moderado ou grave:</b> azitromicina 1 g VO em dose única ou 500 mg 1×/dia por 3 dias; ciprofloxacino 750 mg VO em dose única ou 500 mg VO 12/12 h por 3 dias fora da Ásia; loperamida associada acelera o alívio. Sem melhora em 24 h, completar até 3 dias (ISTM 2017).</li>
 <li><b>CMV colônico:</b> ganciclovir 5 mg/kg IV 12/12 h por 3–6 semanas até resolução (II01; o GH05 traz 5–10 dias IV: divergência, conferir), com ajuste pela ClCr e hemograma seriado; transição para valganciclovir 900 mg VO 12/12 h se tolerar a via oral.</li>
@@ -1143,7 +1162,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card tx">
+<div class="card tx" id="f2">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">F.2</span> Doses Operacionais</div><h3>Tabela de doses — diarreia aguda e colites infecciosas</h3></div>
 <div class="card-body">
 <div class="stbl stbl-3">
@@ -1180,7 +1199,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card tx">
+<div class="card tx" id="f3">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">F.3</span> Cenários</div><h3>Caso → conduta certa → erro típico</h3></div>
 <div class="card-body">
 <div class="stbl stbl-3">
@@ -1198,7 +1217,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card tx">
+<div class="card tx" id="f4">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">F.4</span> Acesso</div><h3>O que o SUS e a CMED trazem e o que fica a conferir <span class="ank ank-dec">DECISION</span></h3></div>
 <div class="card-body">
 <div class="stbl stbl-3">
@@ -1217,7 +1236,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <section id="pitfalls">
 <div class="section"><div class="section-eyebrow"><span>G</span> Pitfalls · Mitos · Controvérsias</div><div class="section-title">Erros operacionais, mitos vivos e debates abertos</div><div class="section-sub">Os erros que se repetem: antibiótico e loperamida por hábito, STEC tratado como Shigella, teste de <i>C. difficile</i> sem critério, vancomicina na veia e hidratação sem olhar para quem recebe.</div></div>
 
-<div class="card pearl">
+<div class="card pearl" id="g1">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">G.1</span> Pegadinhas</div><h3>10 erros operacionais em diarreia aguda e colites infecciosas</h3></div>
 <div class="card-body">
 <div class="stbl stbl-2">
@@ -1236,7 +1255,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card pearl">
+<div class="card pearl" id="g2">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">G.2</span> Mitos</div><h3>Três mitos vivos</h3></div>
 <div class="card-body">
 <div class="box myth"><span class="box-label">MYTH</span><div class="box-title">"Sangue nas fezes é infecção bacteriana e pede antibiótico"</div><div class="box-body">O sangue vivo, abundante, com dor intensa e sem febre sugere STEC, em que o antibiótico faz mal; a DII, a isquemia, a diverticulite, a neoplasia e o CMV também sangram. Nem a Shigella com sangue pede antibiótico em quem está bem: o MS 2023 condiciona ao comprometimento do estado geral. A decisão pertence ao conjunto de febre, estado geral, exposição e imunidade, e não ao sangue isolado.</div></div>
@@ -1245,7 +1264,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card pearl">
+<div class="card pearl" id="g3">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">G.3</span> Controvérsias</div><h3>Três debates sem consenso</h3></div>
 <div class="card-body">
 <div class="box controversy"><span class="box-label">CONTROVERSY</span><div class="box-title">Fidaxomicina ou vancomicina no 1º episódio de <i>C. difficile</i></div><div class="box-body">O IDSA/SHEA 2017 colocava as duas em pé de igualdade; o 2021 passou a preferir a fidaxomicina pela menor recorrência (resumo lido; texto integral não obtido), e a apostila traz o mesmo argumento (15% contra 30% de recorrência, números da apostila; os ensaios citados pelo IDSA/SHEA 2017 dão cerca de 25% com vancomicina: conferir). No Brasil a fidaxomicina não consta na CMED, de modo que a vancomicina oral continua a ser a prática; o custo-efetividade e o acesso decidem. A escolha dentro deste HP é a vancomicina 125 mg VO 6/6 h por 10 dias com a fidaxomicina rotulada como preferida internacional.</div></div>
@@ -1258,7 +1277,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <section id="pearls">
 <div class="section"><div class="section-eyebrow"><span>H</span> Pearls · Evolving</div><div class="section-title">H1 · Nuances de especialista · H2 · O que mudou entre 2017 e 2026</div><div class="section-sub">Oito ideias que o plantão esquece e seis mudanças reais; onde o tema é estável (SRO, planos A, B e C, fisiologia do cotransporte), diz-se.</div></div>
 
-<div class="card pearl">
+<div class="card pearl" id="h1">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">H.1</span> Pearls</div><h3>8 nuances que distinguem o especialista</h3></div>
 <div class="card-body">
 <div class="box pearl"><span class="box-label">PEARL</span><div class="box-title">Fezes formadas não têm <i>C. difficile</i> doença: têm portador</div><div class="box-body">A colonização de 3–15% da população e de mais de 20% dos internados por mais de 1 semana faz com que testar fezes formadas ou assintomáticos gere falsos "casos" que levam a tratamento, isolamento e estatística errados. O teste só vale quando a probabilidade pré-teste é alta, isto é, ≥3 evacuações não formadas em 24 h e ausência de outra causa; a molecular isolada detecta o gene, e não a doença.</div></div>
@@ -1272,7 +1291,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card pearl">
+<div class="card pearl" id="h2">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">H.2</span> Evolving</div><h3>Seis mudanças reais; o resto do tema é estável</h3></div>
 <div class="card-body">
 <div class="box evolving"><span class="box-label">EVOLVING</span><div class="box-title">Fidaxomicina passa a ser a preferida para o 1º episódio e para a recorrência</div><div class="box-body">A atualização de 2021 do IDSA/SHEA, que teve o texto integral inacessível nesta sessão, sugere fidaxomicina em vez do curso padrão de vancomicina, mantendo a vancomicina como alternativa aceitável, e traz a preferência pela fidaxomicina também na recorrência (conferir). A diretriz de 2017 dava as duas como equivalentes. No Brasil, a fidaxomicina ainda não consta na CMED.</div></div>
@@ -1321,5 +1340,36 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <a class="to-top" href="#" aria-label="Voltar ao topo">↑</a>
 <div class="watermark">@dr.lorencato · GH03 Diarreia Aguda e Colites Infecciosas v5.2</div>
 
-</body>
+<!--hp-f2--><script>(function(){var d=document,M=d.querySelector('main');if(!M)return;
+var SELF='GH03',HP=' CT01 CT02 CT03 CT04 CT05 CT06 CT08 CT10 CV01 CV03 CV04 CV05 CV06 CV07 CV08 EN01 EN02 EN03 EN04 EN06 EN07 GH01 GH02 GH03 GH05 GH06 GH07 GH08 GH09 GH10 GO01 GO02 GO03 GO04 GO09 GO10 GO11 GO12 GO13 GO14 HO01 HO02 HO03 HO04 HO05 HO06 II01 II02 II03 II04 II07 II08 NE01 NE02 NE03 NE04 NE05 NE06 NE07 NE08 NU01 NU02 NU03 NU04 NU05 OE01 OE02 PC01 PC02 PC03 PC04 PC05 PC06 PD01 PD02 PD03 PD04 PD05 PD06 PD07 PD08 PD09 PD10 RD01 RD02 RD03 RD04 RD05 RD07 RP01 RP02 RP03 RP04 ';
+var SK='A,H1,H2,H3,SCRIPT,STYLE,NAV,.card-num,.card-eyebrow,.sub-title,.disease-tag,.toc';
+var R=/\b(?:([A-H])(\d)?\.(\d{1,2}[a-c]?)|(CV|RP|GH|NE|EN|NU|HO|II|RD|GO|PD|PC|CT|OE)(\d\d))\b/g;
+function skip(n){for(var e=n.parentNode;e&&e!==M;e=e.parentNode)if(e.matches&&e.matches(SK))return 1;return 0}
+var w=d.createTreeWalker(M,4),t,L=[];while(t=w.nextNode())if(R.test(t.data)&&!skip(t))L.push(t);
+L.forEach(function(t){var s=t.data,f=d.createDocumentFragment(),i=0,m;R.lastIndex=0;
+while(m=R.exec(s)){var h=null;
+if(m[1]){var id=m[1].toLowerCase()+(m[2]?m[2]+'-':'')+m[3];if(d.getElementById(id))h='#'+id}
+else{var x=m[4]+m[5];if(x!==SELF&&HP.indexOf(' '+x+' ')>=0)h='../'+x+'/'+x+'.html'}
+if(!h)continue;f.appendChild(d.createTextNode(s.slice(i,m.index)));
+var a=d.createElement('a');a.href=h;a.className='xr';a.textContent=m[0];f.appendChild(a);i=R.lastIndex}
+if(i){f.appendChild(d.createTextNode(s.slice(i)));t.parentNode.replaceChild(f,t)}});
+function nz(s){return s.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'')}
+var q=d.querySelector('.hp-q'),n=d.querySelector('.hp-n'),it=M.querySelectorAll('.card,.pocket-card'),T;
+function clr(){M.querySelectorAll('.q-off').forEach(function(e){e.classList.remove('q-off')})}
+function run(){var v=nz(q.value.trim());clr();n.textContent='';if(v.length<2)return;var k=0;
+it.forEach(function(c){if(nz(c.textContent).indexOf(v)<0){c.classList.add('q-off');return}k++;
+var r=c.querySelectorAll('.stbl-row,.disease-row,.score-row'),h=[];r.forEach(function(x){if(nz(x.textContent).indexOf(v)>=0)h.push(x)});
+if(h.length)r.forEach(function(x){if(h.indexOf(x)<0)x.classList.add('q-off')});
+c.querySelectorAll('details').forEach(function(x){if(nz(x.textContent).indexOf(v)>=0)x.open=true})});
+M.querySelectorAll('section').forEach(function(s){if(!s.querySelector('.card:not(.q-off),.pocket-card:not(.q-off)'))s.classList.add('q-off')});
+n.textContent=k?k+' achado'+(k>1?'s':''):'nada'}
+if(q){q.addEventListener('input',function(){clearTimeout(T);T=setTimeout(run,180)});
+q.addEventListener('keydown',function(e){if(e.key==='Escape'){q.value='';run()}})}
+function tg(b,f){b.addEventListener('click',function(){var on=b.getAttribute('aria-pressed')!=='true';b.setAttribute('aria-pressed',on);f(on)})}
+var bd=d.querySelector('.hp-dz'),bo=d.querySelector('.hp-op');
+if(bd)tg(bd,function(on){d.body.classList.toggle('dz',on);if(on)d.getElementById('tratamento').scrollIntoView()});
+if(bo)tg(bo,function(on){M.querySelectorAll('details').forEach(function(x){x.open=on})});
+var P=[];addEventListener('beforeprint',function(){P=[];M.querySelectorAll('details:not([open])').forEach(function(x){P.push(x);x.open=true})});
+addEventListener('afterprint',function(){P.forEach(function(x){x.open=false})});
+})();</script><!--/hp-f2--></body>
 </html>

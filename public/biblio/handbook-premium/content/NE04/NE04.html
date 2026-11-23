@@ -345,6 +345,25 @@ ul.bullets li b{color:var(--ink);font-weight:600}
   .pocket .pocket-card.tx{--accent:#a8481a}
   .pocket .pocket-card.clin{--accent:#0b5d4e}
 }
+
+/* === v5.2.2 · fase 2 (navegação) === */
+.hp-tools{display:flex;gap:6px;align-items:center;flex:none;order:1;margin-left:auto;padding-left:6px;position:sticky;right:0;background:#f1eee5;box-shadow:-10px 0 10px -4px #f1eee5,16px 0 0 #f1eee5}
+@media(min-width:900px){html{scroll-padding-top:150px}.toc-inner{flex-wrap:wrap;overflow:visible}.card[id],.sub-title[id]{scroll-margin-top:150px}}
+@media(max-width:899px){.hp-b,.hp-n{display:none}.hp-q{width:104px}}
+.hp-q{width:128px;font:500 12px/1 'DM Sans',system-ui,sans-serif;padding:7px 11px;border:1px solid var(--line-strong);border-radius:999px;background:var(--paper);color:var(--ink)}
+.hp-b{font:600 11px/1 'DM Sans',system-ui,sans-serif;letter-spacing:.05em;text-transform:uppercase;padding:7px 10px;border-radius:999px;border:1px solid var(--line-strong);background:var(--paper);color:var(--ink-soft);cursor:pointer;white-space:nowrap}
+.hp-b[aria-pressed=true]{background:var(--ink);color:#fff;border-color:var(--ink)}
+.hp-n{font:600 11px/1 'DM Mono',monospace;color:var(--ink-mute);white-space:nowrap}
+.sec-idx{display:flex;flex-wrap:wrap;gap:6px;margin:12px 0 20px}
+.sec-idx a{font:500 12px/1.25 'DM Sans',system-ui,sans-serif;padding:6px 10px;border-radius:999px;background:var(--paper);border:1px solid var(--line);color:var(--ink-soft);text-decoration:none}
+.sec-idx a:hover{border-color:var(--line-strong);color:var(--ink)}
+.sec-idx b{color:var(--c-prim);margin-right:5px;font-weight:700}
+a.xr{color:inherit;text-decoration:underline dotted;text-underline-offset:2px}
+a.xr:hover{color:var(--c-prim)}
+.card[id],.sub-title[id]{scroll-margin-top:110px}
+.q-off{display:none!important}
+body.dz main section:not(#tratamento){display:none}
+@media print{.hp-tools,.sec-idx,.toc-doses{display:none!important}}
 </style>
 </head>
 <body>
@@ -364,14 +383,14 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 
 <!-- STICKY TOC -->
 <nav class="toc">
-  <div class="toc-inner">
+  <div class="toc-inner"><!--hp-f2--><span class="hp-tools"><input class="hp-q" type="search" placeholder="Buscar no HP" aria-label="Buscar no HP"><button class="hp-b hp-dz" type="button" aria-pressed="false">Só doses</button><button class="hp-b hp-op" type="button" aria-pressed="false">Abrir tudo</button><span class="hp-n" aria-live="polite"></span></span><!--/hp-f2-->
     <a href="#pocket"      class="toc-chip"><span class="toc-chip-num">0</span>Pocket</a>
     <a href="#redflags"    class="toc-chip"><span class="toc-chip-num">A</span>Red Flags</a>
     <a href="#approach"    class="toc-chip"><span class="toc-chip-num">B</span>Apresentação</a>
     <a href="#primarias"   class="toc-chip"><span class="toc-chip-num">C</span>Entidades</a>
     <a href="#secundarias" class="toc-chip"><span class="toc-chip-num">D</span>Secundárias</a>
     <a href="#algoritmo"   class="toc-chip"><span class="toc-chip-num">E</span>Algoritmo</a>
-    <a href="#tratamento"  class="toc-chip"><span class="toc-chip-num">F</span>Tratamento</a>
+    <a href="#tratamento"  class="toc-chip"><span class="toc-chip-num">F</span>Tratamento</a><!--hp-f2--><a href="#f2" class="toc-chip toc-doses"><span class="toc-chip-num">Rx</span>Doses</a><!--/hp-f2-->
     <a href="#pitfalls"    class="toc-chip"><span class="toc-chip-num">G</span>Pitfalls</a>
     <a href="#pearls"      class="toc-chip"><span class="toc-chip-num">H</span>Pearls</a>
   </div>
@@ -492,7 +511,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
     <div class="section-sub">O delirium mata mais que muitas doenças "graves" do prontuário, e a demência rapidamente progressiva esconde causas tratáveis. Aqui estão os sinais que exigem conduta no mesmo turno.</div>
   </div>
 
-  <div class="card emerg">
+  <div class="card emerg" id="a1">
     <div class="card-head">
       <div class="card-eyebrow"><span class="card-num">A.1</span> Emergências</div>
       <h3>Sinais de alarme na queixa cognitiva <span class="ank ank-dgr">DANGER</span></h3>
@@ -575,7 +594,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
     </div>
   </div>
 
-  <div class="card emerg">
+  <div class="card emerg" id="a2">
     <div class="card-head">
       <div class="card-eyebrow"><span class="card-num">A.2</span> Diferencial de plantão</div>
       <h3>O que se disfarça de "confusão do idoso" <span class="ank ank-dgr">DANGER</span></h3>
@@ -633,7 +652,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
     <div class="section-sub">Tempo de instalação e ordem de perda dos domínios cognitivos são os dois eixos que separam etiologias; a imagem e os biomarcadores confirmam, não substituem, essa leitura.</div>
   </div>
 
-  <div class="card clin">
+  <div class="card clin" id="b1">
     <div class="card-head">
       <div class="card-eyebrow"><span class="card-num">B.1</span> Padrão 1</div>
       <h3>Confusão aguda flutuante com desatenção</h3>
@@ -652,7 +671,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
     </div>
   </div>
 
-  <div class="card clin">
+  <div class="card clin" id="b2">
     <div class="card-head">
       <div class="card-eyebrow"><span class="card-num">B.2</span> Padrão 2</div>
       <h3>Esquecimento progressivo de fatos recentes em anos</h3>
@@ -671,7 +690,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
     </div>
   </div>
 
-  <div class="card clin">
+  <div class="card clin" id="b3">
     <div class="card-head">
       <div class="card-eyebrow"><span class="card-num">B.3</span> Padrão 3</div>
       <h3>Mudança de personalidade ou de linguagem antes da memória</h3>
@@ -690,7 +709,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
     </div>
   </div>
 
-  <div class="card clin">
+  <div class="card clin" id="b4">
     <div class="card-head">
       <div class="card-eyebrow"><span class="card-num">B.4</span> Padrão 4</div>
       <h3>Flutuação, alucinações visuais bem formadas e parkinsonismo</h3>
@@ -714,7 +733,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
     </div>
   </div>
 
-  <div class="card clin">
+  <div class="card clin" id="b5">
     <div class="card-head">
       <div class="card-eyebrow"><span class="card-num">B.5</span> Padrão 5</div>
       <h3>Lentificação, apatia, marcha alterada e incontinência</h3>
@@ -747,10 +766,10 @@ ul.bullets li b{color:var(--ink);font-weight:600}
     <div class="section-eyebrow"><span>C</span> Entidades Primárias</div>
     <div class="section-title">Disease Boxes — do estado confusional às proteinopatias</div>
     <div class="section-sub">Sete entidades com raciocínio próprio. As demências neurodegenerativas são lidas como proteinopatias (β-amiloide e tau, α-sinucleína, TDP-43/tau/FUS) com topografia que explica o fenótipo; delirium, CCL, doença vascular e HPN completam o mapa.</div>
-  </div>
+  </div><!--hp-f2--><nav class="sec-idx" aria-label="Neste capítulo"><a href="#c1"><b>C.1</b>Delirium (estado confusional…</a><a href="#c2"><b>C.2</b>Declínio cognitivo subjetivo…</a><a href="#c3"><b>C.3</b>Doença de Alzheimer</a><a href="#c4"><b>C.4</b>Demências com corpos de Lewy…</a><a href="#c5"><b>C.5</b>Demência frontotemporal varia…</a><a href="#c6"><b>C.6</b>Comprometimento cognitivo vas…</a><a href="#c7"><b>C.7</b>Hidrocefalia de pressão norma…</a></nav><!--/hp-f2-->
 
   <!-- C.1 DELIRIUM -->
-  <div class="card prim">
+  <div class="card prim" id="c1">
     <div class="card-head">
       <div class="card-eyebrow"><span class="card-num">C.1</span> Síndrome neuropsiquiátrica aguda</div>
       <h3>Delirium (estado confusional agudo) <span class="ank ank-hy">HIGH-YIELD</span> <span class="ank ank-dgr">DANGER</span></h3>
@@ -808,7 +827,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
   </div>
 
   <!-- C.2 CCL -->
-  <div class="card prim">
+  <div class="card prim" id="c2">
     <div class="card-head">
       <div class="card-eyebrow"><span class="card-num">C.2</span> Estágio intermediário</div>
       <h3>Declínio cognitivo subjetivo e comprometimento cognitivo leve <span class="ank ank-dec">DECISION</span></h3>
@@ -845,7 +864,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
   </div>
 
   <!-- C.3 ALZHEIMER -->
-  <div class="card prim">
+  <div class="card prim" id="c3">
     <div class="card-head">
       <div class="card-eyebrow"><span class="card-num">C.3</span> Proteinopatia β-amiloide + tau</div>
       <h3>Doença de Alzheimer <span class="ank ank-hy">HIGH-YIELD</span> <span class="ank ank-evo">EVOLVING</span></h3>
@@ -904,7 +923,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
   </div>
 
   <!-- C.4 LEWY -->
-  <div class="card prim">
+  <div class="card prim" id="c4">
     <div class="card-head">
       <div class="card-eyebrow"><span class="card-num">C.4</span> α-sinucleinopatia cortical</div>
       <h3>Demências com corpos de Lewy: DCL e demência da doença de Parkinson <span class="ank ank-hy">HIGH-YIELD</span> <span class="ank ank-dgr">DANGER</span></h3>
@@ -960,7 +979,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
   </div>
 
   <!-- C.5 DFT -->
-  <div class="card prim">
+  <div class="card prim" id="c5">
     <div class="card-head">
       <div class="card-eyebrow"><span class="card-num">C.5</span> Degeneração lobar frontotemporal</div>
       <h3>Demência frontotemporal variante comportamental e afasias progressivas primárias <span class="ank ank-hy">HIGH-YIELD</span></h3>
@@ -1017,7 +1036,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
   </div>
 
   <!-- C.6 CCV -->
-  <div class="card prim">
+  <div class="card prim" id="c6">
     <div class="card-head">
       <div class="card-eyebrow"><span class="card-num">C.6</span> Doença cerebrovascular</div>
       <h3>Comprometimento cognitivo vascular <span class="ank ank-hy">HIGH-YIELD</span></h3>
@@ -1060,7 +1079,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
   </div>
 
   <!-- C.7 HPN -->
-  <div class="card prim">
+  <div class="card prim" id="c7">
     <div class="card-head">
       <div class="card-eyebrow"><span class="card-num">C.7</span> Demência potencialmente cirúrgica</div>
       <h3>Hidrocefalia de pressão normal (síndrome de Hakim-Adams) <span class="ank ank-dec">DECISION</span></h3>
@@ -1108,10 +1127,10 @@ ul.bullets li b{color:var(--ink);font-weight:600}
     <div class="section-eyebrow"><span>D</span> Entidades Secundárias</div>
     <div class="section-title">O que completa o diferencial — e o que é tratável</div>
     <div class="section-sub">Doenças priônicas, causas potencialmente reversíveis agrupadas pela mesma lógica de rastreio, Wernicke-Korsakoff, depressão com déficit cognitivo, SPCD e amnésia global transitória.</div>
-  </div>
+  </div><!--hp-f2--><nav class="sec-idx" aria-label="Neste capítulo"><a href="#d1"><b>D.1</b>Doença de Creutzfeldt-Jakob e…</a><a href="#d2"><b>D.2</b>Causas potencialmente reversí…</a><a href="#d3"><b>D.3</b>Encefalopatia de Wernicke e s…</a><a href="#d4"><b>D.4</b>Depressão com déficit cogniti…</a><a href="#d5"><b>D.5</b>Sintomas psicológicos e compo…</a><a href="#d6"><b>D.6</b>Amnésia global transitória</a></nav><!--/hp-f2-->
 
   <!-- D.1 DCJ -->
-  <div class="card diag">
+  <div class="card diag" id="d1">
     <div class="card-head">
       <div class="card-eyebrow"><span class="card-num">D.1</span> Demência rapidamente progressiva</div>
       <h3>Doença de Creutzfeldt-Jakob e demências rapidamente progressivas <span class="ank ank-dgr">DANGER</span></h3>
@@ -1152,7 +1171,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
   </div>
 
   <!-- D.2 Reversíveis -->
-  <div class="card diag">
+  <div class="card diag" id="d2">
     <div class="card-head">
       <div class="card-eyebrow"><span class="card-num">D.2</span> Rastreio da primeira consulta</div>
       <h3>Causas potencialmente reversíveis de declínio cognitivo <span class="ank ank-dec">DECISION</span> <span class="ank ank-hy">HIGH-YIELD</span></h3>
@@ -1186,7 +1205,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
   </div>
 
   <!-- D.3 Wernicke-Korsakoff -->
-  <div class="card diag">
+  <div class="card diag" id="d3">
     <div class="card-head">
       <div class="card-eyebrow"><span class="card-num">D.3</span> Emergência carencial</div>
       <h3>Encefalopatia de Wernicke e síndrome de Korsakoff <span class="ank ank-dgr">DANGER</span></h3>
@@ -1217,7 +1236,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
   </div>
 
   <!-- D.4 Depressão -->
-  <div class="card diag">
+  <div class="card diag" id="d4">
     <div class="card-head">
       <div class="card-eyebrow"><span class="card-num">D.4</span> Diferencial psiquiátrico</div>
       <h3>Depressão com déficit cognitivo ("pseudodemência") <span class="ank ank-prl">PEARL</span></h3>
@@ -1246,7 +1265,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
   </div>
 
   <!-- D.5 SPCD -->
-  <div class="card tx">
+  <div class="card tx" id="d5">
     <div class="card-head">
       <div class="card-eyebrow"><span class="card-num">D.5</span> Síndrome comportamental</div>
       <h3>Sintomas psicológicos e comportamentais da demência (SPCD) <span class="ank ank-dec">DECISION</span></h3>
@@ -1277,7 +1296,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
   </div>
 
   <!-- D.6 AGT -->
-  <div class="card diag">
+  <div class="card diag" id="d6">
     <div class="card-head">
       <div class="card-eyebrow"><span class="card-num">D.6</span> Amnésia aguda isolada</div>
       <h3>Amnésia global transitória <span class="ank ank-hy">HIGH-YIELD</span></h3>
@@ -1313,7 +1332,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
     <div class="section-sub">A árvore separa delirium, CCL, demência rapidamente progressiva e demência de curso lento; depois o domínio inicial aponta a proteinopatia e a conduta.</div>
   </div>
 
-  <div class="card prim">
+  <div class="card prim" id="e1">
     <div class="card-head">
       <div class="card-eyebrow"><span class="card-num">E.1</span> Árvore</div>
       <h3>Queixa cognitiva ou comportamental <span class="ank ank-dec">DECISION</span></h3>
@@ -1404,23 +1423,23 @@ ul.bullets li b{color:var(--ink);font-weight:600}
     <div class="section-eyebrow"><span>F</span> Tratamento Integrado</div>
     <div class="section-title">F1 · Estratégia por entidade · F2 · Doses operacionais · F3–F6 · SUS, anti-amiloides, ARIA e cenários</div>
     <div class="section-sub">Doses adultas com unidade, via, frequência e duração; recomendação internacional separada de critério de dispensação do SUS. "Confirmar" apenas onde a dose depende de protocolo ou de bula ainda não conferida.</div>
-  </div>
+  </div><!--hp-f2--><nav class="sec-idx" aria-label="Neste capítulo"><a href="#f1"><b>F.1</b>Escadas terapêuticas por enti…</a><a href="#f2"><b>F.2</b>Tabela de doses — delirium, d…</a><a href="#f3"><b>F.3</b>Critérios de dispensação do P…</a><a href="#f4"><b>F.4</b>Lecanemabe × donanemabe — o q…</a><a href="#f5"><b>F.5</b>Manejo de ARIA conforme RM e…</a><a href="#f6"><b>F.6</b>Caso → conduta certa → erro t…</a></nav><!--/hp-f2-->
 
   <!-- F.1 -->
-  <div class="card tx">
+  <div class="card tx" id="f1">
     <div class="card-head">
       <div class="card-eyebrow"><span class="card-num">F.1</span> Estratégia</div>
       <h3>Escadas terapêuticas por entidade <span class="ank ank-dec">DECISION</span></h3>
     </div>
     <div class="card-body">
-      <div class="sub-title">F1.1 · Delirium — prevenção</div>
+      <div class="sub-title" id="f1-1">F1.1 · Delirium — prevenção</div>
       <ul class="bullets">
         <li><b>Identificar o risco na admissão:</b> idade &gt;65, demência ou CCL, fratura de quadril, doença grave, déficit sensorial; aplicar 4AT ou CAM na entrada e a cada turno/dia enquanto houver risco (APA 2025, recomendação 1; NICE CG103).</li>
         <li><b>Multicomponente (HELP, NICE CG103):</b> reorientação (relógio, calendário, nomes da equipe), estimulação cognitiva diurna, óculos e aparelho auditivo, mobilização precoce e fisioterapia, sono noturno sem interrupções (agrupar medicações e sinais vitais, reduzir ruído e luz), hidratação e nutrição, controle de constipação, retirada de cateter vesical e acessos desnecessários, analgesia regular, oxigenação adequada, família presente.</li>
         <li><b>Farmacológico preventivo:</b> não usar antipsicótico (APA 2025, recomendação 9; PADIS 2018) nem estatina para prevenir; <b>dexmedetomidina</b> pode ser considerada em cirurgia de grande porte e ventilação mecânica (APA 2025, sugestão 11). Na UTI aplicar o pacote ABCDEF.</li>
         <li><b>Pré-operatório do idoso:</b> rastreio cognitivo basal, revisão de anticolinérgicos e benzodiazepínicos, analgesia multimodal poupadora de opioide, evitar meperidina, anestesia regional quando adequada, orientação da família.</li>
       </ul>
-      <div class="sub-title">F1.2 · Delirium — tratamento</div>
+      <div class="sub-title" id="f1-2">F1.2 · Delirium — tratamento</div>
       <ul class="bullets">
         <li><b>Causa primeiro:</b> tratar infecção, corrigir sódio e cálcio, oxigenar, esvaziar bexiga e reto, tratar dor, reduzir ou suspender fármacos deliriogênicos (anticolinérgicos, benzodiazepínicos, opioides em excesso, corticoide, anti-histamínicos), repor tiamina se risco.</li>
         <li><b>Não farmacológico durante o episódio:</b> mesmas medidas da prevenção, desescalada verbal e não verbal, acompanhante, evitar contenção física (APA 2025, recomendação 5).</li>
@@ -1434,7 +1453,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
         <div class="box-body">No delirium por abstinência de álcool ou de benzodiazepínico, o benzodiazepínico é o tratamento, e o antipsicótico isolado reduz o limiar convulsivo e mascara a evolução. Esquema e escalas de abstinência (CIWA-Ar) ficam no PC03; aqui a mensagem é <b>não aplicar a proibição de BZD do delirium geral a esse grupo</b> e sempre associar tiamina (no DT, 200–500 mg IV 8/8 h, porque o delirium mascara Wernicke).</div>
       </div>
 
-      <div class="sub-title">F1.3 · Doença de Alzheimer</div>
+      <div class="sub-title" id="f1-3">F1.3 · Doença de Alzheimer</div>
       <ul class="bullets">
         <li><b>Diagnóstico comunicado e plano de cuidado:</b> revelação como processo, diretivas antecipadas, capacidade para finanças e direção, segurança domiciliar, apoio ao cuidador, estimulação cognitiva em grupo (CST, 14 sessões em 7 semanas), exercício físico.</li>
         <li><b>Leve a moderada (CDR 1–2):</b> um IChE (donepezila, rivastigmina ou galantamina); a escolha considera custo, via (adesivo se intolerância gastrointestinal ou disfagia), comorbidades e interações. Reavaliar em 3–4 meses e depois a cada 6 meses com MEEM, CDR e eventos adversos (PCDT 2025).</li>
@@ -1450,7 +1469,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
         <div class="box-body">IChE aumentam o tônus vagal: bradicardia, BAV, síncope e quedas. O PCDT exclui insuficiência ou arritmia cardíaca graves, bradicardia sintomática, BAV de 2º/3º grau, doença do nó sinusal e asma/DPOC graves descompensadas; a galantamina também na insuficiência hepática ou renal grave. Betabloqueador, digoxina, amiodarona, verapamil e diltiazem somam efeito. <b>ECG basal e FC em cada consulta</b>; síncope em uso de IChE exige ECG/Holter antes de culpar a demência.</div>
       </div>
 
-      <div class="sub-title">F1.4 · Demências com corpos de Lewy (DCL e DDP)</div>
+      <div class="sub-title" id="f1-4">F1.4 · Demências com corpos de Lewy (DCL e DDP)</div>
       <ul class="bullets">
         <li><b>Cognição e alucinações:</b> donepezila ou rivastigmina (NICE: oferecer na leve a moderada, considerar na grave); galantamina só se as duas falharem por intolerância; memantina se IChE contraindicados.</li>
         <li><b>Psicose com sofrimento</b> apesar de IChE: quetiapina em dose baixa ou clozapina com hemograma; nunca neuroléptico típico, risperidona ou olanzapina. Reduzir antes os fármacos dopaminérgicos de menor benefício motor (anticolinérgicos, amantadina, agonistas, IMAO-B), mantendo levodopa.</li>
@@ -1459,7 +1478,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
         <li><b>Hospitalização:</b> alertar no prontuário sobre sensibilidade a neurolépticos; antiemético preferido domperidona ou ondansetrona (não metoclopramida/bromoprida).</li>
       </ul>
 
-      <div class="sub-title">F1.5 · Degeneração lobar frontotemporal</div>
+      <div class="sub-title" id="f1-5">F1.5 · Degeneração lobar frontotemporal</div>
       <ul class="bullets">
         <li><b>Comportamento:</b> ISRS (citalopram, sertralina, paroxetina, fluvoxamina) ou trazodona para desinibição, compulsões, hiperoralidade e irritabilidade (ABN 2022); antipsicótico atípico em dose baixa apenas para agitação perigosa, com vigilância de parkinsonismo.</li>
         <li><b>Não oferecer IChE nem memantina</b> (NICE 1.5.15) — exceto na APP logopênica com biomarcador de DA.</li>
@@ -1468,21 +1487,21 @@ ul.bullets li b{color:var(--ink);font-weight:600}
         <li><b>DFT-DNM:</b> avaliação de deglutição e ventilação, riluzol e suporte ventilatório pelo protocolo de ELA.</li>
       </ul>
 
-      <div class="sub-title">F1.6 · Comprometimento cognitivo vascular</div>
+      <div class="sub-title" id="f1-6">F1.6 · Comprometimento cognitivo vascular</div>
       <ul class="bullets">
         <li><b>Prevenção secundária (NE03):</b> PA alvo individualizada, estatina conforme risco, antiagregante após AVC/AIT isquêmico não cardioembólico (AAS 81–100 mg/dia ou clopidogrel 75 mg/dia), anticoagulação na FA, controle glicêmico sem hipoglicemia, cessação do tabagismo, atividade física.</li>
         <li><b>Sem evento clínico:</b> leucoaraiose isolada não é indicação de antiagregante; micro-hemorragias lobares sugerem angiopatia amiloide e pesam contra antitrombóticos sem indicação forte.</li>
         <li><b>Sintomático:</b> IChE/memantina apenas se suspeita de DA, DCL ou DDP concomitante (NICE 1.5.14); depressão e apatia tratadas ativamente; fisioterapia de marcha.</li>
       </ul>
 
-      <div class="sub-title">F1.7 · Hidrocefalia de pressão normal</div>
+      <div class="sub-title" id="f1-7">F1.7 · Hidrocefalia de pressão normal</div>
       <ul class="bullets">
         <li>RM com DESH → punção com pressão de abertura e <b>tap test 30–50 mL</b> (ou drenagem lombar externa de 72 h) com marcha cronometrada antes e após.</li>
         <li>Resposta objetiva → derivação ventriculoperitoneal com válvula programável; seguimento com ajuste de pressão de abertura e TC se cefaleia postural (hiperdrenagem) ou piora (HSD, obstrução).</li>
         <li>Sem resposta e quadro forte → drenagem prolongada antes de descartar; demência grave dominante prediz pouco benefício.</li>
       </ul>
 
-      <div class="sub-title">F1.8 · SPCD (agitação, psicose, sono)</div>
+      <div class="sub-title" id="f1-8">F1.8 · SPCD (agitação, psicose, sono)</div>
       <ul class="bullets">
         <li><b>Passo 1:</b> avaliação estruturada — dor, delirium, constipação, retenção, infecção, fome, sede, ambiente, abordagem do cuidador (NICE NG97 1.7.1).</li>
         <li><b>Passo 2:</b> intervenções psicossociais e ambientais personalizadas como manejo inicial e contínuo; paracetamol regular como teste terapêutico se dor provável.</li>
@@ -1491,7 +1510,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
         <li><b>Insônia:</b> abordagem multicomponente (higiene, luz diurna, exercício, atividades); trazodona em dose baixa tem benefício modesto; zolpidem ou zopiclona só por curto prazo (ABN 2022).</li>
       </ul>
 
-      <div class="sub-title">F1.9 · Causas reversíveis, Wernicke e prevenção</div>
+      <div class="sub-title" id="f1-9">F1.9 · Causas reversíveis, Wernicke e prevenção</div>
       <ul class="bullets">
         <li><b>Wernicke:</b> tiamina IV em dose alta (200–500 mg 8/8 h) junto com a glicose, em qualquer ordem, magnésio, nutrição; Korsakoff exige reabilitação e abstinência.</li>
         <li><b>B12:</b> reposição parenteral se manifestação neurológica; oral em dose alta como alternativa na deficiência sem dano neurológico importante e com boa adesão (BSH 2014).</li>
@@ -1507,7 +1526,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
   </div>
 
   <!-- F.2 DOSES -->
-  <div class="card tx">
+  <div class="card tx" id="f2">
     <div class="card-head">
       <div class="card-eyebrow"><span class="card-num">F.2</span> Doses Operacionais</div>
       <h3>Tabela de doses — delirium, demências e causas tratáveis <span class="ank ank-dgr">DANGER</span></h3>
@@ -1691,7 +1710,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
   </div>
 
   <!-- F.3 PCDT -->
-  <div class="card tx">
+  <div class="card tx" id="f3">
     <div class="card-head">
       <div class="card-eyebrow"><span class="card-num">F.3</span> SUS</div>
       <h3>Critérios de dispensação do PCDT Doença de Alzheimer 2025 <span class="ank ank-dec">DECISION</span></h3>
@@ -1745,7 +1764,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
   </div>
 
   <!-- F.4 ANTI-AMILOIDE -->
-  <div class="card tx">
+  <div class="card tx" id="f4">
     <div class="card-head">
       <div class="card-eyebrow"><span class="card-num">F.4</span> Anti-amiloides</div>
       <h3>Lecanemabe × donanemabe — o que muda a decisão <span class="ank ank-evo">EVOLVING</span> <span class="ank ank-dec">DECISION</span></h3>
@@ -1793,7 +1812,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
   </div>
 
   <!-- F.5 ARIA -->
-  <div class="card tx">
+  <div class="card tx" id="f5">
     <div class="card-head">
       <div class="card-eyebrow"><span class="card-num">F.5</span> Segurança</div>
       <h3>Manejo de ARIA conforme RM e sintomas <span class="ank ank-dgr">DANGER</span></h3>
@@ -1837,7 +1856,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
   </div>
 
   <!-- F.6 CENÁRIOS -->
-  <div class="card tx">
+  <div class="card tx" id="f6">
     <div class="card-head">
       <div class="card-eyebrow"><span class="card-num">F.6</span> Cenários</div>
       <h3>Caso → conduta certa → erro típico <span class="ank ank-hy">HIGH-YIELD</span></h3>
@@ -1910,7 +1929,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
     <div class="section-sub">Onde o raciocínio costuma falhar — na enfermaria, no PS e no ambulatório de memória.</div>
   </div>
 
-  <div class="card pearl">
+  <div class="card pearl" id="g1">
     <div class="card-head">
       <div class="card-eyebrow"><span class="card-num">G.1</span> Pegadinhas</div>
       <h3>10 Erros Operacionais em Delirium e Demências <span class="ank ank-dgr">DANGER</span></h3>
@@ -1962,7 +1981,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
     </div>
   </div>
 
-  <div class="card pearl">
+  <div class="card pearl" id="g2">
     <div class="card-head">
       <div class="card-eyebrow"><span class="card-num">G.2</span> Mitos · Controvérsias</div>
       <h3>Mitos Vivos e Debates Atuais <span class="ank ank-myt">MYTH</span> <span class="ank ank-con">CONTROVERSY</span></h3>
@@ -2012,7 +2031,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
     <div class="section-sub">Oito nuances de neurologia cognitiva e sete mudanças reais, separando recomendação internacional, registro sanitário e acesso SUS.</div>
   </div>
 
-  <div class="card pearl">
+  <div class="card pearl" id="h1">
     <div class="card-head">
       <div class="card-eyebrow"><span class="card-num">H.1</span> Pearls</div>
       <h3>8 Nuances que Distinguem o Expert <span class="ank ank-prl">PEARL</span></h3>
@@ -2061,7 +2080,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
     </div>
   </div>
 
-  <div class="card pearl">
+  <div class="card pearl" id="h2">
     <div class="card-head">
       <div class="card-eyebrow"><span class="card-num">H.2</span> Evolving</div>
       <h3>7 Paradigmas em Mudança — Neurologia Cognitiva 2023–2026 <span class="ank ank-evo">EVOLVING</span></h3>
@@ -2150,5 +2169,36 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <a class="to-top" href="#" aria-label="Voltar ao topo">↑</a>
 <div class="watermark">@dr.lorencato · NE04 Delirium e Demências v5.2</div>
 
-</body>
+<!--hp-f2--><script>(function(){var d=document,M=d.querySelector('main');if(!M)return;
+var SELF='NE04',HP=' CT01 CT02 CT03 CT04 CT05 CT06 CT08 CT10 CV01 CV03 CV04 CV05 CV06 CV07 CV08 EN01 EN02 EN03 EN04 EN06 EN07 GH01 GH02 GH03 GH05 GH06 GH07 GH08 GH09 GH10 GO01 GO02 GO03 GO04 GO09 GO10 GO11 GO12 GO13 GO14 HO01 HO02 HO03 HO04 HO05 HO06 II01 II02 II03 II04 II07 II08 NE01 NE02 NE03 NE04 NE05 NE06 NE07 NE08 NU01 NU02 NU03 NU04 NU05 OE01 OE02 PC01 PC02 PC03 PC04 PC05 PC06 PD01 PD02 PD03 PD04 PD05 PD06 PD07 PD08 PD09 PD10 RD01 RD02 RD03 RD04 RD05 RD07 RP01 RP02 RP03 RP04 ';
+var SK='A,H1,H2,H3,SCRIPT,STYLE,NAV,.card-num,.card-eyebrow,.sub-title,.disease-tag,.toc';
+var R=/\b(?:([A-H])(\d)?\.(\d{1,2}[a-c]?)|(CV|RP|GH|NE|EN|NU|HO|II|RD|GO|PD|PC|CT|OE)(\d\d))\b/g;
+function skip(n){for(var e=n.parentNode;e&&e!==M;e=e.parentNode)if(e.matches&&e.matches(SK))return 1;return 0}
+var w=d.createTreeWalker(M,4),t,L=[];while(t=w.nextNode())if(R.test(t.data)&&!skip(t))L.push(t);
+L.forEach(function(t){var s=t.data,f=d.createDocumentFragment(),i=0,m;R.lastIndex=0;
+while(m=R.exec(s)){var h=null;
+if(m[1]){var id=m[1].toLowerCase()+(m[2]?m[2]+'-':'')+m[3];if(d.getElementById(id))h='#'+id}
+else{var x=m[4]+m[5];if(x!==SELF&&HP.indexOf(' '+x+' ')>=0)h='../'+x+'/'+x+'.html'}
+if(!h)continue;f.appendChild(d.createTextNode(s.slice(i,m.index)));
+var a=d.createElement('a');a.href=h;a.className='xr';a.textContent=m[0];f.appendChild(a);i=R.lastIndex}
+if(i){f.appendChild(d.createTextNode(s.slice(i)));t.parentNode.replaceChild(f,t)}});
+function nz(s){return s.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'')}
+var q=d.querySelector('.hp-q'),n=d.querySelector('.hp-n'),it=M.querySelectorAll('.card,.pocket-card'),T;
+function clr(){M.querySelectorAll('.q-off').forEach(function(e){e.classList.remove('q-off')})}
+function run(){var v=nz(q.value.trim());clr();n.textContent='';if(v.length<2)return;var k=0;
+it.forEach(function(c){if(nz(c.textContent).indexOf(v)<0){c.classList.add('q-off');return}k++;
+var r=c.querySelectorAll('.stbl-row,.disease-row,.score-row'),h=[];r.forEach(function(x){if(nz(x.textContent).indexOf(v)>=0)h.push(x)});
+if(h.length)r.forEach(function(x){if(h.indexOf(x)<0)x.classList.add('q-off')});
+c.querySelectorAll('details').forEach(function(x){if(nz(x.textContent).indexOf(v)>=0)x.open=true})});
+M.querySelectorAll('section').forEach(function(s){if(!s.querySelector('.card:not(.q-off),.pocket-card:not(.q-off)'))s.classList.add('q-off')});
+n.textContent=k?k+' achado'+(k>1?'s':''):'nada'}
+if(q){q.addEventListener('input',function(){clearTimeout(T);T=setTimeout(run,180)});
+q.addEventListener('keydown',function(e){if(e.key==='Escape'){q.value='';run()}})}
+function tg(b,f){b.addEventListener('click',function(){var on=b.getAttribute('aria-pressed')!=='true';b.setAttribute('aria-pressed',on);f(on)})}
+var bd=d.querySelector('.hp-dz'),bo=d.querySelector('.hp-op');
+if(bd)tg(bd,function(on){d.body.classList.toggle('dz',on);if(on)d.getElementById('tratamento').scrollIntoView()});
+if(bo)tg(bo,function(on){M.querySelectorAll('details').forEach(function(x){x.open=on})});
+var P=[];addEventListener('beforeprint',function(){P=[];M.querySelectorAll('details:not([open])').forEach(function(x){P.push(x);x.open=true})});
+addEventListener('afterprint',function(){P.forEach(function(x){x.open=false})});
+})();</script><!--/hp-f2--></body>
 </html>

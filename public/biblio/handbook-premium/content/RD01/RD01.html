@@ -345,13 +345,32 @@ ul.bullets li b{color:var(--ink);font-weight:600}
   .pocket .pocket-card.tx{--accent:#a8481a}
   .pocket .pocket-card.clin{--accent:#0b5d4e}
 }
+
+/* === v5.2.2 · fase 2 (navegação) === */
+.hp-tools{display:flex;gap:6px;align-items:center;flex:none;order:1;margin-left:auto;padding-left:6px;position:sticky;right:0;background:#f1eee5;box-shadow:-10px 0 10px -4px #f1eee5,16px 0 0 #f1eee5}
+@media(min-width:900px){html{scroll-padding-top:150px}.toc-inner{flex-wrap:wrap;overflow:visible}.card[id],.sub-title[id]{scroll-margin-top:150px}}
+@media(max-width:899px){.hp-b,.hp-n{display:none}.hp-q{width:104px}}
+.hp-q{width:128px;font:500 12px/1 'DM Sans',system-ui,sans-serif;padding:7px 11px;border:1px solid var(--line-strong);border-radius:999px;background:var(--paper);color:var(--ink)}
+.hp-b{font:600 11px/1 'DM Sans',system-ui,sans-serif;letter-spacing:.05em;text-transform:uppercase;padding:7px 10px;border-radius:999px;border:1px solid var(--line-strong);background:var(--paper);color:var(--ink-soft);cursor:pointer;white-space:nowrap}
+.hp-b[aria-pressed=true]{background:var(--ink);color:#fff;border-color:var(--ink)}
+.hp-n{font:600 11px/1 'DM Mono',monospace;color:var(--ink-mute);white-space:nowrap}
+.sec-idx{display:flex;flex-wrap:wrap;gap:6px;margin:12px 0 20px}
+.sec-idx a{font:500 12px/1.25 'DM Sans',system-ui,sans-serif;padding:6px 10px;border-radius:999px;background:var(--paper);border:1px solid var(--line);color:var(--ink-soft);text-decoration:none}
+.sec-idx a:hover{border-color:var(--line-strong);color:var(--ink)}
+.sec-idx b{color:var(--c-prim);margin-right:5px;font-weight:700}
+a.xr{color:inherit;text-decoration:underline dotted;text-underline-offset:2px}
+a.xr:hover{color:var(--c-prim)}
+.card[id],.sub-title[id]{scroll-margin-top:110px}
+.q-off{display:none!important}
+body.dz main section:not(#tratamento){display:none}
+@media print{.hp-tools,.sec-idx,.toc-doses{display:none!important}}
 </style>
 </head>
 <body>
 
 <header class="header"><div class="header-row"><div class="h-mark">R</div><div class="h-titles"><div class="h-title">AR e Espondiloartrites · Pocket Handbook</div><div class="h-sub">Elite edition · Reumatologia clínica · RD01</div></div><div class="h-author">@dr.lorencato</div><div class="h-edition">v5.2</div></div></header>
 
-<nav class="toc"><div class="toc-inner"><a href="#pocket" class="toc-chip"><span class="toc-chip-num">0</span>Pocket</a><a href="#redflags" class="toc-chip"><span class="toc-chip-num">A</span>Red Flags</a><a href="#approach" class="toc-chip"><span class="toc-chip-num">B</span>Apresentação</a><a href="#primarias" class="toc-chip"><span class="toc-chip-num">C</span>Entidades</a><a href="#secundarias" class="toc-chip"><span class="toc-chip-num">D</span>Secundárias</a><a href="#algoritmo" class="toc-chip"><span class="toc-chip-num">E</span>Algoritmo</a><a href="#tratamento" class="toc-chip"><span class="toc-chip-num">F</span>Tratamento</a><a href="#pitfalls" class="toc-chip"><span class="toc-chip-num">G</span>Pitfalls</a><a href="#pearls" class="toc-chip"><span class="toc-chip-num">H</span>Pearls</a></div></nav>
+<nav class="toc"><div class="toc-inner"><!--hp-f2--><span class="hp-tools"><input class="hp-q" type="search" placeholder="Buscar no HP" aria-label="Buscar no HP"><button class="hp-b hp-dz" type="button" aria-pressed="false">Só doses</button><button class="hp-b hp-op" type="button" aria-pressed="false">Abrir tudo</button><span class="hp-n" aria-live="polite"></span></span><!--/hp-f2--><a href="#pocket" class="toc-chip"><span class="toc-chip-num">0</span>Pocket</a><a href="#redflags" class="toc-chip"><span class="toc-chip-num">A</span>Red Flags</a><a href="#approach" class="toc-chip"><span class="toc-chip-num">B</span>Apresentação</a><a href="#primarias" class="toc-chip"><span class="toc-chip-num">C</span>Entidades</a><a href="#secundarias" class="toc-chip"><span class="toc-chip-num">D</span>Secundárias</a><a href="#algoritmo" class="toc-chip"><span class="toc-chip-num">E</span>Algoritmo</a><a href="#tratamento" class="toc-chip"><span class="toc-chip-num">F</span>Tratamento</a><!--hp-f2--><a href="#f2" class="toc-chip toc-doses"><span class="toc-chip-num">Rx</span>Doses</a><!--/hp-f2--><a href="#pitfalls" class="toc-chip"><span class="toc-chip-num">G</span>Pitfalls</a><a href="#pearls" class="toc-chip"><span class="toc-chip-num">H</span>Pearls</a></div></nav>
 
 <main>
 <div class="wrap">
@@ -415,7 +434,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <section id="redflags">
 <div class="section"><div class="section-eyebrow"><span>A</span> Red Flags</div><div class="section-title">Na artrite crônica o perigo raramente é a articulação: é a infecção que o tratamento permite e o nervo que a coluna comprime</div><div class="section-sub">Sinal objetivo, suspeita e conduta imediata. Os eventos evitáveis deste HP são a artrite séptica tratada como flare, a tuberculose reativada por anti-TNF sem rastreio, a mielopatia por subluxação atlantoaxial, a uveíte sem fundo de olho e o metotrexato tomado todos os dias em vez de uma vez por semana.</div></div>
 
-<div class="card emerg">
+<div class="card emerg" id="a1">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">A.1</span> Emergências</div><h3>Sinais de alarme — AR e espondiloartrites <span class="ank ank-dgr">DANGER</span></h3></div>
 <div class="card-body">
 
@@ -456,7 +475,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <section id="approach">
 <div class="section"><div class="section-eyebrow"><span>B</span> Por Apresentação</div><div class="section-title">Cinco portas de entrada: pelo punho, pela nádega, pelo joelho, pela articulação quente e pela AR que não responde</div><div class="section-sub">O paciente não chega com o rótulo de AR ou de espondiloartrite. Chega com um padrão de articulações, um horário de dor e, às vezes, uma pele, um olho ou um intestino.</div></div>
 
-<div class="card clin">
+<div class="card clin" id="b1">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">B.1</span> Padrão 1</div><h3>Poliartrite simétrica de pequenas articulações, com rigidez matinal longa <span class="ank ank-hy">HIGH-YIELD</span></h3><div class="card-sub">Metacarpofalangeanas, interfalangeanas proximais, punhos e antepés, sem coluna</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Mulher de 30–50 anos com rigidez matinal acima de 1 hora, dor ao apertar as metacarpofalangeanas e FR ou anti-CCP positivo é AR até prova em contrário. <b>O que muda conduta:</b> ≥6 semanas de sinovite, escore ≥6 e fase aguda elevada pedem DMARD imediato; poliartrite há menos de 6 semanas pode ser viral (parvovírus B19, chikungunya, hepatites B e C, HIV) e se resolve sozinha.</div></div>
@@ -470,7 +489,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card clin">
+<div class="card clin" id="b2">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">B.2</span> Padrão 2</div><h3>Lombalgia de padrão inflamatório em adulto jovem <span class="ank ank-dec">DECISION</span></h3><div class="card-sub">Dor que desperta na segunda metade da noite e melhora com o movimento</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Início antes dos 40–45 anos, insidioso, melhora com exercício, não melhora com repouso, dor noturna que alivia ao levantar e dor alternante nas nádegas: padrão inflamatório (≥4 de 5 critérios). <b>O que muda conduta:</b> RM de sacroilíacas com STIR mostra a sacroileíte antes do raio X; HLA-B27 positivo com dois traços fecha o critério ASAS; resposta franca a AINE em 48 horas é traço de SpA.</div></div>
@@ -483,7 +502,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card clin">
+<div class="card clin" id="b3">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">B.3</span> Padrão 3</div><h3>Oligoartrite assimétrica de membros inferiores, com dactilite ou entesite <span class="ank ank-hy">HIGH-YIELD</span></h3><div class="card-sub">Joelho, tornozelo e antepé; tendão de Aquiles e fáscia plantar</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Adulto jovem com joelho e tornozelo inflamados, dedo em salsicha e dor no calcanhar pertence ao grupo das espondiloartrites periféricas. <b>O que muda conduta:</b> diarreia ou uretrite 1–4 semanas antes = artrite reativa (C.7); placa de psoríase, unha em dedal ou história familiar = artrite psoriásica (C.6); sangue nas fezes e emagrecimento = DII (D.3, GH05). Gonococcemia e artrite séptica entram no diferencial e se excluem com a punção.</div></div>
@@ -496,7 +515,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card clin">
+<div class="card clin" id="b4">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">B.4</span> Padrão 4</div><h3>Monoartrite aguda: cristal, bactéria ou doença crônica em surto <span class="ank ank-dgr">DANGER</span></h3><div class="card-sub">Gota, CPPD e artrite séptica têm dono no RD04; aqui o que não se perde</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Joelho, tornozelo ou primeira metatarsofalangeana quentes, com dor desproporcional, exigem <b>punção articular no dia</b>. O líquido define o rumo: leucometria baixa e cristais (gota, pseudogota), pus e Gram (séptica), líquido inflamatório estéril (reumatismo crônico em surto). <b>O que muda conduta:</b> suspeita infecciosa → antibiótico e drenagem (RD04); cristais → tratamento da crise (RD04); estéril em portador de AR ou SpA → ajuste do DMARD aqui.</div></div>
@@ -508,7 +527,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card clin">
+<div class="card clin" id="b5">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">B.5</span> Padrão 5</div><h3>AR que não responde: antes de trocar de classe, repense o diagnóstico <span class="ank ank-dec">DECISION</span></h3><div class="card-sub">Falha terapêutica verdadeira, adesão, dor sem inflamação e diagnóstico errado</div></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Antes de declarar falha: dose de metotrexato foi 20–25 mg/semana? Via subcutânea? Houve 3 meses de tratamento? O CDAI conta articulações ou o paciente está com dor? <b>O que muda conduta:</b> fibromialgia associada eleva a dor e o escore sem sinovite (ultrassonografia com Doppler ajuda); diagnóstico errado (artrite psoriásica, osteoartrite nodal, LES, gota) muda a classe de fármaco; infecção e fármaco indutor (anti-TNF induzindo lúpus) mudam a conduta.</div></div>
@@ -522,9 +541,9 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 
 </section>
 <section id="primarias">
-<div class="section"><div class="section-eyebrow"><span>C</span> Entidades Primárias</div><div class="section-title">Cinco entidades de doença e dois cartões de segurança: AR, o que ela faz fora da articulação, rastreio pré-biológico, JAK, e três espondiloartrites</div><div class="section-sub">A AR ocupa o primeiro box, com escore de classificação e índices de atividade; as manifestações extra-articulares, o rastreio pré-biológico e a segurança dos JAK vêm em seguida; a espondiloartrite axial, a artrite psoriásica e a artrite reativa fecham a lista.</div></div>
+<div class="section"><div class="section-eyebrow"><span>C</span> Entidades Primárias</div><div class="section-title">Cinco entidades de doença e dois cartões de segurança: AR, o que ela faz fora da articulação, rastreio pré-biológico, JAK, e três espondiloartrites</div><div class="section-sub">A AR ocupa o primeiro box, com escore de classificação e índices de atividade; as manifestações extra-articulares, o rastreio pré-biológico e a segurança dos JAK vêm em seguida; a espondiloartrite axial, a artrite psoriásica e a artrite reativa fecham a lista.</div></div><!--hp-f2--><nav class="sec-idx" aria-label="Neste capítulo"><a href="#c1"><b>C.1</b>AR: classificação, atividade…</a><a href="#c2"><b>C.2</b>AR fora da articulação: pulmã…</a><a href="#c3"><b>C.3</b>Antes do biológico ou do JAK…</a><a href="#c4"><b>C.4</b>Inibidores de JAK: o que a ta…</a><a href="#c5"><b>C.5</b>Espondilite anquilosante e es…</a><a href="#c6"><b>C.6</b>Artrite psoriásica: cinco dom…</a><a href="#c7"><b>C.7</b>Artrite reativa: oligoartrite…</a></nav><!--/hp-f2-->
 
-<div class="card prim">
+<div class="card prim" id="c1">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.1</span> Artrite reumatoide</div><h3>AR: classificação, atividade e a meta que define o tratamento <span class="ank ank-hy">HIGH-YIELD</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Poliartrite simétrica, aditiva e erosiva de pequenas articulações, de curso crônico, com autoanticorpos (FR, anti-CCP) e fase aguda elevada. <b>A meta é remissão ou baixa atividade, medida por CDAI, SDAI ou DAS28 em toda consulta, com ajuste em 3 meses</b> (PCDT 2026, EULAR 2025). <b>O que muda conduta:</b> sinovite persistente com escore ≥6 e fatores de mau prognóstico (anti-CCP alto, erosão, ≥20 articulações, nódulos) → DMARD já, em dose cheia; meta não alcançada em 3 meses → troca de etapa; remissão sustentada → considerar redução, nunca suspensão abrupta.</div></div>
@@ -582,7 +601,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="c2">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.2</span> Manifestações extra-articulares</div><h3>AR fora da articulação: pulmão, vasculite, olho, coração e rim <span class="ank ank-dgr">DANGER</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">As manifestações extra-articulares aparecem sobretudo na AR soropositiva de título alto, nodular e longa. A doença pulmonar intersticial, a vasculite, a esclerite e a pericardite mudam prognóstico e escolha do fármaco. <b>O que muda conduta:</b> dispneia ou tosse seca com crepitações basais → TC de alta resolução e prova de função antes de ajustar o DMARD; nódulo pulmonar isolado → pensar em câncer de pulmão; mononeurite múltipla, úlcera necrótica ou esclerite → imunossupressão intensiva e oftalmologia no dia.</div></div>
@@ -611,7 +630,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="c3">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.3</span> Segurança pré-tratamento</div><h3>Antes do biológico ou do JAK: tuberculose, hepatites, vacinas e o que contraindica <span class="ank ank-dec">DECISION</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">O PCDT exige investigar tuberculose ativa e infecção latente antes de qualquer biológico ou JAK; o PCDT de hepatite B de 2023 exige estratificar o risco de reativação; o CRIE 2023 manda vacinar antes. <b>O que muda conduta:</b> PT ≥5 mm, IGRA reagente, sequela radiográfica ou contato recente → tratar ILTB antes; HBsAg ou anti-HBc reagente → antiviral profilático ou monitoramento conforme o risco da terapia; vacina viva só 14–30 dias antes e nunca durante a imunossupressão.</div></div>
@@ -631,7 +650,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="c4">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.4</span> Segurança dos alvo-específicos</div><h3>Inibidores de JAK: o que a tarja diz, a quem se aplica e o que o PCDT e a EULAR mantêm <span class="ank ank-dgr">DANGER</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Tofacitinibe, baricitinibe e upadacitinibe estão no PCDT 2026 como alternativa ao biológico depois do csDMARD, com <b>tofacitinibe 5 mg 12/12 h, baricitinibe 4 mg/dia (2 mg se &gt;75 anos, insuficiência renal ou controle prolongado; limiar renal: conferir) e upadacitinibe 15 mg/dia</b>. A bula FDA do tofacitinibe traz tarja para infecção grave, mortalidade, malignidade, eventos cardiovasculares maiores e trombose. <b>O que muda conduta:</b> idade ≥65 anos, tabagismo, doença aterosclerótica, risco de tromboembolismo e neoplasia empurram a escolha para outra classe.</div></div>
@@ -651,7 +670,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="c5">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.5</span> Espondiloartrite axial</div><h3>Espondilite anquilosante e espondiloartrite axial não radiográfica <span class="ank ank-hy">HIGH-YIELD</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Lombalgia inflamatória em adulto jovem com sacroileíte, entesite e, às vezes, uveíte, HLA-B27 e fase aguda elevada em metade dos casos. <b>Classificação ASAS: dor ≥3 meses com início antes dos 45 anos e sacroileíte em imagem + ≥1 traço de SpA, ou HLA-B27 + ≥2 traços.</b> <b>O que muda conduta:</b> AINE em dose plena por 2 semanas, trocando de AINE se falhar; corticoide sistêmico não entra; BASDAI ≥4 ou ASDAS ≥2,1 após AINE → biológico (PCDT AP 2026); fratura vertebral após trauma mínimo é emergência.</div></div>
@@ -713,7 +732,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="c6">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.6</span> Artrite psoriásica</div><h3>Artrite psoriásica: cinco domínios, um critério (CASPAR) e o fluxo do PCDT 2026 <span class="ank ank-hy">HIGH-YIELD</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Artrite periférica, axial, entesite, dactilite e psoríase (pele e unha) em combinações variáveis, com fator reumatoide em geral negativo. <b>CASPAR: doença inflamatória articular, entesítica ou axial + ≥3 pontos</b> (psoríase atual 2; história pessoal ou familiar, unha típica, FR negativo, dactilite e neoformação justa-articular 1 cada). <b>O que muda conduta:</b> periférica → metotrexato; axial ou entesite → AINE e depois biológico; pele extensa → classe que trate pele; uveíte ou DII → anti-TNF monoclonal; corticoide sistêmico não é o caminho.</div></div>
@@ -760,7 +779,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="c7">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">C.7</span> Artrite reativa</div><h3>Artrite reativa: oligoartrite estéril 1–4 semanas depois de uma infecção <span class="ank ank-dec">DECISION</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Artrite não supurativa, oligoarticular, assimétrica, aditiva e de membros inferiores, que começa 1–4 semanas depois de diarreia (<i>Shigella</i>, <i>Salmonella</i>, <i>Campylobacter</i>, <i>Yersinia</i>) ou uretrite e cervicite (<i>Chlamydia trachomatis</i>). A tríade de Reiter soma conjuntivite e uretrite. <b>O que muda conduta:</b> punção para excluir artrite séptica e cristais antes de firmar o diagnóstico; AINE em dose plena por pelo menos 2 semanas; antibiótico só para infecção aguda e para parceiros de clamídia; sorologia para HIV.</div></div>
@@ -791,9 +810,9 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 
 </section>
 <section id="secundarias">
-<div class="section"><div class="section-eyebrow"><span>D</span> Entidades Secundárias</div><div class="section-title">Felty, coluna cervical, intestino, olho, gestação, toxicidade dos DMARD e o mapa das artrites que moram em outros HPs</div><div class="section-sub">Casos que completam o diferencial e a prática da AR e das espondiloartrites. A artrite das DII segue o GH05; a uveíte tem tratamento oftalmológico no OE01; gota, séptica, OA e fibromialgia pertencem ao RD04, e aqui só o cartão de remissão.</div></div>
+<div class="section"><div class="section-eyebrow"><span>D</span> Entidades Secundárias</div><div class="section-title">Felty, coluna cervical, intestino, olho, gestação, toxicidade dos DMARD e o mapa das artrites que moram em outros HPs</div><div class="section-sub">Casos que completam o diferencial e a prática da AR e das espondiloartrites. A artrite das DII segue o GH05; a uveíte tem tratamento oftalmológico no OE01; gota, séptica, OA e fibromialgia pertencem ao RD04, e aqui só o cartão de remissão.</div></div><!--hp-f2--><nav class="sec-idx" aria-label="Neste capítulo"><a href="#d1"><b>D.1</b>Síndrome de Felty e leucemia…</a><a href="#d2"><b>D.2</b>AR cervical: subluxação atlan…</a><a href="#d3"><b>D.3</b>Artrite enteropática: perifér…</a><a href="#d4"><b>D.4</b>Uveíte anterior e outras mani…</a><a href="#d5"><b>D.5</b>Espondiloartrite indiferencia…</a><a href="#d6"><b>D.6</b>AR e SpA na gestação e na lac…</a><a href="#d7"><b>D.7</b>Toxicidade dos DMARD sintétic…</a><a href="#d8"><b>D.8</b>Onde moram as outras artrites…</a></nav><!--/hp-f2-->
 
-<div class="card diag">
+<div class="card diag" id="d1">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">D.1</span> Felty</div><h3>Síndrome de Felty e leucemia de linfócitos grandes granulares <span class="ank ank-dgr">DANGER</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">AR soropositiva de longa duração com <b>esplenomegalia e neutropenia</b> (neutrófilos &lt;2.000/µL), às vezes anemia, plaquetopenia, febre, hepatomegalia e adenomegalia. Risco de ~1%, em queda com o controle precoce. <b>O que muda conduta:</b> o problema clínico é a infecção bacteriana de repetição, proporcional à neutropenia; o esfregaço decide entre Felty e síndrome de LGL; o metotrexato é a primeira escolha, e a esplenectomia fica para infecção recorrente refratária.</div></div>
@@ -811,7 +830,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card diag">
+<div class="card diag" id="d2">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">D.2</span> Coluna cervical</div><h3>AR cervical: subluxação atlantoaxial e invaginação basilar <span class="ank ank-dgr">DANGER</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">A subluxação atlantoaxial (C1 sobre C2) existe em menos de 10% dos pacientes atualmente. Distância entre o odontoide e o arco do atlas &gt;3 mm define subluxação; a maioria <b>não tem dor cervical intensa</b>. <b>O que muda conduta:</b> colar cervical em viagens e desacelerações, radiografias dinâmicas antes de cirurgia ou intubação, RM se sintoma neurológico, artrodese C1-C2 se déficit, dor intratável ou instabilidade grave.</div></div>
@@ -829,7 +848,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card diag">
+<div class="card diag" id="d3">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">D.3</span> Artrite das DII</div><h3>Artrite enteropática: periférica paralela ao intestino e axial independente <span class="ank ank-dec">DECISION</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Cerca de 20% dos pacientes com Crohn grave e 2–7% com retocolite têm artrite periférica; ~20% têm sacroileíte. A artrite periférica tipo 1 (oligoartrite de grandes articulações de membros inferiores) segue a atividade intestinal; a axial e a poliartrite simétrica de pequenas articulações (tipo 2) não. <b>O que muda conduta:</b> a artrite que segue o intestino se trata tratando o intestino; a que não segue pede escolha de classe que cubra o órgão extraintestinal (anti-TNF monoclonal para espondilite, uveíte e pioderma), como no GH05.</div></div>
@@ -847,7 +866,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card diag">
+<div class="card diag" id="d4">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">D.4</span> Olho</div><h3>Uveíte anterior e outras manifestações extra-articulares das espondiloartrites <span class="ank ank-dgr">DANGER</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">A uveíte anterior aguda é a manifestação extra-articular mais frequente das SpA, unilateral, de início agudo, com recorrência em olhos alternados. <b>O que muda conduta:</b> olho vermelho e doloroso com fotofobia → oftalmologia no mesmo dia; recorrência frequente → anti-TNF monoclonal (adalimumabe, infliximabe) e não etanercepte; DII ou psoríase associadas orientam a classe. O tratamento da uveíte é do OE01.</div></div>
@@ -865,7 +884,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card diag">
+<div class="card diag" id="d5">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">D.5</span> Indiferenciada</div><h3>Espondiloartrite indiferenciada e SpA de início na juventude <span class="ank ank-hy">HIGH-YIELD</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Quando há traços de SpA (artrite assimétrica de membros inferiores, entesite, dactilite, HLA-B27) sem preencher critério de espondilite anquilosante, psoríase, artrite reativa ou DII, o rótulo é espondiloartrite indiferenciada. <b>O que muda conduta:</b> trata-se como SpA pelo domínio dominante (AINE, sulfassalazina na periférica, biológico se persistente); investigue psoríase, DII e infecção; reavalie a cada 6–12 meses, pois pode evoluir para EA ou outra forma.</div></div>
@@ -883,7 +902,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card diag">
+<div class="card diag" id="d6">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">D.6</span> Gestação</div><h3>AR e SpA na gestação e na lactação: planejar a troca antes de engravidar <span class="ank ank-dec">DECISION</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">O PCDT AR contraindica <b>metotrexato, leflunomida e ciclofosfamida</b> na gravidez e na lactação; hidroxicloroquina e sulfassalazina permanecem (com sulfassalazina e folato). <b>O que muda conduta:</b> planejar com doença inativa, trocar metotrexato e leflunomida (esta exige eliminação com colestiramina) por hidroxicloroquina, sulfassalazina, azatioprina ou outra opção antes de concepção; manter anti-TNF sob orientação; contracepção eficaz em mulher em idade fértil sob DMARD.</div></div>
@@ -901,7 +920,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card diag">
+<div class="card diag" id="d7">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">D.7</span> Toxicidade</div><h3>Toxicidade dos DMARD sintéticos: metotrexato, leflunomida, sulfassalazina e hidroxicloroquina <span class="ank ank-dgr">DANGER</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Cada csDMARD tem um padrão: metotrexato (mucosite, mielotoxicidade, hepatotoxicidade, pneumonite), leflunomida (diarreia, hipertensão, hepatotoxicidade, neuropatia, DPI), sulfassalazina (hipersensibilidade a sulfa, granulocitopenia, hemólise em G6PD) e hidroxicloroquina (retina). <b>O que muda conduta:</b> hemograma, creatinina e transaminases a cada 2–3 meses; ALT persistente alta ou hipoalbuminemia com metotrexato → investigar fibrose; qualquer citopenia nova pede suspender e rever a dose semanal.</div></div>
@@ -929,7 +948,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card diag">
+<div class="card diag" id="d8">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">D.8</span> Mapa</div><h3>Onde moram as outras artrites: remissões, lacunas e limites deste HP <span class="ank ank-dec">DECISION</span></h3></div>
 <div class="card-body">
 <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">A apostila REU 1 reúne temas que o catálogo distribui em outros HPs. Este cartão não é uma entidade, e sim uma tabela de remissão: o essencial para não perder o diagnóstico e o dono de cada conduta.</div></div>
@@ -950,7 +969,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <section id="algoritmo">
 <div class="section"><div class="section-eyebrow"><span>E</span> Algoritmo</div><div class="section-title">Da articulação inflamada ao alvo: padrão, critério, DMARD e troca de etapa em três árvores</div><div class="section-sub">Cada ponta termina em exame ou conduta com número. A primeira árvore classifica a artrite pelo padrão; a segunda conduz a AR pela sequência do PCDT 2026; a terceira resolve a lombalgia inflamatória e a escolha na espondiloartrite.</div></div>
 
-<div class="card prim">
+<div class="card prim" id="e1">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">E.1</span> Algoritmo</div><h3>Artrite inflamatória: o padrão aponta o diagnóstico <span class="ank ank-dec">DECISION</span></h3></div>
 <div class="card-body">
 <div class="algo"><div class="tree">
@@ -977,7 +996,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="e2">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">E.2</span> Algoritmo</div><h3>AR: da meta ao ajuste, na sequência do PCDT 2026 <span class="ank ank-hy">HIGH-YIELD</span></h3></div>
 <div class="card-body">
 <div class="algo"><div class="tree">
@@ -1000,7 +1019,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card prim">
+<div class="card prim" id="e3">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">E.3</span> Algoritmo</div><h3>Lombalgia inflamatória: ASAS, AINE e a hora do biológico <span class="ank ank-hy">HIGH-YIELD</span></h3></div>
 <div class="card-body">
 <div class="algo"><div class="tree">
@@ -1039,13 +1058,13 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </ul></div></div>
 </section>
 <section id="tratamento">
-<div class="section"><div class="section-eyebrow"><span>F</span> Tratamento Integrado</div><div class="section-title">F1 · Estratégia por entidade · F2 · Doses · F3 · Casos · F4 · SUS e CMED</div><div class="section-sub">Doses lidas nos PCDT de 2026, no EULAR 2025 e 2023 e nas bulas FDA levam a sigla da fonte; as de ASAS, SBR, ACR e PCDT de espondilite anquilosante, não relidas, levam "conferir". Mesma dose, mesmo texto em todo o HP.</div></div>
+<div class="section"><div class="section-eyebrow"><span>F</span> Tratamento Integrado</div><div class="section-title">F1 · Estratégia por entidade · F2 · Doses · F3 · Casos · F4 · SUS e CMED</div><div class="section-sub">Doses lidas nos PCDT de 2026, no EULAR 2025 e 2023 e nas bulas FDA levam a sigla da fonte; as de ASAS, SBR, ACR e PCDT de espondilite anquilosante, não relidas, levam "conferir". Mesma dose, mesmo texto em todo o HP.</div></div><!--hp-f2--><nav class="sec-idx" aria-label="Neste capítulo"><a href="#f1"><b>F.1</b>Escada terapêutica por entida…</a><a href="#f2"><b>F.2</b>Tabela de doses — AR e espond…</a><a href="#f3"><b>F.3</b>Caso → conduta certa → erro t…</a><a href="#f4"><b>F.4</b>O que há no SUS e no mercado…</a></nav><!--/hp-f2-->
 
-<div class="card tx">
+<div class="card tx" id="f1">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">F.1</span> Estratégia</div><h3>Escada terapêutica por entidade <span class="ank ank-dec">DECISION</span></h3></div>
 <div class="card-body">
 
-<div class="sub-title">F1.1 · AR: da meta ao ajuste, em três etapas (C.1, E.2)</div>
+<div class="sub-title" id="f1-1">F1.1 · AR: da meta ao ajuste, em três etapas (C.1, E.2)</div>
 <ul class="bullets">
 <li><b>Etapa 1:</b> metotrexato em monoterapia, com ácido fólico 5 mg por semana, 36 horas depois da dose; pode ser iniciado na atenção primária em circunstâncias especiais enquanto o paciente aguarda reumatologia (PCDT 2026). Alternativa por toxicidade: leflunomida ou sulfassalazina; hidroxicloroquina isolada é "pouco efetiva" e fica para AR leve e inicial ou como terceira droga da tripla.</li>
 <li><b>Etapa 1b, depois de 3 meses sem meta:</b> troca de csDMARD ou terapia combinada: MTX + HCQ, MTX + SSZ, MTX + LEF, ou tripla MTX + SSZ + HCQ; o PCDT recomenda considerar o MTX injetável nas combinações. Não troque de etapa em menos de 3 meses.</li>
@@ -1056,7 +1075,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 
 <div class="box decision"><span class="box-label">DECISION</span><div class="box-title">Divergência de ordem: o PCDT de 2026 não ranqueia biológicos e JAK</div><div class="box-body">Textos de estudo costumam apresentar a sequência anti-TNF, abatacepte, tocilizumabe, rituximabe, JAK. O fluxograma do PCDT 2026 coloca na mesma etapa "anti-TNF ou não anti-TNF ± MTX ou JAK", reserva o rituximabe a contraindicações e permite o JAK em monoterapia. A EULAR 2025 também não fixa ordem e manteve a ressalva de risco para o JAK. A escolha individual (infecção, comorbidade, preferência de via, custo e disponibilidade) é o que decide.</div></div>
 
-<div class="sub-title">F1.2 · Metotrexato: iniciar, escalonar, monitorar e parar (C.1, D.7)</div>
+<div class="sub-title" id="f1-2">F1.2 · Metotrexato: iniciar, escalonar, monitorar e parar (C.1, D.7)</div>
 <ul class="bullets">
 <li><b>Início e escalonamento:</b> 7,5 mg por semana, com acréscimo de 2,5 mg se não houver resposta em 4 semanas (apostila); PCDT 7,5–25 mg por semana; teto de 25 mg (PCDT, apostila), com a bula FDA alertando para risco de eventos graves acima de 20 mg. Em dose alta ou com intolerância digestiva, passar à via IM ou SC.</li>
 <li><b>Exames:</b> basais (hemograma, creatinina, AST e ALT, HBV, HCV, radiografia de tórax); hemograma, creatinina e transaminases a cada 2–3 meses (apostila; PCDT Quadro 5, não lido, sugere mais frequência no início).</li>
@@ -1064,7 +1083,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <li><b>Critérios de parada ou suspensão:</b> citopenia nova ou queda progressiva, ALT persistentemente &gt;2–3× o limite superior, hipoalbuminemia (biópsia hepática), pneumonite, infecção grave, gestação. Dose diária por engano: suspender, resgatar com folinato de cálcio (dose por protocolo; conferir) e hemograma seriado.</li>
 </ul>
 
-<div class="sub-title">F1.3 · Ponte, AINE e osso: o corticoide que não vira rotina (C.1)</div>
+<div class="sub-title" id="f1-3">F1.3 · Ponte, AINE e osso: o corticoide que não vira rotina (C.1)</div>
 <ul class="bullets">
 <li><b>Ponte:</b> prednisona ≤10 mg/dia (texto do PCDT; a tabela diz ≤5 mg/dia), por menos de 3 meses, na AR de início recente com atividade moderada ou alta; AINE em dose baixa e por curto prazo (PCDT 2026). EULAR 2025: corticoide curto ao iniciar ou trocar o csDMARD, em doses e vias variadas, reduzido e retirado o quanto antes.</li>
 <li><b>Flare:</b> curso curto ou infiltração (metilprednisolona acetato 4–80 mg conforme a articulação, a cada 3–4 meses no máximo), depois de excluir infecção.</li>
@@ -1074,7 +1093,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 
 <div class="box danger"><span class="box-label">DANGER</span><div class="box-title">Corticoide sem DMARD é o caminho mais curto para a erosão silenciosa</div><div class="box-body">A prednisona baixa alivia dor e rigidez e mascara a atividade, enquanto a sinovite continua a produzir erosão. O paciente fica satisfeito, o CDAI parece aceitável, e o dano radiográfico aparece em 1–2 anos. Todo esquema com corticoide deve ter, na mesma receita, o DMARD, a data para desmame e o plano de proteção óssea.</div></div>
 
-<div class="sub-title">F1.4 · Biológicos e JAK: escolher pela situação, não pela moda (C.3, C.4)</div>
+<div class="sub-title" id="f1-4">F1.4 · Biológicos e JAK: escolher pela situação, não pela moda (C.3, C.4)</div>
 <ul class="bullets">
 <li><b>TB latente tratada ou contato:</b> qualquer classe, com rastreio e vigilância; anti-TNF monoclonal tem maior risco que etanercepte e abatacepte em dados observacionais (conferir).</li>
 <li><b>Insuficiência cardíaca moderada ou grave:</b> evitar anti-TNF (PCDT); esclerose múltipla e neurite óptica: evitar anti-TNF (PCDT).</li>
@@ -1084,7 +1103,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <li><b>Idade ≥65 anos, tabagismo, doença cardiovascular, risco de TEV ou neoplasia:</b> preferir biológico a JAK (C.4).</li>
 </ul>
 
-<div class="sub-title">F1.5 · Espondiloartrite axial: AINE, exercício e biológico (C.5)</div>
+<div class="sub-title" id="f1-5">F1.5 · Espondiloartrite axial: AINE, exercício e biológico (C.5)</div>
 <ul class="bullets">
 <li><b>1ª linha:</b> AINE em dose plena (ibuprofeno 600–3.200 mg/dia em 3 tomadas ou naproxeno 500–1.500 mg/dia no PCDT AP 2026; sem classe superior; coxibe é opção) por ≥2 semanas, trocando de AINE se falhar; exercício supervisionado, natação e postura; parar de fumar.</li>
 <li><b>Periférica:</b> sulfassalazina 2–3 g/dia (apostila), infiltração local; o metotrexato não tem evidência consistente na axial.</li>
@@ -1092,7 +1111,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <li><b>Corticoide sistêmico:</b> não prescrever (piora a osteoporose e não alivia o sintoma); infiltração em sacroilíaca ou entesite refratária é aceita.</li>
 </ul>
 
-<div class="sub-title">F1.6 · Artrite psoriásica: pelo domínio, com o PCDT 2026 (C.6)</div>
+<div class="sub-title" id="f1-6">F1.6 · Artrite psoriásica: pelo domínio, com o PCDT 2026 (C.6)</div>
 <ul class="bullets">
 <li><b>Periférica:</b> metotrexato 7,5–25 mg por semana; falha → leflunomida 20 mg/dia, sulfassalazina ou dois csDMARD; falha → biológico de 1ª linha (anti-TNF) ± MTX; falha → outro anti-TNF, 2ª linha (secuquinumabe, certolizumabe pegol, ixequizumabe) ou tofacitinibe. Nota 5 do PCDT: associar outro csDMARD ao MTX é opção; nota 4: o adalimumabe pode ser associado à leflunomida, além do MTX.</li>
 <li><b>Periférica grave com mau prognóstico:</b> biológico de 1ª linha após 3 meses de um csDMARD, sem esperar o segundo.</li>
@@ -1100,7 +1119,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <li><b>Corticoide sistêmico:</b> o PCDT lista prednisona 5–20 mg/dia como sintomático, mas a apostila e a EULAR 2023 restringem a infiltração local, pelo risco de psoríase pustulosa na retirada; padrão deste HP: infiltração local e sem sistêmico.</li>
 </ul>
 
-<div class="sub-title">F1.7 · Artrite reativa e artrite das DII (C.7, D.3)</div>
+<div class="sub-title" id="f1-7">F1.7 · Artrite reativa e artrite das DII (C.7, D.3)</div>
 <ul class="bullets">
 <li><b>Reativa:</b> AINE em dose máxima por ≥2 semanas; infiltração; sulfassalazina 0,5–3 g/dia nos refratários; anti-TNF na falha. Antibiótico só para infecção aguda e parceiros na clamídia.</li>
 <li><b>DII com artrite tipo 1:</b> tratar o intestino; paracetamol, sulfassalazina e AINE curto na doença estável (GH05). <b>Axial ou independente:</b> anti-TNF monoclonal; JAK sob GH05; anti-IL-17 evitado.</li>
@@ -1112,7 +1131,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card tx">
+<div class="card tx" id="f2">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">F.2</span> Doses Operacionais</div><h3>Tabela de doses — AR e espondiloartrites</h3></div>
 <div class="card-body">
 <div class="stbl stbl-3">
@@ -1147,7 +1166,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card tx">
+<div class="card tx" id="f3">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">F.3</span> Cenários</div><h3>Caso → conduta certa → erro típico</h3></div>
 <div class="card-body">
 <div class="stbl stbl-3">
@@ -1164,7 +1183,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card tx">
+<div class="card tx" id="f4">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">F.4</span> SUS e CMED</div><h3>O que há no SUS e no mercado, e o que conferir <span class="ank ank-dec">DECISION</span></h3></div>
 <div class="card-body">
 <div class="stbl stbl-3">
@@ -1184,7 +1203,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <section id="pitfalls">
 <div class="section"><div class="section-eyebrow"><span>G</span> Pitfalls · Mitos · Controvérsias</div><div class="section-title">Erros operacionais, mitos vivos e debates abertos</div><div class="section-sub">Os erros que se repetem: esperar o escore para tratar, o metotrexato em dose diária, o biológico sem rastreio, o corticoide como muleta e o HLA-B27 como diagnóstico.</div></div>
 
-<div class="card pearl">
+<div class="card pearl" id="g1">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">G.1</span> Pegadinhas</div><h3>10 erros operacionais em AR e espondiloartrites</h3></div>
 <div class="card-body">
 <div class="stbl stbl-2">
@@ -1203,7 +1222,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card pearl">
+<div class="card pearl" id="g2">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">G.2</span> Mitos</div><h3>Três mitos vivos</h3></div>
 <div class="card-body">
 <div class="box myth"><span class="box-label">MYTH</span><div class="box-title">"FR negativo afasta artrite reumatoide"</div><div class="box-body">Cerca de 20–30% dos pacientes são soronegativos; o FR é negativo no início e positiva depois, e o anti-CCP pode estar presente com FR ausente. O diagnóstico depende do padrão articular, da sinovite, da fase aguda e da evolução; a soronegatividade só indica, em média, doença menos agressiva.</div></div>
@@ -1212,7 +1231,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card pearl">
+<div class="card pearl" id="g3">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">G.3</span> Controvérsias</div><h3>Três debates sem consenso</h3></div>
 <div class="card-body">
 <div class="box controversy"><span class="box-label">CONTROVERSY</span><div class="box-title">JAK antes ou depois de um biológico?</div><div class="box-body">A EULAR 2025 discutiu separar o JAK como opção apenas depois de falha de biológico e manteve a ressalva de risco no mesmo item, por 81% contra 19%, sem ensaio novo desde 2022. A bula FDA do tofacitinibe restringe ao paciente que falhou ≥1 anti-TNF; o PCDT 2026 coloca o JAK na mesma etapa do biológico. O HP segue o PCDT, com o alerta de segurança em C.4.</div></div>
@@ -1225,7 +1244,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <section id="pearls">
 <div class="section"><div class="section-eyebrow"><span>H</span> Pearls · Evolving</div><div class="section-title">H1 · Nuances de especialista · H2 · O que mudou em 2023–2026</div><div class="section-sub">Oito ideias que o plantão esquece e cinco mudanças reais; onde o tema é estável (fisiopatologia, escores de atividade, farmacologia do metotrexato), diz-se.</div></div>
 
-<div class="card pearl">
+<div class="card pearl" id="h1">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">H.1</span> Pearls</div><h3>8 nuances que distinguem o especialista</h3></div>
 <div class="card-body">
 <div class="box pearl"><span class="box-label">PEARL</span><div class="box-title">A remissão é uma meta medida, e o CDAI de cada consulta é o termômetro</div><div class="box-body">Sem número, a impressão de "está bem" é enganosa: o paciente com prednisona baixa e analgésico relata melhora com sinovite ativa. O CDAI (remissão ≤2,8; baixa ≤10) dispensa exame, cabe no ambulatório do SUS e permite comparar consultas; usar o mesmo índice em cada paciente evita deslocamento de faixa entre instrumentos. A decisão de trocar em 3 meses só funciona se o escore existe.</div></div>
@@ -1239,7 +1258,7 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 </div>
 </div>
 
-<div class="card pearl">
+<div class="card pearl" id="h2">
 <div class="card-head"><div class="card-eyebrow"><span class="card-num">H.2</span> Evolving</div><h3>O que mudou: cinco itens reais; o resto do tema é estável</h3></div>
 <div class="card-body">
 <div class="box evolving"><span class="box-label">EVOLVING</span><div class="box-title">PCDT da AR de 2026 coloca biológico e JAK na mesma etapa</div><div class="box-body">A Portaria Conjunta SAES/SCTIE/MS nº 33, de 19/01/2026, inclui baricitinibe, tofacitinibe e upadacitinibe ao lado de cinco anti-TNF, abatacepte, tocilizumabe e rituximabe, e reserva o rituximabe a contraindicações. O fluxograma exige 3 meses por etapa e permite retirada gradual do biológico ou do tofacitinibe depois de 6–12 meses de remissão. A apostila de 2025 ainda descreve o JAK como opção para AR refratária aos biológicos.</div></div>
@@ -1287,5 +1306,36 @@ ul.bullets li b{color:var(--ink);font-weight:600}
 <a class="to-top" href="#" aria-label="Voltar ao topo">↑</a>
 <div class="watermark">@dr.lorencato · RD01 AR e Espondiloartrites v5.2</div>
 
-</body>
+<!--hp-f2--><script>(function(){var d=document,M=d.querySelector('main');if(!M)return;
+var SELF='RD01',HP=' CT01 CT02 CT03 CT04 CT05 CT06 CT08 CT10 CV01 CV03 CV04 CV05 CV06 CV07 CV08 EN01 EN02 EN03 EN04 EN06 EN07 GH01 GH02 GH03 GH05 GH06 GH07 GH08 GH09 GH10 GO01 GO02 GO03 GO04 GO09 GO10 GO11 GO12 GO13 GO14 HO01 HO02 HO03 HO04 HO05 HO06 II01 II02 II03 II04 II07 II08 NE01 NE02 NE03 NE04 NE05 NE06 NE07 NE08 NU01 NU02 NU03 NU04 NU05 OE01 OE02 PC01 PC02 PC03 PC04 PC05 PC06 PD01 PD02 PD03 PD04 PD05 PD06 PD07 PD08 PD09 PD10 RD01 RD02 RD03 RD04 RD05 RD07 RP01 RP02 RP03 RP04 ';
+var SK='A,H1,H2,H3,SCRIPT,STYLE,NAV,.card-num,.card-eyebrow,.sub-title,.disease-tag,.toc';
+var R=/\b(?:([A-H])(\d)?\.(\d{1,2}[a-c]?)|(CV|RP|GH|NE|EN|NU|HO|II|RD|GO|PD|PC|CT|OE)(\d\d))\b/g;
+function skip(n){for(var e=n.parentNode;e&&e!==M;e=e.parentNode)if(e.matches&&e.matches(SK))return 1;return 0}
+var w=d.createTreeWalker(M,4),t,L=[];while(t=w.nextNode())if(R.test(t.data)&&!skip(t))L.push(t);
+L.forEach(function(t){var s=t.data,f=d.createDocumentFragment(),i=0,m;R.lastIndex=0;
+while(m=R.exec(s)){var h=null;
+if(m[1]){var id=m[1].toLowerCase()+(m[2]?m[2]+'-':'')+m[3];if(d.getElementById(id))h='#'+id}
+else{var x=m[4]+m[5];if(x!==SELF&&HP.indexOf(' '+x+' ')>=0)h='../'+x+'/'+x+'.html'}
+if(!h)continue;f.appendChild(d.createTextNode(s.slice(i,m.index)));
+var a=d.createElement('a');a.href=h;a.className='xr';a.textContent=m[0];f.appendChild(a);i=R.lastIndex}
+if(i){f.appendChild(d.createTextNode(s.slice(i)));t.parentNode.replaceChild(f,t)}});
+function nz(s){return s.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'')}
+var q=d.querySelector('.hp-q'),n=d.querySelector('.hp-n'),it=M.querySelectorAll('.card,.pocket-card'),T;
+function clr(){M.querySelectorAll('.q-off').forEach(function(e){e.classList.remove('q-off')})}
+function run(){var v=nz(q.value.trim());clr();n.textContent='';if(v.length<2)return;var k=0;
+it.forEach(function(c){if(nz(c.textContent).indexOf(v)<0){c.classList.add('q-off');return}k++;
+var r=c.querySelectorAll('.stbl-row,.disease-row,.score-row'),h=[];r.forEach(function(x){if(nz(x.textContent).indexOf(v)>=0)h.push(x)});
+if(h.length)r.forEach(function(x){if(h.indexOf(x)<0)x.classList.add('q-off')});
+c.querySelectorAll('details').forEach(function(x){if(nz(x.textContent).indexOf(v)>=0)x.open=true})});
+M.querySelectorAll('section').forEach(function(s){if(!s.querySelector('.card:not(.q-off),.pocket-card:not(.q-off)'))s.classList.add('q-off')});
+n.textContent=k?k+' achado'+(k>1?'s':''):'nada'}
+if(q){q.addEventListener('input',function(){clearTimeout(T);T=setTimeout(run,180)});
+q.addEventListener('keydown',function(e){if(e.key==='Escape'){q.value='';run()}})}
+function tg(b,f){b.addEventListener('click',function(){var on=b.getAttribute('aria-pressed')!=='true';b.setAttribute('aria-pressed',on);f(on)})}
+var bd=d.querySelector('.hp-dz'),bo=d.querySelector('.hp-op');
+if(bd)tg(bd,function(on){d.body.classList.toggle('dz',on);if(on)d.getElementById('tratamento').scrollIntoView()});
+if(bo)tg(bo,function(on){M.querySelectorAll('details').forEach(function(x){x.open=on})});
+var P=[];addEventListener('beforeprint',function(){P=[];M.querySelectorAll('details:not([open])').forEach(function(x){P.push(x);x.open=true})});
+addEventListener('afterprint',function(){P.forEach(function(x){x.open=false})});
+})();</script><!--/hp-f2--></body>
 </html>
