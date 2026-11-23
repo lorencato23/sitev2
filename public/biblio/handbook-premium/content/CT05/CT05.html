@@ -1,0 +1,1377 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#0d1117">
+<title>Hérnias e Parede Abdominal · Pocket Handbook · Elite Edition</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700;9..40,800&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   MEDICAL HANDBOOK PREMIUM · ELITE EDITION · CSS FRAMEWORK
+   Copy this ENTIRE block verbatim into the <style> tag of the
+   output HTML. Do NOT modify design tokens, colors, or
+   typography — they are calibrated for legibility and print.
+============================================================ */
+:root{
+  --bg:#f1eee5;--bg-tint:#ebe8de;--paper:#ffffff;--paper-tint:#fbf9f3;
+  --ink:#0e1116;--ink-soft:#232830;--ink-mute:#545b69;--ink-faint:#8a91a0;--ink-ghost:#b8bdc7;
+  --line:#e2dfd5;--line-soft:#ece9df;--line-strong:#c9c5b8;
+  --c-prim:#0b5d4e;--c-clin:#1d4570;--c-diag:#5e2f78;--c-tx:#a8481a;--c-emerg:#a31b35;--c-pearl:#7a6014;
+  --ank-hy:#b88e0a;--ank-hy-bg:#fef4c8;--ank-dec:#1d4ea3;--ank-dec-bg:#dde7f8;
+  --ank-dgr:#a31b25;--ank-dgr-bg:#fadcdc;--ank-prl:#3e6a2e;--ank-prl-bg:#d8e6cf;
+  --ank-myt:#6a3a1a;--ank-myt-bg:#f0dec5;--ank-con:#5a4070;--ank-con-bg:#e3d6f0;
+  --ank-evo:#0d6373;--ank-evo-bg:#cde5e9;
+  --sh-sm:0 1px 2px rgba(14,17,22,.04),0 1px 1px rgba(14,17,22,.03);
+  --sh-md:0 6px 16px -8px rgba(14,17,22,.10),0 2px 4px rgba(14,17,22,.04);
+  --sh-lg:0 20px 40px -22px rgba(14,17,22,.18),0 4px 10px -4px rgba(14,17,22,.08);
+  --r:10px;--r-lg:14px;--r-xl:20px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;scroll-padding-top:120px}
+body{font-family:'DM Sans',system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.5;font-size:15px;letter-spacing:-.005em;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:-1;background:radial-gradient(900px 500px at -10% -5%,rgba(11,93,78,.04),transparent 60%),radial-gradient(800px 450px at 110% 10%,rgba(163,27,53,.035),transparent 55%)}
+a{color:inherit;text-decoration:none}
+
+/* FIXED HEADER */
+.header{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(13,17,23,.82);backdrop-filter:saturate(160%) blur(20px);-webkit-backdrop-filter:saturate(160%) blur(20px);border-bottom:1px solid rgba(255,255,255,.06)}
+.header-row{max-width:1080px;margin:0 auto;padding:10px 20px;display:flex;align-items:center;gap:14px;color:#f0eee5}
+.h-mark{width:30px;height:30px;border-radius:7px;background:linear-gradient(135deg,#d4b94a 0%,#a07f1a 100%);display:grid;place-items:center;font:800 13px/1 'DM Sans',system-ui,sans-serif;color:#1a1500;letter-spacing:-.04em;box-shadow:inset 0 1px 0 rgba(255,255,255,.3),0 1px 2px rgba(0,0,0,.4);flex-shrink:0}
+.h-titles{display:flex;flex-direction:column;line-height:1.15;min-width:0}
+.h-title{font-weight:700;font-size:14px;letter-spacing:-.02em}
+.h-sub{font-size:10.5px;color:#9fa298;font-weight:500;letter-spacing:.08em;text-transform:uppercase}
+.h-edition{margin-left:auto;font:500 10px/1 'DM Mono',monospace;color:#9fa298;letter-spacing:.05em;padding:5px 9px;border:1px solid rgba(255,255,255,.1);border-radius:999px;white-space:nowrap}
+.h-author{font:700 10.5px/1 'DM Mono',monospace;color:#d4b94a;letter-spacing:.04em;padding:6px 10px;border:1px solid rgba(212,185,74,.35);background:rgba(212,185,74,.08);border-radius:999px;white-space:nowrap;display:inline-flex;align-items:center;gap:6px}
+.h-author::before{content:"●";font-size:6px;color:#d4b94a}
+@media(max-width:560px){.h-edition{display:none}.h-author{margin-left:auto}}
+
+/* STICKY TOC */
+.toc{position:sticky;top:50px;z-index:90;background:rgba(241,238,229,.92);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}
+.toc-inner{max-width:1080px;margin:0 auto;padding:10px 16px;display:flex;gap:6px;overflow-x:auto;scrollbar-width:none;-ms-overflow-style:none}
+.toc-inner::-webkit-scrollbar{display:none}
+.toc-chip{flex:none;font:600 11px/1 'DM Sans',system-ui,sans-serif;letter-spacing:.06em;text-transform:uppercase;padding:7px 12px;background:var(--paper);border:1px solid var(--line);border-radius:999px;color:var(--ink-soft);transition:all .15s;white-space:nowrap;cursor:pointer}
+.toc-chip:hover{background:var(--paper-tint);border-color:var(--ink-faint);color:var(--ink)}
+.toc-chip-num{display:inline-block;font-family:'DM Mono',monospace;color:var(--ink-faint);margin-right:5px;font-weight:500;font-size:10px}
+
+/* LAYOUT */
+.wrap{max-width:1080px;margin:0 auto;padding:24px 20px 80px}
+.section{margin:48px 0 18px;padding-top:8px}
+.section:first-child{margin-top:14px}
+.section-eyebrow{font:700 10.5px/1 'DM Sans',system-ui,sans-serif;letter-spacing:.18em;text-transform:uppercase;color:var(--c-prim);margin-bottom:8px;display:flex;align-items:center;gap:10px}
+.section-eyebrow::before{content:"";width:24px;height:1.5px;background:var(--c-prim)}
+.section-title{font-size:26px;font-weight:700;letter-spacing:-.03em;line-height:1.1}
+.section-sub{margin-top:6px;font-size:13.5px;color:var(--ink-mute);max-width:680px}
+
+/* HERO */
+.hero{margin:20px 0 28px;padding:26px 28px;background:linear-gradient(180deg,#fdfcf6 0%,#f7f4e8 100%);border:1px solid var(--line);border-radius:var(--r-xl);box-shadow:var(--sh-md);position:relative;overflow:hidden}
+.hero::after{content:"";position:absolute;top:0;right:0;bottom:0;left:0;background:radial-gradient(400px 200px at 100% 0%,rgba(163,27,53,.06),transparent 60%),radial-gradient(360px 200px at 0% 100%,rgba(11,93,78,.05),transparent 60%);pointer-events:none}
+.hero-tag{font:700 10.5px/1 'DM Sans',system-ui,sans-serif;letter-spacing:.2em;text-transform:uppercase;color:var(--c-emerg);display:inline-flex;align-items:center;gap:8px;margin-bottom:10px}
+.hero-tag::before{content:"";width:18px;height:1.5px;background:currentColor}
+.hero h1{font-size:34px;font-weight:800;letter-spacing:-.035em;line-height:1.02;margin-bottom:8px}
+.hero h1 em{font-style:italic;font-weight:500;color:var(--ink-mute)}
+.hero-lead{font-size:14.5px;color:var(--ink-mute);max-width:660px;line-height:1.55}
+.hero-stamp{position:absolute;top:20px;right:22px;font:700 10.5px/1 'DM Mono',monospace;letter-spacing:.04em;padding:7px 11px 7px 18px;border:1.5px dashed rgba(163,27,53,.45);color:rgba(163,27,53,.9);border-radius:5px;background:rgba(255,255,255,.55);transform:rotate(-3deg);z-index:2;box-shadow:0 2px 6px rgba(163,27,53,.08)}
+.hero-stamp::before{content:"●";position:absolute;left:7px;top:50%;transform:translateY(-50%);color:rgba(163,27,53,.7);font-size:7px}
+.hero-sig{margin-top:14px;display:flex;align-items:center;gap:10px;font:600 11px/1 'DM Sans',system-ui,sans-serif;color:var(--ink-mute);letter-spacing:.04em}
+.hero-sig::before{content:"";flex:none;width:22px;height:1.5px;background:var(--c-emerg)}
+.hero-sig b{color:var(--c-emerg);font-weight:700;font-family:'DM Mono',monospace;letter-spacing:.02em}
+@media(max-width:560px){.hero{padding:22px 20px}.hero h1{font-size:26px}.section-title{font-size:22px}.hero-stamp{position:relative;top:auto;right:auto;display:inline-block;transform:none;margin-bottom:14px}}
+
+/* POCKET CARD 0 */
+.pocket{background:#0e1116;color:#f0eee5;border-radius:var(--r-xl);padding:24px 26px 26px;margin:0 0 28px;position:relative;overflow:hidden;box-shadow:var(--sh-lg)}
+.pocket::before{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(600px 300px at 100% 0%,rgba(212,185,74,.07),transparent 60%),radial-gradient(500px 280px at 0% 100%,rgba(163,27,53,.08),transparent 60%)}
+.pocket-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:18px;flex-wrap:wrap;position:relative}
+.pocket-eyebrow{font:700 10.5px/1 'DM Sans',system-ui,sans-serif;letter-spacing:.2em;text-transform:uppercase;color:#d4b94a;display:flex;align-items:center;gap:9px}
+.pocket-eyebrow::before{content:"●";color:#d4b94a;font-size:9px;animation:pulse 2.4s ease infinite}
+@keyframes pulse{50%{opacity:.4}}
+.pocket-title{font-size:22px;font-weight:700;letter-spacing:-.02em;line-height:1.15;color:#fff}
+.pocket-sub{font-size:12.5px;color:#9aa0a8;margin-top:2px}
+.pocket-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px;position:relative}
+.pocket-card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-left:3px solid var(--accent,#d4b94a);border-radius:var(--r);padding:12px 14px}
+.pocket-card .pc-trig{font:700 10px/1.1 'DM Sans',system-ui,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:var(--accent,#d4b94a);margin-bottom:6px;display:flex;align-items:center;gap:6px}
+.pocket-card .pc-trig::before{content:"";width:4px;height:4px;background:currentColor;border-radius:50%}
+.pocket-card .pc-act{font-size:13.5px;line-height:1.4;color:#dedfd5}
+.pocket-card .pc-act b{color:#fff;font-weight:600}
+.pocket-card.emerg{--accent:#ff8a96}.pocket-card.dec{--accent:#7cb0ff}.pocket-card.tx{--accent:#ffb085}.pocket-card.clin{--accent:#b0e0d4}
+
+/* LEGEND */
+.legend{background:var(--paper);border:1px solid var(--line);border-radius:var(--r-lg);padding:18px 20px;margin-bottom:28px;box-shadow:var(--sh-sm)}
+.lg-title{font:700 10.5px/1 'DM Sans',system-ui,sans-serif;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-faint);margin-bottom:12px}
+.lg-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:8px 14px}
+.lg-item{display:flex;align-items:center;gap:9px;font-size:12.5px;color:var(--ink-soft)}
+.dot{width:9px;height:9px;border-radius:50%;flex-shrink:0;box-shadow:0 0 0 2px var(--paper),0 0 0 3px currentColor}
+.dot.c1{color:var(--c-prim);background:var(--c-prim)}.dot.c2{color:var(--c-clin);background:var(--c-clin)}.dot.c3{color:var(--c-diag);background:var(--c-diag)}.dot.c4{color:var(--c-tx);background:var(--c-tx)}.dot.c5{color:var(--c-emerg);background:var(--c-emerg)}.dot.c6{color:var(--c-pearl);background:var(--c-pearl)}
+.lg-divider{height:1px;background:var(--line-soft);margin:14px 0}
+.lg-anchors{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:8px}
+.ank{display:inline-flex;align-items:center;gap:5px;font:700 10.5px/1 'DM Sans',system-ui,sans-serif;letter-spacing:.12em;text-transform:uppercase;padding:4px 8px 4px 7px;border-radius:999px;border:1px solid;vertical-align:middle;white-space:nowrap}
+.ank::before{content:"";width:4px;height:4px;border-radius:50%;background:currentColor}
+.ank-hy{color:var(--ank-hy);background:var(--ank-hy-bg);border-color:#e5cd72}
+.ank-dec{color:var(--ank-dec);background:var(--ank-dec-bg);border-color:#9fbae6}
+.ank-dgr{color:var(--ank-dgr);background:var(--ank-dgr-bg);border-color:#e29ca0}
+.ank-prl{color:var(--ank-prl);background:var(--ank-prl-bg);border-color:#a8c298}
+.ank-myt{color:var(--ank-myt);background:var(--ank-myt-bg);border-color:#d0b181}
+.ank-con{color:var(--ank-con);background:var(--ank-con-bg);border-color:#bba7d3}
+.ank-evo{color:var(--ank-evo);background:var(--ank-evo-bg);border-color:#8fc1c9}
+.lg-explain{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:6px 14px;font-size:11.5px;color:var(--ink-mute);margin-top:10px}
+.lg-explain b{font-weight:700}
+.lg-explain .ehy b{color:var(--ank-hy)}.lg-explain .edec b{color:var(--ank-dec)}.lg-explain .edgr b{color:var(--ank-dgr)}.lg-explain .eprl b{color:var(--ank-prl)}.lg-explain .emyt b{color:var(--ank-myt)}.lg-explain .econ b{color:var(--ank-con)}.lg-explain .eevo b{color:var(--ank-evo)}
+
+/* EVIDENCE CHIPS */
+.ev{display:inline-flex;align-items:center;font:600 10.5px/1 'DM Mono',monospace;letter-spacing:.04em;padding:3px 6px 2px;border-radius:4px;background:#eeebde;color:var(--ink-soft);border:1px solid var(--line);vertical-align:middle;margin-left:3px}
+.ev-acr{background:#fadcdc;color:#a31b25;border-color:#e29ca0}
+.ev-eular{background:#dde7f8;color:#1d4ea3;border-color:#9fbae6}
+.ev-sbr{background:#e3d6f0;color:#5a4070;border-color:#bba7d3}
+.ev-nice{background:#cde5e9;color:#0d6373;border-color:#8fc1c9}
+.ev-expert{background:#eeebde;color:#7a6014;border-color:#d0b181}
+.ev-cochrane{background:#d8e6cf;color:#3e6a2e;border-color:#a8c298}
+
+/* CARD */
+.card{background:var(--paper);border:1px solid var(--line);border-radius:var(--r-lg);margin-bottom:22px;box-shadow:var(--sh-md);overflow:hidden;break-inside:avoid}
+.card-head{padding:18px 22px 15px;border-bottom:1px solid var(--line-soft);position:relative;background:linear-gradient(180deg,#fcfaf2 0%,#ffffff 100%)}
+.card-head::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--accent,var(--c-prim))}
+.card-eyebrow{font:700 10px/1 'DM Sans',system-ui,sans-serif;letter-spacing:.16em;text-transform:uppercase;color:var(--accent,var(--c-prim));margin-bottom:5px;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.card-num{font-family:'DM Mono',monospace;font-weight:500;color:var(--ink-faint);font-size:10.5px;letter-spacing:0}
+.card h3{font-size:21px;font-weight:700;letter-spacing:-.025em;color:var(--ink);line-height:1.15;display:flex;align-items:center;gap:9px;flex-wrap:wrap}
+.card-sub{margin-top:6px;font-size:13px;color:var(--ink-mute)}
+.card-body{padding:20px 22px 24px}
+.card.prim{--accent:var(--c-prim)}.card.clin{--accent:var(--c-clin)}.card.diag{--accent:var(--c-diag)}.card.tx{--accent:var(--c-tx)}.card.emerg{--accent:var(--c-emerg)}.card.pearl{--accent:var(--c-pearl)}
+@media(max-width:560px){.card-head{padding:16px 18px 14px}.card-body{padding:18px 18px 20px}.card h3{font-size:18px}}
+
+/* QUICK VIEW */
+.quick{background:var(--paper-tint);border:1px solid var(--line);border-left:3px solid var(--accent,var(--c-prim));border-radius:var(--r);padding:13px 16px;margin:0 0 16px}
+.quick-label{font:700 10.5px/1 'DM Sans',system-ui,sans-serif;letter-spacing:.16em;text-transform:uppercase;color:var(--accent,var(--c-prim));margin-bottom:6px}
+.quick-body{font-size:13.5px;line-height:1.45;color:var(--ink-soft)}
+.quick-body b{color:var(--ink);font-weight:600}
+
+/* SUB-TITLE */
+.sub-title{font:700 10.5px/1 'DM Sans',system-ui,sans-serif;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-soft);margin:18px 0 10px;display:flex;align-items:center;gap:9px;border-bottom:1px dashed var(--line);padding-bottom:6px}
+.sub-title::before{content:"";width:4px;height:4px;border-radius:50%;background:var(--accent,var(--ink-soft))}
+.sub-title:first-child{margin-top:0}
+
+/* TEXT */
+p{color:var(--ink-soft);margin-bottom:8px;font-size:14px;line-height:1.5}
+p:last-child{margin-bottom:0}
+strong{color:var(--ink);font-weight:600}
+ul.bullets{list-style:none;padding:0;margin:0 0 10px}
+ul.bullets li{position:relative;padding:5px 0 5px 20px;font-size:13.5px;line-height:1.5;color:var(--ink-soft);border-bottom:1px dashed var(--line-soft)}
+ul.bullets li:last-child{border-bottom:none}
+ul.bullets li::before{content:"";position:absolute;left:5px;top:13px;width:4px;height:4px;border-radius:50%;background:var(--accent,var(--ink-mute))}
+ul.bullets li b{color:var(--ink);font-weight:600}
+
+/* DISEASE BOX */
+.disease{border:1px solid var(--line);border-radius:var(--r);margin:14px 0;overflow:hidden;background:var(--paper)}
+.disease-head{padding:12px 16px;background:linear-gradient(180deg,#faf7eb 0%,#f1eddc 100%);border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap}
+.disease-name{font-weight:700;color:var(--ink);font-size:14.5px;letter-spacing:-.015em}
+.disease-tag{font:600 10px/1 'DM Sans',system-ui,sans-serif;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-mute)}
+.disease-body{padding:14px 16px}
+.disease-rows{display:grid;gap:0}
+.disease-row{display:grid;grid-template-columns:130px 1fr;gap:12px;padding:8px 0;border-bottom:1px dashed var(--line-soft)}
+.disease-row:last-child{border-bottom:none;padding-bottom:0}
+.disease-row:first-child{padding-top:0}
+.disease-row .k{font:700 10px/1.2 'DM Sans',system-ui,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:var(--accent,var(--ink-faint));padding-top:2px}
+.disease-row .v{font-size:13.5px;color:var(--ink-soft);line-height:1.5}
+.disease-row .v b{color:var(--ink)}
+@media(max-width:560px){.disease-row{grid-template-columns:1fr;gap:3px;padding:6px 0 8px}.disease-row .k{padding-top:0}}
+
+/* DEEP DIVE */
+.deep{margin:16px 0 6px;border:1px solid var(--line);border-radius:var(--r);background:linear-gradient(180deg,#fdfcf6 0%,#f9f6ea 100%);overflow:hidden}
+.deep>summary{list-style:none;cursor:pointer;padding:11px 16px;display:flex;align-items:center;justify-content:space-between;font:700 11px/1 'DM Sans',system-ui,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft);user-select:none;transition:background .15s}
+.deep>summary::-webkit-details-marker{display:none}
+.deep>summary::after{content:"+";font-size:18px;font-weight:600;color:var(--ink-faint);transition:transform .2s;font-family:'DM Mono',monospace}
+.deep[open]>summary::after{transform:rotate(45deg)}
+.deep>summary:hover{background:rgba(0,0,0,.02)}
+.deep-content{padding:14px 16px 16px;border-top:1px dashed var(--line)}
+.deep-content p{font-size:13px;color:var(--ink-mute);line-height:1.55}
+.deep-content p b{color:var(--ink-soft)}
+
+/* MNEMONIC */
+.mnemo{background:var(--paper-tint);border:1px solid var(--line);border-radius:var(--r);padding:14px 16px;margin:14px 0}
+.mnemo-title{font:700 10.5px/1 'DM Sans',system-ui,sans-serif;letter-spacing:.16em;text-transform:uppercase;color:var(--c-pearl);margin-bottom:10px;display:flex;align-items:center;gap:8px}
+.mnemo-title b{background:var(--ink);color:#fff;padding:3px 7px;border-radius:4px;font-size:10px;letter-spacing:.06em}
+.mnemo-grid{display:grid;gap:5px}
+.mnemo-row{display:grid;grid-template-columns:28px 1fr;gap:10px;align-items:baseline;font-size:13px;color:var(--ink-soft);padding:3px 0}
+.mnemo-letter{display:grid;place-items:center;width:24px;height:24px;background:var(--ink);color:#fff;border-radius:5px;font:800 12px/1 'DM Sans',system-ui,sans-serif;letter-spacing:-.02em}
+.mnemo-row b{color:var(--ink);font-weight:600}
+.mnemo-row em{font-style:italic;color:var(--ink-mute);font-size:12px}
+
+/* SCORE BOX */
+.score{border:1px solid var(--line);border-radius:var(--r);margin:14px 0;background:var(--paper);overflow:hidden}
+.score-head{padding:11px 14px;background:linear-gradient(180deg,#f5f1e0 0%,#ede9d6 100%);border-bottom:1px solid var(--line)}
+.score-name{font:700 13px/1.2 'DM Sans',system-ui,sans-serif;color:var(--ink);letter-spacing:-.01em}
+.score-purpose{font:500 10.5px/1.2 'DM Sans',system-ui,sans-serif;color:var(--ink-mute);letter-spacing:.06em;text-transform:uppercase;margin-top:3px}
+.score-rows{display:grid;gap:0}
+.score-row{display:grid;grid-template-columns:90px 1fr;gap:12px;align-items:start;padding:9px 14px;border-bottom:1px dashed var(--line-soft);font-size:13px}
+.score-row:last-child{border-bottom:none}
+.score-grade{font:800 12px/1.2 'DM Mono',monospace;color:var(--c-emerg);letter-spacing:-.01em}
+.score-desc{color:var(--ink-soft);line-height:1.45}
+.score-desc b{color:var(--ink)}
+
+/* STACKED TABLE */
+.stbl{margin:14px 0;border:1px solid var(--line);border-radius:var(--r);background:var(--paper);overflow:hidden}
+.stbl-head,.stbl-row{display:grid;gap:14px;padding:10px 14px;align-items:start}
+.stbl-head{background:#faf7eb;border-bottom:2px solid var(--line);font:700 10.5px/1 'DM Sans',system-ui,sans-serif;letter-spacing:.1em;text-transform:uppercase;color:var(--ink)}
+.stbl-row{border-bottom:1px solid var(--line-soft);font-size:13px;color:var(--ink-soft);line-height:1.5}
+.stbl-row:last-child{border-bottom:none}
+.stbl-row:nth-child(even){background:#fcfaf2}
+.stbl-row b{color:var(--ink);font-weight:600}
+.stbl-row .col1{font-weight:600;color:var(--ink)}
+.stbl-2{grid-template-columns:1fr 2fr}
+.stbl-3{grid-template-columns:1fr 1.3fr 1.5fr}
+.stbl-4{grid-template-columns:1.2fr 1fr 1fr 1.2fr}
+@media(max-width:680px){
+  .stbl-head{display:none}
+  .stbl-row{grid-template-columns:1fr !important;gap:12px;padding:14px 16px}
+  .stbl-row .col{display:block;min-width:0;word-wrap:break-word;overflow-wrap:anywhere}
+  .stbl-row .col::before{content:attr(data-l);display:block;font:700 10.5px/1.3 'DM Sans',system-ui,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-mute);margin-bottom:4px}
+  .stbl-row .col1{font-weight:700;font-size:15px;padding-bottom:8px;margin-bottom:6px;border-bottom:1px dashed var(--line)}
+  .stbl-row .col1::before{display:none}
+}
+
+/* CALLOUT BOXES */
+.box{border-radius:var(--r);padding:14px 16px;margin:14px 0;position:relative;border:1px solid}
+.box-label{position:absolute;top:-9px;left:14px;font:700 10.5px/1 'DM Sans',system-ui,sans-serif;letter-spacing:.16em;text-transform:uppercase;padding:3px 9px;border-radius:999px;color:#fff}
+.box-title{font-weight:700;color:var(--ink);font-size:14px;margin:2px 0 6px}
+.box-body{font-size:13.5px;line-height:1.5;color:var(--ink-soft)}
+.box-body b{color:var(--ink)}
+.box-body ul{list-style:none;padding:0;margin:4px 0 0}
+.box-body ul li{position:relative;padding:3px 0 3px 20px}
+.box-body ul li::before{content:"→";position:absolute;left:0;top:3px;font-weight:700;color:var(--bx-color)}
+.box.decision{background:#f1f5fc;border-color:#c4d3eb;--bx-color:var(--ank-dec)}.box.decision .box-label{background:var(--ank-dec)}
+.box.danger{background:#fbf0f0;border-color:#e5c2c2;--bx-color:var(--ank-dgr)}.box.danger .box-label{background:var(--ank-dgr)}.box.danger .box-body b{color:var(--ank-dgr)}
+.box.pearl{background:#f1f7ed;border-color:#c1d5b3;--bx-color:var(--ank-prl)}.box.pearl .box-label{background:var(--ank-prl)}
+.box.hy{background:#fcf6dd;border-color:#e3cf78;--bx-color:var(--ank-hy)}.box.hy .box-label{background:var(--ank-hy)}
+.box.myth{background:#f8eed8;border-color:#d0b181;--bx-color:var(--ank-myt)}.box.myth .box-label{background:var(--ank-myt)}
+.box.controversy{background:#f1e9f6;border-color:#bba7d3;--bx-color:var(--ank-con)}.box.controversy .box-label{background:var(--ank-con)}
+.box.evolving{background:#dff0f2;border-color:#8fc1c9;--bx-color:var(--ank-evo)}.box.evolving .box-label{background:var(--ank-evo)}
+
+/* ALGORITHM TREE */
+.algo{background:linear-gradient(180deg,#fcfaf2 0%,#f5f0dc 100%);border:1px solid var(--line-strong);border-radius:var(--r-lg);padding:18px;margin:14px 0;overflow-x:auto}
+.tree{font-size:13px}
+.tree-line{padding:6px 0}
+.tree-node{display:inline-block;padding:8px 12px;background:var(--paper);border:1.5px solid var(--ink-soft);border-radius:7px;font-weight:600;color:var(--ink);font-size:12.5px;box-shadow:var(--sh-sm)}
+.tree-node.start{background:var(--ink);color:#fff;border-color:var(--ink)}
+.tree-node.dec{background:#fff7d6;border-color:#e3cf78;color:#6b520a}
+.tree-node.dx{background:#dde7f8;border-color:#9fbae6;color:#1d4ea3}
+.tree-node.dgr{background:#fadcdc;border-color:#e29ca0;color:#a31b25}
+.tree-node.action{background:#d8e6cf;border-color:#a8c298;color:#3e6a2e}
+.tree-branch{margin-left:14px;border-left:1.5px dashed #b8b094;padding:6px 0 6px 18px;margin-top:6px;margin-bottom:2px;position:relative}
+.tree-branch::before{content:"";position:absolute;left:-1.5px;top:-4px;width:14px;height:14px;border-left:1.5px solid #b8b094;border-bottom:1.5px solid #b8b094;border-radius:0 0 0 6px}
+.tree-label{display:inline-block;font:700 10.5px/1 'DM Sans',system-ui,sans-serif;letter-spacing:.12em;text-transform:uppercase;padding:3px 7px;border-radius:4px;margin-bottom:5px}
+.tree-label.yes{background:#fadcdc;color:#a31b25}.tree-label.no{background:#d8e6cf;color:#3e6a2e}
+
+/* FOOTER */
+.foot{margin-top:48px;padding-top:22px;border-top:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;font-size:11px;color:var(--ink-faint);letter-spacing:.04em;flex-wrap:wrap;gap:8px}
+.foot-mono{font-family:'DM Mono',monospace}
+.foot-author{font:800 14px/1.1 'DM Mono',monospace;color:var(--ink);letter-spacing:.02em;margin-bottom:3px}
+.foot-meta{font:500 11px/1.3 'DM Sans',system-ui,sans-serif;color:var(--ink-faint);letter-spacing:.04em}
+
+/* WATERMARK */
+.watermark{position:fixed;bottom:calc(14px + env(safe-area-inset-bottom,0px));right:calc(14px + env(safe-area-inset-right,0px));font:600 10px/1 'DM Mono',monospace;letter-spacing:.04em;color:rgba(14,17,22,.55);background:rgba(255,255,255,.85);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);padding:6px 10px;border-radius:99px;border:1px solid rgba(14,17,22,.1);box-shadow:0 2px 8px rgba(14,17,22,.06);z-index:50;pointer-events:none;user-select:none}
+@media(max-width:560px){.watermark{bottom:calc(10px + env(safe-area-inset-bottom,0px));right:calc(10px + env(safe-area-inset-right,0px));font-size:9px;padding:5px 8px}}
+
+/* PRINT */
+@media print{
+  body{background:#fff;font-size:10.5pt}
+  body::before{display:none}
+  .header,.toc{position:static;background:#0e1116;color:#fff}
+  .wrap{padding:14px;max-width:100%}
+  .card,.hero,.legend,.pocket{box-shadow:none !important;break-inside:avoid}
+  .hero::after,.pocket::before{display:none}
+  .pocket{background:#1a1d24;color:#f0eee5}
+  .ank,.box,.disease,.score,.algo,.stbl,.deep,.mnemo,.quick{box-shadow:none !important;break-inside:avoid}
+  .deep:not([open]) .deep-content{display:block}
+  .deep>summary::after{display:none}
+  .watermark{position:fixed;bottom:8mm;right:8mm;background:none;border:none;color:rgba(0,0,0,.5)}
+  .hero-stamp{transform:none;position:absolute}
+}
+
+/* === v5.2.1 · fase 1 (review de estrutura 2026-11-17) === */
+:root{--ink-faint:#6b7280;--ank-hy:#8a6a00}
+
+/* cabeçalho sempre em uma linha: o índice fixo (top:50px) deixa de ficar coberto */
+.header-row{height:50px;padding-top:0;padding-bottom:0}
+.h-titles{flex:1 1 auto}
+.h-title,.h-sub{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.h-author,.h-edition,.h-mark{flex:none}
+.h-edition{margin-left:0}
+
+/* árvores: sim/não neutros; a cor fica no nó de destino (.dgr, .action, .dx, .dec) */
+.tree-label{font-size:11px;letter-spacing:.08em}
+.tree-label.yes{background:var(--ink-soft);color:#fff}
+.tree-label.no{background:var(--paper);color:var(--ink-soft);box-shadow:inset 0 0 0 1px var(--line-strong)}
+
+/* endereços longos da bibliografia não alargam a página */
+.foot-meta{overflow-wrap:anywhere}
+
+/* voltar ao topo */
+.to-top{position:fixed;left:calc(14px + env(safe-area-inset-left,0px));bottom:calc(14px + env(safe-area-inset-bottom,0px));width:38px;height:38px;display:grid;place-items:center;border-radius:50%;background:rgba(14,17,22,.82);color:#f0eee5;font:700 17px/1 'DM Sans',system-ui,sans-serif;z-index:50;box-shadow:var(--sh-md)}
+.to-top:hover{background:#0e1116}
+
+@media(max-width:680px){
+  .header-row{padding-left:14px;padding-right:14px;gap:10px}
+  .h-sub{display:none}
+}
+@media(max-width:560px){
+  .wrap{padding-top:14px}
+  .hero{margin:0 0 18px;padding:16px 16px 18px}
+  .hero h1{font-size:23px}
+  .hero-lead{font-size:13.5px;line-height:1.5}
+  .hero-stamp{margin-bottom:10px}
+  .watermark{display:none}
+  .to-top{left:auto;right:calc(12px + env(safe-area-inset-right,0px));bottom:calc(12px + env(safe-area-inset-bottom,0px))}
+  .tree-branch{margin-left:3px;padding-left:11px}
+  .tree-node{display:block}
+  .score-grade{overflow-wrap:anywhere;hyphens:auto}
+}
+
+@media print{
+  .header,.toc,.watermark,.to-top{display:none !important}
+  .wrap{padding:0}
+  .section{margin:22px 0 10px}
+  .card,.hero,.legend,.pocket,.disease,.score,.algo,.stbl,.deep,.mnemo{break-inside:auto}
+  .stbl-row,.disease-row,.score-row,.mnemo-row,.box,.quick,.pocket-card,.tree-node,.ank{break-inside:avoid}
+  .section-eyebrow,.section-title,.section-sub,.card-head,.disease-head,.stbl-head,.sub-title,.box-title,.deep>summary{break-after:avoid}
+  .deep::details-content{content-visibility:visible;display:block}
+  .pocket{background:#fff;color:#0e1116;border:1.5px solid #0e1116}
+  .pocket-title,.pocket .pc-act b{color:#0e1116}
+  .pocket .pc-act{color:#232830}
+  .pocket-sub{color:#545b69}
+  .pocket-eyebrow,.pocket-eyebrow::before{color:#7a6014}
+  .pocket .pocket-card{background:#fff;border-color:#c9c5b8;border-left-color:var(--accent);--accent:#7a6014}
+  .pocket .pocket-card.emerg{--accent:#a31b25}
+  .pocket .pocket-card.dec{--accent:#1d4ea3}
+  .pocket .pocket-card.tx{--accent:#a8481a}
+  .pocket .pocket-card.clin{--accent:#0b5d4e}
+}
+</style>
+</head>
+<body>
+<header class="header">
+  <div class="header-row">
+    <div class="h-mark">H</div>
+    <div class="h-titles">
+      <div class="h-title">Hérnias e Parede Abdominal · Pocket Handbook</div>
+      <div class="h-sub">Elite edition · Cirurgia geral · CT05</div>
+    </div>
+    <div class="h-author">@dr.lorencato</div>
+    <div class="h-edition">v5.2</div>
+  </div>
+</header>
+
+<nav class="toc">
+  <div class="toc-inner">
+    <a href="#pocket"      class="toc-chip"><span class="toc-chip-num">0</span>Pocket</a>
+    <a href="#redflags"    class="toc-chip"><span class="toc-chip-num">A</span>Red Flags</a>
+    <a href="#approach"    class="toc-chip"><span class="toc-chip-num">B</span>Apresentação</a>
+    <a href="#primarias"   class="toc-chip"><span class="toc-chip-num">C</span>Entidades</a>
+    <a href="#secundarias" class="toc-chip"><span class="toc-chip-num">D</span>Secundárias</a>
+    <a href="#algoritmo"   class="toc-chip"><span class="toc-chip-num">E</span>Algoritmo</a>
+    <a href="#tratamento"  class="toc-chip"><span class="toc-chip-num">F</span>Tratamento</a>
+    <a href="#pitfalls"    class="toc-chip"><span class="toc-chip-num">G</span>Pitfalls</a>
+    <a href="#pearls"      class="toc-chip"><span class="toc-chip-num">H</span>Pearls</a>
+  </div>
+</nav>
+
+<main>
+<div class="wrap">
+
+<div class="hero">
+  <div class="hero-stamp">@dr.lorencato</div>
+  <div class="hero-tag">Cirurgia geral · Parede abdominal</div>
+  <h1>Hérnias e Parede Abdominal<br><em>Entender a hérnia é entender a anatomia: onde sai, o que encarcera, quando operar</em></h1>
+  <p class="hero-lead">Do canal inguinal e do triângulo de Hesselbach à hérnia direta e indireta, à classificação de Nyhus e da EHS, à conduta expectante no homem oligossintomático, às técnicas (Lichtenstein, Shouldice, TEP e TAPP), à dor crônica pós-herniorrafia e à recidiva; da hérnia femoral (sempre operar) à umbilical, epigástrica, de Spiegel e incisional (planos da tela, separação de componentes); da hérnia encarcerada e estrangulada (taxe, cirurgia de urgência, tela em campo contaminado) às hérnias de Richter, Littré, Amyand e internas; da criança (inguinal sem demora, umbilical com espera) à diástase dos retos.</p>
+  <div class="hero-sig">Compilação clínica por <b>@dr.lorencato</b> · Elite Edition v5.2 · Cirurgia geral · rascunho educacional em revisão clínica (clinical_review)</div>
+</div>
+
+<div id="pocket" class="pocket">
+  <div class="pocket-head">
+    <div>
+      <div class="pocket-eyebrow">Pocket Card 0 · 5 segundos</div>
+      <div class="pocket-title">Decisões Críticas — Hérnias da Parede Abdominal</div>
+      <div class="pocket-sub">Ambulatório de cirurgia · PS · Centro cirúrgico · obstrução intestinal no GH06 · pré-operatório no CT06</div>
+    </div>
+  </div>
+  <div class="pocket-grid">
+    <div class="pocket-card emerg">
+      <div class="pc-trig">Hérnia irredutível com dor intensa, hiperemia, febre, taquicardia ou lactato alto</div>
+      <div class="pc-act"><b>Estrangulamento até prova em contrário:</b> sem taxe, jejum, acesso, analgesia e antibiótico, <b>cirurgia imediata</b>. Cada hora de atraso aumenta ressecção intestinal e mortalidade (WSES, HerniaSurge).</div>
+    </div>
+    <div class="pocket-card emerg">
+      <div class="pc-trig">Vômitos e distensão com cicatriz de cirurgia prévia ou volume na virilha</div>
+      <div class="pc-act"><b>Examine todos os orifícios herniários</b> (virilhas, umbigo, linha média, cicatrizes) antes de pedir imagem: hérnia estrangulada é causa clássica de obstrução de delgado (GH06).</div>
+    </div>
+    <div class="pocket-card emerg">
+      <div class="pc-trig">Abaulamento pequeno e doloroso abaixo do ligamento inguinal, sobretudo em mulher idosa</div>
+      <div class="pc-act"><b>Hérnia femoral (e Richter):</b> encarcera e estrangula com mais frequência, e pode ocorrer sem obstrução. Operar sempre, e em urgência se encarcerada.</div>
+    </div>
+    <div class="pocket-card dec">
+      <div class="pc-trig">Homem com hérnia inguinal oligossintomática ou assintomática</div>
+      <div class="pc-act"><b>Conduta expectante é segura</b> (HerniaSurge, SBH): acidente herniário é raro (0,2 por 100 pessoas-ano), mas cerca de 68% operam em 10 anos, em geral por dor. Opere se sintomático e discuta o seguimento.</div>
+    </div>
+    <div class="pocket-card dec">
+      <div class="pc-trig">Mulher com hérnia na virilha, sintomática ou não</div>
+      <div class="pc-act"><b>Operar, de preferência por via endoscópica (TAPP ou TEP):</b> a hérnia femoral é frequente e passa despercebida na via anterior (~40% das reoperações). Gestante: observar, é quase sempre varizes do ligamento redondo.</div>
+    </div>
+    <div class="pocket-card dec">
+      <div class="pc-trig">Hérnia incisional, defeito de 1 a 10 cm ou mais</div>
+      <div class="pc-act"><b>Tela sempre; plano retromuscular (sublay)</b>, fechando o defeito e sem ponte (EHS 2023). Pré-otimize IMC, glicemia e tabagismo. Defeito &gt;8 cm: planeje separação de componentes.</div>
+    </div>
+    <div class="pocket-card tx">
+      <div class="pc-trig">Reparo eletivo inguinal com tela</div>
+      <div class="pc-act"><b>Lichtenstein</b> (aberto) ou <b>TEP/TAPP</b> (endoscópico); <b>Shouldice</b> se não usar tela. Anestesia local com infiltração se o cirurgião domina. Antibiótico de rotina não é consenso: <b>cefazolina 2 g IV</b> em ASA III–IV ou ambiente de risco.</div>
+    </div>
+    <div class="pocket-card tx">
+      <div class="pc-trig">Hérnia estrangulada com ressecção intestinal</div>
+      <div class="pc-act"><b>Campo limpo-contaminado: tela sintética pode ser usada; contaminado ou sujo: sutura (&lt;3 cm) ou tela biológica</b> (WSES 2017). Antibiótico 48 h; peritonite: <b>ceftriaxona 2 g + metronidazol 500 mg 8/8 h</b>, como no II03.</div>
+    </div>
+    <div class="pocket-card tx">
+      <div class="pc-trig">Dor persistente depois da herniorrafia</div>
+      <div class="pc-act"><b>Mapeie o dermátomo</b>; analgesia multimodal e bloqueio nervoso diagnóstico e terapêutico; neurectomia com troca da tela só depois de ≥6 meses e de falha do tratamento clínico.</div>
+    </div>
+    <div class="pocket-card clin">
+      <div class="pc-trig">Direta ou indireta?</div>
+      <div class="pc-act"><b>Direta:</b> medial aos vasos epigástricos inferiores, dentro do Hesselbach, adquirida. <b>Indireta:</b> lateral, pelo anel interno, congênita (conduto peritoneovaginal), a mais comum em ambos os sexos.</div>
+    </div>
+    <div class="pocket-card clin">
+      <div class="pc-trig">Criança com hérnia inguinal</div>
+      <div class="pc-act"><b>Operar sem demora</b> (risco de encarceramento de 15–30%, sobretudo no 1º ano). Encarcerada sem sinais de sofrimento: redução manual suave e cirurgia na mesma internação. <b>Umbilical:</b> esperar até 4–5 anos.</div>
+    </div>
+    <div class="pocket-card clin">
+      <div class="pc-trig">Hérnia umbilical em cirrótico com ascite</div>
+      <div class="pc-act"><b>Não deixe romper:</b> pele fina, bolha ou escape de líquido é indicação imediata de reparo, com ascite controlada (GH10). Complicada, a mortalidade é alta; programe o reparo antes.</div>
+    </div>
+  </div>
+</div>
+
+<div class="legend">
+  <div class="lg-title">Sistema de legendas</div>
+  <div class="lg-grid">
+    <div class="lg-item"><span class="dot c1"></span> Fisiopatologia / Classificação</div>
+    <div class="lg-item"><span class="dot c2"></span> Clínica / Apresentação</div>
+    <div class="lg-item"><span class="dot c3"></span> Diagnóstico / Exames</div>
+    <div class="lg-item"><span class="dot c4"></span> Tratamento / Conduta</div>
+    <div class="lg-item"><span class="dot c5"></span> Emergências / Red Flags</div>
+    <div class="lg-item"><span class="dot c6"></span> Nuances / Pearls</div>
+  </div>
+  <div class="lg-divider"></div>
+  <div class="lg-anchors">
+    <span class="ank ank-hy">HIGH-YIELD</span>
+    <span class="ank ank-dec">DECISION</span>
+    <span class="ank ank-dgr">DANGER</span>
+    <span class="ank ank-prl">PEARL</span>
+    <span class="ank ank-myt">MYTH</span>
+    <span class="ank ank-con">CONTROVERSY</span>
+    <span class="ank ank-evo">EVOLVING</span>
+  </div>
+  <div class="lg-explain">
+    <div class="ehy"><b>HIGH-YIELD</b> — prova/prática frequente</div>
+    <div class="edec"><b>DECISION</b> — muda a conduta</div>
+    <div class="edgr"><b>DANGER</b> — erro grave / risco crítico</div>
+    <div class="eprl"><b>PEARL</b> — nuance de especialista</div>
+    <div class="emyt"><b>MYTH</b> — mito vivo na prática</div>
+    <div class="econ"><b>CONTROVERSY</b> — debate sem consenso</div>
+    <div class="eevo"><b>EVOLVING</b> — mudança recente</div>
+  </div>
+</div>
+
+<section id="redflags">
+  <div class="section">
+    <div class="section-eyebrow"><span>A</span> Red Flags</div>
+    <div class="section-title">A hérnia mata pela isquemia que ninguém procurou</div>
+    <div class="section-sub">O volume da hérnia não prevê o risco: o colo estreito (femoral, inguinal pequena, Richter) estrangula. Cada linha abaixo é sinal, suspeita e conduta imediata.</div>
+  </div>
+
+  <div class="card emerg">
+    <div class="card-head">
+      <div class="card-eyebrow"><span class="card-num">A.1</span> Emergências herniárias</div>
+      <h3>Encarcerada ou estrangulada: o sinal que tira a hérnia do ambulatório <span class="ank ank-dgr">DANGER</span></h3>
+    </div>
+    <div class="card-body">
+      <div class="mnemo">
+        <div class="mnemo-title"><b>ISQUEMIA</b> — sinais de que a hérnia encarcerada já sofre: operar sem tentar a taxe</div>
+        <div class="mnemo-grid">
+          <div class="mnemo-row"><span class="mnemo-letter">I</span><span><b>Irredutível e dolorosa</b> · início agudo, quase sempre depois de esforço (aumento súbito da pressão intra-abdominal)</span></div>
+          <div class="mnemo-row"><span class="mnemo-letter">S</span><span><b>SIRS</b> · febre, taquicardia, leucocitose; rigidez da parede é indicador clássico</span></div>
+          <div class="mnemo-row"><span class="mnemo-letter">Q</span><span><b>Queda do estado geral</b> · hipotensão, prostração, dor abdominal intensa à distância da hérnia</span></div>
+          <div class="mnemo-row"><span class="mnemo-letter">U</span><span><b>Úlcera ou hiperemia da pele</b> · sinais flogísticos sobre o saco, cianose, crepitação</span></div>
+          <div class="mnemo-row"><span class="mnemo-letter">E</span><span><b>Elevação de lactato</b> · também CPK e D-dímero (WSES 2017: preditores; HerniaSurge 2023: pouco específicos, valem junto da clínica)</span></div>
+          <div class="mnemo-row"><span class="mnemo-letter">M</span><span><b>Massa tensa e endurecida</b> · sem impulso à tosse, dolorosa à palpação suave</span></div>
+          <div class="mnemo-row"><span class="mnemo-letter">I</span><span><b>Imagem de sofrimento</b> · TC com redução do realce da parede, líquido no saco, pneumatose, mesentério congesto</span></div>
+          <div class="mnemo-row"><span class="mnemo-letter">A</span><span><b>Abdome obstruído</b> · vômitos, distensão, parada de gases e fezes (ausente na Richter e na Littré)</span></div>
+        </div>
+      </div>
+
+      <div class="sub-title">Sinal → suspeita → conduta imediata</div>
+      <div class="stbl stbl-3">
+        <div class="stbl-head stbl-3"><div>Red flag</div><div>Suspeita</div><div>Conduta imediata</div></div>
+        <div class="stbl-row stbl-3"><div class="col col1" data-l="Red flag">Hérnia irredutível com dor intensa, hiperemia ou SIRS</div><div class="col" data-l="Suspeita">Estrangulamento: isquemia da alça ou do omento, risco de perfuração e peritonite</div><div class="col" data-l="Conduta"><b>Não fazer taxe.</b> Jejum, 2 acessos, cristaloide, analgesia, antibiótico e <b>sala cirúrgica agora</b> (WSES 2017, grau 1C: reparo imediato se há suspeita de estrangulamento) (C.4).</div></div>
+        <div class="stbl-row stbl-3"><div class="col col1" data-l="Red flag">Obstrução de delgado com cicatriz ou virilha suspeita</div><div class="col" data-l="Suspeita">Hérnia encarcerada com alça de delgado (a causa que o exame da parede deixa passar)</div><div class="col" data-l="Conduta"><b>Examinar umbigo, virilhas, cicatrizes e a região femoral</b> em pé e deitado; TC se a hérnia não for evidente. Complicada: operar (C.4, GH06).</div></div>
+        <div class="stbl-row stbl-3"><div class="col col1" data-l="Red flag">Dor e abaulamento abaixo do ligamento inguinal, sobretudo em mulher</div><div class="col" data-l="Suspeita">Hérnia femoral encarcerada (anel inelástico: 15–20% de encarceramento ou estrangulamento)</div><div class="col" data-l="Conduta"><b>Reparo urgente</b>; tenha ressecção intestinal em mente (23% nas femorais operadas de urgência contra ~5% nas inguinais, SBH 2019). Via preperitoneal (C.3).</div></div>
+        <div class="stbl-row stbl-3"><div class="col col1" data-l="Red flag">Dor localizada na hérnia, sem distensão nem vômitos, e sinais locais</div><div class="col" data-l="Suspeita">Hérnia de Richter ou de Littré: isquemia da borda antimesentérica, sem obstrução</div><div class="col" data-l="Conduta"><b>Ausência de obstrução não afasta estrangulamento.</b> Mesma pressa cirúrgica; ressecção segmentar se a parede estiver necrótica (D.3).</div></div>
+        <div class="stbl-row stbl-3"><div class="col col1" data-l="Red flag">Hérnia que reduziu sozinha ou à taxe, mas a dor abdominal persiste</div><div class="col" data-l="Suspeita">Redução "em massa" ou alça isquêmica devolvida à cavidade</div><div class="col" data-l="Conduta"><b>Observação hospitalar com exame seriado, lactato e TC</b>; hernioscopia ou laparoscopia diagnóstica se houver dúvida (WSES 2017, grau 2B); laparotomia se peritonite.</div></div>
+        <div class="stbl-row stbl-3"><div class="col col1" data-l="Red flag">Hérnia umbilical com pele fina, bolha ou escape de líquido em cirrótico com ascite</div><div class="col" data-l="Suspeita">Ruptura iminente do saco: peritonite bacteriana e choque</div><div class="col" data-l="Conduta"><b>Reparo imediato</b> com controle da ascite (paracentese, albumina, GH10); antibiótico; não esperar o transplante (C.5).</div></div>
+        <div class="stbl-row stbl-3"><div class="col col1" data-l="Red flag">Dor súbita na face medial da coxa, mulher idosa e magra, obstrução</div><div class="col" data-l="Suspeita">Hérnia obturadora (sinal de Howship-Romberg por compressão do nervo obturatório)</div><div class="col" data-l="Conduta"><b>TC de abdome e pelve</b>; cirurgia por laparoscopia ou laparotomia; ressecção se isquemia (D.2).</div></div>
+        <div class="stbl-row stbl-3"><div class="col col1" data-l="Red flag">Criança irredutível, chorosa, vomitando, com tumor inguinal duro</div><div class="col" data-l="Suspeita">Hérnia inguinal encarcerada (15–30% das hérnias do lactente; 85% no 1º ano)</div><div class="col" data-l="Conduta"><b>Redução manual suave com analgesia ou sedação</b> se não houver toxemia, peritonite ou obstrução franca; cirurgia imediata se falhar ou houver sinal de isquemia (D.1).</div></div>
+        <div class="stbl-row stbl-3"><div class="col col1" data-l="Red flag">Dor inguinal pós-herniorrafia que começa nos primeiros dias, com testículo aumentado e doloroso</div><div class="col" data-l="Suspeita">Orquite isquêmica por trombose do plexo pampiniforme (2 a 5 dias de pós-operatório)</div><div class="col" data-l="Conduta"><b>AINE e suporte escrotal</b>; USG com Doppler para afastar hematoma e torção; orquiectomia só em necrose ou infecção (C.2).</div></div>
+        <div class="stbl-row stbl-3"><div class="col col1" data-l="Red flag">Tela infectada ou fístula crônica depois do reparo ventral</div><div class="col" data-l="Suspeita">Infecção de prótese; enterotomia não reconhecida; fístula enterocutânea</div><div class="col" data-l="Conduta"><b>TC, cultura, drenagem</b>; tela monofilamentar de poro largo muitas vezes se preserva (SBH 2019); explante e reconstrução em centro de parede abdominal (C.6).</div></div>
+      </div>
+
+      <div class="box danger">
+        <span class="box-label">DANGER</span>
+        <div class="box-title">Reduzir uma alça isquêmica é pior do que operá-la a tempo</div>
+        <div class="box-body">A taxe só cabe quando a hérnia está encarcerada sem sinais de isquemia: bom estado geral, hemodinâmica estável, sem peritonite, sem dor intensa na hérnia ou no abdome, laboratório normal e, pela apostila, menos de 6 horas de evolução (o corte de 6 a 8 horas é da apostila e não consta nas diretrizes lidas). Dentro dessa janela, a redução evita cirurgia de urgência; fora dela, devolve à cavidade uma alça necrótica. Também é <b>acidental</b> a redução durante a indução anestésica, que relaxa a parede: se a hérnia some na mesa e a alça era suspeita, explore (hernioscopia ou laparoscopia diagnóstica).</div>
+      </div>
+
+      <div class="box decision">
+        <span class="box-label">DECISION</span>
+        <div class="box-title">Quem tem risco de encarcerar: o perfil que corrige a falsa segurança</div>
+        <div class="box-body">Fatores de risco para encarceramento e estrangulamento (HerniaSurge 2018, forte): <b>sexo feminino, hérnia femoral (sobretudo à direita) e internação prévia por hérnia no último ano</b>. Fatores de pior desfecho no encarcerado: idade acima de 65 anos, sintomas por mais de 24 horas ou 3 dias, obstrução intestinal, ASA III–IV, IMC acima de 30, recidivada, anticoagulado e atraso até a sala cirúrgica.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card emerg">
+    <div class="card-head">
+      <div class="card-eyebrow"><span class="card-num">A.2</span> Diferenciais que enganam</div>
+      <h3>O que parece hérnia e não é (e o que esconde a hérnia) <span class="ank ank-dec">DECISION</span></h3>
+    </div>
+    <div class="card-body">
+      <div class="stbl stbl-3">
+        <div class="stbl-head stbl-3"><div>Achado</div><div>Pode ser</div><div>Como separar</div></div>
+        <div class="stbl-row stbl-3"><div class="col col1" data-l="Achado">Massa inguinoescrotal que não se reduz, transilumina</div><div class="col" data-l="Pode ser">Hidrocele (comunicante ou não), cisto de cordão</div><div class="col" data-l="Como separar">Transiluminação, USG; a comunicante varia de tamanho ao longo do dia e acompanha a hérnia (D.1).</div></div>
+        <div class="stbl-row stbl-3"><div class="col col1" data-l="Achado">Massa inguinal dolorosa com febre ou lesão no membro inferior</div><div class="col" data-l="Pode ser">Adenite, linfoma, metástase, abscesso de psoas</div><div class="col" data-l="Como separar">USG e foco infeccioso; linfonodo não tem impulso à tosse e não se reduz.</div></div>
+        <div class="stbl-row stbl-3"><div class="col col1" data-l="Achado">Massa pulsátil abaixo do ligamento inguinal</div><div class="col" data-l="Pode ser">Aneurisma ou pseudoaneurisma femoral (punção prévia)</div><div class="col" data-l="Como separar">Doppler antes de qualquer incisão; cateterismo femoral recente é a pista (CV08).</div></div>
+        <div class="stbl-row stbl-3"><div class="col col1" data-l="Achado">Dor aguda no escroto ou na virilha do adolescente</div><div class="col" data-l="Pode ser">Torção testicular, epididimite</div><div class="col" data-l="Como separar">Reflexo cremastérico, Doppler; torção é emergência de horas, não é hérnia.</div></div>
+        <div class="stbl-row stbl-3"><div class="col col1" data-l="Achado">Dor inguinal do atleta sem abaulamento</div><div class="col" data-l="Pode ser">Hérnia do esporte (disfunção da parede posterior), pubalgia, osteíte</div><div class="col" data-l="Como separar">RM dinâmica é superior à TC; a USG dinâmica ajuda (SBH 2019).</div></div>
+        <div class="stbl-row stbl-3"><div class="col col1" data-l="Achado">Massa na virilha de gestante</div><div class="col" data-l="Pode ser">Varizes do ligamento redondo (hérnia: 1 em 2.000)</div><div class="col" data-l="Como separar">USG com Doppler colorido; conduta expectante (C.3).</div></div>
+      </div>
+      <div class="box danger">
+        <span class="box-label">DANGER</span>
+        <div class="box-title">Não puncione e não incise uma massa inguinal sem saber o que é</div>
+        <div class="box-body">Aneurisma femoral, linfoma e hérnia estrangulada parecem a mesma tumoração à inspeção. A USG é o primeiro exame na dúvida (SBH 2019, HerniaSurge 2018); se persistir a incerteza, a RM supera a TC. O exame físico isolado tem sensibilidade de 74,5% e especificidade de 96% (SBH 2019): bom para confirmar, fraco para excluir.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="approach">
+  <div class="section">
+    <div class="section-eyebrow"><span>B</span> Por Apresentação</div>
+    <div class="section-title">Mapa sindrômico: onde está o abaulamento, e o que ele faz</div>
+    <div class="section-sub">Cinco perguntas na consulta: onde sai (virilha, umbigo, linha média, cicatriz), se reduz, se dói de forma aguda, se o paciente já foi operado e quem é o paciente (criança, mulher, cirrótico).</div>
+  </div>
+
+  <div class="card clin">
+    <div class="card-head">
+      <div class="card-eyebrow"><span class="card-num">B.1</span> Padrão 1</div>
+      <h3>Massa na virilha: direta, indireta ou femoral?</h3>
+      <div class="card-sub">A relação com o ligamento inguinal e com os vasos epigástricos decide</div>
+    </div>
+    <div class="card-body">
+      <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Examine <b>em pé</b>, em repouso e em Valsalva. <b>Acima</b> do ligamento inguinal é inguinal; <b>abaixo</b> e medial aos vasos femorais é femoral. Entre as inguinais, a <b>indireta</b> sai pelo anel interno (lateral aos epigástricos inferiores), a <b>direta</b> pelo Hesselbach (medial). Todo abaulamento abaixo do ligamento que aumenta com Valsalva é femoral até prova em contrário.</div></div>
+      <ul class="bullets">
+        <li><b>Indireta:</b> a mais comum em homens e em mulheres; congênita (conduto peritoneovaginal persistente); pode descer ao escroto (inguinoescrotal).</li>
+        <li><b>Direta:</b> adquirida, por fraqueza da fascia transversalis; idosos, tabagistas, esforço crônico; raramente desce ao escroto e encarcera pouco.</li>
+        <li><b>Manobras clínicas</b> (dedo no anel externo pelo escroto; Landivar com oclusão do anel interno) separam direta de indireta, mas na prática o tipo se define no ato operatório; nenhum exame distingue com segurança a inguinal da femoral (SBH 2019).</li>
+        <li><b>USG</b> só na dúvida diagnóstica ou no diferencial; RM é superior à TC se a dúvida persistir.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="card clin">
+    <div class="card-head">
+      <div class="card-eyebrow"><span class="card-num">B.2</span> Padrão 2</div>
+      <h3>Abaulamento da linha média ou da cicatriz</h3>
+      <div class="card-sub">Umbigo, epigástrio, laparotomia prévia ou "barriga que abre" em pé</div>
+    </div>
+    <div class="card-body">
+      <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Peça Valsalva ou a elevação da cabeça com o paciente deitado. <b>Abaulamento largo e fusiforme que some ao contrair o reto</b> sugere diástase (sem defeito aponeurótico); <b>defeito palpável</b> com saco sugere hérnia. Cicatriz prévia define incisional; sem cicatriz, a linha média sugere umbilical ou epigástrica.</div></div>
+      <ul class="bullets">
+        <li><b>Umbilical do adulto:</b> adquirida (obesidade, gestação, ascite); omento e gordura pré-peritoneal; alça é rara.</li>
+        <li><b>Epigástrica:</b> entre o umbigo e o xifoide; 80% na linha média; conteúdo é gordura pré-peritoneal encarcerada, com dor desproporcional ao defeito.</li>
+        <li><b>Incisional:</b> cicatriz prévia (obesidade, tabagismo, diabetes, infecção de ferida, DPOC, corticoide). TC ou USG com Valsalva se o exame não decidir (EHS 2023).</li>
+        <li><b>Linha semilunar infraumbilical:</b> Spiegel; clínica mal definida, TC ou USG.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="card clin">
+    <div class="card-head">
+      <div class="card-eyebrow"><span class="card-num">B.3</span> Padrão 3</div>
+      <h3>Hérnia que não reduz: encarcerada ou estrangulada?</h3>
+      <div class="card-sub">Reduzir, observar ou operar na hora</div>
+    </div>
+    <div class="card-body">
+      <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body"><b>Encarcerada</b> é irredutível; <b>estrangulada</b> é encarcerada com comprometimento vascular. A clínica separa as duas mal: o que decide é o conjunto (tempo, dor, SIRS, lactato, TC), e na dúvida opera-se. A obstrução intestinal por hérnia chega como "abdome agudo obstrutivo" (GH06) e a hérnia só aparece no exame.</div></div>
+      <div class="stbl stbl-3">
+        <div class="stbl-head stbl-3"><div>Situação</div><div>Achado</div><div>Conduta</div></div>
+        <div class="stbl-row stbl-3"><div class="col col1" data-l="Situação">Encarcerada, estável, sem sinais de isquemia</div><div class="col" data-l="Achado">Bom estado geral, dor moderada, menos de 6 h, laboratório normal</div><div class="col" data-l="Conduta">Taxe com analgesia e Trendelenburg; se reduzir, reparo eletivo (breve); se falhar, cirurgia imediata.</div></div>
+        <div class="stbl-row stbl-3"><div class="col col1" data-l="Situação">Encarcerada com sinal de alarme</div><div class="col" data-l="Achado">Dor intensa, hiperemia, SIRS, lactato alto, TC com sofrimento</div><div class="col" data-l="Conduta">Sem taxe; cirurgia de urgência com exame da alça e ressecção se necessário.</div></div>
+        <div class="stbl-row stbl-3"><div class="col col1" data-l="Situação">Peritonite ou perfuração suspeita</div><div class="col" data-l="Achado">Defesa abdominal, choque</div><div class="col" data-l="Conduta">Laparotomia exploradora; antibiótico terapêutico; campo contaminado (sem tela sintética).</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card clin">
+    <div class="card-head">
+      <div class="card-eyebrow"><span class="card-num">B.4</span> Padrão 4</div>
+      <h3>Dor ou abaulamento depois de uma herniorrafia</h3>
+      <div class="card-sub">Aguda, neuropática ou recidiva: três problemas com três condutas</div>
+    </div>
+    <div class="card-body">
+      <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Dor até 6–8 semanas é inflamatória e tratada com analgesia. <b>Dor que passa de 8 semanas é provavelmente neuropática</b>; <b>acima de 3 meses é inguinodinia</b> (dor crônica pós-herniorrafia). Abaulamento precoce pode ser seroma (~7%) ou hematoma (~8%), e não recidiva (SBH 2019).</div></div>
+      <ul class="bullets">
+        <li><b>Seroma e hematoma:</b> conduta expectante na maioria; dreno só com anticoagulante, coagulopatia ou sangramento difuso.</li>
+        <li><b>Recidiva:</b> 1–3% em 10 anos; mais comum nos 2 primeiros anos e nas diretas; tratar com tela por via oposta à anterior.</li>
+        <li><b>Testículo aumentado e doloroso nos primeiros dias:</b> orquite isquêmica (A.1).</li>
+        <li><b>Infecção do sítio cirúrgico, deiscência e tromboprofilaxia:</b> CT06.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="card clin">
+    <div class="card-head">
+      <div class="card-eyebrow"><span class="card-num">B.5</span> Padrão 5</div>
+      <h3>Quem é o paciente: criança, mulher, gestante, cirrótico</h3>
+      <div class="card-sub">A mesma hérnia com regras diferentes</div>
+    </div>
+    <div class="card-body">
+      <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body"><b>Criança:</b> inguinal é sempre cirúrgica e sem demora; umbilical espera. <b>Mulher:</b> opera-se mesmo assintomática, de preferência por TAPP ou TEP. <b>Gestante:</b> observação, quase sempre é varize do ligamento redondo. <b>Cirrótico com ascite:</b> a ruptura do saco é a ameaça; controle a ascite e programe o reparo.</div></div>
+      <div class="box decision"><span class="box-label">DECISION</span><div class="box-title">Homem com hérnia assintomática: esperar é seguro, mas não é gratuito</div><div class="box-body">O ensaio de Fitzgibbons (720 homens) registrou risco de encarceramento de cerca de 1,8 por 1.000 pacientes-ano; 23% cruzaram para cirurgia em 2 anos, 50% em 7,3 anos e 68% em 10 anos, quase sempre por dor (HerniaSurge 2018). A SBH 2019 fala em mais de 70% de sintomas em 2 anos, número mais alto que o do ensaio (divergência rotulada). Discuta o risco, ensine os sinais de alarme e reavalie. Dor em atividade extenuante, constipação e prostatismo antecipam a cirurgia.</div></div>
+    </div>
+  </div>
+</section>
+
+<section id="primarias">
+  <div class="section">
+    <div class="section-eyebrow"><span>C</span> Entidades Primárias</div>
+    <div class="section-title">Seis entidades da parede: virilha, complicações do reparo, femoral, urgência, linha média e cicatriz</div>
+    <div class="section-sub">Anatomia primeiro, indicação depois, técnica por último. Cada box termina na linha que muda a conduta; a criança, as hérnias raras e a diástase ficam em D.</div>
+  </div>
+
+  <div class="card prim">
+    <div class="card-head">
+      <div class="card-eyebrow"><span class="card-num">C.1</span> Hérnia inguinal do adulto</div>
+      <h3>Hérnia inguinal: direta × indireta, quem operar e como <span class="ank ank-hy">HIGH-YIELD</span></h3>
+    </div>
+    <div class="card-body">
+      <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">A hérnia inguinal é <b>75% das hérnias da parede</b> e o reparo mais comum do cirurgião geral. A <b>indireta</b> (a mais frequente) sai lateral aos vasos epigástricos inferiores, pelo anel interno; a <b>direta</b> sai medial, pelo triângulo de Hesselbach. A cirurgia melhora a qualidade de vida mais do que evita complicação: <b>opere o homem sintomático e a mulher sempre; observe o homem oligossintomático</b>. Reparo com tela (Lichtenstein ou endoscópico) é a regra; Shouldice, se sem tela.</div></div>
+
+      <div class="mnemo">
+        <div class="mnemo-title"><b>MIL</b> — limites do triângulo de Hesselbach (onde sai a hérnia direta)</div>
+        <div class="mnemo-grid">
+          <div class="mnemo-row"><span class="mnemo-letter">M</span><span><b>Medial</b> · borda lateral do músculo reto do abdome</span></div>
+          <div class="mnemo-row"><span class="mnemo-letter">I</span><span><b>Inferior</b> · ligamento inguinal</span></div>
+          <div class="mnemo-row"><span class="mnemo-letter">L</span><span><b>Lateral (superolateral)</b> · vasos epigástricos inferiores. A hérnia indireta sai <b>lateral</b> a eles; a direta, <b>medial</b></span></div>
+        </div>
+      </div>
+
+      <div class="disease">
+        <div class="disease-head"><div class="disease-name">Hérnia inguinal unilateral, sem obstrução</div><div class="disease-tag">CID-10 K40.9 <span class="ev ev-eular">HerniaSurge 2018</span> <span class="ev ev-sbr">SBH 2019</span></div></div>
+        <div class="disease-body"><div class="disease-rows">
+          <div class="disease-row"><div class="k">Epidemiologia</div><div class="v">Mais frequente no homem (reparo 8 a 10 vezes mais comum que na mulher, que responde por 8–9% das cirurgias inguinocrurais) e mais à direita, pelo fechamento tardio do conduto peritoneovaginal desse lado. Fatores de risco: história familiar, hérnia contralateral, sexo masculino, idade, metabolismo anormal do colágeno, prostatectomia e IMC baixo; para a direta, tabagismo, desnutrição, doença debilitante e esforço intenso (HerniaSurge 2018; apostila). Na mulher, o risco ao longo da vida é de 3% e a indireta segue a mais comum.</div></div>
+          <div class="disease-row"><div class="k">Fisiopatologia</div><div class="v"><b>Indireta:</b> persistência do conduto peritoneovaginal (equivalente feminino: divertículo de Nuck); defeito congênito que se manifesta em qualquer idade. <b>Direta:</b> fraqueza adquirida da fascia transversalis no Hesselbach, com menos hidroxiprolina, fibroblastos anormais e inserção alta do oblíquo interno, que amplia a área frágil (o triângulo de Hessert é a área residual quando o oblíquo interno se contrai). Aumento crônico da pressão intra-abdominal (prostatismo, tosse, constipação, ascite) é o gatilho.</div></div>
+          <div class="disease-row"><div class="k">Clínica</div><div class="v">Peso ou dor mal definida na virilha com esforço, abaulamento que reduz espontaneamente ou à manobra. Tamanho do saco não tem relação com o do defeito. Hérnia <b>redutível</b>, <b>encarcerada</b> (irredutível) e <b>estrangulada</b> (isquemia) têm conduta diferente (C.4). Hérnia inguinoescrotal: o saco indireto desce à bolsa.</div></div>
+          <div class="disease-row"><div class="k">Diagnóstico</div><div class="v">Clínico, em pé, com Valsalva; a história somada ao exame tem sensibilidade de 74,5% e especificidade de 96%. <b>USG</b> na dúvida (sensibilidade de 33–77% e especificidade de 81–100% com exame físico indefinido); RM, se a dúvida persistir, é superior à TC e vê hérnia do esporte e osteíte. Nem o exame nem a imagem distinguem a inguinal da crural de forma confiável. A <b>classificação da EHS</b> (L, M, F; 1, 2, 3; P/R) é a sugerida pelo HerniaSurge; Nyhus e Gilbert persistem nas provas. <span class="ev ev-eular">HerniaSurge 2018</span> <span class="ev ev-sbr">SBH 2019</span></div></div>
+          <div class="disease-row"><div class="k">Tratamento</div><div class="v"><b>Operar:</b> homem sintomático; mulher mesmo assintomática. <b>Observar:</b> homem oligo ou assintomático e o de comorbidades que elevam o risco. <b>Tela é a regra</b> (recomendação forte): <b>Lichtenstein</b> (padrão-ouro aberto, tela ≥6×14 cm (prática citada pelo HerniaSurge; seção não reconfirmada), 2 cm além do tubérculo púbico, alças fechadas e fixas ao ligamento inguinal) ou <b>TEP/TAPP</b> (tela ≥15×10 cm, sem fenda; mesma ressalva de dimensão); <b>Shouldice</b> em três planos se o serviço não usa tela. Anestesia local com infiltração no reparo aberto, quando o cirurgião domina; geral é a segunda opção. <b>Endoscópico:</b> a atualização HerniaSurge 2023 <b>recomenda a técnica laparo-endoscópica no reparo primário unilateral de qualquer sexo</b>, se houver cirurgião com expertise e recursos (forte), pela menor dor e menor dor crônica; Lichtenstein e a técnica pré-peritoneal aberta com tela plana seguem aceitáveis e preferíveis em certos pacientes. Na bilateral, na recidivada, na mulher e no jovem ativo a via endoscópica é a mais favorecida. Não usar plug (HerniaSurge 2018). Anestesia: local no aberto; em ≥65 anos, geral ou local em vez de regional (2023). Pré-operatório: tratar prostatismo, tosse e constipação. <span class="ev ev-eular">HerniaSurge 2018 e 2023</span> <span class="ev ev-sbr">SBH 2019</span></div></div>
+          <div class="disease-row"><div class="k">Prognóstico</div><div class="v">Recidiva de 1–3% em 10 anos, a maioria nos 2 primeiros anos, mais nas diretas; o reparo com tela cai a recidiva de forma consistente, e aberto com tela e laparoscópico têm taxas iguais. Dor crônica moderada a grave: 10–12% (C.2). A tela <b>não aumenta</b> a infecção; a infecção depende das doenças do paciente. Retorno às atividades em 2 a 7 dias; sem peso &gt;10 kg por 4 a 6 semanas.</div></div>
+          <div class="disease-row"><div class="k">O que muda conduta</div><div class="v"><b>Homem sintomático</b> → cirurgia. <b>Mulher</b> → cirurgia, de preferência TAPP ou TEP (C.3). <b>Bilateral ou recidivada</b> → via endoscópica ou via oposta à anterior. <b>Irredutível com dor</b> → C.4. <b>ASA III–IV ou ambiente de alto risco de infecção</b> → profilaxia com cefazolina (F2); em risco médio e ambiente de baixo risco, sem profilaxia no aberto (forte) e nunca no endoscópico (HerniaSurge 2018 e 2023). <b>Anticoagulado</b> → dreno e hemostasia rigorosa; manejo do anticoagulante no CT06 e no HO03.</div></div>
+        </div></div>
+      </div>
+
+      <div class="score">
+        <div class="score-head"><div class="score-name">Classificação de Nyhus (apostila) e EHS (HerniaSurge) <span class="ev ev-expert">Apostila 2025</span> <span class="ev ev-eular">HerniaSurge 2018</span></div><div class="score-purpose">Padroniza o laudo, a técnica e a auditoria</div></div>
+        <div class="score-rows">
+          <div class="score-row"><div class="score-grade">Nyhus I</div><div class="score-desc">Indireta com anel interno normal (até 2 cm). Reparo simples; em criança, ligadura alta do saco.</div></div>
+          <div class="score-row"><div class="score-grade">Nyhus II</div><div class="score-desc">Indireta com anel interno alargado, parede posterior preservada.</div></div>
+          <div class="score-row"><div class="score-grade">Nyhus III</div><div class="score-desc">Defeito da parede posterior: <b>IIIA direta</b>, <b>IIIB mista</b> (indireta com destruição da parede, ou em "pantalona"), <b>IIIC femoral</b>. Tela.</div></div>
+          <div class="score-row"><div class="score-grade">Nyhus IV</div><div class="score-desc">Recidivada: A direta, B indireta, C femoral, D mista. <b>Via oposta à anterior, com tela.</b></div></div>
+          <div class="score-row"><div class="score-grade">EHS</div><div class="score-desc"><b>L</b> lateral (indireta), <b>M</b> medial (direta), <b>F</b> femoral; <b>1</b> até 1,5 cm (um dedo), <b>2</b> 1,5–3 cm (dois dedos), <b>3</b> &gt;3 cm; P primária, R recidivada. M3 grande é o defeito em que se fixa a tela no TEP e no TAPP.</div></div>
+        </div>
+      </div>
+
+      <div class="score">
+        <div class="score-head"><div class="score-name">Técnicas de reparo: o que cada uma resolve <span class="ev ev-eular">HerniaSurge 2018</span> <span class="ev ev-sbr">SBH 2019</span></div><div class="score-purpose">Escolha pela expertise, pelo paciente e pelo tipo de hérnia</div></div>
+        <div class="score-rows">
+          <div class="score-row"><div class="score-grade">Lichtenstein</div><div class="score-desc">Anterior, tela plana de polipropileno, sem tensão; melhor avaliada, mais fácil de aprender e reproduzir; local é possível. Recidivas nos extremos: perto do púbis e perto do anel profundo.</div></div>
+          <div class="score-row"><div class="score-grade">Shouldice</div><div class="score-desc">Tecidual, três planos de sutura contínua com fio monofilamentar; o melhor reparo sem tela, em serviço com experiência; pouco uso fora de centros especializados.</div></div>
+          <div class="score-row"><div class="score-grade">Bassini, McVay, Zimmerman</div><div class="score-desc">Históricos e mais recidivantes: Bassini sutura o tendão conjunto ao ligamento inguinal; McVay o fixa ao ligamento de Cooper (clássico da femoral).</div></div>
+          <div class="score-row"><div class="score-grade">TEP</div><div class="score-desc">Espaço pré-peritoneal sem entrar na cavidade (balão dissector; 3 portais); sem fixação, exceto M3; mais difícil, converte-se em TAPP.</div></div>
+          <div class="score-row"><div class="score-grade">TAPP</div><div class="score-desc">Acesso transperitoneal e retalho peritoneal (≥4 cm acima do defeito, do ligamento umbilical medial à crista ilíaca); mais reproduzível; inspeciona a contralateral com consentimento; fechar o peritônio sem frestas.</div></div>
+          <div class="score-row"><div class="score-grade">Stoppa e plug</div><div class="score-desc">Stoppa (tela gigante pré-peritoneal): bilateral e recidivada por incisão mediana. Plug and patch: erosão maior; o HerniaSurge sugere não usar.</div></div>
+        </div>
+      </div>
+
+      <details class="deep">
+        <summary>Deep dive · anatomia aplicada: camadas, triângulos e armadilhas da virilha</summary>
+        <div class="deep-content">
+          <p>De superficial a profundo, a região tem pele, tecido subcutâneo (fáscia de Camper, delicada e vascularizada, e fáscia de Scarpa, espessa, contínua com o dartos do escroto), aponeurose do oblíquo externo (limite anterior do canal, cuja borda livre espessada é o ligamento inguinal, de Poupart, da espinha ilíaca anterossuperior ao tubérculo púbico), oblíquo interno e transverso com suas aponeuroses (teto e assoalho), fascia transversalis, gordura pré-peritoneal e peritônio. O canal inguinal mede cerca de 4 cm no adulto e tem dois orifícios: o anel interno (abertura da fascia transversalis, na parede posterior) e o anel externo (abertura da aponeurose do oblíquo externo). Conduz o funículo espermático no homem e o ligamento redondo na mulher. O nervo ilioinguinal desce junto ao funículo; o ílio-hipogástrico corre junto à aponeurose do oblíquo interno. O ramo genital do genitofemoral integra o funículo. As aponeuroses do oblíquo interno e do transverso se fundem no tubérculo púbico em apenas 5 a 10% das pessoas, por isso se prefere "área conjunta" a "tendão conjunto".</p>
+          <p>A fascia transversalis é a chave: é a porção inguinal da fáscia endoabdominal e sustenta a parede posterior. O ligamento de Cooper (pectíneo) é o espessamento do periósteo do ramo superior do púbis e ponto de reparo da técnica de McVay; ao lado dele corre a veia da <b>corona mortis</b>, cuja lesão dá sangramento importante (na visão laparoscópica, a artéria obturatória aberrante liga a ilíaca externa à obturatória). O triângulo de Hesselbach (1814) é a região de maior fraqueza da fascia transversalis. O Hessert é o triângulo reduzido quando o oblíquo interno se contrai sobre ele; inserção alta do oblíquo interno amplia a área frágil e favorece a direta.</p>
+          <p>Na visão endoscópica posterior, o "Y invertido" (vasos deferentes medialmente, vasos espermáticos lateralmente, epigástricos inferiores dividindo medial e lateral) delimita os cinco triângulos da região: o das hérnias indiretas, o das diretas, o femoral, o <b>triângulo de Doom</b> (entre o ducto deferente e os vasos espermáticos, onde correm os vasos ilíacos externos: não se fixam grampos nem se dissecam sem necessidade) e o <b>triângulo da dor</b> (entre os vasos espermáticos e o trato iliopúbico, com o nervo femoral, o cutâneo lateral da coxa e o ramo femoral do genitofemoral: nunca se fixa tela ali). O limite seguro da fixação lateral é cerca de 3 cm acima do trato iliopúbico, e a fixação medial vai ao ligamento de Cooper, à sínfise e à linha alba (SBH 2019). O orifício miopectíneo de Fruchaud, que abrange os defeitos direto, indireto e femoral, é o que a tela endoscópica precisa cobrir por inteiro.</p>
+          <p>Do ponto de vista técnico, as grandes armadilhas são três. Primeiro, o <b>lipoma do cordão</b> (gordura pré-peritoneal que entra no anel interno) deve ser procurado e reduzido, ou a recidiva é provável. Segundo, o saco indireto inguinoescrotal grande não precisa ser dissecado até o escroto: secciona-se o saco no nível do anel interno e abandona-se o distal, o que protege o ramo genital, os vasos testiculares e o deferente. Terceiro, a tela encolhe cerca de 20% depois da cicatrização: por isso os 2 cm além do púbis no Lichtenstein e as dimensões mínimas no endoscópico. A SBH 2019 recomenda tela plana monofilamentar de 30 a 140 g/m² e poro ≥1 mm, sem escolher pelo peso isolado, e lembra que telas de poro menor que 0,1 mm têm mais infecção. A atualização HerniaSurge 2023 é mais diretiva, por procedimento (<b>divergência rotulada</b>): tela leve (<50 g/m²) no Lichtenstein, para menos dor crônica e sensação de corpo estranho, sem mudar a recidiva (forte); tela pesada (>70 g/m²) no endoscópico, sobretudo na direta grande, para menos recidiva, e tela leve não recomendada ali. Hérnia contralateral oculta achada no TAPP: discutir o reparo no consentimento (progressão de cerca de 1,2% ao ano).</p>
+        </div>
+      </details>
+    </div>
+  </div>
+
+  <div class="card prim">
+    <div class="card-head">
+      <div class="card-eyebrow"><span class="card-num">C.2</span> Complicações do reparo inguinal</div>
+      <h3>Inguinodinia, recidiva e orquite isquêmica <span class="ank ank-dec">DECISION</span></h3>
+    </div>
+    <div class="card-body">
+      <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body"><b>Inguinodinia</b> é a dor ≥3 meses depois do reparo, moderada a grave, que atrapalha a vida diária e não tem outra causa: 10–12% dos operados, e 0,5–6% com dor incapacitante. Dor aguda some em 6 a 8 semanas; <b>depois de 8 semanas, pense em dor neuropática</b>. A conduta é em degraus: analgesia multimodal, bloqueio, ablação e, por último, neurectomia com troca da tela depois de 6 meses.</div></div>
+
+      <div class="disease">
+        <div class="disease-head"><div class="disease-name">Dor crônica pós-herniorrafia e outras complicações do reparo</div><div class="disease-tag">CID-10 R52.2 · T81.8 <span class="ev ev-eular">EurA-CPIP 2026</span> <span class="ev ev-sbr">SBH 2019</span></div></div>
+        <div class="disease-body"><div class="disease-rows">
+          <div class="disease-row"><div class="k">Epidemiologia</div><div class="v">Dor crônica moderada a grave em 10–12%, caindo com o tempo; revisão recente estima 8–17% com limitação funcional. Fatores de risco: idade jovem, sexo feminino, dor pré-operatória e dor pós-operatória precoce intensa, intervalo menor que 3 anos da cirurgia anterior, hérnia recidivada, complicação da ferida, distúrbio sensitivo prévio e <b>cirurgia aberta</b>. Recidiva: 1–3% em 10 anos. Seroma ~7% e hematoma ~8%.</div></div>
+          <div class="disease-row"><div class="k">Fisiopatologia</div><div class="v">Dor aguda é nociceptiva e inflamatória. A neuropática resulta de transecção parcial ou completa (neuroma), estiramento, esmagamento, lesão por cautério, aprisionamento por sutura ou grampo, e inflamação da tela em contato com o nervo (degeneração da bainha de mielina, edema, fibrose); fixação no periósteo do púbis causa periostite. Na via aberta lesam-se o ilioinguinal, o ílio-hipogástrico e o ramo genital do genitofemoral; na endoscópica, o ramo femoral do genitofemoral, o cutâneo lateral da coxa e o femoral. Recidiva precoce é, em geral, erro técnico: tensão, margem insuficiente, tela pequena, anel interno alargado não fechado.</div></div>
+          <div class="disease-row"><div class="k">Clínica</div><div class="v">Dor em queimação, choque ou alodinia na virilha, na raiz da coxa ou no escroto, piora com movimento e posição; pode haver hipoestesia. Mapear a dor por dermátomo localiza o nervo. <b>Orquite isquêmica:</b> dor e aumento do testículo 2 a 5 dias depois, por trombose do plexo pampiniforme, durando 6 a 12 semanas e podendo atrofiar.</div></div>
+          <div class="disease-row"><div class="k">Diagnóstico</div><div class="v">Clínico, com mapeamento do dermátomo e exame da cicatriz e dos pontos de fixação; USG e TC/RM se houver suspeita de recidiva, coleção, infecção ou tela dobrada. O bloqueio nervoso é diagnóstico e terapêutico. EurA-CPIP 2026 (algoritmo europeu, primeira versão) propõe degraus de tratamento sob equipe multidisciplinar. <span class="ev ev-eular">EurA-CPIP 2026</span> <span class="ev ev-sbr">SBH 2019</span></div></div>
+          <div class="disease-row"><div class="k">Tratamento</div><div class="v"><b>Aguda (até 6–8 semanas):</b> paracetamol, AINE e, se preciso, opioide curto. <b>Crônica:</b> (1) analgesia multimodal com fármaco neuropático (antidepressivo tricíclico, duloxetina ou gabapentinoide), sem opioide prolongado; o EurA-CPIP 2026 coloca tópicos de lidocaína ou capsaicina no 2º passo, mas a atualização HerniaSurge 2023 não viu benefício do emplastro de lidocaína nem de capsaicina (<b>divergência rotulada</b>); (2) bloqueio do nervo com anestésico de longa ação e corticoide, repetido se houver resposta; (3) ablação percutânea (fenol ou álcool); (4) neurectomia com remoção e troca da tela, depois de pelo menos 6 meses e de falha do tratamento clínico (sucesso de 70–100% pela SBH 2019; a atualização de 2023 estima cerca de 30% de ineficácia, com risco pequeno de piorar a dor, e pede informar o doente com clareza: <b>divergência rotulada</b>); medidas farmacológicas e intervencionistas seguem por pelo menos 3 meses (e no mínimo 6 meses depois da cirurgia da hérnia) antes de reoperar; a avaliação deve ser centralizada em equipe multidisciplinar; denervação microcirúrgica do cordão só em pesquisa; radiofrequência pulsada pode ser eficaz; remoção isolada da tela, neurólise e simples secção falham mais. A infecção profunda com tela monofilamentar de poro largo não pede remoção sistemática. <span class="ev ev-sbr">SBH 2019</span> <span class="ev ev-eular">HerniaSurge 2023</span></div></div>
+          <div class="disease-row"><div class="k">Prognóstico</div><div class="v">A maioria melhora com o tempo e com bloqueios; a minoria incapacitante é a que vai à reoperação. A tela não é a causa isolada: a dor crônica com tela é igual ou menor do que sem tela. A neurectomia prevenindo a dor traz hipoestesia; a profilática de rotina não é recomendada.</div></div>
+          <div class="disease-row"><div class="k">O que muda conduta</div><div class="v"><b>Dor &gt;8 semanas</b> → tratar como neuropática, mapear e bloquear. <b>Resposta ao bloqueio</b> → repetir; <b>sem resposta sustentada</b> → ablação ou neurectomia. <b>Antes de 6 meses</b> → não operar de rotina. <b>Testículo doloroso e aumentado no pós-operatório inicial</b> → orquite isquêmica: AINE e suporte; Doppler para afastar hematoma. <b>Recidiva</b> → tela por via diferente da primeira.</div></div>
+        </div></div>
+      </div>
+
+      <details class="deep">
+        <summary>Deep dive · como prevenir a dor: nervos, fixação e o mito da "culpa da tela"</summary>
+        <div class="deep-content">
+          <p>O raciocínio preventivo parte do mecanismo. Na via aberta, o cirurgião deve <b>identificar</b> o ilioinguinal, o ílio-hipogástrico e o ramo genital, sem dissecá-los em toda a extensão, apenas para não aprisioná-los na sutura ou sob a tela. Se algum nervo for seccionado ou ficar muito exposto à tela, liga-se e sepulta-se o coto proximal e o distal em músculo, com fio absorvível. A neurectomia profilática "pragmática" pode reduzir a neuralgia, mas dá hipoestesia ou disestesia em parte dos pacientes; o HerniaSurge sugere ressecção apenas em casos selecionados e desaconselha a ressecção planejada de rotina, e a SBH não a recomenda. Na via endoscópica, a identificação não é feita, e o objetivo é evitar a dissecção traumática e a fixação no triângulo da dor.</p>
+          <p>A fixação é o outro ponto. Fixar tela com grampos ou tacks se associa a dor, e o risco cresce com o número de pontos (acima de 8–10 há mais dor). Por isso: sem fixação no TEP e no TAPP em hérnias pequenas (EHS L1–L2, M1–M2, de até 2–3 cm), e fixação só nos defeitos mediais grandes (M3, 3–4 cm ou mais), de preferência com cola ou fixação atraumática, que se associa a menos dor sem aumentar a recidiva; se grampos, quatro a seis bastam. No Lichtenstein, a fixação medial vai ao ligamento reflexo de Colles ou ao inguinal, nunca ao periósteo do púbis.</p>
+          <p>O mito da "culpa da tela" merece correção, porque muda a conduta: a incidência de dor crônica com tela é semelhante ou menor do que sem tela (SBH 2019), e a remoção isolada da tela falha mais do que a neurectomia com troca. Também é comum confundir dor com recidiva precoce: o seroma (7%) abaúla a ferida e some sem drenagem. Quando se chega à reoperação, o raciocínio da EurA-CPIP é dar tempo (de preferência meia ano) para o tratamento clínico e a inflamação da tela cederem, passar por equipe multidisciplinar e escolher entre exploração, neurectomia seletiva ou tripla e remoção de tela, combinadas conforme o mapa de dor e os achados.</p>
+        </div>
+      </details>
+    </div>
+  </div>
+
+  <div class="card prim">
+    <div class="card-head">
+      <div class="card-eyebrow"><span class="card-num">C.3</span> Hérnia femoral e a virilha da mulher</div>
+      <h3>Hérnia femoral: sempre operar, e não esquecer a mulher na virilha <span class="ank ank-dec">DECISION</span></h3>
+    </div>
+    <div class="card-body">
+      <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">A hérnia femoral sai <b>abaixo do ligamento inguinal, medial aos vasos femorais</b>, por um canal inelástico: encarcera e estrangula mais que qualquer outra da virilha. Responde por menos de 5% das hérnias inguinocrurais, mas é <b>4 vezes mais frequente em mulheres</b>, e a hérnia mais comum da mulher continua sendo a inguinal indireta. <b>Operar sempre</b>, sem espera vigilante. Na mulher, a via endoscópica pré-peritoneal cobre a femoral oculta.</div></div>
+
+      <div class="disease">
+        <div class="disease-head"><div class="disease-name">Hérnia femoral (e hérnia da virilha na mulher)</div><div class="disease-tag">CID-10 K41.9 <span class="ev ev-eular">HerniaSurge 2018</span> <span class="ev ev-sbr">SBH 2019</span></div></div>
+        <div class="disease-body"><div class="disease-rows">
+          <div class="disease-row"><div class="k">Epidemiologia</div><div class="v">Menos de 5% das hérnias da virilha; mulheres obesas acima de 45 anos; mais à direita (o sigmoide tampona o canal esquerdo) e bilateral em 20%. O risco de reoperação por inguinotomia é maior na mulher porque ~40% das "recidivas" são femorais deixadas ou não vistas na primeira cirurgia. Cerca de 17% das mulheres com hérnia inguinocrural são operadas de urgência, contra 5% dos homens; 36–39% das femorais são operadas em urgência, contra 5% das inguinais.</div></div>
+          <div class="disease-row"><div class="k">Fisiopatologia</div><div class="v">O canal femoral tem assoalho no ligamento pectíneo (Cooper), teto no ligamento inguinal, parede medial no ligamento lacunar e lateral na veia femoral; contém tecido linfático e conjuntivo. É rígido, e por isso o colo estrangula a alça sem a distender. Idade, multiparidade, obesidade e aumento da pressão abdominal alargam o anel. A hérnia femoral da mulher é muitas vezes <b>descoberta como recidiva</b> de uma inguinal operada.</div></div>
+          <div class="disease-row"><div class="k">Clínica</div><div class="v">Abaulamento pequeno e firme abaixo do ligamento inguinal, que aumenta com Valsalva; dor mal localizada; muitas vezes a primeira manifestação é a obstrução intestinal com isquemia. Pode ser uma Richter (borda antimesentérica) sem distensão (D.3). Todo abaulamento abaixo do ligamento é femoral até prova em contrário.</div></div>
+          <div class="disease-row"><div class="k">Diagnóstico</div><div class="v">Clínico; USG na dúvida (nem exame físico nem imagem distinguem a crural da inguinal com segurança). Na urgência, TC se a clínica não decide e a hérnia não é palpável. Em encarcerada na virilha, mesmo em mulher, a hipótese mais provável ainda é a inguinal indireta. <span class="ev ev-eular">HerniaSurge 2018</span> <span class="ev ev-sbr">SBH 2019</span></div></div>
+          <div class="disease-row"><div class="k">Tratamento</div><div class="v"><b>Sempre cirúrgico</b>, mesmo assintomática (consenso mais forte do HerniaSurge). <b>Reparo pré-peritoneal com tela</b> (TEP ou TAPP, ou aberto posterior), com menos recorrência e menos dor que a inguinotomia; McVay (tendão conjunto ao ligamento de Cooper) é o clássico, hoje pouco usado; o <b>plug femoral</b> existe, mas o HerniaSurge sugere não usar plug. Na mulher, <b>evitar seccionar o ligamento redondo na via aberta</b> (lesão do nervo genital, disfunção sexual referida); na via endoscópica a secção é opcional e feita proximal ao ramo genital. Gestante: observação ativa; reparar só se encarcerar ou estrangular. <span class="ev ev-eular">HerniaSurge 2018</span> <span class="ev ev-sbr">SBH 2019</span></div></div>
+          <div class="disease-row"><div class="k">Prognóstico</div><div class="v">Reparo eletivo com mortalidade em 30 dias abaixo de 0,1%, igual à da população da mesma idade; <b>em urgência, 3,8%</b>, com ressecção intestinal em 23% (contra 5% nas inguinais). Quanto antes, melhor.</div></div>
+          <div class="disease-row"><div class="k">O que muda conduta</div><div class="v"><b>Qualquer femoral, sintomática ou não</b> → reparo. <b>Mulher com massa na virilha</b> → TAPP ou TEP, que inspecionam o orifício miopectíneo inteiro. <b>Encarcerada ou estrangulada</b> → urgência (C.4). <b>Gestante com massa</b> → Doppler colorido para varizes do ligamento redondo, e expectante.</div></div>
+        </div></div>
+      </div>
+
+      <div class="box pearl"><span class="box-label">PEARL</span><div class="box-title">Reoperação por "recidiva" na mulher é, 40% das vezes, uma femoral esquecida</div><div class="box-body">Nas mulheres operadas por via anterior, quase metade das reoperações encontra hérnia femoral: o defeito já existia. A lição de método é que o orifício miopectíneo deve ser inspecionado inteiro em toda mulher, e que a abordagem posterior endoscópica faz isso por construção. O risco de reoperação é quase 10 vezes maior que o do homem (SBH 2019).</div></div>
+    </div>
+  </div>
+
+  <div class="card prim">
+    <div class="card-head">
+      <div class="card-eyebrow"><span class="card-num">C.4</span> Hérnia encarcerada e estrangulada</div>
+      <h3>Encarcerada × estrangulada: taxe, cirurgia de urgência e tela em campo sujo <span class="ank ank-dgr">DANGER</span></h3>
+    </div>
+    <div class="card-body">
+      <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body"><b>Irredutível não é sinônimo de estrangulada, mas só se prova depois.</b> Sem sinal de isquemia (estável, sem peritonite, sem dor intensa, laboratório normal e, pela apostila, menos de 6 h), tenta-se a <b>taxe</b> com analgesia e Trendelenburg; se reduz, opera-se de forma eletiva; se não reduz, opera-se na hora. Com qualquer sinal de isquemia, <b>cirurgia imediata, sem taxe</b>. A tela depende do campo: <b>limpo ou limpo-contaminado, pode; contaminado ou sujo, não (ou biológica)</b>.</div></div>
+
+      <div class="disease">
+        <div class="disease-head"><div class="disease-name">Hérnia encarcerada e estrangulada (inguinal, femoral, umbilical, incisional)</div><div class="disease-tag">CID-10 K40.3 · K40.4 · K41.3 · K41.4 · K42.0 · K43.0 <span class="ev ev-eular">WSES 2017</span> <span class="ev ev-sbr">SBH 2019</span></div></div>
+        <div class="disease-body"><div class="disease-rows">
+          <div class="disease-row"><div class="k">Epidemiologia</div><div class="v">Dentre as hérnias inguinais, a necessidade de ressecção intestinal ocorre em ~15% das encarceradas operadas de urgência. Risco aumentado: sexo feminino, femoral (sobretudo à direita) e internação prévia por hérnia (HerniaSurge 2018). Pior desfecho: idade &gt;65 anos, &gt;24 h de encarceramento, obstrução, ASA III–IV, IMC &gt;30, recidivada, anticoagulante e atraso para a sala cirúrgica. A mortalidade do reparo de urgência é muito maior que a do eletivo e cresce com cada hora de atraso.</div></div>
+          <div class="disease-row"><div class="k">Fisiopatologia</div><div class="v">O colo estreito comprime primeiro a drenagem venosa e linfática: congestão e edema da alça, que aperta o colo e oclui a artéria; isquemia da mucosa, translocação bacteriana, necrose transmural e perfuração, com peritonite. A obstrução aparece quando toda a circunferência participa; na Richter, o pinçamento é só da borda antimesentérica e não há obstrução, o que atrasa o diagnóstico. Anestesia relaxa a parede e pode reduzir a alça isquêmica de volta à cavidade.</div></div>
+          <div class="disease-row"><div class="k">Clínica</div><div class="v">História de esforço, dor aguda na hérnia e abaulamento irredutível. Alça no saco dá obstrução (distensão, vômitos, parada de gases). Estrangulamento: dor intensa e contínua, hiperemia, edema e calor locais, febre, taquicardia, leucocitose, queda do estado geral e depois peritonite. A clínica é mal acurada para separar encarcerada de estrangulada (A.1).</div></div>
+          <div class="disease-row"><div class="k">Diagnóstico</div><div class="v">Em geral clínico: o exame da virilha encurta o tempo até a cirurgia e reduz imagens (registro sueco). Na dúvida, laboratório (leucocitose, <b>lactato</b>, CPK, D-dímero, creatinina) e <b>TC com contraste</b>, cujo achado mais específico é a redução do realce da parede (sensibilidade 56% e especificidade 94% em um estudo citado pelo WSES). SIRS e rigidez da parede são indicadores clássicos. O HerniaSurge 2023 lembra que os marcadores bioquímicos têm baixa especificidade: usá-los junto da clínica, nunca sozinhos (sugestão fraca). <span class="ev ev-eular">WSES 2017 · grau 1C</span> <span class="ev ev-sbr">SBH 2019</span></div></div>
+          <div class="disease-row"><div class="k">Tratamento</div><div class="v"><b>Estrangulamento suspeito → reparo imediato</b> (WSES, 1C). <b>Taxe</b> só se estável, sem peritonite, sem dor intensa, laboratório normal, evolução curta; com analgesia, Trendelenburg e pressão suave e contínua. Reduzida: reparo eletivo breve, com observação inicial do doente. Irredutível: cirurgia imediata por inguinotomia ou via pré-peritoneal, avaliar a alça, ressecar se inviável e reparar. <b>Laparotomia</b> se houver peritonite ou redução acidental de saco estrangulado na indução; hernioscopia ou laparoscopia diagnóstica avalia a viabilidade depois de redução espontânea (2B). Abordagem laparoscópica só sem estrangulamento nem necessidade provável de ressecção (2C). Anestesia local é possível sem gangrena (1C). <b>Tela pelo campo:</b> ver escore abaixo. <span class="ev ev-eular">WSES 2017</span> <span class="ev ev-sbr">SBH 2019</span></div></div>
+          <div class="disease-row"><div class="k">Prognóstico</div><div class="v">Morbimortalidade alta no reparo de urgência; o tempo de início da dor até a cirurgia é o principal fator prognóstico. Infecção de ferida é a complicação mais comum. Recidiva é maior com sutura simples do que com tela.</div></div>
+          <div class="disease-row"><div class="k">O que muda conduta</div><div class="v"><b>Sinal de isquemia, SIRS, lactato, TC suspeita</b> → sem taxe, cirurgia imediata. <b>Peritonite ou instabilidade</b> → laparotomia e controle de contaminação; considerar abdome aberto. <b>Ressecção sem derrame</b> (limpo-contaminado) → tela sintética pode ser usada; <b>derrame ou perfuração</b> → sutura (&lt;3 cm) ou tela biológica. <b>Reduzida à taxe</b> → observar até passar a sedação, reexaminar o abdome e programar o reparo breve; internar se houver dúvida.</div></div>
+        </div></div>
+      </div>
+
+      <div class="box decision"><span class="box-label">DECISION</span><div class="box-title">Terminologia da atualização HerniaSurge 2023</div><div class="box-body">A atualização de 2023 recomenda abandonar "hérnia encarcerada" e usar <b>hérnia irredutível aguda</b> (era redutível e deixou de ser, com sintomas de início agudo), <b>irredutível crônica</b> (de longa data, sem sintoma novo) e <b>estrangulada</b>, termo só aplicável quando a isquemia é confirmada por imagem ou na cirurgia. O HP mantém "encarcerada" por ser o termo da apostila, do GH06 e da CID-10 (K40.3, K41.3, K42.0 e K43.0 incluem encarcerada, irredutível e estrangulada sem gangrena).</div></div>
+
+      <div class="score">
+        <div class="score-head"><div class="score-name">Tela em urgência, pela classe de ferida do CDC <span class="ev ev-eular">WSES 2017</span> <span class="ev ev-sbr">SBH 2019</span> <span class="ev ev-eular">HerniaSurge 2018</span></div><div class="score-purpose">Campo contaminado muda a tela, não a necessidade de reparar</div></div>
+        <div class="score-rows">
+          <div class="score-row"><div class="score-grade">Classe I · limpo</div><div class="score-desc">Encarcerada, sem isquemia nem ressecção. <b>Tela sintética</b> (WSES 1A; HerniaSurge e SBH: recomendada); menos recidiva sem mais infecção.</div></div>
+          <div class="score-row"><div class="score-grade">Classe II · limpo-contaminado</div><div class="score-desc">Estrangulada ou com ressecção, sem derrame grosseiro. <b>Tela sintética</b> pode ser usada (WSES 1A) com lavagem e protetor de ferida; HerniaSurge: evidência fraca. Polipropileno monofilamentar nos estudos.</div></div>
+          <div class="score-row"><div class="score-grade">Classe III · contaminado</div><div class="score-desc">Necrose intestinal ou derrame entérico na ressecção. <b>Sutura primária se o defeito &lt;3 cm</b>; se não der, tela biológica (2C); sem biológica, tela de poliglactina ou ferida aberta com reparo tardio. SBH: evitar tela.</div></div>
+          <div class="score-row"><div class="score-grade">Classe IV · sujo</div><div class="score-desc">Peritonite por perfuração ou abscesso. Mesma regra da classe III. <b>Instável (choque séptico):</b> abdome aberto para evitar síndrome compartimental e fechamento tardio; separação de componentes é opção na reconstrução.</div></div>
+        </div>
+      </div>
+
+      <details class="deep">
+        <summary>Deep dive · a taxe: janela, técnica e a falsa segurança do "reduziu"</summary>
+        <div class="deep-content">
+          <p>A taxe (redução manual incruenta) é um procedimento de seleção, não de rotina. A lógica é fisiológica: com o saco encarcerado há horas, o edema aperta o colo e a isquemia progride; a janela em que a alça ainda é viável é curta, e a apostila aponta menos de 6 horas como mais compatível com ausência de sofrimento isquêmico e 6 a 8 horas como o ponto em que um ou mais sinais de comprometimento já costumam estar presentes. Esses limites de tempo vêm da apostila e do ensino clássico; o HerniaSurge e o WSES não fixam corte e tratam o tempo de sintomas como fator de pior desfecho (24 horas ou 3 dias nos estudos). Trate o corte como orientação e nunca como licença: o doente com um critério de alarme nunca deve ser submetido à taxe, qualquer que seja o relógio.</p>
+          <p>Para tentar, o doente fica em Trendelenburg com analgesia venosa (e sedação cuidadosa em criança), e se aplica pressão suave, firme e contínua no fundo do saco, orientando-o em direção ao anel. Força excessiva é proibida: ela esmaga a alça ou empurra o saco inteiro, com a constrição junto, para o espaço pré-peritoneal (redução "em massa"), e o doente continua obstruído e isquêmico com a hérnia "resolvida". Depois da redução, o HerniaSurge 2023 (sugestão fraca) pede um período de observação até o analgésico e o sedativo perderem o efeito e o doente se sentir bem; o HP acrescenta exame abdominal seriado e baixo limiar de internar com lactato e, se necessário, TC, porque a alça devolvida pode estar isquêmica e perfurar horas depois (a apostila programa o reparo eletivo breve, porque o risco de reencarcerar persiste). A taxe falhada, por sua vez, tem indicação clara de cirurgia imediata.</p>
+          <p>O mesmo raciocínio vale quando a hérnia reduz "sozinha": ao entrar na sala, sob indução, o relaxamento da parede pode devolver uma alça suspeita à cavidade antes que o cirurgião a veja. A saída é a hernioscopia (laparoscopia pelo saco ou pelo abdome) ou a laparoscopia diagnóstica para ver a viabilidade (WSES 2B; no HerniaSurge só há um estudo pequeno randomizado com limitações), com laparotomia se houver líquido turvo, alça duvidosa ou peritonite. Por fim, a escolha da via: em encarcerada sem estrangulamento, o reparo laparoscópico é possível; havendo estrangulamento ou provável ressecção, prefere-se a abordagem aberta, inguinal ou pré-peritoneal, pela maior segurança diagnóstica e pela facilidade de ressecar e anastomosar através da mesma incisão, com laparotomia quando há peritonite.</p>
+        </div>
+      </details>
+    </div>
+  </div>
+
+  <div class="card prim">
+    <div class="card-head">
+      <div class="card-eyebrow"><span class="card-num">C.5</span> Hérnia umbilical e epigástrica do adulto</div>
+      <h3>Umbilical e epigástrica: pequenas, enganosas e, no cirrótico, perigosas <span class="ank ank-hy">HIGH-YIELD</span></h3>
+    </div>
+    <div class="card-body">
+      <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">A <b>umbilical</b> do adulto é <b>adquirida</b> (obesidade, gestação, ascite) e contém omento e gordura; a <b>epigástrica</b> fica entre o umbigo e o xifoide, 80% na linha média, com gordura pré-peritoneal encarcerada e dor desproporcional ao defeito. Reparo <b>com tela</b> reduz a recidiva (EHS/AHS 2020). No <b>cirrótico com ascite</b>, o saco rompe ou estrangula e carrega mortalidade alta: <b>controle a ascite e repare antes da ruptura</b>.</div></div>
+
+      <div class="disease">
+        <div class="disease-head"><div class="disease-name">Hérnia umbilical e epigástrica do adulto</div><div class="disease-tag">CID-10 K42.9 · K43.9 <span class="ev ev-eular">EHS/AHS 2020</span> <span class="ev ev-expert">Apostila 2025</span></div></div>
+        <div class="disease-body"><div class="disease-rows">
+          <div class="disease-row"><div class="k">Epidemiologia</div><div class="v">A epigástrica ocorre em 3–5% da população, 20% das vezes é múltipla, e muitos têm um único cruzamento aponeurótico na linha média. A umbilical do adulto decorre de aumento da pressão intra-abdominal (obesidade, gravidez, ascite) ou de defeito congênito não diagnosticado antes. Na criança, é congênita (D.1).</div></div>
+          <div class="disease-row"><div class="k">Fisiopatologia</div><div class="v">Defeito aponeurótico da linha alba, onde as fibras decussam pouco, com herniação de gordura pré-peritoneal (epigástrica, com encarceramento da gordura e dor isquêmica) ou de omento e, raramente, alça (umbilical). Na cirrose, a ascite sustentada e a perda de tecido da parede levam a saco com vísceras, pele afinada, erosão e ruptura com peritonite (apostila), e <b>complicações em hérnia umbilical de cirrótico com ascite têm mortalidade alta</b>.</div></div>
+          <div class="disease-row"><div class="k">Clínica</div><div class="v">Abaulamento da linha média, dor local com esforço; epigástrica pode doer sem abaulamento visível. Sinais de alarme no cirrótico: pele fina, cianótica ou ulcerada sobre o saco e escape de líquido pela cicatriz umbilical (ruptura iminente).</div></div>
+          <div class="disease-row"><div class="k">Diagnóstico</div><div class="v">Clínico, em pé e com Valsalva; USG ou TC se o paciente for obeso ou o defeito não for palpável. Diástase dos retos coexiste com frequência e confunde (D.5). <span class="ev ev-eular">EHS/AHS 2020</span></div></div>
+          <div class="disease-row"><div class="k">Tratamento</div><div class="v"><b>Sintomática ou complicada: operar.</b> Reparo <b>com tela</b> reduz a recidiva (principal recomendação do EHS/AHS 2020, resumo; a maioria das recomendações é fraca, de baixa qualidade); preferência por via aberta com tela plana pré-peritoneal, e laparoscópica se o defeito é grande ou se há risco de morbidade de ferida. Pela apostila: anel &lt;1 cm, fechamento simples (transverso), com ou sem tela; 1–4 cm, tela aberta ou laparoscópica; 4–10 cm, tela por laparoscopia. A epigástrica segue os princípios da umbilical: libera o saco, avalia o conteúdo, fecha o defeito (tela). <b>Cirrótico com ascite:</b> reparo é recomendado apesar do risco; assintomático, no momento do transplante; pele fina ou escape de líquido, reparo imediato; encarcerada ou estrangulada, urgência. Ascite controlada antes (paracentese, diurético, albumina; GH10). O corte de 1 cm também aparece no EHS 2021 (diástase), que cita o EHS/AHS 2020: a plicação da bainha anterior pode bastar abaixo de 1 cm; o texto integral do EHS/AHS 2020 não foi lido (conferir). <span class="ev ev-eular">EHS/AHS 2020</span></div></div>
+          <div class="disease-row"><div class="k">Prognóstico</div><div class="v">Complicações do reparo são baixas no eletivo. A recidiva cai com tela. No cirrótico, o reparo eletivo com ascite controlada tem desfecho muito melhor que o de urgência; a decisão do momento (antes do transplante, no transplante) é do hepatologista com o cirurgião.</div></div>
+          <div class="disease-row"><div class="k">O que muda conduta</div><div class="v"><b>Defeito ≥1 cm</b> → tela. <b>Cirrótico com pele fina, bolha ou escape de líquido</b> → reparo imediato, antibiótico, ascite controlada. <b>Dor intensa com defeito pequeno na epigástrica</b> → gordura encarcerada; ressecar e fechar. <b>Hérnia + diástase</b> → o reparo do defeito não trata a diástase; discutir plicatura ou tela (D.5).</div></div>
+        </div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card prim">
+    <div class="card-head">
+      <div class="card-eyebrow"><span class="card-num">C.6</span> Hérnia incisional e ventral complexa</div>
+      <h3>Incisional: fatores de risco, tela no plano certo e separação de componentes <span class="ank ank-dec">DECISION</span></h3>
+    </div>
+    <div class="card-body">
+      <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">A hérnia incisional vem de tensão sobre uma cicatriz que cicatrizou mal, em geral com <b>infecção do sítio cirúrgico</b>. <b>Tela é a regra</b> (recomendação forte, EHS 2023): no plano <b>retromuscular (sublay, Rives-Stoppa)</b>, <b>fechando o defeito e sem ponte</b>. Onlay dá mais complicação de ferida; IPOM (intraperitoneal) fica para casos selecionados. <b>Pré-otimize</b> IMC, glicemia e tabagismo; defeito &gt;8 cm pede <b>separação de componentes</b>.</div></div>
+
+      <div class="disease">
+        <div class="disease-head"><div class="disease-name">Hérnia incisional (e paraestomal)</div><div class="disease-tag">CID-10 K43.2 · K43.5 <span class="ev ev-eular">EHS 2023</span> <span class="ev ev-sbr">SBH 2019</span></div></div>
+        <div class="disease-body"><div class="disease-rows">
+          <div class="disease-row"><div class="k">Epidemiologia</div><div class="v">Fatores de risco: <b>infecção do sítio cirúrgico</b> (o de maior peso), IMC acima de 25 (cresce com o IMC), diabetes mal controlado, tabagismo (18% × 7,7% de hérnia nos fumantes), imunossupressão, incisão na linha média (hérnia de trocarte em portais), idade, gravidez, desnutrição, DPOC, corticoide, quimioterapia, ascite e falha de técnica. O fechamento da laparotomia com pontos curtos contínuos (small bites) e fio de absorção lenta previne a hérnia (EHS 2015, atualização 2022).</div></div>
+          <div class="disease-row"><div class="k">Fisiopatologia</div><div class="v">A cicatriz fascial é frágil e a tensão contínua a alarga; o defeito cresce com o tempo e pode ganhar dimensões que perdem o "domicílio" abdominal: vísceras fora da cavidade por meses reduzem a pressão intra-abdominal, hipotonizam o diafragma, retraem e fibrosam a musculatura lateral e diminuem o volume da cavidade. A devolução súbita causa hipertensão intra-abdominal e síndrome compartimental.</div></div>
+          <div class="disease-row"><div class="k">Clínica</div><div class="v">Abaulamento sobre a cicatriz, dor, desconforto; risco de encarceramento e estrangulamento é baixo no defeito largo (cerca de 1% no primeiro ano e 2,5% em 5 anos, EHS 2023) e maior no pequeno e de colo estreito. Hérnia de trocarte: defeito pequeno, risco de Richter.</div></div>
+          <div class="disease-row"><div class="k">Diagnóstico</div><div class="v">Clínico; se o exame não decide, TC é o mais sensível, e USG ou RM com Valsalva são alternativas (custo e radiação). Para planejar a cirurgia, TC ou RM: o fechamento fascial exigirá liberação miofascial (separação de componentes) se, na TC, o defeito &gt;8 cm, a área &gt;164 cm², a relação reto/defeito &lt;1,34 ou o índice de separação de componentes &gt;0,146 (boa prática; não prevê com acurácia). <span class="ev ev-eular">EHS 2023</span></div></div>
+          <div class="disease-row"><div class="k">Tratamento</div><div class="v"><b>Tela é recomendada</b> (forte; recidiva 11,8% × 30,4% sem tela) em hérnia incisional da linha média. <b>Plano retromuscular</b> (forte); a tela deve poder ser posicionada em onlay, retromuscular ou intraperitoneal (o cirurgião deve dominar os três). <b>Fechar o defeito e evitar ponte</b> (forte), tanto aberta quanto laparoscópica. <b>Pré-otimização</b> (IMC, HbA1c, tabagismo por pelo menos 4 semanas, condicionamento pulmonar); sem perda de peso depois de um programa, o adiamento pode custar mais que ganhar. <b>Profilaxia:</b> dose única de antibiótico, e segunda dose se &gt;4 h (sugestão condicional). Apostila: até 4 cm, via aberta; 4–10 cm, laparoscópica; &gt;10 cm, complexa; trocarte, tela mesmo se pequena. <span class="ev ev-eular">EHS 2023</span> <span class="ev ev-expert">Apostila 2025</span></div></div>
+          <div class="disease-row"><div class="k">Prognóstico</div><div class="v">A hérnia cresce com o tempo, mas o acidente herniário é raro no defeito largo; a cirurgia é eletiva e orientada por qualidade de vida (EHS 2023). A recidiva e a infecção de tela dependem de plano, técnica e comorbidades. O reparo só com sutura recidiva mais (inclusive trocarte).</div></div>
+          <div class="disease-row"><div class="k">O que muda conduta</div><div class="v"><b>Qualquer incisional da linha média</b> → tela retromuscular com fechamento do defeito. <b>IMC alto, HbA1c ruim, fumante</b> → otimizar antes. <b>Defeito &gt;8 cm ou critérios de TC</b> → separação de componentes ou liberação do transverso. <b>VH/VC &gt;25% (Tanaka)</b> → preparo com pneumoperitônio progressivo (apostila). <b>Encarcerada ou estrangulada</b> → C.4, com a tela pelo campo.</div></div>
+        </div></div>
+      </div>
+
+      <div class="score">
+        <div class="score-head"><div class="score-name">Posição da tela na hérnia ventral <span class="ev ev-eular">EHS 2023</span> <span class="ev ev-expert">Apostila 2025</span></div><div class="score-purpose">O plano é a decisão; a nomenclatura cai na prova</div></div>
+        <div class="score-rows">
+          <div class="score-row"><div class="score-grade">Onlay</div><div class="score-desc">Sobre a aponeurose, depois de fechar o defeito. Mais simples, mais complicação de ferida (seroma, infecção).</div></div>
+          <div class="score-row"><div class="score-grade">Sublay (retromuscular)</div><div class="score-desc"><b>Abaixo do reto e acima do peritônio</b>: Rives-Stoppa. Plano recomendado pelo EHS 2023 (forte). Espaço bem vascularizado e tela protegida de alça e de pele.</div></div>
+          <div class="score-row"><div class="score-grade">Underlay · IPOM</div><div class="score-desc">Intraperitoneal, em geral por laparoscopia, com tela de face antiaderente. Exige fechar o defeito (EHS 2023); contato com alça (aderência, fístula) é a objeção.</div></div>
+          <div class="score-row"><div class="score-grade">Inlay</div><div class="score-desc">Entre as bordas do defeito, em ponte, quando não se aproxima. Maior recidiva; hoje evitada (ponte).</div></div>
+          <div class="score-row"><div class="score-grade">Separação de componentes</div><div class="score-desc">Liberação do oblíquo externo (anterior) ou do transverso (posterior, TAR) para <b>fechamento primário</b> antes da tela, restaurando a função da parede; para defeitos grandes ou &gt;8 cm.</div></div>
+        </div>
+      </div>
+
+      <details class="deep">
+        <summary>Deep dive · perda de domicílio, preparo e o que a diretriz de 2023 mudou</summary>
+        <div class="deep-content">
+          <p>A hérnia com perda de domicílio é uma doença da cavidade, e não só da parede. Meses ou anos com as vísceras fora do abdome fazem a pressão intra-abdominal cair, o diafragma perder tônus, a ventilação se restringir, a musculatura lateral (os oblíquos) encurtar e fibrosar, e o volume da cavidade diminuir. Devolver tudo de uma vez eleva a pressão intra-abdominal, com risco de síndrome compartimental, e o abdome fechado sob tensão sofre deiscência. Por isso o reparo é precedido de <b>preparo do doente</b> (perda de peso, parada do tabagismo, controle glicêmico) e <b>do abdome</b>: pneumoperitônio progressivo pré-operatório, a cada uma a três semanas, que distende e relaxa a musculatura; toxina botulínica na parede lateral em casos selecionados; ou abordagem em etapas, com tela de ePTFE. O método de Tanaka relaciona o volume da hérnia ao volume da cavidade; a relação acima de 25% indica pneumoperitônio. Todo esse arsenal vem da apostila de 2025, e o EHS 2023 não o aborda: fica como piso, com conferência de protocolo local.</p>
+          <p>A diretriz europeia de 2023, que se apresenta como a primeira dedicada só à hérnia incisional da linha média, muda três hábitos da apostila. Primeiro, o <b>plano</b>: retromuscular recomendado, e não a laparoscopia com IPOM como padrão dos 4 a 10 cm. Segundo, a <b>ponte</b>: fechar o defeito e evitar telas em ponte, tanto na via aberta quanto na laparoscópica (a apostila descreve a inlay como solução para defeitos grandes). Terceiro, a <b>antecipação da cirurgia complexa</b>: a TC antes da operação serve para prever a liberação miofascial, e o ato de otimizar o doente é prática, e não opcional. Em todas, o grau de certeza da evidência é baixo ou muito baixo, e a recomendação de tela é forte apenas porque a diferença de recidiva (11,8% × 30,4% em cinco ensaios de baixa qualidade) é grande e consistente.</p>
+          <p>A hérnia paraestomal tem lógica semelhante, com agravantes: o defeito é a passagem do estoma e o risco de recidiva é alto; a prevenção com tela ao criar o estoma é discutida, e o reparo exige tela em plano retromuscular ou técnica de Sugarbaker. A hérnia incisional também é a que mais se associa à infecção de prótese, e a conduta diante de infecção profunda com tela monofilamentar de poro largo é preservá-la quando possível (SBH 2019, extrapolado da virilha); explante e reconstrução ficam para centros de parede abdominal.</p>
+        </div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<section id="secundarias">
+  <div class="section">
+    <div class="section-eyebrow"><span>D</span> Entidades Secundárias</div>
+    <div class="section-title">A criança, as hérnias raras, o conteúdo incomum, as internas e a diástase</div>
+    <div class="section-sub">Entidades que completam o diferencial e fecham as remissões do catálogo. Rara e correlata fica agrupada; cada box mantém sua linha de conduta.</div>
+  </div>
+
+  <div class="card diag">
+    <div class="card-head">
+      <div class="card-eyebrow"><span class="card-num">D.1</span> Pediatria</div>
+      <h3>Criança: inguinal sem demora, hidrocele que espera, umbigo que fecha <span class="ank ank-hy">HIGH-YIELD</span></h3>
+    </div>
+    <div class="card-body">
+      <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">A hérnia inguinal da criança é <b>indireta em 95%</b> (conduto peritoneovaginal persistente), tem <b>risco de encarceramento de 15–30%, 85% no 1º ano</b>, e por isso é <b>operada logo</b>, sem reforço da parede posterior (ligadura alta do saco). Encarcerada sem toxemia: redução manual suave e cirurgia na mesma internação. A <b>hidrocele</b> não comunicante regride em até 12 meses; a <b>umbilical</b> fecha sozinha em ~80% até os 4–6 anos. Este box atende à remissão do PD08.</div></div>
+
+      <div class="disease">
+        <div class="disease-head"><div class="disease-name">Hérnia inguinal, hidrocele e hérnia umbilical na criança</div><div class="disease-tag">CID-10 K40 · P83.5 · K42 <span class="ev ev-expert">Apostila 2025</span> <span class="ev ev-sbr">sem diretriz aberta lida</span></div></div>
+        <div class="disease-body"><div class="disease-rows">
+          <div class="disease-row"><div class="k">Epidemiologia</div><div class="v"><b>Inguinal:</b> 1–5% dos recém-nascidos de termo, 9–11% dos prematuros e 30–40% dos de 500–1.000 g; 3 a 6 vezes mais em meninos; 60% à direita (fechamento tardio do conduto), 30% à esquerda e 10% bilateral (mais em prematuros). <b>Umbilical:</b> congênita, mais comum em crianças de ascendência africana; concomitante à inguinal em 15%.</div></div>
+          <div class="disease-row"><div class="k">Fisiopatologia</div><div class="v">A hérnia inguinal indireta e a hidrocele comunicante compartilham o conduto peritoneovaginal pérvio: o diâmetro do canal decide se passa só líquido (hidrocele) ou víscera (hérnia). A hidrocele não comunicante é líquido residual com o conduto fechado. A hérnia umbilical é persistência do anel umbilical sem fechamento aponeurótico, e o anel tende a se estreitar com o crescimento.</div></div>
+          <div class="disease-row"><div class="k">Clínica</div><div class="v">Tumoração redutível que aparece com choro, cólica e esforço; muitas vezes ausente no exame, e o relato dos pais vale. Encarceramento: choro inconsolável, vômitos, tumor duro e doloroso. Hidrocele: aumento de volume escrotal indolor, que transilumina; a comunicante muda de tamanho ao longo do dia. <b>Em lactente do sexo feminino, o saco pode conter ovário</b> e, se houver gônada palpável com genitália feminina, investigue insensibilidade androgênica (GO01).</div></div>
+          <div class="disease-row"><div class="k">Diagnóstico</div><div class="v">Clínico; <b>cirurgia diante de história positiva e exame negativo</b> é prática de muitos cirurgiões; USG na dúvida. O diferencial é com a hidrocele (transiluminação) e, na urgência, com torção testicular e linfadenite.</div></div>
+          <div class="disease-row"><div class="k">Tratamento</div><div class="v"><b>Inguinal redutível:</b> reparo o mais rápido possível, com dissecção, ligadura alta do saco e exploração dele, sem reforçar a parede posterior (técnica de Marcy). <b>Encarcerada:</b> redução manual com pressão suave, analgesia ou sedação (sucesso de 70–90%) se a criança não estiver claramente doente; se reduzida, cirurgia na mesma internação, em geral 24–48 h depois (alguns esperam até 5 dias, por causa do edema); irredutível ou com sinais de sofrimento, cirurgia imediata. <b>Prematuro:</b> operar antes da alta, ao atingir cerca de 1.800–2.000 g; se o diagnóstico vier depois da alta, esperar 55 semanas de idade pós-concepção (apostila; conferir com a equipe de cirurgia pediátrica e a anestesia, pelo risco de apneia). <b>Exploração contralateral:</b> prematuros, encarceradas, meninos &lt;2 anos, meninas &lt;4 anos (controverso), derivação ventriculoperitoneal e doenças que aumentam a pressão abdominal. <b>Hidrocele:</b> observar até 12 meses; comunicante que persiste além de 1–2 anos ou associada à hérnia, operar; não comunicante, só sintomática ou volumosa. <b>Umbilical:</b> esperar o fechamento até 4–5 anos; operar se persistir depois disso, se o defeito for &gt;1,5 cm ou com derivação ventriculoperitoneal; se coexistir inguinal, corrigir as duas no mesmo ato.</div></div>
+          <div class="disease-row"><div class="k">Prognóstico</div><div class="v">Excelente com cirurgia oportuna; a recidiva é baixa. O risco principal é o encarceramento no primeiro ano, com lesão do cordão, do testículo e do intestino. A umbilical complica pouco.</div></div>
+          <div class="disease-row"><div class="k">O que muda conduta</div><div class="v"><b>Inguinal confirmada</b> → cirurgia sem demora (não esperar a idade). <b>Irredutível com toxemia, peritonite ou obstrução</b> → sem taxe, cirurgia. <b>Prematuro</b> → decidir antes da alta, com peso e idade pós-concepção. <b>Hidrocele comunicante persistente ou com hérnia</b> → cirurgia. <b>Umbilical &gt;1,5 cm, derivação ventriculoperitoneal ou persistência após 4–5 anos</b> → operar. <b>Menina com gônada palpável</b> → GO01.</div></div>
+        </div></div>
+      </div>
+      <div class="box danger"><span class="box-label">DANGER</span><div class="box-title">Criança e sedação para taxe: sem dose de memória</div><div class="box-body">A apostila indica analgesia ou sedação para a redução manual, sem dose. O HP não fixa dose pediátrica de sedativo: a sedação da criança só com equipe de via aérea, monitorização contínua e protocolo de sedação do serviço (confirmar protocolo local); doses pediátricas no PD10. A taxe não se tenta em criança com aspecto toxêmico, com distensão importante ou com tumor duro e hiperemiado.</div></div>
+    </div>
+  </div>
+
+  <div class="card diag">
+    <div class="card-head">
+      <div class="card-eyebrow"><span class="card-num">D.2</span> Hérnias raras da parede</div>
+      <h3>Spiegel, lombar e obturadora: o diagnóstico é de imagem <span class="ank ank-dec">DECISION</span></h3>
+    </div>
+    <div class="card-body">
+      <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Raras, sem abaulamento evidente e muitas vezes achadas na TC ou na cirurgia. <b>Spiegel</b> (linha semilunar, infraumbilical, abaixo da linha arqueada), <b>lombar</b> (Grynfelt, superior; Petit, inferior) e <b>obturadora</b> (mulher idosa e magra, sinal de Howship-Romberg). O que muda a conduta é lembrar delas diante de dor sem diagnóstico ou obstrução sem hérnia visível.</div></div>
+
+      <div class="disease">
+        <div class="disease-head"><div class="disease-name">Hérnia de Spiegel, lombar e obturadora</div><div class="disease-tag">CID-10 K45.8 · K43.6 <span class="ev ev-expert">Apostila 2025</span> <span class="ev ev-sbr">sem diretriz aberta lida</span></div></div>
+        <div class="disease-body"><div class="disease-rows">
+          <div class="disease-row"><div class="k">Epidemiologia</div><div class="v">Raras. A de Spiegel ocorre em geral abaixo do nível da linha arqueada de Douglas (na CID-10 da OMS, hérnia de Spiegel entra em K43.6 quando complicada e em K43.9 sem complicação; lombar e obturadora em K45). A lombar de Grynfelt é a mais comum das lombares; congênita (rara, bilateral, mais em meninas) ou adquirida (idosos). A obturadora acomete mulheres debilitadas.</div></div>
+          <div class="disease-row"><div class="k">Fisiopatologia</div><div class="v"><b>Spiegel:</b> defeito da aponeurose do transverso entre a borda lateral do reto e a linha semilunar; o saco fica sob a aponeurose do oblíquo externo, o que a torna <b>interparietal</b> e difícil de palpar. <b>Lombar:</b> abertura em trígonos da parede posterior, o superior (Grynfelt: 12ª costela, denteado menor, oblíquo interno) e o inferior (Petit: crista ilíaca, oblíquo externo, grande dorsal). <b>Obturadora:</b> fraqueza da membrana obturadora, com saco pelo canal obturatório junto ao feixe vasculonervoso.</div></div>
+          <div class="disease-row"><div class="k">Clínica</div><div class="v">Spiegel: dor mal definida, difícil no obeso; lombar: geralmente assintomática, dor lombar nas grandes, <b>não costuma encarcerar</b>; obturadora: dor na face medial da coxa (Howship-Romberg, compressão do nervo obturador) ou obstrução intestinal sem hérnia visível, com risco de estrangulamento.</div></div>
+          <div class="disease-row"><div class="k">Diagnóstico</div><div class="v">USG e <b>TC de abdome</b> são os métodos para Spiegel, lombar e obturadora (a TC é a que mais acha a obturadora no abdome agudo obstrutivo). Exame físico é pouco sensível.</div></div>
+          <div class="disease-row"><div class="k">Tratamento</div><div class="v">Spiegel: aproximação simples dos tecidos com pontos, e <b>tela</b> se o defeito for grande ou os tecidos frágeis. Lombar: sutura simples com fio inabsorvível nos pequenos; retalho muscular ou tela nos volumosos. Obturadora: cirurgia, por laparoscopia ou laparotomia, com ressecção da alça se isquêmica; tela ou sutura conforme o campo (C.4). <span class="ev ev-expert">Apostila 2025</span></div></div>
+          <div class="disease-row"><div class="k">Prognóstico</div><div class="v">Bom no eletivo; a obturadora tem prognóstico pior porque chega tarde, em pacientes frágeis, com ressecção intestinal.</div></div>
+          <div class="disease-row"><div class="k">O que muda conduta</div><div class="v"><b>Obstrução sem hérnia visível em mulher idosa magra</b> → TC procurando obturadora e femoral. <b>Dor na linha semilunar sem abaulamento</b> → USG ou TC por Spiegel. <b>Lombar assintomática</b> → pode esperar. <b>Complicada</b> → C.4.</div></div>
+        </div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card diag">
+    <div class="card-head">
+      <div class="card-eyebrow"><span class="card-num">D.3</span> Hérnias de conteúdo especial</div>
+      <h3>Richter, Littré, Amyand, Garengeot e deslizamento: o conteúdo muda o quadro <span class="ank ank-dgr">DANGER</span></h3>
+    </div>
+    <div class="card-body">
+      <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">Todas se reconhecem pelo <b>conteúdo do saco</b>. <b>Richter:</b> só a borda antimesentérica do intestino, <b>sem obstrução</b> e com risco de necrose e perfuração. <b>Littré:</b> divertículo de Meckel. <b>Amyand:</b> apêndice (apendicite) em hérnia inguinal; <b>Garengeot:</b> apêndice em hérnia femoral. <b>Deslizamento:</b> um órgão (cólon, bexiga) forma parte da parede do saco. Quase sempre descobertas na operação.</div></div>
+
+      <div class="disease">
+        <div class="disease-head"><div class="disease-name">Hérnias de Richter, Littré, Amyand, Garengeot e por deslizamento</div><div class="disease-tag">CID-10 K45.0 · K45.1 <span class="ev ev-expert">Apostila 2025</span> <span class="ev ev-sbr">sem diretriz aberta lida</span></div></div>
+        <div class="disease-body"><div class="disease-rows">
+          <div class="disease-row"><div class="k">Epidemiologia</div><div class="v">Richter: mais nas hérnias femorais, mas também nas inguinais, umbilicais e em portais de laparoscopia (a de trocarte é a clássica no pós-operatório). Littré: o divertículo de Meckel (anomalia congênita mais comum do intestino, na borda antimesentérica do íleo, a cerca de 60 cm da válvula ileocecal) é achado na dissecção do saco, mais à direita. Amyand (1735) é, em rigor, a apendicite aguda no saco inguinal; Garengeot (quatro anos antes) é o apêndice, inflamado ou perfurado, em hérnia femoral. Deslizamento: variante da indireta, e a hérnia com componente direto e indireto é a "em pantalona". As CIDs de cada uma não têm código nominal na OMS; codifique pelo local (K40–K43, K45) e pela complicação (a rubrica K45.0/K45.1 vale para as especificadas, e a Richter pelo sítio da hérnia).</div></div>
+          <div class="disease-row"><div class="k">Fisiopatologia</div><div class="v"><b>Richter:</b> o colo pinça só parte da circunferência, a luz permanece pérvia, e a parede isquêmica evolui a necrose e perfuração <b>sem obstrução</b>, o que atrasa o diagnóstico. <b>Littré:</b> o Meckel pode inflamar, estrangular ou necrosar no saco. <b>Amyand e Garengeot:</b> a inflamação do apêndice por constrição no colo, com risco de abscesso e de infecção de ferida e de tela. <b>Deslizamento:</b> a víscera é parte da parede, e o saco não a envolve toda: ligar o saco às cegas lesa cólon ou bexiga.</div></div>
+          <div class="disease-row"><div class="k">Clínica</div><div class="v">Richter e Littré: dor e sinais locais na hérnia, febre, leucocitose, sem distensão nem parada de gases; o diagnóstico pré-operatório é difícil. Amyand e Garengeot: simulam hérnia estrangulada (dor inguinoescrotal, febre, toxemia), com o apêndice como surpresa. Deslizamento: hérnia volumosa, em geral inguinal indireta, sem sintoma específico.</div></div>
+          <div class="disease-row"><div class="k">Diagnóstico</div><div class="v">Raramente pré-operatório. A TC com contraste pode mostrar a alça pinçada, o apêndice no saco ou o divertículo; em hérnia estrangulada com quadro desproporcional, a ausência de obstrução <b>não</b> descarta Richter nem Littré (A.1). Na bexiga, a cistografia ou a TC ajudam em deslizamento volumoso.</div></div>
+          <div class="disease-row"><div class="k">Tratamento</div><div class="v"><b>Richter e Littré:</b> cirurgia de urgência; avaliar a parede, ressecar o segmento isquêmico (enterectomia segmentar ou Meckel com a base) e escolher a tela pelo campo (C.4). <b>Amyand e Garengeot:</b> apendicectomia; reparo da parede com sutura em campo contaminado, e tela só sem contaminação (a tela sintética em apendicite perfurada aumenta o risco de infecção); em Garengeot, reparo femoral com a mesma cautela. Antibiótico terapêutico, como no II03 (F2). <b>Deslizamento:</b> reconhecer e <b>não ligar nem seccionar</b> o saco antes de identificar o órgão; reduzir o órgão com o saco, ou abrir o saco só na parte livre, e reparo com tela. <span class="ev ev-expert">Apostila 2025</span></div></div>
+          <div class="disease-row"><div class="k">Prognóstico</div><div class="v">Depende do tempo até a cirurgia; Richter e Littré chegam tarde com perfuração. Amyand e Garengeot têm bom desfecho com apendicectomia, e a infecção de ferida é a complicação.</div></div>
+          <div class="disease-row"><div class="k">O que muda conduta</div><div class="v"><b>Hérnia dolorosa sem obstrução, mas com sinais locais e SIRS</b> → pensar Richter ou Littré e operar. <b>Apêndice no saco</b> → apendicectomia e <b>sem tela sintética se houver pus</b>. <b>Saco com órgão na parede</b> → deslizamento: dissecar com cuidado.</div></div>
+        </div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card diag">
+    <div class="card-head">
+      <div class="card-eyebrow"><span class="card-num">D.4</span> Hérnias internas</div>
+      <h3>Hérnia interna: obstrução com abdome virgem de cirurgia, ou com bypass gástrico <span class="ank ank-dec">DECISION</span></h3>
+    </div>
+    <div class="card-body">
+      <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">É a herniação de vísceras por um <b>defeito da cavidade peritoneal</b> (mesentério, ligamentos, recessos), e não da parede. Entra no diferencial da <b>obstrução de delgado sem cicatriz nem hérnia externa</b> e do pós-operatório de <b>bypass gástrico em Y de Roux</b> e de colectomias. Em alça fechada, a isquemia é rápida: TC e <b>cirurgia sem espera</b>. O abdome agudo obstrutivo em si é do GH06.</div></div>
+
+      <div class="disease">
+        <div class="disease-head"><div class="disease-name">Hérnia interna</div><div class="disease-tag">CID-10 K46.0 · K46.9 <span class="ev ev-expert">Conhecimento do autor · conferir</span> <span class="ev ev-nice">WSES 2017 (conceito de estrangulamento)</span></div></div>
+        <div class="disease-body"><div class="disease-rows">
+          <div class="disease-row"><div class="k">Epidemiologia</div><div class="v">Causa pouco frequente de obstrução, mas relevante pela gravidade. <b>Congênitas:</b> paraduodenais (as mais comuns entre as internas), pericecal, do forame de Winslow, intersigmoide, transmesentéricas. <b>Adquiridas:</b> defeitos mesentéricos e do espaço de Petersen depois de bypass gástrico em Y de Roux, de ressecções intestinais e de transplante. Sem fonte aberta lida neste HP: a classificação é a do ensino cirúrgico, conferir com tratado e com o GH06.</div></div>
+          <div class="disease-row"><div class="k">Fisiopatologia</div><div class="v">Uma alça de delgado passa por um orifício natural ou criado cirurgicamente e fica pinçada contra o defeito, formando alça fechada, com risco de volvo do mesentério e de isquemia extensa. Depois de bypass, a perda de gordura mesentérica por emagrecimento amplia os defeitos.</div></div>
+          <div class="disease-row"><div class="k">Clínica</div><div class="v">Dor abdominal em cólica ou contínua, intermitente nas formas crônicas; vômitos e distensão se houver obstrução completa; em alça fechada, dor intensa com abdome pouco distendido, e piora súbita sugere isquemia. O exame não acha hérnia externa.</div></div>
+          <div class="disease-row"><div class="k">Diagnóstico</div><div class="v"><b>TC de abdome com contraste</b>: alças agrupadas em saco, vasos mesentéricos congestos, convergentes ou em "redemoinho" (sinal do redemoinho), alça fechada e sinais de isquemia. A radiografia simples pouco ajuda.</div></div>
+          <div class="disease-row"><div class="k">Tratamento</div><div class="v">Cirurgia: reduzir a alça, avaliar a viabilidade, ressecar o necrosado e <b>fechar o defeito</b> (mesentério, espaço de Petersen) com sutura, para evitar recidiva; laparoscopia quando estável, laparotomia se alça isquêmica ou instabilidade. Antibiótico perioperatório e terapêutico, como em F2. Não tentar tratamento conservador em alça fechada. <span class="ev ev-expert">Conhecimento do autor · conferir</span></div></div>
+          <div class="disease-row"><div class="k">Prognóstico</div><div class="v">Mortalidade cresce com a extensão da isquemia e com o atraso; síndrome do intestino curto é o risco de ressecções extensas.</div></div>
+          <div class="disease-row"><div class="k">O que muda conduta</div><div class="v"><b>Obstrução sem cicatriz nem hérnia externa</b> → hérnia interna entre as hipóteses e TC. <b>Bypass gástrico com dor</b> → não adiar a TC nem a exploração; <b>alça fechada ou isquemia</b> → cirurgia imediata (GH06).</div></div>
+        </div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card diag">
+    <div class="card-head">
+      <div class="card-eyebrow"><span class="card-num">D.5</span> Diástase dos retos</div>
+      <h3>Diástase dos retos: a "hérnia" que não tem defeito <span class="ank ank-prl">PEARL</span></h3>
+    </div>
+    <div class="card-body">
+      <div class="quick"><div class="quick-label">Quick view · 30 segundos</div><div class="quick-body">É o alargamento da <b>linha alba (&gt;2 cm)</b> com afastamento dos retos, sem defeito fascial. Não encarcera nem estrangula. <b>Não consta na apostila</b>: entra pelo EHS 2021. A queixa que importa é a <b>imagem corporal</b> e a <b>instabilidade do core</b>. Fisioterapia primeiro; <b>plicatura</b> se não houver hérnia; <b>tela</b> se houver hérnia da linha média associada.</div></div>
+
+      <div class="disease">
+        <div class="disease-head"><div class="disease-name">Diástase dos músculos retos do abdome</div><div class="disease-tag">CID-10 M62.0 <span class="ev ev-eular">EHS 2021</span></div></div>
+        <div class="disease-body"><div class="disease-rows">
+          <div class="disease-row"><div class="k">Epidemiologia</div><div class="v">Frequente no pós-parto e na obesidade, em homens e mulheres com perda de peso importante e em idosos; coexiste com hérnia umbilical e epigástrica. Uma separação de 2 cm ou menos pode ser fisiológica.</div></div>
+          <div class="disease-row"><div class="k">Fisiopatologia</div><div class="v">Adelgaçamento e alargamento da linha alba por aumento crônico da pressão intra-abdominal, estiramento hormonal e mecânico da gravidez e fragilidade do colágeno; sem solução de continuidade da fáscia, o que a separa da hérnia.</div></div>
+          <div class="disease-row"><div class="k">Clínica</div><div class="v">Abaulamento da linha média ao esforço (em "barco" ou fusiforme), de largura variável, indolor. Sintomas mais relevantes: <b>imagem corporal alterada e instabilidade do core</b>; a largura não prediz a gravidade dos sintomas.</div></div>
+          <div class="disease-row"><div class="k">Diagnóstico</div><div class="v">Clínico, com a medida em dedos; USG ou paquímetro a 3 cm acima do umbigo medem melhor; TC só para achar hérnia associada ou para planejar a cirurgia. A classificação sugerida pelo EHS 2021 usa a largura, o estado pós-gravidez e a presença de hérnia. <span class="ev ev-eular">EHS 2021</span></div></div>
+          <div class="disease-row"><div class="k">Tratamento</div><div class="v">Sem tratamento não operatório específico validado; <b>fisioterapia</b> pode ser considerada antes da cirurgia (certeza moderada, recomendação fraca). Cirurgia por decisão compartilhada: <b>plicatura da linha alba</b> sem hérnia associada, aberta ou endoscópica, com ou sem tela; <b>reparo com tela</b> se houver hérnia umbilical ou epigástrica (a plicatura pode bastar abaixo de 1 cm); cinta abdominal no pós-operatório é opcional. <span class="ev ev-eular">EHS 2021</span></div></div>
+          <div class="disease-row"><div class="k">Prognóstico</div><div class="v">Benigno; a evidência dos tratamentos é de baixa qualidade e heterogênea, por isso a indicação é por sintoma e preferência.</div></div>
+          <div class="disease-row"><div class="k">O que muda conduta</div><div class="v"><b>Sem defeito e sem sintomas</b> → tranquilizar. <b>Hérnia associada</b> → reparo com tela (C.5). <b>Queixa de core ou de imagem</b> → fisioterapia e, se persistir, plicatura. Não é urgência e não encarcera.</div></div>
+        </div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="algoritmo">
+  <div class="section">
+    <div class="section-eyebrow"><span>E</span> Algoritmo</div>
+    <div class="section-title">Da massa na parede à operação certa, no tempo certo</div>
+    <div class="section-sub">A árvore separa primeiro o que não espera (isquemia) e depois decide por local, sexo, idade e tamanho. O raciocínio em seis passos vem logo abaixo.</div>
+  </div>
+
+  <div class="card prim">
+    <div class="card-head">
+      <div class="card-eyebrow"><span class="card-num">E.1</span> Algoritmo</div>
+      <h3>Hérnia da parede abdominal: decisão em sequência</h3>
+    </div>
+    <div class="card-body">
+      <div class="algo">
+        <div class="tree">
+          <div class="tree-line"><span class="tree-node start">Paciente com abaulamento da parede abdominal (virilha, umbigo, linha média, cicatriz)</span></div>
+          <div class="tree-branch">
+            <div class="tree-label yes">A hérnia é irredutível e dolorosa, ou há obstrução intestinal?</div>
+            <div class="tree-line"><span class="tree-node dec">Sinais de isquemia: dor intensa, hiperemia, SIRS, lactato alto, TC suspeita, peritonite?</span></div>
+            <div class="tree-branch">
+              <div class="tree-label yes">SIM</div>
+              <div class="tree-line"><span class="tree-node dgr">→ Sem taxe. Jejum, acessos, analgesia, antibiótico e cirurgia imediata (C.4). Avaliar a alça; ressecar se inviável. Campo limpo ou limpo-contaminado: tela sintética pode; contaminado ou sujo: sutura (&lt;3 cm) ou tela biológica; instável: abdome aberto</span></div>
+            </div>
+            <div class="tree-branch">
+              <div class="tree-label no">NÃO (estável, laboratório normal, evolução curta)</div>
+              <div class="tree-line"><span class="tree-node action">→ Taxe com analgesia e Trendelenburg. Reduziu: observar até passar o efeito dos fármacos e o doente estar bem, internar se houver dúvida, e programar o reparo eletivo breve. Não reduziu: cirurgia imediata</span></div>
+            </div>
+          </div>
+          <div class="tree-branch">
+            <div class="tree-label no">A hérnia é redutível: onde está?</div>
+            <div class="tree-line"><span class="tree-node dec">Virilha (acima ou abaixo do ligamento inguinal)</span></div>
+            <div class="tree-branch">
+              <div class="tree-label yes">Abaixo do ligamento ou mulher</div>
+              <div class="tree-line"><span class="tree-node dx">→ Femoral até prova em contrário: operar sempre; mulher, mesmo assintomática, de preferência TAPP ou TEP (C.3). Gestante: Doppler e conduta expectante</span></div>
+            </div>
+            <div class="tree-branch">
+              <div class="tree-label no">Homem, inguinal</div>
+              <div class="tree-line"><span class="tree-node dec">Sintomático, ou de risco para urgência?</span></div>
+              <div class="tree-branch">
+                <div class="tree-label yes">SIM</div>
+                <div class="tree-line"><span class="tree-node action">→ Reparo com tela: Lichtenstein (aberto, local se possível) ou TEP/TAPP (bilateral, recidivada, jovem ativo). Sem tela: Shouldice. Recidiva: via oposta</span></div>
+              </div>
+              <div class="tree-branch">
+                <div class="tree-label no">Assintomático ou oligossintomático, ou comorbidade grave</div>
+                <div class="tree-line"><span class="tree-node action">→ Conduta expectante com discussão de risco e sinais de alarme; reavaliar; operar se surgirem sintomas</span></div>
+              </div>
+            </div>
+            <div class="tree-line"><span class="tree-node dec">Linha média ou cicatriz</span></div>
+            <div class="tree-branch">
+              <div class="tree-label yes">Sem cicatriz: umbilical ou epigástrica</div>
+              <div class="tree-line"><span class="tree-node action">→ Defeito ≥1 cm: tela (aberta pré-peritoneal; laparoscópica se defeito grande); &lt;1 cm: sutura ou tela. Cirrótico com ascite: controlar a ascite; pele fina ou escape de líquido: reparo imediato (C.5)</span></div>
+            </div>
+            <div class="tree-branch">
+              <div class="tree-label no">Com cicatriz: incisional</div>
+              <div class="tree-line"><span class="tree-node action">→ Otimizar IMC, glicemia e tabagismo; tela retromuscular, fechando o defeito, sem ponte; defeito &gt;8 cm ou critérios de TC: separação de componentes; perda de domicílio: preparo do abdome (C.6)</span></div>
+            </div>
+            <div class="tree-line"><span class="tree-node dx">Criança: inguinal, operar logo; hidrocele e umbilical: esperar (D.1)</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="box decision">
+        <span class="box-label">DECISION</span>
+        <div class="box-title">Raciocínio em 6 passos: o que perguntar antes de agendar qualquer hérnia</div>
+        <div class="box-body"><ol style="margin:6px 0 0 18px;padding:0;">
+          <li><b>Primeiro, a hérnia está viva?</b> Dor aguda, irredutibilidade, SIRS ou lactato: isquemia até prova em contrário e sala cirúrgica; o tempo é o prognóstico.</li>
+          <li><b>Segundo, onde sai?</b> Abaixo do ligamento inguinal é femoral e se opera sempre; acima, inguinal; na linha média, umbilical, epigástrica ou incisional; lateral ao reto, Spiegel.</li>
+          <li><b>Terceiro, quem é o paciente?</b> Mulher, criança, gestante e cirrótico invertem a regra do homem adulto: mulher opera, criança opera logo, gestante observa, cirrótico controla a ascite.</li>
+          <li><b>Quarto, sintoma ou risco?</b> Homem inguinal sem dor pode esperar; a cirurgia existe para a qualidade de vida, e a espera é segura com orientação.</li>
+          <li><b>Quinto, tela e plano.</b> Tela na quase totalidade; na incisional, retromuscular com fechamento do defeito; na urgência, a classe da ferida decide a tela.</li>
+          <li><b>Sexto, preparo e profilaxia.</b> Pré-otimizar a incisional; antibiótico só onde há indicação (ASA III–IV, tela em risco, ressecção); dor depois de 8 semanas é neuropática e vai à escada da inguinodinia.</li>
+        </ol></div>
+      </div>
+
+      <div class="score">
+        <div class="score-head"><div class="score-name">Qual técnica na virilha do adulto? <span class="ev ev-eular">HerniaSurge 2018 e 2023</span> <span class="ev ev-sbr">SBH 2019</span></div><div class="score-purpose">A técnica boa é a que a equipe domina e o paciente tolera</div></div>
+        <div class="score-rows">
+          <div class="score-row"><div class="score-grade">Unilateral primária</div><div class="score-desc">Endoscópica recomendada, com expertise (HerniaSurge 2023, forte); Lichtenstein ou pré-peritoneal aberta com tela plana seguem aceitáveis. Local no aberto, se o cirurgião domina; geral ou local, em vez de regional, em ≥65 anos.</div></div>
+          <div class="score-row"><div class="score-grade">Bilateral</div><div class="score-desc">Endoscópica (TEP/TAPP) é a técnica de escolha; duas telas com 1–2 cm de sobreposição na linha média.</div></div>
+          <div class="score-row"><div class="score-grade">Recidivada</div><div class="score-desc">Via oposta à anterior: após reparo anterior, posterior (endoscópico); depois de posterior, anterior. Falha das duas: cirurgião de parede abdominal.</div></div>
+          <div class="score-row"><div class="score-grade">Mulher</div><div class="score-desc">TAPP ou TEP; evita a femoral oculta e a secção do ligamento redondo na via aberta.</div></div>
+          <div class="score-row"><div class="score-grade">Sem tela</div><div class="score-desc">Shouldice, em serviço com experiência; Bassini e McVay estão em desuso.</div></div>
+          <div class="score-row"><div class="score-grade">Urgência</div><div class="score-desc">Pela viabilidade e pelo campo (C.4): inguinotomia ou via pré-peritoneal, tela só em campo limpo ou limpo-contaminado.</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="tratamento">
+  <div class="section">
+    <div class="section-eyebrow"><span>F</span> Tratamento Integrado</div>
+    <div class="section-title">F1 · Estratégia por entidade · F2 · Doses · F3 · Casos · F4 · Brasil</div>
+    <div class="section-sub">O tratamento da hérnia é cirúrgico; o que o médico decide é quando, por qual via, com que tela e com que analgesia. Cada degrau tem indicação e limite; as doses estão em F2.</div>
+  </div>
+
+  <div class="card tx">
+    <div class="card-head">
+      <div class="card-eyebrow"><span class="card-num">F.1</span> Estratégia</div>
+      <h3>Escada terapêutica por entidade <span class="ank ank-dec">DECISION</span></h3>
+    </div>
+    <div class="card-body">
+      <div class="sub-title">F1.1 · Hérnia inguinal do adulto (C.1)</div>
+      <ul class="bullets">
+        <li><b>Indicação:</b> homem sintomático e toda mulher operam; homem oligo ou assintomático, ou com comorbidade grave, pode ser observado com orientação (risco de acidente 0,2 por 100 pessoas-ano; 68% operam em 10 anos).</li>
+        <li><b>Preparo:</b> tratar prostatismo, tosse crônica e constipação (menos recidiva); esvaziar a bexiga antes (sobretudo no TEP); tricotomia só se necessária, com máquina, logo antes. Anticoagulado e antiagregado: conduta no CT06 e no HO03.</li>
+        <li><b>Via e anestesia:</b> aberto com tela plana (Lichtenstein) sob anestesia local com infiltração da ferida, se o cirurgião domina; geral é a segunda melhor; raqui e peridural têm mais retenção urinária. Endoscópico (TEP ou TAPP) sob geral: recomendado no primário unilateral de qualquer sexo se houver expertise (HerniaSurge 2023), e o mais favorecido na bilateral, recidivada, mulher e jovem ativo; em ≥65 anos, geral ou local em vez de regional.</li>
+        <li><b>Tela e fixação:</b> plana, monofilamentar, poro ≥1 mm (SBH: 30–140 g/m²; HerniaSurge 2023: leve no Lichtenstein, pesada no endoscópico, sobretudo na direta grande); Lichtenstein ≥6×14 cm; endoscópica ≥15×10 cm sem fenda (prática citada pelo HerniaSurge; seção não reconfirmada); sem fixação, exceto M3 (de preferência cola); no máximo 4–6 grampos se usados.</li>
+        <li><b>Pós-operatório:</b> alta no mesmo dia; infiltração local; atividades normais quando confortável (2 a 7 dias); sem peso &gt;10 kg por 4 a 6 semanas; sem dreno de rotina (dreno só com anticoagulante, coagulopatia ou sangramento difuso).</li>
+      </ul>
+      <div class="box decision"><span class="box-label">DECISION</span><div class="box-title">Antibiótico no reparo inguinal eletivo: três fontes, três respostas</div><div class="box-body">HerniaSurge 2018 e atualização 2023: <b>não recomendado</b> no reparo aberto com tela em risco médio e ambiente de baixo risco (forte), <b>sugerido</b> em paciente de alto risco nesse ambiente, <b>recomendado em qualquer paciente em ambiente de alto risco</b> (forte) e <b>não sugerido</b> no laparo-endoscópico; cefalosporina de primeira geração ou betalactâmico com inibidor de betalactamase são os agentes recomendados. SBH 2019: sem como estabelecer o uso rotineiro; em ASA III–IV, <b>cefalosporina de primeira geração</b>. ASHP 2013: recomenda cefazolina em todo reparo (herniorrafia e hernioplastia). A apostila 2025 diz que é controverso e obrigatório em ASA III–IV; o CT06 aceita uso e não uso. O padrão do HP é <b>não usar de rotina em ASA I–II de baixo risco e usar cefazolina em ASA III–IV, em ambiente de risco ou com ferida de risco</b> (divergência rotulada).</div></div>
+
+      <div class="sub-title">F1.2 · Hérnia femoral e a virilha da mulher (C.3)</div>
+      <ul class="bullets">
+        <li><b>Sempre operar</b>, sintomática ou não; sem espera vigilante. Via pré-peritoneal com tela (TEP, TAPP ou aberta posterior); McVay e plug só se não houver alternativa.</li>
+        <li><b>Mulher com massa na virilha:</b> TAPP ou TEP; não seccionar o ligamento redondo na via aberta; inspecionar o orifício miopectíneo inteiro.</li>
+        <li><b>Gestante:</b> Doppler colorido (varizes do ligamento redondo) e observação; cirurgia só se encarcerar ou estrangular (GO10 no pré-natal).</li>
+      </ul>
+
+      <div class="sub-title">F1.3 · Hérnia encarcerada e estrangulada (C.4)</div>
+      <ul class="bullets">
+        <li><b>Ressuscitação:</b> jejum, 2 acessos, cristaloide, analgesia, sonda gástrica se obstruído, antibiótico, lactato e hemograma; TC se a clínica não decidir e o tempo permitir.</li>
+        <li><b>Taxe</b> só se estável, sem peritonite, sem dor intensa, laboratório normal e evolução curta; analgesia e Trendelenburg; pressão suave e contínua; se reduziu, observar até passar o efeito de analgésico e sedativo e o doente estar bem (HerniaSurge 2023, sugestão fraca), com exame abdominal seriado e baixo limiar para internar (idoso, comorbidade, quadro obstrutivo, evolução longa); se não reduziu, cirurgia imediata.</li>
+        <li><b>Cirurgia:</b> inguinotomia ou via pré-peritoneal; avaliar a alça (cor, peristalse, pulso mesentérico, aquecimento com compressa); ressecção e anastomose primária se inviável; laparotomia se peritonite ou redução acidental na indução.</li>
+        <li><b>Tela pelo campo (CDC):</b> I e II, sintética; III e IV, sutura se defeito &lt;3 cm ou tela biológica; instável, abdome aberto e fechamento tardio.</li>
+        <li><b>Antibiótico:</b> encarcerada sem isquemia, profilaxia curta (WSES 2C); estrangulada ou com ressecção, 48 h (WSES 2C); peritonite, esquema terapêutico (F2), primeira dose cheia; ajuste renal só depois de 24–72 h, com a farmácia (II03).</li>
+      </ul>
+      <ul class="bullets">
+        <li><b>Passo a passo no centro cirúrgico:</b> incisão sobre a hérnia (inguinotomia, ou paramediana/mediana se houver dúvida de peritonite); abertura do saco com isolamento do líquido (cultura se turvo ou fétido); inspeção da alça no anel; liberação do colo, nunca às cegas; aquecimento com compressa morna e reavaliação de cor, peristalse e pulso mesentérico por alguns minutos; ressecção do inviável com anastomose primária; lavagem; protetor de ferida antes de pensar em tela.</li>
+        <li><b>Alça duvidosa:</b> viável com dúvida, reavaliar ou marcar nova olhada; ressecção larga é melhor que anastomose em tecido isquêmico. Se o conteúdo é omento necrótico, ressecção do omento.</li>
+        <li><b>Depois:</b> a ferida em campo contaminado pode ficar aberta ou fechada com dreno, conforme o serviço; reavaliar a alta com exame seriado, e tromboprofilaxia e jejum conforme o CT06.</li>
+      </ul>
+      <div class="box danger"><span class="box-label">DANGER</span><div class="box-title">Hérnia estrangulada em paciente de risco: não "otimizar" por dias</div><div class="box-body">Idoso, anticoagulado, cardiopata e ASA III–IV têm pior desfecho, mas o atraso piora mais ainda (HerniaSurge 2018: atraso do início da dor à cirurgia é fator de pior prognóstico). Reversão do anticoagulante (HO03), estabilização hemodinâmica e cirurgia no mesmo turno; anestesia local com sedação é opção se não houver necrose intestinal. A avaliação pré-operatória de urgência é a do CT06, abreviada.</div></div>
+
+      <div class="sub-title">F1.4 · Hérnia umbilical, epigástrica e cirrose com ascite (C.5)</div>
+      <ul class="bullets">
+        <li><b>Operar a sintomática</b> e a de defeito grande; com tela se o defeito for ≥1 cm (EHS/AHS 2020, apostila); laparoscópica se o defeito for grande ou houver risco de morbidade da ferida.</li>
+        <li><b>Cirrótico com ascite:</b> controlar a ascite antes (paracentese, diurético, albumina; TIPS em refratária; GH10); assintomático, reparo no momento do transplante; pele fina ou escape de líquido, reparo imediato; encarcerada ou estrangulada, urgência.</li>
+        <li><b>Hérnia associada à diástase:</b> o reparo com tela do defeito; a plicatura sozinha basta apenas abaixo de 1 cm (D.5).</li>
+      </ul>
+
+      <div class="sub-title">F1.5 · Hérnia incisional e ventral complexa (C.6)</div>
+      <ul class="bullets">
+        <li><b>Pré-otimização</b> (EHS 2023, boa prática): peso, HbA1c, tabagismo por ≥4 semanas, condicionamento pulmonar; se não houver perda de peso depois de um programa, discutir e operar mesmo assim.</li>
+        <li><b>Técnica:</b> tela retromuscular, fechando o defeito e evitando ponte; onlay e IPOM são alternativas conhecidas; separação de componentes (oblíquo externo ou liberação do transverso) para defeitos &gt;8 cm ou critérios de TC.</li>
+        <li><b>Perda de domicílio:</b> preparo do abdome (pneumoperitônio progressivo, toxina botulínica, método de Tanaka com VH/VC &gt;25%); conferir protocolo local, pois a apostila é a única fonte.</li>
+        <li><b>Prevenção:</b> fechamento da laparotomia com pontos curtos contínuos e fio de absorção lenta (EHS 2015/2022).</li>
+      </ul>
+      <div class="box hy"><span class="box-label">HIGH-YIELD</span><div class="box-title">Incisional: o que a prova ainda cobra e o que a diretriz de 2023 pede</div><div class="box-body">Prova: nomes (onlay, sublay, underlay = IPOM, inlay), indicação laparoscópica de 4 a 10 cm e separação de componentes. Diretriz de 2023: <b>retromuscular</b> como plano, <b>fechar o defeito</b>, <b>tela sempre</b> e otimização do doente. Quando houver conflito, responda pela diretriz atual e cite o plano.</div></div>
+
+      <div class="sub-title">F1.6 · Dor crônica pós-herniorrafia (C.2)</div>
+      <ul class="bullets">
+        <li><b>Degrau 1:</b> analgesia multimodal (paracetamol e AINE) com fármaco neuropático (duloxetina, tricíclico ou gabapentinoide; F2); tópicos (lidocaína, capsaicina) estão no EurA-CPIP 2026, mas sem benefício na atualização HerniaSurge 2023; reavaliar em 3–6 semanas; sem opioide prolongado.</li>
+        <li><b>Degrau 2:</b> bloqueio nervoso com anestésico de longa ação e corticoide; repetir se houver resposta.</li>
+        <li><b>Degrau 3:</b> ablação percutânea (fenol ou álcool) nos refratários ao bloqueio repetido.</li>
+        <li><b>Degrau 4:</b> neurectomia com troca da tela, depois de pelo menos 6 meses e de 3 meses de tratamento clínico e intervencionista, em centro com equipe multidisciplinar; informar que a eficácia é incerta (SBH: 70–100%; HerniaSurge 2023: cerca de 30% de falha).</li>
+      </ul>
+
+      <div class="sub-title">F1.7 · Analgesia pós-operatória escalonada (todas as hérnias)</div>
+      <ul class="bullets">
+        <li><b>Degrau 0:</b> infiltração da ferida e, no aberto, bloqueio de campo com anestésico local antes de acordar o doente (recomendado pela SBH e pelo HerniaSurge).</li>
+        <li><b>Degrau 1:</b> paracetamol e dipirona em horário, sem esperar a dor aparecer (F2).</li>
+        <li><b>Degrau 2:</b> AINE (ibuprofeno ou cetorolaco curto) se função renal normal, sem sangramento e sem contraindicação; evitar na urgência com hipovolemia.</li>
+        <li><b>Degrau 3:</b> morfina em resgate, em dose baixa e titulada, parando se sedação, FR &lt;12 ou SpO₂ caindo; o doente de hérnia complicada recebe a mesma frase do NU05 e do GH08.</li>
+        <li><b>Critério de revisão:</b> dor que não cede em 48 h sugere hematoma, infecção ou isquemia testicular; depois de 8 semanas, é dor neuropática (C.2).</li>
+      </ul>
+
+      <div class="sub-title">F1.8 · Criança (D.1)</div>
+      <ul class="bullets">
+        <li><b>Inguinal:</b> reparo logo; ligadura alta do saco sem reforço da parede; encarcerada sem toxemia, redução manual suave e cirurgia em 24–48 h na mesma internação; prematuro, antes da alta, pelo peso e pela idade pós-concepção.</li>
+        <li><b>Hidrocele:</b> observar até 12 meses; cirurgia se comunicante persistente ou associada à hérnia. <b>Umbilical:</b> esperar até 4–5 anos; operar se &gt;1,5 cm, com derivação ventriculoperitoneal ou persistente.</li>
+        <li><b>Profilaxia:</b> cefazolina 30 mg/kg IV (máx. 2 g), como no CT06; analgesia em F2.</li>
+      </ul>
+
+      <div class="sub-title">F1.9 · Orientação de alta e seguimento (todas as hérnias)</div>
+      <ul class="bullets">
+        <li><b>Sinais de alarme para voltar ao PS:</b> dor súbita e intensa na região operada ou no abdome, vômitos, distensão, febre, abaulamento irredutível, hematoma que cresce, testículo doloroso e aumentado, saída de secreção pela ferida.</li>
+        <li><b>Atividade:</b> retomar o que for confortável (2 a 7 dias na inguinal), sem peso &gt;10 kg por 4 a 6 semanas; a incisional e a ventral complexa pedem mais cautela, por decisão do cirurgião (as diretrizes lidas não fixam prazo de repouso para elas).</li>
+        <li><b>Retorno:</b> revisão em 2 a 4 semanas para ferida, seroma e dor; seroma é frequente (cerca de 7%) e quase sempre se resolve sozinho; o abaulamento precoce não é recidiva até se provar.</li>
+        <li><b>Seguimento de dor:</b> perguntar sobre dor aos 3 e 6 meses; dor que atrapalha a vida diária depois de 3 meses é inguinodinia e vai à escada F1.6.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="card tx">
+    <div class="card-head">
+      <div class="card-eyebrow"><span class="card-num">F.2</span> Doses Operacionais</div>
+      <h3>Tabela de doses — hérnias da parede <span class="ank ank-dgr">DANGER</span></h3>
+    </div>
+    <div class="card-body">
+      <div class="stbl stbl-3">
+        <div class="stbl-head stbl-3"><div>Fármaco</div><div>Dose adulto</div><div>Indicação · notas</div></div>
+        <div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Cefazolina (profilaxia)</div><div class="col" data-l="Dose"><b>2 g IV até 60 min antes da incisão (3 g se ≥120 kg)</b>; repetir a cada 4 h se a cirurgia se prolongar (&gt;4 h na incisional, EHS 2023) ou se a perda passar de 1,5 L (CT06; texto integral do EHS 2023 a conferir). Alergia a betalactâmico: clindamicina 900 mg IV, repetir 600 mg a cada 6 h (como no CT06)</div><div class="col" data-l="Indicação">Hérnia em ASA III–IV, ambiente de risco, incisional (dose única) e urgência com ressecção <span class="ev ev-sbr">SBH 2019</span> <span class="ev ev-nice">ASHP 2013</span> <span class="ev ev-eular">EHS 2023</span>. Reparo inguinal eletivo aberto com tela: não usar em risco médio e ambiente de baixo risco, usar em alto risco do doente ou do ambiente (HerniaSurge 2023); endoscópico: não sugerida (divergência em F1.1). Doses iguais às do CT06. A apostila cita 30–60 min antes; o ASHP, até 60 min.</div></div>
+        <div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Cefazolina + metronidazol (ressecção sem derrame)</div><div class="col" data-l="Dose"><b>Cefazolina 2 g IV 8/8 h (3 g se &gt;120 kg) + metronidazol 500 mg IV 8/8 h por 48 h</b> (WSES 2017 · 2C: 48 h nas classes II–III; CT06: dose única nas limpas; o fármaco e o intervalo são adaptação, a conferir com a CCIH)</div><div class="col" data-l="Indicação">Estrangulada com ressecção de campo limpo-contaminado <span class="ev ev-eular">WSES 2017 · 2C</span>. Peritonite ou derrame franco: esquema terapêutico na linha seguinte.</div></div>
+        <div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Ceftriaxona + metronidazol (peritonite por necrose ou perfuração)</div><div class="col" data-l="Dose"><b>Ceftriaxona 2 g IV 24/24 h + metronidazol 500 mg IV 8/8 h</b>; alternativa pip-tazo 4,5 g IV 6/6 h; pós-operatório, nosocomial ou choque: pip-tazo ou carbapenêmico (como no II03). Duração: julgamento clínico, pelo controle do foco e pela evolução (sem prazo fixo no II03 nem no WSES; conferir)</div><div class="col" data-l="Indicação">Hérnia estrangulada com perfuração, abscesso ou peritonite; controle cirúrgico do foco é a parte principal <span class="ev ev-nice">II03</span> <span class="ev ev-eular">WSES 2017</span>. <b>Primeira dose cheia</b>; ajuste renal só depois de 24–72 h (II03).</div></div>
+        <div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Dipirona (comprimido de 500 mg; ampola de 500 mg/mL)</div><div class="col" data-l="Dose"><b>Dipirona (ampola de 500 mg/mL) 1 g IV de 6/6 h; máximo de 4 g/dia, ou até 5 g/dia pela bula de injetável</b>; VO 500–1.000 mg até 4×/dia (máx. 4 g/dia); aviso da bula de injetável para dose única: ≤1 g, IV lenta (como no CT04)</div><div class="col" data-l="Indicação">Analgesia de base na hérnia encarcerada e no pós-operatório <span class="ev ev-sbr">GH08 · NU05</span>. Analgesia sem risco renal dos AINE; suspender se hipotensão, sobretudo com infusão rápida; agranulocitose rara. Contraindicada na alergia a pirazolonas (inclusive broncoespasmo por analgésico), na agranulocitose ou na mielossupressão prévias, na porfiria hepática aguda e na deficiência de G6PD (bula; conferir bula Anvisa). Mesma frase do GH08 e do NU05 (a diferença da SBN, de até 8 g/dia, é rotulada naquele HP).</div></div>
+        <div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Cetorolaco (comprimido de 10 mg; ampola de 30 mg/mL)</div><div class="col" data-l="Dose"><b>30 mg IV (máx. 120 mg/dia); 15 mg IV e máx. 60 mg/dia em pessoas com 65 anos ou mais, com menos de 50 kg ou com disfunção renal leve; máx. 5 dias somados IV e VO (15 mg por dose: conferir rótulo completo).</b> VO 10 mg a cada 4–6 h (máx. 40 mg/dia), só como continuação após IV ou IM</div><div class="col" data-l="Indicação">Dor pós-operatória moderada a intensa <span class="ev ev-sbr">NU05</span>. Contraindicado na insuficiência renal, na hipovolemia e com sangramento; em hérnia encarcerada com possível necrose, <b>evitar até definir a conduta</b> (hipovolemia e função renal). Contraindicação absoluta: úlcera ativa, hemorragia cerebrovascular, sangramento, diátese hemorrágica, uso com AAS, AINE, probenecida ou pentoxifilina, insuficiência renal avançada e hipovolemia; asma, urticária ou reação tipo AAS/AINE; CABG; neuroeixo; terceiro trimestre e lactação (rótulo FDA). Mesma frase do NU05 e do GH08.</div></div>
+        <div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Morfina (ampola de 10 mg/mL)</div><div class="col" data-l="Dose"><b>2–4 mg IV a cada 5–15 min (0,05–0,1 mg/kg/dose), em geral até 10–15 mg na 1ª hora; parar se sedação, FR &lt;12 ou SpO₂ caindo</b>; teto de dose em 24 h e metabólitos se acumulam em IRC (como no GH06; conferir). A dose de bula (0,1–0,2 mg/kg a cada 4 h) é de outra escala: 2–4 mg é titulação (prática; conferir bula Anvisa)</div><div class="col" data-l="Indicação">Dor intensa na encarcerada ou estrangulada, enquanto se prepara a cirurgia. Bula: contraindicada na obstrução gastrointestinal conhecida ou suspeita; no abdome agudo cirúrgico, só como resgate titulado, com o exame registrado antes (prática, como no GH06) <span class="ev ev-sbr">NU05</span>. Idoso e renal: reduzir dose e espaçar; náuseas, comuns. <b>Contraindicada</b> na obstrução intestinal conhecida ou suspeita (bula); no abdome agudo cirúrgico, usar só como resgate titulado, com o exame registrado antes (prática, como no GH06). Mesma frase do NU05; o analgésico não esconde o abdome se o exame é feito antes e depois.</div></div>
+        <div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Paracetamol (comprimido de 500–750 mg)</div><div class="col" data-l="Dose"><b>500–750 mg VO a cada 4–6 h (máx. 4.000 mg/dia)</b>; criança 15 mg/kg/dose VO a cada 4–6 h (faixa 10–15; máx. 75 mg/kg/dia, até 4 g) (conferir bula)</div><div class="col" data-l="Indicação">Pós-operatório e analgesia de base <span class="ev ev-sbr">NU05</span>. Adjuvante e opção em quem não pode usar AINE. Hepatopatia: reduzir (conferir). Cirrótico com hérnia umbilical: preferir paracetamol, até 2 g/dia (conferir).</div></div>
+        <div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Ibuprofeno (comprimido de 400–600 mg)</div><div class="col" data-l="Dose"><b>400–600 mg VO a cada 6–8 h (máx. 2.400 mg/dia)</b>, menor tempo possível (conferir bula; dose de bula não lida nesta sessão); 2.400 mg é teto conservador: II07 cita 3.200 mg/dia pelo MS</div><div class="col" data-l="Indicação">Dor pós-operatória leve a moderada e orquite isquêmica. <b>Contraindicado</b>: hipersensibilidade; asma, urticária ou reação a AAS/AINE; CABG; úlcera ou sangramento digestivo ativo (rótulo). <b>Cautela</b>: DRC, anticoagulado, cirrose com ascite, hérnia encarcerada com suspeita de isquemia; em ≥65 anos, cuidado cardiovascular e renal.</div></div>
+        <div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Lidocaína e bupivacaína (infiltração e bloqueio de campo)</div><div class="col" data-l="Dose"><b>Lidocaína 1% sem vasoconstritor: até 4,5 mg/kg (máx. 300 mg); com adrenalina: até 7 mg/kg (máx. 500 mg). Bupivacaína: até 2,5 mg/kg (máx. 175 mg sem vasoconstritor e 225 mg com epinefrina)</b> (bula)</div><div class="col" data-l="Indicação">Anestesia local do reparo inguinal aberto e infiltração da ferida <span class="ev ev-eular">HerniaSurge 2018</span> <span class="ev ev-sbr">SBH 2019</span>. Recomendada em todo reparo aberto, junto com bloqueios de campo (ilioinguinal e ílio-hipogástrico). Sinais de toxicidade: zumbido, parestesia perioral, convulsão. Emulsão lipídica 20%: 1,5 mL/kg em bólus, depois 0,25 mL/kg/min, com teto de 12,5 mL/kg (consenso CCB 2017); remissão ao CT10.</div></div>
+        <div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Gabapentina</div><div class="col" data-l="Dose"><b>300 mg VO à noite; subir 300 mg a cada 1–3 dias até 900–1.800 mg/dia em 3 tomadas</b>; teto de 3.600 mg/dia. Ajuste pela ClCr (tabela da bula): ≥60 mL/min, 900–3.600 mg/dia; 30–59, 400–1.400 mg/dia; 15–29, 200–700 mg/dia; &lt;15, proporcional (conferir)</div><div class="col" data-l="Indicação">Dor neuropática da inguinodinia, 1º degrau <span class="ev ev-eular">EurA-CPIP 2026</span> (a diretriz cita a classe, não a dose; a atualização HerniaSurge 2023 não traz fármaco oral). Sedação e tontura em idoso; ajuste por ClCr.</div></div>
+        <div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Pregabalina</div><div class="col" data-l="Dose"><b>75 mg VO 12/12 h; depois 150 mg 12/12 h</b>; o habitual é até 300 mg/dia, e 600 mg/dia só em dor refratária (bula FDA). ClCr 30–60: reduzir à metade; abaixo disso, ajustar mais (bula). Conferir bula Anvisa</div><div class="col" data-l="Indicação">Alternativa ao gabapentinoide; edema, sonolência, ganho de peso. Não associar com outros depressores sem necessidade <span class="ev ev-eular">EurA-CPIP 2026</span>.</div></div>
+        <div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Duloxetina</div><div class="col" data-l="Dose"><b>30 mg VO 1×/dia por 1 semana; depois 60 mg 1×/dia</b> (conferir bula)</div><div class="col" data-l="Indicação">Dor neuropática (o EurA-CPIP prefere duloxetina entre os IRSN) <span class="ev ev-eular">EurA-CPIP 2026</span>. Náuseas. <b>Contraindicada</b> com IMAO (e nos 14 dias após suspendê-lo), com linezolida e com azul de metileno IV; evitar com ClCr &lt;30 e em hepatopatia grave; interação com tramadol (serotoninérgica).</div></div>
+        <div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Amitriptilina</div><div class="col" data-l="Dose"><b>10–25 mg VO à noite; subir a cada 1–2 semanas até 50–75 mg; teto de 150 mg/dia no ambulatório (rótulo)</b> (conferir bula)</div><div class="col" data-l="Indicação">Tricíclico para a dor neuropática <span class="ev ev-eular">EurA-CPIP 2026</span>. <b>Contraindicada</b> com IMAO (14 dias de intervalo), com cisaprida e na recuperação aguda de IAM. Anticolinérgico: retenção urinária (relevante em quem tem prostatismo e hérnia), arritmia e sedação; evitar em idoso frágil.</div></div>
+        <div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Bloqueio nervoso com corticoide</div><div class="col" data-l="Dose"><b>Anestésico de longa ação + glicocorticoide perineural no nervo afetado</b>; volume, droga e corticoide por protocolo do serviço de dor (confirmar protocolo local); no anestésico, respeitar o teto do F07; repetir semanalmente se houver resposta</div><div class="col" data-l="Indicação">Diagnóstico e tratamento da inguinodinia <span class="ev ev-sbr">SBH 2019</span>. Resposta positiva autoriza repetir até alívio sustentado; sem resposta sustentada, ablação (fenol ou álcool) e neurectomia.</div></div>
+      </div>
+      <div class="box danger"><span class="box-label">DANGER</span><div class="box-title">Analgesia que atrapalha a hérnia complicada</div><div class="box-body">Opioide e AINE na hérnia encarcerada: examine o abdome e registre antes e depois; o alívio da dor não prova que a alça está viva. AINE soma o risco de hipovolemia e de lesão renal em quem já vomita e se desidrata. Reversão do anticoagulante e função renal vêm antes de qualquer AINE (CT06, HO03). Tromboprofilaxia e manejo do anticoagulante no pós-operatório: CT06.</div></div>
+    </div>
+  </div>
+
+  <div class="card tx">
+    <div class="card-head">
+      <div class="card-eyebrow"><span class="card-num">F.3</span> Casos</div>
+      <h3>Caso → conduta certa → erro típico</h3>
+    </div>
+    <div class="card-body">
+      <div class="stbl stbl-3">
+        <div class="stbl-head stbl-3"><div>Caso</div><div>Conduta certa</div><div>Erro típico</div></div>
+        <div class="stbl-row stbl-3"><div class="col col1" data-l="Caso">Homem de 62 anos, hérnia inguinal indireta, indolor, que aparece ao esforço</div><div class="col" data-l="Conduta">Conduta expectante com orientação sobre sinais de alarme; opera se doer ou limitar atividade</div><div class="col" data-l="Erro">Operar toda hérnia "para evitar estrangulamento" sem discutir risco e preferência</div></div>
+        <div class="stbl-row stbl-3"><div class="col col1" data-l="Caso">Mulher de 70 anos, vômitos há 2 dias, dor e abaulamento na virilha direita</div><div class="col" data-l="Conduta">Femoral encarcerada até prova em contrário: cirurgia de urgência, via pré-peritoneal, ressecção se necessário</div><div class="col" data-l="Erro">Atribuir o quadro a gastroenterite e pedir imagem sem examinar a virilha</div></div>
+        <div class="stbl-row stbl-3"><div class="col col1" data-l="Caso">Hérnia inguinal encarcerada há 3 h, estável, dor moderada, sem SIRS</div><div class="col" data-l="Conduta">Taxe com analgesia e Trendelenburg; se reduzir, internar e agendar o reparo breve</div><div class="col" data-l="Erro">Insistir na taxe com força, ou dar alta depois de reduzir sem observação</div></div>
+        <div class="stbl-row stbl-3"><div class="col col1" data-l="Caso">Mesma hérnia há 12 h, com hiperemia, febre e lactato de 4</div><div class="col" data-l="Conduta">Sem taxe; cirurgia imediata, avaliação da alça e antibiótico; tela pelo campo</div><div class="col" data-l="Erro">Tentar a taxe "só uma vez" ou esperar o jejum de 8 horas</div></div>
+        <div class="stbl-row stbl-3"><div class="col col1" data-l="Caso">Estrangulada com ressecção e derrame de conteúdo entérico, defeito de 2 cm</div><div class="col" data-l="Conduta">Sutura primária do defeito (&lt;3 cm); antibiótico terapêutico; sem tela sintética</div><div class="col" data-l="Erro">Colocar tela de polipropileno em campo contaminado "para evitar recidiva"</div></div>
+        <div class="stbl-row stbl-3"><div class="col col1" data-l="Caso">Hérnia incisional de 7 cm em diabética obesa tabagista</div><div class="col" data-l="Conduta">Pré-otimizar (peso, HbA1c, parar de fumar ≥4 semanas), depois tela retromuscular com fechamento do defeito</div><div class="col" data-l="Erro">Operar de imediato com tela em ponte ou sutura simples</div></div>
+        <div class="stbl-row stbl-3"><div class="col col1" data-l="Caso">Cirrótico com ascite, hérnia umbilical com pele cianótica e fina</div><div class="col" data-l="Conduta">Controlar a ascite e reparar logo (ruptura iminente); antibiótico; hepatologia junto</div><div class="col" data-l="Erro">Adiar para depois do transplante ou ignorar por ser "pequena"</div></div>
+        <div class="stbl-row stbl-3"><div class="col col1" data-l="Caso">Lactente de 2 meses com tumor inguinal que aparece ao chorar</div><div class="col" data-l="Conduta">Hérnia inguinal: reparo em breve, sem esperar a idade; observar sinais de encarceramento</div><div class="col" data-l="Erro">Mandar esperar até 1 ano como na hérnia umbilical</div></div>
+        <div class="stbl-row stbl-3"><div class="col col1" data-l="Caso">Gestante de 24 semanas com massa dolorosa na virilha direita, sem vômitos</div><div class="col" data-l="Conduta">Doppler colorido (varizes do ligamento redondo, mais provável que hérnia, 1 em 2.000); conduta expectante e analgesia simples</div><div class="col" data-l="Erro">Operar ou pedir TC; ou rotular de hérnia e agendar cirurgia eletiva</div></div>
+        <div class="stbl-row stbl-3"><div class="col col1" data-l="Caso">Recidiva 8 meses depois de Lichtenstein por hérnia direta</div><div class="col" data-l="Conduta">Reparo por via oposta (posterior, endoscópico), com tela grande; procurar erro técnico (margem, lipoma, anel)</div><div class="col" data-l="Erro">Repetir a mesma via pela cicatriz anterior sem tela</div></div>
+        <div class="stbl-row stbl-3"><div class="col col1" data-l="Caso">Homem de 45 anos, dor inguinal em queimação há 5 meses após Lichtenstein</div><div class="col" data-l="Conduta">Mapear o dermátomo; analgesia multimodal; bloqueio nervoso; neurectomia só depois de 6 meses e de falha</div><div class="col" data-l="Erro">Culpar a tela e reoperar com 2 meses, ou prescrever opioide indefinidamente</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card tx">
+    <div class="card-head">
+      <div class="card-eyebrow"><span class="card-num">F.4</span> Brasil</div>
+      <h3>O que vai para a prescrição e o acesso no SUS <span class="ank ank-hy">HIGH-YIELD</span></h3>
+    </div>
+    <div class="card-body">
+      <div class="stbl stbl-3">
+        <div class="stbl-head stbl-3"><div>Ponto</div><div>Diretrizes internacionais</div><div>Brasil (SBH, SUS, hospital)</div></div>
+        <div class="stbl-row stbl-3"><div class="col col1" data-l="Ponto">Orientação nacional</div><div class="col" data-l="Internacional">HerniaSurge 2018 (virilha), EHS 2023 (incisional), EHS/AHS 2020 (umbilical), WSES (urgência)</div><div class="col" data-l="Brasil">SBH 2019 (hérnias inguinocrurais do adulto, RCBC). <b>Não há PCDT do MS para hérnia</b>; incisional e ventral não têm orientação brasileira lida (lacuna).</div></div>
+        <div class="stbl-row stbl-3"><div class="col col1" data-l="Ponto">Via endoscópica e tela</div><div class="col" data-l="Internacional">Sugerida na mulher, na bilateral e na recidivada, se houver expertise</div><div class="col" data-l="Brasil">TAPP é a mais feita no país; disponibilidade de laparoscopia e de tela na rede pública varia por serviço (confirmar localmente; não há fonte de disponibilidade lida).</div></div>
+        <div class="stbl-row stbl-3"><div class="col col1" data-l="Ponto">Fármacos</div><div class="col" data-l="Internacional">Cefazolina, AINE, opioide, gabapentinoides</div><div class="col" data-l="Brasil">Lista CMED de 09/10/2026: cefazolina, ceftriaxona, metronidazol, dipirona, cetorolaco, morfina, paracetamol, ibuprofeno, lidocaína, bupivacaína, gabapentina, pregabalina, duloxetina e amitriptilina constam. A disponibilidade no SUS por padronização não foi conferida.</div></div>
+        <div class="stbl-row stbl-3"><div class="col col1" data-l="Ponto">Notificação e registro</div><div class="col" data-l="Internacional">Registros nacionais de hérnia sugeridos (HerniaSurge)</div><div class="col" data-l="Brasil">Sem notificação compulsória. Hérnia estrangulada é causa de internação por urgência; códigos CID-10 K40–K46 com "obstrução" incluem encarcerada e estrangulada.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="pitfalls">
+  <div class="section">
+    <div class="section-eyebrow"><span>G</span> Pitfalls · Mitos · Controvérsias</div>
+    <div class="section-title">Erros Operacionais + Mitos Vivos + Debates Atuais</div>
+    <div class="section-sub">Os erros em hérnia são de tempo, de rótulo e de tela: a taxe fora de hora, a femoral esquecida, a tela no campo errado e o plano que a prova ainda cobra de outro jeito.</div>
+  </div>
+
+  <div class="card pearl">
+    <div class="card-head">
+      <div class="card-eyebrow"><span class="card-num">G.1</span> Pegadinhas</div>
+      <h3>10 Erros Operacionais em Hérnias da Parede Abdominal</h3>
+    </div>
+    <div class="card-body">
+      <div class="stbl stbl-2">
+        <div class="stbl-head stbl-2"><div>Erro Comum</div><div>Correto</div></div>
+        <div class="stbl-row stbl-2"><div class="col col1" data-l="Erro">Fazer a taxe em hérnia com dor intensa, hiperemia ou SIRS</div><div class="col" data-l="Correto">Sem taxe; cirurgia imediata. A taxe só cabe em encarcerada sem sinais de isquemia e de evolução curta.</div></div>
+        <div class="stbl-row stbl-2"><div class="col col1" data-l="Erro">Dar alta logo depois da taxe, sem observar e sem reexaminar</div><div class="col" data-l="Correto">Observar até passar o efeito do analgésico e do sedativo, reexaminar o abdome e só então liberar com retorno orientado e reparo breve; internar idoso, comorbidade e quadro obstrutivo: a alça devolvida pode estar isquêmica.</div></div>
+        <div class="stbl-row stbl-2"><div class="col col1" data-l="Erro">Esperar obstrução para pensar em estrangulamento</div><div class="col" data-l="Correto">Richter e Littré estrangulam sem obstrução; dor local, SIRS e lactato bastam para operar.</div></div>
+        <div class="stbl-row stbl-2"><div class="col col1" data-l="Erro">Deixar a hérnia femoral em observação</div><div class="col" data-l="Correto">Toda femoral é operada, sintomática ou não: o risco de estrangulamento e de ressecção é alto e a mortalidade da urgência é de 3,8%.</div></div>
+        <div class="stbl-row stbl-2"><div class="col col1" data-l="Erro">Reparar a virilha da mulher por inguinotomia sem procurar a femoral</div><div class="col" data-l="Correto">TAPP ou TEP: examinam o orifício miopectíneo inteiro; ~40% das reoperações da mulher são femorais esquecidas.</div></div>
+        <div class="stbl-row stbl-2"><div class="col col1" data-l="Erro">Colocar tela sintética em campo contaminado ou sujo</div><div class="col" data-l="Correto">Sutura primária (&lt;3 cm) ou tela biológica; tela sintética só em campo limpo ou limpo-contaminado.</div></div>
+        <div class="stbl-row stbl-2"><div class="col col1" data-l="Erro">Reparar a hérnia incisional só com sutura, ou com tela em ponte</div><div class="col" data-l="Correto">Tela retromuscular com fechamento do defeito (EHS 2023); reparo só com sutura recidiva mais.</div></div>
+        <div class="stbl-row stbl-2"><div class="col col1" data-l="Erro">Culpar a tela pela dor crônica e retirá-la logo</div><div class="col" data-l="Correto">A dor com tela é igual ou menor que sem tela; a remoção isolada falha mais que a neurectomia com troca, e só depois de 6 meses.</div></div>
+        <div class="stbl-row stbl-2"><div class="col col1" data-l="Erro">Operar hérnia inguinal infantil só depois do ano de idade</div><div class="col" data-l="Correto">A inguinal opera-se logo (risco de encarceramento de 15–30%, 85% no 1º ano); a que espera é a umbilical e a hidrocele.</div></div>
+        <div class="stbl-row stbl-2"><div class="col col1" data-l="Erro">Adiar a hérnia umbilical do cirrótico com ascite até o transplante, mesmo com pele afinada</div><div class="col" data-l="Correto">Pele fina, bolha ou escape de líquido pede reparo imediato, com a ascite controlada; ruptura tem mortalidade alta.</div></div>
+      </div>
+
+      <div class="box myth"><span class="box-label">MYTH</span><div class="box-title">"Hérnia grande estrangula mais; a pequena é inofensiva"</div><div class="box-body">O volume não prediz o risco, e o colo estreito (femoral, inguinal pequena, epigástrica, Richter) é que estrangula. Na incisional de defeito largo, o acidente herniário é raro (cerca de 1% em 1 ano), e a apostila lembra que não há correlação entre o defeito e o tamanho do saco. Avalie o colo, não o abaulamento.</div></div>
+      <div class="box myth"><span class="box-label">MYTH</span><div class="box-title">"Toda hérnia inguinal precisa ser operada para evitar estrangulamento"</div><div class="box-body">No homem oligo ou assintomático, a espera vigilante é segura (0,2 acidente por 100 pessoas-ano), e a cirurgia existe para a qualidade de vida. A mulher e a femoral são a exceção. A SBH 2019 diz que o momento da cirurgia deve ser definido pelo prejuízo à qualidade de vida, e não pelo medo do encarceramento.</div></div>
+      <div class="box myth"><span class="box-label">MYTH</span><div class="box-title">"A tela infecta mais e causa dor crônica"</div><div class="box-body">O risco de infecção do sítio cirúrgico não aumenta com a tela, e sim com as doenças do paciente. A dor crônica com tela é semelhante ou menor que sem tela (apostila; SBH 2019). Em campo limpo ou limpo-contaminado, a tela diminui a recidiva sem mais infecção (WSES 2017).</div></div>
+
+      <div class="box controversy"><span class="box-label">CONTROVERSY</span><div class="box-title">TEP ou TAPP; aberto ou endoscópico</div><div class="box-body">HerniaSurge: Lichtenstein e endoscópica são as melhores avaliadas; a atualização de 2023 recomenda a endoscópica no primário unilateral, por menos dor crônica e recuperação mais rápida, se houver expertise; a SBH diz que TEP e TAPP são equivalentes e que a escolha é pela habilidade do cirurgião; a recidiva é igual entre aberto com tela e endoscópico. No Brasil, a TAPP domina; nos EUA, a TEP. Cerca de 100 reparos supervisionados são necessários para igualar os resultados do Lichtenstein.</div></div>
+      <div class="box controversy"><span class="box-label">CONTROVERSY</span><div class="box-title">Profilaxia antibiótica no reparo com tela</div><div class="box-body">HerniaSurge (2018 e 2023) não a recomenda no reparo aberto de risco médio em ambiente de baixo risco e a SBH não a recomenda de rotina, mas ambas a admitem em ASA III–IV; metanálises de ensaios abertos mostram redução de infecção (ASHP: OR 0,61–0,64) mas sem consenso; o CT06 aceita uso e não uso. A decisão é por risco (ASA III–IV, diabetes, imunossupressão, ambiente de alto risco, incisional): cefazolina em dose única. O ônus é a resistência e o efeito adverso, e o benefício, a diferença absoluta de 1–2%.</div></div>
+      <div class="box controversy"><span class="box-label">CONTROVERSY</span><div class="box-title">Neurectomia profilática e nervo no Lichtenstein</div><div class="box-body">Identificar e preservar os nervos é a recomendação da SBH; a neurectomia planejada reduz a neuralgia, mas dá hipoestesia e disestesia, e o HerniaSurge a limita a casos selecionados. Seccionar um nervo lesado, ligar e enterrar o coto é aceito. O debate real é o benefício líquido: menos neuralgia crônica contra mais dormência permanente.</div></div>
+    </div>
+  </div>
+</section>
+
+<section id="pearls">
+  <div class="section">
+    <div class="section-eyebrow"><span>H</span> Pearls · Evolving</div>
+    <div class="section-title">H1 · Pearls de Especialista · H2 · Áreas em Evolução</div>
+    <div class="section-sub">O que distingue quem opera hérnia bem: a anatomia dita a conduta, o colo importa mais que o volume, o campo manda na tela e o nervo deve ser visto.</div>
+  </div>
+
+  <div class="card pearl">
+    <div class="card-head">
+      <div class="card-eyebrow"><span class="card-num">H.1</span> Pearls</div>
+      <h3>8 Nuances que Distinguem o Expert</h3>
+    </div>
+    <div class="card-body">
+      <div class="box pearl"><span class="box-label">PEARL</span><div class="box-title">Medial aos epigástricos inferiores é direta; lateral é indireta (e a indireta é a mais comum)</div><div class="box-body">A relação com os vasos epigástricos inferiores, e não a vontade do exame, define o tipo no ato operatório. A direta sai pelo triângulo de Hesselbach, adquirida; a indireta, pelo anel interno, congênita. Até a mulher tem a indireta como mais frequente; a femoral é a "outra" hérnia da mulher, e muda a via. O Hessert (oblíquo interno contraído sobre o Hesselbach) explica por que inserção alta do músculo favorece a direta.</div></div>
+      <div class="box pearl"><span class="box-label">PEARL</span><div class="box-title">Hérnia encarcerada na virilha da mulher ainda é, na maioria das vezes, inguinal indireta</div><div class="box-body">Como a femoral é rara, a probabilidade de uma massa encarcerada na virilha ser femoral é menor do que o risco proporcional sugere; mas a femoral é a que, proporcionalmente, mais estrangula. A conduta é a mesma: urgência. O que muda é a via pré-peritoneal, que cobre os dois defeitos.</div></div>
+      <div class="box pearl"><span class="box-label">PEARL</span><div class="box-title">Richter: estrangulamento sem obstrução é a regra, e não a exceção</div><div class="box-body">Como o intestino segue pérvio, o doente evacua, não vomita e não distende, e o abdome parece normal; o erro é esperar obstrução para operar. A parede do segmento pinçado pode necrosar em horas. Nas hérnias femorais, em portais de laparoscopia e em incisionais pequenas, dor local com SIRS é o gatilho para operar.</div></div>
+      <div class="box pearl"><span class="box-label">PEARL</span><div class="box-title">A taxe tem um relógio e uma lista de exclusões: o relógio é do ensino, a lista é da fisiologia</div><div class="box-body">O limite de 6 horas vem da apostila; as diretrizes lidas (WSES, HerniaSurge) tratam o tempo como fator de pior desfecho, sem corte. O que protege o doente é a lista de exclusões: SIRS, dor intensa, hiperemia, lactato, TC suspeita, peritonite. Uma taxe "bem-sucedida" em quem já tinha sofrimento isquêmico é um sucesso que mata.</div></div>
+      <div class="box pearl"><span class="box-label">PEARL</span><div class="box-title">O campo manda na tela, e o nome do campo é CDC I a IV</div><div class="box-body">A ressecção intestinal sem derrame grosseiro é limpo-contaminada (II): a tela sintética pode ser usada, com lavagem e protetor de ferida. Necrose com derrame ou perfuração é contaminada ou suja (III e IV): sutura primária se o defeito &lt;3 cm, senão tela biológica; sem biológica, tela de poliglactina ou ferida aberta. A SBH resume: tela quando limpo; evitar quando contaminado.</div></div>
+      <div class="box pearl"><span class="box-label">PEARL</span><div class="box-title">No triângulo da dor não se fixa; no triângulo de Doom não se dissecam os vasos ilíacos</div><div class="box-body">O triângulo da dor (entre vasos espermáticos e trato iliopúbico) guarda o femoral, o cutâneo lateral da coxa e o ramo femoral do genitofemoral; fixar a tela ali é a origem de muita inguinodinia pós-endoscópica. O de Doom (entre deferente e vasos espermáticos) contém os ilíacos externos. A fixação lateral fica 3 cm acima do trato iliopúbico.</div></div>
+      <div class="box pearl"><span class="box-label">PEARL</span><div class="box-title">Dor depois de 8 semanas deixa de ser inflamatória: procure o nervo e a tela</div><div class="box-body">A dor nociceptiva tem prazo previsível (6 a 8 semanas). Depois dele, pense em lesão nervosa ou em contato da tela com o nervo. Mapear o dermátomo localiza o nervo (ilioinguinal, ílio-hipogástrico, genital ou femoral), o bloqueio confirma e trata, e a cirurgia vem depois de 6 meses. A fixação no periósteo do púbis dá periostite e dor crônica.</div></div>
+      <div class="box pearl"><span class="box-label">PEARL</span><div class="box-title">Hérnia ventral é problema da cavidade: a perda de domicílio muda o preparo, não só a tela</div><div class="box-body">Quem teve vísceras fora do abdome por anos perdeu volume de cavidade e tônus diafragmático; devolver tudo de uma vez causa síndrome compartimental. O método de Tanaka (VH/VC &gt;25%) e o pneumoperitônio progressivo existem para isso. Na incisional de rotina, o que a diretriz de 2023 pede é o plano retromuscular, o defeito fechado e o doente otimizado.</div></div>
+    </div>
+  </div>
+
+  <div class="card pearl">
+    <div class="card-head">
+      <div class="card-eyebrow"><span class="card-num">H.2</span> Evolving</div>
+      <h3>Áreas em Evolução <span class="ank ank-evo">EVOLVING</span></h3>
+    </div>
+    <div class="card-body">
+      <div class="box evolving"><span class="box-label">EVOLVING</span><div class="box-title">Atualização HerniaSurge 2023: laparoscopia recomendada, tela por procedimento e fim de "encarcerada"</div><div class="box-body">A atualização de 2023 (BJS Open, 39 declarações e 32 recomendações, 16 fortes, com corrigendum em 2024) recomenda a via laparo-endoscópica no reparo primário unilateral de qualquer sexo, se houver expertise; tela leve no Lichtenstein e pesada no endoscópico; antibiótico só em risco do doente ou do ambiente; anestesia local ou geral em vez de regional a partir dos 65 anos; e abandona o termo "hérnia encarcerada" por "irredutível aguda", reservando "estrangulada" ao que se confirma. Em parte, contradiz a SBH 2019 e a apostila (divergências rotuladas nos boxes).</div></div>
+      <div class="box evolving"><span class="box-label">EVOLVING</span><div class="box-title">Primeira diretriz europeia só da hérnia incisional da linha média (EHS 2023)</div><div class="box-body">Antes dela, as recomendações vinham de diretrizes ventrais mais amplas. A de 2023 fixa a tela retromuscular, o fechamento do defeito e a otimização do doente, com certeza de evidência baixa e recomendação forte para a tela; critérios de TC (defeito &gt;8 cm, área &gt;164 cm²) preveem a necessidade de liberação miofascial.</div></div>
+      <div class="box evolving"><span class="box-label">EVOLVING</span><div class="box-title">Algoritmo europeu de dor crônica pós-herniorrafia (EurA-CPIP 2026)</div><div class="box-body">A primeira versão, de 2026, propõe degraus (analgesia, tópicos, bloqueios, radiofrequência, depois reoperação) com equipe multidisciplinar e desfechos padronizados; radiofrequência, crioneurólise e toxina botulínica entram a título de investigação. Contradiz a atualização HerniaSurge 2023 no emplastro de lidocaína e na capsaicina (sem benefício para esta). Sem validação prospectiva.</div></div>
+      <div class="box evolving"><span class="box-label">EVOLVING</span><div class="box-title">Diretriz japonesa de hérnia inguinal do adulto (JHS 2024, publicada em 2026)</div><div class="box-body">A JHS aceita a conduta expectante na hérnia inguinal assintomática do adulto, com aconselhamento (recomendação condicional, evidência baixa), não faz recomendação definitiva a favor da laparoscopia na femoral e não prefere de modo forte tela leve ou pesada, ao contrário da atualização HerniaSurge 2023. Mostra que as diretrizes regionais ainda divergem.</div></div>
+      <div class="box evolving"><span class="box-label">EVOLVING</span><div class="box-title">Robótica e técnicas eTEP/eTAPP na hérnia ventral</div><div class="box-body">A literatura recente de cirurgia robótica e de eTEP/eTAPP na parede abdominal cresce, inclusive com comparações de custo direto no Brasil (Arq Bras Cir Dig 2023, só o título foi lido). Nenhuma das diretrizes lidas as recomenda em lugar da via aberta com tela retromuscular. Estado atual: opção local, dependente de equipe e de custo.</div></div>
+    </div>
+  </div>
+</section>
+
+</div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <div>
+        <div class="foot-author">@dr.lorencato</div>
+        <div class="foot-meta">Hérnias e Parede Abdominal · Pocket Handbook Elite · v5.2 · Cirurgia geral · CT05</div>
+      </div>
+      <div class="foot-mono">Compilação clínica · status clinical_review até signoff humano · gerado em 2026-11-22</div>
+    </div>
+    <div class="foot-meta"><b>Bibliografia rastreável</b>
+      <ol>
+        <li id="src-1">HerniaSurge Group. International guidelines for groin hernia management. Hernia 2018;22:1–165 · papel: diagnóstico, indicação, técnica, tela, dor crônica, urgência, mulher, femoral, profilaxia (texto integral lido via PMC5809582) · DOI 10.1007/s10029-017-1668-x · PMID 29330835</li>
+        <li id="src-2">Stabilini C et al. Update of the international HerniaSurge guidelines for groin hernia management. BJS Open 2023;7(5):zrad080 (corrigendum BJS Open 2024, zrae034) · papel: laparo-endoscopia, peso da tela, antibiótico, anestesia, dor crônica, terminologia e taxe na urgência (declarações e recomendações lidas via PMC10588975) · DOI 10.1093/bjsopen/zrad080 · PMID 37862616</li>
+        <li id="src-3">Sociedade Brasileira de Hérnia. Orientações da SBH para o manejo das hérnias inguinocrurais em adultos. Rev Col Bras Cir 2019;46(4):e20192226 · papel: padrão brasileiro (indicação, tela, técnica, mulher, dor crônica; lida na íntegra no SciELO) · DOI 10.1590/0100-6991e-20192226</li>
+        <li id="src-4">Birindelli A et al. 2017 update of the WSES guidelines for emergency repair of complicated abdominal wall hernias. World J Emerg Surg 2017;12:37 · papel: urgência, tela por classe de ferida, antibiótico, laparoscopia (lida via PMC5545868) · DOI 10.1186/s13017-017-0149-y · PMID 28804507; resumo executivo Hernia 2020;24:359–68, DOI 10.1007/s10029-019-02021-8 · PMID 31407109 (só resumo)</li>
+        <li id="src-5">Sanders DL et al. (EHS). Midline incisional hernia guidelines: the European Hernia Society. Br J Surg 2023 · papel: incisional (fatores de risco, imagem, tela, plano retromuscular, fechamento do defeito, profilaxia; lida via PMC10638550) · DOI 10.1093/bjs/znad284 · PMID 37727928</li>
+        <li id="src-6">Hernández-Granados P et al. European Hernia Society guidelines on management of rectus diastasis. Br J Surg 2021;108:1189–91 · papel: diástase dos retos (sumário lido via PMC10364860) · DOI 10.1093/bjs/znab128 · PMID 34595502</li>
+        <li id="src-7">Henriksen NA et al. Guidelines for treatment of umbilical and epigastric hernias from the European Hernia Society and Americas Hernia Society. Br J Surg 2020 · papel: umbilical e epigástrica (só o resumo do PubMed; texto integral não lido) · DOI 10.1002/bjs.11489 · PMID 31916607</li>
+        <li id="src-8">EurA-CPIP: a European algorithm and strategy for management of chronic postoperative inguinal pain. J Abdom Wall Surg 2026;5:16944 · papel: escada de dor crônica (lida via PMC13713437) · DOI 10.3389/jaws.2026.16944 · PMID 42952593</li>
+        <li id="src-9">Japanese Hernia Society Guidelines for Adult Groin Hernia Management 2024. Ann Gastroenterol Surg 2026 · papel: comparação regional (leitura parcial, via PMC13735530) · DOI 10.1002/ags3.70295 · PMID 42990815</li>
+        <li id="src-10">Bratzler DW et al. ASHP/IDSA/SIS/SHEA. Clinical practice guidelines for antimicrobial prophylaxis in surgery. Am J Health Syst Pharm 2013;70:195–283 · papel: cefazolina em herniorrafia e hernioplastia, intestino obstruído (Tabela 2 e seção de hérnia; PDF local lido)</li>
+        <li id="src-11">Apostila MED/Medcurso 2025 CIR 3 · seção "Hérnias da parede abdominal" (l. 1293–1827 do arquivo) · papel: piso de cobertura, nunca conduta; pediatria, hérnias raras e de conteúdo especial, perda de domicílio, Tanaka (sem fonte atual lida)</li>
+        <li id="src-12">HPs do catálogo II03 (antibióticos e ajuste renal), CT06 (cefazolina, clindamicina), GH08 e NU05 (dipirona, cetorolaco, morfina), GH06 (remissão de hérnia), PD08 e GO01 (remissões de pediatria e de insensibilidade androgênica) · papel: coerência de doses e de remissões</li>
+        <li id="src-13">CMED. Lista de preços de medicamentos (PMVG), publicada em 09/10/2026 · papel: registro e comercialização dos fármacos de F2</li>
+        <li id="src-14">OMS. CID-10 (versão 2019, icd.who.int/browse10/2019), capítulos XI (K40–K46), XIII (M62.0), XIV (N43), XVI (P83.5), XVIII (R52.2) e XIX (T81.8) · papel: codificação (o conector ICD-10-CM do ambiente não foi usado)</li>
+        <li id="src-15">Conhecimento do autor, sem fonte lida: hérnias internas (D.4), via de acesso e técnica de Sugarbaker na paraestomal, doses de gabapentina, pregabalina, duloxetina, amitriptilina, ibuprofeno e anestésicos locais, e dose pediátrica de paracetamol · papel: marcados "conferir bula" em F2 e D.4</li>
+      </ol>
+    </div>
+  </div>
+</footer>
+
+<a class="to-top" href="#" aria-label="Voltar ao topo">↑</a>
+<div class="watermark">@dr.lorencato · Hérnias e Parede Abdominal v5.2</div>
+
+</body>
+</html>
