@@ -1,0 +1,1656 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#0d1117">
+<title>UTI e Choque Não Séptico · Pocket Handbook · Elite Edition</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700;9..40,800&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   MEDICAL HANDBOOK PREMIUM · ELITE EDITION · CSS FRAMEWORK
+   Copy this ENTIRE block verbatim into the <style> tag of the
+   output HTML. Do NOT modify design tokens, colors, or
+   typography — they are calibrated for legibility and print.
+============================================================ */
+:root{
+  --bg:#f1eee5;--bg-tint:#ebe8de;--paper:#ffffff;--paper-tint:#fbf9f3;
+  --ink:#0e1116;--ink-soft:#232830;--ink-mute:#545b69;--ink-faint:#8a91a0;--ink-ghost:#b8bdc7;
+  --line:#e2dfd5;--line-soft:#ece9df;--line-strong:#c9c5b8;
+  --c-prim:#0b5d4e;--c-clin:#1d4570;--c-diag:#5e2f78;--c-tx:#a8481a;--c-emerg:#a31b35;--c-pearl:#7a6014;
+  --ank-hy:#b88e0a;--ank-hy-bg:#fef4c8;--ank-dec:#1d4ea3;--ank-dec-bg:#dde7f8;
+  --ank-dgr:#a31b25;--ank-dgr-bg:#fadcdc;--ank-prl:#3e6a2e;--ank-prl-bg:#d8e6cf;
+  --ank-myt:#6a3a1a;--ank-myt-bg:#f0dec5;--ank-con:#5a4070;--ank-con-bg:#e3d6f0;
+  --ank-evo:#0d6373;--ank-evo-bg:#cde5e9;
+  --sh-sm:0 1px 2px rgba(14,17,22,.04),0 1px 1px rgba(14,17,22,.03);
+  --sh-md:0 6px 16px -8px rgba(14,17,22,.10),0 2px 4px rgba(14,17,22,.04);
+  --sh-lg:0 20px 40px -22px rgba(14,17,22,.18),0 4px 10px -4px rgba(14,17,22,.08);
+  --r:10px;--r-lg:14px;--r-xl:20px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;scroll-padding-top:120px}
+body{font-family:'DM Sans',system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.5;font-size:15px;letter-spacing:-.005em;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:-1;background:radial-gradient(900px 500px at -10% -5%,rgba(11,93,78,.04),transparent 60%),radial-gradient(800px 450px at 110% 10%,rgba(163,27,53,.035),transparent 55%)}
+a{color:inherit;text-decoration:none}
+
+/* FIXED HEADER */
+.header{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(13,17,23,.82);backdrop-filter:saturate(160%) blur(20px);-webkit-backdrop-filter:saturate(160%) blur(20px);border-bottom:1px solid rgba(255,255,255,.06)}
+.header-row{max-width:1080px;margin:0 auto;padding:10px 20px;display:flex;align-items:center;gap:14px;color:#f0eee5}
+.h-mark{width:30px;height:30px;border-radius:7px;background:linear-gradient(135deg,#d4b94a 0%,#a07f1a 100%);display:grid;place-items:center;font:800 13px/1 'DM Sans',system-ui,sans-serif;color:#1a1500;letter-spacing:-.04em;box-shadow:inset 0 1px 0 rgba(255,255,255,.3),0 1px 2px rgba(0,0,0,.4);flex-shrink:0}
+.h-titles{display:flex;flex-direction:column;line-height:1.15;min-width:0}
+.h-title{font-weight:700;font-size:14px;letter-spacing:-.02em}
+.h-sub{font-size:10.5px;color:#9fa298;font-weight:500;letter-spacing:.08em;text-transform:uppercase}
+.h-edition{margin-left:auto;font:500 10px/1 'DM Mono',monospace;color:#9fa298;letter-spacing:.05em;padding:5px 9px;border:1px solid rgba(255,255,255,.1);border-radius:999px;white-space:nowrap}
+.h-author{font:700 10.5px/1 'DM Mono',monospace;color:#d4b94a;letter-spacing:.04em;padding:6px 10px;border:1px solid rgba(212,185,74,.35);background:rgba(212,185,74,.08);border-radius:999px;white-space:nowrap;display:inline-flex;align-items:center;gap:6px}
+.h-author::before{content:"●";font-size:6px;color:#d4b94a}
+@media(max-width:560px){.h-edition{display:none}.h-author{margin-left:auto}}
+
+/* STICKY TOC */
+.toc{position:sticky;top:50px;z-index:90;background:rgba(241,238,229,.92);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}
+.toc-inner{max-width:1080px;margin:0 auto;padding:10px 16px;display:flex;gap:6px;overflow-x:auto;scrollbar-width:none;-ms-overflow-style:none}
+.toc-inner::-webkit-scrollbar{display:none}
+.toc-chip{flex:none;font:600 11px/1 'DM Sans',system-ui,sans-serif;letter-spacing:.06em;text-transform:uppercase;padding:7px 12px;background:var(--paper);border:1px solid var(--line);border-radius:999px;color:var(--ink-soft);transition:all .15s;white-space:nowrap;cursor:pointer}
+.toc-chip:hover{background:var(--paper-tint);border-color:var(--ink-faint);color:var(--ink)}
+.toc-chip-num{display:inline-block;font-family:'DM Mono',monospace;color:var(--ink-faint);margin-right:5px;font-weight:500;font-size:10px}
+
+/* LAYOUT */
+.wrap{max-width:1080px;margin:0 auto;padding:24px 20px 80px}
+.section{margin:48px 0 18px;padding-top:8px}
+.section:first-child{margin-top:14px}
+.section-eyebrow{font:700 10.5px/1 'DM Sans',system-ui,sans-serif;letter-spacing:.18em;text-transform:uppercase;color:var(--c-prim);margin-bottom:8px;display:flex;align-items:center;gap:10px}
+.section-eyebrow::before{content:"";width:24px;height:1.5px;background:var(--c-prim)}
+.section-title{font-size:26px;font-weight:700;letter-spacing:-.03em;line-height:1.1}
+.section-sub{margin-top:6px;font-size:13.5px;color:var(--ink-mute);max-width:680px}
+
+/* HERO */
+.hero{margin:20px 0 28px;padding:26px 28px;background:linear-gradient(180deg,#fdfcf6 0%,#f7f4e8 100%);border:1px solid var(--line);border-radius:var(--r-xl);box-shadow:var(--sh-md);position:relative;overflow:hidden}
+.hero::after{content:"";position:absolute;top:0;right:0;bottom:0;left:0;background:radial-gradient(400px 200px at 100% 0%,rgba(163,27,53,.06),transparent 60%),radial-gradient(360px 200px at 0% 100%,rgba(11,93,78,.05),transparent 60%);pointer-events:none}
+.hero-tag{font:700 10.5px/1 'DM Sans',system-ui,sans-serif;letter-spacing:.2em;text-transform:uppercase;color:var(--c-emerg);display:inline-flex;align-items:center;gap:8px;margin-bottom:10px}
+.hero-tag::before{content:"";width:18px;height:1.5px;background:currentColor}
+.hero h1{font-size:34px;font-weight:800;letter-spacing:-.035em;line-height:1.02;margin-bottom:8px}
+.hero h1 em{font-style:italic;font-weight:500;color:var(--ink-mute)}
+.hero-lead{font-size:14.5px;color:var(--ink-mute);max-width:660px;line-height:1.55}
+.hero-stamp{position:absolute;top:20px;right:22px;font:700 10.5px/1 'DM Mono',monospace;letter-spacing:.04em;padding:7px 11px 7px 18px;border:1.5px dashed rgba(163,27,53,.45);color:rgba(163,27,53,.9);border-radius:5px;background:rgba(255,255,255,.55);transform:rotate(-3deg);z-index:2;box-shadow:0 2px 6px rgba(163,27,53,.08)}
+.hero-stamp::before{content:"●";position:absolute;left:7px;top:50%;transform:translateY(-50%);color:rgba(163,27,53,.7);font-size:7px}
+.hero-sig{margin-top:14px;display:flex;align-items:center;gap:10px;font:600 11px/1 'DM Sans',system-ui,sans-serif;color:var(--ink-mute);letter-spacing:.04em}
+.hero-sig::before{content:"";flex:none;width:22px;height:1.5px;background:var(--c-emerg)}
+.hero-sig b{color:var(--c-emerg);font-weight:700;font-family:'DM Mono',monospace;letter-spacing:.02em}
+@media(max-width:560px){.hero{padding:22px 20px}.hero h1{font-size:26px}.section-title{font-size:22px}.hero-stamp{position:relative;top:auto;right:auto;display:inline-block;transform:none;margin-bottom:14px}}
+
+/* POCKET CARD 0 */
+.pocket{background:#0e1116;color:#f0eee5;border-radius:var(--r-xl);padding:24px 26px 26px;margin:0 0 28px;position:relative;overflow:hidden;box-shadow:var(--sh-lg)}
+.pocket::before{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(600px 300px at 100% 0%,rgba(212,185,74,.07),transparent 60%),radial-gradient(500px 280px at 0% 100%,rgba(163,27,53,.08),transparent 60%)}
+.pocket-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:18px;flex-wrap:wrap;position:relative}
+.pocket-eyebrow{font:700 10.5px/1 'DM Sans',system-ui,sans-serif;letter-spacing:.2em;text-transform:uppercase;color:#d4b94a;display:flex;align-items:center;gap:9px}
+.pocket-eyebrow::before{content:"●";color:#d4b94a;font-size:9px;animation:pulse 2.4s ease infinite}
+@keyframes pulse{50%{opacity:.4}}
+.pocket-title{font-size:22px;font-weight:700;letter-spacing:-.02em;line-height:1.15;color:#fff}
+.pocket-sub{font-size:12.5px;color:#9aa0a8;margin-top:2px}
+.pocket-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px;position:relative}
+.pocket-card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-left:3px solid var(--accent,#d4b94a);border-radius:var(--r);padding:12px 14px}
+.pocket-card .pc-trig{font:700 10px/1.1 'DM Sans',system-ui,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:var(--accent,#d4b94a);margin-bottom:6px;display:flex;align-items:center;gap:6px}
+.pocket-card .pc-trig::before{content:"";width:4px;height:4px;background:currentColor;border-radius:50%}
+.pocket-card .pc-act{font-size:13.5px;line-height:1.4;color:#dedfd5}
+.pocket-card .pc-act b{color:#fff;font-weight:600}
+.pocket-card.emerg{--accent:#ff8a96}.pocket-card.dec{--accent:#7cb0ff}.pocket-card.tx{--accent:#ffb085}.pocket-card.clin{--accent:#b0e0d4}
+
+/* LEGEND */
+.legend{background:var(--paper);border:1px solid var(--line);border-radius:var(--r-lg);padding:18px 20px;margin-bottom:28px;box-shadow:var(--sh-sm)}
+.lg-title{font:700 10.5px/1 'DM Sans',system-ui,sans-serif;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-faint);margin-bottom:12px}
+.lg-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:8px 14px}
+.lg-item{display:flex;align-items:center;gap:9px;font-size:12.5px;color:var(--ink-soft)}
+.dot{width:9px;height:9px;border-radius:50%;flex-shrink:0;box-shadow:0 0 0 2px var(--paper),0 0 0 3px currentColor}
+.dot.c1{color:var(--c-prim);background:var(--c-prim)}.dot.c2{color:var(--c-clin);background:var(--c-clin)}.dot.c3{color:var(--c-diag);background:var(--c-diag)}.dot.c4{color:var(--c-tx);background:var(--c-tx)}.dot.c5{color:var(--c-emerg);background:var(--c-emerg)}.dot.c6{color:var(--c-pearl);background:var(--c-pearl)}
+.lg-divider{height:1px;background:var(--line-soft);margin:14px 0}
+.lg-anchors{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:8px}
+.ank{display:inline-flex;align-items:center;gap:5px;font:700 10.5px/1 'DM Sans',system-ui,sans-serif;letter-spacing:.12em;text-transform:uppercase;padding:4px 8px 4px 7px;border-radius:999px;border:1px solid;vertical-align:middle;white-space:nowrap}
+.ank::before{content:"";width:4px;height:4px;border-radius:50%;background:currentColor}
+.ank-hy{color:var(--ank-hy);background:var(--ank-hy-bg);border-color:#e5cd72}
+.ank-dec{color:var(--ank-dec);background:var(--ank-dec-bg);border-color:#9fbae6}
+.ank-dgr{color:var(--ank-dgr);background:var(--ank-dgr-bg);border-color:#e29ca0}
+.ank-prl{color:var(--ank-prl);background:var(--ank-prl-bg);border-color:#a8c298}
+.ank-myt{color:var(--ank-myt);background:var(--ank-myt-bg);border-color:#d0b181}
+.ank-con{color:var(--ank-con);background:var(--ank-con-bg);border-color:#bba7d3}
+.ank-evo{color:var(--ank-evo);background:var(--ank-evo-bg);border-color:#8fc1c9}
+.lg-explain{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:6px 14px;font-size:11.5px;color:var(--ink-mute);margin-top:10px}
+.lg-explain b{font-weight:700}
+.lg-explain .ehy b{color:var(--ank-hy)}.lg-explain .edec b{color:var(--ank-dec)}.lg-explain .edgr b{color:var(--ank-dgr)}.lg-explain .eprl b{color:var(--ank-prl)}.lg-explain .emyt b{color:var(--ank-myt)}.lg-explain .econ b{color:var(--ank-con)}.lg-explain .eevo b{color:var(--ank-evo)}
+
+/* EVIDENCE CHIPS */
+.ev{display:inline-flex;align-items:center;font:600 10.5px/1 'DM Mono',monospace;letter-spacing:.04em;padding:3px 6px 2px;border-radius:4px;background:#eeebde;color:var(--ink-soft);border:1px solid var(--line);vertical-align:middle;margin-left:3px}
+.ev-acr{background:#fadcdc;color:#a31b25;border-color:#e29ca0}
+.ev-eular{background:#dde7f8;color:#1d4ea3;border-color:#9fbae6}
+.ev-sbr{background:#e3d6f0;color:#5a4070;border-color:#bba7d3}
+.ev-nice{background:#cde5e9;color:#0d6373;border-color:#8fc1c9}
+.ev-expert{background:#eeebde;color:#7a6014;border-color:#d0b181}
+.ev-cochrane{background:#d8e6cf;color:#3e6a2e;border-color:#a8c298}
+
+/* CARD */
+.card{background:var(--paper);border:1px solid var(--line);border-radius:var(--r-lg);margin-bottom:22px;box-shadow:var(--sh-md);overflow:hidden;break-inside:avoid}
+.card-head{padding:18px 22px 15px;border-bottom:1px solid var(--line-soft);position:relative;background:linear-gradient(180deg,#fcfaf2 0%,#ffffff 100%)}
+.card-head::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--accent,var(--c-prim))}
+.card-eyebrow{font:700 10px/1 'DM Sans',system-ui,sans-serif;letter-spacing:.16em;text-transform:uppercase;color:var(--accent,var(--c-prim));margin-bottom:5px;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.card-num{font-family:'DM Mono',monospace;font-weight:500;color:var(--ink-faint);font-size:10.5px;letter-spacing:0}
+.card h3{font-size:21px;font-weight:700;letter-spacing:-.025em;color:var(--ink);line-height:1.15;display:flex;align-items:center;gap:9px;flex-wrap:wrap}
+.card-sub{margin-top:6px;font-size:13px;color:var(--ink-mute)}
+.card-body{padding:20px 22px 24px}
+.card.prim{--accent:var(--c-prim)}.card.clin{--accent:var(--c-clin)}.card.diag{--accent:var(--c-diag)}.card.tx{--accent:var(--c-tx)}.card.emerg{--accent:var(--c-emerg)}.card.pearl{--accent:var(--c-pearl)}
+@media(max-width:560px){.card-head{padding:16px 18px 14px}.card-body{padding:18px 18px 20px}.card h3{font-size:18px}}
+
+/* QUICK VIEW */
+.quick{background:var(--paper-tint);border:1px solid var(--line);border-left:3px solid var(--accent,var(--c-prim));border-radius:var(--r);padding:13px 16px;margin:0 0 16px}
+.quick-label{font:700 10.5px/1 'DM Sans',system-ui,sans-serif;letter-spacing:.16em;text-transform:uppercase;color:var(--accent,var(--c-prim));margin-bottom:6px}
+.quick-body{font-size:13.5px;line-height:1.45;color:var(--ink-soft)}
+.quick-body b{color:var(--ink);font-weight:600}
+
+/* SUB-TITLE */
+.sub-title{font:700 10.5px/1 'DM Sans',system-ui,sans-serif;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-soft);margin:18px 0 10px;display:flex;align-items:center;gap:9px;border-bottom:1px dashed var(--line);padding-bottom:6px}
+.sub-title::before{content:"";width:4px;height:4px;border-radius:50%;background:var(--accent,var(--ink-soft))}
+.sub-title:first-child{margin-top:0}
+
+/* TEXT */
+p{color:var(--ink-soft);margin-bottom:8px;font-size:14px;line-height:1.5}
+p:last-child{margin-bottom:0}
+strong{color:var(--ink);font-weight:600}
+ul.bullets{list-style:none;padding:0;margin:0 0 10px}
+ul.bullets li{position:relative;padding:5px 0 5px 20px;font-size:13.5px;line-height:1.5;color:var(--ink-soft);border-bottom:1px dashed var(--line-soft)}
+ul.bullets li:last-child{border-bottom:none}
+ul.bullets li::before{content:"";position:absolute;left:5px;top:13px;width:4px;height:4px;border-radius:50%;background:var(--accent,var(--ink-mute))}
+ul.bullets li b{color:var(--ink);font-weight:600}
+
+/* DISEASE BOX */
+.disease{border:1px solid var(--line);border-radius:var(--r);margin:14px 0;overflow:hidden;background:var(--paper)}
+.disease-head{padding:12px 16px;background:linear-gradient(180deg,#faf7eb 0%,#f1eddc 100%);border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap}
+.disease-name{font-weight:700;color:var(--ink);font-size:14.5px;letter-spacing:-.015em}
+.disease-tag{font:600 10px/1 'DM Sans',system-ui,sans-serif;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-mute)}
+.disease-body{padding:14px 16px}
+.disease-rows{display:grid;gap:0}
+.disease-row{display:grid;grid-template-columns:130px 1fr;gap:12px;padding:8px 0;border-bottom:1px dashed var(--line-soft)}
+.disease-row:last-child{border-bottom:none;padding-bottom:0}
+.disease-row:first-child{padding-top:0}
+.disease-row .k{font:700 10px/1.2 'DM Sans',system-ui,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:var(--accent,var(--ink-faint));padding-top:2px}
+.disease-row .v{font-size:13.5px;color:var(--ink-soft);line-height:1.5}
+.disease-row .v b{color:var(--ink)}
+@media(max-width:560px){.disease-row{grid-template-columns:1fr;gap:3px;padding:6px 0 8px}.disease-row .k{padding-top:0}}
+
+/* DEEP DIVE */
+.deep{margin:16px 0 6px;border:1px solid var(--line);border-radius:var(--r);background:linear-gradient(180deg,#fdfcf6 0%,#f9f6ea 100%);overflow:hidden}
+.deep>summary{list-style:none;cursor:pointer;padding:11px 16px;display:flex;align-items:center;justify-content:space-between;font:700 11px/1 'DM Sans',system-ui,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft);user-select:none;transition:background .15s}
+.deep>summary::-webkit-details-marker{display:none}
+.deep>summary::after{content:"+";font-size:18px;font-weight:600;color:var(--ink-faint);transition:transform .2s;font-family:'DM Mono',monospace}
+.deep[open]>summary::after{transform:rotate(45deg)}
+.deep>summary:hover{background:rgba(0,0,0,.02)}
+.deep-content{padding:14px 16px 16px;border-top:1px dashed var(--line)}
+.deep-content p{font-size:13px;color:var(--ink-mute);line-height:1.55}
+.deep-content p b{color:var(--ink-soft)}
+
+/* MNEMONIC */
+.mnemo{background:var(--paper-tint);border:1px solid var(--line);border-radius:var(--r);padding:14px 16px;margin:14px 0}
+.mnemo-title{font:700 10.5px/1 'DM Sans',system-ui,sans-serif;letter-spacing:.16em;text-transform:uppercase;color:var(--c-pearl);margin-bottom:10px;display:flex;align-items:center;gap:8px}
+.mnemo-title b{background:var(--ink);color:#fff;padding:3px 7px;border-radius:4px;font-size:10px;letter-spacing:.06em}
+.mnemo-grid{display:grid;gap:5px}
+.mnemo-row{display:grid;grid-template-columns:28px 1fr;gap:10px;align-items:baseline;font-size:13px;color:var(--ink-soft);padding:3px 0}
+.mnemo-letter{display:grid;place-items:center;width:24px;height:24px;background:var(--ink);color:#fff;border-radius:5px;font:800 12px/1 'DM Sans',system-ui,sans-serif;letter-spacing:-.02em}
+.mnemo-row b{color:var(--ink);font-weight:600}
+.mnemo-row em{font-style:italic;color:var(--ink-mute);font-size:12px}
+
+/* SCORE BOX */
+.score{border:1px solid var(--line);border-radius:var(--r);margin:14px 0;background:var(--paper);overflow:hidden}
+.score-head{padding:11px 14px;background:linear-gradient(180deg,#f5f1e0 0%,#ede9d6 100%);border-bottom:1px solid var(--line)}
+.score-name{font:700 13px/1.2 'DM Sans',system-ui,sans-serif;color:var(--ink);letter-spacing:-.01em}
+.score-purpose{font:500 10.5px/1.2 'DM Sans',system-ui,sans-serif;color:var(--ink-mute);letter-spacing:.06em;text-transform:uppercase;margin-top:3px}
+.score-rows{display:grid;gap:0}
+.score-row{display:grid;grid-template-columns:90px 1fr;gap:12px;align-items:start;padding:9px 14px;border-bottom:1px dashed var(--line-soft);font-size:13px}
+.score-row:last-child{border-bottom:none}
+.score-grade{font:800 12px/1.2 'DM Mono',monospace;color:var(--c-emerg);letter-spacing:-.01em}
+.score-desc{color:var(--ink-soft);line-height:1.45}
+.score-desc b{color:var(--ink)}
+
+/* STACKED TABLE */
+.stbl{margin:14px 0;border:1px solid var(--line);border-radius:var(--r);background:var(--paper);overflow:hidden}
+.stbl-head,.stbl-row{display:grid;gap:14px;padding:10px 14px;align-items:start}
+.stbl-head{background:#faf7eb;border-bottom:2px solid var(--line);font:700 10.5px/1 'DM Sans',system-ui,sans-serif;letter-spacing:.1em;text-transform:uppercase;color:var(--ink)}
+.stbl-row{border-bottom:1px solid var(--line-soft);font-size:13px;color:var(--ink-soft);line-height:1.5}
+.stbl-row:last-child{border-bottom:none}
+.stbl-row:nth-child(even){background:#fcfaf2}
+.stbl-row b{color:var(--ink);font-weight:600}
+.stbl-row .col1{font-weight:600;color:var(--ink)}
+.stbl-2{grid-template-columns:1fr 2fr}
+.stbl-3{grid-template-columns:1fr 1.3fr 1.5fr}
+.stbl-4{grid-template-columns:1.2fr 1fr 1fr 1.2fr}
+@media(max-width:680px){
+  .stbl-head{display:none}
+  .stbl-row{grid-template-columns:1fr !important;gap:12px;padding:14px 16px}
+  .stbl-row .col{display:block;min-width:0;word-wrap:break-word;overflow-wrap:anywhere}
+  .stbl-row .col::before{content:attr(data-l);display:block;font:700 10.5px/1.3 'DM Sans',system-ui,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-mute);margin-bottom:4px}
+  .stbl-row .col1{font-weight:700;font-size:15px;padding-bottom:8px;margin-bottom:6px;border-bottom:1px dashed var(--line)}
+  .stbl-row .col1::before{display:none}
+}
+
+/* CALLOUT BOXES */
+.box{border-radius:var(--r);padding:14px 16px;margin:14px 0;position:relative;border:1px solid}
+.box-label{position:absolute;top:-9px;left:14px;font:700 10.5px/1 'DM Sans',system-ui,sans-serif;letter-spacing:.16em;text-transform:uppercase;padding:3px 9px;border-radius:999px;color:#fff}
+.box-title{font-weight:700;color:var(--ink);font-size:14px;margin:2px 0 6px}
+.box-body{font-size:13.5px;line-height:1.5;color:var(--ink-soft)}
+.box-body b{color:var(--ink)}
+.box-body ul{list-style:none;padding:0;margin:4px 0 0}
+.box-body ul li{position:relative;padding:3px 0 3px 20px}
+.box-body ul li::before{content:"→";position:absolute;left:0;top:3px;font-weight:700;color:var(--bx-color)}
+.box.decision{background:#f1f5fc;border-color:#c4d3eb;--bx-color:var(--ank-dec)}.box.decision .box-label{background:var(--ank-dec)}
+.box.danger{background:#fbf0f0;border-color:#e5c2c2;--bx-color:var(--ank-dgr)}.box.danger .box-label{background:var(--ank-dgr)}.box.danger .box-body b{color:var(--ank-dgr)}
+.box.pearl{background:#f1f7ed;border-color:#c1d5b3;--bx-color:var(--ank-prl)}.box.pearl .box-label{background:var(--ank-prl)}
+.box.hy{background:#fcf6dd;border-color:#e3cf78;--bx-color:var(--ank-hy)}.box.hy .box-label{background:var(--ank-hy)}
+.box.myth{background:#f8eed8;border-color:#d0b181;--bx-color:var(--ank-myt)}.box.myth .box-label{background:var(--ank-myt)}
+.box.controversy{background:#f1e9f6;border-color:#bba7d3;--bx-color:var(--ank-con)}.box.controversy .box-label{background:var(--ank-con)}
+.box.evolving{background:#dff0f2;border-color:#8fc1c9;--bx-color:var(--ank-evo)}.box.evolving .box-label{background:var(--ank-evo)}
+
+/* ALGORITHM TREE */
+.algo{background:linear-gradient(180deg,#fcfaf2 0%,#f5f0dc 100%);border:1px solid var(--line-strong);border-radius:var(--r-lg);padding:18px;margin:14px 0;overflow-x:auto}
+.tree{font-size:13px}
+.tree-line{padding:6px 0}
+.tree-node{display:inline-block;padding:8px 12px;background:var(--paper);border:1.5px solid var(--ink-soft);border-radius:7px;font-weight:600;color:var(--ink);font-size:12.5px;box-shadow:var(--sh-sm)}
+.tree-node.start{background:var(--ink);color:#fff;border-color:var(--ink)}
+.tree-node.dec{background:#fff7d6;border-color:#e3cf78;color:#6b520a}
+.tree-node.dx{background:#dde7f8;border-color:#9fbae6;color:#1d4ea3}
+.tree-node.dgr{background:#fadcdc;border-color:#e29ca0;color:#a31b25}
+.tree-node.action{background:#d8e6cf;border-color:#a8c298;color:#3e6a2e}
+.tree-branch{margin-left:14px;border-left:1.5px dashed #b8b094;padding:6px 0 6px 18px;margin-top:6px;margin-bottom:2px;position:relative}
+.tree-branch::before{content:"";position:absolute;left:-1.5px;top:-4px;width:14px;height:14px;border-left:1.5px solid #b8b094;border-bottom:1.5px solid #b8b094;border-radius:0 0 0 6px}
+.tree-label{display:inline-block;font:700 10.5px/1 'DM Sans',system-ui,sans-serif;letter-spacing:.12em;text-transform:uppercase;padding:3px 7px;border-radius:4px;margin-bottom:5px}
+.tree-label.yes{background:#fadcdc;color:#a31b25}.tree-label.no{background:#d8e6cf;color:#3e6a2e}
+
+/* FOOTER */
+.foot{margin-top:48px;padding-top:22px;border-top:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;font-size:11px;color:var(--ink-faint);letter-spacing:.04em;flex-wrap:wrap;gap:8px}
+.foot-mono{font-family:'DM Mono',monospace}
+.foot-author{font:800 14px/1.1 'DM Mono',monospace;color:var(--ink);letter-spacing:.02em;margin-bottom:3px}
+.foot-meta{font:500 11px/1.3 'DM Sans',system-ui,sans-serif;color:var(--ink-faint);letter-spacing:.04em}
+
+/* WATERMARK */
+.watermark{position:fixed;bottom:calc(14px + env(safe-area-inset-bottom,0px));right:calc(14px + env(safe-area-inset-right,0px));font:600 10px/1 'DM Mono',monospace;letter-spacing:.04em;color:rgba(14,17,22,.55);background:rgba(255,255,255,.85);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);padding:6px 10px;border-radius:99px;border:1px solid rgba(14,17,22,.1);box-shadow:0 2px 8px rgba(14,17,22,.06);z-index:50;pointer-events:none;user-select:none}
+@media(max-width:560px){.watermark{bottom:calc(10px + env(safe-area-inset-bottom,0px));right:calc(10px + env(safe-area-inset-right,0px));font-size:9px;padding:5px 8px}}
+
+/* PRINT */
+@media print{
+  body{background:#fff;font-size:10.5pt}
+  body::before{display:none}
+  .header,.toc{position:static;background:#0e1116;color:#fff}
+  .wrap{padding:14px;max-width:100%}
+  .card,.hero,.legend,.pocket{box-shadow:none !important;break-inside:avoid}
+  .hero::after,.pocket::before{display:none}
+  .pocket{background:#1a1d24;color:#f0eee5}
+  .ank,.box,.disease,.score,.algo,.stbl,.deep,.mnemo,.quick{box-shadow:none !important;break-inside:avoid}
+  .deep:not([open]) .deep-content{display:block}
+  .deep>summary::after{display:none}
+  .watermark{position:fixed;bottom:8mm;right:8mm;background:none;border:none;color:rgba(0,0,0,.5)}
+  .hero-stamp{transform:none;position:absolute}
+}
+
+/* === v5.2.1 · fase 1 (review de estrutura 2026-11-17) === */
+:root{--ink-faint:#6b7280;--ank-hy:#8a6a00}
+
+/* cabeçalho sempre em uma linha: o índice fixo (top:50px) deixa de ficar coberto */
+.header-row{height:50px;padding-top:0;padding-bottom:0}
+.h-titles{flex:1 1 auto}
+.h-title,.h-sub{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.h-author,.h-edition,.h-mark{flex:none}
+.h-edition{margin-left:0}
+
+/* árvores: sim/não neutros; a cor fica no nó de destino (.dgr, .action, .dx, .dec) */
+.tree-label{font-size:11px;letter-spacing:.08em}
+.tree-label.yes{background:var(--ink-soft);color:#fff}
+.tree-label.no{background:var(--paper);color:var(--ink-soft);box-shadow:inset 0 0 0 1px var(--line-strong)}
+
+/* endereços longos da bibliografia não alargam a página */
+.foot-meta{overflow-wrap:anywhere}
+
+/* voltar ao topo */
+.to-top{position:fixed;left:calc(14px + env(safe-area-inset-left,0px));bottom:calc(14px + env(safe-area-inset-bottom,0px));width:38px;height:38px;display:grid;place-items:center;border-radius:50%;background:rgba(14,17,22,.82);color:#f0eee5;font:700 17px/1 'DM Sans',system-ui,sans-serif;z-index:50;box-shadow:var(--sh-md)}
+.to-top:hover{background:#0e1116}
+
+@media(max-width:680px){
+  .header-row{padding-left:14px;padding-right:14px;gap:10px}
+  .h-sub{display:none}
+}
+@media(max-width:560px){
+  .wrap{padding-top:14px}
+  .hero{margin:0 0 18px;padding:16px 16px 18px}
+  .hero h1{font-size:23px}
+  .hero-lead{font-size:13.5px;line-height:1.5}
+  .hero-stamp{margin-bottom:10px}
+  .watermark{display:none}
+  .to-top{left:auto;right:calc(12px + env(safe-area-inset-right,0px));bottom:calc(12px + env(safe-area-inset-bottom,0px))}
+  .tree-branch{margin-left:3px;padding-left:11px}
+  .tree-node{display:block}
+  .score-grade{overflow-wrap:anywhere;hyphens:auto}
+}
+
+@media print{
+  .header,.toc,.watermark,.to-top{display:none !important}
+  .wrap{padding:0}
+  .section{margin:22px 0 10px}
+  .card,.hero,.legend,.pocket,.disease,.score,.algo,.stbl,.deep,.mnemo{break-inside:auto}
+  .stbl-row,.disease-row,.score-row,.mnemo-row,.box,.quick,.pocket-card,.tree-node,.ank{break-inside:avoid}
+  .section-eyebrow,.section-title,.section-sub,.card-head,.disease-head,.stbl-head,.sub-title,.box-title,.deep>summary{break-after:avoid}
+  .deep::details-content{content-visibility:visible;display:block}
+  .pocket{background:#fff;color:#0e1116;border:1.5px solid #0e1116}
+  .pocket-title,.pocket .pc-act b{color:#0e1116}
+  .pocket .pc-act{color:#232830}
+  .pocket-sub{color:#545b69}
+  .pocket-eyebrow,.pocket-eyebrow::before{color:#7a6014}
+  .pocket .pocket-card{background:#fff;border-color:#c9c5b8;border-left-color:var(--accent);--accent:#7a6014}
+  .pocket .pocket-card.emerg{--accent:#a31b25}
+  .pocket .pocket-card.dec{--accent:#1d4ea3}
+  .pocket .pocket-card.tx{--accent:#a8481a}
+  .pocket .pocket-card.clin{--accent:#0b5d4e}
+}
+</style>
+</head>
+<body>
+
+<header class="header">
+  <div class="header-row">
+    <div class="h-mark">C</div>
+    <div class="h-titles">
+      <div class="h-title">UTI e Choque Não Séptico · Pocket Handbook</div>
+      <div class="h-sub">Elite edition · Medicina intensiva e cirurgia · CT08</div>
+    </div>
+    <div class="h-author">@dr.lorencato</div>
+    <div class="h-edition">v5.2</div>
+  </div>
+</header>
+
+<nav class="toc">
+  <div class="toc-inner">
+    <a href="#pocket"      class="toc-chip"><span class="toc-chip-num">0</span>Pocket</a>
+    <a href="#redflags"    class="toc-chip"><span class="toc-chip-num">A</span>Red Flags</a>
+    <a href="#approach"    class="toc-chip"><span class="toc-chip-num">B</span>Apresentação</a>
+    <a href="#primarias"   class="toc-chip"><span class="toc-chip-num">C</span>Entidades</a>
+    <a href="#secundarias" class="toc-chip"><span class="toc-chip-num">D</span>Secundárias</a>
+    <a href="#algoritmo"   class="toc-chip"><span class="toc-chip-num">E</span>Algoritmo</a>
+    <a href="#tratamento"  class="toc-chip"><span class="toc-chip-num">F</span>Tratamento</a>
+    <a href="#pitfalls"    class="toc-chip"><span class="toc-chip-num">G</span>Pitfalls</a>
+    <a href="#pearls"      class="toc-chip"><span class="toc-chip-num">H</span>Pearls</a>
+  </div>
+</nav>
+
+<main>
+<div class="wrap">
+
+<div class="hero">
+  <div class="hero-stamp">@dr.lorencato</div>
+  <div class="hero-tag">Medicina intensiva · Choque não séptico</div>
+  <h1>UTI e Choque Não Séptico<br><em>Perfusão antes de pressão: o fenótipo manda no vasoativo</em></h1>
+  <p class="hero-lead">Da fisiologia do choque e do ultrassom à beira do leito (RUSH) ao choque hemorrágico não traumático e à transfusão maciça, ao choque cardiogênico pelo SCAI com noradrenalina, dobutamina, milrinona, levosimendana e suporte mecânico, ao obstrutivo, à anafilaxia, ao neurogênico e à crise adrenal; a tabela única de vasoativos, as medidas gerais de UTI, os cuidados pós-parada e a morte encefálica pela Resolução CFM 2.173/2017.</p>
+  <div class="hero-sig">Compilação clínica por <b>@dr.lorencato</b> · Elite Edition v5.2 · Medicina intensiva · rascunho educacional em revisão clínica (clinical_review)</div>
+</div>
+
+<div id="pocket" class="pocket">
+  <div class="pocket-head">
+    <div>
+      <div class="pocket-eyebrow">Pocket Card 0 · 5 segundos</div>
+      <div class="pocket-title">Decisões Críticas — UTI e Choque Não Séptico</div>
+      <div class="pocket-sub">PS · Sala vermelha · UTI · Sepse no II03, trauma no CT01–CT03</div>
+    </div>
+  </div>
+  <div class="pocket-grid">
+    <div class="pocket-card emerg">
+      <div class="pc-trig">Hipoperfusão sem causa clara</div>
+      <div class="pc-act"><b>Ultrassom à beira do leito em 5 min</b> (RUSH: bomba, tanque, tubos), lactato e ECG. <b>Noradrenalina já</b>, em veia periférica calibrosa, para PAM ≥65 mmHg enquanto procura a causa; não espere o acesso central.</div>
+    </div>
+    <div class="pocket-card emerg">
+      <div class="pc-trig">Urticária, estridor, sibilo ou hipotensão após exposição</div>
+      <div class="pc-act"><b>Adrenalina 1 mg/mL IM, 0,5 mg (0,5 mL) na coxa</b> (0,01 mg/kg, máx. 0,5 mg), repetir a cada 5–15 min; O2 em alto fluxo e cristaloide 20 mL/kg se hipotenso. Anti-histamínico e corticoide não substituem.</div>
+    </div>
+    <div class="pocket-card emerg">
+      <div class="pc-trig">Hipotensão com jugular distendida</div>
+      <div class="pc-act"><b>Obstrutivo até prova em contrário:</b> eco para pericárdio e VD, pulmão para pneumotórax. Tamponamento → pericardiocentese ou cirurgia; pneumotórax hipertensivo → descompressão; TEP maciço → HNF e alteplase (RP04). Sem diurético nem vasodilatador.</div>
+    </div>
+    <div class="pocket-card dec">
+      <div class="pc-trig">É choque cardiogênico? Em que estágio?</div>
+      <div class="pc-act">VE hipocinético com congestão e hipoperfusão (lactato ≥2 mmol/L). <b>SCAI C</b> exige intervenção além do volume; <b>D</b> piora apesar dela; <b>E</b> é colapso. Shock Team, coronariografia na SCA (CV03) e transferência para centro com suporte mecânico.</div>
+    </div>
+    <div class="pocket-card dec">
+      <div class="pc-trig">Hemorragia com instabilidade, sem trauma</div>
+      <div class="pc-act"><b>Controle da fonte é o tratamento</b> (endoscopia em 24 h, angioembolização, cirurgia). Hb 7 g/dL como limiar (9–10 na coronariopatia aguda); transfusão maciça 1:1:1 se perda massiva; TXA 1 g só na HPP (choque não traumático), <b>não na HDA</b>; no trauma, 1 g + 1 g (CT01).</div>
+    </div>
+    <div class="pocket-card dec">
+      <div class="pc-trig">Hipotensão com hipoglicemia, Na baixo, K alto ou corticoide crônico</div>
+      <div class="pc-act"><b>Crise adrenal:</b> hidrocortisona 100 mg IV em bólus, depois 200 mg em 24 h, SF 0,9% ≥1 L na primeira hora. Colha cortisol e ACTH, mas não espere (EN04).</div>
+    </div>
+    <div class="pocket-card tx">
+      <div class="pc-trig">Noradrenalina: como prescrever</div>
+      <div class="pc-act"><b>1 ampola (4 mL = 8 mg de hemitartarato = 4 mg de base) em 250 mL de SG5% = 16 µg/mL de base.</b> Iniciar 0,05–0,1 µg/kg/min; teto 1 µg/kg/min. Se periférica, olhar o sítio a cada 1–2 h.</div>
+    </div>
+    <div class="pocket-card tx">
+      <div class="pc-trig">Cardiogênico com baixo débito</div>
+      <div class="pc-act">Noradrenalina para a PAM; <b>dobutamina 2,5 µg/kg/min</b> (teto 10; SBC admite 20) ou <b>milrinona 0,375 µg/kg/min</b> sem bólus (teto 0,75; 0,5 se IRA); levosimendana 0,05 → 0,2 µg/kg/min em 24 h.</div>
+    </div>
+    <div class="pocket-card tx">
+      <div class="pc-trig">Pós-parada comatoso</div>
+      <div class="pc-act">SpO2 ≥94% sem hiperóxia, PaCO2 normal, PAM ≥65, ECG e coronariografia se supra, glicemia 140–180 e <b>febre tratada por ≥72 h</b>. O TTM2 não mostrou vantagem de 33 °C sobre a normotermia.</div>
+    </div>
+    <div class="pocket-card clin">
+      <div class="pc-trig">Choque neurogênico</div>
+      <div class="pc-act">Lesão <b>acima de T6</b>: hipotensão, bradicardia e pele quente e seca. Excluir hemorragia primeiro. Noradrenalina e PAM 85–90 mmHg por 7 dias na lesão medular (CT03).</div>
+    </div>
+    <div class="pocket-card clin">
+      <div class="pc-trig">Coma apneico, sem reflexos de tronco</div>
+      <div class="pc-act"><b>Protocolo de morte encefálica é obrigatório</b> (CFM 2.173/2017): 2 exames clínicos, teste de apneia (PaCO2 &gt;55 mmHg) e exame complementar; notificar a central. Manter o potencial doador estável (D.2).</div>
+    </div>
+    <div class="pocket-card clin">
+      <div class="pc-trig">Paciente de UTI em piloto automático</div>
+      <div class="pc-act">Enoxaparina 40 mg SC 1×/dia (20 mg se ClCr &lt;30), IBP na VM invasiva, glicemia 140–180, <b>analgesia antes de sedação</b>, mobilização e delirium (NE04). <b>Descalone o vasoativo</b> a cada turno.</div>
+    </div>
+  </div>
+</div>
+
+<div class="legend">
+  <div class="lg-title">Sistema de legendas</div>
+  <div class="lg-grid">
+    <div class="lg-item"><span class="dot c1"></span> Fisiopatologia / Classificação</div>
+    <div class="lg-item"><span class="dot c2"></span> Clínica / Apresentação</div>
+    <div class="lg-item"><span class="dot c3"></span> Diagnóstico / Exames</div>
+    <div class="lg-item"><span class="dot c4"></span> Tratamento / Conduta</div>
+    <div class="lg-item"><span class="dot c5"></span> Emergências / Red Flags</div>
+    <div class="lg-item"><span class="dot c6"></span> Nuances / Pearls</div>
+  </div>
+  <div class="lg-divider"></div>
+  <div class="lg-anchors">
+    <span class="ank ank-hy">HIGH-YIELD</span>
+    <span class="ank ank-dec">DECISION</span>
+    <span class="ank ank-dgr">DANGER</span>
+    <span class="ank ank-prl">PEARL</span>
+    <span class="ank ank-myt">MYTH</span>
+    <span class="ank ank-con">CONTROVERSY</span>
+    <span class="ank ank-evo">EVOLVING</span>
+  </div>
+  <div class="lg-explain">
+    <div class="ehy"><b>HIGH-YIELD</b> — prova/prática frequente</div>
+    <div class="edec"><b>DECISION</b> — muda a conduta</div>
+    <div class="edgr"><b>DANGER</b> — erro grave / risco crítico</div>
+    <div class="eprl"><b>PEARL</b> — nuance de especialista</div>
+    <div class="emyt"><b>MYTH</b> — mito vivo na prática</div>
+    <div class="econ"><b>CONTROVERSY</b> — debate sem consenso</div>
+    <div class="eevo"><b>EVOLVING</b> — mudança recente</div>
+  </div>
+</div>
+
+<section id="redflags">
+  <div class="section">
+    <div class="section-eyebrow"><span>A</span> Red Flags</div>
+    <div class="section-title">Choque é falta de oxigênio na célula, não pressão baixa</div>
+    <div class="section-sub">A pressão cai tarde e a hipoperfusão aparece antes: pele, consciência, diurese e lactato. Cada linha abaixo é sinal objetivo, suspeita e conduta imediata; a causa vem do ultrassom, não do palpite.</div>
+  </div>
+
+  <div class="card emerg">
+    <div class="card-head">
+      <div class="card-eyebrow"><span class="card-num">A.1</span> Emergências</div>
+      <h3>Choque indiferenciado: o que fazer nos primeiros 10 minutos <span class="ank ank-dgr">DANGER</span></h3>
+    </div>
+    <div class="card-body">
+      <div class="mnemo">
+        <div class="mnemo-title"><b>CHOQUE</b> Seis perguntas antes de escolher o vasoativo</div>
+        <div class="mnemo-grid">
+          <div class="mnemo-row"><span class="mnemo-letter">C</span><span><b>Cor e temperatura</b> · extremidade fria, livedo, enchimento capilar &gt;3 s: choque hipodinâmico (hipovolêmico, cardiogênico, obstrutivo). Quente, pulso amplo e diastólica baixa: distributivo</span></div>
+          <div class="mnemo-row"><span class="mnemo-letter">H</span><span><b>Hipoperfusão de órgão</b> · rebaixamento da consciência, diurese &lt;0,5 mL/kg/h, lactato ≥2 mmol/L, creatinina subindo</span></div>
+          <div class="mnemo-row"><span class="mnemo-letter">O</span><span><b>Obstrução</b> · tamponamento, pneumotórax hipertensivo e TEP maciço matam em minutos e se tratam com procedimento, não com droga</span></div>
+          <div class="mnemo-row"><span class="mnemo-letter">Q</span><span><b>Queda da PAM</b> · PAM &lt;65 mmHg, PAS &lt;90 ou queda &gt;30% do basal; o hipertenso crônico e o idoso entram em choque com pressão "normal"</span></div>
+          <div class="mnemo-row"><span class="mnemo-letter">U</span><span><b>Ultrassom à beira do leito</b> · RUSH: bomba (VE, VD, pericárdio), tanque (VCI, pulmão, FAST) e tubos (aorta, veias)</span></div>
+          <div class="mnemo-row"><span class="mnemo-letter">E</span><span><b>Exposição e etiologia rápida</b> · sangramento oculto, alérgeno, fármaco, corticoide suspenso, lesão de medula, infarto</span></div>
+        </div>
+      </div>
+
+      <div class="sub-title">Sinal → suspeita → conduta imediata</div>
+      <div class="stbl stbl-3">
+        <div class="stbl-head stbl-3"><div>Red flag</div><div>Suspeita</div><div>Conduta imediata</div></div>
+        <div class="stbl-row stbl-3"><div class="col col1" data-l="Red flag">Hipotensão, jugular distendida, bulhas abafadas, pulso paradoxal ou derrame com colapso de câmara direita</div><div class="col" data-l="Suspeita">Tamponamento cardíaco</div><div class="col" data-l="Conduta"><b>Pericardiocentese guiada por eco ou drenagem cirúrgica</b>; hemopericárdio traumático ou de dissecção vai à cirurgia (CV07, CT01). Volume só como ponte; sem diurético nem vasodilatador.</div></div>
+        <div class="stbl-row stbl-3"><div class="col col1" data-l="Red flag">Hipotensão e hipoxemia em ventilação com pressão positiva, hemitórax sem deslizamento pleural</div><div class="col" data-l="Suspeita">Pneumotórax hipertensivo (ou auto-PEEP)</div><div class="col" data-l="Conduta"><b>Descompressão de alívio e drenagem</b> (CT01). Se não há pneumotórax e o paciente é ventilado com broncoespasmo, <b>desconecte do ventilador</b>: hipotensão que cede é auto-PEEP (RP01).</div></div>
+        <div class="stbl-row stbl-3"><div class="col col1" data-l="Red flag">Dispneia súbita, síncope ou parada, VD dilatado e hipocinético no eco, TVP</div><div class="col" data-l="Suspeita">TEP de alto risco</div><div class="col" data-l="Conduta"><b>HNF em bólus e trombólise com alteplase</b> se não houver contraindicação absoluta; noradrenalina; volume ≤500 mL (RP04).</div></div>
+        <div class="stbl-row stbl-3"><div class="col col1" data-l="Red flag">Exposição a fármaco, alimento ou veneno, com urticária, angioedema, estridor, sibilo ou hipotensão</div><div class="col" data-l="Suspeita">Anafilaxia</div><div class="col" data-l="Conduta"><b>Adrenalina IM 0,5 mg na coxa</b>, repetir em 5–15 min; O2, acesso, cristaloide 20 mL/kg se hipotenso (C.5).</div></div>
+        <div class="stbl-row stbl-3"><div class="col col1" data-l="Red flag">Dor torácica ou IC prévia, congestão pulmonar, extremidade fria, lactato ≥2 mmol/L, VE hipocinético</div><div class="col" data-l="Suspeita">Choque cardiogênico (SCAI C ou pior)</div><div class="col" data-l="Conduta"><b>ECG e eco imediatos, linha arterial, noradrenalina</b> para a PAM, Shock Team; coronariografia se a causa é SCA (C.3, CV03).</div></div>
+        <div class="stbl-row stbl-3"><div class="col col1" data-l="Red flag">Hematêmese, melena, dor lombar com massa pulsátil, sangramento vaginal, taquicardia com Hb ainda normal</div><div class="col" data-l="Suspeita">Choque hemorrágico oculto (classe III–IV)</div><div class="col" data-l="Conduta"><b>Dois acessos calibrosos, sangue em vez de cristaloide, controle da fonte</b>; ativar transfusão maciça se perda massiva (C.2).</div></div>
+        <div class="stbl-row stbl-3"><div class="col col1" data-l="Red flag">Hipotensão refratária com hipoglicemia, hiponatremia, hipercalemia, vômitos; corticoide suspenso ou etomidato recente</div><div class="col" data-l="Suspeita">Insuficiência adrenal aguda</div><div class="col" data-l="Conduta"><b>Hidrocortisona 100 mg IV</b> sem esperar o cortisol, SF 0,9% ≥1 L, glicose se hipoglicemia (C.7, EN04).</div></div>
+        <div class="stbl-row stbl-3"><div class="col col1" data-l="Red flag">Hipotensão com bradicardia e pele quente após trauma de coluna ou raquianestesia alta</div><div class="col" data-l="Suspeita">Choque neurogênico (lesão acima de T6)</div><div class="col" data-l="Conduta"><b>Afastar hemorragia</b>, volume guiado e noradrenalina; atropina 0,5 mg IV se bradicardia sintomática (C.6, CT03).</div></div>
+        <div class="stbl-row stbl-3"><div class="col col1" data-l="Red flag">Lactato ≥4 mmol/L ou em ascensão com PAM normal</div><div class="col" data-l="Suspeita">Choque compensado (hipoperfusão sem hipotensão)</div><div class="col" data-l="Conduta"><b>Tratar como choque:</b> procurar a causa, reavaliar lactato em 2 h; PA normal não afasta, e o lactato também sobe por adrenalina, metformina e hepatopatia (C.1).</div></div>
+      </div>
+
+      <div class="box danger">
+        <span class="box-label">DANGER</span>
+        <div class="box-title">Intubar o chocado antes de ressuscitá-lo</div>
+        <div class="box-body">Indução, sedação e pressão positiva removem o tônus simpático e o retorno venoso: a parada peri-intubação é a complicação que mais mata o paciente em choque. Ressuscite primeiro (sangue, noradrenalina em curso, vasopressor pronto na seringa), reduza o indutor (etomidato 0,15–0,2 mg/kg ou cetamina 0,5–1 mg/kg) e use succinilcolina 1,5 mg/kg ou rocurônio 1,2 mg/kg, como no CT01 e no RP01. No obstrutivo, a ventilação com pressão positiva piora o quadro.</div>
+      </div>
+      <div class="box danger">
+        <span class="box-label">DANGER</span>
+        <div class="box-title">"A pressão está boa, ele está bem"</div>
+        <div class="box-body">PAM é o alvo mais fácil de medir e o pior marcador de perfusão. Um doente com PAM 70 mmHg sob noradrenalina alta, pele marmórea, lactato subindo e diurese zero está em choque refratário, não estável. Meça a perfusão (tempo de enchimento capilar, livedo, consciência, diurese, lactato) a cada intervenção e pare de escalar a droga quando a resposta é só o número.</div>
+      </div>
+      <div class="box decision">
+        <span class="box-label">DECISION</span>
+        <div class="box-title">Vasopressor antes do acesso central</div>
+        <div class="box-body">Noradrenalina em veia periférica calibrosa (cateter ≥20G em antebraço proximal ou fossa antecubital, sítio checado a cada 1–2 h, por tempo curto) é aceitável e melhor que atrasar a PAM; a conduta é a mesma do II03. Central, linha arterial e eco vêm em paralelo, não em série.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="approach">
+  <div class="section">
+    <div class="section-eyebrow"><span>B</span> Por Apresentação</div>
+    <div class="section-title">Mapa sindrômico: frio ou quente, congesto ou seco</div>
+    <div class="section-sub">O exame da pele, da jugular e do pulmão, somado ao ultrassom, separa os quatro mecanismos em minutos. Cinco padrões cobrem quase todo choque não séptico do plantão.</div>
+  </div>
+
+  <div class="card clin">
+    <div class="card-head">
+      <div class="card-eyebrow"><span class="card-num">B.1</span> Padrão 1</div>
+      <h3>Frio e congesto: o coração que falhou</h3>
+      <div class="card-sub">Hipotensão, estertores, jugular alta, extremidade fria, lactato alto</div>
+    </div>
+    <div class="card-body">
+      <div class="quick">
+        <div class="quick-label">Quick view · 30 segundos</div>
+        <div class="quick-body">Pressão de enchimento alta com débito baixo: <b>choque cardiogênico</b>. A causa mais comum é o infarto extenso (cerca de 80%); o resto é miocardite, descompensação de cardiomiopatia, valvopatia aguda, arritmia e complicação mecânica. <b>Volume empírico piora o quadro.</b></div>
+      </div>
+      <ul class="bullets">
+        <li><b>Eco primeiro:</b> VE hipocinético, regurgitação mitral nova, comunicação interventricular ou derrame pericárdico mudam a conduta (C.3).</li>
+        <li><b>ECG em 10 minutos:</b> supradesnivelamento leva à coronariografia imediata (CV03); infarto de VD pede derivações direitas (V4R) e volume cauteloso.</li>
+        <li><b>PA preservada não exclui:</b> SCAI B tem taquicardia e hipotensão relativa com lactato ainda normal e é o momento de agir antes da falência de órgão.</li>
+        <li><b>Arritmia como causa:</b> FA rápida, TV sustentada ou bradicardia extrema derrubam o débito; reverter o ritmo trata o choque (CV01).</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="card clin">
+    <div class="card-head">
+      <div class="card-eyebrow"><span class="card-num">B.2</span> Padrão 2</div>
+      <h3>Frio e seco: o tanque vazio</h3>
+      <div class="card-sub">Taquicardia, veias colabadas, VCI pequena, sem congestão pulmonar</div>
+    </div>
+    <div class="card-body">
+      <div class="quick">
+        <div class="quick-label">Quick view · 30 segundos</div>
+        <div class="quick-body">Pré-carga baixa: <b>choque hipovolêmico</b>, mais provavelmente hemorrágico (HDA, AAA roto, retroperitônio, ectópica, pós-parto) e, menos, por perda de líquido (diarreia, queimadura, cetoacidose). A hemoglobina de entrada subestima a perda.</div>
+      </div>
+      <ul class="bullets">
+        <li><b>Classes de perda (ATLS 10, rotuladas):</b> I &lt;15%, II 15–30%, III 31–40%, IV &gt;40%; a PAS só cai na classe III, e a pressão de pulso estreita antes dela.</li>
+        <li><b>Índice de choque (FC/PAS):</b> descrito na apostila CIR 1 como mais sensível que FC e PAS isoladas, sobretudo no idoso e na criança; limiar de corte: conferir.</li>
+        <li><b>Fonte oculta:</b> em hipotenso sem trauma, procure sangue no abdome, retroperitônio, tórax, coxa e trato digestivo; toque retal e FAST valem mais que o hematócrito.</li>
+        <li><b>Mulher em idade fértil:</b> gravidez ectópica rota até prova em contrário (GO12).</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="card clin">
+    <div class="card-head">
+      <div class="card-eyebrow"><span class="card-num">B.3</span> Padrão 3</div>
+      <h3>Jugular alta, pulmão limpo: o obstáculo</h3>
+      <div class="card-sub">Hipotensão e hipoxemia com sinais de pressão alta à direita e pulmão sem edema</div>
+    </div>
+    <div class="card-body">
+      <div class="quick">
+        <div class="quick-label">Quick view · 30 segundos</div>
+        <div class="quick-body">Há uma barreira mecânica ao retorno venoso ou à ejeção: <b>tamponamento, pneumotórax hipertensivo ou TEP maciço</b>. O diagnóstico é de segundos no ultrassom e o tratamento é procedimento ou trombólise.</div>
+      </div>
+      <ul class="bullets">
+        <li><b>Pericárdio:</b> derrame com colapso do átrio ou ventrículo direito e VCI plétora (CV07).</li>
+        <li><b>Pleura:</b> ausência de deslizamento e ponto pulmonar; descompressão é clínica no instável (CT01).</li>
+        <li><b>VD:</b> dilatado, hipocinético, septo achatado, sinal de McConnell; compressão venosa positiva sustenta a suspeita de TEP (RP04).</li>
+        <li><b>Mimetizadores:</b> auto-PEEP no broncoespástico ventilado, hipertensão pulmonar com crise, embolia gasosa e síndrome de veia cava superior.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="card clin">
+    <div class="card-head">
+      <div class="card-eyebrow"><span class="card-num">B.4</span> Padrão 4</div>
+      <h3>Quente e vasodilatado, sem infecção: o distributivo não séptico</h3>
+      <div class="card-sub">Pele quente, diastólica baixa, débito normal ou alto, sem foco infeccioso</div>
+    </div>
+    <div class="card-body">
+      <div class="quick">
+        <div class="quick-label">Quick view · 30 segundos</div>
+        <div class="quick-body">Perda de tônus vascular sem sepse: <b>anafilaxia</b> (pele, via aérea e exposição), <b>neurogênico</b> (bradicardia e lesão alta), <b>crise adrenal</b> (hipoglicemia, Na baixo, K alto) e vasoplegia de fármaco, de pós-circulação extracorpórea ou de síndrome pós-parada.</div>
+      </div>
+      <ul class="bullets">
+        <li><b>Exposição no último minuto a duas horas:</b> contraste, betalactâmico, dipirona, látex, ferroada, alimento: anafilaxia antes de qualquer exame (C.5).</li>
+        <li><b>FC baixa em hipotenso:</b> neurogênico, bloqueio de canal de cálcio ou betabloqueador, infarto inferior; hemorragia dá taquicardia, exceto nesses casos (C.6, D.4).</li>
+        <li><b>Sepse ainda é o primeiro mimetizador:</b> culturas e antimicrobiano em 1 h não esperam a exclusão do distributivo não séptico (II03).</li>
+        <li><b>Choque endócrino:</b> crise tireotóxica e coma mixedematoso também cabem aqui (D.4).</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="card clin">
+    <div class="card-head">
+      <div class="card-eyebrow"><span class="card-num">B.5</span> Padrão 5</div>
+      <h3>O paciente de UTI que piora sem motivo aparente</h3>
+      <div class="card-sub">Instabilidade em paciente já internado, ventilado e sedado</div>
+    </div>
+    <div class="card-body">
+      <div class="quick">
+        <div class="quick-label">Quick view · 30 segundos</div>
+        <div class="quick-body">No internado, a hipotensão nova tem <b>causa iatrogênica ou evitável</b> em boa parte dos casos: sedação, pressão positiva alta, auto-PEEP, sangramento oculto, pneumotórax, tamponamento pós-cateter, TEP, hipovolemia por diurético e supressão adrenal. Pense em <b>DOPES</b> e em dose de fármaco antes de pedir cultura.</div>
+      </div>
+      <ul class="bullets">
+        <li><b>Ventilador:</b> tubo, pneumotórax, auto-PEEP, estômago distendido, secreção: desconecte, ventile à mão, ultrassom (RP01).</li>
+        <li><b>Sangramento:</b> cateter central, anticoagulação profilática, úlcera de estresse, hematoma retroperitoneal; Hb seriada e eco/TC.</li>
+        <li><b>Fármaco:</b> propofol, midazolam, dexmedetomidina (bradicardia e hipotensão), opioide, vasodilatador, antiarrítmico, sedativo e BNM em dose acumulada na falência renal ou hepática.</li>
+        <li><b>Pós-parada:</b> disfunção miocárdica e vasoplegia 6–24 h depois do retorno circulatório (D.1).</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="primarias">
+  <div class="section">
+    <div class="section-eyebrow"><span>C</span> Entidades Primárias</div>
+    <div class="section-title">Choque: o mecanismo antes da droga</div>
+    <div class="section-sub">Sete boxes: o choque como síndrome, o hemorrágico não traumático, o cardiogênico, o obstrutivo (só reconhecimento), a anafilaxia, o neurogênico e a crise adrenal. A sepse está no II03, o trauma no CT01–CT03 e a insuficiência cardíaca no CV04.</div>
+  </div>
+
+  <div class="card prim">
+    <div class="card-head">
+      <div class="card-eyebrow"><span class="card-num">C.1</span> Síndrome</div>
+      <h3>Choque: fisiologia, classificação, reconhecimento e metas <span class="ank ank-hy">HIGH-YIELD</span></h3>
+    </div>
+    <div class="card-body">
+      <div class="quick">
+        <div class="quick-label">Quick view · 30 segundos</div>
+        <div class="quick-body">Choque é hipoperfusão efetiva generalizada: a oferta de oxigênio (DO2) não cobre o consumo (VO2) e a célula passa a produzir lactato. <b>Hipotensão não é necessária nem suficiente.</b> Quatro mecanismos: hipovolêmico, cardiogênico, obstrutivo e distributivo. O ultrassom à beira do leito separa os três primeiros em minutos; a meta é perfusão (pele, consciência, diurese, lactato), não só PAM ≥65 mmHg.</div>
+      </div>
+
+      <div class="disease">
+        <div class="disease-head">
+          <div class="disease-name">Choque (síndrome)</div>
+          <div class="disease-tag">CID-10 R57.9 (choque não especificado) · código do mecanismo quando conhecido <span class="ev ev-expert">Apostila CAR 2 · 2025</span></div>
+        </div>
+        <div class="disease-body">
+          <div class="disease-rows">
+            <div class="disease-row"><div class="k">Epidemiologia</div><div class="v">O choque indiferenciado domina a sala vermelha e a UTI. O séptico é o mais frequente em geral (II03); entre os não sépticos, o hemorrágico e o cardiogênico predominam, e o obstrutivo é raro, porém o mais tratável em segundos.</div></div>
+            <div class="disease-row"><div class="k">Fisiopatologia</div><div class="v">PAM = débito cardíaco × resistência vascular sistêmica; débito = volume sistólico × FC. <b>Hipodinâmicos</b> (hipovolêmico, cardiogênico, obstrutivo): débito baixo e vasoconstrição compensatória. <b>Hiperdinâmicos</b> (distributivos): vasoplegia, débito normal ou alto e venodilatação com perda de retorno venoso. Abaixo de um DO2 crítico, a extração de O2 satura e o lactato sobe.</div></div>
+            <div class="disease-row"><div class="k">Clínica</div><div class="v">Taquicardia, taquipneia, tempo de enchimento capilar &gt;3 s, livedo, oligúria (&lt;0,5 mL/kg/h), confusão, pele fria e pegajosa nos hipodinâmicos, quente nos distributivos. A apostila CAR 2 pede quatro de seis critérios empíricos (fácies de sofrimento, FC &gt;100, FR &gt;22, déficit de base, diurese e PAS).</div></div>
+            <div class="disease-row"><div class="k">Diagnóstico</div><div class="v"><b>Lactato arterial ou venoso</b> (≥2 mmol/L sugere hipoperfusão; ≥4 grave), gasometria com déficit de base, creatinina, troponina, ECG e Hb; <b>ultrassom RUSH</b> em 5 minutos: bomba (VE, VD, pericárdio), tanque (VCI, FAST, pulmão) e tubos (aorta, veias). Cateter de artéria pulmonar só em seleção, no choque misto ou de mecanismo duvidoso. <span class="ev ev-expert">RUSH · Perera 2010</span> <span class="ev ev-acr">SCAI 2022</span></div></div>
+            <div class="disease-row"><div class="k">Tratamento</div><div class="v">Tratar a causa e sustentar a perfusão em paralelo. PAM ≥65 mmHg com noradrenalina; volume só se o paciente responde (levantamento passivo das pernas, variação do VTI) e sem congestão; sangue no hemorrágico; trombólise ou procedimento no obstrutivo. Linha arterial, lactato a cada 2 h. Fluidos e balanço: CT09. <span class="ev ev-sbr">SBC RCP 2019</span></div></div>
+            <div class="disease-row"><div class="k">Prognóstico</div><div class="v">Depende do mecanismo e do tempo até a causa ser tratada: o hemorrágico controlado e a anafilaxia tratada cedo têm bom desfecho; o cardiogênico tem mortalidade em torno de 50% mesmo com suporte máximo.</div></div>
+            <div class="disease-row"><div class="k">O que muda conduta</div><div class="v">Eco com VCI plétora e VE ou VD dilatado: <b>não dê volume</b>. VCI colabada com coração hiperdinâmico: volume ou sangue. Pericárdio com colapso: procedimento. Lactato que não cai em 2 h ou pele que continua marmórea: causa errada ou fonte não controlada, não "mais vasopressor".</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="score">
+        <div class="score-head">
+          <div class="score-name">RUSH: bomba, tanque e tubos <span class="ev ev-expert">Perera 2010 · resumo</span></div>
+          <div class="score-purpose">Protocolo de ultrassom para o choque indiferenciado</div>
+        </div>
+        <div class="score-rows">
+          <div class="score-row"><div class="score-grade">Bomba</div><div class="score-desc"><b>Pericárdio</b> (derrame, colapso), <b>VE</b> (hipocinético, hiperdinâmico) e <b>VD</b> (dilatado, septo achatado). Hipocinético: cardiogênico; hiperdinâmico e cavidade vazia: hipovolêmico ou distributivo; derrame com colapso: tamponamento; VD grande: TEP.</div></div>
+          <div class="score-row"><div class="score-grade">Tanque</div><div class="score-desc"><b>VCI</b> (colabada ou plétora), <b>FAST</b> (hepatorrenal, esplenorrenal, pelve) e <b>pulmão</b> (linhas B no edema, ausência de deslizamento no pneumotórax, derrame). VCI plétora sem colapso e linhas B: congestão; líquido livre: hemorragia.</div></div>
+          <div class="score-row"><div class="score-grade">Tubos</div><div class="score-desc"><b>Aorta abdominal e torácica</b> (aneurisma, flap de dissecção) e <b>veias profundas</b> (compressão femoral e poplítea para TVP). Um aneurisma maior que 5 cm com hipotensão é ruptura até prova em contrário (CV08).</div></div>
+        </div>
+      </div>
+
+      <div class="stbl stbl-4">
+        <div class="stbl-head stbl-4"><div>Mecanismo</div><div>Débito e RVS</div><div>Enchimento</div><div>Pista no exame</div></div>
+        <div class="stbl-row stbl-4"><div class="col col1" data-l="Mecanismo">Hipovolêmico</div><div class="col" data-l="Débito e RVS">Débito ↓, RVS ↑</div><div class="col" data-l="Enchimento">PVC e PCP baixas</div><div class="col" data-l="Pista">VCI colabada, cavidades vazias, veias planas</div></div>
+        <div class="stbl-row stbl-4"><div class="col col1" data-l="Mecanismo">Cardiogênico</div><div class="col" data-l="Débito e RVS">Débito ↓, RVS ↑</div><div class="col" data-l="Enchimento">PVC e PCP altas</div><div class="col" data-l="Pista">VE hipocinético, linhas B, jugular alta</div></div>
+        <div class="stbl-row stbl-4"><div class="col col1" data-l="Mecanismo">Obstrutivo</div><div class="col" data-l="Débito e RVS">Débito ↓, RVS ↑</div><div class="col" data-l="Enchimento">PVC alta, PCP baixa ou normal</div><div class="col" data-l="Pista">Derrame com colapso, VD dilatado, pneumotórax</div></div>
+        <div class="stbl-row stbl-4"><div class="col col1" data-l="Mecanismo">Distributivo</div><div class="col" data-l="Débito e RVS">Débito normal ou ↑, RVS ↓</div><div class="col" data-l="Enchimento">Variável, queda do retorno</div><div class="col" data-l="Pista">Pele quente, diastólica baixa, coração hiperdinâmico</div></div>
+      </div>
+
+      <div class="box decision">
+        <span class="box-label">DECISION</span>
+        <div class="box-title">Metas de perfusão, em ordem de importância</div>
+        <div class="box-body">PAM ≥65 mmHg (maior no hipertenso crônico, menor no hemorrágico não controlado); tempo de enchimento capilar ≤3 s; diurese ≥0,5 mL/kg/h; consciência; <b>lactato em queda de pelo menos 10–20% em 2 h</b> (mesmo corte usado no II03). Lactato que sobe com perfusão melhorando costuma ser efeito β2 da adrenalina ou da glicólise aeróbica, não piora.</div>
+      </div>
+
+      <details class="deep">
+        <summary>Deep dive · Oferta, consumo e extração: por que o lactato sobe e quando a pressão não resolve</summary>
+        <div class="deep-content">
+          <p>A oferta de oxigênio é o produto do débito cardíaco pelo conteúdo arterial de O2 (hemoglobina e saturação); em repouso gira em 700–1.200 mL/min, contra um consumo de 180–280 mL/min. A taxa de extração, normalmente de 25–35%, compensa quedas moderadas de oferta sem que o consumo mude. Quando a oferta cai abaixo de um limiar crítico (da ordem de 500 mL/min no adulto, segundo a apostila CAR 2), a extração atinge cerca de 70%, o consumo passa a depender da oferta e o metabolismo se desvia para a glicólise anaeróbia: piruvato vira lactato, o ATP cai e a bomba de Na+/K+ falha. É a "pedra mestra" do choque: não existe choque sem alteração do metabolismo celular.</p>
+          <p>A saturação venosa mista (ou a central, ScvO2) reflete esse equilíbrio. Nos hipodinâmicos ela cai, porque a extração sobe; no distributivo avançado ela pode ficar alta, porque a célula não consegue extrair o oxigênio ofertado (bloqueio mitocondrial e shunts microcirculatórios). Por isso uma ScvO2 normal não exclui hipoperfusão em paciente vasoplégico, e uma ScvO2 baixa com Hb baixa pode ser tratada com sangue, não com droga.</p>
+          <p>O lactato não é só marcador de hipóxia. Ele também sobe por glicólise aeróbica estimulada por adrenalina (receptor β2) e por depuração hepática reduzida, além de metformina, linezolida, deficiência de tiamina e crises convulsivas. Em geral, o músculo esquelético produz o lactato e o coração o consome, exceto no infarto. Por isso a interpretação é de tendência, associada a tempo de enchimento capilar e diurese, e a conduta é procurar a causa, não normalizar o número com bicarbonato ou diurético.</p>
+          <p>A resposta ao choque é neuro-humoral: catecolaminas, cortisol e glucagon elevam a glicemia; a vasoconstrição sacrifica pele, músculo e vísceras para proteger cérebro e coração, que mantêm o fluxo até uma PAM de cerca de 50–55 mmHg em quem não tem doença vascular prévia (mais alta em idosos e hipertensos). A microcirculação é heterogênea desde o início, com microshunts, plugs de células e extravasamento, e o resultado final da hipoperfusão prolongada é a disfunção de múltiplos órgãos pela inflamação (TNF-α, IL-1, IL-6, óxido nítrico), pela lesão de reperfusão e pela morte celular. A reanimação que restaura a macro-hemodinâmica pode deixar a microcirculação para trás: é a razão de seguir a perfusão periférica e o lactato, não só a PAM.</p>
+        </div>
+      </details>
+    </div>
+  </div>
+
+  <div class="card prim">
+    <div class="card-head">
+      <div class="card-eyebrow"><span class="card-num">C.2</span> Hipovolêmico</div>
+      <h3>Choque hemorrágico não traumático <span class="ank ank-dgr">DANGER</span></h3>
+    </div>
+    <div class="card-body">
+      <div class="quick">
+        <div class="quick-label">Quick view · 30 segundos</div>
+        <div class="quick-body"><b>Controle da fonte é o tratamento; o resto é ponte.</b> Cristaloide em pequeno volume, sangue cedo, limiar restritivo de Hb 7 g/dL (9–10 na coronariopatia aguda), transfusão maciça 1:1:1 se perda massiva, cálcio e normotermia. O ácido tranexâmico tem indicação na hemorragia pós-parto e <b>não tem na hemorragia digestiva</b>.</div>
+      </div>
+
+      <div class="disease">
+        <div class="disease-head">
+          <div class="disease-name">Choque hemorrágico (não traumático)</div>
+          <div class="disease-tag">CID-10 R57.1 (choque hipovolêmico) · acrescentar o código da causa (K92.2, I71.3, O72.x) <span class="ev ev-eular">HALT-IT 2020</span></div>
+        </div>
+        <div class="disease-body">
+          <div class="disease-rows">
+            <div class="disease-row"><div class="k">Epidemiologia</div><div class="v">As fontes mais comuns fora do trauma são a hemorragia digestiva (varicosa no GH10, não varicosa no GH02), o aneurisma de aorta roto (CV08), a hemorragia obstétrica (GO12, GO14), o retroperitônio do anticoagulado (HO03), a hemoptise maciça (RP03), o tumor sangrante e o pós-operatório (CT06).</div></div>
+            <div class="disease-row"><div class="k">Fisiopatologia</div><div class="v">A perda reduz a pré-carga e o débito; a vasoconstrição e a taquicardia compensam até 30% da volemia. A diluição por cristaloide, a hipotermia, a acidose e o consumo de fibrinogênio instalam a coagulopatia da hemorragia grave, que sustenta o sangramento. Sem lesão tecidual extensa, ela é mais tardia e menos intensa que a do trauma.</div></div>
+            <div class="disease-row"><div class="k">Clínica</div><div class="v">Taquicardia, pressão de pulso estreita, extremidade fria, consciência alterada; a PAS cai só na classe III. Idoso, betabloqueado e atleta mascaram a taquicardia, e a gestante tolera perda maior antes de se manifestar (GO12). A Hb de entrada subestima a perda.</div></div>
+            <div class="disease-row"><div class="k">Diagnóstico</div><div class="v">Clínico, com FAST/RUSH (líquido livre, aorta, VCI colabada), toque retal, Hb e lactato seriados, coagulograma e fibrinogênio, tipagem. Angio-TC no estável para localizar a fonte (CV08, GH02). Índice de choque FC/PAS como alerta (apostila CIR 1; limiar: conferir). <span class="ev ev-expert">ATLS 10 · classes rotuladas</span></div></div>
+            <div class="disease-row"><div class="k">Tratamento</div><div class="v">Dois acessos calibrosos; cristaloide balanceado 250–500 mL no adulto como ponte (ATLS 11, como no CT01); concentrado de hemácias O (Rh negativo em mulher fértil) até tipagem; <b>Hb 7 g/dL</b> como limiar, 9–10 g/dL na coronariopatia aguda (HO06); transfusão maciça por pacotes <b>plasma:plaquetas:CH 1:1:1</b> (aceitável ≥1:2 de plasma:CH), cloreto de cálcio 10% 10 mL IV em 5–10 min com cálcio iônico 1,1–1,3 mmol/L, fibrinogênio acima de 1,5 g/L e temperatura acima de 35 °C (CT01). <b>TXA:</b> HPP 1 g IV em 10 min (GO14), segunda dose de 1 g se o sangramento continuar após 30 min ou recomeçar em 24 h (WOMAN); no trauma, 1 g + 1 g (CT01); <b>HDA: não</b>. <span class="ev ev-eular">HALT-IT 2020</span> <span class="ev ev-expert">WOMAN 2017</span></div></div>
+            <div class="disease-row"><div class="k">Prognóstico</div><div class="v">Cada hora de choque não controlado aumenta a mortalidade; a morte vem da exsanguinação, da coagulopatia e da disfunção de órgão por hipoperfusão. A hemorragia pós-parto tratada em minutos raramente mata; a do AAA roto operado tem mortalidade alta.</div></div>
+            <div class="disease-row"><div class="k">O que muda conduta</div><div class="v">Fonte controlável (endoscopia em até 24 h, EVAR, embolização, laparotomia) decide a sala. Cirrose ou hipertensão portal: volume e transfusão restritivos (GH10). Anticoagulado: reversão específica (HO03). Coronariopatia aguda: Hb mais alta. AAA roto consciente: hipotensão permissiva com PAS 70–90 mmHg (CV08). TCE ou lesão medular associada: PAM maior (CT03).</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="score">
+        <div class="score-head">
+          <div class="score-name">Classes de hemorragia (ATLS 10 · rotuladas; ATLS 11 usa minor, moderate e major) <span class="ev ev-expert">Apostila CIR 1 · CAR 2</span></div>
+          <div class="score-purpose">Estimativa para um adulto de 70 kg; orientam, não substituem a resposta ao tratamento</div>
+        </div>
+        <div class="score-rows">
+          <div class="score-row"><div class="score-grade">I · &lt;15%</div><div class="score-desc">Menos de 750 mL. Sem repercussão; a volemia se restabelece em até 24 h. Observação e acesso.</div></div>
+          <div class="score-row"><div class="score-grade">II · 15–30%</div><div class="score-desc">750–1.500 mL. <b>Taquicardia, taquipneia e pressão de pulso estreita</b>; PAS ainda normal. Cristaloide limitado e pesquisa da fonte.</div></div>
+          <div class="score-row"><div class="score-grade">III · 31–40%</div><div class="score-desc">1.500–2.000 mL. <b>PAS cai</b>, taquicardia acentuada, confusão, oligúria. Candidato a transfusão; a prioridade é parar o sangramento.</div></div>
+          <div class="score-row"><div class="score-grade">IV · &gt;40%</div><div class="score-desc">Acima de 2.000 mL. Obnubilação, diastólica não mensurável, anúria. <b>Transfusão maciça e controle cirúrgico imediato.</b></div></div>
+        </div>
+      </div>
+
+      <div class="box danger">
+        <span class="box-label">DANGER</span>
+        <div class="box-title">Ácido tranexâmico na hemorragia digestiva</div>
+        <div class="box-body">No HALT-IT (12.009 pacientes com HDA ou HDB significativa) o TXA em dose alta (1 g em 10 min e 3 g em 24 h) não reduziu a morte por sangramento em 5 dias (4% nos dois grupos; RR 0,99) e aumentou o tromboembolismo venoso (0,8% × 0,4%; RR 1,85). Não use TXA na hemorragia digestiva fora de ensaio. Na HPP, ele é indicado em até 3 h, e no trauma em até 3 h (CT01).</div>
+      </div>
+
+      <details class="deep">
+        <summary>Deep dive · Reposição na hemorragia sem trauma: o que se extrapola e o que não se extrapola</summary>
+        <div class="deep-content">
+          <p>A maior parte da teoria da ressuscitação de controle de danos vem do trauma, em que a lesão tecidual extensa ativa a proteína C, consome o fibrinogênio e causa a coagulopatia aguda. Fora do trauma, o ambiente é outro: a hemorragia digestiva do cirrótico depende da pressão portal e piora com volume liberal (o aumento da pressão dissolve o coágulo e favorece o ressangramento); a hemorragia obstétrica carrega consumo precoce de fibrinogênio e risco de coagulopatia de diluição; o aneurisma roto tolera a hipotensão permissiva desde que o paciente esteja consciente. Por isso a pressão-alvo e o volume não são os mesmos em todos os cenários, e a regra "PAS 80–90 mmHg" do trauma deve ser lida com a causa na mão.</p>
+          <p>O ensaio de Villanueva (NEJM 2013), citado no GH02, mostrou que o limiar restritivo de Hb de 7 g/dL reduziu o ressangramento e a mortalidade na hemorragia digestiva alta, sobretudo na úlcera. A exceção é o paciente com isquemia miocárdica aguda, em que o limiar sobe para 9–10 g/dL (MS 2015, HO06). A transfusão decidida por número isolado erra para os dois lados: a Hb é a última a cair na hemorragia aguda e a primeira a subir após volume, de modo que a decisão se baseia em hemodinâmica, perda estimada e sintomas.</p>
+          <p>A transfusão maciça é definida pelo Ministério da Saúde como reposição de uma volemia em 24 h (10–12 concentrados de hemácias), 50% da volemia em 3 h ou mais de 4 unidades em 1 h (MS 2015). O escore ABC (penetrante, FAST positivo, PAS ≤90, FC ≥120) foi validado no trauma e não cabe na hemorragia digestiva ou obstétrica, nas quais o gatilho é o julgamento de perda maciça em curso e o protocolo da instituição. O pacote 1:1:1 evita a diluição dos fatores, repõe o plasma junto com a hemácia e corta o intervalo até o fibrinogênio; o cálcio é necessário porque cada unidade traz citrato e a metabolização hepática falha no choque.</p>
+          <p>O ácido tranexâmico, antifibrinolítico por bloqueio do sítio de lisina do plasminogênio, funciona onde há hiperfibrinólise com sangramento de origem tecidual ou uterina e em janela curta; fora disso o risco trombótico domina. Ele não substitui o controle da fonte nem a reversão do anticoagulante: se o paciente usa varfarina ou DOAC, a reversão específica vem do HO03, e o plasma não é a resposta ao DOAC. O paciente que continua instável após o pacote completo de reposição precisa de cirurgia ou embolização, não de mais produto.</p>
+        </div>
+      </details>
+    </div>
+  </div>
+
+
+  <div class="card prim">
+    <div class="card-head">
+      <div class="card-eyebrow"><span class="card-num">C.3</span> Cardiogênico</div>
+      <h3>Choque cardiogênico: SCAI, vasoativos e suporte mecânico <span class="ank ank-hy">HIGH-YIELD</span></h3>
+    </div>
+    <div class="card-body">
+      <div class="quick">
+        <div class="quick-label">Quick view · 30 segundos</div>
+        <div class="quick-body">Falência de bomba com pressões de enchimento adequadas ou altas e hipoperfusão. <b>Reconhecer cedo (SCAI B), tratar a causa (revascularização na SCA), sustentar a PAM com noradrenalina e, se o débito segue baixo, somar dobutamina ou milrinona.</b> Balão intra-aórtico de rotina não reduz mortalidade; dispositivo de fluxo microaxial é uma opção selecionada no infarto com supra e disfunção do VE. O resgate depende de Shock Team e de centro capaz.</div>
+      </div>
+
+      <div class="disease">
+        <div class="disease-head">
+          <div class="disease-name">Choque cardiogênico</div>
+          <div class="disease-tag">CID-10 R57.0 (choque cardiogênico) · causa isquêmica: I21.9 <span class="ev ev-acr">SCAI 2022</span></div>
+        </div>
+        <div class="disease-body">
+          <div class="disease-rows">
+            <div class="disease-row"><div class="k">Epidemiologia</div><div class="v">Cerca de 80% decorrem de infarto agudo, em geral com mais de 40% da massa do VE perdida; o infarto com supra complica mais que o sem supra. A mortalidade hospitalar chega a cerca de 50% nos primeiros 30 dias e a de Killip IV, a 70–80% (apostila CAR 3; SBC 2019). Outras causas: miocardite, descompensação de cardiomiopatia, valvopatia aguda, arritmia, Takotsubo, falência de VD e pós-cardiotomia.</div></div>
+            <div class="disease-row"><div class="k">Fisiopatologia</div><div class="v">A queda do débito reduz a perfusão coronariana, o que piora a isquemia e a contratilidade: a espiral do choque. A resposta compensatória (vasoconstrição, retenção de volume) aumenta a pós-carga e o consumo de O2. A inflamação sistêmica e o óxido nítrico produzem vasodilatação inapropriada em parte dos casos, o que explica a resposta variável aos vasoativos. No infarto de VD, o ventrículo dilatado desloca o septo e reduz o enchimento do VE.</div></div>
+            <div class="disease-row"><div class="k">Clínica</div><div class="v">Hipotensão (PAS &lt;90 mmHg persistente ou queda &gt;30 mmHg do basal), extremidades frias e úmidas, oligúria, confusão, estertores, jugular alta e galope. Pode haver PA preservada com hipoperfusão (SCAI C sem hipotensão). Dor torácica pode faltar; o ECG é obrigatório em todo choque sem causa óbvia.</div></div>
+            <div class="disease-row"><div class="k">Diagnóstico</div><div class="v">ECG, eco (função do VE e VD, complicação mecânica, derrame), lactato seriado, troponina, função renal e hepática, gasometria. Critérios hemodinâmicos da SBC: índice cardíaco &lt;1,8 L/min/m² sem inotrópico (&lt;2,2 com) e PCP &gt;15 mmHg; o diagnóstico é clínico quando o cateter não está disponível. O cateter de artéria pulmonar não é de rotina, só quando o mecanismo é incerto. <span class="ev ev-sbr">SBC RCP 2019</span> <span class="ev ev-acr">SCAI 2022</span></div></div>
+            <div class="disease-row"><div class="k">Tratamento</div><div class="v">1) <b>Shock Team</b>, eco imediato, linha arterial, lactato seriado. 2) <b>Causa:</b> cinecoronariografia precoce com revascularização na SCA (SBC 2019, classe I A; SHOCK), correção da complicação mecânica e da arritmia, drenagem do tamponamento. 3) <b>Noradrenalina</b> para a PAM (SBC 2019 IIa B; ESC 2026 IIb C); SBC 2018: 0,1–0,2 µg/kg/min, ajuste a cada 15 min, teto 1 µg/kg/min. 4) Débito baixo com PAM adequada: <b>dobutamina</b> 2,5 µg/kg/min, titulada a cada 10 min, teto 10 (SBC 2018: 10–20) ou <b>milrinona</b> 0,375 µg/kg/min sem bólus, a cada 4 h, teto 0,75 (0,5 com IRA), preferida sob betabloqueador; <b>levosimendana</b> 0,05 → 0,2 µg/kg/min em infusão de 24 h. 5) Sem volume empírico no congesto. 6) Resgate: lactato subindo, dose crescente ou nova disfunção de órgão → suporte mecânico e transferência. <span class="ev ev-eular">ESC IC 2026</span> <span class="ev ev-sbr">SBC IC 2018</span></div></div>
+            <div class="disease-row"><div class="k">Prognóstico</div><div class="v">O estágio SCAI, a causa e os modificadores (parada, idade, lesão de órgão, acidose, lactato ≥8) estratificam o risco; o estágio avalia a gravidade e não prediz a mortalidade sozinho. Ensaios maiores de suporte mecânico mostraram benefício só em subgrupos selecionados.</div></div>
+            <div class="disease-row"><div class="k">O que muda conduta</div><div class="v"><b>SCA:</b> coronariografia agora (CV03). <b>Complicação mecânica</b> (CIV, ruptura de parede livre, insuficiência mitral por papilar): cirurgia, com BIA como ponte. <b>Infarto de VD:</b> volume inicial se sem congestão, sem nitrato, diurético ou opioide, sincronia AV. <b>Betabloqueador prévio ou DRC:</b> milrinona e levosimendana no lugar de dobutamina, com a milrinona reduzida na DRC. <b>Lesão cerebral anóxica provável:</b> sem dispositivo agressivo. <b>Estágio D ou E:</b> transferência a centro hub.</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="score">
+        <div class="score-head">
+          <div class="score-name">SCAI SHOCK: estágios A a E <span class="ev ev-acr">SCAI 2022 · lido</span></div>
+          <div class="score-purpose">Gravidade do choque; o modificador A indica parada cardíaca. Gravidade não é risco de morte isolado.</div>
+        </div>
+        <div class="score-rows">
+          <div class="score-row"><div class="score-grade">A · em risco</div><div class="score-desc">Sem sinais de choque, mas com infarto extenso ou IC aguda ou crônica descompensada. PA normal, perfusão normal, lactato normal.</div></div>
+          <div class="score-row"><div class="score-grade">B · início</div><div class="score-desc"><b>Instabilidade hemodinâmica sem hipoperfusão:</b> PAS &lt;90 ou PAM &lt;60 mmHg (ou queda &gt;30 mmHg), FC ≥100 bpm, lactato normal, jugular elevada, estertores. Aqui se age antes da falência de órgão.</div></div>
+          <div class="score-row"><div class="score-grade">C · clássico</div><div class="score-desc"><b>Hipoperfusão que exige uma intervenção além do volume</b> (fármaco ou dispositivo): pele fria, confusão, diurese &lt;30 mL/h, <b>lactato ≥2 mmol/L</b>, creatinina 1,5× a basal; se medido, índice cardíaco &lt;2,2 e PCP &gt;15 mmHg.</div></div>
+          <div class="score-row"><div class="score-grade">D · deteriorando</div><div class="score-desc">Como o C, mas piorando ou sem resposta à terapia inicial: lactato persistente &gt;2 e subindo, mais vasopressores ou dispositivo adicionado.</div></div>
+          <div class="score-row"><div class="score-grade">E · extremis</div><div class="score-desc">Colapso ou parada: quase sem pulso, múltiplas desfibrilações, <b>lactato ≥8 mmol/L</b>, pH &lt;7,2, déficit de base &gt;10, bólus de vasopressor.</div></div>
+        </div>
+      </div>
+
+      <div class="sub-title">Suporte circulatório mecânico: o que cada dispositivo faz e onde falha</div>
+      <div class="stbl stbl-3">
+        <div class="stbl-head stbl-3"><div>Dispositivo</div><div>Efeito e indicação</div><div>Limites e posição das diretrizes</div></div>
+        <div class="stbl-row stbl-3"><div class="col col1" data-l="Dispositivo">Balão intra-aórtico (BIA)</div><div class="col" data-l="Efeito e indicação">Infla na diástole (perfusão coronariana) e desinfla na sístole (menor pós-carga); +0,5 L/min. Ponte nas <b>complicações mecânicas</b> do infarto.</div><div class="col" data-l="Limites e posição">IABP-SHOCK II (600 pacientes) sem queda de mortalidade em 30 dias ou 12 meses. ESC 2026: não recomendado nos não selecionados (III B1); SBC 2019: IIa C se persistir hipoperfusão após fármaco, IIb B de rotina. Contraindicado na insuficiência aórtica, na dissecção de aorta, na doença arterial periférica grave e no trombo ou tumor intracardíaco.</div></div>
+        <div class="stbl-row stbl-3"><div class="col col1" data-l="Dispositivo">Bomba microaxial (Impella)</div><div class="col" data-l="Efeito e indicação">Descarrega o VE e sustenta fluxo. ESC 2026: <b>considerar</b> em choque por infarto com supra e disfunção sistólica do VE, sem risco de lesão cerebral anóxica (IIa B1; DanGer Shock).</div><div class="col" data-l="Limites e posição">Não recomendado em choque não selecionado por risco de dano (III B1). Complicações vasculares, hemólise e sangramento; centro com equipe. Disponibilidade no SUS limitada: conferir.</div></div>
+        <div class="stbl-row stbl-3"><div class="col col1" data-l="Dispositivo">ECMO venoarterial</div><div class="col" data-l="Efeito e indicação">Substitui a bomba e as trocas gasosas no refratário (e na parada, ECPR). Aumenta a pós-carga do VE e diminui a pré-carga.</div><div class="col" data-l="Limites e posição">ECLS-SHOCK (2023): sem redução da mortalidade em 30 dias na estratégia sistemática (citado de memória; conferir). Exige plano de saída (recuperação, ponte para transplante ou dispositivo de longa duração).</div></div>
+      </div>
+
+      <div class="box danger">
+        <span class="box-label">DANGER</span>
+        <div class="box-title">Dopamina e "mais dobutamina" no cardiogênico</div>
+        <div class="box-body">No SOAP II, a dopamina causou mais arritmia que a noradrenalina (24,1% × 12,4%) e, no subgrupo cardiogênico, mais morte em 28 dias (P=0,03), embora a mortalidade global não diferisse. Dobutamina acima de 10 µg/kg/min raramente acrescenta fluxo e aumenta arritmia e consumo de O2; a milrinona acumula na DRC e vasodilata. Escalada persistente pede resgate (suporte mecânico, transferência), não só mais droga.</div>
+      </div>
+
+      <details class="deep">
+        <summary>Deep dive · A espiral cardiogênica, a escolha do vasoativo e o ventrículo direito</summary>
+        <div class="deep-content">
+          <p>O choque cardiogênico é uma síndrome de baixo débito e baixa pressão de perfusão coronariana que se retroalimenta: a queda do volume sistólico reduz a PAM e o fluxo diastólico coronariano, a isquemia piora a contratilidade, e a taquicardia e a vasoconstrição compensatórias aumentam o consumo de O2. Em cerca de uma parte dos casos soma-se a inflamação sistêmica, com óxido nítrico induzido e queda inapropriada da resistência, o que explica por que a classificação por débito e resistência de Forrester não separa bem os pacientes que respondem à noradrenalina dos que respondem à dobutamina. A conduta efetiva interrompe a espiral em dois pontos: reperfusão do miocárdio e suporte da pressão de perfusão.</p>
+          <p>A noradrenalina é o vasopressor de escolha porque aumenta a PAM e a pressão diastólica sem a taquicardia e o risco arritmogênico da dopamina; a dose é a menor que sustenta a perfusão, pois o excesso de pós-carga reduz o débito do VE doente. A dobutamina é agonista β1 e β2 e eleva o débito pelo AMPc; sua ação cai com betabloqueador e com o uso prolongado (taquifilaxia em 48–72 h), e a vasodilatação β2 pode derrubar a PAM, por isso ela não é usada sozinha no hipotenso. A milrinona inibe a fosfodiesterase 3, dilata a circulação sistêmica e pulmonar e independe do receptor β, o que a torna útil no betabloqueado e na hipertensão pulmonar, mas acumula na insuficiência renal (meia-vida de 2–4 h que se alonga) e causa hipotensão e arritmia ventricular. A levosimendana sensibiliza o cálcio na troponina C e abre canais de potássio; a infusão de 24 h tem efeito que persiste por dias a duas semanas (metabólito ativo), sem superioridade de mortalidade sobre a dobutamina na SBC 2018.</p>
+          <p>O ventrículo direito merece capítulo próprio. No infarto inferior com acometimento de VD, a pré-carga é essencial: o paciente hipotenso sem congestão pulmonar responde a volume, e os fármacos que reduzem a pré-carga (nitratos, diuréticos, opioides) devem ser evitados. Se o volume não basta, dobutamina e noradrenalina; a sincronia atrioventricular é crítica, e o marca-passo sequencial é preferível ao de VD isolado. O VD também falha no TEP, na hipertensão pulmonar e na ventilação com PEEP alto, e nesses casos a conduta é diminuir a pós-carga do VD (oxigênio, tratar a causa, evitar acidose e hipercapnia) e manter a pressão de perfusão coronariana direita com noradrenalina.</p>
+          <p>O papel dos dispositivos é limitado pela evidência. O balão intra-aórtico melhora a perfusão coronariana e reduz a pós-carga, mas aumenta o débito em cerca de 0,5 L/min e, no IABP-SHOCK II, não reduziu a mortalidade; a bomba microaxial descarrega o VE e, no DanGer Shock, reduziu a morte em seleção estrita. Em qualquer dispositivo, a pergunta decisiva é o destino: recuperação do miocárdio, ponte para transplante ou assistência de longa duração. Sem destino, o dispositivo prolonga a internação sem mudar o desfecho, e a limitação de suporte é uma decisão compartilhada, não uma omissão.</p>
+        </div>
+      </details>
+    </div>
+  </div>
+
+  <div class="card prim">
+    <div class="card-head">
+      <div class="card-eyebrow"><span class="card-num">C.4</span> Obstrutivo</div>
+      <h3>Choque obstrutivo: reconhecer e remeter <span class="ank ank-dgr">DANGER</span></h3>
+    </div>
+    <div class="card-body">
+      <div class="quick">
+        <div class="quick-label">Quick view · 30 segundos</div>
+        <div class="quick-body">Três lesões mecânicas produzem hipotensão com jugular alta e pulmão sem edema: <b>TEP maciço, tamponamento e pneumotórax hipertensivo</b>. Aqui entra só o reconhecimento; o tratamento completo é do RP04, do CV07 e do CT01.</div>
+      </div>
+      <div class="disease">
+        <div class="disease-head">
+          <div class="disease-name">Choque obstrutivo (TEP maciço · tamponamento · pneumotórax hipertensivo)</div>
+          <div class="disease-tag">CID-10 I26.0 (TEP com cor pulmonale agudo) · I31.4 (tamponamento cardíaco) · J93.0 (pneumotórax hipertensivo espontâneo; traumático: S27.0) <span class="ev ev-expert">RP04 · CV07 · CT01</span></div>
+        </div>
+        <div class="disease-body">
+          <div class="disease-rows">
+            <div class="disease-row"><div class="k">Fisiopatologia</div><div class="v">Obstáculo ao retorno venoso (pneumotórax, tamponamento) ou à ejeção do VD (TEP): o débito cai com pressão de enchimento direita alta. A resistência sistêmica sobe de forma compensatória.</div></div>
+            <div class="disease-row"><div class="k">Clínica</div><div class="v">Jugular distendida, hipoxemia, taquicardia, síncope. Tamponamento: bulhas abafadas, pulso paradoxal. Pneumotórax: assimetria respiratória e hipertimpanismo. TEP: dor pleurítica, TVP, parada sem ritmo chocável.</div></div>
+            <div class="disease-row"><div class="k">Diagnóstico</div><div class="v">Eco à beira do leito: derrame com colapso de câmara direita; VD dilatado com septo achatado; ausência de deslizamento pleural. Não espere a tomografia no instável. <span class="ev ev-expert">RUSH · Perera 2010</span></div></div>
+            <div class="disease-row"><div class="k">Tratamento</div><div class="v">TEP: HNF 80 UI/kg em bólus (máx. 10.000 UI; conferir protocolo local) e alteplase 100 mg IV em 2 h (ESC 2019; esquema acelerado de 0,6 mg/kg em 15 min, máx. 50 mg), volume ≤500 mL, noradrenalina (RP04). Tamponamento: pericardiocentese guiada por eco ou drenagem cirúrgica, volume enquanto prepara (CV07). Pneumotórax: descompressão de alívio e dreno (CT01). <span class="ev ev-eular">SBPT 2025 · via RP04</span></div></div>
+            <div class="disease-row"><div class="k">O que muda conduta</div><div class="v">Hemopericárdio por trauma, aorta ou ruptura de parede livre vai ao centro cirúrgico; a punção é ponte. Contraindicação absoluta à trombólise no TEP (ESC 2019): AVC hemorrágico ou de origem desconhecida em qualquer época; AVC isquêmico nos últimos 6 meses; neoplasia do SNC; trauma maior, cirurgia ou TCE nas últimas 3 semanas; diátese hemorrágica; sangramento ativo. Cateter, embolectomia e ECMO são alternativas quando a trombólise é contraindicada, não contraindicações (RP04). Ventilação com pressão positiva piora os três: intube só se inevitável, com sangue e vasopressor prontos.</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card prim">
+    <div class="card-head">
+      <div class="card-eyebrow"><span class="card-num">C.5</span> Distributivo</div>
+      <h3>Anafilaxia <span class="ank ank-hy">HIGH-YIELD</span></h3>
+    </div>
+    <div class="card-body">
+      <div class="quick">
+        <div class="quick-label">Quick view · 30 segundos</div>
+        <div class="quick-body"><b>Adrenalina intramuscular é o tratamento; o resto é adjuvante.</b> 0,01 mg/kg (máx. 0,5 mg; no adulto, 0,5 mg = 0,5 mL da ampola de 1 mg/mL) na face anterolateral da coxa, repetida a cada 5–15 min. Refratária a doses repetidas: infusão monitorada. Em uso de betabloqueador, glucagon. A pele falta em parte dos casos.</div>
+      </div>
+      <div class="disease">
+        <div class="disease-head">
+          <div class="disease-name">Anafilaxia e choque anafilático</div>
+          <div class="disease-tag">CID-10 T78.2 (choque anafilático não especificado) · T88.6 (por fármaco corretamente administrado) · T78.0 (alimento) <span class="ev ev-nice">WAO 2020</span></div>
+        </div>
+        <div class="disease-body">
+          <div class="disease-rows">
+            <div class="disease-row"><div class="k">Epidemiologia</div><div class="v">Alimentos dominam na criança; fármacos (betalactâmico, AINE, dipirona, contraste, bloqueador neuromuscular) e himenópteros no adulto. Até um terço dos casos é idiopático, e vale pesquisar mastocitose. Asma mal controlada e adrenalina tardia concentram os óbitos.</div></div>
+            <div class="disease-row"><div class="k">Fisiopatologia</div><div class="v">Degranulação de mastócitos e basófilos, por IgE (a mais comum), IgG/complemento ou ativação direta. Histamina, triptase, PAF e leucotrienos causam vasodilatação, extravasamento capilar, broncoconstrição e edema de laringe. É um choque distributivo com componente de hipovolemia relativa por perda de plasma.</div></div>
+            <div class="disease-row"><div class="k">Clínica</div><div class="v">Início em minutos a horas: urticária, prurido, angioedema, estridor, sibilo, dispneia, vômitos em salva, cólica, síncope, hipotensão. Sinais de parada iminente: rouquidão, estridor, cianose, colapso.</div></div>
+            <div class="disease-row"><div class="k">Diagnóstico</div><div class="v">Clínico, pelos critérios WAO 2020: (1) início agudo com pele ou mucosa <b>e</b> comprometimento respiratório, hipotensão ou disfunção de órgão, ou sintomas gastrointestinais graves; ou (2) hipotensão, broncoespasmo ou laringe após alérgeno conhecido ou muito provável, mesmo sem pele. Hipotensão: queda &gt;30% da PAS basal ou PAS &lt;90 mmHg (adulto). Triptase 1–2 h após o início e, depois, basal; normal não exclui, e não atrasa a adrenalina. <span class="ev ev-nice">WAO 2020</span></div></div>
+            <div class="disease-row"><div class="k">Tratamento</div><div class="v">Retirar o gatilho; <b>adrenalina IM 0,5 mg</b> (0,01 mg/kg, máx. 0,5 mg), repetir em 5–15 min; supino com pernas elevadas (sentado se dispneia; decúbito lateral esquerdo na gestante); O2 em alto fluxo; dois acessos calibrosos; cristaloide 20 mL/kg se instável; salbutamol inalatório para broncoespasmo (não substitui a adrenalina); adrenalina nebulizada no edema de via aérea alta. <b>Refratária após 2–3 doses IM:</b> infusão de adrenalina 0,05–0,5 µg/kg/min por bomba (regra única, como no choque), com monitor, titulada a cada 5–10 min; teto prático de 1 µg/kg/min só na anafilaxia refratária; parada ao resolver (prática; dose do protocolo de Brown não lida; conferir). <b>Betabloqueador:</b> glucagon 1–5 mg IV lento em 5 min e depois 5–15 µg/min (prática; fonte primária não lida; a WAO 2020 cita o glucagon sem dose; conferir). Anti-H1 e corticoide só adjuvantes. <span class="ev ev-nice">WAO 2020</span></div></div>
+            <div class="disease-row"><div class="k">Prognóstico</div><div class="v">Letalidade baixa com adrenalina precoce. Reação bifásica: cerca da metade ocorre nas primeiras 6–12 h; observe os casos graves e os que usaram mais de uma dose.</div></div>
+            <div class="disease-row"><div class="k">O que muda conduta</div><div class="v">Duas ou mais doses, hipotensão, via aérea ou asma grave: observação prolongada ou internação. Betabloqueador ou IECA: resposta pior, glucagon. Gestante: adrenalina igualmente indicada. Criança: PD10. Alta com plano escrito, prescrição de adrenalina e encaminhamento ao alergista (II08); no Brasil, o autoinjetor não tem registro (ver PD10).</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="box danger">
+        <span class="box-label">DANGER</span>
+        <div class="box-title">Concentração errada da adrenalina</div>
+        <div class="box-body">A via IM usa a ampola de <b>1 mg/mL</b> (0,5 mg = 0,5 mL). Na CMED há também ampola de 0,1 mg/mL de uso pediátrico IM/IV/SC: aplicar 0,5 mL dela é uma dose dez vezes menor, e o bólus IV de 1 mg/mL no consciente causa arritmia e infarto. Bólus IV não é a via inicial da anafilaxia; só em paciente monitorizado, em infusão.</div>
+      </div>
+
+      <details class="deep">
+        <summary>Deep dive · Por que a adrenalina IM funciona e por que corticoide e anti-histamínico não a substituem</summary>
+        <div class="deep-content">
+          <p>A adrenalina age em quatro frentes simultâneas: receptores α1 (vasoconstrição, redução do edema de mucosa e da perda capilar), β1 (inotropia e cronotropia), β2 (broncodilatação e inibição da liberação de mediadores pelo mastócito) e, indiretamente, na pressão de perfusão coronariana. Nenhum outro fármaco reúne esses efeitos. A via intramuscular na coxa atinge pico plasmático em poucos minutos, porque o vasto lateral é muito perfundido, enquanto a via subcutânea é lenta e a própria adrenalina contrai o subcutâneo. O WAO 2020 contraindica o bólus intravenoso como primeira via pelo risco de arritmia fatal e reserva a infusão contínua em bomba para pacientes monitorizados com reação refratária.</p>
+          <p>O choque anafilático combina vasodilatação com perda de volume intravascular, que pode chegar a uma fração substancial da volemia em minutos; por isso a posição supina com pernas elevadas e o cristaloide em bólus de 20 mL/kg compõem o tratamento, e a posição sentada ou em pé súbita pode precipitar colapso por enchimento ventricular insuficiente. O broncoespasmo responde ao β2 da própria adrenalina; o salbutamol é adjuvante, não alternativa, e o estridor pede adrenalina nebulizada enquanto se prepara a via aérea, que pode ser difícil pelo edema.</p>
+          <p>Os anti-H1 aliviam o prurido e a urticária, mas não tratam a hipotensão nem a obstrução de via aérea, e a administração parenteral rápida de anti-H1 de primeira geração pode causar hipotensão. O corticoide tem início lento e foi usado para prevenir a reação bifásica, mas o WAO 2020 registra evidência crescente de que não traz benefício agudo e que o uso rotineiro é controverso. Todos podem coexistir com a adrenalina e nenhum deve adiá-la; o erro clássico de plantão é dar anti-H1 e corticoide e observar, deixando a adrenalina para quando o paciente piorar.</p>
+          <p>Em pacientes com betabloqueador, a adrenalina age menos porque o β está ocupado e a ação α domina, o que pode causar bradicardia e hipertensão reflexas; o glucagon eleva o AMPc por receptor próprio e contorna o bloqueio, com a limitação de causar vômitos (risco de aspiração em paciente sonolento, daí o decúbito lateral) e hiperglicemia. A evidência é muito limitada, e a dose na anafilaxia é de prática. Na gestante, a adrenalina é indicada, o decúbito lateral esquerdo evita a compressão da veia cava e a perfusão do útero é preservada pela correção da hipotensão materna.</p>
+        </div>
+      </details>
+    </div>
+  </div>
+
+  <div class="card prim">
+    <div class="card-head">
+      <div class="card-eyebrow"><span class="card-num">C.6</span> Distributivo</div>
+      <h3>Choque neurogênico <span class="ank ank-dec">DECISION</span></h3>
+    </div>
+    <div class="card-body">
+      <div class="quick">
+        <div class="quick-label">Quick view · 30 segundos</div>
+        <div class="quick-body">Perda do tônus simpático por lesão da medula acima de T6 (ou raquianestesia alta): <b>hipotensão, bradicardia e pele quente e seca</b>. É diagnóstico de exclusão: o politraumatizado hipotenso é hemorrágico até prova em contrário. O detalhe (choque medular, PAM 85–90 mmHg por 7 dias, corticoide não) está no CT03.</div>
+      </div>
+      <div class="disease">
+        <div class="disease-head">
+          <div class="disease-name">Choque neurogênico</div>
+          <div class="disease-tag">CID-10 R57.8 (outras formas de choque; sem código nominal) · lesão medular: S14.1, S24.1, S34.1 <span class="ev ev-expert">CT03 · ATLS 11</span></div>
+        </div>
+        <div class="disease-body">
+          <div class="disease-rows">
+            <div class="disease-row"><div class="k">Fisiopatologia</div><div class="v">A interrupção do fluxo simpático causa vasoplegia arterial e venosa: a venodilatação reduz o retorno e o débito, e a perda do estímulo cardioaceleratório (T1–T4) impede a taquicardia. É um choque hiperdinâmico semelhante ao séptico, mas sem infecção.</div></div>
+            <div class="disease-row"><div class="k">Clínica</div><div class="v">Hipotensão, <b>FC baixa ou normal</b>, extremidades quentes, hipotermia por perda do controle vasomotor. Dura de 1 a 3 semanas. Distinto do choque medular, que é a arreflexia flácida abaixo da lesão.</div></div>
+            <div class="disease-row"><div class="k">Diagnóstico</div><div class="v">Clínico e de exclusão: FAST, radiografias, hemoglobina e lactato antes de atribuir a hipotensão à medula. Hemorragia e neurogênico podem coexistir; lesão abaixo de T6 não explica a hipotensão. <span class="ev ev-expert">ATLS 11 · via CT03</span></div></div>
+            <div class="disease-row"><div class="k">Tratamento</div><div class="v">Volume guiado para não encher um leito vasodilatado, noradrenalina (α1 + β1, preferível pela bradicardia; fenilefrina é α pura), atropina 0,5 mg IV a cada 3–5 min, máximo 3 mg, na bradicardia sintomática (SBC RCP 2019), pré-oxigenação antes de aspirar a via aérea. Lesão medular: PAM 85–90 mmHg por 7 dias (CT03). <span class="ev ev-sbr">SBC RCP 2019</span></div></div>
+            <div class="disease-row"><div class="k">O que muda conduta</div><div class="v">Taquicardia ou pele fria: hemorragia, não neurogênico. TCE associado: meta de pressão do TCE. Acima de T6 e instável: UTI, vasopressor e controle térmico.</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card prim">
+    <div class="card-head">
+      <div class="card-eyebrow"><span class="card-num">C.7</span> Endócrino</div>
+      <h3>Insuficiência adrenal aguda (crise adrenal) <span class="ank ank-dgr">DANGER</span></h3>
+    </div>
+    <div class="card-body">
+      <div class="quick">
+        <div class="quick-label">Quick view · 30 segundos</div>
+        <div class="quick-body">Hipotensão refratária a volume e vasopressor em quem não tem cortisol: <b>hidrocortisona 100 mg IV em bólus, depois 200 mg em 24 h</b>, SF 0,9% ≥1 L na primeira hora. Colha cortisol e ACTH, mas não espere. Mesmas doses do EN04.</div>
+      </div>
+      <div class="disease">
+        <div class="disease-head">
+          <div class="disease-name">Crise adrenal</div>
+          <div class="disease-tag">CID-10 E27.2 (crise addisoniana) · E27.1 (insuficiência primária) <span class="ev ev-eular">EN04 · ES 2016</span></div>
+        </div>
+        <div class="disease-body">
+          <div class="disease-rows">
+            <div class="disease-row"><div class="k">Fisiopatologia</div><div class="v">A ausência de cortisol reduz a sensibilidade vascular às catecolaminas, o débito e a gliconeogênese; na forma primária soma-se a perda de aldosterona, com hipovolemia, hiponatremia e hipercalemia. Gatilhos: infecção, cirurgia, trauma, suspensão de corticoide crônico, hemorragia ou infarto de suprarrenal (apoplexia, sepse, meningococcemia), etomidato e apoplexia hipofisária.</div></div>
+            <div class="disease-row"><div class="k">Clínica</div><div class="v">Hipotensão, náuseas, vômitos, dor abdominal, febre, confusão, hipoglicemia, hiponatremia, hipercalemia (na primária), hiperpigmentação. Imita sepse e desidratação, e o erro de plantão é tratar assim e adiar o corticoide.</div></div>
+            <div class="disease-row"><div class="k">Diagnóstico</div><div class="v">Clínico. O cortisol colhido antes do bólus confirma depois. Dexametasona na crise impede interpretar o cortisol, e a hidrocortisona nas doses da crise dispensa fludrocortisona nesta fase. <span class="ev ev-eular">EN04 · ES 2016</span></div></div>
+            <div class="disease-row"><div class="k">Tratamento</div><div class="v">Hidrocortisona 100 mg IV em bólus, depois 200 mg em 24 h (infusão contínua ou 50 mg IV de 6/6 h), SF 0,9% ≥1 L na primeira hora, glicose se hipoglicemia, tratar o gatilho. A lista CMED tem o succinato injetável de hidrocortisona (conferir apresentação). Sem fludrocortisona na crise.</div></div>
+            <div class="disease-row"><div class="k">O que muda conduta</div><div class="v">Corticoide crônico em doente grave: dose de estresse. Choque séptico refratário: hidrocortisona 200 mg/dia pelo II03. Retirada depois da estabilização, com reposição oral e cartão (EN04).</div></div>
+          </div>
+        </div>
+      </div>
+
+      <details class="deep">
+        <summary>Deep dive · Cortisol, vasos e etomidato: por que o corticoide muda o choque</summary>
+        <div class="deep-content">
+          <p>O cortisol mantém a expressão de receptores adrenérgicos α1 e β na parede vascular e no miocárdio e potencializa o efeito vasoconstritor das catecolaminas; sem ele, a noradrenalina perde eficácia e a pressão não responde ao vasopressor. Esse é o mecanismo do choque refratário da crise adrenal e a razão de o corticoide ser tratamento hemodinâmico, não apenas reposição hormonal. A hidrocortisona tem afinidade pelo receptor mineralocorticoide suficiente, nas doses de 200 mg por dia, para repor a aldosterona na fase aguda, e por isso a fludrocortisona é dispensável até a estabilização.</p>
+          <p>A supressão adrenal ocorre também no paciente grave sem doença adrenal prévia. A dose única de etomidato bloqueia a 11β-hidroxilase por algumas horas, sem impacto demonstrado na mortalidade da sequência rápida (CT01); o uso crônico de glicocorticoide suprime o eixo e torna a suspensão abrupta e a doença aguda um gatilho clássico. Na UTI, a pergunta é se a hipotensão que não cede ao vasopressor é adrenal: hipoglicemia, hiponatremia e eosinofilia sugerem, e o tratamento é seguro e rápido.</p>
+          <p>A apoplexia (hemorragia) suprarrenal e a hipofisária são causas de choque de início agudo, com cefaleia e alteração visual na hipofisária; a apostila CAR 2 as classifica entre os choques endócrinos. O diagnóstico definitivo vem depois: ACTH e renina separam a forma primária da secundária (EN04), e o teste da cortrosina é feito fora da crise. Em qualquer dúvida entre crise adrenal e sepse, as duas coisas se tratam ao mesmo tempo: antimicrobiano, hidrocortisona e volume.</p>
+        </div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<section id="secundarias">
+  <div class="section">
+    <div class="section-eyebrow"><span>D</span> Entidades Secundárias</div>
+    <div class="section-title">Parada, morte encefálica, rotina de UTI e outros choques</div>
+    <div class="section-sub">Quatro boxes agrupados. A PCR não tem HP no catálogo: o CT08 assume só o essencial, e a lacuna fica registrada. A morte encefálica tem o protocolo completo no CT03 (D.9).</div>
+  </div>
+
+  <div class="card diag">
+    <div class="card-head">
+      <div class="card-eyebrow"><span class="card-num">D.1</span> Parada cardíaca</div>
+      <h3>PCR e cuidados pós-RCE <span class="ank ank-hy">HIGH-YIELD</span></h3>
+    </div>
+    <div class="card-body">
+      <div class="quick">
+        <div class="quick-label">Quick view · 30 segundos</div>
+        <div class="quick-body">A síndrome pós-parada reúne lesão cerebral, disfunção miocárdica, isquemia-reperfusão sistêmica e a causa precipitante. O alvo é <b>oxigenação sem hiperóxia, PaCO2 normal, PAM ≥65, ECG e coronariografia se supra, glicemia 140–180, convulsões tratadas e febre evitada por pelo menos 72 h</b>. Prognóstico só depois de 72 h, com vários métodos.</div>
+      </div>
+      <div class="disease">
+        <div class="disease-head">
+          <div class="disease-name">Parada cardiorrespiratória e síndrome pós-parada</div>
+          <div class="disease-tag">CID-10 I46.0 (parada cardíaca com ressuscitação bem-sucedida) · I46.9 · G93.1 (lesão cerebral anóxica) <span class="ev ev-sbr">SBC RCP 2019</span></div>
+        </div>
+        <div class="disease-body">
+          <div class="disease-rows">
+            <div class="disease-row"><div class="k">Epidemiologia</div><div class="v">A sobrevida depende da integração do suporte básico, do avançado e dos cuidados pós-ressuscitação. A assistolia como ritmo inicial tem alta hospitalar de cerca de 7%. A lesão cerebral e a instabilidade cardiovascular são os principais determinantes da sobrevida após a parada (SBC 2019).</div></div>
+            <div class="disease-row"><div class="k">Fisiopatologia</div><div class="v">Dano cerebral, disfunção miocárdica reversível em dias, vasoplegia por isquemia-reperfusão e resposta inflamatória. A lesão coronariana aguda atinge 59–71% dos que param sem causa cardíaca evidente.</div></div>
+            <div class="disease-row"><div class="k">Clínica</div><div class="v">Coma, hipotensão, mioclonias, convulsões, arritmias, febre rebote. Hipotermia espontânea de 35–36 °C é comum logo após o retorno.</div></div>
+            <div class="disease-row"><div class="k">Diagnóstico</div><div class="v">ECG de 12 derivações imediato, eco, gasometria, lactato, K e Mg, glicemia, troponina, TC de crânio e tórax conforme a causa (5Hs e 5Ts). Capnografia: PETCO2 &lt;10 mmHg por mais de 20 min em RCP adequada sinaliza baixa chance de retorno (SBC 2019). <span class="ev ev-sbr">SBC RCP 2019</span></div></div>
+            <div class="disease-row"><div class="k">Tratamento</div><div class="v"><b>RCP:</b> compressões contínuas, adrenalina 1 mg IV/IO a cada 3–5 min (SBC 2019; vasopressina não indicada), desfibrilação bifásica 120–200 J no ritmo chocável, amiodarona ou lidocaína na FV refratária (amiodarona 300 mg IV ou IO e mais 150 mg se necessário, SBC 2019; a SBC dá 900 mg em 24 h por 24 h após o retorno). <b>Pós-RCE:</b> O2 quando SpO2 &lt;94%, evitar hipocapnia, sedação, vasoativo com fluido na instabilidade, coronariografia precoce (nas 2 h se a causa cardíaca é incerta, SBC 2019), BIA ou ECMO se persistir. <b>Temperatura:</b> SBC 2019 admite 32–36 °C por 12–24 h, reaquecimento de 0,25–0,5 °C/h e controle de febre por 72 h; o TTM2 (1.900 randomizados; 1.850 analisados) não mostrou vantagem de 33 °C sobre normotermia com tratamento da febre (≥37,8 °C): mortalidade em 6 meses de 50% × 48%, com mais arritmia com repercussão hemodinâmica (24% × 17%). Prática coerente com ambas: alvo constante entre 36 e 37,5 °C, sem febre por ≥72 h (ERC/ESICM 2025 não lida: conferir). Glicemia 140–180 mg/dL (ADA 2026). Sem anticonvulsivante profilático. <span class="ev ev-eular">TTM2 2021</span></div></div>
+            <div class="disease-row"><div class="k">Prognóstico</div><div class="v">Não decidir limitação de suporte antes de 72 h da normotermia, sem sedação residual, e com mais de um método (exame neurológico, EEG, imagem, biomarcador); regra do ERC/ESICM: conferir. Em coma sem recuperação, considerar morte encefálica só após 24 h (CFM 2.173/2017).</div></div>
+            <div class="disease-row"><div class="k">O que muda conduta</div><div class="v">Supra de ST ou causa cardíaca provável: coronariografia imediata (CV03). Infecção grave ou coagulopatia prévia: cautela com resfriamento ativo. Choque pós-parada: o mesmo fenótipo do C.3, com noradrenalina. Repetir ECG e pesquisar TEP, hipovolemia e pneumotórax na reparada sem causa.</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="box pearl">
+        <span class="box-label">PEARL</span>
+        <div class="box-title">Lacuna registrada: a RCP não tem HP</div>
+        <div class="box-body">O CV01 remete a um HP de PCR sem ID no catálogo. Este box traz o mínimo do algoritmo e os cuidados pós-RCE; as doses do algoritmo (lidocaína, magnésio) ficam em "conferir" até haver um dono; a amiodarona de ataque é a da SBC 2019 (300 mg e depois 150 mg), e o suporte avançado pediátrico está no PD10.</div>
+      </div>
+
+      <details class="deep">
+        <summary>Deep dive · Temperatura, pressão e cérebro depois do retorno da circulação</summary>
+        <div class="deep-content">
+          <p>A hipotermia terapêutica nasceu de dois ensaios de 2002 em PCR extra-hospitalar com ritmo chocável, e o TTM de 2013 mostrou equivalência entre 33 °C e 36 °C. A SBC 2019 incorporou isso sob o nome "modulação terapêutica da temperatura", com faixa de 32–36 °C por 12–24 h na parada extra-hospitalar com FV ou TV sem pulso (classe I B) e benefício possível nos demais ritmos e na parada intra-hospitalar (IIb B). O TTM2 (NEJM 2021), com 1.900 randomizados e 1.850 analisados, não encontrou diferença em mortalidade (50% × 48%) nem em incapacidade grave (55% nos dois grupos) entre 33 °C e normotermia com tratamento precoce da febre, e a hipotermia aumentou as arritmias com repercussão hemodinâmica. A leitura que unifica as fontes é que o dano está na febre, não na ausência de frio: o doente comatoso precisa de uma temperatura central monitorada (esofágica, vesical ou de artéria pulmonar), alvo constante e febre prevenida ativamente por pelo menos 72 h, e o reaquecimento ativo não deve ser feito em quem tem hipotermia leve espontânea acima de 32 °C nas primeiras 48 h (SBC 2019).</p>
+          <p>A autorregulação cerebral fica desviada após a parada, e a perfusão passa a depender da pressão arterial. A hipotensão e a hiperóxia agravam a lesão de reperfusão, e a hipocapnia causa vasoconstrição cerebral; daí o alvo de PaCO2 normal e SpO2 de 94% sem excesso. A pressão-alvo de ≥65 mmHg e a escolha do vasopressor seguem o fenótipo hemodinâmico, e o ensaio de alvos de PAM mais altos não definiu o ideal (as referências do ERC/ESICM 2025 listam estudos piloto; o texto integral não foi lido).</p>
+          <p>O prognóstico neurológico exige tempo e multimodalidade. Sedativos e bloqueadores neuromusculares confundem o exame, a hipotermia prolonga o metabolismo dos fármacos, e a avaliação antes de 72 h tem risco de prognóstico falsamente ruim. Mioclonias e convulsões são tratadas, o EEG as distingue de outros movimentos, e o uso preventivo de anticonvulsivantes não tem evidência (SBC 2019). Quando a evolução é para ausência de função do tronco, o protocolo de morte encefálica só começa 24 h após a parada ou o reaquecimento, como exige a Resolução CFM 2.173/2017.</p>
+        </div>
+      </details>
+    </div>
+  </div>
+
+  <div class="card diag">
+    <div class="card-head">
+      <div class="card-eyebrow"><span class="card-num">D.2</span> Morte encefálica</div>
+      <h3>Morte encefálica e potencial doador: Resolução CFM 2.173/2017 <span class="ank ank-hy">HIGH-YIELD</span></h3>
+    </div>
+    <div class="card-body">
+      <div class="quick">
+        <div class="quick-label">Quick view · 30 segundos</div>
+        <div class="quick-body">É a morte da pessoa. O protocolo é <b>obrigatório</b> em todo paciente com coma não perceptivo, ausência de reatividade supraespinhal e apneia persistente, doador ou não: pré-requisitos, <b>dois exames clínicos por médicos diferentes, teste de apneia e exame complementar</b>. Notificar a central de transplantes. O protocolo detalhado e o teste de apneia estão no CT03 (D.9); aqui, a UTI e o manejo do potencial doador.</div>
+      </div>
+      <div class="disease">
+        <div class="disease-head">
+          <div class="disease-name">Morte encefálica e potencial doador</div>
+          <div class="disease-tag">CID-10 G93.8 (sem código nominal na CID-10 OMS; registrar a lesão causal) <span class="ev ev-sbr">CFM 2.173/2017</span></div>
+        </div>
+        <div class="disease-body">
+          <div class="disease-rows">
+            <div class="disease-row"><div class="k">Epidemiologia</div><div class="v">Entre 2001 e 2016 foram feitas 104.268 determinações no Brasil sob a norma anterior (CFM 2.173/2017, exposição de motivos). A resolução de 2017 tornou a determinação obrigatória em todo coma apneico, e a Lei 9.434/1997 obriga a notificação às centrais.</div></div>
+            <div class="disease-row"><div class="k">Pré-requisitos</div><div class="v">Lesão encefálica de causa conhecida, irreversível e capaz de causar a morte encefálica; ausência de fator tratável confundidor; observação hospitalar por ≥6 h (≥24 h se a causa é encefalopatia hipóxico-isquêmica, contados após a parada ou o reaquecimento); temperatura &gt;35 °C, SatO2 &gt;94% e PAS ≥100 ou PAM ≥65 mmHg no adulto (tabela por idade abaixo de 16 anos). Hipotermia grave (≤32 °C), distúrbio metabólico grave, sedativo e bloqueador neuromuscular não eliminados (4 a 5 meias-vidas, mais na disfunção renal ou hepática) impedem o início.</div></div>
+            <div class="disease-row"><div class="k">Exame</div><div class="v"><b>Dois exames clínicos</b>, cada um por um médico diferente e capacitado (um deles intensivista, neurologista, neurocirurgião ou emergencista, quando disponível): coma não perceptivo e ausência de reflexos fotomotor, córneo-palpebral, oculocefálico, vestíbulo-calórico e de tosse. Intervalo mínimo na criança: 24 h (7 dias a 2 meses), 12 h (2 a 24 meses), 1 h acima de 2 anos. <b>Teste de apneia</b> uma vez, com PaCO2 &gt;55 mmHg sem movimento respiratório. <b>Exame complementar</b> (perfusão, atividade metabólica ou elétrica), com laudo do especialista no método; prefira fluxo se houve sedação, insuficiência ou hipotermia terapêutica. <span class="ev ev-sbr">CFM 2.173/2017</span></div></div>
+            <div class="disease-row"><div class="k">Conduta</div><div class="v">Registrar cada etapa no termo (Anexo II) e no prontuário; informar a família a cada etapa; a hora do óbito é a da conclusão do último procedimento, na declaração de óbito (causas externas: médico legista). Os examinadores não podem integrar a equipe de remoção ou transplante. <b>Notificar todo potencial doador à comissão intra-hospitalar e à central</b> (Westphal 2016). A conversa sobre doação é distinta da comunicação do diagnóstico. Não doador: suspensão do suporte conforme a Resolução CFM 1.826/2007.</div></div>
+            <div class="disease-row"><div class="k">Manejo do potencial doador</div><div class="v">A tempestade simpática inicial é seguida de vasoplegia e hipotensão; há diabetes insípido, hipernatremia, hipotermia, hipocalemia e hipofosfatemia. Meta prática (diretriz AMIB/ABTO 2011 não lida: <b>conferir</b>): PAM ≥65 mmHg com volume e noradrenalina, vasopressina na escalada (0,01–0,04 U/min), temperatura &gt;35 °C, Na &lt;150 mEq/L, diabetes insípido com desmopressina, Hb ≥7 g/dL, glicemia 140–180 mg/dL, ventilação protetora (VC 6–8 mL/kg) e antibiótico conforme infecção. Metilprednisolona e hormônio tireoidiano são práticas de centros de transplante: conferir protocolo local. Vasopressor em dose alta, sozinho, não contraindica a doação de coração.</div></div>
+            <div class="disease-row"><div class="k">O que muda conduta</div><div class="v">Dúvida em qualquer pré-requisito impede o diagnóstico (a ME é de certeza absoluta). Instabilidade que invalida o teste de apneia: corrigir com volume, hemoderivados e vasopressor. Exame complementar de fluxo é preferido sob sedativo ou na hipotermia terapêutica. Suspeita de lesão cervical: omitir o oculocefálico.</div></div>
+          </div>
+        </div>
+      </div>
+
+      <details class="deep">
+        <summary>Deep dive · Fisiologia da morte encefálica e o que a UTI faz pelos órgãos</summary>
+        <div class="deep-content">
+          <p>A herniação do tronco encefálico produz, nos minutos iniciais, uma descarga simpática intensa com hipertensão, taquicardia, vasoconstrição e liberação de catecolaminas, que causa lesão miocárdica e pulmonar neurogênica. Em seguida vem a perda do tônus simpático: vasoplegia e queda do débito, com hipotensão que responde a volume e vasopressor. A perda do eixo hipotálamo-hipofisário causa deficiência de vasopressina (diabetes insípido, com poliúria diluída, hipernatremia e hipovolemia) e queda de cortisol e hormônios tireoidianos, o que alimenta a instabilidade. A perda do controle térmico leva à hipotermia, e a coagulopatia por liberação de fator tecidual cerebral completa o quadro.</p>
+          <p>O objetivo da manutenção é preservar a perfusão e a oxigenação de todos os órgãos até a decisão da família. O volume é conduzido com cautela para não congestionar o pulmão, a noradrenalina e a vasopressina sustentam a pressão com doses mais baixas de catecolamina, e a reposição de sódio livre e a desmopressina controlam a hipernatremia e a poliúria. A ventilação protetora com PEEP evita a atelectasia e a inflamação pulmonar que reduzem o número de pulmões aproveitáveis. Os critérios de aceitação de cada órgão (idade, infecção, neoplasia, função) estão na diretriz brasileira de 2016, que aponta contraindicações absolutas como HIV, HTLV-1, infecção viral sistêmica e meningoencefalite viral e relativas como a doença de Chagas para o coração.</p>
+          <p>Do ponto de vista legal e ético, o diagnóstico é feito para todo paciente que cumpre os critérios, e a doação é uma etapa posterior, que depende de consentimento familiar. A recusa familiar diminui quando o diagnóstico é comunicado com clareza, o processo é explicado a cada etapa e a abordagem é feita por equipe treinada. O sistema nacional de transplantes depende da notificação rápida: o potencial doador não notificado é o órgão perdido.</p>
+        </div>
+      </details>
+    </div>
+  </div>
+
+  <div class="card tx">
+    <div class="card-head">
+      <div class="card-eyebrow"><span class="card-num">D.3</span> Rotina de UTI</div>
+      <h3>Medidas gerais de UTI <span class="ank ank-dec">DECISION</span></h3>
+    </div>
+    <div class="card-body">
+      <div class="quick">
+        <div class="quick-label">Quick view · 30 segundos</div>
+        <div class="quick-body">O paciente crítico morre também do que não se prescreve: <b>profilaxia de TEV, proteção gástrica na VM invasiva, glicemia entre 140 e 180, analgesia antes da sedação, nutrição precoce, mobilização, vigilância de delirium</b> e a retirada diária de vasoativo, sonda e cateter.</div>
+      </div>
+      <div class="disease">
+        <div class="disease-head">
+          <div class="disease-name">Cuidados gerais do paciente crítico</div>
+          <div class="disease-tag">CID-10 Z51.8 (outros cuidados médicos especificados) · J96.0 · F05.9 quando delirium <span class="ev ev-cochrane">REVISE 2024</span></div>
+        </div>
+        <div class="disease-body">
+          <div class="disease-rows">
+            <div class="disease-row"><div class="k">TEV</div><div class="v">Enoxaparina 40 mg SC 1×/dia ou HNF 5.000 UI SC 8/8–12/12 h; ClCr &lt;30: enoxaparina 20 mg/dia (bula brasileira; 30 mg é a bula dos EUA) ou HNF; diálise: HNF; obesidade grave: 40 mg 12/12 h (CT06, HO03). Compressão pneumática se há contraindicação a anticoagulante. <span class="ev ev-expert">CT06 · HO03</span></div></div>
+            <div class="disease-row"><div class="k">Úlcera de estresse</div><div class="v">No REVISE (4.821 pacientes em VM invasiva), pantoprazol 40 mg IV por dia reduziu o sangramento digestivo clinicamente importante de 3,5% para 1,0% (HR 0,30), sem efeito na mortalidade em 90 dias (29,1% × 30,9%). Indicar na VM invasiva, na coagulopatia ou na insuficiência renal; suspender quando o risco passa. Evite sem fator de risco. <span class="ev ev-cochrane">REVISE 2024</span></div></div>
+            <div class="disease-row"><div class="k">Glicemia</div><div class="v">Iniciar insulina com hiperglicemia persistente ≥180 mg/dL e manter 140–180 mg/dL (ADA 2026, seção hospitalar); metas de 80–110 não trouxeram vantagem e aumentaram a mortalidade. Insulina regular IV contínua por protocolo institucional (dose inicial e ajustes: conferir), glicemia horária no início, parar a infusão e tratar se &lt;70 mg/dL. <span class="ev ev-nice">ADA 2026</span></div></div>
+            <div class="disease-row"><div class="k">Nutrição e líquidos</div><div class="v">Nutrição enteral precoce, balanço hídrico, tipo de cristaloide e retirada de fluido na recuperação: CT09. Ressuscitação balanceada, sem amido.</div></div>
+            <div class="disease-row"><div class="k">Analgesia, sedação e VM</div><div class="v">Analgesia primeiro, sedação leve (RASS 0 a −2, prática), interrupção diária; doses de fentanil, propofol, midazolam, dexmedetomidina e bloqueio neuromuscular no RP01 (F2.3). No choque, indução com dose reduzida (etomidato 0,15–0,2 mg/kg ou cetamina 0,5–1 mg/kg) e rocurônio 1,2 mg/kg ou succinilcolina 1,5 mg/kg, como no CT01 e no RP01.</div></div>
+            <div class="disease-row"><div class="k">Delirium e sono</div><div class="v">Rastrear com escala validada, tratar causa (dor, hipóxia, abstinência, fármaco), mobilização, sono, óculos e aparelho auditivo; haloperidol 0,5–2 mg só se há risco ou sofrimento (NE04). Sem benzodiazepínico.</div></div>
+            <div class="disease-row"><div class="k">Transfusão e cateteres</div><div class="v">Hb 7 g/dL como limiar (9–10 na coronariopatia aguda; HO06). Linha arterial e central guiadas por ultrassom, retirada diária de cateter e sonda sem indicação; cabeceira a 30–45°.</div></div>
+            <div class="disease-row"><div class="k">O que muda conduta</div><div class="v">Sangramento ativo: suspender anticoagulante, usar compressão. ClCr &lt;30: ajustar a HBPM. Falência hepática ou renal: evitar infusão de midazolam e ajustar fármacos acumulativos. Retirar o vasoativo e o sedativo antes de pedir extubação.</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card tx">
+    <div class="card-head">
+      <div class="card-eyebrow"><span class="card-num">D.4</span> Outros choques</div>
+      <h3>Choque endócrino, tóxico e vasoplegia pós-operatória</h3>
+    </div>
+    <div class="card-body">
+      <div class="quick">
+        <div class="quick-label">Quick view · 30 segundos</div>
+        <div class="quick-body">Grupo de choques distributivos ou mistos de causa específica: <b>crise tireotóxica</b> (hiperdinâmica, febre, taquiarritmia), <b>coma mixedematoso</b> (hipodinâmico, bradicardia, hipotermia), <b>intoxicação</b> por bloqueador de canal de cálcio ou betabloqueador, e vasoplegia após circulação extracorpórea. O tratamento da causa está no EN03, no EN05 e no CT10.</div>
+      </div>
+      <div class="disease">
+        <div class="disease-head">
+          <div class="disease-name">Choques endócrinos, tóxicos e vasoplégicos</div>
+          <div class="disease-tag">CID-10 E05.5 (crise tireotóxica) · E03.5 (coma mixedematoso) <span class="ev ev-expert">Apostila CAR 2 · CT10</span></div>
+        </div>
+        <div class="disease-body">
+          <div class="disease-rows">
+            <div class="disease-row"><div class="k">Fisiopatologia</div><div class="v">A crise tireotóxica produz estado hiperdinâmico com febre e taquiarritmia, semelhante ao séptico. O coma mixedematoso causa baixo débito, bradicardia, hipotermia e vasoconstrição. Bloqueadores de canal de cálcio reduzem contratilidade, tônus e secreção de insulina; betabloqueadores bloqueiam o AMPc.</div></div>
+            <div class="disease-row"><div class="k">Diagnóstico</div><div class="v">História de fármaco e doença tireoidiana, TSH e T4 livre, glicemia, ECG, lactato, e a mesma rotina do C.1. Hiperglicemia com bradicardia e hipotensão sugere bloqueio de canal de cálcio.</div></div>
+            <div class="disease-row"><div class="k">Tratamento</div><div class="v">Suporte hemodinâmico pelo fenótipo (C.1, C.3). Intoxicação por bloqueador de canal de cálcio ou betabloqueador: cálcio IV, insulina em dose alta, noradrenalina, glucagon no betabloqueador (3–5 mg IV e 2–5 mg/h, CT10, conferir), marca-passo, emulsão lipídica e ECMO na refratariedade. Crise tireotóxica e mixedema: EN03. Vasoplegia pós-circulação extracorpórea: noradrenalina e vasopressina; o azul de metileno não consta na lista CMED (conferir registro). <span class="ev ev-expert">CT10 · EN03</span></div></div>
+            <div class="disease-row"><div class="k">O que muda conduta</div><div class="v">Bradicardia com hipotensão e hiperglicemia: pensar em intoxicação antes de sepse. Hipotermia com bradicardia e baixo débito: pensar em mixedema e dar hormônio com cautela cardíaca (EN03). Choque tóxico por fármaco: consulte o centro de intoxicações.</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="algoritmo">
+  <div class="section">
+    <div class="section-eyebrow"><span>E</span> Algoritmo</div>
+    <div class="section-title">Do choque indiferenciado ao mecanismo em 10 minutos</div>
+    <div class="section-sub">A árvore começa pela pergunta que separa quem morre em minutos de quem tem tempo, e termina em condutas com dose e alvo. O raciocínio narrado vem logo depois.</div>
+  </div>
+
+  <div class="card prim">
+    <div class="card-head">
+      <div class="card-eyebrow"><span class="card-num">E.1</span> Algoritmo</div>
+      <h3>Hipoperfusão no PS ou na UTI: PAM &lt;65 mmHg, lactato ≥2 mmol/L ou tempo de enchimento capilar &gt;3 s</h3>
+    </div>
+    <div class="card-body">
+      <div class="algo">
+        <div class="tree">
+          <div class="tree-line"><span class="tree-node start">Hipoperfusão: acesso, monitor, lactato, ECG, noradrenalina periférica se PAM &lt;65</span></div>
+          <div class="tree-branch">
+            <div class="tree-label yes">Sem pulso ou ritmo agônico?</div>
+            <div class="tree-line"><span class="tree-node dgr">→ RCP, adrenalina 1 mg a cada 3–5 min, causas reversíveis (D.1)</span></div>
+          </div>
+          <div class="tree-branch">
+            <div class="tree-label no">Com pulso: exposição recente e pele, via aérea ou sibilo?</div>
+            <div class="tree-line"><span class="tree-node dgr">→ Anafilaxia: adrenalina IM 0,5 mg (0,01 mg/kg, máx. 0,5 mg) agora, repetir em 5–15 min (C.5)</span></div>
+            <div class="tree-branch">
+              <div class="tree-label no">Eco à beira do leito (RUSH)</div>
+              <div class="tree-line"><span class="tree-node dec">Pericárdio com colapso, VD dilatado ou pulmão sem deslizamento?</span></div>
+              <div class="tree-branch">
+                <div class="tree-label yes">SIM: obstrutivo</div>
+                <div class="tree-line"><span class="tree-node action">→ Pericardiocentese, descompressão ou HNF + alteplase 100 mg em 2 h (C.4)</span></div>
+              </div>
+              <div class="tree-branch">
+                <div class="tree-label no">NÃO</div>
+                <div class="tree-line"><span class="tree-node dec">VE hipocinético com VCI plétora e linhas B?</span></div>
+                <div class="tree-branch">
+                  <div class="tree-label yes">SIM: cardiogênico</div>
+                  <div class="tree-line"><span class="tree-node action">→ SCAI, coronariografia na SCA, noradrenalina; dobutamina ou milrinona se débito baixo (C.3)</span></div>
+                </div>
+                <div class="tree-branch">
+                  <div class="tree-label no">NÃO: VCI colabada, coração vazio</div>
+                  <div class="tree-line"><span class="tree-node dec">Sangramento visível ou oculto (líquido livre, melena, AAA)?</span></div>
+                  <div class="tree-branch">
+                    <div class="tree-label yes">SIM: hemorrágico</div>
+                    <div class="tree-line"><span class="tree-node action">→ Sangue, controle da fonte, Hb 7, PTM 1:1:1, Ca; TXA só na HPP (C.2)</span></div>
+                  </div>
+                  <div class="tree-branch">
+                    <div class="tree-label no">NÃO: vasodilatado e quente</div>
+                    <div class="tree-line"><span class="tree-node dx">Lesão de medula, corticoide crônico, tireoide, fármaco, pós-parada?</span></div>
+                    <div class="tree-line"><span class="tree-node action">→ Neurogênico (C.6), adrenal: hidrocortisona 100 mg (C.7), tóxico (D.4); sem causa: sepse, II03</span></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="box decision">
+        <span class="box-label">DECISION</span>
+        <div class="box-title">Raciocínio em 6 passos: a sequência mental do plantão</div>
+        <div class="box-body">
+          <ul>
+            <li><b>Passo 1 · Há pulso e há via aérea?</b> Primeiro separe parada e anafilaxia, que se tratam antes de qualquer exame: o primeiro minuto decide.</li>
+            <li><b>Passo 2 · Que tipo de pele?</b> Fria e úmida aponta para hipodinâmico; quente e vasodilatada, para distributivo. Isso orienta a pergunta seguinte, mas não a resolve: o séptico precoce e o cardiogênico podem mentir.</li>
+            <li><b>Passo 3 · O que o ultrassom diz sobre bomba, tanque e tubos?</b> Pericárdio, VD, VE, VCI, pulmão, FAST e aorta separam os mecanismos em 5 minutos; o obstrutivo vai ao procedimento.</li>
+            <li><b>Passo 4 · Congestão ou vazio?</b> Linhas B, VCI plétora e VE hipocinético proíbem volume; VCI colabada e cavidades vazias pedem sangue ou cristaloide. Teste a resposta ao volume, não a presuma.</li>
+            <li><b>Passo 5 · Qual é a causa tratável?</b> Fonte de sangramento, oclusão coronariana, trombo, tamponamento, alérgeno, cortisol: nomeie e trate a causa em paralelo ao vasopressor.</li>
+            <li><b>Passo 6 · A perfusão melhorou?</b> Reavalie pele, consciência, diurese e lactato a cada intervenção; se não, a causa está errada ou a fonte não foi controlada, e o próximo passo é suporte mecânico ou outro diagnóstico (sepse no II03, adrenal, tóxico).</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="box hy">
+        <span class="box-label">HIGH-YIELD</span>
+        <div class="box-title">Onde estão as outras árvores</div>
+        <div class="box-body">Sepse e vasopressor no séptico: II03. Trauma, ABCDE e transfusão maciça no trauma: CT01–CT03. IC aguda sem choque e miocardite: CV04. SCA e ICP: CV03. Tamponamento: CV07. TEP e hipertensão pulmonar: RP04. Ventilação, SDRA e desmame: RP01. Fluidos e nutrição: CT09. Intoxicações: CT10. Anafilaxia crônica e alérgenos: II08; criança: PD10.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card prim">
+    <div class="card-head">
+      <div class="card-eyebrow"><span class="card-num">E.2</span> Metas</div>
+      <h3>Quando parar de escalar: critérios de resposta e de falha</h3>
+    </div>
+    <div class="card-body">
+      <div class="stbl stbl-3">
+        <div class="stbl-head stbl-3"><div>Parâmetro</div><div>Resposta (continue o plano)</div><div>Falha (revise causa e suporte)</div></div>
+        <div class="stbl-row stbl-3"><div class="col col1" data-l="Parâmetro">PAM</div><div class="col" data-l="Resposta">≥65 mmHg com dose estável ou em queda de vasopressor</div><div class="col" data-l="Falha">Dose de noradrenalina subindo sem ganho de pressão; escalada de agentes (SCAI D)</div></div>
+        <div class="stbl-row stbl-3"><div class="col col1" data-l="Parâmetro">Lactato</div><div class="col" data-l="Resposta">Queda ≥10–20% em 2 h; normaliza em 24 h</div><div class="col" data-l="Falha">Persistente &gt;2 mmol/L e subindo, ou ≥8 (extremis); excluir efeito β2 e hepatopatia</div></div>
+        <div class="stbl-row stbl-3"><div class="col col1" data-l="Parâmetro">Pele e capilar</div><div class="col" data-l="Resposta">Tempo de enchimento ≤3 s, livedo regride</div><div class="col" data-l="Falha">Marmóreo apesar de PAM adequada: microcirculação ou débito ainda baixo</div></div>
+        <div class="stbl-row stbl-3"><div class="col col1" data-l="Parâmetro">Diurese e consciência</div><div class="col" data-l="Resposta">≥0,5 mL/kg/h; vigil</div><div class="col" data-l="Falha">Oligúria ou confusão persistente: lesão de órgão, considerar diálise (NU03)</div></div>
+        <div class="stbl-row stbl-3"><div class="col col1" data-l="Parâmetro">Eco</div><div class="col" data-l="Resposta">VCI e câmaras compatíveis com a causa tratada</div><div class="col" data-l="Falha">Novo derrame, VD dilatado, regurgitação nova: reavaliar mecanismo</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="tratamento">
+  <div class="section">
+    <div class="section-eyebrow"><span>F</span> Tratamento Integrado</div>
+    <div class="section-title">F1 · Estratégia por entidade · F2 · Vasoativos · F3 · Demais doses · F4 · Casos · F5 · Brasil</div>
+    <div class="section-sub">Primeiro a causa, depois a pressão, sempre com teto e critério de parada. A tabela única de vasoativos vem em F2; as demais doses em F3; os casos, com o erro típico, em F4.</div>
+  </div>
+
+  <div class="card tx">
+    <div class="card-head">
+      <div class="card-eyebrow"><span class="card-num">F.1</span> Estratégia</div>
+      <h3>Escadas terapêuticas por entidade <span class="ank ank-dec">DECISION</span></h3>
+    </div>
+    <div class="card-body">
+      <div class="sub-title">F1.1 · Choque indiferenciado (primeiros 10 minutos)</div>
+      <ul class="bullets">
+        <li><b>Monitor, dois acessos, lactato, gasometria, ECG, glicemia.</b> Ultrassom RUSH em paralelo (C.1).</li>
+        <li><b>Noradrenalina</b> se PAM &lt;65 mmHg que não cede a pequeno volume; em veia periférica calibrosa se necessário, com checagem do sítio a cada 1–2 h. Central e linha arterial depois.</li>
+        <li><b>Volume por resposta:</b> cristaloide balanceado em bólus de 250–500 mL só se há sinal de fluido-responsividade (levantamento passivo das pernas, variação do VTI) e sem congestão; fluidos e balanço no CT09.</li>
+        <li><b>Intubação por último</b> e preparada: ressuscitar, indutor em dose reduzida, vasopressor pronto (A.1).</li>
+      </ul>
+
+      <div class="sub-title">F1.2 · Choque hemorrágico não traumático</div>
+      <ul class="bullets">
+        <li>Dois acessos calibrosos; cristaloide balanceado 250–500 mL como ponte; <b>sangue precoce</b> (CH O, Rh negativo em mulher fértil, até a tipagem).</li>
+        <li><b>Hb 7 g/dL</b> como limiar; 9–10 g/dL na coronariopatia aguda (HO06). Perda massiva: pacotes 1:1:1, cloreto de cálcio 10% 10 mL, fibrinogênio &gt;1,5 g/L, plaquetas &gt;50 mil, normotermia.</li>
+        <li><b>Fonte:</b> endoscopia em até 24 h (GH02; GH10 se varicosa), EVAR ou cirurgia (CV08), embolização, histerectomia ou balão (GO14), reversão do anticoagulante (HO03).</li>
+        <li><b>TXA:</b> HPP 1 g IV em 10 min em até 3 h, 2ª dose de 1 g se o sangramento continuar após 30 min; trauma 1 g + 1 g (CT01); <b>não na HDA</b>.</li>
+        <li>Noradrenalina só se a meta não vem com volume e sangue (e no neurogênico associado).</li>
+      </ul>
+
+      <div class="sub-title">F1.3 · Choque cardiogênico</div>
+      <ul class="bullets">
+        <li><b>1 · Ativar:</b> Shock Team, eco, lactato seriado, linha arterial; ECG com derivações direitas se inferior.</li>
+        <li><b>2 · Causa:</b> coronariografia e revascularização na SCA (CV03); cirurgia na complicação mecânica; cardioversão ou marca-passo na arritmia; drenagem do tamponamento; miocardite e Takotsubo no CV04.</li>
+        <li><b>3 · Pressão:</b> noradrenalina 0,1–0,2 µg/kg/min, ajuste a cada 15 min, teto 1 µg/kg/min (SBC 2018).</li>
+        <li><b>4 · Débito:</b> dobutamina 2,5 µg/kg/min (teto 10; SBC 10–20) ou milrinona 0,375 µg/kg/min (teto 0,75; 0,5 com IRA), sem bólus; levosimendana 0,05 → 0,2 µg/kg/min em 24 h.</li>
+        <li><b>5 · Resgate:</b> lactato subindo ou dose crescente: suporte mecânico e transferência (SCAI D–E); BIA de rotina não.</li>
+        <li><b>6 · Saída:</b> retirar vasoativos assim que a perfusão permitir; um agente por vez.</li>
+      </ul>
+      <div class="box decision">
+        <span class="box-label">DECISION</span>
+        <div class="box-title">Quem recebe dobutamina e quem recebe milrinona</div>
+        <div class="box-body">Dobutamina é a primeira escolha de inotrópico (SBC 2018) em PAM adequada. Betabloqueador prévio, disfunção de VD com hipertensão pulmonar ou taquiarritmia limitante: milrinona (sem bólus, com teto 0,5 µg/kg/min na IRA) ou levosimendana, esta com PAS &gt;90 mmHg. Nenhum deles em paciente sem baixo débito (SBC 2018, III B).</div>
+      </div>
+
+      <div class="sub-title">F1.4 · Anafilaxia</div>
+      <ul class="bullets">
+        <li><b>Adrenalina IM 0,5 mg</b> na coxa, repetida a cada 5–15 min; supino com pernas elevadas; O2; acesso; cristaloide 20 mL/kg se hipotenso.</li>
+        <li>Broncoespasmo: salbutamol inalatório. Estridor: adrenalina nebulizada e via aérea precoce.</li>
+        <li><b>Refratária a 2–3 doses:</b> infusão 0,05–0,5 µg/kg/min titulada, monitor (teto prático de 1 só na anafilaxia refratária); betabloqueador: glucagon.</li>
+        <li>Anti-H1 e corticoide só depois; observação ≥6–12 h nos graves; alta com plano e adrenalina prescrita (II08).</li>
+      </ul>
+
+      <div class="sub-title">F1.5 · Obstrutivo, neurogênico e adrenal</div>
+      <ul class="bullets">
+        <li><b>Obstrutivo:</b> procedimento ou trombólise (RP04, CV07, CT01); volume ≤500 mL no TEP; noradrenalina.</li>
+        <li><b>Neurogênico:</b> exclua sangramento, volume guiado, noradrenalina, atropina 0,5 mg (máx. 3 mg) na bradicardia; PAM 85–90 mmHg por 7 dias na lesão medular (CT03).</li>
+        <li><b>Adrenal:</b> hidrocortisona 100 mg IV, depois 200 mg em 24 h, SF ≥1 L, glicose se necessário.</li>
+      </ul>
+
+      <div class="sub-title">F1.6 · Pós-parada e morte encefálica</div>
+      <ul class="bullets">
+        <li>SpO2 ≥94% sem hiperóxia, PaCO2 normal, PAM ≥65, coronariografia se supra, temperatura constante e febre evitada por ≥72 h, glicemia 140–180 (D.1).</li>
+        <li>ME: notificar, seguir a Resolução CFM 2.173/2017 (CT03 D.9), manter o potencial doador estável (D.2).</li>
+      </ul>
+
+      <div class="box danger">
+        <span class="box-label">DANGER</span>
+        <div class="box-title">O vasoativo que ninguém retirou</div>
+        <div class="box-body">Catecolamina além da necessidade causa arritmia, isquemia de membros e mesentérica e aumento do consumo de O2. Defina a meta, revise a dose a cada turno e retire um agente por vez (primeiro a dobutamina ou milrinona, em geral, quando a perfusão permite). Ao desmamar, mantenha a PAM; se cair, a causa não foi tratada.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card tx">
+    <div class="card-head">
+      <div class="card-eyebrow"><span class="card-num">F.2</span> Vasoativos</div>
+      <h3>Tabela única de vasoativos: diluição, dose, teto, acesso e extravasamento</h3>
+    </div>
+    <div class="card-body">
+      <div class="quick"><div class="quick-label">Convenções da tabela</div><div class="quick-body">Doses de noradrenalina em <b>base</b> (hemitartarato 2 mg/mL = 1 mg/mL de base; ampola de 4 mL = 8 mg de sal = 4 mg de base). Cálculos para 70 kg. Padronização de diluição e bomba segue o protocolo da instituição. Todas as doses de bula estrangeira: conferir bula Anvisa. Disponibilidade CMED de 09/10/2026.</div></div>
+      <div class="stbl stbl-4">
+        <div class="stbl-head stbl-4"><div>Fármaco</div><div>Diluição-padrão</div><div>Dose · teto · parada</div><div>Acesso e extravasamento</div></div>
+        <div class="stbl-row stbl-4">
+          <div class="col col1" data-l="Fármaco">Noradrenalina (hemitartarato 2 mg/mL, ampola de 4 mL; consta na CMED)</div>
+          <div class="col" data-l="Diluição">1 ampola (4 mg de base) + SG5% até 250 mL = <b>16 µg/mL</b>; 0,1 µg/kg/min = 7 µg/min = 26 mL/h</div>
+          <div class="col" data-l="Dose">Início <b>0,05–0,1 µg/kg/min</b>, titular 0,02–0,05 a cada 5–10 min (SBC 2018 no cardiogênico: 0,1–0,2, a cada 15 min). <b>Teto 1 µg/kg/min</b> (ACC 2025 e SBC 2018); acima de 0,5 considera-se refratário. Parar ou reduzir: PAM ≥65 com perfusão, arritmia grave, isquemia de extremidade ou mesentérica. <span class="ev ev-sbr">SBC IC 2018</span></div>
+          <div class="col" data-l="Acesso">Central preferida; periférica aceitável em emergência e por tempo curto (cateter ≥20G em antebraço proximal ou fossa antecubital, sítio a cada 1–2 h). <b>Extravasamento:</b> parar, aspirar pelo cateter e infiltrar fentolamina 5–10 mg em 10 mL de SF (fentolamina não consta na CMED: conferir registro; alternativa por protocolo local).</div>
+        </div>
+        <div class="stbl-row stbl-4">
+          <div class="col col1" data-l="Fármaco">Adrenalina em infusão (ampola 1 mg/mL; consta na CMED)</div>
+          <div class="col" data-l="Diluição">4 mg (4 mL) + SG5% até 250 mL = <b>16 µg/mL</b>; 0,1 µg/kg/min = 7 µg/min = 26 mL/h</div>
+          <div class="col" data-l="Dose">Regra única: <b>0,05–0,5 µg/kg/min</b>, titulada, no choque e na anafilaxia refratária (II03; ACC 2025: 0,01–0,5; a apostila usa 0,1–1). <b>Teto prático de 1 µg/kg/min só na anafilaxia refratária</b> (prática; conferir). Eleva lactato e glicemia por efeito β2. Parar ou reduzir: taquiarritmia ventricular, isquemia miocárdica, PAM alta.</div>
+          <div class="col" data-l="Acesso">Central; na anafilaxia, periférica aceitável com monitor e bomba. Extravasamento: necrose, mesmo manejo da noradrenalina.</div>
+        </div>
+        <div class="stbl-row stbl-4">
+          <div class="col col1" data-l="Fármaco">Vasopressina (20 U/mL, ampola de 1 mL; consta na CMED)</div>
+          <div class="col" data-l="Diluição">20 U + SF até 100 mL = <b>0,2 U/mL</b>; 0,03 U/min = 9 mL/h</div>
+          <div class="col" data-l="Dose">Dose fixa de <b>0,03 U/min</b> (máx. 0,04) no séptico (II03); no cardiogênico 0,01–0,04 U/min (ACC 2025). Não titular como catecolamina. Parar ou reduzir: isquemia digital ou mesentérica, hiponatremia; desmamar por último ou antes da noradrenalina, por protocolo.</div>
+          <div class="col" data-l="Acesso">Central preferida; periférica por pouco tempo. Extravasamento: isquemia cutânea, mesmo manejo.</div>
+        </div>
+        <div class="stbl-row stbl-4">
+          <div class="col col1" data-l="Fármaco">Dopamina (5 mg/mL, ampola de 10 mL; consta na CMED)</div>
+          <div class="col" data-l="Diluição">250 mg (5 ampolas) + SG5% até 250 mL = <b>1.000 µg/mL</b>; 5 µg/kg/min = 21 mL/h</div>
+          <div class="col" data-l="Dose">2–20 µg/kg/min (ACC 2025 e SBC RCP 2019). <b>Contraindicada no feocromocitoma</b> (rótulo FDA; conferir bula Anvisa). <b>Não é de 1ª linha:</b> mais arritmia que a noradrenalina e mais morte no subgrupo cardiogênico (SOAP II); no séptico, forte contra (II03). Reserva: bradicardia sintomática hipotensiva enquanto aguarda marca-passo. <b>Teto 20</b>; parar se taquiarritmia ou FC &gt;130.</div>
+          <div class="col" data-l="Acesso">Central; irritante, necrose por extravasamento: mesmo manejo (fentolamina).</div>
+        </div>
+        <div class="stbl-row stbl-4">
+          <div class="col col1" data-l="Fármaco">Dobutamina (12,5 mg/mL, ampola de 20 mL; consta na CMED)</div>
+          <div class="col" data-l="Diluição">250 mg (1 ampola) + SG5% até 250 mL = <b>1.000 µg/mL</b>; 5 µg/kg/min = 21 mL/h</div>
+          <div class="col" data-l="Dose">Início <b>2,5 µg/kg/min</b>, ajuste a cada 10 min (SBC 2018). <b>Teto operacional 10 µg/kg/min</b> (escolha do HP: ACC 2025 dá até 10; SBC IC 2018, Tab. 2.3, dá 10–20, com 20 como máximo). Parar ou reduzir: taquiarritmia, FC &gt;130, hipotensão (β2), isquemia; taquifilaxia em 48–72 h e menor efeito sob betabloqueador. Nunca isolada no hipotenso. <b>Contraindicada na estenose subaórtica hipertrófica idiopática</b> (rótulo FDA; conferir bula Anvisa). <span class="ev ev-sbr">SBC IC 2018</span></div>
+          <div class="col" data-l="Acesso">Veia periférica por tempo curto é aceita; central preferida. Extravasamento: irritação, manejo local.</div>
+        </div>
+        <div class="stbl-row stbl-4">
+          <div class="col col1" data-l="Fármaco">Milrinona (1 mg/mL, ampola de 10 mL; consta na CMED)</div>
+          <div class="col" data-l="Diluição">20 mg (2 ampolas) + SG5% até 100 mL = <b>200 µg/mL</b>; 0,375 µg/kg/min = 8 mL/h</div>
+          <div class="col" data-l="Dose">Início <b>0,375 µg/kg/min</b>, ajuste a cada 4 h, <b>teto 0,75</b>; com IRA, teto 0,5 (SBC 2018; ACC 2025: 0,125–0,5). <b>Sem bólus</b> em hipotensão ou instabilidade. Reduzir com ClCr baixa (conferir bula Anvisa). Parar ou reduzir: PAS &lt;90, TV, hipotensão; acumula na DRC (meia-vida de 2–4 h, maior na IR).</div>
+          <div class="col" data-l="Acesso">Veia periférica ou central; não é vesicante, mas é vasodilatadora.</div>
+        </div>
+        <div class="stbl-row stbl-4">
+          <div class="col col1" data-l="Fármaco">Levosimendana (2,5 mg/mL, ampola de 5 mL; consta na CMED)</div>
+          <div class="col" data-l="Diluição">12,5 mg (1 ampola) + SG5% até 250 mL = <b>50 µg/mL</b>; 0,1 µg/kg/min = 8,4 mL/h</div>
+          <div class="col" data-l="Dose"><b>0,05 → 0,2 µg/kg/min</b>, ajuste de 0,05 a cada 4 h, infusão de <b>24 h</b> (SBC 2018); bólus de ataque: omitir no hipotenso (conferir SmPC). Evitar com PAS &lt;90 mmHg, taquicardia, torsades e insuficiência renal ou hepática grave (conferir bula Anvisa). Efeito de dias. Contra no séptico (II03). Parar: hipotensão ou arritmia.</div>
+          <div class="col" data-l="Acesso">Veia periférica ou central; sem extravasamento relevante descrito.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card tx">
+    <div class="card-head">
+      <div class="card-eyebrow"><span class="card-num">F.3</span> Doses operacionais</div>
+      <h3>Demais fármacos do choque e da UTI: dose, teto e parada</h3>
+    </div>
+    <div class="card-body">
+      <div class="quick">
+        <div class="quick-label">Convenções</div>
+        <div class="quick-body">Doses "prática" não vêm de bula nem de diretriz lida: levam teto e critério de parada e a marca "conferir". Doses que se repetem em outro HP são copiadas e citam o HP. Dose de bula estrangeira: conferir bula Anvisa.</div>
+      </div>
+      <div class="stbl stbl-3">
+        <div class="stbl-head stbl-3"><div>Fármaco</div><div>Dose adulto · teto · parada</div><div>Indicação e notas</div></div>
+
+        <div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Adrenalina IM (ampola 1 mg/mL)</div><div class="col" data-l="Dose"><b>0,5 mg (0,5 mL) na coxa</b> (0,01 mg/kg, máx. 0,5 mg) a cada 5–15 min; parar ao resolver. Criança: 0,01 mg/kg IM, com as faixas da WAO 2020 (0,15 mg em 1–5 anos; 0,3 mg em 6–12 anos; 0,5 mg a partir da adolescência); detalhes no PD10.</div><div class="col" data-l="Indicação">Anafilaxia. Sem contraindicação absoluta nesse cenário. Não usar a ampola de 0,1 mg/mL na dose de adulto. <span class="ev ev-nice">WAO 2020</span></div></div>
+
+        <div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Glucagon (1 mg, liofilizado)</div><div class="col" data-l="Dose">Anafilaxia com betabloqueador: 1–5 mg IV lento em 5 min e depois 5–15 µg/min (prática; fonte primária não lida; a WAO 2020 cita o glucagon sem dose; conferir); teto de 5 mg no bólus; parar ao resolver ou se vômito com risco de aspiração. Intoxicação por betabloqueador: 3–5 mg IV e depois 2–5 mg/h (CT10; conferir).</div><div class="col" data-l="Indicação">Anafilaxia sem resposta à adrenalina, sobretudo sob betabloqueador (uso fora da bula; evidência muito limitada, WAO 2020). Vômito e hiperglicemia: decúbito lateral.</div></div>
+
+        <div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Cristaloide balanceado</div><div class="col" data-l="Dose">Hemorrágico: 250–500 mL IV em bólus, reavaliando (ATLS 11, como no CT01; a apostila CAR 2 cita 1–2 L: divergência rotulada). Anafilaxia: 20 mL/kg em bólus (WAO 2020). Parar: congestão, linhas B, VCI plétora.</div><div class="col" data-l="Indicação">Ponte, não tratamento. Escolha do fluido e balanço: CT09. Sem amido.</div></div>
+
+        <div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Ácido tranexâmico</div><div class="col" data-l="Dose">HPP: 1 g IV em 10 min, 2ª dose de 1 g se continuar após 30 min ou recomeçar em 24 h (WOMAN; GO14), em até 3 h. Trauma: 1 g IV em 10 min + 1 g em 8 h (CT01). <b>HDA e HDB: não usar.</b></div><div class="col" data-l="Indicação">Hemorragia pós-parto e trauma, em até 3 h. HALT-IT: sem redução de morte e mais TEV. Convulsão em dose alta. Contraindicado no TEV ativo, na coagulação intravascular ativa, na hemorragia subaracnóidea e na hipersensibilidade (bula).</div></div>
+
+        <div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Cloreto de cálcio 10%</div><div class="col" data-l="Dose">10 mL (1 g; 270 mg de cálcio elementar) IV em 5–10 min, de preferência central; repetir guiado pelo cálcio iônico (1,1–1,3 mmol/L). Mesma frase do CT01.</div><div class="col" data-l="Indicação">Transfusão maciça e hipocalcemia por citrato. Gluconato (alternativa periférica, 1/3 do cálcio) e cloreto: conferir registro na CMED, onde não constam como listados.</div></div>
+
+        <div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Concentrado de hemácias e pacotes de transfusão maciça</div><div class="col" data-l="Dose">Hb &lt;7 g/dL: transfundir; 9–10 na coronariopatia aguda (HO06). 1 CH eleva a Hb em ~1 g/dL. Maciça: plasma:plaquetas:CH 1:1:1 (aceitável ≥1:2 de plasma:CH); fibrinogênio &gt;1,5 g/L; plaquetas &gt;50 mil.</div><div class="col" data-l="Indicação">Hemorragia com instabilidade. Definição de maciça (MS 2015): 1 volemia em 24 h, 50% em 3 h ou &gt;4 CH em 1 h. Complicações (cálcio, K, TACO): HO06.</div></div>
+
+        <div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Hidrocortisona (succinato injetável)</div><div class="col" data-l="Dose">100 mg IV em bólus, depois 200 mg em 24 h (infusão contínua ou 50 mg IV 6/6 h); SF 0,9% ≥1 L na 1ª hora (EN04). Séptico refratário: 200 mg/dia (II03).</div><div class="col" data-l="Indicação">Crise adrenal; dexametasona não, pelo cortisol. Hiperglicemia e hipernatremia.</div></div>
+
+        <div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">HNF e alteplase (TEP de alto risco)</div><div class="col" data-l="Dose">HNF 80 UI/kg em bólus (máx. 10.000 UI; conferir protocolo local); alteplase 100 mg IV em 2 h (ESC 2019); esquema acelerado de 0,6 mg/kg em 15 min, máx. 50 mg; volume ≤500 mL (RP04).</div><div class="col" data-l="Indicação">Contraindicações absolutas (ESC 2019): AVC hemorrágico ou de origem desconhecida em qualquer época; AVC isquêmico nos últimos 6 meses; neoplasia do SNC; trauma maior, cirurgia ou TCE nas últimas 3 semanas; diátese hemorrágica; sangramento ativo. Cateter, embolectomia e ECMO são alternativas quando a trombólise é contraindicada, não contraindicações. Detalhes: RP04.</div></div>
+
+        <div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Atropina</div><div class="col" data-l="Dose">0,5 mg IV a cada 3–5 min, <b>máximo 3 mg</b>; doses menores de 0,5 mg podem lentificar (SBC RCP 2019).</div><div class="col" data-l="Indicação">Bradicardia sintomática, neurogênico. Sem resposta: marca-passo transcutâneo, dopamina ou adrenalina como ponte.</div></div>
+
+        <div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Indução em choque</div><div class="col" data-l="Dose">Etomidato 0,15–0,2 mg/kg ou cetamina 0,5–1 mg/kg IV (CT01); succinilcolina 1,5 mg/kg ou rocurônio 1,2 mg/kg IV (CT01, RP01). Sugamadex 16 mg/kg após 1,2 mg/kg de rocurônio.</div><div class="col" data-l="Indicação">Contraindicação da succinilcolina: hipercalemia, miopatia, hipertermia maligna, queimadura e desnervação após 24–72 h (RP01). Preferir sangue e vasopressor prontos.</div></div>
+
+        <div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Enoxaparina e HNF (profilaxia)</div><div class="col" data-l="Dose">Enoxaparina 40 mg SC 1×/dia; ClCr &lt;30: 20 mg/dia (bula brasileira; 30 mg é a bula dos EUA); diálise: HNF 5.000 UI SC 8/8–12/12 h; obesidade grave 40 mg 12/12 h (CT06, HO03).</div><div class="col" data-l="Indicação">Paciente crítico sem sangramento ativo. Contraindicação: sangramento ativo, trombocitopenia grave, HIT nos últimos 100 dias ou anticorpo anti-PF4 presente (bula); nesses casos, compressão pneumática.</div></div>
+
+        <div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Pantoprazol IV</div><div class="col" data-l="Dose">40 mg IV 1×/dia (dose do REVISE); suspender ao deixar a VM ou o risco. Efeitos adversos: infecção por <i>C. difficile</i> e pneumonia (sem aumento significativo no REVISE).</div><div class="col" data-l="Indicação">VM invasiva, coagulopatia, falência renal. Sem fator de risco: não usar. Apresentação injetável: conferir registro.</div></div>
+
+        <div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Insulina regular IV</div><div class="col" data-l="Dose">Infusão contínua por protocolo institucional: em geral 0,05–0,1 U/kg/h no início, ajustada pela glicemia horária (prática; sem teto fixo, a glicemia é o limite); iniciar com glicemia ≥180 mg/dL; meta 140–180 (ADA 2026); parar a infusão e tratar se &lt;70 mg/dL.</div><div class="col" data-l="Indicação">Hiperglicemia persistente no crítico. Glicemia horária no início; cuidado com a mudança de dieta e de corticoide.</div></div>
+
+        <div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Dipirona</div><div class="col" data-l="Dose">1 g IV de 6/6 h, máximo de 4 g/dia, ou até 5 g/dia pela bula de injetável (mesmo texto do GH08 e do NU05).</div><div class="col" data-l="Indicação">Analgésico e antitérmico de 1ª linha. <b>Contraindicada na alergia a pirazolonas, na agranulocitose ou mielossupressão prévias, na porfiria hepática aguda e na deficiência de G6PD</b> (bula; conferir bula Anvisa). Hipotensão com infusão rápida.</div></div>
+
+        <div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Cetorolaco</div><div class="col" data-l="Dose">Cetorolaco 30 mg IV, máx. 120 mg/dia, com 15 mg e máx. 60 mg/dia em pessoas com 65 anos ou mais, com menos de 50 kg ou com disfunção renal leve, e máx. 5 dias (NU05; GH08).</div><div class="col" data-l="Indicação">Cetorolaco tem contraindicação absoluta em úlcera ativa, hemorragia cerebrovascular, sangramento, diátese hemorrágica, uso com AAS, AINE, probenecida ou pentoxifilina, insuficiência renal avançada e hipovolemia (rótulo FDA; NU05); não usar no choque.</div></div>
+
+        <div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Morfina</div><div class="col" data-l="Dose">2–4 mg IV a cada 5–15 min, titulada até o alívio, em geral até 10–15 mg na primeira hora (os 2–4 mg são o incremento da titulação, não a dose total); parar se sedação, FR &lt;12 ou SpO₂ caindo (prática; conferir bula Anvisa; mesma frase do GH08 e do NU05).</div><div class="col" data-l="Indicação">Dor refratária. Libera histamina e reduz pré-carga: cautela no choque e na asma (RP01); evitar no infarto de VD.</div></div>
+
+        <div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Fentanil, propofol, midazolam e dexmedetomidina</div><div class="col" data-l="Dose">Fentanil 1–3 µg/kg/h; propofol 0,3–3 mg/kg/h (teto operacional 4, não é da bula); midazolam 0,04–0,06 mg/kg/h (RP01 F2.3). Reduzir se FR &lt;10 ou RASS ≤−3.</div><div class="col" data-l="Indicação">Analgesia primeiro, sedação leve. Propofol e midazolam causam hipotensão: reduzir no choque. Dexmedetomidina: bradicardia e hipotensão.</div></div>
+
+        <div class="stbl-row stbl-3"><div class="col col1" data-l="Fármaco">Desmopressina (potencial doador)</div><div class="col" data-l="Dose">1–2 µg IV a cada 4–6 h, guiado pela diurese e pelo Na (prática do manejo do doador; diretriz AMIB/ABTO 2011 não lida; conferir protocolo da OPO). Os 0,3 µg/kg do HO03 são a dose hemostática, não a do diabetes insípido. Apresentação da CMED é spray nasal de 0,1 mg/mL: injetável, conferir registro.</div><div class="col" data-l="Indicação">Diabetes insípido da morte encefálica, com Na e diurese seriados (D.2).</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card tx">
+    <div class="card-head">
+      <div class="card-eyebrow"><span class="card-num">F.4</span> Casos</div>
+      <h3>Caso → conduta certa → erro típico</h3>
+    </div>
+    <div class="card-body">
+      <div class="stbl stbl-3">
+        <div class="stbl-head stbl-3"><div>Caso</div><div>Conduta certa</div><div>Erro típico</div></div>
+        <div class="stbl-row stbl-3"><div class="col col1" data-l="Caso">Homem de 62 anos, dor torácica há 8 h, PA 82/50, FC 118, estertores até o ápice, extremidades frias, lactato 5,2, supra de ST em parede anterior</div><div class="col" data-l="Conduta"><b>Choque cardiogênico SCAI C a D.</b> Linha arterial, noradrenalina 0,1 µg/kg/min, Shock Team, coronariografia imediata e revascularização da culpada (CV03); dobutamina 2,5 µg/kg/min se o débito segue baixo com PAM ≥65; sem volume empírico.</div><div class="col" data-l="Erro">Dar 1 L de cristaloide por "hipotensão" e esperar a troponina; balão intra-aórtico de rotina.</div></div>
+        <div class="stbl-row stbl-3"><div class="col col1" data-l="Caso">Mulher de 58 anos, 20 min após ceftriaxona IV: urticária, rouquidão, sibilos, PA 78/40</div><div class="col" data-l="Conduta"><b>Anafilaxia.</b> Suspender o fármaco, adrenalina IM 0,5 mg na coxa, repetir em 5–15 min; O2, acesso, cristaloide 20 mL/kg; infusão 0,05–0,5 µg/kg/min se refratária; observar ≥6–12 h.</div><div class="col" data-l="Erro">Prescrever anti-histamínico e corticoide e observar; usar a ampola de 0,1 mg/mL pediátrica.</div></div>
+        <div class="stbl-row stbl-3"><div class="col col1" data-l="Caso">Cirrótico com hematêmese, PA 92/60, FC 112, Hb 7,4</div><div class="col" data-l="Conduta"><b>Hemorragia varicosa até a EDA</b> (GH10): volume e transfusão restritivos (Hb 7 g/dL), não elevar a pressão portal, endoscopia em até 12 h; <b>sem TXA</b>.</div><div class="col" data-l="Erro">Transfundir até Hb 10 e dar TXA "para ajudar".</div></div>
+        <div class="stbl-row stbl-3"><div class="col col1" data-l="Caso">Homem de 74 anos com dor lombar e massa pulsátil, PA 78/50, consciente</div><div class="col" data-l="Conduta"><b>AAA roto.</b> Sala cirúrgica, sangue, hipotensão permissiva com PAS 70–90 mmHg e consciência, equipe vascular; EVAR se anatomia favorável (CV08).</div><div class="col" data-l="Erro">Normalizar a pressão com cristaloide e mandar para a tomografia.</div></div>
+        <div class="stbl-row stbl-3"><div class="col col1" data-l="Caso">Mulher pós-cesárea, perda de 1.800 mL e útero atônico, PA 85/50</div><div class="col" data-l="Conduta">Pacote de HPP (GO14): massagem, ocitocina, <b>TXA 1 g IV em 10 min em até 3 h</b>, 2ª dose de 1 g se persistir após 30 min, sangue, fibrinogênio, cálcio, escalonar.</div><div class="col" data-l="Erro">Esperar a Hb cair ou dar TXA depois de 3 h como se fosse profilaxia.</div></div>
+        <div class="stbl-row stbl-3"><div class="col col1" data-l="Caso">Ventilado por asma, hipotensão súbita, pico de pressão alto</div><div class="col" data-l="Conduta"><b>Desconectar do ventilador</b>: se a pressão sobe, é auto-PEEP; excluir pneumotórax por ultrassom (RP01, CT01).</div><div class="col" data-l="Erro">Iniciar noradrenalina e pedir tomografia.</div></div>
+        <div class="stbl-row stbl-3"><div class="col col1" data-l="Caso">Em uso crônico de prednisona 20 mg, vômitos, PA 70/40, Na 124, K 5,8, glicemia 48</div><div class="col" data-l="Conduta"><b>Crise adrenal.</b> Glicose, hidrocortisona 100 mg IV agora, depois 200 mg em 24 h, SF ≥1 L, tratar o gatilho (EN04).</div><div class="col" data-l="Erro">Esperar o cortisol ou dar dexametasona.</div></div>
+        <div class="stbl-row stbl-3"><div class="col col1" data-l="Caso">Homem de 55 anos, parada em FV revertida, comatoso, ECG sem supra, PA 85/50</div><div class="col" data-l="Conduta">Noradrenalina para PAM ≥65, SpO2 ≥94% sem hiperóxia, PaCO2 normal, eco, causa (coronariografia se suspeita cardíaca), temperatura constante com febre evitada por ≥72 h, glicemia 140–180.</div><div class="col" data-l="Erro">Prognosticar nas primeiras 24 h ou deixar a febre subir.</div></div>
+        <div class="stbl-row stbl-3"><div class="col col1" data-l="Caso">TCE grave, coma, sem reflexos de tronco, em sedação contínua há 3 h</div><div class="col" data-l="Conduta">Suspender o sedativo e esperar 4–5 meias-vidas (mais com disfunção renal ou hepática), corrigir temperatura e pressão, depois iniciar o protocolo (CFM 2.173/2017; CT03 D.9). Exame de fluxo se houver confusão.</div><div class="col" data-l="Erro">Declarar a morte encefálica sob sedativo ou com temperatura de 34 °C.</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card tx">
+    <div class="card-head">
+      <div class="card-eyebrow"><span class="card-num">F.5</span> Brasil e SUS</div>
+      <h3>O que existe, o que não existe e o que depende do serviço</h3>
+    </div>
+    <div class="card-body">
+      <ul class="bullets">
+        <li><b>CMED de 09/10/2026:</b> constam hemitartarato de norepinefrina, epinefrina (1 mg/mL e 0,1 mg/mL), vasopressina, dopamina, dobutamina, milrinona, levosimendana, glucagon, ácido tranexâmico, alteplase, desmopressina (spray nasal), succinato de hidrocortisona, insulina humana, enoxaparina e heparina. <b>Não constam:</b> fentolamina e azul de metileno (conferir registro); cloreto e gluconato de cálcio injetáveis não foram localizados na lista de regulados (a ausência não prova falta de registro).</li>
+        <li><b>Adrenalina:</b> a ampola de 1 mg/mL é a do IM; não há autoinjetor com registro na Anvisa (PD10); prescreva a ampola e ensine a dose.</li>
+        <li><b>Noradrenalina:</b> a ampola mais comum é de hemitartarato (2 mg/mL, equivalente a 1 mg/mL de base): confirme o sal antes de converter doses de ensaios, que usam base (II03).</li>
+        <li><b>Suporte mecânico:</b> BIA, microaxial e ECMO estão em poucos centros; a transferência precoce para centro com Shock Team é parte do tratamento (ACC 2025). Disponibilidade no SUS e regulação: conferir.</li>
+        <li><b>Morte encefálica e doação:</b> Resolução CFM 2.173/2017, notificação obrigatória à central estadual (Lei 9.434/1997, art. 13) e comissão intra-hospitalar de doação.</li>
+        <li><b>SAMU 192:</b> protocolos de suporte avançado de 2016 (MS) orientam o pré-hospitalar: O2 para SpO2 ≥94%, acesso, cristaloide aquecido, descompressão de alívio (CT01).</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="card tx">
+    <div class="card-head">
+      <div class="card-eyebrow"><span class="card-num">F.6</span> Segurança</div>
+      <h3>Prescrever vasoativo sem errar: a checagem de bomba e o desmame <span class="ank ank-dgr">DANGER</span></h3>
+    </div>
+    <div class="card-body">
+      <div class="mnemo">
+        <div class="mnemo-title"><b>DOSE</b> Quatro checagens antes de ligar a bomba</div>
+        <div class="mnemo-grid">
+          <div class="mnemo-row"><span class="mnemo-letter">D</span><span><b>Diluição e sal</b> · concentração em µg/mL escrita na prescrição; noradrenalina em base × hemitartarato; adrenalina em mg (IM) × µg/kg/min (infusão)</span></div>
+          <div class="mnemo-row"><span class="mnemo-letter">O</span><span><b>Onde entra</b> · veia dedicada, sem bólus de outros fármacos na mesma via, sítio periférico checado a cada 1–2 h, central e linha arterial assim que possível</span></div>
+          <div class="mnemo-row"><span class="mnemo-letter">S</span><span><b>Seguimento</b> · PAM, FC, ritmo, pele, diurese e lactato a cada turno; nova dose só com meta escrita (PAM e perfusão)</span></div>
+          <div class="mnemo-row"><span class="mnemo-letter">E</span><span><b>Escalada com teto e parada</b> · teto da fonte citada, critério de parada (arritmia, isquemia, PAS &lt;90 com inodilatador) e quem chamar quando o teto chega</span></div>
+        </div>
+      </div>
+      <ul class="bullets">
+        <li><b>Troca de seringa:</b> use bomba com biblioteca de fármacos e troque a seringa com a nova já em curso, para evitar o colapso pressórico do intervalo; a noradrenalina tem meia-vida de minutos.</li>
+        <li><b>Desmame:</b> reduza um agente por vez, em passos de 10–20% a cada 15–30 min, mantendo a PAM-alvo; em geral, retire primeiro o inotrópico e a vasopressina, por último a noradrenalina, ou conforme o protocolo local. Piora de perfusão durante o desmame devolve o agente e reabre a pergunta da causa.</li>
+        <li><b>Interações:</b> inibidor da monoaminoxidase e antidepressivo tricíclico potencializam catecolaminas; betabloqueador atenua a dobutamina; anestésico halogenado sensibiliza o miocárdio à adrenalina (conferir bula de cada fármaco).</li>
+        <li><b>Gravidez:</b> a anafilaxia e o choque na gestante seguem as mesmas doses; decúbito lateral esquerdo após 20 semanas; obstetra e neonatologia no caso (GO12, GO14).</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="pitfalls">
+  <div class="section">
+    <div class="section-eyebrow"><span>G</span> Pitfalls · Mitos · Controvérsias</div>
+    <div class="section-title">Erros Operacionais + Mitos Vivos + Debates Atuais</div>
+    <div class="section-sub">Os erros que repetem no choque não séptico e na UTI, os mitos que sobrevivem e os debates que ainda não fecharam.</div>
+  </div>
+
+  <div class="card pearl">
+    <div class="card-head">
+      <div class="card-eyebrow"><span class="card-num">G.1</span> Pegadinhas</div>
+      <h3>10 Erros Operacionais em Choque Não Séptico e UTI</h3>
+    </div>
+    <div class="card-body">
+      <div class="stbl stbl-2">
+        <div class="stbl-head stbl-2"><div>Erro Comum</div><div>Correto</div></div>
+        <div class="stbl-row stbl-2"><div class="col col1" data-l="Erro">Tratar choque cardiogênico com litros de cristaloide</div><div class="col" data-l="Correto">Eco antes do volume; congestão proíbe. Exceção: infarto de VD sem congestão pulmonar e hipovolemia associada.</div></div>
+        <div class="stbl-row stbl-2"><div class="col col1" data-l="Erro">Esperar o acesso central para iniciar a noradrenalina</div><div class="col" data-l="Correto">Veia periférica calibrosa por tempo curto, com checagem do sítio a cada 1–2 h; o atraso da PAM custa mais que o risco de extravasamento.</div></div>
+        <div class="stbl-row stbl-2"><div class="col col1" data-l="Erro">Dar adrenalina IV em bólus na anafilaxia com paciente consciente</div><div class="col" data-l="Correto">IM 0,5 mg na coxa; IV só em infusão monitorada na refratária.</div></div>
+        <div class="stbl-row stbl-2"><div class="col col1" data-l="Erro">Usar TXA na hemorragia digestiva</div><div class="col" data-l="Correto">HALT-IT: sem benefício e mais TEV; TXA é de trauma e de HPP, em até 3 h.</div></div>
+        <div class="stbl-row stbl-2"><div class="col col1" data-l="Erro">Confundir noradrenalina em sal e em base</div><div class="col" data-l="Correto">Ampola de 2 mg/mL de hemitartarato = 1 mg/mL de base; dose de ensaio é em base.</div></div>
+        <div class="stbl-row stbl-2"><div class="col col1" data-l="Erro">Aumentar a dobutamina acima de 10 µg/kg/min por "pressão"</div><div class="col" data-l="Correto">Dobutamina é inotrópico, vasodilata (β2) e pode derrubar a PAM; para pressão, noradrenalina; refratário, suporte mecânico.</div></div>
+        <div class="stbl-row stbl-2"><div class="col col1" data-l="Erro">Colocar balão intra-aórtico de rotina no choque cardiogênico</div><div class="col" data-l="Correto">Sem redução de mortalidade (IABP-SHOCK II); reservar para complicação mecânica como ponte.</div></div>
+        <div class="stbl-row stbl-2"><div class="col col1" data-l="Erro">Adiar a hidrocortisona para depois do cortisol</div><div class="col" data-l="Correto">Colher e tratar: 100 mg IV agora; o cortisol colhido antes do bólus confirma depois.</div></div>
+        <div class="stbl-row stbl-2"><div class="col col1" data-l="Erro">Declarar morte encefálica sob sedativo ou hipotermia</div><div class="col" data-l="Correto">Eliminar o fármaco (4–5 meias-vidas, mais na insuficiência), temperatura &gt;35 °C, pressão adequada; dúvida impede o diagnóstico.</div></div>
+        <div class="stbl-row stbl-2"><div class="col col1" data-l="Erro">Deixar o paciente crítico sem profilaxia de TEV, sem proteção gástrica na VM e sem analgesia</div><div class="col" data-l="Correto">Bundle diário: enoxaparina 40 mg (20 se ClCr &lt;30), pantoprazol na VM invasiva, analgesia antes de sedar, glicemia 140–180 (D.3).</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card pearl">
+    <div class="card-head">
+      <div class="card-eyebrow"><span class="card-num">G.2</span> Mitos · Controvérsias</div>
+      <h3>Mitos Vivos e Debates Atuais</h3>
+    </div>
+    <div class="card-body">
+      <div class="box myth">
+        <span class="box-label">MYTH</span>
+        <div class="box-title">"Choque é pressão abaixo de 90"</div>
+        <div class="box-body">Choque é hipoperfusão. Há choque com PA de 100/60 no idoso hipertenso, e há PA de 85/50 sem choque em jovem. A PAS cai só na classe III de hemorragia; o lactato, o capilar e a diurese vêm antes.</div>
+      </div>
+      <div class="box myth">
+        <span class="box-label">MYTH</span>
+        <div class="box-title">"Dopamina em dose renal protege o rim"</div>
+        <div class="box-body">Doses de 3–5 µg/kg/min têm efeito dopaminérgico, mas a maioria dos estudos não mostrou benefício em prognóstico de choque ou de insuficiência renal; a dopamina em escala causa mais arritmia que a noradrenalina (SOAP II).</div>
+      </div>
+      <div class="box myth">
+        <span class="box-label">MYTH</span>
+        <div class="box-title">"Anti-histamínico e corticoide tratam a anafilaxia"</div>
+        <div class="box-body">Tratam a pele e, talvez, a reação prolongada; não revertem hipotensão nem obstrução de via aérea. O WAO 2020 aponta que o corticoide pode não ter benefício agudo. A adrenalina IM é o tratamento, e atrasá-la por esses fármacos é o erro de plantão.</div>
+      </div>
+      <div class="box controversy">
+        <span class="box-label">CONTROVERSY</span>
+        <div class="box-title">Temperatura-alvo após a parada: 33 °C, 36 °C ou normotermia</div>
+        <div class="box-body">A SBC 2019 aceita 32–36 °C por 12–24 h; o TTM2 (2021) não mostrou superioridade de 33 °C sobre normotermia com tratamento da febre, e houve mais arritmias. O ponto de consenso é evitar a febre por pelo menos 72 h; o alvo exato nos subgrupos (parada intra-hospitalar, ritmo não chocável) segue em debate, e o ERC/ESICM 2025 não foi lido.</div>
+      </div>
+      <div class="box controversy">
+        <span class="box-label">CONTROVERSY</span>
+        <div class="box-title">Suporte mecânico de rotina no cardiogênico</div>
+        <div class="box-body">O balão intra-aórtico não reduziu mortalidade; a microaxial reduziu a morte em seleção estrita no infarto com supra, com mais complicações; o ECMO venoarterial não mostrou benefício na estratégia sistemática (conferir). Quem, quando e com que destino segue sendo decisão do Shock Team.</div>
+      </div>
+      <div class="box controversy">
+        <span class="box-label">CONTROVERSY</span>
+        <div class="box-title">Hipotensão permissiva fora do trauma</div>
+        <div class="box-body">No AAA roto, a diretriz brasileira aceita PAS 70–90 com paciente consciente; na hemorragia obstétrica e na digestiva do cirrótico, a pressão-alvo e o volume são outros. A regra do trauma é extrapolada e não validada nessas causas; vale o julgamento, com a fonte controlada o quanto antes.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="pearls">
+  <div class="section">
+    <div class="section-eyebrow"><span>H</span> Pearls · Evolving</div>
+    <div class="section-title">H1 · Pearls de Especialista · H2 · Áreas em Evolução</div>
+    <div class="section-sub">Nuances que separam o intensivista do residente e as mudanças recentes que pesam na prática. Em áreas estáveis, os itens de evolução são poucos de propósito.</div>
+  </div>
+
+  <div class="card pearl">
+    <div class="card-head">
+      <div class="card-eyebrow"><span class="card-num">H.1</span> Pearls</div>
+      <h3>8 Nuances que Distinguem o Expert</h3>
+    </div>
+    <div class="card-body">
+      <div class="box pearl"><span class="box-label">PEARL</span>
+        <div class="box-title">A VCI não é uma pressão venosa; é um teste de tolerância ao volume</div>
+        <div class="box-body">Uma VCI plétora num paciente em choque diz que o coração direito não aceita mais volume, não que o paciente está "cheio". Uma VCI colabada em ventilação espontânea sugere responsividade, mas em ventilação com PEEP alto ou hipertensão abdominal perde valor. Combine com levantamento passivo das pernas e variação do VTI.</div></div>
+      <div class="box pearl"><span class="box-label">PEARL</span>
+        <div class="box-title">Taquicardia que falta é pista diagnóstica</div>
+        <div class="box-body">Hipotenso sem taquicardia: neurogênico, bloqueio de canal de cálcio ou betabloqueador, infarto inferior com bradicardia, hipotermia ou mixedema. Em hemorragia, a ausência de taquicardia no idoso betabloqueado atrasa o diagnóstico de classe III.</div></div>
+      <div class="box pearl"><span class="box-label">PEARL</span>
+        <div class="box-title">O lactato sobe pelo tratamento também</div>
+        <div class="box-body">Adrenalina em infusão aumenta o lactato por glicólise aeróbica β2, e hepatopatia, metformina e deficiência de tiamina atrapalham a leitura. A tendência com perfusão periférica vale mais que o valor isolado; não corrija a gasometria com bicarbonato se a perfusão é a pergunta.</div></div>
+      <div class="box pearl"><span class="box-label">PEARL</span>
+        <div class="box-title">Milrinona e levosimendana são inotrópicos de quem tomou betabloqueador</div>
+        <div class="box-body">A dobutamina depende do receptor β, e o betabloqueador a atenua; a milrinona age na fosfodiesterase 3 e a levosimendana sensibiliza o cálcio, e ambas funcionam apesar do bloqueio. O preço é a vasodilatação: sem noradrenalina de base, a PAM cai.</div></div>
+      <div class="box pearl"><span class="box-label">PEARL</span>
+        <div class="box-title">No infarto de VD, a pré-carga é o tratamento</div>
+        <div class="box-body">Hipotensão sem congestão pulmonar com supra inferior: derivações direitas, volume em bólus pequeno, nada de nitrato, diurético ou opioide, e manutenção da sincronia atrioventricular. O erro é tratá-lo como o cardiogênico de VE.</div></div>
+      <div class="box pearl"><span class="box-label">PEARL</span>
+        <div class="box-title">Dose de adrenalina: a unidade e a concentração são o erro</div>
+        <div class="box-body">IM é miligramas da ampola de 1 mg/mL; infusão é µg/kg/min; parada é 1 mg IV. Três contextos, três escalas. Escreva a diluição e a velocidade na prescrição, e confira a ampola (1 mg/mL × 0,1 mg/mL) antes de abrir.</div></div>
+      <div class="box pearl"><span class="box-label">PEARL</span>
+        <div class="box-title">A hora de retirar o vasoativo é a hora de achar a causa</div>
+        <div class="box-body">Se a noradrenalina não desce quando o tratamento deveria ter funcionado, há uma fonte não controlada, uma causa mista, uma insuficiência adrenal ou um erro de diagnóstico. Escalar a droga adia a pergunta e aumenta a lesão de órgão.</div></div>
+      <div class="box pearl"><span class="box-label">PEARL</span>
+        <div class="box-title">A morte encefálica é um diagnóstico de exclusão de confundidores</div>
+        <div class="box-body">Sedativo, bloqueador neuromuscular, hipotermia, distúrbio grave do sódio e choque são os confundidores que mais invalidam o exame. A resolução exige eliminar cada um antes de começar; o exame complementar de fluxo é preferido quando não se pode esperar.</div></div>
+    </div>
+  </div>
+
+  <div class="card pearl">
+    <div class="card-head">
+      <div class="card-eyebrow"><span class="card-num">H.2</span> Evolving</div>
+      <h3>6 Paradigmas em Mudança — Choque e UTI 2024–2026</h3>
+    </div>
+    <div class="card-body">
+      <div class="box evolving"><span class="box-label">EVOLVING</span>
+        <div class="box-title">Estadiamento do choque cardiogênico pelo SCAI, com modificadores</div>
+        <div class="box-body">A atualização de 2022 incorporou estudos de validação, manteve os estágios A–E, destacou o lactato (com ressalvas) e formalizou o modificador de parada cardíaca. A ESC 2026 adotou a classificação, e o ACC 2025 reforçou o cuidado em rede e a transferência precoce.</div></div>
+      <div class="box evolving"><span class="box-label">EVOLVING</span>
+        <div class="box-title">Microaxial no infarto com supra e choque</div>
+        <div class="box-body">A ESC 2026 passou a considerar a bomba de fluxo microaxial (IIa B1) em paciente selecionado, sem lesão cerebral anóxica, e manteve contra o balão intra-aórtico de rotina (III B1). A brasileira SBC 2019 ainda trazia o balão como IIa C após inotrópico.</div></div>
+      <div class="box evolving"><span class="box-label">EVOLVING</span>
+        <div class="box-title">Temperatura pós-parada: do resfriamento ao controle da febre</div>
+        <div class="box-body">O TTM2 (2021) retirou a vantagem de 33 °C sobre normotermia; a prática se deslocou para o alvo constante e a prevenção de febre por pelo menos 72 h. O ERC/ESICM 2025 atualizou o capítulo (texto integral não lido: conferir).</div></div>
+      <div class="box evolving"><span class="box-label">EVOLVING</span>
+        <div class="box-title">Proteção gástrica na VM invasiva voltou a ter evidência</div>
+        <div class="box-body">O REVISE (2024) mostrou queda do sangramento clinicamente importante (3,5% para 1,0%) sem diferença na mortalidade, o que recolocou o pantoprazol na rotina da VM invasiva, com revisão diária da indicação.</div></div>
+      <div class="box evolving"><span class="box-label">EVOLVING</span>
+        <div class="box-title">TXA: indicação por cenário, não por reflexo</div>
+        <div class="box-body">CRASH-2 e WOMAN sustentam o uso em trauma e HPP em até 3 h; o HALT-IT retirou a hemorragia digestiva da lista. A pergunta passa a ser a causa e o tempo, não "sangra, dê TXA".</div></div>
+      <div class="box evolving"><span class="box-label">EVOLVING</span>
+        <div class="box-title">Fluido por resposta, não por fórmula</div>
+        <div class="box-body">A reanimação por litros fixos perde espaço para bólus pequenos com teste de responsividade e para a retirada ativa de fluido na recuperação (CT09, II03). No hemorrágico, o sangue substitui o cristaloide.</div></div>
+    </div>
+  </div>
+</section>
+
+</div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <div>
+        <div class="foot-author">@dr.lorencato</div>
+        <div class="foot-meta">UTI e Choque Não Séptico · Pocket Handbook Elite · v5.2 · Medicina intensiva · CT08</div>
+      </div>
+      <div class="foot-mono">Compilação clínica · status clinical_review até signoff humano · gerado em 2026-11-23</div>
+    </div>
+    <div class="foot-meta"><b>Bibliografia rastreável</b>
+      <ol>
+        <li id="src-1">Naidu SS et al. SCAI SHOCK Stage Classification Expert Consensus Update. J Soc Cardiovasc Angiogr Interv 2022;1:100008 · papel: estágios A–E · DOI 10.1016/j.jscai.2021.100008 · texto integral PMC lido</li>
+        <li id="src-2">Cardona V et al. World Allergy Organization Anaphylaxis Guidance 2020. World Allergy Organ J 2020;13:100472 · papel: critérios, adrenalina IM, cristaloide; glucagon citado sem dose · DOI 10.1016/j.waojou.2020.100472 · PMC7607509 lido</li>
+        <li id="src-3">CFM. Resolução nº 2.173/2017 (critérios de morte encefálica), DOU 15/12/2017, com Anexo I · papel: protocolo e notificação · PDF local lido (partes essenciais)</li>
+        <li id="src-4">SBC. Diretriz de Ressuscitação Cardiopulmonar e Cuidados Cardiovasculares de Emergência, 2019 · papel: RCP, cuidados pós-parada, choque cardiogênico no IAM, atropina · texto local lido nas seções 5, 6 e 7</li>
+        <li id="src-5">SBC/DEIC. Diretriz Brasileira de Insuficiência Cardíaca Crônica e Aguda. Arq Bras Cardiol 2018;111:436–539, Tabela 2.3 · papel: doses de dobutamina, milrinona, levosimendana e noradrenalina · DOI 10.5935/abc.20180190 · texto local do CV04 lido</li>
+        <li id="src-6">ESC. 2026 Guidelines for the management of heart failure, slides oficiais (EHJ, DOI 10.1093/eurheartj/ehag100) · papel: choque cardiogênico, vasopressor, suporte mecânico · slides locais lidos nas seções de choque; ACC 2025 Concise Clinical Guidance on Cardiogenic Shock (JACC, DOI 10.1016/j.jacc.2025.02.018) citado via CV04</li>
+        <li id="src-7">Dankiewicz J et al. Hypothermia versus Normothermia after Out-of-Hospital Cardiac Arrest (TTM2). N Engl J Med 2021;384:2283–94 · PMID 34133859 · papel: temperatura pós-parada · resumo PubMed lido</li>
+        <li id="src-8">Halt-IT Trial Collaborators. Effects of a high-dose 24-h infusion of tranexamic acid in gastrointestinal bleeding. Lancet 2020;395:1927–36 · PMID 32563378 · papel: TXA na HDA · resumo lido; WOMAN Trial Collaborators. Lancet 2017;389:2105–16 · PMID 28456509 · papel: TXA na HPP · resumo lido</li>
+        <li id="src-9">Cook D et al. Stress Ulcer Prophylaxis during Invasive Mechanical Ventilation (REVISE). N Engl J Med 2024;391:9–20 · PMID 38875111 · papel: pantoprazol na VM · resumo lido</li>
+        <li id="src-10">De Backer D et al. Comparison of dopamine and norepinephrine in the treatment of shock (SOAP II). N Engl J Med 2010;362:779–89 · PMID 20200382 · papel: dopamina × noradrenalina · resumo lido</li>
+        <li id="src-11">Perera P et al. The RUSH exam. Emerg Med Clin North Am 2010;28:29–56 · PMID 19945597 · papel: ultrassom no choque · resumo lido</li>
+        <li id="src-12">American Diabetes Association. Standards of Care in Diabetes 2026, seção de hospital · papel: glicemia 140–180 no crítico · PDF local lido (recomendação 16.5)</li>
+        <li id="src-13">Westphal GA et al. Guidelines for the assessment and acceptance of potential brain-dead organ donors. Rev Bras Ter Intensiva 2016;28:220–55 · PMID 27737418 · papel: notificação e aceitação · PMC5051181 lido; diretriz AMIB/ABTO 2011 (PMID 23949397 e 23949398): só resumo, manutenção em "conferir"</li>
+        <li id="src-14">Ministério da Saúde. Protocolos de Suporte Avançado de Vida, SAMU 192, 2016 · papel: SUS pré-hospitalar · via CT01; CMED, lista PMVG de 09/10/2026 · papel: disponibilidade</li>
+        <li id="src-15">Apostila MED/Medcurso 2025: CAR 2 (choque), CIR 1 (hemorragia), CAR 3, PNE 1 · papel: piso de cobertura, nunca conduta; HPs vizinhos CT01, CT03, CT06, CV07, CV08, EN04, GH02, GO14, HO03, HO06, II03, RP01, RP04 · papel: doses copiadas e remissões</li>
+        <li id="src-16">Nolan JP et al. ERC/ESICM guidelines 2025: post-resuscitation care. Intensive Care Med 2025;51:2213–88 · DOI 10.1007/s00134-025-08117-3 · PMID 41123621 · só resumo e referências obtidos; conteúdo em "conferir"</li>
+      </ol>
+    </div>
+  </div>
+</footer>
+
+<a class="to-top" href="#" aria-label="Voltar ao topo">↑</a>
+<div class="watermark">@dr.lorencato · UTI e Choque Não Séptico v5.2</div>
+
+</body>
+</html>
